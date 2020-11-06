@@ -1,0 +1,38 @@
+{
+	"N" : 	{
+		"alias" : "BP chromatic N clef",
+		"baseclef" : "TREBLE_CLEF",
+		"tritave" : 4,
+		"font" : [ "Greifswaler Deutsche Schrift", 28 ],
+		"characters" : "N",
+		"offsets" : [ 0, -1 ]
+	}
+,
+	"T" : 	{
+		"alias" : "BP chromatic T clef",
+		"baseclef" : "TREBLE_CLEF",
+		"tritave" : 3,
+		"font" : [ "Greifswaler Deutsche Schrift", 28 ],
+		"characters" : "T",
+		"offsets" : [ 2, -1 ]
+	}
+,
+	"U" : 	{
+		"alias" : "BP chromatic U clef",
+		"baseclef" : "BASS_CLEF",
+		"tritave" : 3,
+		"font" : [ "Greifswaler Deutsche Schrift", 28 ],
+		"characters" : "U",
+		"offsets" : [ 2, -1 ]
+	}
+,
+	"Z" : 	{
+		"alias" : "BP chromatic Z clef",
+		"baseclef" : "BASS_CLEF",
+		"tritave" : 2,
+		"font" : [ "Greifswaler Deutsche Schrift", 28 ],
+		"characters" : "Z",
+		"offsets" : [ 4, -4 ]
+	}
+
+}

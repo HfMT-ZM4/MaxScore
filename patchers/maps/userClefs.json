@@ -1,0 +1,22 @@
+{
+	"None" : [ " ", "0", "0", "Bravura", 24, 0 ],
+	"Soprano" : [ "", "0", "-13", "Bravura", 24, 0 ],
+	"Mezzo" : [ "", "0", "-13", "Bravura", 24, 0 ],
+	"Baritone" : [ "", "0", "-19", "Bravura", 24, 0 ],
+	"G8va" : [ "", "0", "-6", "Bravura", 24, 0 ],
+	"G8vb" : [ "", "0", "-6", "Bravura", 24, 0 ],
+	"G15ma" : [ "", "0", "-6", "Bravura", 24, 0 ],
+	"F8vb" : [ "", "0", "-18", "Bravura", 24, 0 ],
+	"F15mb" : [ "", "0", "-18", "Bravura", 24, 0 ],
+	"FG" : [ " ", "0 0", "-1 -25", "Bravura", 24, 0 ],
+	"FF" : [ " ", "0 0", "23 -19", "Bravura", 24, 0 ],
+	"GG" : [ " ", "0 0", "-6 -49", "Bravura", 24, 0 ],
+	"FFG" : [ "  ", "0 0 0", "23 -19 -43", "Bravura", 24, 0 ],
+	"FGG" : [ "  ", "0 0 0", "17 -6 -49", "Bravura", 24, 0 ],
+	"FFGG" : [ "   ", "0 0 0 0", "41 -1 -25 -67", "Bravura", 24, 0 ],
+	"N" : [ "N", "0", "-1", "Greifswaler Deutsche Schrift", 28, 0 ],
+	"T" : [ "T", "2", "-1", "Greifswaler Deutsche Schrift", 28, 0 ],
+	"U" : [ "U", "2", "-1", "Greifswaler Deutsche Schrift", 28, 0 ],
+	"Z" : [ "Z", "4", "-4", "Greifswaler Deutsche Schrift", 28, 0 ],
+	"TAB" : [ "", "4", "-9.5", "Bravura", 18, 0 ]
+}

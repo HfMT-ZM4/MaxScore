@@ -1,0 +1,18 @@
+{
+	"name": "MaxScore",
+	"type": "package",
+	"author": "Nick Didkovsky, Georg Hajdu",
+	"description": "MaxScore is more than a notation tool. It is an interactive performance object.",
+	"version": "1.0.x",
+	"major_version": "1",
+	"minor_version": "0",
+	"min_max_version": "8.0.0",
+	"min_osx_version": "10.6.8",
+	"min_win_version": "XP",
+	"website": "http://www.computermusicnotation.com",
+	"link_mac32": "http://www.computermusicnotation.com/?page_id=22",
+	"link_mac64": "http://www.computermusicnotation.com/?page_id=22",
+	"link_win32": "http://www.computermusicnotation.com/?page_id=22",
+	"link_win64": "http://www.computermusicnotation.com/?page_id=22",
+	"relative_path": "None"
+}

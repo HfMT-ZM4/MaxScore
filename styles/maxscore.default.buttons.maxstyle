@@ -1,0 +1,9 @@
+{
+	"default" : 	{
+		"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "maxscore.default.buttons",
+	"multi" : 0
+}

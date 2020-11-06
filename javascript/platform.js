@@ -1,0 +1,1 @@
+inlets = 1;setinletassist(0, "bang");outlets = 1;function bang(){	outlet(0, max["os"]); // tried also the other form}

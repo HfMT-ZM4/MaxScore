@@ -1,0 +1,2 @@
+max objectfile canvas maxscore.canvas;
+max objectfile bcanvas maxscore.bcanvas;

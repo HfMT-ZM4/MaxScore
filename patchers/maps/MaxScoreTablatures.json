@@ -1,0 +1,107 @@
+{
+	"monochord" : 	{
+		"strings" : [ 62 ],
+		"fret-interval" : 1
+	}
+,
+	"dombra" : 	{
+		"strings" : [ 62, 67 ],
+		"fret-interval" : 1
+	}
+,
+	"domra" : 	{
+		"strings" : [ 64, 69, 74 ],
+		"fret-interval" : 1
+	}
+,
+	"mandolin" : 	{
+		"strings" : [ 55, 62, 69, 76 ],
+		"fret-interval" : 1
+	}
+,
+	"bass guitar" : 	{
+		"strings" : [ 28, 33, 38, 43 ],
+		"fret-interval" : 1
+	}
+,
+	"5-string bass guitar" : 	{
+		"strings" : [ 23, 28, 33, 38, 43 ],
+		"fret-interval" : 1
+	}
+,
+	"guitar" : 	{
+		"strings" : [ 40, 45, 50, 55, 59, 64 ],
+		"fret-interval" : 1
+	}
+,
+	"BP-acoustic_guitar" : 	{
+		"strings" : [ 41.201500000000003, 45.590733, 49.979999999999997, 54.369190000000003, 58.758423000000001, 63.147655 ],
+		"fret-interval" : 1.463
+	}
+,
+	"7-string guitar" : 	{
+		"strings" : [ 35, 40, 45, 50, 55, 59, 64 ],
+		"fret-interval" : 1
+	}
+,
+	"8-string guitar" : 	{
+		"strings" : [ 35, 40, 45, 50, 55, 59, 64, 69 ],
+		"fret-interval" : 1
+	}
+,
+	"9-string guitar" : 	{
+		"strings" : [ 30, 35, 40, 45, 50, 55, 59, 64, 69 ],
+		"fret-interval" : 1
+	}
+,
+	"9-string BP electric" : 	{
+		"strings" : [ 36.810001, 41.200001, 45.590000000000003, 49.979999999999997, 54.369999, 58.759998000000003, 63.150002000000001, 67.540001000000004, 71.930000000000007 ],
+		"fret-interval" : 1.46
+	}
+,
+	"10-string guitar (Yepes)" : 	{
+		"strings" : [ 30, 32, 34, 36, 40, 45, 50, 55, 59, 64 ],
+		"fret-interval" : 1
+	}
+,
+	"10-string 41-tone guitar" : 	{
+		"strings" : [ 31.536587000000001, 35.341464999999999, 39.146343000000002, 42.951220999999997, 46.756100000000004, 50.560974000000002, 54.365851999999997, 58.170731000000004, 61.975608999999999, 65.780486999999994 ],
+		"fret-interval" : 0.292688
+	}
+,
+	"11-string alto guitar" : 	{
+		"strings" : [ 34, 36, 38, 39, 41, 43, 48, 53, 58, 62, 67 ],
+		"fret-interval" : 1
+	}
+,
+	"12-string classical guitar" : 	{
+		"strings" : [ 29, 31, 33, 35, 36, 38, 40, 45, 50, 55, 59, 64 ],
+		"fret-interval" : 1
+	}
+,
+	"13-string classical guitar" : 	{
+		"strings" : [ 28, 29, 31, 33, 35, 36, 38, 40, 45, 50, 55, 59, 64 ],
+		"fret-interval" : 1
+	}
+,
+	"14-course archlute" : 	{
+		"strings" : [ 29, 31, 33, 34, 36, 38, 40, 41, 43, 48, 53, 57, 62, 67 ],
+		"fret-interval" : 1
+	}
+,
+	"15-course theorbo" : 	{
+		"strings" : [ 29, 31, 33, 35, 36, 38, 40, 41, 43, 45, 50, 55, 59, 52, 57 ],
+		"fret-interval" : 1
+	}
+,
+	"19-course theorbo" : 	{
+		"strings" : [ 23, 24, 26, 28, 29, 31, 33, 35, 36, 38, 40, 41, 43, 45, 50, 55, 59, 52, 57 ],
+		"fret-interval" : 1
+	}
+,
+	"BP-double_bass" : 	{
+		"strings" : [ 28.030000999999999, 32.419998, 36.810001, 41.200001 ],
+		"fret-interval" : 1.463
+	}
+
+}

@@ -1,0 +1,18 @@
+{
+	"Quarter Tone" : [ "default", 5, "mM-none", "default" ],
+	"Eighth Tone" : [ "EDS", 5, "mM-eighth-tones", "default" ],
+	"Twelfth Tone (Stahnke)" : [ "EDS", 5, "mM-72TET", "default" ],
+	"Twelfth Tone (Sims)" : [ "EDS", 5, "mM-SIMS", "default" ],
+	"Sixteenth Tone (Sagittal)" : [ "EDS", 5, "mM-sagittal", "default" ],
+	"Just Intonation" : [ "justintonation", 5, "mM-JI", "default" ],
+	"Percussion" : [ "percussion", "editor", "mM-none", "percussion" ],
+	"17EDO" : [ "17EDO", 5, "mM-none", "default" ],
+	"19EDO" : [ "19EDO", 5, "mM-none", "default" ],
+	"BP Alto Kalimba" : [ "BP-alto-kalimba", 5, "mM-none", "percussion" ],
+	"BP chromatic" : [ "BP-chromatic", "editor", "mM-BP", "editor", "editor" ],
+	"BP MIDI Keyboard" : [ "BP-keyboard", 5, "mM-none", "default" ],
+	"BP Soprano Clarinet" : [ "BP-soprano-clarinet", 5, "mM-none", "TREBLE_CLEF" ],
+	"BP Tenor Clarinet" : [ "BP-tenor-clarinet", 5, "mM-none", "TREBLE_CLEF" ],
+	"ClefDesigner" : [ "clefdesigner", "editor", "editor", "editor", "editor" ],
+	"Tablature" : [ "tablature", "editor", "mM-none", "TAB-clef" ]
+}

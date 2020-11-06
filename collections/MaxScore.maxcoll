@@ -1,0 +1,5 @@
+{
+	"name" : "MaxScore",
+	"type" : "filelist",
+	"contents" : [ "bcanvas.maxpat", "vz.audiosplittr.maxpat", "stockhausen-studie-II.maxpat", "vibes-a1.aif", "jit.bcanvas.maxpat", "docintro.maxvig.xml" ]
+}

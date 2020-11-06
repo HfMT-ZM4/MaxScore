@@ -1,0 +1,28 @@
+{
+	"boxes" : [ 		{
+			"box" : 			{
+				"maxclass" : "jsui",
+				"varname" : "btoggle",
+				"filename" : "btoggle.js",
+				"presentation_rect" : [ 0.0, 0.0, 19.0, 19.0 ],
+				"patching_rect" : [ 52.0, 154.0, 19.0, 19.0 ],
+				"id" : "obj-18",
+				"parameter_enable" : 0,
+				"numinlets" : 1,
+				"numoutlets" : 1,
+				"outlettype" : [ "" ],
+				"embedstate" : [ [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ]
+			}
+
+		}
+ ],
+	"appversion" : 	{
+		"major" : 7,
+		"minor" : 0,
+		"revision" : 2,
+		"architecture" : "x86",
+		"modernui" : 1
+	}
+,
+	"preview_image" : [ 314, "png", "IBkSG0fBZn....PCIgDQRA...LA...vDHX....fbPYCy....DLmPIQEBHf.B7g.YHB...DeRDEDU3zXqTGriBBCDF.9eHfQ6VPr03ivt66+Si5ifYkEAjCRBimXCzsSUCN2ljoeG5+zRFqkMasXtUwOmQrYqEe98WyF639CHZ1JipIXDQH8i0fHJ3gjlaBlVkgUKUHO0HBRDg7TCVsTAsJSFqosBcc2PRxBufCPIIKPW2MzzVIiwLix5BuftPk0EfYVFSBLJJ5gPdw7AZy28PHQrAvKM+BlYPDMoWpDwHhvZ8l+fF2+RXtW1mKOELkEw7kZ888horHVn3OzZiWLsJKXp4B59BHdbyvFcSakXpM.pUY+6EPr6f0Wu3E4Yl6s9ED8N+o8NPBXu8X4qb1M.....IUjSD4pPfIH" ]
+}

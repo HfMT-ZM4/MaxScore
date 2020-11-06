@@ -1,0 +1,34 @@
+{
+	"boxes" : [ 		{
+			"box" : 			{
+				"maxclass" : "bpatcher",
+				"varname" : "maxscore.noteslider",
+				"viewvisibility" : 1,
+				"offset" : [ 0.0, 0.0 ],
+				"lockeddragscroll" : 0,
+				"clickthrough" : 0,
+				"enablehscroll" : 0,
+				"enablevscroll" : 0,
+				"bgmode" : 0,
+				"border" : 0,
+				"numoutlets" : 2,
+				"patching_rect" : [ 288.0, 226.0, 108.0, 196.0 ],
+				"outlettype" : [ "", "float" ],
+				"name" : "maxscore.noteslider.maxpat",
+				"id" : "obj-1",
+				"numinlets" : 1
+			}
+
+		}
+ ],
+	"appversion" : 	{
+		"major" : 8,
+		"minor" : 1,
+		"revision" : 4,
+		"architecture" : "x64",
+		"modernui" : 1
+	}
+,
+	"classnamespace" : "box",
+	"preview_image" : [ 2589, "png", "IBkSG0fBZn....PCIgDQRA...3F...faHX....fwaYx9....DLmPIQEBHf.B7g.YHB..IPcRDEDU3wY6btGTTccGG+y9hUx.xSQ.QEAwW7PLhJJsngQyDhOnwwL0zoZZwXLp0Ls5TUznQwFMHpInISzzzlIQqIZiDRrjFL5fhTr5vFkHpAhOPTXInwEVMrxiA5ev3ZWiDMIduWNjym+Atm6tLem86dt76d9cte0UUUU0Vu5UuPh3PUUUEFu0As1Z8ZoVjbehd8d09O0XcH4GIRiSPQZbBJRiSPQZbBJRiSPQZbBJRiSPQZbBJRiSPQZbBJRiSPQZbBJZtwsjkrR5aeijBJ3+v3F2iShI9XLlwLdV4JeIsVZcpw389knbrwMtExLyrvrYyzRKsfUq0PhIl.IjP7LyY9TZoz5zilNi6Dm3Kvc2cmILgGgbyMOpqt5ojRJESlLhd8Z9EC5Til9oyy9r+db3vAojxDogFbvgObdX1rarwM9ZZorDBzTiK6r+XzqWOd4U2Yaa6uy0tlMNyYJijSdBZorDBzcq8bhZu0Edy27sY8qOKb3vAlMalJp3hDSLQwvFVLrt0sJBLvdpp5QTPudunpppR6LN.Zs0VIkTlN4ladXznQxO+bIgDhW00gHwsLNM8RkYk0aPt4lG.zRKsP5omgVJGgBMaFW80WOAG7.wgCGtLdIkTDQGcjppVDIz7Ybu268ANMsG4QRjm64lElMalO3C9HsRRBEZ1Mf+YeV9.PJoLQ1yd1A50qmqcMabtycAsRRBEZ1Ltye9JvnQir0s9pNuY6PBIXN24NuVIIgBMaF2EtvEYxSNY5YOCv4XETPQTe8xcT88CJhwYwxw+dOuc6WG61sSe5SHNes0V6UwhkiyPGZz2y2unwvG9vdf+2TStTYCMz..tbS1qacaf1ZqMBIjf0BIIbnHy3tWeCylMa.PbwMLF9vGFok1pnvB+u.vLlwzUjug1UCMYFmmd5I5zoiqe8avZVSFjQFuB.3s2dKWmx6SzjhSLZzH8pWAyRVxJ4q9py4b7LybM3gGdnERR3PSLtxK+rzPCMvkubUNGabi6Wxrl0L0B4Hjn5UUVRIkxBWXZX290cNlISl34e94zkqZxagvWU4gNTgL249mbwz.XYKaQz6dGhZJEgGUqpx7xa+jVZqllatYWFOyL+KrnEs.kPFcoQUlwUTQGkoN0eqKlVng1WzoSGCdvCTMjPWNTbi6l27lLyYNGWZeShIl.EW7AYfCLBJszSqzRnKIJdUkYjwqv4O+sWw+jSdB7ge3NwM2bigLjAIMtejnnUUd4KWEqcsaz43idzijW3EVLm7jmB.dnG5gX+6+frgMrYBJndR3gGFlLooa0SEAknpRE8So8t2O04+WqO8IDxHizwM2LQc0UOu9q+WImb9W.vhW7J..u7p6LqYMSdpmZZJor5RfhVUY0UaE.zoSG4jy6QrwFC0V6UXxS9WSM070em2W80amMsoWC+7yWRKsEoDRqKCJZwIVrbBf16xcrwFC.jZpy6tZZ++r7kmNu8auCkTZBOJlwY0ZMbkqbU.XpScJ.Pc0UGexmrOmuloMseEAETfjRJSjUspzvSO8z44191eekRZcIPwLN2cuaN+8ALfvAfhK91KoU1Y+OX269cXzidjXvfAV4JWJVrbH7yOeAfibjiQiM1nRIOgGEspRO7vCtwMtAUWsUrX43XyVc.PXgEJ8t28BKVNN95qOru8c.mum4LmTYsqcCzXiMxt1U1DYjCRIjnphvsVkCcnQA.kWd6stIrvBE+82O7zya25lvBKTtzkphlZp8pOiO93bdt.BvekTdBMJZUkok1hXRS5I4rm87r3E+GAfm9o+MroM8ZzbysP7wOB5V25FKaYqF2cuaDarwvwNVw.f+96GO1iIapZGghNiK4jm.IkzX4sdq2g8t2+M.r90uFVwJVBIkzjXW6ZOLfAzeLZzHkV5Y.frydu.vbm6ynjRS3Qw2B51rYiQMpjn1ZuJu5q9xLiYLcLXv.kTxIQmNcDSLQQjQNRl7jSl912dyBVvelAO3AhEKEfat4lhnIQFUaKn6iO9vQNxA3IdhIQpoNOF5PGCYlYVTQEUhACF3zm9Kwau8hMu4sx7m+hX1y92QQE8YRS6dfhLiqi5j8IO4oIu71OG8nEyW+0WAGNbfNc5vfAC.vV1RlDWbc81gWOHqp7Vy3T0UzM5nGBQG8PbdbiM1DlLYh7yu.V5ReQFzfhPMkiPilruJuS7zSOXoK8EwjI2j6ox6ST88UYkUdIra2tKi0+9GFFMZjxK+rpsbDVTMiq7xOKQDwvHzPihdzivbYsHMZzHAETfX0ZMpkbDdTMiKqrdCmOBUM2byLu4sPW1CJADPOvp0u+tFH41nZF2d1iqOooe629sTYkWx4wUWsU5QO7SsjivipYblLYxki6W+BkvCOLf1aAjUq0vHFwCqVxQ3Q0LtoLkG24uGUTCgsu82Dn8Hy3Ydl+.96ueDe7iPsjivipYbqYMK2YZJL1w9K3K9hR4kdoLIxHGI4m+g4i9n2Gu81a0RNBOp1Mf6qu9xwNV9ricrK9zOc+74e9IvKu5NSaZofACF4a9lqoVRoKAcpRVnCdvOgwLlQo55PjPyy4D36lrPqd0urVJGgBYxBIXn4y3jIKzOMjIKjfhLYgDTjIKjfhLYgTADt8UYGgLYg9oiLYgDTjIKjfhLYgDTjIKjfhLYgtCrZsFpnhJIhHBG+8+ASG4EtmA76jCcnBuqgTSmgjEpfBJhMu42fKdwaucJRN4IP5oubMTUcLp1hLmWd6moLko2oLYgV0pVGom9cuyDc1VzaUcQl6LmrPEV3Q5PSCfJq7xpnZt+4m8IKzN24+rCOWvAGDie7iS8DyO.Tbi6tkrP6ae4fu95amhjEJgDt6cb2Ge7gbxYmX1rYUVQ2e7y9jEJhHBmjRZrTXgGglZpI7zSOYhS7QI0TmA5zo6ARktBWUkhPxBYvfAxHiUiCG2D61s6R2J5LiLYgDTjIKjfhLYgDTjIKjfhLYgTADtNfKSVHkCYxBInHSVHAEYxBIXHSVHAGYxBoBHSVHINQlrPBJxjERPQlrPBJxjERPQlrPBJxjERPQlrPBJxjERPQUiKiFarQmIKT0UaEu7p6LhQLbl6bmkKOjiR5Xt0JmnoIKjje3nnK40casJqs1qRYk8UTVYkSSM0LAFXOIpnFLCX.8WIjPmJDt8UIz9kG2xV1F6d2eH8qe8k.BH.N0oNCW+5s+XVEWbOLKbgymHhHbkVJcoPQuTYyM2LidzimFZnAd22caDWbsWteqs1Jyd1Kv4VvyGe7gCbfOlXiMFZqs1Xqa8uQ0UWCqXEKV1dm6.Uo6.YlYVbpScFJu7O2km+M850y11VVbziVLm9zeI1rYim7IeZJqLKbvCdXl+7aeyvFbvAJ6DdGv+C.7OEEDOS6lq.....jTQNQjqBAlf" ]
+}

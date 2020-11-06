@@ -1,0 +1,12 @@
+max oblist MaxScore MaxScore;
+max oblist MaxScore packback;
+max oblist MaxScore gh.split@;
+max oblist MaxScore "js btoggle";
+max oblist MaxScore maxscore.bachScoreToMaxScore;
+max oblist MaxScore maxscore.bcanvas;
+max oblist MaxScore maxscore.canvas;
+max oblist MaxScore maxscore.makenote;
+max oblist MaxScore maxscore.net.recv;
+max oblist MaxScore maxscore.net.send;
+max oblist MaxScore maxscore.parse2;
+max oblist MaxScore maxscore.split2;

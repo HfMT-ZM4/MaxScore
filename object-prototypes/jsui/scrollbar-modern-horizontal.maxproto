@@ -1,0 +1,28 @@
+{
+	"boxes" : [ 		{
+			"box" : 			{
+				"maxclass" : "jsui",
+				"prototypename" : "scrollbar-wide-horizontal",
+				"numoutlets" : 1,
+				"outlettype" : [ "" ],
+				"filename" : "scrollbar.js",
+				"patching_rect" : [ 1257.0, 115.0, 145.0, 12.0 ],
+				"numinlets" : 1,
+				"id" : "obj-13",
+				"parameter_enable" : 0,
+				"embedstate" : [ [ "arrowcolorh", 0.996, 0.996, 0.996, 0 ], [ "type", "modern" ], [ "bgcolor", 0.9, 0.9, 0.9, 1 ], [ "bodycolorh", 0.5, 0.5, 0.5, 1 ], [ "bordercolor", 0.608, 0.608, 0.678, 0 ], [ "orientation", "Horizontal" ], [ "guttercolorh", 0.487, 0.487, 0.5, 0 ], [ "percentage", 25 ], [ "bodycolor", 0.75, 0.75, 0.75, 1 ], [ "guttercolor", 0.487, 0.487, 0.5, 0 ], [ "bordercolorh", 0.447, 0.447, 0.522, 0 ] ]
+			}
+
+		}
+ ],
+	"appversion" : 	{
+		"major" : 8,
+		"minor" : 0,
+		"revision" : 6,
+		"architecture" : "x64",
+		"modernui" : 1
+	}
+,
+	"classnamespace" : "box",
+	"preview_image" : [ 114, "png", "IBkSG0fBZn....PCIgDQRA...v.....CHX....fU0w04....DLmPIQEBHf.B7g.YHB...jRRDEDUnD4XzBKr3+VYkULPr.VrxJqXnjRJgn0.SDsJGUCCpz.ijZRC.3gvFz7dZ4Gj.....jTQNQjqBAlf" ]
+}
