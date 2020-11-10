@@ -230,8 +230,7 @@ if (mode == "picster" && !blocked) {
 			if (tempDict2.contains("picster-element::expression")) outlet(1, "expression", "dictionary", picster.get("expression").name);
 		}
 		else if (tempDict2.contains("picster-element[2]::val")) {
-		post("o2", tempDict2.stringify(), format, "\n");
-			// FIX!
+			if (buttonMode) { 
 			var o = {};
 			var o2 = {};
 			o = JSON.parse(tempDict2.stringify());
@@ -242,8 +241,9 @@ if (mode == "picster" && !blocked) {
 				}
 				var tempDict = new Dict();
 				tempDict.parse(JSON.stringify(o2));
-			outlet(1, "expression", "dictionary", tempDict.name);
-			}
+			outlet(1, "expression", foundobjects.get(item)[2], "dictionary", tempDict.name);
+				}
+			}		
 		else outlet(1, "expression", "clear");
 		}
 		else clicks = 0;
@@ -482,7 +482,7 @@ if (mode == "picster") {
 			}
 		break;
 		case "staff" :
-			post("staff", "\n");
+			//post("staff", "\n");
 			outlet(0, "getNumStaves");
 			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
 			var key = Object.keys(json);
@@ -1077,7 +1077,7 @@ function deleteSelectedItem()
 			if (userBeans[i]["Message"].indexOf("rendered") && userBeans[i]["Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["Message"]);
- 			post("compare", tempDict.get("picster-element[0]::val[0]::id"), foundobjects.get(item)[foundobjects.get(item).length - 6], "\n");
+ 			//post("compare", tempDict.get("picster-element[0]::val[0]::id"), foundobjects.get(item)[foundobjects.get(item).length - 6], "\n");
 			if (tempDict.get("picster-element[0]::val[0]::id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]), parseFloat(userBeans[i]["Yoffset"]), userBeans[i]["Message"]);
 			}
 			else {
@@ -1135,7 +1135,7 @@ function deleteSelectedItem()
 
 function reattachRenderedMessage(serialized)
 {
-	post("reattachRenderedMessage", "\n");
+	//post("reattachRenderedMessage", "\n");
 if (mode == "picster") {
 	if (item != -1)  {
 	switch (foundobjects.get(item)[0]){
@@ -1233,7 +1233,7 @@ if (mode == "picster") {
 
 function reattachRenderedMessage2(x, y, serialized)
 {
-	post("reattachRenderedMessage2", "\n");
+	//post("reattachRenderedMessage2", "\n");
 if (mode == "picster") {
 	if (item != -1)  {
 	switch (foundobjects.get(item)[0]){
@@ -1352,7 +1352,7 @@ function createRenderedMessage(f, x, y, serialized)
 		}
 		this.patcher.getnamed("pane").message("clearGraphics");
 		}
-		restoreSelection();
+		restoreSelection(anchors);
 		outlet(0, "saveToUndoStack");
 		outlet(0, "setRenderAllowed", "true");
 	}
@@ -1401,11 +1401,11 @@ function cnt()
 //mystring.replace( /(^.*\[|\].*$)/g, '' );
 
 
-function restoreSelection()
+function restoreSelection(obj)
 {
 		outlet(0, "clearSelection");
-		for(var event in anchors){
-		anchor = anchors[event];
+		for(var event in obj){
+		anchor = obj[event];
 		if (anchor[6] == -1) outlet(0, "addNoteToSelection", anchor[2], anchor[3], anchor[4], anchor[5]);
 		else for (var i = 0; i <= anchor[6]; i++) {
 			//outlet(0, "selectNextInterval");
@@ -1830,7 +1830,7 @@ function replaceExpressionsForSelectedShape()
 			_picster["picster-element"][2].key = "expression";	
 			_picster["picster-element"][2].val = [];
 			_picster["picster-element"][2].val = a;
-			post("dict", JSON.stringify(_picster), "\n");
+			//post("dict", JSON.stringify(_picster), "\n");
 			edit.parse(JSON.stringify(_picster));
 			}
 		else {
@@ -1864,6 +1864,8 @@ function init()
 		mode = "picster";
 		increment = 0;
 		anchors = {};
+		outlet(0, "getNoteAnchor");
+		var _anchors = JSON.parse(JSON.stringify(anchors));
 		outlet(0, "setRenderAllowed", 0);
 		outlet(0, "selectAll");
 		outlet(0, "getNoteAnchor");
@@ -1888,15 +1890,24 @@ function init()
 					//post("success", "\n");
 					if (userBeans[k]["Message"].indexOf("rendered") == -1 && userBeans[k]["Message"].indexOf("sequenced") == -1) {
 					e.parse(userBeans[k]["Message"]);
-					//if (e.contains("picster-element[0]::val")) {
 						if (e.contains("picster-element[2]::val")) {
 							var dictArray = [].concat(e.get("picster-element[2]::val"));
 							for (var l = 0; l < dictArray.length; l++) jexpr.push(JSON.parse(dictArray[l].stringify()));
 							o[i] = jexpr;
-							//post("jexpr", JSON.stringify(o), i, "\n");
 							outlet(0, "setNoteDimension", 6, i);
 							}		
 						}
+					else if (userBeans[k]["Message"].indexOf("sequenced") == 0) {
+						e.parse(userBeans[k]["Message"].split(" ")[2]);
+						var o2 = {};
+						o2.editor = (e.get("0")[e.get("0").length - 1] == "linear" || e.get("0")[e.get("0").length - 1] == "curve") ? "bpf" : "default";
+						o2.message = e.get("0")[0];
+						o2.value = e.get("0").slice(1);
+						jexpr.push(o2);
+						o[i] = jexpr;
+						//post("o", JSON.stringify(o), k, "\n");
+						outlet(0, "setNoteDimension", 6, i);
+					}
 					else {
 					e.parse(userBeans[k]["Message"].split(" ")[2]);
 					var picster = e.get("picster-element");
@@ -1916,7 +1927,7 @@ function init()
 			}
 		expr.parse(JSON.stringify(o));
  		outlet(1, "dictionary", expr.name);
-		//outlet(0, "sequenceDump");
+		restoreSelection(_anchors);
 		outlet(0, "setRenderAllowed", 1);
 		mode = currentMode;
 }
@@ -1940,6 +1951,17 @@ function anything()
 	case "property" :
 	property = msg;
 		break;
+	case "onclick" :
+	if (foundobjects.contains("0") && item != -1) {
+		edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+		//post("edit", edit.stringify(), "\n");
+		if (edit.contains("picster-element[0]::val")) {
+			edit.replace("picster-element[0]::val::onclick", msg);
+			action = "update";
+			outlet(3, "bang");
+			}
+		}
+		break;
 	case "color" :
 	color = msg;
 		break;
@@ -1954,7 +1976,6 @@ function anything()
 		break;
 	case "font" :
 	font = msg;
-	//post("textedit", typeof textedit, textbox, "\n");
 	if (typeof textedit != "undefined" && textbox == "created") this.patcher.parentpatcher.message("script", "sendbox", textedit.varname, "fontname", font);
 		break;
 	case "fontsize" :
@@ -2469,11 +2490,5 @@ function ovalarc(startangle, endangle, cx, cy, r1, r2) {
         var d = "M" + cx + "," + cy + "M" + x1 + "," + y1 + "A" + r1 + "," + r2 + ",0 ," + big + ",1 " + x2.toFixed(3) + "," + y2.toFixed(3);
 //            + " Z\"";                       // Close path back to (cx,cy)
  		return d;
-}
-
-function test()
-{
-	a = arrayfromargs(arguments);
-	post("length", a.length, "\n");
 }
 

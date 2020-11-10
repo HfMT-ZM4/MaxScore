@@ -246,7 +246,7 @@ function newEvent() {
                         messnamed(grab, "getIntervalInfo", inf.slice(3));
                         event[5] = dump.get("interval::dim::1::@value");
                     }
-                    this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("triggerNote").message(StaffIndex, event);
+                    this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("setPitch").subpatcher().getnamed("triggerNote").message(StaffIndex, event);
                     this.patcher.parentpatcher.parentpatcher.getnamed("pitchtool").subpatcher().getnamed("pitch").message(event[5]);
                 }
             }
