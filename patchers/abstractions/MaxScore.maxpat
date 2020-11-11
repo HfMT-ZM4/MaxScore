@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -77,12 +77,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
+					"linecount" : 2,
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 98.0, 79.0, 215.0, 22.0 ],
-					"text" : "routepass setUserClef setToneDivision"
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 98.0, 70.0, 215.0, 35.0 ],
+					"text" : "routepass picster setUserClef setToneDivision"
 				}
 
 			}
@@ -374,6 +375,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-18", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-18", 2 ]
 				}
 

@@ -1418,18 +1418,12 @@ function addShape()
 {
 	var num = cnt();
 	var msg = arrayfromargs(arguments);
-	//var toffsets = [msg[0], msg[1]];
 	var toffsets = [0, 0];
 	edit.clear();
 	outlet(0, "getSelectionBufferSize");
-	// remove when done
-	//var measurerange = this.patcher.getnamed("measurerange").getvalueof();
-	//
-	var num = cnt();
- 	//post("num",  msg, "\n");
 	if (msg[0] == "." || msg[1] == ".") {
 		if (!selectionBufferSize) {
-			if (measurerange == null) return;
+			if (measurerange[0] == -1) return;
 				increment = 0;
 				anchors = {};
 				if (preference == "staff") outlet(0, "getDrawingAnchor", measurerange[0], measurerange[1]);
@@ -1749,6 +1743,70 @@ function addShape()
 			}
 }
 
+function attach()
+{
+	measurerange = this.patcher.getnamed("measurerange").getvalueof();
+	var currentMode = mode;
+	mode = "picster";
+	var elem = arrayfromargs(arguments);
+	var temp = new Dict();
+	post("elem", elem, "\n");
+	if (elem[0] == "dictionary") temp.name = elem[1];
+	else if (elem[0].substr(elem[0].lastIndexOf(".") + 1).toLowerCase() == "json") temp.import_json(elem);
+	else return;
+	edit.clear();
+	_picster["picster-element"] = [];
+	_picster["picster-element"][0] = JSON.parse(temp.stringify());
+	_picster["picster-element"][0]["val"]["id"] = "Picster-Element_" + cnt();
+	outlet(0, "getSelectionBufferSize");
+			if (!selectionBufferSize) {
+			if (measurerange[0] == -1) return;
+				increment = 0;
+				anchors = {};
+				if (preference == "staff") outlet(0, "getDrawingAnchor", measurerange[0], measurerange[1]); //getSelectedLocation?
+				else outlet(0, "getDrawingAnchor", measurerange[0]);
+				for(var event in anchors){
+					anchor = anchors[event];
+				}
+				if (preference == "staff") offsets[0] = [ anchor[2] / factor, anchor[3] / factor];
+				else offsets[0] = [ anchor[1] / factor, anchor[2] / factor ];
+				}
+				else if (selectionBufferSize != 0) {
+					increment = 0;
+					anchors = {};
+					outlet(0, "getNoteAnchor");
+					for(var event in anchors){
+					anchor = anchors[event];
+					offsets[0] = [ anchor[0] / factor, anchor[1] / factor ];
+				}
+			}
+		_picster["picster-element"][1] = {};
+		_picster["picster-element"][1].key = "extras";	
+		_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};		
+		edit.parse(JSON.stringify(_picster));
+		action = "addShape";
+		outlet(3, "bang");
+		mode = currentMode;
+}
+
+function removeAllElements()
+{
+	measurerange = this.patcher.getnamed("measurerange").getvalueof();
+	outlet(0, "getSelectionBufferSize");
+	if (!selectionBufferSize) {
+	if (measurerange[0] == -1) return;
+	if (preference == "staff") outlet(0, "removeAllRenderedMessagesFromStaff", measurerange[0], measurerange[1]);
+	else outlet(0, "removeAllRenderedMessagesFromMeasure", measurerange[0]);
+	outlet(0, "saveToUndoStack");
+	outlet(0, "setRenderAllowed", 1);
+	}
+	else {
+		outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
+		outlet(0, "saveToUndoStack");
+		outlet(0, "setRenderAllowed", 1);
+	}	
+}
+
 function rotate(angle)
 {
 	//print: getNoteAnchor 83.620689 57. 0 0 0 0 -1
@@ -1756,7 +1814,6 @@ function rotate(angle)
 	var center = [(bounds[2] - bounds[0]) / 2 + bounds[0], (bounds[3] - bounds[1]) / 2 + bounds[1]];
 	var offset_x = center[0] - RenderMessageOffset[0];
 	var offset_y = center[1] - RenderMessageOffset[1];
-	//post("rendermessageoffset", RenderMessageOffset, "\n");
 	var elem = "";
 	var matrix = [Math.cos(angle / 360 * 6.28), Math.sin(angle / 360 * 6.28), Math.sin(angle / 360 * -6.28), Math.cos(angle / 360 * 6.28), -offset_x * Math.cos(angle / 360 * 6.28) + offset_y * Math.sin(angle / 360 * 6.28) + offset_x, -offset_x * Math.sin(angle / 360 * 6.28) - offset_y * Math.cos(angle / 360 * 6.28) + offset_y];
 	action = "update";

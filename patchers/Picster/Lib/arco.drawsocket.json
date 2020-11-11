@@ -1,0 +1,19 @@
+{
+			"key" : "svg",
+			"val" : 			{
+				"new" : "text",
+				"child" : "arco.",
+				"x" : 0,
+				"y" : -9,
+				"font-family" : [ "Times Italic" ],
+				"font-size" : [ 16 ],
+				"font-weight" : "normal",
+				"font-style" : "normal",
+				"style" : 				{
+					"fill" : "rgb(0,0,0)",
+					"fill-opacity" : 1
+				}
+,
+				"transform" : "matrix(1,0,0,1,0,0)"
+			}
+}
