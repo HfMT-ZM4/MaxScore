@@ -1749,15 +1749,11 @@ function attach()
 	var currentMode = mode;
 	mode = "picster";
 	var elem = arrayfromargs(arguments);
-	var temp = new Dict();
-	post("elem", elem, "\n");
-	if (elem[0] == "dictionary") temp.name = elem[1];
-	else if (elem[0].substr(elem[0].lastIndexOf(".") + 1).toLowerCase() == "json") temp.import_json(elem);
-	else return;
 	edit.clear();
-	_picster["picster-element"] = [];
-	_picster["picster-element"][0] = JSON.parse(temp.stringify());
-	_picster["picster-element"][0]["val"]["id"] = "Picster-Element_" + cnt();
+	//post("elem", elem, "\n");
+	if (elem[0] == "dictionary") edit.name = elem[1];
+	else if (elem[0].substr(elem[0].lastIndexOf(".") + 1).toLowerCase() == "json") edit.import_json(elem);
+	else return;
 	outlet(0, "getSelectionBufferSize");
 			if (!selectionBufferSize) {
 			if (measurerange[0] == -1) return;
@@ -1780,10 +1776,6 @@ function attach()
 					offsets[0] = [ anchor[0] / factor, anchor[1] / factor ];
 				}
 			}
-		_picster["picster-element"][1] = {};
-		_picster["picster-element"][1].key = "extras";	
-		_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};		
-		edit.parse(JSON.stringify(_picster));
 		action = "addShape";
 		outlet(3, "bang");
 		mode = currentMode;
@@ -2067,6 +2059,9 @@ function anything()
 			if (foundobjects.contains("0") && item != -1) edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 			outlet(3, "edit");
 			break;
+			case 76 : //l
+			if (foundobjects.contains("0") && item != -1) this.patcher.getnamed("savedialog").message("bang");
+			break;
 			case 77 :
 			preference = "measure";
 			break;
@@ -2219,6 +2214,10 @@ function anything()
 				edit.parse(JSON.stringify(_picster));
 			outlet(3, "bang");
 			}
+		break;
+	case "library" :
+		edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+		edit.export_json(msg[0]);
 		break;
 	case "getInstrumentName" :
 		break;

@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 322.0, 153.0, 815.0, 731.0 ],
+		"rect" : [ 227.0, -1122.0, 815.0, 731.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,25 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-42",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 317.666665999999964, 445.0, 19.0, 19.0 ],
+					"varname" : "savedialog"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 683.0, 379.0, 137.0, 22.0 ],
+					"patching_rect" : [ 683.0, 379.0, 144.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -67,7 +80,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -213,6 +226,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -578,7 +593,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -840,7 +855,7 @@
 				"box" : 				{
 					"id" : "obj-32",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patcher" : 					{
@@ -848,7 +863,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -884,6 +899,55 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 186.000006000000042, 66.0, 173.0, 22.0 ],
+									"text" : "name untitled.picster.json, json"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-4",
+									"index" : 3,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 186.000006000000042, 24.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 186.000006000000042, 131.0, 89.0, 22.0 ],
+									"text" : "prepend library"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "bang" ],
+									"patching_rect" : [ 186.000006000000042, 100.0, 66.0, 22.0 ],
+									"text" : "savedialog"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-45",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -915,7 +979,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.000006000000042, 40.0, 30.0, 30.0 ]
+									"patching_rect" : [ 50.000006000000042, 24.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -928,7 +992,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 85.000006000000042, 40.0, 30.0, 30.0 ]
+									"patching_rect" : [ 85.000006000000042, 24.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -1010,6 +1074,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
@@ -1024,6 +1095,20 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-28", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-45", 0 ],
 									"source" : [ "obj-42", 0 ]
 								}
@@ -1033,6 +1118,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-28", 0 ],
 									"source" : [ "obj-45", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -1070,9 +1162,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 224.333332999999925, 39.5, 173.0, 22.0 ],
+					"patching_rect" : [ 224.333332999999925, 39.5, 180.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"initial" : [ 2492 ],
+						"initial" : [ 13483745 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -1117,7 +1209,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 860.0, 210.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 800.0, 800.0 ],
 					"rounded" : 0.0,
 					"types" : [ "TEXT" ],
 					"varname" : "dropfile"
@@ -1165,7 +1257,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1207,7 +1299,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 230.970020263305685, 136.724784851074219, 256.0, 22.0 ],
-									"restore" : [ "scoreLayout", 2, 0, 2, 0.5, 860, 210 ],
+									"restore" : [ "scoreLayout", 4, 0, 4, 0.5, 800, 800 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1301,7 +1393,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1735,7 +1827,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2096,7 +2188,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 16.5, 443.0, 201.0, 20.0 ],
-													"restore" : [ 101 ],
+													"restore" : [ 127 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -2188,7 +2280,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 6,
+															"revision" : 8,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3607,7 +3699,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4395,7 +4487,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4687,7 +4779,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 317.666665999999964, 437.0, 19.0, 19.0 ],
+					"patching_rect" : [ 282.166665999999964, 445.0, 19.0, 19.0 ],
 					"varname" : "opendialog"
 				}
 
@@ -4704,7 +4796,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4976,7 +5068,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 78.166665999999964, 275.5, 215.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "render2canvas.js",
+						"filename" : "render2canvas",
 						"parameter_enable" : 0
 					}
 ,
@@ -5031,7 +5123,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 1, 1, 1, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1 ], [ "transparency", 0 ] ],
 					"filename" : "pane.js",
 					"id" : "obj-7",
 					"maxclass" : "jsui",
@@ -5041,7 +5133,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 717.0, 528.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 883.0, 869.0 ],
 					"varname" : "pane"
 				}
 
@@ -5276,7 +5368,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-34", 1 ],
-					"midpoints" : [ 299.833332999999982, 454.0, 232.666665999999964, 454.0 ],
+					"midpoints" : [ 299.833332999999982, 433.0, 232.666665999999964, 433.0 ],
 					"source" : [ "obj-30", 0 ]
 				}
 
@@ -5378,6 +5470,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-5", 1 ],
 					"source" : [ "obj-41", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 2 ],
+					"source" : [ "obj-42", 0 ]
 				}
 
 			}
