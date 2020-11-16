@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="Welcome to MaxScore!">
+
+<!--
+<setdocpatch name="02jJavascriptScripting" patch="02jJavascriptScripting.maxpat"/>
+<previous name="javascriptchapter01">Basic JavaScripting</previous>
+<next name="javascriptchapter03">Tasks, Arguments and Globals</next>
+<parent name="00_maxindex">Max Tutorials</parent>
+
+<indexinfo category="JavaScript" title="JavaScript Scripting">Using JavaScript to create patcher elements</indexinfo>
+-->
+
+<h1>Welcome to MaxScore!</h1>
+
+<p>MaxScore provides a barrage of different possibilities for musicians, composers, creators, programmers and not only. It offers maximum flexibility for music notation, as it gives the opportunity to create a score and interfere with it in multiple groundbreaking and creative ways. The advantage of using MaxScore in comparison to other professional notation environments is its integration into the Max environment, allowing programmers to adapt the application to their needs. MaxScore is a leading application for graphical and microtonal notation. It gives the opportunity to integrate graphics and it is designed to represent pitch with visually unlimited precision. Furthermore, the API part of MaxScore is capable of rendering different environments and interacting with 3d objects. It is the perfect tool to combine music notation with VR/AR environments and it interferes with Jitter or Max Canvas. Another feature that makes MaxScore unique is its capability to export a score to different popular formats for professional publishing.</p>
+<p>In the ‘tutorials’ section, you could get to know all these and much more about the MaxScore environment. You can learn step by step how to use the multiple possibilities it offers and benefit from it.</p>
+<p>*************</p>
+<p><i>MaxScore - common music notation for Max and Ableton Live</i></p>
+<p><i>MaxScore provides the computer music composer with common music notation directly in the Max/MSP environment. MaxScore is a Max object which accepts messages that can create a score, populate it with notes, perform it, and export to popular formats for professional publishable results. MaxScore currently supports export via MusicXML for input into Finale, as well as LilyPond format.</i></p>
+<p><i>MaxScore is more than a notation tool, it is an interactive performance object. MaxScore can play back a score and drive your MSP patches through a well-defined instrument interface. Scores can be created and modified in real-time. You can add notes explicitly by defining their properties (specifying a quarter note triplet as duration and middle C as pitch), or generate an arbitrary stream of musical events and use MaxScore's transcriber to notate them automatically.</i></p>
+<p><i>MaxScore was programmed in Java Music Specification Language by Nick Didkovsky (but requires no Java programming), and is freely available to the public. MaxScore was commissioned by "Bipolar - German-Hungarian Cultural Projects." </i></p>
+<p><i>MaxScore requires a JMSL license to run, available at www.algomusic.com. A 30-day trial license is available for free.</i></p>
+
+
+
+<!-->
+
+<seealsolist>
+<seealso name="js">Max JavaScript object</seealso>
+<seealso name="jsintro" type="vignette" module="js" >javascriptinmax</seealso>
+</seealsolist> <-->
+
+</chapter>

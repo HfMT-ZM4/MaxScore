@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<root>
+<refpage name='com.algomusic.max.MaxScore.maxref.xml'/>
+<refpage name='bcanvas.maxref.xml'/>
+<refpage name='canvas.maxref.xml'/>
+<refpage name='maxscore.split.maxref.xml'/>
+<refpage name='maxscore.parse.maxref.xml'/>
+<refpage name='btoggle.maxref.xml'/>
+<refpage name='packback.maxref.xml'/>
+</root>

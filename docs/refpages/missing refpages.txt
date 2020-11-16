@@ -1,0 +1,5 @@
+MaxScore.2conTimbre.maxref.xml
+maxscore.bachScoreToMaxScore.maxref.xml
+maxscore.cursors.maxref.xml
+maxscore.makenote.maxref.xml
+MaxScore.toMira.maxref.xml

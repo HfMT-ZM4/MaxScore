@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="MaxScore Editor 2: Basics">
+
+<!--
+<setdocpatch name="02jJavascriptScripting" patch="02jJavascriptScripting.maxpat"/>
+<previous name="javascriptchapter01">Basic JavaScripting</previous>
+<next name="javascriptchapter03">Tasks, Arguments and Globals</next>
+<parent name="00_maxindex">Max Tutorials</parent>
+
+<indexinfo category="JavaScript" title="JavaScript Scripting">Using JavaScript to create patcher elements</indexinfo>
+-->
+
+<h1>MaxScore Editor 2: Basics</h1>
+
+<p>Open the MaxScore Editor and create a new score.</p>
+
+<p>You can start by preparing your score regarding your needs. If you wish to add different staff for different instruments, voices or anything else, go to “Edit” on the left corner of the window and select the corresponding option such as “Add staff”, “Delete staff”, etc. </p>
+<p>You can work fast and effective by changing the behaviour of each staff separately.</p>
+
+<h2>Staff Manager</h2>
+<p>Go to “View” on the left corner of the window and choose “Staff Manager”, or use the shortcut Command-2. A wide selection of actions would then appear on the window to let you customise your score.</p>
+
+
+<ul>
+  <li>You can always choose which staff will be displayed in which order. Choose the order by typing in the numbers in the “Staff” column. 
+e.g. if you have 3 staffs and you want the second one to be displayed as the top one, type “2” “1” “3” in the different rows, instead of “1” “2” “3” which exists as default.</li>
+  <li> If you want to group together two or more staffs, go the the “Group” column and type the same number for the staffs you wish to be displayed as a system.
+e.g. if you have 3 staffs and you want the bottom two to exist as a system, type “0” “1” “1” in the different rows.</li>
+</ul>
+
+<p>Choose also to use brackets or braces for your staff, at the “Group” column.</p>
+<ul>
+<li>You can specify the instrument’s name in the “Instrument Name” column for each staff by clicking on the white space for typing. Type the name of the instrument in the window that will pop up and press “OK”.
+You can choose to type an abbreviation of the instrument’s name on the second white space of each column.</li>
+<li>Choose a specific clef or the key signature for each stuff in the corresponding columns.</li>
+<li>Other columns:</li>
+</ul>
+<p>“Space Above/Below” -> Costumize your score even further by choosing the wished spacing between the staffs.</p>
+<p>“St.L.” -> Add stafflines above or bellow the 5-line staff.</p>
+<p>“L.L” -> Chose to add Ledger Lines</p>
+
+<illustration><img src="images/Preferences.png"/></illustration>
+<p>You can select specific preferences and styles in order to prepare your score regarding your needs.</p>
+
+<h2>Preferences</h2>
+
+<p>Go to “View” on the left corner of the window and choose “Preferences”, or use the shortcut Command-3. A wide selection of actions would then appear on the window to let you customise your score.</p>
+<p>There, you can change the title of your project and add the name of the composer. You can always choose to show this information on the score by selecting the corresponding button. You also have the possibility to change the position of this information or customise the positioning of the score itself. Use the “Title Margin”, “Left Margin”, “Right Margin”, etc. option.</p>
+<p>You can also choose to show information such as Tempo, time signatures, key signatures etc. by selecting the corresponding buttons. If you wish to hide this information from the main score, just unclick those options.</p>
+<p>You can also customise your score by changing the color of the background or using another text font.</p>
+<p>A great feature that the MaxScore Editor provides is the option to change the canvas size, and prepare the score for professional printing and publishing in a preferred format. Just change the “Canvas Size” depending on your wished format.</p>
+<p>Always hit the “Save Preferences” button on the bottom of the page, to save any changes in the “Preferences” section.</p>
+
+<illustration><img src="images/StaffManager.png"/></illustration>
+
+
+<!-->
+
+<seealsolist>
+<seealso name="js">Max JavaScript object</seealso>
+<seealso name="jsintro" type="vignette" module="js" >javascriptinmax</seealso>
+</seealsolist> <-->
+
+</chapter>
