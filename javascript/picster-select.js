@@ -2055,9 +2055,57 @@ function anything()
 			}
 			break;
 			case 69 :
-			//post("e", item, foundobjects.get(item)[foundobjects.get(item).length - 1], "\n");
 			if (foundobjects.contains("0") && item != -1) edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 			outlet(3, "edit");
+			break;
+			case 71 :
+			var tempDict = new Dict();
+			var tempObjArray = [];
+			
+			outlet(0, "getNoteAnchor");
+			anchor = anchors[0];			
+			outlet(0, "getNoteInfo", anchor.slice(2, 6));
+			var key = Object.keys(json);
+			if ("userBean" in json[key]){
+			var userBeans = [].concat(json[key]["userBean"]);
+			//outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
+			for (var i = 0; i < userBeans.length; i++) {
+			if (userBeans[i]["Message"].indexOf("rendered") == -1 && userBeans[i]["Message"].indexOf("sequenced") == -1) {
+			//tempObjArray[i] = {};
+			post("Message", userBeans[i]["Message"], "\n");
+			//cases: don't consider old format, sustains, pitchbends (same?) and tablature symbols
+			tempDict.parse(userBeans[i]["Message"]);
+			tempObjArray[i] = JSON.parse(tempDict.stringify());
+			tempObjArray[i].Xoffset = parseFloat(userBeans[i]["Xoffset"]);
+			tempObjArray[i].Yoffset = parseFloat(userBeans[i]["Yoffset"]);
+			//if (tempDict.get("picster-element[0]::val[0]::id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]), parseFloat(userBeans[i]["Yoffset"]), userBeans[i]["Message"]);
+			//else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["Message"]);
+			}
+			else return;
+			}
+			var attr = {};
+			attr.new = "g";
+			attr.id = "Picster-Element_" + cnt();
+			attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+			attr.child = [];
+			for (var i = 0; i < tempObjArray.length; i++) attr.child.push(tempObjArray[i]["picster-element"][0].val);
+			var _picster = {};
+			_picster["picster-element"] = [];
+			_picster["picster-element"][0] = {}; 
+			_picster["picster-element"][0]["key"] = "svg";
+			_picster["picster-element"][0]["val"] = attr;
+			_picster["picster-element"][1] = {};
+			_picster["picster-element"][1].key = "extras";	
+			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};		
+			/*
+			_picster["picster-element"][2] = {};
+			_picster["picster-element"][2].key = "expression";	
+			_picster["picster-element"][2].val = [];
+			_picster["picster-element"][2].val = a;
+			*/
+			post("_picster", JSON.stringify(_picster), "\n");
+			}
+			
 			break;
 			case 76 : //l
 			if (foundobjects.contains("0") && item != -1) this.patcher.getnamed("savedialog").message("bang");

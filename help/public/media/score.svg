@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="880px" height="200px" viewBox="0 0 880 200" style="background:rgb(253.98,253.98,239.7)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<svg width="860px" height="210px" viewBox="0 0 860 210" style="background:rgb(253.98,253.98,239.7)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <g id="1" transform="matrix(1,0,0,1,0,0)">
-<rect x="79" y="32" width="4" height="53" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="99" y="34" width="20" height="5" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="130" y="55" width="38" height="5" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="249" y="31" width="3" height="51" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="344" y="39" width="11" height="7" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="407" y="40" width="6" height="20" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="442" y="43" width="66" height="19" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="561" y="71" width="8" height="6" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="608" y="53" width="6" height="9" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="667" y="75" width="57" height="4" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="152.5" cy="71.5" rx="4.5" ry="4.5" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="286.5" cy="30.5" rx="5.5" ry="5.5" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="355" cy="65" rx="24" ry="3" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="473.5" cy="71" rx="5.5" ry="5" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="562.5" cy="49.5" rx="26.5" ry="2.5" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="750" y="38" width="7" height="40" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="683" y="57" width="23" height="4" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="214" y="46" width="6" height="25" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M93,171L95,135,125,170,93,171" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M125,127 L153,167" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M240,171 L293,134" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M362,139 L422,172" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M565,171 L631,120" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,131,4)"/>
-<path d="M565,171 L631,120" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,155,7)"/>
-<path d="M565,171 L631,120" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,106,1)"/>
-<path d="M176,138L192,175,215,140,224,169,176,138" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<text x="464" y="157" font-family="Arial" font-size="24" font-style="normal" font-weight="normal" text-decoration="none" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,-131,4)">bang!</text>
-<ellipse cx="455" cy="153.5" rx="10" ry="9.5" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="501.5" cy="150" rx="29.5" ry="3" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="499" y="155" width="9" height="18" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,37,-5)"/>
-<path d="M547,138 L588,170" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,212,4)"/>
-<path d="M547,138 L588,170" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,111,2)"/>
-<rect x="598" y="133" width="9" height="39" stroke="rgb(255,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(255,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
+<text x="0" y="0" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,-78.6953125,65)" >MaxScoreIns-0</text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,255)" fill-opacity="1" transform="matrix(1,0,0,1,38.620689392089844,54)" ></text>
+<text x="0" y="0" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,-78.6953125,161)" >MaxScoreIns-1</text>
+<path d="M20 75 L440.000 75 M20 69 L440.000 69 M20 63 L440.000 63 M20 57 L440.000 57 M20 51 L440.000 51 M20 171 L440.000 171 M20 165 L440.000 165 M20 159 L440.000 159 M20 153 L440.000 153 M20 147 L440.000 147 M440 75 L840.000 75 M440 69 L840.000 69 M440 63 L840.000 63 M440 57 L840.000 57 M440 51 L840.000 51 M440 171 L840.000 171 M440 165 L840.000 165 M440 159 L840.000 159 M440 153 L840.000 153 M440 147 L840.000 147 " stroke="rgb(0,0,0)" stroke-width="0.4" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<path id="sustain_0" d="M 5,3 L 93, 3 M 93,1 L 93,5" stroke="rgb(0,0,255)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,40.620689392089844,51)"/>
 </g>
 </svg>

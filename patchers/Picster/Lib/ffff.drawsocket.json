@@ -3,12 +3,12 @@
 			"key" : "svg",
 			"val" : 			{
 				"new" : "text",
-				"id" : "Picster-Element_1605512744660",
-				"child" : "arco.",
-				"x" : 3,
-				"y" : 9,
-				"font-family" : "Times Italic",
-				"font-size" : 16,
+				"id" : "Picster-Element_1605512978106",
+				"child" : "",
+				"x" : 0,
+				"y" : 31,
+				"font-family" : "Bravura",
+				"font-size" : 24,
 				"font-weight" : "normal",
 				"font-style" : "normal",
 				"style" : 				{
