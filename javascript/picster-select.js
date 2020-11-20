@@ -71,6 +71,7 @@ var buttonMode = 0;
 var textbox = "destroyed";
 var _picster = {};
 var format = "";
+var svggroupflag = false;
 
 removeTextedit();
 
@@ -182,12 +183,16 @@ if (mode == "picster" && !blocked) {
 	}
 	else {
 		var foundBounds = findBoundsToo(vals);
+		foundBounds[0] += RenderMessageOffset[0];
+		foundBounds[1] += RenderMessageOffset[1];
+		foundBounds[2] += RenderMessageOffset[0];
+		foundBounds[3] += RenderMessageOffset[1];
 		var boundmin = [foundBounds[0] - horizontalOffset, foundBounds[1] - verticalOffset];
 		var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
-		//post("item", foundBounds, horizontalOffset, verticalOffset, "\n");
 	}
 	if (boundmin[0] <= x && boundmin[1] <= y && boundmax[0] >= x && boundmax[1] >= y) {
 		foundobjects.replace(c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4), e.get("picster-element[0]::val::id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
+		//post("item", foundobjects.stringify(), "\n");
 		offsets[c] = RenderMessageOffset;
 		c++;
 		}
@@ -230,7 +235,7 @@ if (mode == "picster" && !blocked) {
 			if (tempDict2.contains("picster-element::expression")) outlet(1, "expression", "dictionary", picster.get("expression").name);
 		}
 		else if (tempDict2.contains("picster-element[2]::val")) {
-			if (buttonMode) { 
+			//if (buttonMode) { 
 			var o = {};
 			var o2 = {};
 			o = JSON.parse(tempDict2.stringify());
@@ -242,7 +247,7 @@ if (mode == "picster" && !blocked) {
 				var tempDict = new Dict();
 				tempDict.parse(JSON.stringify(o2));
 			outlet(1, "expression", foundobjects.get(item)[2], "dictionary", tempDict.name);
-				}
+			//	}
 			}		
 		else outlet(1, "expression", "clear");
 		}
@@ -439,7 +444,8 @@ if (mode == "picster") {
 	outlet(2, "clearGraphics");
 	action = "mouseReleased";
 	var dragged = !(JSON.stringify(origin) == JSON.stringify([x, y]));
-	if (item != -1)  {
+	//post("item", item, "\n");
+	if (item != -1 && dragged)  {
 	switch (foundobjects.get(item)[0]){
 		case "interval" :
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
@@ -527,9 +533,10 @@ if (mode == "picster") {
 		break;
 		}
 		outlet(0, "saveToUndoStack");
-		outlet(0, "setRenderAllowed", "true");
+		outlet(0, "setRenderAllowed", "1");
 		if (shape == 0) pathDone = true;
 		}
+		else if (item != -1 && !dragged) clickcount = 0;
 		else
 		{
 			/*
@@ -553,15 +560,6 @@ if (mode == "picster") {
 		switch (shape){
 			case 1:
 				if (dragged) {
-				/*
-				edit.clear();
-				edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-				edit.replace("picster-element::bounds", Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y));
-				edit.replace("picster-element::linesegment_0::commands::0", "pen_size", pensize);
-				edit.replace("picster-element::linesegment_0::commands::1", "color", color);
-				edit.replace("picster-element::linesegment_0::commands::2", "line", origin, x, y);
-				infoAndAnchors(x, y, "linesegment");
-				*/
 				var attr = {};
 				attr.new = "line";
 				attr.id = "Picster-Element_" + num;
@@ -603,16 +601,6 @@ if (mode == "picster") {
 					y1 = origin[1];
 					y2 = y;
 				}
-				/*
-				edit.clear();
-				edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-				edit.replace("picster-element::bounds", Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y));
-				edit.replace("picster-element::" + style + "rect_0::commands::0", "pen_size", pensize);
-				edit.replace("picster-element::" + style + "rect_0::commands::1", "color", color);
-				edit.replace("picster-element::" + style + "rect_0::commands::2", "rectangle", x1 + (x2 - x1)/2, y1 + (y2 - y1)/2, x2 - x1, y2 - y1);
-				edit.replace("picster-element::" + style + "rect_0::commands::3", property);
-				infoAndAnchors(x2, y2, style + "rect");
-				*/
 				var attr = {};
 				attr.new = "rect";
 				attr.id = "Picster-Element_" + num;
@@ -647,33 +635,6 @@ if (mode == "picster") {
 			case 3:
 				//  <rect x="120" width="100" height="100" rx="15" />
 				if (dragged) {
-				/*
-				var points = [];
-				points[0] = origin[0];
-				points[1] = origin[0] + Math.min((x - origin[0])/2, roundedness);
-				points[2] = origin[1];
-				points[3] = origin[1] + Math.min((y - origin[1])/2, roundedness);
-				points[4] = x;
-				points[5] = x - Math.min((x - origin[0])/2, roundedness);
-				points[6] = y;
-				points[7] = y - Math.min((y - origin[1])/2, roundedness);
-				edit.clear();
-				edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-				edit.replace("picster-element::bounds", Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y));
-				edit.replace("picster-element::" + style + "roundrect_0::commands::0", "pen_size", pensize);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::1", "color", color);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::2", "move_to", points[0], points[3]);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::3", "line_to", points[0], points[7]);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::4", "curve_to", points[0], points[6], points[0], points[6], points[1], points[6]);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::5", "line_to", points[5], points[6]);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::6", "curve_to", points[4], points[6], points[4], points[6], points[4], points[7]);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::7", "line_to", points[4], points[3]);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::8", "curve_to", points[4], points[2], points[4], points[2], points[5], points[2]);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::9", "line_to", points[1], points[2]);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::10", "curve_to", points[0], points[2], points[0], points[2], points[0], points[3]);
-				edit.replace("picster-element::" + style + "roundrect_0::commands::11", property);
-				infoAndAnchors(x, y, style + "roundrect");
-				*/
 				if (x < origin[0]) {
 					x1 = x;
 					x2 = origin[0];
@@ -740,16 +701,6 @@ if (mode == "picster") {
 					y1 = origin[1];
 					y2 = y;
 				}
-				/*
-				edit.clear();
-				edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-				edit.replace("picster-element::bounds", Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y));
-				edit.replace("picster-element::" + style + "oval_0::commands::0", "pen_size", pensize);
-				edit.replace("picster-element::" + style + "oval_0::commands::1", "color", color);
-				edit.replace("picster-element::" + style + "oval_0::commands::2", "ellipse", x1 + (x2 - x1)/2, y1 + (y2 - y1)/2, x2 - x1, y2 - y1);
-				edit.replace("picster-element::" + style + "oval_0::commands::3", property);
-				infoAndAnchors(x, y, style + "oval");
-				*/
 				var attr = {};
 				attr.new = "ellipse";
 				attr.id = "Picster-Element_" + num;
@@ -783,17 +734,6 @@ if (mode == "picster") {
 				break;
 			case 5:
 				if (dragged) {
-				/*
-				edit.clear();
-				edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-				edit.replace("picster-element::bounds", []);
-				edit.replace("picster-element::" + style + "arc_0::commands::0", "pen_size", pensize);
-				edit.replace("picster-element::" + style + "arc_0::commands::1", "color", color);
-				edit.replace("picster-element::" + style + "arc_0::commands::2", "ovalarc", origin[0] + (x - origin[0])/2, origin[1] + (y - origin[1])/2, (x - origin[0])/2, (y - origin[1])/2, arc[0], arc[1]);
-				edit.replace("picster-element::" + style + "arc_0::commands::3", property);
-				infoAndAnchors(x, y, style + "arc");
-				edit.replace("picster-element::bounds", findBounds(edit.get("picster-element")));
-				*/
 				var attr = {};
 				attr.new = "path";
 				attr.id = "Picster-Element_" + num;
@@ -823,27 +763,14 @@ if (mode == "picster") {
 				}
 				break;
 			case 6:
-				//post("click", click, clickcount, "\n");
+				post("click", click, clickcount, "\n");
 				if (click == "single") {
 				blocked = 1;
 				polyclicks[clickcount] = [x, y];
 				clickcount++;
 				}
 				else {
-					polyclicks[clickcount] = [x, y];
-					/*
-					edit.clear();
-					edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-					edit.replace("picster-element::bounds", []);
-					edit.replace("picster-element::" + style + "poly_0::commands::0", "pen_size", pensize);
-					edit.replace("picster-element::" + style + "poly_0::commands::1", "color", color);
-					edit.replace("picster-element::" + style + "poly_0::commands::2", "move_to", polyclicks[0]);
-					for (var i = 1; i <= clickcount; i++) edit.replace("picster-element::" + style + "poly_0::commands::" + [i + 2], "line_to", polyclicks[i]);
-					edit.replace("picster-element::" + style + "poly_0::commands::" + (polyclicks.length + 3), "line_to", polyclicks[0]);
-					edit.replace("picster-element::" + style + "poly_0::commands::" + (polyclicks.length + 4), property);
-					infoAndAnchors(x, y, style + "poly");
-					edit.replace("picster-element::bounds", findBounds(edit.get("picster-element")));
-					*/
+				polyclicks[clickcount] = [x, y];
 				var attr = {};
 				attr.new = "polyline";
 				attr.id = "Picster-Element_" + num;
@@ -881,20 +808,7 @@ if (mode == "picster") {
 				if (dragged) {
 					edit.clear();
 					//tol = 12;
-					var fitted = fitCurve([origin].concat(polyclicks));
-					//post("FITTED", JSON.stringify(fitted), "\n");
-					/*
-					edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-					edit.replace("picster-element::bounds", []);
-					edit.replace("picster-element::freehand_0::commands::0", "pen_size", pensize);
-					edit.replace("picster-element::freehand_0::commands::1", "color", color);
-					edit.replace("picster-element::freehand_0::commands::2", "move_to", fitted[0]);
-					for (var i = 1; i < fitted.length; i++) edit.replace("picster-element::freehand_0::commands::" + [i + 3], "curve_to", fitted[i]);
-					edit.replace("picster-element::freehand_0::commands::" + (fitted.length + 3), "stroke");
-					infoAndAnchors(x, y, "freehand");
-					edit.replace("picster-element::bounds", findBounds(edit.get("picster-element")));
-					*/
-					
+				var fitted = fitCurve([origin].concat(polyclicks));
 				var attr = {};
 				attr.new = "path";
 				attr.id = "Picster-Element_" + num;
@@ -933,23 +847,6 @@ if (mode == "picster") {
 				var text = textedit.getvalueof();
 				if (JSON.stringify(text).length == 4) return;
 				storedText = htmlEntities(text);
-				/*
- 				edit.clear();
-				edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-				edit.replace("picster-element::bounds", []);
-				edit.replace("picster-element::text_0::commands::0", "textcolor", color);
-				edit.replace("picster-element::text_0::commands::1", "font", font, fontsize);
-				edit.replace("picster-element::text_0::commands::2", "write", text);
-				edit.replace("picster-element::text_0::info::origin", origin[0], origin[1]);
-				edit.replace("picster-element::text_0::info::a", [ 1.0, 0.0, 0.0, "no", 0, 1.0 ]);
-				edit.replace("picster-element::text_0::info::b", [ 0.0, 1.0, 0.0, "no", 0, 1.0 ]);
-				edit.replace("picster-element::text_0::info::hide", 0);
-				edit.replace("picster-element::text_0::info::transform_mode", 0);
-				edit.replace("picster-element::text_0::info::draw_axes", 0);
-				edit.replace("picster-element::text_0::info::transform", [ 1.0, 0.0, 0.0, 1.0, 0.0, 0.0 ]);
-				edit.replace("picster-element::text_0::anchors::0", [ origin[0] , origin[1], 4.0, "yes", 0 ]);
-				edit.replace("picster-element::bounds", findBounds(edit.get("picster-element")));
-				*/
 				var attr = {};
 				attr.new = "text";
 				attr.id = "Picster-Element_" + num;
@@ -985,21 +882,7 @@ if (mode == "picster") {
 		      if (current.length) segments.push(current);
 		      current = [];
 		      if (click == "ctrl") {
-						pathDone = true;
-						// put shape in edit!
-						/*
-						edit.clear();
-						edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-						//edit.replace("picster-element::bounds", []);
-						edit.replace("picster-element::" + style + "polycurve_0::commands::0", "pen_size", pensize);
-						edit.replace("picster-element::" + style + "polycurve_0::commands::1", "color", color);
-						edit.replace("picster-element::" + style + "polycurve_0::commands::2", "move_to", polyclicks[0]);
-						for (var i = 0; i < segments.length; i++) edit.replace("picster-element::" + style + "polycurve_0::commands::" + [i + 3], "curve_to", segments[i]);
-						edit.replace("picster-element::" + style + "polycurve_0::commands::" + (segments.length + 4), property);
-						infoAndAnchors(x, y, style + "polycurve");
-						//edit.replace("picster-element::bounds", findBounds(edit.get("picster-element")));
-						*/
-						
+				pathDone = true;
 				var attr = {};
 				attr.new = "path";
 				attr.id = "Picster-Element_" + num;
@@ -1335,7 +1218,7 @@ function createRenderedMessage(f, x, y, serialized)
 	outlet(0, "getSelectionBufferSize");
 	var measurerange = [-1, -1, -1, -1];
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
-	//post("measurerange", measurerange, "\n");
+	post("serialized", serialized, "\n");
 	if (selectionBufferSize > 0)
 	{
 		increment = 0;
@@ -1797,6 +1680,7 @@ function removeAllElements()
 		outlet(0, "saveToUndoStack");
 		outlet(0, "setRenderAllowed", 1);
 	}	
+	outlet(2, "bounds", "hide");
 }
 
 function rotate(angle)
@@ -2059,6 +1943,8 @@ function anything()
 			outlet(3, "edit");
 			break;
 			case 71 :
+			// group elements
+			edit.clear();
 			var tempDict = new Dict();
 			var tempObjArray = [];
 			
@@ -2068,16 +1954,16 @@ function anything()
 			var key = Object.keys(json);
 			if ("userBean" in json[key]){
 			var userBeans = [].concat(json[key]["userBean"]);
-			//outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
+			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["Message"].indexOf("rendered") == -1 && userBeans[i]["Message"].indexOf("sequenced") == -1) {
 			//tempObjArray[i] = {};
-			post("Message", userBeans[i]["Message"], "\n");
 			//cases: don't consider old format, sustains, pitchbends (same?) and tablature symbols
 			tempDict.parse(userBeans[i]["Message"]);
 			tempObjArray[i] = JSON.parse(tempDict.stringify());
-			tempObjArray[i].Xoffset = parseFloat(userBeans[i]["Xoffset"]);
-			tempObjArray[i].Yoffset = parseFloat(userBeans[i]["Yoffset"]);
+			tempObjArray[i].Xoffset = parseFloat(userBeans[i]["Xoffset"]) * factor + anchor[0];
+			tempObjArray[i].Yoffset = parseFloat(userBeans[i]["Yoffset"]) * factor + anchor[1];
+			post("Xoffset/Yoffset", anchor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
 			//if (tempDict.get("picster-element[0]::val[0]::id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]), parseFloat(userBeans[i]["Yoffset"]), userBeans[i]["Message"]);
 			//else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["Message"]);
 			}
@@ -2088,7 +1974,11 @@ function anything()
 			attr.id = "Picster-Element_" + cnt();
 			attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 			attr.child = [];
-			for (var i = 0; i < tempObjArray.length; i++) attr.child.push(tempObjArray[i]["picster-element"][0].val);
+			// filter out non-Picster elements
+			for (var i = 0; i < tempObjArray.length; i++) {
+				attr.child.push(tempObjArray[i]["picster-element"][0].val);
+				attr.child[i].transform = "matrix(" + [1, 0, 0, 1, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset] + ")";
+				}
 			var _picster = {};
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {}; 
@@ -2096,16 +1986,29 @@ function anything()
 			_picster["picster-element"][0]["val"] = attr;
 			_picster["picster-element"][1] = {};
 			_picster["picster-element"][1].key = "extras";	
-			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};		
-			/*
+			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};	
+			var incidence = false;		
+			var xpr = [];
+			for (var i = 0; i < tempObjArray.length; i++) {
+				if (tempObjArray[i]["picster-element"].length > 2) {
+					incidence = true;
+					for (var j = 0; j < tempObjArray[i]["picster-element"][2].val.length; j++) {
+						post("XPR", JSON.stringify(xpr), "\n");
+						xpr.push(tempObjArray[i]["picster-element"][2].val[j]);
+					}
+				}
+			}
+			if (incidence) {
 			_picster["picster-element"][2] = {};
 			_picster["picster-element"][2].key = "expression";	
-			_picster["picster-element"][2].val = [];
-			_picster["picster-element"][2].val = a;
-			*/
-			post("_picster", JSON.stringify(_picster), "\n");
+			_picster["picster-element"][2].val = xpr;
 			}
-			
+			edit.parse(JSON.stringify(_picster));
+			//post("edit", edit.stringify(), "\n");
+			//offsets need to be defined here
+			action = "addShape";
+			outlet(3, "bang");
+			}
 			break;
 			case 76 : //l
 			if (foundobjects.contains("0") && item != -1) this.patcher.getnamed("savedialog").message("bang");
@@ -2227,22 +2130,6 @@ function anything()
 				_dim = [ Number(quotes[found + 1].replace(/,/g, "").split(" ")[2]), Number(quotes[found + 1].replace(/,/g, "").split(" ")[3]) ];
 				//dim = [line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[2], line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[3]];
 			}
-			/*
-			edit.clear();
-			edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-			edit.replace("picster-element::bounds", [origin[0], origin[1], _dim[0] + origin[0], _dim[1] + origin[1]]);
-			edit.replace("picster-element::picture_0::commands::0", pictype, msg);
-			edit.replace("picster-element::picture_0::info::origin", origin[0], origin[1]);
-			edit.replace("picster-element::picture_0::info::a", [ _dim[0], 0.0, 0.0, "no", 0, _dim[0] ]);
-			edit.replace("picster-element::picture_0::info::b", [ 0.0, _dim[1], 0.0, "no", 0, _dim[1] ]);
-			edit.replace("picster-element::picture_0::info::hide", 0);
-			edit.replace("picster-element::picture_0::info::transform_mode", 0);
-			edit.replace("picster-element::picture_0::info::draw_axes", 0);
-			edit.replace("picster-element::picture_0::info::transform", [ 1.0, 0.0, 0.0, 1.0, 0, 0 ]);
-			edit.replace("picster-element::picture_0::anchors::0", [  _dim[0]/2, _dim[1]/2, 4.0, "yes", 0 ]);
-			//edit.replace("picster-element::bounds", findBounds(edit.get("picster-element")));
-			post("edit", msg, edit.stringify(), "\n");
-			*/
 				var attr = {};
 				attr.new = "image";
 				attr.id = "Picster-Element_" + num;
@@ -2516,13 +2403,34 @@ function findBounds(d)
 function findBoundsToo(d)
 {
 	var origin = [0, 0];
-	//post("d", JSON.stringify(d), "\n");
 	SVGString = [];
+	renderDrawSocket(d);
+	if (svggroupflag == true) SVGString.push("</g>");
+	var svg = "<svg>";
+	svg += SVGString.join("");
+	svg += "</svg>";
+	//img.setsvg(svg);
+	mgraphics.svg_create("img", svg);
+	mgraphics.set_source_rgba(1, 1, 1, 1);
+	mgraphics.paint();
+	//post("offsets", horizontalOffset, verticalOffset, "\n");
+	mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
+	mgraphics.svg_render("img");
+
+	mgraphics.matrixcalc(outmatrix, outmatrix);
+	findbounds.matrixcalc(outmatrix, outmatrix);
+	//post("svg", svg, "\n");
+	return [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]];
+}
+
+function renderDrawSocket(d)
+{
 	for (var i = 0; i < d.length; i++){
 	var _d = d[i];
  	var transform = _d["transform"].substr(_d["transform"].indexOf("(") + 1, _d["transform"].lastIndexOf(")") - _d["transform"].indexOf("(") - 1).split(",").map(Number);
 	//post("transform", JSON.stringify(_d), "\n");
-	var svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + origin[0] + RenderMessageOffset[0], transform[5] + origin[1] + RenderMessageOffset[1]] + ")";
+	if (svggroupflag == false) var svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + origin[0] + RenderMessageOffset[0], transform[5] + origin[1] + RenderMessageOffset[1]] + ")";
+	else var svgtransform = _d["transform"];
 	//post("svgtransform", svgtransform, "\n");
 	switch (_d.new) {
 		case "line" :
@@ -2531,7 +2439,7 @@ function findBoundsToo(d)
 		case "rect" :
 		SVGString.push("<rect x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" width=\"" + _d["width"] + "\" height=\"" + _d["height"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
 		break;
-		case "ellipse" :_
+		case "ellipse" :
 		SVGString.push("<ellipse cx=\"" + _d["cx"] + "\" cy=\"" + _d["cy"] + "\" rx=\"" + _d["rx"] + "\" ry=\"" + _d["ry"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
 		break;
 		case "polyline" :
@@ -2544,40 +2452,27 @@ function findBoundsToo(d)
  		SVGString.push("<text x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" font-family=\"" + _d["font-family"] + "\" font-size=\"" + _d["font-size"] + "\" font-style=\"" + _d["font-style"] + "\" font-weight=\"" + _d["font-weight"] + "\" text-decoration=\"none\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\">" + _d["child"] + "</text>");
 		break;
 		case "image" :
-		//post("_d", _d.new, "\n");
 		SVGString.push("<rect x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" width=\"" + _d["width"] + "\" height=\"" + _d["height"] + "\" stroke=\"none\" stroke-width=\"1.\" stroke-opacity=\"1.\" fill=\"black\" fill-opacity=\"1.\" transform=\"" + svgtransform + "\"/>");
 		break;	
 		case "g" :
-		var _e = {}
-		for (var j = 0; j < _d.length; j++) {
-		var child = _d.child[j];
-		_e.push(child);
-		_e[j].transform = _d["transform"];
+		svggroupflag = true;
+		SVGString.push("<g transform=\"" + svgtransform + "\">");
+		//post("_d", JSON.stringify(_d), "\n");
+		var _e = [];
+		for (var j = 0; j < _d.child.length; j++) {
+		//post("child", JSON.stringify(child), "\n");
+		//var child = _d.child[j];
+		_e.push(_d.child[j]);
+		//_e[j].transform = _d["transform"];
 		}
-		findBoundsToo(_e);
+		renderDrawSocket(_e);
 		break;
 		}
-	}
-	var svg = "<svg>";
-	svg += SVGString.join("");
-	svg += "</svg>";
-	//img.setsvg(svg);
-	//post("svg", svg, "\n");
-	mgraphics.svg_create("img", svg);
-	mgraphics.set_source_rgba(1, 1, 1, 1);
-	mgraphics.paint();
-	mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
-	mgraphics.svg_render("img");
-
-	mgraphics.matrixcalc(outmatrix, outmatrix);
-	findbounds.matrixcalc(outmatrix, outmatrix);
-	return [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]];
-	
+	}	
 }
 
-
-
-function htmlEntities(str) {
+function htmlEntities(str) 
+{
     return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;"); //"
 }
 

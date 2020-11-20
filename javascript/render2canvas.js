@@ -122,6 +122,7 @@ var zoom = 0.5;
 var shiftdown;
 var paperSize = [];
 var svgFile = "untitled.svg";
+var svggroupflag = false;
 var extendedStaffLines = {};
 var annotation = new Dict();
 var intervalCount = 0;
@@ -1505,6 +1506,7 @@ function anything() {
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
 			if (e.contains("picster-element")) {
+				svggroupflag = false;
 				var vals = [].concat(e.get("picster-element[0]::val"));
  				for (var i = 0; i < vals.length; i++){
 					//var picster = JSON.parse(vals[i].stringify());
@@ -1543,6 +1545,7 @@ function anything() {
 					for (var d = 0; d < dest.length; d++) {
 					//post("picster-1", picster.stringify(), "\n");					
 					renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
+					if (svggroupflag == true) SVGGraphics[s + 1].push("</g>");
 								}
 							}
 						}
@@ -1700,7 +1703,7 @@ function anything() {
 						}
  						if (path != "") svgelement.path = path;
 						//transform[4] + origin[1] + dest[d]
-						//post("svgtransform", transform[4], origin[0], RenderMessageOffset[0], transform[5], origin[1], dest[d], "\n");
+						//post("svgelement", Object.keys(svgelement).toString(), "\n");
 					switch (Object.keys(svgelement).toString()){
 						case "path" :
 							svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + origin[0] + RenderMessageOffset[0], transform[5] + origin[1] + dest[d]];
@@ -2297,15 +2300,17 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
 			//var onclick = "";
 			transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
-			//post("svg", svgstroke, svgfill, "\n");
+			if (svggroupflag == false) svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
 			switch (picster.get("new")) {
 				case "g" :
+				svggroupflag = true;
+				SVGGraphics[s + 1].push("<g id=\"" + picster.get("id") + "\" transform=\"matrix(" + svgtransform + ")\">");
 				var group = {};
 				var tempDict = new Dict();
 				group = JSON.parse(picster.stringify());
 				for (var i = 0; i < group.child.length; i++) {
 					var child = group.child[i];
-					child.transform = picster.get("transform");
+					svgtransform = group.child[i].transform.substr(group.child[i].transform.indexOf("(") + 1, group.child[i].transform.lastIndexOf(")") - group.child[i].transform.indexOf("(") - 1).split(",").map(Number);
 					svgstroke = group.child[i].style.stroke;
 					svgstrokeopacity = group.child[i].style["stroke-opacity"];
 					svgfill = group.child[i].style.fill;
@@ -2316,34 +2321,35 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					}
 				break;
 				case "line" :
-				svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
-				SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" transform=\"matrix(" + svgtransform + onclick + ")\"/>");
+				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
+				SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "rect" :
 				var roundedness = (picster.contains("rx")) ? picster.get("rx") : 0;
-				svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
-				SVGGraphics[s + 1].push("<rect id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" rx=\"" + roundedness + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + onclick + ")\"/>");
+				//post("svgtransform-3", svgtransform, "\n");
+				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
+				SVGGraphics[s + 1].push("<rect id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" rx=\"" + roundedness + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "ellipse" :
-				SVGGraphics[s + 1].push("<ellipse id=\"" + picster.get("id") + "\" cx=\"" + picster.get("cx") + "\" cy=\"" + picster.get("cy") + "\" rx=\"" + picster.get("rx") + "\" ry=\"" + picster.get("ry") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + onclick + ")\"/>");
+				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
+				SVGGraphics[s + 1].push("<ellipse id=\"" + picster.get("id") + "\" cx=\"" + picster.get("cx") + "\" cy=\"" + picster.get("cy") + "\" rx=\"" + picster.get("rx") + "\" ry=\"" + picster.get("ry") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				//post("ellipse", SVGGraphics[s + 1], "\n");
 				break;
 				case "polyline" :
-				svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
-				SVGGraphics[s + 1].push("<polyline id=\"" + picster.get("id") + "\" points=\"" + picster.get("points") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + onclick + ")\"/>");
+				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
+				SVGGraphics[s + 1].push("<polyline id=\"" + picster.get("id") + "\" points=\"" + picster.get("points") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "path" :
-				svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
-				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + onclick + ")\"/>");
+				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
+				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "text" :
- 				svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
- 				SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + onclick + ")\">" + picster.get("child") + "</text>");
+ 				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
+ 				SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + ">" + picster.get("child") + "</text>");
 				break;
 				case "image" :
-				//SVGString.push("<rect x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" stroke=\"" + picster.get("style::stroke") + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + picster.get("style::stroke-opacity") + "\" fill=\"" + picster.get("style::fill") + "\" fill-opacity=\"" + picster.get("style::fill-opacity") + "\" transform=\"" + picster.get("transform") + "/>");
 				var imgtype = (picster.get("href").substr(picster.get("href").lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
-				svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
+				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
  				SVGImages[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), svgtransform]);
 				SVGImages2[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), svgtransform]);
 				break;	
