@@ -131,8 +131,6 @@ var value = 0;
 var accinfo = 0;
 var accvis = 0;
 var accpref = 0;
-var currentElement = [];
-var intervalCount = -1;
 var keysigaccum = 0;
 var format = "";
 var cent2ratio = new Dict();
@@ -142,7 +140,7 @@ var repeatedAccidentals = {};
 var pageNumber = "";
 var oldMeasureStaff = "";
 var filterRepeatedAccidentalsFlag = 1;
-var accList = ["natural", "sharp", "flat", "natural", "doubleflat", "doublesharp", "quartertoneflat", "threequartertoneflat", "quartertonesharp", "threequartertonesharp", "no_accidental"];
+var accPref = ["natural", "sharp", "flat", "natural", "doubleflat", "doublesharp", "quartertoneflat", "threequartertoneflat", "quartertonesharp", "threequartertonesharp", "no_accidental"];
 var clefDesigner = new Dict();
 clefDesigner.import_json("MaxScoreClefDesigner.json");
 var clefs = {
@@ -1483,18 +1481,16 @@ function anything() {
 			}
             break;
         case "RenderMessage":
+			//post("RenderMessage", "\n");					
 			format = "sadam.canvas";
 			switch (msg[0]){
-				/*
 				case "interval" :
             	var RenderMessageOffset = [msg[6], msg[7]];
 				if (msg.length == 10) format = "drawsocket";
 				break;
-				*/
 				case "note" :
             	var RenderMessageOffset = [msg[5], msg[6]];
 				if (msg.length == 9) format = "drawsocket";
-				msg = currentElement.concat(msg.splice(5));
 				break;
 				case "staff" :
             	var RenderMessageOffset = [msg[3], msg[4]];
@@ -1507,7 +1503,6 @@ function anything() {
 			}
 			if (format == "drawsocket"){
 			renderedMessages.set(rm++, msg);
-				post("renderedMessages", renderedMessages.stringify(), "\n");					
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
 			if (e.contains("picster-element")) {
@@ -1919,20 +1914,7 @@ function anything() {
 				}
 			//else msg[1] += 0.;
 			}
-		if (accList.indexOf(messagename) != -1) {
-			if (msg[3] == "Note") {
-				intervalCount = -1;
-				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7]];
-				}
-			else {
-				intervalCount += 1;
-				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount];
-				}
-		}	 
-		//KEEP TRACK OF INCIDENCES OF NOTEs AND INTERVALS
-		//post("currentElement", currentElement, "\n");
-		
-		if (accList.indexOf(msgname) != -1 && annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
+		if (accPref.indexOf(msgname) != -1 && annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 			var Accidental = [];
 			if (msg[3] == "Note") {
 				outlet(1, "getNoteProperty", "level", msg[4], msg[5], msg[6], msg[7], -1);
@@ -2377,7 +2359,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 function nTET(steps, system)
 {
 				var deviation = pitch % 12 - [0, 0, 2, 2, 4, 5, 5, 7, 7, 9, 9, 11][parseInt(pitch % 12)];
-				var accidental = accList[accinfo];
+				var accidental = accPref[accinfo];
 				var factor1, direction;
 				switch (accidental) {
 					case "doubleflat" :

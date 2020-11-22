@@ -57,9 +57,6 @@ horizontalScrollbar.extent = width-verticalScrollbar.span;
 verticalScrollbar.center = verticalScrollbar.extent/2;
 horizontalScrollbar.center = horizontalScrollbar.extent/2;
 
-var	buttonfillcolor = [1., 0., 0., 0.1];
-var	buttonstrokecolor = [1., 0., 0., 1.];
-var buttonstrokewidth = 0.5;
 var horizontalOffset = 0;
 var verticalOffset =0;
 var _horizontalOffset = 0;
@@ -142,13 +139,6 @@ function setattr_bgcolor(r, g, b, a)
 function setMediaFolder()
 {
 
-}
-
-function buttonmode(bm)
-{
-	buttonfillcolor = (bm) ? [0.808, 0.898, 0.910, 0.8] : [1., 0., 0., 0.1];
-	buttonstrokecolor = (bm) ? [0.35, 0.35, 0.35, 1.000] : [1., 0., 0., 1.];
-	buttonstrokewidth = (bm) ? 3 : 0.5;
 }
 
 function anything()
@@ -750,13 +740,13 @@ function drawBoundingRect()
         //if (controlshift) {
             with(mgraphics) {
 				//if (boundingRect.length == 4) {
-                set_line_width(buttonstrokewidth);
+                set_line_width(0.5);
 				//scale(zoom, zoom);
  				//translate(boundingRectOffset);
-               	set_source_rgba(buttonfillcolor);
+               	set_source_rgba(1., 0., 0., 0.1);
 				rectangle(boundingRect);
                 fill();
-                set_source_rgba(buttonstrokecolor);
+                set_source_rgba(1., 0., 0., 1.);
  				rectangle(boundingRect);
                	stroke();
 				}

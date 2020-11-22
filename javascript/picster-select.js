@@ -183,7 +183,6 @@ if (mode == "picster" && !blocked) {
 	}
 	else {
 		var foundBounds = findBoundsToo(vals);
-		post("foundBounds", foundBounds, RenderMessageOffset, "\n");
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
 		foundBounds[2] += RenderMessageOffset[0];
@@ -370,7 +369,7 @@ function mouseDragged(x, y)
 				outlet(2, "scale", zoom/0.5, zoom/0.5);
 				outlet(2, "set_line_width", pensize);
 				outlet(2, "set_source_rgba", color);
-				outlet(2, "rectangle_rounded",x1, y1, x2 - x1, y2 - y1, roundedness * 2 , roundedness * 2);
+				outlet(2, "rectangle_rounded",x1, y1, x2 - x1, y2 - y1, roundedness, roundedness);
 				outlet(2, property);
 				outlet(2, "identity_matrix");
 			break;
@@ -927,8 +926,6 @@ if (mode == "picster") {
 function buttonmode(bm)
 {
 	buttonMode = bm;
-	outlet(2, "bounds", "hide");
-	outlet(2, "buttonmode", bm);
 }
 
 function deleteSelectedItem()
@@ -1717,7 +1714,7 @@ function addExpressionToSelectedShape()
 		expr.name = arrayfromargs(arguments)[1];
 		if (edit.contains("picster-element[0]::val")) {
 			var expression = {};
-			_picster = JSON.parse(edit.stringify());
+			var _picster = JSON.parse(edit.stringify());
 			var numElements = _picster["picster-element"].length;
 			//post("numElements", numElements, "\n");
 			if (numElements == 2) {
@@ -1758,7 +1755,7 @@ function replaceExpressionsForSelectedShape()
 		var a = [];
 		if (edit.contains("picster-element[0]::val")) {
 			//var expression = {};
-			_picster = JSON.parse(edit.stringify());
+			var _picster = JSON.parse(edit.stringify());
 			//edit.remove("picster-element[2]");
 			o = JSON.parse(expr.stringify());
 			for (var i = 0; i < expr.getkeys().length; i++) a[i] = o[expr.getkeys()[i]];
@@ -1947,46 +1944,17 @@ function anything()
 			break;
 			case 71 :
 			// group elements
-			// save picster preference
 			edit.clear();
 			var tempDict = new Dict();
 			var tempObjArray = [];
-			if (foundobjects.contains("0") && item != -1) {
-			switch (foundobjects.get(item)[0]){
-			case "interval" :
-			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			
+			outlet(0, "getNoteAnchor");
+			anchor = anchors[0];			
+			outlet(0, "getNoteInfo", anchor.slice(2, 6));
 			var key = Object.keys(json);
-			if (!("userBean" in json[key])) return;
+			if ("userBean" in json[key]){
 			var userBeans = [].concat(json[key]["userBean"]);
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-			break;
-			case "note" :
-			outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
-			var key = Object.keys(json);
-			if (!("userBean" in json[key])) return;
-			var userBeans = [].concat(json[key]["userBean"]);
-			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-			break;
-			case "staff" :
-			// we need to 'artificially' set picster preference to staff
-			outlet(0, "getNumStaves");
-			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
-			var key = Object.keys(json);
-			var staves = {};
-			if (numStaves == 1) staves = json["measure"]["staff"];
-			else  staves = json["measure"]["staff"][foundobjects.get(item)[2]];
-			if (!("staffUserBean" in staves)) return;
-			outlet(0, "removeAllRenderedMessagesFromStaff", foundobjects.get(item).slice(1, 3));
-			var userBeans = [].concat(staves["staffUserBean"]);
-			break;
-			case "measure" :
- 			// we need to 'artificially' set picster preference to measure
-			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
-			if (!("measureUserBean" in json["measure"])) return;
-			outlet(0, "removeAllRenderedMessagesFromMeasure", foundobjects.get(item)[1]);
-			var userBeans = [].concat(json["measure"]["measureUserBean"]);
-			break;
-			}
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["Message"].indexOf("rendered") == -1 && userBeans[i]["Message"].indexOf("sequenced") == -1) {
 			//tempObjArray[i] = {};
@@ -1995,7 +1963,7 @@ function anything()
 			tempObjArray[i] = JSON.parse(tempDict.stringify());
 			tempObjArray[i].Xoffset = parseFloat(userBeans[i]["Xoffset"]) * factor + anchor[0];
 			tempObjArray[i].Yoffset = parseFloat(userBeans[i]["Yoffset"]) * factor + anchor[1];
-			//post("Xoffset/Yoffset", anchor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
+			post("Xoffset/Yoffset", anchor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
 			//if (tempDict.get("picster-element[0]::val[0]::id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]), parseFloat(userBeans[i]["Yoffset"]), userBeans[i]["Message"]);
 			//else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["Message"]);
 			}
@@ -2011,7 +1979,7 @@ function anything()
 				attr.child.push(tempObjArray[i]["picster-element"][0].val);
 				attr.child[i].transform = "matrix(" + [1, 0, 0, 1, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset] + ")";
 				}
-			_picster = {};
+			var _picster = {};
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {}; 
 			_picster["picster-element"][0]["key"] = "svg";
@@ -2037,9 +2005,9 @@ function anything()
 			}
 			edit.parse(JSON.stringify(_picster));
 			//post("edit", edit.stringify(), "\n");
+			//offsets need to be defined here
 			action = "addShape";
 			outlet(3, "bang");
-			// restore picster preference 
 			}
 			break;
 			case 76 : //l
@@ -2434,6 +2402,7 @@ function findBounds(d)
 
 function findBoundsToo(d)
 {
+	var origin = [0, 0];
 	SVGString = [];
 	renderDrawSocket(d);
 	if (svggroupflag == true) SVGString.push("</g>");
@@ -2444,13 +2413,13 @@ function findBoundsToo(d)
 	mgraphics.svg_create("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
 	mgraphics.paint();
-	post("svg", svg, "\n");
+	//post("offsets", horizontalOffset, verticalOffset, "\n");
 	mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
 	mgraphics.svg_render("img");
 
 	mgraphics.matrixcalc(outmatrix, outmatrix);
 	findbounds.matrixcalc(outmatrix, outmatrix);
-	post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
+	//post("svg", svg, "\n");
 	return [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]];
 }
 
@@ -2459,10 +2428,10 @@ function renderDrawSocket(d)
 	for (var i = 0; i < d.length; i++){
 	var _d = d[i];
  	var transform = _d["transform"].substr(_d["transform"].indexOf("(") + 1, _d["transform"].lastIndexOf(")") - _d["transform"].indexOf("(") - 1).split(",").map(Number);
-	post("svggroupflag", svggroupflag, RenderMessageOffset, transform, "\n");
-	if (svggroupflag == false) var svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + RenderMessageOffset[1]] + ")";
+	//post("transform", JSON.stringify(_d), "\n");
+	if (svggroupflag == false) var svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + origin[0] + RenderMessageOffset[0], transform[5] + origin[1] + RenderMessageOffset[1]] + ")";
 	else var svgtransform = _d["transform"];
-	post("svgtransform", svgtransform, "\n");
+	//post("svgtransform", svgtransform, "\n");
 	switch (_d.new) {
 		case "line" :
 		SVGString.push("<line x1=\"" + _d["x1"] + "\" y1=\"" + _d["y1"] + "\" x2=\"" + _d["x2"] + "\" y2=\"" + _d["y2"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
