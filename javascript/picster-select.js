@@ -94,11 +94,12 @@ function singleClick(x, y, shift)
 {
 if (mode == "picster" && !blocked) {
 	//lcd = this.patcher.getnamed("pane");
+	//svggroupflag = false;
 	outlet(2, "bounds", "hide");
 	click = "single";
 	origin = [x, y];
 	if (shape == 0) {
-		if (pathDone) { // Initialize new path
+	if (pathDone) { // Initialize new path
       segments = [];
       handles = [];
       polyclicks = [];
@@ -108,8 +109,7 @@ if (mode == "picster" && !blocked) {
     polyclicks.push(origin);
     handles.push(origin);
 	}
-	//if (shift) return;
-	var c = 0;
+	var _c = 0;
 	format = "sadam.canvas";
 	item = -1;
 	//output.clear();
@@ -183,7 +183,7 @@ if (mode == "picster" && !blocked) {
 	}
 	else {
 		var foundBounds = findBoundsToo(vals);
-		post("foundBounds", foundBounds, RenderMessageOffset, "\n");
+		//post("foundBounds", foundBounds, RenderMessageOffset, "\n");
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
 		foundBounds[2] += RenderMessageOffset[0];
@@ -192,15 +192,15 @@ if (mode == "picster" && !blocked) {
 		var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
 	}
 	if (boundmin[0] <= x && boundmin[1] <= y && boundmax[0] >= x && boundmax[1] >= y) {
-		foundobjects.replace(c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4), e.get("picster-element[0]::val::id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
+		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4), e.get("picster-element[0]::val::id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
 		//post("item", foundobjects.stringify(), "\n");
-		offsets[c] = RenderMessageOffset;
-		c++;
+		offsets[_c] = RenderMessageOffset;
+		_c++;
 		}
 		}
 	}
-	if (c > 0) {
-		item = clicks % c;
+	if (_c > 0) {
+		item = clicks % _c;
 		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
 		outlet(0, "clearSelection");
 		if (!buttonMode) {
@@ -252,7 +252,9 @@ if (mode == "picster" && !blocked) {
 			}		
 		else outlet(1, "expression", "clear");
 		}
-		else clicks = 0;
+		else {
+			clicks = 0;
+			}
 		}
 	}
 }
@@ -281,9 +283,11 @@ function offset(h, v)
 	verticalOffset = v;
 }
 
-function mouseIdle(x, y, shift, ctrl)
+function mouseIdle(	_x, _y, shift, ctrl)
 {
 	if (mode == "picster") {
+		var x = _x / zoom * 0.5;
+		var y = _y / zoom * 0.5;
 		switch (shape) {
 			case 6 :
 				if (clickcount > 0) {
@@ -300,6 +304,7 @@ function mouseIdle(x, y, shift, ctrl)
 			break;
 			case 0 :
 			if (!pathDone) {
+			//post("aha", "\n");
 				if (polyclicks.length > 1 && shift) {
 			    handles.pop();
 			    segments.pop();
@@ -909,8 +914,11 @@ if (mode == "picster") {
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};	
+				//_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};	
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};	
 				edit.parse(JSON.stringify(_picster));
+				polyclicks = [];
+				clickcount = 0;
 				outlet(3, "bang");
 				
 				}
@@ -2444,13 +2452,13 @@ function findBoundsToo(d)
 	mgraphics.svg_create("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
 	mgraphics.paint();
-	post("svg", svg, "\n");
+	//post("svg", svg, "\n");
 	mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
 	mgraphics.svg_render("img");
 
 	mgraphics.matrixcalc(outmatrix, outmatrix);
 	findbounds.matrixcalc(outmatrix, outmatrix);
-	post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
+	//post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
 	return [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]];
 }
 
@@ -2458,10 +2466,11 @@ function renderDrawSocket(d)
 {
 	for (var i = 0; i < d.length; i++){
 	var _d = d[i];
- 	var transform = _d["transform"].substr(_d["transform"].indexOf("(") + 1, _d["transform"].lastIndexOf(")") - _d["transform"].indexOf("(") - 1).split(",").map(Number);
-	post("svggroupflag", svggroupflag, RenderMessageOffset, transform, "\n");
-	if (svggroupflag == false) var svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + RenderMessageOffset[1]] + ")";
-	else var svgtransform = _d["transform"];
+ 	//var transform = _d["transform"].substr(_d["transform"].indexOf("(") + 1, _d["transform"].lastIndexOf(")") - _d["transform"].indexOf("(") - 1).split(",").map(Number);
+	//post("svggroupflag", svggroupflag, RenderMessageOffset, transform, "\n");
+	//if (svggroupflag == false) var svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + RenderMessageOffset[1]] + ")";
+	//else var svgtransform = _d["transform"];
+	var svgtransform = _d["transform"];
 	post("svgtransform", svgtransform, "\n");
 	switch (_d.new) {
 		case "line" :

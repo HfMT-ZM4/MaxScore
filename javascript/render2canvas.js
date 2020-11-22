@@ -1507,7 +1507,6 @@ function anything() {
 			}
 			if (format == "drawsocket"){
 			renderedMessages.set(rm++, msg);
-				post("renderedMessages", renderedMessages.stringify(), "\n");					
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
 			if (e.contains("picster-element")) {
