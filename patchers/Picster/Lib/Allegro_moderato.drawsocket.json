@@ -1,0 +1,87 @@
+{
+	"picster-element" : [ 		{
+			"key" : "svg",
+			"val" : 			{
+				"new" : "g",
+				"id" : "Picster-Element_1606049667668",
+				"child" : [ 					{
+						"new" : "text",
+						"id" : "Picster-Element_1606049667669",
+						"child" : "",
+						"x" : 141,
+						"y" : 27,
+						"font-family" : "Aloisen New",
+						"font-size" : 24,
+						"font-weight" : "normal",
+						"font-style" : "normal",
+						"style" : 						{
+							"fill" : "rgb(0,0,0)",
+							"fill-opacity" : 1
+						}
+,
+						"transform" : "matrix(1,0,0,1,0,0)"
+					}
+, 					{
+						"new" : "text",
+						"id" : "Picster-Element_1606049667670",
+						"child" : "Allegro moderato",
+						"x" : -6,
+						"y" : 31,
+						"font-family" : "Times Italic",
+						"font-size" : 18,
+						"font-weight" : "normal",
+						"font-style" : "normal",
+						"style" : 						{
+							"fill" : "rgb(0,0,0)",
+							"fill-opacity" : 1
+						}
+,
+						"transform" : "matrix(1,0,0,1,0,0)"
+					}
+, 					{
+						"new" : "text",
+						"id" : "Picster-Element_1606049667671",
+						"child" : "=",
+						"x" : 132,
+						"y" : 33,
+						"font-family" : "Arial",
+						"font-size" : 14,
+						"font-weight" : "normal",
+						"font-style" : "normal",
+						"style" : 						{
+							"fill" : "rgb(0,0,0)",
+							"fill-opacity" : 1
+						}
+,
+						"transform" : "matrix(1,0,0,1,0,0)"
+					}
+, 					{
+						"new" : "text",
+						"id" : "Picster-Element_1606049667672",
+						"child" : "",
+						"x" : 124,
+						"y" : 28,
+						"font-family" : "Aloisen New",
+						"font-size" : 26,
+						"font-weight" : "normal",
+						"font-style" : "normal",
+						"style" : 						{
+							"fill" : "rgb(0,0,0)",
+							"fill-opacity" : 1
+						}
+,
+						"transform" : "matrix(1,0,0,1,0,0)"
+					}
+ ]
+			}
+
+		}
+, 		{
+			"key" : "extras",
+			"val" : 			{
+				"bounds" : [ -1, -1, -1, -1 ]
+			}
+
+		}
+ ]
+}

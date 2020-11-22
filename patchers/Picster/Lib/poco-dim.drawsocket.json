@@ -1,0 +1,53 @@
+{
+	"picster-element" : [ 		{
+			"key" : "svg",
+			"val" : 			{
+				"new" : "g",
+				"id" : "Picster-Element_1606049725937",
+				"child" : [ 					{
+						"new" : "text",
+						"id" : "Picster-Element_1606049725938",
+						"child" : "poco",
+						"x" : -1,
+						"y" : 14,
+						"font-family" : "Times Italic",
+						"font-size" : 16,
+						"font-weight" : "normal",
+						"font-style" : "normal",
+						"style" : 						{
+							"fill" : "rgb(0,0,0)",
+							"fill-opacity" : 1
+						}
+,
+						"transform" : "matrix(1,0,0,1,0,0)"
+					}
+, 					{
+						"new" : "text",
+						"id" : "Picster-Element_1606049725939",
+						"child" : "dim.",
+						"x" : 32,
+						"y" : 14,
+						"font-family" : "Times Italic",
+						"font-size" : 16,
+						"font-weight" : "normal",
+						"font-style" : "normal",
+						"style" : 						{
+							"fill" : "rgb(0,0,0)",
+							"fill-opacity" : 1
+						}
+,
+						"transform" : "matrix(1,0,0,1,0,0)"
+					}
+ ]
+			}
+
+		}
+, 		{
+			"key" : "extras",
+			"val" : 			{
+				"bounds" : [ -1, -1, -1, -1 ]
+			}
+
+		}
+ ]
+}
