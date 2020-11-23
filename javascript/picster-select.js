@@ -1933,7 +1933,7 @@ function anything()
     switch (messagename) {
 	case "key" :
 		switch (Number(msg)) {
-			case 67 :
+			case 67 :  //copy
 			if (foundobjects.contains("0") && item != -1) {
 				anchors = {};
 				if (foundobjects.get(item)[0] == "note" || foundobjects.get(item)[0] == "interval") {
@@ -1949,19 +1949,19 @@ function anything()
 				}
 			}
 			break;
-			case 69 :
+			case 69 :  //edit
 			if (foundobjects.contains("0") && item != -1) edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 			outlet(3, "edit");
 			break;
-			case 71 :
-			// group elements
-			// save picster preference
+			case 71 : //group
 			edit.clear();
 			var tempDict = new Dict();
 			var tempObjArray = [];
 			if (foundobjects.contains("0") && item != -1) {
 			switch (foundobjects.get(item)[0]){
 			case "interval" :
+			outlet(0, "getNoteAnchor");
+			anchor = anchors[0];
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			var key = Object.keys(json);
 			if (!("userBean" in json[key])) return;
@@ -1969,6 +1969,8 @@ function anything()
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			break;
 			case "note" :
+			outlet(0, "getNoteAnchor");
+			anchor = anchors[0];
 			outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			var key = Object.keys(json);
 			if (!("userBean" in json[key])) return;
@@ -1976,7 +1978,8 @@ function anything()
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			break;
 			case "staff" :
-			// we need to 'artificially' set picster preference to staff
+			outlet(0, "getDrawingAnchor", foundobjects.get(item)[1], foundobjects.get(item)[2]);
+			anchor = anchors[0].slice(2);
 			outlet(0, "getNumStaves");
 			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
 			var key = Object.keys(json);
@@ -1988,7 +1991,8 @@ function anything()
 			var userBeans = [].concat(staves["staffUserBean"]);
 			break;
 			case "measure" :
- 			// we need to 'artificially' set picster preference to measure
+ 			outlet(0, "getDrawingAnchor",  foundobjects.get(item)[1]);
+			anchor = anchors[0].slice(1);
 			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
 			if (!("measureUserBean" in json["measure"])) return;
 			outlet(0, "removeAllRenderedMessagesFromMeasure", foundobjects.get(item)[1]);
@@ -2003,7 +2007,7 @@ function anything()
 			tempObjArray[i] = JSON.parse(tempDict.stringify());
 			tempObjArray[i].Xoffset = parseFloat(userBeans[i]["Xoffset"]) * factor + anchor[0];
 			tempObjArray[i].Yoffset = parseFloat(userBeans[i]["Yoffset"]) * factor + anchor[1];
-			//post("Xoffset/Yoffset", anchor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
+			//post("Xoffset/Yoffset", parseFloat(userBeans[i]["Xoffset"]) * factor, parseFloat(userBeans[i]["Yoffset"]) * factor, anchor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
 			//if (tempDict.get("picster-element[0]::val[0]::id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]), parseFloat(userBeans[i]["Yoffset"]), userBeans[i]["Message"]);
 			//else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["Message"]);
 			}
@@ -2044,7 +2048,8 @@ function anything()
 			_picster["picster-element"][2].val = xpr;
 			}
 			edit.parse(JSON.stringify(_picster));
-			//post("edit", edit.stringify(), "\n");
+			outlet(2, "bounds", findBoundsToo([].concat(attr)));
+			//post("BOUNDS", findBoundsToo([].concat(attr)), "\n");
 			action = "addShape";
 			outlet(3, "bang");
 			// restore picster preference 
@@ -2086,6 +2091,16 @@ function anything()
 				}
 				deleteSelectedItem();
 			}
+			break;
+			case 89 :
+			outlet(2, "bounds", "hide");
+			outlet(0, "redo");
+			outlet(0, "setRenderAllowed", 1);
+			break;
+			case 90 :
+			outlet(2, "bounds", "hide");
+			outlet(0, "undo");
+			outlet(0, "setRenderAllowed", 1);
 			break;
 			case 127 :
 			if (foundobjects.contains("0") && item != -1) deleteSelectedItem();
