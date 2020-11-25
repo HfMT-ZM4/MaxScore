@@ -46,7 +46,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1410.5, 105.21893310546875, 82.0, 20.0 ],
+					"patching_rect" : [ 1410.5, 44.0, 82.0, 20.0 ],
 					"text" : "print #1staffattr"
 				}
 
@@ -889,7 +889,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1281.5, 198.0, 216.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ "#1" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1021,7 +1021,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 263.0, 225.0, 209.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "maxscore.setStaffAttributes.exp.js",
+						"filename" : "maxscore.setStaffAttributes.exp",
 						"parameter_enable" : 0
 					}
 ,
@@ -1758,7 +1758,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 459.0, 79.0, 1033.0, 750.0 ],
+						"rect" : [ 201.0, -992.0, 1033.0, 750.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2044,8 +2044,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 618.0, 414.0, 171.0, 20.0 ],
-									"text" : "loadmess store <none> 16777215"
+									"patching_rect" : [ 618.0, 414.0, 167.0, 20.0 ],
+									"text" : "loadmess store <none> 12500670"
 								}
 
 							}
@@ -2072,8 +2072,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "dump", "bang", "int" ],
-									"patching_rect" : [ 446.0, 186.0, 102.0, 20.0 ],
-									"text" : "t dump b 16777215"
+									"patching_rect" : [ 446.0, 186.0, 98.0, 20.0 ],
+									"text" : "t dump b 12500670"
 								}
 
 							}
@@ -2823,7 +2823,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-123", 0 ],
-									"midpoints" : [ 497.0, 225.0, 544.166625999999951, 225.0 ],
+									"midpoints" : [ 495.0, 225.0, 544.166625999999951, 225.0 ],
 									"source" : [ "obj-116", 1 ]
 								}
 
@@ -2838,7 +2838,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-91", 0 ],
-									"midpoints" : [ 538.5, 216.0, 725.0, 216.0, 725.0, 488.0, 605.5, 488.0 ],
+									"midpoints" : [ 534.5, 216.0, 725.0, 216.0, 725.0, 488.0, 605.5, 488.0 ],
 									"source" : [ "obj-116", 2 ]
 								}
 
@@ -3184,7 +3184,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1229.0, 82.0, 169.0, 20.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3197,10 +3197,10 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"bgfillcolor_angle" : 270.0,
 					"bgfillcolor_autogradient" : 0.0,
-					"bgfillcolor_color" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bgfillcolor_color" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_proportion" : 0.39,
@@ -5043,6 +5043,49 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-16" : [ "live.menu[56]", "live.menu", 0 ],
+			"obj-19" : [ "live.toggle[109]", "live.toggle", 0 ],
+			"obj-21" : [ "live.toggle[122]", "live.toggle", 0 ],
+			"obj-237" : [ "live.menu[55]", "live.menu", 0 ],
+			"obj-24" : [ "live.button[1]", "live.button", 0 ],
+			"obj-26" : [ "live.menu[54]", "bracket", 0 ],
+			"obj-28" : [ "live.toggle[123]", "live.toggle", 0 ],
+			"obj-43" : [ "live.text[55]", "live.text", 0 ],
+			"obj-51" : [ "live.toggle[108]", "live.toggle", 0 ],
+			"obj-70" : [ "live.text[54]", "live.text", 0 ],
+			"obj-72" : [ "track[1]", "track", 0 ],
+			"obj-8" : [ "live.toggle[124]", "live.toggle", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "divmod.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.api.GetID.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.setStaffAttributes.exp.js",
+				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
+				"patcherrelativepath" : "../../../../Library/MaxScore",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 		"editing_bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ]
 	}
