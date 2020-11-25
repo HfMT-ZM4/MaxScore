@@ -165,7 +165,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "<none>", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32" ],
-							"parameter_longname" : "track[1]",
+							"parameter_longname" : "track[3]",
 							"parameter_mmax" : 32,
 							"parameter_shortname" : "track",
 							"parameter_type" : 2
@@ -246,7 +246,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_longname" : "live.text[54]",
+							"parameter_longname" : "live.text[34]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -318,7 +318,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_longname" : "live.text[55]",
+							"parameter_longname" : "live.text[36]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -603,7 +603,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ " ", "", "" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[54]",
+							"parameter_longname" : "live.menu[11]",
 							"parameter_mmax" : 2,
 							"parameter_shortname" : "bracket",
 							"parameter_type" : 2
@@ -632,7 +632,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.button[1]",
+							"parameter_longname" : "live.button[3]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.button",
 							"parameter_type" : 2
@@ -783,7 +783,7 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[124]",
+							"parameter_longname" : "live.toggle[130]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -889,7 +889,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1281.5, 198.0, 216.0, 20.0 ],
-					"restore" : [ "#1" ],
+					"restore" : [ 2 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1019,13 +1019,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 263.0, 225.0, 209.0, 20.0 ],
+					"patching_rect" : [ 263.0, 225.0, 189.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "maxscore.setStaffAttributes.exp",
+						"filename" : "maxscore.setStaffAttributes",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js maxscore.setStaffAttributes.exp #1  #2",
+					"text" : "js maxscore.setStaffAttributes #1  #2",
 					"varname" : "setStaffAttributes"
 				}
 
@@ -1147,7 +1147,7 @@
 					"htricolor" : [ 0.87, 0.82, 0.24, 1.0 ],
 					"id" : "obj-54",
 					"maxclass" : "number",
-					"maximum" : 1,
+					"maximum" : 3,
 					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -3184,7 +3184,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1229.0, 82.0, 169.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3237,7 +3237,7 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[123]",
+							"parameter_longname" : "live.toggle[126]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -3267,7 +3267,7 @@
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[122]",
+							"parameter_longname" : "live.toggle[129]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -3297,7 +3297,7 @@
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[109]",
+							"parameter_longname" : "live.toggle[128]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -3925,7 +3925,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "0", "1", "2", "3", "4" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[56]",
+							"parameter_longname" : "live.menu[10]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -4026,7 +4026,7 @@
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[108]",
+							"parameter_longname" : "live.toggle[127]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -4055,7 +4055,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 114.0, 4.0, 99.0, 19.0 ],
 					"readonly" : 1,
-					"text" : "MaxScoreIns-0",
+					"text" : "MaxScoreIns-2",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "instrument"
 				}
@@ -4124,7 +4124,7 @@
 							"parameter_enum" : [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ],
 							"parameter_initial" : [ 7.0 ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[55]",
+							"parameter_longname" : "live.menu[12]",
 							"parameter_mmax" : 15,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -5043,49 +5043,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-16" : [ "live.menu[56]", "live.menu", 0 ],
-			"obj-19" : [ "live.toggle[109]", "live.toggle", 0 ],
-			"obj-21" : [ "live.toggle[122]", "live.toggle", 0 ],
-			"obj-237" : [ "live.menu[55]", "live.menu", 0 ],
-			"obj-24" : [ "live.button[1]", "live.button", 0 ],
-			"obj-26" : [ "live.menu[54]", "bracket", 0 ],
-			"obj-28" : [ "live.toggle[123]", "live.toggle", 0 ],
-			"obj-43" : [ "live.text[55]", "live.text", 0 ],
-			"obj-51" : [ "live.toggle[108]", "live.toggle", 0 ],
-			"obj-70" : [ "live.text[54]", "live.text", 0 ],
-			"obj-72" : [ "track[1]", "track", 0 ],
-			"obj-8" : [ "live.toggle[124]", "live.toggle", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.GetID.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.setStaffAttributes.exp.js",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../../Library/MaxScore",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 		"editing_bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ]
 	}
