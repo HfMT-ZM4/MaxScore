@@ -46,7 +46,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1410.5, 44.0, 82.0, 20.0 ],
+					"patching_rect" : [ 1334.5, 129.0, 82.0, 20.0 ],
 					"text" : "print #1staffattr"
 				}
 
@@ -295,7 +295,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 388.0, 465.18548583984375, 89.0, 20.0 ],
+					"patching_rect" : [ 459.0, 450.0, 89.0, 20.0 ],
 					"text" : "loadmess set \" \""
 				}
 
@@ -342,7 +342,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 300.0, 405.0, 51.0, 20.0 ],
+					"patching_rect" : [ 386.0, 360.81451416015625, 51.0, 20.0 ],
 					"text" : "route \" \""
 				}
 
@@ -357,7 +357,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 300.0, 381.0, 86.0, 20.0 ],
+					"patching_rect" : [ 386.0, 336.81451416015625, 86.0, 20.0 ],
 					"text" : "route text"
 				}
 
@@ -372,7 +372,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 357.5, 405.0, 88.0, 20.0 ],
+					"patching_rect" : [ 418.0, 384.81451416015625, 88.0, 20.0 ],
 					"text" : "prepend symbol"
 				}
 
@@ -387,7 +387,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 300.0, 357.18548583984375, 32.0, 20.0 ],
+					"patching_rect" : [ 386.0, 313.0, 32.0, 20.0 ],
 					"text" : "grab",
 					"varname" : "u120011958"
 				}
@@ -433,7 +433,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 545.18548583984375, 123.0, 20.0 ],
+					"patching_rect" : [ 386.0, 539.18548583984375, 123.0, 20.0 ],
 					"text" : "prepend abbrInstrName"
 				}
 
@@ -445,7 +445,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 465.18548583984375, 68.0, 20.0 ],
+					"patching_rect" : [ 386.0, 450.0, 68.0, 20.0 ],
 					"text" : "set $1, bang"
 				}
 
@@ -457,7 +457,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "bang", "bang" ],
-					"patching_rect" : [ 300.0, 440.0, 203.0, 20.0 ],
+					"patching_rect" : [ 386.0, 419.81451416015625, 203.0, 20.0 ],
 					"text" : "dialog Set Abbreviated Instrument Name"
 				}
 
@@ -472,7 +472,7 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "bang", "bang", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 300.0, 334.0, 99.0, 18.0 ],
+					"patching_rect" : [ 386.0, 289.81451416015625, 99.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 114.0, 24.0, 99.0, 18.0 ],
 					"rounded" : 8.0
@@ -489,7 +489,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 300.0, 519.18548583984375, 56.0, 20.0 ],
+					"patching_rect" : [ 386.0, 513.18548583984375, 56.0, 20.0 ],
 					"text" : "route text"
 				}
 
@@ -504,7 +504,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 494.18548583984375, 108.0, 20.0 ],
+					"patching_rect" : [ 386.0, 488.18548583984375, 108.0, 20.0 ],
 					"text" : "pvar abbrinstrument"
 				}
 
@@ -727,7 +727,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1045.0, 53.0, 65.0, 20.0 ],
+					"patching_rect" : [ 1046.0, 47.0, 65.0, 20.0 ],
 					"text" : "loadmess 1"
 				}
 
@@ -742,7 +742,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1045.5, 105.0, 81.0, 20.0 ],
+					"patching_rect" : [ 1046.5, 99.0, 81.0, 20.0 ],
 					"text" : "prepend set #1"
 				}
 
@@ -754,7 +754,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 1045.5, 131.0, 94.0, 20.0 ],
+					"patching_rect" : [ 1046.5, 125.0, 94.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -774,7 +774,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 1045.5, 81.0, 15.0, 15.0 ],
+					"patching_rect" : [ 1046.5, 75.0, 15.0, 15.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 783.5, 17.0, 15.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
@@ -889,7 +889,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1281.5, 198.0, 216.0, 20.0 ],
-					"restore" : [ 2 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -909,7 +909,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 885.5, 115.0, 77.0, 20.0 ],
+					"patching_rect" : [ 892.5, 125.0, 77.0, 20.0 ],
 					"text" : "ledgerlines $1"
 				}
 
@@ -977,7 +977,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"patching_rect" : [ 885.5, 88.0, 32.5, 20.0 ],
+					"patching_rect" : [ 892.5, 98.0, 32.5, 20.0 ],
 					"text" : "t i i"
 				}
 
@@ -1019,9 +1019,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 263.0, 225.0, 189.0, 20.0 ],
+					"patching_rect" : [ 263.0, 225.0, 190.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "maxscore.setStaffAttributes",
+						"filename" : "maxscore.setStaffAttributes.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -1083,13 +1083,13 @@
 					"bgfillcolor_type" : "color",
 					"fontface" : 1,
 					"id" : "obj-103",
-					"items" : [ "Quarter Tone", ",", "Just Intonation", ",", "BP Tenor Clarinet", ",", "BP Soprano Clarinet", ",", "BP MIDI Keyboard", ",", "BP Contra Clarinet", ",", "BP Alto Kalimba", ",", "19EDO", ",", "17EDO", ",", "Tablature", ",", "Percussion", ",", "ClefDesigner", ",", "BP chromatic", ",", "-", ",", "General MIDI Percussion", ",", "Eighth Tone", ",", "Twelfth Tone (Stahnke)", ",", "Twelfth Tone (Sims)", ",", "Twelfth Tone (Wyschnegradsky)", ",", "Sixteenth Tone", ",", "Soprano Clef", ",", "BP chromatic N clef", ",", "BP chromatic T clef", ",", "BP chromatic U clef", ",", "BP chromatic Z clef" ],
+					"items" : [ "Quarter Tone", ",", "Just Intonation", ",", "BP Tenor Clarinet", ",", "BP Soprano Clarinet", ",", "BP MIDI Keyboard", ",", "BP Contra Clarinet", ",", "BP Alto Kalimba", ",", "19EDO", ",", "17EDO", ",", "Tablature", ",", "Percussion|GM", ",", "ClefDesigner|Soprano", ",", "BP chromatic|Z", ",", "Default", ",", "-", ",", "General MIDI Percussion", ",", "Soprano Clef", ",", "BP chromatic N clef", ",", "BP chromatic T clef", ",", "BP chromatic U clef", ",", "BP chromatic Z clef", ",", "-", ",", "24TET", ",", "48TET", ",", "72TET-Stahnke", ",", "72TET-Sims", ",", "72TET-Wyschnegradsky", ",", "96TET" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 213.0, 156.0, 119.0, 20.0 ],
+					"patching_rect" : [ 213.0, 150.0, 119.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 619.0, 15.0, 127.0, 20.0 ],
 					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
@@ -1147,7 +1147,7 @@
 					"htricolor" : [ 0.87, 0.82, 0.24, 1.0 ],
 					"id" : "obj-54",
 					"maxclass" : "number",
-					"maximum" : 3,
+					"maximum" : 1,
 					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -3184,7 +3184,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1229.0, 82.0, 169.0, 20.0 ],
-					"restore" : [ 3 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4017,7 +4017,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 886.0, 65.0, 15.0, 15.0 ],
+					"patching_rect" : [ 893.0, 75.0, 15.0, 15.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 586.0, 17.0, 15.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
@@ -4055,7 +4055,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 114.0, 4.0, 99.0, 19.0 ],
 					"readonly" : 1,
-					"text" : "MaxScoreIns-2",
+					"text" : "MaxScoreIns-0",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "instrument"
 				}
@@ -4172,7 +4172,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 899.0, 138.0, 136.0, 20.0 ],
+					"patching_rect" : [ 906.0, 150.0, 136.0, 20.0 ],
 					"text" : "setLedgerLinesVisible #1 $1"
 				}
 
@@ -4459,6 +4459,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-132", 0 ],
+					"midpoints" : [ 443.5, 255.0, 635.0, 255.0 ],
 					"source" : [ "obj-190", 1 ]
 				}
 
@@ -4828,7 +4829,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-190", 0 ],
-					"midpoints" : [ 309.5, 571.0, 240.0, 571.0, 240.0, 224.0, 272.5, 224.0 ],
+					"midpoints" : [ 395.5, 571.0, 240.0, 571.0, 240.0, 224.0, 272.5, 224.0 ],
 					"source" : [ "obj-63", 0 ]
 				}
 

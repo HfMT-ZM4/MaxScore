@@ -1,9 +1,5 @@
 {
-	"Quarter Tone" : [ "default", 5, "mM-none", "default" ],
-	"Eighth Tone" : [ "EDS", 5, "mM-eighth-tones", "default" ],
-	"Twelfth Tone (Stahnke)" : [ "EDS", 5, "mM-72TET", "default" ],
-	"Twelfth Tone (Sims)" : [ "EDS", 5, "mM-SIMS", "default" ],
-	"Sixteenth Tone (Sagittal)" : [ "EDS", 5, "mM-sagittal", "default" ],
+	"Default" : [ "default", 5, "mM-none", "default" ],
 	"Just Intonation" : [ "justintonation", 5, "mM-JI", "default" ],
 	"Percussion" : [ "percussion", "editor", "mM-none", "percussion" ],
 	"17EDO" : [ "17EDO", 5, "mM-none", "default" ],

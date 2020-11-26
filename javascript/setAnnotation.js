@@ -33,7 +33,7 @@ function insertStaff(n) {
         //for (var i = 0; i < 5; i++) annotation.replace("staff-" + n + "::stafflines::" + i, 1);
         if (annotation.contains("staff-" + n + "::stafflineshidden") == 1) annotation.remove("staff-" + n + "::stafflineshidden");
 		annotation.replace("staff-" + n + "::ledgerlines", 1);
-        annotation.replace("staff-" + n + "::style", "Quarter Tone");
+        annotation.replace("staff-" + n + "::style", "Default");
         annotation.replace("staff-" + n + "::microMap", "mM-none");
         annotation.replace("staff-" + n + "::adjust", 0);
         annotation.replace("staff-" + n + "::clef", "default");
@@ -44,7 +44,7 @@ function insertStaff(n) {
         //for (var i = 0; i < 5; i++) annotation.replace("staff-0::stafflines::" + i, 1);
         if (annotation.contains("staff-0::stafflineshidden") == 1) annotation.remove("staff-0::stafflineshidden");
         annotation.replace("staff-0::ledgerlines", 1);
-        annotation.replace("staff-0::style", "Quarter Tone");
+        annotation.replace("staff-0::style", "Default");
         annotation.replace("staff-0::micromap", "mM-none");
         annotation.replace("staff-0::adjust", 0);
         annotation.replace("staff-0::clef", "default");
@@ -57,7 +57,7 @@ function addStaff(n) {
     //post("addStaff", n, "\n");
     if (annotation.contains("staff-" + n + "::stafflineshidden") == 1) annotation.remove("staff-" + n + "::stafflineshidden");
     annotation.replace("staff-" + n + "::ledgerlines", 1);
-    annotation.replace("staff-" + n + "::style", "Quarter Tone");
+    annotation.replace("staff-" + n + "::style", "Default");
     annotation.replace("staff-" + n + "::micromap", "mM-none");
     annotation.replace("staff-" + n + "::adjust", 0);
     annotation.replace("staff-" + n + "::clef", "default");

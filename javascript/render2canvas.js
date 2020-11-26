@@ -722,7 +722,7 @@ function setUserClef(targetStaff, userClef)
         	outlet(1, "setExtendedStaffLinesBelow", i, targetStaff, 0);
 			outlet(1, "setClef", i, targetStaff, "TREBLE_CLEF");
 			}
-		annotation.replace("staff-" + targetStaff + "::style", "Quarter Tone");
+		annotation.replace("staff-" + targetStaff + "::style", "Default");
 		annotation.replace("staff-" + targetStaff + "::clef", "default");
 		if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
 		outlet(2, "setAnnotation", "dictionary", annotation.name);

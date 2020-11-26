@@ -48,6 +48,10 @@ var editors = 	{
 				styles: ["tablature", "percussion", "clefdesigner", "BP-chromatic"], 
 				names: ["Tablature", "ClefDesigner", "BP chromatic", "Percussion"]
 				};
+var tonedivisions = {
+				names: ["24TET", "48TET", "72TET-Stahnke", "72TET-Sims", "72TET-Wyschnegradsky", "96TET"],
+				maps: ["mM-none", "mM-eighth-tones", "mM-Stahnke", "mM-SIMS", "mM-Wysch", "mM-sagittal"]
+				}
 var styletype = "default";
 var newstyletype = "default";
 var ss = [];
@@ -134,8 +138,8 @@ _style(stl, 0);
 }
 else 
 {
-style("Quarter Tone");
-_style("Quarter Tone", 0);
+style("Default");
+_style("Default", 0);
 }
 
 
@@ -185,30 +189,44 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 3. Editor with substyle set: No problem.
 4. Alias: style alias 0 will be sent. No problem. 
 */
+	if (tonedivisions.names.indexOf(stl) != -1) {
+    	annotation.replace("staff-" + StaffIndex + "::micromap", tonedivisions.maps[tonedivisions.names.indexOf(stl)]);
+        post("currentstyle", stl, oldstl, "\n");
+		this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("setsymbol", stl);
+		this.patcher.getnamed("style").message("setsymbol", oldstl);
+		}
+	else 
+	{
 	annotation.replace("staff-"+StaffIndex+"::style", stl);			
 	this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict").message("bang");
 	if (aliases.contains(stl)) stl = aliases.get(stl);
 	if (isAlias(stl) && flag) _style(stl, 1);
 	else if (editors.names.indexOf(stl) != -1) _style(stl, 1);
 	else _style(stl, 0);
+	}
 }
 
 function clef(cf)
 {
 switch(cf){
 case(0):
+style("Default", 1);
 cf = "TREBLE_CLEF";
 break;
 case(1):
+style("Default", 1);
 cf = "ALTO_CLEF";
 break;
 case(2):
+style("Default", 1);
 cf = "TENOR_CLEF";
 break;
 case(3):
+style("Default", 1);
 cf = "BASS_CLEF";
 break;
 case(4):
+style("Default", 1);
 cf = "PERCUSSION_CLEF";
 break;
 /*
@@ -302,6 +320,8 @@ function setMenu() {
 	styleMenu.message("append", "-");
     keys = [].concat(aliases.getkeys());
     for (var i = 0; i < keys.length; i++) styleMenu.message("append", keys[i]);
+	styleMenu.message("append", "-");
+   	for (var i = 0; i < tonedivisions.names.length; i++) styleMenu.message("append", tonedivisions.names[i]);
 }
 
 function state(st) {
@@ -354,7 +374,9 @@ function _style(stl, flag)
             case "clefdesigner":
                 this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
                 if (isAlias(stl)) {
-                    this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("umenu").message("setsymbol", substyle);
+    				//post("substyle", substyle, "\n");
+					if (tonedivisions.names.indexOf(substyle) == -1) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("umenu").message("setsymbol", substyle);
+					else this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("symbol", substyle);
                 }
                 break;
         }
@@ -362,7 +384,7 @@ function _style(stl, flag)
         if (!isAlias(stl)) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").message("front");
         this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
         this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
-        if (isAlias(stl)) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("bang");
+        if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("bang");
         return;
     }
     outlet(0, "setRenderAllowed", "false");
@@ -405,6 +427,7 @@ function _style(stl, flag)
                 if (baseclef == "default") annotation.replace("staff-" + StaffIndex + "::clef", "default");
                 else annotation.replace("staff-" + StaffIndex + "::clef", substyle);
                 annotation.replace("staff-" + StaffIndex + "::micromap", this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("insert").subpatcher().getnamed("grid").getvalueof());
+                post("substyle", substyle, clefdesigner.get(substyle + "::transposition"), "\n");
                 this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("transp").message(clefdesigner.get(substyle + "::transposition"));
                 break;
         }

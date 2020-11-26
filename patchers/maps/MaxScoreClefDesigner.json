@@ -1,34 +1,4 @@
 {
-	"48TET" : 	{
-		"alias" : "Eighth Tone",
-		"in_menu" : "false",
-		"micromap" : "mM-eighth-tones"
-	}
-,
-	"72TET-Stahnke" : 	{
-		"alias" : "Twelfth Tone (Stahnke)",
-		"in_menu" : "false",
-		"micromap" : "mM-Stahnke"
-	}
-,
-	"72TET-Sims" : 	{
-		"alias" : "Twelfth Tone (Sims)",
-		"in_menu" : "false",
-		"micromap" : "mM-SIMS"
-	}
-,
-	"72TET-Wyschnegradsky" : 	{
-		"alias" : "Twelfth Tone (Wyschnegradsky)",
-		"in_menu" : "false",
-		"micromap" : "mM-Wysch"
-	}
-,
-	"96TET" : 	{
-		"alias" : "Sixteenth Tone",
-		"in_menu" : "false",
-		"micromap" : "mM-sagittal"
-	}
-,
 	"None" : 	{
 		"alias" : "<none>",
 		"stafflines" : 		{
@@ -41,6 +11,21 @@
 		"font" : [ "Bravura", 24 ],
 		"characters" : " ",
 		"offsets" : [ 0, 0 ],
+		"transposition" : 0
+	}
+,
+	"Treble" : 	{
+		"alias" : "<none>",
+		"stafflines" : 		{
+			"above" : 0,
+			"below" : 0,
+			"hidden" : "none"
+		}
+,
+		"baseclef" : "TREBLE_CLEF",
+		"font" : [ "Bravura", 24 ],
+		"characters" : "",
+		"offsets" : [ 0, -6 ],
 		"transposition" : 0
 	}
 ,
@@ -71,8 +56,37 @@
 		"font" : [ "Bravura", 24 ],
 		"characters" : "",
 		"offsets" : [ 0, -13 ],
-		"transposition" : 0,
-		"micromap" : "mM-none"
+		"transposition" : 0
+	}
+,
+	"Alto" : 	{
+		"alias" : "<none>",
+		"stafflines" : 		{
+			"above" : 0,
+			"below" : 0,
+			"hidden" : "none"
+		}
+,
+		"baseclef" : "ALTO_CLEF",
+		"font" : [ "Bravura", 24 ],
+		"characters" : "",
+		"offsets" : [ 0, -16 ],
+		"transposition" : 0
+	}
+,
+	"Tenor" : 	{
+		"alias" : "<none>",
+		"stafflines" : 		{
+			"above" : 0,
+			"below" : 0,
+			"hidden" : "none"
+		}
+,
+		"baseclef" : "TENOR_CLEF",
+		"font" : [ "Bravura", 24 ],
+		"characters" : "",
+		"offsets" : [ 0, -19 ],
+		"transposition" : 0
 	}
 ,
 	"Baritone" : 	{
@@ -87,8 +101,22 @@
 		"font" : [ "Bravura", 24 ],
 		"characters" : "",
 		"offsets" : [ 0, -19 ],
-		"transposition" : 0,
-		"micromap" : "mM-none"
+		"transposition" : 0
+	}
+,
+	"Bass" : 	{
+		"alias" : "<none>",
+		"stafflines" : 		{
+			"above" : 0,
+			"below" : 0,
+			"hidden" : "none"
+		}
+,
+		"baseclef" : "BASS_CLEF",
+		"font" : [ "Bravura", 24 ],
+		"characters" : "",
+		"offsets" : [ 0, 0 ],
+		"transposition" : 0
 	}
 ,
 	"G8va" : 	{
@@ -178,8 +206,7 @@
 		"font" : [ "Bravura", 24 ],
 		"characters" : [ "", "" ],
 		"offsets" : [ 0, -1, 0, -25 ],
-		"transposition" : 0,
-		"micromap" : "mM-none"
+		"transposition" : 0
 	}
 ,
 	"FF" : 	{
