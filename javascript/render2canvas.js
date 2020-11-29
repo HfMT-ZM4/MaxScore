@@ -532,6 +532,7 @@ function getSelectedLocation(m, s)
 		clickedLocations = [];
 		selectedLocations = {};
 		measurerange = [-1, -1, -1, -1];
+		notifyclients();
 		outlet(0, "setMeasureSelection", "clear");
 		}
 		staffBoundingFlag = 0;
