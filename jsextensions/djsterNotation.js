@@ -1,4 +1,4 @@
-function createDjsterNotation() {
+function addShapeFromExpression() {
 	post("d pressed\n");
 	if (foundobjects.contains("0") && item != -1) {
 		post("object found\n");
@@ -22,7 +22,7 @@ function createDjsterNotation() {
 				timeStamp++;
 				var element = JSON.parse('{"new":"g","id":"Picster-Element_'+timeStamp+'","child":[],"transform":"matrix(1,0,0,1,0,0)"}');
 				var l = djsterAttributes.meter.length;
-				
+
 
 			}
 
