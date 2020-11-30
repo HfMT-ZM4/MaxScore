@@ -20,6 +20,7 @@ findbounds.min = [0, 0, 0, 0];
 findbounds.max = [1, 1, 1, 0.99];
 var renderedMessages = new Dict();
 var RenderMessageOffset = [];
+var YrenderOffset = 0;
 var offsets = {};
 var foundobjects = new Dict;
 foundobjects.name = "foundobjects";
@@ -72,6 +73,7 @@ var textbox = "destroyed";
 var _picster = {};
 var format = "";
 var svggroupflag = false;
+var measurerange = [-1, -1, -1, -1];
 
 removeTextedit();
 
@@ -1227,7 +1229,6 @@ if (mode == "picster") {
 function createRenderedMessage(f, x, y, serialized)
 {
 	outlet(0, "getSelectionBufferSize");
-	var measurerange = [-1, -1, -1, -1];
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
 	post("serialized", serialized, "\n");
 	if (selectionBufferSize > 0)
@@ -1543,6 +1544,7 @@ function addShape()
 				outlet(3, "bang");
 				break;
 			case "text":
+				post("offsets", offsets[0], "\n");
 				var text = htmlEntities(msg[3]);
 				var attr = {};
 				attr.new = "text";
@@ -2467,14 +2469,14 @@ function findBoundsToo(d)
 	mgraphics.svg_create("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
 	mgraphics.paint();
-	//post("svg", svg, "\n");
+	post("svg", svg, "\n");
 	mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
 	mgraphics.svg_render("img");
 
 	mgraphics.matrixcalc(outmatrix, outmatrix);
 	findbounds.matrixcalc(outmatrix, outmatrix);
 	//post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
-	return [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]];
+	return [findbounds.boundmin[0], findbounds.boundmin[1] - YrenderOffset, findbounds.boundmax[0], findbounds.boundmax[1] - YrenderOffset];
 }
 
 function renderDrawSocket(d)
@@ -2486,7 +2488,8 @@ function renderDrawSocket(d)
 	//if (svggroupflag == false) var svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + RenderMessageOffset[1]] + ")";
 	//else var svgtransform = _d["transform"];
 	var svgtransform = _d["transform"];
-	post("svgtransform", svgtransform, "\n");
+	//post("svgtransform", svgtransform, "\n");
+	YrenderOffset = 0;
 	switch (_d.new) {
 		case "line" :
 		SVGString.push("<line x1=\"" + _d["x1"] + "\" y1=\"" + _d["y1"] + "\" x2=\"" + _d["x2"] + "\" y2=\"" + _d["y2"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
@@ -2504,7 +2507,9 @@ function renderDrawSocket(d)
 		SVGString.push("<path d=\"" + _d["d"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
 		break;
 		case "text" :
- 		SVGString.push("<text x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" font-family=\"" + _d["font-family"] + "\" font-size=\"" + _d["font-size"] + "\" font-style=\"" + _d["font-style"] + "\" font-weight=\"" + _d["font-weight"] + "\" text-decoration=\"none\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\">" + _d["child"] + "</text>");
+		//post("_d", JSON.stringify(_d), "\n");
+		YrenderOffset = 100;
+ 		SVGString.push("<text x=\"" + _d["x"] + "\" y=\"" + (_d["y"] + YrenderOffset) + "\" font-family=\"" + _d["font-family"] + "\" font-size=\"" + _d["font-size"] + "\" font-style=\"" + _d["font-style"] + "\" font-weight=\"" + _d["font-weight"] + "\" text-decoration=\"none\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\">" + _d["child"] + "</text>");
 		break;
 		case "image" :
 		SVGString.push("<rect x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" width=\"" + _d["width"] + "\" height=\"" + _d["height"] + "\" stroke=\"none\" stroke-width=\"1.\" stroke-opacity=\"1.\" fill=\"black\" fill-opacity=\"1.\" transform=\"" + svgtransform + "\"/>");
@@ -2512,7 +2517,6 @@ function renderDrawSocket(d)
 		case "g" :
 		svggroupflag = true;
 		SVGString.push("<g transform=\"" + svgtransform + "\">");
-		//post("_d", JSON.stringify(_d), "\n");
 		var _e = [];
 		for (var j = 0; j < _d.child.length; j++) {
 		//post("child", JSON.stringify(child), "\n");
