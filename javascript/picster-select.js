@@ -4,6 +4,7 @@ outlets = 4;
 include("xml2json");
 include("fitcurve");
 include("pentool");
+include("djsterNotation");
 
 var output = new Dict();
 output.name = "output";
@@ -228,7 +229,7 @@ if (mode == "picster" && !blocked) {
 		}
 		}
 		outlet(1, foundobjects.get(item).slice(0, foundobjects.get(item).length - 5));
-		
+
 		//post("e", e.stringify(), format, "\n");
 		var tempDict2 = new Dict();
 		tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
@@ -236,7 +237,7 @@ if (mode == "picster" && !blocked) {
 			if (tempDict2.contains("picster-element::expression")) outlet(1, "expression", "dictionary", picster.get("expression").name);
 		}
 		else if (tempDict2.contains("picster-element[2]::val")) {
-			//if (buttonMode) { 
+			//if (buttonMode) {
 			var o = {};
 			var o2 = {};
 			o = JSON.parse(tempDict2.stringify());
@@ -249,7 +250,7 @@ if (mode == "picster" && !blocked) {
 				tempDict.parse(JSON.stringify(o2));
 			outlet(1, "expression", foundobjects.get(item)[2], "dictionary", tempDict.name);
 			//	}
-			}		
+			}
 		else outlet(1, "expression", "clear");
 		}
 		else {
@@ -579,12 +580,12 @@ if (mode == "picster") {
 				attr.style["stroke-width"] = pensize;
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				}
@@ -624,16 +625,16 @@ if (mode == "picster") {
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				}
@@ -675,16 +676,16 @@ if (mode == "picster") {
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				}
@@ -724,16 +725,16 @@ if (mode == "picster") {
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				}
@@ -754,16 +755,16 @@ if (mode == "picster") {
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				}
@@ -792,18 +793,18 @@ if (mode == "picster") {
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
-				
+
 					outlet(3, "bang");
 					polyclicks = [];
 					clickcount = 0;
@@ -831,19 +832,19 @@ if (mode == "picster") {
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
-					
-					
+
+
 					outlet(3, "bang");
 					polyclicks = [];
 					stroke = 0;
@@ -869,12 +870,12 @@ if (mode == "picster") {
 				attr.style["fill-opacity"] = color[3];
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
 
 				outlet(3, "bang");
@@ -905,22 +906,22 @@ if (mode == "picster") {
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				//_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};	
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};	
+				_picster["picster-element"][1].key = "extras";
+				//_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
 				polyclicks = [];
 				clickcount = 0;
 				outlet(3, "bang");
-				
+
 				}
 		      	origin = [];
 				}
@@ -1357,12 +1358,12 @@ function addShape()
 				attr.style["stroke-width"] = pensize;
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1385,16 +1386,16 @@ function addShape()
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1417,16 +1418,16 @@ function addShape()
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1448,16 +1449,16 @@ function addShape()
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1476,16 +1477,16 @@ function addShape()
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};	
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1507,16 +1508,16 @@ function addShape()
 				}
 				else {
 				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;	
+				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";				
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};		
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1533,12 +1534,12 @@ function addShape()
 				attr.style["stroke-width"] = pensize;
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";				
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};		
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1560,12 +1561,12 @@ function addShape()
 				attr.style["fill-opacity"] = color[3];
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};		
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1613,7 +1614,7 @@ function addShape()
 			edit.replace("picster-element::picture_0::info::transform", [ 1.0, 0.0, 0.0, 1.0, 0, 0 ]);
 			edit.replace("picster-element::picture_0::anchors::0", [  _dim[0]/2, _dim[1]/2, 4.0, "yes", 0 ]);
 			*/
-			
+
 				var attr = {};
 				attr.new = "image";
 				attr.id = "Picster-Element_" + num;
@@ -1624,14 +1625,14 @@ function addShape()
 				attr.height = _dim[1];
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};		
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
-			
+
 			outlet(3, "bang");
 			break;
 			}
@@ -1690,7 +1691,7 @@ function removeAllElements()
 		outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 		outlet(0, "saveToUndoStack");
 		outlet(0, "setRenderAllowed", 1);
-	}	
+	}
 	outlet(2, "bounds", "hide");
 }
 
@@ -1730,8 +1731,8 @@ function addExpressionToSelectedShape()
 			//post("numElements", numElements, "\n");
 			if (numElements == 2) {
 			_picster["picster-element"][2] = {};
-			_picster["picster-element"][2].key = "expression";	
-			_picster["picster-element"][2].val = [];	
+			_picster["picster-element"][2].key = "expression";
+			_picster["picster-element"][2].val = [];
 			}
 			expression.id = _picster["picster-element"][2].val.length.toString();
 			expression.editor = expr.get("editor");
@@ -1739,7 +1740,7 @@ function addExpressionToSelectedShape()
 			expression.value = expr.get("value");
 			expression.autorender = expr.get("autorender");
 			_picster["picster-element"][2].val.push(expression);
-			edit.parse(JSON.stringify(_picster));		
+			edit.parse(JSON.stringify(_picster));
 		}
 		else {
 		var expressionCount = (edit.contains("picster-element::expression")) ? edit.get("picster-element::expression").getkeys().length : 0;
@@ -1771,7 +1772,7 @@ function replaceExpressionsForSelectedShape()
 			o = JSON.parse(expr.stringify());
 			for (var i = 0; i < expr.getkeys().length; i++) a[i] = o[expr.getkeys()[i]];
 			_picster["picster-element"][2] = {};
-			_picster["picster-element"][2].key = "expression";	
+			_picster["picster-element"][2].key = "expression";
 			_picster["picster-element"][2].val = [];
 			_picster["picster-element"][2].val = a;
 			//post("dict", JSON.stringify(_picster), "\n");
@@ -1783,7 +1784,7 @@ function replaceExpressionsForSelectedShape()
 			}
 		action = "update";
 		outlet(3, "bang");
-		init(); //we may no longer need this!	
+		init(); //we may no longer need this!
 	}
 }
 
@@ -1839,7 +1840,7 @@ function init()
 							for (var l = 0; l < dictArray.length; l++) jexpr.push(JSON.parse(dictArray[l].stringify()));
 							o[i] = jexpr;
 							outlet(0, "setNoteDimension", 6, i);
-							}		
+							}
 						}
 					else if (userBeans[k]["Message"].indexOf("sequenced") == 0) {
 						e.parse(userBeans[k]["Message"].split(" ")[2]);
@@ -1949,6 +1950,9 @@ function anything()
 				}
 			}
 			break;
+			case 68 : //create Djster Notation
+			createDjsterNotation();
+			break;
 			case 69 :  //edit
 			if (foundobjects.contains("0") && item != -1) edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 			outlet(3, "edit");
@@ -2025,13 +2029,13 @@ function anything()
 				}
 			_picster = {};
 			_picster["picster-element"] = [];
-			_picster["picster-element"][0] = {}; 
+			_picster["picster-element"][0] = {};
 			_picster["picster-element"][0]["key"] = "svg";
 			_picster["picster-element"][0]["val"] = attr;
 			_picster["picster-element"][1] = {};
-			_picster["picster-element"][1].key = "extras";	
-			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};	
-			var incidence = false;		
+			_picster["picster-element"][1].key = "extras";
+			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+			var incidence = false;
 			var xpr = [];
 			for (var i = 0; i < tempObjArray.length; i++) {
 				if (tempObjArray[i]["picster-element"].length > 2) {
@@ -2044,7 +2048,7 @@ function anything()
 			}
 			if (incidence) {
 			_picster["picster-element"][2] = {};
-			_picster["picster-element"][2].key = "expression";	
+			_picster["picster-element"][2].key = "expression";
 			_picster["picster-element"][2].val = xpr;
 			}
 			edit.parse(JSON.stringify(_picster));
@@ -2052,7 +2056,7 @@ function anything()
 			//post("BOUNDS", findBoundsToo([].concat(attr)), "\n");
 			action = "addShape";
 			outlet(3, "bang");
-			// restore picster preference 
+			// restore picster preference
 			}
 			break;
 			case 76 : //l
@@ -2195,12 +2199,12 @@ function anything()
 				attr.height = _dim[1];
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {}; 
+				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";	
-				_picster["picster-element"][1].val = {"bounds" : [origin[0], origin[1], _dim[0] + origin[0], _dim[1] + origin[1]]};		
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [origin[0], origin[1], _dim[0] + origin[0], _dim[1] + origin[1]]};
 				edit.parse(JSON.stringify(_picster));
 			outlet(3, "bang");
 			}
@@ -2296,7 +2300,7 @@ function findBounds(d)
 			var keys = [];
 			var temp = [].concat(d.getkeys());
 			for (var i = 0; i < temp.length; i++){
-				switch (temp[i]) { 
+				switch (temp[i]) {
 					case "name" :
 					break;
 					case "bounds" :
@@ -2304,7 +2308,7 @@ function findBounds(d)
 					case "expression" :
 					break;
 					default :
-					keys.push(temp[i]);	
+					keys.push(temp[i]);
 				}
 			}
 			for (var k = 0; k < keys.length; k++) {
@@ -2352,7 +2356,7 @@ function findBounds(d)
 								/*
 								*/
 								svgfill = svgstroke;
-             					svgfillopacity = svgstrokeopacity;					
+             					svgfillopacity = svgstrokeopacity;
                                break;
                             case "textcolor":
 								if (command[1] == "$FRGB") {
@@ -2363,7 +2367,7 @@ function findBounds(d)
 								svgstroke = "rgb("+ Math.round(command[1] * 255) + "," + Math.round(command[2] * 255) + "," + Math.round(command[3] * 255) + ")";
              					svgstrokeopacity = command[4];
 								svgfill = svgstroke;
-             					svgfillopacity = svgstrokeopacity;	
+             					svgfillopacity = svgstrokeopacity;
 								}
 								svgstrokewidth = 0;
                               break;
@@ -2508,7 +2512,7 @@ function renderDrawSocket(d)
 		break;
 		case "image" :
 		SVGString.push("<rect x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" width=\"" + _d["width"] + "\" height=\"" + _d["height"] + "\" stroke=\"none\" stroke-width=\"1.\" stroke-opacity=\"1.\" fill=\"black\" fill-opacity=\"1.\" transform=\"" + svgtransform + "\"/>");
-		break;	
+		break;
 		case "g" :
 		svggroupflag = true;
 		SVGString.push("<g transform=\"" + svgtransform + "\">");
@@ -2523,10 +2527,10 @@ function renderDrawSocket(d)
 		renderDrawSocket(_e);
 		break;
 		}
-	}	
+	}
 }
 
-function htmlEntities(str) 
+function htmlEntities(str)
 {
     return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;"); //"
 }
@@ -2545,4 +2549,3 @@ function ovalarc(startangle, endangle, cx, cy, r1, r2) {
 //            + " Z\"";                       // Close path back to (cx,cy)
  		return d;
 }
-
