@@ -38,20 +38,8 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "1485137-maxscore",
+		"globalpatchername" : "1530056-maxscore",
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 590.0, 181.0, 24.0, 24.0 ]
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"fontname" : "Arial Bold",
 					"fontsize" : 10.0,
@@ -1226,7 +1214,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 556.5, 395.0, 210.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 0.0, 160379488.0, 72.0, 0.5, 0.25, 3.0, 0.0, 0.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1258,7 +1246,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 491.5, 216.0, 268.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"initial" : [ "1485137-" ],
+						"initial" : [ "1530056-" ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -6812,7 +6800,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[13]",
+							"parameter_longname" : "live.text[37]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -7084,13 +7072,6 @@
 					"destination" : [ "obj-16", 1 ],
 					"midpoints" : [ 586.5, 180.0, 501.999999999999886, 180.0 ],
 					"source" : [ "obj-79", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-125", 0 ],
-					"source" : [ "obj-8", 0 ]
 				}
 
 			}
