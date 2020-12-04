@@ -21,7 +21,7 @@ findbounds.min = [0, 0, 0, 0];
 findbounds.max = [1, 1, 1, 0.99];
 var renderedMessages = new Dict();
 var RenderMessageOffset = [];
-var YrenderOffset = 0;
+var textRenderOffset = [0, 0];
 var offsets = {};
 var foundobjects = new Dict;
 foundobjects.name = "foundobjects";
@@ -2489,7 +2489,7 @@ function findBoundsToo(d)
 	mgraphics.matrixcalc(outmatrix, outmatrix);
 	findbounds.matrixcalc(outmatrix, outmatrix);
 	//post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
-	return [findbounds.boundmin[0], findbounds.boundmin[1] - YrenderOffset, findbounds.boundmax[0], findbounds.boundmax[1] - YrenderOffset];
+	return [findbounds.boundmin[0] - textRenderOffset[0], findbounds.boundmin[1] - textRenderOffset[1], findbounds.boundmax[0]  - textRenderOffset[0], findbounds.boundmax[1] - textRenderOffset[1]];
 }
 
 function renderDrawSocket(d)
@@ -2502,7 +2502,7 @@ function renderDrawSocket(d)
 	//else var svgtransform = _d["transform"];
 	var svgtransform = _d["transform"];
 	//post("svgtransform", svgtransform, "\n");
-	YrenderOffset = 0;
+	textRenderOffset = [0, 0];
 	switch (_d.new) {
 		case "line" :
 		SVGString.push("<line x1=\"" + _d["x1"] + "\" y1=\"" + _d["y1"] + "\" x2=\"" + _d["x2"] + "\" y2=\"" + _d["y2"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
@@ -2521,8 +2521,9 @@ function renderDrawSocket(d)
 		break;
 		case "text" :
 		//post("_d", JSON.stringify(_d), "\n");
-		YrenderOffset = 100;
- 		SVGString.push("<text x=\"" + _d["x"] + "\" y=\"" + (_d["y"] + YrenderOffset) + "\" font-family=\"" + _d["font-family"] + "\" font-size=\"" + _d["font-size"] + "\" font-style=\"" + _d["font-style"] + "\" font-weight=\"" + _d["font-weight"] + "\" text-decoration=\"none\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\">" + _d["child"] + "</text>");
+		if (!(_d.hasOwnProperty("text-anchor"))) _d["text-anchor"] = "start";
+		textRenderOffset = [100, 100];
+ 		SVGString.push("<text x=\"" + (_d["x"] + textRenderOffset[0]) + "\" y=\"" + (_d["y"] + textRenderOffset[1]) + "\" font-family=\"" + _d["font-family"] + "\" font-size=\"" + _d["font-size"] + "\" font-style=\"" + _d["font-style"] + "\" font-weight=\"" + _d["font-weight"] + "\" text-anchor=\"" + _d["text-anchor"] + "\" text-decoration=\"none\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\">" + _d["child"] + "</text>");
 		break;
 		case "image" :
 		SVGString.push("<rect x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" width=\"" + _d["width"] + "\" height=\"" + _d["height"] + "\" stroke=\"none\" stroke-width=\"1.\" stroke-opacity=\"1.\" fill=\"black\" fill-opacity=\"1.\" transform=\"" + svgtransform + "\"/>");
