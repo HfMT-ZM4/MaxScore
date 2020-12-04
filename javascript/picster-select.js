@@ -866,6 +866,7 @@ if (mode == "picster") {
 				attr["font-size"] = fontsize;
 				attr["font-weight"] = "normal";
 				attr["font-style"] = "normal";
+				attr["text-anchor"] = "start";
 				//attr.rotate = 0;
 				attr.style = {};
 				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -1557,6 +1558,7 @@ function addShape()
 				attr["font-size"] = fontsize;
 				attr["font-weight"] = "normal";
 				attr["font-style"] = "normal";
+				attr["text-anchor"] = "start";
 				//attr.rotate = 0;
 				attr.style = {};
 				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -1812,29 +1814,36 @@ function init()
 		increment = 0;
 		anchors = {};
 		outlet(0, "getNoteAnchor");
-		var _anchors = JSON.parse(JSON.stringify(anchors));
+		var _anchors = {};
+		for (var key in anchors) if (anchors[key][5] != -1) _anchors[key] = anchors[key];
+		//var _anchors = JSON.parse(JSON.stringify(anchors));
 		outlet(0, "setRenderAllowed", 0);
 		outlet(0, "selectAll");
+		anchors = {};
 		outlet(0, "getNoteAnchor");
 		outlet(0, "clearSelection");
 		//outlet(3, "clear");
-		var keys = Object.keys(anchors);
+		var keys = [];
+		for (var key in anchors) if (anchors[key][5] != -1) keys.push(key);
+		//var keys = Object.keys(anchors);
+		//post("anchors-2", JSON.stringify(anchors), "\n");
 		var expr = new Dict();
 		var e = new Dict();
 		var o = {};
 		for (var i = 0; i < keys.length; i++){
 			var jexpr = [];
-			anchor = anchors[i];
+			anchor = anchors[keys[i]];
+			//post("anchor", JSON.stringify(anchors), anchor,"\n");
 			outlet(0, "selectNote", anchor[2], anchor[3], anchor[4], anchor[5]);
 			if (anchor[6] != -1) for (var j = 0; j <= anchor[6]; j++) outlet(0, "selectNextInterval");
 			outlet(0, "getSelectedNoteInfo");
 			var key = Object.keys(json);
 			//look through all userBeans and add instance # to note dimension
+			//if (key.length > 0) {
 			if ("userBean" in json[key]){
 			var userBeans = [].concat(json[key]["userBean"]);
 				for (var k = 0; k < userBeans.length; k++) {
 					//e.clear();
-					//post("success", "\n");
 					if (userBeans[k]["Message"].indexOf("rendered") == -1 && userBeans[k]["Message"].indexOf("sequenced") == -1) {
 					e.parse(userBeans[k]["Message"]);
 						if (e.contains("picster-element[2]::val")) {
@@ -1852,7 +1861,6 @@ function init()
 						o2.value = e.get("0").slice(1);
 						jexpr.push(o2);
 						o[i] = jexpr;
-						//post("o", JSON.stringify(o), k, "\n");
 						outlet(0, "setNoteDimension", 6, i);
 					}
 					else {
@@ -1871,7 +1879,8 @@ function init()
 				else {
 				outlet(0, "setNoteDimension", 6, -1);
 				}
-			}
+			//}	
+		}
 		expr.parse(JSON.stringify(o));
  		outlet(1, "dictionary", expr.name);
 		restoreSelection(_anchors);
