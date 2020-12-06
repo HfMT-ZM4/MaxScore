@@ -2542,32 +2542,277 @@ function addShapeFromExpression() {
 			//post("Picster element contains expressions\n");
 			var i = 0;
 			while (edit.contains("picster-element[2]::val["+i+"]::editor")) { // loop until all expressions are done
-				post("Processing the "+i+"th expression\n");
+				post("Processing expression "+(i+1)+"\n");
 				switch (edit.get("picster-element[2]::val["+i+"]::editor")) { // type of expression
+					//djster notation
 					case "djster" :
 					//picster group template
 					var timeStamp = Date.now();
-					var outputPicster = JSON.parse('{"picster-element":[{"key":"svg","val":{"new":"g","id":"Picster-Element_'+timeStamp+'","child":[],"transform":"matrix(1,0,0,1,0,0)"}},{"key":"extras","val":{"bounds":[-1,-1,-1,-1]}}]}');
+					var groupId = "Picster-Element_"+timeStamp;
+					var outputPicster = JSON.parse('{"picster-element":[{"key":"svg","val":{"new":"g","id":"'+groupId+'","child":[],"transform":"matrix(1,0,0,1,0,0)"}},{"key":"extras","val":{"bounds":[90,90,330,270]}}]}');
 					//parse djster attributes from Dict edit
 					var djsterAttributes = JSON.parse(edit.stringify())["picster-element"][2]["val"][i]["value"];
 
-					if ("scale" in djsterAttributes) {
-						timeStamp++;
-						var element = JSON.parse('{"new":"text","x":140,"y":30,"font-family":"Aloisen New","font-size":18,"style":{"fill":"rgb(0,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
-						element.id = "Picster-Element_"+timeStamp;
-						element.child = djsterAttributes.scale;
+					//draw border
+					var border = JSON.parse('{"new":"rect","x":90,"y":90,"width":240,"height":180,"style":{"stroke":"black","stroke-width":1,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+					border.id = groupId+"_border";
+					outputPicster["picster-element"][0]["val"]["child"].push(border);
 
+					//main stem
+					var stem = JSON.parse('{"new":"line","x1":215,"y1":125,"x2":215,"y2":200,"style":{"stroke":"rgb(0, 191, 63)","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+					stem.id = groupId+"_stem";
+					outputPicster["picster-element"][0]["val"]["child"].push(stem);
+
+					//meter
+					if ("meter" in djsterAttributes) {
+						var l = djsterAttributes.meter.length;
+						var border = JSON.parse('{"new":"rect","x":215,"y":125,"width":105,"height":60,"style":{"stroke":"green","stroke-width":1,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						border.id = groupId+"_meter";
+						outputPicster["picster-element"][0]["val"]["child"].push(border);
+						for (var j = 0; j < l; j++) {
+							var xl = Math.round(215 + j/l*105);
+							var xr = Math.round(xl+105/l);
+							var y = Math.round(125 + (j+1)*Math.min(50/l, 20));
+							var vert = JSON.parse('{"new":"line","x1":'+xr+',"y1":125,"x2":'+xr+',"y2":'+y+',"style":{"stroke":"rgb(0, 191, 63)","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							vert.id = groupId+"_meter_vert_"+j;
+							outputPicster["picster-element"][0]["val"]["child"].push(vert);
+							var hor = JSON.parse('{"new":"line","x1":'+xl+',"y1":127,"x2":320,"y2":127,"style":{"stroke":"rgb(0, 191, 63)","stroke-width":4,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							hor.id = groupId+"_meter_hor_"+j;
+							outputPicster["picster-element"][0]["val"]["child"].push(hor);
+						}
+					}
+
+					//event length and pulse length
+					if ("event_length" in djsterAttributes && "pulse_length" in djsterAttributes) {
+						if (djsterAttributes.event_length > djsterAttributes.pulse_length) {
+							var thickh = JSON.parse('{"new":"line","x1":210,"y1":200,"x2":320,"y2":200,"style":{"stroke":"rgb(0, 0, 255)","stroke-width":5,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							thickh.id = groupId+"_event_thickh";
+							outputPicster["picster-element"][0]["val"]["child"].push(thickh);
+							var shortv = JSON.parse('{"new":"line","x1":320,"y1":196,"x2":320,"y2":204,"style":{"stroke":"rgb(0, 0, 255)","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							shortv.id = groupId+"_event_shortv";
+							outputPicster["picster-element"][0]["val"]["child"].push(shortv);
+							var longv = JSON.parse('{"new":"line","x1":280,"y1":192,"x2":280,"y2":208,"style":{"stroke":"rgb(0, 0, 255)","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							longv.id = groupId+"_event_longv";
+							outputPicster["picster-element"][0]["val"]["child"].push(longv);
+						}
+						else {
+							var thickh = JSON.parse('{"new":"line","x1":210,"y1":200,"x2":280,"y2":200,"style":{"stroke":"rgb(0, 0, 255)","stroke-width":5,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							thickh.id = groupId+"_event_thickh";
+							outputPicster["picster-element"][0]["val"]["child"].push(thickh);
+							var thinh = JSON.parse('{"new":"line","x1":210,"y1":200,"x2":320,"y2":200,"style":{"stroke":"rgb(0, 0, 255)","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							thinh.id = groupId+"_event_thinh";
+							outputPicster["picster-element"][0]["val"]["child"].push(thinh);
+							var shortv = JSON.parse('{"new":"line","x1":280,"y1":196,"x2":280,"y2":204,"style":{"stroke":"rgb(0, 0, 255)","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							shortv.id = groupId+"_event_shortv";
+							outputPicster["picster-element"][0]["val"]["child"].push(shortv);
+							var longv = JSON.parse('{"new":"line","x1":320,"y1":192,"x2":320,"y2":208,"style":{"stroke":"rgb(0, 0, 255)","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							longv.id = groupId+"_event_longv";
+							outputPicster["picster-element"][0]["val"]["child"].push(longv);
+						}
+						var smaller = JSON.parse('{"new":"text","x":250,"y":195,"font-family":"Arial","font-size":12,"style":{"fill":"rgb(0, 0, 255)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						smaller.id = groupId+"_event_smaller";
+						smaller.child = Math.round(Math.min(djsterAttributes.event_length, djsterAttributes.pulse_length));
+						outputPicster["picster-element"][0]["val"]["child"].push(smaller);
+						var larger = JSON.parse('{"new":"text","x":295,"y":195,"font-family":"Arial","font-size":12,"style":{"fill":"rgb(0, 0, 255)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						larger.id = groupId+"_event_larger";
+						larger.child = Math.round(Math.max(djsterAttributes.event_length, djsterAttributes.pulse_length));
+						outputPicster["picster-element"][0]["val"]["child"].push(larger);
+					}
+
+					//main notehead
+					var notehead = JSON.parse('{"new":"text","x":199,"y":200,"text-anchor":"end","font-family":"Aloisen New","child":"","font-size":55,"style":{"fill":"rgb(255,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+					notehead.id = groupId+"_notehead";
+					outputPicster["picster-element"][0]["val"]["child"].push(notehead);
+
+					//chordal_weight
+					if ("chordal_weight" in djsterAttributes && djsterAttributes.chordal_weight > 1) {
+						for (var j = 1; j < djsterAttributes.chordal_weight; j++) {
+							var y = 198 - j*10;
+							var chordal_weight = JSON.parse('{"new":"text","x":203,"y":'+y+',"text-anchor":"end","font-family":"Aloisen New","child":"","font-size":40,"style":{"fill":"rgb(255, 127, 191)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+							chordal_weight.id = groupId+"_chordal_weight_"+i;
+							outputPicster["picster-element"][0]["val"]["child"].push(chordal_weight);
+						}
+					}
+
+					//silent downbeat
+					if ("silent_downbeat" in djsterAttributes && djsterAttributes.silent_downbeat == 1) {
+						var silent_downbeat = JSON.parse('{"new":"text","x":195,"y":135,"child":"","font-family":"Aloisen New","font-size":50,"style":{"fill":"rgb(0, 191, 63)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						silent_downbeat.id = groupId+"_silent_downbeat";
+						outputPicster["picster-element"][0]["val"]["child"].push(silent_downbeat);
+					}
+
+					//pitch bar
+					var pitch_vertical = JSON.parse('{"new":"line","x1":140,"y1":125,"x2":140,"y2":230,"style":{"stroke":"red","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+					pitch_vertical.id = groupId+"_pitch_vertical";
+					outputPicster["picster-element"][0]["val"]["child"].push(pitch_vertical);
+					var pitch_top = JSON.parse('{"new":"line","x1":130,"y1":125,"x2":150,"y2":125,"style":{"stroke":"red","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+					pitch_top.id = groupId+"_pitch_top";
+					outputPicster["picster-element"][0]["val"]["child"].push(pitch_top);
+					var pitch_bottom = JSON.parse('{"new":"line","x1":130,"y1":230,"x2":150,"y2":230,"style":{"stroke":"red","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+					pitch_bottom.id = groupId+"_pitch_bottom";
+					outputPicster["picster-element"][0]["val"]["child"].push(pitch_bottom);
+					var pitch_circle = JSON.parse('{"new":"ellipse","cx":140,"cy":178,"rx":10,"ry":10,"style":{"stroke":"red","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+					pitch_circle.id = groupId+"_pitch_circle";
+					outputPicster["picster-element"][0]["val"]["child"].push(pitch_circle);
+
+					//pitch center
+					if ("pitch_center" in djsterAttributes) {
+						var pitch_center = JSON.parse('{"new":"text","x":150,"y":172,"font-family":"Arial","font-size":18,"style":{"fill":"red","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						pitch_center.id = groupId+"_pitch_center";
+						pitch_center.child = djsterAttributes.pitch_center;
+						outputPicster["picster-element"][0]["val"]["child"].push(pitch_center);
+					}
+
+					//melody scope
+					if ("melody_scope" in djsterAttributes) {
+						var melody_scope = JSON.parse('{"new":"text","x":142,"y":200,"font-family":"Arial","font-size":14,"style":{"fill":"red","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						melody_scope.id = groupId+"_melody_scope";
+						melody_scope.child = "±"+djsterAttributes.melody_scope;
+						outputPicster["picster-element"][0]["val"]["child"].push(melody_scope);
+					}
+
+					//pitch range
+					if ("pitch_range" in djsterAttributes) {
+						var pitch_range = JSON.parse('{"new":"text","x":142,"y":140,"font-family":"Arial","font-size":16,"style":{"fill":"red","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						pitch_range.id = groupId+"_pitch_range";
+						pitch_range.child = "±"+djsterAttributes.pitch_range;
+						outputPicster["picster-element"][0]["val"]["child"].push(pitch_range);
+					}
+
+					//tonic pitch
+					if ("tonic_pitch" in djsterAttributes) {
+						var tonic_pitch = JSON.parse('{"new":"text","x":175,"y":220,"font-family":"Arial","font-size":18,"style":{"fill":"red","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						tonic_pitch.id = groupId+"_tonic_pitch";
+						tonic_pitch.child = djsterAttributes.tonic_pitch;
+						outputPicster["picster-element"][0]["val"]["child"].push(tonic_pitch);
+					}
+
+					//scale
+					if ("scale" in djsterAttributes) {
+						var element = JSON.parse('{"new":"text","x":100,"y":110,"font-family":"Arial","font-size":18,"style":{"fill":"red","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						element.id = groupId+"_scale";
+						element.child = djsterAttributes.scale;
 						outputPicster["picster-element"][0]["val"]["child"].push(element);
 					}
 
-					/*if ("meter" in djsterAttributes) {
-						timeStamp++;
-						var element = JSON.parse('{"new":"g","id":"Picster-Element_'+timeStamp+'","child":[],"transform":"matrix(1,0,0,1,0,0)"}');
-						var l = djsterAttributes.meter.length;
+					if ("dynamics" in djsterAttributes) {
+						/*
+						//For nested group
+						var group = JSON.parse('{"new":"g","child":[],"transform":"matrix(1,0,0,1,0,0)"}');
+						group.id = groupId+"_dynamics";
 
+
+						var border = JSON.parse('{"new":"rect","x":100,"y":240,"width":75,"height":20,"style":{"stroke":"rgb(0.8, 0.6, 0.4)","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						border.id = groupId+"_dynamics_border";
+						group.child.push(border);
+
+						var fillbarlength = Math.round(djsterAttributes.dynamics / 127 * 75);
+						var fillbar = JSON.parse('{"new":"rect","x":100,"y":240,"width":'+fillbarlength+',"height":20,"style":{"fill":"rgb(0.4, 0.3, 0.2)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						fillbar.id = groupId+"_dynamics_fillbar";
+						group.child.push(fillbar);
+
+						var dtext = JSON.parse('{"new":"text","x":100,"y":250,"font-family":"Arial","font-size":10,"style":{"fill":"white","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						dtext.id = groupId+"_dynamics_text";
+						group.child.push(dtext);
+						*/
+
+						var fillbarlength = Math.round(djsterAttributes.dynamics / 127 * 105);
+						var fillbar = JSON.parse('{"new":"rect","x":100,"y":240,"width":'+fillbarlength+',"height":20,"style":{"fill":"rgb(191, 159, 127)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						fillbar.id = groupId+"_dynamics_fillbar";
+						outputPicster["picster-element"][0]["val"]["child"].push(fillbar);
+
+						var border = JSON.parse('{"new":"rect","x":100,"y":240,"width":105,"height":20,"style":{"stroke":"rgb(95, 79, 63)","stroke-width":2, "stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						border.id = groupId+"_dynamics_border";
+						outputPicster["picster-element"][0]["val"]["child"].push(border);
+
+						var text = JSON.parse('{"new":"text","x":104,"y":254,"child":"d","font-family":"Arial","font-size":16,"style":{"fill":"white","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						text.id = groupId+"_dynamics_text";
+						outputPicster["picster-element"][0]["val"]["child"].push(text);
 
 					}
-					*/
+
+					if ("attenuation" in djsterAttributes) {
+						var fillbarlength = Math.round(djsterAttributes.attenuation / 100 * 105);
+						var fillbar = JSON.parse('{"new":"rect","x":215,"y":240,"width":'+fillbarlength+',"height":20,"style":{"fill":"rgb(191, 159, 127)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						fillbar.id = groupId+"_attenuation_fillbar";
+						outputPicster["picster-element"][0]["val"]["child"].push(fillbar);
+
+						var border = JSON.parse('{"new":"rect","x":215,"y":240,"width":105,"height":20,"style":{"stroke":"rgb(95, 79, 63)","stroke-width":2, "stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						border.id = groupId+"_attenuation_border";
+						outputPicster["picster-element"][0]["val"]["child"].push(border);
+
+						var text = JSON.parse('{"new":"text","x":219,"y":254,"child":"a","font-family":"Arial","font-size":16,"text-anchor":"end","style":{"fill":"white","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						text.id = groupId+"_attenuation_text";
+						outputPicster["picster-element"][0]["val"]["child"].push(text);
+					}
+
+					if ("eventfulness" in djsterAttributes) {
+						var fillbarlength = Math.round(djsterAttributes.eventfulness / 100 * 105);
+						var fillbar = JSON.parse('{"new":"rect","x":215,"y":210,"width":'+fillbarlength+',"height":20,"style":{"fill":"rgb(127, 191, 255)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						fillbar.id = groupId+"_eventfulness_fillbar";
+						outputPicster["picster-element"][0]["val"]["child"].push(fillbar);
+
+						var border = JSON.parse('{"new":"rect","x":215,"y":210,"width":105,"height":20,"style":{"stroke":"rgb(0, 0, 255)","stroke-width":2, "stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						border.id = groupId+"_eventfulness_border";
+						outputPicster["picster-element"][0]["val"]["child"].push(border);
+
+						var text = JSON.parse('{"new":"text","x":219,"y":224,"child":"e","font-family":"Arial","font-size":16,"text-anchor":"end","style":{"fill":"white","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						text.id = groupId+"_eventfulness_text";
+						outputPicster["picster-element"][0]["val"]["child"].push(text);
+					}
+
+					if ("harmoniclarity" in djsterAttributes) {
+						var fillbarlength = Math.round(djsterAttributes.eventfulness / 100 * 105);
+						var fillbarystart = 230-fillbarlength;
+						var fillbar = JSON.parse('{"new":"rect","x":100,"y":'+fillbarystart+',"width":20,"height":'+fillbarlength+',"style":{"fill":"rgb(255, 127, 191)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						fillbar.id = groupId+"_harmoniclarity_fillbar";
+						outputPicster["picster-element"][0]["val"]["child"].push(fillbar);
+
+						var border = JSON.parse('{"new":"rect","x":100,"y":125,"width":20,"height":105,"style":{"stroke":"rgb(255, 0, 0)","stroke-width":2, "stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						border.id = groupId+"_harmoniclarity_border";
+						outputPicster["picster-element"][0]["val"]["child"].push(border);
+
+						var text = JSON.parse('{"new":"text","x":105,"y":220,"child":"h","font-family":"Arial","font-size":16,"text-anchor":"end","style":{"fill":"white","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						text.id = groupId+"_harmoniclarity_text";
+						outputPicster["picster-element"][0]["val"]["child"].push(text);
+					}
+
+					if ("metriclarity" in djsterAttributes) {
+						var fillbarlength = Math.round(djsterAttributes.metriclarity / 100 * 105);
+						var fillbar = JSON.parse('{"new":"rect","x":215,"y":100,"width":'+fillbarlength+',"height":20,"style":{"fill":"rgb(63, 255, 127)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						fillbar.id = groupId+"_metriclarity_fillbar";
+						outputPicster["picster-element"][0]["val"]["child"].push(fillbar);
+
+						var border = JSON.parse('{"new":"rect","x":215,"y":100,"width":105,"height":20,"style":{"stroke":"rgb(0, 191, 63)","stroke-width":2, "stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						border.id = groupId+"_metriclarity_border";
+						outputPicster["picster-element"][0]["val"]["child"].push(border);
+
+						var text = JSON.parse('{"new":"text","x":219,"y":112,"child":"m","font-family":"Arial","font-size":16,"text-anchor":"end","style":{"fill":"white","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+						text.id = groupId+"_metriclarity_text";
+						outputPicster["picster-element"][0]["val"]["child"].push(text);
+					}
+
+					//draw new picster element
+					edit.parse(JSON.stringify(outputPicster));
+				  action = "addShape";
+				  outlet(3, "bang");
+					break;
+
+					//normal expression messages
+					case "default":
+					var msgstring = edit.get("picster-element[2]::val["+i+"]::message");
+					//picster group template
+					var timeStamp = Date.now();
+					var groupId = "Picster-Element_"+timeStamp;
+					var outputPicster = JSON.parse('{"picster-element":[{"key":"svg","val":{"new":"g","id":"'+groupId+'","child":[],"transform":"matrix(1,0,0,1,0,0)"}},{"key":"extras","val":{"bounds":[90,90,190,120]}}]}');
+
+					//draw components
+					var text = JSON.parse('{"new":"text","x":110,"y":110,"child":"'+msgstring+'","font-family":"Arial","font-size":20,"text-anchor":"end","style":{"fill":"blue","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+					text.id = groupId+"_text";
+					outputPicster["picster-element"][0]["val"]["child"].push(text);
+					var border = JSON.parse('{"new":"rect","x":90,"y":90,"width":100,"height":30,"rx":[15],"style":{"stroke":"blue","stroke-width":3,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+					border.id = groupId+"_border";
+					outputPicster["picster-element"][0]["val"]["child"].push(border);
 
 					//draw new picster element
 					edit.parse(JSON.stringify(outputPicster));
