@@ -2362,8 +2362,9 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "text" :
+				if (!(picster.contains("text-anchor"))) picster.replace("text-anchor", "start");
  				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
- 				SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + ">" + picster.get("child") + "</text>");
+ 				SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-anchor=\"" + picster.get("text-anchor") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + ">" + picster.get("child") + "</text>");
 				break;
 				case "image" :
 				var imgtype = (picster.get("href").substr(picster.get("href").lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
