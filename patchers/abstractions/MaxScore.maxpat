@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 182.0, 256.0, 913.0, 424.0 ],
+		"rect" : [ 84.0, 129.0, 901.0, 440.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -77,21 +77,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 2,
 					"maxclass" : "newobj",
-<<<<<<< Updated upstream
-					"numinlets" : 4,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 98.0, 70.0, 215.0, 35.0 ],
-					"text" : "routepass picster setUserClef setToneDivision"
-=======
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 98.0, 71.0, 215.0, 22.0 ],
 					"text" : "routepass setUserClef setToneDivision"
->>>>>>> Stashed changes
 				}
 
 			}
@@ -195,7 +186,7 @@
 				"box" : 				{
 					"comment" : "Index for transcribed notes",
 					"id" : "obj-9",
-					"index" : 4,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -207,7 +198,7 @@
 				"box" : 				{
 					"comment" : "Timed messages for playback",
 					"id" : "obj-8",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -219,7 +210,7 @@
 				"box" : 				{
 					"comment" : "Messages sent in response to info queries",
 					"id" : "obj-7",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -231,7 +222,7 @@
 				"box" : 				{
 					"comment" : "Drawing messages to be rendered",
 					"id" : "obj-6",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -243,7 +234,7 @@
 				"box" : 				{
 					"comment" : "(anything) XML data to clone a score",
 					"id" : "obj-4",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -256,7 +247,7 @@
 				"box" : 				{
 					"comment" : "(anything) Control messages",
 					"id" : "obj-3",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -706,13 +697,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-18", 3 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-18", 2 ]
 				}
 
@@ -818,7 +802,9 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [  ],
+		"autosave" : 0
 	}
 
 }
