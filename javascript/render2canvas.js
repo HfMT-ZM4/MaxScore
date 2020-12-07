@@ -1263,8 +1263,9 @@ function anything() {
 			var dest = remap(sg[s], msg[1], msg[10]);
 			if (dest != -1)
 			{
+			var compress = (msg[11] < 30) ? 1.5 : 1;
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"" + frgb + "\" transform=\"matrix(" + [msg[11]/100., 0., 0., orient, msg[9], dest[d] + 7] + ")\"/>");
+			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"" + frgb + "\" transform=\"matrix(" + [msg[11]/100., 0., 0., orient/compress, msg[9], dest[d] + 7] + ")\"/>");
 			}
 			}
 			}
@@ -1550,7 +1551,7 @@ function anything() {
 					for (var d = 0; d < dest.length; d++) {
 					//post("picster-1", picster.stringify(), "\n");					
 					renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
-					if (svggroupflag == true) SVGGraphics[s + 1].push("</g>");
+					//if (svggroupflag == true) SVGGraphics[s + 1].push("</g>");
 								}
 							}
 						}
@@ -2328,15 +2329,18 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				group = JSON.parse(picster.stringify());
 				for (var i = 0; i < group.child.length; i++) {
 					var child = group.child[i];
-					svgtransform = group.child[i].transform.substr(group.child[i].transform.indexOf("(") + 1, group.child[i].transform.lastIndexOf(")") - group.child[i].transform.indexOf("(") - 1).split(",").map(Number);
-					svgstroke = group.child[i].style.stroke;
-					svgstrokeopacity = group.child[i].style["stroke-opacity"];
-					svgfill = group.child[i].style.fill;
-					svgfillopacity = group.child[i].style["fill-opacity"];
+					svgtransform = child.transform.substr(child.transform.indexOf("(") + 1, child.transform.lastIndexOf(")") - child.transform.indexOf("(") - 1).split(",").map(Number);
+					if (child.hasOwnProperty("style")) {
+					svgstroke = child.style.stroke;
+					svgstrokeopacity = child.style["stroke-opacity"];
+					svgfill = child.style.fill;
+					svgfillopacity = child.style["fill-opacity"];
+					}
 					tempDict.clear();
 					tempDict.parse(JSON.stringify(child));
 					renderDrawSocket(s, _dest, RenderMessageOffset, tempDict);
 					}
+				SVGGraphics[s + 1].push("</g>");
 				break;
 				case "line" :
 				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
