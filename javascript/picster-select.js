@@ -1649,8 +1649,7 @@ function attach()
 	mode = "picster";
 	var elem = arrayfromargs(arguments);
 	edit.clear();
-	//post("elem", elem, "\n");
-	if (elem[0] == "dictionary") edit.name = elem[1];
+	if (elem[0] == "dictionary") edit.clone(elem[1]);
 	else if (elem[0].substr(elem[0].lastIndexOf(".") + 1).toLowerCase() == "json") edit.import_json(elem);
 	else return;
 	outlet(0, "getSelectionBufferSize");
@@ -1667,6 +1666,7 @@ function attach()
 				else offsets[0] = [ anchor[1] / factor, anchor[2] / factor ];
 				}
 				else if (selectionBufferSize != 0) {
+		post("elem", elem, edit.stringify(), "\n");
 					increment = 0;
 					anchors = {};
 					outlet(0, "getNoteAnchor");
@@ -1675,6 +1675,7 @@ function attach()
 					offsets[0] = [ anchor[0] / factor, anchor[1] / factor ];
 				}
 			}
+		post("edit", edit.stringify(), "\n");
 		action = "addShape";
 		outlet(3, "bang");
 		mode = currentMode;
@@ -1732,7 +1733,6 @@ function addExpressionToSelectedShape()
 			var expression = {};
 			_picster = JSON.parse(edit.stringify());
 			var numElements = _picster["picster-element"].length;
-			//post("numElements", numElements, "\n");
 			if (numElements == 2) {
 			_picster["picster-element"][2] = {};
 			_picster["picster-element"][2].key = "expression";
@@ -1753,7 +1753,7 @@ function addExpressionToSelectedShape()
 		edit.replace("picster-element::expression::" + expressionCount + "::value", expr.get("value"));
 		edit.replace("picster-element::expression::" + expressionCount + "::autorender", expr.get("autorender"));
 		}
-		//post("dict", edit.stringify(), "\n");
+		post("dict", edit.stringify(), "\n");
 		action = "update";
 		outlet(3, "bang");
 		init(); //we may no longer need this!
@@ -1833,11 +1833,11 @@ function init()
 		for (var i = 0; i < keys.length; i++){
 			var jexpr = [];
 			anchor = anchors[keys[i]];
-			//post("anchor", JSON.stringify(anchors), anchor,"\n");
 			outlet(0, "selectNote", anchor[2], anchor[3], anchor[4], anchor[5]);
 			if (anchor[6] != -1) for (var j = 0; j <= anchor[6]; j++) outlet(0, "selectNextInterval");
 			outlet(0, "getSelectedNoteInfo");
 			var key = Object.keys(json);
+			post("json", JSON.stringify(json),"\n");
 			//look through all userBeans and add instance # to note dimension
 			//if (key.length > 0) {
 			if ("userBean" in json[key]){
@@ -2073,14 +2073,103 @@ function anything()
 			case 76 : //l
 			if (foundobjects.contains("0") && item != -1) this.patcher.getnamed("savedialog").message("bang");
 			break;
-			case 77 :
+			case 77 : //m
 			preference = "measure";
 			break;
-			case 83 :
+			case 82 : //r
+			if (foundobjects.contains("0") && item != -1) {
+				edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+				if (edit.contains("picster-element[0]::val")) {
+					var expr = new Dict();
+					var distances = [];
+					distances[0] = 0;
+					var trajectory = [];
+					var trajectory_x = [];
+					var trajectory_y = [];
+					switch (edit.get("picster-element[0]::val::new")) {
+						case "line" :
+							var line = JSON.parse(edit.get("picster-element[0]::val").stringify());
+							var totalDistance = Math.sqrt(Math.pow(line.x2 - line.x1, 2) + Math.pow(line.y2 - line.y1, 2));
+							trajectory.push("data", 0, 10, totalDistance, 0, 800);
+							trajectory.push(0, line.x1, 0, totalDistance, line.x2, 0);
+							trajectory.push("linear");
+							trajectory.push("data", 1, 10, totalDistance, 0, 800);
+							trajectory.push(0, line.y1, 0, totalDistance, line.y2, 0);
+							trajectory.push("linear");	
+						break;
+						case "rect" :
+							var _rect = JSON.parse(edit.get("picster-element[0]::val").stringify());
+							post("rect", JSON.stringify(_rect), "\n");
+    						var totalDistance = (_rect.width) * 2 + (_rect.height) * 2;
+							trajectory_x = [[0, _rect.x, 0, 0], [_rect.width, _rect.x + _rect.width, 0, 0], [_rect.width + _rect.height, _rect.x + _rect.width, 0, 0], [_rect.width * 2 + _rect.height, _rect.x, 0, 0], [totalDistance, _rect.x, 0, 0]];
+							trajectory.push("data", 0, 24, totalDistance, 0, 800);
+							for (var i = 0; i < 5; i++) {
+								for (var j = 0; j < 4; j++) trajectory.push(trajectory_x[i][j]);
+								}
+							trajectory.push("curve");
+							trajectory_y = [[0, _rect.y, 0, 0], [_rect.width, _rect.y, 0, 0], [_rect.width + _rect.height, _rect.y + _rect.height, 0, 0], [_rect.width * 2 + _rect.height, _rect.y + _rect.height, 0, 0], [totalDistance, _rect.y, 0, 0]];
+							trajectory.push("data", 1, 24, totalDistance, 0, 800);
+							for (var i = 0; i < 5; i++) {
+								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
+								}	
+							trajectory.push("curve");	
+						break;
+						case "ellipse" :
+							var ellipse = JSON.parse(edit.get("picster-element[0]::val").stringify());
+							var h = Math.pow((ellipse.rx-ellipse.ry), 2) / Math.pow((ellipse.rx+ellipse.ry), 2);
+    						var totalDistance = (Math.PI * ( ellipse.rx + ellipse.ry )) * (1 + ( (3 * h) / ( 10 + Math.sqrt( 4 - (3 * h) )) ));
+							trajectory_x = [[0, ellipse.cx - ellipse.rx, 0, 0], [totalDistance/4, ellipse.cx, 0, 0.5], [totalDistance/2, ellipse.cx + ellipse.rx, 0, -0.5], [totalDistance*3/4, ellipse.cx, 0, 0.5], [totalDistance, ellipse.cx - ellipse.rx, 0, -0.5]];
+							trajectory.push("data", 0, 24, totalDistance, 0, 800);
+							for (var i = 0; i < 5; i++) {
+								for (var j = 0; j < 4; j++) trajectory.push(trajectory_x[i][j]);
+								}
+							trajectory.push("curve");
+							trajectory_y = [[0, ellipse.cy, 0, 0], [totalDistance/4, ellipse.cy - ellipse.ry, 0, -0.5], [totalDistance/2, ellipse.cy, 0, 0.5], [totalDistance*3/4, ellipse.cy + ellipse.ry, 0, -0.5], [totalDistance, ellipse.cy, 0, 0.5]];
+							trajectory.push("data", 1, 24, totalDistance, 0, 800);
+							for (var i = 0; i < 5; i++) {
+								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
+								}	
+							trajectory.push("curve");	
+						break;
+						case "polyline" :
+							var totalDistance = 0;
+							var points = edit.get("picster-element[0]::val::points").split(" ");
+							for (var i = 0; i < points.length - 1; i++) {
+							distances[i + 1] = Math.sqrt(Math.pow(Number(points[i + 1].split(",")[0]) - Number(points[i].split(",")[0]), 2) + Math.pow(Number(points[i + 1].split(",")[1]) - Number(points[i].split(",")[1]), 2));
+							trajectory_x[i] = [totalDistance, Number(points[i].split(",")[0]), 0];
+							trajectory_y[i] = [totalDistance, Number(points[i].split(",")[1]), 0];
+							totalDistance += distances[i + 1];
+							}
+							trajectory_x[i] = [totalDistance, Number(points[points.length - 1].split(",")[0]), 0];
+							trajectory_y[i] = [totalDistance, Number(points[points.length - 1].split(",")[1]), 0];
+							trajectory.push("data", 0, trajectory_x.length * 3 + 4, totalDistance, 0, 800);
+							for (var i = 0; i < trajectory_x.length; i++) {
+								for (var j = 0; j < 3; j++) trajectory.push(trajectory_x[i][j]);
+							}
+							trajectory.push("linear");
+							trajectory.push("data", 1, trajectory_x.length * 3 + 4, totalDistance, 0, 800);
+							for (var i = 0; i < trajectory_y.length; i++) {
+								for (var j = 0; j < 3; j++) trajectory.push(trajectory_y[i][j]);
+								}
+							trajectory.push("linear");	
+							//post("distances-2", trajectory_x[1],  "\n");	
+						break;
+						case "path" :
+						break;
+						default :
+						error("Error: This shape can not translated into an expression");
+					}
+					expr.replace("editor", "bpf");
+					expr.replace("message", edit.get("picster-element[0]::val::id"));
+					expr.replace("value", trajectory);
+					addExpressionToSelectedShape("dictionary", expr.name);
+				}
+			}
+			break;
+			case 83 : 	//s
 			preference = "staff";
 			break;
-			case 85 :
-			//update: serialize picster-editor dict, format message, reattach to score element and redraw bounding rect, clear dict
+			case 85 : //u = update: serialize picster-editor dict, format message, reattach to score element and redraw bounding rect, clear dict
 			action = "update";
 			var updatedDict = new Dict();
 			updatedDict.name = "picster-editor";
