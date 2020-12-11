@@ -1232,7 +1232,7 @@ function createRenderedMessage(f, x, y, serialized)
 {
 	outlet(0, "getSelectionBufferSize");
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
-	post("serialized", serialized, "\n");
+	//post("serialized", serialized, "\n");
 	if (selectionBufferSize > 0)
 	{
 		increment = 0;
@@ -1675,7 +1675,7 @@ function attach()
 					offsets[0] = [ anchor[0] / factor, anchor[1] / factor ];
 				}
 			}
-		post("edit", edit.stringify(), "\n");
+		//post("edit", edit.stringify(), "\n");
 		action = "addShape";
 		outlet(3, "bang");
 		mode = currentMode;
@@ -1753,7 +1753,7 @@ function addExpressionToSelectedShape()
 		edit.replace("picster-element::expression::" + expressionCount + "::value", expr.get("value"));
 		edit.replace("picster-element::expression::" + expressionCount + "::autorender", expr.get("autorender"));
 		}
-		post("dict", edit.stringify(), "\n");
+		//post("dict", edit.stringify(), "\n");
 		action = "update";
 		outlet(3, "bang");
 		init(); //we may no longer need this!
@@ -1837,7 +1837,7 @@ function init()
 			if (anchor[6] != -1) for (var j = 0; j <= anchor[6]; j++) outlet(0, "selectNextInterval");
 			outlet(0, "getSelectedNoteInfo");
 			var key = Object.keys(json);
-			post("json", JSON.stringify(json),"\n");
+			//post("json", JSON.stringify(json),"\n");
 			//look through all userBeans and add instance # to note dimension
 			//if (key.length > 0) {
 			if ("userBean" in json[key]){
@@ -2099,7 +2099,7 @@ function anything()
 						break;
 						case "rect" :
 							var _rect = JSON.parse(edit.get("picster-element[0]::val").stringify());
-							post("rect", JSON.stringify(_rect), "\n");
+							//post("rect", JSON.stringify(_rect), "\n");
     						var totalDistance = (_rect.width) * 2 + (_rect.height) * 2;
 							trajectory_x = [[0, _rect.x, 0, 0], [_rect.width, _rect.x + _rect.width, 0, 0], [_rect.width + _rect.height, _rect.x + _rect.width, 0, 0], [_rect.width * 2 + _rect.height, _rect.x, 0, 0], [totalDistance, _rect.x, 0, 0]];
 							trajectory.push("data", 0, 24, totalDistance, 0, 800);
