@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 605.0, 219.0, 576.0, 495.0 ],
+		"rect" : [ 399.0, 98.0, 795.0, 615.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,34 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 405.0, 508.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 531.0, 244.0, 64.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "bpf.expr.js",
+						"parameter_enable" : 0
+					}
+,
+					"text" : "js bpf.expr"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-15",
 					"maxclass" : "message",
@@ -133,7 +161,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 139.666666666666686, 116.0, 85.0, 22.0 ],
-					"restore" : [ "test" ],
+					"restore" : [ "Picster-Element_1607458840746" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -164,7 +192,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 220.333333333333371, 211.0, 65.0, 22.0 ],
-					"restore" : [ 1000.0, 0.0, 1.0, 0.0, 0.0, 0, 0.0, 300.0, 0.4, 0, 0.0, 400.0, 0.8, 0, 0.0, 500.0, 0.9, 0, 0.0, 600.0, 0.5, 0, 0.0, 800.0, 0.7, 0, 0.0, 1000.0, 0.0, 0, 0.0, "curve" ],
+					"restore" : [ "data", 0, 10, 65.802734375, 0.0, 800.0, 1.376626242154812, 140.259740259740255, 0, 65.80273550544841, 232.0, 0, "linear", "data", 1, 10, 65.802734375, 0.0, 800.0, 0.0, 71.0, 0, 65.80273550544841, 110.0, 0, "linear" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -194,7 +222,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 2.0, 251.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "test",
+					"text" : "Picster-Element_1607458840746",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit",
 					"wordwrap" : 0
@@ -220,30 +248,42 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints_with_curve" : [ 0.0, 0.0, 0, 0.0, 300.0, 0.4, 0, 0.0, 400.0, 0.8, 0, 0.0, 500.0, 0.9, 0, 0.0, 600.0, 0.5, 0, 0.0, 800.0, 0.7, 0, 0.0, 1000.0, 0.0, 0, 0.0 ],
-					"bgcolor" : [ 1.0, 1.0, 0.7, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 0.701960784313725, 1.0 ],
+					"candycane" : 2,
+					"chans" : 2,
 					"clicksustain" : 0,
+					"data" : [ 						{
+							"addpoints" : [ 1.376626242154812, 140.259740259740255, 0, 65.80273550544841, 232.0, 0 ]
+						}
+, 						{
+							"addpoints" : [ 0.0, 71.0, 0, 65.80273550544841, 110.0, 0 ]
+						}
+ ],
+					"displaychan" : 2,
+					"domain" : 65.802734375,
 					"grid" : 3,
-					"gridcolor" : [ 0.044134, 0.0, 0.0, 1.0 ],
+					"gridcolor" : [ 0.043137254901961, 0.0, 0.0, 1.0 ],
+					"gridstep_x" : 25.0,
+					"gridstep_y" : 50.0,
 					"id" : "obj-2",
-					"linecolor" : [ 0.0, 1.0, 0.17, 1.0 ],
-					"maxclass" : "function",
-					"mode" : 1,
+					"linecolor" : [ 0.0, 1.0, 0.168627450980392, 1.0 ],
+					"maxclass" : "mc.function",
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "float", "", "", "bang" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "float", "", "", "bang", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 243.333333333333371, 279.0, 178.0, 101.0 ],
+					"patching_rect" : [ 243.333333333333371, 279.0, 178.0, 106.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 43.0, 251.0, 197.0 ],
-					"snap2grid" : 3,
+					"presentation_rect" : [ 3.0, 48.0, 251.0, 197.0 ],
+					"range" : [ 0.0, 800.0 ],
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"varname" : "bpf"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"attr" : "gridstep_y",
+					"attr" : "domain",
 					"attrfilter" : [ "range", "domain", "mode", "gridstep_x", "gridstep_y" ],
 					"fontface" : 0,
 					"fontname" : "Arial",
@@ -363,9 +403,9 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"fontsize" : [ 12.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"umenu" : 				{
@@ -398,9 +438,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -409,8 +449,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -419,9 +459,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",
