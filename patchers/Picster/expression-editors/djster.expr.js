@@ -176,7 +176,7 @@ function bang() {
   if ("pitch_center" in djsterAttributes) {
     var pitch_center = JSON.parse('{"new":"text","x":75,"y":86,"font-family":"Arial","font-size":12,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     pitch_center.id = groupId+"_pitch_center";
-    pitch_center.child = djsterAttributes.pitch_center;
+    pitch_center.child = parseFloat(djsterAttributes.pitch_center.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(pitch_center);
   }
 
@@ -184,7 +184,7 @@ function bang() {
   if ("melody_scope" in djsterAttributes) {
     var melody_scope = JSON.parse('{"new":"text","x":71,"y":100,"font-family":"Arial","font-size":10,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     melody_scope.id = groupId+"_melody_scope";
-    melody_scope.child = "±"+djsterAttributes.melody_scope;
+    melody_scope.child = "±"+parseFloat(djsterAttributes.melody_scope.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(melody_scope);
   }
 
@@ -192,7 +192,7 @@ function bang() {
   if ("pitch_range" in djsterAttributes) {
     var pitch_range = JSON.parse('{"new":"text","x":71,"y":70,"font-family":"Arial","font-size":10,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     pitch_range.id = groupId+"_pitch_range";
-    pitch_range.child = "±"+djsterAttributes.pitch_range;
+    pitch_range.child = "±"+parseFloat(djsterAttributes.pitch_range.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(pitch_range);
   }
 
@@ -200,7 +200,7 @@ function bang() {
   if ("tonic_pitch" in djsterAttributes) {
     var tonic_pitch = JSON.parse('{"new":"text","x":100,"y":112,"text-anchor":"end","font-family":"Arial","font-size":12,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     tonic_pitch.id = groupId+"_tonic_pitch";
-    tonic_pitch.child = djsterAttributes.tonic_pitch;
+    tonic_pitch.child = parseFloat(djsterAttributes.tonic_pitch.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(tonic_pitch);
   }
 
