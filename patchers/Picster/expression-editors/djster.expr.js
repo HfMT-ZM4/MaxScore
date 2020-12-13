@@ -73,7 +73,7 @@ function bang() {
       var hor = JSON.parse('{"new":"line","x1":'+xl+',"y1":'+yu+',"x2":161,"y2":'+yu+',"style":{"stroke":"rgb(0,159,63)","stroke-width":2,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
       hor.id = groupId+"_meter_hor_"+j;
       outputPicster["picster-element"][0]["val"]["child"].push(hor);
-      var text = JSON.parse('{"new":"text","y":'+(yd+3)+',"font-family":"Aloisen New","text-anchor":"middle","font-size":20,"style":{"fill":"rgb(0,159,63)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+      var text = JSON.parse('{"new":"text","y":'+(yd+2)+',"font-family":"Aloisen New","text-anchor":"middle","font-size":20,"style":{"fill":"rgb(0,159,63)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
       text.x = (xl+xr)/2;
       text.id = groupId+"_meter_text_"+j;
       if (typeof(djsterAttributes.meter[j]) == "number") {
@@ -81,18 +81,20 @@ function bang() {
           text.child = text_array[djsterAttributes.meter[j]];
         }
         else {
+          text["font-size"] = 17;
           var ones = djsterAttributes.meter[j]%10;
           var tens = (djsterAttributes.meter[j]-ones)/10;
           text.child = text_array[tens]+text_array[ones];
         }
       }
       else if (typeof(djsterAttributes.meter[j]) == "string") {
-        text["font-size"] = 17;
+        text["font-size"] = 20-2*djsterAttributes.meter[j].length;
         var temp = djsterAttributes.meter[j];
         for (var k = 0; k < 10; k++) {
-          temp = temp.replace(k.toString(),text_array[k]);
+          var re = new RegExp(k, 'g');
+          temp = temp.replace(re, text_array[k]);
         }
-        temp = temp.replace("+","");
+        temp = temp.replace(/\+/g,"");
         text.child = temp;
       }
       outputPicster["picster-element"][0]["val"]["child"].push(text);
@@ -153,7 +155,7 @@ function bang() {
 
   //silent downbeat
   if ("silent_downbeat" in djsterAttributes && djsterAttributes.silent_downbeat == 1) {
-    var silent_downbeat = JSON.parse('{"new":"text","x":98,"y":66,"child":"","font-family":"Aloisen New","font-size":25,"style":{"fill":"rgb(0,159,63)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var silent_downbeat = JSON.parse('{"new":"text","x":100,"y":66,"child":"","font-family":"Aloisen New","font-size":25,"style":{"fill":"rgb(0,159,63)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     silent_downbeat.id = groupId+"_silent_downbeat";
     outputPicster["picster-element"][0]["val"]["child"].push(silent_downbeat);
   }
@@ -174,7 +176,7 @@ function bang() {
 
   //pitch center
   if ("pitch_center" in djsterAttributes) {
-    var pitch_center = JSON.parse('{"new":"text","x":75,"y":86,"font-family":"Arial","font-size":12,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var pitch_center = JSON.parse('{"new":"text","x":72,"y":85,"font-family":"Arial","font-size":12,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     pitch_center.id = groupId+"_pitch_center";
     pitch_center.child = parseFloat(djsterAttributes.pitch_center.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(pitch_center);
@@ -209,6 +211,7 @@ function bang() {
     var element = JSON.parse('{"new":"text","x":50,"y":56,"font-family":"Arial","font-size":10,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     element.id = groupId+"_scale";
     element.child = djsterAttributes.scale;
+    if (element.child.length > 12) element.y = 43;
     outputPicster["picster-element"][0]["val"]["child"].push(element);
   }
 
