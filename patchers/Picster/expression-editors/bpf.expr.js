@@ -1,49 +1,74 @@
-
-function generate_bpf()
-{
-				var attr = {};
-				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
-				var d = "M " + polyclicks[0];
-				for (var i = 0; i < segments.length; i++) d += " C " + segments[i];
-				attr.d = d;
-				attr.style = {};
-				attr.style["stroke"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["stroke-opacity"] = color[3];
-				attr.style["stroke-width"] = pensize;
-				if (property == "fill") {
-				attr.style["fill"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
+var shape = {
+	"picster-element" : [ 		{
+			"key" : "svg",
+			"val" : 			{
+				"new" : "g",
+				"id" : "Picster-Element_1607700309159",
+				"transform" : "matrix(1,0,0,1,0,0)",
+				"visibility" : "visible",
+				"child" : [ 					{
+						"new" : "rect",
+						"id" : "Picster-Element_1607700228143",
+						"x" : 0,
+						"y" : 0,
+						"width" : 100,
+						"height" : 25,
+						"style" : 						{
+							"stroke" : "rgb(0,0,0)",
+							"stroke-opacity" : 1,
+							"stroke-width" : 1 ,
+							"fill" : "rgb(250,250,250)",
+							"fill-opacity" : 0.6
+						}
+,
+						"transform" : "matrix(1,0,0,1,0,-50)"
+					}
+, 					{
+				"new" : "path",
+				"id" : "Picster-Element_1607767365034",
+				"d" : "",
+				"style" : 				{
+					"stroke" : "rgb(0,0,0)",
+					"stroke-opacity" : 1,
+					"stroke-width" :  2,
+					"fill" : "none",
+					"fill-opacity" : 1
 				}
-				else {
-				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;
-				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				//_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
-				edit.parse(JSON.stringify(_picster));
-}
+,
+				"transform" : "matrix(1,0,0,1,0,0)"
+			}
+ ]
+			}
 
-function bpf()
+		}
+, 		{
+			"key" : "extras",
+			"val" : 			{
+				"bounds" : [ -1, -1, -1, -1 ]
+			}
+
+		}
+, 		{
+			"key" : "expression",
+			"val" : [ 				{
+					"editor" : "bpf",
+					"message" : "message",
+					"value" : "value",
+					"autorender" : "false"
+				}
+ ]
+		}
+ ]
+};
+
+function anything()
 {
-			if (msg[msg.length - 2] == "renderbpf") {
-				var space = 0;
+	var date = new Date;
+				var space = 0.3;
 				var bpf = "";
- 				var e = new Dict();
-				e.parse(msg[msg.length - 1]);
-				var keys = [].concat(e.getkeys());
-				for (var i = 0; i < keys.length; i++){
-					var seq = e.get(keys[i]);
-					var skeys = seq.getkeys();
-					if (skeys == "pitchbend"){
-						var pitchbend = seq.get("pitchbend");
+						var _curve = arrayfromargs(arguments);
+						var curve = [];
+						/*
 						outlet(1, "getDrawingAnchor", msg.slice(1, 5));
 						var currentDrawingAnchor = drawingAnchor;
 						outlet(1, "getNumNotes",  msg.slice(1, 4));
@@ -59,19 +84,22 @@ function bpf()
 						space = drawingAnchor[4] - currentDrawingAnchor[4] - 7;
 						}
             			var RenderMessageOffset = [msg[5], msg[6]];
-						for (var s = 0; s < groupcount; s++) {
-							var dest = [].concat(RenderMessageOffset[1]);
-							if (dest != -1) {
-								for (var d = 0; d < dest.length; d++) {
-						//post(msg[5], msg[6], "pitchbend", pitchbend, "\n");
-						var numPoints = (pitchbend.length - 4) / 4;
-						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + msg[6] + 2];
+						*/
+						var idx = getAllIndexes(_curve, "data");
+						idx[idx.length] = _curve.length;
+						for (var i = 0; i < idx.length; i++) curve[i] = _curve.slice(idx[i] + 6, idx[i + 1]);
+						var dims = _curve.slice(3, 6);
+						for (var i = 0; i < idx.length - 1; i++) {
+						if (curve[i][curve[i].length - 1] == "curve") {
+						var numPoints = (curve[i].length - 1) / 4;
+						//var moveTo = [curve[3] * space + msg[5] + 7, curve[4] / 300 * -6 + msg[6] + 2];
+						var moveTo = [curve[i][0], curve[i][1]];
 						var oldPoint = moveTo;
-						bpf = "M" + moveTo + " ";
-						for (var i = 0; i < numPoints - 1; i++){
-							var curvature = pitchbend[10  + i * 4];
+						bpf += "M" + moveTo + " ";
+						for (var j = 0; j < numPoints - 1; j++){
+							var curvature = curve[i][7 + j * 4];
 							//post("curvature", curvature, "\n");
-							var curveTo = [pitchbend[7 + i * 4] * space + msg[5] + 7, pitchbend[8  + i * 4] / 300 * -6 + msg[6] + 2, curvature];
+							var curveTo = [curve[i][4 + j * 4], curve[i][5 + j * 4], curvature];
 							var controlPoint = oldPoint;
 							//post("controlPoint-1", curvature, controlPoint, "\n");
 							if (curvature >= 0) controlPoint[0] = oldPoint[0] + (curveTo[0] - oldPoint[0]) * Math.abs(curvature);
@@ -80,11 +108,42 @@ function bpf()
 							bpf += "C" + controlPoint + " " + controlPoint + " " + curveTo.slice(0, 2) + " ";
 							oldPoint = curveTo.slice(0, 2);
 							}
-							SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 2.0 + "\" stroke-opacity=\"" + 1. + "\" fill=\"none\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
-							}
-							}
-							}
 						}
-					}
-				}
+						else
+						{
+						var numPoints = (curve[i].length - 1) / 3;
+						post("curve", numPoints, "\n");
+						var moveTo = [curve[i][0], curve[i][1]];
+						bpf += "M" + moveTo + " ";
+						for (var j = 0; j < numPoints - 1; j++){
+							var lineTo = [curve[i][3 + j * 3], curve[i][4 + j * 3]];
+							bpf += "L" + lineTo.slice(0, 2) + " ";
+							}							
+						}
+						}
+	shape["picster-element"][0]["val"]["id"] = "Picster-Element_" + parseInt(date.getTime());
+	shape["picster-element"][0]["val"]["child"][0]["id"] = "Picster-Element_" + parseInt(date.getTime()) + 1;
+	shape["picster-element"][0]["val"]["child"][1]["id"] = "Picster-Element_" + parseInt(date.getTime()) + 2;
+	shape["picster-element"][0]["val"]["child"][1]["d"] = bpf;
+	shape["picster-element"][0]["val"]["child"][1]["transform"] = "matrix(" + 100 / dims[0] + ", 0, 0, -0.125, 0, -25)";
+	//post("arguments", JSON.stringify(arguments), "\n");
+	shape["picster-element"][2]["val"][0]["message"] = messagename;
+	shape["picster-element"][2]["val"][0]["value"] = _curve;
+	var expr = new Dict();
+	expr.parse(JSON.stringify(shape));
+	outlet(0, "dictionary", expr.name);
+}
+
+function getAllIndexes(arr, val) {
+    var indexes = [-1], i;
+	var c = 0;
+	if (typeof arr == "number" && arr == val) indexes = [0];
+    else {for(i = 0; i < arr.length; i++)
+        if (arr[i] == val)
+			{
+            indexes[c] = i;
+			c++;
+			}
+		}
+    return indexes;
 }
