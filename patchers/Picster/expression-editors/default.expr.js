@@ -70,7 +70,7 @@ var shape = {
 function anything()
 {
 	var date = new Date;
-	var a = arrayfromargs(messagename, arguments)
+	var a = arrayfromargs(messagename, arguments);
 	shape["picster-element"][0]["val"]["id"] = "Picster-Element_" + parseInt(date.getTime());
 	shape["picster-element"][0]["val"]["child"][0]["id"] = "Picster-Element_" + parseInt(date.getTime()) + 1;
 	shape["picster-element"][0]["val"]["child"][0]["width"] = text_measure("Arial", 10, a.join(" "))[0] + 4;
