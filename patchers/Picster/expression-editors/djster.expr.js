@@ -1,5 +1,6 @@
 var djsterDict = new Dict();
 var djsterAttributes = {};
+
 //parse djster attributes from Dict
 function dictionary(dictName) {
   djsterDict.name = dictName; //get Dict
@@ -139,7 +140,7 @@ function bang() {
   }
 
   //main notehead
-  var notehead = JSON.parse('{"new":"text","x":100,"y":100,"font-family":"Aloisen New","child":"","font-size":28,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+  var notehead = JSON.parse('{"new":"text","x":100,"y":100,"font-family":"Aloisen New","child":"","font-size":28,"style":{"fill":"rgb(207, 95, 127)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
   notehead.id = groupId+"_notehead";
   outputPicster["picster-element"][0]["val"]["child"].push(notehead);
 
@@ -170,13 +171,13 @@ function bang() {
   var pitch_bottom = JSON.parse('{"new":"line","x1":63,"y1":116,"x2":73,"y2":116,"style":{"stroke":"rgb(191,0,0)","stroke-width":1,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
   pitch_bottom.id = groupId+"_pitch_bottom";
   outputPicster["picster-element"][0]["val"]["child"].push(pitch_bottom);
-  var pitch_circle = JSON.parse('{"new":"ellipse","cx":68,"cy":89,"rx":5,"ry":5,"style":{"stroke":"rgb(191,0,0)","stroke-width":1,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+  var pitch_circle = JSON.parse('{"new":"ellipse","cx":68,"cy":89,"rx":5,"ry":5,"style":{"stroke":"rgb(255,0,0)","stroke-width":1,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
   pitch_circle.id = groupId+"_pitch_circle";
   outputPicster["picster-element"][0]["val"]["child"].push(pitch_circle);
 
   //pitch center
   if ("pitch_center" in djsterAttributes) {
-    var pitch_center = JSON.parse('{"new":"text","x":72,"y":85,"font-family":"Arial","font-size":12,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var pitch_center = JSON.parse('{"new":"text","x":72,"y":85,"font-family":"Arial","font-size":11,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     pitch_center.id = groupId+"_pitch_center";
     pitch_center.child = parseFloat(djsterAttributes.pitch_center.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(pitch_center);
@@ -184,7 +185,7 @@ function bang() {
 
   //melody scope
   if ("melody_scope" in djsterAttributes) {
-    var melody_scope = JSON.parse('{"new":"text","x":71,"y":100,"font-family":"Arial","font-size":10,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var melody_scope = JSON.parse('{"new":"text","x":71,"y":100,"font-family":"Arial","font-size":10,"style":{"fill":"rgb(207, 95, 127)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     melody_scope.id = groupId+"_melody_scope";
     melody_scope.child = "±"+parseFloat(djsterAttributes.melody_scope.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(melody_scope);
@@ -200,7 +201,7 @@ function bang() {
 
   //tonic pitch
   if ("tonic_pitch" in djsterAttributes) {
-    var tonic_pitch = JSON.parse('{"new":"text","x":100,"y":112,"text-anchor":"end","font-family":"Arial","font-size":12,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var tonic_pitch = JSON.parse('{"new":"text","x":100,"y":112,"text-anchor":"end","font-family":"Arial","font-size":11,"style":{"fill":"rgb(207, 95, 127)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     tonic_pitch.id = groupId+"_tonic_pitch";
     tonic_pitch.child = parseFloat(djsterAttributes.tonic_pitch.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(tonic_pitch);
@@ -279,15 +280,15 @@ function bang() {
 
   if ("metriclarity" in djsterAttributes) {
     var fillbarlength = Math.round(djsterAttributes.metriclarity / 100 * 53);
-    var fillbar = JSON.parse('{"new":"rect","x":108,"y":50,"width":'+fillbarlength+',"height":10,"style":{"fill":"rgb(159,255,159)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var fillbar = JSON.parse('{"new":"rect","x":108,"y":48,"width":'+fillbarlength+',"height":10,"style":{"fill":"rgb(159,255,159)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     fillbar.id = groupId+"_metriclarity_fillbar";
     outputPicster["picster-element"][0]["val"]["child"].push(fillbar);
 
-    var border = JSON.parse('{"new":"rect","x":108,"y":50,"width":53,"height":10,"style":{"stroke":"rgb(0,159,63)","stroke-width":1, "stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var border = JSON.parse('{"new":"rect","x":108,"y":48,"width":53,"height":10,"style":{"stroke":"rgb(0,159,63)","stroke-width":1, "stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     border.id = groupId+"_metriclarity_border";
     outputPicster["picster-element"][0]["val"]["child"].push(border);
 
-    var text = JSON.parse('{"new":"text","x":109,"y":58,"child":"M","font-family":"Arial","font-size":8,"style":{"fill":"rgb(0,159,63)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var text = JSON.parse('{"new":"text","x":109,"y":56,"child":"M","font-family":"Arial","font-size":8,"style":{"fill":"rgb(0,159,63)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     text.id = groupId+"_metriclarity_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
   }
