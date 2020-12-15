@@ -40,24 +40,6 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-51",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 568.471698113207594, 358.561403274536133, 264.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 16.904770800315845, 47.061403274536133, 251.0, 20.0 ],
-					"text" : "Preview:",
-					"textcolor" : [ 0.396078431372549, 0.396078431372549, 0.396078431372549, 1.0 ],
-					"textjustification" : 0,
-					"varname" : "label[1]"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-50",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -141,101 +123,9 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 16.904770800315845, 18.456522000000007, 251.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "\"Macintosh HD:/Users/james/Documents/0 Working files/20201202 In the Midst of/Episode 1/media/audio/text-to-speech/17 Your message (Joanna).mp3\"",
+					"text" : "\"Macintosh HD:/Users/james/Documents/0 Working files/20201202 In the Midst of/Episode 1/media/audio/text-to-speech/17 Your message (Matthew).mp3\"",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"wordwrap" : 0
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-31",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 478.471698113207594, 426.061403274536133, 32.0, 22.0 ],
-					"text" : "start"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 532.138364779874337, 426.061403274536133, 41.0, 22.0 ],
-					"text" : "pause"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-24",
-					"maxclass" : "newobj",
-					"numinlets" : 4,
-					"numoutlets" : 4,
-					"outlettype" : [ "bang", "bang", "bang", "" ],
-					"patching_rect" : [ 478.471698113207594, 392.061403274536133, 180.0, 22.0 ],
-					"text" : "sel 0 1 2"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"activebgcolor" : [ 0.572549, 0.615686, 0.658824, 0.0 ],
-					"activebgoncolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"bordercolor" : [ 1.0, 1.0, 1.0, 0.0 ],
-					"button" : 1,
-					"focusbordercolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 0.0 ],
-					"hint" : "Stop | Play With Options | Play From Start",
-					"id" : "obj-38",
-					"maxclass" : "live.tab",
-					"multiline" : 0,
-					"num_lines_patching" : 1,
-					"num_lines_presentation" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "float" ],
-					"parameter_enable" : 1,
-					"patching_rect" : [ 478.471698113207594, 347.184209823608398, 60.528301886792406, 36.877193450927734 ],
-					"pictures" : [ "fwdarrow_wob.svg", "pause_wob.svg" ],
-					"presentation" : 1,
-					"presentation_rect" : [ 73.904770800315845, 38.622806549072266, 60.528301886792406, 36.877193450927734 ],
-					"saved_attribute_attributes" : 					{
-						"valueof" : 						{
-							"parameter_enum" : [ "play", "stop" ],
-							"parameter_initial" : [ 0.0 ],
-							"parameter_initial_enable" : 1,
-							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[2]",
-							"parameter_mmax" : 1,
-							"parameter_shortname" : "live.tab",
-							"parameter_type" : 2,
-							"parameter_unitstyle" : 9
-						}
-
-					}
-,
-					"spacing_x" : 3.0,
-					"spacing_y" : 3.0,
-					"usepicture" : 1,
-					"varname" : "live.tab"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "bang" ],
-					"patching_rect" : [ 478.471698113207594, 464.061403274536133, 87.0, 22.0 ],
-					"text" : "play~ sf_buffer"
 				}
 
 			}
@@ -553,27 +443,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"source" : [ "obj-24", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-31", 0 ],
-					"source" : [ "obj-24", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
-					"source" : [ "obj-26", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
 					"midpoints" : [ 81.5, 160.0, 325.5, 160.0 ],
 					"source" : [ "obj-28", 1 ]
@@ -598,20 +467,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-30", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
-					"source" : [ "obj-31", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"source" : [ "obj-38", 0 ]
 				}
 
 			}
@@ -703,7 +558,6 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-38" : [ "live.tab[2]", "live.tab", 0 ],
 			"obj-89" : [ "live.text[17]", "live.text", 0 ],
 			"parameterbanks" : 			{
 
@@ -717,20 +571,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fwdarrow_wob.svg",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../../../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "pause_wob.svg",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../../../media/Images/svg",
-				"type" : "svg",
 				"implicit" : 1
 			}
  ],
