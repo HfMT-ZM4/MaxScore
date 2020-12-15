@@ -2248,8 +2248,8 @@ function getDrawingAnchor()
 
 function dim(w, h)
 {
-	outmatrix.dim = [Math.min(w, 16383), Math.min(h, 16383)];
-	mgraphics.dim = [Math.min(w, 16383), Math.min(h, 16383)];
+	//outmatrix.dim = [Math.min(w, 16383), Math.min(h, 16383)];
+	//mgraphics.dim = [Math.min(w, 16383), Math.min(h, 16383)];
 }
 
 function setZoom(z)
