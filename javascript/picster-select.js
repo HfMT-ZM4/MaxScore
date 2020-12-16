@@ -113,7 +113,6 @@ if (mode == "picster" && !blocked) {
     handles.push(origin);
 	}
 	var _c = 0;
-	format = "sadam.canvas";
 	item = -1;
 	//output.clear();
 	foundobjects.clear();
@@ -124,6 +123,7 @@ if (mode == "picster" && !blocked) {
 	var keys = renderedMessages.getkeys();
 	for (var i = 0; i < keys.length; i++)
 	{
+		format = "sadam.canvas";
 		switch (renderedMessages.get(keys[i])[0]){
 			case "interval" :
             RenderMessageOffset = [renderedMessages.get(keys[i])[6], renderedMessages.get(keys[i])[7]];
@@ -131,6 +131,7 @@ if (mode == "picster" && !blocked) {
 			break;
 			case "note" :
             RenderMessageOffset = [renderedMessages.get(keys[i])[5], renderedMessages.get(keys[i])[6]];
+			//post("FORMAT-1", renderedMessages.get(keys[i]).length	,  "\n");
 			if (renderedMessages.get(keys[i]).length == 9) format = "drawsocket";
 			break;
 			case "staff" :
@@ -142,6 +143,7 @@ if (mode == "picster" && !blocked) {
 			if (renderedMessages.get(keys[i]).length == 6) format = "drawsocket";
 			break;
 	}
+	//post("FORMAT-1", format,  "\n");
 	var e = new Dict();
 	e.parse(renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
 	if (format == "sadam.canvas") {
@@ -174,8 +176,7 @@ if (mode == "picster" && !blocked) {
 	var dictArray = [].concat(e.get("picster-element[0]::val"));
 	var vals = [];
 	for (var k = 0; k < dictArray.length; k++) vals.push(JSON.parse(dictArray[k].stringify()));
- 	//post("FORMAT-1", JSON.stringify(vals),  "\n");
-	if (e.get("picster-element[1]::val::bounds[0]") != -1 && vals[0]["transform"] == "matrix(1,0,0,1,0,0)") {
+ 	if (e.get("picster-element[1]::val::bounds[0]") != -1 && vals[0]["transform"] == "matrix(1,0,0,1,0,0)") {
 		var foundBounds = e.get("picster-element[1]::val::bounds");
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
@@ -183,10 +184,12 @@ if (mode == "picster" && !blocked) {
 		foundBounds[3] += RenderMessageOffset[1];
 		var boundmin = [foundBounds[0], foundBounds[1]];
 		var boundmax = [foundBounds[2], foundBounds[3]];
+		//var boundmin = [foundBounds[0] - horizontalOffset, foundBounds[1] - verticalOffset];
+		//var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
+		//post("foundBounds", x, y, boundmin, boundmax, RenderMessageOffset, "\n");
 	}
 	else {
 		var foundBounds = findBoundsToo(vals);
-		post("foundBounds", x, y, foundBounds, RenderMessageOffset, "\n");
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
 		foundBounds[2] += RenderMessageOffset[0];
@@ -2447,12 +2450,10 @@ function findBoundsToo(d)
 	mgraphics.matrixcalc(outmatrix, outmatrix);
 	findbounds.matrixcalc(outmatrix, outmatrix);
 	//post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
-	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) {
-		renderOffset = [0, 0];
+	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) renderOffset = [0, 0];
 		horizontalOffset = 0;
 		verticalOffset = 0;	
-	}
-	//post("textRenderOffset", horizontalOffset, verticalOffset, textRenderOffset, "\n");
+	//post("renderOffset", origin, horizontalOffset, verticalOffset, renderOffset, "\n");
 	return [findbounds.boundmin[0] - renderOffset[0] + horizontalOffset, findbounds.boundmin[1] - renderOffset[1] + verticalOffset, findbounds.boundmax[0] - renderOffset[0] + horizontalOffset, findbounds.boundmax[1] - renderOffset[1] + verticalOffset];
 }
 

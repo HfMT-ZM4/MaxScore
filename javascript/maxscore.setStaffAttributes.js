@@ -130,6 +130,7 @@ ledgerlines(1);
 }
 
 stl = annotation.get("staff-"+StaffIndex+"::style");
+if (stl == "Quarter Tone") stl = "Default";
 if (typeof(stl)!="object" && stl!="*") 
 {
 state("virgin");	
