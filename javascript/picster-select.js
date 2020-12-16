@@ -1955,6 +1955,12 @@ function anything()
 					var trajectory_x = [];
 					var trajectory_y = [];
 					switch (edit.get("picster-element[0]::val::new")) {
+						case "text" :
+							expr.replace("editor", "default");
+							expr.replace("message", edit.get("picster-element[0]::val::child").split(" ")[0]);
+							expr.replace("value", edit.get("picster-element[0]::val::child").split(" ")[1]);
+							addExpressionToSelectedShape("dictionary", expr.name);
+						break;
 						case "line" :
 							var line = JSON.parse(edit.get("picster-element[0]::val").stringify());
 							var totalDistance = Math.sqrt(Math.pow(line.x2 - line.x1, 2) + Math.pow(line.y2 - line.y1, 2));
@@ -1964,6 +1970,10 @@ function anything()
 							trajectory.push("data", 1, 10, totalDistance, 0, 800);
 							trajectory.push(0, line.y1, 0, totalDistance, line.y2, 0);
 							trajectory.push("linear");	
+							expr.replace("editor", "bpf");
+							expr.replace("message", edit.get("picster-element[0]::val::id"));
+							expr.replace("value", trajectory);
+							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "rect" :
 							var _rect = JSON.parse(edit.get("picster-element[0]::val").stringify());
@@ -1981,6 +1991,10 @@ function anything()
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
 								}	
 							trajectory.push("curve");	
+							expr.replace("editor", "bpf");
+							expr.replace("message", edit.get("picster-element[0]::val::id"));
+							expr.replace("value", trajectory);
+							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "ellipse" :
 							var ellipse = JSON.parse(edit.get("picster-element[0]::val").stringify());
@@ -1998,6 +2012,10 @@ function anything()
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
 								}	
 							trajectory.push("curve");	
+							expr.replace("editor", "bpf");
+							expr.replace("message", edit.get("picster-element[0]::val::id"));
+							expr.replace("value", trajectory);
+							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "polyline" :
 							var totalDistance = 0;
@@ -2021,16 +2039,16 @@ function anything()
 								}
 							trajectory.push("linear");	
 							//post("distances-2", trajectory_x[1],  "\n");	
+							expr.replace("editor", "bpf");
+							expr.replace("message", edit.get("picster-element[0]::val::id"));
+							expr.replace("value", trajectory);
+							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "path" :
 						break;
 						default :
 						error("Error: This shape can not translated into an expression");
 					}
-					expr.replace("editor", "bpf");
-					expr.replace("message", edit.get("picster-element[0]::val::id"));
-					expr.replace("value", trajectory);
-					addExpressionToSelectedShape("dictionary", expr.name);
 				}
 			}
 			break;
