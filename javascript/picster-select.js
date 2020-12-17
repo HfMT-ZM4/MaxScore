@@ -11,10 +11,10 @@ output.name = "output";
 SVGString = [];
 SVGImages = [];
 //var ImageCache = {};
-var mgraphics = new JitterObject("jit.mgraphics", 800, 800);
+var mgraphics = new JitterObject("jit.mgraphics", 2000, 2000);
 var findbounds = new JitterObject("jit.findbounds");
-var outmatrix = new JitterMatrix(4, "char", 800, 800);
-var import = new JitterMatrix(4, "char", 800, 800);
+var outmatrix = new JitterMatrix(4, "char", 2000, 2000);
+var import = new JitterMatrix(4, "char", 2000, 2000);
 var svg = new Dict();
 svg.name = "svg";
 findbounds.min = [0, 0, 0, 0];
@@ -113,7 +113,6 @@ if (mode == "picster" && !blocked) {
     handles.push(origin);
 	}
 	var _c = 0;
-	format = "sadam.canvas";
 	item = -1;
 	//output.clear();
 	foundobjects.clear();
@@ -124,6 +123,7 @@ if (mode == "picster" && !blocked) {
 	var keys = renderedMessages.getkeys();
 	for (var i = 0; i < keys.length; i++)
 	{
+		format = "sadam.canvas";
 		switch (renderedMessages.get(keys[i])[0]){
 			case "interval" :
             RenderMessageOffset = [renderedMessages.get(keys[i])[6], renderedMessages.get(keys[i])[7]];
@@ -131,6 +131,7 @@ if (mode == "picster" && !blocked) {
 			break;
 			case "note" :
             RenderMessageOffset = [renderedMessages.get(keys[i])[5], renderedMessages.get(keys[i])[6]];
+			//post("FORMAT-1", renderedMessages.get(keys[i]).length	,  "\n");
 			if (renderedMessages.get(keys[i]).length == 9) format = "drawsocket";
 			break;
 			case "staff" :
@@ -142,6 +143,7 @@ if (mode == "picster" && !blocked) {
 			if (renderedMessages.get(keys[i]).length == 6) format = "drawsocket";
 			break;
 	}
+	//post("FORMAT-1", format,  "\n");
 	var e = new Dict();
 	e.parse(renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
 	if (format == "sadam.canvas") {
@@ -165,17 +167,16 @@ if (mode == "picster" && !blocked) {
 	}
 
 	if (boundmin[0] <= x && boundmin[1] <= y && boundmax[0] >= x && boundmax[1] >= y) {
-		foundobjects.replace(c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 6), renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 2], boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
-		offsets[c] = RenderMessageOffset;
-		c++;
+		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 6), renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 2], boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
+		offsets[_c] = RenderMessageOffset;
+		_c++;
 		}
 	}
 	else {
 	var dictArray = [].concat(e.get("picster-element[0]::val"));
 	var vals = [];
 	for (var k = 0; k < dictArray.length; k++) vals.push(JSON.parse(dictArray[k].stringify()));
- 	//post("FORMAT-1", JSON.stringify(vals),  "\n");
-	if (e.get("picster-element[1]::val::bounds[0]") != -1 && vals[0]["transform"] == "matrix(1,0,0,1,0,0)") {
+ 	if (e.get("picster-element[1]::val::bounds[0]") != -1 && vals[0]["transform"] == "matrix(1,0,0,1,0,0)") {
 		var foundBounds = e.get("picster-element[1]::val::bounds");
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
@@ -183,10 +184,12 @@ if (mode == "picster" && !blocked) {
 		foundBounds[3] += RenderMessageOffset[1];
 		var boundmin = [foundBounds[0], foundBounds[1]];
 		var boundmax = [foundBounds[2], foundBounds[3]];
+		//var boundmin = [foundBounds[0] - horizontalOffset, foundBounds[1] - verticalOffset];
+		//var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
+		//post("foundBounds", x, y, boundmin, boundmax, RenderMessageOffset, "\n");
 	}
 	else {
 		var foundBounds = findBoundsToo(vals);
-		//post("foundBounds", foundBounds, RenderMessageOffset, "\n");
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
 		foundBounds[2] += RenderMessageOffset[0];
@@ -272,7 +275,7 @@ function ctrlClick(x, y)
 		else {
 			click = "ctrl";
 			if (shape == 0 && !pathDone) {
-				origin = snapEnd([x, y]);
+			origin = snapEnd([x, y]);
 		    polyclicks.push(origin);
 		    handles.push(origin);
 			}
@@ -569,210 +572,31 @@ if (mode == "picster") {
 		switch (shape){
 			case 1:
 				if (dragged) {
-				var attr = {};
-				attr.new = "line";
-				attr.id = "Picster-Element_" + num;
-				attr.x1 = origin[0];
-				attr.y1 = origin[1];
-				attr.x2 = x;
-				attr.y2 = y;
-				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["stroke-opacity"] = color[3];
-				attr.style["stroke-width"] = pensize;
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};
-				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				addShape(origin[0], origin[1], "line", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
 			case 2:
 				if (dragged) {
-				if (x < origin[0]) {
-					x1 = x;
-					x2 = origin[0];
-					}
-				else {
-					x1 = origin[0];
-					x2 = x;
-				}
-				if (y < origin[1]) {
-					y1 = y;
-					y2 = origin[1];
-					}
-				else {
-					y1 = origin[1];
-					y2 = y;
-				}
-				var attr = {};
-				attr.new = "rect";
-				attr.id = "Picster-Element_" + num;
-				attr.x = x1;
-				attr.y = y1;
-				attr.width = x2 - x1;
-				attr.height = y2 - y1;
-				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["stroke-opacity"] = color[3];
-				attr.style["stroke-width"] = pensize;
-				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
-				}
-				else {
-				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;
-				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};
-				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				addShape(origin[0], origin[1], "rectangle", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
 			case 3:
-				//  <rect x="120" width="100" height="100" rx="15" />
 				if (dragged) {
-				if (x < origin[0]) {
-					x1 = x;
-					x2 = origin[0];
-					}
-				else {
-					x1 = origin[0];
-					x2 = x;
-				}
-				if (y < origin[1]) {
-					y1 = y;
-					y2 = origin[1];
-					}
-				else {
-					y1 = origin[1];
-					y2 = y;
-				}
-				var attr = {};
-				attr.new = "rect";
-				attr.id = "Picster-Element_" + num;
-				attr.x = x1;
-				attr.y = y1;
-				attr.width = x2 - x1;
-				attr.height = y2 - y1;
-				attr.rx = roundedness;
-				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["stroke-opacity"] = color[3];
-				attr.style["stroke-width"] = pensize;
-				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
-				}
-				else {
-				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;
-				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};
-				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				addShape(origin[0], origin[1], "rounded_rectangle", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
 			case 4:
 				if (dragged) {
-				if (x < origin[0]) {
-					x1 = x;
-					x2 = origin[0];
-					}
-				else {
-					x1 = origin[0];
-					x2 = x;
-				}
-				if (y < origin[1]) {
-					y1 = y;
-					y2 = origin[1];
-					}
-				else {
-					y1 = origin[1];
-					y2 = y;
-				}
-				var attr = {};
-				attr.new = "ellipse";
-				attr.id = "Picster-Element_" + num;
-				attr.cx = x1 + (x2 - x1) / 2;
-				attr.cy = y1 + (y2 - y1) / 2;
-				attr.rx = (x2 - x1) / 2;
-				attr.ry = (y2 - y1) / 2;
-				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["stroke-opacity"] = color[3];
-				attr.style["stroke-width"] = pensize;
-				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
-				}
-				else {
-				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;
-				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [Math.min(origin[0], x), Math.min(origin[1], y), Math.max(origin[0], x), Math.max(origin[1], y)]};
-				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				addShape(origin[0], origin[1], "oval", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
 			case 5:
 				if (dragged) {
-				var attr = {};
-				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
-				attr.d = ovalarc(arc[0], arc[1], origin[0] + (x - origin[0])/2, origin[1] + (y - origin[1])/2, (x - origin[0])/2, (y - origin[1])/2);
-				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["stroke-opacity"] = color[3];
-				attr.style["stroke-width"] = pensize;
-				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
-				}
-				else {
-				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;
-				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
-				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				addShape(origin[0], origin[1], "arc", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
 			case 6:
-				post("click", click, clickcount, "\n");
+				var temp = [];
 				if (click == "single") {
 				blocked = 1;
 				polyclicks[clickcount] = [x, y];
@@ -780,44 +604,19 @@ if (mode == "picster") {
 				}
 				else {
 				polyclicks[clickcount] = [x, y];
-				var attr = {};
-				attr.new = "polyline";
-				attr.id = "Picster-Element_" + num;
 				polyclicks.push(polyclicks[0]);
-				attr.points = polyclicks.join(" ");
-				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["stroke-opacity"] = color[3];
-				attr.style["stroke-width"] = pensize;
-				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
-				}
-				else {
-				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;
-				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
-				edit.parse(JSON.stringify(_picster));
-
-					outlet(3, "bang");
-					polyclicks = [];
-					clickcount = 0;
-					blocked = 0;
+				for (var i = 0; i < polyclicks.length; i++) temp[i] = [polyclicks[i][0] - origin[0], polyclicks[i][1] - origin[1]];
+				addShape(origin[0], origin[1], "polygon", temp);
+				polyclicks = [];
+				clickcount = 0;
+				blocked = 0;
 				}
 				break;
 			case 7:
 				if (dragged) {
-					edit.clear();
+					//edit.clear();
 					//tol = 12;
-				var fitted = fitCurve([origin].concat(polyclicks));
+				/*
 				var attr = {};
 				attr.new = "path";
 				attr.id = "Picster-Element_" + num;
@@ -845,17 +644,20 @@ if (mode == "picster") {
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
-
-
-					outlet(3, "bang");
-					polyclicks = [];
-					stroke = 0;
+				outlet(3, "bang");
+				*/
+				var temp = [];
+				for (var i = 0; i < polyclicks.length; i++) temp[i] = [polyclicks[i][0] - origin[0], polyclicks[i][1] - origin[1]];
+				addShape(origin[0], origin[1], "fitcurve", temp);
+				polyclicks = [];
+				stroke = 0;
 				}
 				break;
 			case 8:
 				var text = textedit.getvalueof();
 				if (JSON.stringify(text).length == 4) return;
 				storedText = htmlEntities(text);
+				/*
 				var attr = {};
 				attr.new = "text";
 				attr.id = "Picster-Element_" + num;
@@ -880,19 +682,22 @@ if (mode == "picster") {
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
-
 				outlet(3, "bang");
+				*/
+				addShape(origin[0], origin[1], "text", text);
 				break;
 			case 9:
 				this.patcher.getnamed("opendialog").message("bang");
 				break;
 			case 0:
+				var temp = [];
 				if (!pathDone) {
 					currentSegment(x, y, true);
 		      if (current.length) segments.push(current);
 		      current = [];
 		      if (click == "ctrl") {
 				pathDone = true;
+				/*
 				var attr = {};
 				attr.new = "path";
 				attr.id = "Picster-Element_" + num;
@@ -921,10 +726,12 @@ if (mode == "picster") {
 				//_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
+				outlet(3, "bang");
+				*/
+				for (var i = 0; i < polyclicks.length; i++) temp[i] = [polyclicks[i][0] - origin[0], polyclicks[i][1] - origin[1]];
+				addShape(origin[0], origin[1], "bezierCurve", temp);
 				polyclicks = [];
 				clickcount = 0;
-				outlet(3, "bang");
-
 				}
 		      	origin = [];
 				}
@@ -1347,6 +1154,7 @@ function addShape()
 			action = "addShape";
 			switch (msg[2]){
 			case "line":
+				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
 				attr.new = "line";
 				attr.id = "Picster-Element_" + num;
@@ -1365,11 +1173,13 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+				post("BOUNDS", [msg[3], msg[4], msg[5], msg[6]], "\n");
+				_picster["picster-element"][1].val = {"bounds" : coords};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
 			case "rectangle":
+				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
 				attr.new = "rect";
 				attr.id = "Picster-Element_" + num;
@@ -1381,7 +1191,6 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
-				//post("property", property, "\n");
 				if (property == "fill") {
 				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["fill-opacity"] = color[3];
@@ -1397,11 +1206,12 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+				_picster["picster-element"][1].val = {"bounds" : coords};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
 			case "rounded_rectangle":
+				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
 				attr.new = "rect";
 				attr.id = "Picster-Element_" + num;
@@ -1409,6 +1219,8 @@ function addShape()
 				attr.y = msg[4];
 				attr.width = msg[5] - msg[3];
 				attr.height = msg[6] - msg[4];
+				//post("property", attr.x, attr.y, attr.width, attr.height, "\n");
+				//BUG in MGraphics
 				attr.rx = roundedness;
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -1429,11 +1241,12 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+				_picster["picster-element"][1].val = {"bounds" : coords};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
 			case "oval":
+				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
 				attr.new = "ellipse";
 				attr.id = "Picster-Element_" + num;
@@ -1460,7 +1273,7 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+				_picster["picster-element"][1].val = {"bounds" : coords};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1488,13 +1301,14 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
 			case "polygon":
 				polyclicks = [];
-				for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
+				if (msg.length == 4) polyclicks = msg[3];
+				else for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
 				polyclicks.push([msg[3], msg[4]]);
 				var attr = {};
 				attr.new = "polyline";
@@ -1519,13 +1333,14 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
 			case "polyline":
 				polyclicks = [];
-				for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
+				if (msg.length == 4) polyclicks = msg[3];
+				else for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
 				var attr = {};
 				attr.new = "polyline";
 				attr.id = "Picster-Element_" + num;
@@ -1541,7 +1356,41 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
+				edit.parse(JSON.stringify(_picster));
+				outlet(3, "bang");
+				break;	
+			case "fitcurve":
+				polyclicks = [];
+				if (msg.length == 4) polyclicks = msg[3];
+				else for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
+				var fitted = fitCurve([[x - origin[0], y - origin[1]]].concat(polyclicks));
+				var d = "M " + fitted[0];
+				for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i];
+				var attr = {};
+				attr.new = "path";
+				attr.id = "Picster-Element_" + num;
+				attr.d = d;
+				attr.style = {};
+				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke-opacity"] = color[3];
+				attr.style["stroke-width"] = pensize;
+				if (property == "fill") {
+				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill-opacity"] = color[3];
+				}
+				else {
+				attr.style["fill"] = "none";
+				attr.style["fill-opacity"] = 1.;
+				}
+				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				_picster["picster-element"] = [];
+				_picster["picster-element"][0] = {};
+				_picster["picster-element"][0]["key"] = "svg";
+				_picster["picster-element"][0]["val"] = attr;
+				_picster["picster-element"][1] = {};
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1570,7 +1419,7 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
@@ -1603,30 +1452,49 @@ function addShape()
 				for (var i = 0; i < quotes.length; i++) if (quotes[i].indexOf("viewBox") != -1) found = i;
 				}
 				else return;
-				_dim = [quotes[found + 1].split(" ")[2], quotes[found + 1].split(" ")[3]]
-				//dim = [line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[2], line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[3]];
+				var inner = quotes[found + 1];
+				var sep = "";
+				sep = (inner.indexOf(",") == -1) ? " " : ",";
+				_dim = [quotes[found + 1].split(sep)[2], quotes[found + 1].split(sep)[3]]
 			}
-			/*
-			edit.replace("picster-element::name", "Picster-Element[" + num + "]");
-			edit.replace("picster-element::picture_0::commands::0", pictype, msg[3]);
-			edit.replace("picster-element::picture_0::info::origin", msg[0], msg[1]);
-			edit.replace("picster-element::picture_0::info::a", [ _dim[0], 0.0, 0.0, "no", 0, _dim[0] ]);
-			edit.replace("picster-element::picture_0::info::b", [ 0.0, _dim[1], 0.0, "no", 0, _dim[1] ]);
-			edit.replace("picster-element::picture_0::info::hide", 0);
-			edit.replace("picster-element::picture_0::info::transform_mode", 0);
-			edit.replace("picster-element::picture_0::info::draw_axes", 0);
-			edit.replace("picster-element::picture_0::info::transform", [ 1.0, 0.0, 0.0, 1.0, 0, 0 ]);
-			edit.replace("picster-element::picture_0::anchors::0", [  _dim[0]/2, _dim[1]/2, 4.0, "yes", 0 ]);
-			*/
-
 				var attr = {};
 				attr.new = "image";
 				attr.id = "Picster-Element_" + num;
 				attr.href = msg[3];
 				attr.x = 0; // msg[0]
 				attr.y = 0; // msg[1]
-				attr.width = _dim[0];
-				attr.height = _dim[1];
+				attr.width = Number(_dim[0]);
+				attr.height = Number(_dim[1]);
+				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				_picster["picster-element"] = [];
+				_picster["picster-element"][0] = {};
+				_picster["picster-element"][0]["key"] = "svg";
+				_picster["picster-element"][0]["val"] = attr;
+				_picster["picster-element"][1] = {};
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [0, 0, Number(_dim[0]), Number(_dim[1])]};
+				edit.parse(JSON.stringify(_picster));
+				outlet(3, "bang");
+				break;
+			case "bezierCurve":
+				var attr = {};
+				attr.new = "path";
+				attr.id = "Picster-Element_" + num;
+				var d = "M " + polyclicks[0];
+				for (var i = 0; i < segments.length; i++) d += " C " + segments[i];
+				attr.d = d;
+				attr.style = {};
+				attr.style["stroke"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke-opacity"] = color[3];
+				attr.style["stroke-width"] = pensize;
+				if (property == "fill") {
+				attr.style["fill"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill-opacity"] = color[3];
+				}
+				else {
+				attr.style["fill"] = "none";
+				attr.style["fill-opacity"] = 1.;
+				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
 				_picster["picster-element"][0] = {};
@@ -1636,9 +1504,9 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
-
-			outlet(3, "bang");
+				outlet(3, "bang");
 			break;
+			
 			}
 }
 
@@ -2087,6 +1955,12 @@ function anything()
 					var trajectory_x = [];
 					var trajectory_y = [];
 					switch (edit.get("picster-element[0]::val::new")) {
+						case "text" :
+							expr.replace("editor", "default");
+							expr.replace("message", edit.get("picster-element[0]::val::child").split(" ")[0]);
+							expr.replace("value", edit.get("picster-element[0]::val::child").split(" ")[1]);
+							addExpressionToSelectedShape("dictionary", expr.name);
+						break;
 						case "line" :
 							var line = JSON.parse(edit.get("picster-element[0]::val").stringify());
 							var totalDistance = Math.sqrt(Math.pow(line.x2 - line.x1, 2) + Math.pow(line.y2 - line.y1, 2));
@@ -2096,6 +1970,10 @@ function anything()
 							trajectory.push("data", 1, 10, totalDistance, 0, 800);
 							trajectory.push(0, line.y1, 0, totalDistance, line.y2, 0);
 							trajectory.push("linear");	
+							expr.replace("editor", "bpf");
+							expr.replace("message", edit.get("picster-element[0]::val::id"));
+							expr.replace("value", trajectory);
+							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "rect" :
 							var _rect = JSON.parse(edit.get("picster-element[0]::val").stringify());
@@ -2113,6 +1991,10 @@ function anything()
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
 								}	
 							trajectory.push("curve");	
+							expr.replace("editor", "bpf");
+							expr.replace("message", edit.get("picster-element[0]::val::id"));
+							expr.replace("value", trajectory);
+							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "ellipse" :
 							var ellipse = JSON.parse(edit.get("picster-element[0]::val").stringify());
@@ -2130,6 +2012,10 @@ function anything()
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
 								}	
 							trajectory.push("curve");	
+							expr.replace("editor", "bpf");
+							expr.replace("message", edit.get("picster-element[0]::val::id"));
+							expr.replace("value", trajectory);
+							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "polyline" :
 							var totalDistance = 0;
@@ -2153,16 +2039,16 @@ function anything()
 								}
 							trajectory.push("linear");	
 							//post("distances-2", trajectory_x[1],  "\n");	
+							expr.replace("editor", "bpf");
+							expr.replace("message", edit.get("picster-element[0]::val::id"));
+							expr.replace("value", trajectory);
+							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "path" :
 						break;
 						default :
 						error("Error: This shape can not translated into an expression");
 					}
-					expr.replace("editor", "bpf");
-					expr.replace("message", edit.get("picster-element[0]::val::id"));
-					expr.replace("value", trajectory);
-					addExpressionToSelectedShape("dictionary", expr.name);
 				}
 			}
 			break;
@@ -2289,6 +2175,7 @@ function anything()
 				_dim = [ Number(quotes[found + 1].replace(/,/g, "").split(" ")[2]), Number(quotes[found + 1].replace(/,/g, "").split(" ")[3]) ];
 				//dim = [line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[2], line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[3]];
 			}
+				/*
 				var attr = {};
 				attr.new = "image";
 				attr.id = "Picster-Element_" + num;
@@ -2306,7 +2193,9 @@ function anything()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : [origin[0], origin[1], _dim[0] + origin[0], _dim[1] + origin[1]]};
 				edit.parse(JSON.stringify(_picster));
-			outlet(3, "bang");
+				outlet(3, "bang");
+				*/
+				addShape(origin[0], origin[1], "image", msg[0]);
 			}
 		break;
 	case "library" :
@@ -2380,8 +2269,8 @@ function getDrawingAnchor()
 
 function dim(w, h)
 {
-	outmatrix.dim = [Math.min(w, 16383), Math.min(h, 16383)];
-	mgraphics.dim = [Math.min(w, 16383), Math.min(h, 16383)];
+	//outmatrix.dim = [Math.min(w, 16383), Math.min(h, 16383)];
+	//mgraphics.dim = [Math.min(w, 16383), Math.min(h, 16383)];
 }
 
 function setZoom(z)
@@ -2562,36 +2451,35 @@ function findBounds(d)
 function findBoundsToo(d)
 {
 	SVGString = [];
+	var renderOffset = [600, 600];
 	renderDrawSocket(d);
 	if (svggroupflag == true) SVGString.push("</g>");
-	var svg = "<svg>";
+	var svg = "<svg><g transform = \"matrix(1,0,0,1," + renderOffset[0] + "," + renderOffset[1] + ")\">";
 	svg += SVGString.join("");
-	svg += "</svg>";
+	svg += "</g></svg>";
 	//img.setsvg(svg);
 	mgraphics.svg_create("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
 	mgraphics.paint();
-	post("svg", svg, "\n");
-	mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
+	//post("svg", svg, "\n");
+	//mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
 	mgraphics.svg_render("img");
 
 	mgraphics.matrixcalc(outmatrix, outmatrix);
 	findbounds.matrixcalc(outmatrix, outmatrix);
 	//post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
-	return [findbounds.boundmin[0] - textRenderOffset[0], findbounds.boundmin[1] - textRenderOffset[1], findbounds.boundmax[0]  - textRenderOffset[0], findbounds.boundmax[1] - textRenderOffset[1]];
+	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) renderOffset = [0, 0];
+		horizontalOffset = 0;
+		verticalOffset = 0;	
+	//post("renderOffset", origin, horizontalOffset, verticalOffset, renderOffset, "\n");
+	return [findbounds.boundmin[0] - renderOffset[0] + horizontalOffset, findbounds.boundmin[1] - renderOffset[1] + verticalOffset, findbounds.boundmax[0] - renderOffset[0] + horizontalOffset, findbounds.boundmax[1] - renderOffset[1] + verticalOffset];
 }
 
 function renderDrawSocket(d)
 {
 	for (var i = 0; i < d.length; i++){
 	var _d = d[i];
- 	//var transform = _d["transform"].substr(_d["transform"].indexOf("(") + 1, _d["transform"].lastIndexOf(")") - _d["transform"].indexOf("(") - 1).split(",").map(Number);
-	//post("svggroupflag", svggroupflag, RenderMessageOffset, transform, "\n");
-	//if (svggroupflag == false) var svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + RenderMessageOffset[1]] + ")";
-	//else var svgtransform = _d["transform"];
 	var svgtransform = _d["transform"];
-	//post("svgtransform", svgtransform, "\n");
-	textRenderOffset = [0, 0];
 	switch (_d.new) {
 		case "line" :
 		SVGString.push("<line x1=\"" + _d["x1"] + "\" y1=\"" + _d["y1"] + "\" x2=\"" + _d["x2"] + "\" y2=\"" + _d["y2"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
@@ -2611,8 +2499,7 @@ function renderDrawSocket(d)
 		case "text" :
 		//post("_d", JSON.stringify(_d), "\n");
 		if (!(_d.hasOwnProperty("text-anchor"))) _d["text-anchor"] = "start";
-		textRenderOffset = [100, 100];
- 		SVGString.push("<text x=\"" + (_d["x"] + textRenderOffset[0]) + "\" y=\"" + (_d["y"] + textRenderOffset[1]) + "\" font-family=\"" + _d["font-family"] + "\" font-size=\"" + _d["font-size"] + "\" font-style=\"" + _d["font-style"] + "\" font-weight=\"" + _d["font-weight"] + "\" text-anchor=\"" + _d["text-anchor"] + "\" text-decoration=\"none\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\">" + _d["child"] + "</text>");
+ 		SVGString.push("<text x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" font-family=\"" + _d["font-family"] + "\" font-size=\"" + _d["font-size"] + "\" font-style=\"" + _d["font-style"] + "\" font-weight=\"" + _d["font-weight"] + "\" text-anchor=\"" + _d["text-anchor"] + "\" text-decoration=\"none\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\">" + _d["child"] + "</text>");
 		break;
 		case "image" :
 		SVGString.push("<rect x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" width=\"" + _d["width"] + "\" height=\"" + _d["height"] + "\" stroke=\"none\" stroke-width=\"1.\" stroke-opacity=\"1.\" fill=\"black\" fill-opacity=\"1.\" transform=\"" + svgtransform + "\"/>");
