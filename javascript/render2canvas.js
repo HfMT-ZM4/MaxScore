@@ -76,7 +76,8 @@ var stems = {};
 var prev_noteheadx = [0, 0, 0, 0];
 var renderNoteheadx = [];
 var currentStaff = 0;
-var frgb = [0, 0, 0];
+var _frgb = [0, 0, 0]; //check lines 2264, 2265 and 2308 for consistency
+var frgb = "rgb(0, 0, 0)";
 var bcolor = [0.996, 0.996, 0.94, 1];
 var fcolor = [0, 0, 0, 1];
 var flcolor = [0.3, 1., 0.3, 0.7];
@@ -2261,8 +2262,8 @@ function anything() {
                 case "frgb":
  					var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
  					//post("colorcode", colorcode, "\n");
-           		if (colorcode == 16776960) frgb = [255 * flcolor[0], 255 * flcolor[1], 255 * flcolor[2]];
-					else frgb = [msg[0], msg[1], msg[2]];
+           		if (colorcode == 16776960) _frgb = [255 * flcolor[0], 255 * flcolor[1], 255 * flcolor[2]];
+					else _frgb = [msg[0], msg[1], msg[2]];
                         break;
  				case ("playheadPosition"):
                     outlet(0, "playback", 1);
@@ -2305,7 +2306,7 @@ function anything() {
 			{
 			for (var d = 0; d < dest.length; d++) {
 			t = glyph[0];
-			outlet(0, "flashing", glyph[1] + msg[0], glyph[2] + dest[d], glyph[3], glyph[4], frgb, t);
+			outlet(0, "flashing", glyph[1] + msg[0], glyph[2] + dest[d], glyph[3], glyph[4], _frgb, t);
 			}
 			}
 			}
