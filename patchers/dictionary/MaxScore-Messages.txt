@@ -184,7 +184,7 @@ setDecrescOut, note "flag (boolean)" "set decrescendo out for selected note(s)" 
 setDoubleBar, measure "measure (int)" "set barline to double" "setDoubleBar 0";
 setDuration, note "duration (float)" "set duration for selected note(s). Quarter note = 1." "setDuration 0.25";
 setDurationForMouseEntry, preference "duration (float)" "defines duration for notes entered by mouse" "setDurationForMouseEntry 1.";
-setDurationalSpacingBase, preference "scaling_base (float)" "Set the \"duration spacing base\" of the Haken/Blostein algorithm which determines the influence of a note's duration on proportional spacing/justification. Range: 0. - 1., default = 0.5" "setDurationalSpacingBase 0.5";
+setDurationalSpacingBase, preference "scaling_base (float)" "Set the \"duration spacing base\" of the Haken/Blostein algorithm which determines the influence of a note's duration on proportional spacing/justification. Range: 0. - 1., default = 0.7" "setDurationalSpacingBase 0.5";
 setDynamic, note "dynamic (symbol)" "set a dynamic for selected note(s). Valid dynamics are: DYNAMIC_NONE, DYNAMIC_PPP, DYNAMIC_PP, DYNAMIC_P, DYNAMIC_MP, DYNAMIC_MF, DYNAMIC_F, DYNAMIC_FF, DYNAMIC_FFF" "setDynamic DYNAMIC_NONE";
 setExtendedStaffLinesAbove, staff "measure (int) staff (int) numExtendedStaffLines (int)" "add any number of staff lines above the five-line system" "setExtendedStaffLinesAbove 0 0 2";
 setExtendedStaffLinesBelow, staff "measure (int) staff (int) numExtendedStaffLines (int)" "add any number of staff lines below the five-line system" "setExtendedStaffLinesBelow 1 0 3";
