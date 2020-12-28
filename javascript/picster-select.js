@@ -1509,7 +1509,7 @@ function addShape()
 				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				post(JSON.stringify(attr));
+				//post(JSON.stringify(attr));
 				_picster["picster-element"] = [];
 				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
