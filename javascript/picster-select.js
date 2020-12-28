@@ -109,8 +109,8 @@ if (mode == "picster" && !blocked) {
       current = [];
       pathDone = false;
     }
-    polyclicks.push(origin);
-    handles.push(origin);
+    polyclicks.push([x,y]);
+    handles.push([x,y]);
 	}
 	var _c = 0;
 	item = -1;
@@ -275,9 +275,9 @@ function ctrlClick(x, y)
 		else {
 			click = "ctrl";
 			if (shape == 0 && !pathDone) {
-			origin = snapEnd([x, y]);
-		    polyclicks.push(origin);
-		    handles.push(origin);
+			var temp = snapEnd([x, y]);
+		  polyclicks.push(temp);
+		  handles.push(temp);
 			}
 		}
 	}
@@ -418,10 +418,10 @@ function mouseDragged(x, y)
 				outlet(2, "identity_matrix");
 			break;
 			case 7 :
-				if (JSON.stringify([x,y]) != oldCoords) {
+				if (x != oldCoords[0] && y != oldCoords[1]) {
 					polyclicks[stroke] = [x, y];
 					stroke++;
-					oldCoords = JSON.stringify([x,y]);
+					oldCoords = [x,y];
 				}
 				outlet(2, "scale", zoom/0.5, zoom/0.5);
 				outlet(2, "clearGraphics");
@@ -548,7 +548,10 @@ if (mode == "picster") {
 		outlet(0, "setRenderAllowed", "1");
 		if (shape == 0) pathDone = true;
 		}
-		else if (item != -1 && !dragged) clickcount = 0;
+		else if (item != -1 && !dragged) {
+			clickcount = 0;
+			if (shape == 0) pathDone = true;
+		}
 		else
 		{
 			/*
@@ -728,8 +731,11 @@ if (mode == "picster") {
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				*/
-				for (var i = 0; i < polyclicks.length; i++) temp[i] = [polyclicks[i][0] - origin[0], polyclicks[i][1] - origin[1]];
-				addShape(origin[0], origin[1], "bezierCurve", temp);
+				for (var i = 0; i < segments.length; i++) {
+					temp[i] = [segments[i][0]-polyclicks[0][0], segments[i][1]-polyclicks[0][1], segments[i][2]-polyclicks[0][0], segments[i][3]-polyclicks[0][1], segments[i][4]-polyclicks[0][0], segments[i][5]-polyclicks[0][1]];
+				}
+				//post(JSON.stringify(temp)+"\n");
+				addShape(polyclicks[0][0], polyclicks[0][1], "bezierCurve", temp);
 				polyclicks = [];
 				clickcount = 0;
 				}
@@ -1359,14 +1365,19 @@ function addShape()
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
-				break;	
+				break;
 			case "fitcurve":
 				polyclicks = [];
 				if (msg.length == 4) polyclicks = msg[3];
 				else for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
-				var fitted = fitCurve([[x - origin[0], y - origin[1]]].concat(polyclicks));
+				//var fitted = fitCurve([[x,y]].concat(polyclicks));
+				var fitted = fitCurve([[0,0]].concat(polyclicks));
+				//post(JSON.stringify(fitted));
+				//var d = "M " + fitted[0][0] + " " + fitted[0][1];
 				var d = "M " + fitted[0];
+				//for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i][0] + " " + + fitted[i][1] + "," + fitted[i][2] + " " + fitted[i][3] + "," + fitted[i][4] + " " + fitted[i][5];
 				for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i];
+				//post(d+"\n");
 				var attr = {};
 				attr.new = "path";
 				attr.id = "Picster-Element_" + num;
@@ -1393,7 +1404,7 @@ function addShape()
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
-				break;
+			break;
 			case "text":
 				post("offsets", offsets[0], "\n");
 				var text = htmlEntities(msg[3]);
@@ -1475,12 +1486,14 @@ function addShape()
 				_picster["picster-element"][1].val = {"bounds" : [0, 0, Number(_dim[0]), Number(_dim[1])]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
-				break;
+			break;
 			case "bezierCurve":
+				segments = msg[3];
 				var attr = {};
 				attr.new = "path";
 				attr.id = "Picster-Element_" + num;
-				var d = "M " + polyclicks[0];
+				var d = "M 0,0";
+				//for (var i = 0; i < segments.length; i++) d += " C " + segments[i][0]+" "+segments[i][1]+", "+segments[i][2]+" "+segments[i][3]+", "+segments[i][4]+" "+segments[i][5];
 				for (var i = 0; i < segments.length; i++) d += " C " + segments[i];
 				attr.d = d;
 				attr.style = {};
@@ -1496,6 +1509,7 @@ function addShape()
 				attr.style["fill-opacity"] = 1.;
 				}
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				post(JSON.stringify(attr));
 				_picster["picster-element"] = [];
 				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
@@ -1506,7 +1520,7 @@ function addShape()
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 			break;
-			
+
 			}
 }
 
@@ -1747,7 +1761,7 @@ function init()
 				else {
 				outlet(0, "setNoteDimension", 6, -1);
 				}
-			//}	
+			//}
 		}
 		expr.parse(JSON.stringify(o));
  		outlet(1, "dictionary", expr.name);
@@ -1969,7 +1983,7 @@ function anything()
 							trajectory.push("linear");
 							trajectory.push("data", 1, 10, totalDistance, 0, 800);
 							trajectory.push(0, line.y1, 0, totalDistance, line.y2, 0);
-							trajectory.push("linear");	
+							trajectory.push("linear");
 							expr.replace("editor", "bpf");
 							expr.replace("message", edit.get("picster-element[0]::val::id"));
 							expr.replace("value", trajectory);
@@ -1989,8 +2003,8 @@ function anything()
 							trajectory.push("data", 1, 24, totalDistance, 0, 800);
 							for (var i = 0; i < 5; i++) {
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
-								}	
-							trajectory.push("curve");	
+								}
+							trajectory.push("curve");
 							expr.replace("editor", "bpf");
 							expr.replace("message", edit.get("picster-element[0]::val::id"));
 							expr.replace("value", trajectory);
@@ -2010,8 +2024,8 @@ function anything()
 							trajectory.push("data", 1, 24, totalDistance, 0, 800);
 							for (var i = 0; i < 5; i++) {
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
-								}	
-							trajectory.push("curve");	
+								}
+							trajectory.push("curve");
 							expr.replace("editor", "bpf");
 							expr.replace("message", edit.get("picster-element[0]::val::id"));
 							expr.replace("value", trajectory);
@@ -2037,8 +2051,8 @@ function anything()
 							for (var i = 0; i < trajectory_y.length; i++) {
 								for (var j = 0; j < 3; j++) trajectory.push(trajectory_y[i][j]);
 								}
-							trajectory.push("linear");	
-							//post("distances-2", trajectory_x[1],  "\n");	
+							trajectory.push("linear");
+							//post("distances-2", trajectory_x[1],  "\n");
 							expr.replace("editor", "bpf");
 							expr.replace("message", edit.get("picster-element[0]::val::id"));
 							expr.replace("value", trajectory);
@@ -2470,7 +2484,7 @@ function findBoundsToo(d)
 	//post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
 	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) renderOffset = [0, 0];
 		horizontalOffset = 0;
-		verticalOffset = 0;	
+		verticalOffset = 0;
 	//post("renderOffset", origin, horizontalOffset, verticalOffset, renderOffset, "\n");
 	return [findbounds.boundmin[0] - renderOffset[0] + horizontalOffset, findbounds.boundmin[1] - renderOffset[1] + verticalOffset, findbounds.boundmax[0] - renderOffset[0] + horizontalOffset, findbounds.boundmax[1] - renderOffset[1] + verticalOffset];
 }
