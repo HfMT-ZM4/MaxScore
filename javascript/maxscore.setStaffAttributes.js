@@ -163,8 +163,6 @@ offset = annotation.get("staff-"+StaffIndex+"::instrumentNamePositionOffset");
 if (typeof(offset)!="object" && offset!="*") this.patcher.getnamed("instrumentnamepositionoffset").message(offset);
 else instrumentnamepositionoffset(0);
 
-outlet(0, "setInstrumentDimension", StaffIndex, 5, "originalPitch", -1., 127., -1.);
-outlet(0, "setInstrumentDimension", StaffIndex, 6, "index", -1., 10000., -1.);		
 this.patcher.parentpatcher.getnamed("done").message("bang");
 }
 

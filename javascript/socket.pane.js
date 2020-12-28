@@ -89,10 +89,12 @@ function setpath(relPath)
 		if (typeof relPath != "undefined")
 		{
 			pathToScript = fullpath.substr(afterDrive, lastSlash - afterDrive + 2) + relPath;
-			mediaFolder = relPath.toString().substr(relPath.toString().indexOf('/'));
+			//mediaFolder = relPath.toString().substr(relPath.toString().indexOf('/'));
+			mediaFolder = relPath.toString();
 		}
 		else pathToScript = fullpath.substr(afterDrive, lastSlash - afterDrive + 2);
 	}
+	post("pathToScript", pathToScript, mediaFolder, "\n");
 }
 
 
@@ -101,7 +103,6 @@ function remap(staffGroup, staffIndex, position)
 	var dest = [];
 	// get occurences of staffIndex in staffgroup #s  
 	var idx = getAllIndexes(staffGroup, staffIndex);
-	//post("staffgroup", staffGroup, "contains staffline from staff", staffIndex, "at position", position, "in boxes", idx, "\n");
 	if (idx != -1)
 	{
  	for (i = 0; i < idx.length; i++){
@@ -437,7 +438,7 @@ function obj_ref(o)
 function writeSVG(destination)
 {
 	f = new File(pathToScript + svgFile, "write", "TEXT");
-	//post("path", pathToScript + svgFile, "\n");
+	post("path", pathToScript, "\n");
 	f.open();
 	f.eof = 0;
 	f.writeline("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
