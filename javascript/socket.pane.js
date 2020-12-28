@@ -89,8 +89,7 @@ function setpath(relPath)
 		if (typeof relPath != "undefined")
 		{
 			pathToScript = fullpath.substr(afterDrive, lastSlash - afterDrive + 2) + relPath;
-			//mediaFolder = relPath.toString().substr(relPath.toString().indexOf('/'));
-			mediaFolder = relPath.toString();
+			mediaFolder = relPath.toString().substr(relPath.toString().indexOf('/'));
 		}
 		else pathToScript = fullpath.substr(afterDrive, lastSlash - afterDrive + 2);
 	}
