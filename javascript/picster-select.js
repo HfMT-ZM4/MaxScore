@@ -1374,7 +1374,7 @@ function addShape()
 				var fitted = fitCurve([[0,0]].concat(polyclicks));
 				//post(JSON.stringify(fitted));
 				//var d = "M " + fitted[0][0] + " " + fitted[0][1];
-				var d = "M " + fitted[0];
+				var d = "M 0 0";
 				//for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i][0] + " " + + fitted[i][1] + "," + fitted[i][2] + " " + fitted[i][3] + "," + fitted[i][4] + " " + fitted[i][5];
 				for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i];
 				//post(d+"\n");

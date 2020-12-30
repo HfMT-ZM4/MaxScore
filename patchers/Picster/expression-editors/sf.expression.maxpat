@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 578.0, 373.0, 761.0, 543.0 ],
+		"rect" : [ 59.0, 109.0, 1313.0, 755.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -96,7 +96,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 456.666666666666742, 224.622806549072266, 264.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 16.904770800315845, 18.456522000000007, 251.0, 20.0 ],
+					"presentation_rect" : [ 16.904770800315845, 36.561403274536133, 251.0, 20.0 ],
 					"text" : "filename",
 					"textcolor" : [ 0.396078431372549, 0.396078431372549, 0.396078431372549, 1.0 ],
 					"textjustification" : 2,
@@ -121,7 +121,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 456.5, 197.5, 264.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 16.904770800315845, 18.456522000000007, 251.0, 20.0 ],
+					"presentation_rect" : [ 16.904770800315845, 36.561403274536133, 251.0, 20.0 ],
 					"rounded" : 0.0,
 					"text" : "\"Macintosh HD:/Users/james/Documents/0 Working files/20201202 In the Midst of/Episode 1/media/audio/text-to-speech/17 Your message (Matthew).mp3\"",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -155,7 +155,7 @@
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 					"patching_rect" : [ 566.666666666666742, 272.122806549072266, 256.0, 64.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 16.904770800315845, 77.5, 251.000000000000028, 64.0 ],
+					"presentation_rect" : [ 16.904770800315845, 61.5, 251.000000000000028, 64.0 ],
 					"ruler" : 0,
 					"vticks" : 0,
 					"waveformcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ]
@@ -177,7 +177,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 456.5, 72.5, 61.5, 28.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 156.519646400947579, 43.561403274536133, 111.385124399368294, 27.0 ],
+					"presentation_rect" : [ 86.712208600631698, 7.561403274536133, 111.385124399368294, 27.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
@@ -387,6 +387,13 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-10", 0 ]
 				}
@@ -579,8 +586,8 @@
 				"name" : "black on white",
 				"number" : 				{
 					"fontname" : [ "Arial" ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"umenu" : 				{
