@@ -131,7 +131,6 @@ if (mode == "picster" && !blocked) {
 			break;
 			case "note" :
             RenderMessageOffset = [renderedMessages.get(keys[i])[5], renderedMessages.get(keys[i])[6]];
-			//post("FORMAT-1", renderedMessages.get(keys[i]).length	,  "\n");
 			if (renderedMessages.get(keys[i]).length == 9) format = "drawsocket";
 			break;
 			case "staff" :

@@ -1105,7 +1105,6 @@ function anything() {
 		outlet(1, "getScoreAnnotation");
 		post("annotation.stringify", annotation.stringify(), "\n");	
 		var keys = annotation.getkeys();
-		post("keys", typeof keys, "\n");	
 		if (keys != null) return;
 		for (i = 0; i < keys.length; i++) {
 			if (keys[i].indexOf("staff-") != -1) {
@@ -1553,7 +1552,7 @@ function anything() {
 				break;
 				*/
 				case "note" :
-            	var RenderMessageOffset = [msg[5], msg[6]];
+           		var RenderMessageOffset = [msg[5], msg[6]];
 				if (msg.length == 9) format = "drawsocket";
 				msg = currentElement.concat(msg.splice(5));
 				break;
@@ -1978,17 +1977,21 @@ function anything() {
 			//else msg[1] += 0.;
 			}
 		//KEEP TRACK OF INCIDENCES OF NOTEs AND INTERVALS
-		if (msg[3]!= "Staff" && accList.indexOf(msgname) != -1 && annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
+		if (msg[3]!= "Staff" && accList.indexOf(msgname) != -1){
 			var Accidental = [];
 			if (msg[3] == "Note") {
+				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 				outlet(1, "getNoteProperty", "level", msg[4], msg[5], msg[6], msg[7], -1);
 				outlet(1, "getNoteInfo", msg[4], msg[5], msg[6], msg[7]);
+				}
 				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7]];
 				intervalCount = 0;
 				}
 			else if (msg[3] == "Interval") {
+				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 				outlet(1, "getNoteProperty", "level", msg[4], msg[5], msg[6], msg[7], intervalCount);
 				outlet(1, "getIntervalInfo", msg[4], msg[5], msg[6], msg[7], intervalCount);
+				}
 				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount];
 				intervalCount++;
 				}
