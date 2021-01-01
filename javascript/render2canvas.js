@@ -1158,13 +1158,71 @@ function anything() {
             break;
        case "printNoteText":
 			//printNoteText measureIndex staffIndex trackIndex noteIndex zoom x y test
+			var noteText = "";
+			switch (msg[7])
+			{
+				case "$MIDICENTS" :
+				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				noteText = Math.round(pitch * 100.);
+				break;
+				case "$DEVIATION" :
+				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				var diff = pitch - parseInt(pitch);
+				noteText = ((diff < 0.5) ? "+" : "") + Math.round((diff < 0.5) ? diff * 100 : (1 - diff) * -100);
+				break;
+				case "$FREQUENCY" :
+				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				noteText = (440 * Math.pow(2, (pitch - 69) / 12)).toFixed(2);
+				break;
+				case "$RATIO" :
+				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
+				else cent2ratio.name = "cent2ratio-8";
+				if (cent2ratio.name.indexOf("odd") == -1)  {
+					keysigaccum = staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][2] ? 1 : -1);
+					//post("keysigaccum", staffInfo[0][1], keysigaccum, "\n");
+					var frame = 1200;
+					var shift = (keysigaccum * 7) % 12;
+					if (shift > 12) shift += 12; 
+				
+					}
+				else {
+					var frame = 1902;
+					shift = 11.94;
+					}
+				if (value == -1) value = pitch;
+				noteText = cent2ratio.get(Math.round((value - shift) * 100) % frame).slice(1).join("/");
+				break;
+				case "$RATIOWITHDEVIATION" :
+				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
+				else cent2ratio.name = "cent2ratio-8";
+				if (cent2ratio.name.indexOf("odd") == -1)  {
+					keysigaccum = staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][2] ? 1 : -1);
+					var frame = 1200;
+					var shift = (keysigaccum * 7) % 12;
+					if (shift > 12) shift += 12; 
+				
+					}
+				else {
+					var frame = 1902;
+					shift = 11.94;
+					}
+				if (value == -1) value = pitch;
+				var ratio = cent2ratio.get(Math.round((value - shift) * 100) % frame).slice(1);
+				var diff = (((value - shift) * 100) % frame) - 1200 * Math.log(ratio[0]/ratio[1])/Math.log(2);
+				//post("diff", pitch, ratio, (((value - shift) * 100) % frame), 1200 * Math.log(ratio[0]/ratio[1])/Math.log(2));
+				noteText = ratio.join("/") + ((diff < 0) ? "" : "+") + diff.toFixed(2);
+				break;
+				default: noteText = decodeURI(msg[7]);
+			}
 			for (var s = 0; s < groupcount; s++)
 			{
 			var dest = remap(sg[s], msg[1], msg[6]);
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<text x=\"" + msg[5] + "\" y=\"" + dest[d] + "\" font-family=\"Arial\" font-style=\"normal\" font-weight=\"normal\" font-size=\"10\" fill=\"black\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + decodeURI(msg[7]) + "</text>");
+			SVGString[s + 1].push("<text x=\"" + msg[5] + "\" y=\"" + dest[d] + "\" font-family=\"Arial\" font-style=\"normal\" font-weight=\"normal\" font-size=\"10\" fill=\"black\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + noteText + "</text>");
 			}
 			}
 			}
@@ -1870,7 +1928,6 @@ function anything() {
 			extendedStaffLines[msg[2]] = [json["staff"]["EXTENDEDLINESABOVE"], json["staff"]["EXTENDEDLINESBELOW"]];
 			clefList[msg[2]] = json["staff"]["CLEF"];
 			var measureOffset = (typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1];
-			//post("staffInfo", msg[1], msg[2], typeof scoreLayout[1], scoreLayout[1], measureOffset, staffInfo[0][msg[2]], "\n");
 			staffInfo[msg[1] - measureOffset][msg[2]] = [json["staff"]["CLEF"], json["staff"]["KEYSIGNUMACC"], json["staff"]["KEYSIGTYPE"]];
 			// for repeated-acc-filter we need CLEF, KEYSIGNUMACC and KEYSIGTYPE in a obj[measure][staff] object
 			break;
@@ -1914,36 +1971,25 @@ function anything() {
 			if (msgname == "dot") return;
 		}
 		if (msg[2] != 0.5 && messagename.indexOf("flag") != -1) {
-				//post("msg", messagename.indexOf("down"), messagename.indexOf("up"), "\n");
 			if (messagename.indexOf("down") != -1) {
 				msg[0] += -2.5;
 				msg[1] += 4.;
 				}
 			//else msg[1] += 0.;
 			}
-		if (accList.indexOf(messagename) != -1) {
-			if (msg[3] == "Note") {
-				intervalCount = -1;
-				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7]];
-				}
-			else {
-				intervalCount += 1;
-				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount];
-				}
-		}	 
 		//KEEP TRACK OF INCIDENCES OF NOTEs AND INTERVALS
-		//post("currentElement", currentElement, "\n");
-		
-		if (accList.indexOf(msgname) != -1 && annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
+		if (msg[3]!= "Staff" && accList.indexOf(msgname) != -1 && annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 			var Accidental = [];
 			if (msg[3] == "Note") {
 				outlet(1, "getNoteProperty", "level", msg[4], msg[5], msg[6], msg[7], -1);
 				outlet(1, "getNoteInfo", msg[4], msg[5], msg[6], msg[7]);
+				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7]];
 				intervalCount = 0;
 				}
-			else {
+			else if (msg[3] == "Interval") {
 				outlet(1, "getNoteProperty", "level", msg[4], msg[5], msg[6], msg[7], intervalCount);
 				outlet(1, "getIntervalInfo", msg[4], msg[5], msg[6], msg[7], intervalCount);
+				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount];
 				intervalCount++;
 				}
 			switch (annotation.get("staff-"+msg[5]+"::micromap")){
@@ -1957,9 +2003,11 @@ function anything() {
 				if (annotation.contains("staff-"+msg[5]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[5]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
+					keysigaccum = staffInfo[msg[4] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[5]][1] * (staffInfo[msg[4] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[5]][2] ? 1 : -1);
 					var frame = 1200;
 					var shift = (keysigaccum * 7) % 12;
 					if (shift > 12) shift += 12; 
+				
 					}
 				else {
 					var frame = 1902;
@@ -1968,10 +2016,11 @@ function anything() {
 				if (value == -1) value = pitch;
 				var ratio = cent2ratio.get(Math.round((value - shift) * 100) % frame);
 				///// accidental finder
+				//post("ratio", cent2ratio.name, ratio, "\n");
 				var JIAccidentalSuffix = "pyth";			
         		if (ratio[1] != 1) var factorPowersNum = toFactorPowerList(primeFactorList(ratio[1]));
 				else var factorPowersNum = [[1, 1]];
-				var fifths = 0;
+				var fifths = keysigaccum;
  				//post("Num", JSON.stringify(factorPowersNum), "\n");
 				for (var i = 0; i < factorPowersNum.length; i++) {
 				switch (factorPowersNum[i][0])
@@ -1996,7 +2045,7 @@ function anything() {
 						break;
 					case 13: 
 						fifths += 3 * factorPowersNum[i][1];
-						 Accidental.push("tridecimalup");
+						 Accidental.push("tridecimaldown");
 						break;
 					case 17: 
 						fifths += -5 * factorPowersNum[i][1];
@@ -2042,7 +2091,7 @@ function anything() {
 						break;
 					case 13: 
 						fifths += -3 * factorPowersDenom[i][1];
-						 Accidental.push("tridecimaldown");
+						 Accidental.push("tridecimalup");
 						break;
 					case 17: 
 						fifths += 5 * factorPowersDenom[i][1];

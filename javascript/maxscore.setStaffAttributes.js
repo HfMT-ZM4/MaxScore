@@ -466,7 +466,7 @@ function isEditor(stl) {
 function newEvent(data) {
     if (data.value[0] == StaffIndex) {
 	var event = data.value.slice(1);
-	//post("event", event, "\n");
+	post("event", event, "\n");
     outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     info.clear();

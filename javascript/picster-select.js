@@ -1180,7 +1180,7 @@ function addShape()
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
 				post("BOUNDS", [msg[3], msg[4], msg[5], msg[6]], "\n");
-				_picster["picster-element"][1].val = {"bounds" : coords};
+				_picster["picster-element"][1].val = {"bounds" : [ coords[0] - 2, coords[1] - 2 , coords[2] + 2, coords[3] + 2 ]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;

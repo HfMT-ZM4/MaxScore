@@ -11,9 +11,9 @@
 		<o>
 			maxscore.icanvas
 		</o>
-integrates the MaxScore object and maxscore.bcanvas abstraction. It's fully self-contained and doesn't require other peripheral objects for the rendering of scores. 
-As an embedded bpatcher, it automatically preserves its content when copied or when its parent patcher is being saved. This also implied that an older instance of maxscore.icanvas has to be <o>manually</o> 
-updated to the most current version. Refer to the MaxScore and maxscore.bcanvas help files for a comprehensive documentation of its features. 
+combines the MaxScore object and maxscore.bcanvas abstraction. It's fully self-contained and doesn't require other peripheral objects for the rendering of scores. 
+As an embedded bpatcher, it automatically preserves its content when copied or when its parent patcher is being saved. Therefore, if you ise instances of maxscore.icanvas in your patches, they have to be <o>manually</o> 
+updated to the most current version (paste-replace with the instance found in the maxscore.icanvas help file. ALso, refer to the MaxScore and maxscore.bcanvas help files for a comprehensive documentation of its features. 
 </description>
 	<!--METADATA-->
 	<metadatalist>

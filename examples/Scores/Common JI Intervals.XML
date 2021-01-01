@@ -1,0 +1,1289 @@
+<?xml version="1.0"?>
+<jmslscoredoc>
+<!-- Saved document from JMSL's programmable music notation editor. Java Music Specification Language by Nick Didkovsky & Phil Burk, available from: http://www.algomusic.com -->
+<score NAME="JMSLMaxScore-4" SUBTITLE="" COMPOSER="" COPYRIGHT="" WIDTH="800" HEIGHT="800" STAFFS="1" NUMTRACKSPERSTAFF="4" InstrumentNamesVisible="false" TempoVisible="true" StaffNumbersVisible="true" MeasureNumbersVisible="true" SectionBracketsVisible="true" TimeSignaturesVisible="true" KeySignaturesVisible="true" ClefsVisible="true" ScoreTitleVisible="false" CourtesyClefsVisible="false" MeasureNumberOffset="1" LeftMargin="20.0" RightMargin="20.0" TopMargin="15.0" BottomMargin="15.0" TopMarginOfFirstPage="60.0" DrawAllMeasureNumbers="false" TextFontScaler="1.5" ScoreSubtitleFontScaler="2.0" ScoreTitleFontScaler="4.0" TimesigFontScaler="2.5" MeasureNumberFontScaler="1.5" TextFontName="SansSerif" ScoreSubtitleFontName="Serif" ScoreTitleFontName="Serif" TimesigFontName="Serif" MeasureNumberFontName="SansSerif" FirstSystemIndent="0.0" useLegacyMultiTrackOrientation="true" >
+<ScoreAnnotation CLASSNAME="com.softsynth.jmsl.score.ScoreAnnotation" Annotation="268.3ocUP1rSDCBEFcM7TPXc6j1DilwcNwMcR7mDW3BiKnsPCJkayEpQyj4cWtfiNtojdtG93CNvYxOzXvBdo3ZgrcSirJwVPXAvXBqbzfFBF0eFMfOlMuAsoQDteZ.b.RzWDMa1t8xpyVtnRjBU7JYZ9uYS0Ye9UJniOipERp8m+ucEUkt7zhZv5m1oB5bs1bUVIpLl5FhvNvYLoSONoQm0qCmxgr9xk2kb+ZHJ57wThTrx73Y6.BykCVNeW89tBWM9VR+zi.SN3zlryn1nVcwhUtf0N.dec4O2bwlPnvR24JQca9ZlxsuG67gHduZtTKQIJKAWm09HM4QHXoR9fwjdIxQyYG47i7uAGYnceC" >
+</ScoreAnnotation>
+<orchestra CLASSNAME="com.softsynth.jmsl.score.Orchestra" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="0" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" Name="MaxScoreIns-0" >
+<dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
+<dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
+<dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="10000.0" name="index" />
+</jmslscoreinstrument>
+</orchestra>
+<mixerpanelsettings >
+<panamppair FADERINDEX="0" PAN="0.5" AMP="0.5" />
+</mixerpanelsettings>
+<staffspacing INDEX="0" ABOVE="72.0" BELOW="72.0" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-1" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-2" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-3" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-4" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-5" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-6" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="15" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="14" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-7" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="13" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-8" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="12" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-9" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="11" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-10" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="10" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-11" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="9" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-12" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="8" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-13" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="7" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-14" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="6" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="-15" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="5" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="4" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="3" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="2" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="1" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="0" isVisible="true" ledgerLinesVisible="true" />
+<scoresection NAME="A" START="0" END="0" />
+<scoresection NAME="B" START="0" END="0" />
+<scoresection NAME="C" START="0" END="0" />
+<scoresection NAME="D" START="0" END="0" />
+<scoresection NAME="E" START="0" END="0" />
+<scoresection NAME="F" START="0" END="0" />
+<scoresection NAME="G" START="0" END="0" />
+<scoresection NAME="H" START="0" END="0" />
+<scoresection NAME="I" START="0" END="0" />
+<scoresection NAME="J" START="0" END="0" />
+<scoresection NAME="K" START="0" END="0" />
+<scoresection NAME="L" START="0" END="0" />
+<scoresection NAME="M" START="0" END="0" />
+<scoresection NAME="N" START="0" END="0" />
+<scoresection NAME="O" START="0" END="0" />
+<scoresection NAME="P" START="0" END="0" />
+<scoresection NAME="Q" START="0" END="0" />
+<scoresection NAME="R" START="0" END="0" />
+<scoresection NAME="S" START="0" END="0" />
+<scoresection NAME="T" START="0" END="0" />
+<scoresection NAME="U" START="0" END="0" />
+<scoresection NAME="V" START="0" END="0" />
+<scoresection NAME="W" START="0" END="0" />
+<scoresection NAME="X" START="0" END="0" />
+<scoresection NAME="Y" START="0" END="0" />
+<scoresection NAME="Z" START="0" END="0" />
+<measure WIDTH="561" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="60.0" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="60.21506118774414" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.21506118774414" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="60.272640228271484" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.272640228271484" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="60.35696792602539" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.35696792602539" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="479" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="60.410587310791016" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.410587310791016" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="60.48770523071289" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.48770523071289" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="60.53273010253906" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.53273010253906" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="60.629608154296875" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.629608154296875" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="479" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="60.70672607421875" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.70672607421875" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="60.80537033081055" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.80537033081055" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="60.84467315673828" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.84467315673828" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="60.90224838256836" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.90224838256836" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="60.92178726196289" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.92178726196289" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="60.98954772949219" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="60.98954772949219" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="61.04955291748047" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.04955291748047" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="61.117313385009766" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.117313385009766" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="61.194427490234375" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.194427490234375" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="61.282981872558594" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.282981872558594" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="61.332374572753906" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.332374572753906" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="9" DURATION="1.0" PITCH="61.38572692871094" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.38572692871094" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="9" DURATION="1.0" PITCH="61.43497848510742" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.43497848510742" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="61.506370544433594" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.506370544433594" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="9" DURATION="1.0" PITCH="61.551395416259766" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.551395416259766" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="61.65004348754883" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.65004348754883" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="9" DURATION="1.0" PITCH="61.682132720947266" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.682132720947266" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="61.82403564453125" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.82403564453125" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="5" DURATION="1.0" PITCH="61.901153564453125" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.901153564453125" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="4" DURATION="1.0" PITCH="61.96198654174805" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="61.96198654174805" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="62.039100646972656" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.039100646972656" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="4" DURATION="1.0" PITCH="62.23462677001953" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.23462677001953" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="62.31174087524414" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.31174087524414" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="62.44968795776367" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.44968795776367" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="62.47740936279297" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.47740936279297" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="62.52680206298828" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.52680206298828" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="62.52680206298828" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.52680206298828" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="62.66870880126953" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.66870880126953" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="62.74582290649414" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.74582290649414" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="62.81358337402344" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.81358337402344" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="62.8444709777832" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.8444709777832" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="62.941349029541016" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.941349029541016" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="62.97513198852539" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="62.97513198852539" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="63.01846694946289" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.01846694946289" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="63.15641403198242" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.15641403198242" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="63.37147521972656" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.37147521972656" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="63.429054260253906" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.429054260253906" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="63.47407913208008" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.47407913208008" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="64.51338195800781" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.51338195800781" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="63.54547119140625" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.54547119140625" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="63.594722747802734" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.594722747802734" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="9" DURATION="1.0" PITCH="63.648075103759766" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.648075103759766" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="63.863136291503906" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="63.863136291503906" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="64.00108337402344" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.00108337402344" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="64.07820129394531" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.07820129394531" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="64.13578033447266" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.13578033447266" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="64.17507934570312" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.17507934570312" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="64.27372741699219" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.27372741699219" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="64.35083770751953" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.35083770751953" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="64.49274444580078" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.49274444580078" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="64.56986236572266" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.56986236572266" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="64.56986236572266" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.56986236572266" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="64.62348175048828" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.62348175048828" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="64.70780944824219" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.70780944824219" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="64.5421371459961" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.5421371459961" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="64.76538848876953" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.76538848876953" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="64.80645751953125" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.80645751953125" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="64.98045349121094" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="64.98045349121094" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="65.19551086425781" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.19551086425781" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="65.33741760253906" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.33741760253906" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="65.3695068359375" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.3695068359375" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="65.39103698730469" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.39103698730469" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="65.46815490722656" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.46815490722656" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="65.51317596435547" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.51317596435547" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="65.63382720947266" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.63382720947266" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="65.68717193603516" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.68717193603516" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="65.82511901855469" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.82511901855469" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="65.90223693847656" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.90223693847656" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="65.9699935913086" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="65.9699935913086" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="66.0300064086914" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.0300064086914" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="66.09776306152344" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.09776306152344" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="66.17488098144531" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.17488098144531" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="66.28274536132812" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.28274536132812" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="66.31282806396484" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.31282806396484" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="66.36617279052734" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.36617279052734" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="66.48682403564453" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.48682403564453" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="66.53184509277344" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.53184509277344" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="9" DURATION="1.0" PITCH="66.60896301269531" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.60896301269531" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="66.6304931640625" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.6304931640625" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="9" DURATION="1.0" PITCH="66.66258239746094" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.66258239746094" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="66.80448913574219" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="66.80448913574219" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="67.01954650878906" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.01954650878906" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="67.19354248046875" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.19354248046875" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="67.23461151123047" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.23461151123047" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="67.29219055175781" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.29219055175781" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="65.36930847167969" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.36930847167969" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="67.37651824951172" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.37651824951172" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="67.43013763427734" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.43013763427734" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="561" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="67.4578628540039" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.4578628540039" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="67.50725555419922" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.50725555419922" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="67.64916229248047" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.64916229248047" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="67.72627258300781" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.72627258300781" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="479" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="67.82492065429688" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.82492065429688" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="67.86421966552734" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.86421966552734" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="67.92179870605469" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.92179870605469" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="67.99891662597656" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.99891662597656" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="479" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="68.1368637084961" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.1368637084961" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="68.3519287109375" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.3519287109375" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="68.4052734375" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.4052734375" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="68.45452880859375" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.45452880859375" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="70.49382781982422" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.49382781982422" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="68.52591705322266" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.52591705322266" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="68.5709457397461" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.5709457397461" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="68.62852478027344" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.62852478027344" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="68.84358978271484" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.84358978271484" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="4" DURATION="1.0" PITCH="68.98153686523438" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.98153686523438" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="69.05864715576172" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.05864715576172" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="4" DURATION="1.0" PITCH="69.18641662597656" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.18641662597656" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="69.2541732788086" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.2541732788086" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="69.33129119873047" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.33129119873047" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="69.46923828125" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.46923828125" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="69.52259063720703" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.52259063720703" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="69.55030822753906" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.55030822753906" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="69.6882553100586" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.6882553100586" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="69.76537322998047" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.76537322998047" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="69.96089935302734" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.96089935302734" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="1" DURATION="1.0" PITCH="70.03801727294922" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.03801727294922" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="70.17596435546875" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.17596435546875" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="70.34996032714844" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.34996032714844" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="70.39102935791016" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.39102935791016" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="70.44860076904297" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.44860076904297" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="70.4936294555664" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.4936294555664" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="70.56501770019531" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.56501770019531" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="70.61427307128906" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.61427307128906" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="70.6676254272461" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.6676254272461" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="70.7170181274414" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.7170181274414" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="70.80557250976562" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.80557250976562" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="70.8826904296875" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.8826904296875" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="70.95044708251953" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.95044708251953" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="71.01045227050781" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.01045227050781" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="71.07821655273438" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.07821655273438" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="71.09774780273438" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.09774780273438" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="71.15532684326172" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.15532684326172" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="71.19462585449219" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.19462585449219" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="71.29327392578125" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.29327392578125" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="71.37039184570312" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.37039184570312" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="791" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="71.46726989746094" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.46726989746094" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="71.51229858398438" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.51229858398438" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="8" DURATION="1.0" PITCH="71.58940887451172" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.58940887451172" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="73.6502456665039" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="true" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.6502456665039" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="730" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="71.72735595703125" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.72735595703125" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="71.7849349975586" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.7849349975586" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="72.0" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="2" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="18" TEXTOFFSETY="-4" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="$RATIO" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="72.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<scoreUserBean CLASSNAME="com.algomusic.max.MaxScoreRenderedMessageListener" >
+</scoreUserBean>
+</score>
+</jmslscoredoc>

@@ -25,3 +25,9 @@ function anything()
 			if (dumpflag) dump.push(messagename);
 	}
 }
+
+function clear()
+{
+	inspector.clear();
+	outlet(0, "dictionary", inspector.name);
+}
