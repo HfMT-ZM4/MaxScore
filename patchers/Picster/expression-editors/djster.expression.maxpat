@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1128.0, 310.0, 1147.0, 643.0 ],
+		"rect" : [ 59.0, 137.0, 1313.0, 727.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -138,7 +138,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 33.416666666666657, 121.622806549072266, 314.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -168,44 +168,14 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 309.416666666666629, 259.0, 24.0, 24.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-65",
+					"linecount" : 2,
 					"maxclass" : "newobj",
-					"numinlets" : 4,
+					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "dictionary" ],
-					"patching_rect" : [ 32.083333333333286, 622.0, 261.0, 22.0 ],
-					"text" : "dict.pack editor : message : value : autorender :"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 275.416666666666629, 304.0, 229.0, 22.0 ],
-					"restore" : [ "false" ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr @thru 0 @bindto parent::autorender",
-					"varname" : "u268009340"
+					"patching_rect" : [ 32.083333333333286, 622.0, 180.0, 35.0 ],
+					"text" : "dict.pack editor : message : value :"
 				}
 
 			}
@@ -214,10 +184,10 @@
 					"id" : "obj-66",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "djster", "djster", "bang", "bang" ],
-					"patching_rect" : [ 33.416666666666657, 259.0, 261.0, 22.0 ],
-					"text" : "t djster djster b b"
+					"numoutlets" : 3,
+					"outlettype" : [ "djster", "djster", "bang" ],
+					"patching_rect" : [ 33.416666666666657, 259.0, 178.999999999999972, 22.0 ],
+					"text" : "t djster djster b"
 				}
 
 			}
@@ -1431,27 +1401,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-66", 3 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-7", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-65", 3 ],
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"midpoints" : [ 79.916666666666657, 236.622806549072266, 157.916666666666629, 236.622806549072266, 157.916666666666629, 162.622806549072266, 721.916666666666629, 162.622806549072266 ],
 					"source" : [ "obj-9", 1 ]
@@ -1466,6 +1415,38 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-1" : [ "outset_pulses", "outset", 0 ],
+			"obj-11" : [ "eventfulness", "Eventfulness", 0 ],
+			"obj-12" : [ "event_length", "Event length", 0 ],
+			"obj-13" : [ "melody_scope", "Melody scope", 0 ],
+			"obj-22" : [ "pulse_length", "Pulse length", 0 ],
+			"obj-23" : [ "chordal_weight[3]", "Chordal weight", 0 ],
+			"obj-24" : [ "harmoniclarity[3]", "Harmoniclarity", 0 ],
+			"obj-25" : [ "pitch_center", "Pitch center", 0 ],
+			"obj-26" : [ "pitch_range", "Pitch range", 0 ],
+			"obj-27" : [ "dynamics", "Dynamics", 0 ],
+			"obj-28" : [ "attenuation", "Attenuation", 0 ],
+			"obj-29" : [ "ostinato", "ostinato", 0 ],
+			"obj-47" : [ "silent_downbeat", "SDB", 0 ],
+			"obj-5" : [ "metriclarity", "Metriclarity", 0 ],
+			"obj-52" : [ "tonic_pitch", "Tonic Pitch", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "djster.expr.js",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{

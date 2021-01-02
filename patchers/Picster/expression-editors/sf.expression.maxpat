@@ -40,6 +40,42 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 346.0, 318.5, 109.0, 22.0 ],
+					"text" : "prepend pathname"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 456.5, 253.0, 40.0, 22.0 ],
+					"text" : "t l l l"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 533.5, 377.872806549072266, 45.0, 22.0 ],
+					"text" : "update"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-50",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -57,7 +93,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 456.5, 254.5, 59.0, 22.0 ],
+					"patching_rect" : [ 456.5, 226.5, 59.0, 22.0 ],
 					"text" : "route text"
 				}
 
@@ -69,7 +105,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 467.0, 164.0, 72.0, 22.0 ],
+					"patching_rect" : [ 467.0, 129.0, 72.0, 22.0 ],
 					"text" : "prepend set"
 				}
 
@@ -81,7 +117,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 456.5, 137.061403274536133, 29.5, 22.0 ],
+					"patching_rect" : [ 456.5, 102.061403274536133, 29.5, 22.0 ],
 					"text" : "t b l"
 				}
 
@@ -94,9 +130,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 456.666666666666742, 224.622806549072266, 264.0, 20.0 ],
+					"patching_rect" : [ 456.666666666666742, 189.622806549072266, 264.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 16.904770800315845, 36.561403274536133, 251.0, 20.0 ],
+					"presentation_rect" : [ -0.095229199684155, 36.561403274536133, 251.0, 20.0 ],
 					"text" : "filename",
 					"textcolor" : [ 0.396078431372549, 0.396078431372549, 0.396078431372549, 1.0 ],
 					"textjustification" : 2,
@@ -119,11 +155,11 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 456.5, 197.5, 264.0, 20.0 ],
+					"patching_rect" : [ 456.5, 162.5, 264.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 16.904770800315845, 36.561403274536133, 251.0, 20.0 ],
+					"presentation_rect" : [ -0.095229199684155, 36.561403274536133, 251.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "\"Macintosh HD:/Users/james/Documents/0 Working files/20201202 In the Midst of/Episode 1/media/audio/text-to-speech/17 Your message (Matthew).mp3\"",
+					"text" : "\"Macintosh HD:/Users/james/Documents/0 Working files/20201202 In the Midst of/Episode 1/media/audio/text-to-speech/17 Your message (Ivy).mp3\"",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"wordwrap" : 0
 				}
@@ -136,7 +172,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 456.666666666666742, 283.5, 95.0, 22.0 ],
+					"patching_rect" : [ 456.5, 318.5, 95.0, 22.0 ],
 					"text" : "prepend replace"
 				}
 
@@ -153,9 +189,9 @@
 					"numinlets" : 5,
 					"numoutlets" : 6,
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-					"patching_rect" : [ 566.666666666666742, 272.122806549072266, 256.0, 64.0 ],
+					"patching_rect" : [ 537.5, 232.0, 256.0, 64.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 16.904770800315845, 61.5, 251.000000000000028, 64.0 ],
+					"presentation_rect" : [ -0.095229199684155, 61.5, 251.000000000000028, 64.0 ],
 					"ruler" : 0,
 					"vticks" : 0,
 					"waveformcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ]
@@ -175,9 +211,9 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 456.5, 72.5, 61.5, 28.0 ],
+					"patching_rect" : [ 456.5, 37.5, 61.5, 28.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 86.712208600631698, 7.561403274536133, 111.385124399368294, 27.0 ],
+					"presentation_rect" : [ 58.712208600631698, 7.561403274536133, 111.385124399368294, 27.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
@@ -202,7 +238,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 456.5, 108.5, 67.0, 22.0 ],
+					"patching_rect" : [ 456.5, 73.5, 67.0, 22.0 ],
 					"text" : "opendialog"
 				}
 
@@ -214,7 +250,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 456.666666666666742, 314.122806549072266, 96.0, 22.0 ],
+					"patching_rect" : [ 456.5, 349.122806549072266, 96.0, 22.0 ],
 					"text" : "buffer~ sf_buffer"
 				}
 
@@ -293,7 +329,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 316.0, 354.622806549072266, 68.0, 22.0 ],
+					"patching_rect" : [ 316.0, 374.622806549072266, 68.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "sf.expr.js",
 						"parameter_enable" : 0
@@ -310,7 +346,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 316.0, 389.622806549072266, 149.0, 22.0 ],
+					"patching_rect" : [ 316.0, 409.622806549072266, 149.0, 22.0 ],
 					"text" : "pattrforward parent::attach"
 				}
 
@@ -387,7 +423,7 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
+					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-1", 1 ]
 				}
 
@@ -443,8 +479,43 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-47", 0 ],
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-20", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-22", 0 ],
+					"source" : [ "obj-20", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-50", 1 ],
+					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-22", 0 ]
 				}
 
 			}
@@ -507,16 +578,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"order" : 0,
-					"source" : [ "obj-46", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-50", 1 ],
-					"order" : 1,
+					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-46", 0 ]
 				}
 
@@ -564,30 +626,12 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-89" : [ "live.text[17]", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "sf.expr.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
 					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"umenu" : 				{
