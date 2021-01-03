@@ -159,7 +159,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ -0.095229199684155, 36.561403274536133, 251.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "\"Macintosh HD:/Users/james/Documents/0 Working files/20201202 In the Midst of/Episode 1/media/audio/text-to-speech/17 Your message (Ivy).mp3\"",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"wordwrap" : 0
 				}
@@ -311,7 +310,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 35.0, 70.622806549072266, 314.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
