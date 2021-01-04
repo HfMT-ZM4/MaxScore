@@ -15,6 +15,7 @@ var mgraphics = new JitterObject("jit.mgraphics", 2000, 2000);
 var findbounds = new JitterObject("jit.findbounds");
 var outmatrix = new JitterMatrix(4, "char", 2000, 2000);
 var import = new JitterMatrix(4, "char", 2000, 2000);
+mgraphics.svg_create("img", "<svg></svg>");
 var svg = new Dict();
 svg.name = "svg";
 findbounds.min = [0, 0, 0, 0];
@@ -2471,11 +2472,10 @@ function findBoundsToo(d)
 	svg += SVGString.join("");
 	svg += "</g></svg>";
 	//img.setsvg(svg);
-	mgraphics.svg_create("img", svg);
+	mgraphics.svg_set("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
 	mgraphics.paint();
 	//post("svg", svg, "\n");
-	//mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
 	mgraphics.svg_render("img");
 
 	mgraphics.matrixcalc(outmatrix, outmatrix);
