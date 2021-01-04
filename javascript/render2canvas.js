@@ -2004,6 +2004,7 @@ function anything() {
 				Accidental.push(nTET(48, _48TET));				
 				break;
 				case "mM-JI" :
+				//post("Num", annotation.get("staff-"+msg[5]+"::micromap"), "\n");
 				if (annotation.contains("staff-"+msg[5]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[5]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
@@ -2025,8 +2026,7 @@ function anything() {
         		if (ratio[1] != 1) var factorPowersNum = toFactorPowerList(primeFactorList(ratio[1]));
 				else var factorPowersNum = [[1, 1]];
 				var fifths = keysigaccum;
- 				//post("Num", JSON.stringify(factorPowersNum), "\n");
-				for (var i = 0; i < factorPowersNum.length; i++) {
+ 				for (var i = 0; i < factorPowersNum.length; i++) {
 				switch (factorPowersNum[i][0])
 				{
 					case 3: 
@@ -2208,9 +2208,11 @@ function anything() {
 				else return;
 				}
 				}
+				else {
 				if (fontMap.contains(msgname)) var glyph = fontMap.get(msgname);
 				else if (fontExtras.contains(msgname)) var glyph = fontExtras.get(msgname); 
 				else return;
+				}
 				}	
 			else {	
 			if (fontMap.contains(msgname)) var glyph = fontMap.get(msgname);

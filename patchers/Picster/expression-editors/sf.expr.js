@@ -1,3 +1,15 @@
+inlets = 2;
+outlets = 2;
+
+var annotation = new Dict();
+// get timeUnit
+// outlet(1, "getScoreAnnotation");
+// var timeUnit = annotation.get("timeUnit");
+
+// get Editor ID
+//outlet(1, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
+
+
 var picsterTemplate = {
 	"picster-element" : [
 		{
@@ -106,3 +118,63 @@ function bang() {
 	outputDict.replace("picster-element[0]::val::child[1]::d", d);
   outlet(0, "dictionary", outputDict.name);
 }
+
+
+function anything()
+{
+	var msg = arrayfromargs(arguments);
+    switch (messagename) {
+	case "setZoom" :
+		zoom = msg[0];
+		if (proportional)
+		{
+		//playhead("create", playheadPosition - 25, clefsvisible);
+		//playhead("show", 1);	
+		}
+		break;
+	case "getNumMeasures" :
+		numMeasures = msg[0];
+		break;
+	case "getNumStaves" :
+		numStaves = msg[0];
+		break;
+	case "getScoreLeftMargin" :
+		playheadPosition = msg[0];
+		//playhead("moveto", msg[0] - 23);
+		break;
+	case "getScoreAnnotation" :
+		//annotation.clear();
+		annotation.parse(msg);
+		//post(annotation.stringify(), "\n");
+		break;
+	case "isChord" :
+		chord = msg[5];
+		break;
+	case "init" :
+		break;
+	case "playheadPosition" :
+		playheadPosition = msg[0];	
+		break;
+	case "getDurationalSpacingBase" :
+		durationalSpacingBase = msg[0];
+		break;
+	case "getStaffBoundingInfo" :
+		staffBoundingInfo = msg;
+		//post("staffBoundingInfo",  msg, "\n");
+		break;
+	case "startdump" :
+		dump = [];
+		json = {};
+		dumpflag = 1;
+		break;
+	case "enddump" :
+		json = xml2json(dump.join(" "));
+		dumpflag = 0;
+		break;
+	default :
+		if (dumpflag == 1) {
+		dump.push(messagename);
+		}
+	}
+}
+
