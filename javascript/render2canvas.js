@@ -1995,6 +1995,7 @@ function anything() {
 				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount];
 				intervalCount++;
 				}
+			if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 			switch (annotation.get("staff-"+msg[5]+"::micromap")){
 				case "mM-BP" :
 				Accidental.push(BP[Math.round((pitch - parseInt(pitch)) * ((accpref == 1) ? -15 : 15))]);
@@ -2206,6 +2207,10 @@ function anything() {
 					}
 				else return;
 				}
+				}
+				if (fontMap.contains(msgname)) var glyph = fontMap.get(msgname);
+				else if (fontExtras.contains(msgname)) var glyph = fontExtras.get(msgname); 
+				else return;
 				}	
 			else {	
 			if (fontMap.contains(msgname)) var glyph = fontMap.get(msgname);
