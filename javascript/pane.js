@@ -633,8 +633,8 @@ function paint() {
 		if (boundingRect.length > 0) drawBoundingRect();
 		mgraphics.identity_matrix();
 		mgraphics.scale(zoom, zoom);
-		if (prop || playback) drawPlayhead();
 		mgraphics.translate(0, verticalOffset);
+		if (prop || playback) drawPlayhead();
 		if (prop) mgraphics.svg_render(clefs);
 		mgraphics.identity_matrix();
 		selectionRect();

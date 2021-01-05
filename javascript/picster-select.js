@@ -1186,13 +1186,14 @@ function addShape()
 				break;
 			case "rectangle":
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
+				//post("coords", coords, msg.slice(3), "\n");
 				var attr = {};
 				attr.new = "rect";
 				attr.id = "Picster-Element_" + num;
 				attr.x = msg[3];
 				attr.y = msg[4];
-				attr.width = msg[5] - msg[3];
-				attr.height = msg[6] - msg[4];
+				attr.width = Math.abs(msg[5] - msg[3]);
+				attr.height = Math.abs(msg[6] - msg[4]);
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
@@ -1205,7 +1206,7 @@ function addShape()
 				attr.style["fill"] = "none";
 				attr.style["fill-opacity"] = 1.;
 				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				attr.transform = "matrix(" + [1, 0, 0, 1, (msg[3] <= msg[5]) ? 0 : msg[3] + msg[5], (msg[4] <= msg[6]) ? 0 : msg[4] + msg[6]] + ")";
 				_picster["picster-element"] = [];
 				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
@@ -1218,14 +1219,14 @@ function addShape()
 				break;
 			case "rounded_rectangle":
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
+				post("coords", coords, msg.slice(3), "\n");
 				var attr = {};
 				attr.new = "rect";
 				attr.id = "Picster-Element_" + num;
 				attr.x = msg[3];
 				attr.y = msg[4];
-				attr.width = msg[5] - msg[3];
-				attr.height = msg[6] - msg[4];
-				//post("property", attr.x, attr.y, attr.width, attr.height, "\n");
+				attr.width = Math.abs(msg[5] - msg[3]);
+				attr.height = Math.abs(msg[6] - msg[4]);
 				//BUG in MGraphics
 				attr.rx = roundedness;
 				attr.style = {};
@@ -1240,7 +1241,7 @@ function addShape()
 				attr.style["fill"] = "none";
 				attr.style["fill-opacity"] = 1.;
 				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				attr.transform = "matrix(" + [1, 0, 0, 1, (msg[3] <= msg[5]) ? 0 : msg[3] + msg[5], (msg[4] <= msg[6]) ? 0 : msg[4] + msg[6]] + ")";
 				_picster["picster-element"] = [];
 				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";

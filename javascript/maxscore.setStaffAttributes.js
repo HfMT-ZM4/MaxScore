@@ -85,6 +85,7 @@ var listener4 = new MaxobjListener(addNote, null , newEvent);
 
 function init()
 {
+//post("spacing", spacing, "\n");
 var dump = new Dict();
 dump.name = ("dump");
 dump.clear();
@@ -108,7 +109,6 @@ ks = keysignumacc * sign + 7;
 this.patcher.getnamed("keySignature").message("set", ks);	
 var spacing = getInfo("getStaffSpacing", StaffIndex);
 if (typeof spacing == "undefined") spacing = ["getStaffSpacing", 0, 72, 72]
-//post("spacing", spacing, "\n");
 	
 this.patcher.getnamed("spacingabove").message("set", spacing[2]);	
 this.patcher.getnamed("spacingbelow").message("set", spacing[3]);

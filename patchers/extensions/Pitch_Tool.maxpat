@@ -41,6 +41,40 @@
 		"title" : "Pitch Tool",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-35",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 696.666666666666629, 202.350128000000041, 56.0, 22.0 ],
+					"restore" : 					{
+						"Transpose&Set" : [ 0 ],
+						"class" : [ 0 ],
+						"doit" : [ -1 ],
+						"fromMeasure" : [ 0 ],
+						"fromStaff" : [ 0 ],
+						"fromTrack" : [ 0 ],
+						"keyarea" : [ 0 ],
+						"live.tab" : [ 0.0 ],
+						"live.tab[1]" : [ 0.0 ],
+						"pitch" : [ 0.0 ],
+						"select" : [ 0 ],
+						"setOriginalPitch" : [ 0.0 ],
+						"setTranspositionInterval" : [ 0.0 ],
+						"toMeasure" : [ 1 ],
+						"toStaff" : [ 1 ],
+						"toTrack" : [ 1 ],
+						"toggle" : [ 0 ],
+						"updown" : [ 0 ]
+					}
+,
+					"text" : "autopattr",
+					"varname" : "u212006672"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-32",
@@ -354,7 +388,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 280.0, 89.649872000000002, 122.0, 34.0 ],
 									"size" : 2,
-									"value" : 1
+									"value" : 0
 								}
 
 							}
@@ -975,7 +1009,7 @@
 									"fontsize" : 12.0,
 									"hint" : "\"Double-click for selection entry\"",
 									"id" : "obj-19",
-									"items" : [ "manual", "entry", ",", "1/1", "unison", "-", "perfect", "prime", ",", "2/1", "octave", ",", "3/2", "perfect", "fifth", ",", "4/3", "perfect", "fourth", ",", "5/4", "major", "third", ",", "5/3", "major", "sixth", "-", "BP", "sixth", ",", "6/5", "minor", "third", ",", "7/6", "septimal", "minor", "third", ",", "7/5", "septimal", "or", "Huygens'", "tritone", "-", "BP", "fourth", ",", "7/4", "harmonic", "seventh", ",", "8/7", "septimal", "whole", "tone", ",", "8/5", "minor", "sixth", ",", "9/8", "major", "whole", "tone", ",", "9/7", "septimal", "major", "third", "-", "BP", "third", ",", "9/5", "just", "minor", "seventh", "-", "BP", "seventh", ",", "10/9", "minor", "whole", "tone", ",", "10/7", "Euler's", "tritone", ",", "11/10", 4, "5-tone", "-", "Ptolemy's", "second", ",", "11/9", "undecimal", "neutral", "third", ",", "11/8", "undecimal", "semi-augmented", "fourth", ",", "11/7", "undecimal", "augmented", "fifth", ",", "11/6", 21, "4-tone", "-", "undecimal", "neutral", "seventh", ",", "12/11", 3, "4-tone", "-", "undecimal", "neutral", "second", ",", "12/7", "septimal", "major", "sixth", ",", "13/12", "tridecimal", 2, "3-tone", ",", "13/10", "tridecimal", "semi-diminished", "fourth", ",", "13/9", "tridecimal", "diminished", "fifth", ",", "13/8", "tridecimal", "neutral", "sixth", ",", "13/7", 16, "3-tone", ",", "14/13", 2, "3-tone", ",", "14/11", "undecimal", "diminished", "fourth", "or", "major", "third", ",", "14/9", "septimal", "minor", "sixth", ",", "15/14", "major", "diatonic", "semitone", ",", "15/13", "tridecimal", 5, "4-tone", ",", "15/11", "undecimal", "augmented", "fourth", ",", "15/8", "classic", "major", "seventh", ",", "16/15", "minor", "diatonic", "semitone", ",", "16/13", "tridecimal", "neutral", "third", ",", "16/11", "undecimal", "semi-diminished", "fifth", ",", "16/9", "Pythagorean", "minor", "seventh", ",", "17/16", "17th", "harmonic", ",", "17/12", "2nd", "septendecimal", "tritone", ",", "17/10", "septendecimal", "diminished", "seventh", ",", "17/9", "septendecimal", "major", "seventh", ",", "18/17", "Arabic", "lute", "index", "finger", ",", "18/13", "tridecimal", "augmented", "fourth", ",", "18/11", "undecimal", "neutral", "sixth", ",", "19/16", "19th", "harmonic", ",", "20/17", "septendecimal", "augmented", "second", ",", "20/13", "tridecimal", "semi-augmented", "fifth", ",", "20/11", "large", "minor", "seventh", ",", "21/20", "minor", "semitone", ",", "21/16", "narrow", "fourth", ",", "21/11", "undecimal", "major", "seventh", ",", "22/21", "undecimal", "minor", "semitone", ",", "22/15", "undecimal", "diminished", "fifth", ",", "23/16", "23rd", "harmonic", ",", "24/17", "1st", "septendecimal", "tritone", ",", "24/13", "tridecimal", "neutral", "seventh", ",", "25/24", "classic", "chromatic", "semitone", "-", "minor", "chroma", ",", "25/21", "BP", "second", "-", "quasi-tempered", "minor", "third", ",", "25/18", "classic", "augmented", "fourth", ",", "25/16", "classic", "augmented", "fifth", ",", "25/14", "middle", "minor", "seventh", ",", "26/15", "tridecimal", "semi-augmented", "sixth", ",", "27/25", "large", "limma", "-", "BP", "small", "semitone", ",", "27/22", "neutral", "third", "-", "Zalzal", "wosta", "of", "al-Farabi", ",", "27/20", "acute", "fourth", ",", "27/16", "Pythagorean", "major", "sixth", ",", "27/14", "septimal", "major", "seventh", ",", "28/27", "Archytas'", 1, "3-tone", ",", "28/25", "middle", "second", ",", "28/15", "grave", "major", "seventh", ",", "32/27", "Pythagorean", "minor", "third", ",", "32/25", "classic", "diminished", "fourth", ",", "32/21", "wide", "fifth", ",", "32/17", "17th", "subharmonic", ",", "33/32", "undecimal", "comma", "-", "al-Farabi's", 1, "4-tone", ",", "33/28", "undecimal", "minor", "third", ",", "33/25", 2, "pentatones", ",", "35/32", "septimal", "neutral", "second", ",", "35/27", 9, "4-tone", "-", "septimal", "semi-diminished", "fourth", ",", "35/24", "septimal", "semi-diminished", "fifth", ",", "35/18", "septimal", "semi-diminished", "octave", ",", "36/35", "septimal", "diesis", "-", 1, "4-tone", ",", "36/25", "classic", "diminished", "fifth", ",", "40/27", "grave", "fifth", ",", "40/21", "acute", "major", "seventh", ",", "42/25", "quasi-tempered", "major", "sixth", ",", "44/27", "neutral", "sixth", ",", "45/32", "diatonic", "tritone", ",", "48/35", "septimal", "semi-augmented", "fourth", ",", "48/25", "classic", "diminished", "octave", ",", "49/48", "slendro", "diesis", "-", 1, "6-tone", ",", "49/40", "larger", "approximation", "to", "neutral", "third", ",", "49/36", "Arabic", "lute", "acute", "fourth", ",", "49/32", "larger", "approximation", "to", "neutral", "sixth", ",", "49/30", "larger", "approximation", "to", "neutral", "sixth", ",", "49/25", "BP", "eighth", ",", "50/33", 3, "pentatones", ",", "50/27", "grave", "major", "seventh", ",", "54/49", "Zalzal's", "mujannab", ",", "54/35", "septimal", "semi-augmented", "fifth", ",", "63/50", "quasi-equal", "major", "third", ",", "63/40", "narrow", "minor", "sixth", ",", "63/32", "octave", "-", "septimal", "comma", ",", "64/63", "septimal", "comma", "-", "Archytas'", "comma", ",", "64/49", 2, "septatones", "or", "septatonic", "major", "third", ",", "64/45", "2nd", "tritone", ",", "64/35", "septimal", "neutral", "seventh", ",", "64/33", "33rd", "subharmonic", ",", "72/49", "Arabic", "lute", "grave", "fifth", ",", "75/64", "classic", "augmented", "second", ",", "75/49", "BP", "fifth", ",", "80/63", "wide", "major", "third", ",", "81/80", "syntonic", "comma", "-", "Didymus", "comma", ",", "81/70", "Al-Hwarizmi's", "lute", "middle", "finger", ",", "81/64", "Pythagorean", "major", "third", ",", "81/50", "acute", "minor", "sixth", ",", "81/44", "2nd", "undecimal", "neutral", "seventh", ",", "88/81", "2nd", "undecimal", "neutral", "second", ",", "100/81", "grave", "major", "third", ",", "100/63", "quasi-equal", "minor", "sixth", ",", "105/64", "septimal", "neutral", "sixth", ",", "125/112", "classic", "augmented", "semitone", ",", "125/108", "semi-augmented", "whole", "tone", ",", "125/96", "classic", "augmented", "third", ",", "125/72", "classic", "augmented", "sixth", ",", "125/64", "classic", "augmented", "seventh", "-", "octave", "-", "minor", "diesis", ",", "128/125", "minor", "diesis", "-", "diesis", ",", "128/105", "septimal", "neutral", "third", ",", "128/81", "Pythagorean", "minor", "sixth", ",", "128/75", "diminished", "seventh", ",", "135/128", "major", "chroma", "-", "major", "limma", ",", "144/125", "classic", "diminished", "third", ",", "160/81", "octave", "-", "syntonic", "comma", ",", "192/125", "classic", "diminished", "sixth", ",", "216/125", "semi-augmented", "sixth", ",", "225/128", "augmented", "sixth", ",", "243/200", "acute", "minor", "third", ",", "243/160", "acute", "fifth", ",", "243/128", "Pythagorean", "major", "seventh", ",", "256/243", "limma", "-", "Pythagorean", "minor", "second", ",", "256/225", "diminished", "third", ",", "256/135", "octave", "-", "major", "chroma", ",", "320/243", "grave", "fourth", ",", "375/256", "double", "augmented", "fourth", ",", "400/243", "grave", "major", "sixth", ",", "512/375", "double", "diminished", "fifth", ",", "675/512", "wide", "augmented", "third", ",", "729/400", "acute", "minor", "seventh" ],
+									"items" : [ "manual", "entry", ",", "1/1", "unison", "-", "perfect", "prime", ",", "81/80", "syntonic", "comma", "-", "Didymus", "comma", ",", "64/63", "septimal", "comma", "-", "Archytas'", "comma", ",", "49/48", "slendro", "diesis", "-", "1/6-tone", ",", "128/125", "minor", "diesis", "-", "diesis", ",", "36/35", "septimal", "diesis", "-", "1/4-tone", ",", "33/32", "undecimal", "comma", "-", "al-Farabi's", "1/4-tone", ",", "28/27", "Archytas'", "1/3-tone", ",", "25/24", "classic", "chromatic", "semitone", "-", "minor", "chroma", ",", "22/21", "undecimal", "minor", "semitone", ",", "21/20", "minor", "semitone", ",", "256/243", "limma", "-", "Pythagorean", "minor", "second", ",", "135/128", "major", "chroma", "-", "major", "limma", ",", "18/17", "Arabic", "lute", "index", "finger", ",", "17/16", "17th", "harmonic", ",", "16/15", "minor", "diatonic", "semitone", ",", "15/14", "major", "diatonic", "semitone", ",", "14/13", "2/3-tone", ",", "27/25", "large", "limma", "-", "BP", "small", "semitone", ",", "13/12", "tridecimal", "2/3-tone", ",", "88/81", "2nd", "undecimal", "neutral", "second", ",", "12/11", "3/4-tone", "-", "undecimal", "neutral", "second", ",", "35/32", "septimal", "neutral", "second", ",", "11/10", "4/5-tone", "-", "Ptolemy's", "second", ",", "54/49", "Zalzal's", "mujannab", ",", "10/9", "minor", "whole", "tone", ",", "125/112", "classic", "augmented", "semitone", ",", "28/25", "middle", "second", ",", "9/8", "major", "whole", "tone", ",", "256/225", "diminished", "third", ",", "8/7", "septimal", "whole", "tone", ",", "144/125", "classic", "diminished", "third", ",", "15/13", "tridecimal", "5/4-tone", ",", "81/70", "Al-Hwarizmi's", "lute", "middle", "finger", ",", "125/108", "semi-augmented", "whole", "tone", ",", "7/6", "septimal", "minor", "third", ",", "75/64", "classic", "augmented", "second", ",", "20/17", "septendecimal", "augmented", "second", ",", "33/28", "undecimal", "minor", "third", ",", "32/27", "Pythagorean", "minor", "third", ",", "19/16", "19th", "harmonic", ",", "25/21", "BP", "second", "-", "quasi-tempered", "minor", "third", ",", "6/5", "minor", "third", ",", "243/200", "acute", "minor", "third", ",", "128/105", "septimal", "neutral", "third", ",", "11/9", "undecimal", "neutral", "third", ",", "49/40", "larger", "approximation", "to", "neutral", "third", ",", "27/22", "neutral", "third", "-", "Zalzal", "wosta", "of", "al-Farabi", ",", "16/13", "tridecimal", "neutral", "third", ",", "100/81", "grave", "major", "third", ",", "5/4", "major", "third", ",", "63/50", "quasi-equal", "major", "third", ",", "81/64", "Pythagorean", "major", "third", ",", "80/63", "wide", "major", "third", ",", "14/11", "undecimal", "diminished", "fourth", "or", "major", "third", ",", "32/25", "classic", "diminished", "fourth", ",", "9/7", "septimal", "major", "third", "-", "BP", "third", ",", "35/27", "9/4-tone", "-", "septimal", "semi-diminished", "fourth", ",", "13/10", "tridecimal", "semi-diminished", "fourth", ",", "125/96", "classic", "augmented", "third", ",", "64/49", 2, "septatones", "or", "septatonic", "major", "third", ",", "21/16", "narrow", "fourth", ",", "320/243", "grave", "fourth", ",", "675/512", "wide", "augmented", "third", ",", "33/25", 2, "pentatones", ",", "4/3", "perfect", "fourth", ",", "27/20", "acute", "fourth", ",", "49/36", "Arabic", "lute", "acute", "fourth", ",", "15/11", "undecimal", "augmented", "fourth", ",", "512/375", "double", "diminished", "fifth", ",", "48/35", "septimal", "semi-augmented", "fourth", ",", "11/8", "undecimal", "semi-augmented", "fourth", ",", "18/13", "tridecimal", "augmented", "fourth", ",", "25/18", "classic", "augmented", "fourth", ",", "7/5", "septimal", "or", "Huygens'", "tritone", "-", "BP", "fourth", ",", "45/32", "diatonic", "tritone", ",", "24/17", "1st", "septendecimal", "tritone", ",", "17/12", "2nd", "septendecimal", "tritone", ",", "64/45", "2nd", "tritone", ",", "10/7", "Euler's", "tritone", ",", "23/16", "23rd", "harmonic", ",", "36/25", "classic", "diminished", "fifth", ",", "13/9", "tridecimal", "diminished", "fifth", ",", "16/11", "undecimal", "semi-diminished", "fifth", ",", "35/24", "septimal", "semi-diminished", "fifth", ",", "375/256", "double", "augmented", "fourth", ",", "22/15", "undecimal", "diminished", "fifth", ",", "72/49", "Arabic", "lute", "grave", "fifth", ",", "40/27", "grave", "fifth", ",", "3/2", "perfect", "fifth", ",", "50/33", 3, "pentatones", ",", "243/160", "acute", "fifth", ",", "32/21", "wide", "fifth", ",", "75/49", "BP", "fifth", ",", "49/32", "larger", "approximation", "to", "neutral", "sixth", ",", "192/125", "classic", "diminished", "sixth", ",", "20/13", "tridecimal", "semi-augmented", "fifth", ",", "54/35", "septimal", "semi-augmented", "fifth", ",", "14/9", "septimal", "minor", "sixth", ",", "25/16", "classic", "augmented", "fifth", ",", "11/7", "undecimal", "augmented", "fifth", ",", "63/40", "narrow", "minor", "sixth", ",", "128/81", "Pythagorean", "minor", "sixth", ",", "100/63", "quasi-equal", "minor", "sixth", ",", "8/5", "minor", "sixth", ",", "81/50", "acute", "minor", "sixth", ",", "13/8", "tridecimal", "neutral", "sixth", ",", "44/27", "neutral", "sixth", ",", "49/30", "larger", "approximation", "to", "neutral", "sixth", ",", "18/11", "undecimal", "neutral", "sixth", ",", "105/64", "septimal", "neutral", "sixth", ",", "400/243", "grave", "major", "sixth", ",", "5/3", "major", "sixth", "-", "BP", "sixth", ",", "42/25", "quasi-tempered", "major", "sixth", ",", "27/16", "Pythagorean", "major", "sixth", ",", "17/10", "septendecimal", "diminished", "seventh", ",", "128/75", "diminished", "seventh", ",", "12/7", "septimal", "major", "sixth", ",", "216/125", "semi-augmented", "sixth", ",", "26/15", "tridecimal", "semi-augmented", "sixth", ",", "125/72", "classic", "augmented", "sixth", ",", "7/4", "harmonic", "seventh", ",", "225/128", "augmented", "sixth", ",", "16/9", "Pythagorean", "minor", "seventh", ",", "25/14", "middle", "minor", "seventh", ",", "9/5", "just", "minor", "seventh", "-", "BP", "seventh", ",", "20/11", "large", "minor", "seventh", ",", "729/400", "acute", "minor", "seventh", ",", "64/35", "septimal", "neutral", "seventh", ",", "11/6", "21/4-tone", "-", "undecimal", "neutral", "seventh", ",", "81/44", "2nd", "undecimal", "neutral", "seventh", ",", "24/13", "tridecimal", "neutral", "seventh", ",", "50/27", "grave", "major", "seventh", ",", "13/7", "16/3-tone", ",", "28/15", "grave", "major", "seventh", ",", "15/8", "classic", "major", "seventh", ",", "32/17", "17th", "subharmonic", ",", "17/9", "septendecimal", "major", "seventh", ",", "256/135", "octave", "-", "major", "chroma", ",", "243/128", "Pythagorean", "major", "seventh", ",", "40/21", "acute", "major", "seventh", ",", "21/11", "undecimal", "major", "seventh", ",", "48/25", "classic", "diminished", "octave", ",", "27/14", "septimal", "major", "seventh", ",", "64/33", "33rd", "subharmonic", ",", "35/18", "septimal", "semi-diminished", "octave", ",", "125/64", "classic", "augmented", "seventh", "-", "octave", "-", "minor", "diesis", ",", "49/25", "BP", "eighth", ",", "63/32", "octave", "-", "septimal", "comma", ",", "160/81", "octave", "-", "syntonic", "comma", ",", "2/1", "octave" ],
 									"maxclass" : "chooser",
 									"multiselect" : 0,
 									"numinlets" : 1,
@@ -1344,14 +1378,7 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -1361,7 +1388,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1401,7 +1435,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 707.0, 348.0, 652.0, 451.0 ],
+						"rect" : [ 893.0, 349.0, 652.0, 451.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1757,14 +1791,7 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -1774,7 +1801,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1783,8 +1817,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontface" : [ 2 ],
-									"fontsize" : [ 11.0 ]
+									"fontsize" : [ 11.0 ],
+									"fontface" : [ 2 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1793,9 +1827,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ]
+									"fontface" : [ 3 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1804,8 +1838,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -1814,9 +1848,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ]
+									"fontface" : [ 1 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1825,7 +1859,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 753.0, 260.5, 75.0, 22.0 ],
+					"patching_rect" : [ 753.0, 269.0, 75.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4224,7 +4258,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 709.0, 218.350128173828125, 148.0, 22.0 ],
+					"patching_rect" : [ 709.0, 231.350128173828125, 148.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 147.8289794921875, 516.32525634765625, 93.74884033203125, 22.0 ],
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
@@ -4543,7 +4577,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 14.0, 371.0, 184.0, 20.0 ],
-									"restore" : [ 1 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5096,8 +5130,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 753.0, 143.0, 62.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 120.68060302734375, 255.0, 54.0, 20.0 ],
-					"text" : "8065.02"
+					"presentation_rect" : [ 120.68060302734375, 255.0, 54.0, 20.0 ]
 				}
 
 			}
@@ -5210,7 +5243,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-7",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -5257,7 +5289,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 66.666663999999997, 367.0, 173.0, 20.0 ],
-									"restore" : [ 1 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -8622,14 +8654,7 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -8639,7 +8664,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9244,7 +9276,7 @@
 					"presentation_rect" : [ 8.4427490234375, 24.0, 192.0, 74.0 ],
 					"shape" : 2,
 					"size" : 4,
-					"value" : 1,
+					"value" : 0,
 					"varname" : "select"
 				}
 
@@ -9821,6 +9853,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-168", 0 ],
+					"source" : [ "obj-35", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-37", 0 ],
 					"source" : [ "obj-36", 0 ]
 				}
@@ -10259,14 +10298,7 @@
  ],
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
-				}
-,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -10276,7 +10308,14 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
