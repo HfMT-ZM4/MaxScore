@@ -2096,7 +2096,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 391.0, 79.0, 889.0, 428.0 ],
+										"rect" : [ 399.0, 197.0, 889.0, 428.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3120,7 +3120,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-23", 0 ],
-													"disabled" : 1,
 													"midpoints" : [ 807.5, 351.0, 34.928573608398438, 351.0, 34.928573608398438, 216.0, 59.5, 216.0 ],
 													"source" : [ "obj-122", 1 ]
 												}
@@ -3129,7 +3128,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-23", 2 ],
-													"disabled" : 1,
 													"midpoints" : [ 731.5, 348.0, 825.285722520616332, 348.0, 825.285722520616332, 216.0, 406.0, 216.0 ],
 													"source" : [ "obj-122", 0 ]
 												}
@@ -3160,7 +3158,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-122", 0 ],
-													"disabled" : 1,
 													"source" : [ "obj-23", 32 ]
 												}
 
@@ -3430,7 +3427,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-36", 0 ],
-													"disabled" : 1,
 													"source" : [ "obj-6", 0 ]
 												}
 
@@ -4824,7 +4820,7 @@
 						"live.text" : [ 0.0 ],
 						"live.text[2]" : [ 0.0 ],
 						"live.text[3]" : [ 0.0 ],
-						"mc.live.gain~" : [ 0.0 ]
+						"mc.live.gain~" : [ 2.992125984251956 ]
 					}
 ,
 					"text" : "autopattr sampler",
