@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -281,6 +281,7 @@
 			}
 , 			{
 				"box" : 				{
+					"autorestore" : "Sampler.json",
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-5",
@@ -290,7 +291,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 13.0, 236.0, 123.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 814, 139, 1423, 455 ],
+						"client_rect" : [ 1187, 252, 1796, 568 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 780, 524, 1380, 824 ]
@@ -350,7 +351,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -436,7 +437,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -486,7 +487,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-4",
-													"linecount" : 6,
+													"linecount" : 7,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
@@ -560,7 +561,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 1155.375, 452.0, 394.0, 35.0 ],
-									"restore" : [ "Macintosh_HD:/Users/alan/Documents/Max 8/Packages/MS-bugTest/Harpsichord.json" ],
+									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/noiwont/noiwont.bank.txt" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -609,7 +610,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1189,7 +1190,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1414,7 +1415,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2089,7 +2090,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2123,7 +2124,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-25",
@@ -2148,7 +2148,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 6,
+															"revision" : 8,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2189,7 +2189,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 216.0, 45.0, 110.0, 22.0 ],
+																	"patching_rect" : [ 216.0, 45.0, 115.0, 22.0 ],
 																	"text" : "r #0-poly_init-op"
 																}
 
@@ -2348,7 +2348,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 6,
+															"revision" : 8,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2690,7 +2690,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "" ],
-																	"patching_rect" : [ 252.0, 291.0, 124.0, 22.0 ],
+																	"patching_rect" : [ 252.0, 291.0, 131.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
 																		"precision" : 6
@@ -2754,7 +2754,7 @@
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-100", 1 ],
-																	"midpoints" : [ 296.5, 319.0, 241.0, 319.0, 241.0, 349.0, 301.833332061767578, 349.0 ],
+																	"midpoints" : [ 298.833333333333314, 319.0, 241.0, 319.0, 241.0, 349.0, 301.833332061767578, 349.0 ],
 																	"source" : [ "obj-15", 1 ]
 																}
 
@@ -2762,7 +2762,7 @@
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-101", 0 ],
-																	"midpoints" : [ 366.5, 418.5, 261.5, 418.5 ],
+																	"midpoints" : [ 373.5, 418.5, 261.5, 418.5 ],
 																	"source" : [ "obj-15", 3 ]
 																}
 
@@ -3120,6 +3120,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-23", 0 ],
+													"disabled" : 1,
 													"midpoints" : [ 807.5, 351.0, 34.928573608398438, 351.0, 34.928573608398438, 216.0, 59.5, 216.0 ],
 													"source" : [ "obj-122", 1 ]
 												}
@@ -3128,6 +3129,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-23", 2 ],
+													"disabled" : 1,
 													"midpoints" : [ 731.5, 348.0, 825.285722520616332, 348.0, 825.285722520616332, 216.0, 406.0, 216.0 ],
 													"source" : [ "obj-122", 0 ]
 												}
@@ -3158,6 +3160,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-122", 0 ],
+													"disabled" : 1,
 													"source" : [ "obj-23", 32 ]
 												}
 
@@ -3427,6 +3430,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-36", 0 ],
+													"disabled" : 1,
 													"source" : [ "obj-6", 0 ]
 												}
 
@@ -3631,7 +3635,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3916,7 +3920,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 6,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4672,7 +4676,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4707,7 +4711,6 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"title" : "Bank Editor",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bgmode" : 0,
