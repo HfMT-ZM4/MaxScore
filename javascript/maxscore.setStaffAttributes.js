@@ -45,8 +45,8 @@ currentValue.name = "current-value";
 var prevVal = {};
 var currVal = {};
 var editors = 	{
-				styles: ["tablature", "percussion", "clefdesigner", "BP-chromatic"], 
-				names: ["Tablature", "ClefDesigner", "BP chromatic", "Percussion"]
+				styles: ["tablature", "percussion", "clefdesigner", "BP-chromatic", "justintonation"], 
+				names: ["Tablature", "ClefDesigner", "BP chromatic", "Percussion", "Just Intonation"]
 				};
 var tonedivisions = {
 				names: ["24TET", "48TET", "72TET-Stahnke", "72TET-Sims", "72TET-Wyschnegradsky", "96TET"],
@@ -200,6 +200,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 	this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict").message("bang");
 	if (aliases.contains(stl)) stl = aliases.get(stl);
 	if (isAlias(stl) && flag) _style(stl, 1);
+	else if (stl == "Just Intonation" && !flag) _style(stl, 0);
 	else if (editors.names.indexOf(stl) != -1) _style(stl, 1);
 	else _style(stl, 0);
 	}
@@ -378,7 +379,10 @@ function _style(stl, flag)
 					else this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("symbol", substyle);
                 }
                 break;
-        }
+			default:
+                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
+ 					post("hello", editors.names.indexOf(stl), flag, "\n");
+       }
         this.patcher.getnamed("editor").message("active", 1);
         if (!isAlias(stl)) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").message("front");
         this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
@@ -386,7 +390,8 @@ function _style(stl, flag)
         if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("bang");
         return;
     }
-    outlet(0, "setRenderAllowed", "false");
+ 	post("hello", "\n");
+   outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     if (ss[1] == "editor") {
 		this.patcher.getnamed("editor").message("active", 1);
@@ -400,7 +405,6 @@ function _style(stl, flag)
                     else var numStrings = annotation.get("usertablatures::" + substyle + "::strings").length;
                 }
                 var newstafflines = [Math.floor((numStrings - 5) / 2), Math.floor((numStrings - 4) / 2)];
-                //post("newstafflines", tablatureditor.get(substyle + "::strings"), newstafflines, "\n");
                 this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed("tablature").subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
                 annotation.replace("staff-" + StaffIndex + "::clef", "TAB");
                 staff2tablature.replace(StaffIndex, substyle, numStrings);
@@ -429,6 +433,8 @@ function _style(stl, flag)
                 post("substyle", substyle, clefdesigner.get(substyle + "::transposition"), "\n");
                 this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("transp").message(clefdesigner.get(substyle + "::transposition"));
                 break;
+			default: 
+                var newstafflines = [0, 0];
         }
     } else {
         var newstafflines = [Math.floor((ss[1] - 5) / 2), Math.floor((ss[1] - 4) / 2)];
@@ -466,8 +472,7 @@ function isEditor(stl) {
 function newEvent(data) {
     if (data.value[0] == StaffIndex) {
 	var event = data.value.slice(1);
-	//post("event", event, "\n");
-    outlet(0, "setRenderAllowed", "false");
+   outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     info.clear();
     getSelection();
@@ -634,11 +639,12 @@ function transform() {
 	//that's the value that was just sent in from a style abstraction. Store this value in the currVal object
 	currVal[newstyletype] = storedValue.get("stored-value");
 	//decide whether previous staff style (= styletype) is editor. If so retrieve stored value 
-    if (isEditor(styletype)) {
+ 	post("styletype", styletype, "\n");
+   if (isEditor(styletype) && styletype != "justintonation") {
 	// if previous style is an editor set current value to previous value stored in currVal. This looks suspicious to me.
 	currentValue.replace("current-value", currVal[styletype]);
 	stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("retrieve").subpatcher().getnamed("current-value").message("bang");
-	if (typeof prevVal[styletype] != "undefined") storedValue.replace("stored-value", prevVal[styletype]); 
+ 	if (typeof prevVal[styletype] != "undefined") storedValue.replace("stored-value", prevVal[styletype]); 
 	stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("retrieve").subpatcher().getnamed("stored-value").message("bang");
 	}
 	for (var item in currVal) prevVal[item] = currVal[item]; 
