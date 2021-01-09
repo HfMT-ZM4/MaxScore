@@ -1,14 +1,12 @@
-inlets = 2;
+inlets = 1;
 outlets = 2;
 
-var annotation = new Dict();
+var dumpflag = 0;
+post("hello\n");
+var annotation = new Dict("score_annotation");
+outlet(1, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
 // get timeUnit
-// outlet(1, "getScoreAnnotation");
-// var timeUnit = annotation.get("timeUnit");
-
-// get Editor ID
-//outlet(1, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
-
+outlet(1, "getScoreAnnotation");
 
 var picsterTemplate = {
 	"picster-element" : [
@@ -75,6 +73,8 @@ var pix = 100;
 var file = "";
 var samples = [];
 var timeUnit = 100;
+var customW = 200;
+var mode = 0;
 
 function update() {
 	frames = buf.framecount();
@@ -83,6 +83,14 @@ function update() {
 
 function pathname(f) {
 	file = f;
+}
+
+function customwidth(w) {
+	customW = parseInt(w);
+}
+
+function displaymode(m) {
+	mode = m;
 }
 
 function bang() {
@@ -99,7 +107,7 @@ function bang() {
 	outputPicster["picster-element"][0]["val"]["child"][1]["id"] = groupId+"_waveform";
 
 	// change length of display
-	outputPicster["picster-element"][0]["val"]["child"][0]["width"] = Math.min(pix/*, 11 * timeUnit*/);
+	outputPicster["picster-element"][0]["val"]["child"][0]["width"] = Math.min(pix);
 	post("pix = "+pix+"\n");
 
 	outputDict.parse(JSON.stringify(outputPicster));
@@ -109,7 +117,7 @@ function bang() {
 	var dfround = Math.round(df);
 	var d = "";
 	var vector, maxh, minh;
-	for (var i = 0; i < pix/* && i < 10*timeUnit*/; i++) {
+	for (var i = 0; i < pix; i++) {
 		vector = buf.peek(1, Math.round(i*df), dfround);
 		maxh = Math.round(20 - Math.max.apply(null, vector) * 20);
 		minh = Math.round(20 - Math.min.apply(null, vector) * 20);
@@ -123,58 +131,41 @@ function bang() {
 function anything()
 {
 	var msg = arrayfromargs(arguments);
-    switch (messagename) {
-	case "setZoom" :
+	switch (messagename) {
+		case "setZoom" :
 		zoom = msg[0];
 		if (proportional)
 		{
-		//playhead("create", playheadPosition - 25, clefsvisible);
-		//playhead("show", 1);	
+			//playhead("create", playheadPosition - 25, clefsvisible);
+			//playhead("show", 1);
 		}
 		break;
-	case "getNumMeasures" :
-		numMeasures = msg[0];
-		break;
-	case "getNumStaves" :
-		numStaves = msg[0];
-		break;
-	case "getScoreLeftMargin" :
-		playheadPosition = msg[0];
-		//playhead("moveto", msg[0] - 23);
-		break;
-	case "getScoreAnnotation" :
-		//annotation.clear();
+		case "getScoreAnnotation" :
 		annotation.parse(msg);
-		//post(annotation.stringify(), "\n");
+		timeUnit = annotation.get("timeUnit");
 		break;
-	case "isChord" :
-		chord = msg[5];
+		case "playheadPosition" :
+		playheadPosition = msg[0];
 		break;
-	case "init" :
-		break;
-	case "playheadPosition" :
-		playheadPosition = msg[0];	
-		break;
-	case "getDurationalSpacingBase" :
+		case "getDurationalSpacingBase" :
 		durationalSpacingBase = msg[0];
 		break;
-	case "getStaffBoundingInfo" :
+		case "getStaffBoundingInfo" :
 		staffBoundingInfo = msg;
 		//post("staffBoundingInfo",  msg, "\n");
 		break;
-	case "startdump" :
+		case "startdump" :
 		dump = [];
 		json = {};
 		dumpflag = 1;
 		break;
-	case "enddump" :
+		case "enddump" :
 		json = xml2json(dump.join(" "));
 		dumpflag = 0;
 		break;
-	default :
+		default :
 		if (dumpflag == 1) {
-		dump.push(messagename);
+			dump.push(messagename);
 		}
 	}
 }
-
