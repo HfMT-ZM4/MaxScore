@@ -10,9 +10,9 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 82.0, 87.0, 1200.0, 605.0 ],
+		"rect" : [ 32.0, -1128.0, 1200.0, 605.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -40,12 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
+					"args" : [ "editor" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"embed" : 1,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
 					"id" : "obj-28",
-					"maxclass" : "newobj",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -57,7 +64,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"openrect" : [ 325.0, 245.0, 215.0, 68.0 ],
+						"openrect" : [ 325.0, 245.0, 256.0, 208.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -68,7 +75,7 @@
 						"gridsnaponopen" : 1,
 						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
-						"toolbarvisible" : 0,
+						"toolbarvisible" : 1,
 						"lefttoolbarpinned" : 0,
 						"toptoolbarpinned" : 0,
 						"righttoolbarpinned" : 0,
@@ -78,7 +85,7 @@
 						"boxanimatetime" : 200,
 						"enablehscroll" : 1,
 						"enablevscroll" : 1,
-						"devicewidth" : 215.0,
+						"devicewidth" : 256.0,
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
@@ -87,6 +94,36 @@
 						"assistshowspatchername" : 0,
 						"title" : "Ratio Lookup",
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontsize" : 14.0,
+									"id" : "obj-20",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 59.0, 2.32525634765625, 174.0, 22.0 ],
+									"presentation" : 1,
+									"presentation_rect" : [ 73.0, 3.32525634765625, 100.0, 22.0 ],
+									"text" : "Just Intonation",
+									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 12.0,
+									"id" : "obj-23",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 306.0, 87.0, 151.0, 20.0 ],
+									"presentation" : 1,
+									"presentation_rect" : [ 13.0, 51.32525634765625, 114.0, 20.0 ],
+									"text" : "Ratio Lookup Table:",
+									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -575,7 +612,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 119.0, 42.5, 51.0, 24.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 133.33331298828125, 22.32525634765625, 51.0, 24.0 ],
+									"presentation_rect" : [ 97.5, 103.32525634765625, 51.0, 24.0 ],
 									"text" : "Set",
 									"textoncolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"varname" : "set"
@@ -584,15 +621,15 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+									"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
 									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+									"bgfillcolor_color" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
 									"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 									"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "color",
-									"fontsize" : 13.0,
+									"fontsize" : 12.0,
 									"hint" : "ratio lookup, select the staff that you want this setting to apply to up first",
 									"id" : "obj-168",
 									"items" : [ "Narrow", ",", "Medium", ",", "Wide", ",", "BP-Narrow", ",", "BP-Wide" ],
@@ -601,9 +638,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 481.5, 173.5, 148.0, 23.0 ],
+									"patching_rect" : [ 481.5, 173.5, 148.0, 22.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 25.8289794921875, 22.32525634765625, 93.74884033203125, 23.0 ],
+									"presentation_rect" : [ 136.125579833984375, 51.32525634765625, 93.74884033203125, 22.0 ],
 									"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 									"varname" : "ratio-lookup"
 								}
@@ -972,8 +1009,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 141.0, 126.0, 417.0, 22.0 ],
-									"text" : "pattrforward parent::parent:parent::parent::preferences::annotation::dumpdict"
+									"patching_rect" : [ 141.0, 127.0, 379.0, 22.0 ],
+									"text" : "pattrforward parent::parent::parent::preferences::annotation::dumpdict"
 								}
 
 							}
@@ -997,14 +1034,14 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 373.5, 338.0, 354.0, 35.0 ],
+									"patching_rect" : [ 373.5, 338.0, 374.0, 35.0 ],
 									"restore" : [ 1206 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "pattr @bindto parent::parent::parent::parent::bcanvas::instance @invisible 1 @autorestore 0",
+									"text" : "pattr @bindto parent::parent::parent::bcanvas::instance @invisible 1 @autorestore 0",
 									"varname" : "u877006805"
 								}
 
@@ -1046,8 +1083,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 61.5, 256.0, 336.0, 22.0 ],
-									"text" : "sprintf send parent::parent::parent::staff-%i::setStaffAttributes"
+									"patching_rect" : [ 61.5, 256.0, 410.0, 22.0 ],
+									"text" : "sprintf send parent::parent::parent::staffmanager::staff-%i::setStaffAttributes"
 								}
 
 							}
@@ -1260,6 +1297,12 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
+								}
+,
 								"umenu" : 								{
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
@@ -1272,12 +1315,6 @@
 										"autogradient" : 0
 									}
 
-								}
-,
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -1296,9 +1333,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1307,8 +1344,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1317,29 +1354,23 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
 								"multi" : 0
 							}
  ],
-						"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+						"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 497.0, 40.0, 76.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
-						"tags" : ""
-					}
-,
-					"text" : "p editor",
-					"varname" : "editor"
+					"patching_rect" : [ 786.0, 103.0, 240.0, 130.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 0.0, 248.0, 143.0 ],
+					"varname" : "editor",
+					"viewvisibility" : 1
 				}
 
 			}
@@ -1468,7 +1499,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 730.0, 282.0, 457.0, 22.0 ],
-					"restore" : [ 1206 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2483,7 +2514,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 7.0, 134.0, 218.0, 22.0 ],
-					"restore" : [ 71.010452270507812, 0, 0, "false", 71.010452270507812, 0, 0, 0, 128, 0.5, "note", 0 ],
+					"restore" : [ 71, 0, 0, "false", 71, 0, 0, 0, 128, 0.5, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2560,7 +2591,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 315.30010986328125, 123.0, 264.0, 22.0 ],
-					"restore" : [ 71.010452270507812, 0, 0, "false", 71.010452270507812, 0, 0, 0, 128, 0.5, "note", 0 ],
+					"restore" : [ 71, 0, 0, "false", 71, 0, 0, 0, 128, 0.5, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6497,7 +6528,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 339.11810302734375, 511.0, 250.0, 22.0 ],
-					"restore" : [ "send", "parent::default::map" ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6571,7 +6602,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 87.0, 40.0, 216.0, 22.0 ],
-					"restore" : [ 71.010452270507812, 0 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6899,6 +6930,12 @@
  ],
 		"styles" : [ 			{
 				"name" : "black on white",
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ]
+				}
+,
 				"umenu" : 				{
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
@@ -6911,12 +6948,6 @@
 						"autogradient" : 0
 					}
 
-				}
-,
-				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -6935,9 +6966,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -6946,8 +6977,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -6956,9 +6987,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",

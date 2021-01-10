@@ -62,17 +62,18 @@ var hidden = "";
 var previous = "";
 var list = [0., 0., 0., "false", 0., 0., 0., 0., 0., "note", 0, 0];
 var preview = this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("preview");
-var pitchtool = this.patcher.parentpatcher.parentpatcher.getnamed("pitchtool").subpatcher().getnamed("pitch");
-var stylesPatcher = this.patcher.parentpatcher.getnamed("styles");
+var stylesPatcher = this.patcher.parentpatcher.parentpatcher.getnamed("pitchtool");
+var pitchDisplay = stylesPatcher.subpatcher().getnamed("entry").subpatcher().getnamed("pitch");
+//var stylesPatcher = this.patcher.parentpatcher.getnamed("styles");
 
 //Listeners
 
 //parent::parent::parent::bcanvas::hub::edit::keyCode
 var keyCode = this.patcher.parentpatcher.parentpatcher.getnamed("bcanvas").subpatcher().getnamed("hub").subpatcher().getnamed("edit").subpatcher().getnamed("keyCode");
 //parent::parent::parent::pitchtool::transposition::go
-var go = this.patcher.parentpatcher.parentpatcher.getnamed("pitchtool").subpatcher().getnamed("transposition").subpatcher().getnamed("go");
+var go = stylesPatcher.subpatcher().getnamed("entry").subpatcher().getnamed("transposition").subpatcher().getnamed("go");
 //parent::parent::parent::pitchtool::set::Pitch
-var pitch = this.patcher.parentpatcher.parentpatcher.getnamed("pitchtool").subpatcher().getnamed("set").subpatcher().getnamed("Pitch");
+var pitch = stylesPatcher.subpatcher().getnamed("entry").subpatcher().getnamed("set").subpatcher().getnamed("Pitch");
 //parent::parent::parent::parent::addNote
 var addNote = this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("addNote");
 var listener = new MaxobjListener(keyCode, null , paste);
@@ -191,7 +192,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 	if (tonedivisions.names.indexOf(stl) != -1) {
     	annotation.replace("staff-" + StaffIndex + "::micromap", tonedivisions.maps[tonedivisions.names.indexOf(stl)]);
         post("currentstyle", stl, oldstl, "\n");
-		this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("setsymbol", stl);
+		stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("setsymbol", stl);
 		this.patcher.getnamed("style").message("setsymbol", oldstl);
 		}
 	else 
@@ -350,47 +351,47 @@ function _style(stl, flag)
     if (ss[1] == "editor" && flag == 1) {
         switch (ss[0]) {
             case "tablature":
-                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
                 if (tablatureditor.contains(substyle)) {
-                    this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
+                    stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
                 }
                 break;
             case "BP-chromatic":
                 var subdivision = 0;
-                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
                 if (isAlias(stl)) {
-                    this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("clef").message("symbol", substyle.split("•")[0]);
+                    stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("clef").message("symbol", substyle.split("•")[0]);
                     if (substyle.split("•")[1] == "39ED3") subdivision = 1;
                     else if (substyle.split("•")[1] == "65ED3") subdivision = 2;
-                    this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("subdivision").message(subdivision);
+                    stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("subdivision").message(subdivision);
                 }
                 break;
             case "percussion":
-                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
                 if (isAlias(stl)) {
-                    this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("umenu").message("setsymbol", substyle);
+                    stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("umenu").message("setsymbol", substyle);
                 }
                 break;
             case "clefdesigner":
-                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
                 if (isAlias(stl)) {
     				//post("substyle", substyle, "\n");
-					if (tonedivisions.names.indexOf(substyle) == -1) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("umenu").message("setsymbol", substyle);
-					else this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("symbol", substyle);
+					if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("umenu").message("setsymbol", substyle);
+					else stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("symbol", substyle);
                 }
                 break;
 			default:
-                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
- 					post("hello", editors.names.indexOf(stl), flag, "\n");
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
+ 					//post("hello", editors.names.indexOf(stl), flag, "\n");
        }
         this.patcher.getnamed("editor").message("active", 1);
-        if (!isAlias(stl)) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").message("front");
-        this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
-        this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
-        if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("bang");
+        if (!isAlias(stl)) stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
+        stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
+        stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
+        if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("bang");
         return;
     }
- 	post("hello", "\n");
+ 	//post("hello", "\n");
    outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     if (ss[1] == "editor") {
@@ -405,10 +406,10 @@ function _style(stl, flag)
                     else var numStrings = annotation.get("usertablatures::" + substyle + "::strings").length;
                 }
                 var newstafflines = [Math.floor((numStrings - 5) / 2), Math.floor((numStrings - 4) / 2)];
-                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed("tablature").subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
+                stylesPatcher.subpatcher().getnamed("tablature").subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
                 annotation.replace("staff-" + StaffIndex + "::clef", "TAB");
                 staff2tablature.replace(StaffIndex, substyle, numStrings);
-                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
                 break;
             case "BP-chromatic":
                 if (isAlias(stl)) {
@@ -416,7 +417,7 @@ function _style(stl, flag)
                     annotation.replace("staff-" + StaffIndex + "::tritave", bpchromatic.get(substyle.split("•")[0] + "::tritave"));
                     annotation.replace("staff-" + StaffIndex + "::subdivision", substyle.split("•")[1]);
                 }
-                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
                 var newstafflines = [0, 1];
                 break;
             case "percussion":
@@ -429,18 +430,20 @@ function _style(stl, flag)
                 baseclef = clefdesigner.get(substyle + "::baseclef");
                 if (baseclef == "default") annotation.replace("staff-" + StaffIndex + "::clef", "default");
                 else annotation.replace("staff-" + StaffIndex + "::clef", substyle);
-                annotation.replace("staff-" + StaffIndex + "::micromap", this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("insert").subpatcher().getnamed("grid").getvalueof());
+                annotation.replace("staff-" + StaffIndex + "::micromap", stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("insert").subpatcher().getnamed("grid").getvalueof());
                 post("substyle", substyle, clefdesigner.get(substyle + "::transposition"), "\n");
-                this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("transp").message(clefdesigner.get(substyle + "::transposition"));
+                stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("transp").message(clefdesigner.get(substyle + "::transposition"));
                 break;
 			default: 
                 var newstafflines = [0, 0];
         }
-    } else {
+    } 
+	else {
         var newstafflines = [Math.floor((ss[1] - 5) / 2), Math.floor((ss[1] - 4) / 2)];
-        this.patcher.getnamed("editor").message("active", 0);
+ 		stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
+       //this.patcher.getnamed("editor").message("active", 0);
 		//can this ever happen?
-        //if (isEditor(styletype)) this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(styletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
+        //if (isEditor(styletype)) stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
     }
     if (oldstl != "virgin") {
         setStafflines(newstafflines);
@@ -455,8 +458,8 @@ function _style(stl, flag)
 }
 
 function bang() {
-    this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").message("front");
-    this.patcher.parentpatcher.getnamed("styles").subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
+	stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
+    stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
 }
 
 function isAlias(stl) {
@@ -509,7 +512,7 @@ function newEvent(data) {
                         event[5] = dump.get("interval::dim::1::@value");
                     }
                     preview.message(StaffIndex, event);
-                    pitchtool.message(event[5]);
+                    pitchDisplay.message(event[5]);
                 }
             }
         }
