@@ -139,8 +139,8 @@ function strings(s)
 		openStrings = s; 
 	}
 //	post(openStrings, typeof(openStrings), openStrings.length, s, "\n");
-	this.patcher.getnamed("GUI").message("size", 900, openStrings.length*20);
-	if (this.patcher.wind.visible == 1) this.patcher.wind.size = [988, openStrings.length*20 + 70];
+	this.patcher.getnamed("GUI").message("size", 200, openStrings.length*20);
+	//if (this.patcher.wind.visible == 1) this.patcher.wind.size = [988, openStrings.length*20 + 70];
 	this.patcher.getnamed("tablature").message("numstrings", openStrings.length);
 	
 	for (i = 0; i < openStrings.length; i++)
@@ -148,7 +148,7 @@ function strings(s)
 	var identifier = "string["+i+"]";
 	var identifier2 = "button["+i+"]";
 	outlet(0, "create",identifier);
-	outlet(0, "append",identifier,"color", 0.5, 0.5, 0, 1.);
+	outlet(0, "append",identifier,"color", 0.1, 0.1, 0, 1.);
 	outlet(0, "append",identifier, "rectangle", 450, 10 + i*20, 900, 4);
 	outlet(0, "append",identifier, "fill");	
 	thenumbers[i] = this.patcher.newdefault(750, 234 + i *20, "flonum");
@@ -157,15 +157,20 @@ function strings(s)
 	thebuttons[i].varname = identifier2;
 	this.patcher.message("script", "sendbox", identifier, "fontname", "Arial Bold");
     this.patcher.message("script", "sendbox", identifier, "fontsize", 8);
+    this.patcher.message("script", "sendbox", identifier, "bgcolor", 0, 0, 0, 0);
+    this.patcher.message("script", "sendbox", identifier, "textcolor", 0.1, 0.1, 0.1, 1.000);
+    this.patcher.message("script", "sendbox", identifier, "tricolor", 0.608, 0.839, 0.757, 1.000);
     this.patcher.message("script", "sendbox", identifier, "presentation", 1);
-    this.patcher.message("script", "sendbox", identifier, "presentation_rect", 15, (openStrings.length - i - 1) *20 + 52, 41, 17);
+    this.patcher.message("script", "sendbox", identifier, "presentation_rect", 17, (openStrings.length - i - 1) *20 + 80, 36, 17);
     this.patcher.message("script", "sendbox", identifier2, "presentation", 1);
-    this.patcher.message("script", "sendbox", identifier2, "presentation_rect", 1, (openStrings.length - i - 1) *20 + 54, 12, 12);
+    this.patcher.message("script", "sendbox", identifier2, "presentation_rect", 0, (openStrings.length - i - 1) *20 + 80, 12, 12);
    	this.patcher.message("script", "sendbox", identifier2, "size", 1);
    	this.patcher.message("script", "sendbox", identifier2, "shape", 2);
    	this.patcher.message("script", "sendbox", identifier2, "itemtype", 1);
    	this.patcher.message("script", "sendbox", identifier2, "bgcolor", 0., 0., 0., 0.);
-    this.patcher.getnamed("tablature").message(identifier, openStrings[i]);
+    this.patcher.message("script", "sendbox", identifier2, "activecolor", 1.0, 0.1, 0.1, 1.000);
+    this.patcher.message("script", "sendbox", identifier2, "elementcolor", 0.608, 0.839, 0.757, 1.000);
+   	this.patcher.getnamed("tablature").message(identifier, openStrings[i]);
 	this.patcher.parentpatcher.getnamed("clean").message("bang");
 //			this.patcher.message("script", "sendbox", numname, "textcolor",0.,1.,0.,1.);
 //		    this.patcher.message("script", "sendbox", numname, "color",0., 0.75, 0.75, 1.);
@@ -191,17 +196,19 @@ function frets(f)
 	fretscreated = 1;
 //	post("frets", f,"typeof",typeof(d), d,"\n"); 
 	this.patcher.getnamed("tablature").message("interval", d);
-	nfrets = f;
+	//nfrets = f;
+	nfrets = 12;
 	for (i = 1; i <= nfrets; i++)
 	{
 	var identifier = "fret["+i+"]";
-	fretboard.replace("fret::"+i, 900-Math.pow(2,i*d/-12)*900); 
+	fretboard.replace("fret::"+i, 500-Math.pow(2,i*d/-12)*500); 
 	outlet(0, "create",identifier);
-	outlet(0, "append",identifier,"color", 0.5, 0.5, 0.5, 1.);
+	//outlet(0, "append",identifier,"color", 0.5, 0.5, 0.5, 1.);
+	outlet(0, "append",identifier,"color", 0.1, 0.1, 0, 1.);
 	outlet(0, "append",identifier, "rectangle", 0, openStrings.length*10, 6, openStrings.length*20);
 	outlet(0, "append",identifier, "fill");	
 	outlet(0, "add_anchor",identifier, 0, openStrings.length*10, 6);
-	outlet(0, "move", identifier, 900-Math.pow(2,i*d/-12)*900, 0);
+	outlet(0, "move", identifier, 500-Math.pow(2,i*d/-12)*500, 0);
 	if (i == 1 || indiv != 0) outlet(0, "set_anchor_visibility", identifier, 0, "auto");
 	else outlet(0, "set_anchor_visibility", identifier, 0, "no");
 	}

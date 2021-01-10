@@ -6,6 +6,7 @@ var spacing = 32
 var width = 120;
 var height = 28;
 var proffset_y = 260;
+var prheight = 500;
 var staffStyles = new Dict;
 staffStyles.name = "staffStyles";
 var _staffStyles = JSON.parse(staffStyles.stringify());
@@ -54,42 +55,42 @@ newobj[idx] = this.patcher.newobject("bpatcher", offset_x, offset_y+idx*spacing,
 newobj[idx].varname = "default";
 newobj[idx].hidden = 1;
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation", 1);
-this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, 460);
+this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, prheight);
 
 idx = fnames.indexOf("justintonation.style.maxpat");
 newobj[idx] = this.patcher.newobject("bpatcher", offset_x, offset_y+idx*spacing, width, height, 0, 0, "justintonation.style.maxpat", 0)
 newobj[idx].varname = "justintonation";
 newobj[idx].hidden = 1;
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation", 1);
-this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, 460);
+this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, prheight);
 
 idx = fnames.indexOf("BP-chromatic.style.maxpat");
 newobj[idx] = this.patcher.newobject("bpatcher", offset_x, offset_y+idx*spacing, width, height, 0, 0, "BP-chromatic.style.maxpat", 0)
 newobj[idx].varname = "BP-chromatic";
 newobj[idx].hidden = 1;
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation", 1);
-this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, 460);
+this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, prheight);
 
 idx = fnames.indexOf("clefdesigner.style.maxpat");
 newobj[idx] = this.patcher.newobject("bpatcher", offset_x, offset_y+idx*spacing, width, height, 0, 0, "clefdesigner.style.maxpat", 0)
 newobj[idx].varname = "clefdesigner";
 newobj[idx].hidden = 1;
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation", 1);
-this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, 460);
+this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, prheight);
 
 idx = fnames.indexOf("percussion.style.maxpat");
 newobj[idx] = this.patcher.newobject("bpatcher", offset_x, offset_y+idx*spacing, width, height, 0, 0, "percussion.style.maxpat", 0)
 newobj[idx].varname = "percussion";
 newobj[idx].hidden = 1;
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation", 1);
-this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, 460);
+this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, prheight);
 
 idx = fnames.indexOf("tablature.style.maxpat");
 newobj[idx] = this.patcher.newobject("bpatcher", offset_x, offset_y+idx*spacing, width, height, 0, 0, "tablature.style.maxpat", 0)
 newobj[idx].varname = "tablature";
 newobj[idx].hidden = 1;
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation", 1);
-this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, 460);
+this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, prheight);
 
 
 //now the rest
@@ -102,7 +103,7 @@ for (i= 0; i < fnames.length -1; i++)
 	newobj[i].varname = fname;
 	newobj[i].hidden = 1;
 	this.patcher.message("script", "sendbox", newobj[i].varname, "presentation", 1);
-	this.patcher.message("script", "sendbox", newobj[i].varname, "presentation_rect", 0, proffset_y, 260, 460);
+	this.patcher.message("script", "sendbox", newobj[i].varname, "presentation_rect", 0, proffset_y, 260, prheight);
 	}
 }
 this.patcher.clean();
