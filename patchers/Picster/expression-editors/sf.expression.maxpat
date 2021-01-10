@@ -40,6 +40,51 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-24",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 612.416666666666742, 253.0, 74.0, 22.0 ],
+					"text" : "normalize 1."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"bordercolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 0.0 ],
+					"fontsize" : 11.0,
+					"id" : "obj-15",
+					"maxclass" : "live.text",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 612.416666666666742, 214.5, 61.5, 28.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 154.519646400947579, 7.561403274536133, 78.385124399368294, 27.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
+							"parameter_longname" : "live.text[23]",
+							"parameter_mmax" : 1,
+							"parameter_shortname" : "live.text",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "Normalize",
+					"varname" : "live.text[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -482,6 +527,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 36.561403274536133, 251.0, 20.0 ],
 					"rounded" : 0.0,
+					"text" : "\"Macintosh HD:/Users/james/Documents/0 Concert recordings/20180215 Tohuwabohu 2 Frappant/Renders/20180215 Frappant Performance.wav\"",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"wordwrap" : 0
 				}
@@ -535,7 +581,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 456.5, 37.5, 61.5, 28.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 72.712208600631698, 7.561403274536133, 111.385124399368294, 27.0 ],
+					"presentation_rect" : [ 23.807437800315853, 7.561403274536133, 111.385124399368294, 27.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
@@ -775,6 +821,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-29", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
@@ -829,6 +882,14 @@
 					"destination" : [ "obj-2", 0 ],
 					"midpoints" : [ 598.166666666666742, 306.061403274536133, 325.5, 306.061403274536133 ],
 					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"midpoints" : [ 621.916666666666742, 332.061403274536133, 532.0, 332.061403274536133 ],
+					"source" : [ "obj-24", 0 ]
 				}
 
 			}
