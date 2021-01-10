@@ -85,7 +85,7 @@ var samples = [];
 var timeUnit = 100;
 var customW = 200;
 var mode = 0;
-var dump, noteInfo, measureInfo;
+var dump, noteInfo, measure, measureInfo;
 var dumpflag = 0;
 var annotation = new Dict("score_annotation");
 outlet(1, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
@@ -109,11 +109,12 @@ function displaymode(m) {
 function bang() {
 	outlet(1, "getScoreAnnotation"); // get timeUnit
 	outlet(1, "getSelectedNoteInfo"); // get note info for note hold time
-	outlet(1, "getMeasureInfo"); // get measure info for tempo
+	outlet(1, "getNotePosition"); // get note info for note hold time
+	outlet(1, "getMeasureInfo", measure); // get measure info for tempo
 
 	switch(mode) {
 		case 0:
-			width = measureInfo.measure.WIDTH;
+			width = measureInfo.measure.WIDTH*annotation.get("setZoom");
 		break;
 		case 1:
 			timeUnit = annotation.get("timeUnit");
@@ -180,6 +181,9 @@ function anything()
 	switch (messagename) {
 		case "getScoreAnnotation" :
 		annotation.parse(msg);
+		break;
+		case "getNotePosition" :
+		measure = msg[0];
 		break;
 		case "startdump" :
 		dump = [];
