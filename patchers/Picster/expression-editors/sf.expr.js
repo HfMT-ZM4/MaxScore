@@ -3,6 +3,22 @@ outlets = 2;
 
 //post("hello\n");
 
+var buf = new Buffer("sf_buffer");
+var frames = 0;
+var width = 100;
+var pix = 100;
+var file = "";
+var samples = [];
+var timeUnit = 100;
+var customW = 200;
+var mode = 0;
+var displaytext = 0;
+var mes = "sf";
+var widthLimit = 9000;
+var dump, noteInfo, measure, measureInfo;
+var dumpflag = 0;
+var annotation = new Dict("score_annotation");
+
 var picsterTemplate = {
 	"picster-element" : [
 		{
@@ -28,7 +44,7 @@ var picsterTemplate = {
 					},
 					{
 						"new" : "line",
-						"id" : "centreline",
+						"id" : "centerline",
 						"x1" : 0,
 						"y1" : 20,
 						"x2" : 100,
@@ -36,7 +52,7 @@ var picsterTemplate = {
 						"style" : {
 							"stroke" : "rgb(0,0,0)",
 							"stroke-opacity" : 1,
-							"stroke-width" : 2
+							"stroke-width" : 0.5
 						},
 						"transform" : "matrix(1,0,0,1,0,0)"
 					},
@@ -49,7 +65,7 @@ var picsterTemplate = {
 						"style" : {
 							"stroke" : "rgb(0,0,0)",
 							"stroke-opacity" : 1,
-							"stroke-width" : 2
+							"stroke-width" : 1
 						},
 						"transform" : "matrix(1,0,0,1,0,0)"
 					}
@@ -76,18 +92,6 @@ var picsterTemplate = {
 		}
 	]
 };
-var buf = new Buffer("sf_buffer");
-var frames = 0;
-var width = 100;
-var pix = 100;
-var file = "";
-var samples = [];
-var timeUnit = 100;
-var customW = 200;
-var mode = 0;
-var dump, noteInfo, measure, measureInfo;
-var dumpflag = 0;
-var annotation = new Dict("score_annotation");
 
 function update() {
 	frames = buf.framecount();
@@ -103,6 +107,14 @@ function customwidth(w) {
 
 function displaymode(m) {
 	mode = m;
+}
+
+function displayinfo(d) {
+	displaytext = d;
+}
+
+function sfmessage(m) {
+	mes = m;
 }
 
 function bang() {
@@ -129,7 +141,7 @@ function bang() {
 		break;
 	}
 
-	pix = Math.min(8000, width);
+	pix = Math.min(widthLimit, width);
 
 	//post("case "+mode+", width = "+width+"\n")
 	//create object from template
@@ -141,14 +153,52 @@ function bang() {
 	outputPicster["picster-element"][2]["val"][0]["value"] = file;
 	outputPicster["picster-element"][0]["val"]["id"] = groupId;
 	outputPicster["picster-element"][0]["val"]["child"][0]["id"] = groupId+"_background";
-	outputPicster["picster-element"][0]["val"]["child"][1]["id"] = groupId+"_centreline";
+	outputPicster["picster-element"][0]["val"]["child"][1]["id"] = groupId+"_centerline";
 	outputPicster["picster-element"][0]["val"]["child"][2]["id"] = groupId+"_waveform";
 
 	// change length of display
 	outputPicster["picster-element"][0]["val"]["child"][0]["width"] = pix;
 	outputPicster["picster-element"][0]["val"]["child"][1]["x2"] = pix;
-	outputPicster["picster-element"][1]["val"]["bounds"] = [0, 0, pix, 40];
+	outputPicster["picster-element"][1]["val"]["bounds"] = [0, 0, width, displaytext?52:40];
+	outputPicster["picster-element"][2]["val"][0]["message"] = mes;
 
+	// display info if checked
+	if (displaytext) {
+		function pad(n, z) {
+			return ('00' + n).slice(-z);
+		}
+		var textObj = {
+			"new" : "text",
+			"id" : groupId+"_info",
+			"x" : 0,
+			"y" : 10,
+			"font-family" : "Arial",
+			"font-size" : 10,
+			"style" : {
+				"fill" : "rgb(0,0,0)",
+				"fill-opacity" : 1
+			},
+			"transform" : "matrix(1,0,0,1,0,0)"
+		};
+		var t = buf.length();
+		var ms = t % 1000;
+		t = (t - ms) / 1000;
+		var s = t % 60;
+		t = (t - s) / 60;
+		var m = t % 60;
+		t = (t - m) / 60;
+
+		if (t) var timeformat = pad(t, 2) + ":" + pad(m, 2) + ":" + pad(s, 2) + "." + pad(ms, 3);
+		else var timeformat = pad(m, 2) + ":" + pad(s, 2) + "." + pad(ms, 3);
+
+		textObj.child = file.split('\\').pop().split('/').pop() + " | " + timeformat;
+		outputPicster["picster-element"][0]["val"]["child"].push(textObj);
+		outputPicster["picster-element"][0]["val"]["child"][0]["y"] = 12;
+		outputPicster["picster-element"][0]["val"]["child"][1]["y1"] = 32;
+		outputPicster["picster-element"][0]["val"]["child"][1]["y2"] = 32;
+	}
+
+	//post(JSON.stringify(outputPicster),"\n");
 	outputDict.parse(JSON.stringify(outputPicster));
 
 	//calculate d
@@ -158,14 +208,14 @@ function bang() {
 	var vector, maxh, minh;
 	for (var i = 0; i < pix; i++) {
 		vector = buf.peek(1, Math.round(i*df), dfround);
-		maxh = Math.round(20 - Math.max.apply(null, vector) * 20);
-		minh = Math.round(20 - Math.min.apply(null, vector) * 20);
-		d += "M " + i + " " + maxh + " V " + minh + " ";
+		maxh = Math.round((displaytext?32:20) - Math.max.apply(null, vector) * 20);
+		minh = Math.round((displaytext?32:20) - Math.min.apply(null, vector) * 20);
+		d += "M" + i + "," + maxh + "V" + minh;
 	}
 	outputDict.replace("picster-element[0]::val::child[2]::d", d);
-	if (width > 8000) {
+	if (width > widthLimit) {
 		outputDict.replace("picster-element[0]::val::child[2]::stroke::stroke-width", 2);
-		var transform = "transform("+width/8000+",0,0,1,0,0)";
+		var transform = "transform("+width/widthLimit+",0,0,1,0,0)";
 		outputDict.replace("picster-element[0]::val::child[0]::transform", transform);
 		outputDict.replace("picster-element[0]::val::child[1]::transform", transform);
 		outputDict.replace("picster-element[0]::val::child[2]::transform", transform);
