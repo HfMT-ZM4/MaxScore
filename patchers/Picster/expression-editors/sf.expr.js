@@ -19,80 +19,6 @@ var dump, noteInfo, measure, measureInfo;
 var dumpflag = 0;
 var annotation = new Dict("score_annotation");
 
-var picsterTemplate = {
-	"picster-element" : [
-		{
-			"key" : "svg",
-			"val" : {
-				"new" : "g",
-				"id" : "Picster-Element",
-				"transform" : "matrix(1,0,0,1,0,0)",
-				"visibility" : "visible",
-				"child" : [
-					{
-						"new" : "rect",
-						"id" : "background",
-						"x" : 0,
-						"y" : 0,
-						"width" : 100,
-						"height" : 40,
-						"style" : {
-							"fill" : "rgb(200,200,200)",
-							"fill-opacity" : 0.4
-						},
-						"transform" : "matrix(1,0,0,1,0,0)"
-					},
-					{
-						"new" : "line",
-						"id" : "centerline",
-						"x1" : 0,
-						"y1" : 20,
-						"x2" : 100,
-						"y2" : 20,
-						"style" : {
-							"stroke" : "rgb(0,0,0)",
-							"stroke-opacity" : 1,
-							"stroke-width" : 0.5
-						},
-						"transform" : "matrix(1,0,0,1,0,0)"
-					},
-					{
-						"new" : "path",
-						"id" : "waveform",
-						"x" : 0,
-						"y" : 0,
-						"d" : "",
-						"style" : {
-							"stroke" : "rgb(0,0,0)",
-							"stroke-opacity" : 1,
-							"stroke-width" : 1
-						},
-						"transform" : "matrix(1,0,0,1,0,0)"
-					}
-				]
-			}
-
-		},
-		{
-			"key" : "extras",
-			"val" : {
-				"bounds" : [ 0, 0, 100, 40 ]
-			}
-
-		},
-		{
-			"key" : "expression",
-			"val" : [
-				{
-					"editor" : "sf",
-					"message" : "sf",
-					"value" : ""
-				}
-			]
-		}
-	]
-};
-
 function update() {
 	frames = buf.framecount();
 }
@@ -118,6 +44,11 @@ function sfmessage(m) {
 }
 
 function bang() {
+	if (file == "") {
+		post("Please load an audio file first.\n");
+		return;
+	}
+
 	outlet(1, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
 	outlet(1, "getScoreAnnotation"); // get timeUnit
 	outlet(1, "getSelectedNoteInfo"); // get note info for note hold time
@@ -149,7 +80,79 @@ function bang() {
   var groupId = "Picster-Element_"+timeStamp;
 	//export jsobject as Dict
   var outputDict = new Dict();
-	var outputPicster = picsterTemplate;
+	var outputPicster = {
+		"picster-element" : [
+			{
+				"key" : "svg",
+				"val" : {
+					"new" : "g",
+					"id" : "Picster-Element",
+					"transform" : "matrix(1,0,0,1,0,0)",
+					"visibility" : "visible",
+					"child" : [
+						{
+							"new" : "rect",
+							"id" : "background",
+							"x" : 0,
+							"y" : 0,
+							"width" : 100,
+							"height" : 40,
+							"style" : {
+								"fill" : "rgb(200,200,200)",
+								"fill-opacity" : 0.4
+							},
+							"transform" : "matrix(1,0,0,1,0,0)"
+						},
+						{
+							"new" : "line",
+							"id" : "centerline",
+							"x1" : 0,
+							"y1" : 20,
+							"x2" : 100,
+							"y2" : 20,
+							"style" : {
+								"stroke" : "rgb(0,0,0)",
+								"stroke-opacity" : 1,
+								"stroke-width" : 0.5
+							},
+							"transform" : "matrix(1,0,0,1,0,0)"
+						},
+						{
+							"new" : "path",
+							"id" : "waveform",
+							"x" : 0,
+							"y" : 0,
+							"d" : "",
+							"style" : {
+								"stroke" : "rgb(0,0,0)",
+								"stroke-opacity" : 1,
+								"stroke-width" : 1
+							},
+							"transform" : "matrix(1,0,0,1,0,0)"
+						}
+					]
+				}
+
+			},
+			{
+				"key" : "extras",
+				"val" : {
+					"bounds" : [ 0, 0, 100, 40 ]
+				}
+
+			},
+			{
+				"key" : "expression",
+				"val" : [
+					{
+						"editor" : "sf",
+						"message" : "sf",
+						"value" : ""
+					}
+				]
+			}
+		]
+	};
 	outputPicster["picster-element"][2]["val"][0]["value"] = file;
 	outputPicster["picster-element"][0]["val"]["id"] = groupId;
 	outputPicster["picster-element"][0]["val"]["child"][0]["id"] = groupId+"_background";
@@ -192,7 +195,7 @@ function bang() {
 		else var timeformat = pad(m, 2) + ":" + pad(s, 2) + "." + pad(ms, 3);
 
 		textObj.child = file.split('\\').pop().split('/').pop() + " | " + timeformat;
-		outputPicster["picster-element"][0]["val"]["child"].push(textObj);
+		outputPicster["picster-element"][0]["val"]["child"][3] = textObj;
 		outputPicster["picster-element"][0]["val"]["child"][0]["y"] = 12;
 		outputPicster["picster-element"][0]["val"]["child"][1]["y1"] = 32;
 		outputPicster["picster-element"][0]["val"]["child"][1]["y2"] = 32;
