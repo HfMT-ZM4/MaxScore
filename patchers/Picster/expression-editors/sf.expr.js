@@ -14,7 +14,7 @@ var customW = 200;
 var mode = 0;
 var displaytext = 0;
 var mes = "sf";
-var widthLimit = 9000;
+var widthLimit = 4500;
 var dump, noteInfo, measure, measureInfo;
 var dumpflag = 0;
 var annotation = new Dict("score_annotation");
@@ -57,7 +57,7 @@ function bang() {
 
 	switch(mode) {
 		case 0:
-			width = measureInfo.measure.WIDTH*annotation.get("setZoom");
+			width = Math.round(measureInfo.measure.WIDTH/2);
 		break;
 		case 1:
 			timeUnit = annotation.get("timeUnit");
@@ -124,9 +124,9 @@ function bang() {
 							"y" : 0,
 							"d" : "",
 							"style" : {
-								"stroke" : "rgb(0,0,0)",
-								"stroke-opacity" : 1,
-								"stroke-width" : 1
+								"fill" : "rgb(0,0,0)",
+								"fill-opacity" : 1,
+								"stroke-width" : 0
 							},
 							"transform" : "matrix(1,0,0,1,0,0)"
 						}
@@ -209,15 +209,16 @@ function bang() {
 	var dfround = Math.round(df);
 	var d = "";
 	var vector, maxh, minh;
-	for (var i = 0; i < pix; i++) {
+	for (var i = pix-1; i >= 0; i--) {
 		vector = buf.peek(1, Math.round(i*df), dfround);
 		maxh = Math.round((displaytext?32:20) - Math.max.apply(null, vector) * 20);
 		minh = Math.round((displaytext?32:20) - Math.min.apply(null, vector) * 20);
-		d += "M" + i + "," + maxh + "V" + minh;
+		d = "L" + i + "," + maxh + d + "L" + i + "," + minh;
 	}
+	d = d.replace('L', 'M');
 	outputDict.replace("picster-element[0]::val::child[2]::d", d);
 	if (width > widthLimit) {
-		outputDict.replace("picster-element[0]::val::child[2]::stroke::stroke-width", 2);
+		//outputDict.replace("picster-element[0]::val::child[2]::stroke::stroke-width", 2);
 		var transform = "transform("+width/widthLimit+",0,0,1,0,0)";
 		outputDict.replace("picster-element[0]::val::child[0]::transform", transform);
 		outputDict.replace("picster-element[0]::val::child[1]::transform", transform);
