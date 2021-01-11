@@ -1217,11 +1217,11 @@ function anything() {
 			}
 			for (var s = 0; s < groupcount; s++)
 			{
-			var dest = remap(sg[s], msg[1], msg[6]);
+			var dest = remap(sg[s], msg[1], msg[6]); 
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<text x=\"" + msg[5] + "\" y=\"" + dest[d] + "\" font-family=\"Arial\" font-style=\"normal\" font-weight=\"normal\" font-size=\"10\" fill=\"black\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + noteText + "</text>");
+			SVGString[s + 1].push("<text x=\"" + msg[5] + "\" y=\"" + dest[d] + "\" font-family=\"Arial\" font-style=\"normal\" font-weight=\"normal\" font-size=\"10\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + noteText + "</text>");
 			}
 			}
 			}
@@ -1306,7 +1306,7 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"black\" stroke-width=\"0.4\" fill=\"black\" transform=\"matrix(" + [Math.abs(msg[11])/100., 0., 0., orient, msg[9], dest[d] + 7] + ")\"/>");
+			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"black\" transform=\"matrix(" + [Math.abs(msg[11])/100., 0., 0., orient, msg[9], dest[d] + 7] + ")\"/>");
 			}
 			}
 			}
