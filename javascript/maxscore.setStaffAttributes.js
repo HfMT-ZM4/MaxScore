@@ -64,6 +64,7 @@ var list = [0., 0., 0., "false", 0., 0., 0., 0., 0., "note", 0, 0];
 var preview = this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("preview");
 var stylesPatcher = this.patcher.parentpatcher.parentpatcher.getnamed("pitchtool");
 var pitchDisplay = stylesPatcher.subpatcher().getnamed("entry").subpatcher().getnamed("pitch");
+var Count = 0;
 //var stylesPatcher = this.patcher.parentpatcher.getnamed("styles");
 
 //Listeners
@@ -189,11 +190,14 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 3. Editor with substyle set: No problem.
 4. Alias: style alias 0 will be sent. No problem. 
 */
+	var styleMenu = this.patcher.getnamed("style");
 	if (tonedivisions.names.indexOf(stl) != -1) {
     	annotation.replace("staff-" + StaffIndex + "::micromap", tonedivisions.maps[tonedivisions.names.indexOf(stl)]);
-        post("currentstyle", stl, oldstl, "\n");
+        //post("currentstyle", stl, oldstl, "\n");
 		stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("setsymbol", stl);
-		this.patcher.getnamed("style").message("setsymbol", oldstl);
+		styleMenu.message("setsymbol", oldstl);
+		styleMenu.message("clearchecks");
+		styleMenu.message("checkitem", tonedivisions.names.indexOf(stl) + Count, 1);
 		}
 	else 
 	{
@@ -314,15 +318,21 @@ this.patcher.parentpatcher.parentpatcher.getnamed("tools").subpatcher().getnamed
 }
 
 function setMenu() {
+	Count = 0
 	var styleMenu = this.patcher.getnamed("style");
     keys = staffStyles.getkeys();
 	styleMenu.message("clear");
+	Count += keys.length;
    	for (var i = 0; i < keys.length; i++) styleMenu.message("append", keys[i]);
 	styleMenu.message("append", "-");
+	Count++;
     keys = [].concat(aliases.getkeys());
     for (var i = 0; i < keys.length; i++) styleMenu.message("append", keys[i]);
-	styleMenu.message("append", "-");
+	Count += keys.length;
+	styleMenu.message("append", "-");;
+	Count++;
    	for (var i = 0; i < tonedivisions.names.length; i++) styleMenu.message("append", tonedivisions.names[i]);
+	styleMenu.message("checkitem", Count, 1);
 }
 
 function state(st) {
