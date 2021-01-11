@@ -52,20 +52,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-60",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 606.5, 348.0, 105.0, 33.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 21.5, 147.0, 193.0, 20.0 ],
-					"text" : "Display file name and buffer length"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
 					"checkedcolor" : [ 0.23921568627451, 0.333333333333333, 0.298039215686275, 1.0 ],
 					"id" : "obj-59",
@@ -76,7 +62,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 606.5, 385.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.904770800315873, 149.202385400157937, 15.595229199684155, 15.595229199684155 ],
+					"presentation_rect" : [ 2.904770800315845, 147.0, 20.0, 20.0 ],
 					"uncheckedcolor" : [ 0.513725490196078, 0.709803921568627, 0.63921568627451, 1.0 ]
 				}
 
@@ -113,7 +99,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 115.666666666666686, 206.5, 85.0, 22.0 ],
-					"restore" : [ "sf" ],
+					"restore" : [ "<empty>" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -241,7 +227,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 88.904770800315873, 248.0, 144.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "30000",
+					"text" : "200",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"textjustification" : 2,
 					"wordwrap" : 0
@@ -397,7 +383,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 189.0, 251.0, 82.0 ],
 					"size" : 4,
-					"value" : 2,
+					"value" : 0,
 					"varname" : "choice"
 				}
 
@@ -421,7 +407,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 125.5, 196.595229199684155, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "sf",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit",
 					"wordwrap" : 0
@@ -519,7 +504,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 196.333333333333371, 358.622806549072266, 65.0, 22.0 ],
-					"restore" : [ "Macintosh HD:/Users/james/Documents/0 Composition exports/20111014 Suite for Solo Violin/Suite for Solo Violin.mp3" ],
+					"restore" : [ "<empty>" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -585,7 +570,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 29.561403274536133, 201.595229199684155, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "\"Macintosh HD:/Users/james/Documents/0 Composition exports/20111014 Suite for Solo Violin/Suite for Solo Violin.mp3\"",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit[1]",
 					"wordwrap" : 0
@@ -738,7 +722,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 35.0, 70.622806549072266, 314.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -870,6 +854,21 @@
 					"textcolor" : [ 0.396078431372549, 0.396078431372549, 0.396078431372549, 1.0 ],
 					"textjustification" : 2,
 					"varname" : "label[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"id" : "obj-60",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 606.5, 348.0, 105.0, 47.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 2.904770800315845, 147.0, 251.0, 20.0 ],
+					"text" : "     Display file name and buffer length"
 				}
 
 			}
@@ -1218,16 +1217,34 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-15" : [ "live.text[39]", "live.text", 0 ],
+			"obj-89" : [ "live.text[38]", "live.text", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "sf.expr.js",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
+					"fontsize" : [ 12.0 ],
 					"fontname" : [ "Arial" ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -1237,7 +1254,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1246,8 +1264,8 @@
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontface" : [ 2 ],
-					"fontsize" : [ 11.0 ]
+					"fontsize" : [ 11.0 ],
+					"fontface" : [ 2 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1256,9 +1274,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontsize" : [ 15.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ]
+					"fontface" : [ 3 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1267,8 +1285,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -1277,9 +1295,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontsize" : [ 20.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ]
+					"fontface" : [ 1 ]
 				}
 ,
 				"parentstyle" : "",
