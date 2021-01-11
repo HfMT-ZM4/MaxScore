@@ -88,7 +88,6 @@ var mode = 0;
 var dump, noteInfo, measure, measureInfo;
 var dumpflag = 0;
 var annotation = new Dict("score_annotation");
-outlet(1, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
 
 function update() {
 	frames = buf.framecount();
@@ -107,6 +106,7 @@ function displaymode(m) {
 }
 
 function bang() {
+	outlet(1, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
 	outlet(1, "getScoreAnnotation"); // get timeUnit
 	outlet(1, "getSelectedNoteInfo"); // get note info for note hold time
 	outlet(1, "getNotePosition"); // get note info for note hold time
