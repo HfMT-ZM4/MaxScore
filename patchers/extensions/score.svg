@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="800px" height="800px" viewBox="0 0 800 800" style="background:rgb(253.98,253.98,239.7)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<g id="1" transform="matrix(1,0,0,1,0,0)">
+<text x="20" y="39" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >1</text>
+<text x="20" y="33" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(64,64,64)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >  &lt;&lt;</text>
+<text x="280.9981994628906" y="33" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(64,64,64)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >&gt;&gt;</text>
+<text x="20" y="21" font-family="Bravura" font-style="normal" font-weight="normal" font-size="12" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" ></text>
+<text x="25" y="21" font-family="Bravura" font-style="normal" font-weight="normal" font-size="8" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" ></text>
+<text x="30" y="24" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >60.0</text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,22,69.95999908447266)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,43,57)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,43,69)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,255)" fill-opacity="1" transform="matrix(1,0,0,1,83.62068939208984,60)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,137.62069702148438,57)" ></text>
+<rect x="83.62068939208984" y="60" width="0.75" height="20" fill="rgb(0,0,255)" stroke="rgb(0,0,255)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,191.62069702148438,66)" ></text>
+<rect x="137.62069702148438" y="57" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,245.62069702148438,63)" ></text>
+<rect x="198.22069702148437" y="45" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<path d="M322.6000061035156,81 L335.3999938964844,81" stroke="rgb(0,0,0)" stroke-width="0.6" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,325,81)" ></text>
+<rect x="245.62069702148438" y="63" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,378,57)" ></text>
+<rect x="331.6" y="60" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,431,63)" ></text>
+<rect x="378" y="57" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,484,63)" ></text>
+<rect x="431" y="63" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,565,60)" ></text>
+<rect x="484" y="63" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,618,63)" ></text>
+<rect x="565" y="60" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,671,63)" ></text>
+<rect x="618" y="63" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="22" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,724,66)" ></text>
+<rect x="671" y="63" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<text x="20" y="135" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >4</text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,22,165.9600067138672)" ></text>
+<rect x="730.6" y="45" width="0.75" height="20" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<path d="M20 75 L300.998 75 M20 69 L300.998 69 M20 63 L300.998 63 M20 57 L300.998 57 M20 51 L300.998 51 M300 75 L539.832 75 M300 69 L539.832 69 M300 63 L539.832 63 M300 57 L539.832 57 M300 51 L539.832 51 M540 75 L779.832 75 M540 69 L779.832 69 M540 63 L779.832 63 M540 57 L779.832 57 M540 51 L779.832 51 M20 171 L781.941 171 M20 165 L781.941 165 M20 159 L781.941 159 M20 153 L781.941 153 M20 147 L781.941 147 " stroke="rgb(0,0,0)" stroke-width="0.4" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<rect x="20" y="51" width="0.6" height="24" fill="rgb(0,0,0)" stroke="none" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<rect x="300" y="51" width="0.6" height="24" fill="rgb(0,0,0)" stroke="none" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<rect x="779.8317260742188" y="51" width="0.6" height="24" fill="rgb(0,0,0)" stroke="none" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<rect x="540" y="51" width="0.6" height="24" fill="rgb(0,0,0)" stroke="none" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<rect x="781.9412231445312" y="147" width="0.6" height="24" fill="rgb(0,0,0)" stroke="none" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<rect x="20" y="147" width="0.6" height="24" fill="rgb(0,0,0)" stroke="none" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+<rect x="20" y="147" width="0.6" height="24" fill="rgb(0,0,0)" stroke="none" stroke-width="0.4" fill-opacity="1.0" stroke-opacity="1.0" transform="matrix(1,0,0,1,0,0)"/>
+</g>
+</svg>

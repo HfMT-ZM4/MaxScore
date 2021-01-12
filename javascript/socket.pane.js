@@ -33,6 +33,10 @@ var pons = 0;
 var x, y, f_size, f_face;
 var source_rgb = [];
 var _val = {};
+var	buttonfillcolor = "red";
+var	buttonstrokecolor = "red";
+var buttonstrokewidth = 0.5;
+var buttonfillopacity = 0.2;
 
 
 if (jsarguments.length >= 1) 
@@ -180,6 +184,14 @@ function setMeasureSelection(ms)
 		selectedMeasures[sm] = arrayfromargs(arguments);
 		sm++;
 	}
+}
+
+function buttonmode(bm)
+{
+	buttonfillcolor = (bm) ? "lightblue" : "red";
+	buttonfillopacity = (bm) ? 0.8 : 0.2;
+	buttonstrokecolor = (bm) ? "lightblue" : "red";
+	buttonstrokewidth = (bm) ? 3 : 0.5;
 }
 
 function anything()
@@ -896,11 +908,11 @@ function drawBounds()
 					"width" : boundingRect[2],
 					"height" : boundingRect[3],
 					"style" : {
-						"stroke-width" : 0.6,
-						"stroke" : "red",
+						"stroke-width" : buttonstrokewidth,
+						"stroke" : buttonstrokecolor,
 						"stroke-opacity" : 0.,
-						"fill" : "red",
-						"fill-opacity" : 0.2
+						"fill" : buttonfillcolor,
+						"fill-opacity" : buttonfillopacity
 						},
 					"transform" : "translate(0, 0)"
 					}];

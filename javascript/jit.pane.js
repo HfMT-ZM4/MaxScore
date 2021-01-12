@@ -109,7 +109,10 @@ var width = 0;
 var height = 0;
 var blnk = new Task(blink, this);
 var maxiter = {};
-var maxcount = {};	
+var maxcount = {};
+var	buttonfillcolor = [1., 0., 0., 0.1];
+var	buttonstrokecolor = [1., 0., 0., 1.];
+var buttonstrokewidth = 0.5;	
 
 function transparency(t)
 {
@@ -124,6 +127,14 @@ function setMediaFolder()
 {
 	
 }
+
+function buttonmode(bm)
+{
+	buttonfillcolor = (bm) ? [0.808, 0.898, 0.910, 0.8] : [1., 0., 0., 0.1];
+	buttonstrokecolor = (bm) ? [0.35, 0.35, 0.35, 1.000] : [1., 0., 0., 1.];
+	buttonstrokewidth = (bm) ? 3 : 0.5;
+}
+
 
 function anything()
 {
@@ -672,14 +683,14 @@ function selectionRect()
 
 function drawBoundingRect()
 {
-                mgraphics.set_line_width(0.5);
+                mgraphics.set_line_width(buttonstrokewidth);
 				mgraphics.save();
 				mgraphics.scale(zoom, zoom);
  				mgraphics.translate(boundingRectOffset);
-               	mgraphics.set_source_rgba(1., 0., 0., 0.1);
+               	mgraphics.set_source_rgba(buttonfillcolor);
 				mgraphics.rectangle(boundingRect);
                 mgraphics.fill();
-                mgraphics.set_source_rgba(1., 0., 0., 1.);
+                mgraphics.set_source_rgba(buttonstrokecolor);
  				mgraphics.rectangle(boundingRect);
                	mgraphics.stroke();
 				mgraphics.restore();
