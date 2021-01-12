@@ -2005,27 +2005,28 @@ function anything() {
 				break;
 				case "mM-JI" :
 				//post("Num", annotation.get("staff-"+msg[5]+"::micromap"), "\n");
+				if (value == -1) value = pitch;
 				if (annotation.contains("staff-"+msg[5]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[5]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
 					keysigaccum = staffInfo[msg[4] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[5]][1] * (staffInfo[msg[4] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[5]][2] ? 1 : -1);
+					var fifths = keysigaccum;
 					var frame = 1200;
 					var shift = (keysigaccum * 7) % 12;
 					if (shift > 12) shift += 12; 
-				
 					}
 				else {
 					var frame = 1902;
 					shift = 11.94;
+					var fifths = Math.floor((value - shift) * 100 / frame);
+					//post("fifths", fifths, "\n");
 					}
-				if (value == -1) value = pitch;
 				var ratio = cent2ratio.get(Math.round((value - shift) * 100) % frame);
 				///// accidental finder
-				//post("ratio", cent2ratio.name, ratio, "\n");
 				var JIAccidentalSuffix = "pyth";			
         		if (ratio[1] != 1) var factorPowersNum = toFactorPowerList(primeFactorList(ratio[1]));
 				else var factorPowersNum = [[1, 1]];
-				var fifths = keysigaccum;
+				//var fifths = keysigaccum;
  				for (var i = 0; i < factorPowersNum.length; i++) {
 				switch (factorPowersNum[i][0])
 				{
