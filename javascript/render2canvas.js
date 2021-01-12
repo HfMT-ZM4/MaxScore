@@ -2019,9 +2019,9 @@ function anything() {
 					var frame = 1902;
 					shift = 11.94;
 					var fifths = Math.floor((value - shift) * 100 / frame);
-					//post("fifths", fifths, "\n");
 					}
 				var ratio = cent2ratio.get(Math.round((value - shift) * 100) % frame);
+				//post("ratio", ratio, Math.round((value - shift) * 100) % frame, value, "\n");
 				///// accidental finder
 				var JIAccidentalSuffix = "pyth";			
         		if (ratio[1] != 1) var factorPowersNum = toFactorPowerList(primeFactorList(ratio[1]));
