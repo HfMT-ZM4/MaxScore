@@ -1162,16 +1162,16 @@ function anything() {
 			{
 				case "$MIDICENTS" :
 				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
-				noteText = Math.round(pitch * 100.);
+				noteText = Math.round(value * 100.);
 				break;
 				case "$DEVIATION" :
 				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
-				var diff = pitch - parseInt(pitch);
+				var diff = value - parseInt(value);
 				noteText = ((diff < 0.5) ? "+" : "") + Math.round((diff < 0.5) ? diff * 100 : (1 - diff) * -100);
 				break;
 				case "$FREQUENCY" :
 				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
-				noteText = (440 * Math.pow(2, (pitch - 69) / 12)).toFixed(2);
+				noteText = (440 * Math.pow(2, (value - 69) / 12)).toFixed(2);
 				break;
 				case "$RATIO" :
 				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
