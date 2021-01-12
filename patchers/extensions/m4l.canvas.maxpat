@@ -2401,7 +2401,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 332.0, 492.0, 541.0, 420.0 ],
+						"rect" : [ 933.0, 548.0, 541.0, 420.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2449,14 +2449,15 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 74.0, 317.0, 454.0, 35.0 ],
-									"text" : "send parent::pitchtool::setTranspositionInterval, $1, send parent::pitchtool::updown, down"
+									"patching_rect" : [ 74.0, 317.0, 346.0, 35.0 ],
+									"text" : "send parent::pitchtool::entry::setTranspositionInterval, $1, send parent::pitchtool::entry::updown, down"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
+									"int" : 1,
 									"maxclass" : "gswitch2",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -2510,8 +2511,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 94.0, 275.0, 313.0, 35.0 ],
-									"text" : "send parent::pitchtool::setTranspositionInterval, $1, send parent::pitchtool::updown, up"
+									"patching_rect" : [ 94.0, 275.0, 346.0, 35.0 ],
+									"text" : "send parent::pitchtool::entry::setTranspositionInterval, $1, send parent::pitchtool::entry::updown, up"
 								}
 
 							}
@@ -4729,7 +4730,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 258.0, 24.0, 293.0, 18.0 ],
-									"restore" : [ 1 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4901,7 +4902,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 58.0, 402.0, 376.0, 18.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ 4, 0, 4, 0.5, 800, 800 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -6905,7 +6906,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 230.22222900390625, 143.0, 178.0, 20.0 ],
-									"restore" : [ "JMSLMaxScore-7" ],
+									"restore" : [ "JMSLMaxScore-28" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7066,7 +7067,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 418.0, 40.0, 449.0, 22.0 ],
-													"restore" : [ 842, 1191 ],
+													"restore" : [ 800, 800 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -7319,7 +7320,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 155.0, 501.0, 1106.0, 35.0 ],
-													"presentation_linecount" : 2,
 													"text" : "script sendbox scorepion presentation_rect $1 82. 256. 620, script sendbox utilitiesmenu presentation_rect $1 59. 256. 22., script sendbox pitchtool presentation_rect $1 59. 256. 760, script sendbox chooser presentation_rect $2 29. 256. 20., script sendbox picsterpane presentation_rect $1 59. 256. 760., script sendbox tools presentation_rect $1 59. 256. 700."
 												}
 
@@ -7667,7 +7667,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 340.0, 200.0, 363.0, 22.0 ],
-													"restore" : [ 0 ],
+													"restore" : [ 1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -8331,7 +8331,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 325.333343505859375, 205.0, 216.0, 20.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ 4, 0, 4, 0.5, 800, 800 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -8904,7 +8904,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 69.5, 295.0, 69.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 81, 53, 1365, 991, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 93, 53, 1377, 991, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -9012,7 +9012,6 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"hidden" : 1,
 					"id" : "obj-60",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
@@ -9062,6 +9061,7 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 1,
 					"enablevscroll" : 1,
+					"hidden" : 1,
 					"id" : "obj-9",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
