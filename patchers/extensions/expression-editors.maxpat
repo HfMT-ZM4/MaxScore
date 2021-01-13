@@ -327,7 +327,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activecolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"activecolor" : [ 0.929411764705882, 0.341176470588235, 0.270588235294118, 1.0 ],
 					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
 					"disabled" : [ 0, 0 ],
 					"id" : "obj-13",
@@ -340,6 +340,7 @@
 					"patching_rect" : [ 683.0, 371.25209903717041, 18.0, 34.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 385.0, 251.0, 34.0 ],
+					"shape" : 2,
 					"size" : 2,
 					"value" : 1,
 					"varname" : "choice"
@@ -2929,6 +2930,28 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"id" : "obj-49",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "sf.expression.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 656.526315999999952, 32.219298000000002, 258.0, 270.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 105.0, 258.0, 270.0 ],
+					"varname" : "sf",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
 					"hidden" : 1,
 					"id" : "obj-38",
 					"lockeddragscroll" : 0,
@@ -2964,28 +2987,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 105.0, 258.0, 270.0 ],
 					"varname" : "djster",
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-49",
-					"lockeddragscroll" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "sf.expression.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 656.526315999999952, 32.219298000000002, 258.0, 270.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 105.0, 258.0, 270.0 ],
-					"varname" : "sf",
 					"viewvisibility" : 1
 				}
 

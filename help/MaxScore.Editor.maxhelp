@@ -104,7 +104,7 @@
 									"numinlets" : 8,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 163.916666666666657, 642.0, 200.999999999999943, 22.0 ],
+									"patching_rect" : [ 163.916666666666657, 592.0, 200.999999999999943, 22.0 ],
 									"text" : "pack i i i i i 1 i i"
 								}
 
@@ -116,7 +116,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 163.916666666666657, 671.0, 133.0, 22.0 ],
+									"patching_rect" : [ 163.916666666666657, 621.0, 133.0, 22.0 ],
 									"text" : "prepend canvas mouse"
 								}
 
@@ -274,7 +274,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 488.5, 400.533331876464786, 187.0, 22.0 ],
+									"patching_rect" : [ 488.5, 395.0, 187.0, 22.0 ],
 									"text" : "jit.dimmap @map 0 1 @invert 0 1"
 								}
 
@@ -286,7 +286,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 488.5, 369.533331876464786, 45.0, 22.0 ],
+									"patching_rect" : [ 488.5, 366.0, 45.0, 22.0 ],
 									"text" : "zl reg"
 								}
 
@@ -312,7 +312,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_gl_texture", "" ],
-									"patching_rect" : [ 488.5, 432.533331876464786, 190.0, 22.0 ],
+									"patching_rect" : [ 488.5, 427.0, 190.0, 22.0 ],
 									"text" : "jit.gl.texture maxscore @name tex"
 								}
 
@@ -327,7 +327,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 697.0, 407.5, 304.0, 49.0 ],
+									"patching_rect" : [ 697.333333333333258, 395.0, 304.0, 49.0 ],
 									"text" : "jit.gl.gridshape maxscore @shape circle @smooth_shading 1 @texture tex @scale 0.82 0.82 1. @dim 70 20 @rotatexyz 0 0 180 @gl_color 1 1 1 1"
 								}
 
@@ -434,7 +434,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 394.5, 607.0, 245.0, 20.0 ],
+									"patching_rect" : [ 394.5, 592.5, 245.0, 20.0 ],
 									"text" : "Open URLs in browser (Chrome works best)"
 								}
 
@@ -458,7 +458,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 394.5, 629.0, 233.0, 35.0 ],
+									"patching_rect" : [ 394.5, 614.5, 233.0, 35.0 ],
 									"text" : ";\rmax launchbrowser http://localhost:3002/1"
 								}
 
@@ -474,7 +474,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 242.25, 395.0, 237.0, 61.0 ],
-									"text" : "/stdout : \"received socket close /1 2uvKB3/Ht8Ehml4lcsVuug==\""
+									"text" : "/stdout : \"received socket close /1 vT/zf0HZrnannrs7hC04gg==\""
 								}
 
 							}
@@ -731,7 +731,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-59", 0 ],
-									"midpoints" : [ 73.75, 632.0, 173.416666666666657, 632.0 ],
+									"midpoints" : [ 73.75, 580.0, 173.416666666666657, 580.0 ],
 									"source" : [ "obj-39", 0 ]
 								}
 
@@ -809,7 +809,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-35", 0 ],
-									"midpoints" : [ 173.416666666666657, 699.0, 34.625, 699.0, 34.625, 130.0, 175.5, 130.0 ],
+									"midpoints" : [ 173.416666666666657, 653.0, 34.625, 653.0, 34.625, 130.0, 175.5, 130.0 ],
 									"source" : [ "obj-56", 0 ]
 								}
 
@@ -824,7 +824,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-59", 2 ],
-									"midpoints" : [ 123.583333333333329, 628.316668393943701, 225.416666666666629, 628.316668393943701 ],
+									"midpoints" : [ 123.583333333333329, 574.316668393943701, 225.416666666666629, 574.316668393943701 ],
 									"source" : [ "obj-64", 0 ]
 								}
 

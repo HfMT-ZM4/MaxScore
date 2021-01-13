@@ -53,7 +53,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-					"checkedcolor" : [ 0.23921568627451, 0.333333333333333, 0.298039215686275, 1.0 ],
+					"checkedcolor" : [ 0.929411764705882, 0.341176470588235, 0.270588235294118, 1.0 ],
 					"id" : "obj-59",
 					"maxclass" : "toggle",
 					"numinlets" : 1,
@@ -63,7 +63,7 @@
 					"patching_rect" : [ 606.5, 385.0, 24.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 147.0, 20.0, 20.0 ],
-					"uncheckedcolor" : [ 0.513725490196078, 0.709803921568627, 0.63921568627451, 1.0 ]
+					"uncheckedcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ]
 				}
 
 			}
@@ -99,7 +99,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 115.666666666666686, 206.5, 85.0, 22.0 ],
-					"restore" : [ "<empty>" ],
+					"restore" : [ "sf" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -142,7 +142,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[39]",
+							"parameter_longname" : "live.text[43]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -368,7 +368,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activecolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"activecolor" : [ 0.929411764705882, 0.341176470588235, 0.270588235294118, 1.0 ],
 					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
 					"disabled" : [ 0, 0, 0, 0 ],
 					"id" : "obj-31",
@@ -382,8 +382,9 @@
 					"patching_rect" : [ 758.5, 277.75209903717041, 18.0, 82.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 189.0, 251.0, 82.0 ],
+					"shape" : 2,
 					"size" : 4,
-					"value" : 0,
+					"value" : 3,
 					"varname" : "choice"
 				}
 
@@ -407,6 +408,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 125.5, 196.595229199684155, 20.0 ],
 					"rounded" : 0.0,
+					"text" : "sf",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit",
 					"wordwrap" : 0
@@ -504,7 +506,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 196.333333333333371, 358.622806549072266, 65.0, 22.0 ],
-					"restore" : [ "<empty>" ],
+					"restore" : [ "Macintosh HD:/Users/hajdu/Music/Sounds/EffectsMachine/D#4 TOY PF.wav" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -570,6 +572,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 29.561403274536133, 201.595229199684155, 20.0 ],
 					"rounded" : 0.0,
+					"text" : "\"Macintosh HD:/Users/hajdu/Music/Sounds/EffectsMachine/D#4 TOY PF.wav\"",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit[1]",
 					"wordwrap" : 0
@@ -629,7 +632,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[38]",
+							"parameter_longname" : "live.text[42]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -722,7 +725,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 35.0, 70.622806549072266, 314.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -865,7 +868,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 606.5, 348.0, 105.0, 47.0 ],
+					"patching_rect" : [ 606.5, 324.5, 105.0, 47.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 147.0, 251.0, 20.0 ],
 					"text" : "     Display file name and buffer length"
@@ -1217,34 +1220,16 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-15" : [ "live.text[39]", "live.text", 0 ],
-			"obj-89" : [ "live.text[38]", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "sf.expr.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
 					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"umenu" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -1254,8 +1239,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "",
