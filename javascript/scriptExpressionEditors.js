@@ -64,4 +64,6 @@ function script()
       this.patcher.getnamed("menu").message("append", fname);
     }
   }
+  this.patcher.clean;
+  this.patcher.getnamed("menu").message("symbol", "default"); 
 }
