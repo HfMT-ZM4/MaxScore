@@ -1,3 +1,10 @@
+Updates 13.01.2021 - Tested on macOS 10.13.6, Max 8.1.8
+
+- reliable play-slices subpatch, easier behaviour
+- multiple bangs do not occur anymore
+- thresh in the envelope has been removed
+- proper envelope trigger&retrigger
+
 Updates 05.10.2020 - Tested on macOS 10.13.6, Max 8.1.6, Maxscore b32
 
 - envelope is triggered once

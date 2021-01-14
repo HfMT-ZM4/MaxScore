@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 70.0, 78.0, 862.0, 711.0 ],
+		"rect" : [ 2564.0, 60.0, 862.0, 711.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -281,7 +281,6 @@
 			}
 , 			{
 				"box" : 				{
-					"autorestore" : "Sampler.json",
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-5",
@@ -357,7 +356,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 38.0, 79.0, 1062.0, 788.0 ],
+						"rect" : [ 2190.0, 159.0, 1062.0, 787.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -385,6 +384,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-51",
@@ -487,7 +487,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-4",
-													"linecount" : 7,
+													"linecount" : 6,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
@@ -561,7 +561,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 1155.375, 452.0, 394.0, 35.0 ],
-									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/noiwont/noiwont.bank.txt" ],
+									"restore" : [ "Macintosh_HD:/Users/alan/Documents/Max 8/Packages/MS-bugTest/Harpsichord.json" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1421,7 +1421,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 2087.0, 79.0, 709.0, 747.0 ],
+										"rect" : [ 647.0, 79.0, 709.0, 747.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2096,7 +2096,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 399.0, 197.0, 889.0, 428.0 ],
+										"rect" : [ 2881.0, 482.0, 889.0, 428.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2124,6 +2124,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-25",
@@ -4678,7 +4679,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 44.0, 749.0, 665.0 ],
+						"rect" : [ 1479.0, 22.0, 751.0, 671.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4707,6 +4708,7 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"title" : "Bank Editor",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bgmode" : 0,
