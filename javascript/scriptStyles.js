@@ -8,7 +8,7 @@ var height = 28;
 var proffset_y = 260;
 var prheight = 500;
 var staffStyles = new Dict;
-staffStyles.name = "staffStyles";
+staffStyles.import_json("maxscore.staffStyles.json");
 var _staffStyles = JSON.parse(staffStyles.stringify());
 var lastEditor = "";
 var editors = ["default.style.maxpat", "BP-chromatic.style.maxpat", "clefdesigner.style.maxpat", "percussion.style.maxpat", "tablature.style.maxpat", "justintonation.style.maxpat"];
@@ -124,7 +124,7 @@ function showLastEditor()
 function showEditor(e)
 {
 	lastEditor = e;
-	//post("lastEditor",lastEditor, "\n");
+	post("lastEditor",lastEditor, "\n");
 	if (e != "default"){	
 	for (var key in _staffStyles) if (_staffStyles[key][0] != e) this.patcher.getnamed(_staffStyles[key][0]).hidden = 1;
 	this.patcher.getnamed("entry").hidden = 1;

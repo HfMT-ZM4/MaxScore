@@ -112,6 +112,7 @@ function removeObjects()
 		this.patcher.remove(thebuttons[i]);
 		outlet(0, "destroy","string["+i+"]");
 	}
+	openStrings = [];
 	}	
 }
 
