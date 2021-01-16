@@ -245,7 +245,7 @@ function search()
 //	else post("no match\n");
 	if (typeof(numSteps) == "number")
 	{
-	select.push("numSteps LIKE '% "+numSteps+"\n%'"); 
+	select.push("numSteps LIKE '%"+numSteps+"\n%'"); 
 	}
 	if (typeof(tuning) == "string" && tuning!="*")
 	{
