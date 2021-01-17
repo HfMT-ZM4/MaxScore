@@ -131,10 +131,10 @@ printCapture, transcriber - "prints captured notes to the Max window" printCaptu
 pruneTies, layout - "checks consistency of ties" pruneTies;
 realignMeasure, layout "measure (int)" "set measure width back to original value" "realignMeasure 0";
 redo, edit - "redo edit. Works with all transforms. Shortcut: y" redo;
-removeAllRenderedMessagesFromMeasure, measure "measure (int)" "removes all rendered messages attached to specified measure" removeAllRenderedMessagesFromMeasure 0;
+removeAllRenderedMessagesFromMeasure, measure "measure (int)" "removes all rendered messages attached to specified measure" "removeAllRenderedMessagesFromMeasure 0";
 removeAllRenderedMessagesFromNote, note "measure (int) staff (int) track (int) note (int)" "removes all rendered messages attached to specified note" "removeAllRenderedMessagesFromNote 0 0 0 0";
 removeAllRenderedMessagesFromSelectedNotes, note - "removes all rendered messages attached to selected notes" removeAllRenderedMessagesFromSelectedNotes;
-removeAllRenderedMessagesFromStaff, staff "measure (int) staff (int)" "removes all rendered messages attached to specified measure/staff" removeAllRenderedMessagesFromStaff 0 0;
+removeAllRenderedMessagesFromStaff, staff "measure (int) staff (int)" "removes all rendered messages attached to specified measure/staff" "removeAllRenderedMessagesFromStaff 0 0";
 removeGraceNotes, note - "removes grace note(s) attached to selected note(s)" removeGraceNotes;
 render, layout "measure (int)" "render score starting with specified measure number" "render 0";
 resetMaxOrchestra, orchestra - "enumerate through the staves and assign a new well-ordered instrument (including its note dimensions) to each staff." resetMaxOrchestra;
