@@ -2,7 +2,7 @@ outlets = 3;
 
 var djsterDict = new Dict();
 var djsterAttributes = {};
-var dump, noteInfo, notePosition, measureInfo, staffInfo;
+var dump, noteInfo, notePosition, measureInfo/*, staffInfo*/;
 var dumpflag = 0;
 //var annotation = new Dict("score_annotation");
 
@@ -11,17 +11,17 @@ function retrieve() {
   //outlet(2, "getScoreAnnotation"); // get timeUnit
   //post ("annotation == ", annotation.stringify(),"\n");
   outlet(2, "getSelectedNoteInfo"); // get note info for note hold time
-  post ("noteInfo == ", JSON.stringify(noteInfo, null, 2),"\n");
+  //post ("noteInfo == ", JSON.stringify(noteInfo, null, 2),"\n");
   if (Object.keys(noteInfo).length == 0) {
     post("Please select a note before retrieving!\n");
     return;
   }
   outlet(2, "getNotePosition");
-  post("notePosition == ", notePosition, "\n");
+  //post("notePosition == ", notePosition, "\n");
   outlet(2, "getMeasureInfo", notePosition[0]); // get measure info for tempo
-  post ("measureInfo == ", JSON.stringify(measureInfo, null, 2),"\n");
-  outlet(2, "getStaffInfo", notePosition[1]); // get measure info for tempo
-  post ("staffInfo == ", JSON.stringify(staffInfo, null, 2),"\n");
+  //post ("measureInfo == ", JSON.stringify(measureInfo, null, 2),"\n");
+  //outlet(2, "getStaffInfo", notePosition[1]); // get measure info for tempo
+  //post ("staffInfo == ", JSON.stringify(staffInfo, null, 2),"\n");
   var retrievedInfo = {};
   var keyName;
   if ("interval" in noteInfo) { //when interval is selected
@@ -121,9 +121,11 @@ function anything()
 			case "getMeasureInfo" :
 			measureInfo = {};
 			break;
+      /*
 			case "getStaffInfo" :
 			staffInfo = {};
 			break;
+      */
 		}
 		dumpflag = 1;
 		break;
@@ -137,10 +139,12 @@ function anything()
 			measureInfo = xml2json(dump.join(" "));
 			//post("measureInfo == "+JSON.stringify(measureInfo)+"\n");
 			break;
+      /*
 			case "getStaffInfo" :
 			staffInfo = xml2json(dump.join(" "));
 			//post("measureInfo == "+JSON.stringify(measureInfo)+"\n");
 			break;
+      */
 		}
 		dumpflag = 0;
 		break;
