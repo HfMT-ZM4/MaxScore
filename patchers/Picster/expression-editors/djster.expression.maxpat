@@ -63,14 +63,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 221.416666666666629, 341.622806549072266, 65.0, 22.0 ],
+					"patching_rect" : [ 221.416666666666629, 330.622806549072266, 219.0, 22.0 ],
 					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "pattr value",
+					"text" : "pattr value @autorestore 0 @invisible 1",
 					"varname" : "value[1]"
 				}
 
@@ -119,7 +119,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[16]",
+							"parameter_longname" : "live.text[7]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -325,14 +325,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 113.416666666666643, 696.0, 85.0, 22.0 ],
-					"restore" : [ "djster" ],
+					"patching_rect" : [ 113.416666666666643, 696.0, 239.0, 22.0 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "pattr message",
+					"text" : "pattr message @autorestore 0 @invisible 1",
 					"varname" : "message"
 				}
 
@@ -828,7 +828,7 @@
 							"parameter_initial" : [ 100 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "harmoniclarity[4]",
+							"parameter_longname" : "harmoniclarity[3]",
 							"parameter_mmax" : 100.0,
 							"parameter_shortname" : "Harmoniclarity",
 							"parameter_type" : 0,
@@ -863,7 +863,7 @@
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "chordal_weight[4]",
+							"parameter_longname" : "chordal_weight[3]",
 							"parameter_mmax" : 5.0,
 							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "Chordal weight",
@@ -1596,45 +1596,11 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-1" : [ "outset_pulses", "outset", 0 ],
-			"obj-11" : [ "eventfulness", "Eventfulness", 0 ],
-			"obj-12" : [ "event_length", "Event length", 0 ],
-			"obj-13" : [ "melody_scope", "Melody scope", 0 ],
-			"obj-22" : [ "pulse_length", "Pulse length", 0 ],
-			"obj-23" : [ "chordal_weight[4]", "Chordal weight", 0 ],
-			"obj-24" : [ "harmoniclarity[4]", "Harmoniclarity", 0 ],
-			"obj-25" : [ "pitch_center", "Pitch center", 0 ],
-			"obj-26" : [ "pitch_range", "Pitch range", 0 ],
-			"obj-27" : [ "dynamics", "Dynamics", 0 ],
-			"obj-28" : [ "attenuation", "Attenuation", 0 ],
-			"obj-29" : [ "ostinato", "ostinato", 0 ],
-			"obj-47" : [ "silent_downbeat", "SDB", 0 ],
-			"obj-5" : [ "metriclarity", "Metriclarity", 0 ],
-			"obj-52" : [ "tonic_pitch", "Tonic Pitch", 0 ],
-			"obj-7" : [ "live.text[24]", "live.text", 0 ],
-			"obj-8" : [ "live.text[16]", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "djster.expr.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"fontname" : [ "Arial" ]
 				}
 ,

@@ -278,7 +278,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 683.0, 418.25209903717041, 89.0, 22.0 ],
+					"patching_rect" : [ 683.0, 406.0, 89.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 1,
 						"precision" : 6
@@ -295,7 +295,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 683.0, 332.25209903717041, 70.0, 22.0 ],
+					"patching_rect" : [ 683.0, 320.0, 70.0, 22.0 ],
 					"text" : "loadmess 0"
 				}
 
@@ -307,7 +307,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 683.0, 448.75209903717041, 51.0, 22.0 ],
+					"patching_rect" : [ 683.0, 436.5, 51.0, 22.0 ],
 					"text" : "pvar set"
 				}
 
@@ -318,7 +318,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 711.0, 366.25209903717041, 204.0, 20.0 ],
+					"patching_rect" : [ 711.0, 354.0, 204.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 36.097332999999992, 401.0, 195.0, 20.0 ],
 					"text" : "Create new shape from expression"
@@ -331,7 +331,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 711.0, 389.25209903717041, 153.0, 20.0 ],
+					"patching_rect" : [ 711.0, 377.0, 153.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 36.097332999999992, 384.0, 153.0, 20.0 ],
 					"text" : "Attach expression to shape"
@@ -350,7 +350,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 683.0, 371.25209903717041, 18.0, 34.0 ],
+					"patching_rect" : [ 683.0, 359.0, 18.0, 34.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 385.0, 251.0, 34.0 ],
 					"shape" : 2,
@@ -804,14 +804,17 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 521.375, 468.5, 126.0, 22.0 ],
-					"restore" : [ 0 ],
+					"patching_rect" : [ 521.375, 468.5, 289.0, 22.0 ],
+					"restore" : [ 						{
+
+						}
+ ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "pattr @bindto bpf::dict",
+					"text" : "pattr @bindto bpf::dict @autorestore 0 @invisible 1",
 					"varname" : "u779018022"
 				}
 
@@ -2893,6 +2896,97 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 0.0, 0.0, 258.0, 45.0 ],
 					"varname" : "default[1]",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-37",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "default.expression.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 656.526315999999952, 32.219298000000002, 258.0, 45.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 105.0, 258.0, 45.0 ],
+					"varname" : "default",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hidden" : 1,
+					"id" : "obj-38",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bpf.expression.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 656.526315999999952, 32.219298000000002, 258.0, 270.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 105.0, 258.0, 270.0 ],
+					"varname" : "bpf",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hidden" : 1,
+					"id" : "obj-47",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "djster.expression.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 656.526315999999952, 32.219298000000002, 258.0, 270.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 105.0, 258.0, 270.0 ],
+					"varname" : "djster",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hidden" : 1,
+					"id" : "obj-49",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "sf.expression.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 656.526315999999952, 32.219298000000002, 258.0, 270.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 105.0, 258.0, 270.0 ],
+					"varname" : "sf",
 					"viewvisibility" : 1
 				}
 

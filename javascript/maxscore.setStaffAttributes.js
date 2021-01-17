@@ -323,7 +323,9 @@ function setMenu() {
     keys = staffStyles.getkeys();
 	styleMenu.message("clear");
 	Count += keys.length;
-   	for (var i = 0; i < keys.length; i++) styleMenu.message("append", keys[i]);
+	styleMenu.message("append", "Default"); 
+	for (var i = 0; i < editors.names.length; i++) styleMenu.message("append", editors.names[i]);
+   	for (var i = 0; i < keys.length; i++) if (editors.names.indexOf(keys[i]) == -1 &&  keys[i] != "Default") styleMenu.message("append", keys[i]);
 	styleMenu.message("append", "-");
 	Count++;
     keys = [].concat(aliases.getkeys());

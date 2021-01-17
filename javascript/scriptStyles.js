@@ -8,6 +8,8 @@ var height = 28;
 var proffset_y = 260;
 var prheight = 500;
 var staffStyles = new Dict;
+staffStyles.name = "staffStyles";
+staffStyles.clear();
 staffStyles.import_json("maxscore.staffStyles.json");
 var _staffStyles = JSON.parse(staffStyles.stringify());
 var lastEditor = "";
@@ -94,7 +96,7 @@ this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rec
 
 
 //now the rest
-for (i= 0; i < fnames.length -1; i++)
+for (i= 0; i < fnames.length - 1; i++)
 {
 	if (editors.indexOf(fnames[i]) == -1 )
 	{
