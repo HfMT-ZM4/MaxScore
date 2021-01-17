@@ -1,5 +1,116 @@
+outlets = 3;
+
 var djsterDict = new Dict();
 var djsterAttributes = {};
+var dump, noteInfo, notePosition, measureInfo, staffInfo;
+var dumpflag = 0;
+var annotation = new Dict("score_annotation");
+
+function retrieve() {
+  outlet(2, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
+  //outlet(2, "getScoreAnnotation"); // get timeUnit
+  //post ("annotation == ", annotation.stringify(),"\n");
+  outlet(2, "getSelectedNoteInfo"); // get note info for note hold time
+  post ("noteInfo == ", JSON.stringify(noteInfo, null, 2),"\n");
+  if (Object.keys(noteInfo).length == 0) {
+    post("Please select a note before retrieving!\n");
+    return;
+  }
+  outlet(2, "getNotePosition");
+  post("notePosition == ", notePosition, "\n");
+  outlet(2, "getMeasureInfo", notePosition[0]); // get measure info for tempo
+  post ("measureInfo == ", JSON.stringify(measureInfo, null, 2),"\n");
+  outlet(2, "getStaffInfo", notePosition[1]); // get measure info for tempo
+  post ("staffInfo == ", JSON.stringify(staffInfo, null, 2),"\n");
+  var retrievedInfo = {};
+  var keyName;
+  if ("interval" in noteInfo) { //when interval is selected
+    keyName = "interval";
+    post("Select the root of a chord to get more attributes\n");
+  }
+  else if ("note" in noteInfo) { //when note root is selected
+    keyName = "note";
+    if ("interval" in noteInfo.note) {
+      if (Array.isArray(noteInfo.note.interval)) {
+        var l = parseInt(noteInfo.note.interval.length);
+        retrievedInfo.chordal_weight = l + 1;
+        retrievedInfo.pitch_range = parseInt(noteInfo.note.interval[l-1].PITCH)-retrievedInfo.pitch_center;
+      }
+      else {
+        retrievedInfo.chordal_weight = 2;
+        retrievedInfo.pitch_range = parseInt(noteInfo.note.interval.PITCH)-retrievedInfo.pitch_center;
+      }
+    }
+  }
+  else {
+    post("Error!\n");
+    return;
+  }
+
+  retrievedInfo.tonic_pitch = parseFloat(noteInfo[keyName].PITCH);
+  retrievedInfo.pitch_center = parseFloat(noteInfo[keyName].PITCH);
+  retrievedInfo.dynamics = parseInt(parseFloat(noteInfo[keyName].VELOCITY)*127);
+  retrievedInfo.pulse_length = parseFloat(noteInfo[keyName].DURATION)*60000/parseFloat(measureInfo.measure.TEMPO);
+  retrievedInfo.event_length = parseFloat(noteInfo[keyName].HOLD)*60000/parseFloat(measureInfo.measure.TEMPO);
+
+
+  var outputDict = new Dict();
+  outputDict.parse(JSON.stringify(retrievedInfo));
+  outlet (1, "dictionary", outputDict.name);
+}
+
+function anything()
+{
+	var msg = arrayfromargs(arguments);
+	switch (messagename) {
+		/*
+    case "getScoreAnnotation" :
+		annotation.parse(msg);
+		break;
+    */
+		case "getNotePosition" :
+    post(msg+"\n");
+		notePosition = msg;
+		break;
+		case "startdump" :
+		dump = [];
+		switch(msg[0]) {
+			case "getSelectedNoteInfo" :
+			noteInfo = {};
+			break;
+			case "getMeasureInfo" :
+			measureInfo = {};
+			break;
+			case "getStaffInfo" :
+			staffInfo = {};
+			break;
+		}
+		dumpflag = 1;
+		break;
+		case "enddump" :
+		switch(msg[0]) {
+			case "getSelectedNoteInfo" :
+			noteInfo = xml2json(dump.join(" "));
+			//post("noteInfo == "+JSON.stringify(noteInfo)+"\n");
+			break;
+			case "getMeasureInfo" :
+			measureInfo = xml2json(dump.join(" "));
+			//post("measureInfo == "+JSON.stringify(measureInfo)+"\n");
+			break;
+			case "getStaffInfo" :
+			staffInfo = xml2json(dump.join(" "));
+			//post("measureInfo == "+JSON.stringify(measureInfo)+"\n");
+			break;
+		}
+		dumpflag = 0;
+		break;
+		default :
+		if (dumpflag) {
+			dump.push(messagename);
+		}
+		break;
+	}
+}
 
 //parse djster attributes from Dict
 function dictionary(dictName) {
@@ -35,8 +146,7 @@ function bang() {
           {
             "editor" : "djster",
             "message" : "djster",
-            "value" : djsterAttributes,
-            "autorender" : true
+            "value" : djsterAttributes
           }
         ]
       }
@@ -58,6 +168,8 @@ function bang() {
 
   //meter
   if ("meter" in djsterAttributes) {
+    if(djsterAttributes.meter == "<empty>") djsterAttributes.meter = [2, 2];
+    if(typeof(djsterAttributes.meter) == "number") djsterAttributes.meter = [djsterAttributes.meter];
     var l = djsterAttributes.meter.length;
     var text_array = ["","","","","","","","","",""]; //glyphs for numbers
     //var border = JSON.parse('{"new":"rect","x":108,"y":63,"width":53,"height":30,"style":{"stroke":"green","stroke-width":1,"stroke-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
@@ -205,6 +317,7 @@ function bang() {
 
   //scale
   if ("scale" in djsterAttributes) {
+    if (djsterAttributes.scale == "<empty>") djsterAttributes.scale = " ";
     var element = JSON.parse('{"new":"text","x":5,"y":11,"font-family":"Arial","font-size":10,"style":{"fill":"rgb(191,0,0)","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     element.id = groupId+"_scale";
     element.child = djsterAttributes.scale;
