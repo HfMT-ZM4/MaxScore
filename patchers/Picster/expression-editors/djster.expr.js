@@ -4,7 +4,7 @@ var djsterDict = new Dict();
 var djsterAttributes = {};
 var dump, noteInfo, notePosition, measureInfo, staffInfo;
 var dumpflag = 0;
-var annotation = new Dict("score_annotation");
+//var annotation = new Dict("score_annotation");
 
 function retrieve() {
   outlet(2, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
@@ -53,10 +53,50 @@ function retrieve() {
   retrievedInfo.pulse_length = parseFloat(noteInfo[keyName].DURATION)*60000/parseFloat(measureInfo.measure.TEMPO);
   retrievedInfo.event_length = parseFloat(noteInfo[keyName].HOLD)*60000/parseFloat(measureInfo.measure.TEMPO);
 
+  //calculate meter
+  retrievedInfo.meter = meterFromInt(measureInfo.measure.TIMESIG.split(" "), parseFloat(noteInfo[keyName].DURATION));
 
   var outputDict = new Dict();
   outputDict.parse(JSON.stringify(retrievedInfo));
   outlet (1, "dictionary", outputDict.name);
+}
+
+function meterFromInt(meterArray, noteDuration) {
+  var n = Math.round(parseInt(meterArray[0])*4/parseInt(meterArray[1])/noteDuration),
+      beats = parseInt(meterArray[0]);
+      meter = [],
+      divisor = 2,
+      subdivide = false;
+
+  if (n > beats && n % beats == 0) {
+    subdivide = true;
+    n /= beats;
+  }
+
+  while (beats >= 2) {
+    if (beats % divisor == 0) {
+       meter.push(divisor);
+       beats /= divisor;
+    }
+    else {
+      divisor++;
+    }
+  }
+
+  if (subdivide) {
+    divisor = 2;
+    while (n >= 2) {
+      if (n % divisor == 0) {
+         meter.push(divisor);
+         n /= divisor;
+      }
+      else {
+        divisor++;
+      }
+    }
+  }
+
+  return meter;
 }
 
 function anything()
