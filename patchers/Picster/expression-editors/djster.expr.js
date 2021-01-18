@@ -4,7 +4,14 @@ var djsterDict = new Dict();
 var djsterAttributes = {};
 var dump, noteInfo, notePosition, measureInfo/*, staffInfo*/;
 var dumpflag = 0;
+var sizes = [0.25, 0.33, 0.5, 0.66, 1, 2];
+var currentsize = 1;
+var colorpalette = [];
 //var annotation = new Dict("score_annotation");
+
+function setsize(s) {
+  currentsize = sizes[s];
+}
 
 function retrieve() {
   outlet(2, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
@@ -175,13 +182,13 @@ function bang() {
           "new" : "g",
           "id": groupId,
           "child":[],
-          "transform":"matrix(1,0,0,1,0,0)"
+          "transform":"matrix("+currentsize+",0,0,"+currentsize+",0,0)"
         }
       },
       {
         "key" : "extras",
         "val" : {
-          "bounds" : [0,0,120,90]
+          "bounds" : [0,0,120*currentsize,90*currentsize]
         }
       },
       {
