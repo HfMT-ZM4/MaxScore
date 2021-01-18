@@ -7,6 +7,7 @@
 <text x="25" y="21" font-family="Bravura" font-style="normal" font-weight="normal" font-size="8" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" ></text>
 <text x="30" y="24" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >60.0</text>
 <text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,22,69.95999908447266)" ></text>
+<text x="0" y="0" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,-78.6953125,65)" >MaxScoreIns-0</text>
 <text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,43,57)" ></text>
 <text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,43,69)" ></text>
 <path d="M20 75 L781.794 75 M20 69 L781.794 69 M20 63 L781.794 63 M20 57 L781.794 57 M20 51 L781.794 51 " stroke="rgb(0,0,0)" stroke-width="0.4" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>

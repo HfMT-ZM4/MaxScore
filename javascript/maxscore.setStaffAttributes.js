@@ -505,11 +505,7 @@ function newEvent(data) {
             if (inf[4] == StaffIndex) {
                 list = getStaffNoteIntervalInfo(i);
                 if (list && list[9] != 0) {
-                    if (styletype == "justintonation") {
-						map("justintonation");
-                        list = getStaffNoteIntervalInfo(0);
-						imap("justintonation", null);
-                    } else if (styletype == "tablature") {
+                    if (styletype == "tablature") {
                         stylesPatcher.subpatcher().getnamed("tablature").subpatcher().getnamed("tmap").message("shiftLocation", list[4], list[0], StaffIndex);
                     } else {
 						imap(styletype, "parent::" + styletype + "::map");
@@ -568,11 +564,19 @@ function paste(data) {
         var inf = selection.get(keys[i]);
         if (inf[4] == StaffIndex) {
             list = getStaffNoteIntervalInfo(i);
+			//post("list", list, "\n");
           if (list[9] != 0) {
+                if (styletype == "justintonation") {
+					map("default");
+                    list = getStaffNoteIntervalInfo(i);
+					imap("default", "parent::justintonation::map");
+                } 
+				else {
 				map(styletype, StaffIndex);
                 list = getStaffNoteIntervalInfo(i);
 				//set original pitch for playback
 				imap(styletype, null);
+				}
             }
 			else if (list[9] == 0) {
  				list[4] = -1;
@@ -667,7 +671,7 @@ function transform() {
         for (var i = 0; i < keys.length; i++) {
             list = getStaffNoteIntervalInfo(i);
             if (list) {
-                if (newstyletype == "justintonation") {
+                if (newstyletype == "bogus") {
 					imap(styletype, "parent::default::map");
                     list = getStaffNoteIntervalInfo(i);
 					imap("default", "parent::" + newstyletype + "::map");
@@ -788,9 +792,6 @@ function getStaffNoteIntervalInfo(i) {
     var inf = info.get(keys[i]);
 	var l = [0., 0., 0., "false", 0., 0., 0., 0., 0., "note", 0, 0];
     if (inf[6] != -1) {
-        messnamed(grab, "getNoteProperty", "level", inf.slice(3));
-        l[11] = StaffIndex;
-        l[8] = property.get(0)[6];
         messnamed(grab, "getStaffInfo", inf.slice(3, 5));
         l[7] = dump.get("dump::staff::0::@CLEF");
         l[6] = dump.get("dump::staff::0::@KEYSIGTYPE");
@@ -820,6 +821,10 @@ function getStaffNoteIntervalInfo(i) {
                 outlet(0, "selectNextInterval");
             }
         }
+        messnamed(grab, "getNoteProperty", "level", inf.slice(3));
+        l[11] = StaffIndex;
+        l[8] = property.get(0)[6];
+		//post("list", l[8], "\n");
         return l;
     }
 }
