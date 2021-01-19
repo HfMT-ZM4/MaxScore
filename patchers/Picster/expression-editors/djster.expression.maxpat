@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 90.0, 1250.0, 926.0 ],
+		"rect" : [ 1714.0, 90.0, 1490.0, 956.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -89,7 +89,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 388.0, 369.0, 150.0, 20.0 ],
+					"patching_rect" : [ 530.516672666666636, 186.622806549072266, 35.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 4.5, 248.0, 35.0, 20.0 ],
 					"text" : "Size:"
@@ -122,6 +122,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 221.416666666666629, 330.622806549072266, 219.0, 22.0 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -322,7 +323,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 33.416666666666657, 121.622806549072266, 314.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -383,7 +384,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 113.416666666666643, 696.0, 239.0, 22.0 ],
-					"restore" : [ "djster" ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -958,7 +959,7 @@
 							"parameter_invisible" : 2,
 							"parameter_linknames" : 1,
 							"parameter_longname" : "tonic_pitch",
-							"parameter_shortname" : "Tonic Pitch",
+							"parameter_shortname" : "Tonic pitch",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
 						}
@@ -993,8 +994,8 @@
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "button[1]",
-							"parameter_shortname" : "button",
+							"parameter_longname" : "melody_scope",
+							"parameter_shortname" : "Melody scope",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
 						}
@@ -1668,6 +1669,41 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-1" : [ "outset_pulses", "outset", 0 ],
+			"obj-11" : [ "eventfulness", "Eventfulness", 0 ],
+			"obj-12" : [ "event_length", "Event length", 0 ],
+			"obj-13" : [ "melody_scope", "Melody scope", 0 ],
+			"obj-22" : [ "pulse_length", "Pulse length", 0 ],
+			"obj-23" : [ "chordal_weight[3]", "Chordal weight", 0 ],
+			"obj-24" : [ "harmoniclarity[3]", "Harmoniclarity", 0 ],
+			"obj-25" : [ "pitch_center", "Pitch center", 0 ],
+			"obj-26" : [ "pitch_range", "Pitch range", 0 ],
+			"obj-27" : [ "dynamics", "Dynamics", 0 ],
+			"obj-28" : [ "attenuation", "Attenuation", 0 ],
+			"obj-29" : [ "ostinato", "ostinato", 0 ],
+			"obj-42" : [ "live.tab[4]", "live.tab[4]", 0 ],
+			"obj-47" : [ "silent_downbeat", "SDB", 0 ],
+			"obj-5" : [ "metriclarity", "Metriclarity", 0 ],
+			"obj-52" : [ "tonic_pitch", "Tonic pitch", 0 ],
+			"obj-7" : [ "live.text[24]", "live.text", 0 ],
+			"obj-8" : [ "live.text[7]", "live.text", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "djster.expr.js",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
