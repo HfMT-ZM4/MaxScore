@@ -480,14 +480,13 @@ function isAlias(stl) {
 }
 
 function isEditor(stl) {
-	//post((editors.indexOf(stl) != -1) ? 1 : 0, "\n");
 	return (editors["styles"].indexOf(stl) != -1) ? 1 : 0;
 }
 
 function newEvent(data) {
     if (data.value[0] == StaffIndex) {
 	var event = data.value.slice(1);
-   outlet(0, "setRenderAllowed", "false");
+   	outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     info.clear();
     getSelection();

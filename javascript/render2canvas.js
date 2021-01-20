@@ -2392,9 +2392,9 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					var child = group.child[i];
 					svgtransform = child.transform.substr(child.transform.indexOf("(") + 1, child.transform.lastIndexOf(")") - child.transform.indexOf("(") - 1).split(",").map(Number);
 					if (child.hasOwnProperty("style")) {
-					svgstroke = child.style.stroke;
+					svgstroke = (child.style.stroke == "$FRGB") ? frgb : child.style.stroke;
 					svgstrokeopacity = child.style["stroke-opacity"];
-					svgfill = child.style.fill;
+					svgfill = (child.style.fill == "$FRGB") ? frgb : child.style.fill;
 					svgfillopacity = child.style["fill-opacity"];
 					}
 					tempDict.clear();

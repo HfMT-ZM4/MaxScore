@@ -154,7 +154,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1016.0, 80.0, 630.0, 937.0 ],
+						"rect" : [ 246.0, 87.0, 586.0, 886.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -189,7 +189,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 321.249999999999943, 737.0, 29.5, 22.0 ],
+									"patching_rect" : [ 321.249999999999943, 754.0, 29.5, 22.0 ],
 									"text" : "join"
 								}
 
@@ -203,34 +203,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "int" ],
-									"patching_rect" : [ 117.666656494140625, 686.0, 29.5, 22.0 ],
+									"patching_rect" : [ 117.666656494140625, 697.0, 29.5, 22.0 ],
 									"text" : "t i i"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-53",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 255.0, 737.0, 47.0, 22.0 ],
-									"text" : "dict.iter"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-52",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 255.0, 678.000000476837158, 140.0, 22.0 ],
-									"text" : "routepass dictionary"
 								}
 
 							}
@@ -253,7 +227,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 255.0, 640.0, 221.0, 22.0 ],
+									"patching_rect" : [ 255.0, 642.0, 221.0, 22.0 ],
 									"text" : "route value message"
 								}
 
@@ -325,7 +299,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 169.0, 308.000000476837158, 152.0, 22.0 ],
+									"patching_rect" : [ 169.0, 307.000000476837158, 152.0, 22.0 ],
 									"text" : "routepass dictionary"
 								}
 
@@ -350,7 +324,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 406.0, 249.0, 47.0, 22.0 ],
+									"patching_rect" : [ 406.0, 254.0, 47.0, 22.0 ],
 									"text" : "dict.iter"
 								}
 
@@ -364,7 +338,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 370.0, 214.600000262260437, 55.0, 22.0 ],
+									"patching_rect" : [ 370.0, 219.600000262260437, 55.0, 22.0 ],
 									"text" : "zl.slice 1"
 								}
 
@@ -390,7 +364,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 370.0, 155.000000476837158, 116.0, 22.0 ],
+									"patching_rect" : [ 370.0, 149.000000476837158, 116.0, 22.0 ],
 									"text" : "routepass dictionary"
 								}
 
@@ -469,7 +443,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 484.25, 249.0, 66.0, 22.0 ],
+									"patching_rect" : [ 484.25, 254.0, 66.0, 22.0 ],
 									"text" : "listfunnel 7"
 								}
 
@@ -481,7 +455,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 255.0, 823.0, 53.0, 22.0 ],
+									"patching_rect" : [ 255.0, 800.0, 53.0, 22.0 ],
 									"text" : "prepend"
 								}
 
@@ -533,7 +507,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 321.249999999999943, 823.0, 206.0, 22.0 ],
+									"patching_rect" : [ 321.249999999999943, 800.0, 206.0, 22.0 ],
 									"text" : "poly~ index-player 20 args #0",
 									"varname" : "indexes"
 								}
@@ -620,7 +594,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 356.0, 737.0, 93.0, 22.0 ],
+									"patching_rect" : [ 255.0, 697.0, 93.0, 22.0 ],
 									"text" : "join @triggers 1"
 								}
 
@@ -714,7 +688,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 255.0, 873.0, 25.0, 25.0 ]
+									"patching_rect" : [ 255.0, 850.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -892,15 +866,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-52", 0 ],
-									"source" : [ "obj-23", 0 ]
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-23", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
-									"source" : [ "obj-23", 1 ]
+									"destination" : [ "obj-6", 1 ],
+									"source" : [ "obj-23", 0 ]
 								}
 
 							}
@@ -914,7 +888,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-56", 0 ],
-									"midpoints" : [ 443.0, 671.5, 127.166656494140625, 671.5 ],
+									"midpoints" : [ 443.0, 500.5, 127.166656494140625, 500.5 ],
 									"source" : [ "obj-24", 1 ]
 								}
 
@@ -1063,30 +1037,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-53", 0 ],
-									"source" : [ "obj-52", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-6", 1 ],
-									"midpoints" : [ 385.5, 727.000000238418579, 439.5, 727.000000238418579 ],
-									"source" : [ "obj-52", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
-									"source" : [ "obj-53", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-57", 1 ],
-									"midpoints" : [ 137.666656494140625, 725.0, 341.249999999999943, 725.0 ],
+									"midpoints" : [ 137.666656494140625, 731.0, 341.249999999999943, 731.0 ],
 									"source" : [ "obj-56", 1 ]
 								}
 
@@ -1108,7 +1060,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
-									"midpoints" : [ 365.5, 784.5, 264.5, 784.5 ],
+									"midpoints" : [ 264.5, 784.5, 264.5, 784.5 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -1130,7 +1082,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 330.749999999999943, 861.5, 264.5, 861.5 ],
+									"midpoints" : [ 330.749999999999943, 838.5, 264.5, 838.5 ],
 									"source" : [ "obj-72", 0 ]
 								}
 
@@ -1154,12 +1106,6 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
-								}
-,
 								"umenu" : 								{
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
@@ -1172,6 +1118,12 @@
 										"autogradient" : 0
 									}
 
+								}
+,
+								"number" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -1190,9 +1142,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ]
+									"fontsize" : [ 15.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -1201,8 +1153,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -1211,9 +1163,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ]
+									"fontsize" : [ 20.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -3928,12 +3880,6 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
-								}
-,
 								"umenu" : 								{
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
@@ -3946,6 +3892,12 @@
 										"autogradient" : 0
 									}
 
+								}
+,
+								"number" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -3964,9 +3916,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ]
+									"fontsize" : [ 15.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -3975,8 +3927,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -3985,9 +3937,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ]
+									"fontsize" : [ 20.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -4512,12 +4464,6 @@
  ],
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
-				}
-,
 				"umenu" : 				{
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
@@ -4530,6 +4476,12 @@
 						"autogradient" : 0
 					}
 
+				}
+,
+				"number" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -4548,9 +4500,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ]
+					"fontsize" : [ 15.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -4559,8 +4511,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -4569,9 +4521,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ]
+					"fontsize" : [ 20.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
