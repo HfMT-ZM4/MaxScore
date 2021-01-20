@@ -760,7 +760,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-44",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -2281,7 +2280,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-44",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -2534,7 +2532,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-44",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -2779,7 +2776,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-44",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -3647,7 +3643,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 614.714285714285666, 183.5, 58.0, 22.0 ],
+					"patching_rect" : [ 710.714285714285552, 174.5, 58.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3835,11 +3831,11 @@
 				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 422.714285714285666, 156.0, 211.0, 22.0 ],
-					"text" : "routepass newScore importMusicXML"
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 422.714285714285666, 138.0, 306.999999999999886, 22.0 ],
+					"text" : "routepass newScore importMusicXML grab"
 				}
 
 			}
@@ -3850,7 +3846,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 687.714285714285666, 272.5, 72.0, 22.0 ],
+					"patching_rect" : [ 687.714285714285666, 277.5, 72.0, 22.0 ],
 					"text" : "prepend set"
 				}
 
@@ -3862,7 +3858,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 687.714285714285666, 247.5, 63.0, 22.0 ],
+					"patching_rect" : [ 687.714285714285666, 253.5, 63.0, 22.0 ],
 					"text" : "route grab"
 				}
 
@@ -3972,7 +3968,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "saveToUndoStack" ],
+					"outlettype" : [ "stop" ],
 					"patching_rect" : [ 31.0, 16.0, 30.0, 30.0 ]
 				}
 
@@ -4096,7 +4092,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-46",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
@@ -4127,7 +4122,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-44",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -4568,8 +4562,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-189", 0 ],
+					"destination" : [ "obj-15", 0 ],
+					"midpoints" : [ 624.214285714285552, 192.25, 697.214285714285666, 192.25 ],
 					"source" : [ "obj-12", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-189", 0 ],
+					"source" : [ "obj-12", 3 ]
 				}
 
 			}
@@ -4674,7 +4676,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 624.214285714285666, 335.0, 432.214285714285666, 335.0 ],
+					"midpoints" : [ 720.214285714285552, 335.0, 432.214285714285666, 335.0 ],
 					"source" : [ "obj-189", 0 ]
 				}
 
