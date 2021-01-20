@@ -98,8 +98,8 @@ function bang() {
 							"width" : 100,
 							"height" : 40,
 							"style" : {
-								"fill" : "rgb(200,200,200)",
-								"fill-opacity" : 0.4
+								"fill" : "rgb(127,127,127)",
+								"fill-opacity" : 0.3
 							},
 							"transform" : "matrix(1,0,0,1,0,0)"
 						},
@@ -111,7 +111,7 @@ function bang() {
 							"x2" : 100,
 							"y2" : 20,
 							"style" : {
-								"stroke" : "rgb(0,0,0)",
+								"stroke" : "$FRGB",
 								"stroke-opacity" : 1,
 								"stroke-width" : 0.5
 							},
@@ -124,7 +124,7 @@ function bang() {
 							"y" : 0,
 							"d" : "",
 							"style" : {
-								"fill" : "rgb(0,0,0)",
+								"fill" : "$FRGB",
 								"fill-opacity" : 1,
 								"stroke-width" : 0
 							},
@@ -178,7 +178,7 @@ function bang() {
 			"font-family" : "Arial",
 			"font-size" : 10,
 			"style" : {
-				"fill" : "rgb(0,0,0)",
+				"fill" : "$FRGB",
 				"fill-opacity" : 1
 			},
 			"transform" : "matrix(1,0,0,1,0,0)"
