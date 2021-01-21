@@ -833,11 +833,10 @@ function writeBarlines()
 						if (stafflines[measures][mathMax][_linesMax[i]].length == 4) _linesMaxFiltered.push(_linesMax[i]);	
 					 }
 				if (_linesMaxFiltered.length == 0 || _linesMinFiltered.length == 0) return;
-//				var dest = remap(sg[s], sg[s][0], barlines[measures][lines][2]);
-//				var dest2 = remap(sg[s], sg[s][sg[s].length - 1], barlines[measures][lines][3]);
 				var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 				var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
-				if (measures == 0 || scoreLeftMargin == barlines[measures][lines][1]) SVGString[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				var _scoreLeftMargin = (scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
+				if (_scoreLeftMargin == barlines[measures][lines][1]) SVGString[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {
 					var mathMin = Math.min.apply(Math, brackets[br]);
 					if (mathMin < sg[s][0]) mathMin = sg[s][0];
@@ -860,10 +859,9 @@ function writeBarlines()
 					if (dest != -1)
 						{
 						for (var d = 0; d < dest.length; d++) {
-							if (measures > 0) SVGString[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
-								//post("diff", dest2 - dest, "\n");
+							//post("barlines", measures, numBrackets, barlines[measures][lines][1], "\n");	
 							if  (numBrackets > 0)
-								var _scoreLeftMargin = (scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
+							if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGString[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 								if (_scoreLeftMargin == barlines[measures][lines][1]) {
 								switch (annotation.get("staff-" + brackets[br][0] + "::staffgroup")[1]) {
 									case 1: 
@@ -886,8 +884,6 @@ function writeBarlines()
 
 function writeStaffLines()
 {
-			//var minmax = [stafflines[0][0][0][0], stafflines[scoreLayout[2] - 1][0][0][2]];
-			//if (JSON.stringify(oldstafflines) != JSON.stringify(stafflines)) {
 			for (var s = 0; s < groupcount; s++) {
 			var lineCount = 0;
 			var path = "";
@@ -939,7 +935,6 @@ function writeStems()
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			//post("zoom", stems[key], yoffset, "\n");	
 			if (stems[key][2] == 0.5) SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. + xoffset) + "\" y=\"" + (dest[d] - 22) + "\" width=\"" + 0.75 + "\" height=\"" + (bottom - top + 20. + yoffset) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			else {
 				if (stems[key][8] == "STEM_UP") SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - 28 * stems[key][2] * 2) + "\" width=\"" + 0.5 + "\" height=\"" + (bottom - top + (26. + yoffset ) * stems[key][2] * 2 ) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -1306,7 +1301,7 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"black\" transform=\"matrix(" + [Math.abs(msg[11])/100., 0., 0., orient, msg[9], dest[d] + 7] + ")\"/>");
+			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"" + frgb + "\" transform=\"matrix(" + [Math.abs(msg[11])/100., 0., 0., orient, msg[9], dest[d] + 7] + ")\"/>");
 			}
 			}
 			}
