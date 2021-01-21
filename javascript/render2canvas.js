@@ -1110,7 +1110,6 @@ function anything() {
 				var _keys = annotation.get("staff-" + currentIndex + "::stafflineshidden").getkeys();
 				for (var j = 0; j < _keys.length; j++){
 				outlet(1, "setStaffLineVisible", currentIndex, Number(_keys[j]), 0);			
-				//post("keys", "setStaffLineVisible", currentIndex, j, 0, "\n");	
 				}
 			}	
 			}	
@@ -1128,8 +1127,9 @@ function anything() {
         case "frgb":
 			//expr $i1*256*256 + $i2*256 + $i3
 			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
-            if (fcolor.length == 0 || colorcode == 255 || colorcode == 16756655 || colorcode != 0) frgb = "rgb("+ msg[0] + "," + msg[1] + "," + msg[2] + ")";
-			else frgb = "rgb("+ 255 * fcolor[0] + "," + 255 * fcolor[1] + "," + 255 * fcolor[2] + ")";
+ 			//post("colorcode", colorcode, "\n");	
+           	if ((colorcode != 0 || fcolor.length == 0 || colorcode == 255 || colorcode == 16756655) && colorcode != 4210752) frgb = "rgb("+ msg[0] + "," + msg[1] + "," + msg[2] + ")";
+			else if (colorcode != 4210752) frgb = "rgb("+ 255 * fcolor[0] + "," + 255 * fcolor[1] + "," + 255 * fcolor[2] + ")";
           break;
         case "clearGraphics":
             break;
