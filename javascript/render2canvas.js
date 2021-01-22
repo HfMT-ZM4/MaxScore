@@ -863,7 +863,8 @@ function writeBarlines()
 							if  (numBrackets > 0)
 							if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGString[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 								if (_scoreLeftMargin == barlines[measures][lines][1]) {
-								switch (annotation.get("staff-" + brackets[br][0] + "::staffgroup")[1]) {
+									if (annotation.contains("staff-" + brackets[br][0] + "::staffgroup")) {
+									switch (annotation.get("staff-" + brackets[br][0] + "::staffgroup")[1]) {
 									case 1: 
 									SVGString[s + 1].push("<path d=\"M34.1,0C19.3,14.5,16.7,30.6,20.2,47.8c2,9.9,4.3,19.7,5,29.7c0.9,15.8-4.7,30-21.9,41c22,14.3,24,32.7,20.5,52.3c-1.8,9.9-4.5,19.7-5.1,29.7c-0.8,12.7,4.2,24.5,14.2,35C21,228,15.4,217.9,11.4,207.1c-4.9-13.2-0.7-26.1,2.4-39.1c1.6-6.8,3.4-13.8,3.2-20.7c0-10.9-4.5-20.9-17-28.6c13.1-8.5,18.2-19.2,17.1-31.2c-0.8-8.1-3-16.2-5.1-24.2c-5.5-20-3.9-38.9,13.1-55.9C27.8,4.7,31,2.4,34.1,0z\" fill=\"" + frgb + "\" transform=\"matrix(" + [0.3, 0., 0., (dest2 - dest) * 0.101911/24, (barlines[measures][lines][1] - 10), dest] + ")\"/>");
 									break;
@@ -872,6 +873,7 @@ function writeBarlines()
 									SVGString[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"Bravura\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
 									SVGString[s + 1].push("<rect x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" width=\"2.\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 									break;	
+									}
 								}
 							}
 						}
