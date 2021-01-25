@@ -184,7 +184,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 990.0, 239.0, 324.0, 35.0 ],
-					"text" : "path \"Macintosh HD:/Users/james/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors\""
+					"text" : "path \"Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/expression-editors\""
 				}
 
 			}
@@ -192,7 +192,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-20",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -355,7 +355,7 @@
 					"presentation_rect" : [ 3.0, 385.0, 251.0, 34.0 ],
 					"shape" : 2,
 					"size" : 2,
-					"value" : 1,
+					"value" : 0,
 					"varname" : "choice"
 				}
 
@@ -573,7 +573,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-8",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -600,7 +600,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1609,7 +1609,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"id" : "obj-29",
-					"items" : "1",
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -2719,7 +2719,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[31]",
+							"parameter_longname" : "live.text[17]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -2727,7 +2727,7 @@
 
 					}
 ,
-					"text" : "Create",
+					"text" : "Set",
 					"varname" : "set"
 				}
 
@@ -2751,7 +2751,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[30]",
+							"parameter_longname" : "live.text[18]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -2783,7 +2783,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[29]",
+							"parameter_longname" : "live.text[19]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -2868,12 +2868,32 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 282.666666666666686, 8.0, 25.0, 25.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-49",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "default.expression.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 0.0, 0.0, 258.0, 45.0 ],
+					"varname" : "default[1]",
+					"viewvisibility" : 1
 				}
 
 			}
@@ -3758,12 +3778,59 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-83" : [ "live.text[19]", "live.text", 0 ],
+			"obj-84" : [ "live.text[18]", "live.text", 0 ],
+			"obj-89" : [ "live.text[17]", "live.text", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "default.expression.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
+				"patcherrelativepath" : "../Picster/expression-editors",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "default.expr.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
+				"patcherrelativepath" : "../Picster/expression-editors",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "primefactors.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps/microMaps/resources",
+				"patcherrelativepath" : "../maps/microMaps/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "scriptExpressionEditors.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxfolder.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ]
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"umenu" : 				{
@@ -3786,8 +3853,8 @@
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontface" : [ 2 ],
-					"fontsize" : [ 11.0 ]
+					"fontsize" : [ 11.0 ],
+					"fontface" : [ 2 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3796,9 +3863,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontsize" : [ 15.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ]
+					"fontface" : [ 3 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3807,8 +3874,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -3817,9 +3884,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontsize" : [ 20.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ]
+					"fontface" : [ 1 ]
 				}
 ,
 				"parentstyle" : "",

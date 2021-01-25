@@ -860,7 +860,7 @@ function writeBarlines()
 						{
 						for (var d = 0; d < dest.length; d++) {
 							//post("barlines", measures, numBrackets, barlines[measures][lines][1], "\n");	
-							if  (numBrackets > 0)
+							//if  (numBrackets > 0)
 							if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGString[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 								if (_scoreLeftMargin == barlines[measures][lines][1]) {
 									if (annotation.contains("staff-" + brackets[br][0] + "::staffgroup")) {

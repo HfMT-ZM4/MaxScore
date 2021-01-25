@@ -194,7 +194,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 149.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "1025-" ],
+									"restore" : [ "3007-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -346,7 +346,7 @@
 							"parameter_annotation_name" : "Outset Pulses",
 							"parameter_invisible" : 2,
 							"parameter_longname" : "outset",
-							"parameter_mmax" : 16.0,
+							"parameter_mmax" : 3.0,
 							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "outset",
 							"parameter_type" : 1,
@@ -2804,7 +2804,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 36.25, 118.927153999999987, 233.0, 22.0 ],
-									"restore" : [ 0, 0, 0, 0 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5881,8 +5881,8 @@
 					"bblend" : 68,
 					"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"bordercolor" : [ 0.2, 0.2, 0.2, 1.0 ],
-					"coldef" : [ [ 0, 27, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 47, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 40, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 3, 66, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
-					"cols" : 5,
+					"coldef" : [ [ 0, 27, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
+					"cols" : 1,
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -5970,24 +5970,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 1,
+					"parameter_enable" : 0,
 					"patching_rect" : [ 435.375, 347.5, 83.5, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 187.75, 113.0, 61.5, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"valueof" : 						{
-							"parameter_enum" : [ "Narrow", "Wide", "Odd Ratios" ],
-							"parameter_initial" : [ 0 ],
-							"parameter_initial_enable" : 1,
-							"parameter_invisible" : 1,
-							"parameter_longname" : "umenu[1]",
-							"parameter_mmax" : 3.0,
-							"parameter_shortname" : "umenu",
-							"parameter_type" : 3
-						}
-
-					}
-,
 					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"varname" : "umenu"
 				}
@@ -6042,6 +6028,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 319.0, 509.0, 30.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in 1"
 				}
 
@@ -6364,7 +6354,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 761.5, 246.0, 138.0, 19.0 ],
-					"restore" : [ 16 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6480,7 +6470,7 @@
 					"fontname" : "Arial Bold",
 					"fontsize" : 10.0,
 					"id" : "obj-49",
-					"items" : "longtenghuyue",
+					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6578,19 +6568,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 84.0, 221.0, 192.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"valueof" : 						{
-							"parameter_invisible" : 1,
-							"parameter_longname" : "omnibus",
-							"parameter_shortname" : "omnibus",
-							"parameter_type" : 3
-						}
-
-					}
-,
 					"saved_object_attributes" : 					{
 						"client_rect" : [ 814, 139, 1423, 455 ],
-						"parameter_enable" : 1,
+						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 780, 524, 1380, 824 ]
 					}
@@ -6698,6 +6678,7 @@
 					"restore" : [ 0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_invisible" : 2,
 							"parameter_longname" : "scale",
 							"parameter_shortname" : "scale",
 							"parameter_type" : 0
@@ -6768,7 +6749,7 @@
 					"fontname" : "Arial Bold",
 					"fontsize" : 10.0,
 					"id" : "obj-16",
-					"items" : "longtenghuyue",
+					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7227,7 +7208,7 @@
 					"fontname" : "Arial Bold",
 					"fontsize" : 10.0,
 					"id" : "obj-47",
-					"items" : "longtenghuyue.cents",
+					"items" : "default.cents",
 					"maxclass" : "umenu",
 					"menumode" : 2,
 					"numinlets" : 1,

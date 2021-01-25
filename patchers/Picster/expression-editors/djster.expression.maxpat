@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1714.0, 90.0, 1490.0, 956.0 ],
+		"rect" : [ 110.0, 87.0, 1490.0, 956.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -70,7 +70,8 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "25%", "33%", "50%", "66%", "100%", "200%" ],
-							"parameter_longname" : "live.tab[4]",
+							"parameter_invisible" : 2,
+							"parameter_longname" : "live.tab[10]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab[4]",
 							"parameter_type" : 2,
@@ -994,7 +995,7 @@
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "melody_scope",
+							"parameter_longname" : "button[2]",
 							"parameter_shortname" : "Melody scope",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -1669,47 +1670,12 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-1" : [ "outset_pulses", "outset", 0 ],
-			"obj-11" : [ "eventfulness", "Eventfulness", 0 ],
-			"obj-12" : [ "event_length", "Event length", 0 ],
-			"obj-13" : [ "melody_scope", "Melody scope", 0 ],
-			"obj-22" : [ "pulse_length", "Pulse length", 0 ],
-			"obj-23" : [ "chordal_weight[3]", "Chordal weight", 0 ],
-			"obj-24" : [ "harmoniclarity[3]", "Harmoniclarity", 0 ],
-			"obj-25" : [ "pitch_center", "Pitch center", 0 ],
-			"obj-26" : [ "pitch_range", "Pitch range", 0 ],
-			"obj-27" : [ "dynamics", "Dynamics", 0 ],
-			"obj-28" : [ "attenuation", "Attenuation", 0 ],
-			"obj-29" : [ "ostinato", "ostinato", 0 ],
-			"obj-42" : [ "live.tab[4]", "live.tab[4]", 0 ],
-			"obj-47" : [ "silent_downbeat", "SDB", 0 ],
-			"obj-5" : [ "metriclarity", "Metriclarity", 0 ],
-			"obj-52" : [ "tonic_pitch", "Tonic pitch", 0 ],
-			"obj-7" : [ "live.text[24]", "live.text", 0 ],
-			"obj-8" : [ "live.text[7]", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "djster.expr.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ]
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"umenu" : 				{
@@ -1732,8 +1698,8 @@
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontface" : [ 2 ],
-					"fontsize" : [ 11.0 ]
+					"fontsize" : [ 11.0 ],
+					"fontface" : [ 2 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1742,9 +1708,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontsize" : [ 15.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ]
+					"fontface" : [ 3 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1753,8 +1719,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -1763,9 +1729,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontsize" : [ 20.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ]
+					"fontface" : [ 1 ]
 				}
 ,
 				"parentstyle" : "",

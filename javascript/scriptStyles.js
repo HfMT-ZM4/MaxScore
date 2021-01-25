@@ -125,6 +125,7 @@ function showLastEditor()
 
 function showEditor(e)
 {
+	if (typeof e == "string") {
 	lastEditor = e;
 	post("lastEditor",lastEditor, "\n");
 	if (e != "default"){	
@@ -135,5 +136,6 @@ function showEditor(e)
 	else {
 	for (var key in _staffStyles) if (_staffStyles[key][0] != e) this.patcher.getnamed(_staffStyles[key][0]).hidden = 1;
 	this.patcher.getnamed("entry").hidden = 0;		
+	}
 	}
 }

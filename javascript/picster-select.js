@@ -2107,7 +2107,7 @@ function anything()
 			outlet(0, "undo");
 			outlet(0, "setRenderAllowed", 1);
 			break;
-			case 127 :
+			case 127 : case 8 :
 			if (foundobjects.contains("0") && item != -1) deleteSelectedItem();
 			break;
 			default :

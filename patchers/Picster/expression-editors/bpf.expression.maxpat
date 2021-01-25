@@ -231,19 +231,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"parameter_enable" : 1,
-					"patching_rect" : [ 46.0, 5.0, 24.0, 24.0 ],
-					"saved_attribute_attributes" : 					{
-						"valueof" : 						{
-							"parameter_enum" : [ "off", "on" ],
-							"parameter_longname" : "button[1]",
-							"parameter_mmax" : 1,
-							"parameter_shortname" : "button",
-							"parameter_type" : 2
-						}
-
-					}
-,
+					"parameter_enable" : 0,
+					"patching_rect" : [ 46.0, 12.0, 24.0, 24.0 ],
 					"varname" : "set"
 				}
 
@@ -537,7 +526,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 1 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-3", 0 ]
 				}
 
@@ -587,7 +576,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 2 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-4", 0 ]
 				}
 

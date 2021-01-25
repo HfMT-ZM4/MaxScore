@@ -45,8 +45,8 @@ currentValue.name = "current-value";
 var prevVal = {};
 var currVal = {};
 var editors = 	{
-				styles: ["tablature", "percussion", "clefdesigner", "BP-chromatic", "justintonation"], 
-				names: ["Tablature", "ClefDesigner", "BP chromatic", "Percussion", "Just Intonation"]
+				styles: ["tablature", "percussion", "clefdesigner", "BP-chromatic"], 
+				names: ["Tablature", "ClefDesigner", "BP chromatic", "Percussion"]
 				};
 var tonedivisions = {
 				names: ["24TET", "48TET", "72TET-Stahnke", "72TET-Sims", "72TET-Wyschnegradsky", "96TET"],
@@ -65,6 +65,8 @@ var preview = this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("p
 var stylesPatcher = this.patcher.parentpatcher.parentpatcher.getnamed("pitchtool");
 var pitchDisplay = stylesPatcher.subpatcher().getnamed("entry").subpatcher().getnamed("pitch");
 var Count = 0;
+var dumpDict = this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict");
+
 //var stylesPatcher = this.patcher.parentpatcher.getnamed("styles");
 
 //Listeners
@@ -84,10 +86,30 @@ var listener3 = new MaxobjListener(pitch, null , update);
 listener3.method = "setPitch";
 var listener4 = new MaxobjListener(addNote, null , newEvent);
 
+function setMenu() {
+	Count = 0
+	var styleMenu = this.patcher.getnamed("style");
+    keys = staffStyles.getkeys();
+	styleMenu.message("clear");
+	Count += keys.length;
+	styleMenu.message("append", "Default"); 
+	for (var i = 0; i < editors.names.length; i++) styleMenu.message("append", editors.names[i]);
+   	for (var i = 0; i < keys.length; i++) if (editors.names.indexOf(keys[i]) == -1 &&  keys[i] != "Default") styleMenu.message("append", keys[i]);
+	styleMenu.message("append", "-");
+	Count++;
+    keys = [].concat(aliases.getkeys());
+    for (var i = 0; i < keys.length; i++) styleMenu.message("append", keys[i]);
+	Count += keys.length;
+	styleMenu.message("append", "-");;
+	Count++;
+   	for (var i = 0; i < tonedivisions.names.length; i++) styleMenu.message("append", tonedivisions.names[i]);
+	styleMenu.message("checkitem", Count, 1);
+}
 
 function init()
 {
 //post("spacing", spacing, "\n");
+setMenu();
 var dump = new Dict();
 dump.name = ("dump");
 dump.clear();
@@ -171,13 +193,13 @@ this.patcher.parentpatcher.getnamed("done").message("bang");
 function clip(clpx, clpy)
 {
 annotation.replace("staff-"+StaffIndex+"::clip", clpx, clpy);
-this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict").message("bang");
+dumpDict.message("bang");
 }
 
 function ledgerlines(ll)
 {
 annotation.replace("staff-"+StaffIndex+"::ledgerlines", ll);		
-this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict").message("bang");
+dumpDict.message("bang");
 }
 
 function style(stl, flag)
@@ -202,10 +224,10 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 	else 
 	{
 	annotation.replace("staff-"+StaffIndex+"::style", stl);			
-	this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict").message("bang");
+	dumpDict.message("bang");
 	if (aliases.contains(stl)) stl = aliases.get(stl);
 	if (isAlias(stl) && flag) _style(stl, 1);
-	else if (stl == "Just Intonation" && !flag) _style(stl, 0);
+	//else if (stl == "Just Intonation" && !flag) _style(stl, 0);
 	else if (editors.names.indexOf(stl) != -1) _style(stl, 1);
 	else _style(stl, 0);
 	}
@@ -292,7 +314,7 @@ outlet(0, "setRenderAllowed", "true");
 function staffgroup(g, b)
 {
 annotation.replace("staff-"+StaffIndex+"::staffgroup", g, b);
-this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict").message("bang");
+dumpDict.message("bang");
 staffgroupdict.replace(StaffIndex, g, b);
 //outlet(0, "setRenderAllowed", "true");	
 }
@@ -300,14 +322,14 @@ staffgroupdict.replace(StaffIndex, g, b);
 function abbrInstrName(ain)
 {
 annotation.replace("staff-"+StaffIndex+"::abbrInstrName", ain);
-this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict").message("bang");
+dumpDict.message("bang");
 //outlet(0, "setRenderAllowed", "true");
 }
 
 function instrumentnamepositionoffset(offset)
 {
 annotation.replace("staff-"+StaffIndex+"::instrumentNamePositionOffset", offset);
-this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict").message("bang");	
+dumpDict.message("bang");
 //outlet(0, "setRenderAllowed", "true");
 }
 
@@ -315,26 +337,6 @@ function stafflines()
 {
 this.patcher.parentpatcher.parentpatcher.getnamed("visual-editor").subpatcher().getnamed("measurerange").message(0, StaffIndex, 0, StaffIndex);
 this.patcher.parentpatcher.parentpatcher.getnamed("tools").subpatcher().getnamed("measure-staff-track-info").subpatcher().getnamed("extendedStaffLines").subpatcher().getnamed("trigger").message("bang");	
-}
-
-function setMenu() {
-	Count = 0
-	var styleMenu = this.patcher.getnamed("style");
-    keys = staffStyles.getkeys();
-	styleMenu.message("clear");
-	Count += keys.length;
-	styleMenu.message("append", "Default"); 
-	for (var i = 0; i < editors.names.length; i++) styleMenu.message("append", editors.names[i]);
-   	for (var i = 0; i < keys.length; i++) if (editors.names.indexOf(keys[i]) == -1 &&  keys[i] != "Default") styleMenu.message("append", keys[i]);
-	styleMenu.message("append", "-");
-	Count++;
-    keys = [].concat(aliases.getkeys());
-    for (var i = 0; i < keys.length; i++) styleMenu.message("append", keys[i]);
-	Count += keys.length;
-	styleMenu.message("append", "-");;
-	Count++;
-   	for (var i = 0; i < tonedivisions.names.length; i++) styleMenu.message("append", tonedivisions.names[i]);
-	styleMenu.message("checkitem", Count, 1);
 }
 
 function state(st) {
@@ -359,8 +361,28 @@ function _style(stl, flag)
     annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
     annotation.replace("staff-" + StaffIndex + "::clef", "default");
     newstyletype = ss[0];
-    // the editor window needs to open here if flag == 1.
-    if (ss[1] == "editor" && flag == 1) {
+	/////////// set ratio lookup tables
+	var ratioLookUp = annotation.get("staff-" + StaffIndex + "::ratio-lookup");
+	var tables = [ "Narrow", "Medium", "BP-Narrow", "BP-Wide" ];
+	this.patcher.getnamed("ratio-lookup").message("clear");
+	for (var i = 0; i < tables.length; i++) this.patcher.getnamed("ratio-lookup").message("append", tables[i]);
+	if (newstyletype.indexOf("BP") != -1) {
+		this.patcher.getnamed("ratio-lookup").message("enableitem", 0, 0);
+		this.patcher.getnamed("ratio-lookup").message("enableitem", 1, 0);
+		if (ratioLookUp == 0) ratioLookUp = 3;
+		else if (ratioLookUp == 1 || ratioLookUp == 2) ratioLookUp = 4;
+	}
+	else {
+		this.patcher.getnamed("ratio-lookup").message("enableitem", 0, 1);
+		this.patcher.getnamed("ratio-lookup").message("enableitem", 1, 1);
+		if (annotation.get("staff-" + StaffIndex + "::micromap") != "mM-JI"){
+			if (ratioLookUp == 3) ratioLookUp = 0;
+			else if (ratioLookUp == 4) ratioLookUp = 2;
+		}
+	}	
+	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
+	///////////
+     if (ss[1] == "editor" && flag == 1) {
         switch (ss[0]) {
             case "tablature":
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
@@ -396,7 +418,7 @@ function _style(stl, flag)
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
  					//post("hello", editors.names.indexOf(stl), flag, "\n");
        }
-        this.patcher.getnamed("editor").message("active", 1);
+        //this.patcher.getnamed("editor").message("active", 1);
         if (!isAlias(stl)) stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
@@ -407,7 +429,7 @@ function _style(stl, flag)
    outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     if (ss[1] == "editor") {
-		this.patcher.getnamed("editor").message("active", 1);
+		//this.patcher.getnamed("editor").message("active", 1);
         switch (ss[0]) {
             case "tablature":
                 if (tablatureditor.contains(substyle)) {
@@ -464,15 +486,25 @@ function _style(stl, flag)
     }
     oldstl = stl;
     styletype = newstyletype;
-    this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict").message("bang");
+	dumpDict.message("bang");
     outlet(0, "setUndoStackEnabled", "true");
     outlet(0, "setRenderAllowed", "true");
 }
 
+/*
 function bang() {
 	stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
     stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
 }
+*/
+
+function lookup(r) {
+	if (r > 0) r += 1;
+	annotation.set("staff-" + StaffIndex + "::ratio-lookup", r);
+	dumpDict.message("bang");
+	if (styletype == "Just Intonation") style("Just Intonation", 0);
+}
+
 
 function isAlias(stl) {
     //post("isAlias", stl.length, stl.split("|")[0].length, stl.length != stl.split("|")[0].length, "\n");
@@ -658,7 +690,7 @@ function transform() {
 	currVal[newstyletype] = storedValue.get("stored-value");
 	//decide whether previous staff style (= styletype) is editor. If so retrieve stored value 
  	post("styletype", styletype, "\n");
-   if (isEditor(styletype) && styletype != "justintonation") {
+   if (isEditor(styletype)) {
 	// if previous style is an editor set current value to previous value stored in currVal. This looks suspicious to me.
 	currentValue.replace("current-value", currVal[styletype]);
 	stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("retrieve").subpatcher().getnamed("current-value").message("bang");
