@@ -66,6 +66,7 @@ var stylesPatcher = this.patcher.parentpatcher.parentpatcher.getnamed("pitchtool
 var pitchDisplay = stylesPatcher.subpatcher().getnamed("entry").subpatcher().getnamed("pitch");
 var Count = 0;
 var dumpDict = this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict");
+var ratioLookUp = 0;
 
 //var stylesPatcher = this.patcher.parentpatcher.getnamed("styles");
 
@@ -152,6 +153,12 @@ else {
 this.patcher.getnamed("ledgerlines").message("set", 1)
 ledgerlines(1);
 }
+
+ratioLookUp = annotation.get("staff-" + StaffIndex + "::ratio-lookup");
+var tables = [ "Narrow", "Wide", "BP-Narrow", "BP-Wide" ];
+this.patcher.getnamed("ratio-lookup").message("clear");
+for (var i = 0; i < tables.length; i++) this.patcher.getnamed("ratio-lookup").message("append", tables[i]);
+
 
 stl = annotation.get("staff-"+StaffIndex+"::style");
 if (stl == "Quarter Tone") stl = "Default";
@@ -353,7 +360,7 @@ function setStyle(stl) {
 
 function _style(stl, flag)
 {
-    if (aliases.contains(stl)) stl = aliases.get(stl);
+   if (aliases.contains(stl)) stl = aliases.get(stl);
     var basestyle = stl.split("|")[0];
     var substyle = stl.split("|")[1];
     ss = staffStyles.get(basestyle);
@@ -362,10 +369,7 @@ function _style(stl, flag)
     annotation.replace("staff-" + StaffIndex + "::clef", "default");
     newstyletype = ss[0];
 	/////////// set ratio lookup tables
-	var ratioLookUp = annotation.get("staff-" + StaffIndex + "::ratio-lookup");
-	var tables = [ "Narrow", "Medium", "BP-Narrow", "BP-Wide" ];
-	this.patcher.getnamed("ratio-lookup").message("clear");
-	for (var i = 0; i < tables.length; i++) this.patcher.getnamed("ratio-lookup").message("append", tables[i]);
+	ratioLookUp = annotation.get("staff-" + StaffIndex + "::ratio-lookup");
 	if (newstyletype.indexOf("BP") != -1) {
 		this.patcher.getnamed("ratio-lookup").message("enableitem", 0, 0);
 		this.patcher.getnamed("ratio-lookup").message("enableitem", 1, 0);
@@ -380,6 +384,7 @@ function _style(stl, flag)
 			else if (ratioLookUp == 4) ratioLookUp = 2;
 		}
 	}	
+  	//post("ratioLookUp", ratioLookUp, "\n");
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
 	///////////
      if (ss[1] == "editor" && flag == 1) {
@@ -425,7 +430,6 @@ function _style(stl, flag)
         if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("bang");
         return;
     }
- 	//post("hello", "\n");
    outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     if (ss[1] == "editor") {
@@ -502,7 +506,9 @@ function lookup(r) {
 	if (r > 0) r += 1;
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", r);
 	dumpDict.message("bang");
-	if (styletype == "Just Intonation") style("Just Intonation", 0);
+	//post("styletype", r, annotation.get("staff-" + StaffIndex + "::ratio-lookup"), "\n");
+	if (styletype == "justintonation") style("Just Intonation", 0);
+	else outlet(0, "setRenderAllowed", "true");
 }
 
 
@@ -756,7 +762,6 @@ function setDefaultClef(dc) {
 }
 
 function setClef(stl) {
-    //post("clef", ss, "\n");
     var numMeasures = getInfo("getNumMeasures");
 	for (var i = -15; i < 16; i++) outlet(0, "setStaffLineVisible", StaffIndex, i, 1); 
     if (stl != oldstl) {
