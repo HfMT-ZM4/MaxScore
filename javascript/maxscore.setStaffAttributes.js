@@ -263,20 +263,7 @@ case(4):
 style("Default", 1);
 cf = "PERCUSSION_CLEF";
 break;
-/*
-case(5):
-cf = "";
-this.patcher.getnamed("style").message("symbol", "BP chromatic N clef");
-break;
-case(6):
-cf = "";
-this.patcher.getnamed("style").message("symbol", "BP chromatic T clef");
-break;
-case(7):
-cf = "";
-this.patcher.getnamed("style").message("symbol", "BP chromatic Z clef");
-break;
-*/
+
 }
 if (cf!="")
 {
@@ -353,9 +340,11 @@ function state(st) {
 function setStyle(stl) {
     if (aliases.contains(stl)) stl = aliases.get(stl);
     var basestyle = stl.split("|")[0];
-    this.patcher.getnamed("style").message("setsymbol", basestyle);
+ 	post("setitem", basestyle, editors.names, "\n");
+	this.patcher.getnamed("style").message("setsymbol", basestyle);
     styletype = staffStyles.get(basestyle)[0];
-    if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", staffStyles.getkeys().indexOf(basestyle), stl);
+    if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", editors.names.indexOf(basestyle) + 1, stl);
+  	if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
 }
 
 function _style(stl, flag)
@@ -384,7 +373,6 @@ function _style(stl, flag)
 			else if (ratioLookUp == 4) ratioLookUp = 2;
 		}
 	}	
-  	//post("ratioLookUp", ratioLookUp, "\n");
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
 	///////////
      if (ss[1] == "editor" && flag == 1) {
@@ -463,13 +451,17 @@ function _style(stl, flag)
                 hidden = percussionMaps.get(substyle + "::stafflines::hidden");
                 break;
             case "clefdesigner":
+                //post("substyle", substyle, annotation.stringify(), "\n");
                 var newstafflines = [clefdesigner.get(substyle + "::stafflines::above"), clefdesigner.get(substyle + "::stafflines::below")];
                 hidden = clefdesigner.get(substyle + "::stafflines::hidden");
+				if (annotation.contains("userclefs::" + substyle)) annotation.replace("staff-" + StaffIndex + "::clef", substyle);
+				else {
                 baseclef = clefdesigner.get(substyle + "::baseclef");
                 if (baseclef == "default") annotation.replace("staff-" + StaffIndex + "::clef", "default");
                 else annotation.replace("staff-" + StaffIndex + "::clef", substyle);
-                annotation.replace("staff-" + StaffIndex + "::micromap", stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("insert").subpatcher().getnamed("grid").getvalueof());
-                post("substyle", substyle, clefdesigner.get(substyle + "::transposition"), "\n");
+				}
+				if (annotation.contains("userclefs::" + substyle)) annotation.replace("staff-" + StaffIndex + "::micromap", annotation.get("userclefs::" + substyle + "::micromap"));
+                else annotation.replace("staff-" + StaffIndex + "::micromap", stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("insert").subpatcher().getnamed("grid").getvalueof());
                 stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("transp").message(clefdesigner.get(substyle + "::transposition"));
                 break;
 			default: 
