@@ -887,7 +887,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "rest", "note" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[56]",
+							"parameter_longname" : "live.tab[98]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -1315,9 +1315,9 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"umenu" : 								{
@@ -1661,7 +1661,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "setTimeSignature", "setTempo", "setMeasureText", "setMeasureWidth", "setLeftMargin", "extendedStaffLines" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[77]",
+							"parameter_longname" : "live.tab[45]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -2439,9 +2439,9 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"umenu" : 								{
@@ -3054,9 +3054,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -3389,9 +3389,9 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"umenu" : 								{
@@ -3450,7 +3450,7 @@
 							"parameter_annotation_name" : "Clef",
 							"parameter_enum" : [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[370]",
+							"parameter_longname" : "live.menu[8]",
 							"parameter_mmax" : 15,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -3488,7 +3488,7 @@
 							"parameter_annotation_name" : "Key Signature",
 							"parameter_enum" : [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[371]",
+							"parameter_longname" : "live.menu[7]",
 							"parameter_mmax" : 15,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -3523,7 +3523,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "1", "2", "3", "4" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[9]",
+							"parameter_longname" : "live.tab[81]",
 							"parameter_mmax" : 3,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -4766,9 +4766,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -5787,9 +5787,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -6436,7 +6436,7 @@
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.grid[6]",
+															"parameter_longname" : "live.grid[5]",
 															"parameter_shortname" : "live.grid",
 															"parameter_type" : 3
 														}
@@ -7089,7 +7089,7 @@
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.slider[6]",
+															"parameter_longname" : "live.slider[5]",
 															"parameter_mmax" : 13.0,
 															"parameter_mmin" : -5.0,
 															"parameter_shortname" : "Extendend Lines Below",
@@ -7125,7 +7125,7 @@
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.slider[7]",
+															"parameter_longname" : "live.slider[6]",
 															"parameter_mmax" : 13.0,
 															"parameter_mmin" : -5.0,
 															"parameter_shortname" : "Extendend Lines Above",
@@ -7603,7 +7603,7 @@
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.grid[7]",
+															"parameter_longname" : "live.grid[6]",
 															"parameter_shortname" : "live.grid",
 															"parameter_type" : 3
 														}
@@ -8175,9 +8175,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -8200,8 +8200,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8210,9 +8210,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8221,8 +8221,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8231,9 +8231,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8649,9 +8649,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -9085,9 +9085,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -9521,9 +9521,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -9578,7 +9578,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 373.0, 79.0, 600.0, 826.0 ],
+										"rect" : [ 373.0, 79.0, 556.0, 789.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -9612,11 +9612,11 @@
 													"fontsize" : 12.0,
 													"id" : "obj-22",
 													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 246.0, 381.0, 57.0, 22.0 ],
-													"text" : "tosymbol"
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 174.5, 392.0, 80.0, 22.0 ],
+													"text" : "route jsobject"
 												}
 
 											}
@@ -9629,7 +9629,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 133.0, 352.0, 60.5, 22.0 ],
+													"patching_rect" : [ 133.0, 359.0, 60.5, 22.0 ],
 													"text" : "zl.ecils 2"
 												}
 
@@ -9737,7 +9737,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 385.0, 77.0, 58.0, 20.0 ],
+													"patching_rect" : [ 256.0, 63.0, 58.0, 20.0 ],
 													"text" : "prepend id"
 												}
 
@@ -9751,7 +9751,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 385.0, 24.0, 25.0, 25.0 ]
+													"patching_rect" : [ 256.0, 10.0, 25.0, 25.0 ]
 												}
 
 											}
@@ -10005,6 +10005,34 @@
 														"title" : "Set Text",
 														"boxes" : [ 															{
 																"box" : 																{
+																	"fontname" : "Arial",
+																	"fontsize" : 12.0,
+																	"id" : "obj-34",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "bang" ],
+																	"patching_rect" : [ 71.5, 208.0, 60.0, 22.0 ],
+																	"text" : "loadbang"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontname" : "Arial",
+																	"fontsize" : 12.0,
+																	"id" : "obj-31",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 71.5, 236.0, 181.0, 22.0 ],
+																	"text" : "window flags float, window exec"
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"fontface" : 3,
 																	"id" : "obj-33",
 																	"linecount" : 2,
@@ -10015,7 +10043,7 @@
 																	"presentation" : 1,
 																	"presentation_linecount" : 2,
 																	"presentation_rect" : [ 28.0, 7.0, 378.0, 33.0 ],
-																	"text" : "This tool uses native, bare-bones text editing. \nFor more options, use QuickText from the Picster menu",
+																	"text" : "This tool uses native, bare-bones text editing. \nFor more options, use Text entry in the Picster > Graphics pane.",
 																	"textcolor" : [ 0.784313976764679, 0.145098000764847, 0.023529000580311, 1.0 ]
 																}
 
@@ -10233,7 +10261,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "wclose" ],
-																	"patching_rect" : [ 4.0, 291.0, 54.0, 22.0 ],
+																	"patching_rect" : [ 4.0, 236.0, 54.0, 22.0 ],
 																	"text" : "t wclose"
 																}
 
@@ -10315,7 +10343,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 256.0, 194.0, 61.0, 22.0 ],
+																	"patching_rect" : [ 256.0, 200.0, 61.0, 22.0 ],
 																	"text" : "route text"
 																}
 
@@ -10395,10 +10423,11 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 682.0, 124.0, 150.0, 20.0 ],
+																	"patching_rect" : [ 705.0, 157.0, 150.0, 20.0 ],
 																	"presentation" : 1,
 																	"presentation_rect" : [ 298.0, 44.0, 46.0, 20.0 ],
-																	"text" : "Offset:"
+																	"text" : "Offset:",
+																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 																}
 
 															}
@@ -10410,10 +10439,11 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 683.0, 149.0, 150.0, 20.0 ],
+																	"patching_rect" : [ 706.0, 182.0, 150.0, 20.0 ],
 																	"presentation" : 1,
 																	"presentation_rect" : [ 15.0, 44.0, 150.0, 20.0 ],
-																	"text" : "Set text:"
+																	"text" : "Set text:",
+																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 																}
 
 															}
@@ -10471,7 +10501,6 @@
 																	"fontsize" : 12.0,
 																	"id" : "obj-1",
 																	"keymode" : 1,
-																	"linecount" : 3,
 																	"maxclass" : "textedit",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -10479,10 +10508,9 @@
 																	"parameter_enable" : 0,
 																	"patching_rect" : [ 256.0, 161.0, 259.0, 26.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 3,
 																	"presentation_rect" : [ 11.0, 70.0, 270.0, 19.0 ],
 																	"rounded" : 0.0,
-																	"text" : "Text: Nicolaus Selneccer 1579 0 Weise nach S. Calvisius 0 Satz: Johann Sebastian Bach 0 BWV 253",
+																	"text" : "<empty>",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -10704,9 +10732,23 @@
 															}
 , 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-11", 0 ],
+																	"source" : [ "obj-31", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"destination" : [ "obj-1", 0 ],
 																	"midpoints" : [ 163.5, 140.0, 265.5, 140.0 ],
 																	"source" : [ "obj-32", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-31", 0 ],
+																	"source" : [ "obj-34", 0 ]
 																}
 
 															}
@@ -10736,7 +10778,7 @@
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-21", 0 ],
-																	"midpoints" : [ 336.5, 99.0, 13.5, 99.0 ],
+																	"midpoints" : [ 336.5, 192.0, 13.5, 192.0 ],
 																	"source" : [ "obj-6", 0 ]
 																}
 
@@ -10749,7 +10791,7 @@
 
 															}
  ],
-														"bgcolor" : [ 0.890196, 0.890196, 0.890196, 1.0 ]
+														"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
 													}
 ,
 													"patching_rect" : [ 133.0, 451.0, 102.0, 22.0 ],
@@ -10757,7 +10799,7 @@
 														"description" : "",
 														"digest" : "",
 														"globalpatchername" : "",
-														"locked_bgcolor" : [ 0.890196, 0.890196, 0.890196, 1.0 ],
+														"locked_bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 														"tags" : ""
 													}
 ,
@@ -10774,7 +10816,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 82.0, 20.0, 25.0, 25.0 ]
+													"patching_rect" : [ 82.0, 10.0, 25.0, 25.0 ]
 												}
 
 											}
@@ -10829,7 +10871,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-59", 0 ],
+													"destination" : [ "obj-22", 0 ],
 													"source" : [ "obj-14", 1 ]
 												}
 
@@ -10906,6 +10948,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-59", 0 ],
+													"source" : [ "obj-22", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-57", 0 ],
 													"source" : [ "obj-23", 0 ]
 												}
@@ -10970,6 +11019,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-8", 0 ],
+													"midpoints" : [ 265.5, 143.0, 91.5, 143.0 ],
 													"source" : [ "obj-6", 0 ]
 												}
 
@@ -11013,9 +11063,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -11539,9 +11589,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -12023,9 +12073,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -12588,9 +12638,9 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"umenu" : 								{
@@ -12650,7 +12700,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "single", "double", "period", "none", "repeat_start", "repeat_end" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[83]",
+							"parameter_longname" : "live.tab[75]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -12689,7 +12739,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "MARK_MORDANT", "MARK_BOWED_TREMOLO_1", "MARK_BOWED_TREMOLO_2", "MARK_BOWED_TREMOLO_3", "MARK_NONE" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[80]",
+							"parameter_longname" : "live.tab[46]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -12727,7 +12777,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "13", "15", "17", "19", "0" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[85]",
+							"parameter_longname" : "live.tab[84]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -12769,7 +12819,7 @@
 							"parameter_defer" : 1,
 							"parameter_enum" : [ "MARK_ACCENT_TENUTO", "MARK_WEDGE_STACCATO", "MARK_FERMATA", "MARK_INVERTED_FERMATA", "MARK_HARMONIC" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[79]",
+							"parameter_longname" : "live.tab[76]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -12864,7 +12914,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "crossstaff", "stemflip" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[84]",
+							"parameter_longname" : "live.tab[86]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -13291,9 +13341,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -13697,7 +13747,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "standard", "x", "diamond", "triangle", "inverted_triangle", "x_diamond", "slash", "color", "noteheadpercentage" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[76]",
+							"parameter_longname" : "live.tab[78]",
 							"parameter_mmax" : 8,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -13737,7 +13787,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "3", "5", "7", "9", "11" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[91]",
+							"parameter_longname" : "live.tab[77]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -13781,7 +13831,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "natural", "sharp", "flat" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[81]",
+							"parameter_longname" : "live.tab[79]",
 							"parameter_mmax" : 2,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -14730,9 +14780,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -15294,9 +15344,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -15420,7 +15470,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 10.0, 103.0, 541.0, 22.0 ],
-													"restore" : [ 0 ],
+													"restore" : [ 1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -16205,9 +16255,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -16549,9 +16599,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -17572,7 +17622,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "rest", "note" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[87]",
+							"parameter_longname" : "live.tab[85]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -17612,7 +17662,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "notevisible", "noteheadvisible", "stemvisible", "accvisible", "ledgerlinesinvisible", "gracenotetransform" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[88]",
+							"parameter_longname" : "live.tab[82]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -17686,7 +17736,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "nodot", "dot", "2dots" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[86]",
+							"parameter_longname" : "live.tab[83]",
 							"parameter_mmax" : 2,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -17759,7 +17809,7 @@
 							"parameter_initial" : [ 2.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[92]",
+							"parameter_longname" : "live.tab[87]",
 							"parameter_mmax" : 7,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -18354,9 +18404,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -18609,8 +18659,8 @@
 																	"patching_rect" : [ 364.5, 365.0, 378.0, 33.0 ],
 																	"presentation" : 1,
 																	"presentation_linecount" : 2,
-																	"presentation_rect" : [ 95.0, 5.0, 330.0, 33.0 ],
-																	"text" : "This tool uses native, bare-bones text editing. \nFor more options use QuickText from the Picster menu",
+																	"presentation_rect" : [ 76.0, 5.0, 368.0, 33.0 ],
+																	"text" : "This tool uses native, bare-bones text editing. \nFor more options use TextEntry in the Picster > Graphics pane.",
 																	"textcolor" : [ 0.784313976764679, 0.145098000764847, 0.023529000580311, 1.0 ]
 																}
 
@@ -19057,7 +19107,8 @@
 																	"patching_rect" : [ 748.0, 174.0, 150.0, 20.0 ],
 																	"presentation" : 1,
 																	"presentation_rect" : [ 405.0, 43.0, 46.0, 20.0 ],
-																	"text" : "Offset:"
+																	"text" : "Offset:",
+																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 																}
 
 															}
@@ -19072,7 +19123,8 @@
 																	"patching_rect" : [ 749.0, 199.0, 150.0, 20.0 ],
 																	"presentation" : 1,
 																	"presentation_rect" : [ 11.0, 43.0, 55.0, 20.0 ],
-																	"text" : "Set text:"
+																	"text" : "Set text:",
+																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 																}
 
 															}
@@ -19139,7 +19191,7 @@
 																	"presentation" : 1,
 																	"presentation_rect" : [ 11.0, 68.0, 389.0, 22.0 ],
 																	"rounded" : 0.0,
-																	"text" : "Ach\\,bleib\\,bei\\,uns\\,0\\,Herr\\,Jesu\\,Christ.",
+																	"text" : "<empty>",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -19510,7 +19562,7 @@
 
 															}
  ],
-														"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+														"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
 													}
 ,
 													"patching_rect" : [ 48.999996000000003, 110.0, 104.333336000000003, 22.0 ],
@@ -19518,7 +19570,7 @@
 														"description" : "",
 														"digest" : "",
 														"globalpatchername" : "",
-														"locked_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+														"locked_bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 														"tags" : ""
 													}
 ,
@@ -21533,7 +21585,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "Pitch", "Amp", "Hold", "Dur", "Text", "Inspect" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[78]",
+							"parameter_longname" : "live.tab[80]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -22162,9 +22214,9 @@
 														"styles" : [ 															{
 																"name" : "black on white",
 																"number" : 																{
-																	"fontsize" : [ 12.0 ],
+																	"fontname" : [ "Arial" ],
 																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-																	"fontname" : [ "Arial" ]
+																	"fontsize" : [ 12.0 ]
 																}
 ,
 																"umenu" : 																{
@@ -23070,9 +23122,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -23095,8 +23147,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -23105,9 +23157,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -23116,8 +23168,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -23126,9 +23178,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -23577,7 +23629,7 @@
 							"parameter_defer" : 1,
 							"parameter_enum" : [ "MARK_ACCENT", "MARK_STACCATO", "MARK_TENUTO", "MARK_WEDGE", "MARK_ACCENT_STACCATO" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[89]",
+							"parameter_longname" : "live.tab[72]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23616,7 +23668,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "MARK_TRILL", "MARK_TRILL_FLAT", "MARK_TRILL_SHARP", "MARK_TRILL_NATURAL", "MARK_INVERTED_MORDANT" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[90]",
+							"parameter_longname" : "live.tab[74]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23657,7 +23709,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "DYNAMIC_PPP", "DYNAMIC_PP", "DYNAMIC_P", "DYNAMIC_MP", "DYNAMIC_MF", "DYNAMIC_F", "DYNAMIC_FF", "DYNAMIC_FFF", "DYNAMIC_NONE" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[82]",
+							"parameter_longname" : "live.tab[73]",
 							"parameter_mmax" : 8,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23707,7 +23759,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "tie", "slur", "beam", "nobeam", "cresc", "decresc", "ottavaalta", "ottavabassa", "gliss" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[93]",
+							"parameter_longname" : "live.tab[71]",
 							"parameter_mmax" : 8,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23742,7 +23794,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text",
+							"parameter_longname" : "live.text[40]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -24381,9 +24433,9 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"umenu" : 				{

@@ -67,6 +67,7 @@ var pitchDisplay = stylesPatcher.subpatcher().getnamed("entry").subpatcher().get
 var Count = 0;
 var dumpDict = this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict");
 var ratioLookUp = 0;
+var previousNumStaves = 0;
 
 //var stylesPatcher = this.patcher.parentpatcher.getnamed("styles");
 
@@ -105,6 +106,7 @@ function setMenu() {
 	Count++;
    	for (var i = 0; i < tonedivisions.names.length; i++) styleMenu.message("append", tonedivisions.names[i]);
 	styleMenu.message("checkitem", Count, 1);
+	if (this.patcher.parentpatcher.getnamed("numstaves").getvalueof() == previousNumStaves) styleMenu.message("textcolor", 0, 0, 0, 1);
 }
 
 function init()
@@ -219,11 +221,11 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 3. Editor with substyle set: No problem.
 4. Alias: style alias 0 will be sent. No problem. 
 */
+    	//post("style", style, "\n");
 	var styleMenu = this.patcher.getnamed("style");
 	if (tonedivisions.names.indexOf(stl) != -1) {
     	annotation.replace("staff-" + StaffIndex + "::micromap", tonedivisions.maps[tonedivisions.names.indexOf(stl)]);
-        //post("currentstyle", stl, oldstl, "\n");
-		stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("setsymbol", stl);
+ 		stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("setsymbol", stl);
 		styleMenu.message("setsymbol", oldstl);
 		styleMenu.message("clearchecks");
 		styleMenu.message("checkitem", tonedivisions.names.indexOf(stl) + Count, 1);
@@ -340,11 +342,11 @@ function state(st) {
 function setStyle(stl) {
     if (aliases.contains(stl)) stl = aliases.get(stl);
     var basestyle = stl.split("|")[0];
- 	post("setitem", basestyle, editors.names, "\n");
+ 	//post("setitem", basestyle, editors.names, "\n");
 	this.patcher.getnamed("style").message("setsymbol", basestyle);
     styletype = staffStyles.get(basestyle)[0];
     if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", editors.names.indexOf(basestyle) + 1, stl);
-  	if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
+  	//if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
 }
 
 function _style(stl, flag)
@@ -376,6 +378,10 @@ function _style(stl, flag)
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
 	///////////
      if (ss[1] == "editor" && flag == 1) {
+    post("currentstyle", oldstl, StaffIndex, this.patcher.parentpatcher.getnamed("numstaves").getvalueof(), editors.names.indexOf(stl), "\n");
+	var styleMenu = this.patcher.getnamed("style");
+	for (var i = 0; i < this.patcher.parentpatcher.getnamed("numstaves").getvalueof(); i++) this.patcher.parentpatcher.getnamed("staff-" + i).subpatcher().getnamed("style").message("textcolor", 0, 0, 0, 1);
+	if (editors.names.indexOf(basestyle) != -1) styleMenu.message("textcolor", 1, 0, 0, 1);
         switch (ss[0]) {
             case "tablature":
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
@@ -451,18 +457,20 @@ function _style(stl, flag)
                 hidden = percussionMaps.get(substyle + "::stafflines::hidden");
                 break;
             case "clefdesigner":
-                //post("substyle", substyle, annotation.stringify(), "\n");
                 var newstafflines = [clefdesigner.get(substyle + "::stafflines::above"), clefdesigner.get(substyle + "::stafflines::below")];
                 hidden = clefdesigner.get(substyle + "::stafflines::hidden");
-				if (annotation.contains("userclefs::" + substyle)) annotation.replace("staff-" + StaffIndex + "::clef", substyle);
+				if (annotation.contains("userclefs::" + substyle)) {
+					annotation.replace("staff-" + StaffIndex + "::clef", substyle);
+					baseclef = clefdesigner.get(substyle + "::baseclef");
+				}
 				else {
                 baseclef = clefdesigner.get(substyle + "::baseclef");
                 if (baseclef == "default") annotation.replace("staff-" + StaffIndex + "::clef", "default");
                 else annotation.replace("staff-" + StaffIndex + "::clef", substyle);
-				}
-				if (annotation.contains("userclefs::" + substyle)) annotation.replace("staff-" + StaffIndex + "::micromap", annotation.get("userclefs::" + substyle + "::micromap"));
-                else annotation.replace("staff-" + StaffIndex + "::micromap", stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("insert").subpatcher().getnamed("grid").getvalueof());
-                stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("transp").message(clefdesigner.get(substyle + "::transposition"));
+         				}
+				if (annotation.contains("userclefs::" + substyle)) annotation.replace("staff-" + StaffIndex + "::micromap", stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").getvalueof());
+                else annotation.replace("staff-" + StaffIndex + "::micromap", stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").getvalueof());
+               	stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("transp").message(clefdesigner.get(substyle + "::transposition"));
                 break;
 			default: 
                 var newstafflines = [0, 0];
@@ -482,6 +490,7 @@ function _style(stl, flag)
     }
     oldstl = stl;
     styletype = newstyletype;
+	previousNumStaves = this.patcher.parentpatcher.getnamed("numstaves").getvalueof();
 	dumpDict.message("bang");
     outlet(0, "setUndoStackEnabled", "true");
     outlet(0, "setRenderAllowed", "true");
@@ -792,7 +801,6 @@ function setClef(stl) {
 	                default:
                     for (var i = 0; i < numMeasures[1]; i++) {
                         if (ss.length == 4) outlet(0, "setClef", i, StaffIndex, ss[4]);
-                     	//post("clef", ss.length, ss[4], "\n");
                     }
                     break;
 					*/
