@@ -221,14 +221,15 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 3. Editor with substyle set: No problem.
 4. Alias: style alias 0 will be sent. No problem. 
 */
-    	//post("style", style, "\n");
 	var styleMenu = this.patcher.getnamed("style");
 	if (tonedivisions.names.indexOf(stl) != -1) {
     	annotation.replace("staff-" + StaffIndex + "::micromap", tonedivisions.maps[tonedivisions.names.indexOf(stl)]);
- 		stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("setsymbol", stl);
+		dumpDict.message("bang");
+		stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("setsymbol", stl);
 		styleMenu.message("setsymbol", oldstl);
 		styleMenu.message("clearchecks");
 		styleMenu.message("checkitem", tonedivisions.names.indexOf(stl) + Count, 1);
+    	outlet(0, "setRenderAllowed", "true");
 		}
 	else 
 	{
@@ -357,6 +358,7 @@ function _style(stl, flag)
     ss = staffStyles.get(basestyle);
     annotation.replace("staff-" + StaffIndex + "::style", stl);
     annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
+    post("style-2", annotation.get("staff-" + StaffIndex + "::micromap"), "\n");
     annotation.replace("staff-" + StaffIndex + "::clef", "default");
     newstyletype = ss[0];
 	/////////// set ratio lookup tables
@@ -415,10 +417,10 @@ function _style(stl, flag)
                 break;
 			default:
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
- 					//post("hello", editors.names.indexOf(stl), flag, "\n");
        }
         //this.patcher.getnamed("editor").message("active", 1);
-        if (!isAlias(stl)) stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
+		post("hello", stl, !isAlias(stl), newstyletype, "\n");
+        stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
         if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("bang");

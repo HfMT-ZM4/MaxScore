@@ -2006,10 +2006,10 @@ function anything() {
 				Accidental.push(BP[Math.round((pitch - parseInt(pitch)) * ((accpref == 1) ? -15 : 15))]);
 				break;
 				case "mM-eighth-tones" :
-				Accidental.push(nTET(48, _48TET));				
+				//post("acc", accinfo, accpref, "\n");
+				Accidental.push(nTET(48, _48TET, accinfo, accpref));				
 				break;
 				case "mM-JI" :
-				//post("Num", annotation.get("staff-"+msg[5]+"::micromap"), "\n");
 				if (value == -1) value = pitch;
 				if (annotation.contains("staff-"+msg[5]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[5]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
@@ -2447,117 +2447,48 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 
 function nTET(steps, system)
 {
-				var deviation = pitch % 12 - [0, 0, 2, 2, 4, 5, 5, 7, 7, 9, 9, 11][parseInt(pitch % 12)];
 				var accidental = accList[accinfo];
-				var factor1, direction;
-				switch (accidental) {
-					case "doubleflat" :
-					//check! This doesn't seem quite right
-					// certain conditions seem to never occur
-					// try to elimiate them
-					if (deviation >= 1.75){
-					factor1 = 4 - deviation;
-					direction = -1;	
-						}
-					else if (deviation >= 0 && deviation < 0.25){
-					factor1 = 2 - deviation;
-					direction = -1;							
+				var deviation = pitch % 12 - [0, 0, 2, 2, 4, 5, 5, 7, 7, 9, 9, 11][parseInt(pitch % 12)];
+				var stammton = [0, 0, 2, 2, 4, 5, 5, 7, 7, 9, 9, 11][parseInt(pitch % 12)];
+				//post("stammton-1", stammton, accidental, deviation, "\n");
+				if (accidental.indexOf("double") != -1) {
+					if (accidental == "doubleflat") {
+						if (stammton == 4 || stammton == 11) stammton += 3;
+						else if (deviation >= 0.75 && deviation < 1.75) stammton += 3;
+						else if (deviation >= 1.75) stammton += 4;
+						else stammton += 2;
 						}
 					else {
-					factor1 = 3 - deviation;
-					direction = -1;				
+						if (stammton == 5 || stammton == 0) {
+							if (deviation >= 0.75 && deviation < 1.75) stammton -= 1;
+							}
+						else if (deviation < 0.25) stammton -= 2;
 						}
-					break;
-					//////////////////////////
-					case "threequartertoneflat" :
-					if (deviation >= 1.75){
-					factor1 = 3 - deviation;
-					direction = -1;	
-						}
-					else {
-					//post("deviation",  deviation, pitch, [0, 0, 2, 2, 4, 5, 5, 7, 7, 9, 9, 11][parseInt(pitch % 12)], "\n");
-					factor1 = 2 - deviation;
-					direction = -1;				
-						}
-					break;
-					case "flat" :
-					if (deviation >= 1.75){
-					factor1 = 3 - deviation;
-					direction = -1;	
-						}
-					else if (deviation >= 0 && deviation < 0.25){
-					factor1 = 1 - deviation;
-					direction = -1;		
-						}					
-					else {
-					factor1 = 2 - deviation;
-					direction = -1;				
-						}
-					break;
-					case "quartertoneflat" :
-					if (deviation <= 1.){
-					factor1 = 1 - deviation;
-					direction = -1;	
+					}
+				else {
+					if (accidental.indexOf("flat") != -1) {
+						if (stammton == 4 || stammton == 11) stammton += 1;
+						else if ((stammton == 2 || stammton == 9) && deviation >= 1.75) stammton += 3;
+						else if (deviation >= 1.75) stammton += 1;
+						else stammton += 2;
 						}
 					else {
-					factor1 = 2 - deviation;
-					direction = -1;				
+						if ((stammton == 5 || stammton == 0) && accidental != "natural") {
+							if (deviation < 0.25) stammton -= 1;
+							}
+						else if ((stammton == 4 || stammton == 11) && deviation >= 0.75 && accidental == "natural") {
+							stammton += 1;
+							}
+						else if (deviation >= 1.75) stammton += 2;
 						}
-					break;
-					case "natural" :
-					if (deviation >= 1.75){
-					factor1 = 2 - deviation;
-					direction = -1;	
-						}
-					else if (deviation >= 0.75){
-					factor1 = 1 - deviation;
-					direction = -1;							
-						}
-					else {
-					factor1 = deviation;
-					direction = 1;				
-						}
-					break;
-					case "quartertonesharp" :
-					//factor1 = 2 - deviation;
-					factor1 = deviation;
-					direction = 1;						
-					break;
-					case "sharp" :
-					//
-					//factor1 = 2 - deviation;
-					if (deviation < 0.25){
-					factor1 = 1 + deviation;
-					direction = 1;	
-						}
-					else {
-					factor1 = deviation;
-					direction = 1;				
-						}	
-					break;
-					case "threequartertonesharp" :
-					//
-					//factor1 = 2 - deviation;
-					factor1 = deviation;
-					direction = 1;	
-					break;
-					case "doublesharp" :
-					//if (deviation >= 1.75){
-					//factor1 = deviation;
-					//direction = 1;	
-					//	}
-					//else if (deviation >= 0 && deviation < 0.25){
-					//factor1 = -2 - deviation;
-					//direction = -1;							
-					//	}
-					//else {
-					factor1 = deviation;
-					direction = 1;				
-					//	}
-					break;
-				}
-				//post("Accidental", factor1, steps, factor1 * steps / 12 * direction + 0.5, system[Math.round(factor1 * steps / 12 * direction - 0.5)], "\n");	
-				return system[Math.round(factor1 * steps / 12 * direction - 0.4999)];
+					}
+				if (stammton < 0) stammton = 12 + stammton;
+				else stammton = stammton % 12;
+				deviation = (Number(pitch) + 6/steps) % 12 - stammton;
+				if (deviation > 2.25) deviation -= 12;
+				else if (deviation < -2.25) deviation += 12;
+				var zone = Math.floor(deviation / 12 * steps);
+				return system[zone];
 }
 
 
