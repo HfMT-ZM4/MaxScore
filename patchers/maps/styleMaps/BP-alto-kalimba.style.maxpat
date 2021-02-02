@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 472.0, 79.0, 965.0, 498.0 ],
+		"rect" : [ 383.0, 118.0, 965.0, 498.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -349,7 +349,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 282.400023999999974, 83.5, 264.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 61.680000305175781, 0, 0, "false", 61.680000305175781, 0, 0, 0, 122, 0.5, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -369,7 +369,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 571.0, 100.5, 74.0, 22.0 ],
+					"patching_rect" : [ 571.0, 105.5, 74.0, 22.0 ],
 					"text" : "prepend set"
 				}
 
@@ -393,12 +393,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-32",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 571.0, 63.5, 373.0, 22.0 ],
-					"text" : "loadmess \"BP Alto Kalimba\" BP-alto-kalimba 5 mM-none percussion"
+					"patching_rect" : [ 571.0, 63.5, 313.0, 35.0 ],
+					"text" : "loadmess \"BP Alto Kalimba\" BP-alto-kalimba 5 mM-none PERCUSSION_CLEF"
 				}
 
 			}
@@ -432,7 +433,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 491.118103000000019, 384.0, 250.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ "send", "parent::default::map" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -534,7 +535,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 26.0, 24.5, 216.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 79.239999999999995, 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0

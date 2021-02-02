@@ -243,6 +243,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 	}
 }
 
+/*
 function clef(cf)
 {
 switch(cf){
@@ -282,6 +283,7 @@ outlet(0, "setClef", i, StaffIndex, cf);
 outlet(0, "setRenderAllowed", "true");
 }
 }
+*/
 
 function keysig(ks)
 {
@@ -718,7 +720,6 @@ function transform() {
                 } 
 				else {
 					if (styletype == "tablature") {
-    					//post("styletype", styletype, "\n");
 						stylesPatcher.subpatcher().getnamed("noteheadtransform").message(1);
 					}
 					imap(styletype, "parent::" + newstyletype + "::map");
@@ -767,6 +768,7 @@ function setDefaultClef(dc) {
 function setClef(stl) {
     var numMeasures = getInfo("getNumMeasures");
 	for (var i = -15; i < 16; i++) outlet(0, "setStaffLineVisible", StaffIndex, i, 1); 
+	//post("setClef-1", stl, ss, "\n");
     if (stl != oldstl) {
         //if (ss.length == 4) {
             switch (ss[0]) {
@@ -778,12 +780,6 @@ function setClef(stl) {
                         outlet(0, "setKeySignature", i, StaffIndex, 0, "FLAT_KEY");
                     }
                     break;
-                case "BP-N-clef":
-                    clf = "TREBLE_CLEF";
-                    for (var i = 0; i < numMeasures[1]; i++) {
-                        outlet(0, "setClef", i, StaffIndex, clf);
-                    }
-                    break;
                 case "BP-chromatic":
                     clf = "TREBLE_CLEF";
                     for (var i = 0; i < numMeasures[1]; i++) {
@@ -791,6 +787,14 @@ function setClef(stl) {
                     }
                     break;
                 default:
+            		switch (ss[3]) {
+	                case "PERCUSSION_CLEF":
+ 					//post("setClef-2", stl, ss[3], "\n");
+                   for (var i = 0; i < numMeasures[1]; i++) {
+                        outlet(0, "setClef", i, StaffIndex, ss[3]);
+                    }
+                    break;
+					}
             		switch (ss[4]) {
 	                case "editor":
                     if (ss[0] == "clefdesigner" && baseclef != "default") {
@@ -799,13 +803,6 @@ function setClef(stl) {
                         }
                     }
                     break;
-					/*
-	                default:
-                    for (var i = 0; i < numMeasures[1]; i++) {
-                        if (ss.length == 4) outlet(0, "setClef", i, StaffIndex, ss[4]);
-                    }
-                    break;
-					*/
             		}  
                 break;
            // }
