@@ -111,7 +111,6 @@ function setMenu() {
 
 function init()
 {
-//post("spacing", spacing, "\n");
 setMenu();
 var dump = new Dict();
 dump.name = ("dump");
@@ -360,7 +359,6 @@ function _style(stl, flag)
     ss = staffStyles.get(basestyle);
     annotation.replace("staff-" + StaffIndex + "::style", stl);
     annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
-    post("style-2", annotation.get("staff-" + StaffIndex + "::micromap"), "\n");
     annotation.replace("staff-" + StaffIndex + "::clef", "default");
     newstyletype = ss[0];
 	/////////// set ratio lookup tables
@@ -382,7 +380,7 @@ function _style(stl, flag)
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
 	///////////
      if (ss[1] == "editor" && flag == 1) {
-    post("currentstyle", oldstl, StaffIndex, this.patcher.parentpatcher.getnamed("numstaves").getvalueof(), editors.names.indexOf(stl), "\n");
+    //post("currentstyle", oldstl, StaffIndex, this.patcher.parentpatcher.getnamed("numstaves").getvalueof(), editors.names.indexOf(stl), "\n");
 	var styleMenu = this.patcher.getnamed("style");
 	for (var i = 0; i < this.patcher.parentpatcher.getnamed("numstaves").getvalueof(); i++) this.patcher.parentpatcher.getnamed("staff-" + i).subpatcher().getnamed("style").message("textcolor", 0, 0, 0, 1);
 	if (editors.names.indexOf(basestyle) != -1) styleMenu.message("textcolor", 1, 0, 0, 1);
@@ -412,7 +410,6 @@ function _style(stl, flag)
             case "clefdesigner":
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
                 if (isAlias(stl)) {
-    				//post("substyle", substyle, "\n");
 					if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("umenu").message("setsymbol", substyle);
 					else stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("symbol", substyle);
                 }
@@ -421,7 +418,7 @@ function _style(stl, flag)
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("wclose").subpatcher().getnamed("oldstyle").message(oldstl);
        }
         //this.patcher.getnamed("editor").message("active", 1);
-		post("hello", stl, !isAlias(stl), newstyletype, "\n");
+		//post("hello", stl, !isAlias(stl), newstyletype, "\n");
         stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
@@ -458,11 +455,11 @@ function _style(stl, flag)
                 break;
             case "percussion":
                 var newstafflines = [percussionMaps.get(substyle + "::stafflines::above"), percussionMaps.get(substyle + "::stafflines::below")];
-                hidden = percussionMaps.get(substyle + "::stafflines::hidden");
+                hidden = [].concat(percussionMaps.get(substyle + "::stafflines::hidden"));
                 break;
             case "clefdesigner":
                 var newstafflines = [clefdesigner.get(substyle + "::stafflines::above"), clefdesigner.get(substyle + "::stafflines::below")];
-                hidden = clefdesigner.get(substyle + "::stafflines::hidden");
+                hidden = [].concat(clefdesigner.get(substyle + "::stafflines::hidden"));
 				if (annotation.contains("userclefs::" + substyle)) {
 					annotation.replace("staff-" + StaffIndex + "::clef", substyle);
 					baseclef = clefdesigner.get(substyle + "::baseclef");
@@ -472,8 +469,7 @@ function _style(stl, flag)
                 if (baseclef == "default") annotation.replace("staff-" + StaffIndex + "::clef", "default");
                 else annotation.replace("staff-" + StaffIndex + "::clef", substyle);
          				}
-				if (annotation.contains("userclefs::" + substyle)) annotation.replace("staff-" + StaffIndex + "::micromap", stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").getvalueof());
-                else annotation.replace("staff-" + StaffIndex + "::micromap", stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").getvalueof());
+				annotation.replace("staff-" + StaffIndex + "::micromap", tonedivisions.maps[tonedivisions.names.indexOf(stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").getvalueof().toString())]);
                	stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("transp").message(clefdesigner.get(substyle + "::transposition"));
                 break;
 			default: 
@@ -488,8 +484,8 @@ function _style(stl, flag)
         //if (isEditor(styletype)) stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
     }
     if (oldstl != "virgin") {
-        setStafflines(newstafflines);
         setClef(stl);
+        setStafflines(newstafflines);
         transform();
     }
     oldstl = stl;
@@ -745,18 +741,13 @@ function setStafflines(n) {
     stafflines = n;
     //set hidden state for select stafflines and set annotation dict
     if (ss[0] == "clefdesigner") {
-        if (typeof(hidden) == "object") {
             for (var i = 0; i < hidden.length; i += 1) {
+				post("hidden", hidden, "\n");
                 outlet(0, "setStaffLineVisible", StaffIndex, hidden[i], 0);
                 annotation.replace("staff-" + StaffIndex + "::stafflineshidden::" + hidden[i], 0);
-            }
-        }
-        if (typeof(hidden) == "number") {
-            outlet(0, "setStaffLineVisible", StaffIndex, hidden, 0);
-            annotation.replace("staff-" + StaffIndex + "::stafflineshidden::" + hidden, 0);
-        }
+            	}
         previous = hidden;
-    }
+    }	
     this.patcher.parentpatcher.parentpatcher.getnamed("tools").subpatcher().getnamed("measure-staff-track-info").subpatcher().getnamed("extendedStaffLines").subpatcher().getnamed("value").message(0, StaffIndex);
     this.patcher.parentpatcher.parentpatcher.getnamed("tools").subpatcher().getnamed("measure-staff-track-info").subpatcher().getnamed("extendedStaffLines").subpatcher().getnamed("value").message("bang");
 }
@@ -768,7 +759,6 @@ function setDefaultClef(dc) {
 function setClef(stl) {
     var numMeasures = getInfo("getNumMeasures");
 	for (var i = -15; i < 16; i++) outlet(0, "setStaffLineVisible", StaffIndex, i, 1); 
-	//post("setClef-1", stl, ss, "\n");
     if (stl != oldstl) {
         //if (ss.length == 4) {
             switch (ss[0]) {

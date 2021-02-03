@@ -1097,29 +1097,6 @@ function anything() {
 		case "height" :
         break;	
 		case "getInstalledMusicFonts" :
-		/*
-		var allowed = 0;
-		outlet(1, "getScoreAnnotation");
-		post("annotation.stringify", annotation.stringify(), "\n");	
-		var keys = annotation.getkeys();
-		if (keys != null) return;
-		for (i = 0; i < keys.length; i++) {
-			if (keys[i].indexOf("staff-") != -1) {
-			var currentIndex = Number(keys[i].replace("staff-", ""));
-			if (annotation.contains("staff-" + currentIndex + "::stafflineshidden")) {
-				if (!allowed) outlet(1, "setRenderAllowed", 0);	
-				allowed = 1;			
-				var _keys = annotation.get("staff-" + currentIndex + "::stafflineshidden").getkeys();
-				for (var j = 0; j < _keys.length; j++){
-				outlet(1, "setStaffLineVisible", currentIndex, Number(_keys[j]), 0);			
-				}
-			}	
-			}	
-			if (allowed) outlet(1, "setRenderAllowed", 1);	
-			allowed = 0;
-
-		}			
-		*/
 		break;
 		case "scoreLayout":
 		scoreLayout = msg;
@@ -2000,6 +1977,7 @@ function anything() {
 				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount];
 				intervalCount++;
 				}
+			//post("annotation.get", annotation.get("staff-"+msg[5]+"::micromap"), "\n");
 			if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 			switch (annotation.get("staff-"+msg[5]+"::micromap")){
 				case "mM-BP" :

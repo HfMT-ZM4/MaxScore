@@ -115,7 +115,7 @@
 		"baseclef" : "BASS_CLEF",
 		"font" : [ "Bravura", 24 ],
 		"characters" : "",
-		"offsets" : [ 0, 0 ],
+		"offsets" : [ 0, -18 ],
 		"transposition" : 0
 	}
 ,
