@@ -246,7 +246,7 @@ function bang() {
     if(djsterAttributes.meter == "<empty>") djsterAttributes.meter = [2, 2];
     if(typeof(djsterAttributes.meter) == "number") djsterAttributes.meter = [djsterAttributes.meter];
     var l = djsterAttributes.meter.length;
-    var text_array = ["","","","","","","","","",""]; //glyphs for numbers
+    var text_array = ["","","","","","","","","",""]; //glyphs for numbers
     //var border = JSON.parse('{"new":"rect","x":108,"y":63,"width":53,"height":30,"style":{"stroke":"green","stroke-width":1,"stroke-opacity":1},"transform":"'+transformMatrix+'"}');
     //border.id = groupId+"_meter";
     //outputPicster["picster-element"][0]["val"]["child"].push(border);
@@ -261,7 +261,7 @@ function bang() {
       var hor = JSON.parse('{"new":"line","x1":'+xl+',"y1":'+yu+',"x2":116,"y2":'+yu+',"style":{"stroke":"'+colorPalette.meter.dark[onoff]+'","stroke-width":2,"stroke-opacity":1},"transform":"'+transformMatrix+'"}');
       hor.id = groupId+"_meter_hor_"+j;
       outputPicster["picster-element"][0]["val"]["child"].push(hor);
-      var text = JSON.parse('{"new":"text","y":'+(yd+2)*currentSize+',"font-family":"Aloisen New","text-anchor":"middle","font-size":'+currentSize*20+',"style":{"fill":"'+colorPalette.meter.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+      var text = JSON.parse('{"new":"text","y":'+(yd+2)*currentSize+',"font-family":"Bravura","text-anchor":"middle","font-size":'+currentSize*20+',"style":{"fill":"'+colorPalette.meter.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
       text.x = (xl+xr)/2*currentSize;
       text.id = groupId+"_meter_text_"+j;
       if (typeof(djsterAttributes.meter[j]) == "number") {
@@ -329,7 +329,7 @@ function bang() {
   }
 
   //main notehead
-  var notehead = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*55+',"font-family":"Aloisen New","child":"","font-size":'+currentSize*28+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+  var notehead = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*55+',"font-family":"Bravura","child":"","font-size":'+currentSize*28+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
   notehead.id = groupId+"_notehead";
   outputPicster["picster-element"][0]["val"]["child"].push(notehead);
 
@@ -337,7 +337,7 @@ function bang() {
   if ("chordal_weight" in djsterAttributes && djsterAttributes.chordal_weight > 1) {
     for (var j = 1; j < djsterAttributes.chordal_weight; j++) {
       var y = 54 - j*5;
-      var chordal_weight = JSON.parse('{"new":"text","x":'+currentSize*57+',"y":'+currentSize*y+',"font-family":"Aloisen New","child":"","font-size":'+currentSize*18+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+      var chordal_weight = JSON.parse('{"new":"text","x":'+currentSize*57+',"y":'+currentSize*y+',"font-family":"Bravura","child":"","font-size":'+currentSize*18+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
       chordal_weight.id = groupId+"_chordal_weight_"+i;
       outputPicster["picster-element"][0]["val"]["child"].push(chordal_weight);
     }
@@ -345,7 +345,7 @@ function bang() {
 
   //silent downbeat
   if ("silent_downbeat" in djsterAttributes && djsterAttributes.silent_downbeat == 1) {
-    var silent_downbeat = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*21+',"child":"","font-family":"Aloisen New","font-size":'+currentSize*25+',"style":{"fill":"'+colorPalette.meter.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var silent_downbeat = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*21+',"child":"","font-family":"Bravura","font-size":'+currentSize*25+',"style":{"fill":"'+colorPalette.meter.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     silent_downbeat.id = groupId+"_silent_downbeat";
     outputPicster["picster-element"][0]["val"]["child"].push(silent_downbeat);
   }
