@@ -706,11 +706,13 @@ function setUserClef(targetStaff, userClef)
     	}		
 		annotation.replace("staff-" + targetStaff + "::style", "ClefDesigner|" + userClef);
 		annotation.replace("staff-" + targetStaff + "::clef", userClef);
+		/*
 		var hiddenStaves = [].concat(selectedClef.get("stafflines").get("hidden"));
 		if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
 		for (var i = 0; i < hiddenStaves.length; i++) {
 		annotation.replace("staff-" + targetStaff + "::stafflineshidden::" + hiddenStaves[i], 0);
 		}
+		*/
 		if (annotation.contains("userclefs")) annotation.remove("userclefs");
 		annotation.replace("userclefs::" + userClef, clefDesigner.get(userClef));
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
@@ -726,7 +728,7 @@ function setUserClef(targetStaff, userClef)
 			}
 		annotation.replace("staff-" + targetStaff + "::style", "Default");
 		annotation.replace("staff-" + targetStaff + "::clef", "default");
-		if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
+		//if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
 		outlet(1, "setRenderAllowed", 1);		
 		}
@@ -1204,12 +1206,14 @@ function anything() {
 			//StaffLine measureIndex staffIndex staffLineIndex zoom x1 y1 x2 y2 selected
 			staffLineColor = frgb;
 			currentStaff = msg[1];
+			/*
 			if (annotation.contains("staff-" + currentStaff + "::stafflineshidden")) {
 				var keys = annotation.get("staff-" + currentStaff + "::stafflineshidden").getkeys();
 				for (var i = 0; i < keys.length; i++){
 					if (keys[i] == msg[2]) return;
 				}
 			}
+			*/
 			//post("stafflines-1", JSON.stringify(stafflines), msg, scoreLayout, "\n");
 			stafflines[msg[0] - scoreLayout[1]][msg[1]][msg[2]] = [msg[4], msg[5], msg[6], msg[7]];
 			break;
