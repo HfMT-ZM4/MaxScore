@@ -968,7 +968,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 316.0, 81.0, 233.0, 22.0 ],
-													"restore" : [ 0 ],
+													"restore" : [ "Default" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -4669,8 +4669,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 895.5, 715.1708984375, 278.0, 22.0 ],
-									"text" : "Percussion percussion editor mM-none percussion"
+									"patching_rect" : [ 895.5, 715.1708984375, 337.0, 22.0 ],
+									"text" : "Percussion percussion editor mM-none PERCUSSION_CLEF"
 								}
 
 							}
@@ -4898,7 +4898,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 710.0, 523.0, 94.0, 22.0 ],
-									"restore" : [ "symbol" ],
+									"restore" : [ "symbol", "GM" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4953,7 +4953,7 @@
 									"patching_rect" : [ 26.0, 117.0, 254.0, 204.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 1.0, 60.3402099609375, 254.0, 199.0 ],
-									"rows" : 47,
+									"rows" : 6,
 									"sccolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 									"selmode" : 3,
 									"sgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
@@ -6060,7 +6060,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 476.955596923828125, 86.0, 264.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 64, 0, 1, "false", 60, 0, 1, 4, 122, 0.5, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6081,7 +6081,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 588.11810302734375, 470.5, 250.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ "send" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6183,7 +6183,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 33.0, 6.5, 194.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 64, 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0

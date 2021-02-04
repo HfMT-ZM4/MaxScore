@@ -61,6 +61,7 @@ post(cent2ratio.get(622), "\n");
 //
 var lookupTables = ["cent2ratio-8", "cent2ratio-14", "cent2ratio-20", "cent2ratio-odd10", "cent2ratio-odd22"];
 var textFont = "Arial";
+var musicFont = "Bravura";
 var textFontSize = "12.";
 var mgraphics = new JitterObject("jit.mgraphics", 320, 240);
 var setStaffGroup = [];
@@ -689,6 +690,17 @@ function text_measure(f, fs, t)
 function textfont(tf)
 {
 	textFont = tf;
+	annotation.set("textFont", textFont);
+	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setRenderAllowed", 1);
+}
+
+function musicfont(mf)
+{
+	musicFont = mf;
+	annotation.set("musicFont", musicFont);
+	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setRenderAllowed", 1);
 }
 
 function setUserClef(targetStaff, userClef)
@@ -871,8 +883,8 @@ function writeBarlines()
 									SVGString[s + 1].push("<path d=\"M34.1,0C19.3,14.5,16.7,30.6,20.2,47.8c2,9.9,4.3,19.7,5,29.7c0.9,15.8-4.7,30-21.9,41c22,14.3,24,32.7,20.5,52.3c-1.8,9.9-4.5,19.7-5.1,29.7c-0.8,12.7,4.2,24.5,14.2,35C21,228,15.4,217.9,11.4,207.1c-4.9-13.2-0.7-26.1,2.4-39.1c1.6-6.8,3.4-13.8,3.2-20.7c0-10.9-4.5-20.9-17-28.6c13.1-8.5,18.2-19.2,17.1-31.2c-0.8-8.1-3-16.2-5.1-24.2c-5.5-20-3.9-38.9,13.1-55.9C27.8,4.7,31,2.4,34.1,0z\" fill=\"" + frgb + "\" transform=\"matrix(" + [0.3, 0., 0., (dest2 - dest) * 0.101911/24, (barlines[measures][lines][1] - 10), dest] + ")\"/>");
 									break;
 									case 2:
-									SVGString[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" font-family=\"Bravura\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
-									SVGString[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"Bravura\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
+									SVGString[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
+									SVGString[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
 									SVGString[s + 1].push("<rect x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" width=\"2.\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 									break;	
 									}
@@ -1119,7 +1131,7 @@ function anything() {
 			{
 			for (var i = 0; i < 2; i++) {
 			var glyph = fontMap.get("tempoqtrequals");
-			SVGString[s + 1].push("<text x=\"" + (glyph[i*5+1] + msg[0]) + "\" y=\"" + (glyph[i*5+2] + msg[1]) + "\" font-family=\"" + glyph[i*5+3] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[i*5+0] + "</text>");
+			SVGString[s + 1].push("<text x=\"" + (glyph[i*5+1] + msg[0]) + "\" y=\"" + (glyph[i*5+2] + msg[1]) + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[i*5+0] + "</text>");
 			}
 			}
 			tempoflag = 1;
@@ -1197,7 +1209,7 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<text x=\"" + msg[5] + "\" y=\"" + dest[d] + "\" font-family=\"Arial\" font-style=\"normal\" font-weight=\"normal\" font-size=\"10\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + noteText + "</text>");
+			SVGString[s + 1].push("<text x=\"" + msg[5] + "\" y=\"" + dest[d] + "\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"10\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + noteText + "</text>");
 			}
 			}
 			}
@@ -1407,8 +1419,8 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 15.5) + "\" font-family=\"" + glyph[3] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
-			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 21.5) + "\" font-family=\"" + glyph[3] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
+			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 15.5) + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
+			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 21.5) + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
 			}
 			}
 			}
@@ -2209,7 +2221,8 @@ function anything() {
 			}
 		if (msgname.indexOf("measurenumber") != -1)
 			{
-				writeAt(0, glyph[3], glyph[4], msg[0] + glyph[1], msg[1] + glyph[2], glyph[0]);
+				//if (glyph[3] == "$TEXTFONT")
+				writeAt(0, textFont, glyph[4], msg[0] + glyph[1], msg[1] + glyph[2], glyph[0]);
 				return;
 			}
 		staticClefs = 0;
@@ -2265,7 +2278,7 @@ function anything() {
 				if (annotation.contains("staff-"+msg[5]+"::abbrInstrName") && msg[4] != 0) _instrumentNames[msg[msg.length - 1]] = annotation.get("staff-"+msg[5]+"::abbrInstrName") != " " ? annotation.get("staff-"+msg[5]+"::abbrInstrName") : instrumentNames[msg[msg.length - 1]];
 				if (msg[msg.length - 1] < _instrumentNames.length && oldstaff != msg[msg.length - 1]){
 				glyph[0] = _instrumentNames[msg[msg.length - 1]];
-				glyph[1] = glyph[1] - text_measure("Arial", 12, _instrumentNames[msg[msg.length - 1]])[0]; 
+				glyph[1] = glyph[1] - text_measure(textFont, 12, _instrumentNames[msg[msg.length - 1]])[0]; 
 				if (annotation.contains("staff-"+msg[5]+"::instrumentNamePositionOffset")) glyph[2] = glyph[2] + annotation.get("staff-"+msg[5]+"::instrumentNamePositionOffset");
 				oldstaff = msg[msg.length - 1];
 				}
@@ -2289,9 +2302,11 @@ function anything() {
 				if (glyph[0].length == 1) t = glyph[i*5+0];
 				else t = htmlEntities(glyph[i*5+0]);
  				}
-				if (staticClefs) SVGClefs[s + 1].push([glyph[i*5+3], glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
-				//if (staticClefs) SVGClefs.push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + glyph[i*5+3] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]] + ")\" >" + t + "</text>");
-				else SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + glyph[i*5+3] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]] + ")\" >" + t + "</text>");
+				if (glyph[i*5+3] == "$TEXTFONT") var fontFamily = textFont;
+				else if (glyph[i*5+3] == "$MUSICFONT") var fontFamily = musicFont;
+				else var fontFamily = glyph[i*5+3];
+				if (staticClefs) SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
+				else SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]] + ")\" >" + t + "</text>");
 			}
 			}
 		  }
@@ -2529,7 +2544,7 @@ function pagenumber()
 	var pn = arrayfromargs(arguments);
 	if (pn[0]) {
 		var y_pos = (pn[2]) ? scoreLayout[5] - 20 : 20;
-		pageNumber = "<text x=\"" + scoreLayout[4] / 2 + "\" y=\"" + y_pos + "\" font-family=\"Arial\" font-style=\"normal\" font-weight=\"normal\" font-size=\"12\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + pn[1] + "</text>";
+		pageNumber = "<text x=\"" + scoreLayout[4] / 2 + "\" y=\"" + y_pos + "\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"12\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + pn[1] + "</text>";
 		}
 	else pageNumber = "";
 }
