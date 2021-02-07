@@ -242,7 +242,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 	}
 }
 
-/*
+
 function clef(cf)
 {
 switch(cf){
@@ -282,7 +282,6 @@ outlet(0, "setClef", i, StaffIndex, cf);
 outlet(0, "setRenderAllowed", "true");
 }
 }
-*/
 
 function keysig(ks)
 {
