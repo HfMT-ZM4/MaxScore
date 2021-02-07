@@ -127,7 +127,6 @@ var svgFile = "untitled.svg";
 var svggroupflag = false;
 var extendedStaffLines = {};
 var annotation = new Dict();
-var intervalCount = 0;
 var pitch = 0;
 var value = 0;
 var accinfo = 0;
@@ -1120,7 +1119,6 @@ function anything() {
         case "frgb":
 			//expr $i1*256*256 + $i2*256 + $i3
 			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
- 			//post("colorcode", colorcode, "\n");	
            	if ((colorcode != 0 || fcolor.length == 0 || colorcode == 255 || colorcode == 16756655) && colorcode != 4210752) frgb = "rgb("+ msg[0] + "," + msg[1] + "," + msg[2] + ")";
 			else if (colorcode != 4210752) frgb = "rgb("+ 255 * fcolor[0] + "," + 255 * fcolor[1] + "," + 255 * fcolor[2] + ")";
           break;
@@ -1146,28 +1144,32 @@ function anything() {
        case "printNoteText":
 			//printNoteText measureIndex staffIndex trackIndex noteIndex zoom x y test
 			var noteText = "";
+			post("currentElement", currentElement, "\n");
 			switch (msg[7])
 			{
 				case "$MIDICENTS" :
-				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
+				else outlet(1, "getIntervalInfo", currentElement.slice(1));
 				noteText = Math.round(value * 100.);
 				break;
 				case "$DEVIATION" :
-				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
+				else outlet(1, "getIntervalInfo", currentElement.slice(1));
 				var diff = value - parseInt(value);
 				noteText = ((diff < 0.5) ? "+" : "") + Math.round((diff < 0.5) ? diff * 100 : (1 - diff) * -100);
 				break;
 				case "$FREQUENCY" :
-				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
+				else outlet(1, "getIntervalInfo", currentElement.slice(1));
 				noteText = (440 * Math.pow(2, (value - 69) / 12)).toFixed(2);
 				break;
 				case "$RATIO" :
-				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
+				else outlet(1, "getIntervalInfo", currentElement.slice(1));
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
 					keysigaccum = staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][2] ? 1 : -1);
-					//post("keysigaccum", staffInfo[0][1], keysigaccum, "\n");
 					var frame = 1200;
 					var shift = (keysigaccum * 7) % 12;
 					if (shift > 12) shift += 12; 
@@ -1181,7 +1183,8 @@ function anything() {
 				noteText = cent2ratio.get(Math.round((value - shift) * 100) % frame).slice(1).join("/");
 				break;
 				case "$RATIOWITHDEVIATION" :
-				outlet(1, "getNoteInfo", msg[0], msg[1], msg[2], msg[3]);
+				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
+				else outlet(1, "getIntervalInfo", currentElement.slice(1));
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
@@ -1974,7 +1977,7 @@ function anything() {
 				}
 			//else msg[1] += 0.;
 			}
-		//KEEP TRACK OF INCIDENCES OF NOTEs AND INTERVALS
+		//KEEP TRACK OF INCIDENTS OF NOTES AND INTERVALS
 		if (msg[3]!= "Staff" && accList.indexOf(msgname) != -1){
 			var Accidental = [];
 			if (msg[3] == "Note") {
