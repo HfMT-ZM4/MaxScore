@@ -1144,7 +1144,7 @@ function anything() {
        case "printNoteText":
 			//printNoteText measureIndex staffIndex trackIndex noteIndex zoom x y test
 			var noteText = "";
-			post("currentElement", currentElement, "\n");
+			//post("currentElement", currentElement, "\n");
 			switch (msg[7])
 			{
 				case "$MIDICENTS" :
