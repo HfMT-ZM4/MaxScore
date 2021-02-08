@@ -4,14 +4,13 @@
 
 <chapter name="MaxScore: Download and Install">
 
-<!--
-<setdocpatch name="02jJavascriptScripting" patch="02jJavascriptScripting.maxpat"/>
-<previous name="javascriptchapter01">Basic JavaScripting</previous>
-<next name="javascriptchapter03">Tasks, Arguments and Globals</next>
-<parent name="00_maxindex">Max Tutorials</parent>
+<previous name="00maxscore-01welcome">Welcome to MaxScore!</previous>
+<next name="01maxscore-01basics"></next>
 
-<indexinfo category="JavaScript" title="JavaScript Scripting">Using JavaScript to create patcher elements</indexinfo>
--->
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+
+
+
 
 <h1>MaxScore: Download and Install</h1>
 
