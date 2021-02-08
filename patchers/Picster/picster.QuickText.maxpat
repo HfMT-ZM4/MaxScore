@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 87.0, 130.0, 1305.0, 661.0 ],
+		"rect" : [ 148.0, 257.0, 1305.0, 661.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -38,8 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "1751marker[1][1][1][1][1][1][1][1][1][1][1][2][1]",
-		"title" : "Quick Text",
+		"globalpatchername" : "1751marker[1][1][1][1][1][1][1][1][1][1][1][2][1][1]",
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -76,7 +75,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 542.426101684570312, 195.0, 22.0, 22.0 ],
+					"patching_rect" : [ 542.426101684570312, 174.0, 22.0, 22.0 ],
 					"text" : "t b"
 				}
 
@@ -432,7 +431,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 331.5, 12.355362000000014, 339.5, 98.783043000000021 ]
+									"patching_rect" : [ 650.5, 0.963840499999989, 339.5, 98.783043000000021 ]
 								}
 
 							}
@@ -533,8 +532,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -551,7 +548,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 527.5, 61.000000000000007, 64.0, 23.0 ],
+									"patching_rect" : [ 413.5, 32.0, 64.0, 23.0 ],
 									"text" : "loadbang"
 								}
 
@@ -565,7 +562,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 555.0, 112.714875000000006, 194.0, 22.0 ],
+									"patching_rect" : [ 441.0, 83.714875000000006, 194.0, 22.0 ],
 									"text" : "window flags nofloat, window exec"
 								}
 
@@ -579,8 +576,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 527.5, 89.214875000000006, 211.0, 22.0 ],
-									"text" : "window flags float, window exec, front"
+									"patching_rect" : [ 413.5, 60.214875000000006, 179.0, 22.0 ],
+									"text" : "window flags float, window exec"
 								}
 
 							}
@@ -593,7 +590,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 527.5, 145.0, 69.0, 22.0 ],
+									"patching_rect" : [ 413.5, 116.0, 69.0, 22.0 ],
 									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 									"text" : "thispatcher"
 								}
@@ -1205,7 +1202,7 @@
 									"colwidth" : 32,
 									"fgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"fontface" : 0,
-									"fontname" : "Inkpen2Special",
+									"fontname" : "BigCaslon-Medium",
 									"fontsize" : 18.0,
 									"hcellcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 0.58 ],
 									"id" : "obj-1",
@@ -1217,7 +1214,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 0.0, 0.0, 530.0, 436.0 ],
 									"rowheight" : 32,
-									"rows" : 13,
+									"rows" : 61,
 									"sccolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 									"stcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
@@ -1698,8 +1695,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -3839,7 +3834,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-16",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -4088,7 +4083,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 542.426101684570312, 165.0, 157.0, 20.0 ],
+					"patching_rect" : [ 542.426101684570312, 144.0, 157.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 51.749267578125, 195.0, 143.50146484375, 22.0 ],
 					"text" : "Character Browser",
@@ -4116,7 +4111,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -4166,7 +4161,7 @@
 					"border" : 0.0,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 0.52 ],
 					"fontface" : 0,
-					"fontname" : "Inkpen2Special",
+					"fontname" : "BigCaslon-Medium",
 					"fontsize" : 24.0,
 					"id" : "obj-29",
 					"maxclass" : "textedit",
@@ -4175,7 +4170,7 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"outputmode" : 1,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 136.671966552734375, 280.87939453125, 144.0, 94.0 ],
+					"patching_rect" : [ 136.671966552734375, 280.87939453125, 272.0, 94.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 24.0, 247.0, 111.0 ],
 					"rounded" : 0.0,
@@ -4934,6 +4929,134 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-55" : [ "live.menu", "live.menu", 0 ],
+			"obj-62" : [ "live.menu[54]", "live.menu", 0 ],
+			"obj-67" : [ "live.menu[55]", "live.menu", 0 ],
+			"obj-73::obj-32" : [ "live.menu[6]", "live.menu", 0 ],
+			"obj-73::obj-45" : [ "live.menu[5]", "live.menu", 0 ],
+			"obj-80" : [ "live.tab[1]", "live.tab", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "roundslider.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsui",
+				"patcherrelativepath" : "../../jsui",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "color_picker.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.getMeasureAttribute.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "unicode2utf-8.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "linesegment.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "paintrect.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "paintroundrect.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "paintoval.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "paintarc.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "paintpoly.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "freehand.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "font.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "picture.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "path.png",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
+				"patcherrelativepath" : "./icons",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "max-opentype.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/max-opentype",
+				"patcherrelativepath" : "../node.js/max-opentype",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "divmod.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/DJster/patchers/DJster/Abstractions",
+				"patcherrelativepath" : "../../../DJster/patchers/DJster/Abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
