@@ -4,14 +4,11 @@
 
 <chapter name="MaxScore Editor 1: The User Interface">
 
-<!--
-<setdocpatch name="02jJavascriptScripting" patch="02jJavascriptScripting.maxpat"/>
-<previous name="javascriptchapter01">Basic JavaScripting</previous>
-<next name="javascriptchapter03">Tasks, Arguments and Globals</next>
-<parent name="00_maxindex">Max Tutorials</parent>
+<previous name="00maxscore-02download">Download and Install</previous>
+<next name="02maxscore-01basics"></next>
 
-<indexinfo category="JavaScript" title="JavaScript Scripting">Using JavaScript to create patcher elements</indexinfo>
--->
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+
 
 <h1>MaxScore Editor 1: The User Interface</h1>
 
@@ -25,7 +22,7 @@
 
 <p>In this tutorial, we will get familiar with the MaxScore.Editor user interface and introduce its basic functions.</p>
 
-<p>Access <o>Maxscore.Editor</o> by right-clicking on an empty space of a Max patch window, then selecting “Paste From>MaxScore>Editors>maxscore.editor.clipping.maxpat”. Boom and here is the editor! You are now ready to start working on a new project.</p>
+<p>Access <o>Maxscore.Editor</o> by right-clicking on an empty space of a Max patch window, then selecting “Paste From>MaxScore>Editors>maxscore.editor.clipping.maxpat”. Here appears the editor. You are now ready to start working on a new project.</p>
 <p>Lock the patcher and open the Editor window by clicking on the “Open Editor” button inside the <o>bpatcher</o>.<illustration><img src="images/editor-01-basics/editor-01-basics-1.png"/></illustration></p>
 
 <h2>The MaxScore Editor Window</h2>

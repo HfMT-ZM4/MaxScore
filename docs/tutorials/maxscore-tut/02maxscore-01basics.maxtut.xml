@@ -3,15 +3,10 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore Editor 2: Basics">
+<previous name="01maxscore-01basics">MaxScore: The User Interface</previous>
 
-<!--
-<setdocpatch name="02jJavascriptScripting" patch="02jJavascriptScripting.maxpat"/>
-<previous name="javascriptchapter01">Basic JavaScripting</previous>
-<next name="javascriptchapter03">Tasks, Arguments and Globals</next>
-<parent name="00_maxindex">Max Tutorials</parent>
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
-<indexinfo category="JavaScript" title="JavaScript Scripting">Using JavaScript to create patcher elements</indexinfo>
--->
 
 <h1>MaxScore Editor 2: Basics</h1>
 
@@ -56,12 +51,5 @@ You can choose to type an abbreviation of the instrument’s name on the second 
 
 <illustration><img src="images/StaffManager.png"/></illustration>
 
-
-<!-->
-
-<seealsolist>
-<seealso name="js">Max JavaScript object</seealso>
-<seealso name="jsintro" type="vignette" module="js" >javascriptinmax</seealso>
-</seealsolist> <-->
 
 </chapter>

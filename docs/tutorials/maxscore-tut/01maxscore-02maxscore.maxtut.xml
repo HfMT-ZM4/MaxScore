@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="How to install MaxScore">
+<!--
+<next name="04tutorial">Quintet.net: Tutorial</next>
+-->
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+
+<h1>How to install MaxScore</h1>
+
+<h2><b>1. Start</b></h2>
+
+
+<p>Uninstall any previous version of MaxScore you may have already installed. The uninstaller resides in [your_Max_folder]/Uninstallers/MaxScore.</p>
+
+<p>Important info for Max 8 users: If your old MaxScore package was automatically copied to the Max 8 packages folder, please remove it before installing MaxScore 1.0 and higher.</p>
+<p>We are going to jump-start Quintet.net by launching all the components on one machine and running Five by John Cage, the "Hello World" of Quintet.net. Once we’ve covered the basics of Quintet.net, we are going to look at the Tutorial project which will give an overview of how to compose for the environment. After a successful installation, the Quintet.net folder should reside in the Max 8/Packages folder. Please don’t move this folder or its subfolders, since, otherwise, Quintet.net may not function properly.</p>
+<p><i>After downloading the installer, open the file. You will first see a splash screen with the MaxScore logo and a text window informing you about the steps you’re about to take.</i></p>
+
+<p><illustration><img src="images/01MaxScoreSetup.png"/></illustration></p>
+<p><i>Click OK and click the Next button in the installer window underneath.</i></p>
+
+<p><illustration><img src="images/02MaxScoreLicense.png"/></illustration></p>
+<p><i>Accept the license agreement and click on Next.</i></p>
+
+<p>On the next window, click on the folder icon and navigate to the location of Max folder you want to install MaxScore into. </p>
+<p>Max 7 and Live 9:</p>
+<p>The best choice for your MaxScore installation is /Users/[your_home_folder]/Documents/Max 7/ (macOS) or C:Users[your_user_name]DocumentsMax 7 (Windows).</p>
+<p>Max 8 and Live 10:</p>
+<p>The best choice for your MaxScore installation is /Users/[your_home_folder]/Documents/Max 8/ (macOS) or C:Users[your_user_name]DocumentsMax 8 (Windows).</p>
+
+<p><b>Refer to the Max documentation if you choose to install MaxScore into another Max 7 or Max 8 folder besides the one indicated above. DO NOT create your own Max 7 or Max 8 folders as Max or Live may not be able to find the files if those folders have not been created by the applications themselves when they were first opened.</b></p>
+<p><illustration><img src="images/03MaxScoreInstallationMode.png"/></illustration></p>
+
+<p>After clicking Next, decide on the type of installation (Minimal = MaxScore for Max only; Full = MaxScore and LiveScore for Ableton Live).</p>
+<p><illustration><img src="images/04MaxScoreReady.png"/></illustration></p>
+<p>The installer is now ready to install MaxScore on your computer.</p>
+
+<p><b>MaxScore and LiveScore users no longer need a JMSL license. For a fuller discussion see Step 3 below!</b></p>
+
+<h2><b>2. Location of installed files</b></h2>
+<p>puts files into</p>
+<ul>
+  <li>Max resources into a folder called MaxScore in [path_to_Max_folder]>Packages.</li>
+  <li>Ableton Live files into a folder called LiveScore in [path_to_Ableton_folder]>User Library.</li>
+</ul>
+<h2><b>3. Authorization of MaxScore</b></h2>
+
+<p><b>MaxScore and LiveScore no longer need a license! Thanks to the Innovative Hochschule grant from the federal ministry of education and research (BMBF), administered by Hochschule für Musik und Theater Hamburg.</b></p>
+
+<p>Why do we still offer a LiveScore license? Because you may not want to deal with installing a new build every year. Or you might have a piece that is mission critical enough that you want to commit it to a “version freeze.” Or you may want to ensure that MaxScore continues to work independently of our reliance on an annual grant renewal. You may have other reasons. However, you no long have to purchase license to use MaxScore and/or LiveScore!</p>
+
+<p>Authorize MaxScore once you’re done with the installation process. For this, use your old JMSL license or request a new license from www.algomusic.com (the macOS installer will take you there at the end of the installation).</p>
+
+<p>Once you’ve received your license file (a short text file with the .lic extension), locate the file named JMSL_License_installer.jar in the following location inside your Max directory: Packages/MaxScore/License_installer/.</p>
+<p><illustration><img src="images/05MaxScoreAuthorize.png"/></illustration></p>
+
+
+<p>Double click that file and a window will open showing a gray rectangle and instructions to drag your JMSL.lic file into it. This will install your JMSL license. Alternatively open MaxScore Combo from MaxScore Overview (which you’ll find in the Max Extras menu) or the Max New From Template menu, click on Open Editor and open the JMSL License Installer by choosing Authorize MaxScore from the editor’s File menu.</p>
+
+<p>There is no need to install additional software such as the current JMSL release. Once you’re done either open Max and choose MaxScore Template or MaxScore Combo from the Max File New From Template menu or open the set LiveScore Demo.als in Ableton Live.</p>
+
+<h2><b>4. Sounds</b></h2>
+
+<p>The MaxScore/LiveScore Fluidsynth and Sampler components come with default sounds, but may require more sounds for playback.</p>
+
+<p>This page will help you to get you started.</p>
+
+<h2><b>5. Additional Downloads</b></h2>
+
+<p>If you want to use the DJster Autobus – Scorepion, a generative plugin capable generating musical structures according to rules that Clarence Barlow implemented in his AUTOBUSK software, you will need to download additional resources from djster.georghajdu.de. The download also contains DJster versions for Ableton Live and Quintet.net.</p>
+
+<p>Go to <a href="http://djster.georghajdu.de">djster.georghajdu.de</a></p>
+
+<h2><b>6. Checking your Installation</b></h2>
+
+<p>We have created a Live device which is capable of checking the three most common reasons why the installation of MaxScore might have failed. Refer to this page for further instructions as to how to use this device.</p>
+
+<!--
+<seealsolist>
+<seealso name="js">Max JavaScript object</seealso>
+<seealso name="jsintro" type="vignette" module="js" >javascriptinmax</seealso>
+</seealsolist>
+-->
+</chapter>

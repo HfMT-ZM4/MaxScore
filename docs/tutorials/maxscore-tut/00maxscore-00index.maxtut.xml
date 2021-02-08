@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="MaxScore: Table of Contents">
+
+<h1>MaxScore Tutorials - Table of Contents</h1>
+
+
+<ul>
+<li><link type="tutorial" module="maxscore" name="00maxscore-01welcome"></link></li>
+<li><link type="tutorial" module="maxscore" name="00maxscore-02download"></link></li>
+<li><link type="tutorial" module="maxscore" name="01maxscore-01basics">MaxScore Editor 1: The User Interface</link></li>
+<li><link type="tutorial" module="maxscore" name="02maxscore-01basics">MaxScore Editor 2: Basics</link></li>
+
+
+</ul>
+
+</chapter>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

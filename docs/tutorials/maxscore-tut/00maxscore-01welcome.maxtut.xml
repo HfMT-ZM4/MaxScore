@@ -4,14 +4,9 @@
 
 <chapter name="Welcome to MaxScore!">
 
-<!--
-<setdocpatch name="02jJavascriptScripting" patch="02jJavascriptScripting.maxpat"/>
-<previous name="javascriptchapter01">Basic JavaScripting</previous>
-<next name="javascriptchapter03">Tasks, Arguments and Globals</next>
-<parent name="00_maxindex">Max Tutorials</parent>
 
-<indexinfo category="JavaScript" title="JavaScript Scripting">Using JavaScript to create patcher elements</indexinfo>
--->
+<next name="00maxscore-02download">Quintet.net: Tutorial</next>
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 <h1>Welcome to MaxScore!</h1>
 
