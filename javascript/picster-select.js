@@ -617,38 +617,6 @@ if (mode == "picster") {
 				break;
 			case 7:
 				if (dragged) {
-					//edit.clear();
-					//tol = 12;
-				/*
-				var attr = {};
-				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
-				var d = "M " + fitted[0];
-				for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i];
-				attr.d = d;
-				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["stroke-opacity"] = color[3];
-				attr.style["stroke-width"] = pensize;
-				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
-				}
-				else {
-				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;
-				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
-				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
-				*/
 				var temp = [];
 				for (var i = 0; i < polyclicks.length; i++) temp[i] = [polyclicks[i][0] - origin[0], polyclicks[i][1] - origin[1]];
 				addShape(origin[0], origin[1], "fitcurve", temp);
@@ -660,33 +628,6 @@ if (mode == "picster") {
 				var text = textedit.getvalueof();
 				if (JSON.stringify(text).length == 4) return;
 				storedText = htmlEntities(text);
-				/*
-				var attr = {};
-				attr.new = "text";
-				attr.id = "Picster-Element_" + num;
-				attr.child = text;
-				attr.x = origin[0];
-				attr.y = origin[1];
-				attr["font-family"] = font;
-				attr["font-size"] = fontsize;
-				attr["font-weight"] = "normal";
-				attr["font-style"] = "normal";
-				attr["text-anchor"] = "start";
-				//attr.rotate = 0;
-				attr.style = {};
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
-				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
-				*/
 				addShape(origin[0], origin[1], "text", text);
 				break;
 			case 9:
@@ -700,37 +641,6 @@ if (mode == "picster") {
 		      current = [];
 		      if (click == "ctrl") {
 				pathDone = true;
-				/*
-				var attr = {};
-				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
-				var d = "M " + polyclicks[0];
-				for (var i = 0; i < segments.length; i++) d += " C " + segments[i];
-				attr.d = d;
-				attr.style = {};
-				attr.style["stroke"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["stroke-opacity"] = color[3];
-				attr.style["stroke-width"] = pensize;
-				if (property == "fill") {
-				attr.style["fill"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
-				}
-				else {
-				attr.style["fill"] = "none";
-				attr.style["fill-opacity"] = 1.;
-				}
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				//_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
-				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
-				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
-				*/
 				for (var i = 0; i < segments.length; i++) {
 					temp[i] = [segments[i][0]-polyclicks[0][0], segments[i][1]-polyclicks[0][1], segments[i][2]-polyclicks[0][0], segments[i][3]-polyclicks[0][1], segments[i][4]-polyclicks[0][0], segments[i][5]-polyclicks[0][1]];
 				}
