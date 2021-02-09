@@ -282,7 +282,7 @@ function bang() {
           var re = new RegExp(k, 'g');
           temp = temp.replace(re, text_array[k]);
         }
-        temp = temp.replace(/\+/g,"");
+        temp = temp.replace(/\+/g,"");
         text.child = temp;
       }
       outputPicster["picster-element"][0]["val"]["child"].push(text);
