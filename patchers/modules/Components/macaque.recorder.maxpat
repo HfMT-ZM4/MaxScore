@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 4,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -47,7 +47,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "bang" ],
-					"patching_rect" : [ 453.5, 254.0, 97.0, 22.0 ],
+					"patching_rect" : [ 453.5, 253.0, 97.0, 22.0 ],
 					"text" : "savedialog AIFF"
 				}
 
@@ -110,20 +110,31 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 129.5, 51.0, 59.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
-							"parameter_invisible" : 1,
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
+							"parameter_longname" : "Edit Button[5]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Edit Button",
-							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "Edit Button[5]"
+							"parameter_type" : 2
 						}
 
 					}
 ,
 					"text" : "Save",
-					"texton" : "Saving...",
-					"varname" : "live.text"
+					"texton" : "Saving..."
 				}
 
 			}
@@ -227,13 +238,25 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 70.5, 51.0, 59.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 1,
+							"parameter_longname" : "Edit Button[6]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Edit Button",
-							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "Edit Button[6]"
+							"parameter_type" : 2
 						}
 
 					}
@@ -260,13 +283,25 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 11.5, 51.0, 59.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 1,
+							"parameter_longname" : "Edit Button[4]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Edit Button",
-							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "Edit Button[4]"
+							"parameter_type" : 2
 						}
 
 					}
@@ -290,16 +325,20 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 416.5, 158.5, 18.0, 18.0 ],
+					"patching_rect" : [ 459.5, 143.5, 18.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "live.text[25]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
-							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "live.text[25]"
+							"parameter_type" : 2
 						}
 
 					}
@@ -339,12 +378,16 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 182.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "live.text[42]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
-							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "live.text[42]"
+							"parameter_type" : 2
 						}
 
 					}
@@ -371,12 +414,16 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 99.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "live.text[26]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
-							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "live.text[26]"
+							"parameter_type" : 2
 						}
 
 					}
@@ -486,7 +533,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 453.5, 283.0, 53.0, 22.0 ],
+					"patching_rect" : [ 453.5, 282.0, 53.0, 22.0 ],
 					"text" : "write $1"
 				}
 
@@ -926,7 +973,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"midpoints" : [ 541.0, 373.5, 515.0, 373.5 ],
+					"midpoints" : [ 541.0, 376.5, 515.0, 376.5 ],
 					"source" : [ "obj-36", 2 ]
 				}
 

@@ -1549,7 +1549,7 @@ function attach()
 				else offsets[0] = [ anchor[1] / factor, anchor[2] / factor ];
 				}
 				else if (selectionBufferSize != 0) {
-		post("elem", elem, edit.stringify(), "\n");
+		//post("elem", elem, edit.stringify(), "\n");
 					increment = 0;
 					anchors = {};
 					outlet(0, "getNoteAnchor");

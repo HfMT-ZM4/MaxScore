@@ -76,7 +76,7 @@ function anything()
 	shape["picster-element"][0]["val"]["child"][0]["width"] = text_measure("Arial", 10, a.join(" "))[0] + 4;
 	shape["picster-element"][0]["val"]["child"][1]["id"] = "Picster-Element_" + parseInt(date.getTime()) + 2;
 	shape["picster-element"][0]["val"]["child"][1]["child"] = a.join(" ");
-	post("arguments", JSON.stringify(arguments), "\n");
+	//post("arguments", JSON.stringify(arguments), "\n");
 	shape["picster-element"][2]["val"][0]["message"] = a[0];
 	shape["picster-element"][2]["val"][0]["value"] = arrayfromargs(arguments).join(" ");
 	var expr = new Dict();
