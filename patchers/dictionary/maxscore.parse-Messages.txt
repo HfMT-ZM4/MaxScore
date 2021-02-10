@@ -1,2 +1,0 @@
-symbol, maxscore.parse "XML-code (symbol)" "parses MaxScore XML data generated in response to info queries into Max messages" -;
-enddump, maxscore.parse "[info-message] (symbol)" "MaxScore's XML dumps are framed by the startdump and enddump messages. They are being used by maxscore.parse to reset the abstraction and trigger the parser." -;

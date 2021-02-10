@@ -704,7 +704,6 @@ function musicfont(mf)
 
 function setUserClef(targetStaff, userClef)
 {
-	//post("dest", clefDesigner.get("FG").stringify(), "\n");
 	outlet(1, "getNumMeasures");			
 	if (clefDesigner.contains(userClef)) {
 		outlet(1, "setRenderAllowed", 0);		
@@ -717,13 +716,11 @@ function setUserClef(targetStaff, userClef)
     	}		
 		annotation.replace("staff-" + targetStaff + "::style", "ClefDesigner|" + userClef);
 		annotation.replace("staff-" + targetStaff + "::clef", userClef);
-		/*
 		var hiddenStaves = [].concat(selectedClef.get("stafflines").get("hidden"));
-		if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
-		for (var i = 0; i < hiddenStaves.length; i++) {
-		annotation.replace("staff-" + targetStaff + "::stafflineshidden::" + hiddenStaves[i], 0);
-		}
-		*/
+		//post("hiddenStaves", hiddenStaves, "\n");
+		//if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
+		for (var i = 0; i < hiddenStaves.length; i++) outlet(1, "setStaffLineVisible", targetStaff, hiddenStaves[i], 0);
+		//annotation.replace("staff-" + targetStaff + "::stafflineshidden::" + hiddenStaves[i], 0);
 		if (annotation.contains("userclefs")) annotation.remove("userclefs");
 		annotation.replace("userclefs::" + userClef, clefDesigner.get(userClef));
 		outlet(2, "setAnnotation", "dictionary", annotation.name);

@@ -1,8 +1,0 @@
-(inlet0), maxscore.split "gracenote-message (list)" "In first inlet: Grace note messages" -;
-(inlet1), maxscore.split "interval-message (list)" "In 2nd inlet: Interval messages" -;
-(inlet2), maxscore.split "note-message (list)" "In 3rd inlet: Note messages" -;
-(inlet3), maxscore.split "track-message (list)" "In 4th inlet: Track messages" -;
-(inlet4), maxscore.split "staff-message (list)" "In 5th inlet: Staff messages" -;
-(inlet5), maxscore.split "measure-message (list)" "In 6th inlet: Measure messages" -;
-(inlet6), maxscore.split "score-message (list)" "In 7th inlet: Score messages" -;
-(inlet7), maxscore.split "staff-groups (list)" "In right inlet: Staff groups. Number of list items determine number of outlets. Use  staff numbers (int) staff-ranges (two ints separated by - symbol) and/or staff-collections (any number of ints separated by + symbol) in any combination." "0 1+3 2 3-4 5";

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 148.0, 257.0, 1305.0, 661.0 ],
+		"openrect" : [ 148.0, 257.0, 1305.0, 661.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -31,14 +31,14 @@
 		"boxanimatetime" : 200,
 		"enablehscroll" : 0,
 		"enablevscroll" : 0,
-		"devicewidth" : 0.0,
+		"devicewidth" : 1305.0,
 		"description" : "",
 		"digest" : "",
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "1751marker[1][1][1][1][1][1][1][1][1][1][1][2][1][1]",
+		"globalpatchername" : "1751marker[1][1][1][1][1][1][1][1][1][1][1][2][1][1][1]",
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -98,7 +98,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"openrect" : [ 433.0, 486.0, 530.0, 506.0 ],
+						"openrect" : [ 565.0, 405.0, 530.0, 436.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -532,8 +532,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -1204,7 +1202,7 @@
 									"colwidth" : 32,
 									"fgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"fontface" : 0,
-									"fontname" : "BigCaslon-Medium",
+									"fontname" : "Bravura",
 									"fontsize" : 18.0,
 									"hcellcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 0.58 ],
 									"id" : "obj-1",
@@ -1216,7 +1214,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 0.0, 0.0, 530.0, 436.0 ],
 									"rowheight" : 32,
-									"rows" : 61,
+									"rows" : 221,
 									"sccolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 									"stcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
@@ -1697,8 +1695,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -3838,7 +3834,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-16",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -4115,7 +4111,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -4165,7 +4161,7 @@
 					"border" : 0.0,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 0.52 ],
 					"fontface" : 0,
-					"fontname" : "BigCaslon-Medium",
+					"fontname" : "Bravura",
 					"fontsize" : 24.0,
 					"id" : "obj-29",
 					"maxclass" : "textedit",
@@ -4174,7 +4170,7 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"outputmode" : 1,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 136.671966552734375, 280.87939453125, 274.0, 94.0 ],
+					"patching_rect" : [ 136.671966552734375, 280.87939453125, 237.0, 99.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 24.0, 247.0, 111.0 ],
 					"rounded" : 0.0,
@@ -4933,134 +4929,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-55" : [ "live.menu", "live.menu", 0 ],
-			"obj-62" : [ "live.menu[54]", "live.menu", 0 ],
-			"obj-67" : [ "live.menu[55]", "live.menu", 0 ],
-			"obj-73::obj-32" : [ "live.menu[6]", "live.menu", 0 ],
-			"obj-73::obj-45" : [ "live.menu[5]", "live.menu", 0 ],
-			"obj-80" : [ "live.tab[1]", "live.tab", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "roundslider.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsui",
-				"patcherrelativepath" : "../../jsui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "color_picker.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.getMeasureAttribute.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "unicode2utf-8.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "linesegment.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "paintrect.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "paintroundrect.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "paintoval.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "paintarc.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "paintpoly.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "freehand.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "font.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "picture.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "path.png",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/icons",
-				"patcherrelativepath" : "./icons",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "max-opentype.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/max-opentype",
-				"patcherrelativepath" : "../node.js/max-opentype",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/DJster/patchers/DJster/Abstractions",
-				"patcherrelativepath" : "../../../DJster/patchers/DJster/Abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{

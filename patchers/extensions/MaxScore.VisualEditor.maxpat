@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 511.0, 522.0, 1035.0, 323.0 ],
+		"rect" : [ 209.0, 331.0, 1035.0, 323.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -497,7 +497,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 315.0, 268.0, 470.0, 22.0 ],
-													"restore" : [ "scoreLayout", 4, 0, 4, 0.5, 800, 800 ],
+													"restore" : [ "scoreLayout", 2, 0, 2, 0.5, 800, 800 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -596,7 +596,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 50.0, 56.0, 532.0, 22.0 ],
-													"restore" : [ 1, 1, 1, 1 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -4367,7 +4367,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 159.75, 108.5, 536.0, 22.0 ],
-													"restore" : [ 1, 1, 1, 1 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -4462,7 +4462,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 35.5, 51.5, 536.0, 22.0 ],
-													"restore" : [ 1, 1, 1, 1 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -7031,9 +7031,9 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 369.0, 311.0, 455.0, 507.0 ],
+										"rect" : [ 147.0, 168.0, 638.0, 439.0 ],
 										"bglocked" : 0,
-										"openinpresentation" : 0,
+										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
 										"default_fontface" : 0,
 										"default_fontname" : "Arial",
@@ -7062,28 +7062,350 @@
 										"title" : "Shortcuts",
 										"boxes" : [ 											{
 												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-24",
-													"maxclass" : "comment",
+													"id" : "obj-9",
+													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 42.0, 114.0, 299.0, 20.0 ],
-													"text" : "all caps: toggle between MaxScore and Picster editing"
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 256.0, 34.0, 70.0, 22.0 ],
+													"text" : "loadmess 0"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+													"id" : "obj-8",
+													"maxclass" : "newobj",
+													"numinlets" : 3,
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "bang", "" ],
+													"patching_rect" : [ 256.0, 99.0, 44.0, 22.0 ],
+													"text" : "sel 1 0"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"colorselectedtext" : 1,
+													"htabcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+													"id" : "obj-7",
+													"maxclass" : "tab",
+													"numinlets" : 1,
+													"numoutlets" : 3,
+													"outlettype" : [ "int", "", "" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 256.0, 71.0, 637.0, 21.0 ],
+													"presentation" : 1,
+													"presentation_rect" : [ 0.0, 1.0, 637.0, 21.0 ],
+													"tabcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+													"tabs" : [ "MaxScore", "Picster" ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-6",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 392.0, 132.0, 141.0, 22.0 ],
+													"text" : "refer maxscore-shortcuts"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"coll_data" : 													{
+														"count" : 31,
+														"data" : [ 															{
+																"key" : " ",
+																"value" : [ "Mouse Actions" ]
+															}
+, 															{
+																"key" : "double-click",
+																"value" : [ "or ctrl-click (Mac) or option-click (Windows): add note" ]
+															}
+, 															{
+																"key" : "cmd-drag",
+																"value" : [ "(Mac) or ctrl-drag (Windows): transpose note" ]
+															}
+, 															{
+																"key" : "shift-click",
+																"value" : [ "select group of notes" ]
+															}
+, 															{
+																"key" : " ",
+																"value" : [ "Key strokes" ]
+															}
+, 															{
+																"key" : 0,
+																"value" : [ "remove tuplets" ]
+															}
+, 															{
+																"key" : 3,
+																"value" : [ "apply triplet" ]
+															}
+, 															{
+																"key" : 5,
+																"value" : [ "apply quintuplet" ]
+															}
+, 															{
+																"key" : 7,
+																"value" : [ "apply septuplet" ]
+															}
+, 															{
+																"key" : 9,
+																"value" : [ "apply ninetuplet" ]
+															}
+, 															{
+																"key" : ".",
+																"value" : [ "cycle through number of dots (1, 2, 0)" ]
+															}
+, 															{
+																"key" : "a",
+																"value" : [ "select all" ]
+															}
+, 															{
+																"key" : "c",
+																"value" : [ "copy" ]
+															}
+, 															{
+																"key" : "d",
+																"value" : [ "double note duration" ]
+															}
+, 															{
+																"key" : "h",
+																"value" : [ "halve note durations" ]
+															}
+, 															{
+																"key" : "i",
+																"value" : [ "transpose up a quarter-tone" ]
+															}
+, 															{
+																"key" : "j",
+																"value" : [ "transpose down a semitone" ]
+															}
+, 															{
+																"key" : "k",
+																"value" : [ "transpose down a quarter-tone" ]
+															}
+, 															{
+																"key" : "l",
+																"value" : [ "transpose down an octave" ]
+															}
+, 															{
+																"key" : "o",
+																"value" : [ "transpose up an octave" ]
+															}
+, 															{
+																"key" : "r",
+																"value" : [ "rest toggle" ]
+															}
+, 															{
+																"key" : "u",
+																"value" : [ "transpose up a semitone" ]
+															}
+, 															{
+																"key" : "x",
+																"value" : [ "cut" ]
+															}
+, 															{
+																"key" : "v",
+																"value" : [ "paste" ]
+															}
+, 															{
+																"key" : "z",
+																"value" : [ "undo" ]
+															}
+, 															{
+																"key" : "shift-v",
+																"value" : [ "paste without notehead alterations" ]
+															}
+, 															{
+																"key" : "backspace",
+																"value" : [ "delete" ]
+															}
+, 															{
+																"key" : "left arrow",
+																"value" : [ "change width of selected measure" ]
+															}
+, 															{
+																"key" : "right arrow",
+																"value" : [ "change width of selected measure" ]
+															}
+, 															{
+																"key" : "up arrow",
+																"value" : [ "change space below selected staff" ]
+															}
+, 															{
+																"key" : "down arrow",
+																"value" : [ "change space below selected staff" ]
+															}
+ ]
+													}
+,
+													"id" : "obj-5",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 4,
+													"outlettype" : [ "", "", "", "" ],
+													"patching_rect" : [ 6.0, 50.0, 197.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"embed" : 1,
+														"precision" : 6
+													}
+,
+													"text" : "coll maxscore-shortcuts @embed 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-4",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 256.0, 132.0, 125.0, 22.0 ],
+													"text" : "refer picster-shortcuts"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"coldef" : [ [ 1, 566, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 0, 72, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
+													"cols" : 2,
+													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
-													"id" : "obj-23",
-													"maxclass" : "comment",
+													"hcellcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+													"hscroll" : 0,
+													"id" : "obj-2",
+													"maxclass" : "jit.cellblock",
+													"numinlets" : 2,
+													"numoutlets" : 4,
+													"outlettype" : [ "list", "", "", "" ],
+													"patching_rect" : [ 256.0, 172.0, 637.0, 433.0 ],
+													"presentation" : 1,
+													"presentation_rect" : [ 0.0, 23.0, 637.0, 415.0 ],
+													"rowhead" : 1,
+													"rows" : 31,
+													"selmode" : 0
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"coll_data" : 													{
+														"count" : 23,
+														"data" : [ 															{
+																"key" : 0,
+																"value" : [ "draw a line" ]
+															}
+, 															{
+																"key" : 2,
+																"value" : [ "draw a rectangle" ]
+															}
+, 															{
+																"key" : 3,
+																"value" : [ "draw a rounded rectangle" ]
+															}
+, 															{
+																"key" : 4,
+																"value" : [ "draw an ellipse" ]
+															}
+, 															{
+																"key" : 5,
+																"value" : [ "draw an arc" ]
+															}
+, 															{
+																"key" : 6,
+																"value" : [ "draw a polygon" ]
+															}
+, 															{
+																"key" : 7,
+																"value" : [ "draw a freehand shape with curve fitting" ]
+															}
+, 															{
+																"key" : 8,
+																"value" : [ "add text" ]
+															}
+, 															{
+																"key" : 9,
+																"value" : [ "insert a picture (bitmap or svg)" ]
+															}
+, 															{
+																"key" : 0,
+																"value" : [ "create Bezier curves" ]
+															}
+, 															{
+																"key" : "c",
+																"value" : [ "copy selected Picster element" ]
+															}
+, 															{
+																"key" : "e",
+																"value" : [ "edit selected Picster element" ]
+															}
+, 															{
+																"key" : "g",
+																"value" : [ "group Picster elements attached to the same score element" ]
+															}
+, 															{
+																"key" : "l",
+																"value" : [ "export selected Picster element" ]
+															}
+, 															{
+																"key" : "m",
+																"value" : [ "set preference to measure" ]
+															}
+, 															{
+																"key" : "r",
+																"value" : [ "convert selected Picster element to trajectory (supported shapes are line, rectangle, ellipse and polygon)" ]
+															}
+, 															{
+																"key" : "s",
+																"value" : [ "set preference to staff" ]
+															}
+, 															{
+																"key" : "u",
+																"value" : [ "update selected Picster element after editing" ]
+															}
+, 															{
+																"key" : "v",
+																"value" : [ "paste Picster element from clipboard" ]
+															}
+, 															{
+																"key" : "x",
+																"value" : [ "cut selected Picster element" ]
+															}
+, 															{
+																"key" : "y",
+																"value" : [ "redo" ]
+															}
+, 															{
+																"key" : "z",
+																"value" : [ "undo" ]
+															}
+, 															{
+																"key" : "delete",
+																"value" : [ "remove selected Picster element" ]
+															}
+ ]
+													}
+,
+													"id" : "obj-3",
+													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 23.0, 92.0, 184.0, 20.0 ],
-													"text" : "Key strokes"
+													"numoutlets" : 4,
+													"outlettype" : [ "", "", "", "" ],
+													"patching_rect" : [ 6.0, 14.0, 180.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"embed" : 1,
+														"precision" : 6
+													}
+,
+													"text" : "coll picster-shortcuts @embed 1"
 												}
 
 											}
@@ -7097,7 +7419,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 353.0, 181.0, 69.0, 22.0 ],
+													"patching_rect" : [ 54.0, 156.0, 69.0, 22.0 ],
 													"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 													"text" : "thispatcher"
 												}
@@ -7113,7 +7435,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 353.0, 119.0, 25.0, 25.0 ]
+													"patching_rect" : [ 54.0, 94.0, 25.0, 25.0 ]
 												}
 
 											}
@@ -7127,92 +7449,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "front" ],
-													"patching_rect" : [ 353.0, 154.0, 41.0, 22.0 ],
+													"patching_rect" : [ 54.0, 129.0, 41.0, 22.0 ],
 													"text" : "t front"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-32",
-													"linecount" : 9,
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 41.0, 359.0, 395.0, 127.0 ],
-													"text" : "a: select all\ns: set entry to selected measure\nz: undo\ny: redo \nleft/right arrows: change width of selected measure\nleft/right arrows with shift: change width of selected measure faster\nup/down arrows: change space below selected staff\nup/down arrows with shift: change space above selected staff\npage up/down: move system up/down (use for scores with many staves)"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-29",
-													"linecount" : 4,
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 42.0, 29.0, 367.0, 60.0 ],
-													"text" : "double-click or ctrl-click (Mac) or option-click (Windows): add note\ncmd-drag (Mac) or ctrl-drag (Windows): transpose note\nshift-click: select group of notes\ntwo-finger-scroll while holding w: scroll visible part of score"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-22",
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 23.0, 11.0, 184.0, 20.0 ],
-													"text" : "Mouse actions"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-9",
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 23.0, 136.0, 186.0, 20.0 ],
-													"text" : "This applies to selected notes:"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-14",
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 23.0, 339.0, 170.0, 20.0 ],
-													"text" : "Other keyboard shortcuts:"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-47",
-													"linecount" : 13,
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 41.0, 154.0, 263.0, 181.0 ],
-													"text" : "u/j: chromatic transposition\ni/k: quarter-tone transposition\no/l: octave transposition\n3, 5, 7, 9: apply tuplets\n0: remove tuplets\nh/d: halve and double durations\ndot: cycle through number of dots (1, 2, 0)\nr: rest toggle\nc: copy\nx: cut\nv: paste\nshift-v: paste without notehead alterations\nshift-backspace: delete"
 												}
 
 											}
@@ -7233,8 +7471,50 @@
 												}
 
 											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-4", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-6", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-8", 0 ],
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"source" : [ "obj-8", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-6", 0 ],
+													"source" : [ "obj-8", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 0 ],
+													"source" : [ "obj-9", 0 ]
+												}
+
+											}
  ],
-										"bgcolor" : [ 0.776471, 0.776471, 0.776471, 1.0 ]
+										"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
 									}
 ,
 									"patching_rect" : [ 653.681884765625, 160.0, 71.0, 22.0 ],
@@ -7242,7 +7522,7 @@
 										"description" : "",
 										"digest" : "",
 										"globalpatchername" : "",
-										"locked_bgcolor" : [ 0.776471, 0.776471, 0.776471, 1.0 ],
+										"locked_bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 										"tags" : ""
 									}
 ,
@@ -12616,7 +12896,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 341.385444505859368, 619.833312999999976, 398.0, 22.0 ],
-													"restore" : [ "JMSLMaxScore-30" ],
+													"restore" : [ "JMSLMaxScore-51" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -14209,7 +14489,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 247.656784000000016, 269.0, 471.0, 22.0 ],
-									"restore" : [ 64 ],
+									"restore" : [ 27 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -21122,7 +21402,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 13.899963, 343.400023999999974, 364.0, 20.0 ],
-													"restore" : [ "JMSLMaxScore-30" ],
+													"restore" : [ "JMSLMaxScore-51" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -23677,7 +23957,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 698.4000244140625, 182.0, 331.0, 31.0 ],
-					"restore" : [ 1, 1, 1, 1 ],
+					"restore" : [ -1, -1, -1, -1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
