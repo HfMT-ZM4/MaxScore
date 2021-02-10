@@ -7031,7 +7031,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 147.0, 168.0, 638.0, 439.0 ],
+										"rect" : [ 146.0, 167.0, 637.0, 439.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -7279,6 +7279,7 @@
 													"fontface" : 0,
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
+													"gridlinecolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 0.27 ],
 													"hcellcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
 													"hscroll" : 0,
 													"id" : "obj-2",
@@ -7290,7 +7291,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 0.0, 23.0, 637.0, 415.0 ],
 													"rowhead" : 1,
-													"rows" : 31,
+													"rows" : 23,
 													"selmode" : 0
 												}
 
