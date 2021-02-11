@@ -2,7 +2,7 @@
 <jmslscoredoc>
 <!-- Saved document from JMSL's programmable music notation editor. Java Music Specification Language by Nick Didkovsky & Phil Burk, available from: http://www.algomusic.com -->
 <score NAME="JMSLMaxScore-5" SUBTITLE="" COMPOSER="" COPYRIGHT="" WIDTH="800" HEIGHT="800" STAFFS="2" NUMTRACKSPERSTAFF="4" InstrumentNamesVisible="false" TempoVisible="true" StaffNumbersVisible="true" MeasureNumbersVisible="true" SectionBracketsVisible="true" TimeSignaturesVisible="true" KeySignaturesVisible="true" ClefsVisible="true" ScoreTitleVisible="false" CourtesyClefsVisible="false" MeasureNumberOffset="1" LeftMargin="20.0" RightMargin="20.0" TopMargin="15.0" BottomMargin="15.0" TopMarginOfFirstPage="60.0" DrawAllMeasureNumbers="false" TextFontScaler="1.5" ScoreSubtitleFontScaler="2.0" ScoreTitleFontScaler="4.0" TimesigFontScaler="2.5" MeasureNumberFontScaler="1.5" TextFontName="SansSerif" ScoreSubtitleFontName="Serif" ScoreTitleFontName="Serif" TimesigFontName="Serif" MeasureNumberFontName="SansSerif" FirstSystemIndent="0.0" useLegacyMultiTrackOrientation="true" >
-<ScoreAnnotation CLASSNAME="com.softsynth.jmsl.score.ScoreAnnotation" Annotation="326.3oc4RtsRCDCDF95ceJB45sKofGndmEQnETKTDAEuHcaxRzbXYRRQoz2cyjzShOBdytrey2N4eFx15J5FA3UNKkbCgNtkQaRrAvM3fPBy0XAFBCJi3YqJffwLVaAJ9JHc1LjdKnR9H1D8pti7o.eSD34Jq56bZGf72Hr1IStp4rWWzPRYf7NZJ+sIq4rGGk7hvK.eHmo8e+pyYxgt8x8j6RGdYXVNv6T19obunnbcVIvkxQLjTsstphpEq6EfVYE9CcFs9Vm+K57nOPlYCoNhsklKaTcfyThB07vn4yJb95OR5G1hUzNsPlcVKj7nNTrxAbj149LNbxMGrdvUXosPZ7yycpsqVAyr9.7H2TREozIEBiFgMfUV37JLiOIkoEQty0U6pOM0i+mM03E16ObwbgHv0QCmrrCTCgSWc+iAsdW8OfJ7duH" >
+<ScoreAnnotation CLASSNAME="com.softsynth.jmsl.score.ScoreAnnotation" Annotation="326.3oc4RtsRCDCDF95ceJB45sKofGndmEQnETKTDAEuHcaxRzbXYRRQoz2cyjzShOBdytrey2N4eFx15J5FA3UNKkbCgNtkQaRrAvM3fPBy0XAFBCJi3YqJffwLVaAJ9JHc1LjdKnR9H1D8pti7o.eSD34Jq56bZGf72Hr1IStp4rWWzPRYf7NZJ+sIq4rGGk7hvK.eHmo8e+pyYxgt8x8j6RGdYXVNv6T19obunnbcVIvkxQLjTsstphpEq6EfVYE9CcFs9Vm+K57nOPlYCoNhsklKaTcfyThB07vn4yJb95OR5G1hUzNsPlcVKj7nNTrxAbj149LNbxMGrdvUXosPZxyycpsqVAyr9.7H2TREozIEBiFgMfUV37JLiOIkoEQty0U6pOM0i+mM03E16ObwbgHv0QCmrrCTCgSWc+iAsdW8OnJ7d2H" >
 </ScoreAnnotation>
 <orchestra CLASSNAME="com.softsynth.jmsl.score.Orchestra" >
 <jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="0" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="MaxScoreIns-0" >
@@ -39,14 +39,14 @@
 <StaffLineVisibility staffIndex="0" staffLineIndex="-10" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="0" staffLineIndex="10" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="0" staffLineIndex="-11" isVisible="true" ledgerLinesVisible="true" />
-<StaffLineVisibility staffIndex="0" staffLineIndex="9" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="0" staffLineIndex="-12" isVisible="true" ledgerLinesVisible="true" />
-<StaffLineVisibility staffIndex="0" staffLineIndex="8" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="9" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="0" staffLineIndex="-13" isVisible="true" ledgerLinesVisible="true" />
-<StaffLineVisibility staffIndex="0" staffLineIndex="7" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="8" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="0" staffLineIndex="-14" isVisible="true" ledgerLinesVisible="true" />
-<StaffLineVisibility staffIndex="0" staffLineIndex="6" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="7" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="0" staffLineIndex="-15" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="6" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="0" staffLineIndex="5" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="0" staffLineIndex="4" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="0" staffLineIndex="3" isVisible="true" ledgerLinesVisible="true" />
@@ -70,21 +70,21 @@
 <StaffLineVisibility staffIndex="1" staffLineIndex="-10" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="10" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="-11" isVisible="true" ledgerLinesVisible="true" />
-<StaffLineVisibility staffIndex="1" staffLineIndex="9" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="-12" isVisible="true" ledgerLinesVisible="true" />
-<StaffLineVisibility staffIndex="1" staffLineIndex="8" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="1" staffLineIndex="9" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="-13" isVisible="true" ledgerLinesVisible="true" />
-<StaffLineVisibility staffIndex="1" staffLineIndex="7" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="1" staffLineIndex="8" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="-14" isVisible="true" ledgerLinesVisible="true" />
-<StaffLineVisibility staffIndex="1" staffLineIndex="6" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="1" staffLineIndex="7" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="-15" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="1" staffLineIndex="6" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="5" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="4" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="3" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="2" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="1" isVisible="true" ledgerLinesVisible="true" />
 <StaffLineVisibility staffIndex="1" staffLineIndex="0" isVisible="true" ledgerLinesVisible="true" />
-<scoresection NAME="A" START="0" END="0" />
+<scoresection NAME="A" START="0" END="1" />
 <scoresection NAME="B" START="0" END="0" />
 <scoresection NAME="C" START="0" END="0" />
 <scoresection NAME="D" START="0" END="0" />
