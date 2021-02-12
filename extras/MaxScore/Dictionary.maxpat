@@ -127,7 +127,7 @@
 					"patching_rect" : [ 61.5, 644.0, 162.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 432.5, 0.0, 223.0, 21.0 ],
-					"tabs" : [ "MaxScore", "Picster" ]
+					"tabs" : [ "Core", "Extended" ]
 				}
 
 			}
@@ -377,7 +377,6 @@
 					"presentation_rect" : [ 0.0, 0.0, 222.0, 20.0 ],
 					"prototypename" : "Classic",
 					"rounded" : 0.0,
-					"text" : "font",
 					"textcolor" : [ 0.988235294117647, 0.988235294117647, 1.0, 1.0 ],
 					"varname" : "search"
 				}
@@ -598,7 +597,6 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-23",
-					"linecount" : 2,
 					"maxclass" : "textedit",
 					"numinlets" : 1,
 					"numoutlets" : 4,
@@ -606,10 +604,8 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 347.0, 644.0, 876.0, 54.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 2,
 					"presentation_rect" : [ 1.0, 664.0, 1086.0, 44.0 ],
 					"rounded" : 0.0,
-					"text" : "musicfont | fontname (symbol) | sets a SMUFL-compatible font for the display of score elements such as note heads, clefs, accidentals and key signatures. Bravura and Petaluma are included in the package | canvas musicfont Bravura",
 					"textcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
 				}
 
@@ -786,7 +782,7 @@
 					"presentation_rect" : [ 1.0, 41.0, 1086.0, 621.0 ],
 					"rowhead" : 1,
 					"rowheight" : 20,
-					"rows" : 53,
+					"rows" : 293,
 					"selmode" : 3,
 					"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"stcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],

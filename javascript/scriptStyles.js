@@ -116,6 +116,7 @@ function hideEditors()
 {
 	for (var key in _staffStyles) this.patcher.getnamed(_staffStyles[key][0]).hidden = 1;
 	this.patcher.getnamed("entry").hidden = 0;
+	this.patcher.getnamed(lastEditor).subpatcher().getnamed("editor").subpatcher().getnamed("set").message(0);
 }
 
 function showLastEditor()
