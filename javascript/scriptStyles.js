@@ -13,7 +13,7 @@ staffStyles.clear();
 staffStyles.import_json("maxscore.staffStyles.json");
 var _staffStyles = JSON.parse(staffStyles.stringify());
 var lastEditor = "";
-var editors = ["default.style.maxpat", "BP-chromatic.style.maxpat", "clefdesigner.style.maxpat", "percussion.style.maxpat", "tablature.style.maxpat", "justintonation.style.maxpat"];
+var editors = ["default.style.maxpat", "BP-chromatic.style.maxpat", "clefdesigner.style.maxpat", "percussion.style.maxpat", "tablature.style.maxpat"];
 
 
 function path(p)
@@ -116,7 +116,7 @@ function hideEditors()
 {
 	for (var key in _staffStyles) this.patcher.getnamed(_staffStyles[key][0]).hidden = 1;
 	this.patcher.getnamed("entry").hidden = 0;
-	this.patcher.getnamed(lastEditor).subpatcher().getnamed("editor").subpatcher().getnamed("set").message(0);
+	if (editors.indexOf(lastEditor + ".style.maxpat") != -1 && lastEditor != "default") this.patcher.getnamed(lastEditor).subpatcher().getnamed("editor").subpatcher().getnamed("set").message(0);
 }
 
 function showLastEditor()

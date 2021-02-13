@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 184.0, -1040.0, 886.0, 509.0 ],
+		"rect" : [ 319.0, 87.0, 886.0, 509.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -387,6 +387,43 @@
 						"title" : "Clef Designer",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-84",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1194.0, 200.5, 55.0, 22.0 ],
+									"text" : "in1 bang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-80",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1194.0, 231.0, 123.0, 22.0 ],
+									"text" : "pattrforward onebang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-71",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 576.5, 229.5, 24.0, 24.0 ],
+									"varname" : "onebang"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-67",
 									"maxclass" : "comment",
@@ -421,8 +458,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
 									"patching_rect" : [ 530.5, 267.0, 65.0, 22.0 ],
-									"text" : "onebang 1",
-									"varname" : "onebang"
+									"text" : "onebang 1"
 								}
 
 							}
@@ -444,7 +480,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 84.0, 131.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -4196,6 +4232,7 @@
 										"hidden" : [ 0, 1, 3, 4 ],
 										"micromap" : [ "mM-JI" ],
 										"offsets" : [ 0, 0 ],
+										"onebang" : [ 0.0 ],
 										"size" : [ 24 ],
 										"transp" : [ 0.0 ],
 										"transposition" : [ 0.0 ]
@@ -5590,6 +5627,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-43", 1 ],
+									"source" : [ "obj-71", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-132", 0 ],
 									"source" : [ "obj-72", 0 ]
 								}
@@ -5614,6 +5658,13 @@
 									"destination" : [ "obj-57", 0 ],
 									"order" : 1,
 									"source" : [ "obj-73", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-82", 0 ],
+									"source" : [ "obj-73", 1 ]
 								}
 
 							}
@@ -5672,6 +5723,13 @@
 									"destination" : [ "obj-60", 1 ],
 									"midpoints" : [ 767.5, 605.0, 108.0, 605.0 ],
 									"source" : [ "obj-82", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-80", 0 ],
+									"source" : [ "obj-84", 0 ]
 								}
 
 							}

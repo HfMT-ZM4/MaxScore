@@ -382,6 +382,7 @@ function _style(stl, flag)
 	var styleMenu = this.patcher.getnamed("style");
 	for (var i = 0; i < this.patcher.parentpatcher.getnamed("numstaves").getvalueof(); i++) this.patcher.parentpatcher.getnamed("staff-" + i).subpatcher().getnamed("style").message("textcolor", 0, 0, 0, 1);
 	if (editors.names.indexOf(basestyle) != -1) styleMenu.message("textcolor", 1, 0, 0, 1);
+    stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
 	this.patcher.parentpatcher.parentpatcher.getnamed("chooser").message(1);
         switch (ss[0]) {
             case "tablature":
@@ -407,7 +408,7 @@ function _style(stl, flag)
                 }
                 break;
             case "clefdesigner":
-                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("in1","bang");
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("bang");
                 if (isAlias(stl)) {
 					if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("umenu").message("setsymbol", substyle);
 					//else stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("symbol", substyle);
@@ -416,7 +417,6 @@ function _style(stl, flag)
        }
         //this.patcher.getnamed("editor").message("active", 1);
 		//post("hello", stl, !isAlias(stl), newstyletype, "\n");
-        stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
         if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("0");
@@ -453,6 +453,7 @@ function _style(stl, flag)
             case "percussion":
                 var newstafflines = [percussionMaps.get(substyle + "::stafflines::above"), percussionMaps.get(substyle + "::stafflines::below")];
                 hidden = [].concat(percussionMaps.get(substyle + "::stafflines::hidden"));
+                annotation.replace("staff-" + StaffIndex + "::clef", "PERCUSSION_CLEF");
                 break;
             case "clefdesigner":
                 var newstafflines = [clefdesigner.get(substyle + "::stafflines::above"), clefdesigner.get(substyle + "::stafflines::below")];
@@ -740,8 +741,10 @@ function setStafflines(n) {
     if (ss[0] == "clefdesigner") {
             for (var i = 0; i < hidden.length; i += 1) {
 				post("hidden", hidden, "\n");
-                outlet(0, "setStaffLineVisible", StaffIndex, hidden[i], 0);
-                annotation.replace("staff-" + StaffIndex + "::stafflineshidden::" + hidden[i], 0);
+                if (hidden[i] != "none") {
+					outlet(0, "setStaffLineVisible", StaffIndex, hidden[i], 0);
+                	annotation.replace("staff-" + StaffIndex + "::stafflineshidden::" + hidden[i], 0);
+					}
             	}
         previous = hidden;
     }	
@@ -755,7 +758,7 @@ function setDefaultClef(dc) {
 
 function setClef(stl) {
     var numMeasures = getInfo("getNumMeasures");
-	for (var i = -15; i < 16; i++) outlet(0, "setStaffLineVisible", StaffIndex, i, 1); 
+	for (var i = -13; i < 18; i++) outlet(0, "setStaffLineVisible", StaffIndex, i, 1); 
     if (stl != oldstl) {
         //if (ss.length == 4) {
             switch (ss[0]) {
@@ -764,6 +767,7 @@ function setClef(stl) {
                     this.patcher.getnamed("clef").message("set", 4);
                     for (var i = 0; i < numMeasures[1]; i++) {
                         outlet(0, "setClef", i, StaffIndex, clf);
+ 						post("setClef-2", stl, ss[3], clf, "\n");
                         outlet(0, "setKeySignature", i, StaffIndex, 0, "FLAT_KEY");
                     }
                     break;
@@ -776,7 +780,6 @@ function setClef(stl) {
                 default:
             		switch (ss[3]) {
 	                case "PERCUSSION_CLEF":
- 					//post("setClef-2", stl, ss[3], "\n");
                    for (var i = 0; i < numMeasures[1]; i++) {
                         outlet(0, "setClef", i, StaffIndex, ss[3]);
                     }

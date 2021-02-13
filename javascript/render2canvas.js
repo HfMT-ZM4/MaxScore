@@ -2239,7 +2239,7 @@ function anything() {
 					glyph[i * 5 + 4] = uc[4];
 					}				
 			}
-			else {
+			else if (annotation.contains("userclefs::" + annotation.get("staff-"+msg[5]+"::clef"))){
 				var ann = annotation.get("userclefs::" + annotation.get("staff-"+msg[5]+"::clef"));
 				if (ann.contains("characters") && ann.get("characters") != "<empty>") {
 					for (var i = 0; i < ann.get("characters").length; i++){
@@ -2255,6 +2255,7 @@ function anything() {
 			else if (annotation.contains("staff-" + msg[5]+"::clef") && annotation.get("staff-"+msg[5]+"::clef") == "default") {
 			if (annotation.get("staff-"+msg[5]+"::style").indexOf("|") != -1) {
 				var substyle = annotation.get("staff-"+msg[5]+"::style").substr(annotation.get("staff-"+msg[5]+"::style").indexOf("|") + 1);
+				
 				if (!annotation.contains("userclefs::" + substyle + "::characters")) return;
 				/*
 				else if (annotation.get("userclefs::" + substyle + "::baseclef") == "default") {
