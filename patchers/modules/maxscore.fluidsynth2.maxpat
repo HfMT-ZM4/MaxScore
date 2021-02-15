@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 1,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Avenir Next Regular",
@@ -53,13 +54,13 @@
 					"presentation_rect" : [ 7.0, 175.0, 303.0, 52.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_invisible" : 2,
+							"parameter_longname" : "mc.live.gain~[1]",
+							"parameter_mmax" : 6.0,
+							"parameter_mmin" : -70.0,
 							"parameter_shortname" : "mc.live.gain~",
 							"parameter_type" : 0,
-							"parameter_unitstyle" : 4,
-							"parameter_mmin" : -70.0,
-							"parameter_longname" : "mc.live.gain~[1]",
-							"parameter_invisible" : 2,
-							"parameter_mmax" : 6.0
+							"parameter_unitstyle" : 4
 						}
 
 					}
@@ -107,8 +108,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 1,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -141,7 +142,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-14",
@@ -153,8 +154,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 1,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -187,6 +188,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-101",
@@ -279,7 +281,8 @@
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 457.5, 622.0, 114.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"embed" : 0
+														"embed" : 0,
+														"precision" : 6
 													}
 ,
 													"text" : "coll note-off-queues"
@@ -1062,8 +1065,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 1,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1096,6 +1099,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-17",
@@ -1424,8 +1428,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 1,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1458,6 +1462,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -1961,8 +1966,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 1,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1995,6 +2000,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"comment" : "",
@@ -2150,13 +2156,15 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-54",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 201.5, 206.0, 239.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"embed" : 0
+														"embed" : 0,
+														"precision" : 6
 													}
 ,
 													"text" : "coll #0-maxscore.fluidsynth.instruments"
@@ -2423,8 +2431,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 1,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2457,6 +2465,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"color" : [ 0.6, 0.6, 1.0, 1.0 ],
@@ -2611,13 +2620,15 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-25",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 264.0, 202.0, 239.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"embed" : 0
+														"embed" : 0,
+														"precision" : 6
 													}
 ,
 													"text" : "coll #0-maxscore.fluidsynth.instruments"
@@ -2943,8 +2954,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 1,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2977,6 +2988,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"comment" : "",
@@ -3124,7 +3136,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "stop" ],
 													"patching_rect" : [ 852.25, 13.0, 25.0, 25.0 ]
 												}
 
@@ -3517,7 +3529,8 @@
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 35.25, 258.0, 59.5, 22.0 ],
 													"saved_object_attributes" : 													{
-														"embed" : 1
+														"embed" : 1,
+														"precision" : 6
 													}
 ,
 													"text" : "coll"
@@ -4109,6 +4122,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-23",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
@@ -4454,12 +4468,16 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
-							"parameter_shortname" : "live.text",
 							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "live.text[19]",
-							"parameter_mmax" : 1
+							"parameter_longname" : "live.text[20]",
+							"parameter_mmax" : 1,
+							"parameter_shortname" : "live.text",
+							"parameter_type" : 2
 						}
 
 					}
@@ -4486,12 +4504,16 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 211.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
-							"parameter_shortname" : "live.text",
 							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "live.text[20]",
-							"parameter_mmax" : 1
+							"parameter_longname" : "live.text[21]",
+							"parameter_mmax" : 1,
+							"parameter_shortname" : "live.text",
+							"parameter_type" : 2
 						}
 
 					}
@@ -4510,7 +4532,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 241.0, 76.0, 46.0, 22.0 ],
+					"patching_rect" : [ 241.0, 76.0, 139.0, 22.0 ],
 					"text" : "sel 0 1"
 				}
 
@@ -4601,6 +4623,7 @@
 			}
 , 			{
 				"box" : 				{
+					"autorestore" : "Blackwood - 23 notes FluidSynth Prefs.json",
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-7",
@@ -4610,10 +4633,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 241.0, 186.0, 139.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1057, 45, 1440, 407 ],
+						"client_rect" : [ 202, 45, 1355, 927 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 69, 1034, 197 ]
+						"storage_rect" : [ 1129, 44, 1688, 594 ]
 					}
 ,
 					"text" : "pattrstorage Fluidsynth2",
@@ -4652,7 +4675,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "panic" ],
 					"patching_rect" : [ 20.0, 13.0, 25.0, 25.0 ]
 				}
 
