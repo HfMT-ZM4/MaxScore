@@ -58,6 +58,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 104.000007629394531, 60.0, 28.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in 1"
 				}
 
@@ -116,8 +120,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 245.000007629394531, 104.0, 50.0, 22.0 ],
-					"text" : "+ 11100"
+					"patching_rect" : [ 245.000007629394531, 104.0, 51.0, 22.0 ],
+					"text" : "+ 11099"
 				}
 
 			}
