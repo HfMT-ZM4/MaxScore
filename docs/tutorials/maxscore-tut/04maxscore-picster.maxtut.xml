@@ -2,13 +2,13 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="MaxScore Editor 3: Picster">
-<previous name="02maxscore-01basics">MaxScore: The User Interface</previous>
+<chapter name="MaxScore Editor 4: Picster">
+<previous name="03maxscore-01basics">MaxScore: The User Interface</previous>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 
-<h1>MaxScore Editor 3: Picster</h1>
+<h1>MaxScore Editor 4: Picster</h1>
 
 <p>Picster is a Max patch for the creation of graphical content for the MaxScore and LiveScore editors. It works like a bare-bones paint program and was authored by Jacob Sello and Georg Hajdu with an essential contribution by Ádám Siska (sadam.canvas). It should be opened from the MaxScore Picster menu.</p>
 <illustration><img src="images/PicsterMenu.png"/></illustration>
