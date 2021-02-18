@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="MaxScore Editor 3: Picster">
+<previous name="02maxscore-01basics">MaxScore: The User Interface</previous>
+
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+
+
+<h1>MaxScore Editor 3: Picster</h1>
+
+<p>Picster is a Max patch for the creation of graphical content for the MaxScore and LiveScore editors. It works like a bare-bones paint program and was authored by Jacob Sello and Georg Hajdu with an essential contribution by Ádám Siska (sadam.canvas). It should be opened from the MaxScore Picster menu.</p>
+<illustration><img src="images/PicsterMenu.png"/></illustration>
+<illustration><img src="images/PiscterElements.png"/></illustration>
+
+<h2>Creating graphical elements</h2>
+<p>Click on the new element icon, choose a shape from the shape menu and use the mouse to draw it at the desired location on the canvas.</p>
+
+<p>Available shapes are:</p>
+<ul>
+  <li>linesegment</li>
+  <li>framerect</li>
+  <li>paintrect</li>
+  <li>frameoval</li>
+  <li>paintoval</li>
+  <li>frameroundrect</li>
+  <li>paintroundrect</li>
+  <li>framearc</li>
+  <li>paintarc</li>
+  <li>framepoly*</li>
+  <li>paintpoly*</li>
+  <li>freehand</li>
+   <li>freehand</li>
+  <li>text**</li>
+  <li>freehand</li>
+  <li>picture (bitmap and vector graphics)</li>
+</ul>
+
+<p>* Close the path of a framepoly or paintpoly object with the tab key.</p>
+<p>** Complete your entry with the return key.</p>
+
+<h2>Color</h2>s
+<p>Before creating an element you may want to set its color: click on Color: and choose a color from the color picker.</p>
+<p>Adjust its transparency with the transparency slider.</p>
+
+<h2>Placing images</h2>
+<p>Click inside canvas (creates an image at original size) or click-drag to create a rectangle in which to place the image.</p>
+
+<h2>Editing elements</h2>
+<p>Click on the Move Element button. Every element’s anchor should appear as a small red circle. Click inside one of the circles and move the element to a different position. If you want to move several elements at once, drag-enclose them and move the group by dragging one of the red circles.</p>
+
+<h2>Saving and opening library items</h2>
+
+<p>While Picster elements can be directly attached in the MaxScore editor to notes, staves and measures, it is wise to create library elements that can be used repeatedly after saving them to the Picster User Library folder. For this, click and on the disk icon and either re-name the element or use the name you have previously entered in the group name field. In the MaxScore editor the Library item will be displayed after manually refreshing the content of the menu.</p>
+<p>Groups can also be opened (click on the Folder icon) for further editing in the Picster editor. On the bottom left-hand side, you can choose between three formats, the graphics will be saved in: native Picster (json format), .png and .svg.</p>
+
+<h2>Attaching groups to MaxScore elements</h2>
+
+<p>Once you’re done creating and/or editing your graphics, the group of objects can be attached to a note, a measure/staff or a measure. In the Picster menu of the MaxScore Editor choose the appropriate destination, select the note(s), staves or measure the element is supposed to be attached to and click on the Attach button. Now the element or group of elements should appear in the score.  You can find further information on how to move or edit Picster elements in the MaxScore/LiveScore editors.</p>
+
+<h2>Known issues</h2>
+
+<p>Currently there is no support for cut, copy, paste, send to back and bring to front. All actions are un/redoable though.</p>
+</chapter>
