@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="MaxScore Editor: Preferences View">
+<previous name="02maxscore-01basics">MaxScore: The User Interface</previous>
+<next name="04maxscore-picster"></next>
+
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+
+
+<h1>MaxScore Editor: Preferences View</h1>
+
+<p><i>Shortcut access: shift+3</i></p>
+<illustration><img src="images/Preferences.png"/></illustration>
+
+<p>In MaxScore you can fully customize your score according your needs. In order to do so change default view (Score View) to Preferences View. Here you can enter Score Information such as:</p>
+
+<ul>
+  <li>Title</li>
+  <li>Subtitle</li>
+  <li>Composer</li>
+  <li>Copyright</li>
+</ul>
+
+<p>Adjust parameters as:</p>
+
+<ul>
+  <li>Canvas size</li>
+  <li>Title Margin</li>
+  <li>Left Margin</li>
+  <li>Right Margin</li>
+  <li>Top Margin</li>
+  <li>Bottom Margin*</li>  
+  <li>First System Indent <i> - indentation for the first system</i></li>
+</ul>
+
+
+<p>You can also select elements to <b>show</b> (through toggle/ untoggle):</p>
+<ul>
+  <li>Title</li>
+  <li>Instruments</li>
+  <li>Section Brackets</li>
+  <li>Time Signatures</li>
+  <li>Key signatures</li>
+  <li>Staff Numbers</li>  
+  <li>Measure Numbers</li>
+  <li>Tempo</li>  
+  <li>Clefs</li>
+  <li>Courtesy Clefs</li>  
+</ul>
+
+<p>Another options to customize your score are:</p>
+
+
+<ul>
+  <li><b>Set Wrap</b> <i>- on/off:  1 system per page</i></li>
+  <li><b>Set Measure Number Offset </b> <i>- enter a value for the measure number on the first measure in the score. </i></li>
+  <li>Numbers on All Measures </li>
+  <li>Set Hold Scaler <i> - requires a value</i></li>  
+  <li>Set Durational Spacing Base</li>
+  <li>Use Legacy Multi Track Orientation</li>  
+</ul>
+
+<h2>Personalisation / Colors:</h2>
+<p>You can also set colors for the parameters, such as:</p>
+
+<ul>
+<li>Selection Buffer Note color</li>
+<li>Background Color</li>
+<li>Foreground Color</li>
+<li>Flashing Note Color</li>
+</ul>
+
+<p>Another section will let you personalise Fonts used in a score, such as:</p>
+
+<ul>
+  <li>Text Font</li>
+  <li>Music Font</li>
+</ul>
+
+<p>Also you can set a library for Picster through clocking on “Set”  by “Default Picster Lib Folder” by clicking and seleting the locating it</p>
+
+<h2>Playback</h2>
+<p>You can specify options for the playback regarding your needs:</p>
+
+<ul>
+  <li>Playback in Overdrivet</li>
+  <li>Playback Adbance Time</li>
+  <li>Quantisation - <i>from the first dropping menu select a main duration (whole Note (W), half Note (H) or Quarter Note(Q)). From the number box dropping menu  adjust a number of pulses to qualify.</i></li>
+</ul>
+
+<h2>Proportional Notation </h2>
+
+<p>Select a time Unit (pixels/second). By default it is set to "100". A lowest possible value is "5"). Click outside of the field to activate your choice. </p>
+
+
+<p><i>You can also save your preferences as a preset file by clicking “Save Preference as…” button. If this option is chosen, you can use them next time you create a new score by going to Preferences View (shift+3) and selecting preferred one by clicking on “Open Preferences”</i></p>
+
+</chapter>

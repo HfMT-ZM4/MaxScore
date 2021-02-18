@@ -12,6 +12,8 @@
 <li><link type="tutorial" module="maxscore" name="00maxscore-02download"></link></li>
 <li><link type="tutorial" module="maxscore" name="01maxscore-01basics">MaxScore Editor 1: The User Interface</link></li>
 <li><link type="tutorial" module="maxscore" name="02maxscore-01basics">MaxScore Editor 2: Basics</link></li>
+<li><link type="tutorial" module="maxscore" name="03maxscore-preferencesView">MaxScore Editor: Preferences View</link></li>
+<li><link type="tutorial" module="maxscore" name="04maxscore-picster">MaxScore Editor: Picster</link></li>
 
 
 </ul>
