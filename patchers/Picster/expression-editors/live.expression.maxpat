@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 175.0, 1240.0, 786.0 ],
+		"rect" : [ 34.0, 118.0, 1250.0, 898.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1984,9 +1984,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 4,
-					"outlettype" : [ "live_param", "bang", "bang", "bang" ],
-					"patching_rect" : [ 35.0, 168.0, 104.0, 22.0 ],
-					"text" : "t live_param b b b"
+					"outlettype" : [ "live", "bang", "bang", "bang" ],
+					"patching_rect" : [ 35.0, 168.0, 63.0, 22.0 ],
+					"text" : "t live b b b"
 				}
 
 			}
@@ -2225,7 +2225,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 1 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-3", 0 ]
 				}
 
@@ -2312,7 +2312,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 2 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -2361,9 +2361,9 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-1::obj-19::obj-19" : [ "saved-int", "saved-int", 0 ],
+			"obj-1::obj-19::obj-19" : [ "saved-int[1]", "saved-int", 0 ],
 			"obj-24::obj-16::obj-14" : [ "live-path", "live-path", 0 ],
-			"obj-24::obj-19::obj-19" : [ "saved-int[1]", "saved-int", 0 ],
+			"obj-24::obj-19::obj-19" : [ "saved-int", "saved-int", 0 ],
 			"obj-37" : [ "live.text[7]", "live.text", 0 ],
 			"parameterbanks" : 			{
 
@@ -2416,7 +2416,6 @@
 				"implicit" : 1
 			}
  ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
