@@ -9,7 +9,7 @@
 	"BP MIDI Keyboard" : [ "BP-keyboard", 5, "mM-none", "default" ],
 	"BP Soprano Clarinet" : [ "BP-soprano-clarinet", 5, "mM-none", "TREBLE_CLEF" ],
 	"BP Tenor Clarinet" : [ "BP-tenor-clarinet", 5, "mM-none", "TREBLE_CLEF" ],
-	"BP Contra Clarinet" : [ "BP-contra-clarinet", 5, "mM-none", "TREBLE_CLEF" ]
+	"BP Contra Clarinet" : [ "BP-contra-clarinet", 5, "mM-none", "TREBLE_CLEF" ],
 	"ClefDesigner" : [ "clefdesigner", "editor", "editor", "editor", "editor" ],
 	"Tablature" : [ "tablature", "editor", "mM-none", "TAB-clef" ]
 }

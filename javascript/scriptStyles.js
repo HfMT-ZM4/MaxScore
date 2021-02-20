@@ -59,13 +59,6 @@ newobj[idx].hidden = 1;
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation", 1);
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, prheight);
 
-idx = fnames.indexOf("justintonation.style.maxpat");
-newobj[idx] = this.patcher.newobject("bpatcher", offset_x, offset_y+idx*spacing, width, height, 0, 0, "justintonation.style.maxpat", 0)
-newobj[idx].varname = "justintonation";
-newobj[idx].hidden = 1;
-this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation", 1);
-this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, prheight);
-
 idx = fnames.indexOf("BP-chromatic.style.maxpat");
 newobj[idx] = this.patcher.newobject("bpatcher", offset_x, offset_y+idx*spacing, width, height, 0, 0, "BP-chromatic.style.maxpat", 0)
 newobj[idx].varname = "BP-chromatic";
@@ -93,6 +86,8 @@ newobj[idx].varname = "tablature";
 newobj[idx].hidden = 1;
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation", 1);
 this.patcher.message("script", "sendbox", newobj[idx].varname, "presentation_rect", 0, proffset_y, 260, prheight);
+
+
 
 
 //now the rest

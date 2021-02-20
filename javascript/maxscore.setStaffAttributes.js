@@ -386,7 +386,7 @@ function _style(stl, flag)
 	this.patcher.parentpatcher.parentpatcher.getnamed("chooser").message(1);
         switch (ss[0]) {
             case "tablature":
-                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("in1", "bang");
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("bang");
                 if (tablatureditor.contains(substyle)) {
                     stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
                 }
@@ -402,7 +402,7 @@ function _style(stl, flag)
                 }
                 break;
             case "percussion":
-                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("in1","bang");
+                stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("bang");
                 if (isAlias(stl)) {
                     stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("umenu").message("setsymbol", substyle);
                 }
