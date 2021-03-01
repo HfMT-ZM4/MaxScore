@@ -436,6 +436,10 @@ function obj_ref(o)
 			"new" : "g",
 			"id" : "quintetnet"
 			});
+		val.push({
+			"id" : "svg",
+			"style" : { "background" : "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")" } 
+			});
 		joutput[s] = [clear, {"key" : "svg", "val" : val}];
 	}
 	output.parse(JSON.stringify(joutput));
