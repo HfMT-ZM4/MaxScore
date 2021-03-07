@@ -142,6 +142,7 @@ var noteProperty = [];
 var repeatedAccidentals = {};
 var pageNumber = "";
 var oldMeasureStaff = "";
+var url = "";
 var filterRepeatedAccidentalsFlag = 1;
 var accList = ["natural", "sharp", "flat", "natural", "doubleflat", "doublesharp", "quartertoneflat", "threequartertoneflat", "quartertonesharp", "threequartertonesharp", "no_accidental"];
 var clefDesigner = new Dict();
@@ -1533,6 +1534,7 @@ function anything() {
 			}
             break;
         case "RenderMessage":
+			//post("picster-1", "\n");					
 			format = "sadam.canvas";
 			switch (msg[0]){
 				/*
@@ -1597,7 +1599,6 @@ function anything() {
 					if (dest != -1)
 					{
 					for (var d = 0; d < dest.length; d++) {
-					//post("picster-1", picster.stringify(), "\n");					
 					renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
 					//if (svggroupflag == true) SVGGraphics[s + 1].push("</g>");
 								}
@@ -2382,7 +2383,8 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
 			//var onclick = "";
-			transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
+			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
+			else transform = (1, 0, 0, 1, 0, 0);
 			if (svggroupflag == false) svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
 			switch (picster.get("new")) {
 				case "g" :
@@ -2406,37 +2408,52 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					}
 				SVGGraphics[s + 1].push("</g>");
 				break;
+				case "marker" :
+				SVGGraphics[s + 1].push("<marker id=\"" + picster.get("id") + "\" markerWidth=\"" + picster.get("markerWidth") + "\" markerHeight=\"" + picster.get("markerHeight") + "\" refX=\"" + picster.get("refX") + "\" refY=\"" + picster.get("refY") + "\" markerUnits=\"" + picster.get("markerUnits") + "\" >");
+				var group = {};
+				var tempDict = new Dict();
+				url = picster.get("id");
+				//post("url", url, "\n");
+				var child = JSON.parse(picster.stringify()).child;
+				if (child.hasOwnProperty("style")) {
+				svgstroke = (child.style.stroke == "$FRGB") ? frgb : child.style.stroke;
+				svgstrokeopacity = child.style["stroke-opacity"];
+				svgfill = (child.style.fill == "$FRGB") ? frgb : child.style.fill;
+				svgfillopacity = child.style["fill-opacity"];
+				}
+				tempDict.clear();
+				tempDict.parse(JSON.stringify(child));
+				renderDrawSocket(s, _dest, RenderMessageOffset, tempDict);
+				SVGGraphics[s + 1].push("</marker>");
+				break;
 				case "line" :
-				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
 				SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "rect" :
 				var roundedness = (picster.contains("rx")) ? picster.get("rx") : 0;
-				//post("svgtransform-3", svgtransform, "\n");
-				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
 				SVGGraphics[s + 1].push("<rect id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" rx=\"" + roundedness + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "ellipse" :
-				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
 				SVGGraphics[s + 1].push("<ellipse id=\"" + picster.get("id") + "\" cx=\"" + picster.get("cx") + "\" cy=\"" + picster.get("cy") + "\" rx=\"" + picster.get("rx") + "\" ry=\"" + picster.get("ry") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				//post("ellipse", SVGGraphics[s + 1], "\n");
 				break;
 				case "polyline" :
-				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
 				SVGGraphics[s + 1].push("<polyline id=\"" + picster.get("id") + "\" points=\"" + picster.get("points") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "path" :
-				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
-				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
+				var marker = "";
+				if (picster.contains("marker-start")) marker += "marker-start=\"url(#" + url + ")\" ";
+				if (picster.contains("marker-mid")) marker += "marker-mid=\"url(#" + url + ")\" ";
+				if (picster.contains("marker-end")) marker += "marker-end=\"url(#" + url + ")\"";
+				//post("url", url, "\n");
+				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + marker + " transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "text" :
 				if (!(picster.contains("text-anchor"))) picster.replace("text-anchor", "start");
- 				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
  				SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-anchor=\"" + picster.get("text-anchor") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + ">" + picster.get("child") + "</text>");
 				break;
 				case "image" :
 				var imgtype = (picster.get("href").substr(picster.get("href").lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
-				//svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest];
  				SVGImages[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), svgtransform]);
 				SVGImages2[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), svgtransform]);
 				break;	
