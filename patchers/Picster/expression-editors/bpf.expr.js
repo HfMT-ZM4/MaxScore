@@ -39,7 +39,7 @@ var shape = {
 				"visibility" : "visible",
 				"child" : [ 					{
 						"new" : "rect",
-						"id" : "Picster-Element_1607700228143",
+						"id" : "box_1607700228143",
 						"x" : 0,
 						"y" : 0,
 						"width" : width,
@@ -56,7 +56,7 @@ var shape = {
 					}
 , 					{
 				"new" : "path",
-				"id" : "Picster-Element_1607767365034",
+				"id" : "functions_1607767365034",
 				"d" : "",
 				"marker-start" : "url(#Circle)",
 				"marker-mid" : "url(#Circle)",
@@ -65,6 +65,20 @@ var shape = {
 					"stroke" : "$FRGB",
 					"stroke-opacity" : 1,
 					"stroke-width" :  2,
+					"fill" : "none",
+					"fill-opacity" : 1
+				}
+,
+				"transform" : "matrix(1,0,0,1,0,0)"
+			}
+, 			{
+				"new" : "path",
+				"id" : "grid_1607767365034",
+				"d" : "",
+				"style" : 				{
+					"stroke" : "$FRGB",
+					"stroke-opacity" : 0.5,
+					"stroke-width" :  0.25,
 					"fill" : "none",
 					"fill-opacity" : 1
 				}
@@ -157,10 +171,13 @@ function anything()
 						}
 						}
 	shape["picster-element"][0]["val"][1]["id"] = "Picster-Element_" + parseInt(date.getTime());
-	shape["picster-element"][0]["val"][1]["child"][0]["id"] = "Picster-Element_" + parseInt(date.getTime()) + 1;
-	shape["picster-element"][0]["val"][1]["child"][1]["id"] = "Picster-Element_" + parseInt(date.getTime()) + 2;
+	shape["picster-element"][0]["val"][1]["child"][0]["id"] = "box_" + parseInt(date.getTime());
+	shape["picster-element"][0]["val"][1]["child"][1]["id"] = "functions_" + parseInt(date.getTime());
 	shape["picster-element"][0]["val"][1]["child"][1]["d"] = bpf;
 	shape["picster-element"][0]["val"][1]["child"][1]["transform"] = "matrix(" + 100 / dims[0] + ", 0, 0, " + -height/dims[2] + ", 0, " + yoffset + ")";
+	shape["picster-element"][0]["val"][1]["child"][2]["id"] = "grid_" + parseInt(date.getTime());
+	shape["picster-element"][0]["val"][1]["child"][2]["d"] = "M10,0 V" + height + " M20,0 V" + height + " M30,0 V" + height + " M40,0 V" + height + " M50,0 V" + height + " M60,0 V" + height + " M70,0 V" + height + " M80,0 V" + height + " M90,0 V" + height + ", M0,10 H" + width + " M0,20 H" + width + " M0,30 H" + width + " M0,40 H" + width + " M0,50 H" + width;
+	shape["picster-element"][0]["val"][1]["child"][2]["transform"] = "matrix(1, 0, 0, 1, 0, " + (yoffset - height) + ")";
 	//post("arguments", JSON.stringify(arguments), "\n");
 	shape["picster-element"][2]["val"][0]["message"] = messagename;
 	shape["picster-element"][2]["val"][0]["value"] = _curve;
