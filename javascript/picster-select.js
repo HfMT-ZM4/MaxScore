@@ -53,6 +53,7 @@ var stroke = 0;
 var shapes = ["0: polycurve", "1: line", "2: rect", "3: orect", "4: oval", "5: arc", "6: poly", "7: fhand", "8: text", "9: img"];
 var preference = "staff";
 var property = "stroke";
+var dasharray = 0;
 var color = [0, 0, 0, 1];
 var pensize = 2.;
 var arc = [0, 3.14];
@@ -76,6 +77,7 @@ var _picster = {};
 var format = "";
 var svggroupflag = false;
 var measurerange = [-1, -1, -1, -1];
+var time2pixels = 10;
 
 removeTextedit();
 
@@ -1097,6 +1099,7 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
 				_picster["picster-element"][0] = {};
@@ -1123,6 +1126,7 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
 				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["fill-opacity"] = color[3];
@@ -1158,6 +1162,7 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
 				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["fill-opacity"] = color[3];
@@ -1190,6 +1195,7 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
 				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["fill-opacity"] = color[3];
@@ -1218,6 +1224,7 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
 				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["fill-opacity"] = color[3];
@@ -1250,6 +1257,7 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
 				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["fill-opacity"] = color[3];
@@ -1281,6 +1289,7 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
 				_picster["picster-element"][0] = {};
@@ -1312,6 +1321,7 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
 				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["fill-opacity"] = color[3];
@@ -1426,6 +1436,7 @@ function addShape()
 				attr.style["stroke"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
 				attr.style["fill"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["fill-opacity"] = color[3];
@@ -1726,6 +1737,9 @@ function anything()
 			}
 		}
 		break;
+	case "stroke-dasharray" :
+	dasharray = [].concat(msg);
+		break;
 	case "color" :
 	color = msg;
 		break;
@@ -1904,11 +1918,11 @@ function anything()
 						case "line" :
 							var line = JSON.parse(edit.get("picster-element[0]::val").stringify());
 							var totalDistance = Math.sqrt(Math.pow(line.x2 - line.x1, 2) + Math.pow(line.y2 - line.y1, 2));
-							trajectory.push("data", 0, 10, totalDistance, 0, 800);
-							trajectory.push(0, line.x1, 0, totalDistance, line.x2, 0);
+							trajectory.push("data", 0, 10, totalDistance * time2pixels, 0, 800);
+							trajectory.push(0, line.x1, 0, totalDistance * time2pixels, line.x2, 0);
 							trajectory.push("linear");
-							trajectory.push("data", 1, 10, totalDistance, 0, 800);
-							trajectory.push(0, line.y1, 0, totalDistance, line.y2, 0);
+							trajectory.push("data", 1, 10, totalDistance * time2pixels, 0, 800);
+							trajectory.push(0, line.y1, 0, totalDistance * time2pixels, line.y2, 0);
 							trajectory.push("linear");
 							expr.replace("editor", "bpf");
 							expr.replace("message", edit.get("picster-element[0]::val::id"));
@@ -1919,14 +1933,14 @@ function anything()
 							var _rect = JSON.parse(edit.get("picster-element[0]::val").stringify());
 							//post("rect", JSON.stringify(_rect), "\n");
     						var totalDistance = (_rect.width) * 2 + (_rect.height) * 2;
-							trajectory_x = [[0, _rect.x, 0, 0], [_rect.width, _rect.x + _rect.width, 0, 0], [_rect.width + _rect.height, _rect.x + _rect.width, 0, 0], [_rect.width * 2 + _rect.height, _rect.x, 0, 0], [totalDistance, _rect.x, 0, 0]];
-							trajectory.push("data", 0, 24, totalDistance, 0, 800);
+							trajectory_x = [[0, _rect.x * time2pixels, 0, 0], [_rect.width, (_rect.x + _rect.width) * time2pixels, 0, 0], [_rect.width + _rect.height, (_rect.x + _rect.width) * time2pixels, 0, 0], [_rect.width * 2 + _rect.height, _rect.x * time2pixels, 0, 0], [totalDistance, _rect.x * time2pixels, 0, 0]];
+							trajectory.push("data", 0, 24, totalDistance  * time2pixels, 0, 800);
 							for (var i = 0; i < 5; i++) {
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_x[i][j]);
 								}
 							trajectory.push("curve");
-							trajectory_y = [[0, _rect.y, 0, 0], [_rect.width, _rect.y, 0, 0], [_rect.width + _rect.height, _rect.y + _rect.height, 0, 0], [_rect.width * 2 + _rect.height, _rect.y + _rect.height, 0, 0], [totalDistance, _rect.y, 0, 0]];
-							trajectory.push("data", 1, 24, totalDistance, 0, 800);
+							trajectory_y = [[0, _rect.y * time2pixels, 0, 0], [_rect.width, _rect.y * time2pixels, 0, 0], [_rect.width + _rect.height, (_rect.y + _rect.height) * time2pixels, 0, 0], [_rect.width * 2 + _rect.height, (_rect.y + _rect.height) * time2pixels, 0, 0], [totalDistance, _rect.y * time2pixels, 0, 0]];
+							trajectory.push("data", 1, 24, totalDistance * time2pixels, 0, 800);
 							for (var i = 0; i < 5; i++) {
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
 								}
@@ -1939,15 +1953,15 @@ function anything()
 						case "ellipse" :
 							var ellipse = JSON.parse(edit.get("picster-element[0]::val").stringify());
 							var h = Math.pow((ellipse.rx-ellipse.ry), 2) / Math.pow((ellipse.rx+ellipse.ry), 2);
-    						var totalDistance = (Math.PI * ( ellipse.rx + ellipse.ry )) * (1 + ( (3 * h) / ( 10 + Math.sqrt( 4 - (3 * h) )) ));
-							trajectory_x = [[0, ellipse.cx - ellipse.rx, 0, 0], [totalDistance/4, ellipse.cx, 0, 0.5], [totalDistance/2, ellipse.cx + ellipse.rx, 0, -0.5], [totalDistance*3/4, ellipse.cx, 0, 0.5], [totalDistance, ellipse.cx - ellipse.rx, 0, -0.5]];
-							trajectory.push("data", 0, 24, totalDistance, 0, 800);
+    						var totalDistance = (Math.PI * ( ellipse.rx + ellipse.ry )) * (1 + ( (3 * h) / ( 10 + Math.sqrt( 4 - (3 * h)))));
+							trajectory_x = [[0, (ellipse.cx - ellipse.rx) * time2pixels, 0, 0], [totalDistance/4, ellipse.cx * time2pixels, 0, 0.5], [totalDistance/2, (ellipse.cx + ellipse.rx) * time2pixels, 0, -0.5], [totalDistance*3/4, ellipse.cx * time2pixels, 0, 0.5], [totalDistance, (ellipse.cx - ellipse.rx) * time2pixels, 0, -0.5]];
+							trajectory.push("data", 0, 24, totalDistance * time2pixels, 0, 800);
 							for (var i = 0; i < 5; i++) {
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_x[i][j]);
 								}
 							trajectory.push("curve");
-							trajectory_y = [[0, ellipse.cy, 0, 0], [totalDistance/4, ellipse.cy - ellipse.ry, 0, -0.5], [totalDistance/2, ellipse.cy, 0, 0.5], [totalDistance*3/4, ellipse.cy + ellipse.ry, 0, -0.5], [totalDistance, ellipse.cy, 0, 0.5]];
-							trajectory.push("data", 1, 24, totalDistance, 0, 800);
+							trajectory_y = [[0, ellipse.cy * time2pixels, 0, 0], [totalDistance/4, (ellipse.cy - ellipse.ry) * time2pixels, 0, -0.5], [totalDistance/2, ellipse.cy * time2pixels, 0, 0.5], [totalDistance*3/4, (ellipse.cy + ellipse.ry) * time2pixels, 0, -0.5], [totalDistance, ellipse.cy * time2pixels, 0, 0.5]];
+							trajectory.push("data", 1, 24, totalDistance * time2pixels, 0, 800);
 							for (var i = 0; i < 5; i++) {
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
 								}
@@ -1962,18 +1976,18 @@ function anything()
 							var points = edit.get("picster-element[0]::val::points").split(" ");
 							for (var i = 0; i < points.length - 1; i++) {
 							distances[i + 1] = Math.sqrt(Math.pow(Number(points[i + 1].split(",")[0]) - Number(points[i].split(",")[0]), 2) + Math.pow(Number(points[i + 1].split(",")[1]) - Number(points[i].split(",")[1]), 2));
-							trajectory_x[i] = [totalDistance, Number(points[i].split(",")[0]), 0];
-							trajectory_y[i] = [totalDistance, Number(points[i].split(",")[1]), 0];
+							trajectory_x[i] = [totalDistance, Number(points[i].split(",")[0]) * time2pixels, 0];
+							trajectory_y[i] = [totalDistance, Number(points[i].split(",")[1]) * time2pixels, 0];
 							totalDistance += distances[i + 1];
 							}
-							trajectory_x[i] = [totalDistance, Number(points[points.length - 1].split(",")[0]), 0];
-							trajectory_y[i] = [totalDistance, Number(points[points.length - 1].split(",")[1]), 0];
-							trajectory.push("data", 0, trajectory_x.length * 3 + 4, totalDistance, 0, 800);
+							trajectory_x[i] = [totalDistance, Number(points[points.length - 1].split(",")[0]) * time2pixels, 0];
+							trajectory_y[i] = [totalDistance, Number(points[points.length - 1].split(",")[1]) * time2pixels, 0];
+							trajectory.push("data", 0, trajectory_x.length * 3 + 4, totalDistance * time2pixels, 0, 800);
 							for (var i = 0; i < trajectory_x.length; i++) {
 								for (var j = 0; j < 3; j++) trajectory.push(trajectory_x[i][j]);
 							}
 							trajectory.push("linear");
-							trajectory.push("data", 1, trajectory_x.length * 3 + 4, totalDistance, 0, 800);
+							trajectory.push("data", 1, trajectory_x.length * 3 + 4, totalDistance * time2pixels, 0, 800);
 							for (var i = 0; i < trajectory_y.length; i++) {
 								for (var j = 0; j < 3; j++) trajectory.push(trajectory_y[i][j]);
 								}

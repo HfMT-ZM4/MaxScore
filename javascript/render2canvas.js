@@ -62,6 +62,7 @@ post(cent2ratio.get(622), "\n");
 var lookupTables = ["cent2ratio-8", "cent2ratio-14", "cent2ratio-20", "cent2ratio-odd10", "cent2ratio-odd22"];
 var textFont = "Arial";
 var musicFont = "Bravura";
+var titleFont = "Times New Roman";
 var textFontSize = "12.";
 var mgraphics = new JitterObject("jit.mgraphics", 320, 240);
 var setStaffGroup = [];
@@ -699,6 +700,14 @@ function musicfont(mf)
 {
 	musicFont = mf;
 	annotation.set("musicFont", musicFont);
+	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setRenderAllowed", 1);
+}
+
+function titlefont(tf)
+{
+	titleFont = tf;
+	annotation.set("titleFont", titleFont);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "setRenderAllowed", 1);
 }
@@ -1516,21 +1525,21 @@ function anything() {
 			var x = (scoreLayout[4] - text_measure("Times New Roman", 26, msg[3])[0]) / 2;
 			for (var s = 0; s < groupcount; s++)
 			{
-			writeAt(s, "Times New Roman", 26, x, msg[2] + 15, msg[3]);
+			writeAt(s, titleFont, 26, x, msg[2] + 15, msg[3]);
 			}
             break;
         case "printScoreSubtitle":
 			var x = (scoreLayout[4] - text_measure("Times New Roman", 12, msg[3])[0]) / 2;
 			for (var s = 0; s < groupcount; s++)
  			{
-			writeAt(s, "Times New Roman", 12, x, msg[2] + 15, msg[3]);
+			writeAt(s, titleFont, 12, x, msg[2] + 15, msg[3]);
 			}
            break;
         case "printComposer":
 			var x = scoreLayout[4] - text_measure("Times New Roman", 12, msg[3])[0] - 30;
 			for (var s = 0; s < groupcount; s++)
 			{
-			writeAt(s, "Times New Roman", 12, x, msg[2] + 15, msg[3]);
+			writeAt(s, titleFont, 12, x, msg[2] + 15, msg[3]);
 			}
             break;
         case "RenderMessage":
@@ -2382,6 +2391,7 @@ function anything() {
 function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
+			var dasharray = (picster.contains("style::stroke-dasharray") && picster.get("style::stroke-dasharray")[0] != 0) ? " stroke-dasharray=\"" + picster.get("style::stroke-dasharray") + "\" " : " ";
 			//var onclick = "";
 			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
 			else transform = (1, 0, 0, 1, 0, 0);
@@ -2427,18 +2437,18 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				SVGGraphics[s + 1].push("</marker>");
 				break;
 				case "line" :
-				SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
+				SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "rect" :
 				var roundedness = (picster.contains("rx")) ? picster.get("rx") : 0;
-				SVGGraphics[s + 1].push("<rect id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" rx=\"" + roundedness + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
+				SVGGraphics[s + 1].push("<rect id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" rx=\"" + roundedness + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "ellipse" :
-				SVGGraphics[s + 1].push("<ellipse id=\"" + picster.get("id") + "\" cx=\"" + picster.get("cx") + "\" cy=\"" + picster.get("cy") + "\" rx=\"" + picster.get("rx") + "\" ry=\"" + picster.get("ry") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
+				SVGGraphics[s + 1].push("<ellipse id=\"" + picster.get("id") + "\" cx=\"" + picster.get("cx") + "\" cy=\"" + picster.get("cy") + "\" rx=\"" + picster.get("rx") + "\" ry=\"" + picster.get("ry") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				//post("ellipse", SVGGraphics[s + 1], "\n");
 				break;
 				case "polyline" :
-				SVGGraphics[s + 1].push("<polyline id=\"" + picster.get("id") + "\" points=\"" + picster.get("points") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
+				SVGGraphics[s + 1].push("<polyline id=\"" + picster.get("id") + "\" points=\"" + picster.get("points") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "path" :
 				var marker = "";
@@ -2446,7 +2456,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				if (picster.contains("marker-mid")) marker += "marker-mid=\"url(#" + url + ")\" ";
 				if (picster.contains("marker-end")) marker += "marker-end=\"url(#" + url + ")\"";
 				//post("url", url, "\n");
-				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + marker + " transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
+				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + marker + " transform=\"matrix(" + svgtransform + ")\"" + onclick + "/>");
 				break;
 				case "text" :
 				if (!(picster.contains("text-anchor"))) picster.replace("text-anchor", "start");
