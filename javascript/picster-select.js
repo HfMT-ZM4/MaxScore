@@ -50,7 +50,7 @@ var firstClick = [0, 0];
 var lcd;
 var blocked = 0;
 var stroke = 0;
-var shapes = ["0: polycurve", "1: line", "2: rect", "3: orect", "4: oval", "5: arc", "6: poly", "7: fhand", "8: text", "9: img"];
+var shapes = ["0: polycurve", "1: line", "2: rect", "3: orect", "4: oval", "5: arc", "6: poly", "7: fhand", "8: text", "9: img", "b: bracket", "h: hairpin"];
 var preference = "staff";
 var property = "stroke";
 var dasharray = 0;
@@ -446,6 +446,28 @@ function mouseDragged(x, y)
 				outlet(2, "identity_matrix");
 			}
 			break;
+			case 10 :
+				outlet(2, "scale", zoom/0.5, zoom/0.5);
+				outlet(2, "set_line_width", pensize);
+				outlet(2, "set_source_rgba", color);
+				outlet(2, "move_to", origin);
+				outlet(2, "line_to", origin[0], y);
+				outlet(2, "line_to", x, y);
+				outlet(2, "line_to", x, origin[1]);
+				outlet(2, "stroke");
+				outlet(2, "identity_matrix");
+			break;
+			case 11 :
+				outlet(2, "scale", zoom/0.5, zoom/0.5);
+				outlet(2, "set_line_width", pensize);
+				outlet(2, "set_source_rgba", color);
+				outlet(2, "move_to", origin[0], origin[1] + (y - origin[1]) / 2);
+				outlet(2, "line_to", x, origin[1]);
+				outlet(2, "move_to", origin[0], origin[1] + (y - origin[1]) / 2);
+				outlet(2, "line_to", x, y);
+				outlet(2, "stroke");
+				outlet(2, "identity_matrix");
+			break;
 			}
 		}
 	}
@@ -579,32 +601,32 @@ if (mode == "picster") {
 		var x1, x2, y1, y2;
 		var num = cnt();
 		switch (shape){
-			case 1:
+			case 1 :
 				if (dragged) {
 				addShape(origin[0], origin[1], "line", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
-			case 2:
+			case 2 :
 				if (dragged) {
 				addShape(origin[0], origin[1], "rectangle", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
-			case 3:
+			case 3 :
 				if (dragged) {
 				addShape(origin[0], origin[1], "rounded_rectangle", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
-			case 4:
+			case 4 :
 				if (dragged) {
 				addShape(origin[0], origin[1], "oval", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
-			case 5:
+			case 5 :
 				if (dragged) {
 				addShape(origin[0], origin[1], "arc", 0, 0, x - origin[0], y - origin[1]);
 				}
 				break;
-			case 6:
+			case 6 :
 				var temp = [];
 				if (click == "single") {
 				blocked = 1;
@@ -621,7 +643,7 @@ if (mode == "picster") {
 				blocked = 0;
 				}
 				break;
-			case 7:
+			case 7 :
 				if (dragged) {
 				var temp = [];
 				for (var i = 0; i < polyclicks.length; i++) temp[i] = [polyclicks[i][0] - origin[0], polyclicks[i][1] - origin[1]];
@@ -630,16 +652,16 @@ if (mode == "picster") {
 				stroke = 0;
 				}
 				break;
-			case 8:
+			case 8 :
 				var text = textedit.getvalueof();
 				if (JSON.stringify(text).length == 4) return;
 				storedText = htmlEntities(text);
 				addShape(origin[0], origin[1], "text", text);
 				break;
-			case 9:
+			case 9 :
 				this.patcher.getnamed("opendialog").message("bang");
 				break;
-			case 0:
+			case 0 :
 				var temp = [];
 				if (!pathDone) {
 					currentSegment(x, y, true);
@@ -657,10 +679,20 @@ if (mode == "picster") {
 				}
 		      	origin = [];
 				}
-				break;
+			break;
+			case 10 :
+				if (dragged) {
+				addShape(origin[0], origin[1], "bracket", 0, 0, x - origin[0], y - origin[1]);
 				}
+				break;
+			case 11 :
+				if (dragged) {
+				addShape(origin[0], origin[1], "hairpin", 0, 0, x - origin[0], y - origin[1]);
+				}
+				break;
 			}
 		}
+	}
 	else outlet(2, "bounds", "blink");
 	}
 }
@@ -1107,7 +1139,7 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				post("BOUNDS", [msg[3], msg[4], msg[5], msg[6]], "\n");
+				//post("BOUNDS", [msg[3], msg[4], msg[5], msg[6]], "\n");
 				_picster["picster-element"][1].val = {"bounds" : [ coords[0] - 2, coords[1] - 2 , coords[2] + 2, coords[3] + 2 ]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
@@ -1148,7 +1180,7 @@ function addShape()
 				break;
 			case "rounded_rectangle":
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
-				post("coords", coords, msg.slice(3), "\n");
+				//post("coords", coords, msg.slice(3), "\n");
 				var attr = {};
 				attr.new = "rect";
 				attr.id = "Picster-Element_" + num;
@@ -1342,7 +1374,7 @@ function addShape()
 				outlet(3, "bang");
 			break;
 			case "text":
-				post("offsets", offsets[0], "\n");
+				//post("offsets", offsets[0], "\n");
 				var text = htmlEntities(msg[3]);
 				var attr = {};
 				attr.new = "text";
@@ -1457,7 +1489,68 @@ function addShape()
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 			break;
-
+			case "bracket" :
+				//addShape(origin[0], origin[1], "bracket", 0, 0, x - origin[0], y - origin[1]);
+				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
+				var attr = {};
+				attr.new = "path";
+				attr.id = "Picster-Element_" + num;
+				attr.d = "M" + [msg[3],msg[4]] + " V" + msg[6] + " H" + msg[5] + " V" + msg[4];
+				attr.style = {};
+				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke-opacity"] = color[3];
+				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
+				if (property == "fill") {
+				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill-opacity"] = color[3];
+				}
+				else {
+				attr.style["fill"] = "none";
+				attr.style["fill-opacity"] = 1.;
+				}
+				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				_picster["picster-element"] = [];
+				_picster["picster-element"][0] = {};
+				_picster["picster-element"][0]["key"] = "svg";
+				_picster["picster-element"][0]["val"] = attr;
+				_picster["picster-element"][1] = {};
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : coords};
+				edit.parse(JSON.stringify(_picster));
+				outlet(3, "bang");
+			break;
+			case "hairpin" :
+				//addShape(origin[0], origin[1], "bracket", 0, 0, x - origin[0], y - origin[1]);
+				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
+				var attr = {};
+				attr.new = "path";
+				attr.id = "Picster-Element_" + num;
+				attr.d = "M" + [msg[3],msg[4] + (msg[6] - msg[4])/2] + " L" + [msg[5], msg[6]] + "M" + [msg[3],msg[4] + (msg[6] - msg[4])/2] + " L" + [msg[5], msg[4]];
+				attr.style = {};
+				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke-opacity"] = color[3];
+				attr.style["stroke-width"] = pensize;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
+				if (property == "fill") {
+				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill-opacity"] = color[3];
+				}
+				else {
+				attr.style["fill"] = "none";
+				attr.style["fill-opacity"] = 1.;
+				}
+				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				_picster["picster-element"] = [];
+				_picster["picster-element"][0] = {};
+				_picster["picster-element"][0]["key"] = "svg";
+				_picster["picster-element"][0]["val"] = attr;
+				_picster["picster-element"][1] = {};
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : coords};
+				edit.parse(JSON.stringify(_picster));
+				outlet(3, "bang");
+			break;
 			}
 }
 
@@ -2051,6 +2144,8 @@ function anything()
 			break;
 			default :
 			if (Number(msg) >= 48 && (Number(msg)) <= 57) shape = (Number(msg)) - 48;
+			else if (msg == 66) shape = 10;
+			else if (msg == 72) shape = 11;
 			//lcd = this.patcher.getnamed("pane");
 			outlet(2, "picsterShape", shapes[shape]);
 				switch (shape) {
