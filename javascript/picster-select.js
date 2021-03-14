@@ -1142,7 +1142,7 @@ function addShape()
 				attr.id = "Picster-Element_" + num;
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				attr.child = [];
-				for (var i = 0; i < Math.floor(Math.sqrt(Math.pow(msg[5] - msg[3], 2) + Math.pow(msg[6] - msg[4], 2)) / 8); i++){
+				for (var i = 0; i < Math.floor(Math.sqrt(Math.pow(msg[5] - msg[3], 2) + Math.pow(msg[6] - msg[4], 2)) / 8.5); i++){
 				attr.child[i] = {};
 				attr.child[i].new = "path";	
 				attr.child[i].id = "wave" + i;
@@ -1162,7 +1162,6 @@ function addShape()
 				else attr.child[i].transform = "translate(" + (sign_x * i * a + Math.sin(rotation/360*Math.PI*2) * 10) + ", " + (sign_y * (i * b) - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)";
 				//post("ROT", rotation, Math.sin(rotation/360*Math.PI*2) * 10, "\n");
 				//attr.child[i].transform = "matrix(0.03, 0, 0, 0.05, " + (i * 8 - 1) + ", -11)";
-				margin = 4;
 					}
 				}
 				_picster["picster-element"] = [];	
@@ -1171,7 +1170,8 @@ function addShape()
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [ coords[0] - margin, coords[1] - margin , coords[2] + margin, coords[3] + margin ]};
+				if (dasharray[0] == -1) _picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
+				else _picster["picster-element"][1].val = {"bounds" : [ coords[0] - margin, coords[1] - margin , coords[2] + margin, coords[3] + margin ]};
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 				break;
