@@ -2,13 +2,13 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="MaxScore Editor: Picster">
+<chapter name="Picster">
 <previous name="03maxscore-preferencesView">MaxScore: Preferences View</previous>
-
+<next name="05maxscore-scorepions">Scorepions</next>
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 
-<h1>MaxScore Editor: Picster</h1>
+<h1>Picster</h1>
 
 <p>Picster is an extension of the bcanvas abstraction allowing people to draw directly to the canvas without having to resort to the external Picster patch.</p>
 

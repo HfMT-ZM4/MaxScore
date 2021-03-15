@@ -6,14 +6,18 @@
 
 <h1>MaxScore Tutorials - Table of Contents</h1>
 
-
+<h2>Basics</h2>
 <ul>
 <li><link type="tutorial" module="maxscore" name="00maxscore-01welcome"></link></li>
 <li><link type="tutorial" module="maxscore" name="00maxscore-02download"></link></li>
-<li><link type="tutorial" module="maxscore" name="01maxscore-01basics">MaxScore Editor 1: The User Interface</link></li>
-<li><link type="tutorial" module="maxscore" name="02maxscore-01basics">MaxScore Editor 2: Basics</link></li>
+<li><link type="tutorial" module="maxscore" name="01maxscore-01basics">MaxScore Editor: The User Interface</link></li>
+<li><link type="tutorial" module="maxscore" name="02maxscore-01basics">MaxScore Editor: Basics</link></li>
 <li><link type="tutorial" module="maxscore" name="03maxscore-preferencesView">MaxScore Editor: Preferences View</link></li>
-<li><link type="tutorial" module="maxscore" name="04maxscore-picster">MaxScore Editor: Picster</link></li>
+<li><link type="tutorial" module="maxscore" name="03maxscore-pitchTool">MaxScore Editor: Pitch Tool</link></li>
+<li><link type="tutorial" module="maxscore" name="04maxscore-picster">Picster</link></li>
+<li><link type="tutorial" module="maxscore" name="05maxscore-scorepions">Scorepions</link></li>
+<li><link type="tutorial" module="maxscore" name="06maxscore-macaque">Macaque</link></li>
+<li><link type="tutorial" module="maxscore" name="07maxscore-microtones">Microtones</link></li>
 
 
 </ul>
