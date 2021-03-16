@@ -232,7 +232,7 @@ function bang() {
   }
 
   //draw box
-  var background = JSON.parse('{"new":"rect","x":0,"y":0,"width":120,"height":90,"style":{"fill":"'+colorPalette.background+'","fill-opacity":0.8,"stroke":"'+colorPalette.border[onoff]+'","stroke-width":1,"stroke-opacity":1,"fill":"none","fill-opacity":0},"transform":"'+transformMatrix+'"}');
+  var background = JSON.parse('{"new":"rect","x":0,"y":0,"width":120,"height":90,"style":{"fill":"'+colorPalette.background+'","fill-opacity":0.8,"stroke":"'+colorPalette.border[onoff]+'","stroke-width":1,"stroke-opacity":1},"transform":"'+transformMatrix+'"}');
   background.id = groupId+"_background";
   outputPicster["picster-element"][0]["val"]["child"].push(background);
 
@@ -266,14 +266,14 @@ function bang() {
           text.child = text_array[djsterAttributes.meter[j]];
         }
         else {
-          text["font-size"] = 17;
+          text["font-size"] = 17*currentSize;
           var ones = djsterAttributes.meter[j]%10;
           var tens = (djsterAttributes.meter[j]-ones)/10;
           text.child = text_array[tens]+text_array[ones];
         }
       }
       else if (typeof(djsterAttributes.meter[j]) == "string") {
-        text["font-size"] = 20-2*djsterAttributes.meter[j].length;
+        text["font-size"] = (20-2*djsterAttributes.meter[j].length)*currentSize;
         var temp = djsterAttributes.meter[j];
         for (var k = 0; k < 10; k++) {
           var re = new RegExp(k, 'g');
@@ -444,9 +444,9 @@ function bang() {
     text.id = groupId+"_eventfulness_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
   }
-
+  
   if ("harmoniclarity" in djsterAttributes) {
-    var fillbarlength = Math.round(djsterAttributes.eventfulness / 100 * 53);
+    var fillbarlength = Math.round(djsterAttributes.harmoniclarity / 100 * 53);
     var fillbarystart = 70-fillbarlength;
     var fillbar = JSON.parse('{"new":"rect","x":5,"y":'+fillbarystart+',"width":10,"height":'+fillbarlength+',"style":{"fill":"'+colorPalette.pitch.light[onoff]+'","fill-opacity":1,"stroke":"none","stroke-opacity":0,"stroke-width":0},"transform":"'+transformMatrix+'"}');
     fillbar.id = groupId+"_harmoniclarity_fillbar";
@@ -460,6 +460,7 @@ function bang() {
     text.id = groupId+"_harmoniclarity_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
   }
+  
 
   if ("metriclarity" in djsterAttributes) {
     var fillbarlength = Math.round(djsterAttributes.metriclarity / 100 * 53);
