@@ -2,14 +2,14 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="MaxScore Editor 2: Basics">
+<chapter name="MaxScore Editor: Basics">
 <previous name="01maxscore-01basics">MaxScore: The User Interface</previous>
 <next name="03maxscore-preferencesView"></next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 
-<h1>MaxScore Editor 2: Basics</h1>
+<h1>MaxScore Editor: Basics</h1>
 
 <p>Open the MaxScore Editor and create a new score.</p>
 
