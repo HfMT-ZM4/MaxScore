@@ -1618,7 +1618,10 @@ function attach()
 					offsets[0] = [ anchor[0] / factor, anchor[1] / factor ];
 				}
 			}
-		//post("edit", edit.stringify(), "\n");
+		if (foundobjects.contains("0")) deleteSelectedItem();
+		post("foundobjects", offsets[0], foundobjects.stringify(), "\n");
+		//we need to be able to observe the offsets a Picster object has when updated
+		//for this the user beans need to be queried and their offsets applied to the new shape
 		action = "addShape";
 		outlet(3, "bang");
 		mode = currentMode;
@@ -1836,6 +1839,7 @@ function capslock(caps)
 	mode = caps ? "picster" : "maxscore";
 	if (mode == "picster") outlet(2, "picsterShape", shapes[shape]);
 	else outlet(2, "bounds", "hide");
+	foundobjects.clear();
 }
 
 
