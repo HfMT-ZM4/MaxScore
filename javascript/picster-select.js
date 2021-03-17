@@ -1618,11 +1618,8 @@ function attach()
 					offsets[0] = [ anchor[0] / factor, anchor[1] / factor ];
 				}
 			}
-		if (foundobjects.contains("0")) deleteSelectedItem();
-		post("foundobjects", offsets[0], foundobjects.stringify(), "\n");
-		//we need to be able to observe the offsets a Picster object has when updated
-		//for this the user beans need to be queried and their offsets applied to the new shape
-		action = "addShape";
+		if (foundobjects.contains("0")) action = "update";
+		else action = "addShape";
 		outlet(3, "bang");
 		mode = currentMode;
 }
