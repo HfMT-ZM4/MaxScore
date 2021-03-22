@@ -24,7 +24,7 @@
 
 <p>Access <o>Maxscore.Editor</o> by right-clicking on an empty space of a Max patch window, then selecting “Paste From>MaxScore>Editors>maxscore.editor.clipping.maxpat”. Here appears the editor. You are now ready to start working on a new project.</p>
 <p>Lock the patcher and open the Editor window by clicking on the “Open Editor” button inside the <o>bpatcher</o>.
-<illustration><img src="images/UserInterace-basics/editor-01-basics-1.png"/></illustration></p>
+<illustration><img src="images/UserInterface-basics/editor-01-basics-1.png"/></illustration></p>
 
 <h2>The MaxScore Editor Window</h2>
 
@@ -32,7 +32,7 @@
   <li>Welcome to the Max Editor window! At the top you will see the <b>Menu Bar</b> in dark gray, where you can access various functions.</li>
   <li>Look at the <b>Control Panel</b> on the right. There are four tabs, <b>Tools</b>, <b>Pitch Utility</b>, <b>Scorpions</b> and <b>Picster</b>. In this tutorial we will look at functions in the first two. We will give further introductions to the others in the later tutorials.</li>
   <li>Now click on File>New Score from the top Menu Bar. 
-  <illustration><img src="images/UserInterace-basics/editor-01-basics-2.png"/></illustration></li>
+  <illustration><img src="images/UserInterface-basics/editor-01-basics-2.png"/></illustration></li>
   <li>In the main canvas, you will see the <b>Score Manager</b>, where you will create and edit your score. You can always access this page by pressing Shift+1.</li>
   <li>Press Shift+2 to go to the <b>Staff View</b>. Here you can customize your staves with different attributes.</li>
   <li>Press Shift+3 for the <b>Preferences</b>, where you can access the settings for the whole score. Press Shift+1 to go back to the <b>Score Manager</b></li>
@@ -43,20 +43,20 @@
 <ul>
   Now let's create our first score!
   <li>By default, the tempo is set to 60 BPM, the time signature to a 4/4 and the clef to a treble G-clef. To change this, go to the ‘Tools’ panel on the right and choose the settings you want by clicking the corresponding sections.
-  <illustration><img src="images/UserInterace-basics/editor-01-basics-2.png"/></illustration>
-  <illustration><img src="images/UserInterace-basics/editor-01-basics-3.png"/></illustration></li>
+  <illustration><img src="images/UserInterface-basics/editor-01-basics-2.png"/></illustration>
+  <illustration><img src="images/UserInterface-basics/editor-01-basics-3.png"/></illustration></li>
   <li>Click on the score and add measures. Blue indicates selected.</li>
   <li>If you need to change the time signature, click on the ‘Meter’ button right bellow the clef box and type the numbers you wish in the window that appears. Use a gap between the two numbers (e.g for 3/4 type 3 4). Use the same procedure for adjusting the tempo by using the button right next to the ‘Meter’ button.
-  <illustration><img src="images/UserInterace-basics/editor-01-basics-4.png"/></illustration></li>
+  <illustration><img src="images/UserInterface-basics/editor-01-basics-4.png"/></illustration></li>
   <li>Let's add the first note. In order to add notes, double click or ctrl-click (Mac) or option-click (Windows) on a blank space on the designated measure. Tadaah and your first note is there. It is now blue which means it is selected. If you want to transpose notes, you can either cmd-drag (Mac) or ctrl-drag (Windows), or use the keyboard shortcuts u, j, i, k, o, l for respective transpositions. You can always access the list of shortcuts from the menu: "Edit>Shortcuts".
-  <illustration><img src="images/UserInterace-basics/editor-01-basics-5.png"/></illustration></li>
+  <illustration><img src="images/UserInterface-basics/editor-01-basics-5.png"/></illustration></li>
   <li>To covert a note into a rest, click the rest button on top of the third column in the Tools panel, or alternatively use the keyboard shortcut r.</li>
   <li>To add dynamics or articulation, select a note and then chose from the Tools bar the corresponding symbols. e.g for dynamics check the 5th column.</li>
   <li>If you wish to add a crescendo or decrescendo to your score, select the passage or notes and click the Crescendo or Decrescendo symbol from the Tools.</li>
   <li>If you want to add tuplets, select the section or notes and then choose the corresponding symbols from the Tools bar (5th and 6th column, ‘3’, ‘5’, ‘7’, ‘9’, etc.)</li>
   <li>To add repeats or barlines, select the measure and then click on the corresponding symbols at the bottom of the Tools bar.</li>
 </ul>
-<illustration><img src="images/UserInterace-basics/editor-01-1st_example.png"/></illustration>
+<illustration><img src="images/UserInterface-basics/editor-01-1st_example.png"/></illustration>
 
 <p>Navigate yourself through the score at the “Navigation” part at the bottom of the window. Type directly the number of the page you wish to display or use the arrows to move around the measures or the pages.</p>
 

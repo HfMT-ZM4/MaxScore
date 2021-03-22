@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="Playback">
+<previous name="07maxscore-microtones">MaxScore: Microtones</previous>
+
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+
+
+
+<h1>Playback</h1>
+
+<p>MaxScore/LiveScore Sampler and MaxScore/LiveScore Fluidsynth are two playback patches/devices that were especially designed for the MaxScore/LiveScore Editor and its microtonal capabilities. So far, the combination of Editor and Sampler and/or Fluidsynth is the only way to consistently compose and playback microtonal music in Ableton Live and, therefore, rely on a communication protocol different from MIDI.</p>
+<illustration><img src="images/playback/combo.png"/></illustration>
+
+<h2>Fluidsynth und Sound Fonts</h2>
+<p><br/> </p>
+<techdetail>
+<p><b>The Fluidsynth2 player is capable of using an abundance of sound fonts available on the Net. The default sound font is included in the installation but it can be also downloaded separately:</b></p></techdetail>
+
+<h2>Sampler and Sample Banks</h2>
+<p>The Sampler uses a propriety text-based format and has an editor built in.</p>
+
+<p><i>Piano.zip</i> 130 MB (a large collection of high-quality grand piano sounds sampled with and without pedal down). Used with kind permission from the Virtual Orchestra Collection (© Thomas Hummel).</p>
+
+<techdetail>
+<p> You can use a combo playback kit accessing from File -> New From Template -> MaxScore -> Combo </p>
+</techdetail>
+
+
+</chapter>
