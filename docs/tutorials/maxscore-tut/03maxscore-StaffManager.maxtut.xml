@@ -3,9 +3,9 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore Editor: Staff Manager">
-<!--><previous name="02maxscore-01basics">MaxScore: The User Interface</previous>
-<next name="04maxscore-picster"></next>
--->
+<previous name="02maxscore-01basics">MaxScore Editor: Basics</previous>
+<next name="03maxscore-preferencesView"></next>
+
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 

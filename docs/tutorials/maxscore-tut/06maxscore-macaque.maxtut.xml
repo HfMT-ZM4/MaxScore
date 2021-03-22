@@ -3,8 +3,9 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="Macaque">
-<previous name="05maxscore-scorepions">Scorepions</previous>
-<next name="07maxscore-microtones">Microtones</next>
+<previous name="07maxscore-microtones">Microtones</previous>
+<next name="06maxscore-macaque">Macaque</next>
+
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 

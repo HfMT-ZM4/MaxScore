@@ -4,9 +4,9 @@
 
 <chapter name="Playback">
 <previous name="07maxscore-microtones">MaxScore: Microtones</previous>
+<next name="06maxscore-macaque">Macaque</next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
-
 
 
 <h1>Playback</h1>
@@ -22,10 +22,10 @@
 <h2>Sampler and Sample Banks</h2>
 <p>The Sampler uses a propriety text-based format and has an editor built in.</p>
 
-<p><i>Piano.zip</i> 130 MB (a large collection of high-quality grand piano sounds sampled with and without pedal down). Used with kind permission from the Virtual Orchestra Collection (© Thomas Hummel).</p>
+<p><i><a href="http://georghajdu.de/computermusicnotation/wopre/wp-content/uploads/2012/08/Piano.zip">Piano.zip</a></i> 130 MB (a large collection of high-quality grand piano sounds sampled with and without pedal down). Used with kind permission from the Virtual Orchestra Collection (© Thomas Hummel).</p>
 
 <techdetail>
-<p> You can use a combo playback kit accessing from File -> New From Template -> MaxScore -> Combo </p>
+<p> You can use a combo playback template accessing from File -> New From Template -> MaxScore -> Combo </p>
 </techdetail>
 
 

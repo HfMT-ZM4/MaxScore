@@ -15,13 +15,15 @@
 <li><link type="tutorial" module="maxscore" name="03maxscore-StaffManager">MaxScore Editor: Staff Manager</link></li>
 <li><link type="tutorial" module="maxscore" name="03maxscore-preferencesView">MaxScore Editor: Preferences View</link></li>
 <li><link type="tutorial" module="maxscore" name="03maxscore-Sidebar">MaxScore: Sidebar</link></li>
-<li><link type="tutorial" module="maxscore" name="03maxscore-Tools">Sidebar: Tools</link></li>
-<li><link type="tutorial" module="maxscore" name="03maxscore-PitchUtility">Sidebar: Pitch Utility</link></li>
-<li><link type="tutorial" module="maxscore" name="04maxscore-picster">Sidebar: Picster</link></li>
-<li><link type="tutorial" module="maxscore" name="05maxscore-scorepions">Sidebar: Scorepions</link></li>
-<li><link type="tutorial" module="maxscore" name="06maxscore-macaque">Macaque</link></li>
+<ol>
+<li><link type="tutorial" module="maxscore" name="03maxscore-Tools">Tools</link></li>
+<li><link type="tutorial" module="maxscore" name="03maxscore-PitchUtility">Pitch Utility</link></li>
+<li><link type="tutorial" module="maxscore" name="04maxscore-picster">Picster</link></li>
+<li><link type="tutorial" module="maxscore" name="05maxscore-scorepions">Scorepions</link></li>
+</ol>
 <li><link type="tutorial" module="maxscore" name="07maxscore-microtones">Microtones</link></li>
 <li><link type="tutorial" module="maxscore" name="08maxscore-playback">Playback</link></li>
+<li><link type="tutorial" module="maxscore" name="06maxscore-macaque">Macaque</link></li>
 
 
 </ul>
