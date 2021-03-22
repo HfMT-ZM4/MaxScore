@@ -13,11 +13,11 @@
 <h1>Scorepions</h1>
 
 <p>A plugin system called Scorepions allows Max programmers to create patches extending the functionality of the MaxScore/LiveScore editors.</p>
-<illustration><img src="images/Scorepion-image1-Template-Presentation-Mode.png"/></illustration>
+<illustration><img src="images/Scorepions/Scorepion-image1-Template-Presentation-Mode.png"/></illustration>
 
 <p>We will now discuss how to create a Scorepion based on the Scorepion Template patch which can be found in [Max folder]/packages/MaxScore/patchers/Tutorial/Scorepions.</p>
 <p><br/> </p>
-<illustration><img src="images/Scorepionn-image2-Template-Edit-Mode.png"/></illustration>
+<illustration><img src="images/Scorepions/Scorepionn-image2-Template-Edit-Mode.png"/></illustration>
 <p><i>Scorepion, expanded and in Edit mode. </i></p>
 
 <p>Scorepions to be included in the Scorepion menu need to reside in "MaxScore Lib/Scorepions"". This Scorepion is based on "Fill Empty Measures with Rest" and serves as an annotated template.</p>
@@ -35,11 +35,22 @@
 <p>Available scorepions:
 
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>Accent Threshold Transform</li>
+<li>Amplitude Crescendo Transform</li>
+<li>Amplitude to Dynamics Transform</li>
+<li>Artificial Harmonic Transform</li>
+<li>Augmentation-Diminuation Transform</li>
+<li>Chord to Melody Transform</li>
+<li>Create Click Track</li>
+<li>Diatonic Transposition Transform</li>
+<li>DJster Autobus-Scorepion</li>
+<li>Double Below Transform</li>
+<li>Transform</li>
+<li>Transform</li>
+<li>Transform</li>
+<li>Transform</li>
+<li>Transform</li>
+<li>Transform</li>
 <li></li>
 <li></li>
 <li></li>

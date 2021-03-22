@@ -3,7 +3,7 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore Editor: Basics">
-<previous name="01maxscore-01basics">MaxScore: The User Interface</previous>
+<previous name="01maxscore-userInterface">MaxScore: The User Interface</previous>
 <next name="03maxscore-preferencesView"></next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
@@ -38,7 +38,7 @@ You can choose to type an abbreviation of the instrument’s name on the second 
 <p>“St.L.” -> Add stafflines above or bellow the 5-line staff.</p>
 <p>“L.L” -> Chose to add Ledger Lines</p>
 
-<illustration><img src="images/Preferences.png"/></illustration>
+<illustration><img src="images/Basics/Preferences.png"/></illustration>
 <p>You can select specific preferences and styles in order to prepare your score regarding your needs.</p>
 
 <h2>Preferences</h2>
@@ -50,7 +50,7 @@ You can choose to type an abbreviation of the instrument’s name on the second 
 <p>A great feature that the MaxScore Editor provides is the option to change the canvas size, and prepare the score for professional printing and publishing in a preferred format. Just change the “Canvas Size” depending on your wished format.</p>
 <p>Always hit the “Save Preferences” button on the bottom of the page, to save any changes in the “Preferences” section.</p>
 
-<illustration><img src="images/StaffManager.png"/></illustration>
+<illustration><img src="images/Basics/StaffManager.png"/></illustration>
 
 
 </chapter>

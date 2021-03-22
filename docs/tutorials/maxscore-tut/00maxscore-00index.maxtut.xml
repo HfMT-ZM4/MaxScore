@@ -9,8 +9,8 @@
 <h2>Basics</h2>
 <ul>
 <li><link type="tutorial" module="maxscore" name="00maxscore-01welcome"></link></li>
-<li><link type="tutorial" module="maxscore" name="00maxscore-02download"></link></li>
-<li><link type="tutorial" module="maxscore" name="01maxscore-01basics">MaxScore Editor: The User Interface</link></li>
+<li><link type="tutorial" module="maxscore" name="00maxscore-installation"></link></li>
+<li><link type="tutorial" module="maxscore" name="01maxscore-userInterface">MaxScore Editor: The User Interface</link></li>
 <li><link type="tutorial" module="maxscore" name="02maxscore-01basics">MaxScore Editor: Basics</link></li>
 <li><link type="tutorial" module="maxscore" name="03maxscore-preferencesView">MaxScore Editor: Preferences View</link></li>
 <li><link type="tutorial" module="maxscore" name="03maxscore-pitchTool">MaxScore Editor: Pitch Tool</link></li>
