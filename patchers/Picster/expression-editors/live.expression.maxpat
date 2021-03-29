@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 10,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -44,7 +44,7 @@
 					"candycane" : 2,
 					"clicksustain" : 0,
 					"data" : [ 						{
-							"addpoints_with_curve" : [ 0.0, 0.0, 0, 0.0, 121.066097999999997, 121.0, 0, 0.0, 322.506427844697953, 800.0, 0, 0.0, 424.350562953549968, 500.0, 0, 0.53, 487.396932306648807, 363.636363636363626, 0, 0.0, 549.80949499999997, 22.0, 0, 0.0, 579.541633000000047, 0.0, 0, 0.0, 579.541633000000047, 0.0, 0, 0.0 ]
+							"addpoints_with_curve" : [ 23.274764095444144, 0.0, 0, 0.0, 114.046344067676827, 0.825396825396825, 0, 0.0, 236.238855568759277, 0.46031746031746, 0, 0.0, 396.834727827324741, 0.841269841269841, 0, 0.0, 579.5416259765625, 0.0, 0, 0.0 ]
 						}
  ],
 					"domain" : 579.5416259765625,
@@ -62,7 +62,6 @@
 					"patching_rect" : [ 262.333333333333371, 638.0, 178.0, 106.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 162.0, 251.0, 131.0 ],
-					"range" : [ 0.0, 800.0 ],
 					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"varname" : "bpf[1]"
 				}
@@ -182,7 +181,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 182.5, 555.622806549072266, 53.0, 22.0 ],
-					"restore" : [ "data", 0, 36, 579.5416259765625, 0.0, 800.0, 0.0, 0.0, 0, 0.0, 121.066097999999997, 121.0, 0, 0.0, 322.506427844697953, 800.0, 0, 0.0, 424.350562953549968, 500.0, 0, 0.53, 487.396932306648807, 363.636363636363626, 0, 0.0, 549.80949499999997, 22.0, 0, 0.0, 579.541633000000047, 0.0, 0, 0.0, 579.541633000000047, 0.0, 0, 0.0, "curve" ],
+					"restore" : [ "data", 0, 24, 579.5416259765625, 0.0, 1.0, 23.274764095444144, 0.0, 0, 0.0, 114.046344067676827, 0.825396825396825, 0, 0.0, 236.238855568759277, 0.46031746031746, 0, 0.0, 396.834727827324741, 0.841269841269841, 0, 0.0, 579.5416259765625, 0.0, 0, 0.0, "curve" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -296,6 +295,18 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 75.653718900157912, 1.0, 105.692562199684147, 27.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
@@ -395,8 +406,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 10,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1166,8 +1177,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 10,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2020,7 +2031,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 35.0, 70.622806549072266, 314.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2040,7 +2051,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 514.0, 283.622806549072266, 65.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "live.expr.js",
+						"filename" : "live.expr",
 						"parameter_enable" : 0
 					}
 ,
@@ -2137,7 +2148,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 93.083333333333371, 224.622806549072266, 85.0, 22.0 ],
-					"restore" : [ "asdf " ],
+					"restore" : [ "Delay || Ping Pong" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2156,7 +2167,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 150.333333333333371, 337.0, 65.0, 22.0 ],
-					"restore" : [ "bpf", "data", 0, 36, 579.5416259765625, 0.0, 800.0, 0.0, 0.0, 0, 0.0, 121.066097999999997, 121.0, 0, 0.0, 322.506427844697953, 800.0, 0, 0.0, 424.350562953549968, 500.0, 0, 0.53, 487.396932306648807, 363.636363636363626, 0, 0.0, 549.80949499999997, 22.0, 0, 0.0, 579.541633000000047, 0.0, 0, 0.0, 579.541633000000047, 0.0, 0, 0.0, "curve" ],
+					"restore" : [ "bpf", "data", 0, 24, 579.5416259765625, 0.0, 1.0, 23.274764095444144, 0.0, 0, 0.0, 114.046344067676827, 0.825396825396825, 0, 0.0, 236.238855568759277, 0.46031746031746, 0, 0.0, 396.834727827324741, 0.841269841269841, 0, 0.0, 579.5416259765625, 0.0, 0, 0.0, "curve" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2186,7 +2197,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 74.0, 251.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "\"asdf \"",
+					"text" : "\"Delay || Ping Pong\"",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit[1]",
 					"wordwrap" : 0
@@ -2230,7 +2241,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 118.0, 251.0, 19.0 ],
 					"rounded" : 0.0,
-					"text" : "data 0 36 579.541626 0. 800. 0. 0. 0 0. 121.066098 121. 0 0. 322.506428 800. 0 0. 424.350563 500. 0 0.53 487.396932 363.636364 0 0. 549.809495 22. 0 0. 579.541633 0. 0 0. 579.541633 0. 0 0. curve",
+					"text" : "data 0 24 579.541626 0. 1. 23.274764 0. 0 0. 114.046344 0.825397 0 0. 236.238856 0.460317 0 0. 396.834728 0.84127 0 0. 579.541626 0. 0 0. curve",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit",
 					"wordwrap" : 0
@@ -2577,63 +2588,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-1::obj-19::obj-19" : [ "saved-int[1]", "saved-int", 0 ],
-			"obj-24::obj-16::obj-14" : [ "live-path", "live-path", 0 ],
-			"obj-24::obj-19::obj-19" : [ "saved-int", "saved-int", 0 ],
-			"obj-37" : [ "live.text[7]", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "live.expr.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.GetParameterNames.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.SaveLivePath.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.SaveInteger.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.GetAllTrackIds.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.GetDeviceNames.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.GetAllDeviceIds.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
