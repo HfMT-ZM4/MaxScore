@@ -222,16 +222,16 @@ var bpfShape = {
 function drawBpf(_curve, time) {
 	//var space = 0.3;
 	//_curve.unshift('data');
-	post(_curve);
+	//post(_curve);
 	var bpf = "";
 	var curve = [];
 	var idx = getAllIndexes(_curve, "data");
-	post('idx: ',idx,'\n');
+	//post('idx: ',idx,'\n');
 	var shape = bpfShape;
 	idx[idx.length] = _curve.length;
 	for (var i = 0; i < idx.length; i++) curve[i] = _curve.slice(idx[i] + 6, idx[i + 1]);
 	var dims = _curve.slice(3, 6);
-	post("dims", dims, "\n");
+	//post("dims", dims, "\n");
 	for (var i = 0; i < idx.length - 1; i++) {
 		if (curve[i][curve[i].length - 1] == "curve") {
 			var numPoints = (curve[i].length - 1) / 4;
@@ -241,7 +241,7 @@ function drawBpf(_curve, time) {
 			bpf += "M" + moveTo + " ";
 			for (var j = 0; j < numPoints - 1; j++){
 				var curvature = curve[i][7 + j * 4];
-				post("curvature", curvature, "\n");
+				//post("curvature", curvature, "\n");
 				var curveTo = [curve[i][4 + j * 4], curve[i][5 + j * 4], curvature];
 				var controlPoint = oldPoint;
 				//post("controlPoint-1", curvature, controlPoint, "\n");
@@ -274,14 +274,14 @@ function drawBpf(_curve, time) {
 	shape["picster-element"][0]["val"][2]["child"][2]["transform"] = "matrix(1, 0, 0, 1, 0, " + (yoffset - height).toFixed(2) + ")";
 	//post("arguments", JSON.stringify(arguments), "\n");
 	shape["picster-element"][2]["val"][0]["message"] = messagename;
-	shape["picster-element"][2]["val"][0]["value"] = ["bpf "].concat(_curve);
+	shape["picster-element"][2]["val"][0]["value"] = ["bpf"].concat(_curve);
 	expr.parse(JSON.stringify(shape));
 }
 
 function message() {
 	var a = arrayfromargs(arguments);
 	messagename = a.join(" ");
-	post('message',messagename,'\n');
+	//post('message',messagename,'\n');
 }
 
 function value() {
