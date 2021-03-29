@@ -4,8 +4,8 @@
 
 <chapter name="Microtones">
 <previous name="06maxscore-macaque">Macaque</previous>
-<!--><next name="03maxscore-preferencesView">MaxScore: Preferences View</next>
--->
+<next name="08maxscore-playback">MaxScore: Playback</next>
+
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 
@@ -16,7 +16,7 @@
 
 <h2>Pitch Tool and JI Interval</h2>
 <p><br/> </p>
-<illustration><img src="images/micro-image1-Pitch-tool.png"/></illustration>
+<illustration><img src="images/Microtones/micro-image1-Pitch-tool.png"/></illustration>
 
 <p>The Pitch Tools allows you to set as well as add notes and intervals in terms of just intonation ratios.</p>
 <p>The intervals menu uses the list of intervals from the Huygens-Fokker website. There are a few modes that need a bit of explanation:</p>
@@ -34,24 +34,24 @@
 <h2>Labels</h2>
 <p>Each note can also be labelled either according to its pitch, frequency or ratio in respect to given fundamental. N.B. labels will need to be updated manually if the pitch of the note changes.</p>
 <p><br/> </p>
-<illustration><img src="images/micro-image2-labels-Pitch-tool.png"/></illustration>
+<illustration><img src="images/Microtones/micro-image2-labels-Pitch-tool.png"/></illustration>
 
 <h2>Keyboards</h2>
 <p><br/>The editor comes with a number of virtual "keyboards " which will let you choose a tuning and convenient enter of its pitches. "Keyboards " are Max patches that can be created and added to the MaxScore/patchers/keyboards folder from where they will be invoked when selected from the Entry Tools menu. The corresponding pitch will be played back while entering a note from a "keyboard. "</p>
-<illustration><img src="images/micro-image3-Keyboard-Pitch-tool.png"/></illustration>
+<illustration><img src="images/Microtones/micro-image3-Keyboard-Pitch-tool.png"/></illustration>
 <p><i>MIDI Input for standard tuning</i></p>
 
 <p><br/>The nTET-entry tool can be used to input pitches of equidistant scales within arbitrary frame intervals.</p>
 <p>Its Action menu contains following items: Add Note, Add Interval, Set Pitch, Set Transposition Interval, Play Thru, Approximate and Copy Scale. Add Note adds a new note, Add Interval adds an interval to an existing note and Set Pitch changes the note/interval to the desired pitch. Set Transposition Interval set the Pitch Tool's transposition interval to the interval between the clicked pitch and the first note of the tuning. When Play Thru is selected the pitch will be heard with note entry and Approximate allows you to approximate selected notes to the pitches of the chosen tuning. Copy Scale puts all pitches on the MaxScore clipboard from which they can be pasted into other scores.</p>
 <p><br/> </p>
-<illustration><img src="images/micro-image4-nTET-entry-Pitch-tool.png"/></illustration>
+<illustration><img src="images/Microtones/micro-image4-nTET-entry-Pitch-tool.png"/></illustration>
 <p><i>nTET-entry: Keyboard for equidistant tunings.</i></p>
 
 <h2>Other keyboards</h2>
-<illustration><img src="images/micro-image5-BPji.png"/></illustration>
+<illustration><img src="images/Microtones/micro-image5-BPji.png"/></illustration>
 <p><i>A Bohlen-Pierce Just Intonation diamond created by Todd Harrop.</i></p>
 <p><br/> </p>
-<illustration><img src="images/micro-image6-Other-Keyboards-Pitch-tool.png"/></illustration>
+<illustration><img src="images/Microtones/micro-image6-Other-Keyboards-Pitch-tool.png"/></illustration>
 <p><i>User-created keyboard for the input of Easley Blackwood's study in 23TET.</i></p>
 <p><br/>In order to listen to his piece, find "23 notes.XML " in MaxScore/examples/Scores. In the MaxScore Combo patch open the editor, open the file and load the 23-Tones.json preset file into the MaxScore.FluidSynth2 player to experience multi-timbral playback of music in non-standard tuning.</p>
 

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="MaxScore: Sidebar">
+<previous name="03maxscore-preferencesView">MaxScore Editor: Preferences View</previous>
+<next name="03maxscore-Tools">Sidebar: Tools</next>
+
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+
+
+<h1>MaxScore: Sidebar</h1>
+
+<p>While selecting the score view, on the right sidebar you can see 4 main sections:</p>
+<techdetail>
+<ol>
+<li>Tools</li>
+<li> Pitch Utility </li>
+<li> Scorepions </li>
+<li> Picster </li>
+</ol>
+</techdetail>
+<p>Each of these corresponds to specific features that you can use when creating your score.</p>
+
+<p>Under <link type="tutorial" module="maxscore" name="03maxscore-Tools">Tools</link> you can customize the note durations or pauses, dynamics, hide or modify note heads, tune grouping, add articulation, as well as key selection, key size, key signature, measure width, and various barlines you can use when you type.
+Among other things, MaxScore also lets you set pitch, amplitude, duration, and text labels. For advanced users, the "Inspection" button provides the ability to fine-tune a large number of elements.</p>
+
+<p>In the <link type="tutorial" module="maxscore" name="03maxscore-PitchUtility">Pitch Utility</link> you can use various microchromatic scales and take advantage of the possibility of entering pitch with the Entry Tool.</p>
+
+<p>In the <link type="tutorial" module="maxscore" name="05maxscore-scorepions">Scorepions</link> section you can transform and generate note text using our plug-in with many specifications.</p>
+
+<p>The <link type="tutorial" module="maxscore" name="04maxscore-picster">Picster</link> section is a sophisticated graphical editor for adding various graphical elements to your score with the ability to automate playback (such as Djster).</p>
+
+<p><i>You can learn more in the following lessons.</i> </p>
+
+
+</chapter>

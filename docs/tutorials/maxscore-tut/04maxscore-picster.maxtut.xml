@@ -29,7 +29,7 @@
 </ol>
 
 <p>Picster can be activated by pressing the caps lock key after which the drawn shapes will be either attached to selected notes, to a selected staff or measure. If a note is selected it will take priority over its staff/measure. Note that notes(s) or staves need to be selected before the Picster mode is activated.</p>
-<illustration><img src="images/image1-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image1-small.png"/></illustration>
 <i>Figure 1: The name of a Picster tool appears in the upper left-hand corner after pressing caps lock. Drawn shapes will be attached to the top staff in this particular case.</i>
 
 <p>Once Picster mode is active, shapes can be drawn with the mouse.</p>
@@ -37,10 +37,10 @@
 <p>When the text tool is selected, a text box will pop up which can be written to. The text will appear in the score after clicking at the desired location.</p>
 <p>Bitmap and vector images can be placed with the image tool. Clicking on the canvas will open a file dialog and the image will be placed at the clicked location.</p>
 
-<illustration><img src="images/image2-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image2-small.png"/></illustration>
 <i>Figure 2: The name of a Picster tool appears in the upper left-hand corner after pressing caps lock. Drawn shapes will be attached to the top staff in this particular case.</i>
 
-<illustration><img src="images/image3-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image3-small.png"/></illustration>
 <i>Figure 3: A text box opens when the text tool is selected.</i>
 
 <h2>Setting properties</h2>
@@ -55,7 +55,7 @@
   
 </ul>
 
-<illustration><img src="images/image4-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image4-small.png"/></illustration>
 <i>Figure 4: Color and other properties can be set by sending messages to the canvas before a shape is created</i>
 
 
@@ -88,12 +88,12 @@
 
 <p>When a shaped is clicked on, a red bounding rectangle will appear and the shape can be moved by dragging the rectangle to another location. Should shapes overlap, the “covered” shapes can be selected by repeatedly ctrl-clicking on them. The bounding rectangle will change its shape accordingly. Selected shapes can be deleted with the delete key.</p>
 
-<illustration><img src="images/image5-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image5-small.png"/></illustration>
 <i>Figure 5. Clicking on an object will selected it. It can now be moved, deleted or edited.</i>
 
-<illustration><img src="images/image6-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image6-small.png"/></illustration>
 <p></p>
-<illustration><img src="images/image7-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image7-small.png"/></illustration>
 <i>Figure 6 and 7: Select overlapping shapes by ctrl-clicking on the canvas</i>
 
 
@@ -113,10 +113,10 @@
 <h2>Editing</h2>
 <p>Once a shape is selected it can also be edited after pressing the e (“edit”) key. This will open a text editor showing the properties of the shape in JSON format. The changes can be finalized by pressing the u (“update”) key. Note that if the fill property is supposed to be changed from fill to stroke or vice versa, the id (2nd line) of the shape will also need to be changed in order to take effect, i.e. a paintrect will have to be renamed to framerect, a paintoval to frameoval and so on.</p>
 
-<illustration><img src="images/image8-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image8-small.png"/></illustration>
 <i>Figure 8: Changes in the editor will take effect after closing the window and pressing the u key.</i>
 
-<illustration><img src="images/image9-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image9-small.png"/></illustration>
 <i>Figure 9: Changing the "transform" property for example to [ 0.5, 0, 0, 0.5, 0, 0 ] will shrink the image to half its size.</i>
 
 <h2>Adding Expressions</h2>
@@ -140,7 +140,7 @@
 
 <p>dictionary-name being the name of the dictionary containing the four keys. The message also goes into the left-most inlet of bcanvas.</p>
 
-<illustration><img src="images/image10-small-Picster.png"/></illustration>
+<illustration><img src="images/Picster/picster-image10-small.png"/></illustration>
 <p></p>
 <i>Figure 10: Example for how to create a dictionary of an expression to be added to a Picster shape.</i>
 
@@ -153,13 +153,13 @@
   <li>With caps lock on, send the picster init message to the left-most inlet of bcanvas. Initialization causes the event sequence stored in the MaxScore object to be dumped into the picster.messenger object.</li>
   <li>NB.: For sequencing to work all instruments (i.e. voices) need to have additional instrument dimensions. Send the following messages to the MaxScore object for every staff in your score before you add any notes or right after you create the score or add a new staff:</li>  
 </ol>
-</techdetail>
+
 <ul>
   <li>setInstrumentDimension staff-index 5 originalPitch -1 127 -1</li>  
   <li>setInstrumentDimension staff-index 6 index -1 10000 -1</li>  
 </ul>
-
-<illustration><img src="images/image11-small-Picster.png"/></illustration>
+</techdetail>
+<illustration><img src="images/Picster/picster-image11-small.png"/></illustration>
 <p></p>
 <i>Figure 11: Playback of picster expressions requires the use of additional objects.</i>
 

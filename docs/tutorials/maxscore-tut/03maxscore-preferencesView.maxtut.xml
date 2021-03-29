@@ -3,8 +3,8 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore Editor: Preferences View">
-<previous name="02maxscore-01basics">MaxScore: The User Interface</previous>
-<next name="04maxscore-picster"></next>
+<previous name="03maxscore-StaffManager">MaxScore Editor: Staff Manager</previous>
+<next name="03maxscore-Sidebar">MaxScore: Sidebar</next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
@@ -12,7 +12,7 @@
 <h1>MaxScore Editor: Preferences View</h1>
 
 <p><i>Shortcut access: shift+3</i></p>
-<illustration><img src="images/Preferences.png"/></illustration>
+<illustration><img src="images/Basics/Preferences.png"/></illustration>
 
 <p>In MaxScore you can fully customize your score according your needs. In order to do so change default view (Score View) to Preferences View. Here you can enter Score Information such as:</p>
 
@@ -79,22 +79,23 @@
   <li>Music Font</li>
 </ul>
 
-<p>Also you can set a library for Picster through clocking on “Set”  by “Default Picster Lib Folder” by clicking and seleting the locating it</p>
+<p>Also you can set a library for Picster by clicking on “Set” and locating it in “Default Picster Lib Folder”. </p>
 
 <h2>Playback</h2>
 <p>You can specify options for the playback regarding your needs:</p>
 
 <ul>
-  <li>Playback in Overdrivet</li>
-  <li>Playback Adbance Time</li>
+  <li>Playback in Overdrive</li>
+  <li>Playback Advance Time</li>
   <li>Quantisation - <i>from the first dropping menu select a main duration (whole Note (W), half Note (H) or Quarter Note(Q)). From the number box dropping menu  adjust a number of pulses to qualify.</i></li>
 </ul>
 
 <h2>Proportional Notation </h2>
 
-<p>Select a time Unit (pixels/second). By default it is set to "100". A lowest possible value is "5"). Click outside of the field to activate your choice. </p>
+<p>Select a time Unit (pixels/second). By default it is set to "100". A lowest possible value is "5". Click outside of the field to activate your choice. </p>
 
 
 <p><i>You can also save your preferences as a preset file by clicking “Save Preference as…” button. If this option is chosen, you can use them next time you create a new score by going to Preferences View (shift+3) and selecting preferred one by clicking on “Open Preferences”</i></p>
+<p>By clicking on Attribute List you can define user the attributes.</p>
 
 </chapter>

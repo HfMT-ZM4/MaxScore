@@ -13,11 +13,11 @@
 <h1>Scorepions</h1>
 
 <p>A plugin system called Scorepions allows Max programmers to create patches extending the functionality of the MaxScore/LiveScore editors.</p>
-<illustration><img src="images/Scorepion-image1-Template-Presentation-Mode.png"/></illustration>
+<illustration><img src="images/Scorepions/Scorepion-image1-Template-Presentation-Mode.png"/></illustration>
 
 <p>We will now discuss how to create a Scorepion based on the Scorepion Template patch which can be found in [Max folder]/packages/MaxScore/patchers/Tutorial/Scorepions.</p>
 <p><br/> </p>
-<illustration><img src="images/Scorepionn-image2-Template-Edit-Mode.png"/></illustration>
+<illustration><img src="images/Scorepions/Scorepionn-image2-Template-Edit-Mode.png"/></illustration>
 <p><i>Scorepion, expanded and in Edit mode. </i></p>
 
 <p>Scorepions to be included in the Scorepion menu need to reside in "MaxScore Lib/Scorepions"". This Scorepion is based on "Fill Empty Measures with Rest" and serves as an annotated template.</p>
@@ -32,17 +32,34 @@
 </ol></div>
 </div>
 
-<p>Available scorepions:
+<p>Available scorepions are:
 
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>Accent Threshold Transform</li>
+<li>Amplitude Crescendo Transform</li>
+<li>Amplitude to Dynamics Transform</li>
+<li>Artificial Harmonic Transform</li>
+<li>Augmentation-Diminuation Transform</li>
+<li>Chord to Melody Transform</li>
+<li>Create Click Track</li>
+<li>Diatonic Transposition Transform</li>
+<li>DJster Autobus-Scorepion</li>
+<li>Double Below Transform</li>
+<li>Dynamics To Amplitude Transform</li>
+<li>Enharmonic Spelling Transform</li>
+<li>Fill Empty Measures with Rests</li>
+<li>Fix Issues</li>
+<li>Inversion Transform</li>
+<li>Markov Operator</li>
+<li>Melody to Chord Transform</li>
+<li>Move Track Transform</li>
+<li>Retrograde Transform</li>
+<li>Scramble Transform</li>
+<li>Scrolling Score Creator</li>
+<li>Serial Transform</li>
+<li>Text To Picster Transform</li>
+<li>Zipper Transform</li>
 </ul>
 </p>
+<p><i>An additional information on how to use a specific scorepion can be found by selecting a corresponding scorepion.</i></p>
 </chapter>

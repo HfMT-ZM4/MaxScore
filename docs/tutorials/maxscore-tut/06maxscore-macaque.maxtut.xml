@@ -3,8 +3,9 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="Macaque">
-<previous name="05maxscore-scorepions">Scorepions</previous>
-<next name="07maxscore-microtones">Microtones</next>
+<previous name="07maxscore-microtones">Microtones</previous>
+<next name="06maxscore-macaque">Macaque</next>
+
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 
@@ -15,10 +16,10 @@
 <p>You'll find the patch in:</p>
 <p>[Max folder]/packages/MaxScore/patchers/environments</p>
 
-<illustration><img src="images/Macaque-image1.png"/></illustration>
+<illustration><img src="images/Macaque/Macaque-image1.png"/></illustration>
 <p><i>The Macaque Environment</i></p>
 
-<illustration><img src="images/Macaque-image2.png"/></illustration>
+<illustration><img src="images/Macaque/Macaque-image2.png"/></illustration>
 <p style="text-align: center;"><i>Macaque has three panes two of which can be collapsed.</i></p>
 
 <p>Macaque is using MaxScore to generate and display:</p>
@@ -28,21 +29,21 @@
 <li>Rhythm and pitch detection via segmentation of the sum-of-amplitude curve (modes are rhythm, fundamental, lowest pitch, salient pitch, centroid, centroid nearest neighbor, and chord). For segmentation you can set markers manually, automatically or import them from AudioSculpt.</li>
 </ol>
 
-<illustration><img src="images/Macaque-image3-transcribe.png"/></illustration>
+<illustration><img src="images/Macaque/Macaque-image3-transcribe.png"/></illustration>
 <p><i>Transcribed rhythm with salient pitches</i></p>
 
-<illustration><img src="images/Macaque-image4-score.png"/></illustration>
+<illustration><img src="images/Macaque/Macaque-image4-score.png"/></illustration>
 <p><b>Macaque has three panes two of which can be collapsed.</b></p>
 
 <p><br/><techdetail><b>Macaque has three panes of which the top one sports four views titled Main, Curves, Speed, Preferences</b></techdetail></p>
 <p>The <i>Mainview</i> shows the spectral display and a number of buttons which are more or less self-explanatory. The most interesting feature, though, is probably the ability to sync-play the SDIF with the transcribed score.</p>
 
-<illustration><img src="images/Macaque-image5-Curves.png"/></illustration>
-<illustration><img src="images/Macaque-image6-Speed.png"/></illustration>
+<illustration><img src="images/Macaque/Macaque-image5-Curves.png"/></illustration>
+<illustration><img src="images/Macaque/Macaque-image6-Speed.png"/></illustration>
 <p><i>A graphical function editor, visible in Curvesview, allows the time-dependent manipulation of various parameters such as amplitude, tiporal trajectory, spectral stretching and transposition, while a separate tempo curve can be set in Speedview.</i></p>
 
 <p><techdetail><b>In Preferences a number of parameters can be set for which the following explanations can serve as a brief introduction:</b></techdetail></p>
-<illustration><img src="images/Macaque-image7-Preferences.png"/></illustration>
+<illustration><img src="images/Macaque/Macaque-image7-Preferences.png"/></illustration>
 
 
 <h2>MIDIfication:</h2>
