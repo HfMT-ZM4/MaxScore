@@ -10,12 +10,7 @@ const fonts = fontManager.getAvailableFontsSync();
 	
 
 Max.addHandler("bang", () => {
-	Max.outlet("fonts", "clear");
-	for (let i = 0; i < fonts.length; i++) {
-		let extension = fonts[i].path.substring(fonts[i].path.lastIndexOf("."), fonts[i].path.length);
-		if (extension == ".otf" || extension == ".ttf") Max.outlet("fonts", i, fonts[i].postscriptName);
-		}
-	Max.outlet("fonts", "enddump");		
+	fillMenu();
 });
 
 
@@ -32,3 +27,16 @@ Max.addHandler("font", (msg) => {
 	Max.outlet("glyphs", "count", font.numGlyphs);
 	for (let i = 0; i < font.numGlyphs; i++) Max.outlet("glyphs", i, font.glyphs.get(i).unicode);
 });
+
+function fillMenu()
+{
+	Max.outlet("fonts", "clear");
+	for (let i = 0; i < fonts.length; i++) {
+		let extension = fonts[i].path.substring(fonts[i].path.lastIndexOf("."), fonts[i].path.length);
+		if (extension == ".otf" || extension == ".ttf") Max.outlet("fonts", i, fonts[i].postscriptName);
+		}
+	Max.outlet("fonts", "enddump");		
+	
+}
+
+fillMenu();

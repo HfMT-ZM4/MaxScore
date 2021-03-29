@@ -2229,14 +2229,14 @@ function anything() {
 			else if (fontExtras.contains(msgname)) var glyph = fontExtras.get(msgname); 
 			else return;
 			}
+		staticClefs = 0;
 		if (msgname.indexOf("measurenumber") != -1)
 			{
 				//if (glyph[3] == "$TEXTFONT")
 				writeAt(0, textFont, glyph[4], msg[0] + glyph[1], msg[1] + glyph[2], glyph[0]);
 				return;
 			}
-		staticClefs = 0;
-		if (["tr", "al", "te", "ba", "pr"].indexOf(msgname) != -1) { 
+		else if (["tr", "al", "te", "ba", "pr"].indexOf(msgname) != -1) { 
 			if (annotation.contains("staff-" + msg[5]+"::clef") && annotation.get("staff-"+msg[5]+"::clef") != "default") {
 			if (userClefs.contains(annotation.get("staff-"+msg[5]+"::clef"))){
 			var uc = userClefs.get(annotation.get("staff-"+msg[5]+"::clef"));
@@ -2282,7 +2282,7 @@ function anything() {
 			if (prop) staticClefs = 1;
 		}
 		
-		if (msgname.indexOf("staffnumber") != -1)
+		else if (msgname.indexOf("staffnumber") != -1)
 			{
 				var	_instrumentNames = [];
 				for (var i = 0; i < instrumentNames.length; i++) _instrumentNames.push(instrumentNames[i]);
@@ -2295,7 +2295,7 @@ function anything() {
 				}
 				else return;
 			}
-		if (msgname.indexOf("timesig") != -1 && annotation.contains("staff-"+msg[5]+"::adjust"))
+		else if (msgname.indexOf("timesig") != -1 && annotation.contains("staff-"+msg[5]+"::adjust"))
 			{
 				msg[1] = msg[1] - annotation.get("staff-"+msg[5]+"::adjust") * 6 * msg[2];
 			}
@@ -2310,6 +2310,7 @@ function anything() {
 			if (typeof glyph[i*5+0] == "number") t = htmlEntities(glyph[i*5+0].toString());
             else {
 				//if (glyph[0].length == 1) t = glyph[i*5+0].charCodeAt(0).toString(16);
+				if (msg[2] == 0.325) post("msg", msg, "\n");
 				if (glyph[0].length == 1) t = glyph[i*5+0];
 				else t = htmlEntities(glyph[i*5+0]);
  				}

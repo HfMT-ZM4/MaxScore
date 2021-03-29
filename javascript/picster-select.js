@@ -1769,7 +1769,7 @@ function init()
 		var keys = [];
 		for (var key in anchors) if (anchors[key][5] != -1) keys.push(key);
 		//var keys = Object.keys(anchors);
-		//post("anchors-2", JSON.stringify(anchors), "\n");
+		//post("anchors-2", keys, JSON.stringify(anchors), "\n");
 		var expr = new Dict();
 		var e = new Dict();
 		var o = {};
@@ -1780,7 +1780,7 @@ function init()
 			if (anchor[6] != -1) for (var j = 0; j <= anchor[6]; j++) outlet(0, "selectNextInterval");
 			outlet(0, "getSelectedNoteInfo");
 			var key = Object.keys(json);
-			//post("json", JSON.stringify(json),"\n");
+			//post("json", key.length, JSON.stringify(json),"\n");
 			//look through all userBeans and add instance # to note dimension
 			//if (key.length > 0) {
 			if ("userBean" in json[key]){
@@ -2117,7 +2117,6 @@ function anything()
 								for (var j = 0; j < 3; j++) trajectory.push(trajectory_y[i][j]);
 								}
 							trajectory.push("linear");
-							//post("distances-2", trajectory_x[1],  "\n");
 							expr.replace("editor", "bpf");
 							expr.replace("message", edit.get("picster-element[0]::val::id"));
 							expr.replace("value", trajectory);
