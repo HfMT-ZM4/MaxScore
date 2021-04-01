@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 89.0, 1243.0, 774.0 ],
+		"rect" : [ 102.0, 90.0, 1031.0, 830.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,14 +40,36 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 690.0, 602.0, 103.0, 22.0 ],
+					"text" : "prepend setrange"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 690.0, 565.0, 62.0, 22.0 ],
+					"text" : "join"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-103",
-					"linecount" : 4,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 745.0, 625.0, 50.0, 62.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 679.0, 652.0, 116.0, 22.0 ],
 					"text" : "\"-69.6 dB\" \"6.00 dB\""
 				}
 
@@ -71,7 +93,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 700.5, 464.0, 29.5, 22.0 ],
+					"patching_rect" : [ 701.0, 443.0, 29.5, 22.0 ],
 					"text" : "t b l"
 				}
 
@@ -691,7 +713,7 @@
 						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 647.0, 533.0, 148.0, 22.0 ],
+					"patching_rect" : [ 647.0, 527.0, 148.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -712,7 +734,7 @@
 					"candycane" : 2,
 					"clicksustain" : 0,
 					"data" : [ 						{
-							"addpoints_with_curve" : [ 23.274764000000001, 0.0, 0, 0.0, 114.046344000000005, 0.825397, 0, 0.0, 236.238855999999998, 0.460317, 0, 0.0, 396.834727999999984, 0.84127, 0, 0.0, 579.541625999999951, 0.0, 0, 0.0 ]
+							"addpoints_with_curve" : [ 23.274764000000001, -29.0, 0, 0.0, 114.046344000000005, 19.698423000000005, 0, 0.0, 236.238855999999998, -1.841297000000001, 0, 0.0, 396.834727999999984, 20.634929999999997, 0, 0.0, 579.541625999999951, -29.0, 0, 0.0 ]
 						}
  ],
 					"domain" : 579.5416259765625,
@@ -727,9 +749,10 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "float", "", "", "bang", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 262.333333333333371, 638.0, 178.0, 106.0 ],
+					"patching_rect" : [ 262.333333333333371, 667.5, 178.0, 106.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 162.0, 251.0, 131.0 ],
+					"range" : [ -29.0, 30.0 ],
 					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"varname" : "bpf[1]"
 				}
@@ -849,7 +872,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 182.5, 555.622806549072266, 53.0, 22.0 ],
-					"restore" : [ "data", 0, 24, 579.5416259765625, 0.0, 1.0, 23.274764000000001, 0.0, 0, 0.0, 114.046344000000005, 0.825397, 0, 0.0, 236.238855999999998, 0.460317, 0, 0.0, 396.834727999999984, 0.84127, 0, 0.0, 579.541625999999951, 0.0, 0, 0.0, "curve" ],
+					"restore" : [ "data", 0, 24, 579.5416259765625, -29.0, 30.0, 23.274764000000001, -29.0, 0, 0.0, 114.046344000000005, 19.698423000000005, 0, 0.0, 236.238855999999998, -1.841297000000001, 0, 0.0, 396.834727999999984, 20.634929999999997, 0, 0.0, 579.541625999999951, -29.0, 0, 0.0, "curve" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2699,14 +2722,14 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 35.0, 70.622806549072266, 314.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
 					"text" : "pattr @bindto parent::choice @invisible 1 @autorestore 0",
-					"varname" : "u2911199572"
+					"varname" : "u969006424"
 				}
 
 			}
@@ -2835,7 +2858,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 150.333333333333371, 337.0, 65.0, 22.0 ],
-					"restore" : [ "bpf", "data", 0, 24, 579.5416259765625, 0, 1, 23.274764000000001, 0, 0, 0, 114.046344000000005, 0.825397, 0, 0, 236.238855999999998, 0.460317, 0, 0, 396.834727999999984, 0.84127, 0, 0, 579.541625999999951, 0, 0, 0, "curve" ],
+					"restore" : [ "bpf", "data", 0, 24, 579.5416259765625, -29.0, 30.0, 23.274764000000001, -29.0, 0, 0.0, 114.046344000000005, 19.698423000000005, 0, 0.0, 236.238855999999998, -1.841297000000001, 0, 0.0, 396.834727999999984, 20.634929999999997, 0, 0.0, 579.541625999999951, -29.0, 0, 0.0, "curve" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2909,7 +2932,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 118.0, 251.0, 19.0 ],
 					"rounded" : 0.0,
-					"text" : "data 0 24 579.541626 0. 1. 23.274764 0. 0 0. 114.046344 0.825397 0 0. 236.238856 0.460317 0 0. 396.834728 0.84127 0 0. 579.541626 0. 0 0. curve",
+					"text" : "data 0 24 579.541626 -29. 30. 23.274764 -29. 0 0. 114.046344 19.698423 0 0. 236.238856 -1.841297 0 0. 396.834728 20.63493 0 0. 579.541626 -29. 0 0. curve",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit",
 					"wordwrap" : 0
@@ -2924,7 +2947,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 387.0, 594.0, 150.0, 22.0 ]
+					"patching_rect" : [ 262.333333333333371, 552.0, 150.0, 22.0 ]
 				}
 
 			}
@@ -3038,7 +3061,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-100", 0 ],
-					"midpoints" : [ 550.5, 215.0, 710.0, 215.0 ],
+					"midpoints" : [ 550.5, 215.0, 710.5, 215.0 ],
 					"source" : [ "obj-24", 0 ]
 				}
 
@@ -3047,6 +3070,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-33", 0 ],
 					"source" : [ "obj-24", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 0 ],
+					"source" : [ "obj-27", 0 ]
 				}
 
 			}
@@ -3084,6 +3114,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-3", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-46", 0 ],
+					"source" : [ "obj-30", 0 ]
 				}
 
 			}
@@ -3279,6 +3316,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-27", 1 ],
+					"source" : [ "obj-88", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"source" : [ "obj-88", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-99", 0 ],
 					"source" : [ "obj-88", 3 ]
 				}
@@ -3306,6 +3357,64 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-1::obj-19::obj-19" : [ "saved-int[1]", "saved-int", 0 ],
+			"obj-24::obj-16::obj-14" : [ "live-path", "live-path", 0 ],
+			"obj-24::obj-19::obj-19" : [ "saved-int", "saved-int", 0 ],
+			"obj-37" : [ "live.text[7]", "live.text", 0 ],
+			"obj-88::obj-44::obj-14" : [ "live-path[1]", "live-path", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "live.expr.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.api.GetParameterNames.maxpat",
+				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.api.SaveLivePath.maxpat",
+				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.api.SaveInteger.maxpat",
+				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.api.GetAllTrackIds.maxpat",
+				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.api.GetDeviceNames.maxpat",
+				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.api.GetAllDeviceIds.maxpat",
+				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
