@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 1,
+			"revision" : 10,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 408.0, 484.0, 588.0, 466.0 ],
+		"rect" : [ 490.0, 573.0, 588.0, 466.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -43,7 +43,7 @@
 					"bgcolor" : [ 0.290196, 0.309804, 0.301961, 0.0 ],
 					"bordercolor" : [ 0.376471, 0.384314, 0.4, 0.0 ],
 					"fontface" : 1,
-					"fontname" : "Arial",
+					"fontname" : "Ableton Sans Light",
 					"fontsize" : 10.0,
 					"id" : "obj-20",
 					"maxclass" : "textedit",
@@ -51,11 +51,11 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 5.0, 85.0, 180.0, 20.0 ],
+					"patching_rect" : [ 5.0, 85.0, 163.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 52.879196166992188, 123.0, 18.241611480712891 ],
+					"presentation_rect" : [ 5.0, 52.879196166992188, 112.0, 18.241611480712891 ],
 					"text" : "synthgms.sf2",
-					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1
 				}
 
@@ -73,8 +73,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -119,8 +119,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1049,10 +1049,12 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activebgcolor" : [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
 					"activebgoncolor" : [ 1.0, 0.709803921568627, 0.196078431372549, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"annotation" : "Press this button to load sound bank",
-					"bordercolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"bordercolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 0.0 ],
+					"fontname" : "Ableton Sans Light",
 					"id" : "obj-22",
 					"maxclass" : "live.text",
 					"mode" : 0,
@@ -1064,18 +1066,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 5.0, 15.0, 121.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
-							"expression" : ""
-						}
-,
-						"activebgoncolor" : 						{
-							"expression" : ""
-						}
-,
-						"activebgcolor" : 						{
-							"expression" : ""
-						}
-,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 1,
@@ -1108,6 +1098,28 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-22" : [ "Edit Button[2]", "Edit Button", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "fixpathissue.js",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluidsynth~.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0,
 		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ]
 	}
 

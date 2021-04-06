@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 1,
+			"revision" : 10,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 107.0, 1592.0, 791.0 ],
+		"rect" : [ 699.0, 360.0, 668.0, 387.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"fontname" : "Avenir Next Regular",
+					"fontname" : "Ableton Sans Light",
 					"id" : "obj-11",
 					"lastchannelcount" : 2,
 					"maxclass" : "mc.live.gain~",
@@ -49,7 +49,7 @@
 					"outlettype" : [ "multichannelsignal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"parameter_mappable" : 0,
-					"patching_rect" : [ 20.0, 251.0, 209.0, 103.0 ],
+					"patching_rect" : [ 20.0, 251.0, 210.0, 103.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 7.0, 175.0, 303.0, 52.0 ],
 					"saved_attribute_attributes" : 					{
@@ -66,6 +66,9 @@
 					}
 ,
 					"showname" : 0,
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"tribordercolor" : [ 0.313725, 0.313725, 0.313725, 0.0 ],
+					"trioncolor" : [ 1.0, 0.4, 0.4, 1.0 ],
 					"varname" : "mc.live.gain~"
 				}
 
@@ -108,8 +111,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -154,8 +157,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1028,7 +1031,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-65",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
@@ -1065,8 +1067,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1428,8 +1430,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1966,8 +1968,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2156,7 +2158,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-54",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2431,8 +2432,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2620,7 +2621,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-25",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2954,8 +2954,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 0,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4122,7 +4122,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-23",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
@@ -4442,7 +4441,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-49",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -4453,7 +4452,10 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activebgcolor" : [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.313725, 0.313725, 0.313725, 0.0 ],
 					"fontsize" : 12.0,
 					"hint" : "maxscore note events  ",
 					"id" : "obj-9",
@@ -4468,10 +4470,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"activebgcolor" : 						{
-							"expression" : ""
-						}
-,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_longname" : "live.text[20]",
@@ -4489,7 +4487,10 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activebgcolor" : [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.313725, 0.313725, 0.313725, 0.0 ],
 					"fontsize" : 12.0,
 					"hint" : "signal",
 					"id" : "obj-40",
@@ -4504,10 +4505,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 211.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"activebgcolor" : 						{
-							"expression" : ""
-						}
-,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_longname" : "live.text[21]",
@@ -4559,23 +4556,24 @@
 , 			{
 				"box" : 				{
 					"fontface" : 1,
-					"fontname" : "Arial",
+					"fontname" : "Ableton Sans Light",
 					"fontsize" : 10.0,
 					"id" : "obj-30",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 453.0, 471.0, 128.0, 18.0 ],
+					"patching_rect" : [ 453.0, 471.0, 115.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 13.0, 120.0, 50.0, 18.0 ],
+					"presentation_rect" : [ 13.0, 120.0, 45.0, 18.0 ],
 					"text" : "Presets:",
-					"textcolor" : [ 0.200000002980232, 0.200000002980232, 0.200000002980232, 1.0 ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 1,
+					"fontface" : 0,
+					"fontname" : "Gill Sans",
 					"fontsize" : 10.0,
 					"htabcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
 					"id" : "obj-22",
@@ -4587,9 +4585,9 @@
 					"patching_rect" : [ 241.0, 40.0, 141.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 13.0, 144.0, 122.0, 18.0 ],
-					"tabcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"tabcolor" : [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
 					"tabs" : [ "read", "write" ],
-					"textcolor" : [ 0.15, 0.15, 0.15, 1.0 ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -4633,10 +4631,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 241.0, 186.0, 139.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 202, 45, 1355, 927 ],
+						"client_rect" : [ 1187, 252, 1796, 568 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 1129, 44, 1688, 594 ]
+						"storage_rect" : [ 780, 524, 1380, 824 ]
 					}
 ,
 					"text" : "pattrstorage Fluidsynth2",
@@ -4671,11 +4669,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-1",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "panic" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 20.0, 13.0, 25.0, 25.0 ]
 				}
 
@@ -4684,7 +4682,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-33",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -4705,7 +4703,7 @@
 					"restore" : 					{
 						"live.text[2]" : [ 0.0 ],
 						"live.text[3]" : [ 0.0 ],
-						"mc.live.gain~" : [ 0.0 ]
+						"mc.live.gain~" : [ -19.600000000000001 ]
 					}
 ,
 					"text" : "autopattr fluidsynth",
@@ -4715,17 +4713,15 @@
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 18.0,
 					"id" : "obj-26",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 553.0, 43.0, 189.0, 27.0 ],
+					"patching_rect" : [ 553.0, 43.0, 185.0, 28.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 65.0, 0.0, 189.0, 27.0 ],
-					"text" : "MaxScore Fluidsynth2",
-					"textcolor" : [ 0.200000002980232, 0.200000002980232, 0.200000002980232, 1.0 ]
+					"presentation_rect" : [ 65.0, 0.0, 183.0, 28.0 ],
+					"style" : "comment_header_white_MaxScore",
+					"text" : "MaxScore Fluidsynth2"
 				}
 
 			}
@@ -4792,20 +4788,16 @@
 			}
 , 			{
 				"box" : 				{
-					"angle" : -90.0,
-					"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"border" : 1,
-					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"id" : "obj-29",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 453.0, 40.0, 399.0, 281.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 0.0, 319.0, 228.0 ],
-					"proportion" : 0.39,
-					"rounded" : 20
+					"rounded" : 20,
+					"style" : "panel_dark_MS"
 				}
 
 			}
@@ -4906,10 +4898,124 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-11" : [ "mc.live.gain~[1]", "mc.live.gain~", 0 ],
+			"obj-24::obj-10::obj-7" : [ "sound[24]", "sound", 0 ],
+			"obj-24::obj-11::obj-7" : [ "sound[23]", "sound", 0 ],
+			"obj-24::obj-12::obj-7" : [ "sound[22]", "sound", 0 ],
+			"obj-24::obj-13::obj-7" : [ "sound[21]", "sound", 0 ],
+			"obj-24::obj-14::obj-7" : [ "sound[20]", "sound", 0 ],
+			"obj-24::obj-15::obj-7" : [ "sound[19]", "sound", 0 ],
+			"obj-24::obj-16::obj-7" : [ "sound[18]", "sound", 0 ],
+			"obj-24::obj-17::obj-7" : [ "sound[17]", "sound", 0 ],
+			"obj-24::obj-18::obj-7" : [ "sound[16]", "sound", 0 ],
+			"obj-24::obj-19::obj-7" : [ "sound[15]", "sound", 0 ],
+			"obj-24::obj-20::obj-7" : [ "sound[14]", "sound", 0 ],
+			"obj-24::obj-21::obj-7" : [ "sound[13]", "sound", 0 ],
+			"obj-24::obj-22::obj-7" : [ "sound[12]", "sound", 0 ],
+			"obj-24::obj-23::obj-7" : [ "sound[11]", "sound", 0 ],
+			"obj-24::obj-24::obj-7" : [ "sound[10]", "sound", 0 ],
+			"obj-24::obj-25::obj-7" : [ "sound[9]", "sound", 0 ],
+			"obj-24::obj-26::obj-7" : [ "sound[8]", "sound", 0 ],
+			"obj-24::obj-27::obj-7" : [ "sound[7]", "sound", 0 ],
+			"obj-24::obj-28::obj-7" : [ "sound[6]", "sound", 0 ],
+			"obj-24::obj-29::obj-7" : [ "sound[5]", "sound", 0 ],
+			"obj-24::obj-30::obj-7" : [ "sound[4]", "sound", 0 ],
+			"obj-24::obj-31::obj-7" : [ "sound[3]", "sound", 0 ],
+			"obj-24::obj-32::obj-7" : [ "sound[2]", "sound", 0 ],
+			"obj-24::obj-33::obj-7" : [ "sound[1]", "sound", 0 ],
+			"obj-24::obj-34::obj-7" : [ "sound", "sound", 0 ],
+			"obj-24::obj-3::obj-7" : [ "sound[31]", "sound", 0 ],
+			"obj-24::obj-4::obj-7" : [ "sound[30]", "sound", 0 ],
+			"obj-24::obj-5::obj-7" : [ "sound[29]", "sound", 0 ],
+			"obj-24::obj-6::obj-7" : [ "sound[28]", "sound", 0 ],
+			"obj-24::obj-7::obj-7" : [ "sound[27]", "sound", 0 ],
+			"obj-24::obj-8::obj-7" : [ "sound[26]", "sound", 0 ],
+			"obj-24::obj-9::obj-7" : [ "sound[25]", "sound", 0 ],
+			"obj-40" : [ "live.text[21]", "live.text", 0 ],
+			"obj-8::obj-22" : [ "Edit Button[2]", "Edit Button", 0 ],
+			"obj-9" : [ "live.text[20]", "live.text", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "maxscore.fluidsynthGUI.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "./Components",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fixpathissue.js",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.fluidsynth.menus.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "./Components",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.fluidsynth.instrument.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "./Components",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Blackwood - 23 notes FluidSynth Prefs.json",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/examples/Scores",
+				"patcherrelativepath" : "../../examples/Scores",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.fluidsynth2-player.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "./Components",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluidsynth~.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
-				"name" : "maxscore.default.buttons",
+				"name" : "comment_header_white_MaxScore",
 				"default" : 				{
-					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"fontsize" : [ 18.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textjustification" : [ 1 ],
+					"fontname" : [ "Ableton Sans Light" ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "panel_dark_MS",
+				"default" : 				{
+					"color" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"bgfillcolor" : 					{
+						"type" : "color",
+						"color" : [ 0.4, 0.4, 0.4, 1.0 ],
+						"color1" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
+						"color2" : [ 0.2, 0.2, 0.2, 1.0 ],
+						"angle" : -90.0,
+						"proportion" : 0.39,
+						"autogradient" : 0.0
+					}
+
 				}
 ,
 				"parentstyle" : "",

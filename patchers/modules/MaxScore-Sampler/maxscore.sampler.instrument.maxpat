@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 10,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 492.0, 159.0, 619.0, 703.0 ],
+		"rect" : [ 633.0, 414.0, 619.0, 703.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -102,8 +102,8 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
-					"bordercolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-					"fontname" : "Avenir Next Regular",
+					"bordercolor" : [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
+					"fontname" : "Ableton Sans Light",
 					"fontsize" : 12.0,
 					"hint" : "Map stereo to output channels",
 					"id" : "obj-15",
@@ -114,11 +114,11 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 374.0, 149.0, 65.0, 23.0 ],
+					"patching_rect" : [ 374.0, 149.0, 66.0, 23.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 104.0, 9.468084335327148, 46.0, 21.0 ],
 					"text" : "1 2",
-					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1,
 					"varname" : "channels"
 				}
@@ -321,7 +321,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -418,7 +418,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 19.0, 14.0, 237.0, 49.0 ],
-									"restore" : [ 1928979 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -698,17 +698,17 @@
 , 			{
 				"box" : 				{
 					"fontface" : 1,
-					"fontname" : "Avenir Next Regular",
+					"fontname" : "Ableton Sans Light",
 					"fontsize" : 9.199999999999999,
 					"id" : "obj-24",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 282.0, 149.0, 84.0, 19.0 ],
+					"patching_rect" : [ 282.0, 149.0, 77.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 0.0, 87.0, 19.0 ],
+					"presentation_rect" : [ 1.0, 0.0, 79.0, 18.0 ],
 					"text" : "Instrument 32:",
-					"textcolor" : [ 0.200000002980232, 0.200000002980232, 0.200000002980232, 1.0 ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -722,8 +722,9 @@
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
+					"color" : [ 1.0, 0.4, 0.4, 1.0 ],
 					"fontface" : 1,
-					"fontname" : "Avenir Next Regular",
+					"fontname" : "Ableton Sans Light",
 					"fontsize" : 10.0,
 					"id" : "obj-25",
 					"items" : "<none>",
@@ -732,11 +733,11 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 95.0, 149.0, 120.0, 22.0 ],
+					"patching_rect" : [ 95.0, 149.0, 120.0, 20.0 ],
 					"pattrmode" : 1,
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 13.468084335327148, 100.0, 22.0 ],
-					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"presentation_rect" : [ 1.0, 13.468084335327148, 100.0, 20.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "instrument"
 				}
 
@@ -908,6 +909,15 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "swissarmyknife.js",
+				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"bgcolor" : [ 0.32549, 0.345098, 0.372549, 0.0 ],
 		"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ]
 	}
