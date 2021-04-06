@@ -1,3 +1,5 @@
+outlets = 3;
+
 var mgraphics = new JitterObject("jit.mgraphics", 320, 240);
 var mode;
 var expr = new Dict();
@@ -321,3 +323,7 @@ function text_measure(f, fs, t)
 	mgraphics.set_font_size(fs);
 	return mgraphics.text_measure(t);
 }
+
+function xrange(choice) {
+	outlet(2, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
+}  
