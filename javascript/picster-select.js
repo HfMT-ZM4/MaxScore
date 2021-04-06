@@ -2255,26 +2255,6 @@ function anything()
 				_dim = [ Number(quotes[found + 1].replace(/,/g, "").split(" ")[2]), Number(quotes[found + 1].replace(/,/g, "").split(" ")[3]) ];
 				//dim = [line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[2], line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[3]];
 			}
-				/*
-				var attr = {};
-				attr.new = "image";
-				attr.id = "Picster-Element_" + num;
-				attr.href = msg;
-				attr.x = origin[0];
-				attr.y = origin[1];
-				attr.width = _dim[0];
-				attr.height = _dim[1];
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				_picster["picster-element"] = [];
-				_picster["picster-element"][0] = {};
-				_picster["picster-element"][0]["key"] = "svg";
-				_picster["picster-element"][0]["val"] = attr;
-				_picster["picster-element"][1] = {};
-				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : [origin[0], origin[1], _dim[0] + origin[0], _dim[1] + origin[1]]};
-				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
-				*/
 				addShape(origin[0], origin[1], "image", msg[0]);
 			}
 		break;
