@@ -11,10 +11,10 @@
 <g id="Ebene_2_3_">
 </g>
 <text fill="white" transform="matrix(1 0 0 1 27.4568 219.3876)" font-family="'Bravura'" font-size="156.0471px"></text>
-<line fill="none" stroke="white" stroke-width="4" x1="100" y1="226.3" x2="145.4" y2="196"/>
+<line stroke="white" stroke-width="4" x1="100" y1="226.3" x2="145.4" y2="196"/>
 <text fill="white" transform="matrix(1 0 0 1 156.5862 196.0223)" font-family="'Bravura'" font-size="156.0471px"></text>
-<rect fill="white" x="79.4" y="40.6" width="2.8" height="173.8"/>
-<rect fill="white" x="79.4" y="22.8" width="131.9" height="21.3"/>
-<rect fill="white" x="79.4" y="65.4" width="131.9" height="21.3"/>
-<rect fill="white" x="208.5" y="38.4" width="2.8" height="152.5"/>
+<rect fill="white" fill-opacity="1" x="79.4" y="40.6" width="2.8" height="173.8"/>
+<rect fill="white" fill-opacity="1" x="79.4" y="22.8" width="131.9" height="21.3"/>
+<rect fill="white" fill-opacity="1" x="79.4" y="65.4" width="131.9" height="21.3"/>
+<rect fill="white" fill-opacity="1" x="208.5" y="38.4" width="2.8" height="152.5"/>
 </svg>

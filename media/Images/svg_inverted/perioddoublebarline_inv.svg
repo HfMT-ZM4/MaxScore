@@ -5,11 +5,11 @@
 <g id="Ebene_2_1_">
 </g>
 <g>
-	<line fill="none" stroke="white" stroke-width="7" x1="17.2" y1="187.6" x2="238.8" y2="187.6"/>
-	<line fill="none" stroke="white" stroke-width="7" x1="17.2" y1="157.8" x2="238.8" y2="157.8"/>
-	<line fill="none" stroke="white" stroke-width="7" x1="17.2" y1="127.9" x2="238.8" y2="127.9"/>
-	<line fill="none" stroke="white" stroke-width="7" x1="17.2" y1="98.2" x2="238.8" y2="98.2"/>
-	<line fill="none" stroke="white" stroke-width="7" x1="17.2" y1="68.4" x2="238.8" y2="68.4"/>
+	<line stroke="white" stroke-width="7" x1="17.2" y1="187.6" x2="238.8" y2="187.6"/>
+	<line stroke="white" stroke-width="7" x1="17.2" y1="157.8" x2="238.8" y2="157.8"/>
+	<line stroke="white" stroke-width="7" x1="17.2" y1="127.9" x2="238.8" y2="127.9"/>
+	<line stroke="white" stroke-width="7" x1="17.2" y1="98.2" x2="238.8" y2="98.2"/>
+	<line stroke="white" stroke-width="7" x1="17.2" y1="68.4" x2="238.8" y2="68.4"/>
 </g>
 <text fill="white" transform="matrix(1 0 0 1 70.4004 161.334)" font-family="'ArialMT'" font-size="49.2752px"> </text>
 <rect fill="white" x="230.9" y="69.3" stroke="white" stroke-width="9" stroke-miterlimit="10" width="7.7" height="117.3"/>

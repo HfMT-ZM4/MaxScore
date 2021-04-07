@@ -4,11 +4,11 @@
 	 width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
 <g id="Ebene_2_1_">
 </g>
-<line fill="none" stroke="white" stroke-width="7" x1="24.7" y1="183.8" x2="231.3" y2="183.8"/>
-<line fill="none" stroke="white" stroke-width="7" x1="24.7" y1="155.7" x2="231.3" y2="155.7"/>
-<line fill="none" stroke="white" stroke-width="7" x1="24.7" y1="127.7" x2="231.3" y2="127.7"/>
-<line fill="none" stroke="white" stroke-width="7" x1="24.7" y1="99.7" x2="231.3" y2="99.7"/>
-<line fill="none" stroke="white" stroke-width="7" x1="24.7" y1="71.6" x2="231.3" y2="71.6"/>
+<line stroke="white" stroke-width="7" x1="24.7" y1="183.8" x2="231.3" y2="183.8"/>
+<line stroke="white" stroke-width="7" x1="24.7" y1="155.7" x2="231.3" y2="155.7"/>
+<line stroke="white" stroke-width="7" x1="24.7" y1="127.7" x2="231.3" y2="127.7"/>
+<line stroke="white" stroke-width="7" x1="24.7" y1="99.7" x2="231.3" y2="99.7"/>
+<line stroke="white" stroke-width="7" x1="24.7" y1="71.6" x2="231.3" y2="71.6"/>
 <rect fill="white" x="34.4" y="71.4" width="7.6" height="112.6"/>
 <rect fill="white" x="48.4" y="71.4" width="2.8" height="112.6"/>
 <text fill="white" transform="matrix(1 0 0 1 57.4361 117.7107)" font-family="'MyriadPro-Regular'" font-size="84px">.</text>

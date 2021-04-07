@@ -9,9 +9,9 @@
 		<text fill="white" transform="matrix(1 0 0 1 178.1699 224.0918)" font-family="'Bravura'" font-size="140.1609px"></text>
 	</g>
 	<g>
-		<line fill="none" stroke="white" stroke-width="4" stroke-miterlimit="10" x1="102.6" y1="150" x2="207.4" y2="150"/>
+		<line stroke="white" stroke-width="4" stroke-miterlimit="10" x1="102.6" y1="150" x2="207.4" y2="150"/>
 		<g>
-			<line fill="none" stroke="white" stroke-width="4" stroke-miterlimit="10" x1="102.6" y1="150" x2="185.2" y2="150"/>
+			<line stroke="white" stroke-width="4" stroke-miterlimit="10" x1="102.6" y1="150" x2="185.2" y2="150"/>
 			<g>
 				<polygon fill="white" stroke="white" stroke-width="4" stroke-miterlimit="10" points="180.7,165.6 207.4,150 180.7,134.7 				"/>
 			</g>
@@ -21,7 +21,7 @@
 		<g id="Ebene_1_3_">
 			<text fill="white" transform="matrix(1 0 0 1 13.3165 224.0918)" font-family="'Bravura'" font-size="245.7286px"></text>
 		</g>
-		<line fill="none" stroke="white" stroke-width="6" stroke-miterlimit="10" x1="35" y1="181.5" x2="96.5" y2="128"/>
+		<line stroke="white" stroke-width="6" stroke-miterlimit="10" x1="35" y1="181.5" x2="96.5" y2="128"/>
 	</g>
 </g>
 </svg>

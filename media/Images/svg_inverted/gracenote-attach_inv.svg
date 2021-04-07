@@ -12,14 +12,14 @@
 		<text fill="white" transform="matrix(1 0 0 1 140.5801 161.5879)" font-family="'Bravura'" font-size="164.8649px"></text>
 	</g>
 	<g>
-		<line fill="none" x1="102.9" y1="128" x2="149.5" y2="128"/>
+		<line x1="102.9" y1="128" x2="149.5" y2="128"/>
 		<g>
-			<line fill="none" stroke="white" stroke-width="1.3665" stroke-miterlimit="10" x1="102.9" y1="128" x2="139.6" y2="128"/>
+			<line stroke="white" stroke-width="1.3665" stroke-miterlimit="10" x1="102.9" y1="128" x2="139.6" y2="128"/>
 			<g>
 				<polygon fill="white" points="137.6,134.8 149.5,128 137.6,121.2 				"/>
 			</g>
 		</g>
 	</g>
-	<line fill="none" stroke="white" stroke-width="1.3665" stroke-miterlimit="10" x1="159.6" y1="129.1" x2="192.5" y2="96.1"/>
+	<line stroke="white" stroke-width="1.3665" stroke-miterlimit="10" x1="159.6" y1="129.1" x2="192.5" y2="96.1"/>
 </g>
 </svg>

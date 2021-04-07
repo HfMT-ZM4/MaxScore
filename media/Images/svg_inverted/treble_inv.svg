@@ -5,15 +5,15 @@
 <g id="Ebene_2_1_">
 </g>
 <g>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="77" y1="92" x2="179" y2="92"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="77" y1="62.8" x2="179" y2="62.8"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="77" y1="122.5" x2="179" y2="122.5"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="77" y1="153.2" x2="179" y2="153.2"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="77" y1="183.6" x2="179" y2="183.6"/>
+	<line stroke="white" stroke-width="4.5" x1="77" y1="92" x2="179" y2="92"/>
+	<line stroke="white" stroke-width="4.5" x1="77" y1="62.8" x2="179" y2="62.8"/>
+	<line stroke="white" stroke-width="4.5" x1="77" y1="122.5" x2="179" y2="122.5"/>
+	<line stroke="white" stroke-width="4.5" x1="77" y1="153.2" x2="179" y2="153.2"/>
+	<line stroke="white" stroke-width="4.5" x1="77" y1="183.6" x2="179" y2="183.6"/>
 	<text fill="white" transform="matrix(1 0 0 1 100.8057 153.3869)" font-family="'ArialMT'" font-size="17.6036px"> </text>
 </g>
 <g>
 	<text fill="white" transform="matrix(1 0 0 1 84.2314 153.0891)" font-family="'Bravura'" font-size="130.9784px"></text>
-	<line fill="none" x1="172.3" y1="151.4" x2="183.8" y2="151.4"/>
+	<line stroke="white" x1="172.3" y1="151.4" x2="183.8" y2="151.4"/>
 </g>
 </svg>

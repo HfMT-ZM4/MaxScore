@@ -6,11 +6,11 @@
 </g>
 <g>
 	<text fill="white" transform="matrix(1 0 0 1 13.0293 83.9035)" font-family="'Bravura'" font-size="120.4683px"></text>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="0" y1="114.4" x2="256" y2="114.4"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="0" y1="86.6" x2="256" y2="86.6"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="0" y1="142.1" x2="256" y2="142.1"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="0" y1="169.8" x2="256" y2="169.8"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="0" y1="197.9" x2="256" y2="197.9"/>
+	<line stroke="white" stroke-width="4.5" x1="0" y1="114.4" x2="256" y2="114.4"/>
+	<line stroke="white" stroke-width="4.5" x1="0" y1="86.6" x2="256" y2="86.6"/>
+	<line stroke="white" stroke-width="4.5" x1="0" y1="142.1" x2="256" y2="142.1"/>
+	<line stroke="white" stroke-width="4.5" x1="0" y1="169.8" x2="256" y2="169.8"/>
+	<line stroke="white" stroke-width="4.5" x1="0" y1="197.9" x2="256" y2="197.9"/>
 	<text fill="white" transform="matrix(1 0 0 1 78.2793 68.4035)" font-family="'Bravura'" font-size="120.4683px"></text>
 	<text fill="white" transform="matrix(1 0 0 1 45.2793 125.1535)" font-family="'Bravura'" font-size="120.4683px"></text>
 	<text fill="white" transform="matrix(1 0 0 1 110.7793 111.1535)" font-family="'Bravura'" font-size="120.4683px"></text>
