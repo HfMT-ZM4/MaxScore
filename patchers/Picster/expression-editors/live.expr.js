@@ -5,6 +5,11 @@ var mode;
 var expr = new Dict();
 var messagename = "";
 
+var customTimeDomain = 100;
+function customtime(time) {
+	customTimeDomain = time;
+}
+
 var width = 100;
 var height = 60;
 var	yoffset = 15;
@@ -143,7 +148,7 @@ var bpfShape = {
 				"ry" : 3,
 				"style" : 					{
 					"fill" : "deeppink",
-					"fill-opacity" : 1.,
+					"fill-opacity" : 1,
 					"stroke" : "none",
 					"stroke-opacity" : 1,
 					"stroke-width" : 1 ,
@@ -183,8 +188,7 @@ var bpfShape = {
 					"stroke" : "$FRGB",
 					"stroke-opacity" : 1,
 					"stroke-width" :  2,
-					"fill" : "none",
-					"fill-opacity" : 1
+					"fill" : "none"
 				},
 				"transform" : "matrix(1,0,0,1,0,0)"
 			}, 		
@@ -196,8 +200,7 @@ var bpfShape = {
 					"stroke" : "$FRGB",
 					"stroke-opacity" : 0.5,
 					"stroke-width" :  0.25,
-					"fill" : "none",
-					"fill-opacity" : 1
+					"fill" : "none"
 				},
 				"transform" : "matrix(1,0,0,1,0,0)"
 			}	]
@@ -233,34 +236,36 @@ function drawBpf(_curve, time) {
 	idx[idx.length] = _curve.length;
 	for (var i = 0; i < idx.length; i++) curve[i] = _curve.slice(idx[i] + 6, idx[i + 1]);
 	var dims = _curve.slice(3, 6);
+	var y_transform = -height/dims[2];
+	var x_transform = 100 / dims[0];
 	//post("dims", dims, "\n");
 	for (var i = 0; i < idx.length - 1; i++) {
 		if (curve[i][curve[i].length - 1] == "curve") {
 			var numPoints = (curve[i].length - 1) / 4;
 			//var moveTo = [curve[3] * space + msg[5] + 7, curve[4] / 300 * -6 + msg[6] + 2];
-			var moveTo = [curve[i][0], curve[i][1]];
+			var moveTo = [curve[i][0] * x_transform, curve[i][1] * y_transform]; // apply transform here
 			var oldPoint = moveTo;
 			bpf += "M" + moveTo + " ";
 			for (var j = 0; j < numPoints - 1; j++){
 				var curvature = curve[i][7 + j * 4];
 				//post("curvature", curvature, "\n");
-				var curveTo = [curve[i][4 + j * 4], curve[i][5 + j * 4], curvature];
+				var curveTo = [curve[i][4 + j * 4] * x_transform, curve[i][5 + j * 4] * y_transform, curvature]; // apply transform here
 				var controlPoint = oldPoint;
 				//post("controlPoint-1", curvature, controlPoint, "\n");
 				if (curvature >= 0) controlPoint[0] = oldPoint[0] + (curveTo[0] - oldPoint[0]) * Math.abs(curvature);
 				else controlPoint[1] = oldPoint[1] + (curveTo[1] - oldPoint[1]) * Math.abs(curvature);
 				//post("controlPoint-2", curvature, controlPoint, "\n");
-				bpf += "C" + controlPoint + " " + controlPoint + " " + curveTo.slice(0, 2) + " ";
+				bpf += "Q" + controlPoint + " " + curveTo.slice(0, 2) + " ";
 				oldPoint = curveTo.slice(0, 2);
 			}
 		}
 		else {
 			var numPoints = (curve[i].length - 1) / 3;
-			var moveTo = [curve[i][0], curve[i][1]];
+			var moveTo = [curve[i][0] * x_transform, curve[i][1] * y_transform]; // apply transform here
 			bpf += "M" + moveTo + " ";
 			for (var j = 0; j < numPoints - 1; j++){
 				//post("curve", curve[i][4 + j * 3], dims[2], height, "\n");
-				var lineTo = [curve[i][3 + j * 3], curve[i][4 + j * 3]];
+				var lineTo = [curve[i][3 + j * 3] * x_transform, curve[i][4 + j * 3] * y_transform]; // apply transform here
 				bpf += "L" + lineTo.slice(0, 2) + " ";
 			}							
 		}
@@ -270,7 +275,7 @@ function drawBpf(_curve, time) {
 	shape["picster-element"][0]["val"][2]["child"][0]["id"] = "box_" + time;
 	shape["picster-element"][0]["val"][2]["child"][1]["id"] = "functions_" + time;
 	shape["picster-element"][0]["val"][2]["child"][1]["d"] = bpf;
-	shape["picster-element"][0]["val"][2]["child"][1]["transform"] = "matrix(" + 100 / dims[0] + ", 0, 0, " + -height/dims[2] + ", 0, " + yoffset + ")";
+	shape["picster-element"][0]["val"][2]["child"][1]["transform"] = "matrix(1, 0, 0, 1, 0, " + yoffset + ")";
 	shape["picster-element"][0]["val"][2]["child"][2]["id"] = "grid_" + time;
 	shape["picster-element"][0]["val"][2]["child"][2]["d"] = "M10,0 V" + height + " M20,0 V" + height + " M30,0 V" + height + " M40,0 V" + height + " M50,0 V" + height + " M60,0 V" + height + " M70,0 V" + height + " M80,0 V" + height + " M90,0 V" + height + ", M0,10 H" + width + " M0,20 H" + width + " M0,30 H" + width + " M0,40 H" + width + " M0,50 H" + width;
 	shape["picster-element"][0]["val"][2]["child"][2]["transform"] = "matrix(1, 0, 0, 1, 0, " + (yoffset - height).toFixed(2) + ")";
@@ -293,21 +298,21 @@ function value() {
 	a.shift();
 	switch (mode) {
 		case "single" : 
-		textBox["picster-element"][0]["val"][0]["id"] = "Destination_" + time;
-		textBox["picster-element"][0]["val"][1]["id"] = "Picster-Element_" + time;
-		textBox["picster-element"][0]["val"][1]["child"][0]["id"] = "Picster-Element_" + (time + 1);
-		textBox["picster-element"][0]["val"][1]["child"][0]["width"] = text_measure("Arial", 10, a.join(" "))[0] + 4;
-		textBox["picster-element"][0]["val"][1]["child"][1]["id"] = "Picster-Element_" + (time + 2);
-		textBox["picster-element"][0]["val"][1]["child"][1]["child"] = a.join(" ");
-		//post("arguments", JSON.stringify(arguments), "\n");
-		textBox["picster-element"][2]["val"][0]["message"] = messagename;
-		textBox["picster-element"][2]["val"][0]["value"] = "single " + a.join(' ');
-		expr.parse(JSON.stringify(textBox));
-		break;
+			textBox["picster-element"][0]["val"][0]["id"] = "Destination_" + time;
+			textBox["picster-element"][0]["val"][1]["id"] = "Picster-Element_" + time;
+			textBox["picster-element"][0]["val"][1]["child"][0]["id"] = "Picster-Element_" + (time + 1);
+			textBox["picster-element"][0]["val"][1]["child"][0]["width"] = text_measure("Arial", 10, a.join(" "))[0] + 4;
+			textBox["picster-element"][0]["val"][1]["child"][1]["id"] = "Picster-Element_" + (time + 2);
+			textBox["picster-element"][0]["val"][1]["child"][1]["child"] = a.join(" ");
+			//post("arguments", JSON.stringify(arguments), "\n");
+			textBox["picster-element"][2]["val"][0]["message"] = messagename;
+			textBox["picster-element"][2]["val"][0]["value"] = "single " + a.join(' ');
+			expr.parse(JSON.stringify(textBox));
+			break;
 		case "bpf" : 
-		drawBpf(a, time);
-		//post(expr.stringify()+'\n');
-		break;
+			drawBpf(a, time);
+			//post(expr.stringify()+'\n');
+			break;
 	}
 	
 }
@@ -325,5 +330,15 @@ function text_measure(f, fs, t)
 }
 
 function xrange(choice) {
-	outlet(2, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
+
+	switch (choice) {
+		case 0: 
+			outlet(2, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
+			break;
+		case 1:
+			outlet(2, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
+			break;
+		case 2:
+			break;
+	}
 }  
