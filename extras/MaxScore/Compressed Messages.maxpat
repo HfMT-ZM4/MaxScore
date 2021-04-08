@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 6,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -54,7 +54,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-25",
 					"maxclass" : "textbutton",
 					"numinlets" : 1,
@@ -65,7 +65,8 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 90.0, 152.0, 50.0, 20.0 ],
 					"text" : "update",
-					"textoncolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+					"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ],
+					"textoncolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
 			}
@@ -173,13 +174,14 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 60.5, 368.0, 408.0, 45.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 30.0, 206.0, 408.0, 134.0 ]
+					"presentation_rect" : [ 30.0, 206.0, 408.0, 134.0 ],
+					"text" : "13.3o8plKtpkK..CXa.W."
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-16",
 					"maxclass" : "textbutton",
 					"numinlets" : 1,
@@ -190,7 +192,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 30.0, 152.0, 50.0, 20.0 ],
 					"text" : "edit",
-					"textoncolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+					"textoncolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
 			}

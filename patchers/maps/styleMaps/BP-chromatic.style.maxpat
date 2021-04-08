@@ -1654,8 +1654,8 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
 													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -1679,8 +1679,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1689,9 +1689,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1700,8 +1700,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1710,9 +1710,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1834,7 +1834,7 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+									"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 									"id" : "obj-32",
 									"maxclass" : "textbutton",
 									"numinlets" : 1,
@@ -1845,7 +1845,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 72.875, 154.5, 100.0, 24.0 ],
 									"text" : "Set",
-									"textoncolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+									"textoncolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ],
 									"varname" : "set"
 								}
 
@@ -1989,7 +1989,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 157.375, 107.5, 68.0, 22.0 ],
 									"text" : "quintuple",
-									"textcolor" : [ 0.200000002980232, 0.200000002980232, 0.200000002980232, 1.0 ]
+									"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 								}
 
 							}
@@ -2004,7 +2004,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 157.375, 83.5, 68.0, 22.0 ],
 									"text" : "triple",
-									"textcolor" : [ 0.200000002980232, 0.200000002980232, 0.200000002980232, 1.0 ]
+									"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 								}
 
 							}
@@ -2019,15 +2019,16 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 157.375, 58.5, 68.0, 22.0 ],
 									"text" : "none",
-									"textcolor" : [ 0.200000002980232, 0.200000002980232, 0.200000002980232, 1.0 ]
+									"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"activecolor" : [ 0.929411764705882, 0.341176470588235, 0.270588235294118, 1.0 ],
+									"activecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 									"bgcolor" : [ 0.290196078431373, 0.309803921568627, 0.301960784313725, 0.0 ],
 									"disabled" : [ 0, 0, 0 ],
+									"elementcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 									"flagmode" : 1,
 									"id" : "obj-45",
 									"itemtype" : 0,
@@ -2183,7 +2184,8 @@
 									"patching_rect" : [ 600.75, 286.0, 109.0, 22.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 9.0, 83.5, 109.0, 22.0 ],
-									"text" : "BP Microtones :"
+									"text" : "BP Microtones :",
+									"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 								}
 
 							}
@@ -2228,7 +2230,8 @@
 									"patching_rect" : [ 394.5, 353.0, 82.0, 22.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 9.0, 16.5, 82.0, 22.0 ],
-									"text" : "Select Clef:"
+									"text" : "Select Clef:",
+									"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 								}
 
 							}
@@ -2636,7 +2639,7 @@
 									"pattrmode" : 1,
 									"presentation" : 1,
 									"presentation_rect" : [ 142.375, 6.5, 78.75, 42.0 ],
-									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+									"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ],
 									"varname" : "clef"
 								}
 
@@ -3682,8 +3685,8 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontsize" : [ 12.0 ],
 									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
@@ -3707,8 +3710,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3717,9 +3720,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3728,8 +3731,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3738,9 +3741,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",

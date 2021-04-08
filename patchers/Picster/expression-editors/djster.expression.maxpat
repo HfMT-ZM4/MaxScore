@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -52,8 +52,8 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.419607843137255, 0.580392156862745, 0.525490196078431, 1.0 ],
-					"activebgoncolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activebgcolor" : [ 0.619607843137255, 0.768627450980392, 0.937254901960784, 1.0 ],
+					"activebgoncolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"bgcolor" : [ 0.419607843137255, 0.580392156862745, 0.525490196078431, 1.0 ],
 					"id" : "obj-42",
 					"lcdcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
@@ -68,6 +68,26 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 43.0, 248.0, 210.899999856948853, 20.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"textoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"lcdcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "25%", "33%", "50%", "66%", "100%", "200%" ],
 							"parameter_initial" : [ 4 ],
@@ -82,6 +102,7 @@
 
 					}
 ,
+					"textoncolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ],
 					"varname" : "live.tab"
 				}
 
@@ -162,8 +183,9 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activebgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activetextcolor" : [ 0.980392156862745, 0.964705882352941, 0.964705882352941, 1.0 ],
+					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"bordercolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 0.0 ],
 					"fontsize" : 11.0,
 					"id" : "obj-8",
@@ -177,6 +199,22 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 188.899999856948853, 3.0, 66.692562199684147, 27.0 ],
 					"saved_attribute_attributes" : 					{
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
@@ -195,8 +233,9 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activebgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activetextcolor" : [ 0.980392156862745, 0.964705882352941, 0.964705882352941, 1.0 ],
+					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"bordercolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 0.0 ],
 					"fontsize" : 11.0,
 					"id" : "obj-7",
@@ -210,6 +249,22 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.5, 3.0, 176.5, 27.0 ],
 					"saved_attribute_attributes" : 					{
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
@@ -436,7 +491,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "Silent downbeat. The first pulse is always lowest priority, while the second is highest priority.",
 					"appearance" : 1,
@@ -452,6 +507,14 @@
 					"presentation_rect" : [ 58.799996852874756, 75.200000643730164, 32.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
@@ -615,7 +678,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "Three choices: none, rhythmic talea, ostinato ",
 					"appearance" : 1,
@@ -631,6 +694,14 @@
 					"presentation_rect" : [ 150.049996852874756, 75.200000643730164, 40.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "none", "talea", "ostinato" ],
 							"parameter_initial" : [ 0 ],
@@ -653,7 +724,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "The interval between pulses of every event generated",
 					"appearance" : 1,
@@ -669,6 +740,14 @@
 					"presentation_rect" : [ 11.0, 117.000000596046448, 64.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1000.0 ],
 							"parameter_initial_enable" : 1,
@@ -725,7 +804,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "The central (=average) MIDI-‘velocity’ of the stream.",
 					"appearance" : 1,
@@ -741,6 +820,14 @@
 					"presentation_rect" : [ 136.0, 203.600000560283661, 47.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 64 ],
 							"parameter_initial_enable" : 1,
@@ -761,7 +848,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "The extent to which the dynamics may deviate from the dynamics value; at minimum ‘metriclarity’  this is decided at random, whereas at maximum ‘metriclarity’ the deviation is related to the ‘indispensability’ of the pulse - the metriclarity is then dynamically amplified; this may be useful in the case of maximum eventfulness where agogic elements are neutralized.",
 					"appearance" : 1,
@@ -777,6 +864,14 @@
 					"presentation_rect" : [ 188.899999856948853, 203.600000560283661, 55.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 12.5 ],
 							"parameter_initial_enable" : 1,
@@ -798,7 +893,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "Set event length",
 					"appearance" : 1,
@@ -814,6 +909,14 @@
 					"presentation_rect" : [ 134.0, 162.000000596046448, 60.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 7 ],
 							"parameter_initial_enable" : 1,
@@ -834,7 +937,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"appearance" : 1,
 					"fontsize" : 9.0,
@@ -849,6 +952,14 @@
 					"presentation_rect" : [ 72.0, 162.000000596046448, 60.0, 36.0 ],
 					"prototypename" : "pitch",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 48 ],
 							"parameter_initial_enable" : 1,
@@ -870,7 +981,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "Analogous to metriclarity, a minimum value accords all pitches in the scale an equal probability, thus weakening the key-feeling; at maximum the opposite is true. Note that this description particularly holds in the case of scales such as the chromatic; a major scale would introduce its own intrinsic key-feeling even at the minimum Parameter value.",
 					"appearance" : 1,
@@ -885,6 +996,14 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 11.0, 203.600000560283661, 71.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 100 ],
 							"parameter_initial_enable" : 1,
@@ -905,7 +1024,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "Up to a maximum of 3 notes can be played together in each stream. ",
 					"appearance" : 1,
@@ -920,6 +1039,14 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 188.899999856948853, 162.000000596046448, 69.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
@@ -941,7 +1068,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"appearance" : 1,
 					"fontsize" : 9.0,
@@ -956,6 +1083,14 @@
 					"presentation_rect" : [ 11.0, 162.000000596046448, 55.0, 36.0 ],
 					"prototypename" : "pitch",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 60 ],
 							"parameter_initial_enable" : 1,
@@ -976,7 +1111,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "The maximum number of semitones permitted between the MIDI number of any event and the one following it.",
 					"appearance" : 1,
@@ -992,6 +1127,14 @@
 					"presentation_rect" : [ 72.5, 203.600000560283661, 72.5, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 7 ],
 							"parameter_initial_enable" : 1,
@@ -1012,7 +1155,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
 					"appearance" : 1,
@@ -1028,6 +1171,14 @@
 					"presentation_rect" : [ 134.0, 117.000000596046448, 64.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1000.0 ],
 							"parameter_initial_enable" : 1,
@@ -1050,7 +1201,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "At minimum the stream is inactive, at maximum it is saturated with attacks, e.g. every available pulse in the metre accorded to this stream is played. ",
 					"appearance" : 1,
@@ -1066,6 +1217,14 @@
 					"presentation_rect" : [ 72.0, 117.000000596046448, 64.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 100.0 ],
 							"parameter_initial_enable" : 1,
@@ -1087,7 +1246,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "A measure of the resultant clarity of the metre as played in the stream - at minimum all pulses are accorded equal probability and the metre cannot be musically detected, whereas at maximum the opposite is true.",
 					"appearance" : 1,
@@ -1103,6 +1262,14 @@
 					"presentation_rect" : [ 188.899999856948853, 117.000000596046448, 60.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 100.0 ],
 							"parameter_initial_enable" : 1,
@@ -1124,7 +1291,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"activefgdialcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"annotation" : "Each meter can be phase-shifted so that the ﬁrst pulse to be attacked on starting a run can be set to this value; e.g. if the metre has 8 pulses and this value is set to E, this is the pulse with which the music will start. The streams can have different outset pulses.",
 					"appearance" : 1,
@@ -1140,6 +1307,14 @@
 					"presentation_rect" : [ 103.799996852874756, 75.200000643730164, 37.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
@@ -1700,7 +1875,7 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "djster.expr.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -1710,13 +1885,12 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
+					"fontname" : [ "Arial" ],
 					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -1726,7 +1900,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1745,9 +1920,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1756,8 +1931,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1766,9 +1941,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",

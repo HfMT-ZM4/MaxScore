@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 201.0, 53.0, 1088.0, 716.0 ],
+		"rect" : [ 200.0, 53.0, 1088.0, 716.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -97,8 +97,8 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"button" : 1,
-					"htabcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"id" : "obj-43",
 					"maxclass" : "tab",
 					"numinlets" : 1,
@@ -108,16 +108,15 @@
 					"patching_rect" : [ 180.5, 436.0, 162.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 864.0, 2.0, 223.0, 15.0 ],
-					"tabcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-					"tabs" : [ "next", "previous" ],
-					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"tabs" : [ "next", "previous" ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"colorselectedtext" : 1,
-					"htabcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"htabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-42",
 					"maxclass" : "tab",
 					"numinlets" : 1,
@@ -606,6 +605,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 664.0, 1086.0, 44.0 ],
 					"rounded" : 0.0,
+					"text" : "GlissandoTransform | - | toggle glissando out for selected notes | GlissandoTransform",
 					"textcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
 				}
 
@@ -679,7 +679,7 @@
 					"fontname" : "Verdana",
 					"fontsize" : 10.0,
 					"gridlinecolor" : [ 0.698039, 0.698039, 0.698039, 1.0 ],
-					"hcellcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"hcellcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"headercolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"hscroll" : 0,
 					"id" : "obj-20",
@@ -757,11 +757,12 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"bordercolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"coldef" : [ [ 0, 222, 1, 0.368627, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, 2, 1 ], [ 1, 77, 1, 0.513726, 0.086275, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, 2, 1 ], [ 2, 204, 1, 0.368627, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, 2, 1 ], [ 3, 280, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 4, 284, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
 					"cols" : 5,
 					"colwidth" : 45,
+					"fgcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"fontface" : 0,
 					"fontname" : "Verdana",
 					"fontsize" : 10.0,
@@ -1253,7 +1254,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "Picster-Messages.txt",
+				"name" : "MaxScore-Messages.txt",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/dictionary",
 				"patcherrelativepath" : "../../patchers/dictionary",
 				"type" : "TEXT",
@@ -1267,7 +1268,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "MaxScore-Messages.txt",
+				"name" : "Picster-Messages.txt",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/dictionary",
 				"patcherrelativepath" : "../../patchers/dictionary",
 				"type" : "TEXT",
@@ -1275,6 +1276,16 @@
 			}
  ],
 		"autosave" : 0,
+		"styles" : [ 			{
+				"name" : "maxscore.default.buttons",
+				"default" : 				{
+					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ],
 		"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
 	}
 
