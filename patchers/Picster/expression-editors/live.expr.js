@@ -3,9 +3,15 @@ outlets = 3;
 var mgraphics = new JitterObject("jit.mgraphics", 320, 240);
 var mode;
 var expr = new Dict();
-var messagename = "";
+var destination = "";
 
-var customTimeDomain = 100;
+// for retrieving information from jmsl
+var dump, noteInfo, measureInfo;
+var dumpflag = 0;
+
+var x_timeMultiple = 1;
+
+var customTimeDomain = 1;
 function customtime(time) {
 	customTimeDomain = time;
 }
@@ -171,7 +177,7 @@ var bpfShape = {
 				"style" : 						{
 					"stroke" : "$FRGB",
 					"stroke-opacity" : 1,
-					"stroke-width" : 1 ,
+					"stroke-width" : 0.5 ,
 					"fill" : "rgb(250,250,250)",
 					"fill-opacity" : 0.6
 				},
@@ -237,7 +243,7 @@ function drawBpf(_curve, time) {
 	for (var i = 0; i < idx.length; i++) curve[i] = _curve.slice(idx[i] + 6, idx[i + 1]);
 	var dims = _curve.slice(3, 6);
 	var y_transform = -height/dims[2];
-	var x_transform = 100 / dims[0];
+	var x_transform = 100 / dims[0] * x_timeMultiple;
 	//post("dims", dims, "\n");
 	for (var i = 0; i < idx.length - 1; i++) {
 		if (curve[i][curve[i].length - 1] == "curve") {
@@ -278,17 +284,18 @@ function drawBpf(_curve, time) {
 	shape["picster-element"][0]["val"][2]["child"][1]["transform"] = "matrix(1, 0, 0, 1, 0, " + yoffset + ")";
 	shape["picster-element"][0]["val"][2]["child"][2]["id"] = "grid_" + time;
 	shape["picster-element"][0]["val"][2]["child"][2]["d"] = "M10,0 V" + height + " M20,0 V" + height + " M30,0 V" + height + " M40,0 V" + height + " M50,0 V" + height + " M60,0 V" + height + " M70,0 V" + height + " M80,0 V" + height + " M90,0 V" + height + ", M0,10 H" + width + " M0,20 H" + width + " M0,30 H" + width + " M0,40 H" + width + " M0,50 H" + width;
-	shape["picster-element"][0]["val"][2]["child"][2]["transform"] = "matrix(1, 0, 0, 1, 0, " + (yoffset - height).toFixed(2) + ")";
+	shape["picster-element"][0]["val"][2]["child"][2]["transform"] = "matrix(" + x_timeMultiple + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
+	shape["picster-element"][0]["val"][2]["child"][0]["transform"] = "matrix(" + x_timeMultiple + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
 	//post("arguments", JSON.stringify(arguments), "\n");
-	shape["picster-element"][2]["val"][0]["message"] = messagename;
+	shape["picster-element"][2]["val"][0]["message"] = destination;
 	shape["picster-element"][2]["val"][0]["value"] = ["bpf"].concat(_curve);
 	expr.parse(JSON.stringify(shape));
 }
 
 function message() {
 	var a = arrayfromargs(arguments);
-	messagename = a.join(" ");
-	//post('message',messagename,'\n');
+	destination = a.join(" ");
+	//post('message',destination,'\n');
 }
 
 function value() {
@@ -305,7 +312,7 @@ function value() {
 			textBox["picster-element"][0]["val"][1]["child"][1]["id"] = "Picster-Element_" + (time + 2);
 			textBox["picster-element"][0]["val"][1]["child"][1]["child"] = a.join(" ");
 			//post("arguments", JSON.stringify(arguments), "\n");
-			textBox["picster-element"][2]["val"][0]["message"] = messagename;
+			textBox["picster-element"][2]["val"][0]["message"] = destination;
 			textBox["picster-element"][2]["val"][0]["value"] = "single " + a.join(' ');
 			expr.parse(JSON.stringify(textBox));
 			break;
@@ -318,7 +325,7 @@ function value() {
 }
 
 function bang() {
-	expr.replace('picster-element[0]::val[0]::child', messagename);
+	expr.replace('picster-element[0]::val[0]::child', destination);
 	outlet(0, "dictionary", expr.name);
 }
 
@@ -334,11 +341,66 @@ function xrange(choice) {
 	switch (choice) {
 		case 0: 
 			outlet(2, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
+			outlet(2, "getMeasureInfo");
+			var timeSig = measureInfo.measure.TIMESIG.split(' ');
+			x_timeMultiple = 60/parseFloat(measureInfo.measure.TEMPO) * parseFloat(timeSig[0]) * 4 / parseFloat(timeSig[1]);
+			//post('x time multiple: ',x_timeMultiple, "\n");
 			break;
 		case 1:
 			outlet(2, "set", this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof() + "fromScore");
+			outlet(2, "getSelectedNoteInfo");
+			outlet(2, "getMeasureInfo");
+			if (Object.keys(noteInfo).length == 0) {
+				post("Please select a note before retrieving!\n");
+				return;
+			}
+			//post('selected note:\n', JSON.stringify(noteInfo), '\n');
+			x_timeMultiple = parseFloat(noteInfo.note.HOLD)*60/parseFloat(measureInfo.measure.TEMPO);
+			//post('x time multiple: ',x_timeMultiple, "\n");
 			break;
 		case 2:
+			x_timeMultiple = customTimeDomain;
 			break;
 	}
 }  
+
+// for retrieving info from jmsl
+function anything()
+{
+	var msg = arrayfromargs(arguments);
+	switch (messagename) {
+		case "getNotePosition" :
+		measure = msg[0];
+		break;
+		case "startdump" :
+		dump = [];
+		switch(msg[0]) {
+			case "getSelectedNoteInfo" :
+			noteInfo = {};
+			break;
+			case "getMeasureInfo" :
+			measureInfo = {};
+			break;
+		}
+		dumpflag = 1;
+		break;
+		case "enddump" :
+		switch(msg[0]) {
+			case "getSelectedNoteInfo" :
+			noteInfo = xml2json(dump.join(" "));
+			//post("noteInfo == "+JSON.stringify(noteInfo)+"\n");
+			break;
+			case "getMeasureInfo" :
+			measureInfo = xml2json(dump.join(" "));
+			//post("measureInfo == "+JSON.stringify(measureInfo)+"\n");
+			break;
+		}
+		dumpflag = 0;
+		break;
+		default :
+		if (dumpflag) {
+			dump.push(messagename);
+		}
+		break;
+	}
+}

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 102.0, 90.0, 1031.0, 830.0 ],
+		"rect" : [ 183.0, 160.0, 1357.0, 702.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -452,7 +452,7 @@
 					"patching_rect" : [ 546.25, 834.0, 254.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 252.0, 251.0, 20.0 ],
-					"text" : "Time: 240.06 Value: 0.53 Hz"
+					"text" : "Time: 402.53 Value: 2.50 s"
 				}
 
 			}
@@ -464,7 +464,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 808.5, 697.0, 72.0, 22.0 ],
-					"text" : "\"0.53 Hz\""
+					"text" : "\"2.50 s\""
 				}
 
 			}
@@ -499,9 +499,9 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 930.5, 365.0, 82.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 108.904770800315873, 169.0, 122.0, 20.0 ],
+					"presentation_rect" : [ 108.904770800315873, 169.0, 132.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "200",
+					"text" : "3",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"textjustification" : 2,
 					"wordwrap" : 0
@@ -521,7 +521,7 @@
 					"patching_rect" : [ 930.5, 387.0, 82.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 108.904770800315873, 169.0, 143.0, 20.0 ],
-					"text" : "ms",
+					"text" : "s",
 					"textcolor" : [ 0.396078431372549, 0.396078431372549, 0.396078431372549, 1.0 ],
 					"textjustification" : 2,
 					"varname" : "label[4]"
@@ -598,7 +598,7 @@
 					"presentation_rect" : [ 21.0, 133.0, 233.0, 56.0 ],
 					"shape" : 2,
 					"size" : 3,
-					"value" : 1,
+					"value" : 0,
 					"varname" : "choice"
 				}
 
@@ -1275,7 +1275,7 @@
 					"candycane" : 2,
 					"clicksustain" : 0,
 					"data" : [ 						{
-							"addpoints_with_curve" : [ 0.0, -0.000000000000246, 0, 0.0, 101.844135108851987, 0.831683162609467, 0, 0.0, 189.139108059296547, 1.0, 0, 0.0, 189.139108059296547, 0.435643561366747, 0, 0.0, 281.283801729210268, 0.092592592592593, 0, -0.595, 395.252238636735115, 0.712871287128713, 0, 0.0, 419.500842234080778, 0.0, 0, 0.0, 494.671513385852506, 0.35, 0, 0.0, 579.5416259765625, 0.388888886220036, 0, -0.745 ]
+							"addpoints_with_curve" : [ 0.0, 0.0, 0, 0.0, 101.844134999999994, 0.831683, 0, 0.0, 281.28380199999998, 0.092593, 0, -0.595, 419.500842234080778, 0.574074074074074, 0, 0.0, 579.5416259765625, 0.0, 0, -0.745 ]
 						}
  ],
 					"domain" : 579.5416259765625,
@@ -1400,7 +1400,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 182.5, 555.622806549072266, 53.0, 22.0 ],
-					"restore" : [ "data", 0, 40, 579.5416259765625, 0.0, 1.0, 0.0, -0.000000000000246, 0, 0.0, 101.844135108851987, 0.831683162609467, 0, 0.0, 189.139108059296547, 1.0, 0, 0.0, 189.139108059296547, 0.435643561366747, 0, 0.0, 281.283801729210268, 0.092592592592593, 0, -0.595, 395.252238636735115, 0.712871287128713, 0, 0.0, 419.500842234080778, 0.0, 0, 0.0, 494.671513385852506, 0.35, 0, 0.0, 579.5416259765625, 0.388888886220036, 0, -0.745, "curve" ],
+					"restore" : [ "data", 0, 24, 579.5416259765625, 0.0, 1.0, 0.0, 0.0, 0, 0.0, 101.844134999999994, 0.831683, 0, 0.0, 281.28380199999998, 0.092593, 0, -0.595, 419.500842234080778, 0.574074074074074, 0, 0.0, 579.5416259765625, 0.0, 0, -0.745, "curve" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1488,7 +1488,6 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
-					"activetextcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
 					"bordercolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 0.0 ],
 					"fontsize" : 11.0,
@@ -1952,7 +1951,7 @@
 									"fontname" : "Arial Bold",
 									"fontsize" : 10.0,
 									"id" : "obj-33",
-									"items" : [ "LiveScore.Hub", ",", "LiveScore.Editor", ",", "Auto Pan", ",", "Reverb", ",", "Delay" ],
+									"items" : [ "LiveScore.Editor", ",", "Echo", ",", "Reverb", ",", "Delay" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -2044,7 +2043,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 200.0, 408.0, 141.0, 20.0 ],
-									"text" : "2 3 22 11 12"
+									"text" : "10 21 11 12"
 								}
 
 							}
@@ -2712,7 +2711,7 @@
 									"fontname" : "Arial Bold",
 									"fontsize" : 10.0,
 									"id" : "obj-105",
-									"items" : [ "Device On", ",", "LFO Type", ",", "Amount", ",", "Frequency", ",", "Sync Rate", ",", "Phase", ",", "Spin", ",", "Stereo Mode", ",", "Offset", ",", "Waveform", ",", "Shape", ",", "Width (Random)", ",", "Invert" ],
+									"items" : [ "Device On", ",", "L Sync", ",", "L Time", ",", "L Division", ",", "L 16th", ",", "L Sync Mode", ",", "L Offset", ",", "R Time", ",", "R Sync", ",", "R Division", ",", "R 16th", ",", "R Sync Mode", ",", "R Offset", ",", "Link", ",", "Repitch", ",", "Feedback", ",", "Feedback Inv", ",", "Channel Mode", ",", "Input Gain", ",", "Output Gain", ",", "Clip Dry", ",", "Gate On", ",", "Gate Thr", ",", "Gate Release", ",", "Duck On", ",", "Duck Thr", ",", "Duck Release", ",", "Filter On", ",", "HP Freq", ",", "HP Res", ",", "LP Freq", ",", "LP Res", ",", "Mod Wave", ",", "Mod Freq", ",", "Mod Sync", ",", "Mod Rate", ",", "Mod Phase", ",", "Env Mix", ",", "Dly < Mod", ",", "Flt < Mod", ",", "Mod 4x", ",", "Reverb Level", ",", "Reverb Decay", ",", "Reverb Loc", ",", "Noise On", ",", "Noise Amt", ",", "Noise Mrph", ",", "Wobble On", ",", "Wobble Amt", ",", "Wobble Mrph", ",", "Stereo Width", ",", "Dry Wet" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -2860,13 +2859,13 @@
 									"fontname" : "Arial Bold",
 									"fontsize" : 10.0,
 									"id" : "obj-3",
-									"linecount" : 2,
+									"linecount" : 5,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 192.0, 464.0, 168.0, 31.0 ],
-									"text" : "23 24 25 26 27 28 29 30 31 32 33 34 35"
+									"patching_rect" : [ 192.0, 464.0, 168.0, 64.0 ],
+									"text" : "22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73"
 								}
 
 							}
@@ -3205,7 +3204,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 35.0, 70.622806549072266, 314.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3322,7 +3321,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 93.083333333333371, 224.622806549072266, 85.0, 22.0 ],
-					"restore" : [ "Auto", "Pan", "||", "Frequency" ],
+					"restore" : [ "Echo || R Time" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3341,7 +3340,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 150.333333333333371, 337.0, 65.0, 22.0 ],
-					"restore" : [ "bpf", "data", 0, 40, 579.5416259765625, 0.0, 1.0, 0.0, -0.000000000000246, 0, 0.0, 101.844135108851987, 0.831683162609467, 0, 0.0, 189.139108059296547, 1.0, 0, 0.0, 189.139108059296547, 0.435643561366747, 0, 0.0, 281.283801729210268, 0.092592592592593, 0, -0.595, 395.252238636735115, 0.712871287128713, 0, 0.0, 419.500842234080778, 0.0, 0, 0.0, 494.671513385852506, 0.35, 0, 0.0, 579.5416259765625, 0.388888886220036, 0, -0.745, "curve" ],
+					"restore" : [ "bpf", "data", 0, 24, 579.5416259765625, 0, 1, 0, 0, 0, 0, 101.844134999999994, 0.831683, 0, 0, 281.28380199999998, 0.092593, 0, -0.595, 419.500842234080778, 0.574074074074074, 0, 0, 579.5416259765625, 0, 0, -0.745, "curve" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3371,7 +3370,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 60.0, 251.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "Auto Pan || Frequency",
+					"text" : "\"Echo || R Time\"",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit[1]",
 					"wordwrap" : 0
@@ -3415,7 +3414,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 82.0, 251.0, 19.0 ],
 					"rounded" : 0.0,
-					"text" : "data 0 40 579.541626 0. 1. 0. -0. 0 0. 101.844135 0.831683 0 0. 189.139108 1. 0 0. 189.139108 0.435644 0 0. 281.283802 0.092593 0 -0.595 395.252239 0.712871 0 0. 419.500842 0. 0 0. 494.671513 0.35 0 0. 579.541626 0.388889 0 -0.745 curve",
+					"text" : "data 0 24 579.541626 0. 1. 0. 0. 0 0. 101.844135 0.831683 0 0. 281.283802 0.092593 0 -0.595 419.500842 0.574074 0 0. 579.541626 0. 0 -0.745 curve",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit",
 					"wordwrap" : 0
@@ -4028,8 +4027,8 @@
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontface" : [ 2 ],
-					"fontsize" : [ 11.0 ]
+					"fontsize" : [ 11.0 ],
+					"fontface" : [ 2 ]
 				}
 ,
 				"parentstyle" : "",
@@ -4038,9 +4037,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
-					"fontface" : [ 3 ],
 					"fontsize" : [ 15.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontface" : [ 3 ]
 				}
 ,
 				"parentstyle" : "",
@@ -4059,9 +4058,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
-					"fontface" : [ 1 ],
 					"fontsize" : [ 20.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontface" : [ 1 ]
 				}
 ,
 				"parentstyle" : "",
