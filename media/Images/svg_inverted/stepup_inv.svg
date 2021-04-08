@@ -10,8 +10,8 @@
 			<text fill="white" transform="matrix(1 0 0 1 120.0486 132.9455)" font-family="'Bravura'" font-size="166.954px"></text>
 		</g>
 	</g>
-	<line fill="none" stroke="white" stroke-width="4" stroke-miterlimit="10" x1="77.5" y1="135.9" x2="120" y2="135.9"/>
-	<line fill="none" stroke="white" stroke-width="4" stroke-miterlimit="10" x1="98.7" y1="157.2" x2="98.7" y2="114.7"/>
+	<line stroke="white" stroke-width="4" stroke-miterlimit="10" x1="77.5" y1="135.9" x2="120" y2="135.9"/>
+	<line stroke="white" stroke-width="4" stroke-miterlimit="10" x1="98.7" y1="157.2" x2="98.7" y2="114.7"/>
 </g>
 <rect stroke="white" x="101" y="132.4" fill="none" width="19.1" height="1.2"/>
 </svg>

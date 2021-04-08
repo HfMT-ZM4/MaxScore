@@ -5,12 +5,12 @@
 <g id="Ebene_2_1_">
 </g>
 <g>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="70.7" y1="92.8" x2="178.2" y2="92.8"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="70.7" y1="62.7" x2="178.2" y2="62.7"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="70.7" y1="122.9" x2="178.2" y2="122.9"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="70.7" y1="153" x2="178.2" y2="153"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="70.7" y1="183.4" x2="178.2" y2="183.4"/>
-	<line fill="none" stroke="white" stroke-width="4.5" x1="70.7" y1="212.9" x2="178.2" y2="212.9"/>
+	<line stroke="white" stroke-width="4.5" x1="70.7" y1="92.8" x2="178.2" y2="92.8"/>
+	<line stroke="white" stroke-width="4.5" x1="70.7" y1="62.7" x2="178.2" y2="62.7"/>
+	<line stroke="white" stroke-width="4.5" x1="70.7" y1="122.9" x2="178.2" y2="122.9"/>
+	<line stroke="white" stroke-width="4.5" x1="70.7" y1="153" x2="178.2" y2="153"/>
+	<line stroke="white" stroke-width="4.5" x1="70.7" y1="183.4" x2="178.2" y2="183.4"/>
+	<line stroke="white" stroke-width="4.5" x1="70.7" y1="212.9" x2="178.2" y2="212.9"/>
 </g>
 <text fill="white" transform="matrix(1 0 0 1 93.646 161.2766)" font-family="'GreifswalerDeutscheSchrift'" font-size="143.1121px">Z</text>
 </svg>

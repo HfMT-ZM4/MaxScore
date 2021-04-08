@@ -29,7 +29,7 @@
 	</g>
 </g>
 <g>
-	<line fill="none" stroke="white" stroke-width="4" stroke-miterlimit="10" x1="219.6" y1="142" x2="250" y2="111.7"/>
-	<line fill="none" stroke="white" stroke-width="4" stroke-miterlimit="10" x1="250" y1="142" x2="219.6" y2="111.7"/>
+	<line stroke="white" stroke-width="4" stroke-miterlimit="10" x1="219.6" y1="142" x2="250" y2="111.7"/>
+	<line stroke="white" stroke-width="4" stroke-miterlimit="10" x1="250" y1="142" x2="219.6" y2="111.7"/>
 </g>
 </svg>

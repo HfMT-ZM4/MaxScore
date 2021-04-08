@@ -139,7 +139,7 @@ function anything()
 		break;
     */
 		case "getNotePosition" :
-    post(msg+"\n");
+    //post(msg+"\n");
 		notePosition = msg;
 		break;
 		case "startdump" :

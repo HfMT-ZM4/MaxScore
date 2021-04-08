@@ -18,12 +18,8 @@
 			<path fill="none" stroke="white" stroke-width="4" stroke-miterlimit="10" d="M232,152.9c-10.3,43.9-47.1,77.5-92.6,83"/>
 			<path fill="none" stroke="white" stroke-width="4" stroke-miterlimit="10" d="M234.8,128"/>
 			<path fill="none" stroke="white" stroke-width="4" stroke-miterlimit="10" d="M139.4,19.9c46.8,5.7,84.2,41.1,93.4,86.6"/>
-			<g>
-				<polygon stroke="white" fill="white" stroke-width="4" stroke-miterlimit="10" points="141.3,29.7 125.9,19.1 142.8,11 				"/>
-			</g>
-			<g>
-				<polygon stroke="white" fill="white" stroke-width="4" stroke-miterlimit="10" points="141.3,226.3 125.9,236.9 142.8,245 				"/>
-			</g>
+			<polygon stroke="white" fill="white" stroke-width="4" stroke-miterlimit="10" points="141.3,29.7 125.9,19.1 142.8,11 				"/>
+			<polygon stroke="white" fill="white" stroke-width="4" stroke-miterlimit="10" points="141.3,226.3 125.9,236.9 142.8,245 				"/>
 		</g>
 	</g>
 </g>

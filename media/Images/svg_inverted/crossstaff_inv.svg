@@ -6,29 +6,29 @@
 </g>
 <g>
 	<g id="Ebene_1_1_">
-		<text fill="white" transform="matrix(1 0 0 1 101.3701 128.2893)" font-family="'Bravura'" font-size="182.5729px"></text>
+		<text fill="white" transform="matrix(1 0 0 1 101.3701 128.2893)" font-family="Bravura" font-size="182.5729px"></text>
 	</g>
-	<line fill="none" stroke="white" stroke-width="11" x1="0" y1="50.9" x2="256" y2="50.9"/>
+	<line stroke="white" stroke-width="11" x1="0" y1="50.9" x2="256" y2="50.9"/>
 	<g>
 		<g>
 			<g>
-				<polygon fill="white" points="100.6,39.7 127.7,2.9 154.5,39.7 				"/>
+				<polygon fill="white" fill-opacity="1" points="100.6,39.7 127.7,2.9 154.5,39.7 				"/>
 			</g>
 		</g>
 	</g>
 	<g>
-		<line fill="none" stroke="white" stroke-width="24" x1="127.6" y1="217.3" x2="127.6" y2="160.6"/>
-		<line fill="none" stroke="white" stroke-width="24" x1="127.6" y1="95.7" x2="127.6" y2="39"/>
+		<line stroke="white" stroke-width="24" x1="127.6" y1="217.3" x2="127.6" y2="160.6"/>
+		<line stroke="white" stroke-width="24" x1="127.6" y1="95.7" x2="127.6" y2="39"/>
 	</g>
-	<polyline fill="none" stroke="white" stroke-width="11" points="161.8,128 160.2,128 256,128 	"/>
-	<line fill="none" stroke="white" stroke-width="11" x1="0" y1="205.3" x2="256" y2="205.3"/>
+	<polyline stroke="white" stroke-width="11" points="161.8,128 160.2,128 256,128"/>
+	<line stroke="white" stroke-width="11" x1="0" y1="205.3" x2="256" y2="205.3"/>
 	<g>
 		<g>
 			<g>
-				<polygon fill="white" points="153.5,217.3 126.4,254.1 99.6,217.3 				"/>
+				<polygon fill="white" fill-opacity="1" points="153.5,217.3 126.4,254.1 99.6,217.3"/>
 			</g>
 		</g>
 	</g>
-	<line fill="none" stroke="white" stroke-width="11" x1="0" y1="128" x2="95.8" y2="128"/>
+	<line stroke="white" stroke-width="11" x1="0" y1="128" x2="95.8" y2="128"/>
 </g>
 </svg>

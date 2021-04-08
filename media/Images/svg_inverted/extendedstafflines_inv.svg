@@ -4,12 +4,12 @@
 	 width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
 <g id="Ebene_2_1_">
 </g>
-<line fill="none" stroke="white" stroke-width="7" x1="129.3" y1="42" x2="242.3" y2="42"/>
+<line stroke="white" stroke-width="7" x1="129.3" y1="42" x2="242.3" y2="42"/>
 <rect fill="white" x="126.3" y="38.4" width="3.2" height="193"/>
-<line fill="none" stroke="white" stroke-width="7" x1="13.6" y1="228" x2="126.6" y2="228"/>
-<line fill="none" stroke="white" stroke-width="7" x1="13.6" y1="195.4" x2="242.3" y2="195.4"/>
-<line fill="none" stroke="white" stroke-width="7" x1="13.6" y1="164.6" x2="242.3" y2="164.6"/>
-<line fill="none" stroke="white" stroke-width="7" x1="13.6" y1="133.7" x2="242.3" y2="133.7"/>
-<line fill="none" stroke="white" stroke-width="7" x1="13.6" y1="103" x2="242.3" y2="103"/>
-<line fill="none" stroke="white" stroke-width="7" x1="13.6" y1="72.2" x2="242.3" y2="72.2"/>
+<line stroke="white" stroke-width="7" x1="13.6" y1="228" x2="126.6" y2="228"/>
+<line stroke="white" stroke-width="7" x1="13.6" y1="195.4" x2="242.3" y2="195.4"/>
+<line stroke="white" stroke-width="7" x1="13.6" y1="164.6" x2="242.3" y2="164.6"/>
+<line stroke="white" stroke-width="7" x1="13.6" y1="133.7" x2="242.3" y2="133.7"/>
+<line stroke="white" stroke-width="7" x1="13.6" y1="103" x2="242.3" y2="103"/>
+<line stroke="white" stroke-width="7" x1="13.6" y1="72.2" x2="242.3" y2="72.2"/>
 </svg>

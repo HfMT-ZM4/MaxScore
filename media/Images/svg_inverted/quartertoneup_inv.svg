@@ -4,8 +4,8 @@
 	 width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
 <g id="Ebene_2_1_">
 </g>
-<rect stroke="white" x="75.8" y="83.7" fill="none" width="133.2" height="135"/>
+<rect stroke="white" x="75.8" y="83.7" width="133.2" height="135"/>
 <text fill="white" transform="matrix(1 0 0 1 119.7788 167.7453)" font-family="'Bravura'" font-size="112.7063px"></text>
-<line fill="none" stroke="white" stroke-width="3.5" stroke-miterlimit="10" x1="80.3" y1="130.9" x2="117.8" y2="130.9"/>
-<line fill="none" stroke="white" stroke-width="3.5" stroke-miterlimit="10" x1="99" y1="112.2" x2="99" y2="149.7"/>
+<line stroke="white" stroke-width="3.5" stroke-miterlimit="10" x1="80.3" y1="130.9" x2="117.8" y2="130.9"/>
+<line stroke="white" stroke-width="3.5" stroke-miterlimit="10" x1="99" y1="112.2" x2="99" y2="149.7"/>
 </svg>
