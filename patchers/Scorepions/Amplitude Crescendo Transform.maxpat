@@ -51,7 +51,7 @@
 					"patching_rect" : [ 1020.0, 123.0, 80.914466737064416, 81.0 ],
 					"pic" : "Scorepion-Tail-blue.svg",
 					"presentation" : 1,
-					"presentation_rect" : [ 82.5, -1.0, 87.0, 87.091966173361513 ]
+					"presentation_rect" : [ 75.0, 11.408033826638487, 97.0, 90.091966173361513 ]
 				}
 
 			}
@@ -70,7 +70,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 159.0, 98.0, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 76.0, 250.0, 100.0, 20.0 ],
+					"presentation_rect" : [ 75.0, 289.0, 100.0, 20.0 ],
 					"text" : "Update Score",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ],
 					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -118,7 +118,7 @@
 					"patching_rect" : [ 415.0, 78.0, 188.0, 152.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 8,
-					"presentation_rect" : [ 9.0, 85.5, 234.0, 123.0 ],
+					"presentation_rect" : [ 8.0, 109.5, 234.0, 123.0 ],
 					"text" : "This Scorepion applies a crescendo/ descrescendo to the velocities of selected notes. It sports its own Java window which lets you choose intial and target values. This process will be applied to selected notes. Update your score once you're done entering values.",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -221,7 +221,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 38.0, 83.0, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 76.0, 210.0, 100.0, 20.0 ],
+					"presentation_rect" : [ 75.0, 249.0, 100.0, 20.0 ],
 					"text" : "Enter Values",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ],
 					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
