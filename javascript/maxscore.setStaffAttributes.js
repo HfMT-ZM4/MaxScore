@@ -16,8 +16,8 @@ var info = new Dict();
 //info.name = "info";
 var dump = new Dict();
 dump.name = grab;
-var property = new Dict();
-property.name = "property";
+//var property = new Dict();
+//property.name = "property";
 var selection = new Dict();
 selection.name = "selection";
 var keys = [];
@@ -525,6 +525,7 @@ function newEvent(data) {
     outlet(0, "setUndoStackEnabled", "false");
     //info.clear();
     getSelection();
+	info.clone(dump.name);
     if (selection.contains("0")) keys = selection.getkeys();
 	else return;
     if (keys.length > 0) {
@@ -598,7 +599,6 @@ function paste(data) {
         var inf = selection.get(keys[i]);
         if (inf[4] == StaffIndex) {
             list = getStaffNoteIntervalInfo(i);
-			//post("list", list, "\n");
           if (list[9] != 0) {
                 if (styletype == "justintonation") {
 					map("default");
@@ -690,6 +690,7 @@ function transform() {
     outlet(0, "selectAllNotesInStaff", StaffIndex);
     messnamed(grab+"-relay", "null", "getNoteAnchor");
     info.clone(dump.name);
+	//post("info-1", info.stringify(), "\n");
     keys = info.getkeys();
 	//that's the value that was just sent in from a style abstraction. Store this value in the currVal object
 	currVal[newstyletype] = storedValue.get("stored-value");
@@ -815,9 +816,8 @@ function getInfo() {
 }
 
 function getStaffNoteIntervalInfo(i) {
-   info.clone(dump.name); 
    //property.clone(dump.name);
-   var inf = info.get(keys[i]);
+  var inf = info.get(keys[i]);
 	var l = [0., 0., 0., "false", 0., 0., 0., 0., 0., "note", 0, 0];
     if (inf[6] != -1) {
         messnamed(grab+"-relay", "null", "getStaffInfo", inf.slice(3, 5));

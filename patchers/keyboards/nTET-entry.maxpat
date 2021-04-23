@@ -1089,7 +1089,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 238.25, 234.0, 286.0, 22.0 ],
-													"restore" : [ 1200.0 ],
+													"restore" : [ 1903.0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -1108,7 +1108,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 282.5, 263.0, 262.0, 22.0 ],
-													"restore" : [ 44 ],
+													"restore" : [ 13 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -3334,7 +3334,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 15.5, 82.0, 179.0, 22.0 ],
-									"restore" : [ 1200.0 ],
+									"restore" : [ 1903.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3355,7 +3355,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 15.5, 34.0, 155.0, 22.0 ],
-									"restore" : [ 44 ],
+									"restore" : [ 13 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3943,10 +3943,10 @@
 					"patching_rect" : [ 26.0, 18.0, 59.5, 22.0 ],
 					"restore" : 					{
 						"Label[1]" : [ 0 ],
-						"framesize" : [ 1200.0 ],
+						"framesize" : [ 1903.0 ],
 						"microtones" : [ 0 ],
 						"microtones[1]" : [ 0 ],
-						"steps" : [ 44 ]
+						"steps" : [ 13 ]
 					}
 ,
 					"text" : "autopattr",

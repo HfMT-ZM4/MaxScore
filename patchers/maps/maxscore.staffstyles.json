@@ -4,6 +4,7 @@
 	"Percussion" : [ "percussion", "editor", "mM-none", "PERCUSSION_CLEF" ],
 	"17EDO" : [ "17EDO", 5, "mM-none", "default" ],
 	"19EDO" : [ "19EDO", 5, "mM-none", "default" ],
+	"31EDO" : [ "31EDO", 5, "mM-none", "default" ],
 	"BP Alto Kalimba" : [ "BP-alto-kalimba", 5, "mM-none", "PERCUSSION_CLEF" ],
 	"BP chromatic" : [ "BP-chromatic", "editor", "mM-BP", "editor", "editor" ],
 	"BP MIDI Keyboard" : [ "BP-keyboard", 5, "mM-none", "default" ],
