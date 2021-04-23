@@ -1,7 +1,7 @@
 inlets = 4;
 outlets = 3;
 
-include("xml2json");
+//include("xml2json");
 
 var SVGString = {};
 var SVGClefs = {};
@@ -92,8 +92,8 @@ var jcursors = {};
 var cursorAttr = {};
 var renderPage = 1;
 var selectionRectCount = 0;
-var dumpflag = 0;
-var dump = [];
+//var dumpflag = 0;
+//var dump = [];
 var json = {};
 var tempo = 60;
 var timesig = [4, 4];
@@ -1053,6 +1053,7 @@ function startRenderDump()
 				stafflines[i][j] = {};
 				staffInfo[i][j] = {};
 				staffBoundingMatrix[i][j] = []; 
+				//post("getstaffinfo", i, scoreLayout[1], "\n");
 				outlet(1, "getStaffInfo", i + scoreLayout[1], j);
 				if (Object.keys(extendedStaffLines).indexOf(j) != -1) for (var k = 0; k < (5 + Number(extendedStaffLines[j][0]) + Number(extendedStaffLines[j][1])); k++) stafflines[i][j][k] = {};
 		}
@@ -1917,61 +1918,67 @@ function anything() {
 				}
 			}	
             break;
+		case "dictionary" :
+			var dump = new Dict;
+			dump.name = msg[0];
+			json = JSON.parse(dump.stringify());
+		break;
 		case "startdump" :
-			dump = [];
-			json = {};
-			dumpflag = 1;
+			//dump = [];
+			//json = {};
+			//dumpflag = 1;
 		break;
 		case "enddump" :
 			//post("enddump", msg, dump[0][1], "\n");
 			switch (msg[0]){
 			case "getMeasureInfo" :
-			json = xml2json(dump.join(" "));
-			tempo = json["measure"]["TEMPO"];
-			timesig = json["measure"]["TIMESIG"].split(" ");
+			//json = xml2json(dump.join(" "));
+			tempo = json["measure"]["@TEMPO"];
+			timesig = json["measure"]["@TIMESIG"].split(" ");
 			break;
 			case "getStaffInfo" :
-			json = xml2json(dump.join(" "));
-			extendedStaffLines[msg[2]] = [json["staff"]["EXTENDEDLINESABOVE"], json["staff"]["EXTENDEDLINESBELOW"]];
-			clefList[msg[2]] = json["staff"]["CLEF"];
+			//json = xml2json(dump.join(" "));
+			//post("json", JSON.stringify(json), "\n");
+			extendedStaffLines[msg[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
+			clefList[msg[2]] = json["staff"]["@CLEF"];
 			var measureOffset = (typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1];
-			staffInfo[msg[1] - measureOffset][msg[2]] = [json["staff"]["CLEF"], json["staff"]["KEYSIGNUMACC"], json["staff"]["KEYSIGTYPE"]];
+			staffInfo[msg[1] - measureOffset][msg[2]] = [json["staff"]["@CLEF"], json["staff"]["@KEYSIGNUMACC"], json["staff"]["@KEYSIGTYPE"]];
 			// for repeated-acc-filter we need CLEF, KEYSIGNUMACC and KEYSIGTYPE in a obj[measure][staff] object
 			break;
 			case "getNoteInfo" :
-			if (dump[0][1] == "n") {
-			json = xml2json(dump.join(" "));
-			pitch = json["note"]["PITCH"];
-			accinfo = json["note"]["ACCINFO"];
-			accvis = json["note"]["ACCVISPOLICY"];
-			accpref = json["note"]["ACCPREF"];
-			value = json["note"]["dim"][1]["value"];
+			if (messagename[1] == "n") {
+			//json = xml2json(dump.join(" "));
+			pitch = json["note"]["@PITCH"];
+			accinfo = json["note"]["@ACCINFO"];
+			accvis = json["note"]["@ACCVISPOLICY"];
+			accpref = json["note"]["@ACCPREF"];
+			value = json["note"]["dim"]["1"]["@value"];
 			}
 			else {
-			json = xml2json(dump.join(" "));
-			pitch = json["interval"]["PITCH"];
-			accinfo = json["interval"]["ACCINFO"];
-			accvis = json["interval"]["ACCVISPOLICY"];
-			accpref = json["interval"]["ACCPREF"];
-			value = json["interval"]["dim"][1]["value"];
+			//json = xml2json(dump.join(" "));
+			pitch = json["interval"]["@PITCH"];
+			accinfo = json["interval"]["@ACCINFO"];
+			accvis = json["interval"]["@ACCVISPOLICY"];
+			accpref = json["interval"]["@ACCPREF"];
+			value = json["interval"]["dim"]["1"]["@value"];
 			}
 			break;
 			case "getIntervalInfo" :
-			json = xml2json(dump.join(" "));
-			pitch = json["interval"]["PITCH"];
-			accinfo = json["interval"]["ACCINFO"];
-			accvis = json["interval"]["ACCVISPOLICY"];
-			accpref = json["interval"]["ACCPREF"];
-			value = json["interval"]["dim"][1]["value"];
+			//json = xml2json(dump.join(" "));
+			pitch = json["interval"]["@PITCH"];
+			accinfo = json["interval"]["@ACCINFO"];
+			accvis = json["interval"]["@ACCVISPOLICY"];
+			accpref = json["interval"]["@ACCPREF"];
+			value = json["interval"]["dim"]["1"]["@value"];
 			break;			
 			}
-			dumpflag = 0;
+			//dumpflag = 0;
 			break;
         default:
-		if (dumpflag == 1) {
-			dump.push(messagename);
-		}
-		else {
+		//if (dumpflag == 1) {
+			//dump.push(messagename);
+		//}
+		//else {
 			var msgname = messagename;
 		if (prop) {
 			if (msgname == "noteheadwhite" || msgname == "noteheadwhole") msgname = "noteheadblack";
@@ -2323,7 +2330,7 @@ function anything() {
 			}
 		  }
        }
-	}
+	//}
 	}
 	}
 	else 
@@ -2343,33 +2350,38 @@ function anything() {
                     outlet(0, "playback", 1);
 					outlet(0, "dyn_playhead", msg);
                     break
+		case "dictionary" :
+			var dump = new Dict;
+			dump.name = msg[0];
+			json = JSON.parse(dump.stringify());
+		break;
 		case "startdump" :
-			dump = [];
-			json = {};
-			dumpflag = 1;
+			//dump = [];
+			//json = {};
+			//dumpflag = 1;
 		break;
 		case "enddump" :
 			if (msg[0] == "getMeasureInfo") {
-			json = xml2json(dump.join(" "));
-			tempo = json["measure"]["TEMPO"];
-			timesig = json["measure"]["TIMESIG"].split(" ");
+			//json = xml2json(dump.join(" "));
+			tempo = json["measure"]["@TEMPO"];
+			timesig = json["measure"]["@TIMESIG"].split(" ");
 			}
 			else if (msg[0] == "getStaffInfo") {
-			json = xml2json(dump.join(" "));
-			extendedStaffLines[msg[2]] = [json["staff"]["EXTENDEDLINESABOVE"], json["staff"]["EXTENDEDLINESBELOW"]];
-			 List[msg[2]] = json["staff"]["CLEF"];
+			//json = xml2json(dump.join(" "));
+			extendedStaffLines[msg[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
+			 List[msg[2]] = json["staff"]["@CLEF"];
 			}
-			dumpflag = 0;
+			//dumpflag = 0;
 			break;
 		case "barline" :
 		break;
 		case "active" :
 		break;
         default:
-			if (dumpflag == 1) {
-			dump.push(messagename);
-			}
-			else {
+			//if (dumpflag == 1) {
+			//dump.push(messagename);
+			//}
+			//else {
 			if (messagename.indexOf("staffnumber" != 1)) return;
  				var msgname = messagename;
 			var glyph = fontMap.get(msgname);
@@ -2384,7 +2396,7 @@ function anything() {
 			}
 			}
 			}
-			}
+			//}
 		}
 	}
 }
@@ -2593,6 +2605,7 @@ function writeSVG(destination)
 	f.setZoom = zoom;
 	//f.bgcolor = bcolor;
 	f.bgcolor = bcolor;
+	//post("bcolor", f.bgcolor, "\n");
 	f.groupcount = groupcount;
 	outlet(0, "obj_ref", f); 
 	}
@@ -2753,7 +2766,6 @@ function cursor()
 			//calculate y position and height of cursor
 			//map staves to staffgroups
 			//jcursors[s + 1] = {};
-			//post("staffBoundingMatrix", measureOffset, JSON.stringify(staffBoundingMatrix), JSON.stringify(cursorAttr[id]), "\n");
 			var dest = remap(sg[0], cursorAttr[id]["@begin"][1], staffBoundingMatrix[cursorAttr[id]["@begin"][0] - measureOffset][cursorAttr[id]["@begin"][1]][1]);
 			var dest2 = remap(sg[0], cursorAttr[id]["@end"][1], staffBoundingMatrix[cursorAttr[id]["@end"][0] - measureOffset][cursorAttr[id]["@end"][1]][1] + staffBoundingMatrix[cursorAttr[id]["@end"][0] - measureOffset][cursorAttr[id]["@end"][1]][3]);
 			//var extent = cursorExtent(sg[s], startStaff, endStaff);

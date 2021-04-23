@@ -5,7 +5,7 @@ outlets = 2;
 
 var StaffIndex = 0;
 if (jsarguments.length > 1) StaffIndex = jsarguments[1];
-var grab = getid() + "toGrab";
+var grab = getid() + "fromScore";
 var annotation = new Dict();
 annotation.name =  this.patcher.parentpatcher.parentpatcher.getnamed("bcanvas").subpatcher().getnamed("instance").getvalueof() + "-annotation";
 var staffgroupdict = new Dict();
@@ -13,9 +13,9 @@ staffgroupdict.name = getid() + "staffGroup";
 var staff2clef = new Dict();
 staff2clef.name = getid()+"staff2clef";
 var info = new Dict();
-info.name = "info";
+//info.name = "info";
 var dump = new Dict();
-dump.name = "dump";
+dump.name = grab;
 var property = new Dict();
 property.name = "property";
 var selection = new Dict();
@@ -112,24 +112,22 @@ function setMenu() {
 function init()
 {
 setMenu();
-var dump = new Dict();
-dump.name = ("dump");
 dump.clear();
-messnamed(grab, "getStaffInfo", 0, StaffIndex);
-var instrumentindex = dump.get("dump::staff::0::@"+"INSTRUMENTINDEX");
+messnamed(grab+"-relay", "null", "getStaffInfo", 0, StaffIndex);
+var instrumentindex = dump.get("staff::@"+"INSTRUMENTINDEX");
 
 
-var clef = dump.get("dump::staff::0::@"+"CLEF");
+var clef = dump.get("staff::@"+"CLEF");
 this.patcher.getnamed("clef").message("set", clef);	
 
-var keysigtype = dump.get("dump::staff::0::@"+"KEYSIGTYPE");
+var keysigtype = dump.get("staff::@"+"KEYSIGTYPE");
 var sign = 1;
 if (keysigtype==1) 
 {
 sign = -1;	
 }
 
-var keysignumacc = dump.get("dump::staff::0::@"+"KEYSIGNUMACC");
+var keysignumacc = dump.get("staff::@"+"KEYSIGNUMACC");
 ks = keysignumacc * sign + 7;
 
 this.patcher.getnamed("keySignature").message("set", ks);	
@@ -525,7 +523,7 @@ function newEvent(data) {
 	var event = data.value.slice(1);
    	outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
-    info.clear();
+    //info.clear();
     getSelection();
     if (selection.contains("0")) keys = selection.getkeys();
 	else return;
@@ -549,10 +547,10 @@ function newEvent(data) {
                 }
                 if (keys.length == 1) {
                     if (inf[7] == -1) {
-                        messnamed(grab, "getNoteInfo", inf.slice(3));
+                        messnamed(grab+"-relay", "null", "getNoteInfo", inf.slice(3));
                         event[5] = dump.get("note::dim::1::@value");
                     } else {
-                        messnamed(grab, "getIntervalInfo", inf.slice(3));
+                        messnamed(grab+"-relay", "null", "getIntervalInfo", inf.slice(3));
                         event[5] = dump.get("interval::dim::1::@value");
                     }
                     preview.message(StaffIndex, event);
@@ -572,8 +570,8 @@ function paste(data) {
 	else if (data.value == 86) f = 1;
 	else return;
     // make sure there are events pasted in this track
-    info.clear();
-    messnamed(grab, "getNoteAnchor");
+    messnamed(grab+"-relay", "null", "getNoteAnchor");
+    info.clone(dump.name);
     if (info.contains("0")) keys = info.getkeys();
 	else return;
     var cont = 0;
@@ -629,9 +627,10 @@ function paste(data) {
 }
 
 function update(data) {
-    info.clear();
+    //info.clear();
     // make sure there are events pasted in this track
-    messnamed(grab, "getNoteAnchor");
+    messnamed(grab+"-relay", "null", "getNoteAnchor");
+    info.clone(dump.name);
     if (info.contains("0")) keys = info.getkeys();
 	else return;
     var cont = 0;
@@ -685,16 +684,17 @@ function update(data) {
 }
 
 function transform() {
-    info.clear();
+    //info.clear();
     getSelection(); //"getNoteAnchor", selection.clone("info"), "clearSelection"
-    info.clear();
+    //info.clear();
     outlet(0, "selectAllNotesInStaff", StaffIndex);
-    messnamed(grab, "getNoteAnchor");
+    messnamed(grab+"-relay", "null", "getNoteAnchor");
+    info.clone(dump.name);
     keys = info.getkeys();
 	//that's the value that was just sent in from a style abstraction. Store this value in the currVal object
 	currVal[newstyletype] = storedValue.get("stored-value");
 	//decide whether previous staff style (= styletype) is editor. If so retrieve stored value 
- 	post("styletype", styletype, "\n");
+ 	//post("styletype", styletype, "\n");
    if (isEditor(styletype)) {
 	// if previous style is an editor set current value to previous value stored in currVal. This looks suspicious to me.
 	currentValue.replace("current-value", currVal[styletype]);
@@ -803,8 +803,9 @@ function setClef(stl) {
 
 function getInfo() {
     attr = arrayfromargs(arguments);
-    info.clear();
-    messnamed(grab, attr);
+    //info.clear();
+    messnamed(grab+"-relay", "null", attr);
+    info.clone(dump.name);
     keys = info.getkeys();
     if (keys) {
         for (var i = 0; i < keys.length; i++) {
@@ -814,15 +815,17 @@ function getInfo() {
 }
 
 function getStaffNoteIntervalInfo(i) {
-    var inf = info.get(keys[i]);
+   info.clone(dump.name); 
+   //property.clone(dump.name);
+   var inf = info.get(keys[i]);
 	var l = [0., 0., 0., "false", 0., 0., 0., 0., 0., "note", 0, 0];
     if (inf[6] != -1) {
-        messnamed(grab, "getStaffInfo", inf.slice(3, 5));
-        l[7] = dump.get("dump::staff::0::@CLEF");
-        l[6] = dump.get("dump::staff::0::@KEYSIGTYPE");
-        l[5] = dump.get("dump::staff::0::@KEYSIGNUMACC");
+        messnamed(grab+"-relay", "null", "getStaffInfo", inf.slice(3, 5));
+        l[7] = dump.get("staff::@CLEF");
+        l[6] = dump.get("staff::@KEYSIGTYPE");
+        l[5] = dump.get("staff::@KEYSIGNUMACC");
         if (inf[7] == -1) {
-            messnamed(grab, "getNoteInfo", inf.slice(3));
+            messnamed(grab+"-relay", "null", "getNoteInfo", inf.slice(3));
             l[10] = "note";
             l[9] = dump.get("note::@VELOCITY");
             l[4] = dump.get("note::@PITCH");
@@ -832,7 +835,7 @@ function getStaffNoteIntervalInfo(i) {
             l[0] = dump.get("note::dim::1::@value");
             outlet(0, "selectNote", inf.slice(3, 7));
         } else {
-            messnamed(grab, "getIntervalInfo", inf.slice(3));
+            messnamed(grab+"-relay", "null", "getIntervalInfo", inf.slice(3));
             l[11] = StaffIndex;
             l[10] = "interval";
             l[9] = dump.get("interval::@VELOCITY");
@@ -846,18 +849,17 @@ function getStaffNoteIntervalInfo(i) {
                 outlet(0, "selectNextInterval");
             }
         }
-        messnamed(grab, "getNoteProperty", "level", inf.slice(3));
+        messnamed(grab+"-relay", "null", "getNoteProperty", "level", inf.slice(3));
         l[11] = StaffIndex;
-        l[8] = property.get(0)[6];
+        l[8] = dump.get(0)[7];
 		//post("list", l[8], "\n");
         return l;
     }
 }
 
 function getSelection() {
-    messnamed(grab, "getNoteAnchor");
-
-    selection.clone("info");
+    messnamed(grab+"-relay", "null", "getNoteAnchor");
+    selection.clone(dump.name);
     outlet(0, "clearSelection");
 }
 

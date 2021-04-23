@@ -1,13 +1,13 @@
 inlets = 3;
 outlets = 4;
 
-include("xml2json");
+//include("xml2json");
 
 var factor = 0.5;
 var zoom = 0.5;
-var dumpflag = 0;
+//var dumpflag = 0;
 var selection = 0;
-var dump = [];
+//var dump = ;
 var json = {};
 var single = 0;
 var anchors = {};
@@ -97,9 +97,9 @@ if (b == 1) {
 	//
 outlet(0, "dumpScoreAttributes");
 scoreAttributes = json["jmslscoredoc"];
-annotation.parse(scoreAttributes.score.ScoreAnnotation.Annotation);
-scoreRightMargin = parseFloat(scoreAttributes["score"]["RightMargin"]);
-var ClefsVisible = scoreAttributes["score"]["ClefsVisible"];
+annotation.parse(scoreAttributes["score"][0]["ScoreAnnotation"][0]["@Annotation"]);
+scoreRightMargin = parseFloat(scoreAttributes["score"][0]["@RightMargin"]);
+var ClefsVisible = scoreAttributes["score"][0]["@ClefsVisible"];
 annotation.set("proportional", 1);
 annotation.set("timeUnit", timeUnit);
 outlet(3, "setAnnotation", "dictionary", annotation.name);
@@ -131,8 +131,8 @@ sustain.clear();
 var tempo = [];
 for (var m = 0; m < numMeasures; m++){
 	outlet(0, "getMeasureInfo", m);
-	tempo[m] = json["measure"]["TEMPO"];
-	var timesig = json["measure"]["TIMESIG"].split(" ");
+	tempo[m] = json["measure"]["@TEMPO"];
+	var timesig = json["measure"]["@TIMESIG"];
 	var measureWidth = (60 / tempo[m]) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
 	if (m == 0 && ClefsVisible == "true") measureWidth += 40;
 	scoreSize += measureWidth;
@@ -153,7 +153,7 @@ single = 0;
 outlet(0, "getNoteAnchor");
 outlet(0, "clearSelection");
 for(var event in anchors){
-	gc();
+	//gc();
 	anchor = anchors[event];
 	outlet(0, "selectNote", anchor[2], anchor[3], anchor[4], anchor[5]);
 	if (anchor[6] != -1) {
@@ -162,37 +162,41 @@ for(var event in anchors){
 	}
 	else outlet(0, "getNoteInfo", anchor[2], anchor[3], anchor[4], anchor[5]);
 	var key = Object.keys(json);	
-	var hold = parseFloat(json[key]["HOLD"]) * (60 / tempo[anchor[2]]);
-	var vel = json[key]["VELOCITY"];
-	var pitch = json[key]["PITCH"];
+	var hold = parseFloat(json["selectedNotes"][0][key]["@HOLD"]) * (60 / tempo[anchor[2]]);
+	var vel = json["selectedNotes"][0][key]["@VELOCITY"];
+	var pitch = json["selectedNotes"][0][key]["@PITCH"];
 	outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-	if ("userBean" in json[key]){
-	var userBeans = [].concat(json[key]["userBean"]);
+	if ("userBean" in json["selectedNotes"][0][key]){
+		var userBeans = [];
+		var occurence = getAllIndexes(json["selectedNotes"][0][key][".ordering"], "userBean");
+		for (var i = 0; i < occurence.length; i++) {
+			userBeans[i] = json["selectedNotes"][0][key]["userBean"][i];
+			}
 	for (var i = 0; i < userBeans.length; i++) {
-	if (userBeans[i]["Message"].indexOf("rendered") && userBeans[i]["Message"].indexOf("sequenced") == -1) {
+	if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 	var tempDict = new Dict();
-	tempDict.parse(userBeans[i]["Message"]);
+	tempDict.parse(userBeans[i]["@Message"]);
  	if (tempDict.get("picster-element[0]::val[0]::id").indexOf("sustain") == -1) {
-		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]), parseFloat(userBeans[i]["Yoffset"]), userBeans[i]["Message"]);
+		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 		}
 	}
 	else {
-	if (userBeans[i]["Message"].indexOf("hold") == -1) {
-		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]), parseFloat(userBeans[i]["Yoffset"]), userBeans[i]["Message"]);
+	if (userBeans[i]["@Message"].indexOf("hold") == -1) {
+		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			}
 		}
 	}
 	}
-	var visibleNote = json[key]["VISIBLE"];
-	if (json[key]["ACCINFO"] == 0) 	outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_NEVER");
+	var visibleNote = json["selectedNotes"][0][key]["@VISIBLE"];
+	if (json["selectedNotes"][0][key]["@ACCINFO"] == 0) outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_NEVER");
 	else outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_ALWAYS");
 	if (vel == 0. && pitch == 0.) {
 		//outlet(0, "setNoteVisible", "false");
 		selectionBuffer.push(anchor.slice(2));
 		}
 	else {
-	if (json[key]["SLUROUT"] == "true") outlet(0, "slurTransform");	
-	if (json[key]["TIEDOUT"] == "true")
+	if (json["selectedNotes"][0][key]["@SLUROUT"] == "true") outlet(0, "slurTransform");	
+	if (json["selectedNotes"][0][key]["@TIEDOUT"] == "true")
 	{
 		currentAnchor = anchor.slice(2, 7);
 		if (visibleNote == "true") 		
@@ -207,8 +211,8 @@ for(var event in anchors){
 		nextAnchor = singleAnchor.slice(2, 7);
 		if (currentAnchor[1] != nextAnchor[1]) break;
 		outlet(0, "getSelectedNoteInfo");
-		held[json["note"]["PITCH"]] = [json["note"]["TIEDOUT"], json["note"]["HOLD"]];
-		if (json["note"]["PITCH"] == pitch) {
+		held[json["selectedNotes"][0]["note"]["@PITCH"]] = [json["selectedNotes"][0]["note"]["@TIEDOUT"], json["selectedNotes"][0]["note"]["@HOLD"]];
+		if (json["selectedNotes"][0]["note"]["@PITCH"] == pitch) {
 			//outlet(0, "setNoteVisible", "false");
 			selectionBuffer.push(nextAnchor);
 			}
@@ -218,8 +222,8 @@ for(var event in anchors){
 		for (var i = 0; i < chord; i++) {
 			outlet(0, "selectNextInterval");
 			outlet(0, "getSelectedNoteInfo");
-			held[json["interval"]["PITCH"]] = [json["interval"]["TIEDOUT"], json["interval"]["HOLD"]];		
-			if (json["interval"]["PITCH"] == pitch) {
+			held[json["selectedNotes"][0]["interval"]["@PITCH"]] = [json["selectedNotes"][0]["interval"]["@TIEDOUT"], json["selectedNotes"][0]["interval"]["@HOLD"]];		
+			if (json["selectedNotes"][0]["interval"]["@PITCH"] == pitch) {
 				//outlet(0, "setNoteVisible", "false");
 				selectionBuffer.push(singleAnchor.slice(2, 6).concat(i));
 				}
@@ -279,7 +283,7 @@ for(var event in anchors){
 	}
 	outlet(0, "setNoteVisible", "false");
 	outlet(0, "clearSelection");
-	if (!selection) outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["score"]["HEIGHT"]));
+	if (!selection) outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["score"][0]["@HEIGHT"]));
 	outlet(0, "setReceivePlayheadPosition", "false");
 	outlet(0, "setNoteFlash", "false");
 	if (!selection){
@@ -293,9 +297,9 @@ for(var event in anchors){
 	if (proportional == 1){
 	annotation.set("proportional", 0);
 	outlet(3, "setAnnotation", "dictionary", annotation.name);
-	scoreRightMargin = parseFloat(scoreAttributes["score"]["RightMargin"]);
-	outlet(0, "setScoreLeftMargin", parseFloat(scoreAttributes["score"]["LeftMargin"]));
-	outlet(0, "setScoreFirstSystemIndent", parseFloat(scoreAttributes["score"]["FirstSystemIndent"]));
+	scoreRightMargin = parseFloat(scoreAttributes["score"][0]["@RightMargin"]);
+	outlet(0, "setScoreLeftMargin", parseFloat(scoreAttributes["score"][0]["@LeftMargin"]));
+	outlet(0, "setScoreFirstSystemIndent", parseFloat(scoreAttributes["score"][0]["@FirstSystemIndent"]));
 	outlet(0, "setDurationalSpacingBase", durationalSpacingBase);
 	outlet(0, "setWrap", 1);
 	if (!blankPage) {
@@ -306,8 +310,8 @@ for(var event in anchors){
 		outlet(0, "showTimeSignatures", "true");
 	//outlet(0, "showClefs", "true");
 		outlet(0, "showTempo", "true");
-		outlet(0, "showMeasureNumbers", scoreAttributes["score"]["TimeSignaturesVisible"]);
-		outlet(0, "showSectionBrackets", scoreAttributes["score"]["SectionBracketsVisible"]);
+		outlet(0, "showMeasureNumbers", scoreAttributes["score"][0]["@TimeSignaturesVisible"]);
+		outlet(0, "showSectionBrackets", scoreAttributes["score"][0]["@SectionBracketsVisible"]);
 		}
 	}
 	else {	
@@ -334,22 +338,26 @@ for(var event in anchors){
 	if (anchor[6] != -1) for (var i = 0; i <= anchor[6]; i++) outlet(0, "selectNextInterval");
 	outlet(0, "getSelectedNoteInfo");
 	var key = Object.keys(json);	
-	var hold = json[key]["HOLD"];
-	var vel = json[key]["VELOCITY"];
+	var hold = json["selectedNotes"][0][key]["@HOLD"];
+	var vel = json["selectedNotes"][0][key]["@VELOCITY"];
 	outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 	if ("userBean" in json[key]){
-	var userBeans = [].concat(json[key]["userBean"]);
+	var userBeans = [];
+	var occurence = getAllIndexes(json["selectedNotes"][0][key][".ordering"], "userBean");
+	for (var i = 0; i < occurence.length; i++) {
+		userBeans[i] = json["selectedNotes"][0][key]["userBean"][i];
+		}
 	for (var i = 0; i < userBeans.length; i++) {
-	if (userBeans[i]["Message"].indexOf("rendered") && userBeans[i]["Message"].indexOf("sequenced") == -1) {
+	if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 	var tempDict = new Dict();
-	tempDict.parse(userBeans[i]["Message"]);
+	tempDict.parse(userBeans[i]["@Message"]);
  	if (tempDict.get("picster-element[0]::val[0]::id").indexOf("sustain") == -1) {
-		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]), parseFloat(userBeans[i]["Yoffset"]), userBeans[i]["Message"]);
+		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 		}
 	}
 	else {
-	if (userBeans[i]["Message"].indexOf("hold") == -1) {
-		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["Xoffset"]), parseFloat(userBeans[i]["Yoffset"]), userBeans[i]["Message"]);
+	if (userBeans[i]["@Message"].indexOf("hold") == -1) {
+		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			}
 		}
 	}
@@ -360,7 +368,7 @@ for(var event in anchors){
 	outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_NORMAL");
 	outlet(0, "noteStemVisibilityTransform", "true");
 	outlet(0, "autoBeamTransform");
-	if (proportional == 1) outlet(0, "setScoreSize", parseFloat(scoreAttributes["score"]["WIDTH"]), parseFloat(scoreAttributes["score"]["HEIGHT"]));
+	if (proportional == 1) outlet(0, "setScoreSize", parseFloat(scoreAttributes["score"][0]["@WIDTH"]), parseFloat(scoreAttributes["score"][0]["@HEIGHT"]));
 	outlet(0, "setReceivePlayheadPosition", "true");
 	outlet(0, "setNoteFlash", "true");
 	outlet(1, "proportional", 0);
@@ -423,8 +431,8 @@ function scroll()
 		outlet(0, "getNumMeasures");	
 		for (var m = 0; m < numMeasures; m++){
 			outlet(0, "getMeasureInfo", m);
-			var tempo = json["measure"]["TEMPO"];
-			var timesig = json["measure"]["TIMESIG"].split(" ");
+			var tempo = json["measure"]["@TEMPO"];
+			var timesig = json["measure"]["@TIMESIG"];
 			var measureWidth = (60 / tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
 			if (m == s) var scoreOffset = scoreSize;
 				scoreSize += measureWidth;
@@ -578,19 +586,40 @@ function anything()
 		staffBoundingInfo = msg;
 		//post("staffBoundingInfo",  msg, "\n");
 		break;
+	case "dictionary" :
+		var dump = new Dict;
+		dump.name = msg[0];
+		json = JSON.parse(dump.stringify());
+		break;
 	case "startdump" :
-		dump = [];
-		json = {};
-		dumpflag = 1;
+		//dump = [];
+		//json = {};
+		//dumpflag = 1;
 		break;
 	case "enddump" :
-		json = xml2json(dump.join(" "));
-		dumpflag = 0;
+		//json = xml2json(dump.join(" "));
+		//dumpflag = 0;
 		break;
 	default :
+		/*
 		if (dumpflag == 1) {
 		dump.push(messagename);
 		}
+		*/
 	}
+}
+
+function getAllIndexes(arr, val) {
+    var indexes = [-1], i;
+	var c = 0;
+	if (typeof arr == "number" && arr == val) indexes = [0];
+    else {for(i = 0; i < arr.length; i++)
+        if (arr[i] == val)
+			{
+            indexes[c] = i;
+			c++;
+			}
+		}
+    return indexes;
 }
 

@@ -8,16 +8,27 @@ function id(a)
 	grab = a;
 }
 
+function getInfo(i)
+{
+	var i = arrayfromargs(arguments);
+	var prop = (["dumpScore", "staffInfo"].indexOf(i[0]) != -1) ? "dictionary" : i[0];
+	var g = new Global("address");
+	g.mess = ["address"].concat(i);
+	g.sendnamed(grab + "-relay", "mess");
+}
+
 function anything()
 {
 var attr = arrayfromargs(messagename, arguments);
-var info = new Dict();
-info.name = ("info");
 var dump = new Dict();
-dump.name = ("dump");
-info.clear();
-messnamed(grab, "getNoteAnchor");
+dump.name = grab;
+messnamed(grab+"-relay", "null", "getNoteAnchor");
+var info = new Dict();
+info.clone(dump.name);
+//post(info.stringify(), "\n");
 var keys = info.getkeys();
+//var dump = new Dict();
+//dump.name = grab;
 if (keys)
 {
 for (var i= 0; i < keys.length; i++)
@@ -27,7 +38,7 @@ for (var i= 0; i < keys.length; i++)
 	{
 	if (attr=="TEXT")
 	{
-	messnamed(grab, "getNoteInfo", inf.slice(3));
+	messnamed(grab+"-relay", "null", "getNoteInfo", inf.slice(3));
 	var text = dump.get("note::@TEXT");
 	var textoffsetx = dump.get("note::@TEXTOFFSETX");
 	var textoffsety = dump.get("note::@TEXTOFFSETY");
@@ -35,14 +46,14 @@ for (var i= 0; i < keys.length; i++)
 	outlet(0, text, textoffsetx, textoffsety);		
 	}
 	else if (attr == "MultitrackRestAdjustmentY") {
-	messnamed(grab, "getMultiTrackRestAdjustmentY", inf.slice(3, 6));
+	messnamed(grab+"-relay", "null", "getMultiTrackRestAdjustmentY", inf.slice(3, 6));
 	var query = info.get("0").slice(1);
 	outlet(1, inf.slice(3));
 	outlet(0, query);
 	}
 	else
 	{
-	messnamed(grab, "getNoteInfo", inf.slice(3));
+	messnamed(grab+"-relay", "null", "getNoteInfo", inf.slice(3));
 	if (attr[0] == "dim")
 		{	
 			var dim = attr[1] - 4;
@@ -53,13 +64,14 @@ for (var i= 0; i < keys.length; i++)
 		else
 		{
 		var query = dump.get("note::@"+attr);
+		//post(dump.stringify(), "\n");
 		outlet(1, inf.slice(3));
 		outlet(0, query);
 		}
 	}
 	}
 	else {
-	messnamed(grab, "getIntervalInfo", inf.slice(3));
+	messnamed(grab+"-relay", "null", "getIntervalInfo", inf.slice(3));
 	if (attr=="TEXT")
 	{
 	var text = dump.get("interval::@TEXT");

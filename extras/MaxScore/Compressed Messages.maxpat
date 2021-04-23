@@ -127,7 +127,8 @@
 					"patching_rect" : [ 555.0, 872.0, 150.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 30.0, 179.0, 236.0, 20.0 ],
-					"text" : "Recompressed string:"
+					"text" : "Recompressed string:",
+					"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ]
 				}
 
 			}
@@ -174,8 +175,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 60.5, 368.0, 408.0, 45.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 30.0, 206.0, 408.0, 134.0 ],
-					"text" : "13.3o8plKtpkK..CXa.W."
+					"presentation_rect" : [ 30.0, 206.0, 408.0, 134.0 ]
 				}
 
 			}
@@ -209,7 +209,8 @@
 					"presentation" : 1,
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 30.0, 2.0, 388.0, 33.0 ],
-					"text" : "Enter compressed string or dictionary name (preceded by \"dictionary\"), edit dictionary and update."
+					"text" : "Enter compressed string or dictionary name (preceded by \"dictionary\"), edit dictionary and update.",
+					"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ]
 				}
 
 			}
@@ -275,6 +276,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-1",
 					"keymode" : 1,
+					"linecount" : 8,
 					"maxclass" : "textedit",
 					"numinlets" : 1,
 					"numoutlets" : 4,
@@ -282,7 +284,9 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 45.0, 33.0, 408.0, 45.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 30.0, 34.0, 408.0, 111.0 ]
+					"presentation_linecount" : 8,
+					"presentation_rect" : [ 30.0, 34.0, 408.0, 111.0 ],
+					"text" : "325.3oc4PtrSCCCDEccxWgkWmDkHdHJ6npaXAkJdHj.wBmzwQlZ6Ix1o.pp+63Gzzx2.aRjOyct5dmc4YzsfwJPMkbMg1TUSK7rACNfFmGyjgAMAXqjo2rh0CARcf3DJ3YsvEkTmPvWNNpiH5MFge+.VMZEcS74F11QCil7vIgoIO4czRVBeRd.ULcTQaeGJQSX9aj5pYytr3jemWP7ol7dPI+uJqKN4yjHK3dwvFlJg+8qHphuqt3WxBe7R0+wAVmP2OmYS8t5rqRhbLNurNvx1kmkQkv5dvHEZvd3jET8sLtGcAvYiRGMhUhNiuewPPU2UpQMjlvV+wn0cHbYzN+wIpZ8o6GCWoDwMiCG0FiTuASL+EnfT1DKs221VysZqyrjoRAhjrRDfiJP6BSVgVQn22y49qPz57r84GKby+iBmuO+GZPv07A"
 				}
 
 			}
@@ -405,7 +409,7 @@
  ],
 		"dependency_cache" : [  ],
 		"autosave" : 0,
-		"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ]
+		"bgcolor" : [ 0.341176470588235, 0.341176470588235, 0.341176470588235, 1.0 ]
 	}
 
 }

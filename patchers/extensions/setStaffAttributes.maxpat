@@ -327,12 +327,6 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
 								"umenu" : 								{
 									"bgfillcolor" : 									{
 										"type" : "color",
@@ -345,6 +339,12 @@
 									}
 ,
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -363,9 +363,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
-									"fontsize" : [ 15.0 ]
+									"fontsize" : [ 15.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -374,8 +374,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -384,9 +384,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
-									"fontsize" : [ 20.0 ]
+									"fontsize" : [ 20.0 ],
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -621,10 +621,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 555.0, 17.0, 15.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
@@ -634,6 +630,10 @@
 						}
 ,
 						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -710,10 +710,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 751.0, 17.0, 15.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
@@ -723,6 +719,10 @@
 						}
 ,
 						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -987,11 +987,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 74.0, 4.5, 34.0, 39.0 ],
 					"saved_attribute_attributes" : 					{
-						"hltcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
-						"bordercolor" : 						{
+						"tricolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -999,7 +999,7 @@
 							"expression" : ""
 						}
 ,
-						"tricolor" : 						{
+						"hltcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -1477,7 +1477,7 @@
 					"bgfillcolor_type" : "color",
 					"fontface" : 1,
 					"id" : "obj-103",
-					"items" : [ "Default", ",", "Tablature", ",", "ClefDesigner", ",", "BP chromatic", ",", "Percussion", ",", "17EDO", ",", "19EDO", ",", "BP Alto Kalimba", ",", "BP Contra Clarinet", ",", "BP MIDI Keyboard", ",", "BP Soprano Clarinet", ",", "BP Tenor Clarinet", ",", "Just Intonation", ",", "-", ",", "General MIDI Percussion", ",", "Soprano Clef", ",", "BP chromatic N clef", ",", "BP chromatic T clef", ",", "BP chromatic U clef", ",", "BP chromatic Z clef", ",", "-", ",", "24TET", ",", "48TET", ",", "72TET-Stahnke", ",", "72TET-Sims", ",", "72TET-Wyschnegradsky", ",", "96TET" ],
+					"items" : [ "Default", ",", "Tablature", ",", "ClefDesigner", ",", "BP chromatic", ",", "Percussion", ",", "Just Intonation", ",", "BP Tenor Clarinet", ",", "BP Soprano Clarinet", ",", "BP MIDI Keyboard", ",", "BP Contra Clarinet", ",", "BP Alto Kalimba", ",", "19EDO", ",", "17EDO", ",", "-", ",", "General MIDI Percussion", ",", "Soprano Clef", ",", "BP chromatic N clef", ",", "BP chromatic T clef", ",", "BP chromatic U clef", ",", "BP chromatic Z clef", ",", "-", ",", "24TET", ",", "48TET", ",", "72TET-Stahnke", ",", "72TET-Sims", ",", "72TET-Wyschnegradsky", ",", "96TET" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1541,7 +1541,7 @@
 					"htricolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-54",
 					"maxclass" : "number",
-					"maximum" : 2,
+					"maximum" : 1,
 					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -3780,7 +3780,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1229.0, 82.0, 169.0, 20.0 ],
-					"restore" : [ 2 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4528,15 +4528,15 @@
 					"outlettype" : [ "", "", "float" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 420.0, 65.0, 31.0, 39.0 ],
-					"pictures" : [ "treble_inv.svg", "alto_inv.svg", "tenore_inv.svg", "bass_inv.svg", "percussion_inv.svg" ],
+					"pictures" : [ "treble_inv.svg", "alto_inv.svg", "tenor_inv.svg", "bass_inv.svg", "percussion_inv.svg" ],
 					"presentation" : 1,
 					"presentation_rect" : [ 278.0, 4.0, 49.25, 39.0 ],
 					"saved_attribute_attributes" : 					{
-						"hltcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
-						"bordercolor" : 						{
+						"tricolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4544,7 +4544,7 @@
 							"expression" : ""
 						}
 ,
-						"tricolor" : 						{
+						"hltcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4753,11 +4753,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 352.0, 4.0, 58.0, 39.0 ],
 					"saved_attribute_attributes" : 					{
-						"hltcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
-						"bordercolor" : 						{
+						"tricolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4765,7 +4765,7 @@
 							"expression" : ""
 						}
 ,
-						"tricolor" : 						{
+						"hltcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -5709,12 +5709,6 @@
  ],
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-				}
-,
 				"umenu" : 				{
 					"bgfillcolor" : 					{
 						"type" : "color",
@@ -5727,6 +5721,12 @@
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -5745,9 +5745,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ]
+					"fontsize" : [ 15.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -5756,8 +5756,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -5766,9 +5766,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ]
+					"fontsize" : [ 20.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",

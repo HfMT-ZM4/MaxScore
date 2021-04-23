@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -69,8 +69,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -189,12 +189,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
 									"id" : "obj-16",
-									"linecount" : 20,
+									"linecount" : 19,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 532.066741999999977, 396.0, 490.216583000000014, 297.0 ],
-									"text" : "When @defaults are set to 1 maxscore.parse2\nwill send default values for measure, note and interval attributes; defaults 0 will only create a message when the value for a attribute differs from the default. For notes and intervals an addNote/addInterval message will be created instead of individual setDuration, setPitch, setAmplitude, setHold messages. Defaults needs to be 0, if a new score is supposed to be created from the output of maxscore.parse2. \nIn addition, setPreviousBeamedOut is sent instead of setBeamedOut.\nWith @measureWidth set to 0 (default), the setMeasureWidth message will be suppressed.\nWith @countMeasuresFromZero set to 0 (default), parsed measure indexes correspond to the current measure numbers, with the the value to 1, the parsed measure indexes always start with 0.\n@dict sets the name of a MaxScore dict to be parsed with getTree.\nWith @useUserOffset set to 1, add an offset specified by the offset message to the measure numbers of the parsed score.\nWhen just a portion of the score is dumped with [dumpScore start-measure numMeasures] score attributes will not be sent and a target score will have to be created by hand. Use the @tempTrackForGraceNotes attribute to indicate the index of the track that grace notes will be written to temporarily before cut and attached to the note they precede. Make sure that no other event exists in this track."
+									"patching_rect" : [ 532.066741999999977, 396.0, 494.0, 282.0 ],
+									"text" : "When @defaults are set to 1 maxscore.parse2\nwill send default values for measure, note and interval attributes; defaults 0 will only create a message when the value for a attribute differs from the default. For notes and intervals an addNote/addInterval message will be created instead of individual setDuration, setPitch, setAmplitude, setHold messages. Defaults needs to be 0, if a new score is supposed to be created from the output of maxscore.parse2. \nIn addition, setPreviousBeamedOut is sent instead of setBeamedOut.\nWith @measureWidth set to 0 (default), the setMeasureWidth message will be suppressed.\nWith @countMeasuresFromZero set to 0 (default), parsed measure indexes correspond to the current measure numbers, with the the value to 1, the parsed measure indexes always start with 0.\nWith @useUserOffset set to 1, add an offset specified by the offset message to the measure numbers of the parsed score.\nWhen just a portion of the score is dumped with [dumpScore start-measure numMeasures] score attributes will not be sent and a target score will have to be created by hand. Use the @tempTrackForGraceNotes attribute to indicate the index of the track that grace notes will be written to temporarily before cut and attached to the note they precede. Make sure that no other event exists in this track."
 								}
 
 							}
@@ -233,41 +233,13 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
-									"id" : "obj-9",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 444.25, 184.0, 330.0, 23.0 ],
-									"text" : "selectNote 0 0 0 0, getSelectedNoteInfo, clearSelection"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 13.0,
-									"id" : "obj-8",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 336.25, 184.0, 99.0, 23.0 ],
-									"text" : "getStaffInfo 0 0"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 13.0,
 									"id" : "obj-7",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 215.25, 184.0, 113.0, 23.0 ],
-									"text" : "getMeasureInfo 0"
+									"patching_rect" : [ 215.25, 184.0, 97.0, 23.0 ],
+									"text" : "dumpScore 0 1"
 								}
 
 							}
@@ -305,7 +277,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
+									"outlettype" : [ "", "dictionary", "", "" ],
 									"patching_rect" : [ 10.0, 231.0, 162.812775999999957, 22.0 ],
 									"text" : "MaxScore"
 								}
@@ -342,7 +314,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
+									"outlettype" : [ "", "dictionary", "", "" ],
 									"patching_rect" : [ 58.25, 526.0, 67.0, 22.0 ],
 									"text" : "MaxScore"
 								}
@@ -838,22 +810,6 @@
 								}
 
 							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 345.75, 218.5, 19.5, 218.5 ],
-									"source" : [ "obj-8", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 453.75, 218.5, 19.5, 218.5 ],
-									"source" : [ "obj-9", 0 ]
-								}
-
-							}
  ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"editing_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
@@ -900,8 +856,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1047,7 +1003,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.sax.maxpat",
+				"name" : "maxscore.json.iter.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
@@ -1064,7 +1020,7 @@
 				"name" : "maxscore.bcanvas.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "TEXT",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -1208,6 +1164,20 @@
 			}
 , 			{
 				"name" : "MaxScore.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m_musicxml2jmsl.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
+				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.xml2json.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",

@@ -12,8 +12,8 @@ function anything()
 {
 var attr = arrayfromargs(messagename, arguments);
 var dump = new Dict();
-dump.name = ("dump");
-messnamed(grab, "getMeasureInfo", attr[1]);	
+dump.name = grab;
+messnamed(grab+"-relay", "null", "getMeasureInfo", attr[1]);	
 if (attr[0] == "MEASURETEXT")
 {
 outlet(0, dump.get("measure::@MEASURETEXT"), dump.get("measure::@MEASURETEXTX"), dump.get("measure::@MEASURETEXTY"));		

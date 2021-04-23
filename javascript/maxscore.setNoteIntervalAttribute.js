@@ -3,9 +3,7 @@ outlets = 3;
 
 var grab = "";
 var info = new Dict();
-info.name = ("info");
 var dump = new Dict();
-dump.name = ("dump");
 var selection = new Dict();
 selection.name = "selection";
 var undo = 1;
@@ -16,6 +14,7 @@ if (jsarguments.length > 1 && jsarguments[1] == "@undo") undo = jsarguments[2];
 function id(a)
 {
 	grab = a;
+	dump.name = grab;
 }
 
 function anything()
@@ -23,8 +22,10 @@ function anything()
 var attr = arrayfromargs(messagename, arguments);
 outlet(1, "setRenderAllowed", 0);
 if (undo == 1) outlet(1, "setUndoStackEnabled", "false");
-info.clear();
-getSelection();
+///getSelection
+messnamed(grab+"-relay", "null", "getNoteAnchor");
+selection.clone(dump.name);	
+info.clone(dump.name);	
 
 var keys = info.getkeys();
 if (keys)
@@ -36,7 +37,7 @@ for (var i= 0; i < keys.length; i++)
 	result = [];
 	if (inf[7] == -1)
 	{
-	messnamed(grab, "getNoteInfo", inf.slice(3));
+	messnamed(grab+"-relay", "null", "getNoteInfo", inf.slice(3));
 	for (var k = 0; k < attr.length; k++)
 	{
 		var singleAttribute = [];
@@ -66,7 +67,7 @@ for (var i= 0; i < keys.length; i++)
 	}
 	else 
 	{
-	messnamed(grab, "getIntervalInfo", inf.slice(3));
+	messnamed(grab+"-relay", "null", "getIntervalInfo", inf.slice(3));
 	for (var k = 0; k < attr.length; k++)
 	{
 		var singleAttribute = [];
@@ -106,12 +107,6 @@ if (undo == 1) {
 outlet(1, "setUndoStackEnabled", true);
 outlet(1, "saveToUndoStack");
 }
-}
-
-function getSelection()
-{
-messnamed(grab, "getNoteAnchor");
-selection.clone("info");	
 }
 
 function restoreSelection()
