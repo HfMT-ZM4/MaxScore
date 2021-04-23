@@ -27,7 +27,7 @@
 e.g. if you have 3 staffs and you want the second one to be displayed as the top one, type “2” “1” “3” in the different rows. The staves will be renumbered after sorting</li>
   <li>Group: If you want to group together two or more staffs, go the the “Group” column and type the same number for the staffs you wish to be displayed as a system.
 e.g. if you have 3 staffs and you want the bottom two to exist as a system, type “0” “1” “1” in the different rows.</li>
-<li>Instrument Name: You can specify the instrument’s name for each staff by clicking on the white space. Type the name of the instrument in the dialog that will pop up and press “OK”. You can also specify an abbreviation for the instrument’s name to appear an all staves but the first one by clicking on the second white space of each column and entering the abbreviated name. The number on the right refers to the vertical offset for both the intrument and abbreviated instrument names.</li>
+<li>Instrument Name: You can specify the instrument’s name for each staff by clicking on the white space. Type the name of the instrument in the dialog that will pop up and press “OK”. You can also specify an abbreviation for the instrument’s name to appear an all staves but the first one by clicking on the second white space of each column and entering the abbreviated name. The number on the right refers to the vertical offset for both the instrument and abbreviated instrument names.</li>
 <li>Clef: Choose a specific clef for each staff.</li>
 <li>Key Signature: Choose a specific key signature for each staff</li>
 <li>Transp.: Here you set the initial transposition that will be applied to the playback of this staff. Useful when notating transposing instruments.</li>

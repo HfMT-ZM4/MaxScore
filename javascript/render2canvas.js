@@ -93,7 +93,7 @@ var cursorAttr = {};
 var renderPage = 1;
 var selectionRectCount = 0;
 //var dumpflag = 0;
-//var dump = [];
+var dumpinfo = ["measure"];
 var json = {};
 var tempo = 60;
 var timesig = [4, 4];
@@ -1054,6 +1054,7 @@ function startRenderDump()
 				staffInfo[i][j] = {};
 				staffBoundingMatrix[i][j] = []; 
 				//post("getstaffinfo", i, scoreLayout[1], "\n");
+				dumpinfo = ["staff", i + scoreLayout[1], j];
 				outlet(1, "getStaffInfo", i + scoreLayout[1], j);
 				if (Object.keys(extendedStaffLines).indexOf(j) != -1) for (var k = 0; k < (5 + Number(extendedStaffLines[j][0]) + Number(extendedStaffLines[j][1])); k++) stafflines[i][j][k] = {};
 		}
@@ -1156,24 +1157,48 @@ function anything() {
 			switch (msg[7])
 			{
 				case "$MIDICENTS" :
-				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
-				else outlet(1, "getIntervalInfo", currentElement.slice(1));
+				if (currentElement[0] == "note") {
+					dumpinfo = ["note"];
+					outlet(1, "getNoteInfo", currentElement.slice(1));
+				}
+				else {
+					dumpinfo = ["interval"];
+					outlet(1, "getIntervalInfo", currentElement.slice(1));
+				}
 				noteText = Math.round(value * 100.);
 				break;
 				case "$DEVIATION" :
-				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
-				else outlet(1, "getIntervalInfo", currentElement.slice(1));
+				if (currentElement[0] == "note") {
+					dumpinfo = ["note"];
+					outlet(1, "getNoteInfo", currentElement.slice(1));
+				}
+				else {
+					dumpinfo = ["interval"];
+					outlet(1, "getIntervalInfo", currentElement.slice(1));
+				}
 				var diff = value - parseInt(value);
 				noteText = ((diff < 0.5) ? "+" : "") + Math.round((diff < 0.5) ? diff * 100 : (1 - diff) * -100);
 				break;
 				case "$FREQUENCY" :
-				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
-				else outlet(1, "getIntervalInfo", currentElement.slice(1));
+				if (currentElement[0] == "note") {
+					dumpinfo = ["note"];
+					outlet(1, "getNoteInfo", currentElement.slice(1));
+				}
+				else {
+					dumpinfo = ["interval"];
+					outlet(1, "getIntervalInfo", currentElement.slice(1));
+				}
 				noteText = (440 * Math.pow(2, (value - 69) / 12)).toFixed(2);
 				break;
 				case "$RATIO" :
-				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
-				else outlet(1, "getIntervalInfo", currentElement.slice(1));
+				if (currentElement[0] == "note") {
+					dumpinfo = ["note"];
+					outlet(1, "getNoteInfo", currentElement.slice(1));
+				}
+				else {
+					dumpinfo = ["interval"];
+					outlet(1, "getIntervalInfo", currentElement.slice(1));
+				}
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
@@ -1191,8 +1216,14 @@ function anything() {
 				noteText = cent2ratio.get(Math.round((value - shift) * 100) % frame).slice(1).join("/");
 				break;
 				case "$RATIOWITHDEVIATION" :
-				if (currentElement[0] == "note") outlet(1, "getNoteInfo", currentElement.slice(1));
-				else outlet(1, "getIntervalInfo", currentElement.slice(1));
+				if (currentElement[0] == "note") {
+					dumpinfo = ["note"];
+					outlet(1, "getNoteInfo", currentElement.slice(1));
+					}
+				else {
+					dumpinfo = ["interval"];
+					outlet(1, "getIntervalInfo", currentElement.slice(1));
+				}
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
@@ -1922,32 +1953,24 @@ function anything() {
 			var dump = new Dict;
 			dump.name = msg[0];
 			json = JSON.parse(dump.stringify());
-		break;
-		case "startdump" :
-			//dump = [];
-			//json = {};
-			//dumpflag = 1;
-		break;
-		case "enddump" :
-			//post("enddump", msg, dump[0][1], "\n");
-			switch (msg[0]){
-			case "getMeasureInfo" :
+			//post("dumpinfo-1", dumpinfo, JSON.stringify(json), "\n");
+			switch (dumpinfo[0]){
+			case "measure" :
 			//json = xml2json(dump.join(" "));
 			tempo = json["measure"]["@TEMPO"];
 			timesig = json["measure"]["@TIMESIG"].split(" ");
 			break;
-			case "getStaffInfo" :
+			case "staff" :
 			//json = xml2json(dump.join(" "));
-			//post("json", JSON.stringify(json), "\n");
-			extendedStaffLines[msg[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
-			clefList[msg[2]] = json["staff"]["@CLEF"];
+			extendedStaffLines[dumpinfo[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
+			clefList[dumpinfo[2]] = json["staff"]["@CLEF"];
 			var measureOffset = (typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1];
-			staffInfo[msg[1] - measureOffset][msg[2]] = [json["staff"]["@CLEF"], json["staff"]["@KEYSIGNUMACC"], json["staff"]["@KEYSIGTYPE"]];
+			staffInfo[dumpinfo[1] - measureOffset][dumpinfo[2]] = [json["staff"]["@CLEF"], json["staff"]["@KEYSIGNUMACC"], json["staff"]["@KEYSIGTYPE"]];
 			// for repeated-acc-filter we need CLEF, KEYSIGNUMACC and KEYSIGTYPE in a obj[measure][staff] object
 			break;
+			/*
 			case "getNoteInfo" :
 			if (messagename[1] == "n") {
-			//json = xml2json(dump.join(" "));
 			pitch = json["note"]["@PITCH"];
 			accinfo = json["note"]["@ACCINFO"];
 			accvis = json["note"]["@ACCVISPOLICY"];
@@ -1955,7 +1978,6 @@ function anything() {
 			value = json["note"]["dim"]["1"]["@value"];
 			}
 			else {
-			//json = xml2json(dump.join(" "));
 			pitch = json["interval"]["@PITCH"];
 			accinfo = json["interval"]["@ACCINFO"];
 			accvis = json["interval"]["@ACCVISPOLICY"];
@@ -1964,22 +1986,32 @@ function anything() {
 			}
 			break;
 			case "getIntervalInfo" :
-			//json = xml2json(dump.join(" "));
 			pitch = json["interval"]["@PITCH"];
 			accinfo = json["interval"]["@ACCINFO"];
 			accvis = json["interval"]["@ACCVISPOLICY"];
 			accpref = json["interval"]["@ACCPREF"];
 			value = json["interval"]["dim"]["1"]["@value"];
-			break;			
+			break;	
+			*/
+			default :
+			//post("dumpinfo-2", dumpinfo, JSON.stringify(json), "\n");
+			pitch = json[dumpinfo[0]]["@PITCH"];
+			accinfo = json[dumpinfo[0]]["@ACCINFO"];
+			accvis = json[dumpinfo[0]]["@ACCVISPOLICY"];
+			accpref = json[dumpinfo[0]]["@ACCPREF"];
+			value = json[dumpinfo[0]]["dim"]["1"]["@value"];					
 			}
-			//dumpflag = 0;
+		break;
+		case "startdump" :
+		break;
+		case "enddump" :
 			break;
         default:
 		//if (dumpflag == 1) {
 			//dump.push(messagename);
 		//}
 		//else {
-			var msgname = messagename;
+		var msgname = messagename;
 		if (prop) {
 			if (msgname == "noteheadwhite" || msgname == "noteheadwhole") msgname = "noteheadblack";
 			if (msgname == "dot") return;
@@ -1997,6 +2029,7 @@ function anything() {
 			if (msg[3] == "Note") {
 				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 				outlet(1, "getNoteProperty", "level", msg[4], msg[5], msg[6], msg[7], -1);
+				dumpinfo = ["note"];		
 				outlet(1, "getNoteInfo", msg[4], msg[5], msg[6], msg[7]);
 				}
 				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7]];
@@ -2005,6 +2038,7 @@ function anything() {
 			else if (msg[3] == "Interval") {
 				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 				outlet(1, "getNoteProperty", "level", msg[4], msg[5], msg[6], msg[7], intervalCount);
+				dumpinfo = ["interval"];
 				outlet(1, "getIntervalInfo", msg[4], msg[5], msg[6], msg[7], intervalCount);
 				}
 				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount];
@@ -2354,6 +2388,16 @@ function anything() {
 			var dump = new Dict;
 			dump.name = msg[0];
 			json = JSON.parse(dump.stringify());
+			if (dumpinfo[0] == "measure") {
+			//json = xml2json(dump.join(" "));
+			tempo = json["measure"]["@TEMPO"];
+			timesig = json["measure"]["@TIMESIG"].split(" ");
+			}
+			else if (dumpinfo[0] == "staff") {
+			//json = xml2json(dump.join(" "));
+			extendedStaffLines[dumpinfo[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
+			 List[dumpinfo[2]] = json["staff"]["@CLEF"];
+			}
 		break;
 		case "startdump" :
 			//dump = [];
@@ -2361,16 +2405,6 @@ function anything() {
 			//dumpflag = 1;
 		break;
 		case "enddump" :
-			if (msg[0] == "getMeasureInfo") {
-			//json = xml2json(dump.join(" "));
-			tempo = json["measure"]["@TEMPO"];
-			timesig = json["measure"]["@TIMESIG"].split(" ");
-			}
-			else if (msg[0] == "getStaffInfo") {
-			//json = xml2json(dump.join(" "));
-			extendedStaffLines[msg[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
-			 List[msg[2]] = json["staff"]["@CLEF"];
-			}
 			//dumpflag = 0;
 			break;
 		case "barline" :
@@ -2748,6 +2782,7 @@ function cursor()
 		var endStaff = cursorAttr[id]["@end"][1];
 		for (var i = cursorAttr[id]["@begin"][0]; i <= cursorAttr[id]["@end"][0]; i++){
 		outlet(1, "getMeasureInfo", i);
+		dumpinfo = ["measure"];
 		if (i == cursorAttr[id]["@begin"][0]) {
 			var countin = timesig;
 			var countinInterval = stretch * 60000 / parseFloat(tempo) * 4 / parseFloat(timesig[1]);
