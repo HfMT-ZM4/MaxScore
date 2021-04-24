@@ -9,7 +9,7 @@
 		<o>
 			maxscore.store 
 		</o>
-		is a js object that stores a score and exposes it to the pattr system. It receives XML data contents from the second outlet of com.algomusic.max.MaxScore and requires a bang to send out the score to the second outlet of another com.algomusic.max.MaxScore instance. 
+		is a js object capable of storing scores and exposing them to the pattr system. It receives XML data via a grab object and requires a bang to send out the current score to the second outlet of a MaxScore object. 
 	</description>
 <!--METADATA-->
 	<metadatalist>

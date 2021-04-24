@@ -449,8 +449,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 23.0, 153.0, 135.0, 22.0 ],
-									"text" : "maxscore.grabinfo.grab"
+									"patching_rect" : [ 23.0, 153.0, 111.0, 22.0 ],
+									"text" : "maxscore.info.grab"
 								}
 
 							}

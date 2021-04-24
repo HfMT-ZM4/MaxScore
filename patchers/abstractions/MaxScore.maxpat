@@ -46,7 +46,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 543.214285714285666, 118.0, 232.0, 22.0 ],
-					"restore" : [ "testeroo" ],
+					"restore" : [ "16506-fromScore" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -75,8 +75,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 567.214285714285666, 316.5, 229.0, 22.0 ],
-					"text" : "maxscore.grabinfo.recv #0-fromScore"
+					"patching_rect" : [ 567.214285714285666, 316.5, 205.0, 22.0 ],
+					"text" : "maxscore.info.recv #0-fromScore"
 				}
 
 			}
@@ -87,7 +87,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "dictionary" ],
-					"patching_rect" : [ 497.464285714285666, 436.5, 198.0, 22.0 ],
+					"patching_rect" : [ 497.464285714285666, 436.5, 205.0, 22.0 ],
 					"text" : "maxscore.xml2json @dict #0-dict"
 				}
 
@@ -207,7 +207,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 258.0, 48.0, 166.0, 22.0 ],
-									"restore" : [ "testeroo" ],
+									"restore" : [ "16506-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -641,7 +641,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 258.0, 56.0, 166.0, 22.0 ],
-									"restore" : [ "testeroo" ],
+									"restore" : [ "16506-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1619,7 +1619,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 569.5, 5.0, 166.0, 22.0 ],
-									"restore" : [ "testeroo" ],
+									"restore" : [ "16506-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3433,6 +3433,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -3618,7 +3620,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "saveToUndoStack" ],
 					"patching_rect" : [ 31.0, 14.5, 30.0, 30.0 ]
 				}
 
@@ -3702,7 +3704,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 117.0, 283.0, 166.0, 22.0 ],
-									"restore" : [ "testeroo" ],
+									"restore" : [ "16506-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0

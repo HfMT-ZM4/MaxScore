@@ -485,7 +485,6 @@
 					"patching_rect" : [ 417.0, 25.0, 151.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 680.0, 2.0, 106.0, 18.0 ],
-					"text" : "processing...",
 					"varname" : "progress"
 				}
 
@@ -3787,6 +3786,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-82",
@@ -3981,8 +3981,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.0, 709.5, 135.0, 22.0 ],
-									"text" : "maxscore.grabinfo.grab"
+									"patching_rect" : [ 340.0, 709.5, 111.0, 22.0 ],
+									"text" : "maxscore.info.grab"
 								}
 
 							}
@@ -4188,7 +4188,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 359.5, 342.0, 454.0, 22.0 ],
-									"restore" : [ 1, 0, 1, 0 ],
+									"restore" : [ -1, -1, -1, -1 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5008,7 +5008,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 258.0, 24.0, 348.0, 22.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ 1 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5160,7 +5160,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 58.0, 402.0, 450.0, 22.0 ],
-									"restore" : [ 3, 0, 3, 0.5, 800, 800 ],
+									"restore" : [ 10, 0, 10, 0.5, 800, 800 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7169,7 +7169,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 230.22222900390625, 143.0, 178.0, 20.0 ],
-									"restore" : [ "JMSLMaxScore-13" ],
+									"restore" : [ "JMSLMaxScore-395" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7358,7 +7358,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 418.0, 40.0, 449.0, 22.0 ],
-													"restore" : [ 1191, 842 ],
+													"restore" : [ 800, 800 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -7958,7 +7958,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 340.0, 200.0, 363.0, 22.0 ],
-													"restore" : [ 0 ],
+													"restore" : [ 1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -8652,7 +8652,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 325.333343505859375, 205.0, 216.0, 20.0 ],
-									"restore" : [ 3, 0, 3, 0.5, 800, 800 ],
+									"restore" : [ 10, 0, 10, 0.5, 800, 800 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -9334,7 +9334,6 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"hidden" : 1,
 					"id" : "obj-60",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
@@ -9384,6 +9383,7 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 1,
 					"enablevscroll" : 1,
+					"hidden" : 1,
 					"id" : "obj-9",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
@@ -9461,10 +9461,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 660.29998779296875, 638.5, 334.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1187, 252, 1796, 568 ],
+						"client_rect" : [ 202, 45, 1355, 927 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 780, 524, 1380, 824 ]
+						"storage_rect" : [ 1129, 44, 1688, 594 ]
 					}
 ,
 					"text" : "pattrstorage MasterScorePreferences @savemode 3 @flat 1",
