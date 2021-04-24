@@ -3,7 +3,7 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="Picster">
-<previous name="03maxscore-preferencesView">MaxScore: Preferences View</previous>
+<previous name="03maxscore-preferencesView">MaxScore: Preferences</previous>
 <next name="05maxscore-scorepions">Scorepions</next>
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 

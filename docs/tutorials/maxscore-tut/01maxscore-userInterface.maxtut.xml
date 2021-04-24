@@ -44,19 +44,20 @@
   Now let's create our first score!
   <li>By default, the tempo is set to 60 BPM, the time signature to 4/4 and the clef to a treble G-clef. To change this, use to the ‘Tools’ pane of the sidebar and make your choices accordingly.
   <illustration><img src="images/UserInterface-basics/editor-01-basics-3.png"/></illustration></li>
-  <li>To change the time signature, click on the ‘Meter’ button right below the clef box and enter number of beats and subdivision such as separated by a space ‘7 8’. Click the ‘Tempo’ button next to it to set the tempo.
+  <li>To change the time signature, click on the ‘Meter’ button right below the clef box and enter number of beats and subdivision separated by a space, e.g ‘7 8’. Click the ‘Tempo’ button next to it to set the tempo, if desired.
   <illustration><img src="images/UserInterface-basics/editor-01-basics-4.png" width="250"/></illustration></li>
-  <li>Let's add the first note. In order to add notes, double click or ctrl-click on a blank space on the designated measure. The note is blue now which means it is selected. If you want to transpose notes, you can either cmd-drag (Mac) or ctrl-drag (Windows), or use the keyboard shortcuts u, j, i, k, o, l for respective transpositions. You can always access the list of shortcuts from the menu: "Edit>Shortcuts".
+  <li>Let's now add the first note. In order to add notes, double click or ctrl-click on a blank space on the designated measure. Otherwise you might add an interval to an already existing note. The note is blue which means it is selected. If you want to transpose notes, you can either cmd-drag (Mac) or ctrl-drag (Windows), or use the keyboard shortcuts u, j, i, k, o, l for respective transpositions. You can always access the list of shortcuts from the menu: "Edit>Shortcuts".
   <illustration><img src="images/UserInterface-basics/editor-01-basics-5.png" width="600"/></illustration></li>
   <li>To convert a note into a rest, click the rest button on top of the third column in the Tools panel, or alternatively use the keyboard shortcut r.</li>
   <li>To add dynamics or articulation, select a note and then choose from the Tools bar the corresponding symbols. e.g. for dynamics check the 5th column.</li>
   <li>If you wish to add a crescendo or decrescendo to your score, drag-enclose the notes to which you want this to apply and click the respective symbols from the Tools pane.</li>
   <li>If you want to turn your notes into tuplets, select the notes and then choose the corresponding symbols from the Tools pane (5th and 6th columns, ‘3’, ‘5’, ‘7’, ‘9’, etc.)</li>
   <li>To add repeats or barlines, select the measure and then click on the corresponding symbols at the bottom of the Tools pane.</li>
+  <li>Go to the Editor Preferences (shift-3) to enable the display of the title and to enter the title, subtitled and composer info to be displayed on the top of your score.</li>
 </ul>
 <illustration><img src="images/UserInterface-basics/editor-01-1st_example.png"/></illustration>
 
-<p>For larger scores, navigate through the score by using “Navigation” tool at the bottom of the window. Type the number of the page you wish to display or use the arrows to move to other measures (single arrows) or pages (double arrows).</p>
+<p>For larger scores, navigate through the score by using the “Navigation” tool at the bottom of the window. Type the number of the page you wish to display or use the arrows to move to other measures (single arrows) or pages (double arrows).</p>
 
 <p>Zoom in or out the score by changing the corresponding value for the “Zoom”.</p>
 
