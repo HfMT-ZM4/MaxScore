@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="A Tour of the MaxScore Package">
+<previous name="00maxscore-installation">Welcome to MaxScore!</previous>
+<next name="01maxscore-userInterface">MaxScore: The User Interface</next>
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+
+<h1>A Tour of the MaxScore Package</h1>
+<illustration><img src="images/Basics/Tour.png"/></illustration>
+
+<!--
+<seealsolist>
+<seealso name="js">Max JavaScript object</seealso>
+<seealso name="jsintro" type="vignette" module="js" >javascriptinmax</seealso>
+</seealsolist>
+-->
+</chapter>

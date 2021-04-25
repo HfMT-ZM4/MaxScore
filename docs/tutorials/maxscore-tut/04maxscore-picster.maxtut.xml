@@ -3,17 +3,17 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="Picster">
-<previous name="03maxscore-preferencesView">MaxScore: Preferences</previous>
-<next name="05maxscore-scorepions">Scorepions</next>
+<previous name="07maxscore-microtones">MaxScore: Preferences</previous>
+<next name="08maxscore-playback">Playback</next>
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 
-<h1>Picster</h1>
+<h1>Graphics</h1>
 
-<p>Picster is an extension of the bcanvas abstraction allowing people to draw directly to the canvas without having to resort to the external Picster patch.</p>
+<p>An extension called Picster allows people to draw directly to the canvas.</p>
 
 <h2>Drawing modes</h2>
-<p>Picster on Board has nine drawing tools which will also be displayed in small red letters in the upper left-hand corner of the canvas after pressing the corresponding number keys.</p>
+<p>Picster has nine drawing tools which will also be displayed in small red letters in the upper left-hand corner of the canvas after pressing the corresponding number keys.</p>
 
 <ol>
   <li>line segment</li>

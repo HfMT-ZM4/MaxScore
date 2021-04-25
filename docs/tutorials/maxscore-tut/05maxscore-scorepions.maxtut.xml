@@ -2,38 +2,22 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="Scorepions">
-<previous name="04maxscore-picster">MaxScore: Picster</previous>
-<next name="06maxscore-macaque">MaxScore: Macaque</next>
+<chapter name="Sidebar: Scorepions">
 
-<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+<setdocpatch name="ScorepionTemplate" patch="ScorepionTemplate.maxpat"/>
+
+<previous name="03maxscore-PitchUtility">MaxScore: Picster</previous>
+<next name="03maxscore-PicsterTool">MaxScore: Macaque</next>
+<parent name="03maxscore-Sidebar">MaxScore: Sidebar</parent>
 
 
 
-<h1>Scorepions</h1>
+<h1>Sidebar: Scorepions</h1>
 
 <p>A plugin system called Scorepions allows Max programmers to create patches extending the functionality of the MaxScore/LiveScore editors.</p>
-<illustration><img src="images/Scorepions/Scorepion-image1-Template-Presentation-Mode.png"/></illustration>
+<illustration><img src="images/Basics/Scorepions.png" width="500" /></illustration>
 
-<p>We will now discuss how to create a Scorepion based on the Scorepion Template patch which can be found in [Max folder]/packages/MaxScore/patchers/Tutorial/Scorepions.</p>
-<p><br/> </p>
-<illustration><img src="images/Scorepions/Scorepionn-image2-Template-Edit-Mode.png"/></illustration>
-<p><i>Scorepion, expanded and in Edit mode. </i></p>
-
-<p>Scorepions to be included in the Scorepion menu need to reside in "MaxScore Lib/Scorepions"". This Scorepion is based on "Fill Empty Measures with Rest" and serves as an annotated template.</p>
-<blockquote class="mkd-blockquote-shortcode">
-<h4 class="mkd-blockquote-text"><span>Besides the core set of Max objects and messages, a Scorepion patch consists of user interface elements which need to be added to Presentation. Three outlets are used to control the behavior of the patch.</span></h4>
-</blockquote>
-<div class="wpb_text_column wpb_content_element ">
-<div class="wpb_wrapper"><ol>
-<li>All messages to the MaxScore object go out the first outlet. They include the 200+ messages defined in the MaxScore dictionary.</li>
-<li>Messages to parent patch. Currently, there are three messages controlling the behavior of MaxScore:<br />a. transcribe. This message will cause transcription of clips selected in the Staff Manager.<br />b. update. This message sends the (modified) MaxScore note list to Live.<br />c. newScore. This message resets the Staff Manager and creates a new score with one staff.</li>
-<li>Drawing messages to bcanvas (in the same format that the MaxScore object sends out of its first outlet).</li>
-</ol></div>
-</div>
-
-<p>Available scorepions are:
-
+<p>The Scorepions currently included in the MaxScore package are:
 <ul>
 <li>Accent Threshold Transform</li>
 <li>Amplitude Crescendo Transform</li>
@@ -61,5 +45,20 @@
 <li>Zipper Transform</li>
 </ul>
 </p>
-<p><i>An additional information on how to use a specific scorepion can be found by selecting a corresponding scorepion.</i></p>
+<p>Selecting a Scorepions from the menu on top will load the Scorepion from disk which displays the instructions as to how to use it and its GUI elements.</p>
+
+<h2>Create your very own Scorepion</h2>
+<p>We will now discuss how to create a Scorepion based on the Scorepion Template patch which can be open by clicking on the Open Tutorial button in this window's upper right-hand side</p>
+<p><br/> </p>
+<illustration><img src="images/Scorepions/Scorepion-image2-Template-Edit-Mode.png"/></illustration>
+<p><i>Scorepion, expanded and in Edit mode. </i></p>
+
+<p>Scorepions to be included in the Scorepion menu need to reside in "MaxScore Lib/Scorepions". This Scorepion is based on "Fill Empty Measures with Rest" and serves as an annotated template.</p>
+<blockquote class="mkd-blockquote-shortcode">
+<h4 class="mkd-blockquote-text"><span>A Scorepion uses the grab object to receive info queries from the host. When the MaxScore Editor receives a message starting with sendScorepion from a Max patch it's embedded in all of its attributes are sent to the currently loaded Scorepion, e.g. "sendScorepion bang". 
+Send all messages to the MaxScore Editor via the outlet.</span></h4>
+</blockquote>
+
+
+
 </chapter>

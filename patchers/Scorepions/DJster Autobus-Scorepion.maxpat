@@ -46,7 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 495.0, 32.0, 178.0, 178.0 ],
+					"patching_rect" : [ 186.0, 10.0, 71.0, 69.0 ],
 					"pic" : "Scorepion-Tail-blue.svg",
 					"presentation" : 1,
 					"presentation_rect" : [ 197.75, 28.0, 58.0, 49.0 ]
@@ -196,7 +196,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 149.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "146465-" ],
+									"restore" : [ "22057-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -344,15 +344,15 @@
 					"presentation_rect" : [ 124.5, 137.25, 40.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -408,19 +408,19 @@
 					"presentation_rect" : [ 165.5, 153.0, 90.0, 16.5 ],
 					"rounded" : 33.0,
 					"saved_attribute_attributes" : 					{
-						"activebgoncolor" : 						{
-							"expression" : ""
-						}
-,
-						"bordercolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
 						"labeltextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -460,15 +460,15 @@
 					"presentation_rect" : [ 73.0, 137.25, 40.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -779,11 +779,11 @@
 					"presentation_rect" : [ 4.0, 114.0, 95.634857177734375, 18.0 ],
 					"prototypename" : "trigger.default",
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -6081,10 +6081,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 319.0, 509.0, 30.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "in 1"
 				}
 
@@ -6175,15 +6171,15 @@
 					"presentation_rect" : [ 107.5, 309.0, 47.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -6393,15 +6389,15 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 150.0, 58.0, 16.973684310913086 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -6801,11 +6797,11 @@
 					"presentation_rect" : [ 4.0, 89.0, 64.0, 18.0 ],
 					"prototypename" : "trigger.default",
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -6879,15 +6875,15 @@
 					"presentation_rect" : [ 180.0, 309.0, 55.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -6930,15 +6926,15 @@
 					"presentation_rect" : [ 188.5, 246.0, 60.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -6979,15 +6975,15 @@
 					"presentation_rect" : [ 125.5, 246.0, 60.0, 36.0 ],
 					"prototypename" : "pitch",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -7029,15 +7025,15 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 188.5, 181.0, 66.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -7079,15 +7075,15 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 22.0, 309.0, 62.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -7128,15 +7124,15 @@
 					"presentation_rect" : [ 67.0, 246.0, 55.0, 36.0 ],
 					"prototypename" : "pitch",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -7178,15 +7174,15 @@
 					"presentation_rect" : [ 7.0, 246.0, 66.5, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -7228,15 +7224,15 @@
 					"presentation_rect" : [ 67.0, 181.0, 60.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -7280,15 +7276,15 @@
 					"presentation_rect" : [ 7.0, 181.0, 60.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -7331,15 +7327,15 @@
 					"presentation_rect" : [ 125.5, 181.0, 60.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
-						"activedialcolor" : 						{
-							"expression" : ""
-						}
-,
 						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"activedialcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -8398,12 +8394,13 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"fontname" : [ "Arial" ],
 					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"umenu" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -8413,8 +8410,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "",

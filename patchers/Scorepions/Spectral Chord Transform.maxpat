@@ -46,7 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 495.0, 32.0, 178.0, 178.0 ],
+					"patching_rect" : [ 615.0, 24.806342999999998, 125.0, 126.0 ],
 					"pic" : "Scorepion-Tail-blue.svg",
 					"presentation" : 1,
 					"presentation_rect" : [ 75.0, 6.0, 100.0, 114.0 ]
@@ -163,7 +163,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 105.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "146465-" ],
+									"restore" : [ "22057-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -704,7 +704,7 @@
 					"patching_rect" : [ 293.715302000000008, 566.17669699999999, 50.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 15.0, 210.0, 27.0, 22.0 ],
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"textcolor" : [ 0.870588235294118, 0.858823529411765, 0.858823529411765, 1.0 ],
 					"triangle" : 0,
 					"tricolor" : [ 0.75, 0.75, 0.75, 1.0 ]
 				}
@@ -726,7 +726,7 @@
 					"patching_rect" : [ 402.715302000000008, 566.17669699999999, 50.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 191.0, 210.0, 30.0, 22.0 ],
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"textcolor" : [ 0.870588235294118, 0.858823529411765, 0.858823529411765, 1.0 ],
 					"triangle" : 0,
 					"tricolor" : [ 0.75, 0.75, 0.75, 1.0 ]
 				}
@@ -2345,7 +2345,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-63", 0 ],
-					"midpoints" : [ 294.821930000000009, 278.028533999999979, 528.07806400000004, 278.028533999999979 ],
+					"midpoints" : [ 294.821930000000009, 257.028533999999979, 528.07806400000004, 257.028533999999979 ],
 					"order" : 0,
 					"source" : [ "obj-70", 1 ]
 				}
