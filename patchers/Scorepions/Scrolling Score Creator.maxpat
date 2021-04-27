@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 49.0, 1521.0, 964.0 ],
+		"rect" : [ 114.0, 53.0, 1521.0, 925.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,49 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 0.19999997317791, 0.199999943375587, 0.19999997317791, 1.0 ],
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 516.0, 58.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 516.0, 90.0, 205.0, 22.0 ],
+					"text" : "textedit clear, umenu clear, number 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 516.0, 126.0, 57.0, 22.0 ],
+					"text" : "universal"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"forceaspect" : 1,
 					"id" : "obj-4",
 					"maxclass" : "fpic",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 262.0, 64.0, 178.0, 178.0 ],
+					"patching_rect" : [ 249.0, 79.5, 166.0, 152.0 ],
 					"pic" : "Scorepion-Tail-blue.svg",
 					"presentation" : 1,
 					"presentation_rect" : [ 90.0, 7.0, 100.0, 114.0 ]
@@ -109,8 +145,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 465.5, 915.5, 405.0, 22.0 ],
-					"text" : "pattrforward parent::visual-editor::filemenu-patcher::open&save::loadScore"
+					"patching_rect" : [ 465.5, 915.5, 419.0, 22.0 ],
+					"text" : "pattrforward parent::visual-editor::filemenu-patcher::open&save::updateEditor"
 				}
 
 			}
@@ -604,7 +640,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-39",
-					"items" : "Great White.png",
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"menumode" : 2,
 					"numinlets" : 1,
@@ -1335,11 +1371,11 @@
 												"val" : 												{
 													"new" : "image",
 													"id" : "Picster-Element_0",
-													"href" : "Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/media/Images/png/beamgroup.png",
+													"href" : "Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/Great White/Great White.png",
 													"x" : 0,
 													"y" : 0,
-													"width" : 0,
-													"height" : 0,
+													"width" : 16113,
+													"height" : 951,
 													"transform" : "matrix(1,0,0,1,0,0)"
 												}
 
@@ -2114,7 +2150,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 594.5, 764.5, 65.0, 22.0 ],
-					"text" : "0."
+					"text" : "33.56875"
 				}
 
 			}
@@ -2228,7 +2264,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 551.5, 619.0, 50.0, 22.0 ],
-					"text" : "0"
+					"text" : "16113"
 				}
 
 			}
@@ -2864,6 +2900,7 @@
 			}
 , 			{
 				"box" : 				{
+					"dontreplace" : 1,
 					"id" : "obj-35",
 					"linecount" : 3,
 					"maxclass" : "message",
@@ -2966,7 +3003,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"id" : "obj-21",
-					"items" : "Project Folder",
+					"items" : "<empty>",
 					"labelclick" : 1,
 					"maxclass" : "umenu",
 					"menumode" : 2,
@@ -2994,7 +3031,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 105.0, 255.0, 146.0, 22.0 ],
 					"rounded" : 2.0,
-					"text" : "Great White",
 					"varname" : "score"
 				}
 
@@ -3048,7 +3084,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 105.0, 281.0, 146.0, 22.0 ],
 					"rounded" : 2.0,
-					"text" : "Cat Hope",
 					"varname" : "composer"
 				}
 
@@ -3057,7 +3092,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-18",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -3087,7 +3122,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-41",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -3194,6 +3229,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-107", 1 ],
 					"source" : [ "obj-108", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-11", 0 ]
 				}
 
 			}
@@ -3390,6 +3432,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-166", 0 ],
 					"source" : [ "obj-159", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -4092,19 +4141,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "Scorepion-Tail-blue.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "sadam.rapidXML.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{

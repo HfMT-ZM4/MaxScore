@@ -243,7 +243,7 @@ function renderImages()
 	var currentMatrix = get_matrix();
 	set_source_rgba(0., 0., 0., 1.);
 	for (var i = 0; i < _svgimages.length; i++){
-		post("svgimages", _svgimages[i].slice(6)[0], "\n");
+		//post("svgimages", _svgimages[i].slice(6)[0], "\n");
 		transform(_svgimages[i].slice(6)[0]);
 		translate(_svgimages[i][2], _svgimages[i][3]);
 		if (_svgimages[i][0] == "raster") image_surface_draw(ImageCache[_svgimages[i].slice(1, 2)], 0, 0, _svgimages[i].slice(4, 6));

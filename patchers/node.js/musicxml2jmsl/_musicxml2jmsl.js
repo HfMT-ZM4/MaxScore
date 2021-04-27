@@ -1290,10 +1290,10 @@ var musicxml_callbacks =
 						'lyric' : (mxml,jmsl)=>{
 						    var num = 1;
 						    if("default-x" in mxml.attributes){
-							nattr.TEXTOFFSETX = mxml.attributes["default-x"];
+							nattr.TEXTOFFSETX = Math.round(mxml.attributes["default-x"]);
 						    }
 						    if("default-y" in mxml.attributes){
-							nattr.TEXTOFFSETY = mxml.attributes["default-y"];
+							nattr.TEXTOFFSETY = Math.round(mxml.attributes["default-y"]);
 						    }
 						    if("number" in mxml.attributes){
 							num = mxml.attributes.number;

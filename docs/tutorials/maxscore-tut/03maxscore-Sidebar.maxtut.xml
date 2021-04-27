@@ -3,7 +3,7 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore: Sidebar">
-<previous name="03maxscore-preferencesView">MaxScore Editor: Preferences View</previous>
+<previous name="03maxscore-preferencesView">MaxScore Editor: Preferences</previous>
 <next name="03maxscore-Tools">Sidebar: Tools</next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
@@ -32,6 +32,5 @@ On this pane, you can also set pitch (see also Pitch Utility fot more choices), 
 <p>The <link type="tutorial" module="maxscore" name="03maxscore-PicsterTool">Picster</link> pane provides a GUI to the sophisticated graphics editor, designed to add various graphical elements or to create an entire graphical score with the ability to attach Expressions to every graphical element. Expressions contain messages which can be used to control the Max environment. </p>
 
 <p><i>You will find more information in the following chapters.</i> </p>
-
 
 </chapter>

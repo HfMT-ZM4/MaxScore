@@ -2,16 +2,16 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="MaxScore Editor: Preferences View">
+<chapter name="MaxScore Editor: Preferences">
 <previous name="03maxscore-StaffManager">MaxScore Editor: Staff Manager</previous>
 <next name="03maxscore-Sidebar">MaxScore: Sidebar</next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 
-<h1>MaxScore Editor: Preferences View</h1>
+<h1>MaxScore Editor: Preferences</h1>
 
-<p><i>Shortcut access: shift+3</i></p>
+<p><i>Shortcut: shift-3</i></p>
 <illustration><img src="images/Basics/Preferences.png"/></illustration>
 
 <p>In MaxScore you can fully customize your score according your needs. In order to do so change default view (Score View) to Preferences View. Here you can enter Score Information such as:</p>
@@ -95,7 +95,7 @@
 <p>Select a time Unit (pixels/second). By default it is set to "100". A lowest possible value is "5". Click outside of the field to activate your choice. </p>
 
 
-<p><i>You can also save your preferences as a preset file by clicking “Save Preference as…” button. If this option is chosen, you can use them next time you create a new score by going to Preferences View (shift+3) and selecting preferred one by clicking on “Open Preferences”</i></p>
+<p><i>You can also save your preferences as a preset file by clicking “Save Preference as…” button. If this option is chosen, you can use them next time you create a new score by going to Preferences (shift-3) and selecting preferred one by clicking on “Open Preferences”</i></p>
 <p>By clicking on Attribute List you can define user the attributes.</p>
 
 </chapter>
