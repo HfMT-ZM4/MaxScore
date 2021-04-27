@@ -3283,7 +3283,7 @@
 							"parameter_annotation_name" : "Clef",
 							"parameter_enum" : [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[8]",
+							"parameter_longname" : "live.menu[4]",
 							"parameter_mmax" : 15,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -3338,7 +3338,7 @@
 							"parameter_annotation_name" : "Key Signature",
 							"parameter_enum" : [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[7]",
+							"parameter_longname" : "live.menu[3]",
 							"parameter_mmax" : 15,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -6288,7 +6288,7 @@
 ,
 														"valueof" : 														{
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.grid[5]",
+															"parameter_longname" : "live.grid[1]",
 															"parameter_shortname" : "live.grid",
 															"parameter_type" : 3
 														}
@@ -6965,7 +6965,7 @@
 ,
 														"valueof" : 														{
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.slider[5]",
+															"parameter_longname" : "live.slider[1]",
 															"parameter_mmax" : 13.0,
 															"parameter_mmin" : -5.0,
 															"parameter_shortname" : "Extendend Lines Below",
@@ -7025,7 +7025,7 @@
 ,
 														"valueof" : 														{
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.slider[6]",
+															"parameter_longname" : "live.slider[2]",
 															"parameter_mmax" : 13.0,
 															"parameter_mmin" : -5.0,
 															"parameter_shortname" : "Extendend Lines Above",
@@ -7519,7 +7519,7 @@
 ,
 														"valueof" : 														{
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.grid[6]",
+															"parameter_longname" : "live.grid[2]",
 															"parameter_shortname" : "live.grid",
 															"parameter_type" : 3
 														}
@@ -12628,7 +12628,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "MARK_MORDANT", "MARK_BOWED_TREMOLO_1", "MARK_BOWED_TREMOLO_2", "MARK_BOWED_TREMOLO_3", "MARK_NONE" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[46]",
+							"parameter_longname" : "live.tab[17]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -12687,7 +12687,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "13", "15", "17", "19", "0" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[84]",
+							"parameter_longname" : "live.tab[28]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -12741,7 +12741,7 @@
 							"parameter_defer" : 1,
 							"parameter_enum" : [ "MARK_ACCENT_TENUTO", "MARK_WEDGE_STACCATO", "MARK_FERMATA", "MARK_INVERTED_FERMATA", "MARK_HARMONIC" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[76]",
+							"parameter_longname" : "live.tab[15]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -13608,7 +13608,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "standard", "x", "diamond", "triangle", "inverted_triangle", "x_diamond", "slash", "color", "noteheadpercentage" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[78]",
+							"parameter_longname" : "live.tab[27]",
 							"parameter_mmax" : 8,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -13669,7 +13669,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "3", "5", "7", "9", "11" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[77]",
+							"parameter_longname" : "live.tab[24]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -13742,7 +13742,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "natural", "sharp", "flat" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[79]",
+							"parameter_longname" : "live.tab[23]",
 							"parameter_mmax" : 2,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -15381,7 +15381,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 10.0, 103.0, 541.0, 22.0 ],
-													"restore" : [ 1 ],
+													"restore" : [ 2 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -17545,7 +17545,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "rest", "note" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[85]",
+							"parameter_longname" : "live.tab[18]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -17644,7 +17644,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "nodot", "dot", "2dots" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[83]",
+							"parameter_longname" : "live.tab[13]",
 							"parameter_mmax" : 2,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -17741,7 +17741,7 @@
 							"parameter_initial" : [ 2.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[87]",
+							"parameter_longname" : "live.tab[25]",
 							"parameter_mmax" : 7,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -19084,7 +19084,7 @@
 																	"presentation" : 1,
 																	"presentation_rect" : [ 11.0, 68.0, 389.0, 22.0 ],
 																	"rounded" : 0.0,
-																	"text" : "<empty>",
+																	"text" : "Crime",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -20303,6 +20303,8 @@
 													"saved_object_attributes" : 													{
 														"autostart" : 1,
 														"defer" : 0,
+														"node_bin_path" : "",
+														"npm_bin_path" : "",
 														"watch" : 0
 													}
 ,
@@ -20633,7 +20635,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 416.600000000000023, 178.0, 338.0, 35.0 ],
-													"restore" : [ 9, 0, 9, 0 ],
+													"restore" : [ 0, 1, 0, 1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -23501,7 +23503,7 @@
 							"parameter_defer" : 1,
 							"parameter_enum" : [ "MARK_BREATH_MARK_COMMA", "MARK_ACCENT", "MARK_STACCATO", "MARK_TENUTO", "MARK_WEDGE", "MARK_ACCENT_STACCATO" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[72]",
+							"parameter_longname" : "live.tab[32]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23553,7 +23555,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "MARK_TRILL", "MARK_TRILL_FLAT", "MARK_TRILL_SHARP", "MARK_TRILL_NATURAL", "MARK_INVERTED_MORDANT" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[74]",
+							"parameter_longname" : "live.tab[21]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23606,7 +23608,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "DYNAMIC_PPP", "DYNAMIC_PP", "DYNAMIC_P", "DYNAMIC_MP", "DYNAMIC_MF", "DYNAMIC_F", "DYNAMIC_FF", "DYNAMIC_FFF", "DYNAMIC_NONE" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[73]",
+							"parameter_longname" : "live.tab[26]",
 							"parameter_mmax" : 8,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23720,7 +23722,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "Pitch", "Amp", "Hold", "Dur", "Text", "Inspect" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[80]",
+							"parameter_longname" : "live.tab[14]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23792,7 +23794,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "1", "2", "3", "4" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[81]",
+							"parameter_longname" : "live.tab[20]",
 							"parameter_mmax" : 3,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23922,7 +23924,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "notevisible", "noteheadvisible", "stemvisible", "accvisible", "ledgerlinesinvisible", "gracenotetransform" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[82]",
+							"parameter_longname" : "live.tab[16]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -23993,7 +23995,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "crossstaff", "stemflip" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[86]",
+							"parameter_longname" : "live.tab[19]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -24123,7 +24125,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "tie", "slur", "beam", "nobeam", "cresc", "decresc", "ottavaalta", "ottavabassa", "gliss" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[71]",
+							"parameter_longname" : "live.tab[33]",
 							"parameter_mmax" : 8,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -24182,7 +24184,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "setTimeSignature", "setTempo", "setMeasureText", "setMeasureWidth", "setLeftMargin", "extendedStaffLines" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[45]",
+							"parameter_longname" : "live.tab[34]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -24246,7 +24248,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "single", "double", "period", "none", "repeat_start", "repeat_end" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[75]",
+							"parameter_longname" : "live.tab[22]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
