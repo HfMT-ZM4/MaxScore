@@ -5,17 +5,20 @@
 <chapter name="MaxScore Editor: Preferences">
 <previous name="03maxscore-StaffManager">MaxScore Editor: Staff Manager</previous>
 <next name="03maxscore-Sidebar">MaxScore: Sidebar</next>
-
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
-
-
 <h1>MaxScore Editor: Preferences</h1>
 
 <p><i>Shortcut: shift-3</i></p>
 <illustration><img src="images/Basics/Preferences.png"/></illustration>
 
-<p>In MaxScore you can fully customize your score according your needs. In order to do so change default view (Score View) to Preferences View. Here you can enter Score Information such as:</p>
+<p>To open the Preferences, go to “View” menu on the upper left-hand side of the window and choose “Preferences”, or use the shortcut Shift-3.
+In the Preferences window, you can set the canvas size as well as change the title and subtitle of your project and add the name of the composer. You can choose to show this information on the score by clicking on the Show Title toggle. You also have the possibility customize the positioning of the entire score. Use the “Title Margin”, “Left Margin”, “Right Margin”, etc. options.
+You can also choose to show or hide markings such as tempo, time signatures, key signatures etc. by setting the corresponding toggles. In addition, you can also customize your score by changing the color of the background or using another text or music font.
+Hit the “Save Preferences” button on the bottom of the page, if you want to make your changes the new default.</p>
 
+<p>This is a comprehensive list of the current options:</p>
+
+<h2>Personal Information</h2>
 <ul>
   <li>Title</li>
   <li>Subtitle</li>
@@ -23,8 +26,7 @@
   <li>Copyright</li>
 </ul>
 
-<p>Adjust parameters as:</p>
-
+<h2>Spacing:</h2>
 <ul>
   <li>Canvas size</li>
   <li>Title Margin</li>
@@ -36,7 +38,7 @@
 </ul>
 
 
-<p>You can also select elements to <b>show</b> (through toggle/ untoggle):</p>
+<h2>Show or hide elements:</h2>
 <ul>
   <li>Title</li>
   <li>Instruments</li>
@@ -50,21 +52,17 @@
   <li>Courtesy Clefs</li>  
 </ul>
 
-<p>Another options to customize your score are:</p>
-
-
+<h2>Other customization options:</h2>
 <ul>
-  <li><b>Set Wrap</b> <i>- on/off:  1 system per page</i></li>
-  <li><b>Set Measure Number Offset </b> <i>- enter a value for the measure number on the first measure in the score. </i></li>
+  <li>Set Wrap <i>- on/off:  1 system per page</i></li>
+  <li>Set Measure Number Offset <i>- enter a value for the measure number on the first measure in the score. </i></li>
   <li>Numbers on All Measures </li>
-  <li>Set Hold Scaler <i> - requires a value</i></li>  
-  <li>Set Durational Spacing Base</li>
+  <li>Set Hold Scaler <i> - change the default for the hold time parameter</i></li>  
+  <li>Set Durational Spacing Base<i> - change the vertical spacing between notes. The higher the number the more equally the notes will be spaced.</i></li>
   <li>Use Legacy Multi Track Orientation</li>  
 </ul>
 
-<h2>Personalisation / Colors:</h2>
-<p>You can also set colors for the parameters, such as:</p>
-
+<h2>Colors:</h2>
 <ul>
 <li>Selection Buffer Note color</li>
 <li>Background Color</li>
@@ -72,30 +70,27 @@
 <li>Flashing Note Color</li>
 </ul>
 
-<p>Another section will let you personalise Fonts used in a score, such as:</p>
-
+<h2>Fonts:</h2>
 <ul>
   <li>Text Font</li>
-  <li>Music Font</li>
+  <li>Music Font <i> - we currently support the Bravura and Petaluma fonts</i></li>
 </ul>
 
-<p>Also you can set a library for Picster by clicking on “Set” and locating it in “Default Picster Lib Folder”. </p>
+<h2>Default Picster Lib Folder.</h2>
+<p>Set the path to your personal Picster Library</p>
 
-<h2>Playback</h2>
-<p>You can specify options for the playback regarding your needs:</p>
-
+<h2>Playback and Quantization:</h2>
 <ul>
   <li>Playback in Overdrive</li>
-  <li>Playback Advance Time</li>
-  <li>Quantisation - <i>from the first dropping menu select a main duration (whole Note (W), half Note (H) or Quarter Note(Q)). From the number box dropping menu  adjust a number of pulses to qualify.</i></li>
+  <li>Playback Advance Time (in seconds)</li>
+  <li>Quantization - <i>from the first drop-down menu select a main duration (whole Note (W), half Note (H) or Quarter Note(Q)). From the number box dropping menu select the subdivision to which to quantize. Add modes, set the default or clear your setting with buttons to the right</i></li>
 </ul>
 
-<h2>Proportional Notation </h2>
+<h2>Proportional Notation: </h2>
+<p>Select a Time Unit (pixels/second) for scrolling. By default is "100"; the lowest possible value is "5".</p>
 
-<p>Select a time Unit (pixels/second). By default it is set to "100". A lowest possible value is "5". Click outside of the field to activate your choice. </p>
-
-
-<p><i>You can also save your preferences as a preset file by clicking “Save Preference as…” button. If this option is chosen, you can use them next time you create a new score by going to Preferences (shift-3) and selecting preferred one by clicking on “Open Preferences”</i></p>
-<p>By clicking on Attribute List you can define user the attributes.</p>
+<h2>Saving Preferences: </h2>
+<p><i>You can also save your preferences as a preset file by clicking “Save Preference as…” button. If this option is chosen, you can use them next time you create a new score by going to Preferences (shift-3) and selecting the preferred one by clicking on “Open Preferences”</i></p>
+<p>By clicking on Attribute List you can inspect the MaxScore attributes being saved as preferences.</p>
 
 </chapter>

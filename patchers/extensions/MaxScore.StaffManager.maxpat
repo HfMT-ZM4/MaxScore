@@ -43,12 +43,27 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"id" : "obj-126",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 288.0, 643.0, 22.0, 22.0 ],
+					"text" : "t b",
+					"varname" : "u098025046[3]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 288.0, 649.0, 225.0, 22.0 ],
+					"patching_rect" : [ 288.0, 675.0, 225.0, 22.0 ],
 					"text" : "pattrforward parent::pitchtool::initScripter",
 					"varname" : "u098025046[2]"
 				}
@@ -3538,6 +3553,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-126", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-144", 0 ],
 					"source" : [ "obj-1587", 0 ]
 				}
@@ -3610,7 +3632,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
+					"destination" : [ "obj-126", 0 ],
 					"source" : [ "obj-203", 0 ]
 				}
 

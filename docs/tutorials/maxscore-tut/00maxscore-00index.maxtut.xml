@@ -12,7 +12,6 @@
 <li><link type="tutorial" module="maxscore" name="00maxscore-installation"></link></li>
 <li><link type="tutorial" module="maxscore" name="00maxscore-tour">A Tour of the MaxScore Package</link></li>
 <li><link type="tutorial" module="maxscore" name="01maxscore-userInterface">MaxScore Editor: The User Interface</link></li>
-<li><link type="tutorial" module="maxscore" name="02maxscore-01basics">MaxScore Editor: Basics</link></li>
 <li><link type="tutorial" module="maxscore" name="03maxscore-StaffManager">MaxScore Editor: Staff Manager</link></li>
 <li><link type="tutorial" module="maxscore" name="03maxscore-preferencesView">MaxScore Editor: Preferences</link></li>
 <li><link type="tutorial" module="maxscore" name="03maxscore-Sidebar">MaxScore: Sidebar</link></li>

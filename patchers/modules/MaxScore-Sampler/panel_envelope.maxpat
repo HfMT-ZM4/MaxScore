@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 5,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 2436.0, 79.0, 1191.0, 678.0 ],
+		"rect" : [ 160.0, 186.0, 1191.0, 678.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-63",
@@ -44,7 +45,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 686.0, 141.0, 117.0, 22.0 ],
+					"patching_rect" : [ 686.0, 141.0, 124.0, 22.0 ],
 					"text" : "r #1-envelope_init"
 				}
 
@@ -184,12 +185,24 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 127.199996948242188, 22.0, 80.800003051757812, 19.0 ],
 					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "live.text[19]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text[33]",
-							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "live.text[19]"
+							"parameter_type" : 2
 						}
 
 					}
@@ -260,7 +273,14 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 20.0, 41.0, 5.0, 100.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 17.0, 212.800003051757812, 5.0 ]
+					"presentation_rect" : [ 5.0, 17.0, 212.800003051757812, 5.0 ],
+					"saved_attribute_attributes" : 					{
+						"linecolor" : 						{
+							"expression" : ""
+						}
+
+					}
+
 				}
 
 			}
@@ -298,7 +318,7 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
-					"activetricolor2" : [ 0.81, 1.0, 0.97, 1.0 ],
+					"activetricolor2" : [ 0.619607843137255, 0.768627450980392, 0.937254901960784, 1.0 ],
 					"appearance" : 1,
 					"fontname" : "Avenir Next Regular",
 					"fontsize" : 12.0,
@@ -312,14 +332,26 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 57.200000762939453, 22.0, 62.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
+						"activetricolor2" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
-							"parameter_mmax" : 9.0,
 							"parameter_initial" : [ 7 ],
+							"parameter_longname" : "live.numbox[2]",
+							"parameter_mmax" : 9.0,
+							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "live.numbox",
 							"parameter_type" : 1,
-							"parameter_unitstyle" : 0,
-							"parameter_mmin" : 1.0,
-							"parameter_longname" : "live.numbox[2]"
+							"parameter_unitstyle" : 0
 						}
 
 					}
@@ -360,8 +392,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -394,6 +426,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontsize" : 12.0,
@@ -1083,7 +1116,8 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 749.5, 324.0, 104.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"embed" : 1
+						"embed" : 1,
+						"precision" : 6
 					}
 ,
 					"text" : "coll qn.envelopes"

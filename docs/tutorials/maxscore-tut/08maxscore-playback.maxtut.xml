@@ -12,7 +12,10 @@
 <h1>Playback</h1>
 
 <p>MaxScore/LiveScore Sampler and MaxScore/LiveScore Fluidsynth are two playback patches/devices that were especially designed for the MaxScore/LiveScore Editor and its microtonal capabilities. So far, the combination of Editor and Sampler and/or Fluidsynth is the only way to consistently compose and playback microtonal music in Ableton Live and, therefore, rely on a communication protocol different from MIDI.</p>
-<illustration><img src="images/playback/combo.png"/></illustration>
+<illustration><img src="images/playback/FluidSynth2.png"/></illustration>
+<illustration><img src="images/playback/Sampler.png"/></illustration>
+<illustration><img src="images/playback/conTimbre.png"/></illustration>
+<illustration><img src="images/playback/Sample-Editor-Window.png"/></illustration>
 
 <h2>Fluidsynth und Sound Fonts</h2>
 <p><br/> </p>
