@@ -2,7 +2,7 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="Picster">
+<chapter name="Graphics">
 <previous name="07maxscore-microtones">MaxScore: Preferences</previous>
 <next name="08maxscore-playback">Playback</next>
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
@@ -10,32 +10,42 @@
 
 <h1>Graphics</h1>
 
-<p>An extension called Picster allows people to draw directly to the canvas.</p>
+<p>Picster is the mode in which the user can create and edit custom graphics</p>
 
 <h2>Drawing modes</h2>
-<p>Picster has nine drawing tools which will also be displayed in small red letters in the upper left-hand corner of the canvas after pressing the corresponding number keys.</p>
+<p>First select a note / staff / measure for the graphics to be attached to.</p>
+<p>Press Caps Lock to enable/disable Picster mode.</p>
+<p>Select the drawing tools by pressing the following keys:</p>
 
-<ol>
-  <li>line segment</li>
-  <li>rectangle</li>
-  <li>rounded rectangle</li>
-  <li>oval</li>
-  <li>arc</li>
-  <li>polygon</li>
-  <li>freehand</li>
-  <li>text</li>
-  <li>image</li>
-  
-</ol>
+<ul>
+  <li>1: line segment</li>
+  <li>2: rectangle</li>
+  <li>3: rounded rectangle</li>
+  <li>4: oval</li>
+  <li>5: arc</li>
+  <li>6: polygon</li>
+  <li>7: freehand</li>
+  <li>8: text</li>
+  <li>9: image</li>
+  <li>0: polycurve</li>
+  <li>h: hairpin</li>
+  <li>b: bracket</li>
+</ul>
 
-<p>Picster can be activated by pressing the caps lock key after which the drawn shapes will be either attached to selected notes, to a selected staff or measure. If a note is selected it will take priority over its staff/measure. Note that notes(s) or staves need to be selected before the Picster mode is activated.</p>
+<p>The tool name will be displayed in red in the upper left corner of the canvas</p>
+
+<p>For most tools, click and drag in order to create shapes. Note that notes(s) or staves need to be selected before the Picster mode is activated.</p>
 <illustration><img src="images/Picster/picster-image1-small.png"/></illustration>
 <i>Figure 1: The name of a Picster tool appears in the upper left-hand corner after pressing caps lock. Drawn shapes will be attached to the top staff in this particular case.</i>
 
-<p>Once Picster mode is active, shapes can be drawn with the mouse.</p>
-<p>While drawing line segments, rectangles, rounded rectangles, ovals and arcs as well as free- hand drawing is straightforward (a shape can be created simply by clicking and dragging), it is important to note that a polygon requires a number of clicks. It will only complete after ctrl-clicking the canvas which closes its path.</p>
+<h3>6: polygon</h3>
+<p>A polygon requires a number of clicks. It will only complete after ctrl-clicking the canvas which closes its path.</p>
+<h3>8: text</h3>
 <p>When the text tool is selected, a text box will pop up which can be written to. The text will appear in the score after clicking at the desired location.</p>
+<h3>9: image</h3>
 <p>Bitmap and vector images can be placed with the image tool. Clicking on the canvas will open a file dialog and the image will be placed at the clicked location.</p>
+<h3>0: polycurve</h3>
+<p>click or drag to create bezier curve nodes and handles. To delete the previous node, press shift once. To finish the shape, ctrl-click on the canvas. The end point will snap to the starting point if it's close enough (which creates a closed path).</p>
 
 <illustration><img src="images/Picster/picster-image2-small.png"/></illustration>
 <i>Figure 2: The name of a Picster tool appears in the upper left-hand corner after pressing caps lock. Drawn shapes will be attached to the top staff in this particular case.</i>
@@ -162,6 +172,7 @@
 <illustration><img src="images/Picster/picster-image11-small.png"/></illustration>
 <p></p>
 <i>Figure 11: Playback of picster expressions requires the use of additional objects.</i>
+<p>[separated chapter for picster expression editors?]</p>
 
 
 
