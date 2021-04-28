@@ -149,7 +149,7 @@ function strings(s)
 	var identifier = "string["+i+"]";
 	var identifier2 = "button["+i+"]";
 	outlet(0, "create",identifier);
-	outlet(0, "append",identifier,"color", 0.1, 0.1, 0, 1.);
+	outlet(0, "append",identifier,"color", 1, 1, 1, 1.);
 	outlet(0, "append",identifier, "rectangle", 450, 10 + i*20, 900, 4);
 	outlet(0, "append",identifier, "fill");	
 	thenumbers[i] = this.patcher.newdefault(750, 234 + i *20, "flonum");
@@ -160,7 +160,7 @@ function strings(s)
     this.patcher.message("script", "sendbox", identifier, "fontsize", 8);
     this.patcher.message("script", "sendbox", identifier, "bgcolor", 0, 0, 0, 0);
     this.patcher.message("script", "sendbox", identifier, "textcolor", 0.1, 0.1, 0.1, 1.000);
-    this.patcher.message("script", "sendbox", identifier, "tricolor", 0.608, 0.839, 0.757, 1.000);
+    this.patcher.message("script", "sendbox", identifier, "tricolor", 0.047, 0.424, 0.847, 1.000);
     this.patcher.message("script", "sendbox", identifier, "presentation", 1);
     this.patcher.message("script", "sendbox", identifier, "presentation_rect", 17, (openStrings.length - i - 1) *20 + 80, 36, 17);
     this.patcher.message("script", "sendbox", identifier2, "presentation", 1);
@@ -170,7 +170,7 @@ function strings(s)
    	this.patcher.message("script", "sendbox", identifier2, "itemtype", 1);
    	this.patcher.message("script", "sendbox", identifier2, "bgcolor", 0., 0., 0., 0.);
     this.patcher.message("script", "sendbox", identifier2, "activecolor", 1.0, 0.1, 0.1, 1.000);
-    this.patcher.message("script", "sendbox", identifier2, "elementcolor", 0.608, 0.839, 0.757, 1.000);
+    this.patcher.message("script", "sendbox", identifier2, "elementcolor", 0.047, 0.424, 0.847, 1.000);
    	this.patcher.getnamed("tablature").message(identifier, openStrings[i]);
 	this.patcher.parentpatcher.getnamed("clean").message("bang");
 //			this.patcher.message("script", "sendbox", numname, "textcolor",0.,1.,0.,1.);
@@ -205,7 +205,7 @@ function frets(f)
 	fretboard.replace("fret::"+i, 500-Math.pow(2,i*d/-12)*500); 
 	outlet(0, "create",identifier);
 	//outlet(0, "append",identifier,"color", 0.5, 0.5, 0.5, 1.);
-	outlet(0, "append",identifier,"color", 0.1, 0.1, 0, 1.);
+	outlet(0, "append",identifier,"color", 1, 1, 1, 1.);
 	outlet(0, "append",identifier, "rectangle", 0, openStrings.length*10, 6, openStrings.length*20);
 	outlet(0, "append",identifier, "fill");	
 	outlet(0, "add_anchor",identifier, 0, openStrings.length*10, 6);

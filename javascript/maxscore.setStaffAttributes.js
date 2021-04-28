@@ -884,8 +884,8 @@ function getid() {
 
 function map(_styletype, _StaffIndex)
 {
-	if (list[0] != -1) stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[0], _StaffIndex);
-	else stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[4], _StaffIndex);
+	if (list[0] != -1) stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[0], _StaffIndex, grab);
+	else stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[4], _StaffIndex, grab);
 }
 
 function imap(_styletype, _destination)
