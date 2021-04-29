@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 495.0, 119.0, 1035.0, 481.0 ],
+		"rect" : [ 295.0, 120.0, 1035.0, 572.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 175.0, 401.5, 327.0, 22.0 ],
+					"text" : "maxscore.bindtoID parent::parent::parent::parent fromScore",
+					"varname" : "u318031574"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -54,25 +67,25 @@
 				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 397.5, 168.0, 22.0 ],
+					"patching_rect" : [ 26.0, 437.5, 168.0, 22.0 ],
 					"text" : "removeAllTablatureMessages"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial Bold",
+					"fontname" : "Arial",
 					"fontsize" : 10.0,
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 50.0, 113.0, 45.0, 20.0 ],
-					"text" : "zl nth 1"
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 50.0, 113.0, 46.0, 20.0 ],
+					"text" : "unpack f"
 				}
 
 			}
@@ -109,7 +122,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 303.200012000000015, 409.0, 58.200012000000001, 22.0 ],
+					"patching_rect" : [ 303.200012000000015, 449.0, 58.200012000000001, 22.0 ],
 					"text" : "join"
 				}
 
@@ -154,7 +167,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 303.200012000000015, 93.0, 264.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 76, 0, 0, "false", 77, 0, 0, 0, 132, 0.5, "interval", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -174,7 +187,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 665.081908999999996, 104.0, 74.0, 22.0 ],
+					"patching_rect" : [ 602.081908999999996, 68.5, 74.0, 22.0 ],
 					"text" : "prepend set"
 				}
 
@@ -188,7 +201,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 665.081908999999996, 139.0, 88.0, 22.0 ],
+					"patching_rect" : [ 602.081908999999996, 103.5, 88.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -207,7 +220,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 679.081908999999996, 31.5, 342.0, 20.0 ],
+					"patching_rect" : [ 596.081908999999996, 2.0, 342.0, 20.0 ],
 					"text" : "definition: menu-name style-type numStaffLines microMap clef"
 				}
 
@@ -221,7 +234,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 665.081908999999996, 72.0, 349.0, 22.0 ],
+					"patching_rect" : [ 602.081908999999996, 36.5, 349.0, 22.0 ],
 					"text" : "loadmess \"BP MIDI Keyboard\" BP-keyboard 5 mM-none default"
 				}
 
@@ -235,7 +248,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 380.200012000000015, 323.0, 250.0, 22.0 ],
+					"patching_rect" : [ 372.200012000000015, 449.0, 250.0, 22.0 ],
 					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -268,7 +281,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 386.200012000000015, 446.0, 150.0, 20.0 ],
+					"patching_rect" : [ 386.200012000000015, 486.0, 150.0, 20.0 ],
 					"text" : "send to next map"
 				}
 
@@ -282,7 +295,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 303.200012000000015, 446.0, 69.0, 20.0 ],
+					"patching_rect" : [ 303.200012000000015, 486.0, 69.0, 20.0 ],
 					"text" : "pattrforward"
 				}
 
@@ -386,7 +399,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 439.0, 148.0, 20.0 ],
+					"patching_rect" : [ 50.0, 479.0, 148.0, 20.0 ],
 					"text" : "pattrforward parent::receiver"
 				}
 
@@ -529,6 +542,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-83", 0 ],
 					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 1 ],
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -697,7 +717,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
-					"midpoints" : [ 389.700012000000015, 440.75, 312.700012000000015, 440.75 ],
+					"midpoints" : [ 381.700012000000015, 477.75, 312.700012000000015, 477.75 ],
 					"source" : [ "obj-8", 0 ]
 				}
 
@@ -708,6 +728,32 @@
 					"source" : [ "obj-81", 0 ]
 				}
 
+			}
+ ],
+		"styles" : [ 			{
+				"name" : "black on white",
+				"number" : 				{
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontname" : [ "Arial" ]
+				}
+,
+				"umenu" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"bgfillcolor" : 					{
+						"type" : "color",
+						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
 			}
  ]
 	}

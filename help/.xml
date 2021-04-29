@@ -1,0 +1,56 @@
+<jmslscoredoc>
+	<score ClefsVisible="true" WIDTH="300" RightMargin="20." TempoVisible="true" TextFontScaler="1.5" KeySignaturesVisible="true" TimesigFontName="Serif" NAME="JMSLMaxScore-776" MeasureNumberOffset="1" NUMTRACKSPERSTAFF="2" TopMarginOfFirstPage="60." SectionBracketsVisible="true" TimesigFontScaler="2.5" ScoreSubtitleFontName="Serif" useLegacyMultiTrackOrientation="true" ScoreTitleVisible="false" HEIGHT="120" TopMargin="15." StaffNumbersVisible="true" ScoreSubtitleFontScaler="2." TextFontName="SansSerif" MeasureNumberFontName="SansSerif" LeftMargin="20." InstrumentNamesVisible="false" DrawAllMeasureNumbers="false" TimeSignaturesVisible="true" MeasureNumberFontScaler="1.5" ScoreTitleFontName="Serif" CourtesyClefsVisible="false" STAFFS="1" BottomMargin="15." MeasureNumbersVisible="true" ScoreTitleFontScaler="4." FirstSystemIndent="0.">
+		<ScoreAnnotation Annotation="317.3ocUPtzSCCCDD9bxuBKeNIxUhGpbipdgCTp3gPBDGbRsiL01azZmBnp9eG+nMTtXK+siGMyturftSfNEXojaHzYMLZUfMfv.f9.lqiCXQXqla2tl2KlHdkQ7hU4ifYLVSFJ91KAaBRuEUAGhXynS0MwWf7ciHmlcwqESSdN3oirR7E4QvvsIEs8cfFv372Irl4yup5rqKpHgbS9HpT9ekrpyNlD4D9WQ9PJ0Ge+F.lTsZt7HYYHd4EvSC7NkseA2kady0IIdtTVyhjh8kEETsXSu.0Jqvcx4npezoeQWJj7QsmlvFUGFZWJBTy80VvJxS3a9bz4OsgKncgUSR0ly+eJZ0Z.1NN7m1Tj5QHyB8uhTOKU4fuss3cVmGWwM4.QxVohvQiv5iSVCNUr0OHkgcPx5xhCkkGJ+EfI+UVK" CLASSNAME="com.softsynth.jmsl.score.ScoreAnnotation"/>
+		<orchestra CLASSNAME="com.softsynth.jmsl.score.Orchestra">
+			<jmslscoreinstrument MixerClassName="com.softsynth.jmsl.NullMixer" EditEnabled="true" Transposition="0." CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="0" Name="MaxScoreIns-0">
+				<dim lowlimit="0." index="4" highlimit="3." name="EventFlag" defaultvalue="0."/>
+				<dim lowlimit="-1." index="5" highlimit="127." name="originalPitch" defaultvalue="-1."/>
+				<dim lowlimit="-1." index="6" highlimit="10000." name="index" defaultvalue="-1."/>
+			</jmslscoreinstrument>
+		</orchestra>
+		<mixerpanelsettings>
+			<panamppair PAN="0.5" AMP="0.5" FADERINDEX="0"/>
+		</mixerpanelsettings>
+		<staffspacing BELOW="72." INDEX="0" ABOVE="72."/>
+		<scoresection END="0" NAME="A" START="0"/>
+		<scoresection END="0" NAME="B" START="0"/>
+		<scoresection END="0" NAME="C" START="0"/>
+		<scoresection END="0" NAME="D" START="0"/>
+		<scoresection END="0" NAME="E" START="0"/>
+		<scoresection END="0" NAME="F" START="0"/>
+		<scoresection END="0" NAME="G" START="0"/>
+		<scoresection END="0" NAME="H" START="0"/>
+		<scoresection END="0" NAME="I" START="0"/>
+		<scoresection END="0" NAME="J" START="0"/>
+		<scoresection END="0" NAME="K" START="0"/>
+		<scoresection END="0" NAME="L" START="0"/>
+		<scoresection END="0" NAME="M" START="0"/>
+		<scoresection END="0" NAME="N" START="0"/>
+		<scoresection END="0" NAME="O" START="0"/>
+		<scoresection END="0" NAME="P" START="0"/>
+		<scoresection END="0" NAME="Q" START="0"/>
+		<scoresection END="0" NAME="R" START="0"/>
+		<scoresection END="0" NAME="S" START="0"/>
+		<scoresection END="0" NAME="T" START="0"/>
+		<scoresection END="0" NAME="U" START="0"/>
+		<scoresection END="0" NAME="V" START="0"/>
+		<scoresection END="0" NAME="W" START="0"/>
+		<scoresection END="0" NAME="X" START="0"/>
+		<scoresection END="0" NAME="Y" START="0"/>
+		<scoresection END="0" NAME="Z" START="0"/>
+		<measure REPEATEND="false" WIDTH="520" MEASURETEXTX="48" TEMPOSETBYHAND="false" BARLINE="SINGLE" TIMESIGSETBYHAND="false" NUMREPEATS="1" MEASURETEXTY="48" WIDTHSETBYHAND="false" REPEATSTART="false" TEMPO="60." MEASURELEFTMARGIN="50." TIMESIG="4 4">
+			<staff EXTENDEDLINESABOVE="0" CLEF="0" KEYSIGNUMACC="0" INSINDEXSETBYHAND="false" EXTENDEDLINESBELOW="0" CLEFSETBYHAND="false" KEYSIGSETBYHAND="false" INDEX="0" KEYSIGTYPE="0" INSTRUMENTINDEX="0">
+				<track MultitrackRestAdjustmentY="0." INDEX="0">
+					<note VELOCITY="67." LEDGERLINESVISIBLE="true" ACCPREF="0" TEXTOFFSETY="0" STEMVISIBLE="true" LAYOUTSHIFTX="0." DURATION="1." ISGRACENOTE="false" GLISSOUT="false" MARK="0" DYN="0" VISIBLE="true" STEMINFOOVERRIDE="false" DOTS="0" HOLD="1." WEDGE="none" ACCVISPOLICY="0" NOTEHEAD="0" OVERRIDELEVEL="-1" NOTEDUR="2" PITCH="64" GRACENOTESEPARATIONSCALER="2." TIEDOUT="false" TEXTOFFSETX="0" SLUROUT="false" NOTEHEADVISIBLE="true" STEMINFO="2" ACCINFO="1" BEAMEDOUT="false" OTTAVA="none" ALTENHARMONIC="false" NOTEHEADSCALE="1." ISOVERRIDELEVEL="false" TUPLET="0">
+						<dim index="4" name="EventFlag" value="0."/>
+						<dim index="5" name="originalPitch" value="-1."/>
+						<dim index="6" name="index" value="-1."/>
+					</note>
+				</track>
+				<track MultitrackRestAdjustmentY="0." INDEX="1"/>
+			</staff>
+		</measure>
+		<scoreUserBean CLASSNAME="com.algomusic.max.MaxScoreRenderedMessageListener"/>
+	</score>
+</jmslscoredoc>
+

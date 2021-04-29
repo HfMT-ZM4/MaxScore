@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 392.0, 330.0, 962.0, 562.0 ],
+		"rect" : [ 208.0, 234.0, 945.0, 539.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,26 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 196.40002400000003, 394.0, 327.0, 22.0 ],
+					"text" : "maxscore.bindtoID parent::parent::parent::parent fromScore",
+					"varname" : "u318031574"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 32.700012000000015, 130.0, 291.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -91,7 +104,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 349.200012000000015, 343.0, 579.0, 35.0 ],
+					"patching_rect" : [ 349.700012000000015, 316.0, 579.0, 35.0 ],
 					"text" : "noteheadVisibilityTransform true, setAltEnharmonicSpelling false, setSelectedNoteLedgerLinesVisible true, overrideStemDirection CLEAR"
 				}
 
@@ -103,7 +116,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 32.700012000000015, 294.0, 52.0, 22.0 ],
+					"patching_rect" : [ 32.700012000000015, 329.0, 52.0, 22.0 ],
 					"text" : "gate 1 0"
 				}
 
@@ -116,7 +129,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 65.700012000000015, 226.0, 831.0, 35.0 ],
+					"patching_rect" : [ 65.700012000000015, 212.0, 577.0, 35.0 ],
 					"text" : "noteheadTransform NOTEHEAD_STANDARD, setAltEnharmonicSpelling false, noteheadVisibilityTransform true, setSelectedNoteLedgerLinesVisible true, overrideStemDirection CLEAR"
 				}
 
@@ -125,7 +138,7 @@
 				"box" : 				{
 					"id" : "obj-14",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 401.70001220703125, 130.0, 166.0, 22.0 ],
@@ -140,7 +153,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 338.700012000000015, 395.0, 93.0, 22.0 ],
+					"patching_rect" : [ 338.700012000000015, 364.0, 93.0, 22.0 ],
 					"text" : "pack f i"
 				}
 
@@ -191,7 +204,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 296.700012000000015, 73.0, 262.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 76, 0, 0, "false", 77, 0, 0, 0, 132, 0.5, "interval", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -209,7 +222,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "float", "bang", "float" ],
-					"patching_rect" : [ 338.700012000000015, 266.0, 40.0, 22.0 ],
+					"patching_rect" : [ 339.200012000000015, 249.0, 40.0, 22.0 ],
 					"text" : "t f b f"
 				}
 
@@ -222,7 +235,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 359.700012000000015, 294.0, 532.0, 35.0 ],
+					"patching_rect" : [ 360.200012000000015, 279.0, 532.0, 35.0 ],
 					"text" : "setNoteDimension originalPitch $1, setAccidentalVisibilityPolicy ACCIDENTAL_SHOW_NORMAL, setSelectedOverrideLevelFlag false"
 				}
 
@@ -288,8 +301,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 363.0, 427.0, 248.0, 22.0 ],
-					"restore" : [ 0 ],
+					"patching_rect" : [ 363.5, 455.0, 248.0, 22.0 ],
+					"restore" : [ "send", "parent::tablature::map" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -308,7 +321,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 13.0, 20.0, 214.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 76.0, 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -326,7 +339,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 13.0, 469.0, 159.0, 22.0 ],
+					"patching_rect" : [ 13.0, 497.0, 159.0, 22.0 ],
 					"text" : "pattrforward parent::receiver"
 				}
 
@@ -338,7 +351,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 338.70001220703125, 469.0, 73.0, 22.0 ],
+					"patching_rect" : [ 339.20001220703125, 497.0, 73.0, 22.0 ],
 					"text" : "pattrforward"
 				}
 
@@ -359,10 +372,10 @@
 				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 13.0, 409.0, 166.0, 22.0 ],
+					"patching_rect" : [ 13.0, 429.0, 202.40002400000003, 22.0 ],
 					"text" : "removeAllTablatureMessages"
 				}
 
@@ -374,7 +387,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 118.40002400000003, 191.0, 597.0, 22.0 ],
+					"patching_rect" : [ 118.40002400000003, 188.0, 597.0, 22.0 ],
 					"text" : "setPitch $1, setAccidentalVisibilityPolicy ACCIDENTAL_SHOW_NORMAL, setSelectedOverrideLevelFlag false"
 				}
 
@@ -476,6 +489,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"source" : [ "obj-21", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-10", 1 ],
+					"source" : [ "obj-23", 0 ]
 				}
 
 			}

@@ -2438,6 +2438,7 @@ function anything() {
 function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
+			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return element * 255}) + ")";
 			var dasharray = (picster.contains("style::stroke-dasharray") && picster.get("style::stroke-dasharray")[0] != 0) ? " stroke-dasharray=\"" + picster.get("style::stroke-dasharray") + "\" " : " ";
 			//var onclick = "";
 			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
@@ -2454,9 +2455,13 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					var child = group.child[i];
 					svgtransform = "transform=\"" + child.transform + "\"";
 					if (child.hasOwnProperty("style")) {
-					svgstroke = (child.style.stroke == "$FRGB") ? frgb : child.style.stroke;
+					if (child.style.stroke == "$FRGB") svgstroke = frgb;
+					else if (child.style.stroke == "$BRGB") svgstroke = brgb;
+					else svgstroke = child.style.stroke;
 					svgstrokeopacity = child.style["stroke-opacity"];
-					svgfill = (child.style.fill == "$FRGB") ? frgb : child.style.fill;
+					if (child.style.fill == "$FRGB") svgfill = frgb;
+					else if (child.style.fill == "$BRGB") svgfill = brgb;
+					else svgfill = child.style.fill;
 					svgfillopacity = child.style["fill-opacity"];
 					}
 					tempDict.clear();
@@ -2470,7 +2475,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				var group = {};
 				var tempDict = new Dict();
 				url = picster.get("id");
-				//post("url", url, "\n");
 				var child = JSON.parse(picster.stringify()).child;
 				if (child.hasOwnProperty("style")) {
 				svgstroke = (child.style.stroke == "$FRGB") ? frgb : child.style.stroke;
@@ -2487,6 +2491,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + svgtransform + onclick + "/>");
 				break;
 				case "rect" :
+				//post("brgb", brgb, svgfill, "\n");
 				var roundedness = (picster.contains("rx")) ? picster.get("rx") : 0;
 				SVGGraphics[s + 1].push("<rect id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" rx=\"" + roundedness + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");
 				break;

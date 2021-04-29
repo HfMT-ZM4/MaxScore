@@ -105,8 +105,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "bang", "bang" ],
-									"patching_rect" : [ 50.0, 294.0, 231.0, 35.0 ],
-									"text" : "dialog \"Download hfmt.drawsocket from https://github.com/HfMT-ZM4/drawsocket\""
+									"patching_rect" : [ 50.0, 294.0, 287.0, 35.0 ],
+									"text" : "dialog \"Download hfmt.drawsocket from https://github.com/HfMT-ZM4/drawsocket\" @mode 1"
 								}
 
 							}
@@ -312,8 +312,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 550.5, 196.5, 152.0, 22.0 ],
-					"text" : "routepass hfmt.drawsocket"
+					"patching_rect" : [ 550.5, 196.5, 125.0, 22.0 ],
+					"text" : "routepass drawsocket"
 				}
 
 			}
@@ -351,7 +351,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 153.0, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 464.0, 340.0, 139.0, 20.0 ],
+					"presentation_rect" : [ 464.0, 340.0, 149.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -390,11 +390,11 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 450.5, 157.0, 219.0, 31.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 233.0, 243.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 459.0, 246.0, 224.0, 70.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "maxscore.net.send", "maxscore.net.recv", "hfmt.drawsocket" ],
+					"tabs" : [ "maxscore.net.send", "maxscore.net.recv", "drawsocket" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -412,11 +412,11 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 123.0, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 238.0, 224.0, 133.0, 20.0 ],
+					"presentation_rect" : [ 238.0, 224.0, 143.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"tabs" : [ "Network" ],
+					"tabs" : [ "More Parsing & Storing" ],
 					"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -696,7 +696,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 367.327576000000022, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 238.0, 340.0, 133.0, 20.0 ],
+					"presentation_rect" : [ 238.0, 340.0, 143.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -754,11 +754,11 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 7.0, 193.0, 436.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 459.0, 243.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 233.0, 246.0, 224.0, 70.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "maxscore.store", "maxscore.makenote" ],
+					"tabs" : [ "maxscore.xml2json", "maxscore.json2xml", "maxscore.store" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -775,7 +775,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 336.327576000000022, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 464.0, 224.0, 139.0, 20.0 ],
+					"presentation_rect" : [ 464.0, 224.0, 149.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -818,11 +818,11 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 305.327576000000022, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 224.0, 139.0, 20.0 ],
+					"presentation_rect" : [ 12.0, 224.0, 149.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"tabs" : [ "Parsing & Network" ],
+					"tabs" : [ "Parsing" ],
 					"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -884,7 +884,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 243.327575999999993, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 464.0, 107.0, 133.0, 20.0 ],
+					"presentation_rect" : [ 464.0, 107.0, 143.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -906,7 +906,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 181.327575999999993, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 340.0, 133.0, 20.0 ],
+					"presentation_rect" : [ 12.0, 340.0, 143.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -928,7 +928,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 212.327575999999993, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 238.0, 107.0, 133.0, 20.0 ],
+					"presentation_rect" : [ 238.0, 107.0, 143.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -950,7 +950,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 274.327576000000022, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 107.0, 139.0, 20.0 ],
+					"presentation_rect" : [ 12.0, 107.0, 149.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],

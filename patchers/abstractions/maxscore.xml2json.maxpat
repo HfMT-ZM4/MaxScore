@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 754.0, 177.0, 790.0, 778.0 ],
+		"rect" : [ 492.0, 158.0, 790.0, 778.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -297,7 +297,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 52.0, 161.0, 173.0, 22.0 ],
+					"patching_rect" : [ 52.0, 161.0, 193.0, 22.0 ],
 					"text" : "gate 2 1"
 				}
 
@@ -306,11 +306,11 @@
 				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "newobj",
-					"numinlets" : 5,
-					"numoutlets" : 5,
-					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 52.0, 91.0, 173.0, 22.0 ],
-					"text" : "route bypass dict toDict clear"
+					"numinlets" : 6,
+					"numoutlets" : 6,
+					"outlettype" : [ "", "", "", "", "", "" ],
+					"patching_rect" : [ 52.0, 91.0, 193.0, 22.0 ],
+					"text" : "route bypass dict toDict clear done"
 				}
 
 			}
@@ -412,7 +412,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "clear" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 52.0, 45.0, 30.0, 30.0 ]
 				}
 
@@ -731,7 +731,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
-					"midpoints" : [ 138.5, 121.0, 29.5, 121.0 ],
+					"midpoints" : [ 131.099999999999994, 121.0, 29.5, 121.0 ],
 					"source" : [ "obj-5", 2 ]
 				}
 
@@ -746,7 +746,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"midpoints" : [ 100.0, 144.0, 617.0, 144.0 ],
+					"midpoints" : [ 96.299999999999997, 144.0, 617.0, 144.0 ],
 					"source" : [ "obj-5", 1 ]
 				}
 
@@ -754,14 +754,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6", 1 ],
-					"source" : [ "obj-5", 4 ]
+					"source" : [ "obj-5", 5 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
-					"midpoints" : [ 215.5, 692.0, 29.5, 692.0 ],
+					"midpoints" : [ 235.5, 692.0, 29.5, 692.0 ],
 					"source" : [ "obj-6", 1 ]
 				}
 

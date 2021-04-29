@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 197.0, 79.0, 1090.0, 803.0 ],
+		"rect" : [ 34.0, 87.0, 1090.0, 803.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,14 +69,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 197.0, 105.0, 1090.0, 777.0 ],
+						"rect" : [ 34.0, 113.0, 1090.0, 777.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -113,7 +113,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 620.0, 189.0, 423.0, 53.0 ],
+									"patching_rect" : [ 620.0, 212.0, 423.0, 53.0 ],
 									"text" : "This example features grace notes which are more complex to create. Note that the grace note is first written to a different track before cut and pasted into the note it precedes."
 								}
 
@@ -123,10 +123,10 @@
 									"id" : "obj-21",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 360.00000399999999, 291.0, 107.0, 22.0 ],
-									"text" : "grab 2 dumpScore"
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 360.00000399999999, 322.0, 175.0, 22.0 ],
+									"text" : "maxscore.info.grab dumpScore"
 								}
 
 							}
@@ -136,7 +136,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
+									"outlettype" : [ "", "dictionary", "", "" ],
 									"patching_rect" : [ 698.000034000000028, 500.317016999999964, 67.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "maxscore-2"
@@ -173,7 +173,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 774.00000399999999, 331.0, 64.0, 23.0 ],
+									"patching_rect" : [ 774.00000399999999, 354.0, 64.0, 23.0 ],
 									"text" : "0 0-1 0+2"
 								}
 
@@ -185,7 +185,7 @@
 									"numinlets" : 9,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 360.00000399999999, 371.0, 405.0, 22.0 ],
+									"patching_rect" : [ 360.00000399999999, 394.0, 405.0, 22.0 ],
 									"text" : "maxscore.split2 @staffgroups 0 0-1 0+2",
 									"varname" : "maxscore-split"
 								}
@@ -197,7 +197,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
+									"outlettype" : [ "", "dictionary", "", "" ],
 									"patching_rect" : [ 360.00000399999999, 500.317016999999964, 67.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "maxscore-1"
@@ -263,7 +263,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 360.00000399999999, 252.0, 78.0, 23.0 ],
+									"patching_rect" : [ 360.00000399999999, 283.0, 78.0, 23.0 ],
 									"text" : "dumpScore"
 								}
 
@@ -274,9 +274,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 26.0, 212.0, 180.0, 22.0 ],
-									"text" : "MaxScore @grab dumpScore"
+									"outlettype" : [ "", "dictionary", "", "" ],
+									"patching_rect" : [ 26.0, 212.0, 127.0, 22.0 ],
+									"text" : "MaxScore dumpScore",
+									"varname" : "MaxScore"
 								}
 
 							}
@@ -307,7 +308,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
+									"outlettype" : [ "", "dictionary", "", "" ],
 									"patching_rect" : [ 26.0, 500.317016999999964, 67.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "maxscore-0"
@@ -342,7 +343,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 17,
 									"outlettype" : [ "", "int", "", "int", "", "int", "", "int", "", "int", "", "int", "", "int", "", "", "bang" ],
-									"patching_rect" : [ 360.00000399999999, 336.0, 405.0, 22.0 ],
+									"patching_rect" : [ 360.00000399999999, 359.0, 405.0, 22.0 ],
 									"text" : "maxscore.parse2",
 									"varname" : "maxscore.parse"
 								}
@@ -376,7 +377,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 774.00000399999999, 371.0, 203.47650146484375, 39.0 ]
+									"patching_rect" : [ 774.0, 394.0, 203.47650146484375, 39.0 ]
 								}
 
 							}
@@ -440,7 +441,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 8 ],
-									"midpoints" : [ 783.50000399999999, 363.0, 755.50000399999999, 363.0 ],
+									"midpoints" : [ 783.50000399999999, 386.0, 755.50000399999999, 386.0 ],
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -485,15 +486,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 457.50000399999999, 324.0, 369.50000399999999, 324.0 ],
-									"source" : [ "obj-21", 1 ]
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-8", 1 ],
-									"midpoints" : [ 89.166666666666657, 240.0, 336.5, 240.0 ],
+									"midpoints" : [ 71.5, 240.0, 336.5, 240.0 ],
 									"source" : [ "obj-3", 1 ]
 								}
 
@@ -589,6 +589,32 @@
 
 							}
  ],
+						"styles" : [ 							{
+								"name" : "black on white",
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontname" : [ "Arial" ]
+								}
+,
+								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+ ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"editing_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 					}
@@ -634,8 +660,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -750,7 +776,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.sax.maxpat",
+				"name" : "maxscore.parseJSON.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
+				"patcherrelativepath" : "../../../Library/MaxScore",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.json.iter.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
@@ -760,7 +793,7 @@
 				"name" : "maxscore.bcanvas.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "TEXT",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -847,9 +880,44 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "n4m_musicxml2jmsl.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
+				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.xml2json.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "my-LtoColl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.split2.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.info.grab.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}

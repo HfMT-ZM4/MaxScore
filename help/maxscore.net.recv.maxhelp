@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
+			"minor" : 2,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 669.0, 462.0 ],
+		"rect" : [ 199.0, 165.0, 775.0, 543.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,7 @@
 		"subpatcher_template" : "",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -68,14 +69,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
+							"minor" : 2,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 669.0, 436.0 ],
+						"rect" : [ 199.0, 191.0, 775.0, 517.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -103,6 +104,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bubble" : 1,
@@ -126,7 +128,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 58.0, 337.0, 299.0, 79.0 ],
+									"patching_rect" : [ 26.0, 338.0, 299.0, 79.0 ],
 									"text" : "@address: Set the IPv4 address for the messages to be sent to.\n@port: Set the number for the port the receiver is listening on."
 								}
 
@@ -139,10 +141,11 @@
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 5,
-									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 366.0, 271.0, 211.0, 23.0 ],
-									"text" : "mxj com.algomusic.max.MaxScore"
+									"numoutlets" : 4,
+									"outlettype" : [ "", "dictionary", "", "" ],
+									"patching_rect" : [ 366.0, 271.0, 67.0, 23.0 ],
+									"text" : "MaxScore",
+									"varname" : "MaxScore[1]"
 								}
 
 							}
@@ -158,9 +161,9 @@
 									"maxclass" : "bpatcher",
 									"name" : "maxscore.bcanvas.maxpat",
 									"numinlets" : 2,
-									"numoutlets" : 3,
+									"numoutlets" : 4,
 									"offset" : [ 0.0, 0.0 ],
-									"outlettype" : [ "", "", "" ],
+									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 366.0, 311.0, 300.0, 120.0 ],
 									"prototypename" : "bcanvas",
 									"varname" : "JMSLMaxScore-10",
@@ -186,8 +189,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 17,
-									"outlettype" : [ "", "int", "", "int", "", "int", "", "int", "", "", "", "int", "", "int", "", "", "bang" ],
-									"patching_rect" : [ 58.0, 260.0, 187.0, 22.0 ],
+									"outlettype" : [ "", "int", "", "int", "", "int", "", "int", "", "int", "", "int", "", "int", "", "", "bang" ],
+									"patching_rect" : [ 26.0, 261.0, 187.0, 22.0 ],
 									"text" : "maxscore.parse2",
 									"varname" : "maxscore.parse"
 								}
@@ -201,10 +204,11 @@
 									"id" : "obj-29",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 5,
-									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 10.0, 219.0, 211.0, 23.0 ],
-									"text" : "mxj com.algomusic.max.MaxScore"
+									"numoutlets" : 4,
+									"outlettype" : [ "", "dictionary", "", "" ],
+									"patching_rect" : [ 10.0, 219.0, 67.0, 23.0 ],
+									"text" : "MaxScore",
+									"varname" : "MaxScore"
 								}
 
 							}
@@ -214,7 +218,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 58.0, 313.0, 287.0, 22.0 ],
+									"patching_rect" : [ 26.0, 314.0, 287.0, 22.0 ],
 									"text" : "maxscore.net.send @address localhost @port 6999"
 								}
 
@@ -265,7 +269,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 235.5, 302.0, 67.5, 302.0 ],
+									"midpoints" : [ 203.5, 303.0, 35.5, 303.0 ],
 									"source" : [ "obj-3", 16 ]
 								}
 
@@ -273,7 +277,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 214.5, 290.5, 335.5, 290.5 ],
+									"midpoints" : [ 182.5, 291.5, 303.5, 291.5 ],
 									"source" : [ "obj-3", 14 ]
 								}
 
@@ -281,7 +285,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 193.5, 290.5, 335.5, 290.5 ],
+									"midpoints" : [ 161.5, 291.5, 303.5, 291.5 ],
 									"source" : [ "obj-3", 12 ]
 								}
 
@@ -289,7 +293,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 172.5, 290.5, 335.5, 290.5 ],
+									"midpoints" : [ 140.5, 291.5, 303.5, 291.5 ],
 									"source" : [ "obj-3", 10 ]
 								}
 
@@ -297,7 +301,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 151.5, 290.5, 335.5, 290.5 ],
+									"midpoints" : [ 119.5, 291.5, 303.5, 291.5 ],
 									"source" : [ "obj-3", 8 ]
 								}
 
@@ -305,7 +309,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 130.5, 290.5, 335.5, 290.5 ],
+									"midpoints" : [ 98.5, 291.5, 303.5, 291.5 ],
 									"source" : [ "obj-3", 6 ]
 								}
 
@@ -313,7 +317,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 109.5, 290.5, 335.5, 290.5 ],
+									"midpoints" : [ 77.5, 291.5, 303.5, 291.5 ],
 									"source" : [ "obj-3", 4 ]
 								}
 
@@ -321,7 +325,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 88.5, 290.5, 335.5, 290.5 ],
+									"midpoints" : [ 56.5, 291.5, 303.5, 291.5 ],
 									"source" : [ "obj-3", 2 ]
 								}
 
@@ -329,7 +333,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 67.5, 290.5, 335.5, 290.5 ],
+									"midpoints" : [ 35.5, 291.5, 303.5, 291.5 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -409,14 +413,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
+							"minor" : 2,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 669.0, 436.0 ],
+						"rect" : [ 0.0, 26.0, 775.0, 517.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -444,6 +448,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [  ],
 						"lines" : [  ]
 					}
@@ -504,6 +509,41 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "MaxScore.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m_musicxml2jmsl.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
+				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.xml2json.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "my-LtoColl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.parse2.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
@@ -546,7 +586,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.sax.maxpat",
+				"name" : "maxscore.parseJSON.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
+				"patcherrelativepath" : "../../../Library/MaxScore",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.json.iter.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
@@ -556,7 +603,7 @@
 				"name" : "maxscore.bcanvas.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "TEXT",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -595,7 +642,41 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "mouseEvents.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "boxSize.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "jit.pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "socket.pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m.max-fs.js",
+				"bootpath" : "C74:/packages/Node For Max/examples/filesystem",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "swissarmyknife.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
@@ -608,11 +689,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "sadam.empty.mxo",
+				"name" : "sadam.rapidXML.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "sadam.rapidXML.mxo",
+				"name" : "sadam.empty.mxo",
 				"type" : "iLaX"
 			}
  ],

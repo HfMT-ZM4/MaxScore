@@ -14,7 +14,7 @@ var attr = arrayfromargs(messagename, arguments);
 var dump = new Dict();
 dump.name = grab;
 dump.clear();
-messnamed(grab+"-relay", "null", attr);
+messnamed(grab+"-relay", attr);
 var keys = dump.getkeys();
 if (keys){
 for (var i= 0; i < keys.length; i++)

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 350.0, 384.0, 1144.0, 494.0 ],
+		"rect" : [ 322.0, 242.0, 1002.0, 583.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-39",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 175.0, 401.5, 327.0, 22.0 ],
+					"text" : "maxscore.bindtoID parent::parent::parent::parent fromScore",
+					"varname" : "u318031574"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -54,25 +67,25 @@
 				"box" : 				{
 					"id" : "obj-31",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 394.5, 168.0, 22.0 ],
+					"patching_rect" : [ 26.0, 429.5, 168.0, 22.0 ],
 					"text" : "removeAllTablatureMessages"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial Bold",
+					"fontname" : "Arial",
 					"fontsize" : 10.0,
 					"id" : "obj-12",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 50.0, 129.0, 45.0, 20.0 ],
-					"text" : "zl nth 1"
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 50.0, 129.0, 46.0, 20.0 ],
+					"text" : "unpack f"
 				}
 
 			}
@@ -156,7 +169,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 305.118103000000019, 89.0, 264.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 76, 0, 0, "false", 77, 0, 0, 0, 132, 0.5, "interval", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -176,7 +189,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 620.0, 69.0, 74.0, 22.0 ],
+					"patching_rect" : [ 578.0, 69.0, 74.0, 22.0 ],
 					"text" : "prepend set"
 				}
 
@@ -190,7 +203,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 620.0, 104.0, 88.0, 22.0 ],
+					"patching_rect" : [ 578.0, 104.0, 88.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -210,7 +223,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 203.0, 199.0, 47.0, 20.0 ],
+					"patching_rect" : [ 203.0, 183.0, 47.0, 20.0 ],
 					"text" : "- 877.85"
 				}
 
@@ -224,7 +237,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 169.0, 232.0, 53.0, 20.0 ],
+					"patching_rect" : [ 169.0, 211.0, 53.0, 20.0 ],
 					"text" : "packback"
 				}
 
@@ -238,7 +251,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 169.0, 138.0, 81.0, 20.0 ],
+					"patching_rect" : [ 169.0, 122.0, 81.0, 20.0 ],
 					"text" : "loadmess dump"
 				}
 
@@ -377,7 +390,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 169.0, 165.0, 121.0, 20.0 ],
+					"patching_rect" : [ 169.0, 149.0, 121.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 1,
 						"precision" : 6
@@ -581,7 +594,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 620.0, 10.5, 342.0, 20.0 ],
+					"patching_rect" : [ 578.0, 10.5, 342.0, 20.0 ],
 					"text" : "definition: menu-name style-type numStaffLines microMap clef"
 				}
 
@@ -595,7 +608,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 620.0, 36.0, 412.0, 22.0 ],
+					"patching_rect" : [ 578.0, 36.0, 412.0, 22.0 ],
 					"text" : "loadmess \"BP Tenor Clarinet\" BP-tenor-clarinet 5 mM-none TREBLE_CLEF"
 				}
 
@@ -630,7 +643,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 402.118103000000019, 320.0, 250.0, 22.0 ],
+					"patching_rect" : [ 342.118103000000019, 429.5, 250.0, 22.0 ],
 					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -663,7 +676,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 388.118103000000019, 441.5, 150.0, 20.0 ],
+					"patching_rect" : [ 388.118103000000019, 475.5, 150.0, 20.0 ],
 					"text" : "send to next map"
 				}
 
@@ -677,7 +690,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 305.118103000000019, 441.5, 69.0, 20.0 ],
+					"patching_rect" : [ 305.118103000000019, 475.5, 69.0, 20.0 ],
 					"text" : "pattrforward"
 				}
 
@@ -705,7 +718,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 318.618103000000019, 386.0, 176.0, 20.0 ],
+					"patching_rect" : [ 318.618103000000019, 376.0, 176.0, 20.0 ],
 					"text" : "setNoteDimension originalPitch $1"
 				}
 
@@ -720,7 +733,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 311.5, 244.0, 76.0 ],
+					"patching_rect" : [ 50.0, 308.5, 244.0, 76.0 ],
 					"text" : "setPitch $1, setAltEnharmonicSpelling false, setAccidentalVisibilityPolicy ACCIDENTAL_SHOW_NORMAL, overrideStemDirection CLEAR, noteheadVisibilityTransform true, setSelectedNoteLedgerLinesVisible true"
 				}
 
@@ -760,7 +773,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 441.5, 148.0, 20.0 ],
+					"patching_rect" : [ 26.0, 475.5, 148.0, 20.0 ],
 					"text" : "pattrforward parent::receiver"
 				}
 
@@ -774,7 +787,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 50.0, 172.0, 66.0, 20.0 ],
+					"patching_rect" : [ 50.0, 156.0, 66.0, 20.0 ],
 					"text" : "routepass 0."
 				}
 
@@ -788,7 +801,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 97.0, 227.0, 44.0, 20.0 ],
+					"patching_rect" : [ 97.0, 211.0, 44.0, 20.0 ],
 					"text" : "+ 73.15"
 				}
 
@@ -802,7 +815,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 97.0, 254.0, 36.0, 20.0 ],
+					"patching_rect" : [ 97.0, 238.0, 36.0, 20.0 ],
 					"text" : "round"
 				}
 
@@ -816,7 +829,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 97.0, 202.0, 37.0, 20.0 ],
+					"patching_rect" : [ 97.0, 186.0, 37.0, 20.0 ],
 					"text" : "* 100."
 				}
 
@@ -830,7 +843,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "bang" ],
-					"patching_rect" : [ 97.0, 278.0, 46.0, 20.0 ],
+					"patching_rect" : [ 97.0, 262.0, 46.0, 20.0 ],
 					"save" : [ "#N", "funbuff", 0, ";" ],
 					"text" : "funbuff"
 				}
@@ -1111,6 +1124,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-31", 1 ],
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-4", 1 ]
 				}
@@ -1161,7 +1181,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
-					"midpoints" : [ 411.618103000000019, 425.75, 314.618103000000019, 425.75 ],
 					"source" : [ "obj-8", 0 ]
 				}
 
@@ -1179,6 +1198,32 @@
 					"source" : [ "obj-9", 0 ]
 				}
 
+			}
+ ],
+		"styles" : [ 			{
+				"name" : "black on white",
+				"number" : 				{
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontname" : [ "Arial" ]
+				}
+,
+				"umenu" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"bgfillcolor" : 					{
+						"type" : "color",
+						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
 			}
  ]
 	}

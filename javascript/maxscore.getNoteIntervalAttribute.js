@@ -22,7 +22,7 @@ function anything()
 var attr = arrayfromargs(messagename, arguments);
 var dump = new Dict();
 dump.name = grab;
-messnamed(grab+"-relay", "null", "getNoteAnchor");
+messnamed(grab+"-relay", "getNoteAnchor");
 var info = new Dict();
 info.clone(dump.name);
 //post(info.stringify(), "\n");
@@ -38,7 +38,7 @@ for (var i= 0; i < keys.length; i++)
 	{
 	if (attr=="TEXT")
 	{
-	messnamed(grab+"-relay", "null", "getNoteInfo", inf.slice(3));
+	messnamed(grab+"-relay", "getNoteInfo", inf.slice(3));
 	var text = dump.get("note::@TEXT");
 	var textoffsetx = dump.get("note::@TEXTOFFSETX");
 	var textoffsety = dump.get("note::@TEXTOFFSETY");
@@ -46,14 +46,14 @@ for (var i= 0; i < keys.length; i++)
 	outlet(0, text, textoffsetx, textoffsety);		
 	}
 	else if (attr == "MultitrackRestAdjustmentY") {
-	messnamed(grab+"-relay", "null", "getMultiTrackRestAdjustmentY", inf.slice(3, 6));
+	messnamed(grab+"-relay", "getMultiTrackRestAdjustmentY", inf.slice(3, 6));
 	var query = info.get("0").slice(1);
 	outlet(1, inf.slice(3));
 	outlet(0, query);
 	}
 	else
 	{
-	messnamed(grab+"-relay", "null", "getNoteInfo", inf.slice(3));
+	messnamed(grab+"-relay", "getNoteInfo", inf.slice(3));
 	if (attr[0] == "dim")
 		{	
 			var dim = attr[1] - 4;
@@ -71,7 +71,7 @@ for (var i= 0; i < keys.length; i++)
 	}
 	}
 	else {
-	messnamed(grab+"-relay", "null", "getIntervalInfo", inf.slice(3));
+	messnamed(grab+"-relay", "getIntervalInfo", inf.slice(3));
 	if (attr=="TEXT")
 	{
 	var text = dump.get("interval::@TEXT");

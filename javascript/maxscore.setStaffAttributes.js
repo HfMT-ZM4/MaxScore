@@ -113,7 +113,7 @@ function init()
 {
 setMenu();
 dump.clear();
-messnamed(grab+"-relay", "null", "getStaffInfo", 0, StaffIndex);
+messnamed(grab+"-relay", "getStaffInfo", 0, StaffIndex);
 var instrumentindex = dump.get("staff::@"+"INSTRUMENTINDEX");
 
 
@@ -548,10 +548,10 @@ function newEvent(data) {
                 }
                 if (keys.length == 1) {
                     if (inf[7] == -1) {
-                        messnamed(grab+"-relay", "null", "getNoteInfo", inf.slice(3));
+                        messnamed(grab+"-relay", "getNoteInfo", inf.slice(3));
                         event[5] = dump.get("note::dim::1::@value");
                     } else {
-                        messnamed(grab+"-relay", "null", "getIntervalInfo", inf.slice(3));
+                        messnamed(grab+"-relay", "getIntervalInfo", inf.slice(3));
                         event[5] = dump.get("interval::dim::1::@value");
                     }
                     preview.message(StaffIndex, event);
@@ -571,7 +571,7 @@ function paste(data) {
 	else if (data.value == 86) f = 1;
 	else return;
     // make sure there are events pasted in this track
-    messnamed(grab+"-relay", "null", "getNoteAnchor");
+    messnamed(grab+"-relay", "getNoteAnchor");
     info.clone(dump.name);
     if (info.contains("0")) keys = info.getkeys();
 	else return;
@@ -629,7 +629,7 @@ function paste(data) {
 function update(data) {
     //info.clear();
     // make sure there are events pasted in this track
-    messnamed(grab+"-relay", "null", "getNoteAnchor");
+    messnamed(grab+"-relay", "getNoteAnchor");
     info.clone(dump.name);
     if (info.contains("0")) keys = info.getkeys();
 	else return;
@@ -688,7 +688,7 @@ function transform() {
     getSelection(); //"getNoteAnchor", selection.clone("info"), "clearSelection"
     //info.clear();
     outlet(0, "selectAllNotesInStaff", StaffIndex);
-    messnamed(grab+"-relay", "null", "getNoteAnchor");
+    messnamed(grab+"-relay", "getNoteAnchor");
     info.clone(dump.name);
 	//post("info-1", info.stringify(), "\n");
     keys = info.getkeys();
@@ -805,7 +805,7 @@ function setClef(stl) {
 function getInfo() {
     attr = arrayfromargs(arguments);
     //info.clear();
-    messnamed(grab+"-relay", "null", attr);
+    messnamed(grab+"-relay", attr);
     info.clone(dump.name);
     keys = info.getkeys();
     if (keys) {
@@ -820,12 +820,14 @@ function getStaffNoteIntervalInfo(i) {
   var inf = info.get(keys[i]);
 	var l = [0., 0., 0., "false", 0., 0., 0., 0., 0., "note", 0, 0];
     if (inf[6] != -1) {
-        messnamed(grab+"-relay", "null", "getStaffInfo", inf.slice(3, 5));
+        messnamed(grab+"-relay", "getNoteProperty", "level", inf.slice(3));
+        l[8] = dump.get(0)[7];
+        messnamed(grab+"-relay", "getStaffInfo", inf.slice(3, 5));
         l[7] = dump.get("staff::@CLEF");
         l[6] = dump.get("staff::@KEYSIGTYPE");
         l[5] = dump.get("staff::@KEYSIGNUMACC");
         if (inf[7] == -1) {
-            messnamed(grab+"-relay", "null", "getNoteInfo", inf.slice(3));
+            messnamed(grab+"-relay", "getNoteInfo", inf.slice(3));
             l[10] = "note";
             l[9] = dump.get("note::@VELOCITY");
             l[4] = dump.get("note::@PITCH");
@@ -835,7 +837,7 @@ function getStaffNoteIntervalInfo(i) {
             l[0] = dump.get("note::dim::1::@value");
             outlet(0, "selectNote", inf.slice(3, 7));
         } else {
-            messnamed(grab+"-relay", "null", "getIntervalInfo", inf.slice(3));
+            messnamed(grab+"-relay", "getIntervalInfo", inf.slice(3));
             l[11] = StaffIndex;
             l[10] = "interval";
             l[9] = dump.get("interval::@VELOCITY");
@@ -849,16 +851,14 @@ function getStaffNoteIntervalInfo(i) {
                 outlet(0, "selectNextInterval");
             }
         }
-        messnamed(grab+"-relay", "null", "getNoteProperty", "level", inf.slice(3));
         l[11] = StaffIndex;
-        l[8] = dump.get(0)[7];
 		//post("list", l[8], "\n");
         return l;
     }
 }
 
 function getSelection() {
-    messnamed(grab+"-relay", "null", "getNoteAnchor");
+    messnamed(grab+"-relay", "getNoteAnchor");
     selection.clone(dump.name);
     outlet(0, "clearSelection");
 }
@@ -884,8 +884,8 @@ function getid() {
 
 function map(_styletype, _StaffIndex)
 {
-	if (list[0] != -1) stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[0], _StaffIndex, grab);
-	else stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[4], _StaffIndex, grab);
+	if (list[0] != -1) stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[0], _StaffIndex);
+	else stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[4], _StaffIndex);
 }
 
 function imap(_styletype, _destination)
