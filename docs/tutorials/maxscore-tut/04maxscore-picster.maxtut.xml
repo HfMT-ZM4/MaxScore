@@ -154,27 +154,6 @@
 <p></p>
 <i>Figure 10: Example for how to create a dictionary of an expression to be added to a Picster shape.</i>
 
-<p><b>Preparing an expression for playback requires some additional steps:</b></p>
-<techdetail>
-
-<ol>
-  <li>Connect the right-most outlet of bcanvas to the left-most inlet of an instance of the picster.messenger abstraction</li>
-  <li>Connect the third (middle) outlet of the MaxScore object (mxj com.algomusic.max.MaxScore) to the left-most inlet of picster.messenger</li>
-  <li>With caps lock on, send the picster init message to the left-most inlet of bcanvas. Initialization causes the event sequence stored in the MaxScore object to be dumped into the picster.messenger object.</li>
-  <li>NB.: For sequencing to work all instruments (i.e. voices) need to have additional instrument dimensions. Send the following messages to the MaxScore object for every staff in your score before you add any notes or right after you create the score or add a new staff:</li>  
-</ol>
-
-<ul>
-  <li>setInstrumentDimension staff-index 5 originalPitch -1 127 -1</li>  
-  <li>setInstrumentDimension staff-index 6 index -1 10000 -1</li>  
-</ul>
-</techdetail>
-<illustration><img src="images/Picster/picster-image11-small.png"/></illustration>
-<p></p>
-<i>Figure 11: Playback of picster expressions requires the use of additional objects.</i>
-<p>[separated chapter for picster expression editors?]</p>
-
-
 
 
 </chapter>

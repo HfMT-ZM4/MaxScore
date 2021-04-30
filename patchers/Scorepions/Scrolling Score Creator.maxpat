@@ -2902,13 +2902,11 @@
 				"box" : 				{
 					"dontreplace" : 1,
 					"id" : "obj-35",
-					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 516.0, 227.0, 336.0, 49.0 ],
-					"text" : "\"Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/Great White/\""
+					"patching_rect" : [ 516.0, 227.0, 336.0, 22.0 ]
 				}
 
 			}
@@ -2994,27 +2992,24 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
-					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_autogradient" : 0.0,
-					"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 0.0 ],
-					"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 0.0 ],
-					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
-					"bgfillcolor_proportion" : 0.5,
-					"bgfillcolor_type" : "color",
+					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"bgoncolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-21",
-					"items" : "<empty>",
-					"labelclick" : 1,
-					"maxclass" : "umenu",
-					"menumode" : 2,
+					"legacytextcolor" : 1,
+					"maxclass" : "textbutton",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
+					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 833.0, 78.0, 100.0, 22.0 ],
+					"patching_rect" : [ 833.0, 78.0, 129.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 382.5, 100.0, 22.0 ],
-					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
+					"presentation_rect" : [ 2.0, 382.5, 100.0, 20.0 ],
+					"text" : "Open Project...",
+					"textcolor" : [ 0.964705882352941, 0.964705882352941, 0.964705882352941, 1.0 ],
+					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textovercolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"usebgoncolor" : 1,
+					"usetextovercolor" : 1
 				}
 
 			}
