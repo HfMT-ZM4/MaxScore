@@ -2,97 +2,216 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="Graphics in MaxScore">
+<chapter name="MaxScore: Graphics">
 <previous name="07maxscore-microtones">MaxScore: Preferences</previous>
 <next name="08maxscore-playback">Playback</next>
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 
-<h1>Graphics in MaxScore</h1>
+<h1>MaxScore: Graphics</h1>
 
-<p>Picster is the mode in which the user can create and edit custom graphics</p>
+<p>MaxScore users can use the Picster mode to create and edit shapes on the fly.</p>
+<p>MaxScore allows you to also attach shapes to measures or staves. This means that a shape will be shown automatically on every part should the score be split or rendered to multiple clients. It’s best used for global instructions that affect every members of an ensemble at once, such as tempo or overall dynamics.</p>
+<p>You can set the preference in the following 3 ways:</p>
+<ul>
+  <li>selecting a note / staff / measure in the canvas</li>
+  <li>pressing s for staff or m for measure after selecting a note</li>
+  <li>sending messages to the MaxScore abstraction (see the section "Creating and Editing Shapes via Messages")</li>
+</ul>
+<p>After selection, press Caps Lock to turn on Picster mode.</p>
 
 <h2>Drawing modes</h2>
-<p>First select a note / staff / measure for the graphics to be attached to.</p>
-<p>Press Caps Lock to enable/disable Picster mode.</p>
-<p>Select the drawing tools by pressing the following keys:</p>
+<p>Picster offers a variety of drawing tools. Once Picster mode is on (by pressing Caps Lock), you will see the name of the current drawing tool displayed in red on the top-left corner of the canvas.</p>
 
+<techdetail>
+<p>Select the desired drawing tool by pressing one of the following keys:</p>
 <ul>
-  <li>1: line segment</li>
-  <li>2: rectangle</li>
-  <li>3: rounded rectangle</li>
-  <li>4: oval</li>
-  <li>5: arc</li>
-  <li>6: polygon</li>
-  <li>7: freehand</li>
-  <li>8: text</li>
-  <li>9: image</li>
-  <li>0: polycurve</li>
-  <li>h: hairpin</li>
-  <li>b: bracket</li>
+  <li><m>1</m>: line segment</li>
+  <li><m>2</m>: rectangle</li>
+  <li><m>3</m>: rounded rectangle</li>
+  <li><m>4</m>: oval</li>
+  <li><m>5</m>: arc</li>
+  <li><m>6</m>: polygon</li>
+  <li><m>7</m>: freehand</li>
+  <li><m>8</m>: text</li>
+  <li><m>9</m>: image</li>
+  <li><m>0</m>: polycurve</li>
+  <li><m>h</m>: hairpin</li>
+  <li><m>b</m>: bracket</li>
 </ul>
+</techdetail>
 
-<p>The tool name will be displayed in red in the upper left corner of the canvas</p>
-
-<p>For most tools, click and drag in order to create shapes. Note that notes(s) or staves need to be selected before the Picster mode is activated.</p>
+<p>For most tools, click and drag in order to create shapes.</p>
 <illustration><img src="images/Picster/picster-image1-small.png"/></illustration>
-<i>Figure 1: The name of a Picster tool appears in the upper left-hand corner after pressing caps lock. Drawn shapes will be attached to the top staff in this particular case.</i>
-
-<h3>6: polygon</h3>
-<p>A polygon requires a number of clicks. It will only complete after ctrl-clicking the canvas which closes its path.</p>
-<h3>8: text</h3>
-<p>When the text tool is selected, a text box will pop up which can be written to. The text will appear in the score after clicking at the desired location.</p>
-<h3>9: image</h3>
-<p>Bitmap and vector images can be placed with the image tool. Clicking on the canvas will open a file dialog and the image will be placed at the clicked location.</p>
-<h3>0: polycurve</h3>
-<p>click or drag to create bezier curve nodes and handles. To delete the previous node, press shift once. To finish the shape, ctrl-click on the canvas. The end point will snap to the starting point if it's close enough (which creates a closed path).</p>
-
 <illustration><img src="images/Picster/picster-image2-small.png"/></illustration>
-<i>Figure 2: The name of a Picster tool appears in the upper left-hand corner after pressing caps lock. Drawn shapes will be attached to the top staff in this particular case.</i>
+<i>The name of a Picster tool appears in the upper left-hand corner after pressing caps lock. Drawn shapes will be attached to the top staff in this particular case.</i>
+
+<h3><m>6</m>: polygon</h3>
+<techdetail>
+<p>A polygon requires a number of clicks. It will only complete after ctrl-clicking the canvas which closes its path.</p>
+</techdetail>
+
+<h3><m>8</m>: text</h3>
+<techdetail>
+<p>When the text tool is selected, a text box will pop up which can be written to. The text will appear in the score after clicking at the desired location.</p>
 
 <illustration><img src="images/Picster/picster-image3-small.png"/></illustration>
-<i>Figure 3: A text box opens when the text tool is selected.</i>
+<i>A text box opens when the text tool is selected.</i>
+
+</techdetail>
+
+<h3><m>9</m>: image</h3>
+<techdetail>
+<p>Bitmap and vector images can be placed with the image tool. Clicking on the canvas will open a file dialog and the image will be placed at the clicked location.</p>
+</techdetail>
+
+<h3><m>0</m>: polycurve</h3>
+<techdetail>
+<p>click or drag to create bezier curve nodes and handles. To delete the previous node, press shift once. To finish the shape, ctrl-click on the canvas. The end point will snap to the starting point if it's close enough (which creates a closed path).</p>
+</techdetail>
+
 
 <h2>Setting properties</h2>
-<p>Properties can be set by sending message to the canvas or bcanvas abstractions.</p>
+<p>Before drawing the shape, some properties (color, pensize, etc) can be set by: </p>
 <ul>
-  <li>Color: send picster <i>color</i> and four numbers between 0 and 1 to set rgba values.</li>
-  <li>Pensize: send <i>picster</i> pensize and one value to set line thickness</li>
-  <li>Arc: send picster <i>arc</i> and two values to set start and end of the arc. Values are given in radians.</li>
-  <li>Roundedness: send <i>picster</i> roundedness and one values to set the roundedness of a rounded rectangle</li>
-  <li>Font and font size: send <i>picster</i> font and <i>picster</i> fontsize to set the appearance of text</li>
-  <li>Property: sending picster <i>property</i> will determine whether a shape will be filled or not. Possible values are stroke or <i>fill</i>.</li>
-  
+  <li>using the <link name="03maxscore=PicsterTool">Picster tool</link> under the sidebar in the MaxScore Editor; or</li>
+  <li>sending messages to the MaxScore abstraction. (See the section "Creating Shapes via Messages" below)</li>
 </ul>
 
 <illustration><img src="images/Picster/picster-image4-small.png"/></illustration>
-<i>Figure 4: Color and other properties can be set by sending messages to the canvas before a shape is created</i>
+<i>Color set to red</i>
 
+<h2>Creating and Editing Shapes via Messages</h2>
+<p>Picster is integrated in the MaxScore API. The MaxScore abstraction can receives messages for the creation of shapes. These messages have the same result as drawing the shapes by hand, i.e. select the elements the shapes are supposed to be attached to first and set properties before the shapes are created.</p>
 
-<h2>Creating Shapes via Messages</h2>
-<p>Picster on Board also receives messages for the creation of shapes via the second inlet of the mascore.bcanvas abstraction. These messages have the same result as drawing the shapes by hand, i.e. select the elements the shapes are supposed to be attached to first and set properties before the shapes are created.</p>
-<p>The following messages can be used:</p>
+<h3>Adding shapes to staves or measures</h3>
+<p>MaxScore allows you to also attach shapes to measures or staves. This means that a shape will be shown automatically on every part should the score be split or rendered to multiple clients. It’s best used for global instructions that affect every members of an ensemble at once, such as tempo or overall dynamics.</p>
+<p>Set the preference by sending the following messages:</p>
 
 <ul>
-  <li>picster addShape offset1 offset2 line x1 x2 y1 y2</li>
-  <li>picster addShape offset1 offset2 rectangle x1 x2 y1 y2</li>
-  <li>picster addShape offset1 offset2 rounded_rectangle x1 x2 y1 y2</li>
-  <li>picster addShape offset1 offset2 oval x1 x2 y1 y2</li>
-  <li>picster addShape offset1 offset2 arc x1 x2 y1 y2</li>
-  <li>picster addShape offset1 offset2 polygon x1 x2 y1 y2 ... xn yn</li>
-  <li>picster addShape offset1 offset2 polyline x1 x2 y1 y2 ... xn yn</li>
-  <li>picster addShape offset1 offset2 text “what’s up”</li>
-  <li>picster addShape offset1 offset2 image "path_to_image/image.png"*</li>
+  <li>picster preference staff</li>
+  <li>picster preference measure</li>
   
 </ul>
 
-<p>The offset are applied in terms of absolute coordinates i.e. relative to the canvas’s origin. If you want to attach a shape relative to the coordinates of a score element, replace offset1 and offset2 each by periods, such as in</p>
+<h3>Setting properties</h3>
+<p>Specify properties for the upcoming shape by sending the following messages:</p>
+<techdetail>
+  <ul>
+    <li>
+      <p><m>picster color <i>[r] [g] [b] [a]</i></m></p>
+      <p>sets the color of the shape, each value from 0 to 1</p>
+    </li>
+    <li>
+      <p><m>picster pensize <i>[p]</i></m></p>
+      <p>sets line thickness in pixels</p>
+    </li>
+    <li>
+      <p><m>picster arc <i>[start] [end]</i></m></p>
+      <p>sets start and end points for arcs in radians</p>
+    </li>
+    <li>
+      <p><m>picster roundedness <i>[r]</i></m></p>
+      <p>sets the roundedness in pixels for a rounded rectangle</p>
+    </li>
+    <li>
+      <p><m>picster font <i>[font]</i></m></p>
+      <p>sets the font for texts</p>
+    </li>
+    <li>
+      <p><m>picster fontsize <i>[fontsize]</i></m></p>
+      <p>sets the font size for texts</p>
+    </li>
+    <li>
+      <p><m>picster property <i>[property]</i></m></p>
+      <p><m>stroke</m> or <m>fill</m>: determines whether a shape will be filled or not.</p>
+    </li>
+  </ul>
+</techdetail>
 
+<h3>Creating shapes</h3>
+<p>Create a new shape by sending the following messages:</p>
+<p>If the offsets are given in <i>numbers</i>, which will be applied in absolute coordinates relative to the canvas’s origin.</p>
+<p>If the offsets are given as <m>. .</m>, the shape will be placed relative to the coordinates of a score element.</p>
+<p>Example: <m>picster addShape . . line 20 20 50 70</m></p>
+<techdetail>
 <ul>
-  <li>picster addShape . . line x1 x2 y1 y2</li>
-  
+  <li>
+    <p><m>picster addShape <i>[xoffset] [yoffset]</i> line <i>[x1] [x2] [y1] [y2]</i></m></p>
+    <p>creates a line from (<m>x1</m>, <m>y1</m>) to (<m>x2</m>, <m>y2</m>)</p>
+  </li>
+  <li>
+    <p><m>picster addShape <i>[xoffset] [yoffset]</i> rectangle <i>[x1] [x2] [y1] [y2]</i></m></p>
+    <p>creates a rectangle from (<m>x1</m>, <m>y1</m>) to (<m>x2</m>, <m>y2</m>)</p>
+  </li>
+  <li>
+    <p><m>picster addShape <i>[xoffset] [yoffset]</i> rounded_rectangle <i>[x1] [x2] [y1] [y2]</i></m></p>
+    <p>creates a rounded rectangle from (<m>x1</m>, <m>y1</m>) to (<m>x2</m>, <m>y2</m>)</p>
+  </li>
+  <li>
+    <p><m>picster addShape <i>[xoffset] [yoffset]</i> oval <i>[x1] [x2] [y1] [y2]</i></m></p>
+    <p>creates an oval from (<m>x1</m>, <m>y1</m>) to (<m>x2</m>, <m>y2</m>)</p>
+  </li>
+  <li>
+    <p><m>picster addShape <i>[xoffset] [yoffset]</i> arc <i>[x1] [x2] [y1] [y2]</i></m></p>
+    <p>creates an arc from (<m>x1</m>, <m>y1</m>) to (<m>x2</m>, <m>y2</m>)</p>
+  </li>
+  <li>
+    <p><m>picster addShape <i>[xoffset] [yoffset]</i> polygon <i>[x1] [x2] [y1] [y2] ... [xn] [yn]</i></m></p>
+    <p>creates a closed polygon with corners at (<m>x1</m>, <m>y1</m>), (<m>x2</m>, <m>y2</m>), ...  (<m>xn</m>, <m>yn</m>).</p>
+  </li>
+  <li>
+    <p><m>picster addShape <i>[xoffset] [yoffset]</i> polyline <i>[x1] [x2] [y1] [y2]</i></m></p>
+    <p>creates a polyline with corners at (<m>x1</m>, <m>y1</m>), (<m>x2</m>, <m>y2</m>), ...  (<m>xn</m>, <m>yn</m>).</p>
+  </li>
+  <li>
+    <p><m>picster addShape <i>[xoffset] [yoffset]</i> text <i>[textstring]</i></m></p>
+    <p>creates a text element with the string <m>textstring</m></p>
+    <p>Example: <m>picster addShape . . text “what’s up”</m></p>
+  </li>
+  <li>
+    <p><m>picster addShape <i>[xoffset] [yoffset]</i> image <i>[path]</i></m></p>
+    <p>creates an image from the <m>path</m></p>
+    <p>Supported image types: PNG, TIFF, JPEG, SVG</p>
+  </li>
 </ul>
-<p><i>*supported image types are png, tiff, jpeg and svg</i></p>
+</techdetail>
+
+<h3>Picster Expressions</h3>
+<p>Picster expressions are in the Max <o>dict</o> format. You can add expressions to or remove expressions from an existing Picster shape.</p>
+<techdetail>
+  <ul>
+    <li>
+      <p><m>picster addExpressionToSelectedShape dictionary <i>[name]</i></m></p>
+      <p>adds Picster expression stored in the dict with name <m>[name]</m> to the selected shape</p>
+    </li>
+    <li>
+      <p><m>picster removeAllExpressionsFromSelectedShape</m></p>
+      <p>removes all expressions from the selected shape</p>
+    </li>
+  </ul>
+</techdetail>
+
+<h3>Button mode</h3>
+<techdetail>
+  <ul>
+    <li>
+      <p><m>picster buttonmode <i>[n]</i></m></p>
+      <p><m>1</m> or <m>0</m>, turns button mode on or off</p>
+    </li>
+  </ul>
+</techdetail>
+
+<h3>Transforming an existing shape</h3>
+<techdetail>
+  <ul>
+    <li>
+      <p><m>picster rotate <i>[theta]</i></m></p>
+      <p>rotates the selected shape by <m>theta</m> degrees</p>
+    </li>
+  </ul>
+</techdetail>
+
 
 <h2>Selecting, moving and deleting shapes</h2>
 
@@ -110,15 +229,6 @@
 <h2>Copy, cut and paste</h2>
 <p>A shape can be copied, cut and pasted and thus attached to a different score element. Use the c, x and v keys in Picster mode, but be aware of the fact that in order to select another score element, Picster mode needs to be first toggled off. Once the element is selected, Picster mode should to be activated again.</p>
 
-<h2>Adding shapes to staves or measures</h2>
-<p>MaxScore allows you to also attach shapes to measures in addition to staves. This means that a shape will be shown automatically on every part should the score be split or rendered to multiple clients. It’s best used for global instructions that affect every members of an ensemble at once, such as tempo or overall dynamics.</p>
-<p>Set the preference, by either pressing s for staff or m for measure, or by sending the following messages to the second inlet of bcanvas:</p>
-
-<ul>
-  <li>picster preference staff</li>
-  <li>picster preference measure</li>
-  
-</ul>
 
 <h2>Editing</h2>
 <p>Once a shape is selected it can also be edited after pressing the e (“edit”) key. This will open a text editor showing the properties of the shape in JSON format. The changes can be finalized by pressing the u (“update”) key. Note that if the fill property is supposed to be changed from fill to stroke or vice versa, the id (2nd line) of the shape will also need to be changed in order to take effect, i.e. a paintrect will have to be renamed to framerect, a paintoval to frameoval and so on.</p>
