@@ -4644,7 +4644,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-60",
@@ -6923,7 +6922,7 @@
 				"box" : 				{
 					"hint" : "Microtonal resolution to represent pitches",
 					"id" : "obj-148",
-					"items" : [ "to Max 1", ",", "to Max 2", ",", "Lumatone" ],
+					"items" : [ "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7882,7 +7881,7 @@
 						"live.tab" : [ 0.0 ],
 						"live.tab[1]" : [ 0.0 ],
 						"live.text" : [ 0.0 ],
-						"microtones[1]" : [ 2 ],
+						"microtones[1]" : [ 0 ],
 						"microtones[2]" : [ 1 ],
 						"start" : [ 6000 ],
 						"steps" : [ 12 ]

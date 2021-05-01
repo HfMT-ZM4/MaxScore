@@ -8,8 +8,61 @@
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 <h1>A Tour of the MaxScore Package</h1>
-<illustration><img src="images/Basics/Tour.png"/></illustration>
+<illustration><img src="images/Basics/Tour.png"  width="800"/></illustration>
 
+<h2>The MaxScore package consists of several groups of objects, abstractions and patchers.</h2>
+
+<h3>Objects &amp; Editors</h3>
+<p>
+<ul>
+<li>The MaxScore abstraction is a wrapper around a Java object implementing the Java Music Specification Language in Max. It was written by Nick Didkovsky who is also one the authors of JMSL. By using a wrapper, a number of new functions have been added, particularly in the way the MaxScore abstraction interacts with the canvas it renders to.</li>
+<li>MaxScore.Editor is a full-blown notation editor which consists of hundreds of abstractions, patchers and objects with the MaxScore abstraction at its core.</li>
+<li>Macaque.Editor is an editor for the transcription of spectral analysis files into music notation.</li>
+</ul>
+</p>
+<p>
+<h3>Display</h3>
+<ul>
+<li>maxscore.bcanvas is a bpatcher which contains the MaxScore renderer. Currently, it can render to three different contexts: 1. to its own canvas, 2. to a browser via drawsocket, 3. to a Jitter matrix </li>
+<li>maxscore.canvas is a variant of maxscore.bcanvas which features its own window which can be collapsed to avoid clutter.</li>
+<li>While maxscore.bcanvas and maxscore.canvas require a separate MaxScore instance for the generation of rendering messages, maxscore.icanvas is an "embedded" all-in-one solution with the added boon that it stores its content when saved or copied. </li>
+</ul>
+</p>
+<p>
+
+<h3>Playback</h3>
+<ul>
+<li>maxscore.makenote is an abstraction which adapts the playback of the MaxScore abstraction to various formats. It defaults to the format supported by the three MaxScore playback engines. All engines are polytimbral and microtonal. </li>
+<li>maxscore.fluidsynth2 is a playback engine which uses the IRCAM fluidsynth object.</li>
+<li>maxscore.sampler is a full-blown sampler which features its own user interface.</li>
+<li>maxscore.2conTimbre interfaces with the conTimbre ePlayer and imports files saved in conTimbre format.</li>
+</ul>
+</p>
+<h3>Parsing </h3>
+<p>
+<ul>
+<li>maxscore.parse2 parses a MaxScore JSON object into MaxScore messages sent out of individual outlets observing the hierarchy of the score data. These message can be intercepted and altered before fed into into another instance of MaxScore.</li>
+<li>maxscore.split2 splits a score into any number of subscores according to the staffgroups message. It receives its input from the maxscore.parse2 abstraction</li>
+<li>maxscore.bachToMaxScore converts the output of the bach.score and bach.roll object to MaxScore messages.</li>
+<li>musicxml2jmsl is a node.js script converting </li>
+</ul>
+</p>
+<h3>More parsing &amp; storing</h3>
+<p>
+<ul>
+<li>maxscore.xml2json converts XML score dumps into Max dictionaries which can be more easily queried and modified (even outside the MaxScore object). </li>
+<li>maxscore.json2xml converts Max dictionaries back into XML format. These scores can be sent to the second inlet of the MaxScore object.</li>
+<li>maxscore.store stores scores in XML format and exposes them to the pattr system thus enabling their use for presets.</li>
+</ul>
+</p>
+<h3>Network</h3>
+<p>
+<ul>
+<li>maxscore.net.send sends a score over a local network or the Internet</li>
+<li>maxscore.net.receive receives scores on a local network or the Internet</li>
+<li>drawsocket is a powerful system developed by Rama Gottfried for controlling browsers from within Max. MaxScore can thus send scores to browsers via drawsocket and animate them.</li>
+</ul>
+</p>
 <!--
 <seealsolist>
 <seealso name="js">Max JavaScript object</seealso>

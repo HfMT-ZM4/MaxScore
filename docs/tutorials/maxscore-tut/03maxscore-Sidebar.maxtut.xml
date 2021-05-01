@@ -4,7 +4,7 @@
 
 <chapter name="MaxScore: Sidebar">
 <previous name="03maxscore-preferencesView">MaxScore Editor: Preferences</previous>
-<next name="03maxscore-Tools">Sidebar: Tools</next>
+<next name="05maxscore-scorepions">Sidebar: Tools</next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
@@ -12,25 +12,56 @@
 <h1>MaxScore: Sidebar</h1>
 
 <p>On top of the right sidebar you can see four tab item:</p>
-<techdetail>
 <ol>
 <li>Tools</li>
 <li> Pitch Utility </li>
 <li> Scorepions </li>
 <li> Picster </li>
 </ol>
-</techdetail>
-<p>Each of these corresponds to specific features that you can use when creating your score.</p>
 
+<p>Each of these tabs corresponds to specific tools which feature their own GUI:</p>
 <p>Under <link type="tutorial" module="maxscore" name="03maxscore-Tools">Tools</link> you can customize the note durations or pauses, hide or modify note heads and other attributes, create beamings and note groups, add markings, as well as select key signatures, set the tempo, measure width, and pick various barlines.
-On this pane, you can also set pitch (see also Pitch Utility fot more choices), amplitude, duration, and text attributes. For advanced users, the "Inspect" button provides an option to inspect various elements or the entire score in JSON format.</p>
+O<illustration><img src="images/Basics/Tools.png" width="500" /></illustration>
+n this pane, you can also set pitch (see also Pitch Utility fot more choices), amplitude, duration, and text attributes. For advanced users, the "Inspect" button provides an option to inspect various elements or the entire score in JSON format.</p>
 
 <p>In the <link type="tutorial" module="maxscore" name="03maxscore-PitchUtility">Pitch Utility</link> you can perform a wide range of pitch-selection operations, apply transpositions in cent precision and take advantage of the possibility of entering microtonal scales with the Virtual Keyboards included in the Entry Tool menu on the bottom.</p>
+<illustration><img src="images/Basics/PitchUtility.png" width="300" /></illustration>
 
-<p>In the <link type="tutorial" module="maxscore" name="05maxscore-scorepions">Scorepions</link> provide a plugin structure for MaxScore which allow you to use existing Scorepions to perform various operations and to ultimately add your own patches to the repertoire. </p>
+<p><link type="tutorial" module="maxscore" name="05maxscore-scorepions">Scorepions</link> provide a plugin structure for MaxScore which allow you to use existing Max patches to process scores and to ultimately add your own plugins to the repertoire. </p>
+<p>The Scorepions currently included in the MaxScore package are:
+<ul>
+<li>Accent Threshold Transform</li>
+<li>Amplitude Crescendo Transform</li>
+<li>Amplitude to Dynamics Transform</li>
+<li>Artificial Harmonic Transform</li>
+<li>Augmentation-Diminuation Transform</li>
+<li>Chord to Melody Transform</li>
+<li>Create Click Track</li>
+<li>Diatonic Transposition Transform</li>
+<li>DJster Autobus-Scorepion</li>
+<li>Double Below Transform</li>
+<li>Dynamics To Amplitude Transform</li>
+<li>Enharmonic Spelling Transform</li>
+<li>Fill Empty Measures with Rests</li>
+<li>Fix Issues</li>
+<li>Inversion Transform</li>
+<li>Markov Operator</li>
+<li>Melody to Chord Transform</li>
+<li>Move Track Transform</li>
+<li>Retrograde Transform</li>
+<li>Scramble Transform</li>
+<li>Scrolling Score Creator</li>
+<li>Serial Transform</li>
+<li>Text To Picster Transform</li>
+<li>Zipper Transform</li>
+</ul>
+</p>
+<p>Selecting a Scorepions from the menu on top will load the Scorepion from disk which displays the instructions as to how to use it and its GUI elements.</p>
+<illustration><img src="images/Basics/Scorepions.png" width="350" /></illustration>
 
 <p>The <link type="tutorial" module="maxscore" name="03maxscore-PicsterTool">Picster</link> pane provides a GUI to the sophisticated graphics editor, designed to add various graphical elements or to create an entire graphical score with the ability to attach Expressions to every graphical element. Expressions contain messages which can be used to control the Max environment. </p>
+<illustration><img src="images/Basics/Picster.png" width="600" /></illustration>
 
-<p><i>You will find more information in the following chapters.</i> </p>
+<p><i>You will find more information on these four tools in the following chapters.</i> </p>
 
 </chapter>

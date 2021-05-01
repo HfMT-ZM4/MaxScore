@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 114.0, 53.0, 1521.0, 925.0 ],
+		"rect" : [ 243.0, 53.0, 1521.0, 925.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -567,7 +567,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 516.0, 183.0, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 69.0, 427.0, 100.0, 20.0 ],
+					"presentation_rect" : [ 69.0, 432.0, 100.0, 20.0 ],
 					"text" : "Create",
 					"textcolor" : [ 0.964705882352941, 0.964705882352941, 0.964705882352941, 1.0 ],
 					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -639,8 +639,16 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
+					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_proportion" : 0.5,
+					"bgfillcolor_type" : "color",
 					"id" : "obj-39",
-					"items" : "<empty>",
+					"items" : "Plateaus-Score-Page_1.png",
 					"maxclass" : "umenu",
 					"menumode" : 2,
 					"numinlets" : 1,
@@ -649,7 +657,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1175.200000000000045, 776.5, 206.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 105.0, 382.5, 142.0, 22.0 ]
+					"presentation_rect" : [ 105.0, 259.5, 149.0, 22.0 ]
 				}
 
 			}
@@ -701,7 +709,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 146.5, 362.5, 50.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 105.0, 331.5, 50.0, 22.0 ],
+					"presentation_rect" : [ 105.0, 368.5, 50.0, 22.0 ],
 					"tricolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"varname" : "start"
 				}
@@ -715,7 +723,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 71.5, 365.5, 69.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 4.0, 332.5, 94.0, 20.0 ],
+					"presentation_rect" : [ 4.0, 369.5, 94.0, 20.0 ],
 					"text" : "Start Offset",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -1272,7 +1280,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 75.0, 108.999999847656227, 355.0, 22.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ 53 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1371,11 +1379,11 @@
 												"val" : 												{
 													"new" : "image",
 													"id" : "Picster-Element_0",
-													"href" : "Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/Great White/Great White.png",
+													"href" : "Macintosh HD:/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/AFewPlateaus/Score/Plateaus-Score-Page_12.png",
 													"x" : 0,
 													"y" : 0,
-													"width" : 16113,
-													"height" : 951,
+													"width" : 756,
+													"height" : 600,
 													"transform" : "matrix(1,0,0,1,0,0)"
 												}
 
@@ -2150,7 +2158,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 594.5, 764.5, 65.0, 22.0 ],
-					"text" : "33.56875"
+					"text" : "12.6"
 				}
 
 			}
@@ -2264,7 +2272,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 551.5, 619.0, 50.0, 22.0 ],
-					"text" : "16113"
+					"text" : "9072"
 				}
 
 			}
@@ -2902,11 +2910,13 @@
 				"box" : 				{
 					"dontreplace" : 1,
 					"id" : "obj-35",
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 516.0, 227.0, 336.0, 22.0 ]
+					"patching_rect" : [ 516.0, 227.0, 336.0, 49.0 ],
+					"text" : "\"Macintosh HD:/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/AFewPlateaus/Score/\""
 				}
 
 			}
@@ -2942,7 +2952,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 46.5, 391.5, 94.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 4.0, 357.5, 94.0, 20.0 ],
+					"presentation_rect" : [ 4.0, 394.5, 94.0, 20.0 ],
 					"text" : "Playhead Offset",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -2956,7 +2966,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 86.5, 340.0, 54.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 4.0, 308.0, 75.0, 20.0 ],
+					"presentation_rect" : [ 4.0, 345.0, 75.0, 20.0 ],
 					"text" : "Duration",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -2970,7 +2980,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 76.5, 314.0, 64.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 4.0, 282.0, 75.0, 20.0 ],
+					"presentation_rect" : [ 4.0, 319.0, 75.0, 20.0 ],
 					"text" : "Composer",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -2984,7 +2994,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 65.5, 286.0, 75.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 4.0, 256.0, 75.0, 20.0 ],
+					"presentation_rect" : [ 4.0, 293.0, 75.0, 20.0 ],
 					"text" : "Score Name",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -3003,7 +3013,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 833.0, 78.0, 129.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 382.5, 100.0, 20.0 ],
+					"presentation_rect" : [ 4.0, 259.5, 100.0, 20.0 ],
 					"text" : "Open Project...",
 					"textcolor" : [ 0.964705882352941, 0.964705882352941, 0.964705882352941, 1.0 ],
 					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -3024,8 +3034,9 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 146.5, 285.0, 199.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 105.0, 255.0, 146.0, 22.0 ],
+					"presentation_rect" : [ 108.0, 292.0, 146.0, 22.0 ],
 					"rounded" : 2.0,
+					"text" : "a_few_plateaus",
 					"varname" : "score"
 				}
 
@@ -3042,7 +3053,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 146.5, 388.5, 50.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 105.0, 356.5, 50.0, 22.0 ],
+					"presentation_rect" : [ 105.0, 393.5, 50.0, 22.0 ],
 					"tricolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"varname" : "offset"
 				}
@@ -3061,7 +3072,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 146.5, 337.0, 50.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 105.0, 307.0, 50.0, 22.0 ],
+					"presentation_rect" : [ 105.0, 344.0, 50.0, 22.0 ],
 					"tricolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"varname" : "duration"
 				}
@@ -3077,8 +3088,9 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 146.5, 311.0, 199.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 105.0, 281.0, 146.0, 22.0 ],
+					"presentation_rect" : [ 108.0, 318.0, 146.0, 22.0 ],
 					"rounded" : 2.0,
+					"text" : "alexander schubert",
 					"varname" : "composer"
 				}
 
@@ -3107,8 +3119,8 @@
 					"patching_rect" : [ 35.0, 79.5, 199.0, 152.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 8,
-					"presentation_rect" : [ 4.0, 129.0, 249.0, 123.0 ],
-					"text" : "This Scorepion creates scrolling scores à la Decibel ScorePlayer. \n\nSelect a folder containing images to be attached to the score according to the settings below. The image files need to numbered (starting with 1).\nThis Scorepion creates a new score.",
+					"presentation_rect" : [ 4.0, 129.0, 255.0, 123.0 ],
+					"text" : "This Scorepion creates scrolling scores à la Decibel ScorePlayer. \n\nSelect a folder containing images to be attached to the score according to the settings below. The image files need to be numbered (starting with _1).\nThis Scorepion creates a new score.",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
 

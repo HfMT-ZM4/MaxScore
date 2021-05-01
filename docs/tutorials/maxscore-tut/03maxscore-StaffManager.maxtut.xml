@@ -3,7 +3,7 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore Editor: Staff Manager">
-<previous name="02maxscore-01basics">MaxScore Editor: Basics</previous>
+<previous name="01maxscore-userInterface">MaxScore: The User Interface</previous>
 <next name="03maxscore-preferencesView"></next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
@@ -15,8 +15,6 @@
 
 <p>If you wish to add a new staff go to the “Edit” menu on the upper left-hand side of the window and select “Add staff”. </p>
 <p>You can now change the behaviour of each staff separately in the Staff Manager.</p>
-
-<h2>Staff Manager</h2>
 
 <illustration><img src="images/Basics/StaffManager.png"/></illustration>
 

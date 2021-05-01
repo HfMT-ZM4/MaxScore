@@ -2,13 +2,13 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="Graphics">
+<chapter name="Graphics in MaxScore">
 <previous name="07maxscore-microtones">MaxScore: Preferences</previous>
 <next name="08maxscore-playback">Playback</next>
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 
-<h1>Graphics</h1>
+<h1>Graphics in MaxScore</h1>
 
 <p>Picster is the mode in which the user can create and edit custom graphics</p>
 
