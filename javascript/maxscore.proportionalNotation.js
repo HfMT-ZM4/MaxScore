@@ -158,19 +158,19 @@ for(var event in anchors){
 	outlet(0, "selectNote", anchor[2], anchor[3], anchor[4], anchor[5]);
 	if (anchor[6] != -1) {
 		for (var i = 0; i <= anchor[6]; i++) outlet(0, "selectNextInterval");
-		outlet(0, "getSelectedNoteInfo");
 	}
-	else outlet(0, "getNoteInfo", anchor[2], anchor[3], anchor[4], anchor[5]);
-	var key = Object.keys(json);	
-	var hold = parseFloat(json["selectedNotes"][0][key]["@HOLD"]) * (60 / tempo[anchor[2]]);
-	var vel = json["selectedNotes"][0][key]["@VELOCITY"];
-	var pitch = json["selectedNotes"][0][key]["@PITCH"];
+	//else outlet(0, "getNoteInfo", anchor[2], anchor[3], anchor[4], anchor[5]);
+	outlet(0, "getSelectedNoteInfo");
+	var key = json["selectedNotes"][".ordering"][0];
+	var hold = parseFloat(json["selectedNotes"][key][0]["@HOLD"]) * (60 / tempo[anchor[2]]);
+	var vel = json["selectedNotes"][key][0]["@VELOCITY"];
+	var pitch = json["selectedNotes"][key][0]["@PITCH"];
 	outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-	if ("userBean" in json["selectedNotes"][0][key]){
+	if ("userBean" in json["selectedNotes"][key]){
 		var userBeans = [];
-		var occurence = getAllIndexes(json["selectedNotes"][0][key][".ordering"], "userBean");
+		var occurence = getAllIndexes(json["selectedNotes"][key][".ordering"], "userBean");
 		for (var i = 0; i < occurence.length; i++) {
-			userBeans[i] = json["selectedNotes"][0][key]["userBean"][i];
+			userBeans[i] = json["selectedNotes"][key]["userBean"][i];
 			}
 	for (var i = 0; i < userBeans.length; i++) {
 	if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -187,16 +187,16 @@ for(var event in anchors){
 		}
 	}
 	}
-	var visibleNote = json["selectedNotes"][0][key]["@VISIBLE"];
-	if (json["selectedNotes"][0][key]["@ACCINFO"] == 0) outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_NEVER");
+	var visibleNote = json["selectedNotes"][key][0]["@VISIBLE"];
+	if (json["selectedNotes"][key][0]["@ACCINFO"] == 0) outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_NEVER");
 	else outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_ALWAYS");
 	if (vel == 0. && pitch == 0.) {
 		//outlet(0, "setNoteVisible", "false");
 		selectionBuffer.push(anchor.slice(2));
 		}
 	else {
-	if (json["selectedNotes"][0][key]["@SLUROUT"] == "true") outlet(0, "slurTransform");	
-	if (json["selectedNotes"][0][key]["@TIEDOUT"] == "true")
+	if (json["selectedNotes"][key][0]["@SLUROUT"] == "true") outlet(0, "slurTransform");	
+	if (json["selectedNotes"][key][0]["@TIEDOUT"] == "true")
 	{
 		currentAnchor = anchor.slice(2, 7);
 		if (visibleNote == "true") 		
@@ -211,8 +211,9 @@ for(var event in anchors){
 		nextAnchor = singleAnchor.slice(2, 7);
 		if (currentAnchor[1] != nextAnchor[1]) break;
 		outlet(0, "getSelectedNoteInfo");
-		held[json["selectedNotes"][0]["note"]["@PITCH"]] = [json["selectedNotes"][0]["note"]["@TIEDOUT"], json["selectedNotes"][0]["note"]["@HOLD"]];
-		if (json["selectedNotes"][0]["note"]["@PITCH"] == pitch) {
+		//post("pitch", pitch, json["selectedNotes"]["note"]["@PITCH"], "\n");
+		held[json["selectedNotes"]["note"][0]["@PITCH"]] = [json["selectedNotes"]["note"][0]["@TIEDOUT"], json["selectedNotes"]["note"][0]["@HOLD"]];
+		if (json["selectedNotes"]["note"][0]["@PITCH"] == pitch) {
 			//outlet(0, "setNoteVisible", "false");
 			selectionBuffer.push(nextAnchor);
 			}
@@ -222,8 +223,8 @@ for(var event in anchors){
 		for (var i = 0; i < chord; i++) {
 			outlet(0, "selectNextInterval");
 			outlet(0, "getSelectedNoteInfo");
-			held[json["selectedNotes"][0]["interval"]["@PITCH"]] = [json["selectedNotes"][0]["interval"]["@TIEDOUT"], json["selectedNotes"][0]["interval"]["@HOLD"]];		
-			if (json["selectedNotes"][0]["interval"]["@PITCH"] == pitch) {
+			held[json["selectedNotes"]["interval"][0]["@PITCH"]] = [json["selectedNotes"]["interval"][0]["@TIEDOUT"], json["selectedNotes"]["interval"][0]["@HOLD"]];		
+			if (json["selectedNotes"]["interval"][0]["@PITCH"] == pitch) {
 				//outlet(0, "setNoteVisible", "false");
 				selectionBuffer.push(singleAnchor.slice(2, 6).concat(i));
 				}
@@ -332,20 +333,20 @@ single = 0;
 outlet(0, "getNoteAnchor");
 outlet(0, "clearSelection");
 for(var event in anchors){
-	gc();
+	//gc();
 	anchor = anchors[event];
 	outlet(0, "selectNote", anchor[2], anchor[3], anchor[4], anchor[5]);
 	if (anchor[6] != -1) for (var i = 0; i <= anchor[6]; i++) outlet(0, "selectNextInterval");
 	outlet(0, "getSelectedNoteInfo");
-	var key = Object.keys(json);	
-	var hold = json["selectedNotes"][0][key]["@HOLD"];
-	var vel = json["selectedNotes"][0][key]["@VELOCITY"];
+	var key = json["selectedNotes"][".ordering"][0];
+	var hold = json["selectedNotes"][key][0]["@HOLD"];
+	var vel = json["selectedNotes"][key][0]["@VELOCITY"];
 	outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-	if ("userBean" in json[key]){
+	if ("userBean" in json["selectedNotes"][key]){
 	var userBeans = [];
-	var occurence = getAllIndexes(json["selectedNotes"][0][key][".ordering"], "userBean");
+	var occurence = getAllIndexes(json["selectedNotes"][key][".ordering"], "userBean");
 	for (var i = 0; i < occurence.length; i++) {
-		userBeans[i] = json["selectedNotes"][0][key]["userBean"][i];
+		userBeans[i] = json["selectedNotes"][key]["userBean"][i];
 		}
 	for (var i = 0; i < userBeans.length; i++) {
 	if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -448,7 +449,6 @@ function scroll()
 				from = -1 * scoreOffset * factor  * zoom / 0.5;
  				to = -1 * scoreSize * factor  * zoom / 0.5
  				dur = (scoreSize - scoreOffset) * factor / timeUnit * 1000. * zoom / 0.5;
-			post(from,to, dur, "\n");
 			}
 			outlet(1, "scroll", from, to, dur);
 		break;

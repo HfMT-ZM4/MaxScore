@@ -279,7 +279,8 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "dictionary", "", "" ],
 									"patching_rect" : [ 10.0, 231.0, 162.812775999999957, 22.0 ],
-									"text" : "MaxScore"
+									"text" : "MaxScore",
+									"varname" : "MaxScore[1]"
 								}
 
 							}
@@ -316,7 +317,8 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "dictionary", "", "" ],
 									"patching_rect" : [ 58.25, 526.0, 67.0, 22.0 ],
-									"text" : "MaxScore"
+									"text" : "MaxScore",
+									"varname" : "MaxScore"
 								}
 
 							}
@@ -1003,6 +1005,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.parseJSON.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
+				"patcherrelativepath" : "../../../Library/MaxScore",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.json.iter.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
@@ -1094,8 +1103,8 @@
 			}
 , 			{
 				"name" : "swissarmyknife.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -1180,6 +1189,20 @@
 				"name" : "maxscore.xml2json.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "my-LtoColl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}

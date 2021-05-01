@@ -72,9 +72,9 @@ function msg_int(v)
 
 function anything()
 {
-	//if (messagename == "true") state = true;
-	//else if (messagename == "false") state = false;
-	state = Boolean(messagename);
+	if (messagename == "true") state = true;
+	else if (messagename == "false") state = false;
+	//state = Boolean(messagename);
 	mgraphics.redraw();
 	notifyclients();
 	outlet(0, state.toString());
