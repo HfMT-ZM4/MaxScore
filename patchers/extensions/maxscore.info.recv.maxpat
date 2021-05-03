@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 350.0, 402.0, 441.0, 461.0 ],
+		"rect" : [ 193.0, -880.0, 441.0, 461.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,7 +69,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 113.0, 253.0, 80.0, 22.0 ],
+					"patching_rect" : [ 113.0, 253.0, 163.0, 22.0 ],
 					"text" : "loadmess  #1"
 				}
 
@@ -141,7 +141,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 231.0, 355.0, 178.0, 22.0 ],
+					"patching_rect" : [ 231.0, 355.0, 185.0, 22.0 ],
 					"text" : "loadmess dict #1"
 				}
 
@@ -214,7 +214,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 174.5, 111.0, 205.0, 22.0 ],
+					"patching_rect" : [ 174.5, 111.0, 212.0, 22.0 ],
 					"text" : "loadmess set #1-relay"
 				}
 

@@ -242,8 +242,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 367.0, 420.5, 42.0, 22.0 ],
-					"text" : "* 120."
+					"patching_rect" : [ 367.0, 420.5, 39.0, 22.0 ],
+					"text" : "* 115."
 				}
 
 			}
@@ -370,7 +370,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 418.5, 420.5, 66.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 2 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2005,7 +2005,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 243.75, 436.0, 240.0, 22.0 ],
-													"restore" : [ 1 ],
+													"restore" : [ 2 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -2036,7 +2036,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 264.75, 353.0, 240.0, 22.0 ],
-													"restore" : [ 1 ],
+													"restore" : [ 2 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -10992,13 +10992,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-58",
-					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 51.0, 577.833374000000049, 546.5, 52.0 ],
-					"text" : "selectAll, execNotePropertiesTransform com.softsynth.jmsl.score.transforms.SpellingTransformLineOfFifthsRule, autoBeamTransform, clearSelection, deleteStaff $1, setRenderAllowed 1"
+					"patching_rect" : [ 51.0, 577.833374000000049, 482.0, 23.0 ],
+					"text" : "selectAll, autoBeamTransform, clearSelection, deleteStaff $1, setRenderAllowed 1"
 				}
 
 			}

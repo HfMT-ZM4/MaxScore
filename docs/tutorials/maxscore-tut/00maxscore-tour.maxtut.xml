@@ -6,6 +6,7 @@
 <previous name="00maxscore-installation">Welcome to MaxScore!</previous>
 <next name="01maxscore-userInterface">MaxScore: The User Interface</next>
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+<setdocpatch name="MaxScore-Tour" patch="0tut-Tour.maxpat"/>
 
 <h1>A Tour of the MaxScore Package</h1>
 <illustration><img src="images/Basics/Tour.png"  width="800"/></illustration>
@@ -62,6 +63,10 @@
 <li>maxscore.net.receive receives scores on a local network or the Internet</li>
 <li>drawsocket is a powerful system developed by Rama Gottfried for controlling browsers from within Max. MaxScore can thus send scores to browsers via drawsocket and animate them.</li>
 </ul>
+</p>
+
+<illustration><img src="images/Basics/MaxScore-Dictionary.png"  width="700"/></illustration>
+<p>Since the MaxScore and the canvas it renders to can be controlled with a large number of messages, we have create a dictionary with a simple search functionality for the lookup of those messages.
 </p>
 <!--
 <seealsolist>
