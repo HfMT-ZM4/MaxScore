@@ -21,8 +21,8 @@
 
 <p>Each of these tabs corresponds to specific tools which feature their own GUI:</p>
 <p>Under <link type="tutorial" module="maxscore" name="03maxscore-Tools">Tools</link> you can customize the note durations or pauses, hide or modify note heads and other attributes, create beamings and note groups, add markings, as well as select key signatures, set the tempo, measure width, and pick various barlines.
-O<illustration><img src="images/Basics/Tools.png" width="500" /></illustration>
-n this pane, you can also set pitch (see also Pitch Utility fot more choices), amplitude, duration, and text attributes. For advanced users, the "Inspect" button provides an option to inspect various elements or the entire score in JSON format.</p>
+<illustration><img src="images/Basics/Tools.png" width="500" /></illustration>
+On this pane, you can also set pitch (see also Pitch Utility fot more choices), amplitude, duration, and text attributes. For advanced users, the "Inspect" button provides an option to inspect various elements or the entire score in JSON format.</p>
 
 <p>In the <link type="tutorial" module="maxscore" name="03maxscore-PitchUtility">Pitch Utility</link> you can perform a wide range of pitch-selection operations, apply transpositions in cent precision and take advantage of the possibility of entering microtonal scales with the Virtual Keyboards included in the Entry Tool menu on the bottom.</p>
 <illustration><img src="images/Basics/PitchUtility.png" width="300" /></illustration>

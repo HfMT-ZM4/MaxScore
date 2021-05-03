@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 10,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,6 +40,36 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-4",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 173.038835883140564, 144.0, 63.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "read $1, 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 20.0, 85.029127597808838, 66.0, 22.0 ],
+					"text" : "route bang",
+					"varname" : "Fluidsynth2[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Ableton Sans Light",
 					"id" : "obj-11",
 					"lastchannelcount" : 2,
@@ -53,6 +83,18 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 7.0, 175.0, 303.0, 52.0 ],
 					"saved_attribute_attributes" : 					{
+						"tribordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"trioncolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_invisible" : 2,
 							"parameter_longname" : "mc.live.gain~[1]",
@@ -96,7 +138,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 20.0, 55.0, 176.0, 22.0 ],
-					"text" : "routepass read write"
+					"text" : "route read write"
 				}
 
 			}
@@ -111,8 +153,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 10,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -157,8 +199,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1031,6 +1073,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-65",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
@@ -1067,8 +1110,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1430,8 +1473,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1968,8 +2011,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2158,6 +2201,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-54",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2432,8 +2476,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2621,6 +2665,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-25",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2954,8 +2999,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4122,6 +4167,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-23",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
@@ -4425,7 +4471,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 20.0, 159.5, 181.0, 22.0 ],
+					"patching_rect" : [ 20.0, 159.5, 70.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4441,7 +4487,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-49",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -4470,6 +4516,22 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextoncolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_longname" : "live.text[20]",
@@ -4505,6 +4567,22 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 211.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextoncolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_longname" : "live.text[21]",
@@ -4669,11 +4747,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "panic" ],
 					"patching_rect" : [ 20.0, 13.0, 25.0, 25.0 ]
 				}
 
@@ -4682,7 +4760,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-33",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -4847,7 +4925,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 1 ],
-					"midpoints" : [ 191.5, 190.0, 80.5, 190.0 ],
+					"midpoints" : [ 80.5, 190.0, 80.5, 190.0 ],
 					"source" : [ "obj-23", 1 ]
 				}
 
@@ -4861,6 +4939,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"midpoints" : [ 29.5, 111.5, 250.5, 111.5 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"midpoints" : [ 76.5, 134.95145446062088, 182.538835883140564, 134.95145446062088 ],
+					"source" : [ "obj-3", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
 					"midpoints" : [ 108.0, 111.5, 310.5, 111.5 ],
 					"source" : [ "obj-35", 1 ]
@@ -4869,17 +4963,23 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"midpoints" : [ 29.5, 111.5, 250.5, 111.5 ],
+					"destination" : [ "obj-23", 0 ],
+					"midpoints" : [ 186.5, 122.466019630432129, 29.5, 122.466019630432129 ],
+					"source" : [ "obj-35", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-35", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
-					"midpoints" : [ 186.5, 138.0, 29.5, 138.0 ],
-					"source" : [ "obj-35", 2 ]
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -4898,105 +4998,13 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-11" : [ "mc.live.gain~[1]", "mc.live.gain~", 0 ],
-			"obj-24::obj-10::obj-7" : [ "sound[24]", "sound", 0 ],
-			"obj-24::obj-11::obj-7" : [ "sound[23]", "sound", 0 ],
-			"obj-24::obj-12::obj-7" : [ "sound[22]", "sound", 0 ],
-			"obj-24::obj-13::obj-7" : [ "sound[21]", "sound", 0 ],
-			"obj-24::obj-14::obj-7" : [ "sound[20]", "sound", 0 ],
-			"obj-24::obj-15::obj-7" : [ "sound[19]", "sound", 0 ],
-			"obj-24::obj-16::obj-7" : [ "sound[18]", "sound", 0 ],
-			"obj-24::obj-17::obj-7" : [ "sound[17]", "sound", 0 ],
-			"obj-24::obj-18::obj-7" : [ "sound[16]", "sound", 0 ],
-			"obj-24::obj-19::obj-7" : [ "sound[15]", "sound", 0 ],
-			"obj-24::obj-20::obj-7" : [ "sound[14]", "sound", 0 ],
-			"obj-24::obj-21::obj-7" : [ "sound[13]", "sound", 0 ],
-			"obj-24::obj-22::obj-7" : [ "sound[12]", "sound", 0 ],
-			"obj-24::obj-23::obj-7" : [ "sound[11]", "sound", 0 ],
-			"obj-24::obj-24::obj-7" : [ "sound[10]", "sound", 0 ],
-			"obj-24::obj-25::obj-7" : [ "sound[9]", "sound", 0 ],
-			"obj-24::obj-26::obj-7" : [ "sound[8]", "sound", 0 ],
-			"obj-24::obj-27::obj-7" : [ "sound[7]", "sound", 0 ],
-			"obj-24::obj-28::obj-7" : [ "sound[6]", "sound", 0 ],
-			"obj-24::obj-29::obj-7" : [ "sound[5]", "sound", 0 ],
-			"obj-24::obj-30::obj-7" : [ "sound[4]", "sound", 0 ],
-			"obj-24::obj-31::obj-7" : [ "sound[3]", "sound", 0 ],
-			"obj-24::obj-32::obj-7" : [ "sound[2]", "sound", 0 ],
-			"obj-24::obj-33::obj-7" : [ "sound[1]", "sound", 0 ],
-			"obj-24::obj-34::obj-7" : [ "sound", "sound", 0 ],
-			"obj-24::obj-3::obj-7" : [ "sound[31]", "sound", 0 ],
-			"obj-24::obj-4::obj-7" : [ "sound[30]", "sound", 0 ],
-			"obj-24::obj-5::obj-7" : [ "sound[29]", "sound", 0 ],
-			"obj-24::obj-6::obj-7" : [ "sound[28]", "sound", 0 ],
-			"obj-24::obj-7::obj-7" : [ "sound[27]", "sound", 0 ],
-			"obj-24::obj-8::obj-7" : [ "sound[26]", "sound", 0 ],
-			"obj-24::obj-9::obj-7" : [ "sound[25]", "sound", 0 ],
-			"obj-40" : [ "live.text[21]", "live.text", 0 ],
-			"obj-8::obj-22" : [ "Edit Button[2]", "Edit Button", 0 ],
-			"obj-9" : [ "live.text[20]", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "maxscore.fluidsynthGUI.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/Components",
-				"patcherrelativepath" : "./Components",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fixpathissue.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.fluidsynth.menus.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/Components",
-				"patcherrelativepath" : "./Components",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.fluidsynth.instrument.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/Components",
-				"patcherrelativepath" : "./Components",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Blackwood - 23 notes FluidSynth Prefs.json",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/examples/Scores",
-				"patcherrelativepath" : "../../examples/Scores",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.fluidsynth2-player.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/Components",
-				"patcherrelativepath" : "./Components",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluidsynth~.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "comment_header_white_MaxScore",
 				"default" : 				{
-					"fontsize" : [ 18.0 ],
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"fontname" : [ "Ableton Sans Light" ],
 					"textjustification" : [ 1 ],
-					"fontname" : [ "Ableton Sans Light" ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"fontsize" : [ 18.0 ]
 				}
 ,
 				"parentstyle" : "",

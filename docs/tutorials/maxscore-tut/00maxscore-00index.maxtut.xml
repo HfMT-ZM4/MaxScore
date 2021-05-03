@@ -16,8 +16,10 @@
 <li><link type="tutorial" module="maxscore" name="03maxscore-Sidebar">MaxScore Editor: Sidebar</link></li>
 <li><link type="tutorial" module="maxscore" name="05maxscore-scorepions">MaxScore Editor: Scorepions</link></li>
 <li><link type="tutorial" module="maxscore" name="07maxscore-microtones">MaxScore Editor: Staff Styles</link></li>
-<li><link type="tutorial" module="maxscore" name="04maxscore-picster">Graphics in MaxScore</link></li>
-<li><link type="tutorial" module="maxscore" name="08maxscore-playback">Playback in MaxScore</link></li>
+<li><link type="tutorial" module="maxscore" name="09maxscore-API">MaxScore: API</link></li>
+<li><link type="tutorial" module="maxscore" name="04maxscore-picster">MaxScore: Graphics </link></li>
+<li><link type="tutorial" module="maxscore" name="10maxscore-expression">MaxScore: Expressions</link></li>
+<li><link type="tutorial" module="maxscore" name="08maxscore-playback">MaxScore: Playback</link></li>
 <li><link type="tutorial" module="maxscore" name="06maxscore-macaque">Macaque: Spectral Transcription</link></li>
 </ul>
 
