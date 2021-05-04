@@ -7,6 +7,7 @@
 <next name="06maxscore-macaque">Macaque</next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+<setdocpatch name="MaxScore-Playback" patch="MaxScore-Playback-Tutorial.maxpat"/>
 
 
 <h1>Playback in MaxScore</h1>
@@ -30,6 +31,8 @@
 <techdetail>
 <p> You can use a combo playback template accessing from File -> New From Template -> MaxScore -> Combo </p>
 </techdetail>
+
+<illustration><img src="images/playback/MaxScore-Playback-Tutorial.png"  width="900"/></illustration>
 
 
 </chapter>
