@@ -12,27 +12,44 @@
 
 <h1>Playback in MaxScore</h1>
 
-<p>MaxScore/LiveScore Sampler and MaxScore/LiveScore Fluidsynth are two playback patches/devices that were especially designed for the MaxScore/LiveScore Editor and its microtonal capabilities. So far, the combination of Editor and Sampler and/or Fluidsynth is the only way to consistently compose and playback microtonal music in Ableton Live and, therefore, rely on a communication protocol different from MIDI.</p>
-<illustration><img src="images/playback/FluidSynth2.png" width="350"/></illustration>
-<illustration><img src="images/playback/MaxScore-Sampler.png" width="350"/></illustration>
-<illustration><img src="images/playback/conTimbre.png" width="350"/></illustration>
-<illustration><img src="images/playback/Sample-Editor-Window.png"  width="600"/></illustration>
-
-<h2>Fluidsynth und Sound Fonts</h2>
-<p><br/> </p>
-<techdetail>
-<p><b>The Fluidsynth2 player is capable of using an abundance of sound fonts available on the Net. The default sound font is included in the installation but it can be also downloaded separately:</b></p></techdetail>
-
-<h2>Sampler and Sample Banks</h2>
-<p>The Sampler uses a propriety text-based format and has an editor built in.</p>
-
-<p><i><a href="http://georghajdu.de/computermusicnotation/wopre/wp-content/uploads/2012/08/Piano.zip">Piano.zip</a></i> 130 MB (a large collection of high-quality grand piano sounds sampled with and without pedal down). Used with kind permission from the Virtual Orchestra Collection (© Thomas Hummel).</p>
+<h2>maxscore.makenote</h2>
+<p>As we have mentioned before, MaxScore is an environment designed for the notation and playback of microtones. We are therefore using a MIDI-like protocol which indicates pitch in MIDI cents.</p>
+<p>The maxscore.makenote abstraction is used to convert the output of the MaxScore abstraction into the format understood by the MaxScore playback devices:</p>
 
 <techdetail>
-<p> You can use a combo playback template accessing from File -> New From Template -> MaxScore -> Combo </p>
+Note on: note 6000 78 1<br/>
+Note off: note 6000 0 1
 </techdetail>
 
+<p>The three numbers denote pitch (in MIDI cents), velocity and channel.</p>
+<p>The maxscore.makenote object also receives a dictionary containing the Picster expressions attached to notes and intervals. These expressions will be looked up during playback and sent out to the parent patcher via the second outlet.</p>
+
+<h2>Playback Devices</h2>
+Currently three playback devices are available for sound generation
+
+<p>MaxScore/LiveScore Sampler and MaxScore/LiveScore Fluidsynth2 are two playback patches/devices that were especially designed for the MaxScore/LiveScore Editor and its microtonal capabilities. So far, the combination of Editor and Sampler and/or Fluidsynth is the only way to consistently compose and playback microtonal music in Ableton Live.</p>
+
+<h3>Fluidsynth und Sound Fonts</h3>
+<illustration><img src="images/playback/FluidSynth2.png" width="350"/></illustration>
+<p><br/> </p>
+<techdetail>
+<p><b>The Fluidsynth2 player is capable of using an abundance of sound fonts available on the Net.</b></p></techdetail>
+<p>In our tutorial patch you will see a score by the American composer Easley Blackwood in 23-tone equal temperament. Turn on audio and press the start button to begin playback. You can also experiment with setLoopingPlayback and setSection messages. To play a section use playSection message instead of start. Turn Overdrive on when you notice that playback is not even.</p>
 <illustration><img src="images/playback/MaxScore-Playback-Tutorial.png"  width="900"/></illustration>
+
+<h3>Sampler and Sample Banks</h3>
+<illustration><img src="images/playback/MaxScore-Sampler.png" width="350"/></illustration>
+<p>The Sampler uses a propriety text-based format with an built-in editor. There will be a separate tutorial on how to use the sampler and its GUI.</p>
+<illustration><img src="images/playback/Sample-Editor-Window.png"  width="600"/></illustration>
+
+<p><i><a href="http://georghajdu.de/computermusicnotation/wopre/wp-content/uploads/2012/08/Piano.zip">Download</a></i> a bank file with high-quality grand piano sounds sampled with and without pedal down. Used with kind permission from the Virtual Orchestra Collection (© Thomas Hummel).</p>
+<techdetail>
+<p>For your convenience, open the Combo template from Max File menu>New>From Template>MaxScore>Combo. It contains the Editor as well as two playback devices.</p>
+</techdetail>
+
+<h3>conTimbre Support</h3>
+<p>The maxscore.2conTimbre interfaces with the conTimbre ePlayer and also opens its preset files. Go to <a href="https://www.contimbre.com/en">conTimbre</a> for more information on this sound library.</p>
+<illustration><img src="images/playback/conTimbre.png" width="350"/></illustration>
 
 
 </chapter>

@@ -7,17 +7,26 @@
 <next name="06maxscore-macaque">Macaque</next>
 
 <parent name="00maxscore-00index">MaxScore: Exporting to SVG and PDF</parent>
+<!--
 <setdocpatch name="MaxScore-API" patch="MaxScore-Export-Tutorial.maxpat"/>
-
+-->
 
 <h1>MaxScore: Exporting to SVG and PDF</h1>
-
+<h2>SVG Export</h2>
+<p>The format MaxScore renders in is SVG, the scalable vector graphics format. This format is widely supported by browsers and other tools such as the MGraphics language available for the JSUI and jitter.mgraphics objects. To export the current page, can can send the "writeSVG (file-path)" message to the canvas or "canvas writeSVG (file-path)" to the MaxScore Editor or maxscore.icanvas, resp.</p>
+<p>In the Editor you can also select "Save Page as SVG..." and use the save dialog to save the current page to disk.</p>
 <illustration><img src="images/Export/MaxScore-file-menu.png"  width="200"/></illustration>
-<illustration><img src="images/Export/MaxScore-part-extraction.png"  width="800"/></illustration>
+
+<h2>PDF Generation</h2>
+<p>The Editor will also allow you to create a PDF file of your entire score, a range of pages or selected staves via the Java-based Batik API. For this, choose "Generate PDF" which will open the preview window with a number of choices resembling a standard print dialog.</p> 
+<p>The small preview of your score is actually a real score which you can still modify on the fly. Pressing the "Create PDF" button causes a save dialog to open. Printing will create a temporary folder with individual SVG and PDF files which can be preserved if the "Keep SVG Files" check box is checked.</p>
+<p>The actual PDF generation might take a while depending on the size of your score. Once the process has finished, the resulting file will open in your default PDF reader.</p>
+
 <illustration><img src="images/Export/MaxScore-PDF-GUI.png"  width="600"/></illustration>
 
-<p>In a previous chapter we have seen that scores can be created using the GUI that Editor offers. However, complex scores can also be created with the API the Max Java object provides (for which the MaxScore abstraction serves as a wrapper).</p>
-<p>In this chapter we will recreate the score shown in <link type="tutorial" module="maxscore" name="01maxscore-userInterface">MaxScore Editor: The User Interface</link> by sending messages to the maxscore.icanvas abstraction. A list of all possible messages can be found in the MaxScore Dictionary (see Max menu>Extras>MaxScore).</p>
-<p>Messages can be sent separately or all at once. When sending a large amount of messages it is recommended that rendering be turned off to avoid repeated redrawing of the score. We can achieve this by sending the "newScore 1 2 800 200 false" message and turn rendering on again with "setRenderAllowed 1"</p>
+<h2>Part Extraction</h2>
+<p>You can also choose to only print single staves or groups thereof. To specify which staves will be included in the PDF generation, go to the Staff Manager and uncheck the blue buttons in the Print column for the staves you don't want to appear the final document. You can also verify your selection in the preview window which will only show the checked staves.</p>
+
+<illustration><img src="images/Export/MaxScore-part-extraction.png"  width="800"/></illustration>
 
 </chapter>
