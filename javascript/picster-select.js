@@ -1688,11 +1688,13 @@ function init() {
 	var expr = new Dict();
 	var e = new Dict();
 	var o = {};
-	outlet(0, "getNoteAnchor");
 	var _anchors = {};
 	var _count = -1;
-	for(var key in anchors)
-		if(anchors[key][5] != -1) _anchors[key] = anchors[key];
+	outlet(0, "getSelectionBufferSize");
+	if (selectionBufferSize > 0) {
+	outlet(0, "getNoteAnchor");
+	for(var key in anchors) if(anchors[key][5] != -1) _anchors[key] = anchors[key];
+	}
 	outlet(0, "setRenderAllowed", 0);
 	//outlet(0, "resortChords", 0);
 	//outlet(0, "clearSelection");
@@ -1701,7 +1703,7 @@ function init() {
 	var numMeasures = getAllIndexes(json["jmslscoredoc"]["score"][0][".ordering"], "measure").length;
 	var numStaves = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0][".ordering"], "staff").length;
 	var numTracks = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0]["staff"][0][".ordering"], "track").length;
-	post("num", numMeasures, numStaves, numTracks, "\n");
+	//post("num", numMeasures, numStaves, numTracks, "\n");
 	for(var i = 0; i < numMeasures; i++) {
 		for(var j = 0; j < numStaves; j++) {
 			for(var k = 0; k < numTracks; k++) {
@@ -1814,7 +1816,8 @@ function init() {
 	}
 	expr.parse(JSON.stringify(o));
 	outlet(1, "dictionary", expr.name);
-	restoreSelection(_anchors);
+	if (selectionBufferSize > 0) restoreSelection(_anchors);
+	outlet(0, "clearSelection");
 	outlet(0, "setRenderAllowed", 1);
 	mode = currentMode;
 }
