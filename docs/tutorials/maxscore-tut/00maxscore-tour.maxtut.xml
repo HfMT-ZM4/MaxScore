@@ -4,7 +4,7 @@
 
 <chapter name="A Tour of the MaxScore Package">
 <previous name="00maxscore-installation">Welcome to MaxScore!</previous>
-<next name="01maxscore-userInterface">MaxScore: The User Interface</next>
+<next name="01maxscore-userInterface">MaxScore: First Steps</next>
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 <setdocpatch name="MaxScore-Tour" patch="0tut-Tour.maxpat"/>
 
