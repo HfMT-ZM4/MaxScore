@@ -376,6 +376,7 @@
 					"presentation_rect" : [ 0.0, 0.0, 222.0, 20.0 ],
 					"prototypename" : "Classic",
 					"rounded" : 0.0,
+					"text" : "measure",
 					"textcolor" : [ 0.988235294117647, 0.988235294117647, 1.0, 1.0 ],
 					"varname" : "search"
 				}
@@ -605,7 +606,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 664.0, 1086.0, 44.0 ],
 					"rounded" : 0.0,
-					"text" : "GlissandoTransform | - | toggle glissando out for selected notes | GlissandoTransform",
+					"text" : "setSingleBar | measure (int) | set barline to single | setSingleBar 0",
 					"textcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
 				}
 
@@ -786,7 +787,7 @@
 					"rows" : 293,
 					"selmode" : 3,
 					"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
-					"stcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
+					"stcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"varname" : "list_display"
 				}
 

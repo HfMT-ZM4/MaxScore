@@ -2,17 +2,19 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="MaxScore: API">
-<previous name="04maxscore-picster">MaxScore: Microtones</previous>
+<chapter name="MaxScore: Export">
+<previous name="04maxscore-picster">MaxScore: Exporting to SVG and PDF</previous>
 <next name="06maxscore-macaque">Macaque</next>
 
-<parent name="00maxscore-00index">MaxScore: API</parent>
-<setdocpatch name="MaxScore-API" patch="MaxScore-API-Tutorial.maxpat"/>
+<parent name="00maxscore-00index">MaxScore: Exporting to SVG and PDF</parent>
+<setdocpatch name="MaxScore-API" patch="MaxScore-Export-Tutorial.maxpat"/>
 
 
-<h1>MaxScore: API</h1>
+<h1>MaxScore: Exporting to SVG and PDF</h1>
 
-<illustration><img src="images/API/MaxScore-API.png"  width="900"/></illustration>
+<illustration><img src="images/Export/MaxScore-file-menu.png"  width="200"/></illustration>
+<illustration><img src="images/Export/MaxScore-part-extraction.png"  width="800"/></illustration>
+<illustration><img src="images/Export/MaxScore-PDF-GUI.png"  width="600"/></illustration>
 
 <p>In a previous chapter we have seen that scores can be created using the GUI that Editor offers. However, complex scores can also be created with the API the Max Java object provides (for which the MaxScore abstraction serves as a wrapper).</p>
 <p>In this chapter we will recreate the score shown in <link type="tutorial" module="maxscore" name="01maxscore-userInterface">MaxScore Editor: The User Interface</link> by sending messages to the maxscore.icanvas abstraction. A list of all possible messages can be found in the MaxScore Dictionary (see Max menu>Extras>MaxScore).</p>
