@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 65.0, 78.0, 992.0, 703.0 ],
+		"rect" : [ 778.0, 237.0, 992.0, 703.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -91,10 +91,9 @@
 				"box" : 				{
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"bordercolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"fontname" : "Ableton Sans Medium",
-					"fontsize" : 9.5,
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
 					"id" : "obj-15",
-					"ignoreclick" : 1,
 					"keymode" : 1,
 					"lines" : 1,
 					"maxclass" : "textedit",
@@ -102,9 +101,9 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 341.0, 197.0, 56.0, 23.0 ],
+					"patching_rect" : [ 341.0, 197.0, 57.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 135.0, 17.468084335327148, 51.0, 17.0 ],
+					"presentation_rect" : [ 135.0, 17.468084335327148, 52.0, 18.0 ],
 					"text" : "1 2",
 					"textcolor" : [ 0.831372549019608, 0.831372549019608, 0.831372549019608, 1.0 ],
 					"textjustification" : 1,
@@ -346,7 +345,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 19.0, 14.0, 528.0, 22.0 ],
-									"restore" : [ 42516 ],
+									"restore" : [ 15008 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -605,32 +604,10 @@
 							}
  ],
 						"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-						"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
-						"saved_attribute_attributes" : 						{
-							"locked_bgcolor" : 							{
-								"expression" : ""
-							}
-,
-							"editing_bgcolor" : 							{
-								"expression" : ""
-							}
-
-						}
-
+						"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 20.0, 77.0, 94.0, 22.0 ],
-					"saved_attribute_attributes" : 					{
-						"locked_bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"editing_bgcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -677,7 +654,7 @@
 					"fontname" : "Ableton Sans Medium",
 					"fontsize" : 9.5,
 					"id" : "obj-25",
-					"items" : [ "<none>", ",", "liveTest-1.instr", ",", "liveTest-2.instr" ],
+					"items" : "<none>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -810,18 +787,7 @@
 			}
  ],
 		"bgcolor" : [ 0.32549, 0.345098, 0.372549, 0.0 ],
-		"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
-		"saved_attribute_attributes" : 		{
-			"locked_bgcolor" : 			{
-				"expression" : ""
-			}
-,
-			"editing_bgcolor" : 			{
-				"expression" : ""
-			}
-
-		}
-
+		"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ]
 	}
 
 }

@@ -334,7 +334,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "btoggle", "packback", "scrollbar.js" ],
+					"tabs" : [ "LiveScore.Fluidsynth2", "LiveScore.Sampler", "LiveScore.2conTimbre" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -351,11 +351,11 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 153.0, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 464.0, 340.0, 149.0, 20.0 ],
+					"presentation_rect" : [ 464.0, 340.0, 152.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"tabs" : [ "Helper" ],
+					"tabs" : [ "LiveScore: Playback" ],
 					"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -412,7 +412,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 123.0, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 238.0, 224.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 238.0, 224.0, 146.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -596,9 +596,9 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
+									"fontname" : [ "Arial" ],
 									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"umenu" : 								{
@@ -678,7 +678,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "LiveScore.Editor", "LiveScore.Viewer", "LiveScore.Fluidsynth2", "LiveScore.Sampler" ],
+					"tabs" : [ "LiveScore.Editor", "LiveScore.Viewer", "LiveScore.Hub" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -690,17 +690,18 @@
 					"htabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-24",
 					"maxclass" : "tab",
+					"multiline" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 367.327576000000022, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 238.0, 340.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 238.0, 340.0, 146.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"tabs" : [ "LiveScore" ],
+					"tabs" : [ "LiveScore: Edit & Route" ],
 					"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -775,7 +776,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 336.327576000000022, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 464.0, 224.0, 149.0, 20.0 ],
+					"presentation_rect" : [ 464.0, 224.0, 152.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -818,7 +819,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 305.327576000000022, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 224.0, 149.0, 20.0 ],
+					"presentation_rect" : [ 12.0, 224.0, 152.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -884,7 +885,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 243.327575999999993, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 464.0, 107.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 464.0, 107.0, 146.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -906,7 +907,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 181.327575999999993, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 340.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 12.0, 340.0, 146.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -928,7 +929,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 212.327575999999993, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 238.0, 107.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 238.0, 107.0, 146.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -950,7 +951,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 274.327576000000022, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 107.0, 149.0, 20.0 ],
+					"presentation_rect" : [ 12.0, 107.0, 152.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -1240,9 +1241,9 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
+					"fontname" : [ "Arial" ],
 					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"umenu" : 				{

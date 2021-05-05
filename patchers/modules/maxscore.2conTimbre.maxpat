@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 687.0, 79.0, 952.0, 731.0 ],
+		"rect" : [ 306.0, -1093.0, 952.0, 731.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -187,10 +187,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 255.0, 2.5, 50.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
-						"textcolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
@@ -200,6 +196,10 @@
 						}
 ,
 						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2375,7 +2375,8 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 0.19 ],
+					"bgoncolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-43",
 					"maxclass" : "textbutton",
 					"mode" : 1,
@@ -2390,6 +2391,7 @@
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ],
 					"texton" : "Reverb",
 					"textoncolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ],
+					"usebgoncolor" : 1,
 					"varname" : "reverb_state"
 				}
 
@@ -5076,7 +5078,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 667.0, 226.0, 150.0, 33.0 ],
-													"presentation_linecount" : 2,
 													"text" : "dynamic voicename pitch dynamic_target duration"
 												}
 
@@ -5207,7 +5208,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 574.0, 332.0, 404.0, 194.0 ],
-													"presentation_linecount" : 14,
 													"text" : "• program voicename programname \nExplanation:\rExecutes a program change.\rvoicename is the name of the voice.\rprogramname is the name of the program. \n• gain voicename gainvalue\rExplanation:\rSets the gain of the voice.\rvoicename is the name of the voice. gainvalue is the gain in dB.\r• panvoicename panvalue\rExplanation:\rSets the pan of a voice.\rvoicename is the name of the voice. panvalue is the pan value(0.-1.).\r0.0: left 1.0: right"
 												}
 
@@ -5932,11 +5932,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"focusbordercolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"focusbordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -6009,7 +6009,7 @@
 						"reverb_dampinp" : [ 1.0 ],
 						"reverb_gain" : [ 0.0 ],
 						"reverb_roomsize" : [ 80.0 ],
-						"reverb_state" : [ 1 ],
+						"reverb_state" : [ 0 ],
 						"reverb_time" : [ 1.5 ],
 						"reverb_voicegain" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 					}
