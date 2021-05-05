@@ -1958,7 +1958,7 @@ function anything() {
 			case "measure" :
 			//json = xml2json(dump.join(" "));
 			tempo = json["measure"]["@TEMPO"];
-			timesig = json["measure"]["@TIMESIG"].split(" ");
+			timesig = json["measure"]["@TIMESIG"];
 			break;
 			case "staff" :
 			//json = xml2json(dump.join(" "));
@@ -2391,7 +2391,7 @@ function anything() {
 			if (dumpinfo[0] == "measure") {
 			//json = xml2json(dump.join(" "));
 			tempo = json["measure"]["@TEMPO"];
-			timesig = json["measure"]["@TIMESIG"].split(" ");
+			timesig = json["measure"]["@TIMESIG"];
 			}
 			else if (dumpinfo[0] == "staff") {
 			//json = xml2json(dump.join(" "));

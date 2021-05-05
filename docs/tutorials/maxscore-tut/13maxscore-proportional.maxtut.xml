@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
+
+<chapter name="MaxScore: Proportional Notation">
+<previous name="04maxscore-picster">MaxScore: Proportional Notation</previous>
+<next name="06maxscore-macaque">Macaque</next>
+
+<parent name="00maxscore-00index">MaxScore: Exporting to SVG and PDF</parent>
+<!--
+<setdocpatch name="MaxScore-API" patch="MaxScore-Export-Tutorial.maxpat"/>
+-->
+
+<h1>MaxScore: Proportional Notation and Cursors</h1>
+<h2>Proportional Notation</h2>
+<p>MaxScore is capable of toggling between displaying standard and proportional notation. In proportional notation, scores are being scrolled rather than displayed page by page when played back. Upon sending the "setProportionalNotation 1" message, MaxScore calculates the total length of score to be displayed on one page as well as the width of each measure taking its tempo and time signature into consideration. The duration of every event (note/interval) including the events that are tied to them is indicated by a line that extends from the notehead. Tied events will be hidden and shown again when the message "setProportionalNotation 0" is sent.</p>
+<p>As scrolling scrolling scores can become quite wide, occasionally up to several 10000 pixels, the "canvas autoadjust 0" message prevents the canvas to resize to the dimension of the score; instead scroll bars can be used to navigate to hidden parts of the score.</p>
+<p>In proportional notation, a green playhead is placed at the beginning of the score. The behavior of the scrolling score can be controlled with the following messages:</p>
+<ul>
+<li>scroll start</li>
+<li>scroll stop</li>
+<li>scroll rewind</li>
+<li>scroll resume</li>
+<li>scroll offset &lt;time in seconds&gt;</li>
+</ul>
+<p>The drawsocket technology developed by Rama Gottfried facilitates the display of scrolling scores on hand-held devices such as the iPad or the iPhone and allows people to participate in networked concert such as the <a href="https://www.youtube.com/watch?v=BXlaSBo0KXs">Symphony in the Old Elbe Tunnel</a>.</p>
+<illustration><img src="images/Proportional/proportional2drawsocket.png"/></illustration>
+<illustration><img src="images/Proportional/drawsocket2browser.png" width="700"/></illustration>
+<i>The images above show the output of a graphical score in proportional notation in a browser. The drawsocket server acts as a bridge between Max and the browser.</i>
+<h2>Cursors</h2>
+<p>MaxScore also provides support for an virtually unlimited number of cursors which can travel independently from each other across single measures or groups thereof.</p>
+<p>Cursors can be created with the canvas cursor &lt;id&gt; message which can have any combination of the following attributes: @begin, @end, @passes, @color, @timestretch, @countin</p>
+
+<p>In addition, the behavior of individual cursors can be controlled with the following messages:</p>
+<ul>
+<li>cursor &lt;id&gt; start</li>
+<li>cursor &lt;id&gt; stop</li>
+<li>cursor &lt;id&gt; rewind</li>
+<li>cursor &lt;id&gt; resume</li>
+<li>cursor &lt;id&gt; show 0/1</li>
+<li>cursor &lt;id&gt; blink 0/1</li>
+</ul>
+<illustration><img src="images/Proportional/MaxScore-Tutorial-Cursors.png" width="600"/></illustration>
+</chapter> 

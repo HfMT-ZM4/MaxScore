@@ -17,6 +17,8 @@
 <p>In the Editor you can also select "Save Page as SVG..." and use the save dialog to save the current page to disk.</p>
 <illustration><img src="images/Export/MaxScore-file-menu.png"  width="200"/></illustration>
 
+<h2>drawsocket<h2>
+
 <h2>PDF Generation</h2>
 <p>The Editor will also allow you to create a PDF file of your entire score, a range of pages or selected staves via the Java-based Batik API. For this, choose "Generate PDF" which will open the preview window with a number of choices resembling a standard print dialog.</p> 
 <p>The small preview of your score is actually a real score which you can still modify on the fly. Pressing the "Create PDF" button causes a save dialog to open. Printing will create a temporary folder with individual SVG and PDF files which can be preserved if the "Keep SVG Files" check box is checked.</p>

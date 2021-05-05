@@ -11,7 +11,7 @@
 <h1>MaxScore: Graphics</h1>
 
 <p>MaxScore users can use the Picster mode to create and edit shapes on the fly.</p>
-<p>MaxScore allows you to also attach shapes to measures or staves. This means that a shape will be shown automatically on every part should the score be split or rendered to multiple clients. It’s best used for global instructions that affect every members of an ensemble at once, such as tempo or overall dynamics.</p>
+<p>MaxScore allows you to also attach shapes to measures or staves. This means that a shape will be shown automatically on every part should the score be split or rendered to multiple clients. It’s best used for global instructions that affect every members of an ensemble at once, such as tempo or overall dynamics. By using the canvas blankPageTransform 1 message, you can hide all score elements such as bar lines, clefs or staff lines and create purely graphical scores. The graphics will still have to be attached to either measure or staves whose areas show when clicked on the (now) empty space they usually occupy.</p>
 <p>You can set the preference in the following 3 ways:</p>
 <ul>
   <li>selecting a note / staff / measure in the canvas</li>

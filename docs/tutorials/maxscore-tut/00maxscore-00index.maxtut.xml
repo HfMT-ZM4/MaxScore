@@ -4,8 +4,9 @@
 
 <chapter name="MaxScore: Table of Contents">
 
-<h1>MaxScore Tutorials - Table of Contents</h1>
 
+<illustration><img src="images/Basics/Scorepion-Tail-blue.svg" width="200"/></illustration>
+<h1>MaxScore Tutorials - Table of Contents</h1>
 <ul>
 <li><link type="tutorial" module="maxscore" name="00maxscore-01welcome"></link></li>
 <li><link type="tutorial" module="maxscore" name="00maxscore-installation"></link></li>
@@ -20,6 +21,7 @@
 <li><link type="tutorial" module="maxscore" name="09maxscore-API">MaxScore: API</link></li>
 <li><link type="tutorial" module="maxscore" name="04maxscore-picster">MaxScore: Graphics </link></li>
 <li><link type="tutorial" module="maxscore" name="10maxscore-expressions">MaxScore: Expressions</link></li>
+<li><link type="tutorial" module="maxscore" name="13maxscore-proportional">MaxScore: Proportional Notation</link></li>
 <li><link type="tutorial" module="maxscore" name="08maxscore-playback">MaxScore: Playback</link></li>
 <li><link type="tutorial" module="maxscore" name="12maxscore-compatibility">MaxScore: Compatibility with Other Software Solutions</link></li>
 <li><link type="tutorial" module="maxscore" name="06maxscore-macaque">Macaque: Spectral Transcription</link></li>
