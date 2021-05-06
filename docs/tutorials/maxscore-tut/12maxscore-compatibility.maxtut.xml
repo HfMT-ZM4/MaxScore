@@ -29,7 +29,7 @@
 <h2>bach.roll and bach.score</h2>
 <p>The bach project is Max package for computer-assisted composition. Its bach.roll and bach.score objects are music notation editors for timed and proportional notation. They implement a Lisp-like language and pass messages in llll (Lisp-like linked lists) format. The maxscore.bachToMaxScore abstraction will take the output of the bach.score and bach.roll objects in its left and right inlets, resp., and translate it to MaxScore messages. As MaxScore can toggle between standard and proportional notation, the resulting score can look like the original bach.roll score.</p>
 <illustration><img src="images/Compatibility/bachToMaxScore.png"/></illustration>
-<i>The output of the bach.score and bach.roll objects can be imported into MaxScore via the maxscore.bachToMaxScore abstraction</i>
+<i>The output of the bach.score and bach.roll objects can be imported into MaxScore via the maxscore.bachToMaxScore abstraction. Switching to proportional view make the score look like the original bach.roll score.</i>
 <h2>SVG support</h2>
 <p>See <link type="tutorial" module="maxscore" name="11maxscore-export">MaxScore Editor: Exporting to SVG and PDF</link> for more information on SVG export.</p>
 </chapter> 
