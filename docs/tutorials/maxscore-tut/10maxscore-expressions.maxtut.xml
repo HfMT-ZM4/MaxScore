@@ -24,28 +24,56 @@
     ]
 }
 </code>
-<p>MaxScore expressions are added optionally onto any <link name="04maxscore-picst4er.maxtut.xml">MaxScore graphical (picster) element.</link></p>
+<p>MaxScore expressions are added optionally onto any <link type="tutorial" module="maxscore" name="04maxscore-picster">MaxScore graphical (picster) element.</link></p>
 <p>The expression will be triggered whenever:</p>
 <ul>
     <li>the note on which the graphical element attached is triggered,</li>
     <li>the graphical element is selected, or</li>
     <li>the graphical element is pressed when <i>Button Mode</i> is on.</li>
 </ul>
-<p>When the expression is triggered, it will be sent out of the first outlet of the <o>MaxScore</o> abstraction. The message should then be parsed through <o>maxscore.makenote</o> where </p>
+<p>When the expression is triggered, it will be sent out of the first outlet of the <o>MaxScore</o> abstraction. The message should then be parsed through <o>maxscore.makenote</o> where information will be sent out through its second outlet as a <o>dict</o>.</p>
 <p>Please refer to the <link name="04maxscore-picst4er.maxtut.xml">MaxScore: Graphics</link> chapter for more information.</p>
 
 <h2>Expression editors</h2>
-<p>MaxScore Expressions can be added without knowing any coding. In the <link name="03maxscore-Sidebar.maxtut.xml">MaxScore Editor sidebar</link>, you will find the <i>Picster tab</i> in which you will find <i>Expressions</i>.</p>
+<p>MaxScore Expressions can be added without knowing any coding. In the <link type="tutorial" module="maxscore" name="03maxscore-Sidebar">MaxScore Editor sidebar</link>, you will find the <i>Picster tab</i> in which you will find <i>Expressions</i>.</p>
 <illustration><img src="images/Basics/Picster.png" width="600" /></illustration>
-<p>Here you will find several ready-made templates for different expression usages:</p>
+<p>Click on the menu that says <i>Choose editor</i>. Here you will find several ready-made templates for different expression usages:</p>
 
 <h3>default</h3>
 <techdetail>
-    The default expression editor is one that consists of a pair of customizable <m>"message"</m> and <m>"value"</m>.
+    The <b>default</b> expression editor is one that consists of a pair of customizable <m>"message"</m> and <m>"value"</m>.
 </techdetail>
 
 <h3>bpf</h3>
-<techdetail></techdetail>
+<techdetail>
+    The <b>bpf</b> expression editor saves a list of numbers to be sent out in time. 
+</techdetail>
+
+<h3>djster</h3>
+<techdetail>
+    <p>The <b>djster</b> expression editor is to be used in integration with the DJster+ abstraction. (This is included in the MaxScore installation) See the tutorial patcher for its usage.</p>
+    <p>If used with the <i>Create new shape from expression</i> option, this creates a graphical element that represents every djster parameter at once.</p>
+</techdetail>
+
+<h3>live</h3>
+<techdetail>
+    <p>The <b>live</b> expression editor is only used in integration with LiveScore, the version of MaxScore inside Ableton Live.</p>
+    <p>When the expression is triggered, it sends its values to the designated parameter in a Live device.</p>
+    <p>You can either set a single value to be sent, or use the GUI below to set an automation curve attached to the Live parameter.</p>
+</techdetail>
+
+<h3>sf</h3>
+<techdetail>
+    <p>The <b>sf</b> expression editor sends out the file name of the designated sound file to be played. You can then use it on the <o>sfplay~</o> object. See the tutorial patcher for its usage.</p>
+    <p>If used with the <i>Create new shape from expression</i> option, this creates a waveform on the score</p>
+    <p>Below the file selection you will see some display options for the graphical element to be attached to the score.</p>
+</techdetail>
+
+<p>After choosing the expression editor and setting the options, you can either:</p>
+<ul>
+    <li>Select an existing graphical element and use the <i>Add expression to shape</i> option, or</li>
+    <li>Select a note / staff / measure on the score and use the <i>Create new shape from expression</i> option.</li>
+</ul>
 
 <h2>Adding Custom Expressions</h2>
 <p>In the canvas, turn on <b>Caps Lock</b> and select a graphical element. Press <b>E</b> and a dictionary editor will pop up, where you can add your own expressions.</p>
@@ -93,4 +121,7 @@
 </code>
 <p>Look at the last object in the array <m>"picster-element"</m> which says <m>{ "key" : "expression" }</m>. Here's where the expression should go.</p>
 
+<h2>Create your own expression editor</h2>
+<p>The MaxScore expression system is very flexible in terms of creating custom solutions.</p>
+<p>Go to <m><i>[MaxScore package folder]</i>/patchers/Picster/expression-editors/</m> and open any expression editor patch to look at how they work. You can duplicate any one of these editors to create your own expression editor, which will then be displayed automatically in the menu <i>Choose Editor</i> in the MaxScore Editor.</p>
 </chapter>
