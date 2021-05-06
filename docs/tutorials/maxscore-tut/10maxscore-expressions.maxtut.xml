@@ -31,8 +31,8 @@
     <li>the graphical element is selected, or</li>
     <li>the graphical element is pressed when <i>Button Mode</i> is on.</li>
 </ul>
-<p>When the expression is triggered, it will be sent out of the first outlet of the <o>MaxScore</o> abstraction. The message should then be parsed through <o>maxscore.makenote</o> where information will be sent out through its second outlet as a <o>dict</o>.</p>
-<p>Please refer to the <link name="04maxscore-picst4er.maxtut.xml">MaxScore: Graphics</link> chapter for more information.</p>
+<p>When the expression is triggered, it will be sent out of the first outlet of the <o>MaxScore</o> abstraction. The message should then be parsed through <m>maxscore.makenote</m> where information will be sent out through its second outlet as a <o>dict</o>.</p>
+<p>Please refer to the <link type="tutorial" module="maxscore" name="04maxscore-picster">MaxScore: Graphics</link> chapter for more information.</p>
 
 <h2>Expression editors</h2>
 <p>MaxScore Expressions can be added without knowing any coding. In the <link type="tutorial" module="maxscore" name="03maxscore-Sidebar">MaxScore Editor sidebar</link>, you will find the <i>Picster tab</i> in which you will find <i>Expressions</i>.</p>
