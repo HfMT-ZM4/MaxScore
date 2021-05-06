@@ -26,7 +26,7 @@ Note off: note 6000 0 1
 <h2>Playback Devices</h2>
 Currently three playback devices are available for sound generation
 
-<p>MaxScore/LiveScore Sampler and MaxScore/LiveScore Fluidsynth2 are two playback patches/devices that were especially designed for the MaxScore/LiveScore Editor and its microtonal capabilities. So far, the combination of Editor and Sampler and/or Fluidsynth is the only way to consistently compose and playback microtonal music in Ableton Live.</p>
+<p>MaxScore/LiveScore Sampler and MaxScore/LiveScore Fluidsynth2 are two playback patches/devices that were especially designed for the MaxScore/LiveScore Editor and its microtonal capabilities. So far, the combination of Editor and maxscore.sampler, maxscore.fluidsynth2 and/or maxscore.2conTimbre (the latter requiring the standalone conTimbre ePlayer) is the only way to consistently compose and playback microtonal music in Ableton Live.</p>
 
 <h3>Fluidsynth und Sound Fonts</h3>
 <illustration><img src="images/playback/FluidSynth2.png" width="350"/></illustration>
