@@ -3,8 +3,8 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore: Graphics">
-<previous name="07maxscore-microtones">MaxScore: Preferences</previous>
-<next name="08maxscore-playback">Playback</next>
+<previous name="09maxscore-API">MaxScore: API</previous>
+<next name="10maxscore-expressions">MaxScore: Expressions</next>
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 
 

@@ -3,12 +3,11 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="Playback in MaxScore">
-<previous name="04maxscore-picster">MaxScore: Microtones</previous>
-<next name="06maxscore-macaque">Macaque</next>
+<previous name="13maxscore-proportional">MaxScore: Proportional Notation and Cursors</previous>
+<next name="12maxscore-compatibility">MaxScore: Compatibility</next>
 
 <parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 <setdocpatch name="MaxScore-Playback" patch="MaxScore-Playback-Tutorial.maxpat"/>
-
 
 <h1>Playback in MaxScore</h1>
 

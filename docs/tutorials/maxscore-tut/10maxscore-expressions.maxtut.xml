@@ -2,20 +2,16 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="MaxScore: API">
-<previous name="04maxscore-picster">MaxScore: Microtones</previous>
-<next name="06maxscore-macaque">Macaque</next>
+<chapter name="MaxScore: Expressions">
+<previous name="04maxscore-picster">MaxScore: Graphics</previous>
+<next name="13maxscore-proportional">MaxScore: Proportional Notation and Cursors</next>
 
-<parent name="00maxscore-00index">MaxScore: API</parent>
-<setdocpatch name="MaxScore-API" patch="MaxScore-API-Tutorial.maxpat"/>
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+<!--<setdocpatch name="MaxScore-API" patch="MaxScore-API-Tutorial.maxpat"/>
+
+-->
+<h1>MaxScore: Expressions</h1>
 
 
-<h1>MaxScore: API</h1>
-
-<illustration><img src="images/API/MaxScore-API.png"  width="900"/></illustration>
-
-<p>In a previous chapter we have seen that scores can be created using the GUI that Editor offers. However, complex scores can also be created with the API the Max Java object provides (for which the MaxScore abstraction serves as a wrapper).</p>
-<p>In this chapter we will recreate the score shown in <link type="tutorial" module="maxscore" name="01maxscore-userInterface">MaxScore Editor: The User Interface</link> by sending messages to the maxscore.icanvas abstraction. A list of all possible messages can be found in the MaxScore Dictionary (see Max menu>Extras>MaxScore).</p>
-<p>Messages can be sent separately or all at once. When sending a large amount of messages it is recommended that rendering be turned off to avoid repeated redrawing of the score. We can achieve this by sending the "newScore 1 2 800 200 false" message and turn rendering on again with "setRenderAllowed 1"</p>
 
 </chapter>

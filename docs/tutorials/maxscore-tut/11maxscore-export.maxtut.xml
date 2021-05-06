@@ -2,22 +2,25 @@
 
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
-<chapter name="MaxScore: Export">
-<previous name="04maxscore-picster">MaxScore: Exporting to SVG and PDF</previous>
-<next name="06maxscore-macaque">Macaque</next>
+<chapter name="MaxScore Editor: Exporting to SVG and PDF">
+<previous name="07maxscore-microtones">MaxScore Editor: Staff Styles</previous>
+<next name="09maxscore-API">MaxScore: API</next>
 
-<parent name="00maxscore-00index">MaxScore: Exporting to SVG and PDF</parent>
-<!--
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
+
 <setdocpatch name="MaxScore-API" patch="MaxScore-Export-Tutorial.maxpat"/>
--->
+
 
 <h1>MaxScore: Exporting to SVG and PDF</h1>
 <h2>SVG Export</h2>
+
 <p>The format MaxScore renders in is SVG, the scalable vector graphics format. This format is widely supported by browsers and other tools such as the MGraphics language available for the JSUI and jitter.mgraphics objects. To export the current page, can can send the "writeSVG (file-path)" message to the canvas or "canvas writeSVG (file-path)" to the MaxScore Editor or maxscore.icanvas, resp.</p>
+
 <p>In the Editor you can also select "Save Page as SVG..." and use the save dialog to save the current page to disk.</p>
+
 <illustration><img src="images/Export/MaxScore-file-menu.png"  width="200"/></illustration>
 
-<h2>drawsocket<h2>
+<h2>drawsocket</h2>
 
 <h2>PDF Generation</h2>
 <p>The Editor will also allow you to create a PDF file of your entire score, a range of pages or selected staves via the Java-based Batik API. For this, choose "Generate PDF" which will open the preview window with a number of choices resembling a standard print dialog.</p> 

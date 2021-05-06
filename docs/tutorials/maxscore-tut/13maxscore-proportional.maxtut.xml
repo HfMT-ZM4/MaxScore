@@ -3,10 +3,10 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore: Proportional Notation">
-<previous name="04maxscore-picster">MaxScore: Proportional Notation</previous>
-<next name="06maxscore-macaque">Macaque</next>
+<previous name="10maxscore-expressions">MaxScore: Expressions</previous>
+<next name="08maxscore-playback">MaxScore: Playback</next>
 
-<parent name="00maxscore-00index">MaxScore: Exporting to SVG and PDF</parent>
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 <!--
 <setdocpatch name="MaxScore-API" patch="MaxScore-Export-Tutorial.maxpat"/>
 -->
