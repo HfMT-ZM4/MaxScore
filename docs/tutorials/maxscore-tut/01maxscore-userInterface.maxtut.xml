@@ -33,13 +33,11 @@
   <li>Look at the <b>Sidebar</b> on the right. There are four tabs, <b>Tools</b>, <b>Pitch Utility</b>, <b>Scorpions</b> and <b>Picster</b>. In this tutorial we will look at functions in the first two. We will go over the others in the next tutorials.</li>
   <li>Now click on File>New Score from <b>MaxScore's</b> Menu Bar.</li>
 </ul>
-  <illustration><img src="images/UserInterface-basics/editor-01-basics-2.png"/></illustration>
+  <illustration><img src="images/UserInterface-basics/editor-01-basics-2.png" width="200"/></illustration>
 <techdetail>
-<ul>
-  <li>In the main canvas, you will see the <b>Score View</b>, where you will create and edit your scores. You can always return to this page by pressing Shift-1.</li>
-  <li>Press Shift-2 to go to the <b>Staff View</b>. Here you can customize your staves with various attributes.</li>
-  <li>Press Shift-3 for the <b>Preferences</b>, where you can change various other score attributes.</li>
-</ul>
+  <p>In the main canvas, you will see the <b>Score View</b>, where you will create and edit your scores. You can always return to this page by pressing Shift-1.</p>
+  <p>Press Shift-2 to go to the <b>Staff View</b>. Here you can customize your staves with various attributes.</p>
+  <p>Press Shift-3 for the <b>Preferences</b>, where you can change various other score attributes.</p>
 </techdetail>
 <h2>Hello World</h2>
 
@@ -48,7 +46,7 @@
   <illustration><img src="images/UserInterface-basics/editor-01-basics-3.png"/></illustration>
   <p>To change the time signature, click on the ‘Meter’ button right below the clef box and enter number of beats and subdivision separated by a space, e.g ‘7 8’. Click the ‘Tempo’ button next to it to set the tempo, if desired.</p>
   <illustration><img src="images/UserInterface-basics/editor-01-basics-4.png" width="250"/></illustration>
-  <p>Let's now add the first note. In order to add notes, double click or ctrl-click on a blank space on the designated measure. Otherwise you might add an interval to an already existing note. The note is blue which means it is selected. If you want to transpose notes, you can either cmd-drag (Mac) or ctrl-drag (Windows), or use the keyboard shortcuts u, j, i, k, o, l for respective transpositions. You can always access the list of shortcuts from the menu: "Edit>Shortcuts".</p>
+  <p>Let's now add the first note. In order to add notes, double click or ctrl-click on a blank space on the designated measure (otherwise you might add an interval to an already existing note). The note is blue which means it is selected. If you want to transpose notes, you can either cmd-drag (Mac) or ctrl-drag (Windows), or use the keyboard shortcuts u, j, i, k, o, l for respective transpositions. You can always access the list of shortcuts from the menu: "Edit>Shortcuts".</p>
   <illustration><img src="images/UserInterface-basics/editor-01-basics-5.png" width="600"/></illustration>
   <p>To convert a note into a rest, click the rest button on top of the third column in the Tools panel, or alternatively use the keyboard shortcut r.</p>
   <p>To add dynamics or articulation, select a note and then choose from the Tools bar the corresponding symbols. e.g. for dynamics check the 5th column.</p>
