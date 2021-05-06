@@ -74,7 +74,7 @@
 <h2>Setting properties</h2>
 <p>Before drawing the shape, some properties (color, pensize, etc) can be set by: </p>
 <ul>
-  <li>using the <link name="03maxscore=PicsterTool">Picster tool</link> under the sidebar in the MaxScore Editor; or</li>
+  <li>using the <link name="03maxscore-Sidebar">Picster tool</link> under the sidebar in the MaxScore Editor; or</li>
   <li>sending messages to the MaxScore abstraction. (See the section "Creating Shapes via Messages" below)</li>
 </ul>
 
