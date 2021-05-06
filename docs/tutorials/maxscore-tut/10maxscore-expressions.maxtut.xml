@@ -3,12 +3,11 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore: Expressions">
-<previous name="04maxscore-picster">MaxScore: Microtones</previous>
-<next name="06maxscore-macaque">Macaque</next>
+<previous name="04maxscore-picster">MaxScore: Graphics</previous>
+<next name="13maxscore-proportional">MaxScore: Proportional Notation and Cursors</next>
 
-<parent name="00maxscore-00index">MaxScore: Expressions</parent>
+<parent name="00maxscore-00index">MaxScore: Table of Contents</parent>
 <setdocpatch name="MaxScore-Expressions" patch="MaxScore-Expressions-Tutorial.maxpat"/>
-
 
 <h1>MaxScore: Expressions</h1>
 

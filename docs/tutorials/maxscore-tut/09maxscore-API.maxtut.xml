@@ -3,8 +3,8 @@
 <?xml-stylesheet href="./_c74_tut.xsl" type="text/xsl"?>
 
 <chapter name="MaxScore: API">
-<previous name="04maxscore-picster">MaxScore: Microtones</previous>
-<next name="06maxscore-macaque">Macaque</next>
+<previous name="11maxscore-export">MaxScore Editor: Exporting to SVG and PDF</previous>
+<next name="04maxscore-picster">MaxScore: Graphics</next>
 
 <parent name="00maxscore-00index">MaxScore: API</parent>
 <setdocpatch name="MaxScore-API" patch="MaxScore-API-Tutorial.maxpat"/>
