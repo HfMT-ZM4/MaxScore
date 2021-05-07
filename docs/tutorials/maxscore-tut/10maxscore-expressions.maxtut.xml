@@ -35,7 +35,7 @@
 <p>Please refer to the <link type="tutorial" module="maxscore" name="04maxscore-picster">MaxScore: Graphics</link> chapter for more information.</p>
 
 <h2>Expression editors</h2>
-<p>MaxScore Expressions can be added without knowing any coding. In the <link type="tutorial" module="maxscore" name="03maxscore-Sidebar">MaxScore Editor sidebar</link>, you will find the <i>Picster tab</i> in which you will find <i>Expressions</i>.</p>
+<p>MaxScore Expressions can be added without knowing any coding. In the <link type="tutorial" module="maxscore" name="03maxscore-Sidebar">MaxScore Editor sidebar</link>, you will see the <i>Picster tab</i> in which you will find <i>Expressions</i>.</p>
 <illustration><img src="images/Basics/Picster.png" width="600" /></illustration>
 <p>Click on the menu that says <i>Choose editor</i>. Here you will find several ready-made templates for different expression usages:</p>
 
@@ -51,8 +51,8 @@
 
 <h3>djster</h3>
 <techdetail>
-    <p>The <b>djster</b> expression editor is to be used in integration with the DJster+ abstraction. (This is included in the MaxScore installation) See the tutorial patcher for its usage.</p>
-    <p>If used with the <i>Create new shape from expression</i> option, this creates a graphical element that represents every djster parameter at once.</p>
+    <p>The <b>djster</b> expression editor is to be used in integration with the DJster.µbus abstraction. See the tutorial patcher for its usage.</p>
+    <p>If used with the <i>Create new shape from expression</i> option, this creates a graphical element that represents every DJster parameter at once.</p>
 </techdetail>
 
 <h3>live</h3>
