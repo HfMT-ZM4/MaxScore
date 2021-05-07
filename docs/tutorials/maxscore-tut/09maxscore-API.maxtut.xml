@@ -15,7 +15,10 @@
 <illustration><img src="images/API/MaxScore-API.png"  width="900"/></illustration>
 
 <p>In a previous chapter we have seen that scores can be created using the GUI that Editor offers. However, complex scores can also be created with the API the Max Java object com.algomusic.max.MaxScore provides (for which the MaxScore abstraction serves as a wrapper).</p>
-<p>In this chapter we will recreate the score shown in <link type="tutorial" module="maxscore" name="01maxscore-userInterface">MaxScore Editor: First Steps</link> by sending messages to the maxscore.icanvas abstraction. A list of all possible messages can be found in the MaxScore Dictionary (see Max menu>Extras>MaxScore).</p>
-<p>Messages can be sent separately or all at once. When sending a large amount of messages it is recommended that rendering be turned off to avoid repeated redrawing of the score. We can achieve this by sending the "newScore 1 2 800 200 false" message and turn rendering on again with "setRenderAllowed 1"</p>
+<p>In this chapter we will recreate the score shown in <link type="tutorial" module="maxscore" name="01maxscore-userInterface">MaxScore Editor: First Steps</link> by sending messages to the <m>maxscore.icanvas</m> abstraction. </p>
+<p>A list of all possible messages can be found in the MaxScore Dictionary (see Max menu>Extras>MaxScore/Dictionary).</p>
+<p>Messages can be sent separately or all at once. When sending a large amount of messages it is recommended that rendering be turned off to avoid repeated redrawing of the score. We can achieve this by sending the <m>newScore 1 2 800 200 false</m> message and turn rendering on again with <m>setRenderAllowed 1</m></p>
+<p>The MaxScore abstraction also accepts messages to the canvas and graphical messages.</p>
+<p>Please see <link type="tutorial" module="maxscore" name="04maxscore-picster">MaxScore: Graphics</link> for the details for Picster graphical messages.</p>
 
 </chapter>
