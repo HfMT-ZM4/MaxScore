@@ -74,12 +74,46 @@
 <h2>Setting properties</h2>
 <p>Before drawing the shape, some properties (color, pensize, etc) can be set by: </p>
 <ul>
-  <li>using the <link name="03maxscore-Sidebar">Picster tool</link> under the sidebar in the MaxScore Editor; or</li>
+  <li>using the Picster tool under the <link type="tutorial" module="maxscore" name="03maxscore-Sidebar">sidebar</link> in the MaxScore Editor; or</li>
   <li>sending messages to the MaxScore abstraction. (See the section "Creating Shapes via Messages" below)</li>
 </ul>
-
+<illustration><img src="images/Basics/Picster.png" width="600" /></illustration>
 <illustration><img src="images/Picster/picster-image4-small.png"/></illustration>
 <i>Color set to red</i>
+
+<h2>Selecting, moving and deleting existing shapes</h2>
+
+<p>When a shaped is clicked on, a red bounding rectangle will appear.</p>
+<p>The shape can then be moved by dragging the rectangle to another location. Should shapes overlap, the covered shapes can be selected by repeatedly <b>ctrl-clicking</b> on them. </p>
+<p>The bounding rectangle will change its shape accordingly. Selected shapes can be deleted with the delete key.</p>
+
+<illustration><img src="images/Picster/picster-image5-small.png"/></illustration>
+<illustration><img src="images/Picster/picster-image6-small.png"/></illustration>
+<illustration><img src="images/Picster/picster-image7-small.png"/></illustration>
+
+
+<h2>Copy, cut and paste</h2>
+<p>A shape can be copied, cut and pasted and thus attached to a different score element. Use the <b>C</b>, <b>X</b> and <b>V</b> keys in Picster mode (<b>Caps Lock</b> on), but be aware of the fact that in order to select another score element, Picster mode needs to be first toggled off. Once the element is selected, Picster mode should to be activated again.</p>
+
+
+<h2>Editing</h2>
+<p>Once a shape is selected it can also be edited after pressing <b>E</b> (“edit”). This will open a text editor showing the properties of the shape in JSON format. The changes can be finalized by pressing <b>U</b> (“update”). Note that if the fill property is supposed to be changed from fill to stroke or vice versa, the id (2nd line) of the shape will also need to be changed in order to take effect, i.e. a paintrect will have to be renamed to framerect, a paintoval to frameoval and so on.</p>
+
+<illustration><img src="images/Picster/picster-image8-small.png"/></illustration>
+<i>Figure 8: Changes in the editor will take effect after closing the window and pressing the u key.</i>
+
+<illustration><img src="images/Picster/picster-image9-small.png"/></illustration>
+<i>Figure 9: Changing the "transform" property for example to [ 0.5, 0, 0, 0.5, 0, 0 ] will shrink the image to half its size.</i>
+
+<h3>Adding Expressions</h3>
+<p>You can also add expressions to a shape, which will be triggered during playback of the note or when the shape is selected/pressed. </p>
+<p>See <link type="tutorial" module="maxscore" name="10maxscore-expressions">MaxScore: Expressions</link> to learn more about expressions.</p>
+
+<illustration><img src="images/Picster/picster-image10-small.png"/></illustration>
+
+<h2>Button Mode</h2>
+<p>You can turn on / off button mode from the <i>Expressions</i> section of the <i>Picster tab</i> in the MaxScore Editor sidebar.</p>
+<p>When button mode is on, shapes can no longer be selected, but instead acts as a button when pressed. This can be used in integration with DrawSocket to create interactive scores on the server.</p>
 
 <h2>Creating and Editing Shapes via Messages</h2>
 <p>Picster is integrated in the MaxScore API. The MaxScore abstraction can receives messages for the creation of shapes. These messages have the same result as drawing the shapes by hand, i.e. select the elements the shapes are supposed to be attached to first and set properties before the shapes are created.</p>
@@ -177,8 +211,9 @@
 </ul>
 </techdetail>
 
-<h3>Picster Expressions</h3>
+<h3>Expressions</h3>
 <p>Picster expressions are in the Max <o>dict</o> format. You can add expressions to or remove expressions from an existing Picster shape.</p>
+<p>See <link type="tutorial" module="maxscore" name="10maxscore-expressions">MaxScore: Expressions</link> to learn more about expressions.</p>
 <techdetail>
   <ul>
     <li>
@@ -211,59 +246,5 @@
     </li>
   </ul>
 </techdetail>
-
-
-<h2>Selecting, moving and deleting shapes</h2>
-
-<p>When a shaped is clicked on, a red bounding rectangle will appear and the shape can be moved by dragging the rectangle to another location. Should shapes overlap, the “covered” shapes can be selected by repeatedly ctrl-clicking on them. The bounding rectangle will change its shape accordingly. Selected shapes can be deleted with the delete key.</p>
-
-<illustration><img src="images/Picster/picster-image5-small.png"/></illustration>
-<i>Figure 5. Clicking on an object will selected it. It can now be moved, deleted or edited.</i>
-
-<illustration><img src="images/Picster/picster-image6-small.png"/></illustration>
-<p></p>
-<illustration><img src="images/Picster/picster-image7-small.png"/></illustration>
-<i>Figure 6 and 7: Select overlapping shapes by ctrl-clicking on the canvas</i>
-
-
-<h2>Copy, cut and paste</h2>
-<p>A shape can be copied, cut and pasted and thus attached to a different score element. Use the c, x and v keys in Picster mode, but be aware of the fact that in order to select another score element, Picster mode needs to be first toggled off. Once the element is selected, Picster mode should to be activated again.</p>
-
-
-<h2>Editing</h2>
-<p>Once a shape is selected it can also be edited after pressing the e (“edit”) key. This will open a text editor showing the properties of the shape in JSON format. The changes can be finalized by pressing the u (“update”) key. Note that if the fill property is supposed to be changed from fill to stroke or vice versa, the id (2nd line) of the shape will also need to be changed in order to take effect, i.e. a paintrect will have to be renamed to framerect, a paintoval to frameoval and so on.</p>
-
-<illustration><img src="images/Picster/picster-image8-small.png"/></illustration>
-<i>Figure 8: Changes in the editor will take effect after closing the window and pressing the u key.</i>
-
-<illustration><img src="images/Picster/picster-image9-small.png"/></illustration>
-<i>Figure 9: Changing the "transform" property for example to [ 0.5, 0, 0, 0.5, 0, 0 ] will shrink the image to half its size.</i>
-
-<h2>Adding Expressions</h2>
-<p>You can add an expression to a shape if you want the expression to be sent when you either click on a shape (all types), or click on the note/interval the shape is attached to. Note and interval will also play their expressions during playback.</p>
-<p>An expression is a sub dictionary which contains four keys:</p>
-
-<ul class="dashed">
-  <li>editor: currently inactive</li>
-  <li>message: the message to be sent, e.g. sfplay</li>
-  <li>value: value of the message, e.g. snare.mp3</li>
-  <li>autorender : currently inactive</li>
-  
-</ul>
-
-<p>To add an expression to a shape, select it first and send a message composed of the following items:</p>
-
-
-<ul>
-  <li>picster addExpressionToSelectedShape dictionary dictionary-name</li>  
-</ul>
-
-<p>dictionary-name being the name of the dictionary containing the four keys. The message also goes into the left-most inlet of bcanvas.</p>
-
-<illustration><img src="images/Picster/picster-image10-small.png"/></illustration>
-<p></p>
-<i>Figure 10: Example for how to create a dictionary of an expression to be added to a Picster shape.</i>
-
-
 
 </chapter>

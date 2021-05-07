@@ -12,8 +12,7 @@
 <h1>MaxScore: Expressions</h1>
 
 <p>MaxScore Expressions can be attached to any graphical element, and is written in DrawSocket JSON format as in the example below:</p>
-<code>
-{ 
+<code>{ 
     "key" : "expression",
     "val" : [
         {
@@ -22,8 +21,7 @@
             "value": "two three"
         }
     ]
-}
-</code>
+}</code>
 <p>MaxScore expressions are added optionally onto any <link type="tutorial" module="maxscore" name="04maxscore-picster">MaxScore graphical (picster) element.</link></p>
 <p>The expression will be triggered whenever:</p>
 <ul>
@@ -78,48 +76,52 @@
 <h2>Adding Custom Expressions</h2>
 <p>In the canvas, turn on <b>Caps Lock</b> and select a graphical element. Press <b>E</b> and a dictionary editor will pop up, where you can add your own expressions.</p>
 <p>In this example, the expression from the top of this chapter is attached onto a rectangle with id <m>"example_rect"</m>:</p>
-<code>
-    {
-        "picster-element" : [
-            {
-                "key" : "svg",
-                "val" : {
-                    "new" : "rect",
-                    "id" : "example_rect",
-                    "x" : 0,
-                    "y" : 0,
-                    "width" : 50,
-                    "height" : 50,
-                    "style" : {
-                        "stroke" : "rgb(0,0,0)",
-                        "stroke-opacity" : 1,
-                        "stroke-width" : [ 1 ],
-                        "fill" : "none",
-                        "fill-opacity" : 1
-                    },
-                    "transform" : "matrix(1,0,0,1,0,0)"
-                }
-            },
-            {
-                "key" : "extras",
-                "val" : {
-                    "bounds" : [ 0, 0, 50, 50 ]
-                }
-            }, 
-            {
-                "key" : "expression",
-                "val" : [
-                    {
-                        "editor": "default",
-                        "message": "one",
-                        "value": "two three"
-                    }
-                ]
+<code>{
+    "picster-element" : [
+        {
+            "key" : "svg",
+            "val" : {
+                "new" : "rect",
+                "id" : "example_rect",
+                "x" : 0,
+                "y" : 0,
+                "width" : 50,
+                "height" : 50,
+                "style" : {
+                    "stroke" : "rgb(0,0,0)",
+                    "stroke-opacity" : 1,
+                    "stroke-width" : [ 1 ],
+                    "fill" : "none",
+                    "fill-opacity" : 1
+                },
+                "transform" : "matrix(1,0,0,1,0,0)"
             }
-        ]
-    }
-</code>
+        },
+        {
+            "key" : "extras",
+            "val" : {
+                "bounds" : [ 0, 0, 50, 50 ]
+            }
+        }, 
+        {
+            "key" : "expression",
+            "val" : [
+                {
+                    "editor": "default",
+                    "message": "one",
+                    "value": "two three"
+                }
+            ]
+        }
+    ]
+}</code>
 <p>Look at the last object in the array <m>"picster-element"</m> which says <m>{ "key" : "expression" }</m>. Here's where the expression should go.</p>
+
+<h2>Adding Expressions with the MaxScore API</h2>
+<p>Expressions can also be added with the help of the MaxScore API. Pass the expression as a <o>dict</o> to MaxScore via the following message:</p>
+<p><m>picster addExpressionToSelectedShape dictionary <i>[name]</i></m></p>
+<p>To remove all expressions from the selected shape, use:</p>
+<p><m>picster removeAllExpressionsFromSelectedShape</m></p>
 
 <h2>Create your own expression editor</h2>
 <p>The MaxScore expression system is very flexible in terms of creating custom solutions.</p>
