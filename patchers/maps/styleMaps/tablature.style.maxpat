@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 676.0, -636.0, 998.0, 600.0 ],
+		"rect" : [ 370.0, 263.0, 998.0, 600.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -649,6 +649,19 @@
 						"title" : "Tablature Editor",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-52",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 122.85000500000001, 19.5, 29.5, 22.0 ],
+									"text" : "0",
+									"varname" : "set"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-29",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -847,7 +860,12 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 188.600006000000008, 390.335448999999983, 58.0, 22.0 ],
 									"restore" : 									{
-										"instrument" : [ 0 ]
+										"instrument" : [ 0 ],
+										"interval" : [ 1.0 ],
+										"live.gain~" : [ 0.0 ],
+										"numfrets" : [ 19 ],
+										"numstrings" : [ 1 ],
+										"onebang" : [ 0.0 ]
 									}
 ,
 									"text" : "autopattr",
@@ -886,11 +904,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 77.0, 468.0, 136.0, 20.0 ],
 									"saved_attribute_attributes" : 									{
-										"tribordercolor" : 										{
-											"expression" : ""
-										}
-,
-										"slidercolor" : 										{
+										"trioncolor" : 										{
 											"expression" : ""
 										}
 ,
@@ -898,7 +912,11 @@
 											"expression" : ""
 										}
 ,
-										"trioncolor" : 										{
+										"tribordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"slidercolor" : 										{
 											"expression" : ""
 										}
 ,
@@ -1755,8 +1773,8 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+													"fontsize" : [ 12.0 ],
 													"fontname" : [ "Arial" ]
 												}
 ,
@@ -1780,8 +1798,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1790,9 +1808,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
+													"fontface" : [ 3 ],
 													"fontsize" : [ 15.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -1811,9 +1829,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
+													"fontface" : [ 1 ],
 													"fontsize" : [ 20.0 ],
-													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontname" : [ "Arial" ]
 												}
 ,
 												"parentstyle" : "",
@@ -2190,8 +2208,7 @@
 									"segmented" : 1,
 									"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 									"tabs" : [ "apply", "add", "remove", "export", "import" ],
-									"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ],
-									"varname" : "set"
+									"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 								}
 
 							}
@@ -2904,14 +2921,16 @@
 												"setDurationalSpacingBase" : 0.7,
 												"staff-0" : 												{
 													"ledgerlines" : 1,
-													"style" : "Default",
-													"micromap" : "mM-none",
-													"adjust" : 0,
-													"clef" : "default",
-													"ratio-lookup" : 0,
+													"style" : "BP chromatic|N",
+													"micromap" : "mM-BP",
+													"adjust" : -1,
+													"clef" : "N",
+													"ratio-lookup" : 3,
 													"staffgroup" : [ 0, 0 ],
 													"abbrInstrName" : " ",
-													"instrumentNamePositionOffset" : 0
+													"instrumentNamePositionOffset" : 0,
+													"tritave" : 4,
+													"subdivision" : ""
 												}
 
 											}
@@ -3024,13 +3043,7 @@
 												}
 
 											}
- ],
-										"interval" : [ 1.0 ],
-										"live.gain~" : [ 0.0 ],
-										"numfrets" : [ 19 ],
-										"numstrings" : [ 6 ],
-										"onebang" : [ 1.0 ],
-										"set" : [ -1 ]
+ ]
 									}
 ,
 									"text" : "autopattr",
@@ -3226,7 +3239,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 805.5, 195.0, 103.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "tablature-editor.js",
+										"filename" : "tablature-editor",
 										"parameter_enable" : 0
 									}
 ,
@@ -3246,9 +3259,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 805.5, 230.0, 200.0, 120.0 ],
+									"patching_rect" : [ 805.5, 230.0, 200.0, 20.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 51.25, 78.0, 200.0, 120.0 ],
+									"presentation_rect" : [ 51.25, 78.0, 200.0, 20.0 ],
 									"varname" : "GUI"
 								}
 
@@ -3348,7 +3361,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 507.100006000000008, 123.5, 411.0, 22.0 ],
-									"restore" : [ "51929-" ],
+									"restore" : [ "3544-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3941,6 +3954,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-616", 0 ],
+									"source" : [ "obj-52", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-53", 0 ]
 								}
@@ -4243,8 +4263,8 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontsize" : [ 12.0 ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -4268,8 +4288,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4278,9 +4298,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontface" : [ 3 ],
 									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -4299,9 +4319,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontface" : [ 1 ],
 									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -4678,7 +4698,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 579.0, 50.0, 411.0, 22.0 ],
-									"restore" : [ "51929-" ],
+									"restore" : [ "3544-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5339,8 +5359,8 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontsize" : [ 12.0 ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ],
 									"fontname" : [ "Arial" ]
 								}
 ,
@@ -5364,8 +5384,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5374,9 +5394,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
+									"fontface" : [ 3 ],
 									"fontsize" : [ 15.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -5395,9 +5415,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
+									"fontface" : [ 1 ],
 									"fontsize" : [ 20.0 ],
-									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontname" : [ "Arial" ]
 								}
 ,
 								"parentstyle" : "",
@@ -7639,7 +7659,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 182.0, 167.0, 219.0, 22.0 ],
-					"restore" : [ "shiftLocation", 74, 60, 0 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10463,7 +10483,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 386.400023999999974, 102.0, 264.0, 22.0 ],
-					"restore" : [ 76, 0, 0, "false", 77, 0, 0, 0, 132, 0.5, "interval", 0 ],
+					"restore" : [ 74.849998474121094, 0, 1, "false", 88, 0, 0, 0, 138, 56, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10533,7 +10553,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 565.0, 446.0, 250.0, 22.0 ],
-					"restore" : [ "send", "parent::default::map" ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10620,7 +10640,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 6.0, 128.5, 216.0, 22.0 ],
-					"restore" : [ 76.0, 0 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0

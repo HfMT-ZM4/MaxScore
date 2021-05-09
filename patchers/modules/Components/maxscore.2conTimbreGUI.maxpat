@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 525.0, 339.0, 588.0, 466.0 ],
+		"rect" : [ 779.0, 377.0, 588.0, 466.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,27 +40,26 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"autoscroll" : 0,
-					"bgcolor" : [ 0.290196, 0.309804, 0.301961, 0.0 ],
-					"border" : 0.0,
-					"bordercolor" : [ 0.376471, 0.384314, 0.4, 0.0 ],
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 10.0,
+					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 0.0 ],
+					"bgfillcolor_color1" : [ 0.2, 0.2, 0.2, 0.0 ],
+					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_proportion" : 0.5,
+					"bgfillcolor_type" : "color",
 					"id" : "obj-20",
-					"lines" : 1,
-					"maxclass" : "textedit",
+					"items" : [ "eplayer", "orchestra.cePlayerOrc" ],
+					"maxclass" : "umenu",
+					"menumode" : 2,
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "int", "", "" ],
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 5.0, 85.0, 167.0, 20.0 ],
+					"patching_rect" : [ 5.0, 85.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ -1.0, 28.0, 131.0, 18.241611480712891 ],
-					"tabmode" : 0,
-					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
-					"textjustification" : 1,
-					"wordwrap" : 0
+					"presentation_rect" : [ -1.0, 28.0, 137.0, 22.0 ],
+					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
 
 			}
@@ -646,8 +645,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 703.0, 114.0, 150.0, 100.0 ],
-									"presentation_linecount" : 7,
+									"patching_rect" : [ 703.0, 114.0, 150.0, 114.0 ],
 									"text" : "  reverb_is_on:  false\n  reverb_gain:  0.000000\n  reverb_time:  1.500000\n  reverb_roomsize:  80.000000\n  reverb_damping:  0.500000\n"
 								}
 
@@ -774,21 +772,6 @@
 							}
 , 							{
 								"box" : 								{
-									"fontface" : 0,
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-28",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 599.5, 192.0, 91.0, 22.0 ],
-									"text" : "loadmess clear"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-25",
@@ -815,15 +798,13 @@
 							}
 , 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
 									"id" : "obj-11",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
+									"maxclass" : "message",
+									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 511.333312999999976, 192.0, 78.0, 22.0 ],
-									"text" : "prepend set"
+									"patching_rect" : [ 510.0, 192.0, 97.0, 22.0 ],
+									"text" : "clear, append $1"
 								}
 
 							}
@@ -915,13 +896,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-29", 0 ],
 									"source" : [ "obj-27", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-21", 0 ],
-									"source" : [ "obj-28", 0 ]
 								}
 
 							}
@@ -1439,17 +1413,17 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 5.0, 19.0, 73.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 12.0, 121.0, 22.0 ],
+					"presentation_rect" : [ 5.0, 8.0, 121.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"bordercolor" : 						{
-							"expression" : ""
-						}
-,
-						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,

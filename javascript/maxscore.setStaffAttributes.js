@@ -417,7 +417,7 @@ function _style(stl, flag)
 		//post("hello", stl, !isAlias(stl), newstyletype, "\n");
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
-        if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("0");
+        if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("bang");
         return;
     }
    outlet(0, "setRenderAllowed", "false");
