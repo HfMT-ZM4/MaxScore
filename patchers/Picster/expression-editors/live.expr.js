@@ -14,6 +14,13 @@ var x_timeMultiple = 1;
 var customTimeDomain = 1;
 function customtime(time) {
 	customTimeDomain = time;
+	outlet(1, customTimeDomain * 1000);
+}
+
+var scaleWidth = false;
+function displayWidth(d) {
+	if (d == 0) scaleWidth = false;
+	else scaleWidth = true;
 }
 
 var width = 100;
@@ -243,7 +250,7 @@ function drawBpf(_curve, time) {
 	for (var i = 0; i < idx.length; i++) curve[i] = _curve.slice(idx[i] + 6, idx[i + 1]);
 	var dims = _curve.slice(3, 6);
 	var y_transform = -height/dims[2];
-	var x_transform = 100 / dims[0] * x_timeMultiple;
+	var x_transform = 100 / dims[0] * (scaleWidth ? x_timeMultiple : 1);
 	//post("dims", dims, "\n");
 	for (var i = 0; i < idx.length - 1; i++) {
 		if (curve[i][curve[i].length - 1] == "curve") {
@@ -284,8 +291,8 @@ function drawBpf(_curve, time) {
 	shape["picster-element"][0]["val"][2]["child"][1]["transform"] = "matrix(1, 0, 0, 1, 0, " + yoffset + ")";
 	shape["picster-element"][0]["val"][2]["child"][2]["id"] = "grid_" + time;
 	shape["picster-element"][0]["val"][2]["child"][2]["d"] = "M10,0 V" + height + " M20,0 V" + height + " M30,0 V" + height + " M40,0 V" + height + " M50,0 V" + height + " M60,0 V" + height + " M70,0 V" + height + " M80,0 V" + height + " M90,0 V" + height + ", M0,10 H" + width + " M0,20 H" + width + " M0,30 H" + width + " M0,40 H" + width + " M0,50 H" + width;
-	shape["picster-element"][0]["val"][2]["child"][2]["transform"] = "matrix(" + x_timeMultiple + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
-	shape["picster-element"][0]["val"][2]["child"][0]["transform"] = "matrix(" + x_timeMultiple + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
+	shape["picster-element"][0]["val"][2]["child"][2]["transform"] = "matrix(" + (scaleWidth ? x_timeMultiple : 1) + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
+	shape["picster-element"][0]["val"][2]["child"][0]["transform"] = "matrix(" + (scaleWidth ? x_timeMultiple : 1) + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
 	//post("arguments", JSON.stringify(arguments), "\n");
 	shape["picster-element"][2]["val"][0]["message"] = destination;
 	shape["picster-element"][2]["val"][0]["value"] = ["bpf"].concat(_curve);
@@ -344,6 +351,7 @@ function xrange(choice) {
 			outlet(2, "getMeasureInfo");
 			var timeSig = measureInfo.measure.TIMESIG.split(' ');
 			x_timeMultiple = 60/parseFloat(measureInfo.measure.TEMPO) * parseFloat(timeSig[0]) * 4 / parseFloat(timeSig[1]);
+			outlet(1, x_timeMultiple * 1000);
 			//post('x time multiple: ',x_timeMultiple, "\n");
 			break;
 		case 1:
@@ -356,10 +364,12 @@ function xrange(choice) {
 			}
 			//post('selected note:\n', JSON.stringify(noteInfo), '\n');
 			x_timeMultiple = parseFloat(noteInfo.note.HOLD)*60/parseFloat(measureInfo.measure.TEMPO);
+			outlet(1, x_timeMultiple * 1000);
 			//post('x time multiple: ',x_timeMultiple, "\n");
 			break;
 		case 2:
 			x_timeMultiple = customTimeDomain;
+			outlet(1, x_timeMultiple * 1000);
 			break;
 	}
 }  
