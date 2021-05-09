@@ -1,0 +1,52 @@
+{
+	"pattrstorage" : 	{
+		"name" : "Fluidsynth2",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"live.text[2]" : [ 0.0 ],
+					"live.text[3]" : [ 0.0 ],
+					"mc.live.gain~" : [ -19.600000000000001 ],
+					"maxscore.fluidsynthGUI::select-bank::bankfile" : [ "/Library/Audio/Sounds/Banks/synthgms.sf2" ],
+					"maxscore.fluidsynth.menus::31-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::30-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::29-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::28-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::27-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::26-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::25-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::24-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::23-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::22-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::21-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::20-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::19-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::18-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::17-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::16-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::15-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::14-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::13-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::12-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::11-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::10-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::9-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::8-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::7-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::6-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::5-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::4-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::3-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::2-instrument::sound" : [ 0 ],
+					"maxscore.fluidsynth.menus::1-instrument::sound" : [ 5 ],
+					"maxscore.fluidsynth.menus::0-instrument::sound" : [ 12 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}

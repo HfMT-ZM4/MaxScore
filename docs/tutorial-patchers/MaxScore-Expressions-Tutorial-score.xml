@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<jmslscoredoc>
+<!-- Saved document from JMSL's programmable music notation editor. Java Music Specification Language by Nick Didkovsky & Phil Burk, available from: http://www.algomusic.com -->
+<score NAME="JMSLMaxScore-7" SUBTITLE="" COMPOSER="" COPYRIGHT="" WIDTH="800" HEIGHT="800" STAFFS="1" NUMTRACKSPERSTAFF="4" InstrumentNamesVisible="false" TempoVisible="true" StaffNumbersVisible="true" MeasureNumbersVisible="true" SectionBracketsVisible="true" TimeSignaturesVisible="true" KeySignaturesVisible="true" ClefsVisible="true" ScoreTitleVisible="false" CourtesyClefsVisible="false" MeasureNumberOffset="1" LeftMargin="20.0" RightMargin="20.0" TopMargin="15.0" BottomMargin="15.0" TopMarginOfFirstPage="60.0" DrawAllMeasureNumbers="false" TextFontScaler="1.5" ScoreSubtitleFontScaler="2.0" ScoreTitleFontScaler="4.0" TimesigFontScaler="2.5" MeasureNumberFontScaler="1.5" TextFontName="SansSerif" ScoreSubtitleFontName="Serif" ScoreTitleFontName="Serif" TimesigFontName="Serif" MeasureNumberFontName="SansSerif" FirstSystemIndent="0.0" useLegacyMultiTrackOrientation="true" >
+<ScoreAnnotation CLASSNAME="com.softsynth.jmsl.score.ScoreAnnotation" Annotation="298.3ocUPtzRDCCEEdc6uhPV2Vx.9fwcNLabg5.hHn3hz1jRbRxsbS5fxv7e27XlZcSB46dxImSNVVPOHPmBrTxcD5pFFsJvFQXDPe.y0wArHrUys62wGDyDuxHd0p7QvJFqICEe6kfMAo2ipfCQrYxo5l4aP9gIjmlzNzAZ.i7OHrl0quoZw1UUjPpHeFUJ+uRV0hkYQNg+MjOlxz4yuCfIE5lqOS1Fd7b8dYj2orCa3tbuZtMIwykxZVjTbrrnfpE8CBTqrB2Emip9QmtEcqPxmzdZBaTcHXxQfZdr1BVQdBu+qIm+x+WAsSKjIU8KueJZ0Z.1OM9m1TjFPHyB8OT7TiC111hOXcd7ItImGR1IUDNYDVebxNvohk9YoL7Ejbtr3TY4oxeAEd7hD." >
+</ScoreAnnotation>
+<orchestra CLASSNAME="com.softsynth.jmsl.score.Orchestra" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="0" EditEnabled="true" Name="MaxScoreIns-0" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" >
+<dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
+<dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
+<dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="10000.0" name="index" />
+</jmslscoreinstrument>
+</orchestra>
+<mixerpanelsettings >
+<panamppair FADERINDEX="0" PAN="0.5" AMP="0.5" />
+</mixerpanelsettings>
+<staffspacing INDEX="0" ABOVE="72.0" BELOW="150.0" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="4" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="3" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="2" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="1" isVisible="true" ledgerLinesVisible="true" />
+<StaffLineVisibility staffIndex="0" staffLineIndex="0" isVisible="true" ledgerLinesVisible="true" />
+<scoresection NAME="A" START="0" END="0" />
+<scoresection NAME="B" START="0" END="0" />
+<scoresection NAME="C" START="0" END="0" />
+<scoresection NAME="D" START="0" END="0" />
+<scoresection NAME="E" START="0" END="0" />
+<scoresection NAME="F" START="0" END="0" />
+<scoresection NAME="G" START="0" END="0" />
+<scoresection NAME="H" START="0" END="0" />
+<scoresection NAME="I" START="0" END="0" />
+<scoresection NAME="J" START="0" END="0" />
+<scoresection NAME="K" START="0" END="0" />
+<scoresection NAME="L" START="0" END="0" />
+<scoresection NAME="M" START="0" END="0" />
+<scoresection NAME="N" START="0" END="0" />
+<scoresection NAME="O" START="0" END="0" />
+<scoresection NAME="P" START="0" END="0" />
+<scoresection NAME="Q" START="0" END="0" />
+<scoresection NAME="R" START="0" END="0" />
+<scoresection NAME="S" START="0" END="0" />
+<scoresection NAME="T" START="0" END="0" />
+<scoresection NAME="U" START="0" END="0" />
+<scoresection NAME="V" START="0" END="0" />
+<scoresection NAME="W" START="0" END="0" />
+<scoresection NAME="X" START="0" END="0" />
+<scoresection NAME="Y" START="0" END="0" />
+<scoresection NAME="Z" START="0" END="0" />
+<measure WIDTH="561" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="1" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="2.0" PITCH="67.0" VELOCITY="0.5" HOLD="2.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="1" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.0" name="originalPitch" />
+<dim index="6" value="0.0" name="index" />
+<userBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_note-sel" Message="1559.3oc6asriaaCEcs8WggVkf5wPjxTO5tTz.zMEn6KBLjk3XyL5ggDsmwcP1LEnq5OS9ExGz7MTJJYKJZ4QiokmQ10HAIPjz7w4v64d4qG62SaAwKkhStAGfCwQTsA+7f+bPudO1uWudZ2gWmkfV5pYZC4orxMHKkdEknmVD9ddQJJPOMhO+6+nnd+bd8NAXBrfliMPlV5FaJq2bRf+llbacJTqIXOZQgYo9PVZ5a+bc0Oum3SmmkD.Vl3bLY1b9nxoLwT55.bwvPnU6ocKIfO7zteNgh21v4YbS7BWOBMuUGYWlYJMI9Nd8oMMv06NM4rtorqsSVBUJnHuu0eaOkl3FkdabRHu1CcoIjG9.XnN6O7+8ikfyqA2mLk08lkDuLxWq+l1ZOPe.IBK.8frDMMJAedB.qxR.kKAOADpYXW..SlM8CrwFxYnowG6v.IKqPkfPgog6ABEKAOACvEIDFhY4MYENgNQuklMZKAk.foDVJTj1DKgcBrbdbxq.Jo3GDzT48PiRj713H5M25FRBxk9+kD2UKSb0pVfsXmVDaPv7ITM662p5tS9Ys9MtQdr9Z9Xm36Gfkqdxewqc3gnYuOtRV693nCtOHKyQHUHnrAOig19S25+S64mdRIafJyvqWOYWi.C6KcAEP6nMCQMhkPzEtfBPEAkw5cSAEv3tofBP2PY8DvdzSd9o+84m9a07rJaHfL2wP.IGnmoBFB5CgHzKYGX7NaGfWkkFcNw6t4JJPijwxwMik1mBrDzIvxTlgJckZXoNbzNnITFMqVHnz74KN7LHNZ1pCTilq4X6TUyVXdYKKIiYK2bu9C9TBYm5dibs8AqVuCo0th0Gx7bFjDfSpQbFfzUft.B9ttxWm.6H2jY0RWPcUnKg88Xsz2m5HhDhB3e999VY0gRUPcqgNng.n06LaEESwywt9pH4grjBS0oSQJfyVRIS5v2MXRN.n394.ab+bfx6tn0g6XG3HMB6dN1WPndy4Kjk3wlCoTnR1Mhk1G+Vic1fkz3EsCLZAZBFs.Wtv3zXJMt488FGDPVjJ.ldOHY85kK+VFASRt9b42qq98aFTNbWk1n3nW7rfdqPeORhGCDTvum3jTNvCOrv6T1qWU2a5mqt2BwAw9qmj5Eu.WmK8e7cSknEypzhv2cYZoFar2ANI2lHz8gZHDamVfMLsuxFGJaPhpgMrPmf0O0AVsK.btpmQiiHd4bVM7koRq2sJcIfMWMdZ7xDvhxuV+JgtekMIsI1nlKIiDaXg18Vx.sp4Rxb3tnYA0kMslAjuHHV6skQJvpciFSe+Qw8FD0k+5H1rVuzIYilotmJh.YnHQHE5KSYw53Nh1NYruaYgowI93DUhyRZWerMpwT6W0dODrNzM7oNN9cPvZKmvAaELKLgMaWbUepAVvkRwQKcoj3niQhR7ZTcUi5nYB0koLG+Jzo9zUcJ03EkkpjLOLA6ZdL1tMzpxBFkqW0vIhcNpUwOisaWFDgSSaSwp5Xi1Rr5nuB.cRspJLQ6IVY5TiX0mOKDq5PmB8FdQUwJzd2Pwxor083HFen2KNFdMrPu5hSqZtaRX1FjD3lv5Os3p+DNMoWlNDTv9+8AeHQEs1R.MspQs52NKTq5FaYkDwzVAWYTSrUsx5.ytEubMKjyEmdUHlUCsfZ0qfLZuPqN1mSPmTtpBSzdwVIrY5kpU+9YRrUm56O+gSLUDqF7kh2hZyMYe9On+Fxr5SjkUmIto66UxNM6IWll+RW0Gl82rGo5.G8AeogZcQBKdP15WqVy4uW1BLWC6SnEGlk+WyPgMniVH6G6NCWWVrZZYI+8XIslfcCqXhoke9DkGHw1L3uBg79Cb3.M3OYnsAOY4FmRIQtz3pOS23kzTLcxhkAo3zpsiHKwmrYOxwxzvxxAAsPHGix0Xv+4SBvQyJDKPksfXjz4OqmQHD.XC.5PCSVDqlUKpP0.00E5MBG5elUY4rSgiOq5sKu58fqxC4QqpKS93CNxzxBXhLPiMLzsDtQuE23CVuKGfsgRYwlslyqktG2rqrRRHBaBR9qiV35wmRBx..+36ilhcoBxj7oj4FH8K9uu0++.3Bx4HL" Xoffset="-18.0" Yoffset="42.0" >
+</userBean>
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="1.0" PITCH="74.0" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="74.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="1.0" PITCH="72.0" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="72.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="479" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="1" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="2.0" PITCH="71.0" VELOCITY="0.5" HOLD="2.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="1" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.0" name="originalPitch" />
+<dim index="6" value="3.0" name="index" />
+<userBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_note-sel" Message="1012.3ocsVt0aiaCDE9Y6eEAB8gcATB3Ewa8wBz1WTAJ5qEEK7EEGg3XGX4MwAK1+6cNmQ1IwEo6FTTj3uYDIOinFQNheY5jp66WLrua2kcq6tqay9pK9wK9yKlL4KSmLYR0scOgFpFdXUUMa4gYqQKSFGwjpMcOxgLNfIU8K40+9Xb+YMtexFclPwjBwr0cbr62Mayv0a2cGkb2r865O7AasQ9i7iGG3C8C8y6W2uWmO7x0cG6cwM8qWdbleZp8hI2ttE6GG724L7Syms31U6194MKeV3Anyb5xmd8kO1ub+MnIqqbpwa55WcCypMOOxg8OISdMM9ho6jpq6WuVmvql+AqKUO96imlC5Xtb68yVLlLLW4G66qSOcG91I1oGk7For08a5dmorERSc6dsvC1yxY7Z2yMbvcdJ6I2YC4MSWC62s8V1S0O7K+wu9SuHKoc8x7j8ez4oWXlqB+ejBuelD92WJ7wYOzw6424ZNMl+lLcZs0kVWs0z5EmF3DDmXctMI+x0w1Rcn0Zp8sVKfqto05AZ.Bn2H5HgKyvqHvAENqzlyAOOPCP.HhNRvKCuh.uA.J7N4158Rj8MvK.DAR0oVeFnHP1aHvB3.7.M.AfH.TzjkGkFnH.EAqbYvA3AZ.vScHBj.x.EjIL.HKEYZJ5IYlJFHijIxbs01FKfICokjZSTahZSTahZSTahZSTalZyTaVz5ZydxFx.YjLQlIKfECokjZKTagZKTagZKTagZKTq0XTiUMN03USiZjHHujMQ0jTSVMEZjkKzXUiSMd0znFMJVMJVMJVMJVMJNMJNMJNMJNMJNMJNMJNMJnpmrFTVRMZbQ1HMwZWhBnoQMdsOmdkUMF1nLInIyFkIHMZTrZTrZTjGLZznX0nHo.XjDBMZTLZTLZTLZTjzpKyjLMN0XUiAF4cCXlLQFICjh9BdGCeG8o3B0lo1L0JqUjdk0MfARpUVaARsxZNuAq+DJqE8bcomqQ8b8p2h0tfMjd1ti9Tqrt2y8.fTqr2.9TajZiTqrWBjZksXdG1sI9xFOwW1CBlHEsdrIErgzy1cz2RZ.ks4fYxDI01PsR0AeCJT.epUJefVnVO05oVO0JUcjdkBPfTqTVxyJTdVrxy5V9.JgAJZirvVD03.CjMjdRGokz.hBlQV6LfxndshZ.EW8rNK78jNRKIuu71xYLmvQlU.XVhIX9d0BOQQt5cbdhy+734Gh3e6ii+W9z3E+0TZmd76ju9bkcGjPM7VGsbNN80fdtNSM9GGSPNH02Lp2uqaXne6lWGY8zgiYmptk862tSOd60GSMU2IBmsp67lkH74twidNua3xY1ql0es9XN9TRyWm92B1TXX." Xoffset="0.0" Yoffset="70.0" >
+</userBean>
+</note>
+<note NOTEDUR="1" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="2.0" PITCH="69.0" VELOCITY="0.5" HOLD="2.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="1" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.0" name="originalPitch" />
+<dim index="6" value="4.0" name="index" />
+<userBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_note-sel" Message="1455.3ocsXt0aaaDDE9Y4eEFB8gD.k.Nyr2Xer.s8EVfh9ZQQfrMisPju.IEGaDj+6cmygzQqaSaBJJr8LCWxy2tZ3v0C0GOYwx61b99Ci6d031wqGu4vxS+9S+8SWr3imrXwhkua7Qefk6u+xkqvH2udqOxhoqXwxaF+.tjoKXwxMWfi+0It+H49FIIYME55S4jMesG1s9l8u81cWCIWu9vtMO7htWaq5p+Ht8kyW58a1u4rMa2bfqHb31w4yd9Ua1dw7Z+oE2QKucimeX5h+JWiu4r0m+tK2c66u4hOK7AWW2SG9X6geXyEGtxGRCedvqF2b4UHudzf6O7XcwyD4QK2EKe6lsa4B9xydgn4US+8xmVC7Zd0s2s97ojQMgMctOcxSyveapUNNwdxrjuPJa6laF+FSYmWGZbWqvGjmkyvw5mG3A84orG0mcIewz09C6t8c3LK+te5294e3nrDO0w4I4ubxmtg0853+Gov6VWw+skB+v56Gwb9UVyQl+R2pzfrRFzU1fU8gpOV8oU5PtFWp+0WiktUwAQVkGD0MlqK3QQ2jV0OH4UkAo3G1WOrdanLnhabEp4iEbSkecBS0xyAuHsFWPb+JotHpIovfIvpvVWWwAK.aD1p1zfkgsfQ583ZoPMNHvpXDnMDPLzFf1PFwEDW0lGhcdbTfEZiFrPaLBaxUEw7Fw7Fw7lv7lv7lTXw7lf1Dzlv7lf1TwmwDzlw7lw7lw7lw7lg1bzuxbBVnMCsYrlKPaQPrBaUaYnDfMBaB1LrEXqZ6G5673dAVEi.s8PaeDijfEZ6KHFZktN5D5T5L5BzEoKQWltBcjhPJBoHjhPJBoHjhPJBoHjhPJJonjhRJJonjhRJJonjhRJJoXjhQJFoXjhQJFoXjhQJFoXjRfTBjRsDT6pNRIPJ0pPLXhtLcE55gqVJBmPGoTqFgKPGoDIkHoDIkHojHkDojHkDojHkDojHkDojHkDojIkLojIkLojIkLojIkLojIkLoTHkBoTHkBoTHkBoTHkBoTHkBozSJ8jROozSJ8jROozSJ8jROozCJZWGcBcJcFcA5hzknKSWgNRQHEgTDRQHEgTDRQHEgTDRQHEkTTRQIEkTTRQIEkTTRQIEkTLRwHEiTLRwHEiTLRwHEiTr9FWo4RRMxCMn0los63kz7BL2r3iMevrlOzxwIjozybxJ2jHiMIYq4Ffb7MmoaUy23xM2TiM2vslhA4nBkoxlmJhxMEXwlhOqovTNtncpDdtfN2TrGadPvZdHQN9AnoGmle3J27fWr4gRq4AV43Glmdzd9A8byl.wlMHrlMOji2XYZal4McxMaHEa1rxZ1HSNdStos7l2.L2r43zVkg4sQgaZS0JEAa35Nu1UvlwvkoKQWjt.cFcJcjhQJJonjhRJJonjhRJJonjhRJJoHjhPJBoHjhPJBoHjhPJBoHjRGozQJcjRGozQJcjRGozQJcjRGnzCH8fQOPzCB8.fW0p9+02iUDKvBsdAq5cL31LrIXivBsdop5cd31pVy6HoZ8xTy6TwsUsAuCF2FgM.qAqBq.ama8hyf2gjag1Dz5ElniJO1PLz5EkQuCrZbDZiPaDZiPaDZiPaDyaDZiXdiXMGf1.zFfVuJL5cMpnCR2BsdEH5xzsXdMn0fVCZ8Zuj2spGCsFVyFzZPqW0k8tdqWoWyk8tg0h2YrhtjUzvrIduyts1it5cTa9lS9H0RM2V7wqEZl4Mh6wwUVvaO2hdm5drhyJHtpMUap2Jd28IuM+9Z+9gtZi+USvMleB0OQURdvUr7a3kPe96T87277e5Mp9u79Tm9Gm.+IyubU6WGw3CUT6+ReiDm4ux9d9kAzsx+0e2x5ae+uR8tci62u41aZIyuRgoryxwK1b31c7aE4syolkWWEt9xwmObkv64fV8C65atb63q1s4lK4GzoOmv8oS9SfcJ1pM" Xoffset="-6.0" Yoffset="-114.0" >
+</userBean>
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="479" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="1.0" PITCH="77.0" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="77.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="3" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="0.5" PITCH="76.0" VELOCITY="0.5" HOLD="0.5" BEAMEDOUT="true" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="76.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="3" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="0.5" PITCH="72.0" VELOCITY="0.5" HOLD="0.5" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="72.0" name="originalPitch" />
+<dim index="6" value="7.0" name="index" />
+<userBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_note-sel" Message="1456.3oc6asraiaCEcs8WggVME0wPjx5g6tonCP2TftuXfAsDiMmnGFTzNwcvrIEnq5Oy7KLeP4anTTxRTzxQ1LJYbxHj3DHRZ93b38bujh7yCGXrl3mxvzqvg3HbLyXzuL5uFMXvmGNXv.iav6xRvHc6RiwhT1hByRYPQIFXDiuUTjhBLvfDHd9OKp2OjWuyAN.WnyTn2TGW68k0eEILXeSVVmR0JE6yJJLO06xRyr7wc0e7VR.aUVR.XUhqvjkqDipYUIlx1EhKFFRs5.iqIghgmwsqHLbYCmmwUIqQ9DVdqNwqJyTFM4Fbd+c4h2AftiK97SFpk5ppd4AYIU+fh79xvxNMihhSuNgFIZnHDiRt6cfwl7eD+spsNIJX9Bj+MKoIahCLFtusNBKDRhwRr.HKQGqJdPj.vspDP0RHRv1tcFPEKmAFW74RFK4YEoEJJMo7HnnbIDIXAdqhhQXddy2hor4lczbROEzD.bTfSohzwvI7h.NWkPOAzjguSRmUzCsp.yqShYWcMJhDl6N3WonsanHi5EnD9Lh4CBteh5YeaoR7A4m05Wgh84807wNIHHDqV8j+VT6vyQG+QnKUI8mFiHbM45LwVGNJa7yIoxuZoaQiGt+dsrDpMOuYgkCMEr79APYAzM5zP6VgSn8aekEfNJKSMuLUV.SuXUV.lVZKr.NhvxC2+eOb++nmiVUyAamCLGrUi9y44xbv56r4.daVZrUD+aVooZssJdNsc77MqZcNdlxsYYa0COMgSN.QgpHZ8BAUlW+lDSCShWt8LkrE5OdypKgKM+riUnw70idT2CumRNnt2qd6cIJdeNy24vRHl1fXMv1TCJCH4NqmydlrmPzkMRYPScnLoMHYmxyO2AJIEYv+90isxqWuzUbBCuBiBzQ6y1UI70YWTrB30KqjIfDfBmmi.ZtoOvV2zGn5FQ59l0M+ZByekXgtDe9DIsBdxqU7z6EaOztLvSVx5tAJcAsAktf21P4hDFKo88JGGFRVmJAn92oXI6mqEWESCMWrt54c0e9EENGenzabR7i9FkdoX.eB0mCDZ3HTdxp.7gmWPeZ6Frt+NyWs96hvgIA6lm5mrF2jS9u8UGs3Em57hzy87xoaXDgtqARwaVGvHNd8LhNLBItAFw09YXoUW.KFF.d0RWrjXheNo0.g4n0ZgqyWRfSuEzIcjD3w+2nSlHzm3yTaiQZ3f2nvHt1GdxaftMbvaNaPDxCyq3yiBhMdBbTBy5vXyLOdLcu.wfErKlOy0Ocd1nYA54hHrszjH9gIX3RhXQBM.S0ItKk8ExypAqsey36gt0q2sDpjVD3sFFGNv1sN5UoZgEPLFNdChQRheJBUxmGqdkptfLzWrxY5InV89d0JsoFsErTLRb.GZjL0qWw5DdebWuILFml1kRVMwF8RVmEazcZVNyZPy5C8ZV5yM5JZorDDXCN1AMcILlZ2qYUxDqPznrMNIDQ48mNbEgRu2oGmNjTx5EsTniNacgNtMnZ868pVOExoqB1xpgXs5WcX6msXZWnZcBjQenVmEYzcgZIse6UhV+Qunk9bSMIqQer3Fv1dSNT7EFtmOqewb40IEkdr6l6hra2YZ98q0bb1uYWM1QyLG8wVp00Tdzg7U0VulyuktEvtANfvJdmWAeJCE1iNFQ7uLZItor30zlJJ7yULKEihpeedyeCFUuxhxLD2sg79Cb7HC3OaYrGO44ljxHwHVR8JKYCKEyludSXJNsl0rgLKIlu4MYlqikq6Lanqs8LqpUcH95yCwwKKzKrqZA43pyuxPSrsA.O.vDZ4v8C3TunRUCzzTp2HcFAxLLqlcJ8R1peV0qeN5pcCgLp63TL9rmXZMyx0zz0ycpYloR43K+Dhv6c4.rGTIK9r0bdsxI49crUQEQZqQxuS1RG19TRXF.Djba7BLhIoTJlRlafLr3eeY3+CBPqTg." Xoffset="0.0" Yoffset="38.0" >
+</userBean>
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="1.0" PITCH="74.0" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="74.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="1.0" PITCH="67.0" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="534" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="68.0" VELOCITY="0.5" HOLD="1.0" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="68.0" name="originalPitch" />
+<dim index="6" value="10.0" name="index" />
+<userBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_note-sel" Message="1598.3oc6asraiaCEcs8WggVMCpigHkHoT2MEc.5lBz8ECLjkXr0D8vPh1ItClMo.cU+Yleg9AkugRQIaQQKGEKqjHa3LAYfHotT7b38vKe8sgCzV56lxnI2PCngzHl1nedzeNZvfuMbvfAZ2Q2jkfV554ZiEor1IHKkAEkXfVD8dQQJJv.MeOwy+Qgc+btcmBv.BDaZXpaaatsrtK7C71Vk6rojUSntrhByS8grzz283lpOduuGaQVR.XYhKn9yWHZU1kIlx1DPKZFR05.sa8CDMOs6W3yn6p37LtIdoiqOKuVmXUlYJKI9Ng8zlE33dmlZV2T9osWVRFETj22Gt6Kkk3DkdabRnv5gNrD+G9.XrN+eh+9wRv4kf6Smw+7lmDuJxSa3155.PefeDUB5AYIhMJAeQB.RYIfpkPj.B0LrKAfIym8AdaCYOFa7wdLPxyJrUPnT2vC.gxkPjfA3hDBCo77ltllvlp2Q8FsTfR..qfkREoKwRXu.KWDm7BfRF8AIMUwWnQIRdabD6lacB8Cxk9+kDm0qRbzpVfcXmVDuQvGSnZ12uS0cu7yp8abhb4eq4sceOu.pp48+Kg0gGil8g3JUs6SiNDiAQvSPsgfxZ7bFZ2qta7Osmd7wV4CToGd85I66DXXcoKn.5FsYHpQrDhtvET.sQPwTueJn.L6mBJ.ciVqm.NfdxSO9uO83e2tQVUcDP38bDPpA5gagif9XHB8b9AFuy9Az0YowV36d2hVJPiTwRylwRqWCrDzKvxTtiJac6vRc7DcCfNDRHl.Caaj5feHnJ19buBTou9EGVGDGMe8QpeKzirrqpmK0msikqo7ohdvwJ9Th+d1dqTt0QqjuGo0sB4GiO.GRBnI0HbCg1sft.RiqckudE7ibRlWOcQZCcIslHaTd90NZIoHD9mebnYccrTETmL1FMF.IuyrUTLitf530FIODQIDV6dEo.NaIkLoCOmfo4.PKWqGXiq0CTckGIG+.6.akVX+af8k9L2EhI456x6C0pvnrZDKsN8kM6rAKYwK6FXj.ZBFIfKWXbVLiE27ZhSCB7WlJAltOn385lK+VFASRt9b4yap97aFTNdek1n3nmcehdqPeW+DWNHzhw8j6jJ.d3wEdWqG0q5va5mqCuERCh81LM0MdIstgz+ue.fshWvU4Eom6y7RMNYuCjRtSQnyC0vHVfIXjszOjNfcvVWYmikc7ipgcP1c.6zzDr5ASGF.NWE7XwQ9t4bXM7GFzF9pJcIgMWclZ7jHvmFPsC7D57UdmzlXiZNgMJrAAs+QrARp4D1b7igyi5KqaMGHeVPr1iZiRjW6Gtl9gCy6MHrLuMQ7dstoSyZMybdsHBjQKIBkXi4JKjSa+c6kAGuiElEm3QSZSbXJKKjkQMtZ+p16gf0wthP0wwuCBV63DAX2B2BLrY+hq5SMvBNLFMZkCyON5TjnjOCVW0nNYln8xTXyWfN0mtpS0Ndo0RUJtGXvqUrTYAiJzqZXKyNG0pDaB2sqBhnoocoXUcrQWIVcxmQfdoVUEln6Dqv10HV84yBwpdz1TukWZqXkxzMLH0b0Jp6lUHc5gegwUgPiKzqt3zpV3jDls.IANI7umNb1eRa2zySGHiq6LRcTQmMEPLoF0pe6rPsperjUJDSWEbkw9NHlcSrUH6wBMKj8EmdUHkagNPs5EPFcWnUm5cQnWJWUgI5tXqjVL8R0pe+LI1pW6Ce+wSLUDqF8khKxZyU4PwKLbKYV890xsYhS5gthsyxtulo4WSV8wY+lcCWGYqO5KMX0kI73A4yespkyursEXtF0ymUrYVdeMCE1hNZg7W1YNstr3VZUI+8sRZMg5DVwESKe+IJ2PhcYHtBC4eOvwizf+jg1V7jmabJyOxgEW8N9FuhkRYSWtJHklVsdjYIQmMqI1DrAgXifDDx1nbNFhWeZ.MZdwLvgVSHFVHKHlP.XDTZ+BkirVHhoOwv1fnqSrHl5.9KTsnxlkT0rFRaRbkSMf3NKW18UZ+0pNI0pmjtJWSHspioluLoSrsg.Hx1xDhf5kks3Hiv+ZyI.h9DLFXBHFbjvvDiwJEk26dt5tVtcYbUzbjV0j71kzMkK0OHCg7huOZF0gIoqJ5Cm6QMr3+99v+GzGGQII" Xoffset="-12.0" Yoffset="62.0" >
+</userBean>
+</note>
+<note NOTEDUR="3" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="0.5" PITCH="70.0" VELOCITY="0.5" HOLD="0.5" BEAMEDOUT="true" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="70.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="3" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="0.5" PITCH="72.0" VELOCITY="0.5" HOLD="0.5" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="72.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="3" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="0.5" PITCH="71.0" VELOCITY="0.5" HOLD="0.5" BEAMEDOUT="true" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="71.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="3" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="0.5" PITCH="69.0" VELOCITY="0.5" HOLD="0.5" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="69.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="3" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="0.5" PITCH="67.0" VELOCITY="0.5" HOLD="0.5" BEAMEDOUT="true" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="67.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+<note NOTEDUR="3" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="0.5" PITCH="77.0" VELOCITY="0.5" HOLD="0.5" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="77.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="1" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="2.0" PITCH="76.0" VELOCITY="0.5" HOLD="0.375" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="1" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="76.0" name="originalPitch" />
+<dim index="6" value="-1.0" name="index" />
+<userBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_note-sel" Message="1802.3ocsX18aabiEE+Y4+JLD1GZATBH4ke125BraeQKPQesnHPwdryfHaGHol3zt8+8N77aj7GEoYyhVDm6Qbzvyb4gGdI07qmsX46FuX+ggcuXX6vMC2dX44ey4+34KV7qmsXwhkuc3i8Krb+6ud4Jck2uYa+JKluiEKuc3C5VlugEKGuTs+9Yd+Wv6q74fK0bUm4h9i26gcatc+U2s6F0ka1bX238ekeka5eJ90Guw2Ote70iaGOP9nlaGN9sW7lwsWdLyOkZOJ41Mbwg4a9+wL7UudyEu85c28y2d4Cc79d+bmZpbwGN09CiWd3M8qEpwSW7MCiW+FIqwG549CebJ6QGeT9tX4Uia2RFe8q+JenrZ9+e8ojf64E28tMWLqFtWZye2uc1omvmWYO6XW9DZ11waG9B0rKltzvtm1w68OSzTa6AU69vykrOFd1s7Ikq8G1c2a02r7e7u+gu6e9HUhu5w5j+O7kmlvbuL82gD9tMSz+kIgeXy6Gzy7O0z8PS37+3VYg09dHzCVOD6gTOj6gROT6gltY5xTe7qm7v8no3T2bq8oUg5ZeVwxpPYsutJjV6a8XvsJjWG7JF5eavTLpXRwrhpugphsdzbJp9NMEGhqMSwXmYKoXVwhh54Zs98OsBZ5yQ02XPe1zmiJlTTO2ndtQ8bipuIkyIe+Jof9rx4jx4jFuIMdSEEqccH05ZRVZUV5aVBbVJbVRbFMNq6rz6Ud541Vm0ysnmaQ4bQO2hx4hx4hx4RVwhhUEUeqRqpJmqgNmUSwnhIEyJpbtVUr0iMmh9921B5ylhZ71z3sIspo91Teapudmdvdm5s2Ejkvg+vEAR3hx.EfJ.NriVLO.r30Hv6i.Z76mMZ9Bfl17d4W7AxkfGH.X.Q.XIjAJ.U.ojdyA3AfEynUD.VLXwfEred7e9H4R2ANkmQXIZzJBvJmHinIenVSUAPWlrh8VIV6kXwWB0Mg5N4GEjAJrlrBzjzMYJEvbTF0s6K6.Kh6NyN.KYxkL4RlbYxd1ukBrzMn1DnUj9tEsCnKEYV7EliJU.7KUG.rTCzhY5J5BtUeEcA+puV4hMkDMFQ3Y8s..paCVv25avRCcogtzDKAmCvCH0M3LZEATtDbhkfq.TAjqK30HJ38.A.px4izh5bdJzg2M3gE7tg.rf2MLWpbtV4bwx4pkykKw6FlKXFj5FLXwHWr4BtvhAKFrXvhQtXjKFrDgE7tgnJEEhy0sYDEQWv6FhvRDVhvRBVRvRRyQgjADAfkt2cRqw6Fv6FRLGkYNJybTl4nrADAR.Y.UeIf2Mf2MTz5nPwC.KEXovLcgboPtz8t8VjKExkJ4REVpp7dnZOAlu3zsXzgHcOBYIQsZkAR.Q.S8qmfFoqQxaLTLFXFCSiAsgDXHHFxSDwJhzkPHSHqID4DRdhIfjlNDDALf..rjfkd4orlvET.x.IfIVJx1XXhLrT5hNAS1MAvhAKSFSCapgo0vBKH..KFrDHWlVHXrrvXQhtH4xzBHAFP.vC3D3gEOr3gEO4hGV7jKdXwCKdxEO4hiQjCVbvhibwg55PccLG4XNxg55jeQkmRTrJRoqnJjMwRur1Dm8hbVUk7Tq.emGP9EUpLpBmcxpRc6EUEj.h.F.rTgkpzkdY69SnToErTxbwjRhB4Rw.fkhFQZSi3osPv65w6pMahr0SjMhRrsTjMoRZKKAx04w65w6ps5hrwmw1fFaJZrEowFlFaeZrYpwVqFazZrsqoMg6bFS.nKQzkHinH5RjbwjeouoeWIrB.5hgtXnK3c6Gjv3XEpk7K8ibH.V5d2pNbhwQUTKXI.Kg.s7.NAcuKGFx3nQVSGTx3XS894Qc8F.4xwia4d7QwNdvrxSNz17Q3Pcw6pC6kzQ+DH+RSxRStklLKMMZv11zJHLsMMRZZfzjZTkXTkVTkfhaEyJdUrpU8jq5AW07QQO2hTfhjwtGs1O07DOE8bK54h+D6YQ4bV8MKWEVSblymVO9nSwGdzo6kaJIyTRqToXZR4bR4LURoPJ0QoLJUQixNG0yMJyLtvnVPDUeipuQU2CCXT4L1ObeT3zzyEqW2405+Zo9mkNaRmM4WvzEjVMWtjJTyEtoLLkQo3FkwnTih3WwzSEEJnncw7r3i0drzyc5GSVO8CLym9QmwS+PzvoebZuGK+BdKHO+G0+7W8we1Oo+uieP+gg6+ReORi2d0cel2fzCsu5taO7hq1by3VdOWe6twMaW9zud+3uL7rt8WfP9+iZc5VO892l9zPeZX3kaFu57+64N223BuzEymT1y+oyDd1QY9ounwI8c2l8ep203q6uNt87h9bq5+0esQmmBeVVe2tg86Gu61mxLutvY4Z4vkiGtaGuuyqNN3VdyTG2b8vyu7DC+7veXHyvbdTJ32N62Af7wAVG" Xoffset="0.0" Yoffset="38.0" >
+</userBean>
+<userBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_note-sel" Message="1494.3oc6asraiaCEcs8WggVME0wPjxRTp6lhN.cSA59hAFxRL1bhdXPQ6D2AylTftp+Lyuv7AkugRQIaQQKGYynjwIiRhigHo3iyg2Cu70mGNvXEIHigoWgivw3DlwneYzeMZvfOObvfAF2f2lGfQ1lEFiEgrwOJOjAkoXfQB9VQRJSv.CRn34+rLe+PQ9NC3.Ms8L83e6h1k1fkjnvcE497TJWo3.VYh4gdWdXl6eba8GukDxVlGD.VE3RLYwRQqxqJvL11HbYyPpTGXbMIRz7LtcIgg2WvEQbU5J+.BqnTm3VEYFildCtn9tX96.Pz3xO+jgZptppVdPTR4OnLtuLbeklQ8SxtNkFKJnXeFkb26.iM4+J9eUYcRTvr49A2rfltNIzX3tx5HrPDIAKwBf7.crp3AQ..TUJfpoPDfsc6LfJV5AFW94RFK4QEqEJJ0o7HnnbJDAXAdqhhwXdby1forYlcTeRWEzD.bTfSojzwvI7h.NWlROAzjguSRmUTCsp.yqSSXWcseLIpX3fek5uYM02ndB1CeFI7FAebh5Qe6dk3ChOuzuxOIfWWKZ6jvvHrZ1S9aQtCOGc7GgtTkzeZLhXnIjyDac3n71Omj1+p6GVz3g6uWKKgZ8yaVX4PSAK2e.TV.ciNMztU3DZ+1WYAnixxTyKSkEvzKVkEfok1BKfiHr7v8+2C2+O5MPqp4fsyAlC1pd+47bYNX8c1b.uIOL1RRvMK0Ts1VEOm1Nd9lUst.Oy31rrM5gmlNSLs.lPHBMEX44YqNZnMTEeerWApzm+MIdGklrXyYJmKzlb8pKuK02siUuw74pdzgNdOkbPduSY28RTX+brE3vRDl1fPND5oAkAjFpqmydlrm7oKZlxP5PYRKdxVkmetchRxqg+8qGaVYudoqjTFdI1OTGsOajhqsdWTrB30KqjKfD5GMq.AlMUKGAfstfPP0EoD8lcX9UDVvRwjfIA7NRZ4Xkaq3o6K15qcYfmrzUcCTh.sAkHvaanbdJik195niihHqxj.zf6TrjCJzhq7ogVHVW8715O+hBmiOT5MIM4Q2soWJFHfPC3.gFCDJ2YU.9vyyoOsGFr93cluZGuKFGkFtcVVP5JbSCx+suBfZQLN0IFom6IlS2xH1+tFXEWvDGaOoePc.C431yP5vPjjFXHauNfgZatWW.yVF.d0RerzDRPAI1.A5.zgvpyWRfSuE0IcdF3SPnwQgh8+DumZaLRCmZGEFAYe3w1AhZ3T6b1fHj6GX4mGEDa736n3G1gNuYdbm9dAbRKbaBumaP1r7Vyb+mKhv1RSh3GFuk2SDySogXpN9korvQtVMXs8aFeOzsd8tlQ6oEAdqgwgCrcqidUpVXAeFCmr1mQRSdJBUxGlqdkptfLzWrxY5InV89d0JsoFsErTLRb.89Uo4F1c85nDbVVWJY0DazKYcVrQ2oY430fl0G50rzmazUzRYJHVnFtBGMcCNjNQx8ZVK8ow4KbRjOkWe5vYDJswTONcXa0KZcL5nylWnCpAUqeuW05oPNckyVVGZnLs2Wq1OXxztP05DHidWsNKxn6b0RZ81qDs9idQK84lZRVi9X40ms8hbn3EFtiOqeqd44I0O6XWr244WMzrhKmq437+xuWsi7LG8wVx0UTt2g7Y0VOmKthukvtANjvJ2yqvOkiB6PGiX9K6u.2TT7bZcEE94Jlkh8iqeYfK1AipsrXeDhKFQQ8ANdjA7msL1gm7XSyXjDeVZ8LKcMKCylsZcTFNql0rgLKI5u4NwC4XgPd1PjssmU0rNDu9rHbxhx4kCcmfrbscgNHDvwFJsshx9YKjxLmX4YgLMQtnol.9KTOoxYKpd1ZIsex0NjAhaJcU2Wocgq9TWqeR7pc+iLpOxZwRnNwyCBf1dtSg1PypzVdDS301BB.YNwwALEfr3Hg0TGGGkjx6cuPcyM2sDuJxNRqkRQ6R5h3kQhxQnvzaSli8YRRqh9vEVTCK+5KC+efd8gVt" Xoffset="-2.0" Yoffset="168.0" >
+</userBean>
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="493" WIDTHSETBYHAND="false" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<scoreUserBean CLASSNAME="com.algomusic.max.MaxScoreRenderedMessageListener" >
+</scoreUserBean>
+</score>
+</jmslscoredoc>
