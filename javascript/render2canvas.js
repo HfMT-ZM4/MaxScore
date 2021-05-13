@@ -267,34 +267,34 @@ var _96TET = {
 	"0" : [ "natural" ],
 	"1" : [ "accSagittal5CommaUp" ],
 	"-1" : [ "accSagittal5CommaDown" ],
-	"2" : [ "accSagittal7CommaUp" ],
-	"-2" : [ "accSagittal7CommaDown" ],
-	"3" : [ "accSagittal35MediumDiesisUp" ],
-	"-3" : [ "accSagittal35MediumDiesisDown" ],
-	"4" : [ "accSagittal11MediumDiesisUp" ],
-	"-4" : [ "accSagittal11MediumDiesisDown" ],
-	"5" : [ "accSagittal35LargeDiesisUp" ],
-	"-5" : [ "accSagittal35LargeDiesisDown" ],
-	"6" : [ "accSagittalSharp7CDown" ],
-	"-6" : [ "accSagittalSharp7CUp" ],
+	"2" : [ "accSagittal5v23SmallDiesisUp" ],
+	"-2" : [ "accSagittal5v23SmallDiesisDown" ],
+	"3" : [ "accSagittal55CommaUp" ],
+	"-3" : [ "accSagittal55CommaDown" ],
+	"4" : [ "quartertonesharp" ],
+	"-4" : [ "quartertoneflat" ],
+	"5" : [ "accSagittalSharp55CDown" ],
+	"-5" : [ "accSagittalFlat55CUp" ],
+	"6" : [ "accSagittalSharp23CDown" ],
+	"-6" : [ "accSagittalFlat23CUp" ],
 	"7" : [ "accSagittalSharp5CDown" ],
-	"-7" : [ "accSagittalSharp5CUp" ],
-	"8" : [ "accSagittalSharp" ],
-	"-8" : [ "accSagittalFlat" ],
-	"9" : [ "accSagittal5CommaUp", "sharp" ],
-	"-9" : [ "accSagittal5CommaDown", "flat" ],
-	"10" : [ "accSagittal7CommaUp", "sharp" ],
-	"-10" : [ "accSagittal7CommaDown", "flat" ],
-	"11" : [ "accSagittal35MediumDiesisUp", "sharp" ],
-	"-11" : [ "accSagittal35MediumDiesisDown", "flat" ],
-	"12" : [ "accSagittal11MediumDiesisUp", "sharp" ],
-	"-12" : [ "accSagittal11MediumDiesisDown", "flat" ],
-	"13" : [ "accSagittal35LargeDiesisUp", "sharp" ],
-	"-13" : [ "accSagittal35LargeDiesisDown", "flat" ],
-	"14" : [ "accSagittal7CommaDown" ],
-	"-14" : [ "accSagittal7CommaUp" ],
-	"15" : [ "accSagittal5CommaDown" ],
-	"-15" : [ "accSagittal5CommaUp" ],
+	"-7" : [ "accSagittalFlat5CUp" ],
+	"8" : [ "sharp" ],
+	"-8" : [ "flat" ],
+	"9" : [ "accSagittalSharp5CUp" ],
+	"-9" : [ "accSagittalFlat5CDown" ],
+	"10" : [ "accSagittalSharp5v23SUp" ],
+	"-10" : [ "accSagittalFlat5v23SDown" ],
+	"11" : [ "accSagittalSharp55CUp" ],
+	"-11" : [ "accSagittalFlat55CDown" ],
+	"12" : [ "threequartertonesharp" ],
+	"-12" : [ "threequartertoneflat" ],
+	"13" : [ "accSagittalDoubleSharp55CDown" ],
+	"-13" : [ "accSagittalDoubleFlat55CUp" ],
+	"14" : [ "accSagittalDoubleSharp23CDown" ],
+	"-14" : [ "accSagittalDoubleFlat23CUp" ],
+	"15" : [ "accSagittalDoubleSharp5CDown" ],
+	"-15" : [ "accSagittalDoubleFlat5CUp" ],
 	"16" : [ "doublesharp" ],
 	"-16" : [ "doubleflat" ]
 };
@@ -1044,6 +1044,7 @@ function startRenderDump()
 		//for (var i = scoreLayout[1]; i < scoreLayout[1] + scoreLayout[2]; i++) {
 		if (numMeasures == 0) numMeasures = 1;
 		var _numMeasures = (init) ? numMeasures : scoreLayout[2];
+		//post("_numMeasures", init, _numMeasures, scoreLayout, "\n");
 		for (var i = 0; i < _numMeasures; i++) {
 			stafflines[i] = {};
 			barlines[i] = {};
@@ -1053,7 +1054,6 @@ function startRenderDump()
 				stafflines[i][j] = {};
 				staffInfo[i][j] = {};
 				staffBoundingMatrix[i][j] = []; 
-				//post("getstaffinfo", i, scoreLayout[1], "\n");
 				dumpinfo = ["staff", i + scoreLayout[1], j];
 				outlet(1, "getStaffInfo", i + scoreLayout[1], j);
 				if (Object.keys(extendedStaffLines).indexOf(j) != -1) for (var k = 0; k < (5 + Number(extendedStaffLines[j][0]) + Number(extendedStaffLines[j][1])); k++) stafflines[i][j][k] = {};
@@ -1098,7 +1098,6 @@ function fgcolor(r, g, b, a)
 {
 	fcolor = [r, g, b, a];
 	annotation.set("fgcolor", fcolor);
-	//post("fgcolor", fcolor, "\n");
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "setRenderAllowed", 1);
 }	
@@ -1111,16 +1110,18 @@ function flashcolor(r, g, b)
 
 function anything() {
     var msg = arrayfromargs(arguments);
+	//post("msg", messagename, msg, "\n");
 	if (renderPage){
     switch (messagename) {
 		case "width" :
-		init = 1;
         break;		
 		case "height" :
         break;	
 		case "getInstalledMusicFonts" :
+		init = 1;
 		break;
 		case "scoreLayout":
+		//post("scoreLayout", msg, "\n");
 		scoreLayout = msg;
 		oldstaff = -1;
 		init = 0;
@@ -1268,7 +1269,7 @@ function anything() {
 				}
 			}
 			*/
-			//post("stafflines-1", JSON.stringify(stafflines), msg, scoreLayout, "\n");
+			//post("stafflines-1", msg, scoreLayout, msg[0] - scoreLayout[1], "\n");
 			stafflines[msg[0] - scoreLayout[1]][msg[1]][msg[2]] = [msg[4], msg[5], msg[6], msg[7]];
 			break;
         case "LedgerLine":
@@ -2186,7 +2187,8 @@ function anything() {
 				}
 				break;
 				case "mM-sagittal" :
-				Accidental.push(nTET(96, _96TET));				
+				Accidental.push(nTET(96, _96TET));
+				//post("Accidental", JSON.stringify(Accidental), "\n");			
 				break;
 				case "mM-SIMS" :
 				Accidental.push(nTET(72, _72SIMS));				
@@ -2209,7 +2211,6 @@ function anything() {
 				{
 				repeatedAccidentals = {};
 				var measureOffset = (typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1];
-				//post("msg", msg, measureOffset, "\n");
 				if (staffInfo[msg[4] - measureOffset][msg[5]][2] == 1) { // KEYSIGTYPE
 				keySig = [6, 2, 5, 1, 4, 0, 3].slice(0, staffInfo[msg[4] - measureOffset][msg[5]][1]) // KEYSIGNUMACC
 				keySigType = "sharp";
@@ -2373,10 +2374,10 @@ function anything() {
 				case "scoreLayout":
                 	outlet(0, "playback", 0);
 					scoreLayout = msg;
+ 					//post("scoreLayout", scoreLayout, "\n");
            			break;
                 case "frgb":
  					var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
- 					//post("colorcode", colorcode, "\n");
            		if (colorcode == 16776960) _frgb = [255 * flcolor[0], 255 * flcolor[1], 255 * flcolor[2]];
 					else _frgb = [msg[0], msg[1], msg[2]];
                         break;

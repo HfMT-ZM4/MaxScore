@@ -390,7 +390,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 450.5, 157.0, 219.0, 31.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 459.0, 246.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 459.0, 243.0, 224.0, 70.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -597,8 +597,8 @@
 								"name" : "black on white",
 								"number" : 								{
 									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"umenu" : 								{
@@ -755,7 +755,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 7.0, 193.0, 436.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 233.0, 246.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 233.0, 243.0, 224.0, 70.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -1242,8 +1242,8 @@
 				"name" : "black on white",
 				"number" : 				{
 					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"umenu" : 				{
