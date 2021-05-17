@@ -166,11 +166,12 @@ for(var event in anchors){
 	var vel = json["selectedNotes"][key][0]["@VELOCITY"];
 	var pitch = json["selectedNotes"][key][0]["@PITCH"];
 	outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-	if ("userBean" in json["selectedNotes"][key]){
+	if ("userBean" in json["selectedNotes"][key][0]){
+	post("yes", "\n");
 		var userBeans = [];
-		var occurence = getAllIndexes(json["selectedNotes"][key][".ordering"], "userBean");
+		var occurence = getAllIndexes(json["selectedNotes"][key][0][".ordering"], "userBean");
 		for (var i = 0; i < occurence.length; i++) {
-			userBeans[i] = json["selectedNotes"][key]["userBean"][i];
+			userBeans[i] = json["selectedNotes"][key][0]["userBean"][i];
 			}
 	for (var i = 0; i < userBeans.length; i++) {
 	if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -211,7 +212,6 @@ for(var event in anchors){
 		nextAnchor = singleAnchor.slice(2, 7);
 		if (currentAnchor[1] != nextAnchor[1]) break;
 		outlet(0, "getSelectedNoteInfo");
-		//post("pitch", pitch, json["selectedNotes"]["note"]["@PITCH"], "\n");
 		held[json["selectedNotes"]["note"][0]["@PITCH"]] = [json["selectedNotes"]["note"][0]["@TIEDOUT"], json["selectedNotes"]["note"][0]["@HOLD"]];
 		if (json["selectedNotes"]["note"][0]["@PITCH"] == pitch) {
 			//outlet(0, "setNoteVisible", "false");
@@ -342,11 +342,11 @@ for(var event in anchors){
 	var hold = json["selectedNotes"][key][0]["@HOLD"];
 	var vel = json["selectedNotes"][key][0]["@VELOCITY"];
 	outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-	if ("userBean" in json["selectedNotes"][key]){
+	if ("userBean" in json["selectedNotes"][key][0]){
 	var userBeans = [];
-	var occurence = getAllIndexes(json["selectedNotes"][key][".ordering"], "userBean");
+	var occurence = getAllIndexes(json["selectedNotes"][key][0][".ordering"], "userBean");
 	for (var i = 0; i < occurence.length; i++) {
-		userBeans[i] = json["selectedNotes"][key]["userBean"][i];
+		userBeans[i] = json["selectedNotes"][key][0]["userBean"][i];
 		}
 	for (var i = 0; i < userBeans.length; i++) {
 	if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -422,12 +422,11 @@ function scroll()
 	if (annotation.contains("proportional")) proportional = annotation.get("proportional");
 	if (proportional) {
 	var msg = arrayfromargs(arguments);
-	var from, to, dur;
+	var from, to, dur, scoreOffset;
 	if (annotation.contains("timeUnit")) timeUnit = annotation.get("timeUnit");
 	switch (msg[0]) {
 	case "start" :
-		if (typeof msg[1] == "undefined") var s = 0;
-		else var s = msg[1];
+		var s = (typeof msg[1] == "undefined") ? 0 : msg[1];
 		scoreSize = 0.;
 		outlet(0, "getNumMeasures");	
 		for (var m = 0; m < numMeasures; m++){
@@ -435,11 +434,11 @@ function scroll()
 			var tempo = json["measure"]["@TEMPO"];
 			var timesig = json["measure"]["@TIMESIG"];
 			var measureWidth = (60 / tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
-			if (m == s) var scoreOffset = scoreSize;
+			if (m == s) scoreOffset = scoreSize;
 				scoreSize += measureWidth;
 				}
-			outlet(2, "offset", 0);
-			outlet(2, "start");
+			//outlet(2, "offset", 0);
+			//outlet(2, "start");
 			if (typeof s == "undefined") {
  				from = 0;
  				to = -1 * scoreSize * factor  * zoom / 0.5;
@@ -453,18 +452,32 @@ function scroll()
 			outlet(1, "scroll", from, to, dur);
 		break;
 	case "offset" :
-		outlet(2, "offset", msg[1]);
-		outlet(1, "scroll", "offset", -msg[1] * timeUnit * zoom / 0.5, timeUnit);
-		break;			
+		//outlet(2, "offset", msg[1]);
+		var s = (typeof msg[1] == "undefined") ? 0 : msg[1];
+		scoreSize = 0.;
+		outlet(0, "getNumMeasures");	
+		for (var m = 0; m < numMeasures; m++){
+			outlet(0, "getMeasureInfo", m);
+			var tempo = json["measure"]["@TEMPO"];
+			var timesig = json["measure"]["@TIMESIG"];
+			var measureWidth = (60 / tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
+			//if (m == s) scoreOffset = scoreSize;
+				scoreSize += measureWidth;
+				}
+			//from = -1 * scoreOffset * factor  * zoom / 0.5;
+ 			to = -1 * scoreSize * factor  * zoom / 0.5
+ 			dur = scoreSize * factor / timeUnit * 1000. * zoom / 0.5;	
+			outlet(1, "scroll", "offset", -msg[1] * timeUnit * zoom / 0.5, timeUnit, 0, to, dur);
+	break;			
 	case "stop" :
-		outlet(2, "stop");
+		//outlet(2, "stop");
 		outlet(1, "scroll", "stop");
 		break;	
 	case "rewind":
 		outlet(1, "scroll", "offset", 0, timeUnit);		
 		break;
 	case "resume":
-		outlet(2, "start");
+		//outlet(2, "start");
 		outlet(1, "scroll", "play");		
 		break;	
 	case "rate":

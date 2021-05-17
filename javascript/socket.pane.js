@@ -13,6 +13,10 @@ var mediaFolder = "/media/project/";
 var duration = 0;
 var eol = 0;
 var prop = 1;
+var duration = 0;
+var rDur = 0;
+var _offset = 0;
+var lastAction = "start";
 var pageWidth = 1200;
 var pageHeight = 800;
 var zoom = 1;
@@ -955,7 +959,7 @@ function drawBounds()
 function scroll()
 {
 	var msg = arrayfromargs(arguments);
-	var duration = 0;
+	//post("msg", msg, lastAction, "\n");
 	cursors.clear();
 	jcursors = {};			
 	switch (msg[0]){
@@ -975,39 +979,69 @@ function scroll()
 		break;
 
 	case "play":
-		//post("dur", duration, toffset, duration + toffset,"\n");
+	//post("play", _offset, rDur, eol, "\n");
+	if (lastAction == "offset")
+		{
 		for (var s = 0; s < groupcount; s++)
 		{
-			/*
-			jcursors[s + 1] = {
+				jcursors[s + 1] = {
 				"key" : "tween",
 				"val" : {
 				"id" : "scroll",
 				"target" : "#score", 
-				"dur" : duration + toffset,
+				"dur" : 0,
 				"vars" : {
-					"x" : eol,
+					"x" : _offset,
 					"y" : 0,
 					"paused" : "false",
 					"ease" : "linear"
 					}
 				}
 			};
-			*/
-			
+		}
+		cursors.parse(JSON.stringify(jcursors));
+		outlet(0, "dictionary", cursors.name);	
+		for (var s = 0; s < groupcount; s++)
+		{
 			jcursors[s + 1] = {
+				"key" : "tween",
+				"val" : {
+				"id" : "scroll",
+				"target" : "#score", 
+				"dur" : rDur,
+				"vars" : {
+					"x" : eol,
+					"y" : 0,
+					"paused" : "false",
+					"ease" : "linear",
+					},
+				}
+			};
+		}
+		}
+	else {
+			for (var s = 0; s < groupcount; s++)
+				{
+				jcursors[s + 1] = {
 				"key" : "tween",
 				"val" : {
 				"id" : "scroll",
 				"cmd" : "play"
 				}
 			};
-			
+		}
 		}
 		cursors.parse(JSON.stringify(jcursors));
-		outlet(0, "dictionary", cursors.name);	
+		outlet(0, "dictionary", cursors.name);
 		break;
 	case "offset":
+		lastAction = "offset";
+		if (msg.length == 6) {
+			rDur = msg[5] * (msg[4] - msg[1]) / msg[4] / 1000;
+			eol = msg[4];
+			}
+		else rDur = duration;
+		_offset = msg[1];
 		//toffset = msg[1] / msg[2];
 		for (var s = 0; s < groupcount; s++)
 		{
@@ -1031,7 +1065,7 @@ function scroll()
 		break;
 	//this is my start message msg[0] should be start position, but I don't see how I can 
 	default:
-		//post("msg", msg, "\n");
+		lastAction = "start";
 		duration = msg[2]/1000;
 		eol = msg[1]
 		for (var s = 0; s < groupcount; s++)

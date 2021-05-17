@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 43.0, 87.0, 1100.0, 822.0 ],
+		"rect" : [ 43.0, 87.0, 1233.0, 822.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1100.0, 796.0 ],
+						"rect" : [ 0.0, 26.0, 1233.0, 796.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -870,7 +870,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1100.0, 796.0 ],
+						"rect" : [ 0.0, 26.0, 1233.0, 796.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2587,7 +2587,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1100.0, 796.0 ],
+						"rect" : [ 43.0, 113.0, 1233.0, 796.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2617,6 +2617,31 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 527.0, 552.5, 113.0, 22.0 ],
+									"text" : "url localhost:3002/1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-31",
+									"maxclass" : "jweb",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 527.0, 582.5, 650.0, 172.0 ],
+									"rendermode" : 1,
+									"url" : "localhost:3002/1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-3",
 									"linecount" : 3,
@@ -3311,11 +3336,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1021.0, 507.5, 81.0, 47.0 ],
+									"patching_rect" : [ 1021.0, 509.0, 143.0, 33.0 ],
 									"text" : "required for rendering to browser"
 								}
 
@@ -3362,7 +3387,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 887.0, 559.0, 157.0, 22.0 ],
+									"patching_rect" : [ 887.0, 544.0, 157.0, 22.0 ],
 									"text" : "output canvas socket matrix"
 								}
 
@@ -3374,7 +3399,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 887.0, 522.5, 121.0, 22.0 ],
+									"patching_rect" : [ 887.0, 515.5, 121.0, 22.0 ],
 									"text" : "output canvas socket"
 								}
 
@@ -3398,8 +3423,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 762.6666259765625, 383.75, 291.0, 33.0 ],
-									"text" : "Set resources folder relative to patcher's path. Make sure that the chosen folder has write privileges."
+									"patching_rect" : [ 762.6666259765625, 383.75, 320.25, 33.0 ],
+									"text" : "Set resources folder relative to patcher's path. Make sure that the chosen folder exists and has write privileges."
 								}
 
 							}
@@ -3422,8 +3447,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 762.6666259765625, 426.75, 165.0, 22.0 ],
-									"text" : "setMediaFolder public/media/"
+									"patching_rect" : [ 762.6666259765625, 426.75, 129.0, 22.0 ],
+									"text" : "setMediaFolder public/"
 								}
 
 							}
@@ -3433,7 +3458,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 555.0, 579.0, 245.0, 20.0 ],
+									"patching_rect" : [ 262.5, 674.5, 245.0, 20.0 ],
 									"text" : "Open URLs in browser (Chrome works best)"
 								}
 
@@ -3572,7 +3597,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 555.0, 601.0, 237.0, 49.0 ],
+									"patching_rect" : [ 262.5, 696.5, 237.0, 49.0 ],
 									"text" : ";\rmax launchbrowser http://localhost:3002/1;\rmax launchbrowser http://localhost:3002/2"
 								}
 
@@ -3582,12 +3607,13 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-15",
+									"linecount" : 2,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 183.25, 597.5, 321.0, 75.0 ],
-									"text" : "/port/ip : \"server stopped\""
+									"text" : "/stdout : \"received socket close /1 bkUoB/U+GW91Vpbf3B/MfQ==\""
 								}
 
 							}
@@ -3982,7 +4008,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 134.0, 127.0, 119.0, 22.0 ],
-									"text" : "newScore 2 600 210"
+									"text" : "newScore 4 600 210"
 								}
 
 							}
@@ -4205,6 +4231,13 @@
 									"destination" : [ "obj-28", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-24", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-31", 0 ],
+									"source" : [ "obj-26", 0 ]
 								}
 
 							}
@@ -4521,7 +4554,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1100.0, 796.0 ],
+						"rect" : [ 0.0, 26.0, 1233.0, 796.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5812,7 +5845,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1100.0, 796.0 ],
+						"rect" : [ 0.0, 26.0, 1233.0, 796.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6547,7 +6580,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1100.0, 796.0 ],
+						"rect" : [ 0.0, 26.0, 1233.0, 796.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7331,7 +7364,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 43.0, 113.0, 1100.0, 796.0 ],
+						"rect" : [ 0.0, 26.0, 1233.0, 796.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7762,7 +7795,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1100.0, 796.0 ],
+						"rect" : [ 0.0, 26.0, 1233.0, 796.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
