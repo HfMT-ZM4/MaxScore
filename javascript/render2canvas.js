@@ -1045,7 +1045,6 @@ function startRenderDump()
 		//for (var i = scoreLayout[1]; i < scoreLayout[1] + scoreLayout[2]; i++) {
 		if (numMeasures == 0) numMeasures = 1;
 		var _numMeasures = (init) ? numMeasures : scoreLayout[2];
-		//post("_numMeasures", init, _numMeasures, scoreLayout, "\n");
 		for (var i = 0; i < _numMeasures; i++) {
 			stafflines[i] = {};
 			barlines[i] = {};
@@ -1084,7 +1083,7 @@ function endRenderDump()
 	writeBarlines();
 	writeSVG("object");
 	renderPage = 0;
-	init = -1;
+	//init = -1;
 	gc();
 }
 
@@ -1116,6 +1115,7 @@ function anything() {
 	if (renderPage){
     switch (messagename) {
 		case "width" :
+		init = 1;
         break;		
 		case "height" :
         break;	
