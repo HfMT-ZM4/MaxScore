@@ -1092,7 +1092,7 @@ var musicxml_callbacks =
 							}
 						    	break;
 						    default:
-						    	transcoder.default_elem_handler(notehead, mxml, jmsl);
+						    	transcoder.default_elem_handler('notehead', mxml, jmsl);
 						    }
 						},
 						'notehead-text' : undefined,
