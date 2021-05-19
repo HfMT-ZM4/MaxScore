@@ -69,7 +69,7 @@ var setStaffGroup = [];
 var _staffGroup = [];
 var instrumentNames = [];
 var flag = 0;
-var init = -1;
+var init = 1;
 var tempoflag = 0;
 var moveToFlag = 0;
 var oldIndex = [];
@@ -1039,7 +1039,6 @@ function startRenderDump()
 		outlet(1, "getScoreAnnotation");
        	outlet(1, "getNumMeasures");
        	outlet(1, "getNumStaves");
-		if (init == -1) init = 1;
 		//post("init-------------", init, numMeasures, numStaves, scoreLayout, "\n");
  		//for (var i = 0; i < numMeasures; i++) {
 		//for (var i = scoreLayout[1]; i < scoreLayout[1] + scoreLayout[2]; i++) {
@@ -1083,8 +1082,8 @@ function endRenderDump()
 	writeBarlines();
 	writeSVG("object");
 	renderPage = 0;
-	//init = -1;
-	gc();
+	init = 0;
+	//gc();
 }
 
 function bgcolor(r, g, b, a) 
@@ -1114,13 +1113,16 @@ function anything() {
 	//post("msg", messagename, msg, "\n");
 	if (renderPage){
     switch (messagename) {
-		case "width" :
+		case "init" :
 		init = 1;
+		break;
+		case "width" :
+		//init = 1;
         break;		
 		case "height" :
         break;	
 		case "getInstalledMusicFonts" :
-		init = 0;
+		//init = 0;
 		break;
 		case "scoreLayout":
 		//post("scoreLayout", msg, "\n");
