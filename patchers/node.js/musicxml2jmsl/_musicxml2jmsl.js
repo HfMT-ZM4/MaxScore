@@ -1448,14 +1448,14 @@ function musicxml2jmsl_transcode(mxml)
 function musicxml2jmsl(musicxml_str, callback)
 {
     var jsonfromxml = JSON.parse(xml2js.xml2json(musicxml_str,
-						 {spaces: 4}))
+                                                 {spaces: 4}))
     var mxml = jsonfromxml;
     for(var i = 0; i < jsonfromxml.elements.length; i++){
-	var e = jsonfromxml.elements[i];	
-	if(e.name == "score-partwise"){
-	    mxml = transcoder.partwise_to_timewise(jsonfromxml)
-	    break;
-	}
+        var e = jsonfromxml.elements[i];
+        if(e.name == "score-partwise"){
+            mxml = transcoder.partwise_to_timewise(jsonfromxml)
+            break;
+        }
     }
     var jmsl = init_jmsl_score(mxml);
     //console.log(JSON.stringify(jmsl.info, null, 2));
@@ -1469,6 +1469,11 @@ function musicxml2jmsl(musicxml_str, callback)
     //jmsl.jmslscoredoc.score[0].ScoreAnnotation[0]['attributes'].Annotation = JSON.stringify(score_annotation);
     var score_annotation = jmsl.elements[0].elements[0].elements[0].attributes.Annotation;
     jmsl.elements[0].elements[0].elements[0].attributes.Annotation = JSON.stringify(score_annotation);
+    jmsl.elements[0].elements[0].elements.push({
+        "type" : "element",
+        "name" : "scoreUserBean",
+        "attributes" : {"CLASSNAME" : "com.algomusic.max.MaxScoreRenderedMessageListener"}
+    })
     var jmsl_xml = xml2js.json2xml(jmsl, {spaces: 4});
     //console.log(jmsl_xml);
     callback(jmsl_xml, skipped_elems);
