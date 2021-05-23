@@ -84,6 +84,7 @@ getNumStaves, info - "returns the number of staves in a score" getNumStaves;
 getNumTracks, info - "returns the number of tracks in a score" getNumTracks;
 getOrchestraSize, info - "returns number of instruments. Same as getNumInstruments" getOrchestraSize;
 getRenderDelay, info - "returns the time in seconds by which score rendering is delayed. Default = 0." getRenderDelay;
+getRenderAllowed, info - "returns whether rendering is currently allowed or not" getRenderAllowed;
 getScoreAnnotation, info - "returns annotation string" getScoreAnnotation;
 getScoreBottomMargin, info - "returns bottom score margin in pixels" getScoreBottomMargin;
 getScoreFirstSystemIndent, info - "returns first system indent in pixels" getScoreFirstSystemIndent;

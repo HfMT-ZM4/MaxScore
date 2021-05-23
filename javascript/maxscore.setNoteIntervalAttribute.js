@@ -7,15 +7,18 @@ var dump = new Dict();
 var selection = new Dict();
 selection.name = "selection";
 var undo = 1;
+var render = 1;
 var noteAttributes = ["NOTEDUR",  "TUPLET",  "DOTS",  "ACCINFO",  "DURATION",  "PITCH",  "VELOCITY", "HOLD",  "BEAMEDOUT",  "GLISSOUT",  "TIEDOUT",  "ACCPREF",  "ACCVISPOLICY",  "ALTENHARMONIC",  "DYN",  "SLUROUT",  "ISGRACENOTE",  "LEDGERLINESVISIBLE", "WEDGE",  "OTTAVA",  "MARK",  "NOTEHEAD",  "NOTEHEADSCALE", "VISIBLE",  "NOTEHEADVISIBLE",  "STEMVISIBLE",  "OVERRIDELEVEL", "ISOVERRIDELEVEL", "STEMINFOOVERRIDE", "STEMINFO", "TEXT", "TEXTOFFSETX", "TEXTOFFSETY", "OVERRIDELEVEL", "ISOVERRIDELEVEL", "LAYOUTSHIFTX"];
 
-if (jsarguments.length > 1 && jsarguments[1] == "@undo") undo = jsarguments[2];
+if (jsarguments.indexOf("@undo") != -1) undo = jsarguments[jsarguments.indexOf("@undo") + 1];
+if (jsarguments.indexOf("@renderAllowed") != -1) render = jsarguments[jsarguments.indexOf("@renderAllowed") + 1];
 
 function id(a)
 {
 	grab = a;
 	dump.name = grab;
 }
+
 
 function anything()
 {
@@ -102,8 +105,8 @@ for (var i= 0; i < keys.length; i++)
 }
 restoreSelection();
 }
-outlet(1, "setRenderAllowed", 1); 	
-if (undo == 1) {
+if (render) outlet(1, "setRenderAllowed", 1); 	
+if (undo) {
 outlet(1, "setUndoStackEnabled", true);
 outlet(1, "saveToUndoStack");
 }
