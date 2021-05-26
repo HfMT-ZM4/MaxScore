@@ -977,6 +977,7 @@ function getScoreAnnotation(a)
 {
 	annotation.parse(a);
 	prop = annotation.get("proportional");
+	//zoom = annotation.get("setZoom");
 	bcolor = (annotation.contains("bgcolor")) ? annotation.get("bgcolor") : [0.996, 0.996, 0.94, 1];
 	fcolor = (annotation.contains("fgcolor")) ? annotation.get("fgcolor") : [0, 0, 0, 1];
 }

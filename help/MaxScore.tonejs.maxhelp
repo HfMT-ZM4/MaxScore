@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 114.0, 87.0, 1311.0, 706.0 ],
+		"rect" : [ 34.0, 87.0, 1164.0, 678.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,7 +49,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 438.0, 287.0, 180.0, 22.0 ],
+					"patching_rect" : [ 438.0, 287.0, 168.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "helpstarter",
 						"parameter_enable" : 0
@@ -76,7 +76,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 114.0, 113.0, 1311.0, 680.0 ],
+						"rect" : [ 34.0, 113.0, 1164.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -107,16 +107,81 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 954.0, 32.0, 58.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"linecount" : 3,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 954.0, 62.0, 169.0, 49.0 ],
+									"presentation_linecount" : 6,
+									"text" : "setZoom 0.3, canvas output canvas socket, canvas setMediaFolder /public/"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-62",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 954.0, 329.0, 113.0, 22.0 ],
+									"text" : "url localhost:3002/1"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
-									"id" : "obj-52",
-									"linecount" : 3,
+									"id" : "obj-61",
+									"linecount" : 5,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 599.0, 592.0, 150.0, 47.0 ],
-									"presentation_linecount" : 3,
-									"text" : "velocity [0 - 1] and duration [in seconds] are optional"
+									"patching_rect" : [ 670.0, 374.0, 156.0, 74.0 ],
+									"text" : "This instance of jweb will play the note of the second staff. Change URL to localhost:3002/1 to hear the note for the first staff."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-60",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 848.5, 399.5, 156.0, 33.0 ],
+									"text" : "Initialize audio playback by clicking inside browser "
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-52",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 586.5, 539.0, 202.0, 60.0 ],
+									"text" : "playback individual samples if you know their names. \nvelocity [0 - 1] and duration [in seconds] are optional"
 								}
 
 							}
@@ -129,8 +194,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 408.0, 601.0, 188.0, 22.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 388.0, 573.0, 188.0, 22.0 ],
 									"text" : "0. sample \"Celeste A3.wav\" 1. 0.5"
 								}
 
@@ -144,8 +208,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 408.0, 572.0, 155.0, 22.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 388.0, 544.0, 155.0, 22.0 ],
 									"text" : "0. sample \"Celeste A3.wav\""
 								}
 
@@ -157,8 +220,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 887.0, 10.0, 117.0, 22.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 829.0, 62.0, 117.0, 22.0 ],
 									"text" : "canvas scroll rewind"
 								}
 
@@ -170,8 +232,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 769.0, 10.0, 104.0, 22.0 ],
-									"presentation_linecount" : 5,
+									"patching_rect" : [ 716.0, 62.0, 104.0, 22.0 ],
 									"text" : "canvas scroll stop"
 								}
 
@@ -183,8 +244,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 808.0, 43.0, 185.0, 22.0 ],
-									"presentation_linecount" : 5,
+									"patching_rect" : [ 607.0, 92.0, 185.0, 22.0 ],
 									"text" : "canvas setProportionalNotation 1"
 								}
 
@@ -196,21 +256,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 777.0, 371.0, 113.0, 22.0 ],
+									"patching_rect" : [ 831.0, 329.0, 113.0, 22.0 ],
 									"text" : "url localhost:3002/2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-44",
-									"maxclass" : "jweb",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 777.0, 407.0, 320.0, 240.0 ],
-									"rendermode" : 0,
-									"url" : "localhost:3002/2"
 								}
 
 							}
@@ -221,8 +268,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 737.0, 43.0, 53.0, 22.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 829.0, 92.0, 53.0, 22.0 ],
 									"text" : "render 0"
 								}
 
@@ -234,21 +280,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "panic", "", "", "" ],
-									"patching_rect" : [ 655.0, 323.0, 117.0, 22.0 ],
+									"patching_rect" : [ 607.0, 283.0, 117.0, 22.0 ],
 									"text" : "maxscore.makenote",
 									"varname" : "maxscore.makenote"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-41",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 695.0, 43.0, 31.0, 22.0 ],
-									"text" : "stop"
 								}
 
 							}
@@ -259,7 +293,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 655.0, 10.0, 105.0, 22.0 ],
+									"patching_rect" : [ 607.0, 62.0, 105.0, 22.0 ],
 									"text" : "canvas scroll start"
 								}
 
@@ -447,7 +481,7 @@
 															}
 , 															{
 																"box" : 																{
-																	"embedstate" : [ [ "restoreblob", "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=" ] ],
+																	"embedstate" : [ [ "restoreblob", "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", "sgCgEAA=" ] ],
 																	"id" : "obj-24",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
@@ -807,8 +841,6 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 0,
-																		"node_bin_path" : "",
-																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -1656,7 +1688,7 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 640.833333333333371, 381.5, 180.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"initial" : [ 33458 ],
+														"initial" : [ 37712 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -1701,7 +1733,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 0.0, 0.0, 860.0, 220.0 ],
+													"presentation_rect" : [ 0.0, 0.0, 516.0, 132.0 ],
 													"rounded" : 0.0,
 													"types" : [ "TEXT" ],
 													"varname" : "dropfile"
@@ -2668,7 +2700,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 16.5, 443.0, 201.0, 20.0 ],
-																					"restore" : [ 108 ],
+																					"restore" : [ 0 ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -5521,7 +5553,7 @@
 													"parameter_enable" : 0,
 													"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 0.0, 0.0, 860.0, 220.0 ],
+													"presentation_rect" : [ 0.0, 0.0, 516.000020503997803, 132.00000524520874 ],
 													"varname" : "pane"
 												}
 
@@ -6252,7 +6284,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 655.0, 89.0, 860.0, 220.0 ],
+									"patching_rect" : [ 607.0, 139.0, 516.0, 132.0 ],
 									"varname" : "bcanvas[1]",
 									"viewvisibility" : 1
 								}
@@ -6304,7 +6336,26 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontsize" : 12.0,
+													"id" : "obj-1",
+													"linecount" : 17,
+													"maxclass" : "o.compose",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 58.0, 348.0, 324.0, 242.0 ],
+													"presentation_linecount" : 17,
+													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 84, 47, 49, 0, 0, 44, 46, 0, 0, 0, 0, 1, 72, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 0, 16, 47, 99, 97, 99, 104, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -8, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 105, 100, 0, 44, 115, 0, 0, 115, 97, 109, 112, 108, 101, 84, 101, 115, 116, 0, 0, 0, 0, 0, -52, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 114, 105, 103, 103, 101, 114, 65, 116, 116, 97, 99, 107, 0, 0, 0, 0, 0, 0, -120, 47, 97, 114, 103, 115, 0, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 1, 4, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 115, 0, 0, 43, 48, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
+													"saved_bundle_length" : 360,
+													"text" : "/1 : {\n\t/key : \"sound\",\n\t/cache : 0,\n\t/val : {\n\t\t/id : \"sampleTest\",\n\t\t/call : {\n\t\t\t/method : \"triggerAttack\",\n\t\t\t/args : [{\n\t\t\t\t/val : 260\n\t\t\t}, {\n\t\t\t\t/val : \"+0\"\n\t\t\t}, {\n\t\t\t\t/val : 1\n\t\t\t}]\n\t\t}\n\t}\n}"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"fontface" : 0,
 													"fontsize" : 12.0,
@@ -6315,7 +6366,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 394.0, 100.0, 324.0, 187.0 ],
-													"presentation_linecount" : 13,
 													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 47, 49, 0, 0, 44, 46, 0, 0, 0, 0, 0, -4, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 0, 16, 47, 99, 97, 99, 104, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, -68, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -84, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 105, 100, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 45, 119, 97, 118, 46, 105, 110, 115, 116, 114, 0, 0, 0, 0, 0, 0, 120, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 114, 105, 103, 103, 101, 114, 82, 101, 108, 101, 97, 115, 101, 0, 0, 0, 0, 0, 52, 47, 97, 114, 103, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 1, 4 ],
 													"saved_bundle_length" : 284,
 													"text" : "/1 : {\n\t/key : \"sound\",\n\t/cache : 0,\n\t/val : {\n\t\t/id : \"Celeste-wav.instr\",\n\t\t/call : {\n\t\t\t/method : \"triggerRelease\",\n\t\t\t/args : {\n\t\t\t\t/val : 260\n\t\t\t}\n\t\t}\n\t}\n}"
@@ -6333,9 +6383,9 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 394.0, 295.0, 324.0, 255.0 ],
-													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -92, 47, 42, 0, 0, 44, 46, 0, 0, 0, 0, 1, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 1, 108, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, 92, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 83, 97, 109, 112, 108, 101, 114, 0, 0, 0, 0, 28, 47, 105, 100, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 45, 119, 97, 118, 46, 105, 110, 115, 116, 114, 0, 0, 0, 0, 0, 0, -52, 47, 118, 97, 114, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 47, 117, 114, 108, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 71, 98, 50, 0, 0, 0, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 32, 71, 98, 50, 46, 119, 97, 118, 0, 0, 0, 0, 24, 47, 69, 51, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 32, 69, 51, 46, 119, 97, 118, 0, 0, 0, 0, 0, 24, 47, 71, 52, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 32, 71, 52, 46, 119, 97, 118, 0, 0, 0, 0, 0, 44, 47, 98, 97, 115, 101, 85, 114, 108, 0, 0, 0, 0, 44, 115, 0, 0, 47, 112, 117, 98, 108, 105, 99, 47, 83, 97, 109, 112, 108, 101, 115, 47, 67, 101, 108, 101, 115, 116, 101, 47, 0, 0, 0, 0, 0, 0, 0, 64, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 48, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 111, 68, 101, 115, 116, 105, 110, 97, 116, 105, 111, 110, 0, 0, 0 ],
-													"saved_bundle_length" : 440,
-													"text" : "/* : {\n\t/key : \"sound\",\n\t/val : {\n\t\t/new : \"Sampler\",\n\t\t/id : \"Celeste-wav.instr\",\n\t\t/vars : {\n\t\t\t/urls : {\n\t\t\t\t/Gb2 : \"Celeste Gb2.wav\",\n\t\t\t\t/E3 : \"Celeste E3.wav\",\n\t\t\t\t/G4 : \"Celeste G4.wav\"\n\t\t\t},\n\t\t\t/baseUrl : \"/public/Samples/Celeste/\"\n\t\t},\n\t\t/call : {\n\t\t\t/method : \"toDestination\"\n\t\t}\n\t}\n}"
+													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -96, 47, 42, 0, 0, 44, 46, 0, 0, 0, 0, 1, -108, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 1, 104, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, 88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 83, 97, 109, 112, 108, 101, 114, 0, 0, 0, 0, 24, 47, 105, 100, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 46, 105, 110, 115, 116, 114, 0, 0, 0, 0, 0, 0, -52, 47, 118, 97, 114, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 47, 117, 114, 108, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 71, 98, 50, 0, 0, 0, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 32, 71, 98, 50, 46, 119, 97, 118, 0, 0, 0, 0, 24, 47, 69, 51, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 32, 69, 51, 46, 119, 97, 118, 0, 0, 0, 0, 0, 24, 47, 71, 52, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 32, 71, 52, 46, 119, 97, 118, 0, 0, 0, 0, 0, 44, 47, 98, 97, 115, 101, 85, 114, 108, 0, 0, 0, 0, 44, 115, 0, 0, 47, 112, 117, 98, 108, 105, 99, 47, 83, 97, 109, 112, 108, 101, 115, 47, 67, 101, 108, 101, 115, 116, 101, 47, 0, 0, 0, 0, 0, 0, 0, 64, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 48, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 111, 68, 101, 115, 116, 105, 110, 97, 116, 105, 111, 110, 0, 0, 0 ],
+													"saved_bundle_length" : 436,
+													"text" : "/* : {\n\t/key : \"sound\",\n\t/val : {\n\t\t/new : \"Sampler\",\n\t\t/id : \"Celeste.instr\",\n\t\t/vars : {\n\t\t\t/urls : {\n\t\t\t\t/Gb2 : \"Celeste Gb2.wav\",\n\t\t\t\t/E3 : \"Celeste E3.wav\",\n\t\t\t\t/G4 : \"Celeste G4.wav\"\n\t\t\t},\n\t\t\t/baseUrl : \"/public/Samples/Celeste/\"\n\t\t},\n\t\t/call : {\n\t\t\t/method : \"toDestination\"\n\t\t}\n\t}\n}"
 												}
 
 											}
@@ -6367,10 +6417,9 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 58.0, 96.0, 324.0, 242.0 ],
-													"presentation_linecount" : 17,
-													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 92, 47, 49, 0, 0, 44, 46, 0, 0, 0, 0, 1, 80, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 0, 16, 47, 99, 97, 99, 104, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 1, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, 0, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 105, 100, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 45, 119, 97, 118, 46, 105, 110, 115, 116, 114, 0, 0, 0, 0, 0, 0, -52, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 114, 105, 103, 103, 101, 114, 65, 116, 116, 97, 99, 107, 0, 0, 0, 0, 0, 0, -120, 47, 97, 114, 103, 115, 0, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 1, 4, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 115, 0, 0, 43, 48, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
-													"saved_bundle_length" : 368,
-													"text" : "/1 : {\n\t/key : \"sound\",\n\t/cache : 0,\n\t/val : {\n\t\t/id : \"Celeste-wav.instr\",\n\t\t/call : {\n\t\t\t/method : \"triggerAttack\",\n\t\t\t/args : [{\n\t\t\t\t/val : 260\n\t\t\t}, {\n\t\t\t\t/val : \"+0\"\n\t\t\t}, {\n\t\t\t\t/val : 1\n\t\t\t}]\n\t\t}\n\t}\n}"
+													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 88, 47, 42, 0, 0, 44, 46, 0, 0, 0, 0, 1, 76, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 0, 16, 47, 99, 97, 99, 104, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -4, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 105, 100, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 46, 105, 110, 115, 116, 114, 0, 0, 0, 0, 0, 0, -52, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 114, 105, 103, 103, 101, 114, 65, 116, 116, 97, 99, 107, 0, 0, 0, 0, 0, 0, -120, 47, 97, 114, 103, 115, 0, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 1, 4, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 115, 0, 0, 43, 48, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
+													"saved_bundle_length" : 364,
+													"text" : "/* : {\n\t/key : \"sound\",\n\t/cache : 0,\n\t/val : {\n\t\t/id : \"Celeste.instr\",\n\t\t/call : {\n\t\t\t/method : \"triggerAttack\",\n\t\t\t/args : [{\n\t\t\t\t/val : 260\n\t\t\t}, {\n\t\t\t\t/val : \"+0\"\n\t\t\t}, {\n\t\t\t\t/val : 1\n\t\t\t}]\n\t\t}\n\t}\n}"
 												}
 
 											}
@@ -6388,6 +6437,13 @@
 											}
  ],
 										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-35", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
 												"patchline" : 												{
 													"destination" : [ "obj-35", 0 ],
 													"source" : [ "obj-24", 0 ]
@@ -6538,7 +6594,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 252.0, 552.0, 42.0, 22.0 ],
+									"patching_rect" : [ 199.0, 554.0, 42.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -6559,7 +6615,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 449.0, 82.0, 22.0 ],
+									"patching_rect" : [ 392.0, 426.0, 82.0, 22.0 ],
 									"text" : "note 6025 0 1"
 								}
 
@@ -6573,7 +6629,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 418.0, 89.0, 22.0 ],
+									"patching_rect" : [ 392.0, 400.0, 89.0, 22.0 ],
 									"text" : "note 6025 72 1"
 								}
 
@@ -6585,7 +6641,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 172.0, 552.0, 63.0, 22.0 ],
+									"patching_rect" : [ 119.0, 554.0, 63.0, 22.0 ],
 									"text" : "script stop"
 								}
 
@@ -6597,7 +6653,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 91.0, 552.0, 64.0, 22.0 ],
+									"patching_rect" : [ 38.0, 554.0, 64.0, 22.0 ],
 									"text" : "script start"
 								}
 
@@ -6609,7 +6665,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "FullPacket", "", "" ],
-									"patching_rect" : [ 45.0, 625.0, 69.0, 22.0 ],
+									"patching_rect" : [ 25.0, 609.0, 69.0, 22.0 ],
 									"text" : "drawsocket"
 								}
 
@@ -6623,8 +6679,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 408.0, 540.0, 131.0, 22.0 ],
-									"text" : "0. instrument sine.instr"
+									"patching_rect" : [ 388.0, 513.0, 172.0, 22.0 ],
+									"text" : "0. instrument Celeste-wav.instr"
 								}
 
 							}
@@ -6637,8 +6693,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 296.0, 128.0, 22.0 ],
-									"text" : "instrument sine.instr 1"
+									"patching_rect" : [ 392.0, 321.0, 169.0, 22.0 ],
+									"text" : "instrument Celeste-wav.instr 1"
 								}
 
 							}
@@ -6651,8 +6707,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 210.0, 91.0, 22.0 ],
-									"text" : "bank sine.bank"
+									"patching_rect" : [ 392.0, 235.0, 115.0, 22.0 ],
+									"text" : "bank tonejs.bank.txt"
 								}
 
 							}
@@ -6666,7 +6722,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 412.0, 240.0, 172.0, 52.0 ],
+									"patching_rect" : [ 392.0, 265.0, 172.0, 52.0 ],
 									"text" : "1-based. Most appropriate for external messages"
 								}
 
@@ -6681,22 +6737,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 408.0, 484.0, 156.0, 52.0 ],
+									"patching_rect" : [ 388.0, 457.0, 156.0, 52.0 ],
 									"text" : "0-based. Use with MaxScore expressions"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-17",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 323.0, 91.0, 22.0 ],
-									"text" : "panorama $1 1"
 								}
 
 							}
@@ -6709,7 +6751,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 376.0, 84.0, 22.0 ],
+									"patching_rect" : [ 392.0, 374.0, 84.0, 22.0 ],
 									"text" : "note 6000 0 1"
 								}
 
@@ -6723,35 +6765,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 350.0, 91.0, 22.0 ],
+									"patching_rect" : [ 392.0, 348.0, 91.0, 22.0 ],
 									"text" : "note 6000 72 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-11",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 185.0, 400.0, 20.0 ],
-									"text" : "send event in this format: channel number, pitch, velocity, duration in sec, "
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-10",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 185.0, 97.0, 22.0 ],
-									"text" : "0 60.5 72.9 6.75"
 								}
 
 							}
@@ -6763,7 +6778,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 222.0, 150.0, 20.0 ],
+									"patching_rect" : [ 128.0, 235.0, 150.0, 20.0 ],
 									"text" : "stop all sound"
 								}
 
@@ -6777,7 +6792,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 221.0, 39.0, 22.0 ],
+									"patching_rect" : [ 25.0, 235.0, 39.0, 22.0 ],
 									"text" : "panic"
 								}
 
@@ -6790,7 +6805,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 261.0, 150.0, 20.0 ],
+									"patching_rect" : [ 128.0, 269.0, 150.0, 20.0 ],
 									"text" : "read and write settings file"
 								}
 
@@ -6804,7 +6819,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 91.0, 260.0, 36.0, 22.0 ],
+									"patching_rect" : [ 71.0, 268.0, 36.0, 22.0 ],
 									"text" : "write"
 								}
 
@@ -6818,7 +6833,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 260.0, 35.0, 22.0 ],
+									"patching_rect" : [ 25.0, 268.0, 35.0, 22.0 ],
 									"text" : "read"
 								}
 
@@ -6838,7 +6853,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 307.0, 320.0, 229.0 ],
+									"patching_rect" : [ 25.0, 315.0, 320.0, 229.0 ],
 									"varname" : "maxscore.tonejs",
 									"viewvisibility" : 1
 								}
@@ -6856,16 +6871,45 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 620.0, 125.0 ]
+									"patching_rect" : [ 10.0, 10.0, 580.0, 200.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-44",
+									"maxclass" : "jweb",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 831.0, 365.0, 193.0, 102.0 ],
+									"rendermode" : 0,
+									"url" : "localhost:3002/2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 270.0,
+									"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
+									"border" : 2,
+									"bordercolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+									"id" : "obj-59",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 830.0, 364.0, 195.0, 104.0 ],
+									"proportion" : 0.5,
+									"rounded" : 0
 								}
 
 							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-10", 0 ]
+									"destination" : [ "obj-9", 0 ],
+									"source" : [ "obj-11", 0 ]
 								}
 
 							}
@@ -6902,14 +6946,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-17", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -6941,6 +6977,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-33", 0 ]
 								}
 
@@ -6948,6 +6985,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -6956,6 +6994,15 @@
 								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
 									"source" : [ "obj-36", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"hidden" : 1,
+									"midpoints" : [ 947.833333333333258, 602.0, 34.5, 602.0 ],
+									"source" : [ "obj-38", 2 ]
 								}
 
 							}
@@ -6977,20 +7024,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-40", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-38", 0 ],
-									"source" : [ "obj-41", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -6998,6 +7040,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-43", 0 ]
 								}
 
@@ -7012,6 +7055,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-47", 0 ]
 								}
 
@@ -7019,6 +7063,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-48", 0 ]
 								}
 
@@ -7026,6 +7071,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-49", 0 ]
 								}
 
@@ -7059,6 +7105,21 @@
 									"destination" : [ "obj-3", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-44", 0 ],
+									"source" : [ "obj-62", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-38", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -7235,7 +7296,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1311.0, 680.0 ],
+						"rect" : [ 0.0, 26.0, 1164.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7326,14 +7387,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.tonejs-sampler.menus.maxpat",
+				"name" : "maxscore.sampler.menus.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.tonejs-sampler.instrument.maxpat",
+				"name" : "maxscore.sampler.instrument.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
@@ -7376,8 +7437,8 @@
 			}
 , 			{
 				"name" : "LtoC.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -7543,8 +7604,8 @@
 			}
 , 			{
 				"name" : "my-loadbang.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../Library/MaxScore",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}

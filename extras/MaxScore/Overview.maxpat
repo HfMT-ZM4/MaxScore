@@ -330,7 +330,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 501.5, 274.327576000000022, 208.0, 34.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 459.0, 359.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 459.0, 359.0, 224.0, 77.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -390,7 +390,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 450.5, 157.0, 219.0, 31.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 459.0, 243.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 459.0, 243.0, 224.0, 77.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -596,13 +596,12 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
+									"fontsize" : [ 12.0 ],
 									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontsize" : [ 12.0 ]
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -612,7 +611,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -674,7 +674,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 394.5, 430.655151683593772, 436.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 233.0, 359.0, 223.4554443359375, 70.0 ],
+					"presentation_rect" : [ 233.0, 359.0, 223.4554443359375, 77.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -733,7 +733,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 7.0, 353.0, 436.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 7.0, 359.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 7.0, 359.0, 224.0, 77.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -755,7 +755,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 7.0, 193.0, 436.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 233.0, 243.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 233.0, 243.0, 224.0, 77.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -798,7 +798,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 7.0, 224.0, 436.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 7.0, 243.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 7.0, 243.0, 224.0, 77.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -841,11 +841,11 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 7.0, 257.0, 436.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 459.0, 126.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 459.0, 126.0, 224.0, 77.0 ],
 					"spacing_x" : 10.0,
-					"spacing_y" : 10.0,
+					"spacing_y" : 6.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "maxscore.makenote", "maxscore.fluidsynth2", "maxscore.sampler", "maxscore.2contimbre" ],
+					"tabs" : [ "maxscore.makenote", "maxscore.fluidsynth2", "maxscore.sampler", "maxscore.2contimbre", "maxscore.tonejs" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -863,7 +863,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 7.0, 291.0, 436.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 233.0, 126.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 233.0, 126.0, 224.0, 77.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -1063,7 +1063,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 7.0, 322.0, 436.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 7.0, 126.0, 224.0, 70.0 ],
+					"presentation_rect" : [ 7.0, 126.0, 224.0, 77.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
@@ -1241,13 +1241,12 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
+					"fontsize" : [ 12.0 ],
 					"fontname" : [ "Arial" ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -1257,7 +1256,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
