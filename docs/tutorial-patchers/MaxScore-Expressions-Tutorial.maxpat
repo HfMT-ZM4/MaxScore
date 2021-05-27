@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 26.0, 113.0, 1185.0, 680.0 ],
+		"rect" : [ 101.0, 115.0, 1125.0, 758.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -75,7 +75,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "multichannelsignal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 803.0, 742.0, 136.0, 47.0 ],
+					"patching_rect" : [ 816.0, 742.0, 136.0, 47.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "mc.live.gain~",
@@ -365,7 +365,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "bang", "int", "" ],
-					"patching_rect" : [ 455.0, 509.600006000000008, 404.200012000000015, 171.399993999999992 ],
+					"patching_rect" : [ 455.0, 508.600006000000008, 404.200012000000015, 171.399993999999992 ],
 					"varname" : "Djster.µbus",
 					"viewvisibility" : 1
 				}
@@ -559,7 +559,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
-					"midpoints" : [ 873.5, 725.5, 812.5, 725.5 ],
+					"midpoints" : [ 873.5, 725.5, 825.5, 725.5 ],
 					"source" : [ "obj-24", 0 ]
 				}
 
@@ -755,18 +755,18 @@
 			"obj-3::obj-40" : [ "live.text[21]", "live.text", 0 ],
 			"obj-3::obj-8::obj-22" : [ "Edit Button[3]", "Edit Button", 0 ],
 			"obj-3::obj-9" : [ "live.text[42]", "live.text", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-16" : [ "live.menu[29]", "live.menu", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-19" : [ "live.toggle[15]", "live.toggle", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-21" : [ "live.toggle[17]", "live.toggle", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-237" : [ "live.menu[31]", "live.menu", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-24" : [ "live.button[3]", "live.button", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-26" : [ "live.menu[30]", "bracket", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-28" : [ "live.toggle[18]", "live.toggle", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-43" : [ "live.text[16]", "live.text", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-51" : [ "live.toggle[14]", "live.toggle", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-70" : [ "live.text[4]", "live.text", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-72" : [ "track[5]", "track", 0 ],
-			"obj-7::obj-17::obj-14::obj-5::obj-8" : [ "live.toggle[16]", "live.toggle", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-16" : [ "live.menu[29]", "live.menu", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-19" : [ "live.toggle[15]", "live.toggle", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-21" : [ "live.toggle[17]", "live.toggle", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-237" : [ "live.menu[31]", "live.menu", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-24" : [ "live.button[3]", "live.button", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-26" : [ "live.menu[30]", "bracket", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-28" : [ "live.toggle[18]", "live.toggle", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-43" : [ "live.text[16]", "live.text", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-51" : [ "live.toggle[14]", "live.toggle", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-70" : [ "live.text[4]", "live.text", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-72" : [ "track[5]", "track", 0 ],
+			"obj-7::obj-17::obj-14::obj-13::obj-8" : [ "live.toggle[16]", "live.toggle", 0 ],
 			"obj-7::obj-17::obj-23" : [ "live.tab[127]", "live.tab", 0 ],
 			"obj-7::obj-17::obj-28::obj-4::obj-55" : [ "live.menu", "live.menu", 0 ],
 			"obj-7::obj-17::obj-28::obj-4::obj-62" : [ "live.menu[54]", "live.menu", 0 ],
