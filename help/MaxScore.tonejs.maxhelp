@@ -107,6 +107,46 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 607.0, 329.0, 32.0, 22.0 ],
+									"text" : "print"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-17",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 222.0, 217.0, 156.0, 47.0 ],
+									"presentation_linecount" : 3,
+									"text" : "Caveat: samples can only be in .mp3, .ogg or .wav format to work with tone.js.",
+									"textcolor" : [ 1.0, 0.4, 0.4, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 104.0, 609.0, 162.0, 22.0 ],
+									"presentation_linecount" : 5,
+									"text" : "script npm install drawsocket"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -6308,7 +6348,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 131.0, 87.0, 771.0, 909.0 ],
+										"rect" : [ 131.0, 87.0, 694.0, 811.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -6336,7 +6376,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontface" : 0,
@@ -6400,6 +6439,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 394.0, 552.0, 324.0, 255.0 ],
+													"presentation_linecount" : 18,
 													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 120, 47, 42, 0, 0, 44, 46, 0, 0, 0, 0, 1, 108, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 1, 64, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, 48, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 83, 97, 109, 112, 108, 101, 114, 0, 0, 0, 0, 20, 47, 105, 100, 0, 44, 115, 0, 0, 115, 97, 109, 112, 108, 101, 84, 101, 115, 116, 0, 0, 0, 0, 0, -88, 47, 118, 97, 114, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 72, 47, 117, 114, 108, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 56, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 65, 49, 0, 44, 115, 0, 0, 65, 49, 46, 109, 112, 51, 0, 0, 0, 0, 0, 16, 47, 65, 50, 0, 44, 115, 0, 0, 65, 50, 46, 109, 112, 51, 0, 0, 0, 0, 0, 56, 47, 98, 97, 115, 101, 85, 114, 108, 0, 0, 0, 0, 44, 115, 0, 0, 104, 116, 116, 112, 115, 58, 47, 47, 116, 111, 110, 101, 106, 115, 46, 103, 105, 116, 104, 117, 98, 46, 105, 111, 47, 97, 117, 100, 105, 111, 47, 99, 97, 115, 105, 111, 47, 0, 0, 0, 0, 0, 0, 64, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 48, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 111, 68, 101, 115, 116, 105, 110, 97, 116, 105, 111, 110, 0, 0, 0 ],
 													"saved_bundle_length" : 396,
 													"text" : "/* : {\n\t/key : \"sound\",\n\t/val : {\n\t\t/new : \"Sampler\",\n\t\t/id : \"sampleTest\",\n\t\t/vars : {\n\t\t\t/urls : {\n\t\t\t\t/A1 : \"A1.mp3\",\n\t\t\t\t/A2 : \"A2.mp3\"\n\t\t\t},\n\t\t\t/baseUrl : \"https://tonejs.github.io/audio/casio/\"\n\t\t},\n\t\t/call : {\n\t\t\t/method : \"toDestination\"\n\t\t}\n\t}\n}"
@@ -6417,9 +6457,10 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 58.0, 96.0, 324.0, 242.0 ],
-													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 88, 47, 42, 0, 0, 44, 46, 0, 0, 0, 0, 1, 76, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 0, 16, 47, 99, 97, 99, 104, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -4, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 105, 100, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 46, 105, 110, 115, 116, 114, 0, 0, 0, 0, 0, 0, -52, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 114, 105, 103, 103, 101, 114, 65, 116, 116, 97, 99, 107, 0, 0, 0, 0, 0, 0, -120, 47, 97, 114, 103, 115, 0, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 1, 4, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 115, 0, 0, 43, 48, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
+													"presentation_linecount" : 17,
+													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 88, 47, 49, 0, 0, 44, 46, 0, 0, 0, 0, 1, 76, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 0, 16, 47, 99, 97, 99, 104, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -4, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 105, 100, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 46, 105, 110, 115, 116, 114, 0, 0, 0, 0, 0, 0, -52, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 114, 105, 103, 103, 101, 114, 65, 116, 116, 97, 99, 107, 0, 0, 0, 0, 0, 0, -120, 47, 97, 114, 103, 115, 0, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 1, 4, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 115, 0, 0, 43, 48, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
 													"saved_bundle_length" : 364,
-													"text" : "/* : {\n\t/key : \"sound\",\n\t/cache : 0,\n\t/val : {\n\t\t/id : \"Celeste.instr\",\n\t\t/call : {\n\t\t\t/method : \"triggerAttack\",\n\t\t\t/args : [{\n\t\t\t\t/val : 260\n\t\t\t}, {\n\t\t\t\t/val : \"+0\"\n\t\t\t}, {\n\t\t\t\t/val : 1\n\t\t\t}]\n\t\t}\n\t}\n}"
+													"text" : "/1 : {\n\t/key : \"sound\",\n\t/cache : 0,\n\t/val : {\n\t\t/id : \"Celeste.instr\",\n\t\t/call : {\n\t\t\t/method : \"triggerAttack\",\n\t\t\t/args : [{\n\t\t\t\t/val : 260\n\t\t\t}, {\n\t\t\t\t/val : \"+0\"\n\t\t\t}, {\n\t\t\t\t/val : 1\n\t\t\t}]\n\t\t}\n\t}\n}"
 												}
 
 											}
@@ -6778,7 +6819,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 128.0, 235.0, 150.0, 20.0 ],
+									"patching_rect" : [ 71.0, 235.0, 83.0, 20.0 ],
 									"text" : "stop all sound"
 								}
 
@@ -6805,7 +6846,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 128.0, 269.0, 150.0, 20.0 ],
+									"patching_rect" : [ 118.0, 268.0, 148.0, 20.0 ],
 									"text" : "read and write settings file"
 								}
 
@@ -6938,6 +6979,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-16", 0 ]
@@ -7031,8 +7079,17 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"order" : 0,
+									"source" : [ "obj-42", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"hidden" : 1,
+									"order" : 1,
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -7436,17 +7493,24 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "LtoC.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "Cymbales_Antiques-wav.instr",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/help/public/Instruments",
 				"patcherrelativepath" : "./public/Instruments",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Celeste-wav.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/help/public/Instruments",
+				"patcherrelativepath" : "./public/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "LtoC.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -7458,22 +7522,22 @@
 			}
 , 			{
 				"name" : "drawsocket.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/drawsocket/patchers",
-				"patcherrelativepath" : "../../drawsocket/patchers",
+				"bootpath" : "/Users/Shared/Max 8/Packages/drawsocket-max/patchers",
+				"patcherrelativepath" : "../../drawsocket-max/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "drawsocket-server.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/drawsocket/code/node",
-				"patcherrelativepath" : "../../drawsocket/code/node",
+				"name" : "drawsocket-max.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/drawsocket-max/javascript",
+				"patcherrelativepath" : "../../drawsocket-max/javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "startscript.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/nodejs/drawsocket-min/code",
-				"patcherrelativepath" : "../../Quintet.net/patchers/Library/nodejs/drawsocket-min/code",
+				"bootpath" : "/Users/Shared/Max 8/Packages/drawsocket-max/javascript",
+				"patcherrelativepath" : "../../drawsocket-max/javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
