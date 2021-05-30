@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 1164.0, 678.0 ],
+		"rect" : [ 34.0, 87.0, 1149.0, 678.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -76,7 +76,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 1164.0, 652.0 ],
+						"rect" : [ 34.0, 113.0, 1149.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -107,12 +107,14 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-19",
-									"maxclass" : "newobj",
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-8",
+									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 607.0, 329.0, 32.0, 22.0 ],
-									"text" : "print"
+									"patching_rect" : [ 743.0, 311.0, 244.0, 20.0 ],
+									"text" : "Set URL after starting the drawsocket server"
 								}
 
 							}
@@ -126,7 +128,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 222.0, 217.0, 156.0, 47.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Caveat: samples can only be in .mp3, .ogg or .wav format to work with tone.js.",
 									"textcolor" : [ 1.0, 0.4, 0.4, 1.0 ]
 								}
@@ -140,7 +141,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 104.0, 609.0, 162.0, 22.0 ],
-									"presentation_linecount" : 5,
 									"text" : "script npm install drawsocket"
 								}
 
@@ -166,7 +166,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 954.0, 62.0, 169.0, 49.0 ],
-									"presentation_linecount" : 6,
 									"text" : "setZoom 0.3, canvas output canvas socket, canvas setMediaFolder /public/"
 								}
 
@@ -178,8 +177,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 954.0, 329.0, 113.0, 22.0 ],
-									"text" : "url localhost:3002/1"
+									"patching_rect" : [ 779.0, 364.0, 211.0, 22.0 ],
+									"text" : "url localhost:3002/1?wait_for_event=1"
 								}
 
 							}
@@ -192,22 +191,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 670.0, 374.0, 156.0, 74.0 ],
+									"patching_rect" : [ 582.0, 409.0, 156.0, 74.0 ],
 									"text" : "This instance of jweb will play the note of the second staff. Change URL to localhost:3002/1 to hear the note for the first staff."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-60",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 848.5, 399.5, 156.0, 33.0 ],
-									"text" : "Initialize audio playback by clicking inside browser "
 								}
 
 							}
@@ -296,8 +281,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 831.0, 329.0, 113.0, 22.0 ],
-									"text" : "url localhost:3002/2"
+									"patching_rect" : [ 743.0, 337.0, 211.0, 22.0 ],
+									"text" : "url localhost:3002/2?wait_for_event=1"
 								}
 
 							}
@@ -521,7 +506,7 @@
 															}
 , 															{
 																"box" : 																{
-																	"embedstate" : [ [ "restoreblob", "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", "sgCgEAA=" ] ],
+																	"embedstate" : [ [ "restoreblob", "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", "hI5AKRXG5ThTY6ia4LIAoBAA" ] ],
 																	"id" : "obj-24",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
@@ -607,12 +592,6 @@
  ],
 														"styles" : [ 															{
 																"name" : "black on white",
-																"number" : 																{
-																	"fontsize" : [ 12.0 ],
-																	"fontname" : [ "Arial" ],
-																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-																}
-,
 																"umenu" : 																{
 																	"bgfillcolor" : 																	{
 																		"type" : "color",
@@ -624,6 +603,12 @@
 																		"autogradient" : 0
 																	}
 ,
+																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+																}
+,
+																"number" : 																{
+																	"fontsize" : [ 12.0 ],
+																	"fontname" : [ "Arial" ],
 																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 																}
 ,
@@ -1728,7 +1713,7 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 640.833333333333371, 381.5, 180.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"initial" : [ 37712 ],
+														"initial" : [ 12349 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -2177,12 +2162,6 @@
  ],
 																		"styles" : [ 																			{
 																				"name" : "black on white",
-																				"number" : 																				{
-																					"fontsize" : [ 12.0 ],
-																					"fontname" : [ "Arial" ],
-																					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-																				}
-,
 																				"umenu" : 																				{
 																					"bgfillcolor" : 																					{
 																						"type" : "color",
@@ -2194,6 +2173,12 @@
 																						"autogradient" : 0
 																					}
 ,
+																					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+																				}
+,
+																				"number" : 																				{
+																					"fontsize" : [ 12.0 ],
+																					"fontname" : [ "Arial" ],
 																					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 																				}
 ,
@@ -4052,12 +4037,6 @@
  ],
 																		"styles" : [ 																			{
 																				"name" : "black on white",
-																				"number" : 																				{
-																					"fontsize" : [ 12.0 ],
-																					"fontname" : [ "Arial" ],
-																					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-																				}
-,
 																				"umenu" : 																				{
 																					"bgfillcolor" : 																					{
 																						"type" : "color",
@@ -4069,6 +4048,12 @@
 																						"autogradient" : 0
 																					}
 ,
+																					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+																				}
+,
+																				"number" : 																				{
+																					"fontsize" : [ 12.0 ],
+																					"fontname" : [ "Arial" ],
 																					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 																				}
 ,
@@ -4939,12 +4924,6 @@
  ],
 														"styles" : [ 															{
 																"name" : "black on white",
-																"number" : 																{
-																	"fontsize" : [ 12.0 ],
-																	"fontname" : [ "Arial" ],
-																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-																}
-,
 																"umenu" : 																{
 																	"bgfillcolor" : 																	{
 																		"type" : "color",
@@ -4956,6 +4935,12 @@
 																		"autogradient" : 0
 																	}
 ,
+																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+																}
+,
+																"number" : 																{
+																	"fontsize" : [ 12.0 ],
+																	"fontname" : [ "Arial" ],
 																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 																}
 ,
@@ -5583,7 +5568,7 @@
 , 											{
 												"box" : 												{
 													"border" : 0,
-													"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1 ] ],
+													"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1 ], [ "transparency", 0 ] ],
 													"filename" : "pane.js",
 													"id" : "obj-7",
 													"maxclass" : "jsui",
@@ -6256,12 +6241,6 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
 												"umenu" : 												{
 													"bgfillcolor" : 													{
 														"type" : "color",
@@ -6273,6 +6252,12 @@
 														"autogradient" : 0
 													}
 ,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -6387,7 +6372,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 58.0, 348.0, 324.0, 242.0 ],
-													"presentation_linecount" : 17,
 													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 84, 47, 49, 0, 0, 44, 46, 0, 0, 0, 0, 1, 72, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 0, 16, 47, 99, 97, 99, 104, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -8, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 105, 100, 0, 44, 115, 0, 0, 115, 97, 109, 112, 108, 101, 84, 101, 115, 116, 0, 0, 0, 0, 0, -52, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 114, 105, 103, 103, 101, 114, 65, 116, 116, 97, 99, 107, 0, 0, 0, 0, 0, 0, -120, 47, 97, 114, 103, 115, 0, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 1, 4, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 115, 0, 0, 43, 48, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
 													"saved_bundle_length" : 360,
 													"text" : "/1 : {\n\t/key : \"sound\",\n\t/cache : 0,\n\t/val : {\n\t\t/id : \"sampleTest\",\n\t\t/call : {\n\t\t\t/method : \"triggerAttack\",\n\t\t\t/args : [{\n\t\t\t\t/val : 260\n\t\t\t}, {\n\t\t\t\t/val : \"+0\"\n\t\t\t}, {\n\t\t\t\t/val : 1\n\t\t\t}]\n\t\t}\n\t}\n}"
@@ -6439,7 +6423,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 394.0, 552.0, 324.0, 255.0 ],
-													"presentation_linecount" : 18,
 													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 120, 47, 42, 0, 0, 44, 46, 0, 0, 0, 0, 1, 108, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 1, 64, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 1, 48, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 110, 101, 119, 0, 0, 0, 0, 44, 115, 0, 0, 83, 97, 109, 112, 108, 101, 114, 0, 0, 0, 0, 20, 47, 105, 100, 0, 44, 115, 0, 0, 115, 97, 109, 112, 108, 101, 84, 101, 115, 116, 0, 0, 0, 0, 0, -88, 47, 118, 97, 114, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -104, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 72, 47, 117, 114, 108, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 56, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 65, 49, 0, 44, 115, 0, 0, 65, 49, 46, 109, 112, 51, 0, 0, 0, 0, 0, 16, 47, 65, 50, 0, 44, 115, 0, 0, 65, 50, 46, 109, 112, 51, 0, 0, 0, 0, 0, 56, 47, 98, 97, 115, 101, 85, 114, 108, 0, 0, 0, 0, 44, 115, 0, 0, 104, 116, 116, 112, 115, 58, 47, 47, 116, 111, 110, 101, 106, 115, 46, 103, 105, 116, 104, 117, 98, 46, 105, 111, 47, 97, 117, 100, 105, 111, 47, 99, 97, 115, 105, 111, 47, 0, 0, 0, 0, 0, 0, 64, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 48, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 111, 68, 101, 115, 116, 105, 110, 97, 116, 105, 111, 110, 0, 0, 0 ],
 													"saved_bundle_length" : 396,
 													"text" : "/* : {\n\t/key : \"sound\",\n\t/val : {\n\t\t/new : \"Sampler\",\n\t\t/id : \"sampleTest\",\n\t\t/vars : {\n\t\t\t/urls : {\n\t\t\t\t/A1 : \"A1.mp3\",\n\t\t\t\t/A2 : \"A2.mp3\"\n\t\t\t},\n\t\t\t/baseUrl : \"https://tonejs.github.io/audio/casio/\"\n\t\t},\n\t\t/call : {\n\t\t\t/method : \"toDestination\"\n\t\t}\n\t}\n}"
@@ -6457,7 +6440,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 58.0, 96.0, 324.0, 242.0 ],
-													"presentation_linecount" : 17,
 													"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 88, 47, 49, 0, 0, 44, 46, 0, 0, 0, 0, 1, 76, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 115, 111, 117, 110, 100, 0, 0, 0, 0, 0, 0, 16, 47, 99, 97, 99, 104, 101, 0, 0, 44, 105, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -4, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 47, 105, 100, 0, 44, 115, 0, 0, 67, 101, 108, 101, 115, 116, 101, 46, 105, 110, 115, 116, 114, 0, 0, 0, 0, 0, 0, -52, 47, 99, 97, 108, 108, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -68, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 47, 109, 101, 116, 104, 111, 100, 0, 44, 115, 0, 0, 116, 114, 105, 103, 103, 101, 114, 65, 116, 116, 97, 99, 107, 0, 0, 0, 0, 0, 0, -120, 47, 97, 114, 103, 115, 0, 0, 0, 44, 46, 46, 46, 0, 0, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 1, 4, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 115, 0, 0, 43, 48, 0, 0, 0, 0, 0, 36, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 47, 118, 97, 108, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1 ],
 													"saved_bundle_length" : 364,
 													"text" : "/1 : {\n\t/key : \"sound\",\n\t/cache : 0,\n\t/val : {\n\t\t/id : \"Celeste.instr\",\n\t\t/call : {\n\t\t\t/method : \"triggerAttack\",\n\t\t\t/args : [{\n\t\t\t\t/val : 260\n\t\t\t}, {\n\t\t\t\t/val : \"+0\"\n\t\t\t}, {\n\t\t\t\t/val : 1\n\t\t\t}]\n\t\t}\n\t}\n}"
@@ -6515,12 +6497,6 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
 												"umenu" : 												{
 													"bgfillcolor" : 													{
 														"type" : "color",
@@ -6532,6 +6508,12 @@
 														"autogradient" : 0
 													}
 ,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -6551,10 +6533,10 @@
 , 											{
 												"name" : "comment_header_white_MaxScore",
 												"default" : 												{
+													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 													"fontsize" : [ 18.0 ],
 													"textjustification" : [ 1 ],
-													"fontname" : [ "Ableton Sans Light" ],
-													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+													"fontname" : [ "Ableton Sans Light" ]
 												}
 ,
 												"parentstyle" : "",
@@ -6563,9 +6545,9 @@
 , 											{
 												"name" : "comment_white",
 												"default" : 												{
+													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 													"fontsize" : [ 10.0 ],
 													"fontname" : [ "Ableton Sans Light" ],
-													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 													"fontface" : [ 0 ]
 												}
 ,
@@ -6923,9 +6905,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 831.0, 365.0, 193.0, 102.0 ],
+									"patching_rect" : [ 743.0, 400.0, 193.0, 102.0 ],
 									"rendermode" : 0,
-									"url" : "localhost:3002/2"
+									"url" : "localhost:3002/1?wait_for_event=1"
 								}
 
 							}
@@ -6940,7 +6922,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 830.0, 364.0, 195.0, 104.0 ],
+									"patching_rect" : [ 742.0, 399.0, 195.0, 104.0 ],
 									"proportion" : 0.5,
 									"rounded" : 0
 								}
@@ -7079,17 +7061,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"order" : 0,
-									"source" : [ "obj-42", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"hidden" : 1,
-									"order" : 1,
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -7183,12 +7156,6 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
 								"umenu" : 								{
 									"bgfillcolor" : 									{
 										"type" : "color",
@@ -7200,6 +7167,12 @@
 										"autogradient" : 0
 									}
 ,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontsize" : [ 12.0 ],
+									"fontname" : [ "Arial" ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
@@ -7219,10 +7192,10 @@
 , 							{
 								"name" : "comment_header_white_MaxScore",
 								"default" : 								{
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"fontsize" : [ 18.0 ],
 									"textjustification" : [ 1 ],
-									"fontname" : [ "Ableton Sans Light" ],
-									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+									"fontname" : [ "Ableton Sans Light" ]
 								}
 ,
 								"parentstyle" : "",
@@ -7231,9 +7204,9 @@
 , 							{
 								"name" : "comment_white",
 								"default" : 								{
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"fontsize" : [ 10.0 ],
 									"fontname" : [ "Ableton Sans Light" ],
-									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"fontface" : [ 0 ]
 								}
 ,
@@ -7353,7 +7326,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1164.0, 652.0 ],
+						"rect" : [ 0.0, 26.0, 1149.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7473,8 +7446,8 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -7483,6 +7456,13 @@
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "packback.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -7536,8 +7516,8 @@
 			}
 , 			{
 				"name" : "startscript.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/drawsocket-max/javascript",
-				"patcherrelativepath" : "../../drawsocket-max/javascript",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/nodejs/drawsocket-min/code",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Library/nodejs/drawsocket-min/code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -7668,8 +7648,8 @@
 			}
 , 			{
 				"name" : "my-loadbang.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
+				"patcherrelativepath" : "../../../Library/MaxScore",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -7689,8 +7669,8 @@
 			}
 , 			{
 				"name" : "first-int.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Macaque/lib/abstractions",
-				"patcherrelativepath" : "../patchers/Macaque/lib/abstractions",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}

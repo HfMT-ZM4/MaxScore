@@ -887,7 +887,9 @@ function renderPlayhead()
 					"child" : SVGClefs[s + 1][i][4],
 					"style" : 					{
 						"font-family" : SVGClefs[s + 1][i][0],
-						"font-size" : SVGClefs[s + 1][i][1]
+						"font-size" : SVGClefs[s + 1][i][1],
+						"fill" : SVGClefs[s + 1][i][2],
+						"fill-opacity" : fill_opacity
 					}
 					,
 					"transform" : "matrix(" + SVGClefs[s + 1][i][3].join() + ")"
