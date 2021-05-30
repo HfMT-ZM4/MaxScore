@@ -123,6 +123,7 @@ if (mode == "picster" && !blocked) {
 	//renderedMessages.clear();
 	offsets = {};
 	renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
+  	//post("e", renderedMessages.stringify(), "\n");
 	if (renderedMessages.stringify().length > 5) {
 	var keys = renderedMessages.getkeys();
 	for (var i = 0; i < keys.length; i++)
@@ -138,7 +139,7 @@ if (mode == "picster" && !blocked) {
 			if (renderedMessages.get(keys[i]).length == 9) format = "drawsocket";
 			break;
 			case "staff" :
-            RenderMessageOffset = [renderedMessages.get(keys[i])[3], renderedMessages.get(keys[i])[4]];
+          RenderMessageOffset = [renderedMessages.get(keys[i])[3], renderedMessages.get(keys[i])[4]];
 			if (renderedMessages.get(keys[i]).length == 7) format = "drawsocket";
 			break;
 			case "measure" :
@@ -146,6 +147,7 @@ if (mode == "picster" && !blocked) {
 			if (renderedMessages.get(keys[i]).length == 6) format = "drawsocket";
 			break;
 	}
+		//post("F", "\n");
 	var e = new Dict();
 	e.parse(renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
 	if (format == "sadam.canvas") {
@@ -237,8 +239,6 @@ if (mode == "picster" && !blocked) {
 		}
 		}
 		outlet(1, foundobjects.get(item).slice(0, foundobjects.get(item).length - 5));
-
-		//post("e", e.stringify(), format, "\n");
 		var tempDict2 = new Dict();
 		tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 		if (format == "sadam.canvas") {
@@ -520,11 +520,11 @@ if (mode == "picster") {
 			}
 		break;
 		case "staff" :
-			//post("staff", "\n");
 			dumpinfo = ["staff", foundobjects.get(item)[2]];
 			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
 			outlet(0, "removeAllRenderedMessagesFromStaff", foundobjects.get(item).slice(1, 3));
 			//var userBeans = [].concat(staves["staffUserBean"]);
+			//post("staff", JSON.stringify(userBeans), "\n");
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["@Message"].indexOf("rendered" == -1) && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
@@ -2288,20 +2288,20 @@ function anything()
 			}
 		}
 		else if (dumpinfo[0] == "staff") {
-			if (key == "measure" && "staffUserBean" in json["measure"]["staff"][dumpinfo[1]]){
-			var occurence = getAllIndexes(json["measure"]["staff"][dumpinfo[1]][".ordering"], "staffUserBean");
-			//post("userBean-1", occurence, JSON.stringify(json[key]["userBean"][0]), "\n");
-			for (i = 0; i < occurence.length; i++) {
-				userBeans[i] = json["measure"]["staff"][dumpinfo[1]]["staffUserBean"][i];
-				post("userBean-2", occurence, JSON.stringify(userBeans), "\n");
+			if (key == "score" && "staffUserBean" in json["score"]["measure"][0]["staff"][dumpinfo[1]]){
+				//post("userBean-1", key, JSON.stringify(json), "\n");
+					var occurence = getAllIndexes(json["score"]["measure"][0]["staff"][dumpinfo[1]][".ordering"], "staffUserBean");
+					for (i = 0; i < occurence.length; i++) {
+					userBeans[i] = json["score"]["measure"][0]["staff"][dumpinfo[1]]["staffUserBean"][i];
+					//post("userBean-2", occurence, JSON.stringify(userBeans), "\n");
 				}
 			}
 		}
 		else if (dumpinfo[0] == "measure"){
-			if (key == "measure" && "measureUserBean" in json["measure"]){
-			var occurence = getAllIndexes(json["measure"][".ordering"], "measureUserBean");
+			if (key == "score" && "measureUserBean" in json["score"]["measure"]){
+			var occurence = getAllIndexes(json["score"]["measure"][".ordering"], "measureUserBean");
 			for (i = 0; i < occurence.length; i++) {
-				userBeans[i] = json["measure"]["measureUserBean"][i];
+				userBeans[i] = json["score"]["measure"]["measureUserBean"][i];
 				}			
 			}
 		}

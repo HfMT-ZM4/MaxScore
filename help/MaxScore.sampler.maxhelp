@@ -186,7 +186,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 586.0, 240.0, 156.0, 52.0 ],
-									"text" : "0 based. Use in MaxScore Editor slots."
+									"presentation_linecount" : 2,
+									"text" : "0 based. Use with MaxScore  expression."
 								}
 
 							}
@@ -335,7 +336,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 160.0, 400.0, 20.0 ],
+									"patching_rect" : [ 148.0, 187.0, 400.0, 20.0 ],
 									"text" : "send event in this format: channel number, pitch, velocity, duration in sec, "
 								}
 
@@ -349,35 +350,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 160.0, 97.0, 22.0 ],
+									"patching_rect" : [ 45.0, 187.0, 97.0, 22.0 ],
 									"text" : "0 60.5 72.9 6.75"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-9",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 195.0, 150.0, 20.0 ],
-									"text" : "send note off"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-8",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 195.0, 33.0, 22.0 ],
-									"text" : "stop"
 								}
 
 							}
@@ -389,7 +363,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 229.0, 150.0, 20.0 ],
+									"patching_rect" : [ 148.0, 219.0, 150.0, 20.0 ],
 									"text" : "stop all sound"
 								}
 
@@ -403,7 +377,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 228.0, 39.0, 22.0 ],
+									"patching_rect" : [ 45.0, 218.0, 39.0, 22.0 ],
 									"text" : "panic"
 								}
 
@@ -416,7 +390,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 261.0, 150.0, 20.0 ],
+									"patching_rect" : [ 148.0, 251.0, 150.0, 20.0 ],
 									"text" : "read and write settings file"
 								}
 
@@ -430,7 +404,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 91.0, 260.0, 36.0, 22.0 ],
+									"patching_rect" : [ 91.0, 250.0, 36.0, 22.0 ],
 									"text" : "write"
 								}
 
@@ -444,7 +418,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 260.0, 35.0, 22.0 ],
+									"patching_rect" : [ 45.0, 250.0, 35.0, 22.0 ],
 									"text" : "read"
 								}
 
@@ -614,14 +588,6 @@
 								}
 
 							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-8", 0 ]
-								}
-
-							}
  ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"editing_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
@@ -756,6 +722,14 @@
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-2::obj-3::obj-2" : 				{
+					"parameter_longname" : "live.text[38]"
+				}
+,
+				"obj-2::obj-3::obj-40" : 				{
+					"parameter_longname" : "live.text[16]"
+				}
+,
 				"obj-2::obj-3::obj-74" : 				{
 					"parameter_longname" : "Edit Button[2]"
 				}
@@ -799,6 +773,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "tonejs.bank.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/help/public",
+				"patcherrelativepath" : "./public",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "swissarmyknife.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
@@ -810,6 +791,20 @@
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Cymbales_Antiques.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/help/public/Instruments",
+				"patcherrelativepath" : "./public/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Celeste.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/help/public/Instruments",
+				"patcherrelativepath" : "./public/Instruments",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
