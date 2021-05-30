@@ -953,7 +953,7 @@ var musicxml_callbacks =
 							  if("elements" in mxml){
 							      //__m.attributes.MEASURETEXT = mxml.elements[0].text;
 							      var placement = "above";
-							      if("placement" in directionmxml.attributes){
+							      if("attributes" in directionmxml && "placement" in directionmxml.attributes){
 								  placement = directionmxml.attributes.placement;
 							      }
 							      if(staff_has_notes(__ss[0]) == 0){
