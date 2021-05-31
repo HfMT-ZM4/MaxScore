@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 1149.0, 678.0 ],
+		"rect" : [ 273.0, 87.0, 1149.0, 678.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -76,7 +76,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 1149.0, 652.0 ],
+						"rect" : [ 273.0, 113.0, 1149.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -127,8 +127,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 222.0, 217.0, 156.0, 47.0 ],
-									"text" : "Caveat: samples can only be in .mp3, .ogg or .wav format to work with tone.js.",
+									"patching_rect" : [ 222.0, 217.0, 161.0, 47.0 ],
+									"text" : "Caveat: samples can only be in .mp3, .ogg or .wav formats to work in tone.js.",
 									"textcolor" : [ 1.0, 0.4, 0.4, 1.0 ]
 								}
 
@@ -866,6 +866,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 0,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -1713,7 +1715,7 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 640.833333333333371, 381.5, 180.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"initial" : [ 12349 ],
+														"initial" : [ 21093 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -7648,8 +7650,8 @@
 			}
 , 			{
 				"name" : "my-loadbang.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../Library/MaxScore",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
