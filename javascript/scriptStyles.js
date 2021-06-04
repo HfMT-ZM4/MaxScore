@@ -121,7 +121,7 @@ function showLastEditor()
 
 function showEditor(e)
 {
-	if (typeof e == "string") {
+	if (typeof e == "string" && e.length > 0) {
 	lastEditor = e;
 	post("lastEditor",lastEditor, "\n");
 	if (e != "default"){	

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 129.0, 272.0, 940.0, 556.0 ],
+		"rect" : [ 129.0, 271.0, 940.0, 556.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -2971,7 +2971,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 46.0, 121.0, 218.0, 22.0 ],
-													"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/help/public/tonejs.bank.txt" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -4846,7 +4846,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 1155.375, 507.0, 268.0, 35.0 ],
-									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/help/public/tonejs.bank.txt" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -9866,13 +9866,13 @@
 					"id" : "obj-24",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "maxscore.sampler.menus.maxpat",
+					"name" : "maxscore.tonejs.menus.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 534.0, 79.0, 217.0, 145.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 146.75, 47.0, 113.5, 140.0 ],
+					"presentation_rect" : [ 146.75, 47.0, 159.5, 140.0 ],
 					"varname" : "maxscore.sampler.menus",
 					"viewvisibility" : 1
 				}

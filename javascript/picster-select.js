@@ -1630,7 +1630,7 @@ function addExpressionToSelectedShape()
 		//post("dict", edit.stringify(), "\n");
 		action = "update";
 		outlet(3, "bang");
-		init(); //we may no longer need this!
+		//init(); //we may no longer need this!
 		}
 }
 
@@ -1662,7 +1662,7 @@ function replaceExpressionsForSelectedShape()
 			}
 		action = "update";
 		outlet(3, "bang");
-		init(); //we may no longer need this!
+		//init(); //we may no longer need this!
 	}
 }
 
@@ -1676,152 +1676,9 @@ function removeAllExpressionsFromSelectedShape()
 		else edit.remove("picster-element::expression");
 		action = "update";
 		outlet(3, "bang");
-		init();
+		//init();
 		}
 }
-
-function init() {
-	var currentMode = mode;
-	mode = "picster";
-	increment = 0;
-	anchors = {};
-	var expr = new Dict();
-	var e = new Dict();
-	var o = {};
-	var _anchors = {};
-	var _count = -1;
-	outlet(0, "getSelectionBufferSize");
-	if (selectionBufferSize > 0) {
-	outlet(0, "getNoteAnchor");
-	for(var key in anchors) if(anchors[key][5] != -1) _anchors[key] = anchors[key];
-	}
-	outlet(0, "setRenderAllowed", 0);
-	//outlet(0, "resortChords", 0);
-	//outlet(0, "clearSelection");
-	//outlet(0, "getNumStaves");
-	outlet(0, "dumpScore");
-	var numMeasures = getAllIndexes(json["jmslscoredoc"]["score"][0][".ordering"], "measure").length;
-	var numStaves = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0][".ordering"], "staff").length;
-	var numTracks = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0]["staff"][0][".ordering"], "track").length;
-	//post("num", numMeasures, numStaves, numTracks, "\n");
-	for(var i = 0; i < numMeasures; i++) {
-		for(var j = 0; j < numStaves; j++) {
-			for(var k = 0; k < numTracks; k++) {
-				if(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k].hasOwnProperty(".ordering")) {
-					////////////////////////////// NOTES ////////////////////////
-					var allIndexes = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k][".ordering"], "note");
-					if(allIndexes[0] != -1) var numNotes = allIndexes.length;
-					//else break;
-					for(var l = 0; l < numNotes; l++) {
-						outlet(0, "selectNote", i, j, k, l);
-						_count++;
-						userBeans = [];
-						var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l][".ordering"], "userBean");
-						if(occurence[0] != -1) {
-							for(n = 0; n < occurence.length; n++) {
-								var jexpr = [];
-								userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["userBean"][n];
-							}
-						}
-						if(userBeans.length > 0) {
-							for(var p = 0; p < userBeans.length; p++) {
-								if(userBeans[p]["@Message"].indexOf("rendered") == -1 && userBeans[p]["@Message"].indexOf("sequenced") == -1) {
-									e.parse(userBeans[p]["@Message"]);
-									if(e.contains("picster-element[2]::val")) {
-										var dictArray = [].concat(e.get("picster-element[2]::val"));
-										for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
-										o[_count] = jexpr;
-									}
-								} else if (userBeans[p]["@Message"].indexOf("sequenced") == 0) {
-									e.parse(userBeans[p]["@Message"][2]);
-									if (e.contains("0")) {
-									var o2 = {};
-									o2.editor = (e.get("0")[e.get("0").length - 1] == "linear" || e.get("0")[e.get("0").length - 1] == "curve") ? "bpf" : "default";
-									o2.message = e.get("0")[0];
-									o2.value = e.get("0").slice(1);
-									jexpr.push(o2);
-									o[_count] = jexpr;
-									}
-								} else {
-									e.parse(userBeans[p]["@Message"][2]);
-									if (e.contains("picster-element")){
-									var picster = e.get("picster-element");
-									if(picster.contains("expression")) {
-										jexpr.push(JSON.parse(picster.get("expression").stringify()));
-										o[_count] = jexpr;
-										}
-									}
-								}
-							}
-							outlet(0, "setNoteDimension", 6, _count);
-						} else {
-							if(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["dim"][2]["@value"] != -1) {
-								outlet(0, "setNoteDimension", 6, -1);
-							}
-						}
-						////////////////////////////// INTERVALS ////////////////////////
-						var allIndexes = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l][".ordering"], "interval");
-						if(allIndexes[0] != -1) {
-							var numIntervals = allIndexes.length;
-							for(var m = 0; m < numIntervals; m++) {
-								outlet(0, "nextInterval");
-								_count++;
-								//post("interval", i, j, k, l, m, _count, "\n");	
-								userBeans = [];
-								var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m][".ordering"], "userBean");
-								if(occurence[0] != -1) {
-									for(n = 0; n < occurence.length; n++) {
-										var jexpr = [];
-										userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m]["userBean"][n];
-									}
-								}
-								if(userBeans.length > 0) {
-									for(var p = 0; p < userBeans.length; p++) {
-										if(userBeans[p]["@Message"].indexOf("rendered") == -1 && userBeans[p]["@Message"].indexOf("sequenced") == -1) {
-											e.parse(userBeans[p]["@Message"]);
-											if(e.contains("picster-element[2]::val")) {
-												var dictArray = [].concat(e.get("picster-element[2]::val"));
-												for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
-												o[_count] = jexpr;
-											}
-										} else if(userBeans[p]["@Message"].indexOf("sequenced") == 0) {
-											e.parse(userBeans[p]["@Message"].split(" ")[2]);
-											var o2 = {};
-											o2.editor = (e.get("0")[e.get("0").length - 1] == "linear" || e.get("0")[e.get("0").length - 1] == "curve") ? "bpf" : "default";
-											o2.message = e.get("0")[0];
-											o2.value = e.get("0").slice(1);
-											jexpr.push(o2);
-											o[_count] = jexpr;
-										} else {
-											e.parse(userBeans[p]["@Message"][2]);
-											var picster = e.get("picster-element");
-											if(picster.contains("expression")) {
-												jexpr.push(JSON.parse(picster.get("expression").stringify()));
-												o[_count] = jexpr;
-											}
-										}
-									}
-									outlet(0, "setNoteDimension", 6, _count);
-								} else {
-									if(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["dim"][2]["@value"] != -1) {
-										outlet(0, "setNoteDimension", 6, -1);
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	expr.parse(JSON.stringify(o));
-	outlet(1, "dictionary", expr.name);
-	if (selectionBufferSize > 0) restoreSelection(_anchors);
-	outlet(0, "clearSelection");
-	outlet(0, "setRenderAllowed", 1);
-	mode = currentMode;
-}
-
 
 function capslock(caps)
 {
@@ -2326,7 +2183,7 @@ function serializedDict()
 	var msg = arrayfromargs(arguments);
 	if (action == "update") {
 		reattachRenderedMessage(msg[0]);
-		init();
+		//init();
 		}
 	else if (action == "rotate") reattachRenderedMessage2(0, 0, msg[0]);
 	else if (action == "mouseReleased") createRenderedMessage(0, 0, 0, msg[0]);
