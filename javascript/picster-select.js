@@ -2155,10 +2155,10 @@ function anything()
 			}
 		}
 		else if (dumpinfo[0] == "measure"){
-			if (key == "score" && "measureUserBean" in json["score"]["measure"]){
-			var occurence = getAllIndexes(json["score"]["measure"][".ordering"], "measureUserBean");
+			if (key == "score" && "measureUserBean" in json["score"]["measure"][0]){
+			var occurence = getAllIndexes(json["score"]["measure"][0][".ordering"], "measureUserBean");
 			for (i = 0; i < occurence.length; i++) {
-				userBeans[i] = json["score"]["measure"]["measureUserBean"][i];
+				userBeans[i] = json["score"]["measure"][0]["measureUserBean"][i];
 				}			
 			}
 		}
