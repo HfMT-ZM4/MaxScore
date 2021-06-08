@@ -51,7 +51,7 @@ function chunkSubstr(str, size) {
   return chunks;
 }
 
-function setvalueof()
+function setvalueof(v)
 {
 	blob = arrayfromargs(arguments);
 	decode();
@@ -61,6 +61,7 @@ function getvalueof()
 {
 	return blob;
 }
+
 
 function save()
 {

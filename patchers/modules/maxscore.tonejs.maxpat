@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 129.0, 272.0, 940.0, 556.0 ],
+		"rect" : [ 129.0, 271.0, 940.0, 556.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -296,7 +296,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 17.0, 77.5, 102.5, 21.0 ],
 					"saved_attribute_attributes" : 					{
-						"activetextcolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -304,7 +304,7 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -361,7 +361,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 17.0, 54.5, 103.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
-						"activetextcolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -369,7 +369,7 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2971,7 +2971,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 46.0, 121.0, 218.0, 22.0 ],
-													"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/help/public/tonejs.bank.txt" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -4360,44 +4360,6 @@
 								}
 
 							}
-, 							{
-								"box" : 								{
-									"id" : "obj-2",
-									"linecount" : 2,
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 750.0, 30.0, 100.0, 0.0 ],
-									"saved_object_attributes" : 									{
-										"embed" : 0,
-										"precision" : 6
-									}
-,
-									"text" : "coll Celeste-wav.instr",
-									"varname" : "Celeste-wav.instr"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-3",
-									"linecount" : 3,
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 750.0, 60.0, 100.0, 0.0 ],
-									"saved_object_attributes" : 									{
-										"embed" : 0,
-										"precision" : 6
-									}
-,
-									"text" : "coll Cymbales_Antiques-wav.instr",
-									"varname" : "Cymbales_Antiques-wav.instr"
-								}
-
-							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -4634,7 +4596,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"activetextcolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4642,7 +4604,7 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4680,7 +4642,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 210.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"activetextcolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4688,7 +4650,7 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4884,7 +4846,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 1155.375, 507.0, 268.0, 35.0 ],
-									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/help/public/tonejs.bank.txt" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7005,12 +6967,6 @@
  ],
 														"styles" : [ 															{
 																"name" : "black on white",
-																"number" : 																{
-																	"fontsize" : [ 12.0 ],
-																	"fontname" : [ "Arial" ],
-																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-																}
-,
 																"umenu" : 																{
 																	"bgfillcolor" : 																	{
 																		"type" : "color",
@@ -7022,6 +6978,12 @@
 																		"autogradient" : 0
 																	}
 ,
+																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+																}
+,
+																"number" : 																{
+																	"fontsize" : [ 12.0 ],
+																	"fontname" : [ "Arial" ],
 																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 																}
 ,
@@ -7041,10 +7003,10 @@
 , 															{
 																"name" : "comment_header_white_MaxScore",
 																"default" : 																{
+																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 																	"fontsize" : [ 18.0 ],
 																	"textjustification" : [ 1 ],
-																	"fontname" : [ "Ableton Sans Light" ],
-																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+																	"fontname" : [ "Ableton Sans Light" ]
 																}
 ,
 																"parentstyle" : "",
@@ -7053,9 +7015,9 @@
 , 															{
 																"name" : "comment_white",
 																"default" : 																{
+																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 																	"fontsize" : [ 10.0 ],
 																	"fontname" : [ "Ableton Sans Light" ],
-																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 																	"fontface" : [ 0 ]
 																}
 ,
@@ -8616,12 +8578,6 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
 												"umenu" : 												{
 													"bgfillcolor" : 													{
 														"type" : "color",
@@ -8633,6 +8589,12 @@
 														"autogradient" : 0
 													}
 ,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontsize" : [ 12.0 ],
+													"fontname" : [ "Arial" ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
@@ -8652,10 +8614,10 @@
 , 											{
 												"name" : "comment_header_white_MaxScore",
 												"default" : 												{
+													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 													"fontsize" : [ 18.0 ],
 													"textjustification" : [ 1 ],
-													"fontname" : [ "Ableton Sans Light" ],
-													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+													"fontname" : [ "Ableton Sans Light" ]
 												}
 ,
 												"parentstyle" : "",
@@ -8664,9 +8626,9 @@
 , 											{
 												"name" : "comment_white",
 												"default" : 												{
+													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 													"fontsize" : [ 10.0 ],
 													"fontname" : [ "Ableton Sans Light" ],
-													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 													"fontface" : [ 0 ]
 												}
 ,
@@ -9904,13 +9866,13 @@
 					"id" : "obj-24",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "maxscore.sampler.menus.maxpat",
+					"name" : "maxscore.tonejs.menus.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 534.0, 79.0, 217.0, 145.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 146.75, 47.0, 113.5, 140.0 ],
+					"presentation_rect" : [ 146.75, 47.0, 159.5, 140.0 ],
 					"varname" : "maxscore.sampler.menus",
 					"viewvisibility" : 1
 				}
@@ -10130,12 +10092,6 @@
  ],
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-				}
-,
 				"umenu" : 				{
 					"bgfillcolor" : 					{
 						"type" : "color",
@@ -10147,6 +10103,12 @@
 						"autogradient" : 0
 					}
 ,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
@@ -10166,10 +10128,10 @@
 , 			{
 				"name" : "comment_header_white_MaxScore",
 				"default" : 				{
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"fontsize" : [ 18.0 ],
 					"textjustification" : [ 1 ],
-					"fontname" : [ "Ableton Sans Light" ],
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"fontname" : [ "Ableton Sans Light" ]
 				}
 ,
 				"parentstyle" : "",
@@ -10178,9 +10140,9 @@
 , 			{
 				"name" : "comment_white",
 				"default" : 				{
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"fontsize" : [ 10.0 ],
 					"fontname" : [ "Ableton Sans Light" ],
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"fontface" : [ 0 ]
 				}
 ,

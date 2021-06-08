@@ -2,12 +2,12 @@ inlets = 1;
 outlets = 1;
 
 var key2note = new Dict;
-key2note.pull_from_coll("key2notename");
-var jkey2note = JSON.parse(key2note.stringify());
 //var abspath = "";
 
 function bang()
 {
+	key2note.pull_from_coll("key2notename");
+	var jkey2note = JSON.parse(key2note.stringify());
 	var jlookup = {};
 	var bank = new Dict;
 	var instr = new Dict;
@@ -19,11 +19,11 @@ function bang()
 		instr.pull_from_coll(jbank[instrument]);
 		var jinstrument = JSON.parse(instr.stringify());
 		for (sample in jinstrument) {
+			//post(jbank[instrument], jkey2note[jinstrument[sample][1]], "\n");
 			//outlet(1, jinstrument[sample][0]);
 			//urls[jkey2note[jinstrument[sample][1]]] = encodeURI(jinstrument[sample][0]);
 			urls[jkey2note[jinstrument[sample][1]]] = jinstrument[sample][0];
 			jlookup[jinstrument[sample][0]] = [jbank[instrument][0], jkey2note[jinstrument[sample][1]][0]];
-			//post(jbank[instrument], jkey2note[jinstrument[sample][1]], "\n");
 		}
 		var jupload = {
 		"*" : {

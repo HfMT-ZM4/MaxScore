@@ -729,7 +729,7 @@ function setUserClef(targetStaff, userClef)
 		var hiddenStaves = [].concat(selectedClef.get("stafflines").get("hidden"));
 		//post("hiddenStaves", hiddenStaves, "\n");
 		//if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
-		for (var i = 0; i < hiddenStaves.length; i++) outlet(1, "setStaffLineVisible", targetStaff, hiddenStaves[i], 0);
+		for (var i = 0; i < hiddenStaves.length; i++) if (hiddenStaves[i] != "none") outlet(1, "setStaffLineVisible", targetStaff, hiddenStaves[i], 0);
 		//annotation.replace("staff-" + targetStaff + "::stafflineshidden::" + hiddenStaves[i], 0);
 		if (annotation.contains("userclefs")) annotation.remove("userclefs");
 		annotation.replace("userclefs::" + userClef, clefDesigner.get(userClef));

@@ -34,6 +34,7 @@ var verticalLineFlag = 0;
 var phead;
 var staffBoundingInfo = [];
 var durationalSpacingBase = 0.385;
+var selectionBufferSize = 0;
 var clefs = {
 	"0" : ["", 3], 
 	"1" : ["", 2], 
@@ -87,7 +88,8 @@ function setSelectedNotesToProportionalNotation()
 function setProportionalNotation(b)
 {
 //annotation.clear();
-annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
+//annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
+outlet(0, "getScoreAnnotation");	
 if (annotation.contains("blankPage")) blankPage = annotation.get("blankPage");
 outlet(0, "setRenderAllowed", "false");
 outlet(0, "setUndoStackEnabled", "false");
@@ -167,7 +169,6 @@ for(var event in anchors){
 	var pitch = json["selectedNotes"][key][0]["@PITCH"];
 	outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 	if ("userBean" in json["selectedNotes"][key][0]){
-	post("yes", "\n");
 		var userBeans = [];
 		var occurence = getAllIndexes(json["selectedNotes"][key][0][".ordering"], "userBean");
 		for (var i = 0; i < occurence.length; i++) {
@@ -282,7 +283,8 @@ for(var event in anchors){
 		if (selectionBuffer[i][4] == -1) outlet(0, "addNoteToSelection", selectionBuffer[i].slice(0, 4));
 		else outlet(0, "addIntervalToSelection", selectionBuffer[i]);
 	}
-	outlet(0, "setNoteVisible", "false");
+	outlet(0, "getSelectionBufferSize");
+	if (selectionBufferSize > 0) outlet(0, "setNoteVisible", "false");
 	outlet(0, "clearSelection");
 	if (!selection) outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["score"][0]["@HEIGHT"]));
 	outlet(0, "setReceivePlayheadPosition", "false");
@@ -418,7 +420,8 @@ function getNoteAnchor()
 
 function scroll()
 {
-	annotation.name = this.patcher.getnamed("instance").getvalueof() + "-annotation";
+	//annotation.name = this.patcher.getnamed("instance").getvalueof() + "-annotation";
+	outlet(0, "getScoreAnnotation");	
 	if (annotation.contains("proportional")) proportional = annotation.get("proportional");
 	if (proportional) {
 	var msg = arrayfromargs(arguments);
@@ -500,7 +503,8 @@ function playback(p)
 
 function blankPageTransform(bpt)
 {
-	annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
+	//annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
+	outlet(0, "getScoreAnnotation");	
 	annotation.set("blankPage", bpt);
 	if (bpt) {
 	outlet(0, "setRenderAllowed", 0);
@@ -603,6 +607,9 @@ function anything()
 		var dump = new Dict;
 		dump.name = msg[0];
 		json = JSON.parse(dump.stringify());
+		break;
+	case "getSelectionBufferSize" :
+		selectionBufferSize = msg[0];
 		break;
 	case "startdump" :
 		//dump = [];
