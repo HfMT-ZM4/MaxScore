@@ -18,13 +18,17 @@ var widthLimit = 4500;
 var dump, noteInfo, measure, measureInfo;
 var dumpflag = 0;
 var annotation = new Dict("score_annotation");
+var dur = 0;
 
 function update() {
 	frames = buf.framecount();
+	dur = buf.length();
+	outlet(0, "dur", dur);
 }
 
 function pathname(f) {
 	file = f;
+
 }
 
 function customwidth(w) {
@@ -76,10 +80,10 @@ function bang() {
 
 	//post("case "+mode+", width = "+width+"\n")
 	//create object from template
-  var timeStamp = Date.now();
-  var groupId = "Picster-Element_"+timeStamp;
+	var timeStamp = Date.now();
+	var groupId = "Picster-Element_"+timeStamp;
 	//export jsobject as Dict
-  var outputDict = new Dict();
+	var outputDict = new Dict();
 	var outputPicster = {
 		"picster-element" : [
 			{
@@ -147,13 +151,15 @@ function bang() {
 					{
 						"editor" : "sf",
 						"message" : "sf",
-						"value" : ""
+						"value" : "",
+						"duration" : 0
 					}
 				]
 			}
 		]
 	};
 	outputPicster["picster-element"][2]["val"][0]["value"] = file;
+	outputPicster["picster-element"][2]["val"][0]["duration"] = dur;
 	outputPicster["picster-element"][0]["val"]["id"] = groupId;
 	outputPicster["picster-element"][0]["val"]["child"][0]["id"] = groupId+"_background";
 	outputPicster["picster-element"][0]["val"]["child"][1]["id"] = groupId+"_centerline";
@@ -183,7 +189,7 @@ function bang() {
 			},
 			"transform" : "matrix(1,0,0,1,0,0)"
 		};
-		var t = buf.length();
+		var t = dur;
 		var ms = t % 1000;
 		t = (t - ms) / 1000;
 		var s = t % 60;
