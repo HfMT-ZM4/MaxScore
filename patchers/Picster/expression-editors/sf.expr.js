@@ -151,15 +151,14 @@ function bang() {
 					{
 						"editor" : "sf",
 						"message" : "sf",
-						"value" : "",
-						"duration" : 0
+						"value" : ["", 0]
 					}
 				]
 			}
 		]
 	};
-	outputPicster["picster-element"][2]["val"][0]["value"] = file;
-	outputPicster["picster-element"][2]["val"][0]["duration"] = dur;
+	outputPicster["picster-element"][2]["val"][0]["value"][0] = file;
+	outputPicster["picster-element"][2]["val"][0]["value"][1] = dur;
 	outputPicster["picster-element"][0]["val"]["id"] = groupId;
 	outputPicster["picster-element"][0]["val"]["child"][0]["id"] = groupId+"_background";
 	outputPicster["picster-element"][0]["val"]["child"][1]["id"] = groupId+"_centerline";
