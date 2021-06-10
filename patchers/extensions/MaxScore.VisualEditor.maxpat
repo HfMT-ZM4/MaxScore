@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 468.0, 384.0, 853.0, 467.0 ],
+		"rect" : [ 568.0, 305.0, 1065.0, 349.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -890,7 +890,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 315.0, 268.0, 470.0, 22.0 ],
-													"restore" : [ "scoreLayout", 10, 0, 10, 0.5, 800, 800 ],
+													"restore" : [ "scoreLayout", 1, 0, 1, 0.5, 800, 800 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -1374,9 +1374,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -1399,8 +1399,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1409,9 +1409,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1420,8 +1420,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1430,9 +1430,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1852,9 +1852,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -1877,8 +1877,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1887,9 +1887,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1898,8 +1898,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1908,9 +1908,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8818,9 +8818,9 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontsize" : [ 12.0 ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"umenu" : 								{
@@ -8843,8 +8843,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8853,9 +8853,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8864,8 +8864,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8874,9 +8874,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9424,7 +9424,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 74.0, 87.0, 1550.0, 836.0 ],
+										"rect" : [ 81.0, 560.0, 1550.0, 836.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -9540,19 +9540,16 @@
 											}
 , 											{
 												"box" : 												{
-													"embedstate" : [ [ "restoreblob" ] ],
+													"border" : 0,
+													"embedstate" : [ [ "restoreblob", "DwKwtgzgNhDGD2AnApgE3rAfAH2wSGDiWQAIAVZADwBcAxeAO2oGVYBDKZRAXgCIBGAHQBWXiQCSDCNUQBXMMiYA5NgogA1AJYRNAI058AZhwjIxSgKoBZMgCUAggGEA", "0swAKAUVvMy92rT4AJjEyeAAHKzZEAHNNBj5+YUExWk1EaWYAT2lkMElURWo+AAZkkgAZZENqSJi4oNKxHz9aZgSxR3hZRGpkCEzHTkMNbT0DXmMYMxJWYjJNak56JlY", "OLj4AFjLQiKjYhgB5Q1T06jc2aOQ+ADZGmYQUZlldagWlxmoVBT5mLk1DMRWZBsCDdZBKeS6LjLFjsTg8AQiEKaNSaaIw1bwoJIkhKexWDx8ABSVmY5UilFmKAAtIFii", "FcmF4FodPorrwZLJplTkPNFsgWWN2ZNTB0hiNWeNOdN5qj0R8vuzfoh/k1kLBXowAEKINiwADWyGoEqFfGlgOBoJQELAUMQR2GRvaJAAEh5xABxF1kPgADmK9Jm1DYhk", "MNrtJrZZrk02cyEyzDRDDY1DBkalMeRCkT0WTqZQ6fZ5pIWvg1Go8DAtX2CSSDJoMMVPzYUmVqpItjRAAsant6rw6WUACK6gDu9igUCBILB4a4ECMJm5D15b2QjdUSr+", "AJIslMlWiesyVlkUFeZF1BoOKsKKc0jGjXLEAHVxEOyC6/QGLTPrZDoQqm7Nq224/la4L/ukgpRhymb3MQTwvGuGJwusA7JDg+AEDy9gMAwZZ3owJCOOU9jMMweIEnwC", "BgIIEDwNU/RMF2gjgNAdEroIOF4QRmoMGIuH4cGfF8AAzPwADsgiiRgFhuNQABezCOCpQ5DgAnLolCyFqcZKOIlAWF2HphLomhhKg0SOGQYSidEbhakOHq6LYOjlMU/B", "sApABaYBagwYTqcgHoANQMDY1AABrOCFOgelYmT5tUzBhh4kXwCAbAugpACaVjlN5FiGFYhgAG6CIY6mCFAACOmiOJFACKkU1VAbCBIsgTOFALqoPqjUSV2FgbP8OXlO", "ozC0ES6n8M49hsFqtiyB4Fj2B6XaRZkDDMMUVijs+hgSbAmgumAUCwKONUeORqBKDJaS2BJHgbI1pWlRA4geBAvqwMcpWiRJgTiIgUAbJkshhMIiA1c4YQutEujMOpLp", "hGQQX6ogYSZEoUBDhsGnPo16luESxQesgIW0NVZAQN51ASS6OU5b1GweKVykSUo+qmPYgT6mwqCZMU4jiKg1BkOomRdiAXa+vqHgeDTkVPIIxREjVpWwJQGwBcgCnwMg", "jXPkSIASY1EBnaVtAWB6tDecbWpkJk/rqKVRKUqJbCaQpGwHBA0TOAwsDRBYzC2MUUCZCFyBEt5xTeYI/BKEoElgPwZAgMIjUupkWq+rIXZkAczjDYYe4QKJsDqGAHrP", "qOVhbI1lDqPAXalY1milcImjMOojiWIgxQHC6+rRLAbiUMIlBdo4+r6h6RIhR4hjiCFFjqM4vAAPSYXgBBILAXZ9DIbDEaR5GUYSvA0XRDHGlt1AsWxUAccQgjXofx+6", "rwu976AkAwBXHEaQcgFBMBIFYTQlAuCDBBBAJs19Ky30Yg/J+ADBAQknJA6BiAxCSA+gwAolASgdHPhRfEV8b4cGiJWPcmhYCCDAGwSgggKQ8nwZyMB1BzBAV4Gwlc+D", "qSBg8KgBYHhkxslQI+GUuopBMh0CJXgjRf5/1EWAEgXZuxQBRAsMSZQCjGFPNQUqHAuQlDKMmb4vA2aFFoG1aIYgoDwFHNosAuilFlDiEQzY28VEEDURorROiigCECFJ", "MQBi2BGJMVAMxvBqRCDEJY9kSA0RxA4G4BYh9HHONce4hJnjCFUD4KIHeuA96qJRIE6IXY8khP4AGAM+iqhRLPDEuJBSkm8K8VQHJLjgl8E6SQHpxDeDXF8bgYAW9n5E", "BQMAzhhRMJTIPkfEBbBf7ADcTgsILZkBTHLHEaIEAVHAB2ZYsIOy0gkHxG4cxogSC0HsEOLw4glDPMiiQkgbh7BKDuRM7AUytlcDOXs0wByGBHI2dIEMwwdnHQhSWDw5", "QDjPj4IDMorz3mfPsFqA46gr7ov+X/WZfR1R8RIB4N5nzL58HsE0XwtgfRKKJQQElpgNT3gYBSqlzLcQUL4Fqel9hGUkLKVhQgK52XkspUOal/LeCOCFSK5lYriWSrJZ", "y7lsreU0t4EOJVTL6SqtZeqjlREZVyqotYg1oqoWmulTywMuraA2pVXa4gUrNUWp1fKj0rqjXuoLBq81jrzDypdP6llEqPXBq5d6p18rxCRuNdGoNZq42hr5VaokybA2", "kvTVqy1V9N4zAZYaqNbLY2Fp9Va8oubykmpjQW+NYarVWHreKytzbM26qUB2tVTaHXaoTVag4/bG1pqHUWvgbhx2pvzVOmtV9Gpzq7YukdV9bCrvtV6nt8rmDbsHbu4d", "rar5kEPZO4907eAWAvQuq9S6+DqDvZ6kNJ6s1X2fC+qtLaP18Eit+7t77dU5UA+u09fBvJzoUL+UgWphXlFeVfZgryPTlA8GIWwHhPD2DIM0ZVIppivnfC6ZgistTMx+", "dqwjIQPBWDcAcG4dwCRkQsFh9DtAyBWGFR6V5JTmMeFY1hsgaUyAfN4BsX0IRxAEhQx6MjZAKMuio4uKY0nZOek2CQDYgJBPMDY4rUTOVNhSfIHRhjCmlMqYmEuF8b4P", "y1kCKJTD2HBMiZ5TR3E1gsM4bw+0E50LQxnw8AEXlzgPA5Tk2QHKnhPmiZlR4IciGlDXS1EilFnzwuRc9JZyjHnbMSDeWlOLkV3PPKS0h5gOK8VX0DK8lDRXlbkby9Rg", "rWW5OWG4ypT59W7DWEpWQTFxXeUkRC7l5T+W1N+OACfA0hWsW8pPGeBYl59S2GPvYVAIA9zUC4cZjxLK/6zf1PN4b/BARGJW3qNbG2ts7b2+Y/5UzAuGCWVvGD4Elkko", "sKYRAWpgRcpImRchVqqFQBoWAOhDCmEsP4cQdbRSUCoCBBACAFxkDlG0L0BgXAf6TK3t937/2WxvZJW9mZK50BYCAA==" ] ],
+													"filename" : "maxscore.store.gui.js",
 													"id" : "obj-43",
-													"maxclass" : "newobj",
+													"maxclass" : "jsui",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
+													"parameter_enable" : 1,
 													"patching_rect" : [ 1054.718726976562493, 425.999959976562536, 103.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"filename" : "maxscore.store",
-														"parameter_enable" : 1
-													}
-,
-													"text" : "js maxscore.store",
 													"varname" : "store"
 												}
 
@@ -10232,9 +10229,9 @@
 														"styles" : [ 															{
 																"name" : "black on white",
 																"number" : 																{
-																	"fontsize" : [ 12.0 ],
 																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-																	"fontname" : [ "Arial" ]
+																	"fontname" : [ "Arial" ],
+																	"fontsize" : [ 12.0 ]
 																}
 ,
 																"umenu" : 																{
@@ -10257,8 +10254,8 @@
 , 															{
 																"name" : "caption text",
 																"default" : 																{
-																	"fontsize" : [ 11.0 ],
-																	"fontface" : [ 2 ]
+																	"fontface" : [ 2 ],
+																	"fontsize" : [ 11.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -10267,9 +10264,9 @@
 , 															{
 																"name" : "section dividers",
 																"default" : 																{
-																	"fontsize" : [ 15.0 ],
 																	"fontname" : [ "Arial" ],
-																	"fontface" : [ 3 ]
+																	"fontface" : [ 3 ],
+																	"fontsize" : [ 15.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -10278,8 +10275,8 @@
 , 															{
 																"name" : "section info reg",
 																"default" : 																{
-																	"fontsize" : [ 12.0 ],
-																	"fontname" : [ "Arial" ]
+																	"fontname" : [ "Arial" ],
+																	"fontsize" : [ 12.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -10288,9 +10285,9 @@
 , 															{
 																"name" : "titles",
 																"default" : 																{
-																	"fontsize" : [ 20.0 ],
 																	"fontname" : [ "Arial" ],
-																	"fontface" : [ 1 ]
+																	"fontface" : [ 1 ],
+																	"fontsize" : [ 20.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -10646,7 +10643,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 341.385444505859368, 619.833312999999976, 398.0, 22.0 ],
-													"restore" : [ "JMSLMaxScore-395" ],
+													"restore" : [ "JMSLMaxScore-13" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -11835,9 +11832,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -11860,8 +11857,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -11870,9 +11867,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontface" : [ 3 ],
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -11881,8 +11878,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -11891,9 +11888,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontface" : [ 1 ],
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -12043,7 +12040,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 247.656784000000016, 269.0, 471.0, 22.0 ],
-									"restore" : [ 27 ],
+									"restore" : [ 64 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -13839,9 +13836,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -14942,9 +14939,9 @@
 																		"styles" : [ 																			{
 																				"name" : "black on white",
 																				"number" : 																				{
-																					"fontsize" : [ 12.0 ],
 																					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-																					"fontname" : [ "Arial" ]
+																					"fontname" : [ "Arial" ],
+																					"fontsize" : [ 12.0 ]
 																				}
 ,
 																				"umenu" : 																				{
@@ -15443,9 +15440,9 @@
 														"styles" : [ 															{
 																"name" : "black on white",
 																"number" : 																{
-																	"fontsize" : [ 12.0 ],
 																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-																	"fontname" : [ "Arial" ]
+																	"fontname" : [ "Arial" ],
+																	"fontsize" : [ 12.0 ]
 																}
 ,
 																"umenu" : 																{
@@ -15703,7 +15700,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 487.29986572265625, 174.0, 22.29986572265625, 18.0 ],
 													"size" : 1,
-													"values" : [ 1 ],
+													"values" : [ 0 ],
 													"varname" : "showtitle"
 												}
 
@@ -18234,9 +18231,9 @@
 														"styles" : [ 															{
 																"name" : "black on white",
 																"number" : 																{
-																	"fontsize" : [ 12.0 ],
 																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-																	"fontname" : [ "Arial" ]
+																	"fontname" : [ "Arial" ],
+																	"fontsize" : [ 12.0 ]
 																}
 ,
 																"umenu" : 																{
@@ -18928,7 +18925,7 @@
 														"indent" : [ 60 ],
 														"keepsvg" : [ 0 ],
 														"left" : [ 80 ],
-														"orientation" : [ 0.0 ],
+														"orientation" : [ 1.0 ],
 														"overwrite" : [ 0 ],
 														"pagenumberlocation" : [ 1 ],
 														"pagenumbers" : [ 1 ],
@@ -18937,7 +18934,7 @@
 														"preserve" : [ 0 ],
 														"right" : [ 30 ],
 														"scale" : [ 30 ],
-														"showtitle" : [ 1 ],
+														"showtitle" : [ 0 ],
 														"to" : [ 1 ],
 														"top" : [ 100 ]
 													}
@@ -19126,7 +19123,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 9.899963, 333.600035999999989, 398.0, 22.0 ],
-													"restore" : [ "JMSLMaxScore-395" ],
+													"restore" : [ "JMSLMaxScore-13" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -19286,7 +19283,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 45.0, 83.0, 440.0, 22.0 ],
-																	"restore" : [ "Petaluma" ],
+																	"restore" : [ "Bravura" ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -20730,9 +20727,9 @@
 										"styles" : [ 											{
 												"name" : "black on white",
 												"number" : 												{
-													"fontsize" : [ 12.0 ],
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"umenu" : 												{
@@ -21399,9 +21396,9 @@
 						"styles" : [ 							{
 								"name" : "black on white",
 								"number" : 								{
-									"fontsize" : [ 12.0 ],
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"umenu" : 								{
@@ -21424,8 +21421,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -21434,9 +21431,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontface" : [ 3 ],
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -21445,8 +21442,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -21455,9 +21452,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontface" : [ 1 ],
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -21847,9 +21844,9 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"fontsize" : [ 12.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"umenu" : 				{
@@ -21873,10 +21870,10 @@
 				"name" : "comment_menuItems_whiteOnBlue_Maxscore",
 				"default" : 				{
 					"textcolor" : [ 0.996078431606293, 0.992156863212585, 0.992156863212585, 1.0 ],
-					"fontsize" : [ 12.0 ],
 					"fontname" : [ "Ableton Sans Light" ],
+					"fontface" : [ 1 ],
 					"clearcolor" : [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
-					"fontface" : [ 1 ]
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21895,10 +21892,10 @@
 				"name" : "maxscore.menu",
 				"default" : 				{
 					"textcolor" : [ 0.996078431606293, 0.992156863212585, 0.992156863212585, 1.0 ],
-					"fontsize" : [ 12.0 ],
 					"fontname" : [ "Arial" ],
+					"fontface" : [ 1 ],
 					"clearcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
-					"fontface" : [ 1 ]
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
