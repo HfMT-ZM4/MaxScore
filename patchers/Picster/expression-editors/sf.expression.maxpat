@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -45,7 +45,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 166.333333333333371, 543.0, 129.0, 22.0 ],
+					"patching_rect" : [ 115.666666666666686, 533.377193450927734, 129.0, 22.0 ],
 					"text" : "pak set Duration: 0 ms"
 				}
 
@@ -59,7 +59,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 166.333333333333371, 575.5, 79.0, 33.0 ],
+					"patching_rect" : [ 115.666666666666686, 565.877193450927734, 79.0, 33.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 2.904770800315845, 110.5, 251.0, 20.0 ],
 					"text" : "Duration: 2844 ms",
@@ -111,7 +111,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 274.0, 263.122806549072266, 57.0, 22.0 ],
+					"patching_rect" : [ 316.0, 533.377193450927734, 57.0, 22.0 ],
 					"text" : "route dur"
 				}
 
@@ -231,6 +231,26 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 154.519646400947579, 0.561403274536133, 78.385124399368294, 27.0 ],
 					"saved_attribute_attributes" : 					{
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"labeltextcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
@@ -267,7 +287,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 393.0, 508.377193450927734, 526.0, 20.0 ],
+					"patching_rect" : [ 412.5, 498.0, 526.0, 20.0 ],
 					"text" : "this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed(\"id\").getvalueof()"
 				}
 
@@ -279,7 +299,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 573.0, 624.877193450927734, 123.0, 22.0 ],
+					"patching_rect" : [ 573.0, 615.377193450927734, 123.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -296,7 +316,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 573.0, 598.377193450927734, 191.0, 20.0 ],
+					"patching_rect" : [ 573.0, 588.877193450927734, 191.0, 20.0 ],
 					"text" : "Score annotation dict comes here:"
 				}
 
@@ -520,7 +540,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 330.0, 598.377193450927734, 176.0, 33.0 ],
+					"patching_rect" : [ 368.0, 580.377193450927734, 176.0, 33.0 ],
 					"text" : "send dictionary to parent patch,\ncreates shape in score"
 				}
 
@@ -528,11 +548,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-17",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 50.166666666666686, 467.0, 150.0, 60.0 ],
+					"patching_rect" : [ 50.166666666666686, 467.0, 202.0, 47.0 ],
 					"text" : "Scripting name: dict\nFor parent patch to add expression dict into Picster elements"
 				}
 
@@ -543,7 +563,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 509.0, 533.377193450927734, 264.0, 20.0 ],
+					"patching_rect" : [ 533.5, 533.377193450927734, 264.0, 20.0 ],
 					"text" : "Grab score annotation and other info from score"
 				}
 
@@ -555,7 +575,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 365.0, 533.377193450927734, 132.0, 22.0 ],
+					"patching_rect" : [ 383.5, 533.377193450927734, 132.0, 22.0 ],
 					"text" : "grab 2 1000-fromScore"
 				}
 
@@ -706,7 +726,7 @@
 					"presentation_rect" : [ 2.904770800315845, 52.5, 251.000000000000028, 55.0 ],
 					"ruler" : 0,
 					"vticks" : 0,
-					"waveformcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ]
+					"waveformcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ]
 				}
 
 			}
@@ -729,6 +749,26 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 23.807437800315853, 0.561403274536133, 111.385124399368294, 27.0 ],
 					"saved_attribute_attributes" : 					{
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"labeltextcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
@@ -843,7 +883,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 316.0, 498.0, 68.0, 22.0 ],
+					"patching_rect" : [ 316.0, 498.0, 86.5, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "sf.expr.js",
 						"parameter_enable" : 0
@@ -860,7 +900,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 316.0, 633.377193450927734, 149.0, 22.0 ],
+					"patching_rect" : [ 354.0, 615.377193450927734, 149.0, 22.0 ],
 					"text" : "pattrforward parent::attach"
 				}
 
@@ -1057,17 +1097,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-47", 0 ],
-					"order" : 0,
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-51", 0 ],
-					"midpoints" : [ 325.5, 528.0, 269.5, 528.0, 269.5, 252.122806549072266, 283.5, 252.122806549072266 ],
-					"order" : 1,
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -1149,7 +1179,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
-					"midpoints" : [ 487.5, 565.377193450927734, 292.0, 565.377193450927734, 292.0, 492.0, 325.5, 492.0 ],
+					"midpoints" : [ 506.0, 565.377193450927734, 292.0, 565.377193450927734, 292.0, 492.0, 325.5, 492.0 ],
 					"source" : [ "obj-3", 1 ]
 				}
 
@@ -1276,7 +1306,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
+					"midpoints" : [ 325.5, 565.377193450927734, 264.5, 565.377193450927734, 264.5, 282.5, 283.5, 282.5 ],
 					"source" : [ "obj-51", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-47", 0 ],
+					"source" : [ "obj-51", 1 ]
 				}
 
 			}
@@ -1389,25 +1427,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-15" : [ "live.text[55]", "live.text", 0 ],
-			"obj-89" : [ "live.text[54]", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "sf.expr.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{

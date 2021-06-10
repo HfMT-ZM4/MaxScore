@@ -34,11 +34,14 @@ decode();
 function decode()
 {
 var output = LZString.decompressFromBase64(blob.join("")).split("||");
+if (output != "*") 
+{
 outlet(0, "startdump","dumpScore");
 for (var i = 0; i < output.length ; i++) {
 	outlet(0, output[i]);
 	}
 outlet(0, "enddump","dumpScore");
+}
 }
 
 function restoreblob()
