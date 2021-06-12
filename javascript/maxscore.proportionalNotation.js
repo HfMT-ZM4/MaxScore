@@ -2,7 +2,8 @@ inlets = 3;
 outlets = 4;
 
 //include("xml2json");
-
+var tempo = [];
+var originalMeasureWidths = [];
 var factor = 0.5;
 var zoom = 0.5;
 //var dumpflag = 0;
@@ -23,6 +24,7 @@ var annotation = new Dict();
 var numMeasures = 0;
 var timeUnit = 50; 	//pixels per second
 var scoreAttributes = {};
+var originalScoreAttributes = {};
 var scoreSize = 0;
 var playheadPosition = 60;
 var currentPlayhead = [];
@@ -93,21 +95,22 @@ outlet(0, "getScoreAnnotation");
 if (annotation.contains("blankPage")) blankPage = annotation.get("blankPage");
 outlet(0, "setRenderAllowed", "false");
 outlet(0, "setUndoStackEnabled", "false");
-if (b == 1) {
+if (b) {
 	//
 	//turn proportional notation on
 	//
 outlet(0, "dumpScoreAttributes");
-scoreAttributes = json["jmslscoredoc"];
-annotation.parse(scoreAttributes["score"][0]["ScoreAnnotation"][0]["@Annotation"]);
-scoreRightMargin = parseFloat(scoreAttributes["score"][0]["@RightMargin"]);
-var ClefsVisible = scoreAttributes["score"][0]["@ClefsVisible"];
+scoreAttributes = json["jmslscoredoc"]["score"][0];
+annotation.parse(scoreAttributes["ScoreAnnotation"][0]["@Annotation"]);
+scoreRightMargin = parseFloat(scoreAttributes["@RightMargin"]);
+var ClefsVisible = scoreAttributes["@ClefsVisible"];
 annotation.set("proportional", 1);
 annotation.set("timeUnit", timeUnit);
 outlet(3, "setAnnotation", "dictionary", annotation.name);
 
 if (proportional == 0) {
 //annotation.clear();
+originalScoreAttributes = json["jmslscoredoc"]["score"][0];
 outlet(0, "getScoreAnnotation");	
 outlet(0, "setScoreLeftMargin", playheadPosition);
 outlet(0, "setScoreFirstSystemIndent", 0.);
@@ -120,17 +123,25 @@ outlet(0, "showKeySignatures", "false");
 outlet(0, "showTempo", "false");
 outlet(0, "showMeasureNumbers", "false");
 outlet(0, "showSectionBrackets", "false");
-outlet(0, "getNumMeasures");
 outlet(0, "getNumStaves");
 //outlet(1, "autoadjust", 0);
 outlet(1, "playhead", playheadPosition);
+outlet(0, "getNumMeasures");
+for (var m = 0; m < numMeasures; m++){
+	outlet(0, "getMeasureInfo", m);
+	originalMeasureWidths[m] = [];
+	originalMeasureWidths[m][0] = json["measure"]["@WIDTH"];
+	originalMeasureWidths[m][1] = json["measure"]["@MEASURELEFTMARGIN"];
+	}
 }
+
+
 //count all beats and calculate scoresize and measure width based on timeUnit
 //outlet(0, "setScoreSize", scoresize);
 scoreSize = 0;
 sustain.clear();
 
-var tempo = [];
+outlet(0, "getNumMeasures");
 for (var m = 0; m < numMeasures; m++){
 	outlet(0, "getMeasureInfo", m);
 	tempo[m] = json["measure"]["@TEMPO"];
@@ -286,55 +297,54 @@ for(var event in anchors){
 	outlet(0, "getSelectionBufferSize");
 	if (selectionBufferSize > 0) outlet(0, "setNoteVisible", "false");
 	outlet(0, "clearSelection");
-	if (!selection) outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["score"][0]["@HEIGHT"]));
+	if (!selection) outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["@HEIGHT"]));
 	outlet(0, "setReceivePlayheadPosition", "false");
 	outlet(0, "setNoteFlash", "false");
 	if (!selection){
 	}
 	proportional = 1;
 	} 
-	else if (b == 0){
+	else if (!b){
 	//
 	//turn proportional notation off
 	//
-	if (proportional == 1){
+	if (proportional){
+	outlet(0, "setScoreSize", parseFloat(originalScoreAttributes["@WIDTH"]), parseFloat(originalScoreAttributes["@HEIGHT"]));
 	annotation.set("proportional", 0);
 	outlet(3, "setAnnotation", "dictionary", annotation.name);
-	scoreRightMargin = parseFloat(scoreAttributes["score"][0]["@RightMargin"]);
-	outlet(0, "setScoreLeftMargin", parseFloat(scoreAttributes["score"][0]["@LeftMargin"]));
-	outlet(0, "setScoreFirstSystemIndent", parseFloat(scoreAttributes["score"][0]["@FirstSystemIndent"]));
+	scoreRightMargin = parseFloat(originalScoreAttributes["@RightMargin"]);
+	outlet(0, "setScoreLeftMargin", parseFloat(originalScoreAttributes["@LeftMargin"]));
+	outlet(0, "setScoreRightMargin", parseFloat(originalScoreAttributes["@RightMargin"]) - 2);
+	outlet(0, "setScoreFirstSystemIndent", parseFloat(originalScoreAttributes["@FirstSystemIndent"]));
 	outlet(0, "setDurationalSpacingBase", durationalSpacingBase);
-	outlet(0, "setWrap", 1);
-	if (!blankPage) {
-		outlet(0, "showKeySignatures", "true");
-	//outlet(0, "showTimeSignatures", scoreAttributes["score"]["TimeSignaturesVisible"]);
-	//outlet(0, "showClefs", scoreAttributes["score"]["ClefsVisible"]);
-	//outlet(0, "showTempo", scoreAttributes["score"]["TempoVisible"]);
-		outlet(0, "showTimeSignatures", "true");
-	//outlet(0, "showClefs", "true");
-		outlet(0, "showTempo", "true");
-		outlet(0, "showMeasureNumbers", scoreAttributes["score"][0]["@TimeSignaturesVisible"]);
-		outlet(0, "showSectionBrackets", scoreAttributes["score"][0]["@SectionBracketsVisible"]);
-		}
+	outlet(0, "setWrap", 1); //get value from scoreAnnotation
+	outlet(0, "getNumMeasures");
+	for (var m = 0; m < numMeasures; m++){
+	outlet(0, "setMeasureWidth", m, originalMeasureWidths[m][0]);
+	outlet(0, "setMeasureLeftMargin", m, originalMeasureWidths[m][1]);
+	outlet(0, "setSingleBar", m, 0);
 	}
+	if (!blankPage) {
+		outlet(0, "showKeySignatures", originalScoreAttributes["@KeySignaturesVisible"]);
+		outlet(0, "showClefs", originalScoreAttributes["@ClefsVisible"]);
+		outlet(0, "showTimeSignatures", originalScoreAttributes["@TimeSignaturesVisible"]);
+		outlet(0, "showTempo", originalScoreAttributes["@TempoVisible"]);
+		outlet(0, "showMeasureNumbers", originalScoreAttributes["@TimeSignaturesVisible"]);
+		outlet(0, "showSectionBrackets", originalScoreAttributes["@SectionBracketsVisible"]);
+		}
+	/*
 	else {	
 	annotation.set("proportional", 0);
 	outlet(3, "setAnnotation", "dictionary", annotation.name);
 	}
-	outlet(0, "getNumMeasures");
-//count all beats and calculate scoresize and measure width based on timeUnit
-	for (var m = 0; m < numMeasures; m++){
-	outlet(0, "realignMeasure", m);
-	outlet(0, "resetMeasureLeftMargin", m);
-	outlet(0, "setSingleBar", m, 0);
-	}
-increment = 0;
-anchors = {};
-outlet(0, "selectAll");
-single = 0;
-outlet(0, "getNoteAnchor");
-outlet(0, "clearSelection");
-for(var event in anchors){
+	*/
+	increment = 0;
+	anchors = {};
+	outlet(0, "selectAll");
+	single = 0;
+	outlet(0, "getNoteAnchor");
+	outlet(0, "clearSelection");
+	for(var event in anchors){
 	//gc();
 	anchor = anchors[event];
 	outlet(0, "selectNote", anchor[2], anchor[3], anchor[4], anchor[5]);
@@ -371,7 +381,6 @@ for(var event in anchors){
 	outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_NORMAL");
 	outlet(0, "noteStemVisibilityTransform", "true");
 	outlet(0, "autoBeamTransform");
-	if (proportional == 1) outlet(0, "setScoreSize", parseFloat(scoreAttributes["score"][0]["@WIDTH"]), parseFloat(scoreAttributes["score"][0]["@HEIGHT"]));
 	outlet(0, "setReceivePlayheadPosition", "true");
 	outlet(0, "setNoteFlash", "true");
 	outlet(1, "proportional", 0);
@@ -380,6 +389,7 @@ for(var event in anchors){
 	outlet(0, "clearSelection");
 	outlet(0, "setUndoStackEnabled", "true");
 	outlet(0, "setRenderAllowed", "true");
+	}
 	}
 	else if (b == -1)
 	{
@@ -434,9 +444,9 @@ function scroll()
 		outlet(0, "getNumMeasures");	
 		for (var m = 0; m < numMeasures; m++){
 			outlet(0, "getMeasureInfo", m);
-			var tempo = json["measure"]["@TEMPO"];
+			var _tempo = json["measure"]["@TEMPO"];
 			var timesig = json["measure"]["@TIMESIG"];
-			var measureWidth = (60 / tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
+			var measureWidth = (60 / _tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
 			if (m == s) scoreOffset = scoreSize;
 				scoreSize += measureWidth;
 				}
@@ -461,9 +471,9 @@ function scroll()
 		outlet(0, "getNumMeasures");	
 		for (var m = 0; m < numMeasures; m++){
 			outlet(0, "getMeasureInfo", m);
-			var tempo = json["measure"]["@TEMPO"];
+			var _tempo = json["measure"]["@TEMPO"];
 			var timesig = json["measure"]["@TIMESIG"];
-			var measureWidth = (60 / tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
+			var measureWidth = (60 / _tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
 			//if (m == s) scoreOffset = scoreSize;
 				scoreSize += measureWidth;
 				}

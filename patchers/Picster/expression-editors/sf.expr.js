@@ -151,7 +151,7 @@ function bang() {
 					{
 						"editor" : "sf",
 						"message" : "sf",
-						"value" : ["", 0]
+						"value" : ["", 0, 0]
 					}
 				]
 			}
