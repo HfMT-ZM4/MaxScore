@@ -255,7 +255,7 @@ if (mode == "picster" && !blocked) {
 				}
 				var tempDict = new Dict();
 				tempDict.parse(JSON.stringify(o2));
-			post("tempDict", tempDict2.stringify(), "O2", JSON.stringify(o), o["picster-element"][2]["val"].length, "\n");
+				//post("tempDict", tempDict2.stringify(), "O2", JSON.stringify(o), o["picster-element"][2]["val"].length, "\n");
 			outlet(1, "expression", foundobjects.get(item)[2], "dictionary", tempDict.name);
 			//	}
 			}
