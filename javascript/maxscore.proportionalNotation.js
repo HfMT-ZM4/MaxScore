@@ -6,7 +6,7 @@ var tempo = [];
 var originalMeasureWidths = [];
 var factor = 0.5;
 var zoom = 0.5;
-//var dumpflag = 0;
+var renderAllowed = 1;
 var selection = 0;
 //var dump = ;
 var json = {};
@@ -112,7 +112,7 @@ if (proportional == 0) {
 //annotation.clear();
 originalScoreAttributes = json["jmslscoredoc"]["score"][0];
 outlet(0, "getScoreAnnotation");	
-outlet(0, "setScoreLeftMargin", playheadPosition);
+//outlet(0, "setScoreLeftMargin", playheadPosition);
 outlet(0, "setScoreFirstSystemIndent", 0.);
 outlet(0, "getDurationalSpacingBase");
 outlet(0, "setDurationalSpacingBase", 0.385);
@@ -125,7 +125,8 @@ outlet(0, "showMeasureNumbers", "false");
 outlet(0, "showSectionBrackets", "false");
 outlet(0, "getNumStaves");
 //outlet(1, "autoadjust", 0);
-outlet(1, "playhead", playheadPosition);
+//outlet(1, "playhead", playheadPosition);
+outlet(1, "playhead", parseFloat(scoreAttributes["@LeftMargin"]));
 outlet(0, "getNumMeasures");
 for (var m = 0; m < numMeasures; m++){
 	outlet(0, "getMeasureInfo", m);
@@ -515,9 +516,13 @@ function blankPageTransform(bpt)
 {
 	//annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
 	outlet(0, "getScoreAnnotation");	
+	outlet(0, "getRenderAllowed");	
+	outlet(0, "dumpScoreAttributes");
 	annotation.set("blankPage", bpt);
 	if (bpt) {
-	outlet(0, "setRenderAllowed", 0);
+	if (renderAllowed) outlet(0, "setRenderAllowed", 0);
+	originalScoreAttributes = json["jmslscoredoc"]["score"][0];
+	outlet(0, "getDurationalSpacingBase");
 	outlet(0, "setDurationalSpacingBase", 0.385);
 	outlet(0, "showTimeSignatures", "false");
 	outlet(0, "showKeySignatures", "false");
@@ -539,13 +544,14 @@ function blankPageTransform(bpt)
 		}
 	}
 	outlet(3, "setAnnotation", "dictionary", annotation.name);
-	outlet(0, "setUndoStackEnabled", 1);
-	outlet(0, "saveToUndoStack");
-	outlet(0, "setRenderAllowed", 1);
+	//outlet(0, "setUndoStackEnabled", 1);
+	//outlet(0, "saveToUndoStack");
+	if (renderAllowed) outlet(0, "setRenderAllowed", 1);
 	}
 	else {
-	outlet(0, "setRenderAllowed", 0);
-	outlet(0, "setDurationalSpacingBase", 0.385);
+	outlet(0, "getRenderAllowed");	
+	if (renderAllowed) outlet(0, "setRenderAllowed", 0);
+	outlet(0, "setDurationalSpacingBase", durationalSpacingBase);
 	outlet(0, "showTimeSignatures", "true");
 	outlet(0, "showKeySignatures", "true");
 	outlet(0, "showClefs", "true");
@@ -565,9 +571,9 @@ function blankPageTransform(bpt)
 		}
 	}
 	outlet(3, "setAnnotation", "dictionary", annotation.name);
-	outlet(0, "setUndoStackEnabled", 1);
-	outlet(0, "saveToUndoStack");
-	outlet(0, "setRenderAllowed", 1);		
+	//outlet(0, "setUndoStackEnabled", 1);
+	//outlet(0, "saveToUndoStack");
+	if (renderAllowed) outlet(0, "setRenderAllowed", 1);		
 	}	
 }
 
@@ -588,6 +594,9 @@ function anything()
 		break;
 	case "getNumStaves" :
 		numStaves = msg[0];
+		break;
+	case "getRenderAllowed" :
+		renderAllowed = msg[0];
 		break;
 	case "getScoreLeftMargin" :
 		playheadPosition = msg[0];

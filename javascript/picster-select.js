@@ -204,7 +204,6 @@ if (mode == "picster" && !blocked) {
 	}
 	if (boundmin[0] <= x && boundmin[1] <= y && boundmax[0] >= x && boundmax[1] >= y) {
 		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4), dictArray[dictArray.length - 1].get("id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
-		//post("item", foundobjects.stringify(), "\n");
 		offsets[_c] = RenderMessageOffset;
 		_c++;
 		}
@@ -256,6 +255,7 @@ if (mode == "picster" && !blocked) {
 				}
 				var tempDict = new Dict();
 				tempDict.parse(JSON.stringify(o2));
+			post("tempDict", tempDict2.stringify(), "O2", JSON.stringify(o), o["picster-element"][2]["val"].length, "\n");
 			outlet(1, "expression", foundobjects.get(item)[2], "dictionary", tempDict.name);
 			//	}
 			}

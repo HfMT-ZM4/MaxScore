@@ -17,7 +17,7 @@ var groupcount = 0;
 var staffBoundingInfo = [];
 var staffBoundingMatrix = {};
 var staffBoundingFlag = 0;
-var scoreLayout = [1, 0, 1, 0.5, 320, 240];
+var _scoreLayout = [1, 0, 1, 0.5, 320, 240];
 var scoreLeftMargin = 0;
 var renderedMessages = new Dict();
 var rm = 0;
@@ -474,7 +474,7 @@ function getNumStaves(n)
 	staffBoundingInfoFlag = 0;
 	for (var b = 0; b < n; b++){
 		outlet(1, "getStaffSpacing", b);
-		outlet(1, "getStaffBoundingInfo", scoreLayout[1], b);
+		outlet(1, "getStaffBoundingInfo", _scoreLayout[1], b);
 		outlet(1, "getInstrumentName", b);
 	}
 }
@@ -566,22 +566,22 @@ function setMeasureRange(clicked_m_min, clicked_s_min, clicked_m_max, clicked_s_
 		measurerange[1] = clicked_s_min;
 		measurerange[2] = clicked_m_max;
 		measurerange[3] = clicked_s_max;
-		if (clicked_m_max < scoreLayout[1]) return;
-		else if (clicked_m_min > scoreLayout[1] + scoreLayout[2] - 1) return;
-		else if (clicked_m_min >= scoreLayout[1] && clicked_m_max <= scoreLayout[1] + scoreLayout[2] - 1) {
+		if (clicked_m_max < _scoreLayout[1]) return;
+		else if (clicked_m_min > _scoreLayout[1] + _scoreLayout[2] - 1) return;
+		else if (clicked_m_min >= _scoreLayout[1] && clicked_m_max <= _scoreLayout[1] + _scoreLayout[2] - 1) {
 		var m_min = clicked_m_min;
 		var m_max = clicked_m_max;
 		}
-		else if (clicked_m_min < scoreLayout[1] && clicked_m_max > scoreLayout[1] + scoreLayout[2] - 1) {
-		var m_min = scoreLayout[1];
-		var m_max = scoreLayout[1] + scoreLayout[2] - 1;
+		else if (clicked_m_min < _scoreLayout[1] && clicked_m_max > _scoreLayout[1] + _scoreLayout[2] - 1) {
+		var m_min = _scoreLayout[1];
+		var m_max = _scoreLayout[1] + _scoreLayout[2] - 1;
 		}
-		else if (clicked_m_min >= scoreLayout[1] && clicked_m_max > scoreLayout[1] + scoreLayout[2] - 1) {
+		else if (clicked_m_min >= _scoreLayout[1] && clicked_m_max > _scoreLayout[1] + _scoreLayout[2] - 1) {
 		var m_min = clicked_m_min;
-		var m_max = scoreLayout[1] + scoreLayout[2] - 1;
+		var m_max = _scoreLayout[1] + _scoreLayout[2] - 1;
 		}		
-		else if (clicked_m_min < scoreLayout[1] && clicked_m_max <= scoreLayout[1] + scoreLayout[2] - 1) {
-		var m_min = scoreLayout[1];
+		else if (clicked_m_min < _scoreLayout[1] && clicked_m_max <= _scoreLayout[1] + _scoreLayout[2] - 1) {
+		var m_min = _scoreLayout[1];
 		var m_max = clicked_m_max;
 		}		
 		//post("setMeasureRange", numStaves, measurerange,m_min, m_max, "\n");
@@ -609,8 +609,8 @@ function getScoreFirstSystemIndent(sfsi)
 
 function getStaffSpacing(staffIndex, a, b)
 {
-	spacing[staffIndex] = (a + b) * scoreLayout[3];
-	staffSpacing[staffIndex] = [a * scoreLayout[3], b * scoreLayout[3]];
+	spacing[staffIndex] = (a + b) * _scoreLayout[3];
+	staffSpacing[staffIndex] = [a * _scoreLayout[3], b * _scoreLayout[3]];
 }
 
 function getStaffBoundingInfo(measureIndex, staffIndex, x, y, width, height, marginX)
@@ -623,7 +623,7 @@ function getStaffBoundingInfo(measureIndex, staffIndex, x, y, width, height, mar
 	else {
 		staffBoundingInfo = [x, y, width, height, marginX];
 		//staffBoundingMatrix[measureIndex - scoreLayout[1]][staffIndex] = [x, y, width, height, marginX];
-		var measureOffset = (typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1];
+		var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
 		//post("staffBoundingMatrix", measureIndex, measureOffset, staffIndex, JSON.stringify(staffBoundingMatrix), "\n");
 		staffBoundingMatrix[measureIndex - measureOffset][staffIndex] = [x, y, width, height, marginX];
 	}
@@ -855,7 +855,7 @@ function writeBarlines()
 				if (_linesMaxFiltered.length == 0 || _linesMinFiltered.length == 0) return;
 				var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 				var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
-				var _scoreLeftMargin = (scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
+				var _scoreLeftMargin = (_scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
 				if (_scoreLeftMargin == barlines[measures][lines][1]) SVGString[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {
 					var mathMin = Math.min.apply(Math, brackets[br]);
@@ -1044,7 +1044,7 @@ function startRenderDump()
  		//for (var i = 0; i < numMeasures; i++) {
 		//for (var i = scoreLayout[1]; i < scoreLayout[1] + scoreLayout[2]; i++) {
 		if (numMeasures == 0) numMeasures = 1;
-		var _numMeasures = (init) ? numMeasures : scoreLayout[2];
+		var _numMeasures = (init) ? numMeasures : _scoreLayout[2];
 		for (var i = 0; i < _numMeasures; i++) {
 			stafflines[i] = {};
 			barlines[i] = {};
@@ -1054,8 +1054,8 @@ function startRenderDump()
 				stafflines[i][j] = {};
 				staffInfo[i][j] = {};
 				staffBoundingMatrix[i][j] = []; 
-				dumpinfo = ["staff", i + scoreLayout[1], j];
-				outlet(1, "getStaffInfo", i + scoreLayout[1], j);
+				dumpinfo = ["staff", i + _scoreLayout[1], j];
+				outlet(1, "getStaffInfo", i + _scoreLayout[1], j);
 				if (Object.keys(extendedStaffLines).indexOf(j) != -1) for (var k = 0; k < (5 + Number(extendedStaffLines[j][0]) + Number(extendedStaffLines[j][1])); k++) stafflines[i][j][k] = {};
 		}
 	}
@@ -1108,6 +1108,11 @@ function flashcolor(r, g, b)
 	flcolor = [r, g, b, a];
 }
 
+function scoreLayout()
+{
+		_scoreLayout = arrayfromargs(arguments);
+		oldstaff = -1;
+}
 
 function anything() {
     var msg = arrayfromargs(arguments);
@@ -1125,11 +1130,7 @@ function anything() {
 		case "getInstalledMusicFonts" :
 		//init = 0;
 		break;
-		case "scoreLayout":
-		//post("scoreLayout", msg, "\n");
-		scoreLayout = msg;
-		oldstaff = -1;
-        break;
+
         case "frgb":
 			//expr $i1*256*256 + $i2*256 + $i3
 			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
@@ -1207,7 +1208,7 @@ function anything() {
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
-					keysigaccum = staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][2] ? 1 : -1);
+					keysigaccum = staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][2] ? 1 : -1);
 					var frame = 1200;
 					var shift = (keysigaccum * 7) % 12;
 					if (shift > 12) shift += 12; 
@@ -1232,7 +1233,7 @@ function anything() {
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
-					keysigaccum = staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[1]][2] ? 1 : -1);
+					keysigaccum = staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][2] ? 1 : -1);
 					var frame = 1200;
 					var shift = (keysigaccum * 7) % 12;
 					if (shift > 12) shift += 12; 
@@ -1274,13 +1275,13 @@ function anything() {
 			}
 			*/
 			//post("stafflines-1", msg, scoreLayout, msg[0] - scoreLayout[1], "\n");
-			stafflines[msg[0] - scoreLayout[1]][msg[1]][msg[2]] = [msg[4], msg[5], msg[6], msg[7]];
+			stafflines[msg[0] - _scoreLayout[1]][msg[1]][msg[2]] = [msg[4], msg[5], msg[6], msg[7]];
 			break;
         case "LedgerLine":
 			//LedgerLine measureIndex staffIndex trackIndex noteIndex ledgerLineIndex zoom x1 y1 x2 y2
-			for (var lines in stafflines[msg[0] - scoreLayout[1]][msg[1]]){
+			for (var lines in stafflines[msg[0] - _scoreLayout[1]][msg[1]]){
 			//post("stafflines", msg[0], msg[1], JSON.stringify(stafflines[msg[0] - scoreLayout[1]][msg[1]]), msg[7], "\n");
-			if (stafflines[msg[0] - scoreLayout[1]][msg[1]][lines][3] == msg[7]) return;
+			if (stafflines[msg[0] - _scoreLayout[1]][msg[1]][lines][3] == msg[7]) return;
 			}
 			for (var s = 0; s < groupcount; s++)
 			{
@@ -1315,7 +1316,7 @@ function anything() {
 			//post("barlines",  msg, "\n");	
 			barLineColor = frgb;
 			if (msg[0] != oldMeasureIndex) bl = 0;
-			barlines[msg[0] - scoreLayout[1]][bl] = msg.slice(1);
+			barlines[msg[0] - _scoreLayout[1]][bl] = msg.slice(1);
 			bl++;
 			oldMeasureIndex = msg[0];
             break;
@@ -1559,21 +1560,21 @@ function anything() {
             break;
         case "printScoreTitle":
 			//printScoreTitle 0.5 120. 34. JMSLMaxScore-118
-			var x = (scoreLayout[4] - text_measure("Times New Roman", 26, msg[3])[0]) / 2;
+			var x = (_scoreLayout[4] - text_measure("Times New Roman", 26, msg[3])[0]) / 2;
 			for (var s = 0; s < groupcount; s++)
 			{
 			writeAt(s, titleFont, 26, x, msg[2] + 15, msg[3]);
 			}
             break;
         case "printScoreSubtitle":
-			var x = (scoreLayout[4] - text_measure("Times New Roman", 12, msg[3])[0]) / 2;
+			var x = (_scoreLayout[4] - text_measure("Times New Roman", 12, msg[3])[0]) / 2;
 			for (var s = 0; s < groupcount; s++)
  			{
 			writeAt(s, titleFont, 12, x, msg[2] + 15, msg[3]);
 			}
            break;
         case "printComposer":
-			var x = scoreLayout[4] - text_measure("Times New Roman", 12, msg[3])[0] - 30;
+			var x = _scoreLayout[4] - text_measure("Times New Roman", 12, msg[3])[0] - 30;
 			for (var s = 0; s < groupcount; s++)
 			{
 			writeAt(s, titleFont, 12, x, msg[2] + 15, msg[3]);
@@ -1969,7 +1970,7 @@ function anything() {
 			//json = xml2json(dump.join(" "));
 			extendedStaffLines[dumpinfo[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
 			clefList[dumpinfo[2]] = json["staff"]["@CLEF"];
-			var measureOffset = (typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1];
+			var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
 			staffInfo[dumpinfo[1] - measureOffset][dumpinfo[2]] = [json["staff"]["@CLEF"], json["staff"]["@KEYSIGNUMACC"], json["staff"]["@KEYSIGTYPE"]];
 			// for repeated-acc-filter we need CLEF, KEYSIGNUMACC and KEYSIGTYPE in a obj[measure][staff] object
 			break;
@@ -2064,7 +2065,7 @@ function anything() {
 				if (annotation.contains("staff-"+msg[5]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[5]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
-					keysigaccum = staffInfo[msg[4] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[5]][1] * (staffInfo[msg[4] - ((typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1])][msg[5]][2] ? 1 : -1);
+					keysigaccum = staffInfo[msg[4] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[5]][1] * (staffInfo[msg[4] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[5]][2] ? 1 : -1);
 					var fifths = keysigaccum;
 					var frame = 1200;
 					var shift = (keysigaccum * 7) % 12;
@@ -2214,7 +2215,7 @@ function anything() {
 				if (JSON.stringify([msg[4]][msg[5]]) != oldMeasureStaff)
 				{
 				repeatedAccidentals = {};
-				var measureOffset = (typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1];
+				var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
 				if (staffInfo[msg[4] - measureOffset][msg[5]][2] == 1) { // KEYSIGTYPE
 				keySig = [6, 2, 5, 1, 4, 0, 3].slice(0, staffInfo[msg[4] - measureOffset][msg[5]][1]) // KEYSIGNUMACC
 				keySigType = "sharp";
@@ -2320,7 +2321,6 @@ function anything() {
 						//glyph[2] = annotation.get("userclefs::" + substyle + "::offsets")[1];
  						//glyph[3] = annotation.get("userclefs::" + substyle + "::font")[0]; 
 						//glyph[4] = annotation.get("userclefs::" + substyle + "::font")[1];					
-				post("glyph-2", glyph, substyle, "\n");
 					}
 					*/
 				}
@@ -2377,7 +2377,7 @@ function anything() {
    	switch (messagename) {
 				case "scoreLayout":
                 	outlet(0, "playback", 0);
-					scoreLayout = msg;
+					_scoreLayout = msg;
  					//post("scoreLayout", scoreLayout, "\n");
            			break;
                 case "frgb":
@@ -2628,8 +2628,8 @@ function pagenumber()
 {
 	var pn = arrayfromargs(arguments);
 	if (pn[0]) {
-		var y_pos = (pn[2]) ? scoreLayout[5] - 20 : 20;
-		pageNumber = "<text x=\"" + scoreLayout[4] / 2 + "\" y=\"" + y_pos + "\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"12\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + pn[1] + "</text>";
+		var y_pos = (pn[2]) ? _scoreLayout[5] - 20 : 20;
+		pageNumber = "<text x=\"" + _scoreLayout[4] / 2 + "\" y=\"" + y_pos + "\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"12\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + pn[1] + "</text>";
 		}
 	else pageNumber = "";
 }
@@ -2645,7 +2645,7 @@ function writeSVG(destination)
 	f.svg = SVGString;
 	f.clefs = SVGClefs;
 	f.svgimages = SVGImages;
-	f.pageSize = [scoreLayout[4], scoreLayout[5]];
+	f.pageSize = [_scoreLayout[4], _scoreLayout[5]];
 	f.setZoom = zoom;
 	//f.bgcolor = bcolor;
 	f.bgcolor = bcolor;
@@ -2661,10 +2661,10 @@ function writeSVG(destination)
 	f.writeline("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
 	f.writeline("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">");
 	var SVGZoom = 1;
-	if (paperSize.length == 0) f.writeline("<svg width=\"" + scoreLayout[4] + "px\" height=\"" + scoreLayout[5] + "px\" viewBox=\"0 0 " + scoreLayout[4] + " " + scoreLayout[5] + "\" style=\"background:" + "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">\n");
+	if (paperSize.length == 0) f.writeline("<svg width=\"" + _scoreLayout[4] + "px\" height=\"" + _scoreLayout[5] + "px\" viewBox=\"0 0 " + _scoreLayout[4] + " " + _scoreLayout[5] + "\" style=\"background:" + "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">\n");
 	else {
 		f.writeline("<svg width=\"" + paperSize[0] + "px\" height=\"" + paperSize[1] + "px\" viewBox=\"0 0 " + paperSize[0] + " " + paperSize[1] + "\" style=\"background:" + "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">\n");
-		SVGZoom = paperSize[1] / scoreLayout[5];
+		SVGZoom = paperSize[1] / _scoreLayout[5];
 		}
 	for (var s = 1; s <= groupcount; s++) {
 	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [SVGZoom, 0., 0., SVGZoom, 0., 0.] + ")\">");	
@@ -2716,7 +2716,7 @@ function ovalarc(startangle, endangle, cx, cy, r1, r2) {
 function playhead()
 {	
 		staffBoundingFlag = 1;
-		outlet(1, "getStaffBoundingInfo", scoreLayout[1], 0);
+		outlet(1, "getStaffBoundingInfo", _scoreLayout[1], 0);
 		staffBoundingFlag = 0;
 		var from = staffBoundingInfo[4];
 		for (var s = 0; s < groupcount; s++)
@@ -2761,7 +2761,7 @@ function cursor()
 		outlet(0, "cursor", id, "show", msg[2]);
 		break;
 	default :
-	var measureOffset = (typeof scoreLayout[1] == "undefined") ? 0 : scoreLayout[1];
+	var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
 	var occurence = [];
 	for (var i = 1; i < msg.length; i++){
 		if (msg[i].toString().indexOf("@") != -1) occurence.push(i); 
