@@ -42,12 +42,27 @@
 				"box" : 				{
 					"fontname" : "Arial Bold",
 					"fontsize" : 10.0,
+					"id" : "obj-10",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 379.0, 180.0, 63.0, 20.0 ],
+					"presentation_linecount" : 2,
+					"text" : "livetrack $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial Bold",
+					"fontsize" : 10.0,
 					"id" : "obj-85",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1068.0, 418.0, 65.0, 20.0 ],
+					"patching_rect" : [ 1084.333333333333258, 427.55645751953125, 65.0, 20.0 ],
 					"text" : "prepend set"
 				}
 
@@ -61,7 +76,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1068.0, 389.6290283203125, 43.0, 20.0 ],
+					"patching_rect" : [ 1084.333333333333258, 399.18548583984375, 43.0, 20.0 ],
 					"text" : "zl.nth 2"
 				}
 
@@ -343,8 +358,8 @@
 ,
 								"number" : 								{
 									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -463,7 +478,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1068.0, 445.0, 79.0, 20.0 ],
+					"patching_rect" : [ 1084.333333333333258, 454.55645751953125, 79.0, 20.0 ],
 					"text" : "pvar track 2"
 				}
 
@@ -477,7 +492,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "int" ],
-					"patching_rect" : [ 1068.0, 473.6290283203125, 59.0, 20.0 ],
+					"patching_rect" : [ 1084.333333333333258, 483.18548583984375, 59.0, 20.0 ],
 					"text" : "t b i"
 				}
 
@@ -491,7 +506,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1068.0, 506.0, 79.0, 20.0 ],
+					"patching_rect" : [ 1084.333333333333258, 515.55645751953125, 79.0, 20.0 ],
 					"text" : "pack set #1 1 s"
 				}
 
@@ -505,7 +520,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 1068.0, 539.0, 159.0, 20.0 ],
+					"patching_rect" : [ 1084.333333333333258, 546.55645751953125, 159.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -536,7 +551,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 1023.0, 303.6290283203125, 72.0, 20.0 ],
+					"patching_rect" : [ 379.0, 150.0, 72.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1027.0, 14.0, 60.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
@@ -625,15 +640,15 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
-							"expression" : ""
-						}
-,
 						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -714,15 +729,15 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
-							"expression" : ""
-						}
-,
 						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -991,11 +1006,11 @@
 							"expression" : ""
 						}
 ,
-						"tricolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"tricolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -1323,7 +1338,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 519.0, 486.3709716796875, 56.0, 20.0 ],
+					"patching_rect" : [ 519.0, 492.0, 56.0, 20.0 ],
 					"text" : "clip $1 $2"
 				}
 
@@ -1477,7 +1492,7 @@
 					"bgfillcolor_type" : "color",
 					"fontface" : 1,
 					"id" : "obj-103",
-					"items" : [ "Default", ",", "Tablature", ",", "ClefDesigner", ",", "BP chromatic", ",", "Percussion", ",", "Just Intonation", ",", "BP Tenor Clarinet", ",", "BP Soprano Clarinet", ",", "BP MIDI Keyboard", ",", "BP Contra Clarinet", ",", "BP Alto Kalimba", ",", "19EDO", ",", "17EDO", ",", "-", ",", "General MIDI Percussion", ",", "Soprano Clef", ",", "BP chromatic N clef", ",", "BP chromatic T clef", ",", "BP chromatic U clef", ",", "BP chromatic Z clef", ",", "-", ",", "24TET", ",", "48TET", ",", "72TET-Stahnke", ",", "72TET-Sims", ",", "72TET-Wyschnegradsky", ",", "96TET" ],
+					"items" : [ "Default", ",", "Tablature", ",", "ClefDesigner", ",", "BP chromatic", ",", "Percussion", ",", "Just Intonation", ",", "BP Tenor Clarinet", ",", "BP Soprano Clarinet", ",", "BP MIDI Keyboard", ",", "BP Contra Clarinet", ",", "BP Alto Kalimba", ",", "31EDO", ",", "19EDO", ",", "17EDO", ",", "-", ",", "General MIDI Percussion", ",", "Soprano Clef", ",", "BP chromatic N clef", ",", "BP chromatic T clef", ",", "BP chromatic U clef", ",", "BP chromatic Z clef", ",", "-", ",", "24TET", ",", "48TET", ",", "72TET-Stahnke", ",", "72TET-Sims", ",", "72TET-Wyschnegradsky", ",", "96TET" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1541,7 +1556,7 @@
 					"htricolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-54",
 					"maxclass" : "number",
-					"maximum" : 1,
+					"maximum" : 3,
 					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -2201,7 +2216,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 106.0, 197.0, 1033.0, 750.0 ],
+						"rect" : [ 47.0, 233.0, 1033.0, 750.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2350,7 +2365,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 44.0, 176.0, 46.0, 22.0 ],
+									"patching_rect" : [ 44.0, 151.0, 46.0, 22.0 ],
 									"text" : "route *"
 								}
 
@@ -2364,7 +2379,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 44.0, 136.0, 25.0, 25.0 ]
+									"patching_rect" : [ 44.0, 111.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -3275,7 +3290,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 156.0, 305.0, 145.0, 22.0 ],
+									"patching_rect" : [ 156.0, 308.0, 145.0, 22.0 ],
 									"text" : "fromsymbol @separator :"
 								}
 
@@ -3780,7 +3795,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1229.0, 82.0, 169.0, 20.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4536,11 +4551,11 @@
 							"expression" : ""
 						}
 ,
-						"tricolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"tricolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4757,11 +4772,11 @@
 							"expression" : ""
 						}
 ,
-						"tricolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"tricolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4829,6 +4844,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-190", 0 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-112", 0 ],
 					"source" : [ "obj-101", 2 ]
@@ -5563,6 +5585,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"order" : 0,
+					"source" : [ "obj-72", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-85", 0 ],
 					"source" : [ "obj-73", 0 ]
 				}
@@ -5725,8 +5755,8 @@
 ,
 				"number" : 				{
 					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

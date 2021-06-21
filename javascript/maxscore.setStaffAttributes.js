@@ -174,10 +174,13 @@ _style("Default", 0);
 }
 
 
-clp = annotation.get("staff-"+StaffIndex+"::clip");
+var clp = annotation.get("staff-"+StaffIndex+"::clip");
 if (clp) outlet(1, clp);
 
-sg = annotation.get("staff-"+StaffIndex+"::staffgroup");
+var _livetrack = annotation.get("staff-"+StaffIndex+"::livetrack");
+if (_livetrack) this.patcher.getnamed("track").message(_livetrack);
+
+var sg = annotation.get("staff-"+StaffIndex+"::staffgroup");
 if (sg instanceof Array && sg!="*") 
 {
 this.patcher.getnamed("groupnumber").message(sg[0]);
@@ -185,11 +188,11 @@ this.patcher.getnamed("bracket").message(sg[1]);
 }
 else staffgroup(0, 0);
 
-ain = annotation.get("staff-"+StaffIndex+"::abbrInstrName");
+var ain = annotation.get("staff-"+StaffIndex+"::abbrInstrName");
 if (typeof(ain)!="object" && ain!="*") this.patcher.getnamed("abbrinstrument").message("set", ain);
 else abbrInstrName(" ");
 
-offset = annotation.get("staff-"+StaffIndex+"::instrumentNamePositionOffset"); 
+var offset = annotation.get("staff-"+StaffIndex+"::instrumentNamePositionOffset"); 
 if (typeof(offset)!="object" && offset!="*") this.patcher.getnamed("instrumentnamepositionoffset").message(offset);
 else instrumentnamepositionoffset(0);
 
@@ -199,6 +202,12 @@ this.patcher.parentpatcher.getnamed("done").message("bang");
 function clip(clpx, clpy)
 {
 annotation.replace("staff-"+StaffIndex+"::clip", clpx, clpy);
+dumpDict.message("bang");
+}
+
+function livetrack(t)
+{
+annotation.replace("staff-"+StaffIndex+"::livetrack", t);
 dumpDict.message("bang");
 }
 
