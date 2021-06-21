@@ -9,7 +9,7 @@
 		<o>
 			maxscore.store 
 		</o>
-		is a js object capable of storing scores and exposing them to the pattr system. It receives XML data via a grab object and requires a bang to send out the current score to the second outlet of a MaxScore object. 
+		is a js object capable of storing scores and exposing them to Max snapshot and  pattr systems. It expects input in JMSL XML format and requires a bang to send out stored or recalled scores. Connect to the second outlet of a MaxScore object to view the output.
 	</description>
 <!--METADATA-->
 	<metadatalist>
