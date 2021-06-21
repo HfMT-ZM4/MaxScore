@@ -503,7 +503,6 @@ function lookup(r) {
 	if (r > 0) r += 1;
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", r);
 	dumpDict.message("bang");
-	//post("styletype", r, annotation.get("staff-" + StaffIndex + "::ratio-lookup"), "\n");
 	if (styletype == "justintonation") style("Just Intonation", 0);
 	else outlet(0, "setRenderAllowed", "true");
 }
@@ -555,6 +554,7 @@ function newEvent(data) {
                         event[5] = dump.get("interval::dim::1::@value");
                     }
                     preview.message(StaffIndex, event);
+					//post("event", event, "\n");
                     pitchDisplay.message(event[5]);
                 }
             }
