@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 724.0, 87.0, 478.0, 894.0 ],
+		"rect" : [ 469.0, 104.0, 478.0, 894.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -73,7 +73,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 946.0, 195.0, 640.0, 480.0 ],
+						"rect" : [ 667.0, 337.0, 813.0, 683.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -101,7 +101,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -110,7 +109,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 84.0, 365.0, 25.0, 25.0 ]
+									"patching_rect" : [ 84.0, 412.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -191,8 +190,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 84.0, 310.0, 476.0, 22.0 ],
-									"text" : "script new $1 bpatcher 0 $2 145 35 0 0 maxscore.tonejs.instrument.maxpat 0 $3 27487-"
+									"patching_rect" : [ 84.0, 310.0, 459.0, 22.0 ],
+									"text" : "script new $1 bpatcher 0 $2 145 35 0 0 maxscore.tonejs.instrument.maxpat 0 $3 \\\\#1"
 								}
 
 							}
@@ -295,13 +294,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 0, "27487-" ],
+					"args" : [ 0, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-66",
+					"id" : "obj-5",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -316,13 +315,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 1, "27487-" ],
+					"args" : [ 1, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-67",
+					"id" : "obj-6",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -337,13 +336,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 2, "27487-" ],
+					"args" : [ 2, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-68",
+					"id" : "obj-7",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -358,13 +357,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 3, "27487-" ],
+					"args" : [ 3, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-69",
+					"id" : "obj-8",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -379,13 +378,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 4, "27487-" ],
+					"args" : [ 4, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-70",
+					"id" : "obj-9",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -400,13 +399,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 5, "27487-" ],
+					"args" : [ 5, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-71",
+					"id" : "obj-10",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -421,13 +420,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 6, "27487-" ],
+					"args" : [ 6, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-72",
+					"id" : "obj-11",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -442,13 +441,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 7, "27487-" ],
+					"args" : [ 7, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-73",
+					"id" : "obj-12",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -463,13 +462,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 8, "27487-" ],
+					"args" : [ 8, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-74",
+					"id" : "obj-13",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -484,13 +483,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 9, "27487-" ],
+					"args" : [ 9, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-75",
+					"id" : "obj-14",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -505,13 +504,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 10, "27487-" ],
+					"args" : [ 10, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-76",
+					"id" : "obj-15",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -526,13 +525,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 11, "27487-" ],
+					"args" : [ 11, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-77",
+					"id" : "obj-16",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -547,13 +546,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 12, "27487-" ],
+					"args" : [ 12, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-78",
+					"id" : "obj-17",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -568,13 +567,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 13, "27487-" ],
+					"args" : [ 13, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-79",
+					"id" : "obj-18",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -589,13 +588,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 14, "27487-" ],
+					"args" : [ 14, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-80",
+					"id" : "obj-19",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -610,13 +609,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 15, "27487-" ],
+					"args" : [ 15, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-81",
+					"id" : "obj-20",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -631,13 +630,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 16, "27487-" ],
+					"args" : [ 16, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-82",
+					"id" : "obj-21",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -652,13 +651,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 17, "27487-" ],
+					"args" : [ 17, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-83",
+					"id" : "obj-22",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -673,13 +672,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 18, "27487-" ],
+					"args" : [ 18, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-84",
+					"id" : "obj-23",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -694,13 +693,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 19, "27487-" ],
+					"args" : [ 19, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-85",
+					"id" : "obj-24",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -715,13 +714,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 20, "27487-" ],
+					"args" : [ 20, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-86",
+					"id" : "obj-25",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -736,13 +735,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 21, "27487-" ],
+					"args" : [ 21, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-87",
+					"id" : "obj-26",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -757,13 +756,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 22, "27487-" ],
+					"args" : [ 22, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-88",
+					"id" : "obj-27",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -778,13 +777,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 23, "27487-" ],
+					"args" : [ 23, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-89",
+					"id" : "obj-28",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -799,13 +798,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 24, "27487-" ],
+					"args" : [ 24, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-90",
+					"id" : "obj-29",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -820,13 +819,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 25, "27487-" ],
+					"args" : [ 25, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-91",
+					"id" : "obj-30",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -841,13 +840,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 26, "27487-" ],
+					"args" : [ 26, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-92",
+					"id" : "obj-31",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -862,13 +861,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 27, "27487-" ],
+					"args" : [ 27, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-93",
+					"id" : "obj-32",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -883,13 +882,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 28, "27487-" ],
+					"args" : [ 28, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-94",
+					"id" : "obj-33",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -904,13 +903,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 29, "27487-" ],
+					"args" : [ 29, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-95",
+					"id" : "obj-34",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -925,13 +924,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 30, "27487-" ],
+					"args" : [ 30, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-96",
+					"id" : "obj-35",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",
@@ -946,13 +945,13 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ 31, "27487-" ],
+					"args" : [ 31, "#1" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"id" : "obj-97",
+					"id" : "obj-36",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.tonejs.instrument.maxpat",

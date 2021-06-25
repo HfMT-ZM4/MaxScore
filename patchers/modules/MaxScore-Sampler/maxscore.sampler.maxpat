@@ -47,7 +47,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 233.0, 402.0, 194.0, 50.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 30.0, 0.0, 257.5, 28.0 ],
+					"presentation_rect" : [ 30.0, 0.0, 258.0, 28.0 ],
 					"style" : "comment_header_white_MaxScore",
 					"text" : "MaxScore Multichannel Sampler"
 				}
@@ -72,11 +72,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"activetextcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
-						"bordercolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -86,7 +86,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_longname" : "live.text[38]",
+							"parameter_longname" : "live.text[4]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -118,11 +118,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ -1.0, 211.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"activetextcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
-						"bordercolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -160,11 +160,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 7.0, 175.0, 293.0, 52.0 ],
 					"saved_attribute_attributes" : 					{
-						"trioncolor" : 						{
+						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"textcolor" : 						{
+						"trioncolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -338,11 +338,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 22.0, 50.0, 100.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
-						"activetextcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
-						"bordercolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -353,7 +353,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 1,
-							"parameter_longname" : "Edit Button[2]",
+							"parameter_longname" : "Edit Button[3]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Edit Button",
 							"parameter_type" : 2
@@ -602,7 +602,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 1155.375, 491.0, 394.0, 35.0 ],
-									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/help/public/tonejs.bank.txt" ],
+									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Disembodiment-1/Disembodiment-1.bank.txt" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2183,7 +2183,7 @@
 													"numinlets" : 32,
 													"numoutlets" : 1,
 													"outlettype" : [ "multichannelsignal" ],
-													"patching_rect" : [ 50.0, 277.0, 344.5, 22.0 ],
+													"patching_rect" : [ 50.0, 277.0, 467.090909090909008, 22.0 ],
 													"text" : "mc.combine~ 32"
 												}
 
@@ -2237,6 +2237,7 @@
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-3",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
@@ -2738,6 +2739,7 @@
 																"box" : 																{
 																	"color" : [ 0.0, 0.533333, 0.168627, 1.0 ],
 																	"id" : "obj-15",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -3117,13 +3119,12 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-23",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 3,
 													"numoutlets" : 34,
 													"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "", "" ],
-													"patching_rect" : [ 50.0, 227.0, 368.0, 35.0 ],
-													"text" : "poly~ maxscore.multisamples-player.maxpat 32 @steal 1 @args #0",
+													"patching_rect" : [ 50.0, 227.0, 496.0, 22.0 ],
+													"text" : "poly~ maxscore.multisamples-player.maxpat 32 @steal 1 @args #0 legacynotemode 1",
 													"varname" : "poly~"
 												}
 
@@ -3180,7 +3181,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-23", 2 ],
-													"midpoints" : [ 731.5, 348.0, 825.285722520616332, 348.0, 825.285722520616332, 216.0, 408.5, 216.0 ],
+													"midpoints" : [ 731.5, 348.0, 825.285722520616332, 348.0, 825.285722520616332, 216.0, 536.5, 216.0 ],
 													"source" : [ "obj-122", 0 ]
 												}
 
@@ -3456,7 +3457,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-23", 1 ],
-													"midpoints" : [ 388.5, 212.0, 234.0, 212.0 ],
+													"midpoints" : [ 388.5, 212.0, 298.0, 212.0 ],
 													"source" : [ "obj-36", 0 ]
 												}
 
@@ -4744,7 +4745,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 430.0, 53.0, 751.0, 671.0 ],
+						"rect" : [ 880.0, 176.0, 751.0, 671.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5059,10 +5060,10 @@
 		"styles" : [ 			{
 				"name" : "comment_header_white_MaxScore",
 				"default" : 				{
-					"fontsize" : [ 18.0 ],
 					"textjustification" : [ 1 ],
-					"fontname" : [ "Ableton Sans Light" ],
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"fontsize" : [ 18.0 ],
+					"fontname" : [ "Ableton Sans Light" ]
 				}
 ,
 				"parentstyle" : "",
@@ -5071,9 +5072,9 @@
 , 			{
 				"name" : "comment_white",
 				"default" : 				{
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"fontsize" : [ 10.0 ],
 					"fontname" : [ "Ableton Sans Light" ],
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"fontface" : [ 0 ]
 				}
 ,
@@ -5092,6 +5093,7 @@
 , 			{
 				"name" : "panel_dark_MS",
 				"default" : 				{
+					"color" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color" : [ 0.4, 0.4, 0.4, 1.0 ],
@@ -5101,8 +5103,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0.0
 					}
-,
-					"color" : [ 0.0, 0.0, 0.0, 0.0 ]
+
 				}
 ,
 				"parentstyle" : "",

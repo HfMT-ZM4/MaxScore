@@ -41,7 +41,7 @@ function script()
 
   var fname = "default";
 
-  newobj[0] = this.patcher.newobject("bpatcher", 0, 0, 258, 45, 0, 0, "default.expression.maxpat", 0)
+  newobj[0] = this.patcher.newobject("bpatcher", 0, 0, 258, 45, 0, 0, "default.expression.maxpat", 0);
   newobj[0].varname = fname;
   this.patcher.message("script", "sendbox", fname, "presentation", 1);
   this.patcher.message("script", "sendbox", fname, "patching_rect", 656.526316, 32.219298, 258, 45);
