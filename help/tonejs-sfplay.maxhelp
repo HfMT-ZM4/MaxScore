@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 171.0, 148.0, 914.0, 694.0 ],
+		"rect" : [ 400.0, 87.0, 1012.0, 720.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,55 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-14",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 462.0, 209.0, 150.0, 33.0 ],
+					"text" : "To do: remove third value if message length < 4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 636.0, 380.0, 153.0, 20.0 ],
+					"presentation_linecount" : 2,
+					"text" : "path relative to this patcher"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 661.0, 400.0, 266.0, 22.0 ],
+					"text" : "loadmess url localhost:3002/1?wait_for_event=1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "jweb",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 661.0, 433.0, 320.0, 240.0 ],
+					"rendermode" : 0,
+					"url" : "localhost:3002/1?wait_for_event=1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -56,8 +105,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 654.0, 326.0, 142.0, 22.0 ],
-					"text" : "start 0 kuroinami.wav 0 0"
+					"patching_rect" : [ 654.0, 326.0, 135.0, 22.0 ],
+					"text" : "start 0 brushes.mp3 0 0"
 				}
 
 			}
@@ -130,8 +179,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 654.0, 299.0, 183.0, 22.0 ],
-					"text" : "start -1 kuroinami.wav 0 0 10000"
+					"patching_rect" : [ 654.0, 299.0, 175.0, 22.0 ],
+					"text" : "start -1 brushes.mp3 0 0 10000"
 				}
 
 			}
@@ -154,8 +203,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 462.0, 407.0, 130.0, 22.0 ],
-					"text" : "dispose kuroinami.wav"
+					"patching_rect" : [ 462.0, 407.0, 123.0, 22.0 ],
+					"text" : "dispose brushes.mp3"
 				}
 
 			}
@@ -166,8 +215,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 462.0, 299.0, 187.0, 22.0 ],
-					"text" : "start /* kuroinami.wav 0 0 100000"
+					"patching_rect" : [ 462.0, 299.0, 179.0, 22.0 ],
+					"text" : "start /* brushes.mp3 0 0 100000"
 				}
 
 			}
@@ -178,8 +227,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 462.0, 353.0, 123.0, 22.0 ],
-					"text" : "stop /* kuroinami.wav"
+					"patching_rect" : [ 462.0, 353.0, 115.0, 22.0 ],
+					"text" : "stop /* brushes.mp3"
 				}
 
 			}
@@ -190,8 +239,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 462.0, 326.0, 145.0, 22.0 ],
-					"text" : "start /1 kuroinami.wav 0 0"
+					"patching_rect" : [ 462.0, 326.0, 138.0, 22.0 ],
+					"text" : "start /1 brushes.mp3 0 0"
 				}
 
 			}
@@ -220,8 +269,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 462.0, 380.0, 125.0, 22.0 ],
-					"text" : "upload kuroinami.wav"
+					"patching_rect" : [ 462.0, 380.0, 152.0, 22.0 ],
+					"text" : "upload public/brushes.mp3"
 				}
 
 			}
@@ -309,8 +358,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "FullPacket", "", "" ],
-					"patching_rect" : [ 302.0, 617.0, 104.0, 22.0 ],
-					"text" : "drawsocket public"
+					"patching_rect" : [ 302.0, 617.0, 69.0, 22.0 ],
+					"text" : "drawsocket"
 				}
 
 			}
@@ -392,18 +441,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "signal", "signal", "bang" ],
 					"patching_rect" : [ 161.166666666666657, 553.0, 57.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"basictuning" : 440,
-						"followglobaltempo" : 0,
-						"formantcorrection" : 0,
-						"mode" : "basic",
-						"originallength" : [ 528181.659863945562392, "ticks" ],
-						"originaltempo" : 119.999999999999986,
-						"pitchcorrection" : 0,
-						"quality" : "basic",
-						"timestretch" : [ 0 ]
-					}
-,
 					"text" : "sfplay~ 2"
 				}
 
@@ -717,6 +754,13 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
 			"obj-34::obj-17::obj-23" : [ "live.tab[123]", "live.tab", 0 ],
@@ -756,6 +800,7 @@
 			"obj-34::obj-17::obj-28::obj-7::obj-89" : [ "live.text[64]", "live.text", 0 ],
 			"obj-34::obj-17::obj-31" : [ "live.tab[121]", "live.tab", 0 ],
 			"obj-34::obj-17::obj-38" : [ "live.tab[122]", "live.tab", 0 ],
+			"obj-34::obj-17::obj-60::obj-33::obj-8::obj-177" : [ "live.gain~[5]", "live.gain~", 0 ],
 			"obj-34::obj-17::obj-60::obj-34::obj-1" : [ "live.tab[119]", "live.tab", 0 ],
 			"obj-34::obj-17::obj-60::obj-34::obj-65" : [ "live.tab[118]", "live.tab", 0 ],
 			"obj-34::obj-17::obj-60::obj-8::obj-8::obj-177" : [ "live.gain~[1]", "live.gain~", 0 ],
@@ -1085,8 +1130,8 @@
 			}
 , 			{
 				"name" : "first-int.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Macaque/lib/abstractions",
-				"patcherrelativepath" : "../patchers/Macaque/lib/abstractions",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1106,8 +1151,8 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1183,8 +1228,8 @@
 			}
 , 			{
 				"name" : "maxscore.parseJSON.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
+				"patcherrelativepath" : "../../../Library/MaxScore",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1225,8 +1270,8 @@
 			}
 , 			{
 				"name" : "MaxScore-Editor-Prefs.xml",
-				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Settings/temp64-Max",
-				"patcherrelativepath" : "../../../../../hajdu/Library/Application Support/Cycling '74/Max 8/Settings/temp64-Max",
+				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Settings",
+				"patcherrelativepath" : "../../../../../hajdu/Library/Application Support/Cycling '74/Max 8/Settings",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -1301,8 +1346,8 @@
 			}
 , 			{
 				"name" : "swissarmyknife.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -2338,8 +2383,8 @@
 			}
 , 			{
 				"name" : "packback.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -2464,8 +2509,8 @@
 			}
 , 			{
 				"name" : "picster-init.js",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../Library/MaxScore",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -2834,9 +2879,9 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ],
 					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"umenu" : 				{
@@ -2859,8 +2904,8 @@
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontface" : [ 2 ],
-					"fontsize" : [ 11.0 ]
+					"fontsize" : [ 11.0 ],
+					"fontface" : [ 2 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2869,10 +2914,10 @@
 , 			{
 				"name" : "comment_header_white_MaxScore",
 				"default" : 				{
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"fontname" : [ "Ableton Sans Light" ],
 					"textjustification" : [ 1 ],
-					"fontsize" : [ 18.0 ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"fontsize" : [ 18.0 ],
+					"fontname" : [ "Ableton Sans Light" ]
 				}
 ,
 				"parentstyle" : "",
@@ -2882,9 +2927,9 @@
 				"name" : "comment_white",
 				"default" : 				{
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"fontname" : [ "Ableton Sans Light" ],
-					"fontface" : [ 0 ],
-					"fontsize" : [ 10.0 ]
+					"fontface" : [ 0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2921,9 +2966,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontsize" : [ 15.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ]
+					"fontface" : [ 3 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2932,8 +2977,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -2942,9 +2987,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontsize" : [ 20.0 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ]
+					"fontface" : [ 1 ]
 				}
 ,
 				"parentstyle" : "",
