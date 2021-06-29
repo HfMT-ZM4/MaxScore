@@ -1171,6 +1171,7 @@ function anything() {
 					dumpinfo = ["interval"];
 					outlet(1, "getIntervalInfo", currentElement.slice(1));
 				}
+				if (!value) return;
 				noteText = Math.round(value * 100.);
 				break;
 				case "$DEVIATION" :
@@ -1182,6 +1183,7 @@ function anything() {
 					dumpinfo = ["interval"];
 					outlet(1, "getIntervalInfo", currentElement.slice(1));
 				}
+				if (!pitch) return;
 				var diff = value - parseInt(value);
 				noteText = ((diff < 0.5) ? "+" : "") + Math.round((diff < 0.5) ? diff * 100 : (1 - diff) * -100);
 				break;
@@ -1194,6 +1196,7 @@ function anything() {
 					dumpinfo = ["interval"];
 					outlet(1, "getIntervalInfo", currentElement.slice(1));
 				}
+				if (!pitch) return;
 				noteText = (440 * Math.pow(2, (value - 69) / 12)).toFixed(2);
 				break;
 				case "$RATIO" :
@@ -1205,10 +1208,11 @@ function anything() {
 					dumpinfo = ["interval"];
 					outlet(1, "getIntervalInfo", currentElement.slice(1));
 				}
+				if (!pitch) return;
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
-					keysigaccum = staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][2] ? 1 : -1);
+					keysigaccum = staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][2] ? -1 : 1);
 					var frame = 1200;
 					var shift = (keysigaccum * 7) % 12;
 					if (shift > 12) shift += 12; 
@@ -1230,10 +1234,11 @@ function anything() {
 					dumpinfo = ["interval"];
 					outlet(1, "getIntervalInfo", currentElement.slice(1));
 				}
+				if (!pitch) return;
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
-					keysigaccum = staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][2] ? 1 : -1);
+					keysigaccum = staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][1] * (staffInfo[msg[0] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[1]][2] ? -1 : 1);
 					var frame = 1200;
 					var shift = (keysigaccum * 7) % 12;
 					if (shift > 12) shift += 12; 
@@ -1246,7 +1251,6 @@ function anything() {
 				if (value == -1) value = pitch;
 				var ratio = cent2ratio.get(Math.round((value - shift) * 100) % frame).slice(1);
 				var diff = (((value - shift) * 100) % frame) - 1200 * Math.log(ratio[0]/ratio[1])/Math.log(2);
-				//post("diff", pitch, ratio, (((value - shift) * 100) % frame), 1200 * Math.log(ratio[0]/ratio[1])/Math.log(2));
 				noteText = ratio.join("/") + ((diff < 0) ? "" : "+") + diff.toFixed(2);
 				break;
 				default: noteText = decodeURI(msg[7]);
@@ -1959,7 +1963,7 @@ function anything() {
 			var dump = new Dict;
 			dump.name = msg[0];
 			json = JSON.parse(dump.stringify());
-			//post("dumpinfo-1", dumpinfo, JSON.stringify(json), "\n");
+			//post("dumpinfo", dumpinfo, JSON.stringify(json), "\n");
 			switch (dumpinfo[0]){
 			case "measure" :
 			//json = xml2json(dump.join(" "));
@@ -2065,7 +2069,7 @@ function anything() {
 				if (annotation.contains("staff-"+msg[5]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[5]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
 				if (cent2ratio.name.indexOf("odd") == -1)  {
-					keysigaccum = staffInfo[msg[4] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[5]][1] * (staffInfo[msg[4] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[5]][2] ? 1 : -1);
+					keysigaccum = staffInfo[msg[4] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[5]][1] * (staffInfo[msg[4] - ((typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1])][msg[5]][2] ? -1 : 1);
 					var fifths = keysigaccum;
 					var frame = 1200;
 					var shift = (keysigaccum * 7) % 12;
@@ -2077,7 +2081,7 @@ function anything() {
 					var fifths = Math.floor((value - shift) * 100 / frame);
 					}
 				var ratio = cent2ratio.get(Math.round((value - shift) * 100) % frame);
-				//post("ratio", ratio, Math.round((value - shift) * 100) % frame, value, "\n");
+				post("ratio", ratio, messagename, value, "\n");
 				///// accidental finder
 				var JIAccidentalSuffix = "pyth";			
         		if (ratio[1] != 1) var factorPowersNum = toFactorPowerList(primeFactorList(ratio[1]));
@@ -2193,7 +2197,6 @@ function anything() {
 				break;
 				case "mM-sagittal" :
 				Accidental.push(nTET(96, _96TET));
-				//post("Accidental", JSON.stringify(Accidental), "\n");			
 				break;
 				case "mM-SIMS" :
 				Accidental.push(nTET(72, _72SIMS));				
@@ -2212,7 +2215,8 @@ function anything() {
 				var keySigType = "";
 				var keySig = [];
 				var levelOffset = 0;
-				if (JSON.stringify([msg[4]][msg[5]]) != oldMeasureStaff)
+				//post("Accidental", msg, msg[4], msg[5], JSON.stringify([msg[4], msg[5]]), oldMeasureStaff, "\n");			
+				if (JSON.stringify([msg[4],msg[5]]) != oldMeasureStaff)
 				{
 				repeatedAccidentals = {};
 				var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
@@ -2235,7 +2239,7 @@ function anything() {
 					case 3: levelOffset = 12;
 				}
 				}
-				oldMeasureStaff = JSON.stringify([msg[4]][msg[5]]);
+				oldMeasureStaff = JSON.stringify([msg[4],msg[5]]);
 				var theResult = -1;
 				var stringifiedAccidental = JSON.stringify(Accidental);
 				//post("filterRepeatedAccidentals", Object.keys(filterRepeatedAccidentals).indexOf("116"), JSON.stringify(filterRepeatedAccidentals), "\n");
