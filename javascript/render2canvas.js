@@ -2081,7 +2081,7 @@ function anything() {
 					var fifths = Math.floor((value - shift) * 100 / frame);
 					}
 				var ratio = cent2ratio.get(Math.round((value - shift) * 100) % frame);
-				post("ratio", ratio, messagename, value, "\n");
+				//post("ratio", ratio, messagename, value, "\n");
 				///// accidental finder
 				var JIAccidentalSuffix = "pyth";			
         		if (ratio[1] != 1) var factorPowersNum = toFactorPowerList(primeFactorList(ratio[1]));
