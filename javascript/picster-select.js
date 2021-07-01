@@ -1016,6 +1016,7 @@ function restoreSelection(obj)
 
 function addShape()
 {
+	measurerange = this.patcher.getnamed("measurerange").getvalueof();
 	var num = cnt();
 	var msg = arrayfromargs(arguments);
 	var toffsets = [0, 0];
@@ -1023,6 +1024,7 @@ function addShape()
 	outlet(0, "getSelectionBufferSize");
 	if (msg[0] == "." || msg[1] == ".") {
 		if (!selectionBufferSize) {
+			post("measurerange", measurerange, "\n");
 			if (measurerange[0] == -1) return;
 				increment = 0;
 				anchors = {};
@@ -1091,7 +1093,6 @@ function addShape()
 				var rotation = Math.asin(sign_x * (msg[6]-msg[4])/Math.sqrt(Math.pow(sign_x * (msg[6]-msg[4]),2)+Math.pow(sign_y * (msg[5]-msg[3]),2)))/Math.PI*180;				
 				if (sign_x == -1) attr.child[i].transform = "translate(" + (sign_x * (i + 1) * a + Math.sin(rotation/360*Math.PI*2) * 10)+ ", " + (sign_y * (i + 1) * b - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)";	
 				else attr.child[i].transform = "translate(" + (sign_x * i * a + Math.sin(rotation/360*Math.PI*2) * 10) + ", " + (sign_y * (i * b) - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)";
-				//post("ROT", rotation, Math.sin(rotation/360*Math.PI*2) * 10, "\n");
 				//attr.child[i].transform = "matrix(0.03, 0, 0, 0.05, " + (i * 8 - 1) + ", -11)";
 					}
 				}
