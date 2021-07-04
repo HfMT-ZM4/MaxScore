@@ -30,22 +30,6 @@ var textBox = {
 	"picster-element" : [ 		{
 			"key" : "svg",
 			"val" : 			[{
-				"new" : "text",
-				"id" : "destination_1607767365034",
-				"x" : 0,
-				"y" : -3,
-				"font-family" : [ "Arial" ],
-				"font-size" : [ 10 ],
-				"font-weight" : "normal",
-				"font-style" : "normal",
-				"text-anchor" : "start",
-				"style" : {
-					"fill" : "$FRGB",
-					"fill-opacity" : 1
-				},
-				"child" : '',
-				"transform" : "matrix(1,0,0,1,-5, -40)"
-			},{
 				"new" : "g",
 				"id" : "Picster-Element_Template",
 				"transform" : "matrix(1,0,0,1,-5,-40)",
@@ -128,23 +112,7 @@ function getAllIndexes(arr, val) {
 var bpfShape = {
 	"picster-element" : [	{
 		"key" : "svg",
-		"val" : [			{
-			"new" : "text",
-			"id" : "destination_1607767365034",
-			"x" : 0,
-			"y" : -3,
-			"font-family" : [ "Arial" ],
-			"font-size" : [ 10 ],
-			"font-weight" : "normal",
-			"font-style" : "normal",
-			"text-anchor" : "start",
-			"style" : {
-				"fill" : "$FRGB",
-				"fill-opacity" : 1
-			},
-			"child" : '',
-			"transform" : "matrix(1,0,0,1,0," + (yoffset - height) + ")"
-		},{
+		"val" : [ {
 			"new" : "marker",
 			"id" : "Circle",
 			"markerWidth" : 8,
@@ -216,6 +184,23 @@ var bpfShape = {
 					"fill" : "none"
 				},
 				"transform" : "matrix(1,0,0,1,0,0)"
+			},
+			{
+				"new" : "text",
+				"id" : "destination_1607767365034",
+				"x" : 0,
+				"y" : -3,
+				"font-family" : [ "Arial" ],
+				"font-size" : [ 10 ],
+				"font-weight" : "normal",
+				"font-style" : "normal",
+				"text-anchor" : "start",
+				"style" : {
+					"fill" : "$FRGB",
+					"fill-opacity" : 1
+				},
+				"child" : '',
+				"transform" : "matrix(1,0,0,1,0," + (yoffset - height) + ")"
 			}	]
 		} ]
 	}, 		
@@ -283,16 +268,17 @@ function drawBpf(_curve, time) {
 			}							
 		}
 	}
-	shape["picster-element"][0]["val"][0]["id"] = "Destination_" + time;
-	shape["picster-element"][0]["val"][2]["id"] = "Picster-Element_" + time;
-	shape["picster-element"][0]["val"][2]["child"][0]["id"] = "box_" + time;
-	shape["picster-element"][0]["val"][2]["child"][1]["id"] = "functions_" + time;
-	shape["picster-element"][0]["val"][2]["child"][1]["d"] = bpf;
-	shape["picster-element"][0]["val"][2]["child"][1]["transform"] = "matrix(1, 0, 0, 1, 0, " + yoffset + ")";
-	shape["picster-element"][0]["val"][2]["child"][2]["id"] = "grid_" + time;
-	shape["picster-element"][0]["val"][2]["child"][2]["d"] = "M10,0 V" + height + " M20,0 V" + height + " M30,0 V" + height + " M40,0 V" + height + " M50,0 V" + height + " M60,0 V" + height + " M70,0 V" + height + " M80,0 V" + height + " M90,0 V" + height + ", M0,10 H" + width + " M0,20 H" + width + " M0,30 H" + width + " M0,40 H" + width + " M0,50 H" + width;
-	shape["picster-element"][0]["val"][2]["child"][2]["transform"] = "matrix(" + (scaleWidth ? x_timeMultiple : 1) + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
-	shape["picster-element"][0]["val"][2]["child"][0]["transform"] = "matrix(" + (scaleWidth ? x_timeMultiple : 1) + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
+	shape["picster-element"][0]["val"][1]["child"][3]["id"] = "Destination_" + time;
+	shape["picster-element"][0]["val"][1]["child"][3]["child"] = destination;
+	shape["picster-element"][0]["val"][1]["id"] = "Picster-Element_" + time;
+	shape["picster-element"][0]["val"][1]["child"][0]["id"] = "box_" + time;
+	shape["picster-element"][0]["val"][1]["child"][1]["id"] = "functions_" + time;
+	shape["picster-element"][0]["val"][1]["child"][1]["d"] = bpf;
+	shape["picster-element"][0]["val"][1]["child"][1]["transform"] = "matrix(1, 0, 0, 1, 0, " + yoffset + ")";
+	shape["picster-element"][0]["val"][1]["child"][2]["id"] = "grid_" + time;
+	shape["picster-element"][0]["val"][1]["child"][2]["d"] = "M10,0 V" + height + " M20,0 V" + height + " M30,0 V" + height + " M40,0 V" + height + " M50,0 V" + height + " M60,0 V" + height + " M70,0 V" + height + " M80,0 V" + height + " M90,0 V" + height + ", M0,10 H" + width + " M0,20 H" + width + " M0,30 H" + width + " M0,40 H" + width + " M0,50 H" + width;
+	shape["picster-element"][0]["val"][1]["child"][2]["transform"] = "matrix(" + (scaleWidth ? x_timeMultiple : 1) + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
+	shape["picster-element"][0]["val"][1]["child"][0]["transform"] = "matrix(" + (scaleWidth ? x_timeMultiple : 1) + ", 0, 0, 1, 0, " + (yoffset - height) + ")";
 	//post("arguments", JSON.stringify(arguments), "\n");
 	shape["picster-element"][2]["val"][0]["message"] = destination;
 	shape["picster-element"][2]["val"][0]["value"] = ["bpf"].concat(_curve);
@@ -312,12 +298,11 @@ function value() {
 	a.shift();
 	switch (mode) {
 		case "single" : 
-			textBox["picster-element"][0]["val"][0]["id"] = "Destination_" + time;
-			textBox["picster-element"][0]["val"][1]["id"] = "Picster-Element_" + time;
-			textBox["picster-element"][0]["val"][1]["child"][0]["id"] = "Picster-Element_" + (time + 1);
-			textBox["picster-element"][0]["val"][1]["child"][0]["width"] = text_measure("Arial", 10, a.join(" "))[0] + 4;
-			textBox["picster-element"][0]["val"][1]["child"][1]["id"] = "Picster-Element_" + (time + 2);
-			textBox["picster-element"][0]["val"][1]["child"][1]["child"] = a.join(" ");
+			textBox["picster-element"][0]["val"][0]["child"][1]["id"] = "Destination_" + time;
+			textBox["picster-element"][0]["val"][0]["child"][1]["child"] = a.join(" ");
+			textBox["picster-element"][0]["val"][0]["id"] = "Picster-Element_" + time;
+			textBox["picster-element"][0]["val"][0]["child"][0]["id"] = "Picster-Element_" + (time + 1);
+			textBox["picster-element"][0]["val"][0]["child"][0]["width"] = text_measure("Arial", 10, a.join(" "))[0] + 4;
 			//post("arguments", JSON.stringify(arguments), "\n");
 			textBox["picster-element"][2]["val"][0]["message"] = destination;
 			textBox["picster-element"][2]["val"][0]["value"] = "single " + a.join(' ');
