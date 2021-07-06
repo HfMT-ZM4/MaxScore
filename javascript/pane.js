@@ -62,10 +62,7 @@ var	buttonstrokecolor = [1., 0., 0., 1.];
 var buttonstrokewidth = 0.5;
 var horizontalOffset = 0;
 var verticalOffset =0;
-var _horizontalOffset = 0;
-var _verticalOffset =0;
 var virgin = 1;
-//verticalScrollbar.bodycolor = [1, 0, 0, 1];
 var idl = 0;
 var idlposition = [];
 var position = [];
@@ -103,7 +100,6 @@ var elapsed = 0;
 var line = [];
 var prop = 0;
 var adjust = 0;
-var hscrollfactor = 1;
 var pshape = "1: line";
 var boundingRect = [];
 var boundingRectOffset = [0, 0];
@@ -259,7 +255,6 @@ function obj_ref(o)
 	gc();
 	s = 1;
 	pageSize(o.pageSize[0], o.pageSize[1]);
-	hscrollfactor = (prop) ? (pageWidth + width) / pageWidth : 1;
 	//post("values", hscrollfactor, width,  pageWidth, "\n");
 	setZoom(o.setZoom);
 	bgcolor = o.bgcolor;
@@ -334,15 +329,14 @@ function pageSize(x, y)
 		this.patcher.message("script", "sendbox", scriptingName, "presentation_rect", 0, 0, pageWidth * zoom, pageHeight * zoom);
 		width = pageWidth * zoom;
 		height = pageHeight * zoom;
-		verticalScrollbar.extent = height-horizontalScrollbar.span;
-		horizontalScrollbar.extent = width-verticalScrollbar.span;
+		verticalScrollbar.extent = height - horizontalScrollbar.span;
+		horizontalScrollbar.extent = width - verticalScrollbar.span;
 		}
-	horizontalScrollbar.percentage = horizontalScrollbar.extent/x*(100/hscrollfactor)/zoom;
-	verticalScrollbar.percentage = verticalScrollbar.extent/y*100/zoom;
+	horizontalScrollbar.percentage = horizontalScrollbar.extent / (pageWidth * zoom) * (prop) ? 50 : 100;
+	verticalScrollbar.percentage = verticalScrollbar.extent / (pageHeight * zoom) * 100;
 	if (JSON.stringify([oldPageWidth, oldPageHeight]) != JSON.stringify([pageWidth, pageHeight])) {
 		horizontalOffset = 0;
 		verticalOffset = 0;
-		//post("horizontalScrollbar.center-1", horizontalScrollbar.value, horizontalOffset, "\n");
 		if (!virgin) outlet(1, "offset", horizontalOffset, verticalOffset);
 		}
 		else {
@@ -353,6 +347,8 @@ function pageSize(x, y)
 		//horizontalScrollbar.value = (horizontalScrollbar.center-horizontalScrollbar.spacer)/(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*100.;
 		//horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, (200/hscrollfactor - horizontalScrollbar.percentage)/2, 0, horizontalScrollbar.extent / zoom - pageWidth);
 		}
+	horizontalScrollbar.value = scale(horizontalOffset, 0, -pageWidth, horizontalScrollbar.percentage/2, (200 - horizontalScrollbar.percentage)/2);
+	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	oldPageWidth = pageWidth;
 	oldPageHeight = pageHeight;
 	//post("horizontalScrollbar-1", horizontalScrollbar.center, hscrollfactor, horizontalScrollbar.percentage/200*horizontalScrollbar.extent+horizontalScrollbar.spacer, "\n");
@@ -642,7 +638,7 @@ function paint() {
 		var adjustedPageWidth = Math.round(pageWidth * zoom);
 		var adjustedPageHeight = Math.round(pageHeight * zoom);
 		horizontalScrollbar.visible = adjustedPageWidth > width || prop;
-		verticalScrollbar.visible = adjustedPageHeight > height;
+		verticalScrollbar.visible = adjustedPageHeight > height - horizontalScrollbar.span;
 		if (verticalScrollbar.visible && horizontalScrollbar.visible && !virgin) handle();
 		if (verticalScrollbar.visible && !virgin) vbar();
 		if ((horizontalScrollbar.visible || prop) && !virgin) hbar();
@@ -786,7 +782,6 @@ function paintOnTop()
 		var currentMatrix = get_matrix();
 		var keys = Object.keys(paintOnScore);
 		for (var i = 0; i < keys.length; i++) {
-		//post("keys.length", paintOnScore[keys[i]][1], paintOnScore[keys[i]].length, "\n");
 		/*
 		if (paintOnScore[keys[i]][0] == "image_surface_draw") eval(paintOnScore[keys[i]][0] + "(\"" + paintOnScore[keys[i]][1] + "\")");
 		else if (paintOnScore[keys[i]][0] == "svg_render") eval(paintOnScore[keys[i]][0] + "(\"" + paintOnScore[keys[i]][1] + "\")");
@@ -988,8 +983,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	horizontalScrollbar.value = (horizontalScrollbar.center-horizontalScrollbar.spacer)/(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*100.;
 	if (horizontalScrollbar.value < horizontalScrollbar.percentage / 2.) horizontalScrollbar.value =  horizontalScrollbar.percentage / 2.;
 	if (horizontalScrollbar.value > 100 - horizontalScrollbar.percentage / 2.) horizontalScrollbar.value =  100 - horizontalScrollbar.percentage / 2.;
-	horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, (200/hscrollfactor - horizontalScrollbar.percentage)/2, 0, horizontalScrollbar.extent / zoom - pageWidth);
-	_horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, (200/hscrollfactor - horizontalScrollbar.percentage)/2, 0, horizontalScrollbar.extent - pageWidth);
+	horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2, 0, -pageWidth);
 	}
 
 	if (first_position[0]>horizontalScrollbar.extent && first_position[0]<width){
@@ -1002,11 +996,10 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	verticalScrollbar.value = (verticalScrollbar.center-verticalScrollbar.spacer)/(verticalScrollbar.extent-verticalScrollbar.spacer*2)*100.;
 	if (verticalScrollbar.value < verticalScrollbar.percentage / 2.) verticalScrollbar.value =  verticalScrollbar.percentage / 2.;
 	if (verticalScrollbar.value > 100 - verticalScrollbar.percentage / 2.) verticalScrollbar.value =  100 - verticalScrollbar.percentage / 2.;
-	verticalOffset = scale(verticalScrollbar.value, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2, 0, verticalScrollbar.extent / zoom - pageHeight);
-	_verticalOffset = scale(verticalScrollbar.value, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2, 0, verticalScrollbar.extent - pageHeight);
+	verticalOffset = scale(verticalScrollbar.value, verticalScrollbar.percentage/2, 100 - verticalScrollbar.percentage/2, 0, verticalScrollbar.extent / zoom - pageHeight);
+	//post("offset", verticalOffset, verticalScrollbar.value, verticalScrollbar.extent, pageHeight, "\n");
 	}
-	outlet(1, "offset", _horizontalOffset, _verticalOffset);
-	//post("offset", _horizontalOffset, _verticalOffset, "\n");
+	outlet(1, "offset", horizontalOffset, verticalOffset);
 	}
 	mgraphics.redraw();
 	last_position = position;
