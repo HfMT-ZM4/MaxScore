@@ -69,7 +69,7 @@ var setStaffGroup = [];
 var _staffGroup = [];
 var instrumentNames = [];
 var flag = 0;
-var init = 1;
+var _init = 1;
 var tempoflag = 0;
 var moveToFlag = 0;
 var oldIndex = [];
@@ -1040,11 +1040,11 @@ function startRenderDump()
 		outlet(1, "getScoreAnnotation");
        	outlet(1, "getNumMeasures");
        	outlet(1, "getNumStaves");
-		//post("init-------------", init, numMeasures, numStaves, scoreLayout, "\n");
+		//post("init", _init, numMeasures, numStaves, _scoreLayout, "\n");
  		//for (var i = 0; i < numMeasures; i++) {
 		//for (var i = scoreLayout[1]; i < scoreLayout[1] + scoreLayout[2]; i++) {
 		if (numMeasures == 0) numMeasures = 1;
-		var _numMeasures = (init) ? numMeasures : _scoreLayout[2];
+		var _numMeasures = (_init) ? numMeasures : _scoreLayout[2];
 		for (var i = 0; i < _numMeasures; i++) {
 			stafflines[i] = {};
 			barlines[i] = {};
@@ -1083,7 +1083,7 @@ function endRenderDump()
 	writeBarlines();
 	writeSVG("object");
 	renderPage = 0;
-	init = 0;
+	_init = 0;
 	//gc();
 }
 
@@ -1114,14 +1114,15 @@ function scoreLayout()
 		oldstaff = -1;
 }
 
+function init()
+{
+	_init = 1;
+}
+
 function anything() {
     var msg = arrayfromargs(arguments);
-	//post("msg", messagename, msg, "\n");
 	if (renderPage){
     switch (messagename) {
-		case "init" :
-		init = 1;
-		break;
 		case "width" :
 		//init = 1;
         break;		
