@@ -332,7 +332,7 @@ function pageSize(x, y)
 		verticalScrollbar.extent = height - horizontalScrollbar.span;
 		horizontalScrollbar.extent = width - verticalScrollbar.span;
 		}
-	horizontalScrollbar.percentage = horizontalScrollbar.extent / (pageWidth * zoom) * (prop) ? 50 : 100;
+	horizontalScrollbar.percentage = horizontalScrollbar.extent / (pageWidth * zoom) * ((prop) ? 50 : 100);
 	verticalScrollbar.percentage = verticalScrollbar.extent / (pageHeight * zoom) * 100;
 	if (JSON.stringify([oldPageWidth, oldPageHeight]) != JSON.stringify([pageWidth, pageHeight])) {
 		horizontalOffset = 0;
@@ -347,7 +347,7 @@ function pageSize(x, y)
 		//horizontalScrollbar.value = (horizontalScrollbar.center-horizontalScrollbar.spacer)/(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*100.;
 		//horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, (200/hscrollfactor - horizontalScrollbar.percentage)/2, 0, horizontalScrollbar.extent / zoom - pageWidth);
 		}
-	horizontalScrollbar.value = scale(horizontalOffset, 0, -pageWidth, horizontalScrollbar.percentage/2, (200 - horizontalScrollbar.percentage)/2);
+	horizontalScrollbar.value = scale(horizontalOffset, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom) - pageWidth, horizontalScrollbar.percentage/2, (200 - horizontalScrollbar.percentage)/2);
 	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	oldPageWidth = pageWidth;
 	oldPageHeight = pageHeight;
@@ -638,7 +638,7 @@ function paint() {
 		var adjustedPageWidth = Math.round(pageWidth * zoom);
 		var adjustedPageHeight = Math.round(pageHeight * zoom);
 		horizontalScrollbar.visible = adjustedPageWidth > width || prop;
-		verticalScrollbar.visible = adjustedPageHeight > height - horizontalScrollbar.span;
+		verticalScrollbar.visible = adjustedPageHeight > height;
 		if (verticalScrollbar.visible && horizontalScrollbar.visible && !virgin) handle();
 		if (verticalScrollbar.visible && !virgin) vbar();
 		if ((horizontalScrollbar.visible || prop) && !virgin) hbar();
@@ -983,7 +983,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	horizontalScrollbar.value = (horizontalScrollbar.center-horizontalScrollbar.spacer)/(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*100.;
 	if (horizontalScrollbar.value < horizontalScrollbar.percentage / 2.) horizontalScrollbar.value =  horizontalScrollbar.percentage / 2.;
 	if (horizontalScrollbar.value > 100 - horizontalScrollbar.percentage / 2.) horizontalScrollbar.value =  100 - horizontalScrollbar.percentage / 2.;
-	horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2, 0, -pageWidth);
+	horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom) - pageWidth);
 	}
 
 	if (first_position[0]>horizontalScrollbar.extent && first_position[0]<width){
