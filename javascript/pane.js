@@ -63,6 +63,7 @@ var buttonstrokewidth = 0.5;
 var horizontalOffset = 0;
 var verticalOffset =0;
 var virgin = 1;
+var _virgin = true;
 var idl = 0;
 var idlposition = [];
 var position = [];
@@ -145,6 +146,16 @@ function buttonmode(bm)
 	buttonfillcolor = (bm) ? [0.808, 0.898, 0.910, 0.8] : [1., 0., 0., 0.1];
 	buttonstrokecolor = (bm) ? [0.35, 0.35, 0.35, 1.000] : [1., 0., 0., 1.];
 	buttonstrokewidth = (bm) ? 3 : 0.5;
+}
+
+function setvalueof(v)
+{
+	scroll("offset", v);
+}
+
+function getvalueof()
+{
+	return horizontalOffset;
 }
 
 function anything()
@@ -351,6 +362,7 @@ function pageSize(x, y)
 	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	oldPageWidth = pageWidth;
 	oldPageHeight = pageHeight;
+	notifyclients();
 	//post("horizontalScrollbar-1", horizontalScrollbar.center, hscrollfactor, horizontalScrollbar.percentage/200*horizontalScrollbar.extent+horizontalScrollbar.spacer, "\n");
 }
 
@@ -379,36 +391,41 @@ function scroll()
 		case "stop" :
 			tsk["scroll"].cancel();
 			elapsed += ticks["scroll"];
-//			delete ticks["scroll"];
 			break;
 		case "play" :
-			var times = (line[2] - elapsed * speed) / grain;
-			//var remainder = msg[2] % grain;
-			//speed = msg[1] / times;
+			var times = 0;
+			//if (_virgin) {
+				line = [0, msg[2], msg[3]];
+				times = (line[2] + horizontalOffset * msg[1] / 10) / grain;
+				speed = (msg[2] - horizontalOffset) / times;
+			//	}
+			//else times = (line[2] + horizontalOffset * msg[1] / 10) / grain;
+			elapsed = horizontalOffset / speed;
 			tsk["scroll"].interval = grain;
 			maxiter["scroll"] = times - 1;
-			//tsk["scroll"].repeat(times - 1);
 			tsk["scroll"].repeat(-1);
 			break;
 		case "offset" :
 			horizontalOffset = msg[1];
+			notifyclients();
 			outlet(1, "offset", horizontalOffset, verticalOffset);
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
-			elapsed = msg[1] / speed;
 			mgraphics.redraw();
 			break;
 		default :
 		if (msg.length == 3) {
+			//_virgin = false;
 			horizontalOffset = msg[0];
+			notifyclients();
 			outlet(1, "offset", horizontalOffset, verticalOffset);
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
-			elapsed = msg[0] / speed;
+			elapsed = horizontalOffset / speed;
 			line = msg;
 			//elapsed = 0;
 			tsk["scroll"].interval = grain;
 			var times = msg[2] / grain;
 			//var remainder = msg[2] % grain;
-			speed = (msg[1] - msg[0]) / times;
+			speed = (msg[1] - horizontalOffset) / times;
 			//post("scroll", msg[2], grain, times, "\n");
 			maxiter["scroll"] = times - 1;
 			//tsk["scroll"].repeat(times - 1);
@@ -610,6 +627,7 @@ function countin(arg)
 function paint() {
 		if (tsk["scroll"].running) {
 			horizontalOffset = (elapsed + ticks["scroll"]) * speed;
+			notifyclients();
 			outlet(1, "offset", horizontalOffset, verticalOffset);
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
 			}
@@ -999,6 +1017,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	verticalOffset = scale(verticalScrollbar.value, verticalScrollbar.percentage/2, 100 - verticalScrollbar.percentage/2, 0, verticalScrollbar.extent / zoom - pageHeight);
 	//post("offset", verticalOffset, verticalScrollbar.value, verticalScrollbar.extent, pageHeight, "\n");
 	}
+	notifyclients();
 	outlet(1, "offset", horizontalOffset, verticalOffset);
 	}
 	mgraphics.redraw();

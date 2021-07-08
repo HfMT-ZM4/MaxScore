@@ -982,6 +982,15 @@ function scroll()
 
 	case "play":
 	//post("play", _offset, rDur, eol, "\n");
+	var matrixctrl = this.patcher.getnamed("output").getvalueof();
+	if (matrixctrl.join("").indexOf("001") != -1) 
+		{
+		_offset = this.patcher.getnamed("pane").getvalueof();
+		//FIX!
+		rDur = msg[5] * (msg[4] - msg[1]) / msg[4] / 1000;
+		eol = msg[4];
+		//
+		}
 	if (lastAction == "offset")
 		{
 		for (var s = 0; s < groupcount; s++)

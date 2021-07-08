@@ -479,9 +479,9 @@ function scroll()
 				scoreSize += measureWidth;
 				}
 			//from = -1 * scoreOffset * factor  * zoom / 0.5;
- 			to = -1 * scoreSize * factor  * zoom / 0.5
- 			dur = scoreSize * factor / timeUnit * 1000. * zoom / 0.5;	
-			outlet(1, "scroll", "offset", -msg[1] * timeUnit * zoom / 0.5, timeUnit, 0, to, dur);
+ 		to = -1 * scoreSize * factor  * zoom / 0.5
+ 		dur = scoreSize * factor / timeUnit * 1000. * zoom / 0.5;	
+		outlet(1, "scroll", "offset", -s * timeUnit * zoom / 0.5, timeUnit, 0, to, dur);
 	break;			
 	case "stop" :
 		//outlet(2, "stop");
@@ -491,8 +491,20 @@ function scroll()
 		outlet(1, "scroll", "offset", 0, timeUnit);		
 		break;
 	case "resume":
-		//outlet(2, "start");
-		outlet(1, "scroll", "play");		
+		scoreSize = 0.;
+		outlet(0, "getNumMeasures");	
+		for (var m = 0; m < numMeasures; m++){
+			outlet(0, "getMeasureInfo", m);
+			var _tempo = json["measure"]["@TEMPO"];
+			var timesig = json["measure"]["@TIMESIG"];
+			var measureWidth = (60 / _tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
+			//if (m == s) scoreOffset = scoreSize;
+				scoreSize += measureWidth;
+				}
+			//from = -1 * scoreOffset * factor  * zoom / 0.5;
+ 		to = -1 * scoreSize * factor  * zoom / 0.5
+ 		dur = scoreSize * factor / timeUnit * 1000. * zoom / 0.5;	
+		outlet(1, "scroll", "play", timeUnit, to, dur);		
 		break;	
 	case "rate":
 		break;	

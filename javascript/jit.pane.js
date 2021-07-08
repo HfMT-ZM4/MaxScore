@@ -327,12 +327,18 @@ function scroll()
 //			delete ticks["scroll"]; 
 			break;
 		case "play" :
-			var times = (line[2] - elapsed * speed) / grain;
-			//var remainder = msg[2] % grain;
-			//speed = msg[1] / times;
+			var matrixctrl = this.patcher.getnamed("output").getvalueof();
+			if (matrixctrl.join("").indexOf("001") != -1) horizontalOffset = this.patcher.getnamed("pane").getvalueof();
+			//consider case when pane is inactive 
+			//if active: use horizontalOffset from pane.js
+			//if inactive: use offset
+			var times = 0;
+			line = [0, msg[2], msg[3]];
+			times = (line[2] + horizontalOffset * msg[1] / 10) / grain;
+			speed = (msg[2] - horizontalOffset) / times;
+			elapsed = horizontalOffset / speed;
 			tsk["scroll"].interval = grain; 
 			maxiter["scroll"] = times - 1;
-			//tsk["scroll"].repeat(times - 1);
 			tsk["scroll"].repeat(-1);
 			break;
 		case "offset" :
