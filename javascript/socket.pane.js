@@ -9,7 +9,7 @@ var jcursors = {};
 var cursorAttr = new Dict();
 cursorAttr.name = "cursorAttr";
 var svgFile = "score.svg";
-var mediaFolder = "/media/project/";
+var mediaFolder = "";
 var duration = 0;
 var eol = 0;
 var prop = 1;
@@ -75,6 +75,18 @@ if (jsarguments.length >= 1)
 		}
 }
 
+var ref = this.patcher.getnamed("pane");
+var listener = new MaxobjListener(ref, null, listenerobj);
+
+function listenerobj(data)
+{
+	if (data.value[1]) {
+		_offset = data.value;
+		scroll("offset", data.value);
+		lastAction == "offset";
+		}
+}
+
 function setMediaFolder(f)
 {
 	setpath(f);
@@ -94,12 +106,8 @@ function setpath(relPath)
 		var lastSlash = fullpath.lastIndexOf('/') - 1;
 		var afterDrive = fullpath.lastIndexOf(':') + 1;
 
-		if (typeof relPath != "undefined")
-		{
-			pathToScript = fullpath.substr(afterDrive, lastSlash - afterDrive + 2) + relPath;
-			mediaFolder = relPath.toString().substr(relPath.toString().indexOf('/'));
-		}
-		else pathToScript = fullpath.substr(afterDrive, lastSlash - afterDrive + 2);
+		if (typeof relPath != "undefined") mediaFolder = relPath;
+		pathToScript = fullpath.substr(afterDrive, lastSlash - afterDrive + 2);
 	}
 	post("pathToScript", pathToScript, mediaFolder, "\n");
 }
@@ -456,8 +464,8 @@ function obj_ref(o)
 
 function writeSVG(destination)
 {
-	f = new File(pathToScript + svgFile, "write", "TEXT");
-	post("path", pathToScript, "\n");
+	f = new File(pathToScript + mediaFolder + svgFile, "write", "TEXT");
+	post("path", pathToScript + mediaFolder, "\n");
 	f.open();
 	f.eof = 0;
 	f.writeline("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
@@ -981,18 +989,12 @@ function scroll()
 		break;
 
 	case "play":
-	//post("play", _offset, rDur, eol, "\n");
-	var matrixctrl = this.patcher.getnamed("output").getvalueof();
-	if (matrixctrl.join("").indexOf("001") != -1) 
-		{
-		_offset = this.patcher.getnamed("pane").getvalueof();
-		//FIX!
-		rDur = msg[5] * (msg[4] - msg[1]) / msg[4] / 1000;
-		eol = msg[4];
+		rDur = msg[3] * (msg[2] - _offset[0]) / msg[2] / 1000;
+		eol = msg[2];
 		//
-		}
 	if (lastAction == "offset")
 		{
+		post("play", _offset[0], msg, rDur, eol, "\n");
 		for (var s = 0; s < groupcount; s++)
 		{
 				jcursors[s + 1] = {
@@ -1002,7 +1004,7 @@ function scroll()
 				"target" : "#score", 
 				"dur" : 0,
 				"vars" : {
-					"x" : _offset,
+					"x" : _offset[0],
 					"y" : 0,
 					"paused" : "false",
 					"ease" : "linear"

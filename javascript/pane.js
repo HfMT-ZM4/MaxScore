@@ -120,6 +120,7 @@ var repeat = 0;
 var blnk = new Task(blink, this);
 var maxiter = {};
 var maxcount = {};
+var manual = 0;
 	
 
 tsk["scroll"] = new Task(scrollTask, this, "scroll"); // our main task
@@ -155,7 +156,7 @@ function setvalueof(v)
 
 function getvalueof()
 {
-	return horizontalOffset;
+	return [horizontalOffset, manual];
 }
 
 function anything()
@@ -362,6 +363,7 @@ function pageSize(x, y)
 	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	oldPageWidth = pageWidth;
 	oldPageHeight = pageHeight;
+	manual = 0;
 	notifyclients();
 	//post("horizontalScrollbar-1", horizontalScrollbar.center, hscrollfactor, horizontalScrollbar.percentage/200*horizontalScrollbar.extent+horizontalScrollbar.spacer, "\n");
 }
@@ -393,20 +395,20 @@ function scroll()
 			elapsed += ticks["scroll"];
 			break;
 		case "play" :
+			//post("resume", horizontalOffset, msg, "\n");
 			var times = 0;
-			//if (_virgin) {
-				line = [0, msg[2], msg[3]];
-				times = (line[2] + horizontalOffset * msg[1] / 10) / grain;
-				speed = (msg[2] - horizontalOffset) / times;
-			//	}
-			//else times = (line[2] + horizontalOffset * msg[1] / 10) / grain;
+			line = [0, msg[2], msg[3]];
+			times = (line[2] + horizontalOffset * msg[1] / 10) / grain;
+			speed = (msg[2] - horizontalOffset) / times;
 			elapsed = horizontalOffset / speed;
+			ticks["scroll"] = 0;
 			tsk["scroll"].interval = grain;
 			maxiter["scroll"] = times - 1;
 			tsk["scroll"].repeat(-1);
 			break;
 		case "offset" :
 			horizontalOffset = msg[1];
+			manual = 0;
 			notifyclients();
 			outlet(1, "offset", horizontalOffset, verticalOffset);
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
@@ -414,21 +416,18 @@ function scroll()
 			break;
 		default :
 		if (msg.length == 3) {
-			//_virgin = false;
 			horizontalOffset = msg[0];
+			manual = 0;
 			notifyclients();
 			outlet(1, "offset", horizontalOffset, verticalOffset);
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
 			elapsed = horizontalOffset / speed;
 			line = msg;
-			//elapsed = 0;
+			ticks["scroll"] = 0;
 			tsk["scroll"].interval = grain;
 			var times = msg[2] / grain;
-			//var remainder = msg[2] % grain;
 			speed = (msg[1] - horizontalOffset) / times;
-			//post("scroll", msg[2], grain, times, "\n");
 			maxiter["scroll"] = times - 1;
-			//tsk["scroll"].repeat(times - 1);
 			tsk["scroll"].repeat(-1);
 			}
 		}
@@ -596,7 +595,6 @@ function cursorTask(arg)
 		currentSegment = j;
 		}
 	}
-	//post("cursor", arg, currentSegment, "\n");
 	if (currentSegment == 0) elapsedTime = currentTime;
 	else elapsedTime = currentTime - segments[arg][currentSegment];
 	cursor_pos[arg] = [(lines[arg][currentSegment + 1][1] - lines[arg][currentSegment + 1][0]) / lines[arg][currentSegment + 1][2] * elapsedTime + lines[arg][currentSegment + 1][0], cursors[arg].segments[currentSegment + 1].y, cursors[arg].segments[currentSegment + 1].height];
@@ -626,7 +624,9 @@ function countin(arg)
 
 function paint() {
 		if (tsk["scroll"].running) {
+			//post("ticks", ticks["scroll"], "\n");
 			horizontalOffset = (elapsed + ticks["scroll"]) * speed;
+			manual = 0;
 			notifyclients();
 			outlet(1, "offset", horizontalOffset, verticalOffset);
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
@@ -761,22 +761,15 @@ function selectionRect()
 
 function drawBoundingRect()
 {
-        //if (controlshift) {
             with(mgraphics) {
-				//if (boundingRect.length == 4) {
-                set_line_width(buttonstrokewidth);
-				//scale(zoom, zoom);
- 				//translate(boundingRectOffset);
-               	set_source_rgba(buttonfillcolor);
+              set_line_width(buttonstrokewidth);
+             	set_source_rgba(buttonfillcolor);
 				rectangle(boundingRect);
                 fill();
                 set_source_rgba(buttonstrokecolor);
  				rectangle(boundingRect);
                	stroke();
 				}
-            //}
-        //}
-
 }
 
 function flashingNoteheads()
@@ -1017,6 +1010,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	verticalOffset = scale(verticalScrollbar.value, verticalScrollbar.percentage/2, 100 - verticalScrollbar.percentage/2, 0, verticalScrollbar.extent / zoom - pageHeight);
 	//post("offset", verticalOffset, verticalScrollbar.value, verticalScrollbar.extent, pageHeight, "\n");
 	}
+	manual = 1;
 	notifyclients();
 	outlet(1, "offset", horizontalOffset, verticalOffset);
 	}

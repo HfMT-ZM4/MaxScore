@@ -112,7 +112,16 @@ var maxiter = {};
 var maxcount = {};
 var	buttonfillcolor = [1., 0., 0., 0.1];
 var	buttonstrokecolor = [1., 0., 0., 1.];
-var buttonstrokewidth = 0.5;	
+var buttonstrokewidth = 0.5;
+
+var ref = this.patcher.getnamed("pane");
+var listener = new MaxobjListener(ref, null, listenerobj);
+
+function listenerobj(data)
+{
+	if (data.value[1]) scroll("offset", data.value[0]);
+}
+	
 
 function transparency(t)
 {
@@ -327,16 +336,12 @@ function scroll()
 //			delete ticks["scroll"]; 
 			break;
 		case "play" :
-			var matrixctrl = this.patcher.getnamed("output").getvalueof();
-			if (matrixctrl.join("").indexOf("001") != -1) horizontalOffset = this.patcher.getnamed("pane").getvalueof();
-			//consider case when pane is inactive 
-			//if active: use horizontalOffset from pane.js
-			//if inactive: use offset
 			var times = 0;
 			line = [0, msg[2], msg[3]];
 			times = (line[2] + horizontalOffset * msg[1] / 10) / grain;
 			speed = (msg[2] - horizontalOffset) / times;
 			elapsed = horizontalOffset / speed;
+			ticks["scroll"] = 0;
 			tsk["scroll"].interval = grain; 
 			maxiter["scroll"] = times - 1;
 			tsk["scroll"].repeat(-1);
@@ -358,7 +363,6 @@ function scroll()
 			var times = msg[2] / grain;
 			//var remainder = msg[2] % grain;
 			speed = (msg[1] - msg[0]) / times;
-			//post("pane", times, speed, "\n");
 			maxiter["scroll"] = times - 1;
 			//tsk["scroll"].repeat(times - 1);
 			tsk["scroll"].repeat(-1);
@@ -557,6 +561,7 @@ function redraw() {
 		//post("virgin", virgin, "\n");
 		if (!virgin && tsk["scroll"].running) {
 			horizontalOffset = (elapsed + ticks["scroll"]) * speed;
+			post("horizontalOffset", horizontalOffset, "\n");
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);			
 			}
 		mgraphics.set_source_rgba(1., 1., 0.94, 1.);
