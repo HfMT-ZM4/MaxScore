@@ -561,7 +561,7 @@ function redraw() {
 		//post("virgin", virgin, "\n");
 		if (!virgin && tsk["scroll"].running) {
 			horizontalOffset = (elapsed + ticks["scroll"]) * speed;
-			post("horizontalOffset", horizontalOffset, "\n");
+			//post("horizontalOffset", horizontalOffset, "\n");
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);			
 			}
 		mgraphics.set_source_rgba(1., 1., 0.94, 1.);

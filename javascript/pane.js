@@ -349,7 +349,11 @@ function pageSize(x, y)
 	if (JSON.stringify([oldPageWidth, oldPageHeight]) != JSON.stringify([pageWidth, pageHeight])) {
 		horizontalOffset = 0;
 		verticalOffset = 0;
-		if (!virgin) outlet(1, "offset", horizontalOffset, verticalOffset);
+		if (!virgin) {
+			manual = 0;
+			notifyclients();
+			outlet(1, "offset", horizontalOffset, verticalOffset);
+			}
 		}
 		else {
 		// to be done when in an enlightened moment
@@ -363,8 +367,6 @@ function pageSize(x, y)
 	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	oldPageWidth = pageWidth;
 	oldPageHeight = pageHeight;
-	manual = 0;
-	notifyclients();
 	//post("horizontalScrollbar-1", horizontalScrollbar.center, hscrollfactor, horizontalScrollbar.percentage/200*horizontalScrollbar.extent+horizontalScrollbar.spacer, "\n");
 }
 
@@ -581,7 +583,7 @@ function scrollTask(id)
    	if (arguments.callee.task.iterations > maxiter[id]) {
        arguments.callee.task.cancel();
    	}
-	outlet(2, ticks[id]);
+	//outlet(2, ticks[id]);
 	mgraphics.redraw();
 }
 scrollTask.local = 1; // prevent triggering the task directly from Max
@@ -925,7 +927,7 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
     if (capsl) {
         controlshift = 1;
         shiftclick = 0;
-		outlet(2, 1);
+		//outlet(2, 1);
         outlet(1, "mousePressed", x / zoom - horizontalOffset , y / zoom - verticalOffset);
         (!ctrl) ? outlet(1, "singleClick", x / zoom - horizontalOffset, y / zoom - verticalOffset, shift) : outlet(1, "ctrlClick", x / zoom - horizontalOffset, y / zoom - verticalOffset);
 		return;
@@ -940,7 +942,7 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
 		shiftclick = 0;
 		controlshift = 0;
 		outlet(0, "mousePressed",  x / zoom - horizontalOffset, y / zoom - verticalOffset);
-		outlet(2, 1);
+		//outlet(2, 1);
 		}
 }
 onclick.local = 1; //private.
@@ -964,7 +966,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
         outlet(controlshift, "shiftKeyDown", 0);
 		outlet(controlshift, "getSelectedLocation");
         //outlet(1, "graphicsSelection", 0);
-		outlet(2, 0);
+		//outlet(2, 0);
     }
     else {
         if (_cmd) {
@@ -1013,6 +1015,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	manual = 1;
 	notifyclients();
 	outlet(1, "offset", horizontalOffset, verticalOffset);
+	outlet(2, "scroll", "pixels", horizontalOffset);
 	}
 	mgraphics.redraw();
 	last_position = position;
@@ -1021,7 +1024,7 @@ ondrag.local = 1; //private.
 
 
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
-	if (!repeat) outlet(2, "idleout", 0);
+	//if (!repeat) outlet(2, "idleout", 0);
 	repeat = 1;
 	var _cmd = (max["os"]=="macintosh") ? cmd : option;
 	if (idleOut) outlet(1, "mouseIdle",  x - horizontalOffset , y - verticalOffset, shift, ctrl);
@@ -1049,7 +1052,7 @@ function onidleout() {
     canvasactive = 0;
     DisplayCursor(1);
 	//mgraphics.redraw();
-	outlet(2, "idleout", 1);
+	//outlet(2, "idleout", 1);
 	repeat = 0;
 }
 

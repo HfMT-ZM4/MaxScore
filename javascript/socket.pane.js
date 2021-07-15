@@ -9,7 +9,6 @@ var jcursors = {};
 var cursorAttr = new Dict();
 cursorAttr.name = "cursorAttr";
 var svgFile = "score.svg";
-var mediaFolder = "";
 var duration = 0;
 var eol = 0;
 var prop = 1;
@@ -20,7 +19,9 @@ var lastAction = "start";
 var pageWidth = 1200;
 var pageHeight = 800;
 var zoom = 1;
+var mediaFolder = "";
 var pathToScript = "public";
+setpath(pathToScript + "/");
 var bgcolor = [1, 1, 1, 1];
 var groupcount = 1;
 var playheadPosition = 0;
@@ -67,9 +68,9 @@ if (jsarguments.length >= 1)
 		flag = 1;
 		}
 		}
-		else if (attribute[0] == "@setMediaFolder") {
-			setpath(attribute.slice(1, attribute.length));
-		}
+		//else if (attribute[0] == "@setMediaFolder") {
+		//	setpath(attribute.slice(1, attribute.length));
+		//}
 		else if (attribute[0] == "@showClefs") shownClefs = attribute.slice(1, attribute.length);
 		else if (attribute[0] == "@showTitle") shownTitle = attribute.slice(1, attribute.length);
 		}
@@ -83,7 +84,7 @@ function listenerobj(data)
 	if (data.value[1]) {
 		_offset = data.value;
 		scroll("offset", data.value);
-		lastAction == "offset";
+		lastAction = "offset";
 		}
 }
 
