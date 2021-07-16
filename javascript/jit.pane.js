@@ -113,13 +113,24 @@ var maxcount = {};
 var	buttonfillcolor = [1., 0., 0., 0.1];
 var	buttonstrokecolor = [1., 0., 0., 1.];
 var buttonstrokewidth = 0.5;
+var ref, listener;
 
-var ref = this.patcher.getnamed("pane");
-var listener = new MaxobjListener(ref, null, listenerobj);
+var waitasecond = new Task(shortDelay, this);
+waitasecond.schedule(10);
+
+function shortDelay()
+{
+	ref = this.patcher.getnamed("pane");
+	listener = new MaxobjListener(ref, null, listenerobj);
+}
 
 function listenerobj(data)
 {
-	if (data.value[1]) scroll("offset", data.value[0]);
+	if (data.value[1]) {
+		_offset = data.value;
+		scroll("offset", data.value);
+		lastAction = "offset";
+		}
 }
 	
 

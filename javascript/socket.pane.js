@@ -42,6 +42,7 @@ var	buttonfillcolor = "red";
 var	buttonstrokecolor = "red";
 var buttonstrokewidth = 0.5;
 var buttonfillopacity = 0.2;
+var ref, listener;
 
 
 if (jsarguments.length >= 1) 
@@ -76,8 +77,14 @@ if (jsarguments.length >= 1)
 		}
 }
 
-var ref = this.patcher.getnamed("pane");
-var listener = new MaxobjListener(ref, null, listenerobj);
+var waitasecond = new Task(shortDelay, this);
+waitasecond.schedule(10);
+
+function shortDelay()
+{
+	ref = this.patcher.getnamed("pane");
+	listener = new MaxobjListener(ref, null, listenerobj);
+}
 
 function listenerobj(data)
 {
