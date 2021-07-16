@@ -1,5 +1,5 @@
 inlets = 2;
-outlets = 3;
+outlets = 4;
 
 
 
@@ -583,7 +583,7 @@ function scrollTask(id)
    	if (arguments.callee.task.iterations > maxiter[id]) {
        arguments.callee.task.cancel();
    	}
-	//outlet(2, ticks[id]);
+	outlet(2, ticks[id]);
 	mgraphics.redraw();
 }
 scrollTask.local = 1; // prevent triggering the task directly from Max
@@ -927,7 +927,7 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
     if (capsl) {
         controlshift = 1;
         shiftclick = 0;
-		//outlet(2, 1);
+		outlet(2, 1);
         outlet(1, "mousePressed", x / zoom - horizontalOffset , y / zoom - verticalOffset);
         (!ctrl) ? outlet(1, "singleClick", x / zoom - horizontalOffset, y / zoom - verticalOffset, shift) : outlet(1, "ctrlClick", x / zoom - horizontalOffset, y / zoom - verticalOffset);
 		return;
@@ -942,7 +942,7 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
 		shiftclick = 0;
 		controlshift = 0;
 		outlet(0, "mousePressed",  x / zoom - horizontalOffset, y / zoom - verticalOffset);
-		//outlet(2, 1);
+		outlet(2, 1);
 		}
 }
 onclick.local = 1; //private.
@@ -966,7 +966,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
         outlet(controlshift, "shiftKeyDown", 0);
 		outlet(controlshift, "getSelectedLocation");
         //outlet(1, "graphicsSelection", 0);
-		//outlet(2, 0);
+		outlet(2, 0);
     }
     else {
         if (_cmd) {
@@ -1015,7 +1015,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	manual = 1;
 	notifyclients();
 	outlet(1, "offset", horizontalOffset, verticalOffset);
-	outlet(2, "scroll", "pixels", horizontalOffset);
+	outlet(3, "scroll", "pixels", horizontalOffset);
 	}
 	mgraphics.redraw();
 	last_position = position;
@@ -1024,7 +1024,7 @@ ondrag.local = 1; //private.
 
 
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
-	//if (!repeat) outlet(2, "idleout", 0);
+	if (!repeat) outlet(2, "idleout", 0);
 	repeat = 1;
 	var _cmd = (max["os"]=="macintosh") ? cmd : option;
 	if (idleOut) outlet(1, "mouseIdle",  x - horizontalOffset , y - verticalOffset, shift, ctrl);
@@ -1052,7 +1052,7 @@ function onidleout() {
     canvasactive = 0;
     DisplayCursor(1);
 	//mgraphics.redraw();
-	//outlet(2, "idleout", 1);
+	outlet(2, "idleout", 1);
 	repeat = 0;
 }
 
