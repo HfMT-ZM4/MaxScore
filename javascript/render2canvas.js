@@ -19,6 +19,7 @@ var staffBoundingMatrix = {};
 var staffBoundingFlag = 0;
 var _scoreLayout = [1, 0, 1, 0.5, 320, 240];
 var scoreLeftMargin = 0;
+var scoreRightMargin = 0;
 var renderedMessages = new Dict();
 var rm = 0;
 var spacing = [];
@@ -107,6 +108,7 @@ var drawingAnchor = [];
 var	scoreTitle = "";
 var	composer = "";
 var prop = 0;
+var _playhead = 0;
 var oldstaff = -1;
 var stafflines = {};
 var oldMeasureIndex = -1; 
@@ -602,6 +604,11 @@ function getScoreLeftMargin(slm)
 	scoreLeftMargin = slm;
 }
 
+function getScoreRightMargin(srm)
+{
+	scoreRightMargin = srm;
+}
+
 function getScoreFirstSystemIndent(sfsi)
 {
 	scoreFirstSystemIndent = sfsi;
@@ -919,7 +926,7 @@ function writeStaffLines()
 					for (var d = 0; d < dest.length; d++) {
 						path += "M" + stafflines[measures][staves][lines][0] + " " + dest[d] + " L" + stafflines[measures][staves][lines][2].toFixed(3) + " " + dest[d] + " ";	
 						if (lineCount > 500) {
-							SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.4\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+							SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 							path = "";
 							lineCount = 0;
 									}	
@@ -930,7 +937,7 @@ function writeStaffLines()
 					}
 				}
 			}
-				if (path != "") SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.4\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				if (path != "") SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 
 				}	
 			//}
@@ -968,6 +975,25 @@ function writeStems()
 }				
 }
 
+function writeRuler()
+{
+	var path = "";
+	var _time = 0;
+	var j = 0;
+	for (var s = 0; s < groupcount; s++)
+	{
+		for (var i = _playhead + 2; i <= _scoreLayout[4] - scoreRightMargin; i += timeUnit) {
+			path += "M" + i + " " + 0 + " V" + 15 + " ";
+			var padding = (j % 60 < 10) ? "0" : "";
+			_time = parseInt(j / 60) + "\'" + padding + j % 60 + "\"";
+			SVGString[s + 1].push("<text x=\"" + (i - 10) + "\" y=\"" + 25 + "\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
+		j++;
+		}	
+		//post("init", scoreLeftMargin, scoreRightMargin, timeUnit, path, "\n");
+		SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"" + frgb + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+	}
+}
+
 function destination()
 {
 	target = [].concat(arrayfromargs(arguments));
@@ -977,6 +1003,7 @@ function getScoreAnnotation(a)
 {
 	annotation.parse(a);
 	prop = annotation.get("proportional");
+	timeUnit = annotation.get("timeUnit");
 	//zoom = annotation.get("setZoom");
 	bcolor = (annotation.contains("bgcolor")) ? annotation.get("bgcolor") : [0.996, 0.996, 0.94, 1];
 	fcolor = (annotation.contains("fgcolor")) ? annotation.get("fgcolor") : [0, 0, 0, 1];
@@ -1028,14 +1055,12 @@ function startRenderDump()
 			SVGImages2[s] = [];
 		}
 		c = 0;
-		//annotation.clear();
 		annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
 		renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
-		//outlet(2, renderedMessages.name);
 		renderedMessages.clear();
 		rm = 0;
-		//outlet(1, "getSelectedLocation");
 		outlet(1, "getScoreLeftMargin");
+		outlet(1, "getScoreRightMargin");
 		outlet(1, "getScoreFirstSystemIndent");
 		outlet(1, "getScoreAnnotation");
        	outlet(1, "getNumMeasures");
@@ -1081,6 +1106,7 @@ function endRenderDump()
 	writeStems();
 	writeStaffLines();
 	writeBarlines();
+	if (prop) writeRuler();
 	writeSVG("object");
 	renderPage = 0;
 	_init = 0;
@@ -2643,16 +2669,12 @@ function writeSVG(destination)
 {
 	if (destination == "object") {
 	var f = {};
-	for (var s = 1; s <= groupcount; s++) {
-		SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
-		//post("SVGString[s]", SVGString[s], "\n");
-	}
+	for (var s = 1; s <= groupcount; s++) SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
 	f.svg = SVGString;
 	f.clefs = SVGClefs;
 	f.svgimages = SVGImages;
 	f.pageSize = [_scoreLayout[4], _scoreLayout[5]];
 	f.setZoom = zoom;
-	//f.bgcolor = bcolor;
 	f.bgcolor = bcolor;
 	//post("bcolor", f.bgcolor, "\n");
 	f.groupcount = groupcount;
@@ -2728,6 +2750,7 @@ function playhead()
 		{
 		//var extent = cursorExtent(sg[s], startStaff, endStaff);
 		//if (extent != -1) {
+		_playhead = from;
 		outlet(0, "playhead", from);
 		//}	
 	}			
