@@ -924,8 +924,8 @@ function writeStaffLines()
 					if (dest != -1)
 					{
 					for (var d = 0; d < dest.length; d++) {
-						path += "M" + stafflines[measures][staves][lines][0] + " " + dest[d] + " L" + stafflines[measures][staves][lines][2].toFixed(3) + " " + dest[d] + " ";	
-						if (lineCount > 500) {
+						path += "M" + stafflines[measures][staves][lines][0] + "," + dest[d] + "H" + stafflines[measures][staves][lines][2].toFixed(1);	
+						if (lineCount > 750) {
 							SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 							path = "";
 							lineCount = 0;
@@ -986,7 +986,7 @@ function writeRuler()
 			path += "M" + i + " " + 0 + " V" + 15 + " ";
 			var padding = (j % 60 < 10) ? "0" : "";
 			_time = parseInt(j / 60) + "\'" + padding + j % 60 + "\"";
-			SVGString[s + 1].push("<text x=\"" + (i - 10) + "\" y=\"" + 25 + "\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
+			SVGString[s + 1].push("<text x=\"" + i + "\" y=\"" + 25 + "\" text-anchor=\"middle\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
 		j++;
 		}	
 		//post("init", scoreLeftMargin, scoreRightMargin, timeUnit, path, "\n");
