@@ -111,6 +111,7 @@ function init() {
 									var o2 = {};
 									o2.editor = (e.get("0")[e.get("0").length - 1] == "linear" || e.get("0")[e.get("0").length - 1] == "curve") ? "bpf" : "default";
 									o2.message = e.get("0")[0];
+									//post("e", e.stringify(), "\n");
 									o2.value = e.get("0").slice(1);
 									jexpr.push(o2);
 									o[_count] = jexpr;

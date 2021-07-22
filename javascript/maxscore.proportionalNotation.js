@@ -108,7 +108,7 @@ annotation.set("proportional", 1);
 annotation.set("timeUnit", timeUnit);
 outlet(3, "setAnnotation", "dictionary", annotation.name);
 
-if (proportional == 0) {
+if (!proportional) {
 //annotation.clear();
 originalScoreAttributes = json["jmslscoredoc"]["score"][0];
 outlet(0, "getScoreAnnotation");	
@@ -232,7 +232,6 @@ for(var event in anchors){
 			}
 		else {
 		outlet(0, "isChord", nextAnchor);
-		//post("ischord", chord, currentAnchor, nextAnchor, "\n");
 		for (var i = 0; i < chord; i++) {
 			outlet(0, "selectNextInterval");
 			outlet(0, "getSelectedNoteInfo");
@@ -297,6 +296,7 @@ for(var event in anchors){
 	}
 	outlet(0, "getSelectionBufferSize");
 	if (selectionBufferSize > 0) outlet(0, "setNoteVisible", "false");
+	//post("selectionBuffer", selectionBufferSize, "\n");
 	outlet(0, "clearSelection");
 	if (!selection) outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["@HEIGHT"]));
 	outlet(0, "setReceivePlayheadPosition", "false");
