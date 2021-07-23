@@ -339,6 +339,7 @@ function scale(x, inputmin, inputmax, outputmin, outputmax)
 
 function scroll()
 {
+	if (this.patcher.getnamed("output").getvalueof().join("").indexOf("011") != -1) {
 	var msg = arrayfromargs(arguments);
 	switch (msg[0]) {
 		case "stop" :
@@ -379,6 +380,7 @@ function scroll()
 			tsk["scroll"].repeat(-1);
 			}
 		}
+	}
 }
 
 function cursor()

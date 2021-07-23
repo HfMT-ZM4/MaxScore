@@ -976,6 +976,7 @@ function drawBounds()
 
 function scroll()
 {
+	if (this.patcher.getnamed("output").getvalueof().join("").indexOf("021") != -1) {
 	var msg = arrayfromargs(arguments);
 	//post("msg", msg, lastAction, "\n");
 	cursors.clear();
@@ -1127,6 +1128,7 @@ function scroll()
 		}
 		cursors.parse(JSON.stringify(jcursors));
 		outlet(0, "dictionary", cursors.name);
+		}
 	}
 }
 
