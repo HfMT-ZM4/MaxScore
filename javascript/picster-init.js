@@ -1,5 +1,8 @@
 outlets = 2;
 var selectionBufferSize = 0;
+var _anchors = {};
+var anchors = {};
+var increment;
 
 function dumpExpressions()
 {
@@ -10,15 +13,15 @@ function init() {
 	//var currentMode = mode;
 	//mode = "picster";
 	outlet(1, "clear");
-	var increment = 0;
-	var anchors = {};
+	_anchors = {};
+	anchors = {};
 	var expr = new Dict();
 	var e = new Dict();
 	var o = {};
-	var _anchors = {};
 	var _count = -1;
 	var scount = 0;
 	var onset = 0;
+	increment = 0;
 	outlet(0, "getSelectionBufferSize");
 	if (selectionBufferSize > 0) {
 	outlet(0, "getNoteAnchor");
@@ -72,7 +75,6 @@ function init() {
 					if(e.contains("picster-element[2]::val")) {
 					var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
 					var dictArray = [].concat(e.get("picster-element[2]::val"));
-					//post("e", e.stringify(), "\n");	
 					for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
 					o[userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1)] = jexpr;
 					outlet(1, scount++, j, onset + offset, userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1, userBeans[n]["@Name"].indexOf("-")));
@@ -190,20 +192,38 @@ function init() {
 	}
 	expr.parse(JSON.stringify(o));
 	outlet(1, "dictionary", expr.name);
-	if (selectionBufferSize > 0) restoreSelection(_anchors);
 	outlet(0, "clearSelection");
+	if (selectionBufferSize > 0) restoreSelection(_anchors);
 	outlet(0, "setRenderAllowed", 1);
 	//mode = currentMode;
+}
+
+function restoreSelection(obj)
+{
+		outlet(0, "clearSelection");
+		for(var event in obj){
+		var anchor = obj[event];
+		if (anchor[6] == -1) outlet(0, "addNoteToSelection", anchor[2], anchor[3], anchor[4], anchor[5]);
+		else for (var i = 0; i <= anchor[6]; i++) {
+			//outlet(0, "selectNextInterval");
+			outlet(0, "addIntervalToSelection", anchor[2], anchor[3], anchor[4], anchor[5], anchor[6]);
+			}
+		}
 }
 
 function anything()
 {
 	var msg = arrayfromargs(arguments);
+	//post("msg", msg, "\n");	
 	switch (messagename) {
 		case "getSelectionBufferSize" :
 			selectionBufferSize = msg[0];
 		break;
-	case "dictionary" :
+		case "getNoteAnchor" :
+		anchors[increment] = arrayfromargs(arguments);
+		increment++;
+		break;
+		case "dictionary" :
 		var dump = new Dict;
 		dump.name = msg[0];
 		userBeans = [];

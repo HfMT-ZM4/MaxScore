@@ -1640,6 +1640,8 @@ function anything() {
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
 			if (e.contains("picster-element")) {
+				_key = e.get("picster-element[0]::key");
+				//post("e", _key, e.stringify(), "\n");					
 				svggroupflag = false;
 				var vals = [].concat(e.get("picster-element[0]::val"));
  				for (var i = 0; i < vals.length; i++){
@@ -1677,8 +1679,8 @@ function anything() {
 					if (dest != -1)
 					{
 					for (var d = 0; d < dest.length; d++) {
-					renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
-					//if (svggroupflag == true) SVGGraphics[s + 1].push("</g>");
+						if (_key == "svg") renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
+						else if (_key == "render-expression") renderExpression(msg, s, dest[d], RenderMessageOffset, e);
 								}
 							}
 						}
@@ -1686,7 +1688,6 @@ function anything() {
 				}	
 			}
 			else if (msg[msg.length - 3] == "rendered") {
-			//post("format", format, "\n");					
 			renderedMessages.set(rm++, msg);
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
@@ -1929,62 +1930,12 @@ function anything() {
 				}
 			}
 		}
+/*
 		else {
 			if (msg[msg.length - 2] == "renderbpf") {
-				var space = 0;
-				var bpf = "";
- 				var e = new Dict();
-				e.parse(msg[msg.length - 1]);
-				var keys = [].concat(e.getkeys());
-				for (var i = 0; i < keys.length; i++){
-					var seq = e.get(keys[i]);
-					var skeys = seq.getkeys();
-					if (skeys == "pitchbend"){
-						var pitchbend = seq.get("pitchbend");
-						outlet(1, "getDrawingAnchor", msg.slice(1, 5));
-						var currentDrawingAnchor = drawingAnchor;
-						outlet(1, "getNumNotes",  msg.slice(1, 4));
-						if ((numNotes[3] - 1) == msg[4]) {
-						staffBoundingFlag = 1;
-						outlet(1, "getStaffBoundingInfo", msg.slice(1, 3));
-						//post("getStaffBoundingInfo", staffBoundingInfo, drawingAnchor[4], "\n");
-						space = staffBoundingInfo[0] + staffBoundingInfo[2] - drawingAnchor[4] - 7;
-						staffBoundingFlag = 1;
-							}
-						else {
-						outlet(1, "getDrawingAnchor", msg.slice(1, 4), msg[4] + 1);
-						space = drawingAnchor[4] - currentDrawingAnchor[4] - 7;
-						}
-            			var RenderMessageOffset = [msg[5], msg[6]];
-						for (var s = 0; s < groupcount; s++) {
-							var dest = [].concat(RenderMessageOffset[1]);
-							if (dest != -1) {
-								for (var d = 0; d < dest.length; d++) {
-						//post(msg[5], msg[6], "pitchbend", pitchbend, "\n");
-						var numPoints = (pitchbend.length - 4) / 4;
-						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + msg[6] + 2];
-						var oldPoint = moveTo;
-						bpf = "M" + moveTo + " ";
-						for (var i = 0; i < numPoints - 1; i++){
-							var curvature = pitchbend[10  + i * 4];
-							//post("curvature", curvature, "\n");
-							var curveTo = [pitchbend[7 + i * 4] * space + msg[5] + 7, pitchbend[8  + i * 4] / 300 * -6 + msg[6] + 2, curvature];
-							var controlPoint = oldPoint;
-							//post("controlPoint-1", curvature, controlPoint, "\n");
-							if (curvature >= 0) controlPoint[0] = oldPoint[0] + (curveTo[0] - oldPoint[0]) * Math.abs(curvature);
-							else controlPoint[1] = oldPoint[1] + (curveTo[1] - oldPoint[1]) * Math.abs(curvature);
-							//post("controlPoint-2", curvature, controlPoint, "\n");
-							bpf += "C" + controlPoint + " " + controlPoint + " " + curveTo.slice(0, 2) + " ";
-							oldPoint = curveTo.slice(0, 2);
-							}
-							SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 2.0 + "\" stroke-opacity=\"" + 1. + "\" fill=\"none\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
-							}
-							}
-							}
-						}
-					}
 				}
 			}	
+*/
             break;
 		case "dictionary" :
 			var dump = new Dict;
@@ -2557,6 +2508,139 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				break;	
 	}
 }
+
+function renderExpression(msg, s, _dest, RenderMessageOffset, e)
+{
+						//IMPLEMENT TRANSFORM (_dest)
+						var space = 0;
+						var bpf = "";
+						var pitchbend = e.get("picster-element[2]::val[0]::value").slice(3);
+						//post(pitchbend, "\n");
+						outlet(1, "getDrawingAnchor", msg.slice(1, 5));
+						var currentDrawingAnchor = drawingAnchor;
+						outlet(1, "getNumNotes",  msg.slice(1, 4));
+						if ((numNotes[3] - 1) == msg[4]) {
+						staffBoundingFlag = 1;
+						outlet(1, "getStaffBoundingInfo", msg.slice(1, 3));
+						space = staffBoundingInfo[0] + staffBoundingInfo[2] - drawingAnchor[4] - 7;
+						staffBoundingFlag = 1;
+							}
+						else {
+						outlet(1, "getDrawingAnchor", msg.slice(1, 4), msg[4] + 1);
+						space = drawingAnchor[4] - currentDrawingAnchor[4] - 7;
+						}
+						var numPoints = (pitchbend.length - 4) / 4;
+						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + msg[6] + 2];
+						var oldPoint = moveTo;
+						//bpf = "M" + moveTo;
+						for (var i = 0; i < numPoints - 1; i++){
+							var curvature = pitchbend[10  + i * 4];
+							var curveTo = [pitchbend[7 + i * 4] * space + msg[5] + 7, pitchbend[8  + i * 4] / 300 * -6 + msg[6] + 2];
+							//var obj = new CurveSeg(x0, y0, x1, y1, curvature, 12);
+							var curveSeg = new CurveSeg(oldPoint[0], oldPoint[1], curveTo[0], curveTo[1], curvature, 12);
+							for (var j = 0; j < curveSeg.cpa.length; j++)
+							{
+								if (!j) bpf += "M" + curveSeg.cpa[0];
+								else {
+									if (curvature < 0) bpf += "L" + [curveSeg.cpa[j][0].toFixed(2), (2*oldPoint[1] - curveSeg.cpa[j][1]).toFixed(2)];
+									else bpf += "L" + [curveSeg.cpa[j][0].toFixed(2), curveSeg.cpa[j][1].toFixed(2)];	
+								}	
+							}
+							bpf += "L" + curveTo;
+							oldPoint = curveTo;
+						}
+						SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 2.0 + "\" stroke-opacity=\"" + 1. + "\" fill=\"none\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
+}
+
+function CurveCoeffs(nhops, crv)
+{
+	var CLCCURVE_C1 = 1e-20;
+	var CLCCURVE_C2 = 1.2;
+	var CLCCURVE_C3 = 0.41;
+	var CLCCURVE_C4 = 0.91;
+	this.bbp = 0.;
+	this.mmp = 0.;
+	
+	if (nhops > 0)
+    {
+		var hh, ff, eff, gh;
+		if (crv < 0.)
+		{
+		    if (crv < -1.)
+			crv = -1.;
+		    hh = Math.pow(((CLCCURVE_C1 - crv) * CLCCURVE_C2), CLCCURVE_C3) * CLCCURVE_C4;
+		    ff = hh / (1. - hh);
+		    eff = Math.exp(ff) - 1.;
+		    gh = (Math.exp(ff * .5) - 1.) / eff;
+		    this.bbp = gh * (gh / (1. - (gh + gh)));
+		    this.mmp = 1. / (((Math.exp(ff * (1. / nhops)) - 1.) / (eff * this.bbp)) + 1.);
+		    this.bbp += 1.;
+		}
+		else
+		{
+		    if (crv > 1.)
+			crv = 1.;
+		    hh = Math.pow(((crv + CLCCURVE_C1) * CLCCURVE_C2), CLCCURVE_C3) * CLCCURVE_C4;
+		    ff = hh / (1. - hh);
+		    eff = Math.exp(ff) - 1.;
+		    gh = (Math.exp(ff * .5) - 1.) / eff;
+		    this.bbp = gh * (gh / (1. - (gh + gh)));
+		    this.mmp = ((Math.exp(ff * (1. / nhops)) - 1.) / (eff * this.bbp)) + 1.;
+		}
+    }
+    else if (crv < 0.) {
+		this.bbp = 2.;
+		this.mmp = 1.;
+	}
+    else
+		this.bbp = this.mmp = 1.;
+}
+CurveCoeffs.local = 1;
+
+//new CurveSeg(prev.valy, curr.valy, prev.valx, curr.valx, curr.curve, numCurvePoints);
+function CurveSeg(x0, y0, x1, y1, curve, nhops)
+{
+	//post("CurveSeg", x0, y0, x1, y1, curve, nhops, "\n");
+	var hopsize, dy, vv, cx;
+	
+	this.y0 = y0;
+	this.y1 = y1;
+	this.x0 = x0;
+	this.x1 = x1;
+	this.delta = x1-x0;
+	this.nhops = nhops;
+	
+	// clip to ±0.995 due to curve~ bug
+	/*
+	if(curve < CURVE_MIN) 
+		this.curve = CURVE_MIN;
+	else if(curve > CURVE_MAX)
+		this.curve = CURVE_MAX;
+	else
+		this.curve = curve;
+	*/
+	this.coeffs = new CurveCoeffs(nhops, curve);
+	this.cpa = new Array(nhops); // x/y pairs in val format so that zooming/rescaling won't need a recalc
+	
+	if(this.curve < 0.)
+		dy = this.y0 - this.y1;
+	else
+		dy = this.y1 - this.y0;
+				
+	cx = this.x0;
+	hopsize = this.delta / this.nhops;
+	vv = this.coeffs.bbp;
+				
+	for (var j = 0; j < this.nhops; j++) {
+		var cy = (vv - this.coeffs.bbp) * dy + this.y0;
+						
+		vv *= this.coeffs.mmp;		
+		this.cpa[j] = [cx, cy];
+					
+		cx += hopsize;
+	}	
+}
+CurveSeg.local = 1;
 
 function nTET(steps, system)
 {

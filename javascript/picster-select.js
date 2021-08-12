@@ -79,6 +79,9 @@ var format = "";
 var svggroupflag = false;
 var measurerange = [-1, -1, -1, -1];
 var time2pixels = 10;
+var numNotes = [];
+var drawingAnchor = [];
+var staffBoundingInfo = [];
 
 removeTextedit();
 
@@ -191,10 +194,12 @@ if (mode == "picster" && !blocked) {
 		var boundmax = [foundBounds[2], foundBounds[3]];
 		//var boundmin = [foundBounds[0] - horizontalOffset, foundBounds[1] - verticalOffset];
 		//var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
-		//post("foundBounds", x, y, boundmin, boundmax, RenderMessageOffset, "\n");
 	}
 	else {
-		var foundBounds = findBoundsToo(vals);
+		_key = e.get("picster-element[0]::key");
+		//post("renderedMessages", renderedMessages.get(keys[i]), boundmax, "\n");
+		if (_key == "svg") var foundBounds = findBoundsToo(vals);
+		else if (_key == "render-expression") var foundBounds = findBoundsForRenderedExpression(renderedMessages.get(keys[i]).slice(0, -1), e);
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
 		foundBounds[2] += RenderMessageOffset[0];
@@ -2461,6 +2466,179 @@ function renderDrawSocket(d)
 		}
 	}
 }
+
+function findBoundsForRenderedExpression(msg, d)
+{
+	SVGString = [];
+	var renderOffset = [600, 600];
+						var space = 0;
+						var bpf = "";
+						var pitchbend = d.get("picster-element[2]::val[0]::value").slice(3);
+						post(msg, "%", pitchbend, "\n");
+						//return [50, 50, 100, 100];
+						outlet(0, "getDrawingAnchor", msg.slice(1, 5));
+						var currentDrawingAnchor = drawingAnchor;
+						outlet(0, "getNumNotes",  msg.slice(1, 4));
+						if ((numNotes[3] - 1) == msg[4]) {
+						//staffBoundingFlag = 1;
+						outlet(0, "getStaffBoundingInfo", msg.slice(1, 3));
+						space = staffBoundingInfo[0] + staffBoundingInfo[2] - drawingAnchor[4] - 7;
+						//staffBoundingFlag = 1;
+							}
+						else {
+						outlet(0, "getDrawingAnchor", msg.slice(1, 4), msg[4] + 1);
+						space = drawingAnchor[4] - currentDrawingAnchor[4] - 7;
+						}
+						var numPoints = (pitchbend.length - 4) / 4;
+						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + msg[6] + 2];
+						var oldPoint = moveTo;
+						//bpf = "M" + moveTo;
+						for (var i = 0; i < numPoints - 1; i++){
+							var curvature = pitchbend[10  + i * 4];
+							var curveTo = [pitchbend[7 + i * 4] * space + msg[5] + 7, pitchbend[8  + i * 4] / 300 * -6 + msg[6] + 2];
+							//var obj = new CurveSeg(x0, y0, x1, y1, curvature, 12);
+							var curveSeg = new CurveSeg(oldPoint[0], oldPoint[1], curveTo[0], curveTo[1], curvature, 12);
+							for (var j = 0; j < curveSeg.cpa.length; j++)
+							{
+								if (!j) bpf += "M" + curveSeg.cpa[0];
+								else {
+									if (curvature < 0) bpf += "L" + [curveSeg.cpa[j][0].toFixed(2), (2*oldPoint[1] - curveSeg.cpa[j][1]).toFixed(2)];
+									else bpf += "L" + [curveSeg.cpa[j][0].toFixed(2), curveSeg.cpa[j][1].toFixed(2)];	
+								}	
+							}
+							bpf += "L" + curveTo;
+							oldPoint = curveTo;
+						}
+						SVGString.push("<path d=\"" + bpf + "\" stroke=\"black\" stroke-width=\"" + 2.0 + "\" stroke-opacity=\"" + 1. + "\" fill=\"none\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");	
+	var svg = "<svg><g transform = \"matrix(1,0,0,1," + renderOffset[0] + "," + renderOffset[1] + ")\">";
+	svg += SVGString.join("");
+	svg += "</g></svg>";
+	//img.setsvg(svg);
+	mgraphics.svg_set("img", svg);
+	mgraphics.set_source_rgba(1, 1, 1, 1);
+	mgraphics.paint();
+	//post("svg", svg, "\n");
+	mgraphics.svg_render("img");
+
+	mgraphics.matrixcalc(outmatrix, outmatrix);
+	findbounds.matrixcalc(outmatrix, outmatrix);
+	//post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
+	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) renderOffset = [0, 0];
+		horizontalOffset = 0;
+		verticalOffset = 0;
+	post("renderOffset", origin, horizontalOffset, verticalOffset, renderOffset, moveTo, "\n");
+	return [findbounds.boundmin[0] - renderOffset[0] + horizontalOffset - moveTo[0] + 7, findbounds.boundmin[1] - renderOffset[1] + verticalOffset  - moveTo[1], findbounds.boundmax[0] - renderOffset[0] + horizontalOffset - moveTo[0] + 7, findbounds.boundmax[1] - renderOffset[1] + verticalOffset - moveTo[1]];
+
+}
+
+function getStaffBoundingInfo(measureIndex, staffIndex, x, y, width, height, marginX)
+{
+	staffBoundingInfo = [x, y, width, height, marginX];
+}
+
+
+function getNumNotes()
+{
+	numNotes = arrayfromargs(arguments);	
+}
+
+
+function getDrawingAnchor()
+{
+	drawingAnchor = arrayfromargs(arguments);
+}
+
+
+function CurveCoeffs(nhops, crv)
+{
+	var CLCCURVE_C1 = 1e-20;
+	var CLCCURVE_C2 = 1.2;
+	var CLCCURVE_C3 = 0.41;
+	var CLCCURVE_C4 = 0.91;
+	this.bbp = 0.;
+	this.mmp = 0.;
+	
+	if (nhops > 0)
+    {
+		var hh, ff, eff, gh;
+		if (crv < 0.)
+		{
+		    if (crv < -1.)
+			crv = -1.;
+		    hh = Math.pow(((CLCCURVE_C1 - crv) * CLCCURVE_C2), CLCCURVE_C3) * CLCCURVE_C4;
+		    ff = hh / (1. - hh);
+		    eff = Math.exp(ff) - 1.;
+		    gh = (Math.exp(ff * .5) - 1.) / eff;
+		    this.bbp = gh * (gh / (1. - (gh + gh)));
+		    this.mmp = 1. / (((Math.exp(ff * (1. / nhops)) - 1.) / (eff * this.bbp)) + 1.);
+		    this.bbp += 1.;
+		}
+		else
+		{
+		    if (crv > 1.)
+			crv = 1.;
+		    hh = Math.pow(((crv + CLCCURVE_C1) * CLCCURVE_C2), CLCCURVE_C3) * CLCCURVE_C4;
+		    ff = hh / (1. - hh);
+		    eff = Math.exp(ff) - 1.;
+		    gh = (Math.exp(ff * .5) - 1.) / eff;
+		    this.bbp = gh * (gh / (1. - (gh + gh)));
+		    this.mmp = ((Math.exp(ff * (1. / nhops)) - 1.) / (eff * this.bbp)) + 1.;
+		}
+    }
+    else if (crv < 0.) {
+		this.bbp = 2.;
+		this.mmp = 1.;
+	}
+    else
+		this.bbp = this.mmp = 1.;
+}
+CurveCoeffs.local = 1;
+
+//new CurveSeg(prev.valy, curr.valy, prev.valx, curr.valx, curr.curve, numCurvePoints);
+function CurveSeg(x0, y0, x1, y1, curve, nhops)
+{
+	//post("CurveSeg", x0, y0, x1, y1, curve, nhops, "\n");
+	var hopsize, dy, vv, cx;
+	
+	this.y0 = y0;
+	this.y1 = y1;
+	this.x0 = x0;
+	this.x1 = x1;
+	this.delta = x1-x0;
+	this.nhops = nhops;
+	
+	// clip to ±0.995 due to curve~ bug
+	/*
+	if(curve < CURVE_MIN) 
+		this.curve = CURVE_MIN;
+	else if(curve > CURVE_MAX)
+		this.curve = CURVE_MAX;
+	else
+		this.curve = curve;
+	*/
+	this.coeffs = new CurveCoeffs(nhops, curve);
+	this.cpa = new Array(nhops); // x/y pairs in val format so that zooming/rescaling won't need a recalc
+	
+	if(this.curve < 0.)
+		dy = this.y0 - this.y1;
+	else
+		dy = this.y1 - this.y0;
+				
+	cx = this.x0;
+	hopsize = this.delta / this.nhops;
+	vv = this.coeffs.bbp;
+				
+	for (var j = 0; j < this.nhops; j++) {
+		var cy = (vv - this.coeffs.bbp) * dy + this.y0;
+						
+		vv *= this.coeffs.mmp;		
+		this.cpa[j] = [cx, cy];
+					
+		cx += hopsize;
+	}	
+}
+CurveSeg.local = 1;
+
 
 function htmlEntities(str)
 {

@@ -167,7 +167,7 @@ single = 0;
 outlet(0, "getNoteAnchor");
 outlet(0, "clearSelection");
 for(var event in anchors){
-	//gc();
+	var hasPitchBend = false;
 	anchor = anchors[event];
 	outlet(0, "selectNote", anchor[2], anchor[3], anchor[4], anchor[5]);
 	if (anchor[6] != -1) {
@@ -190,6 +190,7 @@ for(var event in anchors){
 	if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 	var tempDict = new Dict();
 	tempDict.parse(userBeans[i]["@Message"]);
+	hasPitchBend = (tempDict.get("picster-element[0]::key") == "render-expression");
  	if (tempDict.get("picster-element[0]::val[0]::id").indexOf("sustain") == -1) {
 		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 		}
@@ -250,7 +251,7 @@ for(var event in anchors){
 		}
 	}
 	var length = hold * timeUnit - 7;
-	if (length > 2.)
+	if (length > 2. && !hasPitchBend)
 	{
 	/*
 	//post("length", length, "\n");
@@ -288,7 +289,6 @@ for(var event in anchors){
 	}
 	}
 	}
-	//post(JSON.stringify(selectionBuffer), "\n");
 	outlet(0, "clearSelection");	
 	for (var i = 0; i < selectionBuffer.length; i++){
 		if (selectionBuffer[i][4] == -1) outlet(0, "addNoteToSelection", selectionBuffer[i].slice(0, 4));
