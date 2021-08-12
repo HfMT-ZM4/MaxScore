@@ -190,7 +190,7 @@ for(var event in anchors){
 	if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 	var tempDict = new Dict();
 	tempDict.parse(userBeans[i]["@Message"]);
-	hasPitchBend = (tempDict.get("picster-element[0]::key") == "render-expression");
+	if (tempDict.get("picster-element[0]::key") == "render-expression") hasPitchBend = true;
  	if (tempDict.get("picster-element[0]::val[0]::id").indexOf("sustain") == -1) {
 		outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 		}
@@ -251,10 +251,10 @@ for(var event in anchors){
 		}
 	}
 	var length = hold * timeUnit - 7;
+	//post("hasPitchBend", hasPitchBend, "\n");
 	if (length > 2. && !hasPitchBend)
 	{
 	/*
-	//post("length", length, "\n");
 	sustain.replace("picster-element::linesegment_0::commands::" + 0, "pen_size", 2);
 	sustain.replace("picster-element::linesegment_0::commands::" + 1, "color", 0., 0., 0., 1.);
 	sustain.replace("picster-element::linesegment_0::commands::" + 2, "line", 5, 3, length, 3);

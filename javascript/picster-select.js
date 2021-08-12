@@ -199,7 +199,8 @@ if (mode == "picster" && !blocked) {
 		_key = e.get("picster-element[0]::key");
 		//post("renderedMessages", renderedMessages.get(keys[i]), boundmax, "\n");
 		if (_key == "svg") var foundBounds = findBoundsToo(vals);
-		else if (_key == "render-expression") var foundBounds = findBoundsForRenderedExpression(renderedMessages.get(keys[i]).slice(0, -1), e);
+		//else if (_key == "render-expression") var foundBounds = findBoundsForRenderedExpression(renderedMessages.get(keys[i]).slice(0, -1), e);
+		else if (_key == "render-expression") var foundBounds = [-1, -1, -1, -1];
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
 		foundBounds[2] += RenderMessageOffset[0];
@@ -940,7 +941,6 @@ function createRenderedMessage(f, x, y, serialized)
 {
 	outlet(0, "getSelectionBufferSize");
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
-	//post("serialized", serialized, "\n");
 	if (selectionBufferSize > 0)
 	{
 		increment = 0;
@@ -961,7 +961,7 @@ function createRenderedMessage(f, x, y, serialized)
 		outlet(0, "saveToUndoStack");
 		outlet(0, "setRenderAllowed", "true");
 	}
-	else if (selectionBufferSize == 0 && measurerange[0] != -1)
+	else if (!selectionBufferSize && measurerange[0] != -1)
 		{
 			increment = 0;
 			anchors = {};
@@ -973,6 +973,7 @@ function createRenderedMessage(f, x, y, serialized)
 				}
 			}
 		for(var event in anchors){
+		//post("serialized", measurerange, "\n");
 		anchor = anchors[event];
 		//subtract anchor from origin
 		if (f) {
@@ -1057,6 +1058,7 @@ function addShape()
 			action = "addShape";
 			switch (msg[2]){
 			case "line":
+				//post("origin", origin, "\n");
 				var margin = 2;
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
@@ -2206,13 +2208,13 @@ function getNoteAnchor()
 {
 	anchors[increment] = arrayfromargs(arguments);
 	increment++;
-	//post("getNoteAnchor1", JSON.stringify(anchors), "\n");
 }
 
 function getDrawingAnchor()
 {
 	anchors[increment] = arrayfromargs(arguments);
 	increment++;
+	//post("anchors", JSON.stringify(anchors), "\n");
 }
 
 function dim(w, h)
@@ -2526,7 +2528,7 @@ function findBoundsForRenderedExpression(msg, d)
 	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) renderOffset = [0, 0];
 		horizontalOffset = 0;
 		verticalOffset = 0;
-	post("renderOffset", origin, horizontalOffset, verticalOffset, renderOffset, moveTo, "\n");
+	//post("renderOffset", origin, horizontalOffset, verticalOffset, renderOffset, moveTo, "\n");
 	return [findbounds.boundmin[0] - renderOffset[0] + horizontalOffset - moveTo[0] + 7, findbounds.boundmin[1] - renderOffset[1] + verticalOffset  - moveTo[1], findbounds.boundmax[0] - renderOffset[0] + horizontalOffset - moveTo[0] + 7, findbounds.boundmax[1] - renderOffset[1] + verticalOffset - moveTo[1]];
 
 }
@@ -2542,12 +2544,12 @@ function getNumNotes()
 	numNotes = arrayfromargs(arguments);	
 }
 
-
+/* NEEDS TO BE ADDRESSED: Integrate into "other" getDrawingAnchor function
 function getDrawingAnchor()
 {
 	drawingAnchor = arrayfromargs(arguments);
 }
-
+*/
 
 function CurveCoeffs(nhops, crv)
 {
