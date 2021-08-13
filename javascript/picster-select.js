@@ -199,8 +199,8 @@ if (mode == "picster" && !blocked) {
 		_key = e.get("picster-element[0]::key");
 		//post("renderedMessages", renderedMessages.get(keys[i]), boundmax, "\n");
 		if (_key == "svg") var foundBounds = findBoundsToo(vals);
-		//else if (_key == "render-expression") var foundBounds = findBoundsForRenderedExpression(renderedMessages.get(keys[i]).slice(0, -1), e);
-		else if (_key == "render-expression") var foundBounds = [-1, -1, -1, -1];
+		else if (_key == "render-expression") var foundBounds = findBoundsForRenderedExpression(renderedMessages.get(keys[i]).slice(0, -1), e);
+		//else if (_key == "render-expression") var foundBounds = [-1, -1, -1, -1];
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
 		foundBounds[2] += RenderMessageOffset[0];
@@ -2212,7 +2212,8 @@ function getNoteAnchor()
 
 function getDrawingAnchor()
 {
-	anchors[increment] = arrayfromargs(arguments);
+	drawingAnchor = arrayfromargs(arguments);
+	anchors[increment] = drawingAnchor;
 	increment++;
 	//post("anchors", JSON.stringify(anchors), "\n");
 }
@@ -2543,13 +2544,6 @@ function getNumNotes()
 {
 	numNotes = arrayfromargs(arguments);	
 }
-
-/* NEEDS TO BE ADDRESSED: Integrate into "other" getDrawingAnchor function
-function getDrawingAnchor()
-{
-	drawingAnchor = arrayfromargs(arguments);
-}
-*/
 
 function CurveCoeffs(nhops, crv)
 {

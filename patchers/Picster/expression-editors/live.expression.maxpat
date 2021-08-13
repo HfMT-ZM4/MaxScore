@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -116,8 +116,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -741,8 +741,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1572,6 +1572,22 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 153.307437800315881, -1.0, 100.692562199684119, 17.0 ],
 					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
@@ -1647,8 +1663,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2418,8 +2434,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3222,11 +3238,11 @@
 				"box" : 				{
 					"id" : "obj-29",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 35.0, 97.622806549072266, 29.5, 22.0 ],
-					"text" : "+ 1"
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 35.0, 97.622806549072266, 133.0, 22.0 ],
+					"text" : "if $i1 == 0 then 2 else 1"
 				}
 
 			}
@@ -4078,69 +4094,11 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-1::obj-19::obj-19" : [ "saved-int[1]", "saved-int", 0 ],
-			"obj-24::obj-16::obj-14" : [ "live-path", "live-path", 0 ],
-			"obj-24::obj-19::obj-19" : [ "saved-int", "saved-int", 0 ],
-			"obj-37" : [ "live.text[20]", "live.text", 0 ],
-			"obj-88::obj-44::obj-14" : [ "live-path[1]", "live-path", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "live.expr.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.GetParameterNames.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.SaveLivePath.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.SaveInteger.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.GetAllTrackIds.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.GetDeviceNames.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.api.GetAllDeviceIds.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"fontsize" : [ 12.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ],
 					"fontname" : [ "Arial" ]
 				}
 ,

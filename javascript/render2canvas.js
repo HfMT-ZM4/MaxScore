@@ -2494,7 +2494,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				if (picster.contains("marker-start")) marker += "marker-start=\"url(#" + url + ")\" ";
 				if (picster.contains("marker-mid")) marker += "marker-mid=\"url(#" + url + ")\" ";
 				if (picster.contains("marker-end")) marker += "marker-end=\"url(#" + url + ")\"";
-				//post("url", url, "\n");
 				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + marker + svgtransform + onclick + "/>");
 				break;
 				case "text" :
@@ -2515,20 +2514,22 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						var space = 0;
 						var bpf = "";
 						var pitchbend = e.get("picster-element[2]::val[0]::value").slice(3);
-						//post(pitchbend, "\n");
-						outlet(1, "getDrawingAnchor", msg.slice(1, 5));
-						var currentDrawingAnchor = drawingAnchor;
+						//outlet(1, "getDrawingAnchor", msg.slice(1, 5));
+						if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
+						post("msg", msg, "\n");
+						var currentDrawingAnchor = msg[5];
 						outlet(1, "getNumNotes",  msg.slice(1, 4));
 						if ((numNotes[3] - 1) == msg[4]) {
 						staffBoundingFlag = 1;
 						outlet(1, "getStaffBoundingInfo", msg.slice(1, 3));
-						space = staffBoundingInfo[0] + staffBoundingInfo[2] - drawingAnchor[4] - 7;
+						space = staffBoundingInfo[0] + staffBoundingInfo[2] - msg[5] - 7;
 						staffBoundingFlag = 1;
 							}
 						else {
 						outlet(1, "getDrawingAnchor", msg.slice(1, 4), msg[4] + 1);
-						space = drawingAnchor[4] - currentDrawingAnchor[4] - 7;
+						space = drawingAnchor[4] - currentDrawingAnchor - 7;
 						}
+						post("space", space, "\n");
 						var numPoints = (pitchbend.length - 4) / 4;
 						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + msg[6] + 2];
 						var oldPoint = moveTo;
@@ -2540,7 +2541,7 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 							var curveSeg = new CurveSeg(oldPoint[0], oldPoint[1], curveTo[0], curveTo[1], curvature, 12);
 							for (var j = 0; j < curveSeg.cpa.length; j++)
 							{
-								if (!j) bpf += "M" + curveSeg.cpa[0];
+								if (!j) bpf += "M" + [curveSeg.cpa[0][0].toFixed(2), curveSeg.cpa[0][1].toFixed(2)];
 								else {
 									if (curvature < 0) bpf += "L" + [curveSeg.cpa[j][0].toFixed(2), (2*oldPoint[1] - curveSeg.cpa[j][1]).toFixed(2)];
 									else bpf += "L" + [curveSeg.cpa[j][0].toFixed(2), curveSeg.cpa[j][1].toFixed(2)];	
@@ -2549,6 +2550,7 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 							bpf += "L" + curveTo;
 							oldPoint = curveTo;
 						}
+						bpf += "M" + [curveTo[0], curveTo[1] - 2] + "L" + [curveTo[0], curveTo[1] + 2];
 						SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 2.0 + "\" stroke-opacity=\"" + 1. + "\" fill=\"none\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
 }
 

@@ -80,11 +80,11 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"lcdcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"lcdcolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -199,11 +199,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 188.899999856948853, 3.0, 66.692562199684147, 27.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
+						"bgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"bgcolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -211,7 +211,7 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -249,11 +249,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.5, 3.0, 176.5, 27.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
+						"bgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"bgcolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -261,7 +261,7 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -353,11 +353,11 @@
 				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 33.416666666666657, 148.622806549072266, 29.5, 22.0 ],
-					"text" : "+ 1"
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 33.416666666666657, 148.622806549072266, 133.0, 22.0 ],
+					"text" : "if $i1 == 0 then 2 else 1"
 				}
 
 			}
@@ -1847,50 +1847,16 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-1" : [ "outset_pulses", "outset", 0 ],
-			"obj-11" : [ "eventfulness", "Eventfulness", 0 ],
-			"obj-12" : [ "event_length", "Event length", 0 ],
-			"obj-13" : [ "melody_scope", "Melody scope", 0 ],
-			"obj-22" : [ "pulse_length", "Pulse length", 0 ],
-			"obj-23" : [ "chordal_weight[3]", "Chordal weight", 0 ],
-			"obj-24" : [ "harmoniclarity[3]", "Harmoniclarity", 0 ],
-			"obj-25" : [ "pitch_center", "Pitch center", 0 ],
-			"obj-26" : [ "pitch_range", "Pitch range", 0 ],
-			"obj-27" : [ "dynamics", "Dynamics", 0 ],
-			"obj-28" : [ "attenuation", "Attenuation", 0 ],
-			"obj-29" : [ "ostinato", "ostinato", 0 ],
-			"obj-42" : [ "live.tab[10]", "live.tab[4]", 0 ],
-			"obj-47" : [ "silent_downbeat", "SDB", 0 ],
-			"obj-5" : [ "metriclarity", "Metriclarity", 0 ],
-			"obj-52" : [ "tonic_pitch", "Tonic pitch", 0 ],
-			"obj-7" : [ "live.text[24]", "live.text", 0 ],
-			"obj-8" : [ "live.text[7]", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "djster.expr.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster/expression-editors",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
-					"fontname" : [ "Arial" ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"umenu" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -1900,8 +1866,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "",
@@ -1920,9 +1885,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ]
+					"fontsize" : [ 15.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -1931,8 +1896,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
+					"fontsize" : [ 12.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -1941,9 +1906,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ]
+					"fontsize" : [ 20.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
