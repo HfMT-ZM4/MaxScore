@@ -2542,14 +2542,14 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						if (prop) space = hold * 60 / tempo * timeUnit - 7;
 						else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
 						if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
-						//post("space", msg[0], prop, space, timeUnit, noteAreaWidth / (timesig[0] / timesig[1]) / 8 , timesig, hold, "\n");
+						post("_dest", _dest, RenderMessageOffset, msg[6], "\n");
 						var numPoints = (pitchbend.length - 4) / 4;
-						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + msg[6] + 2];
+						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + 2 + _dest];
 						var oldPoint = moveTo;
 						//bpf = "M" + moveTo;
 						for (var i = 0; i < numPoints - 1; i++){
 							var curvature = pitchbend[10  + i * 4];
-							var curveTo = [pitchbend[7 + i * 4] * space + msg[5] + 7, pitchbend[8  + i * 4] / 300 * -6 + msg[6] + 2];
+							var curveTo = [pitchbend[7 + i * 4] * space + msg[5] + 7, pitchbend[8  + i * 4] / 300 * -6 + 2 + _dest];
 							//var obj = new CurveSeg(x0, y0, x1, y1, curvature, 12);
 							var curveSeg = new CurveSeg(oldPoint[0], oldPoint[1], curveTo[0], curveTo[1], curvature, 12);
 							for (var j = 0; j < curveSeg.cpa.length; j++)

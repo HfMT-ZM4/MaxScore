@@ -82,6 +82,11 @@ var time2pixels = 10;
 var numNotes = [];
 var drawingAnchor = [];
 var staffBoundingInfo = [];
+var noteAreaWidth = 0;
+var hold = 0;
+var currentMeasure = -1;
+var annotation = new Dict;
+var timeUnit, prop, timesig, tempo;
 
 removeTextedit();
 
@@ -105,8 +110,10 @@ function singleClick(x, y, shift)
 if (mode == "picster" && !blocked) {
 	//lcd = this.patcher.getnamed("pane");
 	//svggroupflag = false;
+	outlet(0, "getScoreAnnotation");
 	outlet(2, "bounds", "hide");
 	click = "single";
+	currentMeasure = -1;
 	origin = [x, y];
 	if (shape == 0) {
 	if (pathDone) { // Initialize new path
@@ -197,7 +204,6 @@ if (mode == "picster" && !blocked) {
 	}
 	else {
 		_key = e.get("picster-element[0]::key");
-		//post("renderedMessages", renderedMessages.get(keys[i]), boundmax, "\n");
 		if (_key == "svg") var foundBounds = findBoundsToo(vals);
 		else if (_key == "render-expression") var foundBounds = findBoundsForRenderedExpression(renderedMessages.get(keys[i]).slice(0, -1), e);
 		//else if (_key == "render-expression") var foundBounds = [-1, -1, -1, -1];
@@ -208,6 +214,7 @@ if (mode == "picster" && !blocked) {
 		var boundmin = [foundBounds[0] - horizontalOffset, foundBounds[1] - verticalOffset];
 		var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
 	}
+		//post("renderedMessages", x, y, boundmin, boundmax, "\n");
 	if (boundmin[0] <= x && boundmin[1] <= y && boundmax[0] >= x && boundmax[1] >= y) {
 		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4), dictArray[dictArray.length - 1].get("id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
 		offsets[_c] = RenderMessageOffset;
@@ -346,6 +353,7 @@ function mouseDragged(x, y)
 {
 	if (mode == "picster" && !buttonMode) {
 		outlet(2, "clearGraphics");
+		//suppress dragging for pitchbend curves
 		if (item != -1) {
 			outlet(2, "bounds", (foundobjects.get(item)[foundobjects.get(item).length - 5] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 4] + y - origin[1]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 3] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 2] + y - origin[1]) * 0.5 / zoom);
 			if (shape == 0) pathDone = true;
@@ -486,6 +494,7 @@ if (mode == "picster") {
 	if (!buttonMode) {
 	outlet(2, "clearGraphics");
 	action = "mouseReleased";
+	//suppress dragging for pitchbend curves
 	var dragged = !(JSON.stringify(origin) == JSON.stringify([x, y]));
 	if (item != -1 && dragged)  {
 	switch (foundobjects.get(item)[0]){
@@ -1711,7 +1720,6 @@ function anything()
 	case "onclick" :
 	if (foundobjects.contains("0") && item != -1) {
 		edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
-		//post("edit", edit.stringify(), "\n");
 		if (edit.contains("picster-element[0]::val")) {
 			edit.replace("picster-element[0]::val::onclick", msg);
 			action = "update";
@@ -1746,7 +1754,14 @@ function anything()
 		break;
 	}
 	if (mode == "picster") {
-    switch (messagename) {
+	//post("timeUnit", annotation.stringify(), timeUnit, "\n");
+   	switch (messagename) {
+	case "getScoreAnnotation" :
+		annotation.parse(msg);
+		prop = annotation.get("proportional");
+		timeUnit = annotation.get("timeUnit");
+		//post("timeUnit", annotation.stringify(), timeUnit, "\n");
+		break;
 	case "key" :
 		switch (Number(msg)) {
 			case 67 :  //copy
@@ -2133,9 +2148,10 @@ function anything()
 		break;
 	case "getInstrumentName" :
 		break;
-	case "getScoreAnnotation" :
-		break;
 	case "getScoreLeftMargin" :
+		break;
+	case "getNoteAreaWidth" :
+		noteAreaWidth = msg[1];
 		break;
 	case "getNumStaves" :
 		numStaves = msg[0];
@@ -2148,13 +2164,11 @@ function anything()
 		var key = Object.keys(json);
 		if ((key == "interval" || key == "note") && "userBean" in json[key]){
 		var occurence = getAllIndexes(json[key][".ordering"], "userBean");
-		for (var i = 0; i < occurence.length; i++) {
-			userBeans[i] = json[key]["userBean"][i];
-			}
+		for (var i = 0; i < occurence.length; i++) userBeans[i] = json[key]["userBean"][i];
+		hold = json[key]["@HOLD"];			
 		}
 		else if (dumpinfo[0] == "staff") {
 			if (key == "score" && "staffUserBean" in json["score"]["measure"][0]["staff"][dumpinfo[1]]){
-				//post("userBean-1", key, JSON.stringify(json), "\n");
 					var occurence = getAllIndexes(json["score"]["measure"][0]["staff"][dumpinfo[1]][".ordering"], "staffUserBean");
 					for (i = 0; i < occurence.length; i++) {
 					userBeans[i] = json["score"]["measure"][0]["staff"][dumpinfo[1]]["staffUserBean"][i];
@@ -2163,6 +2177,8 @@ function anything()
 			}
 		}
 		else if (dumpinfo[0] == "measure"){
+			tempo = json["score"]["measure"][0]["@TEMPO"];
+			timesig = json["score"]["measure"][0]["@TIMESIG"];
 			if (key == "score" && "measureUserBean" in json["score"]["measure"][0]){
 			var occurence = getAllIndexes(json["score"]["measure"][0][".ordering"], "measureUserBean");
 			for (i = 0; i < occurence.length; i++) {
@@ -2215,7 +2231,6 @@ function getDrawingAnchor()
 	drawingAnchor = arrayfromargs(arguments);
 	anchors[increment] = drawingAnchor;
 	increment++;
-	//post("anchors", JSON.stringify(anchors), "\n");
 }
 
 function dim(w, h)
@@ -2476,22 +2491,19 @@ function findBoundsForRenderedExpression(msg, d)
 	var renderOffset = [600, 600];
 						var space = 0;
 						var bpf = "";
-						var pitchbend = d.get("picster-element[2]::val[0]::value").slice(3);
-						//post(msg, "%", pitchbend, "\n");
-						//return [50, 50, 100, 100];
-						outlet(0, "getDrawingAnchor", msg.slice(1, 5));
-						var currentDrawingAnchor = drawingAnchor;
-						outlet(0, "getNumNotes",  msg.slice(1, 4));
-						if ((numNotes[3] - 1) == msg[4]) {
-						//staffBoundingFlag = 1;
-						outlet(0, "getStaffBoundingInfo", msg.slice(1, 3));
-						space = staffBoundingInfo[0] + staffBoundingInfo[2] - drawingAnchor[4] - 7;
-						//staffBoundingFlag = 1;
-							}
-						else {
-						outlet(0, "getDrawingAnchor", msg.slice(1, 4), msg[4] + 1);
-						space = drawingAnchor[4] - currentDrawingAnchor[4] - 7;
-						}
+						var pitchbend = d.get("picster-element[2]::val[0]::value").slice(3);						
+						dumpinfo = ["measure"];
+						outlet(0, "getNoteAreaWidth", msg[1]);
+						if (msg[1] != currentMeasure) outlet(0, "dumpScore", msg[1], 1);
+						currentMeasure = msg[1];
+						dumpinfo = [msg[0]];
+						if (msg[0] == "note") outlet(0, "getNoteInfo", msg.slice(1, 5));
+						else outlet(0, "getIntervalInfo", msg.slice(1));
+						if (prop) space = hold * 60 / tempo * timeUnit - 7;
+						else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
+						//post("SPACE", space, hold, tempo, timesig, timeUnit, noteAreaWidth, "\n");
+						if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
+						
 						var numPoints = (pitchbend.length - 4) / 4;
 						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + msg[6] + 2];
 						var oldPoint = moveTo;
@@ -2516,7 +2528,6 @@ function findBoundsForRenderedExpression(msg, d)
 	var svg = "<svg><g transform = \"matrix(1,0,0,1," + renderOffset[0] + "," + renderOffset[1] + ")\">";
 	svg += SVGString.join("");
 	svg += "</g></svg>";
-	//img.setsvg(svg);
 	mgraphics.svg_set("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
 	mgraphics.paint();
@@ -2537,12 +2548,6 @@ function findBoundsForRenderedExpression(msg, d)
 function getStaffBoundingInfo(measureIndex, staffIndex, x, y, width, height, marginX)
 {
 	staffBoundingInfo = [x, y, width, height, marginX];
-}
-
-
-function getNumNotes()
-{
-	numNotes = arrayfromargs(arguments);	
 }
 
 function CurveCoeffs(nhops, crv)
