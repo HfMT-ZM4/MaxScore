@@ -41,6 +41,18 @@
 		"title" : "Expression Editor",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-47",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 527.875, 702.5, 66.0, 22.0 ],
+					"text" : "route done"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-23",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
@@ -274,7 +286,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-20",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -410,6 +422,7 @@
 			}
 , 			{
 				"box" : 				{
+					"hidden" : 1,
 					"id" : "obj-25",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -427,7 +440,7 @@
 				"box" : 				{
 					"activecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 0.0 ],
-					"disabled" : [ 0, 0 ],
+					"disabled" : [ 0 ],
 					"elementcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
 					"id" : "obj-13",
 					"itemtype" : 0,
@@ -437,11 +450,11 @@
 					"offset" : 20,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 683.0, 359.0, 18.0, 42.0 ],
+					"patching_rect" : [ 683.0, 359.0, 18.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 385.0, 251.0, 42.0 ],
+					"presentation_rect" : [ 3.0, 385.0, 251.0, 22.0 ],
 					"shape" : 2,
-					"size" : 2,
+					"size" : 1,
 					"value" : 0,
 					"varname" : "choice"
 				}
@@ -466,7 +479,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 538.375, 738.0, 127.0, 22.0 ],
+					"patching_rect" : [ 574.875, 742.0, 127.0, 22.0 ],
 					"text" : "prepend picster attach"
 				}
 
@@ -488,10 +501,10 @@
 					"id" : "obj-6",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 527.875, 674.0, 29.5, 22.0 ],
-					"text" : "t b l",
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 527.875, 674.0, 19.0, 22.0 ],
+					"text" : "t l",
 					"varname" : "attach"
 				}
 
@@ -636,7 +649,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-8",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -663,7 +676,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1722,7 +1735,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-32",
 					"maxclass" : "newobj",
-					"numinlets" : 4,
+					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patcher" : 					{
@@ -1850,19 +1863,6 @@
 							}
 , 							{
 								"box" : 								{
-									"comment" : "",
-									"id" : "obj-5",
-									"index" : 1,
-									"maxclass" : "inlet",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
-									"patching_rect" : [ 29.75, 49.0, 25.0, 25.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -1877,12 +1877,12 @@
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-6",
-									"index" : 3,
+									"index" : 2,
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 144.25, 49.0, 25.0, 25.0 ]
+									"patching_rect" : [ 144.0, 49.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -2085,7 +2085,7 @@
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-16",
-									"index" : 4,
+									"index" : 3,
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -2110,11 +2110,11 @@
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-30",
-									"index" : 2,
+									"index" : 1,
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "int" ],
 									"patching_rect" : [ 29.75, 49.0, 25.0, 25.0 ]
 								}
 
@@ -3069,6 +3069,21 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-47", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-49", 0 ],
+					"midpoints" : [ 537.375, 733.0, 797.5, 733.0 ],
+					"source" : [ "obj-47", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-101", 0 ],
 					"source" : [ "obj-48", 0 ]
 				}
@@ -3177,15 +3192,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
-					"source" : [ "obj-6", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-49", 0 ],
-					"midpoints" : [ 537.375, 722.25, 797.5, 722.25 ],
+					"destination" : [ "obj-47", 0 ],
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -3302,14 +3309,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-133", 0 ],
 					"source" : [ "obj-73", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-32", 0 ],
-					"midpoints" : [ 91.5, 309.0, 102.5, 309.0 ],
-					"source" : [ "obj-73", 0 ]
 				}
 
 			}
@@ -3472,33 +3471,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-83" : [ "live.text[52]", "live.text", 0 ],
-			"obj-84" : [ "live.text[46]", "live.text", 0 ],
-			"obj-89" : [ "live.text[57]", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "scriptExpressionEditors.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxfolder.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{

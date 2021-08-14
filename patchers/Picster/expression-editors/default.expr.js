@@ -82,6 +82,7 @@ function anything()
 	var expr = new Dict();
 	expr.parse(JSON.stringify(shape));
 	outlet(0, "dictionary", expr.name);
+	outlet(0, "done");
 }
 
 function text_measure(f, fs, t)

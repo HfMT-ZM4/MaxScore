@@ -319,6 +319,7 @@ function value() {
 function bang() {
 	expr.replace('picster-element[0]::val[0]::child', destination);
 	outlet(0, "dictionary", expr.name);
+	outlet(0, "done");
 }
 
 function text_measure(f, fs, t)

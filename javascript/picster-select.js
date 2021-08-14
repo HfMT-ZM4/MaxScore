@@ -2477,7 +2477,7 @@ function findBoundsForRenderedExpression(msg, d)
 						var space = 0;
 						var bpf = "";
 						var pitchbend = d.get("picster-element[2]::val[0]::value").slice(3);
-						post(msg, "%", pitchbend, "\n");
+						//post(msg, "%", pitchbend, "\n");
 						//return [50, 50, 100, 100];
 						outlet(0, "getDrawingAnchor", msg.slice(1, 5));
 						var currentDrawingAnchor = drawingAnchor;

@@ -35,31 +35,34 @@ var shape = {
 function bang()
 {
 	//UNDO + NORENDER
-	//var hold;
+	var key;
 	var id = this.patcher.parentpatcher.parentpatcher.parentpatcher.parentpatcher.getnamed("id").getvalueof();
 	grab = id + "fromScore";
 	//send = id + "toScore";
 	dump.name = grab;
 	dump.clear();
+	messnamed(grab, "setRenderAllowed", 0);
+	messnamed(grab, "setUndoStackEnabled", 0);
 	messnamed(grab + "-relay", "getNoteAnchor");
 	eventlist = JSON.parse(dump.stringify());
 	dump.clear();
  	for (event in eventlist) {
     	if (eventlist[event][7] == -1) {
-        //messnamed(grab+"-relay", "getNoteInfo", eventlist[event].slice(3, 7));
-        //hold = dump.get("note::@HOLD");
+        messnamed(grab+"-relay", "getNoteInfo", eventlist[event].slice(3, 7));
+        key = "note";
  		//post("note", id, grab + "-relay", hold, "\n");
         //outlet(0, "selectNote", eventlist[event].slice(3, 7));
  		messnamed(grab, "selectNote", eventlist[event].slice(3, 7));
       	} 
 		else {
-        //messnamed(grab+"-relay", "getIntervalInfo", eventlist[event].slice(3));
-       	//hold = dump.get("interval::@HOLD");
+        messnamed(grab+"-relay", "getIntervalInfo", eventlist[event].slice(3));
+        key = "interval";
  		//post("interval", eventlist[event].slice(3), dump.stringify(), "\n");
         messnamed(grab, "selectNote", eventlist[event].slice(3, 7));
         for (var i = 0; i < eventlist[event][7] + 1; i++) messnamed(grab, "selectNextInterval");
        }	
 	//this.patcher.getnamed("pb").message("setdomain", parseInt(hold * 1000));
+	removePitchBendCurve(key);
 	var _curve = this.patcher.getnamed("pb").getvalueof();	
 	var date = new Date;
 	shape["picster-element"][0]["val"]["id"] = "pitchbend_" + parseInt(date.getTime());
@@ -69,7 +72,39 @@ function bang()
  	//post("expr", expr.stringify(), "\n");
 	outlet(0, "dictionary", expr.name);
 	}
-    restoreSelection();
+ 	messnamed(grab, "setUndoStackEnabled", 1);
+	messnamed(grab, "saveToUndoStack");
+   	restoreSelection();
+	//messnamed(grab, "setRenderAllowed", 1);
+	outlet(0, "done");
+}
+
+function removePitchBendCurve(key)
+{
+	var json = JSON.parse(dump.stringify());
+	messnamed(grab, "removeAllRenderedMessagesFromSelectedNotes");
+	if ("userBean" in json[key]){
+		var userBeans = [];
+		var occurence = getAllIndexes(json[key][".ordering"], "userBean");
+		for (var i = 0; i < occurence.length; i++) {
+			userBeans[i] = json[key]["userBean"][i];
+			}
+	for (var i = 0; i < userBeans.length; i++) {
+	if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
+	var tempDict = new Dict();
+	tempDict.parse(userBeans[i]["@Message"]);
+	if (tempDict.get("picster-element[0]::val[0]::id").indexOf("sustain") == -1 && tempDict.get("picster-element[0]::key") != "render-expression") {
+		messnamed(grab, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+		}
+	}
+	else {
+	if (userBeans[i]["@Message"].indexOf("hold") == -1) {
+		messnamed(grab, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			}
+		}
+	}
+	}
+
 }
 
 function restoreSelection() {
@@ -80,4 +115,19 @@ function restoreSelection() {
                 else messnamed(grab, "addIntervalToSelection", eventlist[event].slice(3));
     	}
 	}
+}
+
+
+function getAllIndexes(arr, val) {
+    var indexes = [-1], i;
+	var c = 0;
+	if (typeof arr == "number" && arr == val) indexes = [0];
+    else {for(i = 0; i < arr.length; i++)
+        if (arr[i] == val)
+			{
+            indexes[c] = i;
+			c++;
+			}
+		}
+    return indexes;
 }

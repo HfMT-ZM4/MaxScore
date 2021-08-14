@@ -130,11 +130,13 @@ var svgFile = "untitled.svg";
 var svggroupflag = false;
 var extendedStaffLines = {};
 var annotation = new Dict();
+var hold = 0;
 var pitch = 0;
 var value = 0;
 var accinfo = 0;
 var accvis = 0;
 var accpref = 0;
+var measurewidth, measureleftmargin, noteAreaWidth;
 var currentElement = [];
 var intervalCount = -1;
 var keysigaccum = 0;
@@ -1947,6 +1949,8 @@ function anything() {
 			//json = xml2json(dump.join(" "));
 			tempo = json["measure"]["@TEMPO"];
 			timesig = json["measure"]["@TIMESIG"];
+			measurewidth = json["measure"]["@WIDTH"];
+			measureleftmargin = json["measure"]["@MEASURELEFTMARGIN"];
 			break;
 			case "staff" :
 			//json = xml2json(dump.join(" "));
@@ -1987,7 +1991,8 @@ function anything() {
 			accinfo = json[dumpinfo[0]]["@ACCINFO"];
 			accvis = json[dumpinfo[0]]["@ACCVISPOLICY"];
 			accpref = json[dumpinfo[0]]["@ACCPREF"];
-			value = json[dumpinfo[0]]["dim"]["1"]["@value"];					
+			value = json[dumpinfo[0]]["dim"]["1"]["@value"];
+			hold = 	json[dumpinfo[0]]["@HOLD"];			
 			}
 		break;
 		case "startdump" :
@@ -2514,9 +2519,10 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						var space = 0;
 						var bpf = "";
 						var pitchbend = e.get("picster-element[2]::val[0]::value").slice(3);
-						//outlet(1, "getDrawingAnchor", msg.slice(1, 5));
-						if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
-						post("msg", msg, "\n");
+						dumpinfo = ["measure"];
+						outlet(1, "getNoteAreaWidth", msg[1]);
+						outlet(1, "getMeasureInfo", msg[1]);
+						/*
 						var currentDrawingAnchor = msg[5];
 						outlet(1, "getNumNotes",  msg.slice(1, 4));
 						if ((numNotes[3] - 1) == msg[4]) {
@@ -2529,7 +2535,14 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						outlet(1, "getDrawingAnchor", msg.slice(1, 4), msg[4] + 1);
 						space = drawingAnchor[4] - currentDrawingAnchor - 7;
 						}
-						post("space", space, "\n");
+						*/
+						dumpinfo = [msg[0]];
+						if (msg[0] == "note") outlet(1, "getNoteInfo", msg.slice(1, 5));
+						else outlet(1, "getIntervalInfo", msg.slice(1));
+						if (prop) space = hold * 60 / tempo * timeUnit - 7;
+						else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
+						if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
+						//post("space", msg[0], prop, space, timeUnit, noteAreaWidth / (timesig[0] / timesig[1]) / 8 , timesig, hold, "\n");
 						var numPoints = (pitchbend.length - 4) / 4;
 						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + msg[6] + 2];
 						var oldPoint = moveTo;
@@ -2643,6 +2656,11 @@ function CurveSeg(x0, y0, x1, y1, curve, nhops)
 	}	
 }
 CurveSeg.local = 1;
+
+function getNoteAreaWidth(m, w)
+{
+	noteAreaWidth = w;
+}
 
 function nTET(steps, system)
 {
@@ -2905,8 +2923,8 @@ function cursor()
 		var startStaff = cursorAttr[id]["@begin"][1];
 		var endStaff = cursorAttr[id]["@end"][1];
 		for (var i = cursorAttr[id]["@begin"][0]; i <= cursorAttr[id]["@end"][0]; i++){
-		outlet(1, "getMeasureInfo", i);
 		dumpinfo = ["measure"];
+		outlet(1, "getMeasureInfo", i);
 		if (i == cursorAttr[id]["@begin"][0]) {
 			var countin = timesig;
 			var countinInterval = stretch * 60000 / parseFloat(tempo) * 4 / parseFloat(timesig[1]);

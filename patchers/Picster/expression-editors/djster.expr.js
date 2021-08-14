@@ -481,5 +481,5 @@ function bang() {
   var outputDict = new Dict();
   outputDict.parse(JSON.stringify(outputPicster));
   outlet(0, "dictionary", outputDict.name);
-
+  outlet(0, "done");
 }

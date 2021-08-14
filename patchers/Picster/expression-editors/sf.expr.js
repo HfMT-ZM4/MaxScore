@@ -230,7 +230,8 @@ function bang() {
 		outputDict.replace("picster-element[0]::val::child[2]::transform", transform);
 	}
 
-  outlet(0, "dictionary", outputDict.name);
+  	outlet(0, "dictionary", outputDict.name);
+	outlet(0, "done");
 }
 
 
