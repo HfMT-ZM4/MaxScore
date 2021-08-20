@@ -3,6 +3,7 @@ var selectionBufferSize = 0;
 var _anchors = {};
 var anchors = {};
 var increment;
+var hold = 0.;
 
 function dumpExpressions()
 {
@@ -88,8 +89,11 @@ function init() {
 					if(allIndexes[0] != -1) var numNotes = allIndexes.length;
 					//else break;
 					for(var l = 0; l < numNotes; l++) {
+						outlet(0, "clearSelection");
 						outlet(0, "selectNote", i, j, k, l);
 						_count++;
+						//post("note", _count, "\n");
+						hold = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["@HOLD"] * 1000;
 						userBeans = [];
 						var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l][".ordering"], "userBean");
 						if(occurence[0] != -1) {
@@ -104,7 +108,16 @@ function init() {
 									e.parse(userBeans[p]["@Message"]);
 									if(e.contains("picster-element[2]::val")) {
 										var dictArray = [].concat(e.get("picster-element[2]::val"));
-										for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
+										for(var q = 0; q < dictArray.length; q++) {
+											var temp = dictArray[q];
+											if (temp.get("editor") == "pb") {
+												var value = temp.get("value");
+												value[3] = hold;
+												for (var v = 6; v <= (value.length - 5); v += 4) value[v] *= hold;
+												temp.replace("value", value);
+												}
+											jexpr.push(JSON.parse(temp.stringify()));
+											}
 										o[_count] = jexpr;
 									}
 								} else if (userBeans[p]["@Message"].indexOf("sequenced") == 0) {
@@ -113,7 +126,6 @@ function init() {
 									var o2 = {};
 									o2.editor = (e.get("0")[e.get("0").length - 1] == "linear" || e.get("0")[e.get("0").length - 1] == "curve") ? "bpf" : "default";
 									o2.message = e.get("0")[0];
-									//post("e", e.stringify(), "\n");
 									o2.value = e.get("0").slice(1);
 									jexpr.push(o2);
 									o[_count] = jexpr;
@@ -130,6 +142,7 @@ function init() {
 								}
 							}
 							outlet(0, "setNoteDimension", 6, _count);
+							post("note", _count, "\n");
 						} else {
 							if(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["dim"][2]["@value"] != -1) {
 								outlet(0, "setNoteDimension", 6, -1);
@@ -140,9 +153,10 @@ function init() {
 						if(allIndexes[0] != -1) {
 							var numIntervals = allIndexes.length;
 							for(var m = 0; m < numIntervals; m++) {
-								outlet(0, "nextInterval");
+								outlet(0, "selectNextInterval");
 								_count++;
-								//post("interval", i, j, k, l, m, _count, "\n");	
+								//post("interval", _count, "\n");
+								hold = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m]["@HOLD"] * 1000;
 								userBeans = [];
 								var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m][".ordering"], "userBean");
 								if(occurence[0] != -1) {
@@ -157,7 +171,16 @@ function init() {
 											e.parse(userBeans[p]["@Message"]);
 											if(e.contains("picster-element[2]::val")) {
 												var dictArray = [].concat(e.get("picster-element[2]::val"));
-												for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
+												for(var q = 0; q < dictArray.length; q++) {
+												var temp = dictArray[q];
+												if (temp.get("editor") == "pb") {
+													var value = temp.get("value");
+													value[3] = hold;
+													for (var v = 6; v <= (value.length - 5); v += 4) value[v] *= hold;
+													temp.replace("value", value);
+													}
+												jexpr.push(JSON.parse(temp.stringify()));
+												}
 												o[_count] = jexpr;
 											}
 										} else if(userBeans[p]["@Message"].indexOf("sequenced") == 0) {

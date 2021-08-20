@@ -24,7 +24,7 @@ var shape = {
 			"key" : "expression",
 			"val" : [ 				{
 					"editor" : "pb",
-					"message" : "pitchbend",
+					"message" : "polybend",
 					"value" : [ "data", 0, 32, 1.0, -2400.0, 2400.0, 0.0, 0.0, 0, 0.0, 0.182367682457973, 566.66650390873383, 0, 0.0, 0.252944946291618, -1300.0, 0, 0.0, 0.455968379975185, 800.0, 0, -0.690900802618258, 0.588727951049959, -1169.571289076917765, 0, 0.0, 0.685916423799543, 1000.0, 0, 0.816666603089348, 1.0, -966.66650390873383, 0, 0.0, "curve" ]
 				}
  ]
@@ -62,7 +62,7 @@ function bang()
         for (var i = 0; i < eventlist[event][7] + 1; i++) messnamed(grab, "selectNextInterval");
        }	
 	//this.patcher.getnamed("pb").message("setdomain", parseInt(hold * 1000));
-	removePitchBendCurve(key);
+	//in picster-select: if no curve is selected removePitchBendCurve(key);
 	var _curve = this.patcher.getnamed("pb").getvalueof();	
 	var date = new Date;
 	shape["picster-element"][0]["val"]["id"] = "pitchbend_" + parseInt(date.getTime());

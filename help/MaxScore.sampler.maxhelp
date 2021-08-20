@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 800.0, 706.0 ],
+		"rect" : [ 122.0, 87.0, 772.0, 625.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -76,7 +76,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 800.0, 680.0 ],
+						"rect" : [ 122.0, 113.0, 772.0, 599.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -107,14 +107,54 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 389.0, 401.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-9",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 485.0, 280.0, 82.0, 22.0 ],
+									"text" : "note 6000 0 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-8",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 485.0, 254.0, 89.0, 22.0 ],
+									"text" : "note 6000 72 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-37",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 412.0, 411.0, 159.0, 20.0 ],
-									"text" : "pitchbend deviation in cents"
+									"patching_rect" : [ 389.0, 376.0, 217.0, 20.0 ],
+									"text" : "polyphonic pitchbend deviation in cents"
 								}
 
 							}
@@ -127,7 +167,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 586.0, 296.0, 131.0, 22.0 ],
+									"patching_rect" : [ 585.0, 195.0, 131.0, 22.0 ],
 									"text" : "0. instrument sine.instr"
 								}
 
@@ -141,8 +181,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 296.0, 128.0, 22.0 ],
-									"text" : "instrument sine.instr 1"
+									"patching_rect" : [ 389.0, 195.0, 157.0, 22.0 ],
+									"text" : "instrument Dreamers.instr 1"
 								}
 
 							}
@@ -155,8 +195,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 210.0, 91.0, 22.0 ],
-									"text" : "bank sine.bank"
+									"patching_rect" : [ 44.0, 154.0, 119.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "bank tutorial.bank.txt"
 								}
 
 							}
@@ -170,7 +211,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 412.0, 240.0, 172.0, 52.0 ],
+									"patching_rect" : [ 389.0, 139.0, 172.0, 52.0 ],
 									"text" : "1 based. Most appropriate for external messages"
 								}
 
@@ -185,8 +226,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 586.0, 240.0, 156.0, 52.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 585.0, 139.0, 156.0, 52.0 ],
 									"text" : "0 based. Use with MaxScore  expression."
 								}
 
@@ -200,7 +240,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 586.0, 323.0, 91.0, 22.0 ],
+									"patching_rect" : [ 585.0, 222.0, 91.0, 22.0 ],
 									"text" : "0. panorama 1."
 								}
 
@@ -214,7 +254,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 586.0, 495.0, 84.0, 22.0 ],
+									"patching_rect" : [ 585.0, 480.0, 84.0, 22.0 ],
 									"text" : "0. bend 80 72"
 								}
 
@@ -227,7 +267,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 412.0, 471.0, 257.0, 20.0 ],
+									"patching_rect" : [ 389.0, 456.0, 257.0, 20.0 ],
 									"text" : "continuous pitch deviation and volume control"
 								}
 
@@ -241,8 +281,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 586.0, 436.0, 93.0, 22.0 ],
-									"text" : "0. pitchbend 89"
+									"patching_rect" : [ 585.0, 429.0, 87.0, 22.0 ],
+									"text" : "0. polybend 89"
 								}
 
 							}
@@ -255,8 +295,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 436.0, 89.0, 22.0 ],
-									"text" : "pitchbend 60 1"
+									"patching_rect" : [ 389.0, 429.0, 114.0, 22.0 ],
+									"text" : "polybend 6000 $1 1"
 								}
 
 							}
@@ -269,7 +309,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 323.0, 91.0, 22.0 ],
+									"patching_rect" : [ 389.0, 222.0, 91.0, 22.0 ],
 									"text" : "panorama $1 1"
 								}
 
@@ -283,7 +323,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 495.0, 81.0, 22.0 ],
+									"patching_rect" : [ 389.0, 480.0, 81.0, 22.0 ],
 									"text" : "bend 80 72 1"
 								}
 
@@ -297,7 +337,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 381.0, 84.0, 22.0 ],
+									"patching_rect" : [ 389.0, 280.0, 84.0, 22.0 ],
 									"text" : "note 6000 0 1"
 								}
 
@@ -311,7 +351,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 412.0, 355.0, 91.0, 22.0 ],
+									"patching_rect" : [ 389.0, 254.0, 91.0, 22.0 ],
 									"text" : "note 6000 72 1"
 								}
 
@@ -322,7 +362,7 @@
 									"maxclass" : "mc.ezdac~",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 45.0, 569.0, 45.0, 45.0 ],
+									"patching_rect" : [ 44.0, 536.0, 45.0, 45.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 233.0, 51.0, 45.0, 45.0 ]
 								}
@@ -333,11 +373,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-11",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 187.0, 400.0, 20.0 ],
-									"text" : "send event in this format: channel number, pitch, velocity, duration in sec, "
+									"patching_rect" : [ 389.0, 313.0, 285.0, 33.0 ],
+									"text" : "if duration is known, events can also be sent in this format: channel #, pitch, velocity, duration (sec)"
 								}
 
 							}
@@ -350,7 +391,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 187.0, 97.0, 22.0 ],
+									"patching_rect" : [ 389.0, 348.0, 97.0, 22.0 ],
 									"text" : "0 60.5 72.9 6.75"
 								}
 
@@ -363,7 +404,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 219.0, 150.0, 20.0 ],
+									"patching_rect" : [ 147.0, 186.0, 150.0, 20.0 ],
 									"text" : "stop all sound"
 								}
 
@@ -377,7 +418,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 218.0, 39.0, 22.0 ],
+									"patching_rect" : [ 44.0, 185.0, 39.0, 22.0 ],
 									"text" : "panic"
 								}
 
@@ -390,7 +431,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 251.0, 150.0, 20.0 ],
+									"patching_rect" : [ 147.0, 218.0, 150.0, 20.0 ],
 									"text" : "read and write settings file"
 								}
 
@@ -404,7 +445,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 91.0, 250.0, 36.0, 22.0 ],
+									"patching_rect" : [ 90.0, 217.0, 36.0, 22.0 ],
 									"text" : "write"
 								}
 
@@ -418,7 +459,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 250.0, 35.0, 22.0 ],
+									"patching_rect" : [ 44.0, 217.0, 35.0, 22.0 ],
 									"text" : "read"
 								}
 
@@ -438,7 +479,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 45.0, 307.0, 318.0, 228.0 ],
+									"patching_rect" : [ 44.0, 274.0, 318.0, 228.0 ],
 									"varname" : "maxscore.sampler",
 									"viewvisibility" : 1
 								}
@@ -527,6 +568,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-24", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-27", 0 ]
@@ -588,6 +636,22 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
  ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"editing_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
@@ -641,7 +705,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 800.0, 680.0 ],
+						"rect" : [ 0.0, 26.0, 772.0, 599.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -722,6 +786,10 @@
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-2::obj-3::obj-11" : 				{
+					"parameter_longname" : "mc.live.gain~"
+				}
+,
 				"obj-2::obj-3::obj-2" : 				{
 					"parameter_longname" : "live.text[38]"
 				}
@@ -773,9 +841,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "tonejs.bank.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/help/public",
-				"patcherrelativepath" : "./public",
+				"name" : "Tutorial.bank.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -794,21 +862,147 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Cymbales_Antiques.instr",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/help/public/Instruments",
-				"patcherrelativepath" : "./public/Instruments",
+				"name" : "Bandoneon.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Celeste.instr",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/help/public/Instruments",
-				"patcherrelativepath" : "./public/Instruments",
+				"name" : "FretSound.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Cymbales_Antiques.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Stopped_Piano.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Marimba.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "percussion_glockenspiel_Glockenspiel-beaters_ordinario.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Celeste.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Venus_Pad.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Galaxis.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Equinox.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "E-Pad.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Synth_1980.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Mini_Moog.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Digi_Vocal.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Dark_Monkey.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Wave_4.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Kalimbell.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Dreamers.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Hi_Voweler.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Bell-2.instr",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Bell-1.instr",
 				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
 				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
 				"type" : "TEXT",

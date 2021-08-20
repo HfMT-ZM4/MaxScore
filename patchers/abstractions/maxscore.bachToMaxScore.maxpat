@@ -370,7 +370,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 418.5, 420.5, 66.0, 22.0 ],
-					"restore" : [ 2 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2005,7 +2005,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 243.75, 436.0, 240.0, 22.0 ],
-													"restore" : [ 2 ],
+													"restore" : [ 1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -2036,7 +2036,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 264.75, 353.0, 240.0, 22.0 ],
-													"restore" : [ 2 ],
+													"restore" : [ 1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -2932,7 +2932,7 @@
 																"key" : "expression",
 																"val" : [ 																	{
 																		"editor" : "pb",
-																		"message" : "pitchbend",
+																		"message" : "polybend",
 																		"value" : [ "data", 0, 32, 1.0, -2400.0, 2400.0, 0.0, 0.0, 0, 0.0, 0.182367682457973, 566.66650390873383, 0, 0.0, 0.252944946291618, -1300.0, 0, 0.0, 0.49838376045292, -2100.0, 0, -0.690900802618258, 0.588727951049959, -1169.571289076917765, 0, 0.0, 0.685916423799543, 1000.0, 0, 0.816666603089348, 1.0, -966.66650390873383, 0, 0.0, "curve" ]
 																	}
  ]
