@@ -787,7 +787,7 @@ function reattachRenderedMessage(serialized)
 	//post("reattachRenderedMessage", "\n");
 if (mode == "picster") {
 	if (item != -1)  {
-	post("foundobjects.2", foundobjects.stringify(), "\n");
+	//post("foundobjects.2", foundobjects.stringify(), "\n");
 	switch (foundobjects.get(item)[0]){
 		case "interval" :
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
