@@ -25,7 +25,7 @@ var RenderMessageOffset = [];
 var textRenderOffset = [0, 0];
 var offsets = {};
 var foundobjects = new Dict;
-foundobjects.name = "foundobjects";
+foundobjects.name = "foundobjects" + this.patcher.getnamed("instance").getvalueof();
 var clicks = 0;
 var item = -1;
 var origin = [];
@@ -87,6 +87,7 @@ var hold = 0;
 var currentMeasure = -1;
 var annotation = new Dict;
 var timeUnit, prop, timesig, tempo;
+var status = "regular";
 
 removeTextedit();
 
@@ -107,6 +108,7 @@ function removeTextedit()
 
 function singleClick(x, y, shift)
 {
+status = "regular";
 if (mode == "picster" && !blocked) {
 	//lcd = this.patcher.getnamed("pane");
 	//svggroupflag = false;
@@ -784,6 +786,7 @@ function reattachRenderedMessage(serialized)
 	//post("reattachRenderedMessage", "\n");
 if (mode == "picster") {
 	if (item != -1)  {
+	post("foundobjects.2", foundobjects.stringify(), "\n");
 	switch (foundobjects.get(item)[0]){
 		case "interval" :
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
@@ -1699,10 +1702,13 @@ function removeAllExpressionsFromSelectedShape()
 
 function capslock(caps)
 {
-	mode = caps ? "picster" : "maxscore";
-	if (mode == "picster") outlet(2, "picsterShape", shapes[shape]);
-	else outlet(2, "bounds", "hide");
-	foundobjects.clear();
+	//post("foundobjects.1", status, foundobjects.stringify(), "\n");
+	if (status == "regular") {
+		mode = caps ? "picster" : "maxscore";
+		if (mode == "picster") outlet(2, "picsterShape", shapes[shape]);
+		else outlet(2, "bounds", "hide");
+		foundobjects.clear();
+	}
 }
 
 
@@ -1754,7 +1760,6 @@ function anything()
 		break;
 	}
 	if (mode == "picster") {
-	//post("timeUnit", annotation.stringify(), timeUnit, "\n");
    	switch (messagename) {
 	case "getScoreAnnotation" :
 		annotation.parse(msg);
@@ -1785,6 +1790,7 @@ function anything()
 			break;
 			case 69 :  //edit
 			if (foundobjects.contains("0") && item != -1) edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+			status = "editing";
 			outlet(3, "edit");
 			break;
 			case 71 : //group
@@ -2018,6 +2024,7 @@ function anything()
 			preference = "staff";
 			break;
 			case 85 : //u = update: serialize picster-editor dict, format message, reattach to score element and redraw bounding rect, clear dict
+			status = "regular";
 			action = "update";
 			var updatedDict = new Dict();
 			updatedDict.name = "picster-editor";
