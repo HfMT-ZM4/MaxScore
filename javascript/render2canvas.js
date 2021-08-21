@@ -2542,7 +2542,7 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						if (prop) space = hold * 60 / tempo * timeUnit - 7;
 						else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
 						if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
-						post("_dest", _dest, RenderMessageOffset, msg[6], "\n");
+						//post("_dest", _dest, RenderMessageOffset, msg[6], "\n");
 						var numPoints = (pitchbend.length - 4) / 4;
 						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + 2 + _dest];
 						var oldPoint = moveTo;

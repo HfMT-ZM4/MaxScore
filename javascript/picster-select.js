@@ -86,7 +86,7 @@ var noteAreaWidth = 0;
 var hold = 0;
 var currentMeasure = -1;
 var annotation = new Dict;
-var timeUnit, prop, timesig, tempo;
+var timeUnit, prop, timesig, tempo, editor;
 var status = "regular";
 
 removeTextedit();
@@ -259,7 +259,7 @@ if (mode == "picster" && !blocked) {
 			if (tempDict2.contains("picster-element::expression")) outlet(1, "expression", "dictionary", picster.get("expression").name);
 		}
 		else if (tempDict2.contains("picster-element[2]::val")) {
-			//if (buttonMode) {
+			editor = tempDict2.get("picster-element[2]::val[0]::editor");
 			var o = {};
 			var o2 = {};
 			o = JSON.parse(tempDict2.stringify());
@@ -357,7 +357,7 @@ function mouseDragged(x, y)
 		outlet(2, "clearGraphics");
 		//suppress dragging for pitchbend curves
 		if (item != -1) {
-			outlet(2, "bounds", (foundobjects.get(item)[foundobjects.get(item).length - 5] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 4] + y - origin[1]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 3] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 2] + y - origin[1]) * 0.5 / zoom);
+			if (editor != "pb") outlet(2, "bounds", (foundobjects.get(item)[foundobjects.get(item).length - 5] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 4] + y - origin[1]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 3] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 2] + y - origin[1]) * 0.5 / zoom);
 			if (shape == 0) pathDone = true;
 		}
 		else {
@@ -493,6 +493,7 @@ function mouseDragged(x, y)
 function mouseReleased(x, y)
 {
 if (mode == "picster") {
+	if (editor == "pb") return;
 	if (!buttonMode) {
 	outlet(2, "clearGraphics");
 	action = "mouseReleased";

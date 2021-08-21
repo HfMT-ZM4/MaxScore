@@ -142,7 +142,7 @@ function init() {
 								}
 							}
 							outlet(0, "setNoteDimension", 6, _count);
-							post("note", _count, "\n");
+							//post("note", _count, "\n");
 						} else {
 							if(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["dim"][2]["@value"] != -1) {
 								outlet(0, "setNoteDimension", 6, -1);
