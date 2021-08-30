@@ -13,3 +13,4 @@
 107, "transposeGraceNotesTransform -0.5";
 111, "transposeGraceNotesTransform 12.";
 108, "transposeGraceNotesTransform -12.";
+112, dumpExpressions;
