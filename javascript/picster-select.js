@@ -108,6 +108,7 @@ function removeTextedit()
 
 function singleClick(x, y, shift)
 {
+editor = "";
 status = "regular";
 if (mode == "picster" && !blocked) {
 	//lcd = this.patcher.getnamed("pane");
@@ -272,7 +273,6 @@ if (mode == "picster" && !blocked) {
 				tempDict.parse(JSON.stringify(o2));
 				//post("tempDict", tempDict2.stringify(), "O2", JSON.stringify(o), o["picster-element"][2]["val"].length, "\n");
 			outlet(1, "expression", foundobjects.get(item)[2], "dictionary", tempDict.name);
-			//	}
 			}
 		else outlet(1, "expression", "clear");
 		}
@@ -358,7 +358,7 @@ function mouseDragged(x, y)
 		//suppress dragging for pitchbend curves
 		if (item != -1) {
 			if (editor != "pb") outlet(2, "bounds", (foundobjects.get(item)[foundobjects.get(item).length - 5] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 4] + y - origin[1]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 3] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 2] + y - origin[1]) * 0.5 / zoom);
-			if (shape == 0) pathDone = true;
+			if (!shape) pathDone = true;
 		}
 		else {
 		var x1, x2, y1, y2;
