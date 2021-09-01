@@ -175,7 +175,10 @@ _style("Default", 0);
 
 
 var clp = annotation.get("staff-"+StaffIndex+"::clip");
-if (clp) outlet(1, clp);
+if (clp) {
+	if (clp[0] != "A" && clp[0] != "S") clp = "S " + clp.join(":"); 
+	outlet(1, clp);
+	}
 
 var _livetrack = annotation.get("staff-"+StaffIndex+"::livetrack");
 if (_livetrack) this.patcher.getnamed("track").message(_livetrack);
@@ -199,9 +202,9 @@ else instrumentnamepositionoffset(0);
 this.patcher.parentpatcher.getnamed("done").message("bang");
 }
 
-function clip(clpx, clpy)
+function clip(clp)
 {
-annotation.replace("staff-"+StaffIndex+"::clip", clpx, clpy);
+annotation.replace("staff-"+StaffIndex+"::clip", clp);
 dumpDict.message("bang");
 }
 
