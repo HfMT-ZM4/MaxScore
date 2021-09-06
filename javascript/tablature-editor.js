@@ -159,7 +159,7 @@ function strings(s)
 	this.patcher.message("script", "sendbox", identifier, "fontname", "Arial Bold");
     this.patcher.message("script", "sendbox", identifier, "fontsize", 8);
     this.patcher.message("script", "sendbox", identifier, "bgcolor", 0, 0, 0, 0);
-    this.patcher.message("script", "sendbox", identifier, "textcolor", 0.1, 0.1, 0.1, 1.000);
+    this.patcher.message("script", "sendbox", identifier, "textcolor", 1, 1, 1, 1.000);
     this.patcher.message("script", "sendbox", identifier, "tricolor", 0.047, 0.424, 0.847, 1.000);
     this.patcher.message("script", "sendbox", identifier, "presentation", 1);
     this.patcher.message("script", "sendbox", identifier, "presentation_rect", 17, (openStrings.length - i - 1) *20 + 80, 36, 17);

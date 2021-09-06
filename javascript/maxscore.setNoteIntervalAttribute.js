@@ -105,6 +105,11 @@ for (var i= 0; i < keys.length; i++)
 }
 restoreSelection();
 }
+else {
+	outlet(1, "setRenderAllowed", 1);
+	if (undo) outlet(1, "setUndoStackEnabled", true);
+	return;
+}
 if (render) outlet(1, "setRenderAllowed", 1); 	
 if (undo) {
 outlet(1, "setUndoStackEnabled", true);
