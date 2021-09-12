@@ -339,7 +339,7 @@ function scale(x, inputmin, inputmax, outputmin, outputmax)
 
 function scroll()
 {
-	if (this.patcher.getnamed("output").getvalueof().join("").indexOf("011") != -1) {
+	if (this.patcher.getnamed("output").getvalueof().join("").indexOf("021") != -1) {
 	var msg = arrayfromargs(arguments);
 	switch (msg[0]) {
 		case "stop" :
