@@ -207,9 +207,12 @@ if (mode == "picster" && !blocked) {
 	}
 	else {
 		_key = e.get("picster-element[0]::key");
-		if (_key == "svg") var foundBounds = findBoundsToo(vals);
+		//post("vals", JSON.stringify(vals), "\n");
+		if (_key == "svg") {
+		if (vals[0]["id"].indexOf("sustain") == 0) var foundBounds = [-1, -1, -1, -1];
+		else var foundBounds = findBoundsToo(vals);
+		}
 		else if (_key == "render-expression") var foundBounds = findBoundsForRenderedExpression(renderedMessages.get(keys[i]).slice(0, -1), e);
-		//else if (_key == "render-expression") var foundBounds = [-1, -1, -1, -1];
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
 		foundBounds[2] += RenderMessageOffset[0];
@@ -217,7 +220,6 @@ if (mode == "picster" && !blocked) {
 		var boundmin = [foundBounds[0] - horizontalOffset, foundBounds[1] - verticalOffset];
 		var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
 	}
-		//post("renderedMessages", x, y, boundmin, boundmax, "\n");
 	if (boundmin[0] <= x && boundmin[1] <= y && boundmax[0] >= x && boundmax[1] >= y) {
 		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4), dictArray[dictArray.length - 1].get("id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
 		offsets[_c] = RenderMessageOffset;

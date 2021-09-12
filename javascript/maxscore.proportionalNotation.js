@@ -251,7 +251,7 @@ for(var event in anchors){
 		}
 	}
 	var length = hold * timeUnit - 7;
-	//post("hasPitchBend", hasPitchBend, "\n");
+	//if (length > 200.) post("length", length, hold, timeUnit,  "\n");
 	if (length > 2. && !hasPitchBend)
 	{
 	/*
@@ -270,7 +270,7 @@ for(var event in anchors){
 	var _picster = {};
 	attr.new = "path";
 	attr.id = "sustain_0";
-	attr.d = "M 5,3 L " + length + ", 3 M " + length + ",1 L " + length + ",5" ;
+	attr.d = "M5,3 L" + length + ",3M" + length + ",1L" + length + ",5" ;
 	attr.style = {};
 	attr.style["stroke"] = "$FRGB";
 	attr.style["stroke-opacity"] = 1.;

@@ -976,7 +976,8 @@ function drawBounds()
 
 function scroll()
 {
-	if (this.patcher.getnamed("output").getvalueof().join("").indexOf("021") != -1) {
+	//post("matrix", this.patcher.getnamed("output").getvalueof().join(""), "\n");
+	if (this.patcher.getnamed("output").getvalueof().join("").indexOf("011") != -1) {
 	var msg = arrayfromargs(arguments);
 	//post("msg", msg, lastAction, "\n");
 	cursors.clear();
@@ -1003,7 +1004,6 @@ function scroll()
 		//
 	if (lastAction == "offset")
 		{
-		post("play", _offset[0], msg, rDur, eol, "\n");
 		for (var s = 0; s < groupcount; s++)
 		{
 				jcursors[s + 1] = {
