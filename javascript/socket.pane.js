@@ -89,8 +89,9 @@ function shortDelay()
 function listenerobj(data)
 {
 	if (data.value[1]) {
-		_offset = data.value;
-		scroll("offset", data.value);
+		_offset = data.value[0];
+		//post("data", data.value[0], "\n");
+		scroll("offset", data.value[0]);
 		lastAction = "offset";
 		}
 }
@@ -999,7 +1000,7 @@ function scroll()
 		break;
 
 	case "play":
-		rDur = msg[3] * (msg[2] - _offset[0]) / msg[2] / 1000;
+		rDur = msg[3] * (msg[2] - _offset) / msg[2] / 1000;
 		eol = msg[2];
 		//
 	if (lastAction == "offset")
@@ -1013,7 +1014,7 @@ function scroll()
 				"target" : "#score", 
 				"dur" : 0,
 				"vars" : {
-					"x" : _offset[0],
+					"x" : _offset,
 					"y" : 0,
 					"paused" : "false",
 					"ease" : "linear"
@@ -1064,6 +1065,7 @@ function scroll()
 			}
 		else rDur = duration;
 		_offset = msg[1];
+		//post("offset", _offset, "\n");
 		//toffset = msg[1] / msg[2];
 		for (var s = 0; s < groupcount; s++)
 		{
