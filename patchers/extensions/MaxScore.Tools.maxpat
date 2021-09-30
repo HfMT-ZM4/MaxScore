@@ -5732,6 +5732,40 @@
 										"title" : "Extended Stafflines",
 										"boxes" : [ 											{
 												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 10.0,
+													"id" : "obj-22",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 145.5, 100.0, 43.0, 20.0 ],
+													"text" : "route -1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontsize" : 10.0,
+													"id" : "obj-14",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 3,
+													"outlettype" : [ "", "", "" ],
+													"patching_rect" : [ 145.5, 73.0, 448.0, 20.0 ],
+													"restore" : [ -1, -1, -1, -1 ],
+													"saved_object_attributes" : 													{
+														"parameter_enable" : 0,
+														"parameter_mappable" : 0
+													}
+,
+													"text" : "pattr @bindto parent::parent::parent::bcanvas::measurerange @invisible 1 @autorestore 0 @thru 0",
+													"varname" : "u564070311"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-42",
 													"maxclass" : "comment",
 													"numinlets" : 1,
@@ -5779,8 +5813,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 395.83331298828125, 73.0, 476.0, 20.0 ],
-													"restore" : [ 0, 0, 0, 0 ],
+													"patching_rect" : [ 395.83331298828125, 95.0, 476.0, 20.0 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -6291,21 +6325,6 @@
 													"outlettype" : [ "int" ],
 													"patching_rect" : [ 894.88330078125, 278.0, 29.5, 22.0 ],
 													"text" : "!= 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-50",
-													"linecount" : 8,
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 24.33331298828125, 215.98760986328125, 294.0, 114.0 ],
-													"presentation" : 1,
-													"presentation_linecount" : 6,
-													"presentation_rect" : [ 24.33331298828125, 6.5, 394.0, 87.0 ],
-													"text" : "Add stafflines above or below the 5-line staff.\nThis process takes, for the top selected staff, the attributes of the first measure and applies the changes to all selected measures. If more staves are included in the selection they will be ignored.\nUse the GUI on the right-hand side to toggle the visibility of a staffline. Changes will be applied to all measures of the selected staff."
 												}
 
 											}
@@ -7231,7 +7250,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 395.83331298828125, 166.0, 148.0, 20.0 ],
+													"patching_rect" : [ 395.83331298828125, 171.0, 148.0, 20.0 ],
 													"saved_object_attributes" : 													{
 														"filename" : "maxscore.getStaffAttribute.js",
 														"parameter_enable" : 0
@@ -7250,7 +7269,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 395.83331298828125, 132.0, 312.0, 20.0 ],
+													"patching_rect" : [ 395.83331298828125, 145.0, 312.0, 20.0 ],
 													"text" : "EXTENDEDLINESABOVE $1 $2, EXTENDEDLINESBELOW $1 $2"
 												}
 
@@ -7304,7 +7323,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 395.83331298828125, 100.0, 336.5, 20.0 ],
+													"patching_rect" : [ 395.83331298828125, 119.0, 336.5, 20.0 ],
 													"text" : "t l l"
 												}
 
@@ -7346,7 +7365,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 146.333328247070312, 4.0, 25.0, 25.0 ]
+													"patching_rect" : [ 146.333328247070312, 9.0, 25.0, 25.0 ]
 												}
 
 											}
@@ -7442,13 +7461,13 @@
 , 											{
 												"box" : 												{
 													"fontname" : "Arial",
-													"fontsize" : 12.0,
+													"fontsize" : 10.0,
 													"id" : "obj-37",
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 165.25, 160.0, 194.0, 22.0 ],
+													"patching_rect" : [ 188.416671752929688, 192.0, 163.0, 20.0 ],
 													"text" : "window flags nofloat, window exec"
 												}
 
@@ -7456,13 +7475,13 @@
 , 											{
 												"box" : 												{
 													"fontname" : "Arial",
-													"fontsize" : 12.0,
+													"fontsize" : 10.0,
 													"id" : "obj-38",
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 196.333328247070312, 131.0, 181.0, 22.0 ],
+													"patching_rect" : [ 219.5, 163.0, 152.0, 20.0 ],
 													"text" : "window flags float, window exec"
 												}
 
@@ -7470,13 +7489,13 @@
 , 											{
 												"box" : 												{
 													"fontname" : "Arial",
-													"fontsize" : 12.0,
+													"fontsize" : 10.0,
 													"id" : "obj-39",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "front", "bang" ],
-													"patching_rect" : [ 146.333328247070312, 100.0, 69.0, 22.0 ],
+													"patching_rect" : [ 169.5, 132.0, 69.0, 20.0 ],
 													"text" : "t front b"
 												}
 
@@ -7512,13 +7531,13 @@
 , 											{
 												"box" : 												{
 													"fontname" : "Arial",
-													"fontsize" : 12.0,
+													"fontsize" : 10.0,
 													"id" : "obj-11",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 146.333328247070312, 208.0, 69.0, 22.0 ],
+													"patching_rect" : [ 169.5, 240.0, 59.0, 20.0 ],
 													"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 													"text" : "thispatcher"
 												}
@@ -7695,6 +7714,21 @@
 											}
 , 											{
 												"box" : 												{
+													"id" : "obj-50",
+													"linecount" : 8,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 24.33331298828125, 215.98760986328125, 294.0, 114.0 ],
+													"presentation" : 1,
+													"presentation_linecount" : 6,
+													"presentation_rect" : [ 24.33331298828125, 6.5, 394.0, 87.0 ],
+													"text" : "Add stafflines above or below the 5-line staff.\nThis process takes, for the top selected staff, the attributes of the first measure and applies the changes to all selected measures. If more staves are included in the selection they will be ignored.\nUse the GUI on the right-hand side to toggle the visibility of a staffline. Changes will be applied to all measures of the selected staff."
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-44",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
@@ -7772,6 +7806,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-22", 0 ],
+													"source" : [ "obj-14", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-10", 0 ],
 													"source" : [ "obj-16", 1 ]
 												}
@@ -7779,7 +7820,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-39", 0 ],
+													"destination" : [ "obj-14", 0 ],
 													"source" : [ "obj-16", 0 ]
 												}
 
@@ -7810,6 +7851,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-214", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-39", 0 ],
+													"source" : [ "obj-22", 1 ]
 												}
 
 											}
@@ -7905,7 +7953,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-11", 0 ],
-													"midpoints" : [ 174.75, 198.5, 155.833328247070312, 198.5 ],
+													"midpoints" : [ 197.916671752929688, 230.5, 179.0, 230.5 ],
 													"source" : [ "obj-37", 0 ]
 												}
 
@@ -7913,7 +7961,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-11", 0 ],
-													"midpoints" : [ 205.833328247070312, 198.5, 155.833328247070312, 198.5 ],
+													"midpoints" : [ 229.0, 230.5, 179.0, 230.5 ],
 													"source" : [ "obj-38", 0 ]
 												}
 
@@ -15434,7 +15482,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 10.0, 103.0, 541.0, 22.0 ],
-													"restore" : [ 1 ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -20680,7 +20728,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 416.600000000000023, 178.0, 338.0, 35.0 ],
-													"restore" : [ 0, 0, 0, 0 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
