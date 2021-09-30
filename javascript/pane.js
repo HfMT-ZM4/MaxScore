@@ -979,7 +979,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 			mgraphics.redraw();
 			//_zoom = (controlshift) ? 1 : zoom;
 			outlet(controlshift, "mouseDragged", x / zoom - horizontalOffset, y / zoom - verticalOffset);
-    		outlet(controlshift, "getSelectedLocation");
+    		//outlet(controlshift, "getSelectedLocation");
         }
     }
 	}
