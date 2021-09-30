@@ -2624,16 +2624,6 @@ function CurveSeg(x0, y0, x1, y1, curve, nhops)
 	this.x1 = x1;
 	this.delta = x1-x0;
 	this.nhops = nhops;
-	
-	// clip to ±0.995 due to curve~ bug
-	/*
-	if(curve < CURVE_MIN) 
-		this.curve = CURVE_MIN;
-	else if(curve > CURVE_MAX)
-		this.curve = CURVE_MAX;
-	else
-		this.curve = curve;
-	*/
 	this.coeffs = new CurveCoeffs(nhops, curve);
 	this.cpa = new Array(nhops); // x/y pairs in val format so that zooming/rescaling won't need a recalc
 	

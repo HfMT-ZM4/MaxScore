@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "1751marker[1][1][1][1][1][1][1][1][1][1][1][2][1][1][1][1]",
+		"globalpatchername" : "1751marker[1][1][1][1][1][1][1][1][1][1][1][2][1][1][1][1][1]",
 		"boxes" : [ 			{
 				"box" : 				{
 					"hint" : "Haha",
@@ -662,6 +662,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -1332,7 +1334,7 @@
 									"colwidth" : 32,
 									"fgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"fontface" : 0,
-									"fontname" : "Bravura",
+									"fontname" : "ArialMT",
 									"fontsize" : 18.0,
 									"hcellcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 0.58 ],
 									"id" : "obj-1",
@@ -1344,7 +1346,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 0.0, 0.0, 530.0, 436.0 ],
 									"rowheight" : 32,
-									"rows" : 221,
+									"rows" : 211,
 									"sccolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 									"stcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
@@ -1797,6 +1799,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -1899,11 +1903,12 @@
 								"name" : "black on white",
 								"number" : 								{
 									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -1913,8 +1918,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -1997,11 +2001,11 @@
 							"expression" : ""
 						}
 ,
-						"bordercolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2047,11 +2051,11 @@
 							"expression" : ""
 						}
 ,
-						"bordercolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2097,11 +2101,11 @@
 							"expression" : ""
 						}
 ,
-						"bordercolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2184,11 +2188,11 @@
 							"expression" : ""
 						}
 ,
-						"textcolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2592,7 +2596,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 336.25048828125, 84.0, 110.0, 22.0 ],
 									"saved_attribute_attributes" : 									{
-										"bordercolor" : 										{
+										"activebgcolor" : 										{
 											"expression" : ""
 										}
 ,
@@ -2600,7 +2604,7 @@
 											"expression" : ""
 										}
 ,
-										"activebgcolor" : 										{
+										"bordercolor" : 										{
 											"expression" : ""
 										}
 ,
@@ -3453,7 +3457,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 336.25048828125, 76.0, 104.0, 21.0 ],
 									"saved_attribute_attributes" : 									{
-										"bordercolor" : 										{
+										"activebgcolor" : 										{
 											"expression" : ""
 										}
 ,
@@ -3461,7 +3465,7 @@
 											"expression" : ""
 										}
 ,
-										"activebgcolor" : 										{
+										"bordercolor" : 										{
 											"expression" : ""
 										}
 ,
@@ -3626,11 +3630,12 @@
 								"name" : "black on white",
 								"number" : 								{
 									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"umenu" : 								{
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -3640,8 +3645,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -3727,7 +3731,7 @@
 					"presentation_rect" : [ 0.0, 373.0, 247.0, 95.0 ],
 					"rounded" : 0.0,
 					"tabmode" : 0,
-					"text" : "\"\\\"drawsocket.input({  key: 'sound',       val: {         id: 'kick',         call: {           method : 'restart'          }       }     })\\\"\"",
+					"text" : "\"\"drawsocket.input({  key: 'sound',       val: {         id: 'kick',         call: {           method : 'restart'          }       }     })\"\"",
 					"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ],
 					"varname" : "script"
 				}
@@ -4204,12 +4208,12 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
+					"bgcolor" : [ 0.996, 0.996, 0.94, 1.0 ],
 					"border" : 0.0,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 0.52 ],
 					"fontface" : 0,
-					"fontname" : "Bravura",
-					"fontsize" : 24.0,
+					"fontname" : "ArialMT",
+					"fontsize" : 18.0,
 					"id" : "obj-29",
 					"maxclass" : "textedit",
 					"numinlets" : 1,
@@ -4217,12 +4221,13 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"outputmode" : 1,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 136.671966552734375, 280.87939453125, 299.0, 220.0 ],
+					"patching_rect" : [ 136.671966552734375, 280.87939453125, 271.0, 220.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 24.0, 247.0, 111.0 ],
 					"rounded" : 0.0,
 					"tabmode" : 0,
-					"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ],
+					"text" : "Marimba + Gong + 2 Drums",
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit"
 				}
 
@@ -4431,7 +4436,7 @@
 					"bgfillcolor_type" : "color",
 					"hint" : "Font",
 					"id" : "obj-98",
-					"items" : [ "ACaslonPro-Bold", ",", "ACaslonPro-BoldItalic", ",", "ACaslonPro-Italic", ",", "ACaslonPro-Regular", ",", "ACaslonPro-Semibold", ",", "ACaslonPro-SemiboldItalic", ",", "AGaramondPro-Bold", ",", "AGaramondPro-BoldItalic", ",", "AGaramondPro-Italic", ",", "AGaramondPro-Regular", ",", "Academico", ",", "Academico-Bold", ",", "Academico-BoldItalic", ",", "Academico-Italic", ",", "AcademyEngravedLetPlain", ",", "Accidentals", ",", "AdobeArabic-Bold", ",", "AdobeArabic-BoldItalic", ",", "AdobeArabic-Italic", ",", "AdobeArabic-Regular", ",", "AdobeFanHeitiStd-Bold", ",", "AdobeFangsongStd-Regular", ",", "AdobeGothicStd-Bold", ",", "AdobeHebrew-Bold", ",", "AdobeHebrew-BoldItalic", ",", "AdobeHebrew-Italic", ",", "AdobeHebrew-Regular", ",", "AdobeHeitiStd-Regular", ",", "AdobeKaitiStd-Regular", ",", "AdobeMingStd-Light", ",", "AdobeMyungjoStd-Medium", ",", "AdobeSongStd-Light", ",", "Aloisen", ",", "AndaleMono", ",", "Apple-Chancery", ",", "AppleBraille", ",", "AppleBraille-Outline6Dot", ",", "AppleBraille-Outline8Dot", ",", "AppleBraille-Pinpoint6Dot", ",", "AppleBraille-Pinpoint8Dot", ",", "AppleGothic", ",", "AppleMyungjo", ",", "AppleSymbols", ",", "Arial-Black", ",", "Arial-BoldItalicMT", ",", "Arial-BoldMT", ",", "Arial-ItalicMT", ",", "ArialMT", ",", "ArialNarrow", ",", "ArialNarrow-Bold", ",", "ArialNarrow-BoldItalic", ",", "ArialNarrow-Italic", ",", "ArialRoundedMTBold", ",", "ArialUnicodeMS", ",", "Ayuthaya", ",", "Batang", ",", "BigCaslon-Medium", ",", "BirchStd", ",", "BlackoakStd", ",", "BodoniOrnamentsITCTT", ",", "BodoniSvtyTwoSCITCTT-Book", ",", "BookshelfSymbolSeven", ",", "Boulez", ",", "BradleyHandITCTT-Bold", ",", "Bravura", ",", "Bravura-Text", ",", "BrushScriptMT", ",", "BrushScriptStd", ",", "Calibri", ",", "Calibri-Bold", ",", "Calibri-BoldItalic", ",", "Calibri-Italic", ",", "Cambria", ",", "Cambria-Bold", ",", "Cambria-BoldItalic", ",", "Cambria-Italic", ",", "Candara", ",", "Candara-Bold", ",", "Candara-BoldItalic", ",", "Candara-Italic", ",", "Chalkduster", ",", "ChaparralPro-Bold", ",", "ChaparralPro-BoldIt", ",", "ChaparralPro-Italic", ",", "ChaparralPro-Regular", ",", "CharisSIL", ",", "CharisSIL-Bold", ",", "CharisSIL-BoldItalic", ",", "CharisSIL-Italic", ",", "CharlemagneStd-Bold", ",", "ComicSansMS", ",", "ComicSansMS-Bold", ",", "Consolas", ",", "Consolas-Bold", ",", "Consolas-BoldItalic", ",", "Consolas-Italic", ",", "Constantia", ",", "Constantia-Bold", ",", "Constantia-BoldItalic", ",", "Constantia-Italic", ",", "CooperBlackStd", ",", "CooperBlackStd-Italic", ",", "Corbel", ",", "Corbel-Bold", ",", "Corbel-BoldItalic", ",", "Corbel-Italic", ",", "CourierNewPS-BoldItalicMT", ",", "CourierNewPS-BoldMT", ",", "CourierNewPS-ItalicMT", ",", "CourierNewPSMT", ",", "Crimson-Bold", ",", "Crimson-BoldItalic", ",", "Crimson-Italic", ",", "Crimson-Roman", ",", "Crimson-Semibold", ",", "Crimson-SemiboldItalic", ",", "Cypher-Regular", ",", "DFKaiShu-SB-Estd-BF", ",", "DFWaWaSC-W5", ",", "DFWaWaTC-W5", ",", "DINAlternate-Bold", ",", "DINCondensed-Bold", ",", "Denemo", ",", "DiwanMishafi", ",", "DiwanMishafiGold", ",", "DiwanThuluth", ",", "Emmentaler-26", ",", "Farisi", ",", "FinaleCopyistText", ",", "FinaleCopyistTextExt", ",", "FinaleLyrics", ",", "FinaleLyrics-Bold", ",", "FinaleLyrics-Italic", ",", "FinaleNumerics", ",", "FranklinGothic-Book", ",", "FranklinGothic-BookItalic", ",", "FranklinGothic-Medium", ",", "FranklinGothic-MediumItalic", ",", "GB18030Bitmap", ",", "Georgia", ",", "Georgia-Bold", ",", "Georgia-BoldItalic", ",", "Georgia-Italic", ",", "GiddyupStd", ",", "GillSansMT", ",", "GillSansMT-Bold", ",", "GillSansMT-BoldItalic", ",", "GillSansMT-Italic", ",", "Gonville-11", ",", "Gonville-18", ",", "Gonville-26", ",", "Gonville-Brace", ",", "GothamNarrow-Light", ",", "GothamNarrow-Medium", ",", "GreifswalerDeutscheSchrift", ",", "Guido2", ",", "Gulim", ",", "HE", ",", "HOYLVT+CircularAir-Bold", ",", "HelsinkiSpecial", ",", "HelsinkiText", ",", "Herculanum", ",", "HoboStd", ",", "HoeflerText-Ornaments", ",", "Impact", ",", "Inkpen2", ",", "Inkpen2Chords", ",", "Inkpen2Special", ",", "Inkpen2Text", ",", "JCHEadA", ",", "JCfg", ",", "JCkg", ",", "JCsmPC", ",", "KEYEJM+airglyphs", ",", "KhmerSangamMN", ",", "Kokonor", ",", "KozGoPr6N-Bold", ",", "KozGoPr6N-ExtraLight", ",", "KozGoPr6N-Heavy", ",", "KozGoPr6N-Light", ",", "KozGoPr6N-Medium", ",", "KozGoPr6N-Regular", ",", "KozGoPro-Bold", ",", "KozGoPro-ExtraLight", ",", "KozGoPro-Heavy", ",", "KozGoPro-Light", ",", "KozGoPro-Medium", ",", "KozGoPro-Regular", ",", "KozMinPr6N-Bold", ",", "KozMinPr6N-ExtraLight", ",", "KozMinPr6N-Heavy", ",", "KozMinPr6N-Light", ",", "KozMinPr6N-Medium", ",", "KozMinPr6N-Regular", ",", "KozMinPro-Bold", ",", "KozMinPro-ExtraLight", ",", "KozMinPro-Heavy", ",", "KozMinPro-Light", ",", "KozMinPro-Medium", ",", "KozMinPro-Regular", ",", "Krungthep", ",", "LaoSangamMN", ",", "Lato-Black", ",", "Lato-BlackItalic", ",", "Lato-Bold", ",", "Lato-BoldItalic", ",", "Lato-Hairline", ",", "Lato-HairlineItalic", ",", "Lato-Heavy", ",", "Lato-HeavyItalic", ",", "Lato-Italic", ",", "Lato-Light", ",", "Lato-LightItalic", ",", "Lato-Medium", ",", "Lato-MediumItalic", ",", "Lato-Regular", ",", "Lato-Semibold", ",", "Lato-SemiboldItalic", ",", "Lato-Thin", ",", "Lato-ThinItalic", ",", "LetterGothicStd", ",", "LetterGothicStd-Bold", ",", "LetterGothicStd-BoldSlanted", ",", "LetterGothicStd-Slanted", ",", "LiGothicMed", ",", "LiHeiPro", ",", "LiSongPro", ",", "LiSungLight", ",", "LiberationMono", ",", "LiberationMono-Bold", ",", "LiberationMono-BoldItalic", ",", "LiberationMono-Italic", ",", "LiberationSans", ",", "LiberationSans-Bold", ",", "LiberationSans-BoldItalic", ",", "LiberationSans-Italic", ",", "LiberationSerif", ",", "LiberationSerif-Bold", ",", "LiberationSerif-BoldItalic", ",", "LiberationSerif-Italic", ",", "LibreBodoni-Bold", ",", "LibreBodoni-BoldItalic", ",", "LibreBodoni-Italic", ",", "LibreBodoni-Regular", ",", "LithosPro-Black", ",", "LithosPro-Regular", ",", "LucidaConsole", ",", "LucidaSansUnicode", ",", "Luminari-Regular", ",", "MLingWaiMedium-SC", ",", "MLingWaiMedium-TC", ",", "MS-Gothic", ",", "MS-Mincho", ",", "MS-PGothic", ",", "MS-PMincho", ",", "MSReferenceSansSerif", ",", "MSReferenceSpecialty", ",", "MaestroTimes", ",", "MaestroTimes-Bold", ",", "MaestroTimes-BoldItalic", ",", "MaestroTimes-Italic", ",", "Marlett", ",", "Meiryo", ",", "Meiryo-Bold", ",", "Meiryo-BoldItalic", ",", "Meiryo-Italic", ",", "MesquiteStd", ",", "MicrosoftSansSerif", ",", "MinionPro-Bold", ",", "MinionPro-BoldCn", ",", "MinionPro-BoldCnIt", ",", "MinionPro-BoldIt", ",", "MinionPro-It", ",", "MinionPro-Medium", ",", "MinionPro-MediumIt", ",", "MinionPro-Regular", ",", "MinionPro-Semibold", ",", "MinionPro-SemiboldIt", ",", "MonotypeGurmukhi", ",", "MyriadPro-Bold", ",", "MyriadPro-BoldCond", ",", "MyriadPro-BoldCondIt", ",", "MyriadPro-BoldIt", ",", "MyriadPro-Cond", ",", "MyriadPro-CondIt", ",", "MyriadPro-It", ",", "MyriadPro-Regular", ",", "MyriadPro-Semibold", ",", "MyriadPro-SemiboldIt", ",", "NotoSansJP-Black", ",", "NotoSansJP-Bold", ",", "NotoSansJP-DemiLight", ",", "NotoSansJP-Light", ",", "NotoSansJP-Medium", ",", "NotoSansJP-Regular", ",", "NotoSansJP-Thin", ",", "NuevaStd-BoldCond", ",", "NuevaStd-BoldCondItalic", ",", "NuevaStd-Cond", ",", "NuevaStd-CondItalic", ",", "OCRAStd", ",", "Opus", ",", "OpusChords", ",", "OpusChordsSans", ",", "OpusChordsSansCondensed", ",", "OpusFiguredBass", ",", "OpusFiguredBassExtras", ",", "OpusFunctionSymbols", ",", "OpusMetronome", ",", "OpusNoteNames", ",", "OpusOrnaments", ",", "OpusPercussion", ",", "OpusPlainChords", ",", "OpusRomanChords", ",", "OpusSpecial", ",", "OpusSpecialExtra", ",", "OpusText", ",", "OratorStd", ",", "OratorStd-Slanted", ",", "Osaka", ",", "Osaka-Mono", ",", "P22Cage-Extras", ",", "P22Cage-Silence", ",", "P22Cage-Text", ",", "PMingLiU", ",", "PartyLetPlain", ",", "Perpetua", ",", "Perpetua-Bold", ",", "Perpetua-BoldItalic", ",", "Perpetua-Italic", ",", "Petaluma", ",", "PetalumaScript", ",", "PetalumaText", ",", "PlantagenetCherokee", ",", "PoplarStd", ",", "PrestigeEliteStd-Bd", ",", "Reprise", ",", "RepriseChords", ",", "RepriseMetronome", ",", "RepriseRehearsal", ",", "RepriseScript", ",", "RepriseSpecial", ",", "RepriseStamp", ",", "RepriseText", ",", "RepriseTitle", ",", "RosewoodStd-Regular", ",", "SIL-Hei-Med-Jian", ",", "SIL-Kai-Reg-Jian", ",", "STFangsong", ",", "STHeiti", ",", "STIXGeneral-Bold", ",", "STIXGeneral-BoldItalic", ",", "STIXGeneral-Italic", ",", "STIXGeneral-Regular", ",", "STIXIntegralsD-Bold", ",", "STIXIntegralsD-Regular", ",", "STIXIntegralsSm-Bold", ",", "STIXIntegralsSm-Regular", ",", "STIXIntegralsUp-Bold", ",", "STIXIntegralsUp-Regular", ",", "STIXIntegralsUpD-Bold", ",", "STIXIntegralsUpD-Regular", ",", "STIXIntegralsUpSm-Bold", ",", "STIXIntegralsUpSm-Regular", ",", "STIXNonUnicode-Bold", ",", "STIXNonUnicode-BoldItalic", ",", "STIXNonUnicode-Italic", ",", "STIXNonUnicode-Regular", ",", "STIXSizeFiveSym-Regular", ",", "STIXSizeFourSym-Bold", ",", "STIXSizeFourSym-Regular", ",", "STIXSizeOneSym-Bold", ",", "STIXSizeOneSym-Regular", ",", "STIXSizeThreeSym-Bold", ",", "STIXSizeThreeSym-Regular", ",", "STIXSizeTwoSym-Bold", ",", "STIXSizeTwoSym-Regular", ",", "STIXVariants-Bold", ",", "STIXVariants-Regular", ",", "STXihei", ",", "Sagittal", ",", "Sathu", ",", "Scriabin", ",", "Scriabin6", ",", "Silom", ",", "SimSun", ",", "Skia-Regular", ",", "Skia-Regular_Black", ",", "Skia-Regular_Black-Condensed", ",", "Skia-Regular_Black-Extended", ",", "Skia-Regular_Bold", ",", "Skia-Regular_Condensed", ",", "Skia-Regular_Extended", ",", "Skia-Regular_Light", ",", "Skia-Regular_Light-Condensed", ",", "Skia-Regular_Light-Extended", ",", "Sonata", ",", "StencilStd", ",", "Symbol", ",", "Tablature", ",", "Tahoma", ",", "Tahoma-Bold", ",", "TektonPro-Bold", ",", "TektonPro-BoldCond", ",", "TektonPro-BoldExt", ",", "TektonPro-BoldObl", ",", "TimesNewRomanPS-BoldItalicMT", ",", "TimesNewRomanPS-BoldMT", ",", "TimesNewRomanPS-ItalicMT", ",", "TimesNewRomanPSMT", ",", "ToppanBunkyuMidashiGothicStdN-ExtraBold", ",", "ToppanBunkyuMidashiMinchoStdN-ExtraBold", ",", "ToppanBunkyuMinchoPr6N-Regular", ",", "TrajanPro-Bold", ",", "TrajanPro-Regular", ",", "Trattatello", ",", "Trebuchet-BoldItalic", ",", "TrebuchetMS", ",", "TrebuchetMS-Bold", ",", "TrebuchetMS-Italic", ",", "TwCenMT-Bold", ",", "TwCenMT-BoldItalic", ",", "TwCenMT-Italic", ",", "TwCenMT-Regular", ",", "Verdana", ",", "Verdana-Bold", ",", "Verdana-BoldItalic", ",", "Verdana-Italic", ",", "WW", ",", "Webdings", ",", "WeibeiSC-Bold", ",", "WeibeiTC-Bold", ",", "Wingdings-Regular", ",", "Wingdings2", ",", "Wingdings3", ",", "XNLOZH+FoundersGrotesk-Semibold", ",", "XVGAXJ+CircularAir-Book", ",", "YuGo-Bold", ",", "YuGo-Medium", ",", "YuppySC-Regular", ",", "YuppyTC-Regular", ",", "ZapfDingbatsITC", ",", "Zapfino", ",", "feta26", ",", "mf", ",", "sims" ],
+					"items" : [ "ACaslonPro-Bold", ",", "ACaslonPro-BoldItalic", ",", "ACaslonPro-Italic", ",", "ACaslonPro-Regular", ",", "ACaslonPro-Semibold", ",", "ACaslonPro-SemiboldItalic", ",", "AGaramondPro-Bold", ",", "AGaramondPro-BoldItalic", ",", "AGaramondPro-Italic", ",", "AGaramondPro-Regular", ",", "Academico", ",", "Academico-Bold", ",", "Academico-BoldItalic", ",", "Academico-Italic", ",", "AcademyEngravedLetPlain", ",", "Accidentals", ",", "AdobeArabic-Bold", ",", "AdobeArabic-BoldItalic", ",", "AdobeArabic-Italic", ",", "AdobeArabic-Regular", ",", "AdobeFanHeitiStd-Bold", ",", "AdobeFangsongStd-Regular", ",", "AdobeGothicStd-Bold", ",", "AdobeHebrew-Bold", ",", "AdobeHebrew-BoldItalic", ",", "AdobeHebrew-Italic", ",", "AdobeHebrew-Regular", ",", "AdobeHeitiStd-Regular", ",", "AdobeKaitiStd-Regular", ",", "AdobeMingStd-Light", ",", "AdobeMyungjoStd-Medium", ",", "AdobeSongStd-Light", ",", "Aloisen", ",", "AndaleMono", ",", "Apple-Chancery", ",", "AppleBraille", ",", "AppleBraille-Outline6Dot", ",", "AppleBraille-Outline8Dot", ",", "AppleBraille-Pinpoint6Dot", ",", "AppleBraille-Pinpoint8Dot", ",", "AppleGothic", ",", "AppleMyungjo", ",", "AppleSymbols", ",", "Arial-Black", ",", "Arial-BoldItalicMT", ",", "Arial-BoldMT", ",", "Arial-ItalicMT", ",", "ArialMT", ",", "ArialNarrow", ",", "ArialNarrow-Bold", ",", "ArialNarrow-BoldItalic", ",", "ArialNarrow-Italic", ",", "ArialRoundedMTBold", ",", "ArialUnicodeMS", ",", "Arimo-Bold", ",", "Arimo-BoldItalic", ",", "Arimo-Italic", ",", "Arimo-Medium", ",", "Arimo-MediumItalic", ",", "Arimo-Regular", ",", "Arimo-SemiBold", ",", "Arimo-SemiBoldItalic", ",", "Ayuthaya", ",", "Batang", ",", "BigCaslon-Medium", ",", "BirchStd", ",", "BlackoakStd", ",", "BodoniOrnamentsITCTT", ",", "BodoniSvtyTwoSCITCTT-Book", ",", "BookshelfSymbolSeven", ",", "Boulez", ",", "BradleyHandITCTT-Bold", ",", "Bravura", ",", "Bravura-Text", ",", "BrushScriptMT", ",", "BrushScriptStd", ",", "Calibri", ",", "Calibri-Bold", ",", "Calibri-BoldItalic", ",", "Calibri-Italic", ",", "Cambria", ",", "Cambria-Bold", ",", "Cambria-BoldItalic", ",", "Cambria-Italic", ",", "Candara", ",", "Candara-Bold", ",", "Candara-BoldItalic", ",", "Candara-Italic", ",", "Chalkduster", ",", "ChaparralPro-Bold", ",", "ChaparralPro-BoldIt", ",", "ChaparralPro-Italic", ",", "ChaparralPro-Regular", ",", "CharisSIL", ",", "CharisSIL-Bold", ",", "CharisSIL-BoldItalic", ",", "CharisSIL-Italic", ",", "CharlemagneStd-Bold", ",", "ComicSansMS", ",", "ComicSansMS-Bold", ",", "Consolas", ",", "Consolas-Bold", ",", "Consolas-BoldItalic", ",", "Consolas-Italic", ",", "Constantia", ",", "Constantia-Bold", ",", "Constantia-BoldItalic", ",", "Constantia-Italic", ",", "CooperBlackStd", ",", "CooperBlackStd-Italic", ",", "Corbel", ",", "Corbel-Bold", ",", "Corbel-BoldItalic", ",", "Corbel-Italic", ",", "CourierNewPS-BoldItalicMT", ",", "CourierNewPS-BoldMT", ",", "CourierNewPS-ItalicMT", ",", "CourierNewPSMT", ",", "Crimson-Bold", ",", "Crimson-BoldItalic", ",", "Crimson-Italic", ",", "Crimson-Roman", ",", "Crimson-Semibold", ",", "Crimson-SemiboldItalic", ",", "Cypher-Regular", ",", "DFKaiShu-SB-Estd-BF", ",", "DFWaWaSC-W5", ",", "DFWaWaTC-W5", ",", "DINAlternate-Bold", ",", "DINCondensed-Bold", ",", "Denemo", ",", "DiwanMishafi", ",", "DiwanMishafiGold", ",", "DiwanThuluth", ",", "Emmentaler-26", ",", "Farisi", ",", "FinaleCopyistText", ",", "FinaleCopyistTextExt", ",", "FinaleLyrics", ",", "FinaleLyrics-Bold", ",", "FinaleLyrics-Italic", ",", "FinaleNumerics", ",", "FranklinGothic-Book", ",", "FranklinGothic-BookItalic", ",", "FranklinGothic-Medium", ",", "FranklinGothic-MediumItalic", ",", "GB18030Bitmap", ",", "Georgia", ",", "Georgia-Bold", ",", "Georgia-BoldItalic", ",", "Georgia-Italic", ",", "GiddyupStd", ",", "GillSansMT", ",", "GillSansMT-Bold", ",", "GillSansMT-BoldItalic", ",", "GillSansMT-Italic", ",", "Gonville-11", ",", "Gonville-18", ",", "Gonville-26", ",", "Gonville-Brace", ",", "GothamNarrow-Light", ",", "GothamNarrow-Medium", ",", "GreifswalerDeutscheSchrift", ",", "Guido2", ",", "Gulim", ",", "HE", ",", "HOYLVT+CircularAir-Bold", ",", "HelsinkiSpecial", ",", "HelsinkiText", ",", "Herculanum", ",", "HoboStd", ",", "HoeflerText-Ornaments", ",", "Impact", ",", "Inkpen2", ",", "Inkpen2Chords", ",", "Inkpen2Special", ",", "Inkpen2Text", ",", "JCHEadA", ",", "JCfg", ",", "JCkg", ",", "JCsmPC", ",", "KEYEJM+airglyphs", ",", "KhmerSangamMN", ",", "Kokonor", ",", "KozGoPr6N-Bold", ",", "KozGoPr6N-ExtraLight", ",", "KozGoPr6N-Heavy", ",", "KozGoPr6N-Light", ",", "KozGoPr6N-Medium", ",", "KozGoPr6N-Regular", ",", "KozGoPro-Bold", ",", "KozGoPro-ExtraLight", ",", "KozGoPro-Heavy", ",", "KozGoPro-Light", ",", "KozGoPro-Medium", ",", "KozGoPro-Regular", ",", "KozMinPr6N-Bold", ",", "KozMinPr6N-ExtraLight", ",", "KozMinPr6N-Heavy", ",", "KozMinPr6N-Light", ",", "KozMinPr6N-Medium", ",", "KozMinPr6N-Regular", ",", "KozMinPro-Bold", ",", "KozMinPro-ExtraLight", ",", "KozMinPro-Heavy", ",", "KozMinPro-Light", ",", "KozMinPro-Medium", ",", "KozMinPro-Regular", ",", "Krungthep", ",", "LaoSangamMN", ",", "Lato-Black", ",", "Lato-BlackItalic", ",", "Lato-Bold", ",", "Lato-BoldItalic", ",", "Lato-Hairline", ",", "Lato-HairlineItalic", ",", "Lato-Heavy", ",", "Lato-HeavyItalic", ",", "Lato-Italic", ",", "Lato-Light", ",", "Lato-LightItalic", ",", "Lato-Medium", ",", "Lato-MediumItalic", ",", "Lato-Regular", ",", "Lato-Semibold", ",", "Lato-SemiboldItalic", ",", "Lato-Thin", ",", "Lato-ThinItalic", ",", "LetterGothicStd", ",", "LetterGothicStd-Bold", ",", "LetterGothicStd-BoldSlanted", ",", "LetterGothicStd-Slanted", ",", "LiGothicMed", ",", "LiHeiPro", ",", "LiSongPro", ",", "LiSungLight", ",", "LiberationMono", ",", "LiberationMono-Bold", ",", "LiberationMono-BoldItalic", ",", "LiberationMono-Italic", ",", "LiberationSans", ",", "LiberationSans-Bold", ",", "LiberationSans-BoldItalic", ",", "LiberationSans-Italic", ",", "LiberationSerif", ",", "LiberationSerif-Bold", ",", "LiberationSerif-BoldItalic", ",", "LiberationSerif-Italic", ",", "LibreBodoni-Bold", ",", "LibreBodoni-BoldItalic", ",", "LibreBodoni-Italic", ",", "LibreBodoni-Regular", ",", "LithosPro-Black", ",", "LithosPro-Regular", ",", "LucidaConsole", ",", "LucidaSansUnicode", ",", "Luminari-Regular", ",", "MLingWaiMedium-SC", ",", "MLingWaiMedium-TC", ",", "MS-Gothic", ",", "MS-Mincho", ",", "MS-PGothic", ",", "MS-PMincho", ",", "MSReferenceSansSerif", ",", "MSReferenceSpecialty", ",", "MaestroTimes", ",", "MaestroTimes-Bold", ",", "MaestroTimes-BoldItalic", ",", "MaestroTimes-Italic", ",", "Marlett", ",", "Meiryo", ",", "Meiryo-Bold", ",", "Meiryo-BoldItalic", ",", "Meiryo-Italic", ",", "MesquiteStd", ",", "MicrosoftSansSerif", ",", "MinionPro-Bold", ",", "MinionPro-BoldCn", ",", "MinionPro-BoldCnIt", ",", "MinionPro-BoldIt", ",", "MinionPro-It", ",", "MinionPro-Medium", ",", "MinionPro-MediumIt", ",", "MinionPro-Regular", ",", "MinionPro-Semibold", ",", "MinionPro-SemiboldIt", ",", "MonotypeGurmukhi", ",", "MyriadPro-Bold", ",", "MyriadPro-BoldCond", ",", "MyriadPro-BoldCondIt", ",", "MyriadPro-BoldIt", ",", "MyriadPro-Cond", ",", "MyriadPro-CondIt", ",", "MyriadPro-It", ",", "MyriadPro-Regular", ",", "MyriadPro-Semibold", ",", "MyriadPro-SemiboldIt", ",", "NotoSansJP-Black", ",", "NotoSansJP-Bold", ",", "NotoSansJP-DemiLight", ",", "NotoSansJP-Light", ",", "NotoSansJP-Medium", ",", "NotoSansJP-Regular", ",", "NotoSansJP-Thin", ",", "NuevaStd-BoldCond", ",", "NuevaStd-BoldCondItalic", ",", "NuevaStd-Cond", ",", "NuevaStd-CondItalic", ",", "OCRAStd", ",", "Opus", ",", "OpusChords", ",", "OpusChordsSans", ",", "OpusChordsSansCondensed", ",", "OpusFiguredBass", ",", "OpusFiguredBassExtras", ",", "OpusFunctionSymbols", ",", "OpusMetronome", ",", "OpusNoteNames", ",", "OpusOrnaments", ",", "OpusPercussion", ",", "OpusPlainChords", ",", "OpusRomanChords", ",", "OpusSpecial", ",", "OpusSpecialExtra", ",", "OpusText", ",", "OratorStd", ",", "OratorStd-Slanted", ",", "Osaka", ",", "Osaka-Mono", ",", "P22Cage-Extras", ",", "P22Cage-Silence", ",", "P22Cage-Text", ",", "PMingLiU", ",", "PartyLetPlain", ",", "Perpetua", ",", "Perpetua-Bold", ",", "Perpetua-BoldItalic", ",", "Perpetua-Italic", ",", "Petaluma", ",", "PetalumaScript", ",", "PetalumaText", ",", "PlantagenetCherokee", ",", "PoplarStd", ",", "PrestigeEliteStd-Bd", ",", "Reprise", ",", "RepriseChords", ",", "RepriseMetronome", ",", "RepriseRehearsal", ",", "RepriseScript", ",", "RepriseSpecial", ",", "RepriseStamp", ",", "RepriseText", ",", "RepriseTitle", ",", "RosewoodStd-Regular", ",", "SIL-Hei-Med-Jian", ",", "SIL-Kai-Reg-Jian", ",", "STFangsong", ",", "STHeiti", ",", "STIXGeneral-Bold", ",", "STIXGeneral-BoldItalic", ",", "STIXGeneral-Italic", ",", "STIXGeneral-Regular", ",", "STIXIntegralsD-Bold", ",", "STIXIntegralsD-Regular", ",", "STIXIntegralsSm-Bold", ",", "STIXIntegralsSm-Regular", ",", "STIXIntegralsUp-Bold", ",", "STIXIntegralsUp-Regular", ",", "STIXIntegralsUpD-Bold", ",", "STIXIntegralsUpD-Regular", ",", "STIXIntegralsUpSm-Bold", ",", "STIXIntegralsUpSm-Regular", ",", "STIXNonUnicode-Bold", ",", "STIXNonUnicode-BoldItalic", ",", "STIXNonUnicode-Italic", ",", "STIXNonUnicode-Regular", ",", "STIXSizeFiveSym-Regular", ",", "STIXSizeFourSym-Bold", ",", "STIXSizeFourSym-Regular", ",", "STIXSizeOneSym-Bold", ",", "STIXSizeOneSym-Regular", ",", "STIXSizeThreeSym-Bold", ",", "STIXSizeThreeSym-Regular", ",", "STIXSizeTwoSym-Bold", ",", "STIXSizeTwoSym-Regular", ",", "STIXVariants-Bold", ",", "STIXVariants-Regular", ",", "STXihei", ",", "Sagittal", ",", "Sathu", ",", "Scriabin", ",", "Scriabin6", ",", "Silom", ",", "SimSun", ",", "Skia-Regular", ",", "Skia-Regular_Black", ",", "Skia-Regular_Black-Condensed", ",", "Skia-Regular_Black-Extended", ",", "Skia-Regular_Bold", ",", "Skia-Regular_Condensed", ",", "Skia-Regular_Extended", ",", "Skia-Regular_Light", ",", "Skia-Regular_Light-Condensed", ",", "Skia-Regular_Light-Extended", ",", "Sonata", ",", "StencilStd", ",", "Symbol", ",", "Tablature", ",", "Tahoma", ",", "Tahoma-Bold", ",", "TektonPro-Bold", ",", "TektonPro-BoldCond", ",", "TektonPro-BoldExt", ",", "TektonPro-BoldObl", ",", "TimesNewRomanPS-BoldItalicMT", ",", "TimesNewRomanPS-BoldMT", ",", "TimesNewRomanPS-ItalicMT", ",", "TimesNewRomanPSMT", ",", "ToppanBunkyuMidashiGothicStdN-ExtraBold", ",", "ToppanBunkyuMidashiMinchoStdN-ExtraBold", ",", "ToppanBunkyuMinchoPr6N-Regular", ",", "TrajanPro-Bold", ",", "TrajanPro-Regular", ",", "Trattatello", ",", "Trebuchet-BoldItalic", ",", "TrebuchetMS", ",", "TrebuchetMS-Bold", ",", "TrebuchetMS-Italic", ",", "TwCenMT-Bold", ",", "TwCenMT-BoldItalic", ",", "TwCenMT-Italic", ",", "TwCenMT-Regular", ",", "Verdana", ",", "Verdana-Bold", ",", "Verdana-BoldItalic", ",", "Verdana-Italic", ",", "WW", ",", "Webdings", ",", "WeibeiSC-Bold", ",", "WeibeiTC-Bold", ",", "Wingdings-Regular", ",", "Wingdings2", ",", "Wingdings3", ",", "XNLOZH+FoundersGrotesk-Semibold", ",", "XVGAXJ+CircularAir-Book", ",", "YuGo-Bold", ",", "YuGo-Medium", ",", "YuppySC-Regular", ",", "YuppyTC-Regular", ",", "ZapfDingbatsITC", ",", "Zapfino", ",", "feta26", ",", "mf", ",", "sims" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -5059,11 +5064,12 @@
 				"name" : "black on white",
 				"number" : 				{
 					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"umenu" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -5073,8 +5079,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "",
