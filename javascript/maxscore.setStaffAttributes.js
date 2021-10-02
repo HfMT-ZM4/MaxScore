@@ -165,6 +165,7 @@ if (typeof(stl)!="object" && stl!="*")
 {
 state("virgin");	
 setStyle(stl);
+//post("hello", stl, "\n");
 _style(stl, 0);
 }
 else 
@@ -244,6 +245,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 	{
 	annotation.replace("staff-"+StaffIndex+"::style", stl);			
 	dumpDict.message("bang");
+	//post("stl", stl, editors.names.indexOf(stl), "\n");
 	if (aliases.contains(stl)) stl = aliases.get(stl);
 	if (isAlias(stl) && flag) _style(stl, 1);
 	//else if (stl == "Just Intonation" && !flag) _style(stl, 0);
@@ -387,8 +389,10 @@ function _style(stl, flag)
 	}	
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
 	///////////
-     if (ss[1] == "editor" && flag == 1) {
-    //post("currentstyle", oldstl, StaffIndex, this.patcher.parentpatcher.getnamed("numstaves").getvalueof(), editors.names.indexOf(stl), "\n");
+	//post("hello", stl, flag, ss[1], "\n");
+    if (ss[1] == "editor" && flag) {
+	//if (ss[1] == "editor") {
+    post("currentstyle", oldstl, StaffIndex, this.patcher.parentpatcher.getnamed("numstaves").getvalueof(), editors.names.indexOf(stl), "\n");
 	var styleMenu = this.patcher.getnamed("style");
 	for (var i = 0; i < this.patcher.parentpatcher.getnamed("numstaves").getvalueof(); i++) this.patcher.parentpatcher.getnamed("staff-" + i).subpatcher().getnamed("style").message("textcolor", 0, 0, 0, 1);
 	if (editors.names.indexOf(basestyle) != -1) styleMenu.message("textcolor", 1, 0, 0, 1);
@@ -405,6 +409,7 @@ function _style(stl, flag)
                 var subdivision = 0;
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("in1","bang");
                 if (isAlias(stl)) {
+					post("hello", substyle.split("•")[0], "\n");
                     stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("clef").message("symbol", substyle.split("•")[0]);
                     if (substyle.split("•")[1] == "39ED3") subdivision = 1;
                     else if (substyle.split("•")[1] == "65ED3") subdivision = 2;
