@@ -65,6 +65,7 @@ var preview = this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("p
 var stylesPatcher = this.patcher.parentpatcher.parentpatcher.getnamed("pitchtool");
 var pitchDisplay = stylesPatcher.subpatcher().getnamed("entry").subpatcher().getnamed("pitch");
 var Count = 0;
+var oldCount = 0;
 var dumpDict = this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict");
 var ratioLookUp = 0;
 var previousNumStaves = 0;
@@ -105,8 +106,10 @@ function setMenu() {
 	styleMenu.message("append", "-");;
 	Count++;
    	for (var i = 0; i < tonedivisions.names.length; i++) styleMenu.message("append", tonedivisions.names[i]);
-	styleMenu.message("checkitem", Count, 1);
-	if (this.patcher.parentpatcher.getnamed("numstaves").getvalueof() == previousNumStaves) styleMenu.message("textcolor", 0, 0, 0, 1);
+	if (stl != oldstl) styleMenu.message("checkitem", Count, 1);
+	else styleMenu.message("checkitem", oldCount, 1);
+	if (this.patcher.parentpatcher.getnamed("numstaves").getvalueof() == previousNumStaves) styleMenu.message("textcolor", 1, 1, 1, 1);
+	//post("checkitem", Count, oldCount, "\n");
 }
 
 function init()
@@ -163,9 +166,8 @@ stl = annotation.get("staff-"+StaffIndex+"::style");
 if (stl == "Quarter Tone") stl = "Default";
 if (typeof(stl)!="object" && stl!="*") 
 {
-state("virgin");	
+if (oldstl != stl) state("virgin");	
 setStyle(stl);
-//post("hello", stl, "\n");
 _style(stl, 0);
 }
 else 
@@ -239,13 +241,13 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 		styleMenu.message("setsymbol", oldstl);
 		styleMenu.message("clearchecks");
 		styleMenu.message("checkitem", tonedivisions.names.indexOf(stl) + Count, 1);
+		oldCount = tonedivisions.names.indexOf(stl) + Count;
     	outlet(0, "setRenderAllowed", "true");
 		}
 	else 
 	{
-	annotation.replace("staff-"+StaffIndex+"::style", stl);			
+	annotation.replace("staff-"+StaffIndex+"::style", stl, oldstl);			
 	dumpDict.message("bang");
-	//post("stl", stl, editors.names.indexOf(stl), "\n");
 	if (aliases.contains(stl)) stl = aliases.get(stl);
 	if (isAlias(stl) && flag) _style(stl, 1);
 	//else if (stl == "Just Intonation" && !flag) _style(stl, 0);
@@ -358,7 +360,7 @@ function setStyle(stl) {
 	this.patcher.getnamed("style").message("setsymbol", basestyle);
     styletype = staffStyles.get(basestyle)[0];
     if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", editors.names.indexOf(basestyle) + 1, stl);
-  	//if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
+  	if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
 }
 
 function _style(stl, flag)
@@ -367,9 +369,12 @@ function _style(stl, flag)
     var basestyle = stl.split("|")[0];
     var substyle = stl.split("|")[1];
     ss = staffStyles.get(basestyle);
+	//post("hello", StaffIndex, oldstl, stl, ss[2], "\n");
+	if (oldstl != stl) {
     annotation.replace("staff-" + StaffIndex + "::style", stl);
     annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
     annotation.replace("staff-" + StaffIndex + "::clef", "default");
+	}
     newstyletype = ss[0];
 	/////////// set ratio lookup tables
 	ratioLookUp = annotation.get("staff-" + StaffIndex + "::ratio-lookup");
@@ -389,12 +394,11 @@ function _style(stl, flag)
 	}	
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
 	///////////
-	//post("hello", stl, flag, ss[1], "\n");
     if (ss[1] == "editor" && flag) {
 	//if (ss[1] == "editor") {
-    post("currentstyle", oldstl, StaffIndex, this.patcher.parentpatcher.getnamed("numstaves").getvalueof(), editors.names.indexOf(stl), "\n");
+    //post("currentstyle", oldstl, StaffIndex, this.patcher.parentpatcher.getnamed("numstaves").getvalueof(), editors.names.indexOf(stl), "\n");
 	var styleMenu = this.patcher.getnamed("style");
-	for (var i = 0; i < this.patcher.parentpatcher.getnamed("numstaves").getvalueof(); i++) this.patcher.parentpatcher.getnamed("staff-" + i).subpatcher().getnamed("style").message("textcolor", 0, 0, 0, 1);
+	for (var i = 0; i < this.patcher.parentpatcher.getnamed("numstaves").getvalueof(); i++) this.patcher.parentpatcher.getnamed("staff-" + i).subpatcher().getnamed("style").message("textcolor", 1, 1, 1, 1);
 	if (editors.names.indexOf(basestyle) != -1) styleMenu.message("textcolor", 1, 0, 0, 1);
     stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
 	this.patcher.parentpatcher.parentpatcher.getnamed("chooser").message(1);
@@ -431,7 +435,6 @@ function _style(stl, flag)
                 break;
        }
         //this.patcher.getnamed("editor").message("active", 1);
-		//post("hello", stl, !isAlias(stl), newstyletype, "\n");
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
         stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("instrument").message("symbol", substyle);
         if (isAlias(stl)) if (tonedivisions.names.indexOf(substyle) == -1) stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("set").message("bang");
@@ -501,7 +504,8 @@ function _style(stl, flag)
         setStafflines(newstafflines);
         transform();
     }
-    oldstl = stl;
+    state(stl);
+	//post("hello2", oldstl, "\n");
     styletype = newstyletype;
 	previousNumStaves = this.patcher.parentpatcher.getnamed("numstaves").getvalueof();
 	dumpDict.message("bang");
