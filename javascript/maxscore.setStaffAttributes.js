@@ -106,9 +106,11 @@ function setMenu() {
 	styleMenu.message("append", "-");;
 	Count++;
    	for (var i = 0; i < tonedivisions.names.length; i++) styleMenu.message("append", tonedivisions.names[i]);
-	if (stl != oldstl) styleMenu.message("checkitem", Count, 1);
+	if (stl != oldstl) {
+		styleMenu.message("checkitem", Count, 1);
+		styleMenu.message("textcolor", 1, 1, 1, 1);
+	}
 	else styleMenu.message("checkitem", oldCount, 1);
-	if (this.patcher.parentpatcher.getnamed("numstaves").getvalueof() == previousNumStaves) styleMenu.message("textcolor", 1, 1, 1, 1);
 	//post("checkitem", Count, oldCount, "\n");
 }
 
@@ -396,9 +398,9 @@ function _style(stl, flag)
 	///////////
     if (ss[1] == "editor" && flag) {
 	//if (ss[1] == "editor") {
-    //post("currentstyle", oldstl, StaffIndex, this.patcher.parentpatcher.getnamed("numstaves").getvalueof(), editors.names.indexOf(stl), "\n");
 	var styleMenu = this.patcher.getnamed("style");
 	for (var i = 0; i < this.patcher.parentpatcher.getnamed("numstaves").getvalueof(); i++) this.patcher.parentpatcher.getnamed("staff-" + i).subpatcher().getnamed("style").message("textcolor", 1, 1, 1, 1);
+    //post("currentstyle", editors.names.indexOf(basestyle), "\n");
 	if (editors.names.indexOf(basestyle) != -1) styleMenu.message("textcolor", 1, 0, 0, 1);
     stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
 	this.patcher.parentpatcher.parentpatcher.getnamed("chooser").message(1);
