@@ -419,6 +419,7 @@ function _style(stl, flag)
 	currentRatioLookUp = tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 1 + ratioLookUp;
 	styleMenu.message("checkitem", currentRatioLookUp, 1);
 	styleMenu.message("checkitem", currentToneDivision, 1);
+	post("checkitem", currentRatioLookUp, currentToneDivision, "\n");
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
 	///////////
     if (ss[1] == "editor" && flag) {
