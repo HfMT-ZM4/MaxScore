@@ -132,8 +132,7 @@ for (var m = 0; m < numMeasures; m++){
 	outlet(0, "getMeasureInfo", m);
 	//post("getInfo", JSON.stringify(originalMeasureWidths), json["measure"]["@WIDTH"], json["measure"]["@MEASURELEFTMARGIN"], "\n"); 
 	originalMeasureWidths[m] = [];
-	originalMeasureWidths[m][0] = json["measure"]["@WIDTH"];
-	originalMeasureWidths[m][1] = json["measure"]["@MEASURELEFTMARGIN"];
+	originalMeasureWidths[m] = [json["measure"]["@WIDTH"], json["measure"]["@MEASURELEFTMARGIN"]];
 	}
 }
 
