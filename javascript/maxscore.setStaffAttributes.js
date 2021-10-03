@@ -248,7 +248,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 		}
 	else 
 	{
-	annotation.replace("staff-"+StaffIndex+"::style", stl, oldstl);			
+	annotation.replace("staff-"+StaffIndex+"::style", stl);			
 	dumpDict.message("bang");
 	if (aliases.contains(stl)) stl = aliases.get(stl);
 	if (isAlias(stl) && flag) _style(stl, 1);
