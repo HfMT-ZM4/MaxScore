@@ -52,6 +52,7 @@ var tonedivisions = {
 				names: ["24TET", "48TET", "72TET-Stahnke", "72TET-Sims", "72TET-Wyschnegradsky", "96TET"],
 				maps: ["mM-none", "mM-eighth-tones", "mM-Stahnke", "mM-SIMS", "mM-Wysch", "mM-sagittal"]
 				}
+var ratiolookup = ["Narrow", "Wide", "BP-Narrow", "BP-Wide"];
 var styletype = "default";
 var newstyletype = "default";
 var ss = [];
@@ -69,6 +70,7 @@ var oldCount = 0;
 var dumpDict = this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict");
 var ratioLookUp = 0;
 var previousNumStaves = 0;
+var currentRatioLookUp, currentToneDivision;
 
 //var stylesPatcher = this.patcher.parentpatcher.getnamed("styles");
 
@@ -103,11 +105,16 @@ function setMenu() {
     keys = [].concat(aliases.getkeys());
     for (var i = 0; i < keys.length; i++) styleMenu.message("append", keys[i]);
 	Count += keys.length;
-	styleMenu.message("append", "-");;
+	styleMenu.message("append", "-");
 	Count++;
    	for (var i = 0; i < tonedivisions.names.length; i++) styleMenu.message("append", tonedivisions.names[i]);
+	styleMenu.message("append", "-");
+   	for (var i = 0; i < ratiolookup.length; i++) styleMenu.message("append", ratiolookup[i]);	
 	if (stl != oldstl) {
+		currentToneDivision = Count;
+		currentRatioLookUp = Count + tonedivisions.names.length + 1;
 		styleMenu.message("checkitem", Count, 1);
+		styleMenu.message("checkitem", Count + tonedivisions.names.length + 1, 1);
 		styleMenu.message("textcolor", 1, 1, 1, 1);
 	}
 	else styleMenu.message("checkitem", oldCount, 1);
@@ -159,10 +166,6 @@ ledgerlines(1);
 }
 
 ratioLookUp = annotation.get("staff-" + StaffIndex + "::ratio-lookup");
-var tables = [ "Narrow", "Wide", "BP-Narrow", "BP-Wide" ];
-this.patcher.getnamed("ratio-lookup").message("clear");
-for (var i = 0; i < tables.length; i++) this.patcher.getnamed("ratio-lookup").message("append", tables[i]);
-
 
 stl = annotation.get("staff-"+StaffIndex+"::style");
 if (stl == "Quarter Tone") stl = "Default";
@@ -242,12 +245,21 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 		//stylesPatcher.subpatcher().getnamed("clefdesigner").subpatcher().getnamed("editor").subpatcher().getnamed("_micromap").message("setsymbol", stl);
 		styleMenu.message("setsymbol", oldstl);
 		styleMenu.message("clearchecks");
-		styleMenu.message("checkitem", tonedivisions.names.indexOf(stl) + Count, 1);
+		currentToneDivision = tonedivisions.names.indexOf(stl) + Count;
+		styleMenu.message("checkitem", currentToneDivision, 1);
+		styleMenu.message("checkitem", currentRatioLookUp, 1);
 		oldCount = tonedivisions.names.indexOf(stl) + Count;
     	outlet(0, "setRenderAllowed", "true");
 		}
-	else 
-	{
+	else if (ratiolookup.indexOf(stl) != -1) {
+		styleMenu.message("setsymbol", oldstl);
+		styleMenu.message("clearchecks");
+		currentRatioLookUp = tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 1;
+		styleMenu.message("checkitem", currentRatioLookUp, 1);
+		styleMenu.message("checkitem", currentToneDivision, 1);
+		lookup(ratiolookup.indexOf(stl));
+	}
+	else {
 	annotation.replace("staff-"+StaffIndex+"::style", stl);			
 	dumpDict.message("bang");
 	if (aliases.contains(stl)) stl = aliases.get(stl);
@@ -256,6 +268,14 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 	else if (editors.names.indexOf(stl) != -1) _style(stl, 1);
 	else _style(stl, 0);
 	}
+}
+
+function lookup(r) {
+	if (r > 0) r += 1;
+	annotation.set("staff-" + StaffIndex + "::ratio-lookup", r);
+	dumpDict.message("bang");
+	if (styletype == "justintonation") style("Just Intonation", 0);
+	else outlet(0, "setRenderAllowed", "true");
 }
 
 function clef(cf)
@@ -362,12 +382,13 @@ function setStyle(stl) {
 	this.patcher.getnamed("style").message("setsymbol", basestyle);
     styletype = staffStyles.get(basestyle)[0];
     if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", editors.names.indexOf(basestyle) + 1, stl);
-  	if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
+  	//if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
 }
 
 function _style(stl, flag)
 {
-   if (aliases.contains(stl)) stl = aliases.get(stl);
+	var styleMenu = this.patcher.getnamed("style");
+   	if (aliases.contains(stl)) stl = aliases.get(stl);
     var basestyle = stl.split("|")[0];
     var substyle = stl.split("|")[1];
     ss = staffStyles.get(basestyle);
@@ -381,24 +402,27 @@ function _style(stl, flag)
 	/////////// set ratio lookup tables
 	ratioLookUp = annotation.get("staff-" + StaffIndex + "::ratio-lookup");
 	if (newstyletype.indexOf("BP") != -1) {
-		this.patcher.getnamed("ratio-lookup").message("enableitem", 0, 0);
-		this.patcher.getnamed("ratio-lookup").message("enableitem", 1, 0);
+		styleMenu.message("enableitem", tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 2, 0);
+		styleMenu.message("enableitem", tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 3, 0);
 		if (ratioLookUp == 0) ratioLookUp = 3;
 		else if (ratioLookUp == 1 || ratioLookUp == 2) ratioLookUp = 4;
 	}
 	else {
-		this.patcher.getnamed("ratio-lookup").message("enableitem", 0, 1);
-		this.patcher.getnamed("ratio-lookup").message("enableitem", 1, 1);
+		styleMenu.message("enableitem", tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 2, 1);
+		styleMenu.message("enableitem", tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 3, 1);
 		if (annotation.get("staff-" + StaffIndex + "::micromap") != "mM-JI"){
 			if (ratioLookUp == 3) ratioLookUp = 0;
 			else if (ratioLookUp == 4) ratioLookUp = 2;
 		}
 	}	
+	styleMenu.message("clearchecks");
+	currentRatioLookUp = tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 1 + ratioLookUp;
+	styleMenu.message("checkitem", currentRatioLookUp, 1);
+	styleMenu.message("checkitem", currentToneDivision, 1);
 	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
 	///////////
     if (ss[1] == "editor" && flag) {
 	//if (ss[1] == "editor") {
-	var styleMenu = this.patcher.getnamed("style");
 	for (var i = 0; i < this.patcher.parentpatcher.getnamed("numstaves").getvalueof(); i++) this.patcher.parentpatcher.getnamed("staff-" + i).subpatcher().getnamed("style").message("textcolor", 1, 1, 1, 1);
     //post("currentstyle", editors.names.indexOf(basestyle), "\n");
 	if (editors.names.indexOf(basestyle) != -1) styleMenu.message("textcolor", 1, 0, 0, 1);
@@ -514,22 +538,6 @@ function _style(stl, flag)
     outlet(0, "setUndoStackEnabled", "true");
     outlet(0, "setRenderAllowed", "true");
 }
-
-/*
-function bang() {
-	stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
-    stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
-}
-*/
-
-function lookup(r) {
-	if (r > 0) r += 1;
-	annotation.set("staff-" + StaffIndex + "::ratio-lookup", r);
-	dumpDict.message("bang");
-	if (styletype == "justintonation") style("Just Intonation", 0);
-	else outlet(0, "setRenderAllowed", "true");
-}
-
 
 function isAlias(stl) {
     //post("isAlias", stl.length, stl.split("|")[0].length, stl.length != stl.split("|")[0].length, "\n");
