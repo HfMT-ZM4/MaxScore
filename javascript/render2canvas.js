@@ -2434,11 +2434,11 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			var dasharray = " ";
 			var wave = false;
 			if (picster.contains("style::stroke-dasharray")){
-					post("wave1", wave, picster.get("style::stroke-dasharray"), "\n");	
+			post("wave1", wave, picster.get("style::stroke-dasharray"), "\n");	
 				switch ([].concat(picster.get("style::stroke-dasharray"))[0]) {
 					case -1: 
 					wave = true;
-					post("wave2", wave, "\n");	
+					//post("wave2", wave, "\n");	
 					break;
 					case 0:
 					break;
