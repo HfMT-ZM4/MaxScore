@@ -2431,7 +2431,21 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
 			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return element * 255}) + ")";
-			var dasharray = (picster.contains("style::stroke-dasharray") && picster.get("style::stroke-dasharray")[0] != 0) ? " stroke-dasharray=\"" + picster.get("style::stroke-dasharray") + "\" " : " ";
+			var dasharray = " ";
+			var wave = false;
+			if (picster.contains("style::stroke-dasharray")){
+					post("wave1", wave, picster.get("style::stroke-dasharray"), "\n");	
+				switch ([].concat(picster.get("style::stroke-dasharray"))[0]) {
+					case -1: 
+					wave = true;
+					post("wave2", wave, "\n");	
+					break;
+					case 0:
+					break;
+					default: 
+					dasharray = " stroke-dasharray=\"" + picster.get("style::stroke-dasharray") + "\" ";
+				}
+			}
 			//var onclick = "";
 			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
 			else transform = (1, 0, 0, 1, 0, 0);
@@ -2480,16 +2494,34 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				SVGGraphics[s + 1].push("</marker>");
 				break;
 				case "line" :
-				SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + svgtransform + onclick + "/>");
+				if (wave){
+				SVGGraphics[s + 1].push("<g id=\"" + picster.get("id") + "\" " + svgtransform + ">");
+				
+				/////////////////
+				for (var i = 0; i < Math.floor(Math.sqrt(Math.pow(picster.get("x2") - picster.get("x1"), 2) + Math.pow(picster.get("y2") - picster.get("y2"), 2)) / 8.5); i++){
+				var _d = "M 129.9,189.5 C 103.9,189.5 88.7,205.42 63.5,238.06 L 33.1,217.1 C 47.9,195.5 57.9,182.62 75.5,169.18 C 91.427778,157.15296 111.9,145.02 135.101,145.02 C 172.276,145.02 192.278,161.973 223.101,185.82 C 253.501,209.34 274.702,219.421 293.901,219.421 C 302.301,219.421 317.28256,215.01581 327.102,207.101 C 340.22141,197.96521 349.502,185.981 363.502,163.42 L 394.302,187.26 C 377.902,212.22 367.102,224.3 353.902,235.82 C 333.502,254.06 314.702,264.381 288.702,264.381 C 218.652,264.38 187.714,189.5 129.9,189.5 z ";
+				var sign_x = (picster.get("x2") - picster.get("x1") < 0) ? -1 : 1;
+				var sign_y = (picster.get("y2") - picster.get("y1") < 0) ? -1 : 1;
+				var a = (picster.get("y2") - picster.get("y1") == 0) ? 8.5 : Math.sqrt(72.25 - 72.25 / (Math.pow((picster.get("x2") - picster.get("x1")) / (picster.get("y2") - picster.get("y1")), 2) + 1));
+				var b = (picster.get("x2") - picster.get("x1") == 0) ? 8.5 : Math.sqrt(72.25 / (Math.pow((picster.get("x2") - picster.get("x1")) / (picster.get("y2") - picster.get("y1")), 2) + 1));
+				var rotation = Math.asin(sign_x * (picster.get("y2") - picster.get("y1"))/Math.sqrt(Math.pow(sign_x * (picster.get("y2") - picster.get("y1")),2)+Math.pow(sign_y * (picster.get("x2") - picster.get("x1")),2)))/Math.PI*180;				
+				if (sign_x == -1) transform_ = "transform=\"translate(" + (sign_x * (i + 1) * a + Math.sin(rotation/360*Math.PI*2) * 10)+ ", " + (sign_y * (i + 1) * b - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)\"";	
+				else transform_ = "transform=\"translate(" + (sign_x * i * a + Math.sin(rotation/360*Math.PI*2) * 10) + ", " + (sign_y * (i * b) - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)\"";
+				//post("ellipse", transform_, "\n");
+				SVGGraphics[s + 1].push("<path id=\"" + "wave" + i + "\" d=\"" + _d + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgstroke + "\" fill-opacity=\"" + svgstrokeopacity + "\" " + transform_ + onclick + "/>");
+				}
+				/////////////////
+								
+				SVGGraphics[s + 1].push("</g>");
+				}
+				else SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + svgtransform + onclick + "/>");
 				break;
 				case "rect" :
-				//post("brgb", brgb, svgfill, "\n");
 				var roundedness = (picster.contains("rx")) ? picster.get("rx") : 0;
 				SVGGraphics[s + 1].push("<rect id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" rx=\"" + roundedness + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");
 				break;
 				case "ellipse" :
 				SVGGraphics[s + 1].push("<ellipse id=\"" + picster.get("id") + "\" cx=\"" + picster.get("cx") + "\" cy=\"" + picster.get("cy") + "\" rx=\"" + picster.get("rx") + "\" ry=\"" + picster.get("ry") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");
-				//post("ellipse", SVGGraphics[s + 1], "\n");
 				break;
 				case "polyline" :
 				SVGGraphics[s + 1].push("<polyline id=\"" + picster.get("id") + "\" points=\"" + picster.get("points") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");

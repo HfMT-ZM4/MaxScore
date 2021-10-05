@@ -1073,11 +1073,9 @@ function addShape()
 			action = "addShape";
 			switch (msg[2]){
 			case "line":
-				//post("origin", origin, "\n");
 				var margin = 2;
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
-				if (dasharray[0] > -1) {
 				attr.new = "line";
 				attr.id = "Picster-Element_" + num;
 				attr.x1 = msg[3];
@@ -1088,36 +1086,9 @@ function addShape()
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
-				if (dasharray[0] > 0) attr.style["stroke-dasharray"] = dasharray;
+				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
+				//post("origin", origin, dasharray, attr.style["stroke-dasharray"], "\n");
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				}
-				else // wavy line
-				{
-				attr.new = "g";
-				attr.id = "Picster-Element_" + num;
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				attr.child = [];
-				for (var i = 0; i < Math.floor(Math.sqrt(Math.pow(msg[5] - msg[3], 2) + Math.pow(msg[6] - msg[4], 2)) / 8.5); i++){
-				attr.child[i] = {};
-				attr.child[i].new = "path";	
-				attr.child[i].id = "wave" + i;
-				attr.child[i].d = "M 129.9,189.5 C 103.9,189.5 88.7,205.42 63.5,238.06 L 33.1,217.1 C 47.9,195.5 57.9,182.62 75.5,169.18 C 91.427778,157.15296 111.9,145.02 135.101,145.02 C 172.276,145.02 192.278,161.973 223.101,185.82 C 253.501,209.34 274.702,219.421 293.901,219.421 C 302.301,219.421 317.28256,215.01581 327.102,207.101 C 340.22141,197.96521 349.502,185.981 363.502,163.42 L 394.302,187.26 C 377.902,212.22 367.102,224.3 353.902,235.82 C 333.502,254.06 314.702,264.381 288.702,264.381 C 218.652,264.38 187.714,189.5 129.9,189.5 z ";
-				attr.child[i].style = {};
-				attr.child[i].style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.child[i].style["stroke-opacity"] = color[3];
-				attr.child[i].style["stroke-width"] = 1;
-				attr.child[i].style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.child[i].style["fill-opacity"] = color[3];
-				var sign_x = (msg[5] - msg[3] < 0) ? -1 : 1;
-				var sign_y = (msg[6] - msg[4] < 0) ? -1 : 1;
-				var a = (msg[6] - msg[4] == 0) ? 8.5 : Math.sqrt(72.25 - 72.25 / (Math.pow((msg[5] - msg[3]) / (msg[6] - msg[4]), 2) + 1));
-				var b = (msg[5] - msg[3] == 0) ? 8.5 : Math.sqrt(72.25 / (Math.pow((msg[5] - msg[3]) / (msg[6] - msg[4]), 2) + 1));
-				var rotation = Math.asin(sign_x * (msg[6]-msg[4])/Math.sqrt(Math.pow(sign_x * (msg[6]-msg[4]),2)+Math.pow(sign_y * (msg[5]-msg[3]),2)))/Math.PI*180;				
-				if (sign_x == -1) attr.child[i].transform = "translate(" + (sign_x * (i + 1) * a + Math.sin(rotation/360*Math.PI*2) * 10)+ ", " + (sign_y * (i + 1) * b - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)";	
-				else attr.child[i].transform = "translate(" + (sign_x * i * a + Math.sin(rotation/360*Math.PI*2) * 10) + ", " + (sign_y * (i * b) - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)";
-				//attr.child[i].transform = "matrix(0.03, 0, 0, 0.05, " + (i * 8 - 1) + ", -11)";
-					}
-				}
 				_picster["picster-element"] = [];	
 				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
