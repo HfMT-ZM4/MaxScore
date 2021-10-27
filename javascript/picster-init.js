@@ -193,10 +193,12 @@ function init() {
 											o[_count] = jexpr;
 										} else {
 											e.parse(userBeans[p]["@Message"][2]);
+											if (e.contains("picster-element")){
 											var picster = e.get("picster-element");
 											if(picster.contains("expression")) {
 												jexpr.push(JSON.parse(picster.get("expression").stringify()));
 												o[_count] = jexpr;
+												}
 											}
 										}
 									}

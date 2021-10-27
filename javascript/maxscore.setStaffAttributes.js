@@ -56,6 +56,7 @@ var ratiolookup = ["Narrow", "Wide", "BP-Narrow", "BP-Wide"];
 var styletype = "default";
 var newstyletype = "default";
 var ss = [];
+var stl = "";
 var oldstl = "virgin";
 var defaultClef = "TREBLE_CLEF";
 var baseclef = "";
@@ -165,7 +166,10 @@ this.patcher.getnamed("ledgerlines").message("set", 1)
 ledgerlines(1);
 }
 
-ratioLookUp = annotation.get("staff-" + StaffIndex + "::ratio-lookup");
+if (annotation.contains("staff-" + StaffIndex + "::ratio-lookup"))  ratioLookUp = (annotation.get("staff-" + StaffIndex + "::ratio-lookup") > 0) ? annotation.get("staff-" + StaffIndex + "::ratio-lookup") - 1 : 0;
+else ratioLookUp = 0;
+//post("helloone", stl, ratioLookUp, "\n");
+
 
 stl = annotation.get("staff-"+StaffIndex+"::style");
 if (stl == "Quarter Tone") stl = "Default";
@@ -254,10 +258,11 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 	else if (ratiolookup.indexOf(stl) != -1) {
 		styleMenu.message("setsymbol", oldstl);
 		styleMenu.message("clearchecks");
-		currentRatioLookUp = tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 1;
+		ratioLookUp = ratiolookup.indexOf(stl);
+		currentRatioLookUp = tonedivisions.names.length + ratioLookUp + Count + 1;
 		styleMenu.message("checkitem", currentRatioLookUp, 1);
 		styleMenu.message("checkitem", currentToneDivision, 1);
-		lookup(ratiolookup.indexOf(stl));
+		lookup(ratioLookUp);
 	}
 	else {
 	annotation.replace("staff-"+StaffIndex+"::style", stl);			
@@ -272,7 +277,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 
 function lookup(r) {
 	if (r > 0) r += 1;
-	annotation.set("staff-" + StaffIndex + "::ratio-lookup", r);
+	annotation.replace("staff-" + StaffIndex + "::ratio-lookup", r);
 	dumpDict.message("bang");
 	if (styletype == "justintonation") style("Just Intonation", 0);
 	else outlet(0, "setRenderAllowed", "true");
@@ -392,35 +397,34 @@ function _style(stl, flag)
     var basestyle = stl.split("|")[0];
     var substyle = stl.split("|")[1];
     ss = staffStyles.get(basestyle);
-	//post("hello", StaffIndex, oldstl, stl, ss[2], "\n");
 	if (oldstl != stl) {
     annotation.replace("staff-" + StaffIndex + "::style", stl);
     annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
     annotation.replace("staff-" + StaffIndex + "::clef", "default");
 	}
     newstyletype = ss[0];
-	/////////// set ratio lookup tables
-	ratioLookUp = annotation.get("staff-" + StaffIndex + "::ratio-lookup");
+	/////////// set ratio lookup tables 
+	//post("hello", stl, ratioLookUp, "\n");
 	if (newstyletype.indexOf("BP") != -1) {
-		styleMenu.message("enableitem", tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 2, 0);
-		styleMenu.message("enableitem", tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 3, 0);
+		styleMenu.message("enableitem", tonedivisions.names.length + Count + 2, 0);
+		styleMenu.message("enableitem", tonedivisions.names.length + Count + 3, 0);
 		if (ratioLookUp == 0) ratioLookUp = 3;
 		else if (ratioLookUp == 1 || ratioLookUp == 2) ratioLookUp = 4;
 	}
 	else {
-		styleMenu.message("enableitem", tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 2, 1);
-		styleMenu.message("enableitem", tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 3, 1);
+		styleMenu.message("enableitem", tonedivisions.names.length + Count + 2, 1);
+		styleMenu.message("enableitem", tonedivisions.names.length + Count + 3, 1);
 		if (annotation.get("staff-" + StaffIndex + "::micromap") != "mM-JI"){
 			if (ratioLookUp == 3) ratioLookUp = 0;
 			else if (ratioLookUp == 4) ratioLookUp = 2;
 		}
 	}	
 	styleMenu.message("clearchecks");
-	currentRatioLookUp = tonedivisions.names.length + ratiolookup.indexOf(stl) + Count + 1 + ratioLookUp;
-	styleMenu.message("checkitem", currentRatioLookUp, 1);
+	currentRatioLookUp = tonedivisions.names.length + Count + 1 + ratioLookUp;
+	styleMenu.message("checkitem", currentRatioLookUp, 1); 
 	styleMenu.message("checkitem", currentToneDivision, 1);
-	post("checkitem", currentRatioLookUp, currentToneDivision, "\n");
-	annotation.set("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
+	//post("checkitem", tonedivisions.names.length, currentRatioLookUp, (ratioLookUp > 0) ? ratioLookUp - 1 : 0, "\n");
+	//annotation.replace("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);
 	///////////
     if (ss[1] == "editor" && flag) {
 	//if (ss[1] == "editor") {
