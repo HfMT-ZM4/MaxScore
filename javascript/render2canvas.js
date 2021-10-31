@@ -1571,7 +1571,7 @@ function anything() {
 			{
 			for (var d = 0; d < dest.length; d++) {
 			var path = "";
-			for (var i = 0; i < parseInt((msg[11] - msg[9]) / 12); i++) path = path + "M" + (msg[9] + i * 12)  + "," + dest[d] + " L" + (msg[9] + i * 12 + 6)  + "," + dest[d] + ",";
+			for (var i = 0; i < parseInt((msg[11] - msg[9]) / 12); i++) path = path + "M" + (msg[9] + i * 12)  + "," + dest[d] + " L" + (msg[9] + i * 12 + 6)  + "," + dest[d] + " ";
 			path += "M" + (msg[11] - (msg[11] - msg[9]) % 12)  + "," + dest[d] + " L" + msg[11] + "," + dest[d];
 			SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			//post("path", parseInt((msg[11] - msg[9]) / 12), "M" + (msg[11] - (msg[11] - msg[9]) % 12)  + "," + dest[d] + " L" + msg[11] + "," + dest[d], "\n");		
