@@ -230,6 +230,16 @@ subtableMakers[1] = function makeLookup1(subtable) {
     check.fail('Lookup type 1 substFormat must be 1 or 2.');
 };
 
+subtableMakers[2] = function makeLookup2(subtable) {
+    check.assert(subtable.substFormat === 1, 'Lookup type 2 substFormat must be 1.');
+    return new table.Table('substitutionTable', [
+        {name: 'substFormat', type: 'USHORT', value: 1},
+        {name: 'coverage', type: 'TABLE', value: new table.Coverage(subtable.coverage)}
+    ].concat(table.tableList('seqSet', subtable.sequences, function(sequenceSet) {
+        return new table.Table('sequenceSetTable', table.ushortList('sequence', sequenceSet));
+    })));
+};
+
 subtableMakers[3] = function makeLookup3(subtable) {
     check.assert(subtable.substFormat === 1, 'Lookup type 3 substFormat must be 1.');
     return new table.Table('substitutionTable', [
@@ -253,6 +263,62 @@ subtableMakers[4] = function makeLookup4(subtable) {
             );
         }));
     })));
+};
+
+subtableMakers[6] = function makeLookup6(subtable) {
+    if (subtable.substFormat === 1) {
+        let returnTable = new table.Table('chainContextTable', [
+            {name: 'substFormat', type: 'USHORT', value: subtable.substFormat},
+            {name: 'coverage', type: 'TABLE', value: new table.Coverage(subtable.coverage)}
+        ].concat(table.tableList('chainRuleSet', subtable.chainRuleSets, function(chainRuleSet) {
+            return new table.Table('chainRuleSetTable', table.tableList('chainRule', chainRuleSet, function(chainRule) {
+                let tableData = table.ushortList('backtrackGlyph', chainRule.backtrack, chainRule.backtrack.length)
+                    .concat(table.ushortList('inputGlyph', chainRule.input, chainRule.input.length + 1))
+                    .concat(table.ushortList('lookaheadGlyph', chainRule.lookahead, chainRule.lookahead.length))
+                    .concat(table.ushortList('substitution', [], chainRule.lookupRecords.length));
+
+                chainRule.lookupRecords.forEach((record, i) => {
+                    tableData = tableData
+                        .concat({name: 'sequenceIndex' + i, type: 'USHORT', value: record.sequenceIndex})
+                        .concat({name: 'lookupListIndex' + i, type: 'USHORT', value: record.lookupListIndex});
+                });
+                return new table.Table('chainRuleTable', tableData);
+            }));
+        })));
+        return returnTable;
+    } else if (subtable.substFormat === 2) {
+        check.assert(false, 'lookup type 6 format 2 is not yet supported.');
+    } else if (subtable.substFormat === 3) {
+        let tableData = [
+            {name: 'substFormat', type: 'USHORT', value: subtable.substFormat},
+        ];
+
+        tableData.push({name: 'backtrackGlyphCount', type: 'USHORT', value: subtable.backtrackCoverage.length});
+        subtable.backtrackCoverage.forEach((coverage, i) => {
+            tableData.push({name: 'backtrackCoverage' + i, type: 'TABLE', value: new table.Coverage(coverage)});
+        });
+        tableData.push({name: 'inputGlyphCount', type: 'USHORT', value: subtable.inputCoverage.length});
+        subtable.inputCoverage.forEach((coverage, i) => {
+            tableData.push({name: 'inputCoverage' + i, type: 'TABLE', value: new table.Coverage(coverage)});
+        });
+        tableData.push({name: 'lookaheadGlyphCount', type: 'USHORT', value: subtable.lookaheadCoverage.length});
+        subtable.lookaheadCoverage.forEach((coverage, i) => {
+            tableData.push({name: 'lookaheadCoverage' + i, type: 'TABLE', value: new table.Coverage(coverage)});
+        });
+
+        tableData.push({name: 'substitutionCount', type: 'USHORT', value: subtable.lookupRecords.length});
+        subtable.lookupRecords.forEach((record, i) => {
+            tableData = tableData
+                .concat({name: 'sequenceIndex' + i, type: 'USHORT', value: record.sequenceIndex})
+                .concat({name: 'lookupListIndex' + i, type: 'USHORT', value: record.lookupListIndex});
+        });
+
+        let returnTable = new table.Table('chainContextTable', tableData);
+
+        return returnTable;
+    }
+
+    check.assert(false, 'lookup type 6 format must be 1, 2 or 3.');
 };
 
 function makeGsubTable(gsub) {

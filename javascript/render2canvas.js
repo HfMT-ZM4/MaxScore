@@ -1133,7 +1133,7 @@ function fgcolor(r, g, b, a)
 
 function flashcolor(r, g, b)
 {
-	flcolor = [r, g, b, a];
+	flcolor = [r, g, b];
 }
 
 function scoreLayout()

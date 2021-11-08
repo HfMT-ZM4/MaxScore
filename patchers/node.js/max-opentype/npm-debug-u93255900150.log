@@ -1,0 +1,10 @@
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/max-opentype/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/max-opentype/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/hajdu/.npm/_logs/2021-11-07T19_52_54_119Z-debug.log
