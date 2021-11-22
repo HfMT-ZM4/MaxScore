@@ -25,7 +25,7 @@ dump.name = grab;
 messnamed(grab+"-relay", "getNoteAnchor");
 var info = new Dict();
 info.clone(dump.name);
-post(info.stringify(), "\n");
+//post(info.stringify(), "\n");
 var keys = info.getkeys();
 //var dump = new Dict();
 //dump.name = grab;
