@@ -2039,12 +2039,13 @@ function anything() {
 				}
 			//post("annotation.get", annotation.get("staff-"+msg[5]+"::micromap"), "\n");
 			if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
+			if (accvis == 1) return;
 			switch (annotation.get("staff-"+msg[5]+"::micromap")){
 				case "mM-BP" :
 				Accidental.push(BP[Math.round((pitch - parseInt(pitch)) * ((accpref == 1) ? -15 : 15))]);
 				break;
 				case "mM-eighth-tones" :
-				//post("acc", accinfo, accpref, "\n");
+				//post("acc", accvis, "\n");
 				Accidental.push(nTET(48, _48TET, accinfo, accpref));				
 				break;
 				case "mM-JI" :
