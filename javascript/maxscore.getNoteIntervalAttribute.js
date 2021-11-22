@@ -25,7 +25,7 @@ dump.name = grab;
 messnamed(grab+"-relay", "getNoteAnchor");
 var info = new Dict();
 info.clone(dump.name);
-//post(info.stringify(), "\n");
+post(info.stringify(), "\n");
 var keys = info.getkeys();
 //var dump = new Dict();
 //dump.name = grab;
@@ -47,7 +47,8 @@ for (var i= 0; i < keys.length; i++)
 	}
 	else if (attr == "MultitrackRestAdjustmentY") {
 	messnamed(grab+"-relay", "getMultiTrackRestAdjustmentY", inf.slice(3, 6));
-	var query = info.get("0").slice(1);
+	var query = dump.get("0").slice(1);
+	
 	outlet(1, inf.slice(3));
 	outlet(0, query);
 	}

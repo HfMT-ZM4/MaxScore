@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "1000-maxscore",
+		"globalpatchername" : "1023-maxscore",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-6",
@@ -1659,15 +1659,15 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2037,7 +2037,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 105.25, 347.0, 212.0, 20.0 ],
 					"readonly" : 1,
-					"text" : "0. 106783920. 62. 0.5 1. 3. -1. -1.",
+					"text" : "0. 305670528. 0. 0. 0. 3. 45. -1.",
 					"varname" : "addNote",
 					"wordwrap" : 0
 				}
@@ -2052,7 +2052,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 342.0, 215.5, 289.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"initial" : [ "1000-" ],
+						"initial" : [ "1023-" ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -2087,15 +2087,15 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2140,15 +2140,15 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2193,15 +2193,15 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2246,15 +2246,15 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2354,7 +2354,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -16.0, 87.0, 1662.0, 882.0 ],
+						"rect" : [ 34.0, 87.0, 1662.0, 882.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3365,7 +3365,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 108.0, 202.0, 563.0, 22.0 ],
-													"restore" : [ 0, 0, 0, 0 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -3979,7 +3979,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 717.702078999999912, 497.0, 473.0, 22.0 ],
+									"patching_rect" : [ 717.702078999999912, 485.0, 473.0, 22.0 ],
 									"text" : "pattrforward parent::m4l-canvas::visual-editor::filemenu-patcher::open&save::loadscore"
 								}
 
@@ -4061,7 +4061,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1089.812979882812442, 473.0, 266.0, 22.0 ],
+									"patching_rect" : [ 1089.812979882812442, 461.0, 266.0, 22.0 ],
 									"text" : "pattrforward parent::m4l-canvas::tools::setTuplet"
 								}
 
@@ -4073,7 +4073,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 999.646353906249942, 449.0, 265.0, 22.0 ],
+									"patching_rect" : [ 999.646353906249942, 437.0, 265.0, 22.0 ],
 									"text" : "pattrforward parent::m4l-canvas::tools::numDots"
 								}
 
@@ -4085,7 +4085,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 939.535269921874942, 425.0, 263.0, 22.0 ],
+									"patching_rect" : [ 939.535269921874942, 413.0, 263.0, 22.0 ],
 									"text" : "pattrforward parent::m4l-canvas::tools::note/rest"
 								}
 
@@ -4097,7 +4097,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 758.979849999999942, 401.0, 277.0, 22.0 ],
+									"patching_rect" : [ 758.979849999999942, 389.0, 277.0, 22.0 ],
 									"text" : "pattrforward parent::m4l-canvas::tools::activeTrack"
 								}
 
@@ -4137,7 +4137,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 668.979849999999942, 377.0, 303.0, 22.0 ],
+									"patching_rect" : [ 668.979849999999942, 365.0, 303.0, 22.0 ],
 									"text" : "pattrforward parent::m4l-canvas::visual-editor::filemenu"
 								}
 
@@ -4299,8 +4299,8 @@
 									"numinlets" : 54,
 									"numoutlets" : 54,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 25.0, 529.0, 840.0, 102.0 ],
-									"text" : "routepass dumpInstrumentInfo dumpOrchestra dumpScore dumpScoreAttributes getCopyright getCurrentLocation getDrawingAnchor getDurationalSpacingBase getInstrumentName getInstrumentTransposition getIntervalInfo getJMSLAdvanceTime getJMSLLicenseType getJMSLNow getJMSLRealTime getLeftMargin getMeasureInfo getMeasureWidth getNoteAnchor getNoteAreaWidth getNoteInfo getNoteLevel getNotePosition getNumInstruments getNumIntervals getNumMeasures getNumNotes getNumStaves getNumTracks getOrchestraSize getScoreBottomMargin getScoreLeftMargin getScoreRightMargin getScoreTopMargin getScoreTopMarginOfFirstPage getSelectedLocation getSelectedNoteInfo getStaffInfo getStaffSpacing getTitle getSubtitle getComposer getTimeSignature getZoom scanForPlugins getSelectionBufferSize getMeasureBoundingInfo getStaffBoundingInfo getScoreAnnotation isChord getMultitrackRestAdjustmentY isLegacyMultiTrackOrientation getLayoutShiftX"
+									"patching_rect" : [ 33.0, 516.5, 865.0, 102.0 ],
+									"text" : "routepass dumpInstrumentInfo dumpOrchestra dumpScore dumpScoreAttributes getCopyright getCurrentLocation getDrawingAnchor getDurationalSpacingBase getInstrumentName getInstrumentTransposition getIntervalInfo getJMSLAdvanceTime getJMSLLicenseType getJMSLNow getJMSLRealTime getLeftMargin getMeasureInfo getMeasureWidth getNoteAnchor getNoteAreaWidth getNoteInfo getNoteLevel getNotePosition getNumInstruments getNumIntervals getNumMeasures getNumNotes getNumStaves getNumTracks getOrchestraSize getScoreBottomMargin getScoreLeftMargin getScoreRightMargin getScoreTopMargin getScoreTopMarginOfFirstPage getSelectedLocation getSelectedNoteInfo getStaffInfo getStaffSpacing getTitle getSubtitle getComposer getTimeSignature getZoom scanForPlugins getSelectionBufferSize getMeasureBoundingInfo getStaffBoundingInfo getScoreAnnotation isChord getMultiTrackRestAdjustmentY isLegacyMultiTrackOrientation getLayoutShiftX"
 								}
 
 							}
@@ -4441,7 +4441,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 1189.535147851562442, 523.5, 34.5, 523.5 ],
+									"midpoints" : [ 1189.535147851562442, 513.5, 42.5, 513.5 ],
 									"source" : [ "obj-11", 19 ]
 								}
 
@@ -5596,7 +5596,7 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
+						"activebgoncolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -5604,7 +5604,7 @@
 							"expression" : ""
 						}
 ,
-						"activebgoncolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -5688,15 +5688,15 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
