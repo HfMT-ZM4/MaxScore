@@ -570,7 +570,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 151.0, 305.0, 67.0, 20.0 ],
+									"patching_rect" : [ 151.0, 320.0, 67.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -14280,7 +14280,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 952.0, 355.0, 554.0, 606.0 ],
+						"rect" : [ 872.0, 230.0, 554.0, 606.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -14994,7 +14994,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"openrect" : [ 310.0, 142.0, 275.0, 54.0 ],
+										"openrect" : [ 310.0, 142.0, 197.0, 54.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -15015,7 +15015,7 @@
 										"boxanimatetime" : 200,
 										"enablehscroll" : 1,
 										"enablevscroll" : 1,
-										"devicewidth" : 275.0,
+										"devicewidth" : 197.0,
 										"description" : "",
 										"digest" : "",
 										"tags" : "",
@@ -15075,7 +15075,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 34.0, 162.0, 42.0, 22.0 ],
+													"patching_rect" : [ 77.0, 153.0, 42.0, 22.0 ],
 													"text" : "active"
 												}
 
@@ -15114,7 +15114,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 178.0, 162.0, 188.0, 22.0 ],
+													"patching_rect" : [ 178.0, 153.0, 188.0, 22.0 ],
 													"text" : "sprintf ACCIDENTAL_SHOW_%s"
 												}
 
@@ -15135,6 +15135,8 @@
 											}
 , 											{
 												"box" : 												{
+													"colorselectedtext" : 1,
+													"htabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 													"id" : "obj-7",
 													"maxclass" : "tab",
 													"numinlets" : 1,
@@ -15143,7 +15145,9 @@
 													"parameter_enable" : 0,
 													"patching_rect" : [ 57.0, 120.0, 261.0, 24.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 6.0, 15.0, 261.0, 24.0 ],
+													"presentation_rect" : [ 6.0, 15.0, 182.0, 24.0 ],
+													"segmented" : 1,
+													"tabcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 													"tabs" : [ "NORMAL", "NEVER", "ALWAYS" ]
 												}
 
@@ -15323,7 +15327,7 @@
 												"multi" : 0
 											}
  ],
-										"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+										"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
 									}
 ,
 									"patching_rect" : [ 203.07144199999999, 116.0, 118.0, 22.0 ],
@@ -15331,7 +15335,7 @@
 										"description" : "",
 										"digest" : "",
 										"globalpatchername" : "",
-										"locked_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+										"locked_bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 										"tags" : ""
 									}
 ,
