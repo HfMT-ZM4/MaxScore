@@ -2195,7 +2195,7 @@ function anything() {
 				if (!Accidental.length) Accidental.push("natural_pyth"); 
 				var glyph = [];
 				//	filter-repeated-accidentals //
-				if (filterRepeatedAccidentalsFlag) {
+				if (filterRepeatedAccidentalsFlag && accvis != 2) {
 				var keySigType = "";
 				var keySig = [];
 				var levelOffset = 0;
