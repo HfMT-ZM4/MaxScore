@@ -86,6 +86,7 @@
 <p>When a shaped is clicked on, a red bounding rectangle will appear.</p>
 <p>The shape can then be moved by dragging the rectangle to another location. Should shapes overlap, the covered shapes can be selected by repeatedly <b>ctrl-clicking</b> on them. </p>
 <p>The bounding rectangle will change its shape accordingly. Selected shapes can be deleted with the delete key.</p>
+<p>If a new shape is supposed to be created in the space of an existing one, the selection tool (on by default) can be toggled by pressing the period key. If a pencil icon is shown in the upper left-hand corner (next to the name of current drawing tool), the selection tool is turned off.</p>
 
 <illustration><img src="images/Picster/picster-image5-small.png"/></illustration>
 <illustration><img src="images/Picster/picster-image6-small.png"/></illustration>

@@ -737,10 +737,19 @@ function picsterLabel()
 			if (capsl) {
            	with(mgraphics) {
 				set_source_rgba(1., 0., 0., 1.);
-				move_to(2, 10);
-				set_font_size(8);
+				set_font_size(10);
  				select_font_face("Arial");
-				text_path(pshape);
+				//post("pshape", pshape, "\n");
+				if (pshape[1]) {
+				move_to(2, 10);
+				text_path(pshape[0] + "   ⤧");
+				move_to(37, 10);
+				text_path("⤩");
+				}
+				else {
+				move_to(2, 10);
+				text_path(pshape[0] + "   ✎");
+				}
             	fill();
 				}
 			}
@@ -909,21 +918,6 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
 	if (((verticalScrollbar.visible && first_position[0] <= horizontalScrollbar.extent) && (horizontalScrollbar.visible && first_position[1] <= verticalScrollbar.extent)) || (!verticalScrollbar.visible && (horizontalScrollbar.visible && first_position[1] <= verticalScrollbar.extent)) || ((verticalScrollbar.visible && first_position[0] <= horizontalScrollbar.extent) && !horizontalScrollbar.visible) || (!horizontalScrollbar.visible && !verticalScrollbar.visible))
  	//if (first_position[0] <= horizontalScrollbar.extent && first_position[1] <= verticalScrollbar.extent)
 	{
-   	if (_cmd && !capsl) {
-		//_zoom = (controlshift) ? 1 : zoom;
-        DisplayCursor(9);
-        shiftclick = 0;
-        outlet(0, "ctrlKeyDown", 1);
-        outlet(0, "shiftKeyDown", 1);
-        outlet(0, "mousePressed", x / zoom - horizontalOffset, y / zoom - verticalOffset);
-		outlet(0, "mouseDragged", x / zoom - horizontalOffset, y / zoom - verticalOffset);
-		return;
-    }
-    if (shift && !_cmd && !ctrl) {
-        outlet(0, "shiftKeyDown", 1);
-        shiftclick = 1;
-		return;
-    }
     if (capsl) {
         controlshift = 1;
         shiftclick = 0;
@@ -932,6 +926,24 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
         (!ctrl) ? outlet(1, "singleClick", x / zoom - horizontalOffset, y / zoom - verticalOffset, shift) : outlet(1, "ctrlClick", x / zoom - horizontalOffset, y / zoom - verticalOffset);
 		return;
     	}
+		else {
+		if (_cmd) {
+		//_zoom = (controlshift) ? 1 : zoom;
+        DisplayCursor(9);
+        shiftclick = 0;
+        outlet(0, "ctrlKeyDown", 1);
+        outlet(0, "shiftKeyDown", 1);
+        outlet(0, "mousePressed", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+		outlet(0, "mouseDragged", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+		return;
+    	}
+    	if (shift && !_cmd && !ctrl) {
+   		//post("CASE", "1", "\n");
+       	outlet(0, "shiftKeyDown", 1);
+        shiftclick = 1;
+		return;
+    	}
+		}
    	if (!shift && ctrl) {
        	shiftclick = 0;
         controlshift = 0;
@@ -939,6 +951,7 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
     	outlet(0, "mousePressed", x / zoom - horizontalOffset, y / zoom - verticalOffset);
 		return;
     	}
+   		//post("CASE", "2", "\n");
 		shiftclick = 0;
 		controlshift = 0;
 		outlet(0, "mousePressed",  x / zoom - horizontalOffset, y / zoom - verticalOffset);
@@ -1010,7 +1023,6 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	if (verticalScrollbar.value < verticalScrollbar.percentage / 2.) verticalScrollbar.value =  verticalScrollbar.percentage / 2.;
 	if (verticalScrollbar.value > 100 - verticalScrollbar.percentage / 2.) verticalScrollbar.value =  100 - verticalScrollbar.percentage / 2.;
 	verticalOffset = scale(verticalScrollbar.value, verticalScrollbar.percentage/2, 100 - verticalScrollbar.percentage/2, 0, verticalScrollbar.extent / zoom - pageHeight);
-	//post("offset", verticalOffset, verticalScrollbar.value, verticalScrollbar.extent, pageHeight, "\n");
 	}
 	manual = 1;
 	notifyclients();

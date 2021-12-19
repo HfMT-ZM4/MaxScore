@@ -73,6 +73,7 @@ var verticalOffset = 0;
 var translate = [];
 var moveToFlag = 0;
 var buttonMode = 0;
+var selectionMode = 1;
 var textbox = "destroyed";
 var _picster = {};
 var format = "";
@@ -137,7 +138,7 @@ if (mode == "picster" && !blocked) {
 	offsets = {};
 	renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
   	//post("e", renderedMessages.stringify(), "\n");
-	if (renderedMessages.stringify().length > 5) {
+	if (renderedMessages.stringify().length > 5 && selectionMode) {
 	var keys = renderedMessages.getkeys();
 	for (var i = 0; i < keys.length; i++)
 	{
@@ -152,7 +153,7 @@ if (mode == "picster" && !blocked) {
 			if (renderedMessages.get(keys[i]).length == 9) format = "drawsocket";
 			break;
 			case "staff" :
-          RenderMessageOffset = [renderedMessages.get(keys[i])[3], renderedMessages.get(keys[i])[4]];
+          	RenderMessageOffset = [renderedMessages.get(keys[i])[3], renderedMessages.get(keys[i])[4]];
 			if (renderedMessages.get(keys[i]).length == 7) format = "drawsocket";
 			break;
 			case "measure" :
@@ -227,6 +228,7 @@ if (mode == "picster" && !blocked) {
 		}
 		}
 	}
+	//post("_c", _c, "\n");
 	if (_c > 0) {
 		item = clicks % _c;
 		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
@@ -288,6 +290,7 @@ if (mode == "picster" && !blocked) {
 function ctrlClick(x, y)
 {
 	if (mode == "picster") {
+		post("item", item, "\n");
 		if (item != -1)  {
 		clicks++;
 		singleClick(x, y);
@@ -330,7 +333,6 @@ function mouseIdle(	_x, _y, shift, ctrl)
 			break;
 			case 0 :
 			if (!pathDone) {
-			//post("aha", "\n");
 				if (polyclicks.length > 1 && shift) {
 			    handles.pop();
 			    segments.pop();
@@ -501,6 +503,7 @@ if (mode == "picster") {
 	action = "mouseReleased";
 	//suppress dragging for pitchbend curves
 	var dragged = !(JSON.stringify(origin) == JSON.stringify([x, y]));
+	//post("dragged", dragged, origin, [x, y], "\n");
 	if (item != -1 && dragged)  {
 	switch (foundobjects.get(item)[0]){
 		case "interval" :
@@ -509,7 +512,6 @@ if (mode == "picster") {
 			//post("userBeans-1", JSON.stringify(userBeans[0]), userBeans[0]["@Message"], "\n");
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["@Message"].indexOf("rendered") == -1 && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
-			//post("userBeans-2", userBeans.length, "\n");
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
  			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
@@ -709,6 +711,14 @@ function buttonmode(bm)
 	outlet(2, "bounds", "hide");
 	outlet(2, "buttonmode", bm);
 }
+
+function selectionmode(sm)
+{
+	selectionMode = sm;
+	outlet(2, "bounds", "hide");
+	outlet(2, "picsterShape", shapes[shape], selectionMode);
+}
+ 
 
 function deleteSelectedItem()
 {
@@ -1679,7 +1689,7 @@ function capslock(caps)
 	//post("foundobjects.1", status, foundobjects.stringify(), "\n");
 	if (status == "regular") {
 		mode = caps ? "picster" : "maxscore";
-		if (mode == "picster") outlet(2, "picsterShape", shapes[shape]);
+		if (mode == "picster") outlet(2, "picsterShape", shapes[shape], selectionMode);
 		else outlet(2, "bounds", "hide");
 		foundobjects.clear();
 	}
@@ -1743,6 +1753,11 @@ function anything()
 		break;
 	case "key" :
 		switch (Number(msg)) {
+			case 46 : //period
+			selectionMode = selectionMode ? 0 : 1;
+			outlet(2, "bounds", "hide");
+			outlet(2, "picsterShape", shapes[shape], selectionMode);
+			break;
 			case 67 :  //copy
 			if (foundobjects.contains("0") && item != -1) {
 				anchors = {};
@@ -1875,7 +1890,6 @@ function anything()
 			}
 			edit.parse(JSON.stringify(_picster));
 			outlet(2, "bounds", findBoundsToo([].concat(attr)));
-			//post("BOUNDS", findBoundsToo([].concat(attr)), "\n");
 			action = "addShape";
 			outlet(3, "bang");
 			// restore picster preference
@@ -2043,7 +2057,7 @@ function anything()
 			else if (msg == 66) shape = 10;
 			else if (msg == 72) shape = 11;
 			//lcd = this.patcher.getnamed("pane");
-			outlet(2, "picsterShape", shapes[shape]);
+			outlet(2, "picsterShape", shapes[shape], selectionMode);
 				switch (shape) {
 			case 6 :
 			case 0 :
@@ -2256,8 +2270,8 @@ function findBounds(d)
 					var path = "";
 					var mode = "none";
 					var svgelement = {};
-            		//c++;
-             		var origin = info.get("origin");
+ 					//post("origin", origin, "\n");
+            		var origin = info.get("origin");
             		var transform = info.get("transform");
                    	for (var i = 0; i < ckeys.length; i++) {
                      var command = commands.get(ckeys[i]);
