@@ -2810,7 +2810,7 @@ function writeSVG(destination)
 	else
 	{
 	var f = new File(destination, "write", "TEXT");
-	f.open();
+	if (f.isopen) {
 	f.eof = 0;
 	f.writeline("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
 	f.writeline("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">");
@@ -2842,6 +2842,7 @@ function writeSVG(destination)
 	}
 	f.writeline("</svg>");	
 	f.close();
+	}
 	}
 }
 

@@ -293,7 +293,7 @@ function ctrlClick(x, y)
 		post("item", item, "\n");
 		if (item != -1)  {
 		clicks++;
-		singleClick(x, y);
+		singleClick(x, y, 0);
 		}
 		else {
 			click = "ctrl";

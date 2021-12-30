@@ -71,6 +71,7 @@ var oldCount = 0;
 var dumpDict = this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict");
 var ratioLookUp = 0;
 var previousNumStaves = 0;
+var styleSetByMenu = 0;
 var currentRatioLookUp, currentToneDivision;
 
 //var stylesPatcher = this.patcher.parentpatcher.getnamed("styles");
@@ -166,10 +167,13 @@ this.patcher.getnamed("ledgerlines").message("set", 1)
 ledgerlines(1);
 }
 
+if (annotation.contains("staff-" + StaffIndex + "::micromap")) currentToneDivision = Count + tonedivisions.maps.indexOf(annotation.get("staff-" + StaffIndex + "::micromap"));
+else currentToneDivision = Count;
+styleSetByMenu = 0;
+//post("currentToneDivision", currentToneDivision, "\n");
+
 if (annotation.contains("staff-" + StaffIndex + "::ratio-lookup"))  ratioLookUp = (annotation.get("staff-" + StaffIndex + "::ratio-lookup") > 0) ? annotation.get("staff-" + StaffIndex + "::ratio-lookup") - 1 : 0;
 else ratioLookUp = 0;
-//post("helloone", stl, ratioLookUp, "\n");
-
 
 stl = annotation.get("staff-"+StaffIndex+"::style");
 if (stl == "Quarter Tone") stl = "Default";
@@ -185,12 +189,11 @@ style("Default");
 _style("Default", 0);
 }
 
-
+if (annotation.contains("staff-"+StaffIndex+"::clip") && annotation.get("staff-"+StaffIndex+"::clip" != "*")) {
 var clp = annotation.get("staff-"+StaffIndex+"::clip");
-if (clp) {
-	if (clp[0] != "A" && clp[0] != "S") clp = "S " + clp.join(":"); 
-	outlet(1, clp);
-	}
+if (clp[0] != "A" && clp[0] != "S") clp = "S " + clp.join(":"); 
+outlet(1, clp);
+}
 
 var _livetrack = annotation.get("staff-"+StaffIndex+"::livetrack");
 if (_livetrack) this.patcher.getnamed("track").message(_livetrack);
@@ -242,6 +245,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 3. Editor with substyle set: No problem.
 4. Alias: style alias 0 will be sent. No problem. 
 */
+	styleSetByMenu = 1;
 	var styleMenu = this.patcher.getnamed("style");
 	if (tonedivisions.names.indexOf(stl) != -1) {
     	annotation.replace("staff-" + StaffIndex + "::micromap", tonedivisions.maps[tonedivisions.names.indexOf(stl)]);
@@ -250,6 +254,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 		styleMenu.message("setsymbol", oldstl);
 		styleMenu.message("clearchecks");
 		currentToneDivision = tonedivisions.names.indexOf(stl) + Count;
+		post("style", currentToneDivision, "\n");
 		styleMenu.message("checkitem", currentToneDivision, 1);
 		styleMenu.message("checkitem", currentRatioLookUp, 1);
 		oldCount = tonedivisions.names.indexOf(stl) + Count;
@@ -383,10 +388,10 @@ function state(st) {
 function setStyle(stl) {
     if (aliases.contains(stl)) stl = aliases.get(stl);
     var basestyle = stl.split("|")[0];
- 	//post("setitem", basestyle, editors.names, "\n");
-	this.patcher.getnamed("style").message("setsymbol", basestyle);
-    styletype = staffStyles.get(basestyle)[0];
-    if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", editors.names.indexOf(basestyle) + 1, stl);
+ 	this.patcher.getnamed("style").message("setsymbol", basestyle);
+  	//post("setitem", staffStyles.stringify(), "\n");
+   	styletype = staffStyles.contains(basestyle) ? staffStyles.get(basestyle)[0] : "Default";
+   	if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", editors.names.indexOf(basestyle) + 1, stl);
   	//if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
 }
 
@@ -399,12 +404,12 @@ function _style(stl, flag)
     ss = staffStyles.get(basestyle);
 	if (oldstl != stl) {
     annotation.replace("staff-" + StaffIndex + "::style", stl);
-    annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
+	//post("micromap", stl, basestyle, "\n");
+	if (styleSetByMenu) annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
     annotation.replace("staff-" + StaffIndex + "::clef", "default");
 	}
     newstyletype = ss[0];
 	/////////// set ratio lookup tables 
-	//post("hello", stl, ratioLookUp, "\n");
 	if (newstyletype.indexOf("BP") != -1) {
 		styleMenu.message("enableitem", tonedivisions.names.length + Count + 2, 0);
 		styleMenu.message("enableitem", tonedivisions.names.length + Count + 3, 0);
@@ -422,6 +427,7 @@ function _style(stl, flag)
 	styleMenu.message("clearchecks");
 	currentRatioLookUp = tonedivisions.names.length + Count + 1 + ratioLookUp;
 	styleMenu.message("checkitem", currentRatioLookUp, 1); 
+	//post("_style", currentToneDivision, "\n");
 	styleMenu.message("checkitem", currentToneDivision, 1);
 	//post("checkitem", tonedivisions.names.length, currentRatioLookUp, (ratioLookUp > 0) ? ratioLookUp - 1 : 0, "\n");
 	//annotation.replace("staff-" + StaffIndex + "::ratio-lookup", ratioLookUp);

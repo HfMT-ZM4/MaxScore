@@ -239,7 +239,6 @@ function restoreSelection(obj)
 function anything()
 {
 	var msg = arrayfromargs(arguments);
-	//post("msg", msg, "\n");	
 	switch (messagename) {
 		case "getSelectionBufferSize" :
 			selectionBufferSize = msg[0];
@@ -251,6 +250,7 @@ function anything()
 		case "dictionary" :
 		var dump = new Dict;
 		dump.name = msg[0];
+		//post("dump", dump.stringify(), "\n");	
 		userBeans = [];
 		json = JSON.parse(dump.stringify());
 		var key = Object.keys(json);

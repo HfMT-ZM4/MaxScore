@@ -4110,7 +4110,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 359.5, 342.0, 454.0, 22.0 ],
-									"restore" : [ -1, -1, -1, -1 ],
+									"restore" : [ 0, 0, 0, 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5082,7 +5082,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 58.0, 402.0, 450.0, 22.0 ],
-									"restore" : [ 1, 0, 1, 0.5, 1200, 800 ],
+									"restore" : [ 2, 0, 2, 0.5, 800, 800 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7092,7 +7092,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 230.22222900390625, 143.0, 178.0, 20.0 ],
-									"restore" : [ "JMSLMaxScore-18" ],
+									"restore" : [ "basestyle-test.XML" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7281,7 +7281,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 418.0, 40.0, 449.0, 22.0 ],
-													"restore" : [ 1200, 800 ],
+													"restore" : [ 800, 800 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -7881,7 +7881,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 340.0, 200.0, 363.0, 22.0 ],
-													"restore" : [ 3 ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -8575,7 +8575,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 325.333343505859375, 205.0, 216.0, 20.0 ],
-									"restore" : [ 1, 0, 1, 0.5, 1200, 800 ],
+									"restore" : [ 2, 0, 2, 0.5, 800, 800 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -9148,7 +9148,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 69.5, 295.0, 69.0, 20.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 11, 53, 1293, 987, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 77, 53, 1359, 987, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -9284,6 +9284,7 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hidden" : 1,
 					"id" : "obj-28",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -9309,7 +9310,6 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 1,
 					"enablevscroll" : 1,
-					"hidden" : 1,
 					"id" : "obj-9",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -9359,6 +9359,7 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hidden" : 1,
 					"id" : "obj-3",
 					"lockeddragscroll" : 1,
 					"lockedsize" : 0,
@@ -9410,7 +9411,6 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 1,
 					"enablevscroll" : 1,
-					"hidden" : 1,
 					"id" : "obj-14",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
