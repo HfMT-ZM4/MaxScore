@@ -783,7 +783,7 @@ function setStafflines(n) {
     //set hidden state for select stafflines and set annotation dict
     if (ss[0] == "clefdesigner") {
             for (var i = 0; i < hidden.length; i += 1) {
-				post("hidden", hidden, "\n");
+				//post("hidden", hidden, "\n");
                 if (hidden[i] != "none") {
 					outlet(0, "setStaffLineVisible", StaffIndex, hidden[i], 0);
                 	annotation.replace("staff-" + StaffIndex + "::stafflineshidden::" + hidden[i], 0);

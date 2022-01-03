@@ -1517,6 +1517,34 @@ function addShape()
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 			break;
+			case "path" :
+				var attr = {};
+				attr.new = "path";
+				attr.id = "Picster-Element_" + num;
+				attr.d = msg[3];
+				attr.style = {};
+				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke-opacity"] = color[3];
+				attr.style["stroke-width"] = pensize;
+				if (property == "fill") {
+				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill-opacity"] = color[3];
+				}
+				else {
+				attr.style["fill"] = "none";
+				attr.style["fill-opacity"] = 1.;
+				}
+				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				_picster["picster-element"] = [];
+				_picster["picster-element"][0] = {};
+				_picster["picster-element"][0]["key"] = "svg";
+				_picster["picster-element"][0]["val"] = attr;
+				_picster["picster-element"][1] = {};
+				_picster["picster-element"][1].key = "extras";
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+				edit.parse(JSON.stringify(_picster));
+				outlet(3, "bang");
+			break;
 			}
 }
 
@@ -2167,11 +2195,11 @@ function anything()
 					var occurence = getAllIndexes(json["score"]["measure"][0]["staff"][dumpinfo[1]][".ordering"], "staffUserBean");
 					for (i = 0; i < occurence.length; i++) {
 					userBeans[i] = json["score"]["measure"][0]["staff"][dumpinfo[1]]["staffUserBean"][i];
-					//post("userBean-2", occurence, JSON.stringify(userBeans), "\n");
 				}
 			}
 		}
 		else if (dumpinfo[0] == "measure"){
+			//post("JSON", JSON.stringify(json), "\n");
 			tempo = json["score"]["measure"][0]["@TEMPO"];
 			timesig = json["score"]["measure"][0]["@TIMESIG"];
 			if (key == "score" && "measureUserBean" in json["score"]["measure"][0]){
