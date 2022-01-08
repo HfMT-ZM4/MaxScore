@@ -998,7 +998,6 @@ function createRenderedMessage(f, x, y, serialized)
 				}
 			}
 		for(var event in anchors){
-		//post("serialized", measurerange, "\n");
 		anchor = anchors[event];
 		//subtract anchor from origin
 		if (f) {
@@ -1011,6 +1010,7 @@ function createRenderedMessage(f, x, y, serialized)
 			else outlet(0, "addRenderedMessageToMeasure", anchor[0], 0, 0, serialized);
 			}
 		else {
+			//post("serialized", f, anchor, "\n");
 			if (preference == "staff") outlet(0, "addRenderedMessageToStaff", anchor[0], anchor[1], x - anchor[2]/factor, y - anchor[3]/factor, serialized);
 			else outlet(0, "addRenderedMessageToMeasure", anchor[0], x - anchor[1]/factor, y - anchor[2]/factor, serialized);
 			}
@@ -1874,9 +1874,9 @@ function anything()
 			//cases: don't consider old format, sustains, pitchbends (same?) and tablature symbols
 			tempDict.parse(userBeans[i]["@Message"]);
 			tempObjArray[i] = JSON.parse(tempDict.stringify());
-			tempObjArray[i].Xoffset = parseFloat(userBeans[i]["@Xoffset"]) * factor + anchor[0];
-			tempObjArray[i].Yoffset = parseFloat(userBeans[i]["@Yoffset"]) * factor + anchor[1];
-			//post("Xoffset/Yoffset", parseFloat(userBeans[i]["@Xoffset"]) * factor, parseFloat(userBeans[i]["@Yoffset"]) * factor, anchor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
+			tempObjArray[i].Xoffset = parseFloat(userBeans[i]["@Xoffset"]) * factor;
+			tempObjArray[i].Yoffset = parseFloat(userBeans[i]["@Yoffset"]) * factor;
+			post("Xoffset/Yoffset", anchor, factor, parseFloat(userBeans[i]["@Xoffset"]) * factor, parseFloat(userBeans[i]["@Yoffset"]) * factor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
 			//if (tempDict.get("picster-element[0]::val[0]::id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			//else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["@Message"]);
 			}
@@ -1906,7 +1906,6 @@ function anything()
 				if (tempObjArray[i]["picster-element"].length > 2) {
 					incidence = true;
 					for (var j = 0; j < tempObjArray[i]["picster-element"][2].val.length; j++) {
-						post("XPR", JSON.stringify(xpr), "\n");
 						xpr.push(tempObjArray[i]["picster-element"][2].val[j]);
 					}
 				}
@@ -1917,10 +1916,12 @@ function anything()
 			_picster["picster-element"][2].val = xpr;
 			}
 			edit.parse(JSON.stringify(_picster));
-			outlet(2, "bounds", findBoundsToo([].concat(attr)));
-			action = "addShape";
+			action = "group";
 			outlet(3, "bang");
+			//post("xy", foundobjects.get(item)[4], foundobjects.get(item)[5], "\n");
+			//singleClick(foundobjects.get(item)[4] + 1, foundobjects.get(item)[5] + 1, 0);
 			// restore picster preference
+			outlet(2, "bounds", "hide");
 			}
 			break;
 			case 76 : //l
@@ -2235,6 +2236,7 @@ function serializedDict()
 	else if (action == "rotate") reattachRenderedMessage2(0, 0, msg[0]);
 	else if (action == "mouseReleased") createRenderedMessage(0, 0, 0, msg[0]);
 	else if (action == "addShape") createRenderedMessage(0, offsets[0][0], offsets[0][1], msg[0]);
+	else if (action == "group") createRenderedMessage(0, ".", ".", msg[0]);
 	}
 }
 

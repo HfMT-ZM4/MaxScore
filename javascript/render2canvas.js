@@ -982,6 +982,7 @@ function writeRuler()
 	var path = "";
 	var _time = 0;
 	var j = 0;
+	if (typeof timeUnit != "number") timeUnit = 100;
 	for (var s = 0; s < groupcount; s++)
 	{
 		for (var i = _playhead + 2; i <= _scoreLayout[4] - scoreRightMargin; i += timeUnit) {
