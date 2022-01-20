@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 104.0, 90.0, 1338.0, 838.0 ],
+		"rect" : [ 180.0, 131.0, 1338.0, 838.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -319,8 +319,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "int" ],
-					"patching_rect" : [ 417.0, -66.0, 41.0, 22.0 ],
-					"text" : "notein"
+					"patching_rect" : [ 363.0, -66.0, 99.0, 22.0 ],
+					"text" : "notein \"to Max 2\""
 				}
 
 			}
@@ -1281,7 +1281,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 379.0, 502.0, 197.0, 22.0 ],
-									"restore" : [ "292826-clientbuffer.1" ],
+									"restore" : [ "3552-clientbuffer.1" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2704,7 +2704,7 @@
 
 					}
 ,
-					"text" : "Save or Load a Bank !",
+					"text" : "(LEGACY) Five.bank.txt",
 					"varname" : "dict-name"
 				}
 
@@ -2718,7 +2718,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 515.0, 136.5, 246.0, 35.0 ],
-					"restore" : [ "Clear all" ],
+					"restore" : [ "Open" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3843,7 +3843,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 774.0, 83.0, 233.0, 22.0 ],
-									"restore" : [ "Clear all" ],
+									"restore" : [ "Open" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4247,7 +4247,7 @@
 						"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 287.0, -66.0, 88.0, 26.0 ],
+					"patching_rect" : [ 265.0, -66.0, 88.0, 26.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4305,7 +4305,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 287.0, -259.0, 121.0, 22.0 ],
+					"patching_rect" : [ 265.0, -259.0, 121.0, 22.0 ],
 					"text" : "refer #0-bank"
 				}
 
@@ -4320,7 +4320,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 295.5, 232.0, 327.0, 22.0 ],
-					"restore" : [ "Clear all" ],
+					"restore" : [ "Open" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4356,8 +4356,8 @@
 				"box" : 				{
 					"bgcolor" : [ 0.498039, 0.498039, 0.498039, 0.501961 ],
 					"bordercolor" : [ 0.082377, 0.098825, 0.098852, 1.0 ],
-					"coldef" : [ [ 0, 47, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ] ],
-					"cols" : 1,
+					"coldef" : [ [ 0, 47, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 1, 130, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 2, 54, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 3, 77, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 4, 77, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 5, 100, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 6, 100, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 7, 50, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 8, 58, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ] ],
+					"cols" : 9,
 					"colwidth" : 104,
 					"fontface" : 0,
 					"fontname" : "Avenir Next Regular",
@@ -4391,8 +4391,8 @@
 					"bblend" : 100,
 					"bgcolor" : [ 0.498039, 0.498039, 0.498039, 0.501961 ],
 					"bordercolor" : [ 0.081824, 0.097609, 0.098039, 1.0 ],
-					"coldef" : [ [ 0, 47, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 0, -1, -1 ] ],
-					"cols" : 1,
+					"coldef" : [ [ 0, 47, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 0, -1, -1 ], [ 1, 646, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 0, -1, -1 ] ],
+					"cols" : 2,
 					"colwidth" : 256,
 					"fontface" : 1,
 					"fontname" : "Avenir Next Regular",
@@ -4406,12 +4406,12 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "list", "", "", "" ],
 					"outmode" : 1,
-					"patching_rect" : [ 287.0, -218.0, 155.0, 138.0 ],
+					"patching_rect" : [ 265.0, -218.0, 155.0, 138.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 16.0, 72.0, 708.5, 123.0 ],
 					"rowhead" : 1,
 					"rowheight" : 20,
-					"rows" : 1,
+					"rows" : 5,
 					"selmode" : 3,
 					"stcolor" : [ 0.619607843137255, 0.768627450980392, 0.937254901960784, 1.0 ],
 					"textcolor" : [ 0.082353, 0.098039, 0.0, 1.0 ],
@@ -4499,7 +4499,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1004.0, 107.0, 237.0, 22.0 ],
-					"restore" : [ 2403 ],
+					"restore" : [ 3552 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -9552,7 +9552,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 46.0, 121.0, 218.0, 22.0 ],
-																					"restore" : [ 0 ],
+																					"restore" : [ "Macintosh HD:/Users/hajdu/Library/Mobile Documents/com~apple~CloudDocs/Documents/Max 8/Packages/Quintet.net/patchers/Projects/Five/Five.bank.txt" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -16535,8 +16535,112 @@
 , 															{
 																"box" : 																{
 																	"coll_data" : 																	{
-																		"count" : 0,
-																		"data" : [  ]
+																		"count" : 26,
+																		"data" : [ 																			{
+																				"key" : 0,
+																				"value" : [ "Bell-1.instr" ]
+																			}
+, 																			{
+																				"key" : 1,
+																				"value" : [ "Bell-2.instr" ]
+																			}
+, 																			{
+																				"key" : 2,
+																				"value" : [ "Hi_Voweler.instr" ]
+																			}
+, 																			{
+																				"key" : 3,
+																				"value" : [ "Dreamers.instr" ]
+																			}
+, 																			{
+																				"key" : 4,
+																				"value" : [ "Kalimbell.instr" ]
+																			}
+, 																			{
+																				"key" : 5,
+																				"value" : [ "Wave_4.instr" ]
+																			}
+, 																			{
+																				"key" : 6,
+																				"value" : [ "Dark_Monkey.instr" ]
+																			}
+, 																			{
+																				"key" : 7,
+																				"value" : [ "Digi_Vocal.instr" ]
+																			}
+, 																			{
+																				"key" : 8,
+																				"value" : [ "Mini_Moog.instr" ]
+																			}
+, 																			{
+																				"key" : 9,
+																				"value" : [ "Synth_1980.instr" ]
+																			}
+, 																			{
+																				"key" : 10,
+																				"value" : [ "E-Pad.instr" ]
+																			}
+, 																			{
+																				"key" : 11,
+																				"value" : [ "Equinox.instr" ]
+																			}
+, 																			{
+																				"key" : 12,
+																				"value" : [ "Galaxis.instr" ]
+																			}
+, 																			{
+																				"key" : 13,
+																				"value" : [ "Venus_Pad.instr" ]
+																			}
+, 																			{
+																				"key" : 14,
+																				"value" : [ "Celeste.instr" ]
+																			}
+, 																			{
+																				"key" : 15,
+																				"value" : [ "percussion_glockenspiel_Glockenspiel-beaters_ordinario.instr" ]
+																			}
+, 																			{
+																				"key" : 16,
+																				"value" : [ "Marimba.instr" ]
+																			}
+, 																			{
+																				"key" : 17,
+																				"value" : [ "Stopped_Piano.instr" ]
+																			}
+, 																			{
+																				"key" : 18,
+																				"value" : [ "Cymbales_Antiques.instr" ]
+																			}
+, 																			{
+																				"key" : 19,
+																				"value" : [ "FretSound.instr" ]
+																			}
+, 																			{
+																				"key" : 20,
+																				"value" : [ "Bandoneon.instr" ]
+																			}
+, 																			{
+																				"key" : 21,
+																				"value" : [ "3angle.instr" ]
+																			}
+, 																			{
+																				"key" : 22,
+																				"value" : [ "Clarinetto.instr" ]
+																			}
+, 																			{
+																				"key" : 23,
+																				"value" : [ "Flauto.instr" ]
+																			}
+, 																			{
+																				"key" : 24,
+																				"value" : [ "Synth2.instr" ]
+																			}
+, 																			{
+																				"key" : 25,
+																				"value" : [ "ThaiGong.instr" ]
+																			}
+ ]
 																	}
 ,
 																	"color" : [ 0.92549, 0.364706, 0.341176, 1.0 ],
@@ -16853,6 +16957,98 @@
 ,
 																	"text" : "coll Marimba.instr",
 																	"varname" : "Marimba.instr[1]"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-44",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 4,
+																	"outlettype" : [ "", "", "", "" ],
+																	"patching_rect" : [ 750.0, 30.0, 100.0, 0.0 ],
+																	"saved_object_attributes" : 																	{
+																		"embed" : 0,
+																		"precision" : 6
+																	}
+,
+																	"text" : "coll 3angle.instr",
+																	"varname" : "3angle.instr"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-45",
+																	"linecount" : 2,
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 4,
+																	"outlettype" : [ "", "", "", "" ],
+																	"patching_rect" : [ 750.0, 60.0, 100.0, 0.0 ],
+																	"saved_object_attributes" : 																	{
+																		"embed" : 0,
+																		"precision" : 6
+																	}
+,
+																	"text" : "coll Clarinetto.instr",
+																	"varname" : "Clarinetto.instr"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-46",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 4,
+																	"outlettype" : [ "", "", "", "" ],
+																	"patching_rect" : [ 750.0, 90.0, 100.0, 0.0 ],
+																	"saved_object_attributes" : 																	{
+																		"embed" : 0,
+																		"precision" : 6
+																	}
+,
+																	"text" : "coll Flauto.instr",
+																	"varname" : "Flauto.instr"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-48",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 4,
+																	"outlettype" : [ "", "", "", "" ],
+																	"patching_rect" : [ 750.0, 120.0, 100.0, 0.0 ],
+																	"saved_object_attributes" : 																	{
+																		"embed" : 0,
+																		"precision" : 6
+																	}
+,
+																	"text" : "coll Synth2.instr",
+																	"varname" : "Synth2.instr"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-49",
+																	"linecount" : 2,
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 4,
+																	"outlettype" : [ "", "", "", "" ],
+																	"patching_rect" : [ 750.0, 150.0, 100.0, 0.0 ],
+																	"saved_object_attributes" : 																	{
+																		"embed" : 0,
+																		"precision" : 6
+																	}
+,
+																	"text" : "coll ThaiGong.instr",
+																	"varname" : "ThaiGong.instr"
 																}
 
 															}
@@ -17297,7 +17493,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 143.0, 10.0, 242.0, 22.0 ],
-									"restore" : [ "Clear all" ],
+									"restore" : [ "Open" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -17539,14 +17735,7 @@
 					"patching_rect" : [ 4.0, -149.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 2.0, 438.0, 738.0, 228.0 ],
-					"proportion" : 0.39,
-					"saved_attribute_attributes" : 					{
-						"bgfillcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-
+					"proportion" : 0.39
 				}
 
 			}
@@ -17599,14 +17788,7 @@
 					"patching_rect" : [ 4.0, -294.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 9.0, 11.0, 724.0, 421.0 ],
-					"proportion" : 0.39,
-					"saved_attribute_attributes" : 					{
-						"bgfillcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-
+					"proportion" : 0.39
 				}
 
 			}
@@ -17636,7 +17818,7 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 287.0, -218.0, 155.0, 138.0 ],
+					"patching_rect" : [ 265.0, -218.0, 155.0, 138.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 14.5, 72.0, 710.0, 123.0 ],
 					"text" : "Ale_hssEffectsIn1.instr",
@@ -17683,7 +17865,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
-					"midpoints" : [ 1004.5, -228.0, 296.5, -228.0 ],
+					"midpoints" : [ 1004.5, -228.0, 274.5, -228.0 ],
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -17892,7 +18074,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
-					"midpoints" : [ 195.5, -230.0, 296.5, -230.0 ],
+					"midpoints" : [ 195.5, -230.0, 274.5, -230.0 ],
 					"source" : [ "obj-54", 1 ]
 				}
 
@@ -17935,7 +18117,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
-					"midpoints" : [ 296.5, -22.0, 255.0, -22.0, 255.0, -231.0, 296.5, -231.0 ],
+					"midpoints" : [ 274.5, -22.0, 233.0, -22.0, 233.0, -231.0, 274.5, -231.0 ],
 					"source" : [ "obj-62", 0 ]
 				}
 
@@ -17943,7 +18125,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-44", 1 ],
-					"midpoints" : [ 437.5, -32.5, 981.5, -32.5 ],
+					"midpoints" : [ 412.5, -32.5, 981.5, -32.5 ],
 					"source" : [ "obj-7", 1 ]
 				}
 
@@ -17951,7 +18133,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-44", 0 ],
-					"midpoints" : [ 426.5, -32.5, 475.5, -32.5 ],
+					"midpoints" : [ 372.5, -32.5, 475.5, -32.5 ],
 					"source" : [ "obj-7", 0 ]
 				}
 
