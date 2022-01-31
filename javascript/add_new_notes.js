@@ -32,5 +32,5 @@ function list()
 	note.release_velocity = 64.0;
 	o.notes.push(note);
 	i++;
-	post(JSON.stringify(o.notes), "\n");	
+	//post(JSON.stringify(o.notes), "\n");	
 }
