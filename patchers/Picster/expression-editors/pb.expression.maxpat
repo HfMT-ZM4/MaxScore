@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 905.0, 407.0, 641.0, 456.0 ],
+		"rect" : [ 114.0, 212.0, 696.0, 391.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,61 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 269.0, 296.0, 61.0, 22.0 ],
+					"text" : "pvar pb 5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-28",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "bang", "bang", "" ],
+					"patching_rect" : [ 311.0, 327.5, 44.0, 22.0 ],
+					"text" : "sel 1 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 461.0, 257.5, 169.0, 22.0 ],
+					"text" : "range -127 127, gridstep_y 10"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-26",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 269.0, 257.5, 189.0, 22.0 ],
+					"text" : "range -1200 1200, gridstep_y 100"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-39",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 425.0, 23.122806549072266, 85.0, 22.0 ],
-					"restore" : [ "pitchbend" ],
+					"restore" : [ "polybend" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -65,7 +113,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 74.0, 167.0, 65.0, 22.0 ],
-					"restore" : [ "data", 0, 20, 1.0, -1200.0, 1200.0, 0.0, 0.0, 0, 0.995, 0.271966527196653, -1000.0, 0, -0.7, 0.627615062761506, -600.0, 0, -0.67, 1.0, -1100.0, 0, 0.5, "curve" ],
+					"restore" : [ "data", 0, 16, 1.0, -127.0, 127.0, 0.00418410041841, 0.0, 0, 0.995, 0.623430962343096, 900.0, 0, 0.4, 1.0, -1100.0, 0, -0.7, "curve", "data", 1, 12, 1.0, -127.0, 127.0, 0.00836820083682, 70.0, 0, 0.0, 1.0, -60.0, 0, 0.0, "curve" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -86,6 +134,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-37",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -96,7 +145,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -300,25 +349,12 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-11",
-					"linecount" : 3,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 309.0, 213.0, 268.0, 47.0 ],
-					"presentation_linecount" : 4,
-					"text" : "To do:\n- curve length corresponds to hold time\n- scale expression to hold time "
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-8",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 309.0, 148.0, 167.0, 60.0 ],
+					"patching_rect" : [ 309.0, 148.0, 171.0, 60.0 ],
 					"text" : "init shouldn't be executed  when several expressions are added at once\n"
 				}
 
@@ -384,7 +420,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 309.0, 71.622806549072266, 61.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "pb.expr.js",
+						"filename" : "pb.expr",
 						"parameter_enable" : 0
 					}
 ,
@@ -408,14 +444,20 @@
 , 			{
 				"box" : 				{
 					"candycane" : 2,
+					"candycane2" : [ 1.0, 0.4, 0.4, 1.0 ],
+					"chans" : 2,
 					"clicksustain" : 0,
 					"data" : [ 						{
-							"addpoints_with_curve" : [ 0.0, 0.0, 0, 0.995, 0.271966527196653, -1000.0, 0, -0.7, 0.627615062761506, -600.0, 0, -0.67, 1.0, -1100.0, 0, 0.5 ]
+							"addpoints_with_curve" : [ 0.00418410041841, 0.0, 0, 0.995, 0.623430962343096, 900.0, 0, 0.4, 1.0, -1100.0, 0, -0.7 ]
+						}
+, 						{
+							"addpoints_with_curve" : [ 0.00836820083682, 70.0, 0, 0.0, 1.0, -60.0, 0, 0.0 ]
 						}
  ],
+					"displaychan" : 2,
 					"domain" : 1.0,
 					"grid" : 2,
-					"gridstep_y" : 100.0,
+					"gridstep_y" : 10.0,
 					"id" : "obj-2",
 					"maxclass" : "mc.function",
 					"mode" : 1,
@@ -426,7 +468,7 @@
 					"patching_rect" : [ 41.0, 222.0, 178.0, 106.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 102.0, 251.0, 152.0 ],
-					"range" : [ -1200.0, 1200.0 ],
+					"range" : [ -127.0, 127.0 ],
 					"snap2grid" : 2,
 					"style" : "velvet",
 					"varname" : "pb"
@@ -458,6 +500,13 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"source" : [ "obj-1", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-13", 0 ]
 				}
@@ -474,6 +523,36 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-27", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"midpoints" : [ 320.5, 370.5, 650.0, 370.5, 650.0, 241.5, 278.5, 241.5 ],
+					"source" : [ "obj-28", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"midpoints" : [ 333.0, 362.5, 640.0, 362.5, 640.0, 250.5, 470.5, 250.5 ],
+					"source" : [ "obj-28", 1 ]
 				}
 
 			}
@@ -509,9 +588,9 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"number" : 				{
+					"fontname" : [ "Arial" ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"umenu" : 				{
@@ -544,9 +623,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -555,8 +634,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -565,9 +644,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",

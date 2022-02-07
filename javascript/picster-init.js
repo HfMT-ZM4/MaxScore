@@ -92,7 +92,6 @@ function init() {
 						outlet(0, "clearSelection");
 						outlet(0, "selectNote", i, j, k, l);
 						_count++;
-						//post("note", _count, "\n");
 						hold = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["@HOLD"] * 1000;
 						userBeans = [];
 						var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l][".ordering"], "userBean");
@@ -112,8 +111,13 @@ function init() {
 											var temp = dictArray[q];
 											if (temp.get("editor") == "pb") {
 												var value = temp.get("value");
+												var lastIndex = value.lastIndexOf("data");
 												value[3] = hold;
-												for (var v = 6; v <= (value.length - 5); v += 4) value[v] *= hold;
+												value[lastIndex + 3] = hold;
+												//post("value1", value, "\n");
+												for (var v = 6; v <= (lastIndex - 4); v += 4) value[v] *= hold;
+												for (var v = lastIndex + 6; v <= (value.length - 5); v += 4) value[v] *= hold;
+												//post("value2", value, "\n");
 												temp.replace("value", value);
 												}
 											jexpr.push(JSON.parse(temp.stringify()));
@@ -175,8 +179,11 @@ function init() {
 												var temp = dictArray[q];
 												if (temp.get("editor") == "pb") {
 													var value = temp.get("value");
+													var lastIndex = value.lastIndexOf("data");
 													value[3] = hold;
-													for (var v = 6; v <= (value.length - 5); v += 4) value[v] *= hold;
+													value[lastIndex + 3] = hold;
+													for (var v = 6; v <= (lastIndex - 4); v += 4) value[v] *= hold;
+													for (var v = lastIndex + 6; v <= (value.length - 5); v += 4) value[v] *= hold;
 													temp.replace("value", value);
 													}
 												jexpr.push(JSON.parse(temp.stringify()));

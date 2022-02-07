@@ -1,3 +1,8 @@
+// render2canvas by Georg Hajdu 
+// a Max JavaScript object for translating JMSL drawing messages into SVG
+// many thanks to Emmanuel Jourdan for making the code for the ej.function object 
+// available through a creative commons license (http://www.e--j.com)
+
 inlets = 4;
 outlets = 3;
 
@@ -136,6 +141,7 @@ var value = 0;
 var accinfo = 0;
 var accvis = 0;
 var accpref = 0;
+var velocity = 0;
 var measurewidth, measureleftmargin, noteAreaWidth;
 var currentElement = [];
 var intervalCount = -1;
@@ -1992,6 +1998,8 @@ function anything() {
 			accinfo = json[dumpinfo[0]]["@ACCINFO"];
 			accvis = json[dumpinfo[0]]["@ACCVISPOLICY"];
 			accpref = json[dumpinfo[0]]["@ACCPREF"];
+			velocity = json[dumpinfo[0]]["@VELOCITY"];
+			if (velocity > 0. && velocity < 1.) velocity = Math.round(velocity * 127);
 			value = json[dumpinfo[0]]["dim"]["1"]["@value"];
 			hold = 	json[dumpinfo[0]]["@HOLD"];			
 			}
@@ -2549,10 +2557,21 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 
 function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 {
-						//IMPLEMENT TRANSFORM (_dest)
+						//data 1 12 1. -1200. 1200. 0. 1200. 0 0. 0.698795 -600. 0 0. curve
 						var space = 0;
-						var bpf = "";
-						var pitchbend = e.get("picster-element[2]::val[0]::value").slice(3);
+						//post(e.stringify(), "\n");
+						var pitchbend = e.get("picster-element[2]::val[0]::value").slice(3, e.get("picster-element[2]::val[0]::value").lastIndexOf("data"));
+						var velocity_ = e.get("picster-element[2]::val[0]::value").slice(e.get("picster-element[2]::val[0]::value").lastIndexOf("data") + 3);
+						var velCurve = {};
+						velCurve.pa = [];
+						velCurve.np = (velocity_.length - 4) / 4;
+						for (var i = 0; i < velCurve.np; i++){
+							velCurve.pa[i] = {};
+							velCurve.pa[i].valx = velocity_[3 + (i * 4)];
+							velCurve.pa[i].valy = velocity_[4 + (i * 4)];
+							velCurve.pa[i].curve = velocity_[6 + (i * 4)];
+						}
+						//post(velocity, velocity_.length, velCurve.np, JSON.stringify(velCurve), "\n");
 						dumpinfo = ["measure"];
 						outlet(1, "getNoteAreaWidth", msg[1]);
 						outlet(1, "getMeasureInfo", msg[1]);
@@ -2576,29 +2595,49 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						if (prop) space = hold * 60 / tempo * timeUnit - 7;
 						else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
 						if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
-						//post("_dest", _dest, RenderMessageOffset, msg[6], "\n");
 						var numPoints = (pitchbend.length - 4) / 4;
 						var moveTo = [pitchbend[3] * space + msg[5] + 7, pitchbend[4] / 300 * -6 + 2 + _dest];
 						var oldPoint = moveTo;
-						//bpf = "M" + moveTo;
+						//var velocity = 45;
+						var thickness = 3;
+						var allCurveSegs = [];
 						for (var i = 0; i < numPoints - 1; i++){
 							var curvature = pitchbend[10  + i * 4];
-							var curveTo = [pitchbend[7 + i * 4] * space + msg[5] + 7, pitchbend[8  + i * 4] / 300 * -6 + 2 + _dest];
+							var curveTo = [pitchbend[7 + i * 4] * space + msg[5] + 7, pitchbend[8 + i * 4] / 300 * -6 + 2 + _dest];
 							//var obj = new CurveSeg(x0, y0, x1, y1, curvature, 12);
 							var curveSeg = new CurveSeg(oldPoint[0], oldPoint[1], curveTo[0], curveTo[1], curvature, 12);
 							for (var j = 0; j < curveSeg.cpa.length; j++)
 							{
-								if (!j) bpf += "M" + [curveSeg.cpa[0][0].toFixed(2), curveSeg.cpa[0][1].toFixed(2)];
+								if (!j) allCurveSegs.push([curveSeg.cpa[0][0], curveSeg.cpa[0][1]]);
 								else {
-									if (curvature < 0) bpf += "L" + [curveSeg.cpa[j][0].toFixed(2), (2*oldPoint[1] - curveSeg.cpa[j][1]).toFixed(2)];
-									else bpf += "L" + [curveSeg.cpa[j][0].toFixed(2), curveSeg.cpa[j][1].toFixed(2)];	
+									if (curvature < 0) allCurveSegs.push([curveSeg.cpa[j][0], (2*oldPoint[1] - curveSeg.cpa[j][1])]);
+									else allCurveSegs.push([curveSeg.cpa[j][0], curveSeg.cpa[j][1]]);	
 								}	
 							}
-							bpf += "L" + curveTo;
+							//allCurveSegs.push(curveTo);
 							oldPoint = curveTo;
 						}
-						bpf += "M" + [curveTo[0], curveTo[1] - 2] + "L" + [curveTo[0], curveTo[1] + 2];
-						SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 2.0 + "\" stroke-opacity=\"" + 1. + "\" fill=\"none\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
+						var bpf = "M" + [allCurveSegs[0][0].toFixed(2), (allCurveSegs[0][1] - thickness/2).toFixed(2)];
+						for (var i = 1; i < allCurveSegs.length; i++) {
+							var point = (allCurveSegs[i][0] - 7 - msg[5]) / space;
+							//post("point", point, interp(velCurve, point), "\n");
+							thickness = (velocity + interp(velCurve, point) - 1) * 5 / 126 + 1.;
+							var displacement = thickness * 0.5 / ((allCurveSegs[i][0] - allCurveSegs[i - 1][0]) / Math.sqrt(Math.pow((allCurveSegs[i][0] - allCurveSegs[i - 1][0]), 2) + Math.pow((allCurveSegs[i][1] - allCurveSegs[i - 1][1]), 2)));
+							//post("displacement1", allCurveSegs[i][0], displacement, "\n");
+							bpf += "L" + [allCurveSegs[i][0].toFixed(2), (allCurveSegs[i][1] - displacement).toFixed(2)];
+						}
+						//bpf += "M" + [curveTo[0], curveTo[1] - 4] + "L" + [curveTo[0], curveTo[1] + 4];
+						for (var i = allCurveSegs.length - 1; i >= 0; i--) {
+							var point = (allCurveSegs[i][0] - 7 - msg[5]) / space;
+							thickness = (velocity + (interp(velCurve, point)) - 1) * 5 / 126 + 1.;
+							if (i < allCurveSegs.length - 1) var displacement = thickness * 0.5 / ((allCurveSegs[i + 1][0] - allCurveSegs[i][0]) / Math.sqrt(Math.pow((allCurveSegs[i + 1][0] - allCurveSegs[i][0]), 2) + Math.pow((allCurveSegs[i + 1][1] - allCurveSegs[i][1]), 2)));
+							//post("displacement2", allCurveSegs[i][0], displacement, "\n");
+							bpf += "L" + [allCurveSegs[i][0].toFixed(2), (allCurveSegs[i][1] + displacement).toFixed(2)];							
+						}
+						bpf += "L" + [allCurveSegs[0][0].toFixed(2), (allCurveSegs[0][1] - thickness/2).toFixed(2)];
+						//bpf += "M" + [curveTo[0], curveTo[1] - 2] + "L" + [curveTo[0], curveTo[1] + 2];
+						SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 0.1 + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + frgb + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
+						//SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 1. + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + "none" + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
 }
 
 function CurveCoeffs(nhops, crv)
@@ -2680,6 +2719,63 @@ function CurveSeg(x0, y0, x1, y1, curve, nhops)
 	}	
 }
 CurveSeg.local = 1;
+
+function interp(courbe, v)
+{
+	var i, a;
+	//post(JSON.stringify(courbe), "\n");
+	// less than one point... abort!
+	if (courbe.np < 1)
+		return 0;
+	
+	// 1 point output the Y value.
+	if (courbe.np < 2) {
+		return courbe.pa[0].valy;
+	}
+	
+	if (v < courbe.pa[0].valx) {	// v est plus petit que le premier point
+		return courbe.pa[0].valy;
+	}
+
+	if (v > courbe.pa[courbe.np - 1].valx) {	// v est plus grand que le dernier point
+		return courbe.pa[courbe.np - 1].valy;
+	}
+	
+	for (i = 0, a = 0; i < courbe.np; i++) {
+		if (v > courbe.pa[i].valx)
+			a = i;
+		else
+			break;
+	}
+	tmpRange = courbe.pa[a+1].valy - courbe.pa[a].valy;
+	tmpDomain = courbe.pa[a+1].valx - courbe.pa[a].valx;
+	
+		if(Math.abs(courbe.pa[a+1].curve) < 0.001) { // almost linear
+			return ((v - courbe.pa[a].valx) / tmpDomain) * tmpRange + courbe.pa[a].valy;
+		} else {	
+			var hp, fp, gp, gx;
+			var curve = courbe.pa[a+1].curve;
+			
+			if(curve < 0.) {
+				gx = (courbe.pa[a+1].valx - v) / tmpDomain;
+				
+				hp = Math.pow((1e-20 - curve) * 1.2, 0.41) * 0.91;
+				fp = hp / (1. - hp);
+				gp = (Math.exp(fp * gx) - 1.) / (Math.exp(fp) - 1.);
+				post("courbe1", courbe.pa[a+1].valy - gp * tmpRange, "\n");
+				return courbe.pa[a+1].valy - gp * tmpRange;
+			} else {
+				gx = (v - courbe.pa[a].valx) / tmpDomain;
+				
+				hp = Math.pow((curve + 1e-20) * 1.2, 0.41) * 0.91;
+				fp = hp / (1. - hp);
+				gp = (Math.exp(fp * gx) - 1.) / (Math.exp(fp) - 1.);
+				post("courbe2", courbe.pa[a+1].valy - gp * tmpRange, "\n");			
+				return gp * tmpRange + courbe.pa[a].valy;
+			}
+		}
+}
+interp.local = 1;
 
 function getNoteAreaWidth(m, w)
 {
