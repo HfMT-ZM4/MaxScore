@@ -999,7 +999,7 @@ function writeRuler()
 		j++;
 		}	
 		//post("init", scoreLeftMargin, scoreRightMargin, timeUnit, path, "\n");
-		SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"" + frgb + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+		SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 	}
 }
 
