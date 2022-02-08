@@ -20,8 +20,15 @@ function loadScore(path)
 	var arr = formatXml(str).split("\n");
 	outlet(0, "startdump", "dumpScore");
 	for (var i = 0; i < arr.length; i++) {
-	//post("str", arr[i], "\n");		
-		if (arr[i].length >= 7) outlet(0, arr[i]);
+		if (arr[i].length >= 7) {
+			if (arr[i].indexOf("serBean") == -1) outlet(0, arr[i]);
+			else {
+				outlet(0, arr[i].substr(0, arr[i].length - 3) + "\">");
+				//post("str", arr[i], arr[i].indexOf("serBean"), "\n");	
+				if (arr[i].indexOf("serBean") - arr[i].indexOf("<") == 2) outlet(0, "</userBean>");
+				else outlet(0, "</" + arr[i].slice(arr[i].indexOf("<") + 1, arr[i].indexOf("serBean")) + "serBean>");
+			}
+		}
 	}
 	outlet(0, "enddump", "dumpScore");
 	}
