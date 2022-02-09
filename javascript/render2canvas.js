@@ -741,6 +741,7 @@ function setUserClef(targetStaff, userClef)
     	}		
 		annotation.replace("staff-" + targetStaff + "::style", "ClefDesigner|" + userClef);
 		annotation.replace("staff-" + targetStaff + "::clef", userClef);
+		annotation.replace("staff-" + targetStaff + "::adjust", selectedClef.get("stafflines").get("above") - selectedClef.get("stafflines").get("below"));
 		var hiddenStaves = [].concat(selectedClef.get("stafflines").get("hidden"));
 		//post("hiddenStaves", hiddenStaves, "\n");
 		//if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
