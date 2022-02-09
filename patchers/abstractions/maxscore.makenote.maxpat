@@ -4738,7 +4738,7 @@
 					"numinlets" : 11,
 					"numoutlets" : 11,
 					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 176.5, 60.0, 510.500000000000114, 22.0 ],
+					"patching_rect" : [ 176.5, 60.0, 872.5, 22.0 ],
 					"text" : "route sequenceDump playback dictionary expression interval note staff measure panic scroll"
 				}
 
@@ -6359,6 +6359,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"midpoints" : [ 612.75, 673.25, 182.166666666666657, 673.25 ],
+					"source" : [ "obj-51", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"source" : [ "obj-51", 8 ]
 				}
@@ -6367,7 +6375,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
-					"midpoints" : [ 235.150000000000006, 119.0, 351.166687000000024, 119.0 ],
+					"midpoints" : [ 271.350000000000023, 119.0, 351.166687000000024, 119.0 ],
 					"source" : [ "obj-51", 1 ]
 				}
 
@@ -6375,7 +6383,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-26", 3 ],
-					"midpoints" : [ 333.450000000000045, 91.0, 1182.5, 91.0 ],
+					"midpoints" : [ 442.050000000000011, 91.0, 1182.5, 91.0 ],
 					"source" : [ "obj-51", 3 ]
 				}
 
@@ -6383,7 +6391,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-26", 2 ],
-					"midpoints" : [ 284.300000000000011, 101.0, 1160.5, 101.0 ],
+					"midpoints" : [ 356.699999999999989, 101.0, 1160.5, 101.0 ],
 					"source" : [ "obj-51", 2 ]
 				}
 
@@ -6391,7 +6399,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-33", 1 ],
-					"midpoints" : [ 677.500000000000114, 226.0, 219.0, 226.0 ],
+					"midpoints" : [ 1039.5, 226.0, 219.0, 226.0 ],
 					"source" : [ "obj-51", 10 ]
 				}
 
@@ -6406,7 +6414,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-77", 0 ],
-					"midpoints" : [ 628.350000000000136, 252.0, 302.5, 252.0 ],
+					"midpoints" : [ 954.149999999999977, 252.0, 302.5, 252.0 ],
 					"source" : [ "obj-51", 9 ]
 				}
 
