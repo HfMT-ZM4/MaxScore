@@ -975,6 +975,7 @@ function writeStems()
 			for (var d = 0; d < dest.length; d++) {
 			if (stems[key][2] == 0.5) SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. + xoffset) + "\" y=\"" + (dest[d] - 22) + "\" width=\"" + 0.75 + "\" height=\"" + (bottom - top + 20. + yoffset) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			else {
+				//post("graceNoteBeamY-2", graceNoteBeamY, "\n");
 				if (stems[key][8] == "STEM_UP") SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - 28 * stems[key][2] * 2) + "\" width=\"" + 0.5 + "\" height=\"" + (bottom - top + (26. + yoffset ) * stems[key][2] * 2 ) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				else SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - 22 * stems[key][2] * 2) + "\" width=\"" + 0.5 + "\" height=\"" + (bottom - top + (20. + yoffset) * stems[key][2] * 2 ) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");	
 				}
@@ -999,7 +1000,6 @@ function writeRuler()
 			SVGString[s + 1].push("<text x=\"" + i + "\" y=\"" + 25 + "\" text-anchor=\"middle\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
 		j++;
 		}	
-		//post("init", scoreLeftMargin, scoreRightMargin, timeUnit, path, "\n");
 		SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 	}
 }
@@ -1364,6 +1364,8 @@ function anything() {
         case "Beam":
 			//Beam measureIndex1 staffIndex1 trackIndex1 noteIndex1 measureIndex2 staffIndex2 trackIndex2 noteIndex2 zoom x y width height
   			var orient = (msg[13] == "up") ? -1 : 1;
+			//if (msg[8] != 0.5) graceNoteBeamY = msg[10];
+			//post("BeamY-2", msg[8], "\n");
 			for (var s = 0; s < groupcount; s++)
 			{
 			var dest = remap(sg[s], msg[1], msg[10]);
@@ -2285,7 +2287,6 @@ function anything() {
 			if (annotation.contains("staff-" + msg[5]+"::clef") && annotation.get("staff-"+msg[5]+"::clef") != "default") {
 			if (userClefs.contains(annotation.get("staff-"+msg[5]+"::clef"))){
 			var uc = userClefs.get(annotation.get("staff-"+msg[5]+"::clef"));
-				//post("uc", uc, "\n");
 			 	for (var i = 0; i < uc[0].split(" ").length; i++){
  					glyph[i * 5] = uc[0].split(" ")[i];			
 					glyph[i * 5 + 1] = Number(uc[1].split(" ")[i]);
@@ -2353,8 +2354,9 @@ function anything() {
 			for (var i = 0; i < multiple; i++) {
 			if (typeof glyph[i*5+0] == "number") t = htmlEntities(glyph[i*5+0].toString());
             else {
-				//if (glyph[0].length == 1) t = glyph[i*5+0].charCodeAt(0).toString(16);
-				if (msg[2] == 0.325) post("msg", msg, "\n");
+				//post("msg[2]", msg[2], "\n");
+				if (msg[2] < 0.5) var gracenoteOffset = 1;
+				else var gracenoteOffset = 0;
 				if (glyph[0].length == 1) t = glyph[i*5+0];
 				else t = htmlEntities(glyph[i*5+0]);
  				}
@@ -2362,7 +2364,7 @@ function anything() {
 				else if (glyph[i*5+3] == "$MUSICFONT") var fontFamily = musicFont;
 				else var fontFamily = glyph[i*5+3];
 				if (staticClefs) SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
-				else SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]] + ")\" >" + t + "</text>");
+				else SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + gracenoteOffset + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")\" >" + t + "</text>");
 			}
 			}
 		  }

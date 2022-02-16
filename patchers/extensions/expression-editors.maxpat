@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -422,7 +422,6 @@
 			}
 , 			{
 				"box" : 				{
-					"hidden" : 1,
 					"id" : "obj-25",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -440,7 +439,7 @@
 				"box" : 				{
 					"activecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"bgcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 0.0 ],
-					"disabled" : [ 0 ],
+					"disabled" : [ 0, 0 ],
 					"elementcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
 					"id" : "obj-13",
 					"itemtype" : 0,
@@ -450,11 +449,11 @@
 					"offset" : 20,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 683.0, 359.0, 18.0, 22.0 ],
+					"patching_rect" : [ 683.0, 359.0, 18.0, 42.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 385.0, 251.0, 22.0 ],
+					"presentation_rect" : [ 3.0, 385.0, 251.0, 42.0 ],
 					"shape" : 2,
-					"size" : 1,
+					"size" : 2,
 					"value" : 0,
 					"varname" : "choice"
 				}
@@ -1006,7 +1005,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1743,7 +1742,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2386,19 +2385,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 87.289895199684139, 428.956522000000007, 79.385124399368294, 27.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"activetextcolor" : 						{
-							"expression" : ""
-						}
-,
-						"bgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2406,14 +2393,26 @@
 							"expression" : ""
 						}
 ,
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
 						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[57]",
+							"parameter_longname" : "live.text[31]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -2446,7 +2445,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 228.0, 27.956521739130437, 24.0, 24.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
+						"labeltextcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2454,7 +2453,7 @@
 							"expression" : ""
 						}
 ,
-						"activetextcolor" : 						{
+						"activetextoncolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2462,7 +2461,7 @@
 							"expression" : ""
 						}
 ,
-						"activetextoncolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2470,14 +2469,14 @@
 							"expression" : ""
 						}
 ,
-						"labeltextcolor" : 						{
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[46]",
+							"parameter_longname" : "live.text[30]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -2508,19 +2507,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 202.0, 27.956521739130437, 24.0, 24.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"activetextcolor" : 						{
-							"expression" : ""
-						}
-,
-						"bgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -2528,14 +2515,26 @@
 							"expression" : ""
 						}
 ,
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
 						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
 							"expression" : ""
 						}
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text[52]",
+							"parameter_longname" : "live.text[29]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -3473,12 +3472,6 @@
  ],
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
-				}
-,
 				"umenu" : 				{
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
@@ -3491,6 +3484,12 @@
 						"autogradient" : 0
 					}
 
+				}
+,
+				"number" : 				{
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3509,9 +3508,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3520,8 +3519,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3530,9 +3529,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
+					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ],
-					"fontname" : [ "Arial" ]
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",
