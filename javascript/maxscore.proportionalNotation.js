@@ -527,6 +527,8 @@ function playback(p)
 function blankPageTransform(bpt)
 {
 	//annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
+	var above = 0;
+	var below = 0;
 	outlet(0, "getScoreAnnotation");	
 	outlet(0, "getRenderAllowed");	
 	outlet(0, "dumpScoreAttributes");
@@ -550,7 +552,11 @@ function blankPageTransform(bpt)
 	outlet(0, "setMeasureLeftMargin", m, 0.);
 			}
 	for (var s = 0; s < numStaves; s++){
-			for (var i = 0; i < 5; i++) {
+	if (annotation.get("staff-" + s + "::clef") != "default"){
+		above = annotation.get("userclefs::" + annotation.get("staff-" + s + "::clef") + "::stafflines::above");
+		below = annotation.get("userclefs::" + annotation.get("staff-" + s + "::clef") + "::stafflines::below");	
+		}
+			for (var i = (0 - above); i < (5 + below); i++) {
 			outlet(0, "setStaffLineVisible", s, i, 0);
 			annotation.replace("staff-" + s + "::stafflineshidden::" + i, 0);
 		}
@@ -577,8 +583,12 @@ function blankPageTransform(bpt)
 	outlet(0, "setMeasureLeftMargin", m, 50.);
 			}
 	for (var s = 0; s < numStaves; s++){
+	if (annotation.get("staff-" + s + "::clef") != "default"){
+		above = annotation.get("userclefs::" + annotation.get("staff-" + s + "::clef") + "::stafflines::above");
+		below = annotation.get("userclefs::" + annotation.get("staff-" + s + "::clef") + "::stafflines::below");	
+	}
 			annotation.remove("staff-" + s + "::stafflineshidden");
-			for (var i = 0; i < 5; i++) {
+			for (var i = (0 - above); i < (5 + below); i++) {
 			outlet(0, "setStaffLineVisible", s, i, 1);
 		}
 	}

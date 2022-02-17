@@ -1128,6 +1128,7 @@ function bgcolor(r, g, b, a)
 	bcolor = [r, g, b, a];
 	annotation.set("bgcolor", bcolor);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "saveToUndoStack", 1);
 	outlet(1, "setRenderAllowed", 1);
 }	
 
@@ -1136,6 +1137,7 @@ function fgcolor(r, g, b, a)
 	fcolor = [r, g, b, a];
 	annotation.set("fgcolor", fcolor);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "saveToUndoStack", 1);
 	outlet(1, "setRenderAllowed", 1);
 }	
 
