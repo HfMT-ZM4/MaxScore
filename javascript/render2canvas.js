@@ -967,6 +967,8 @@ function writeStems()
 			else var yoffset = 0;	
 			var bottom = arrayMax(y);
 			var top = arrayMin(y);
+			//post("heigth", (bottom - top + (26. + yoffset ) * stems[key][2] * 2 ), "\n");
+			//post("didkovsky", bottom - top + (12 * 3.5 + yoffset) * stems[key][2], "\n");
 			for (var s = 0; s < groupcount; s++)
 			{
 			var dest = remap(sg[s], stems[key][5], top);
@@ -975,8 +977,9 @@ function writeStems()
 			for (var d = 0; d < dest.length; d++) {
 			if (stems[key][2] == 0.5) SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. + xoffset) + "\" y=\"" + (dest[d] - 22) + "\" width=\"" + 0.75 + "\" height=\"" + (bottom - top + 20. + yoffset) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			else {
-				//post("graceNoteBeamY-2", graceNoteBeamY, "\n");
-				if (stems[key][8] == "STEM_UP") SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - 28 * stems[key][2] * 2) + "\" width=\"" + 0.5 + "\" height=\"" + (bottom - top + (26. + yoffset ) * stems[key][2] * 2 ) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				var h = bottom - top + (12 * 3.5 + yoffset) * stems[key][2];
+				if (stems[key][8] == "STEM_UP") SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - ((y.length == 1) ? 1.7 : 3) - (12 * 3.5 + yoffset) * stems[key][2]) + "\" width=\"" + 0.5 + "\" height=\"" + h + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+
 				else SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - 22 * stems[key][2] * 2) + "\" width=\"" + 0.5 + "\" height=\"" + (bottom - top + (20. + yoffset) * stems[key][2] * 2 ) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");	
 				}
 			}
@@ -2356,8 +2359,8 @@ function anything() {
 			for (var i = 0; i < multiple; i++) {
 			if (typeof glyph[i*5+0] == "number") t = htmlEntities(glyph[i*5+0].toString());
             else {
-				//post("msg[2]", msg[2], "\n");
-				if (msg[2] < 0.5) var gracenoteOffset = 1;
+				//post("msg[2]", messagename, "\n");
+				if (msg[2] < 0.5 && msgname.indexOf("notehead") == 0) var gracenoteOffset = 1;
 				else var gracenoteOffset = 0;
 				if (glyph[0].length == 1) t = glyph[i*5+0];
 				else t = htmlEntities(glyph[i*5+0]);
@@ -2366,7 +2369,7 @@ function anything() {
 				else if (glyph[i*5+3] == "$MUSICFONT") var fontFamily = musicFont;
 				else var fontFamily = glyph[i*5+3];
 				if (staticClefs) SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
-				else SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + gracenoteOffset + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")\" >" + t + "</text>");
+				else SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + (gracenoteOffset * 0.5) + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")\" >" + t + "</text>");
 			}
 			}
 		  }
@@ -2449,7 +2452,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			var dasharray = " ";
 			var wave = false;
 			if (picster.contains("style::stroke-dasharray")){
-			post("wave1", wave, picster.get("style::stroke-dasharray"), "\n");	
 				switch ([].concat(picster.get("style::stroke-dasharray"))[0]) {
 					case -1: 
 					wave = true;
@@ -2511,9 +2513,9 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				case "line" :
 				if (wave){
 				SVGGraphics[s + 1].push("<g id=\"" + picster.get("id") + "\" " + svgtransform + ">");
-				
+				//post("wave1", picster.get("x1"), picster.get("x2"), Math.floor(Math.sqrt(Math.pow(picster.get("x2") - picster.get("x1"), 2) + Math.pow(picster.get("y2") - picster.get("y1"), 2)) / 8.5), "\n");	
 				/////////////////
-				for (var i = 0; i < Math.floor(Math.sqrt(Math.pow(picster.get("x2") - picster.get("x1"), 2) + Math.pow(picster.get("y2") - picster.get("y2"), 2)) / 8.5); i++){
+				for (var i = 0; i < Math.floor(Math.sqrt(Math.pow(picster.get("x2") - picster.get("x1"), 2) + Math.pow(picster.get("y2") - picster.get("y1"), 2)) / 8.5); i++){
 				var _d = "M 129.9,189.5 C 103.9,189.5 88.7,205.42 63.5,238.06 L 33.1,217.1 C 47.9,195.5 57.9,182.62 75.5,169.18 C 91.427778,157.15296 111.9,145.02 135.101,145.02 C 172.276,145.02 192.278,161.973 223.101,185.82 C 253.501,209.34 274.702,219.421 293.901,219.421 C 302.301,219.421 317.28256,215.01581 327.102,207.101 C 340.22141,197.96521 349.502,185.981 363.502,163.42 L 394.302,187.26 C 377.902,212.22 367.102,224.3 353.902,235.82 C 333.502,254.06 314.702,264.381 288.702,264.381 C 218.652,264.38 187.714,189.5 129.9,189.5 z ";
 				var sign_x = (picster.get("x2") - picster.get("x1") < 0) ? -1 : 1;
 				var sign_y = (picster.get("y2") - picster.get("y1") < 0) ? -1 : 1;
@@ -2522,7 +2524,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				var rotation = Math.asin(sign_x * (picster.get("y2") - picster.get("y1"))/Math.sqrt(Math.pow(sign_x * (picster.get("y2") - picster.get("y1")),2)+Math.pow(sign_y * (picster.get("x2") - picster.get("x1")),2)))/Math.PI*180;				
 				if (sign_x == -1) transform_ = "transform=\"translate(" + (sign_x * (i + 1) * a + Math.sin(rotation/360*Math.PI*2) * 10)+ ", " + (sign_y * (i + 1) * b - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)\"";	
 				else transform_ = "transform=\"translate(" + (sign_x * i * a + Math.sin(rotation/360*Math.PI*2) * 10) + ", " + (sign_y * (i * b) - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)\"";
-				//post("ellipse", transform_, "\n");
+				//post("ellipse", transform_, _d, "\n");
 				SVGGraphics[s + 1].push("<path id=\"" + "wave" + i + "\" d=\"" + _d + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgstroke + "\" fill-opacity=\"" + svgstrokeopacity + "\" " + transform_ + onclick + "/>");
 				}
 				/////////////////

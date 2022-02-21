@@ -2516,7 +2516,7 @@ function findBoundsForRenderedExpression(msg, d)
 	var renderOffset = [600, 600];
 						var space = 0;
 						var bpf = "";
-						var pitchbend = d.get("picster-element[2]::val[0]::value").slice(3);						
+						var pitchbend = d.get("picster-element[2]::val[0]::value").slice(3, d.get("picster-element[2]::val[0]::value").lastIndexOf("data"));						
 						dumpinfo = ["measure"];
 						outlet(0, "getNoteAreaWidth", msg[1]);
 						if (msg[1] != currentMeasure) outlet(0, "dumpScore", msg[1], 1);
@@ -2549,6 +2549,7 @@ function findBoundsForRenderedExpression(msg, d)
 							bpf += "L" + curveTo;
 							oldPoint = curveTo;
 						}
+						//post("bpf", bpf, "\n");
 						SVGString.push("<path d=\"" + bpf + "\" stroke=\"black\" stroke-width=\"" + 2.0 + "\" stroke-opacity=\"" + 1. + "\" fill=\"none\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");	
 	var svg = "<svg><g transform = \"matrix(1,0,0,1," + renderOffset[0] + "," + renderOffset[1] + ")\">";
 	svg += SVGString.join("");
@@ -2556,7 +2557,6 @@ function findBoundsForRenderedExpression(msg, d)
 	mgraphics.svg_set("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
 	mgraphics.paint();
-	//post("svg", svg, "\n");
 	mgraphics.svg_render("img");
 
 	mgraphics.matrixcalc(outmatrix, outmatrix);

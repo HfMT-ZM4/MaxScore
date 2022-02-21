@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 5,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -62,6 +62,7 @@
 					"hidden" : 1,
 					"id" : "obj-2",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "ejies-downloader.maxpat",
 					"numinlets" : 0,
@@ -179,8 +180,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 5,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -239,8 +240,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -287,8 +288,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -788,8 +789,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1184,7 +1185,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 85.25, 78.0, 274.0, 19.0 ],
-													"restore" : [ 4 ],
+													"restore" : [ 2 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -1339,7 +1340,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-9",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1429,7 +1429,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-65",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1505,7 +1504,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-59",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1525,7 +1523,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-56",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1695,7 +1692,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-73",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1881,11 +1877,11 @@
 												"box" : 												{
 													"id" : "obj-71",
 													"maxclass" : "jit.pwindow",
-													"name" : "u545019835",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "jit_matrix", "" ],
-													"patching_rect" : [ 23.5, 708.0, 39.0, 32.0 ]
+													"patching_rect" : [ 23.5, 708.0, 47.0, 32.0 ],
+													"sync" : 1
 												}
 
 											}
@@ -1922,7 +1918,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-79",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
@@ -2594,8 +2589,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2639,7 +2634,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 386.0, 62.0, 340.0, 19.0 ],
-													"restore" : [ 0, 5044 ],
+													"restore" : [ 0, 1830 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -2696,8 +2691,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3085,11 +3080,11 @@
 												"box" : 												{
 													"id" : "obj-12",
 													"maxclass" : "jit.pwindow",
-													"name" : "u085019854",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "jit_matrix", "" ],
-													"patching_rect" : [ 453.0, 783.5, 41.0, 4.0 ]
+													"patching_rect" : [ 453.0, 783.5, 49.0, 1.0 ],
+													"sync" : 1
 												}
 
 											}
@@ -3140,7 +3135,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-19",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
@@ -3434,7 +3428,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-32",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -3454,7 +3447,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 597.0, 131.0, 373.0, 19.0 ],
-													"restore" : [ "1TRC" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -3488,7 +3481,7 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 78.5, 245.5, 61.0, 20.0 ],
-													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", "\u003b", "#X", "domainAndRange", 0.0, 5044.99951171875, 0.0, 2.0, 0.0, 5044.99951171875, 0.0, 10.0, 0.0, 5044.99951171875, 0.0, 1000.0, 0.0, 5044.99951171875, 0.0, 5044.99951171875, 0.0, 5044.99951171875, -4800.0, 4800.0, "\u003b" ],
+													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", "\u003b", "#X", "domainAndRange", 0.0, 1830.0, 0.0, 2.0, 0.0, 1830.0, 0.0, 10.0, 0.0, 1830.0, 0.0, 1000.0, 0.0, 1830.0, 0.0, 1830.0, 0.0, 1830.0, -4800.0, 4800.0, "\u003b" ],
 													"text" : "mxj ej.fplay",
 													"varname" : "ej.play"
 												}
@@ -3499,7 +3492,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-63",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -3550,8 +3542,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3731,8 +3723,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4086,7 +4078,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-88",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
@@ -4713,8 +4704,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4759,8 +4750,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4854,7 +4845,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 77.0, 76.0, 474.0, 22.0 ],
-																	"restore" : [ "Macintosh HD:/Users/hajdu/Dropbox/Music/Schœdénian-Constitution/ mySPEARFun.sdif" ],
+																	"restore" : [ 0 ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -5012,8 +5003,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5395,8 +5386,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5503,7 +5494,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 10.0,
 																	"id" : "obj-86",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -5579,7 +5569,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 10.0,
 																	"id" : "obj-77",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -5613,7 +5602,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 10.0,
 																	"id" : "obj-73",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -5908,8 +5896,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6759,8 +6747,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6967,7 +6955,7 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 10.0,
 																	"id" : "obj-73",
-																	"linecount" : 3,
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -7185,8 +7173,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -7258,7 +7246,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 349.75, 299.0, 46.0, 20.0 ],
-																	"restore" : [ 6840.0, 0.0, 6840.0, 0.0, 0.0, 0, 5050.0, 5050.0, 0, "linear" ],
+																	"restore" : [ 6840.0, 0.0, 6840.0, 0.0, 0.0, 0, 1000.0, 1000.0, 0, "linear" ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -7271,7 +7259,7 @@
 															}
 , 															{
 																"box" : 																{
-																	"addpoints" : [ 0.0, 0.0, 0, 5050.0, 5050.0, 0 ],
+																	"addpoints" : [ 0.0, 0.0, 0, 1000.0, 1000.0, 0 ],
 																	"domain" : 6840.0,
 																	"id" : "obj-19",
 																	"maxclass" : "function",
@@ -7295,7 +7283,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 349.75, 257.5, 440.0, 20.0 ],
-																	"restore" : [ 6840.0, 0.0, 6840.0, 0.0, 0.0, 0, 5050.0, 5050.0, 0, "linear" ],
+																	"restore" : [ 6840.0, 0.0, 6840.0, 0.0, 0.0, 0, 1000.0, 1000.0, 0, "linear" ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -7416,7 +7404,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 10.0,
 																	"id" : "obj-3",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -8538,8 +8525,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9034,8 +9021,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9228,8 +9215,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 5,
+																			"minor" : 3,
+																			"revision" : 0,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -9348,8 +9335,8 @@
 																						"fileversion" : 1,
 																						"appversion" : 																						{
 																							"major" : 8,
-																							"minor" : 1,
-																							"revision" : 5,
+																							"minor" : 3,
+																							"revision" : 0,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -9786,7 +9773,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 275.0, 76.0, 443.0, 20.0 ],
-																					"restore" : [ 5040.0 ],
+																					"restore" : [ 6000.0 ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -10175,8 +10162,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 5,
+																			"minor" : 3,
+																			"revision" : 0,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -10413,8 +10400,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 5,
+																			"minor" : 3,
+																			"revision" : 0,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -11617,7 +11604,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-32",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -12309,7 +12295,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 123.0, 156.0, 342.0, 20.0 ],
-									"restore" : [ 4 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -12344,7 +12330,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 83.0, 16.0, 342.0, 20.0 ],
-									"restore" : [ 5040.0 ],
+									"restore" : [ 6000.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -12641,6 +12627,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-62",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maq.buttons.maxpat",
 					"numinlets" : 1,
@@ -12667,8 +12654,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 5,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -13433,8 +13420,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 5,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -13868,8 +13855,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 5,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -13955,7 +13942,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 549.5, 121.5, 320.0, 20.0 ],
-									"restore" : [ 5044.999599456787109 ],
+									"restore" : [ 1830.000043000000005 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -14331,8 +14318,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -14455,7 +14442,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-29",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -14475,7 +14461,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 50.0, 121.0, 413.0, 20.0 ],
-													"restore" : [ "1TRC" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -14675,8 +14661,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -15005,7 +14991,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-88",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -15104,7 +15089,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 9.0,
 									"id" : "obj-13",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -15128,8 +15112,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -15310,7 +15294,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 307.0, 151.0, 305.0, 19.0 ],
-													"restore" : [ 0, 5044 ],
+													"restore" : [ 0, 1830 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -15368,7 +15352,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 126.0, 28.5, 337.0, 20.0 ],
-													"restore" : [ 5044.0, -1.0, 1.0, 0.0, 0.0, 0, 5044.000118520219075, 0.0, 0, "linear" ],
+													"restore" : [ 1830.0, -1.0, 1.0, 0.0, 0.0, 0, 1830.000043000000005, 0.0, 0, "linear" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -15935,21 +15919,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "signal" ],
 									"patching_rect" : [ 767.375, 308.5, 117.0, 20.0 ],
-									"saved_object_attributes" : 									{
-										"basictuning" : 440,
-										"followglobaltempo" : 0,
-										"formantcorrection" : 0,
-										"loopend" : [ 0.0, "ms" ],
-										"loopstart" : [ 0.0, "ms" ],
-										"mode" : "basic",
-										"originallength" : [ 959.999982384033501, "ticks" ],
-										"originaltempo" : 120.0,
-										"phase" : [ 0.0, "ticks" ],
-										"pitchcorrection" : 0,
-										"quality" : "basic",
-										"timestretch" : [ 0 ]
-									}
-,
 									"text" : "groove~ Macaque-ramp"
 								}
 
@@ -15996,8 +15965,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -16034,13 +16003,13 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-16",
-													"linecount" : 5,
+													"linecount" : 4,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 520.0, 133.0, 50.0, 76.0 ],
-													"text" : "syncpoints 4 0. 0. 0 5044. 0. 0"
+													"text" : "syncpoints 4 0 0 0 0 0 0"
 												}
 
 											}
@@ -16269,7 +16238,7 @@
 											}
 , 											{
 												"box" : 												{
-													"addpoints" : [ 0.0, 0.0, 0, 5044.0, 5044.0, 0 ],
+													"addpoints" : [ 0.0, 0.0, 0, 0.0, 0.0, 0 ],
 													"domain" : 5045.0,
 													"id" : "obj-1",
 													"maxclass" : "function",
@@ -16357,7 +16326,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-61",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 3,
 													"numoutlets" : 1,
@@ -16495,7 +16463,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-43",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 3,
 													"numoutlets" : 1,
@@ -16566,7 +16533,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-60",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
@@ -16609,7 +16575,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-58",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -17019,8 +16984,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -17239,8 +17204,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -17420,8 +17385,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 5,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -17641,7 +17606,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-58",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -17659,7 +17623,7 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 137.0, 134.5, 100.0, 20.0 ],
-													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", "\u003b", "#X", "domainAndRange", 0.0, 5044.99951171875, 0.0, 2.0, 0.0, 5044.99951171875, 0.0, 10.0, 0.0, 5044.99951171875, 0.0, 1000.0, 0.0, 5044.99951171875, 0.0, 5044.99951171875, 0.0, 5044.99951171875, -4800.0, 4800.0, "\u003b" ],
+													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", "\u003b", "#X", "domainAndRange", 0.0, 1830.0, 0.0, 2.0, 0.0, 1830.0, 0.0, 10.0, 0.0, 1830.0, 0.0, 1000.0, 0.0, 1830.0, 0.0, 1830.0, 0.0, 1830.0, -4800.0, 4800.0, "\u003b" ],
 													"text" : "mxj ej.fplay",
 													"varname" : "ej.play"
 												}
@@ -18146,7 +18110,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-49",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
@@ -18165,7 +18128,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 511.5, 76.5, 372.0, 20.0 ],
-									"restore" : [ 1899.757661670446396 ],
+									"restore" : [ 0.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -18223,7 +18186,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-61",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
@@ -19163,8 +19125,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 5,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -19200,17 +19162,6 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-28",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 379.0, 110.0, 28.0, 20.0 ],
-									"text" : "print"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-18",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -19245,7 +19196,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 262.285706000000005, 278.0, 238.0, 22.0 ],
-									"restore" : [ "Macintosh HD:/Users/hajdu/Dropbox/Music/Schœdénian-Constitution/ mySPEARFun.sdif" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -19266,7 +19217,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 471.0, 347.0, 249.0, 22.0 ],
-									"restore" : [ "1TRC" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -19457,7 +19408,7 @@
 									"fontsize" : 12.0,
 									"id" : "obj-12",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "FullPacket" ],
 									"patching_rect" : [ 406.0, 460.0, 133.0, 22.0 ],
@@ -19470,12 +19421,11 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-13",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 406.0, 433.0, 162.0, 22.0 ],
+									"patching_rect" : [ 406.0, 433.0, 160.0, 22.0 ],
 									"text" : "SDIF-ranges #0-macaque"
 								}
 
@@ -19490,7 +19440,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 677.0, 486.0, 225.0, 22.0 ],
-									"restore" : [ 5044.999599456787109 ],
+									"restore" : [ 1830.000043000000005 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -19682,7 +19632,7 @@
 									"fontsize" : 12.0,
 									"id" : "obj-30",
 									"maxclass" : "newobj",
-									"numinlets" : 8,
+									"numinlets" : 1,
 									"numoutlets" : 8,
 									"outlettype" : [ "", "", "", "", "", "", "", "FullPacket" ],
 									"patching_rect" : [ 158.0, 243.0, 748.99993900000004, 22.0 ],
@@ -19695,12 +19645,11 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-31",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 158.0, 210.0, 145.0, 22.0 ],
+									"patching_rect" : [ 158.0, 210.0, 143.0, 22.0 ],
 									"text" : "SDIF-info #0-macaque"
 								}
 
@@ -19741,7 +19690,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 105.0, 17.0, 58.0, 22.0 ],
+									"patching_rect" : [ 105.0, 13.0, 58.0, 22.0 ],
 									"text" : "loadbang"
 								}
 
@@ -19798,7 +19747,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 54.0, 144.0, 147.0, 22.0 ],
+									"patching_rect" : [ 54.0, 144.0, 143.0, 35.0 ],
 									"text" : "sdif-buffer #0-macaque"
 								}
 
@@ -19858,7 +19807,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 923.5, 374.0, 115.5, 374.0 ],
+									"midpoints" : [ 115.5, 374.0 ],
 									"order" : 1,
 									"source" : [ "obj-17", 0 ]
 								}
@@ -19941,16 +19890,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-28", 0 ],
-									"order" : 0,
-									"source" : [ "obj-31", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-30", 0 ],
-									"order" : 1,
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -20107,7 +20047,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 706.0, 194.0, 60.0, 19.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 309, 44, 1023, 979, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 309, 53, 1023, 988, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -20168,6 +20108,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-41",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "MacaquePanes.maxpat",
 					"numinlets" : 1,
@@ -20211,6 +20152,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-25",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "beat-detection.maxpat",
 					"numinlets" : 1,
@@ -20235,6 +20177,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-57",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "SpectralNotation.maxpat",
 					"numinlets" : 1,
