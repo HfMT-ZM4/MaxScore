@@ -953,40 +953,6 @@ function writeStaffLines()
 			//oldstafflines = stafflines;
 }
 
-function writeStems()
-{
-			if (!isEmpty(stems)){
-			var y = [];
-			for (var key in stems)
-			{
-			y.push(stems[key][1]);
-			}
-			if (stems[key][8] == "STEM_UP") var xoffset	= -0.4;
-			else var xoffset = 0;	
-			if (stems[key][3] == "TAB") var yoffset	= -5;
-			else var yoffset = 0;	
-			var bottom = arrayMax(y);
-			var top = arrayMin(y);
-			//post("heigth", (bottom - top + (26. + yoffset ) * stems[key][2] * 2 ), "\n");
-			//post("didkovsky", bottom - top + (12 * 3.5 + yoffset) * stems[key][2], "\n");
-			for (var s = 0; s < groupcount; s++)
-			{
-			var dest = remap(sg[s], stems[key][5], top);
-			if (dest != -1)
-			{
-			for (var d = 0; d < dest.length; d++) {
-			if (stems[key][2] == 0.5) SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. + xoffset) + "\" y=\"" + (dest[d] - 22) + "\" width=\"" + 0.75 + "\" height=\"" + (bottom - top + 20. + yoffset) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
-			else {
-				var h = bottom - top + (12 * 3.5 + yoffset) * stems[key][2];
-				if (stems[key][8] == "STEM_UP") SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - ((y.length == 1) ? 1.7 : 3) - (12 * 3.5 + yoffset) * stems[key][2]) + "\" width=\"" + 0.5 + "\" height=\"" + h + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
-
-				else SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - 22 * stems[key][2] * 2) + "\" width=\"" + 0.5 + "\" height=\"" + (bottom - top + (20. + yoffset) * stems[key][2] * 2 ) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");	
-				}
-			}
-		}
-	}
-}				
-}
 
 function writeRuler()
 {
@@ -1116,7 +1082,6 @@ function endRenderDump()
 	}
    	outlet(1, "getTitle");
     outlet(1, "getComposer");
-	writeStems();
 	writeStaffLines();
 	writeBarlines();
 	if (prop) writeRuler();
@@ -1340,22 +1305,21 @@ function anything() {
 			}
 			}
             break;
-        case "stem":
-			//stem 83.620689 67. 0.5 Note 0. 0. 0. 0. STEM_UP
-			var index = [msg[0], msg[4], msg[5], msg[6], msg[7], msg[8]];				
-			if (JSON.stringify(index) === JSON.stringify(oldIndex)) {
-				if (annotation.contains("staff-" + msg[5]+"::clef") && annotation.get("staff-"+msg[5]+"::clef") == "TAB") msg[3] = "TAB";
-				else notes++;
-				stems[notes] = msg.concat(frgb);
+        case "Stem":
+			// Stem, measureIndex, staffIndex, trackIndex, noteIndex, zoom, x, y1, y2, isGraceNote, graceNoteIndex
+			var stemOffset = (msg[7] - msg[6] > 0) ? 0 : -0.5 * msg[4];  
+			for (var s = 0; s < groupcount; s++)
+			{
+			var dest = remap(sg[s], msg[1], msg[6]);
+			if (dest != -1)
+			{
+			for (var d = 0; d < dest.length; d++) {
+			//post("Stem", msg[5], dest[d], 1.5 * msg[4], msg[7] - msg[6], "\n");
+ 			SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + (msg[7] - msg[6]) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			}
-			else {
-			writeStems();
-			stems = {};
-			notes = 0;	
-			stems[notes] = msg.concat(frgb);
 			}
-			oldIndex = index;
-            break;
+			}
+           break;
         case "barline":
 			//barline 0. 0.5 20. 51. 363. 1.
 			//barline measureIndex zoom x barTop barBottom barThickness
