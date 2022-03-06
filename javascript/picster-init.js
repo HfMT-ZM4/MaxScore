@@ -1,4 +1,7 @@
 outlets = 2;
+
+include("maxscore.tools");
+
 var selectionBufferSize = 0;
 var _anchors = {};
 var anchors = {};
@@ -269,18 +272,4 @@ function anything()
 		}
 		break;
 	}
-}
-
-function getAllIndexes(arr, val) {
-    var indexes = [-1], i;
-	var c = 0;
-	if (typeof arr == "number" && arr == val) indexes = [0];
-    else {for(i = 0; i < arr.length; i++)
-        if (arr[i] == val)
-			{
-            indexes[c] = i;
-			c++;
-			}
-		}
-    return indexes;
 }

@@ -1,7 +1,7 @@
 inlets = 3;
 outlets = 4;
 
-//include("xml2json");
+include("maxscore.tools");
 var tempo = [];
 var originalMeasureWidths = [];
 var factor = 0.5;
@@ -669,18 +669,3 @@ function anything()
 		*/
 	}
 }
-
-function getAllIndexes(arr, val) {
-    var indexes = [-1], i;
-	var c = 0;
-	if (typeof arr == "number" && arr == val) indexes = [0];
-    else {for(i = 0; i < arr.length; i++)
-        if (arr[i] == val)
-			{
-            indexes[c] = i;
-			c++;
-			}
-		}
-    return indexes;
-}
-

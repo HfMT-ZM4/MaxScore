@@ -1,4 +1,5 @@
 outlets = 2;
+include("maxscore.tools");
 
 var output = new Dict();
 output.name = "output";
@@ -1133,18 +1134,4 @@ function scroll()
 		outlet(0, "dictionary", cursors.name);
 		}
 	}
-}
-
-function getAllIndexes(arr, val) {
-    var indexes = [-1], i;
-	var c = 0;
-	if (typeof arr == "number" && arr == val) indexes = [0];
-    else {for(i = 0; i < arr.length; i++)
-        if (arr[i] == val)
-			{
-            indexes[c] = i;
-			c++;
-			}
-		}
-    return indexes;
 }
