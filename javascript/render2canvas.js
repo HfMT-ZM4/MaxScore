@@ -1341,7 +1341,7 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<rect x=\"" + (msg[9] - 0.3)  + "\" y=\"" + dest[d] + "\" width=\"" + (msg[11] + 1.) + "\" height=\"" + msg[12] + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+			SVGString[s + 1].push("<rect x=\"" + (msg[9] - 0.2)  + "\" y=\"" + (dest[d] - 0.4) + "\" width=\"" + (msg[11] + (2. * msg[8])) + "\" height=\"" + msg[12] + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			}
 			}
 			}
@@ -2324,7 +2324,7 @@ function anything() {
 			if (typeof glyph[i*5+0] == "number") t = htmlEntities(glyph[i*5+0].toString());
             else {
 				//post("msg[2]", messagename, "\n");
-				if (msg[2] < 0.5 && msgname.indexOf("notehead") == 0) var gracenoteOffset = 1;
+				if (msg[2] < 0.5 && msgname.indexOf("notehead") == 0) var gracenoteOffset = 0.6;
 				else var gracenoteOffset = 0;
 				if (glyph[0].length == 1) t = glyph[i*5+0];
 				else t = htmlEntities(glyph[i*5+0]);

@@ -140,7 +140,7 @@ function strings(s)
 		openStrings = s; 
 	}
 //	post(openStrings, typeof(openStrings), openStrings.length, s, "\n");
-	this.patcher.getnamed("GUI").message("size", 200, openStrings.length*20);
+	this.patcher.getnamed("pane").message("size", 200, openStrings.length*20);
 	//if (this.patcher.wind.visible == 1) this.patcher.wind.size = [988, openStrings.length*20 + 70];
 	this.patcher.getnamed("tablature").message("numstrings", openStrings.length);
 	
