@@ -4,7 +4,7 @@
 	"accentstaccatobelow" : [ "", 0, -4, "$MUSICFONT", 24 ],
 	"accenttenutoabove" : [ "", 0, -3, "$MUSICFONT", 24 ],
 	"accenttenutobelow" : [ "", 0, -3, "$MUSICFONT", 24 ],
-	"acciaccatura" : [ "", 2, -15, "$MUSICFONT", 18 ],
+	"acciaccatura" : [ "", 1, -2, "$MUSICFONT", 18 ],
 	"al" : [ "", 0, -12, "$MUSICFONT", 24 ],
 	"ba" : [ "", 0, -18, "$MUSICFONT", 24 ],
 	"breathmarkcomma" : [ "", 0, 0, "$MUSICFONT", 24 ],

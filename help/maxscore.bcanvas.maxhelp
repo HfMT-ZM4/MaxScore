@@ -2571,7 +2571,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1233.0, 805.0 ],
+						"rect" : [ 38.0, 113.0, 1233.0, 805.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3428,7 +3428,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 149.333333333333371, 515.5, 245.0, 33.0 ],
+									"patching_rect" : [ 230.25, 515.5, 245.0, 33.0 ],
 									"text" : "Click here after downloading drawsocket and running the server for the first time"
 								}
 
@@ -3440,8 +3440,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.5, 521.0, 98.0, 22.0 ],
-									"text" : "script npm install"
+									"patching_rect" : [ 50.5, 521.0, 162.0, 22.0 ],
+									"text" : "script npm install drawsocket"
 								}
 
 							}
@@ -7104,7 +7104,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 38.0, 113.0, 1233.0, 805.0 ],
+						"rect" : [ 0.0, 26.0, 1233.0, 805.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -8469,6 +8469,10 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "MaxScore.rxml.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "MaxScoreKeyMap.txt",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
 				"patcherrelativepath" : "../patchers/maps",
@@ -8494,13 +8498,6 @@
 				"bootpath" : "/Users/Shared/Max 8/Packages/drawsocket-max/patchers",
 				"patcherrelativepath" : "../../drawsocket-max/patchers",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "formatXML.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -8557,17 +8554,17 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.json2xml.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "maxscore.proportionalNotation.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.rapidxml.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{

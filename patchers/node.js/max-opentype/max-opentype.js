@@ -1,8 +1,9 @@
 const opentype = require('opentype.js');
 const path = require('path');
 const Max = require('max-api');
-const fontManager = require('font-manager');
+const fontManager = require('fontmanager-redux');
 const fonts = fontManager.getAvailableFontsSync();
+//const fontKit = require('fontkit');
 
 //import opentype from 'opentype.js'
 

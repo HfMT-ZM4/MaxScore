@@ -2313,6 +2313,7 @@ function anything() {
 			{
 				msg[1] = msg[1] - annotation.get("staff-"+msg[5]+"::adjust") * 6 * msg[2];
 			}
+		if (msgname == "acciaccatura") post("acciaccatura1", msg, "\n");
 		var multiple = glyph.length / 5;
 			for (var s = 0; s < groupcount; s++)
 			{
@@ -2321,6 +2322,7 @@ function anything() {
 			{
 			for (var d = 0; d < dest.length; d++) {
 			for (var i = 0; i < multiple; i++) {
+		if (msgname == "acciaccatura") post("acciaccatura2", msg, "\n");
 			if (typeof glyph[i*5+0] == "number") t = htmlEntities(glyph[i*5+0].toString());
             else {
 				//post("msg[2]", messagename, "\n");

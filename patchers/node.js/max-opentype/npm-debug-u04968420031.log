@@ -1,0 +1,21 @@
+npm WARN old lockfile 
+npm WARN old lockfile The package-lock.json file was created with an old version of npm,
+npm WARN old lockfile so supplemental metadata must be fetched from the registry.
+npm WARN old lockfile 
+npm WARN old lockfile This is a one-time fix-up, please be patient...
+npm WARN old lockfile 
+npm notice 
+npm notice New major version of npm available! 7.19.1 -> 8.5.3
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v8.5.3>
+npm notice Run `npm install -g npm@8.5.3` to update!
+npm notice 
+npm ERR! code ENOENT
+npm ERR! syscall open
+npm ERR! path /Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/max-opentype/package.json
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, open '/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/max-opentype/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/hajdu/.npm/_logs/2022-03-07T18_44_50_492Z-debug.log
