@@ -1926,17 +1926,17 @@ function anything() {
 			switch (dumpinfo[0]){
 			case "measure" :
 			//json = xml2json(dump.join(" "));
-			tempo = json["measure"]["@TEMPO"];
-			timesig = json["measure"]["@TIMESIG"];
-			measurewidth = json["measure"]["@WIDTH"];
-			measureleftmargin = json["measure"]["@MEASURELEFTMARGIN"];
+			tempo = json["measure"]["0"]["@TEMPO"];
+			timesig = json["measure"]["0"]["@TIMESIG"];
+			measurewidth = json["measure"]["0"]["@WIDTH"];
+			measureleftmargin = json["measure"]["0"]["@MEASURELEFTMARGIN"];
 			break;
 			case "staff" :
 			//json = xml2json(dump.join(" "));
-			extendedStaffLines[dumpinfo[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
-			clefList[dumpinfo[2]] = json["staff"]["@CLEF"];
+			extendedStaffLines[dumpinfo[2]] = [json["staff"]["0"]["@EXTENDEDLINESABOVE"], json["staff"]["0"]["@EXTENDEDLINESBELOW"]];
+			clefList[dumpinfo[2]] = json["staff"]["0"]["@CLEF"];
 			var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
-			staffInfo[dumpinfo[1] - measureOffset][dumpinfo[2]] = [json["staff"]["@CLEF"], json["staff"]["@KEYSIGNUMACC"], json["staff"]["@KEYSIGTYPE"]];
+			staffInfo[dumpinfo[1] - measureOffset][dumpinfo[2]] = [json["staff"]["0"]["@CLEF"], json["staff"]["0"]["@KEYSIGNUMACC"], json["staff"]["0"]["@KEYSIGTYPE"]];
 			// for repeated-acc-filter we need CLEF, KEYSIGNUMACC and KEYSIGTYPE in a obj[measure][staff] object
 			break;
 			/*
@@ -1966,14 +1966,14 @@ function anything() {
 			*/
 			default :
 			//post("dumpinfo-2", dumpinfo, JSON.stringify(json), "\n");
-			pitch = json[dumpinfo[0]]["@PITCH"];
-			accinfo = json[dumpinfo[0]]["@ACCINFO"];
-			accvis = json[dumpinfo[0]]["@ACCVISPOLICY"];
-			accpref = json[dumpinfo[0]]["@ACCPREF"];
-			velocity = json[dumpinfo[0]]["@VELOCITY"];
+			pitch = json[dumpinfo[0]]["0"]["@PITCH"];
+			accinfo = json[dumpinfo[0]]["0"]["@ACCINFO"];
+			accvis = json[dumpinfo[0]]["0"]["@ACCVISPOLICY"];
+			accpref = json[dumpinfo[0]]["0"]["@ACCPREF"];
+			velocity = json[dumpinfo[0]]["0"]["@VELOCITY"];
 			if (velocity > 0. && velocity < 1.) velocity = Math.round(velocity * 127);
-			value = json[dumpinfo[0]]["dim"]["1"]["@value"];
-			hold = 	json[dumpinfo[0]]["@HOLD"];			
+			value = json[dumpinfo[0]]["0"]["dim"]["1"]["@value"];
+			hold = 	json[dumpinfo[0]]["0"]["@HOLD"];			
 			}
 		break;
 		case "startdump" :
@@ -2366,13 +2366,13 @@ function anything() {
 			json = JSON.parse(dump.stringify());
 			if (dumpinfo[0] == "measure") {
 			//json = xml2json(dump.join(" "));
-			tempo = json["measure"]["@TEMPO"];
-			timesig = json["measure"]["@TIMESIG"];
+			tempo = json["measure"]["0"]["@TEMPO"];
+			timesig = json["measure"]["0"]["@TIMESIG"];
 			}
 			else if (dumpinfo[0] == "staff") {
 			//json = xml2json(dump.join(" "));
-			extendedStaffLines[dumpinfo[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
-			 List[dumpinfo[2]] = json["staff"]["@CLEF"];
+			extendedStaffLines[dumpinfo[2]] = [json["staff"]["0"]["@EXTENDEDLINESABOVE"], json["staff"]["0"]["@EXTENDEDLINESBELOW"]];
+			 List[dumpinfo[2]] = json["staff"]["0"]["@CLEF"];
 			}
 		break;
 		case "startdump" :

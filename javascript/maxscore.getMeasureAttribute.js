@@ -16,10 +16,10 @@ dump.name = grab;
 messnamed(grab+"-relay", "getMeasureInfo", attr[1]);	
 if (attr[0] == "MEASURETEXT")
 {
-outlet(0, dump.get("measure::@MEASURETEXT"), dump.get("measure::@MEASURETEXTX"), dump.get("measure::@MEASURETEXTY"));		
+outlet(0, dump.get("measure::0::@MEASURETEXT"), dump.get("measure::0::@MEASURETEXTX"), dump.get("measure::0::@MEASURETEXTY"));		
 }
 else
 {
-if (dump.contains("measure::@"+attr[0])) outlet(0, dump.get("measure::@"+attr[0]));	
+if (dump.contains("measure::0::@"+attr[0])) outlet(0, dump.get("measure::0::@"+attr[0]));	
 }
 }

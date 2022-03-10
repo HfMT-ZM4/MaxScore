@@ -36,30 +36,31 @@ function init() {
 	//outlet(0, "clearSelection");
 	//outlet(0, "getNumStaves");
 	outlet(0, "dumpScore");
-	var numMeasures = getAllIndexes(json["jmslscoredoc"]["score"][0][".ordering"], "measure").length;
-	var numStaves = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0][".ordering"], "staff").length;
-	var numTracks = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0]["staff"][0][".ordering"], "track").length;
-	var leftMargin = json["jmslscoredoc"]["score"][0]["@LeftMargin"];
-	var clefsVisible = json["jmslscoredoc"]["score"][0]["@ClefsVisible"];
+	//post("JSON", JSON.stringify(json), "\n");
+	var numMeasures = getAllIndexes(json["jmslscoredoc"][0]["score"][0][".ordering"], "measure").length;
+	var numStaves = getAllIndexes(json["jmslscoredoc"][0]["score"][0]["measure"][0][".ordering"], "staff").length;
+	var numTracks = getAllIndexes(json["jmslscoredoc"][0]["score"][0]["measure"][0]["staff"][0][".ordering"], "track").length;
+	var leftMargin = json["jmslscoredoc"][0]["score"][0]["@LeftMargin"];
+	var clefsVisible = json["jmslscoredoc"][0]["score"][0]["@ClefsVisible"];
 	var scoreAnnotation = new Dict;
-	scoreAnnotation.parse(json["jmslscoredoc"]["score"][0]["ScoreAnnotation"][0]["@Annotation"]);
+	scoreAnnotation.parse(json["jmslscoredoc"][0]["score"][0]["ScoreAnnotation"][0]["@Annotation"]);
 	var timeUnit = scoreAnnotation.get("timeUnit");
 	for(var i = 0; i < numMeasures; i++) {
 		if (i > 0) {
-		var tempo = json["jmslscoredoc"]["score"][0]["measure"][i - 1]["@TEMPO"];
-		var timesig = json["jmslscoredoc"]["score"][0]["measure"][i - 1]["@TIMESIG"];
+		var tempo = json["jmslscoredoc"][0]["score"][0]["measure"][i - 1]["@TEMPO"];
+		var timesig = json["jmslscoredoc"][0]["score"][0]["measure"][i - 1]["@TIMESIG"];
 		var duration = (60 / tempo) * (timesig[0] * 4 / timesig[1]);
 		onset += duration;
 		}
-		var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i][".ordering"], "measureUserBean");
+		var occurence = getAllIndexes(json["jmslscoredoc"][0]["score"][0]["measure"][i][".ordering"], "measureUserBean");
 		if(occurence[0] != -1) {
 			for(n = 0; n < occurence.length; n++) {	
 				userBeans = [];
 				var jexpr = [];
-				userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["measureUserBean"][n];
+				userBeans[n] = json["jmslscoredoc"][0]["score"][0]["measure"][i]["measureUserBean"][n];
 				e.parse(userBeans[n]["@Message"]);
 				if(e.contains("picster-element[2]::val")) {
-				post("offsets", leftMargin, clefsVisible, (clefsVisible == "true") ? 20 : 0, userBeans[n]["@Xoffset"]/2, e.get("picster-element[1]::val::bounds")[0], "\n");
+				//post("offsets", leftMargin, clefsVisible, (clefsVisible == "true") ? 20 : 0, userBeans[n]["@Xoffset"]/2, e.get("picster-element[1]::val::bounds")[0], "\n");
 				var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
 				var dictArray = [].concat(e.get("picster-element[2]::val"));
 				for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
@@ -69,12 +70,12 @@ function init() {
 			}
 		}
 		for(var j = 0; j < numStaves; j++) {
-			var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j][".ordering"], "staffUserBean");
+			var occurence = getAllIndexes(json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j][".ordering"], "staffUserBean");
 			if(occurence[0] != -1) {
 				for(n = 0; n < occurence.length; n++) {	
 					userBeans = [];
 					var jexpr = [];
-					userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["staffUserBean"][n];
+					userBeans[n] = json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["staffUserBean"][n];
 					e.parse(userBeans[n]["@Message"]);
 					if(e.contains("picster-element[2]::val")) {
 					var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
@@ -86,22 +87,22 @@ function init() {
 				}
 			}
 			for(var k = 0; k < numTracks; k++) {
-				if(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k].hasOwnProperty(".ordering")) {
+				if(json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k].hasOwnProperty(".ordering")) {
 					////////////////////////////// NOTES ////////////////////////
-					var allIndexes = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k][".ordering"], "note");
+					var allIndexes = getAllIndexes(json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k][".ordering"], "note");
 					if(allIndexes[0] != -1) var numNotes = allIndexes.length;
 					//else break;
 					for(var l = 0; l < numNotes; l++) {
 						outlet(0, "clearSelection");
 						outlet(0, "selectNote", i, j, k, l);
 						_count++;
-						hold = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["@HOLD"] * 1000;
+						hold = json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["@HOLD"] * 1000;
 						userBeans = [];
-						var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l][".ordering"], "userBean");
+						var occurence = getAllIndexes(json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l][".ordering"], "userBean");
 						if(occurence[0] != -1) {
 							for(n = 0; n < occurence.length; n++) {
 								var jexpr = [];
-								userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["userBean"][n];
+								userBeans[n] = json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["userBean"][n];
 							}
 						}
 						if(userBeans.length > 0) {
@@ -151,25 +152,24 @@ function init() {
 							outlet(0, "setNoteDimension", 6, _count);
 							//post("note", _count, "\n");
 						} else {
-							if(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["dim"][2]["@value"] != -1) {
+							if(json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["dim"][2]["@value"] != -1) {
 								outlet(0, "setNoteDimension", 6, -1);
 							}
 						}
 						////////////////////////////// INTERVALS ////////////////////////
-						var allIndexes = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l][".ordering"], "interval");
+						var allIndexes = getAllIndexes(json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l][".ordering"], "interval");
 						if(allIndexes[0] != -1) {
 							var numIntervals = allIndexes.length;
 							for(var m = 0; m < numIntervals; m++) {
 								outlet(0, "selectNextInterval");
 								_count++;
-								//post("interval", _count, "\n");
-								hold = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m]["@HOLD"] * 1000;
+								hold = json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m]["@HOLD"] * 1000;
 								userBeans = [];
-								var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m][".ordering"], "userBean");
+								var occurence = getAllIndexes(json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m][".ordering"], "userBean");
 								if(occurence[0] != -1) {
 									for(n = 0; n < occurence.length; n++) {
 										var jexpr = [];
-										userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m]["userBean"][n];
+										userBeans[n] = json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m]["userBean"][n];
 									}
 								}
 								if(userBeans.length > 0) {
@@ -214,7 +214,7 @@ function init() {
 									}
 									outlet(0, "setNoteDimension", 6, _count);
 								} else {
-									if(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["dim"][2]["@value"] != -1) {
+									if(json["jmslscoredoc"][0]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["dim"][2]["@value"] != -1) {
 										outlet(0, "setNoteDimension", 6, -1);
 									}
 								}
@@ -264,10 +264,10 @@ function anything()
 		userBeans = [];
 		json = JSON.parse(dump.stringify());
 		var key = Object.keys(json);
-		if ((key == "interval" || key == "note") && "userBean" in json[key]){
-		var occurence = getAllIndexes(json[key][".ordering"], "userBean");
+		if ((key == "interval" || key == "note") && "userBean" in json[key][0]){
+		var occurence = getAllIndexes(json[key][0][".ordering"], "userBean");
 		for (var i = 0; i < occurence.length; i++) {
-			userBeans[i] = json[key]["userBean"][i];
+			userBeans[i] = json[key][0]["userBean"][i];
 			}
 		}
 		break;
