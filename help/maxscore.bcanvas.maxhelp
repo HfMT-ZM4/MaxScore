@@ -135,7 +135,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 84.0, 299.0, 63.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore"
@@ -2072,7 +2072,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 40.0, 130.0, 219.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore"
@@ -2601,24 +2601,6 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-37",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 61.0, 258.0, 50.5, 22.0 ],
-									"saved_object_attributes" : 									{
-										"embed" : 0,
-										"parameter_enable" : 0,
-										"parameter_mappable" : 0
-									}
-,
-									"text" : "dict"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"format" : 6,
 									"id" : "obj-55",
@@ -4020,13 +4002,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-15",
-									"linecount" : 2,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 148.25, 597.5, 321.0, 34.0 ],
-									"text" : "/stdout : \"received socket close /1 nqMlgSPeBtbI2gf8v9QHYw==\""
+									"patching_rect" : [ 148.25, 597.5, 321.0, 48.0 ]
 								}
 
 							}
@@ -4431,7 +4411,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 134.0, 206.0, 254.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore"
@@ -5895,7 +5875,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 32.5, 132.0, 63.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore"
@@ -6786,7 +6766,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 63.0, 415.0, 63.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore"
@@ -7615,7 +7595,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 265.0, 432.0, 63.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore"
@@ -8040,7 +8020,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 454.0, 316.0, 67.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore[1]"
@@ -8172,7 +8152,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 41.0, 316.0, 67.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore"
@@ -8581,6 +8561,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.rapidXML.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.rapidxml.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
@@ -8592,13 +8579,6 @@
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.xml2json.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -8618,13 +8598,6 @@
 , 			{
 				"name" : "mxj.mxo",
 				"type" : "iLaX"
-			}
-, 			{
-				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
 			}
 , 			{
 				"name" : "n4m.max-fs.js",
@@ -8709,10 +8682,6 @@
 				"patcherrelativepath" : "../jsui",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "sadam.rapidXML.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "socket.pane.js",
