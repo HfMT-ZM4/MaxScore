@@ -91,7 +91,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 110.5, 160.0, 29.5, 22.0 ],
+									"patching_rect" : [ 123.5, 159.0, 29.5, 22.0 ],
 									"text" : "\" \""
 								}
 
@@ -119,8 +119,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "bang" ],
-									"patching_rect" : [ 60.5, 129.5, 69.0, 20.0 ],
-									"text" : "sadam.empty"
+									"patching_rect" : [ 60.5, 129.5, 82.0, 20.0 ],
+									"text" : "maxscore.empty"
 								}
 
 							}
@@ -1793,7 +1793,7 @@
 					"patching_rect" : [ 213.0, 150.0, 119.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 619.0, 15.0, 142.0, 20.0 ],
-					"textcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "style"
 				}
 

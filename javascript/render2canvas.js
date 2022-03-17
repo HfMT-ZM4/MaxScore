@@ -1307,16 +1307,18 @@ function anything() {
             break;
         case "Stem":
 			// Stem, measureIndex, staffIndex, trackIndex, noteIndex, zoom, x, y1, y2, isGraceNote, graceNoteIndex
+			if (msg[7] != -1) {
 			var stemOffset = (msg[7] - msg[6] > 0) ? 0 : -0.5 * msg[4];  
 			for (var s = 0; s < groupcount; s++)
 			{
-			var dest = remap(sg[s], msg[1], msg[6]);
-			if (dest != -1)
-			{
-			for (var d = 0; d < dest.length; d++) {
-			//post("Stem", msg[5], dest[d], 1.5 * msg[4], msg[7] - msg[6], "\n");
- 			SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + (msg[7] - msg[6]) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
-			}
+				var dest = remap(sg[s], msg[1], msg[6]);
+				if (dest != -1)
+				{
+					for (var d = 0; d < dest.length; d++) {
+					post("Stem", msg[5], dest[d], 1.5 * msg[4], msg[7] - msg[6], "\n");
+ 					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + (msg[7] - msg[6]) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+					}
+				}
 			}
 			}
            break;
@@ -2241,6 +2243,11 @@ function anything() {
 				}
 				}	
 			else {	
+			if (msgname == "acciaccatura") {
+			//post("acciaccatura1", msg, "\n");
+			if (msg[8] == "STEM_DOWN") msgname = "acciaccaturastemdown";
+			else msgname = "acciaccaturastemup";
+			}
 			if (fontMap.contains(msgname)) var glyph = fontMap.get(msgname);
 			else if (fontExtras.contains(msgname)) var glyph = fontExtras.get(msgname); 
 			else return;
@@ -2313,7 +2320,6 @@ function anything() {
 			{
 				msg[1] = msg[1] - annotation.get("staff-"+msg[5]+"::adjust") * 6 * msg[2];
 			}
-		if (msgname == "acciaccatura") post("acciaccatura1", msg, "\n");
 		var multiple = glyph.length / 5;
 			for (var s = 0; s < groupcount; s++)
 			{
@@ -2322,7 +2328,6 @@ function anything() {
 			{
 			for (var d = 0; d < dest.length; d++) {
 			for (var i = 0; i < multiple; i++) {
-		if (msgname == "acciaccatura") post("acciaccatura2", msg, "\n");
 			if (typeof glyph[i*5+0] == "number") t = htmlEntities(glyph[i*5+0].toString());
             else {
 				//post("msg[2]", messagename, "\n");

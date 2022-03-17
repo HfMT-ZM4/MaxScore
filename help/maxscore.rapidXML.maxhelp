@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 281.0, 87.0, 899.0, 736.0 ],
+		"rect" : [ 100.0, 87.0, 938.0, 736.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -76,7 +76,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 281.0, 113.0, 899.0, 710.0 ],
+						"rect" : [ 100.0, 113.0, 938.0, 710.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -106,6 +106,66 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-92",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 408.0, 247.0, 90.0, 22.0 ],
+									"text" : "getStaffInfo 1 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-90",
+									"maxclass" : "dict.view",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 582.0, 402.0, 331.0, 227.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-77",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 603.0, 319.0, 221.0, 22.0 ],
+									"presentation_linecount" : 4,
+									"text" : "selectNote 0 0 0 0, getSelectedNoteInfo"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-51",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 666.0, 283.0, 121.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "dumpScoreAttributes"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 545.0, 283.0, 102.0, 22.0 ],
+									"text" : "getMeasureInfo 1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-27",
 									"maxclass" : "newobj",
@@ -150,16 +210,6 @@
 									"patching_rect" : [ 282.333333333333314, 361.0, 60.0, 22.0 ],
 									"text" : "print XML",
 									"varname" : "MaxScore[5]"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "dict.view",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 582.0, 402.0, 284.0, 245.0 ]
 								}
 
 							}
@@ -389,6 +439,13 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
 									"midpoints" : [ 509.5, 260.0, 260.5, 260.0 ],
 									"source" : [ "obj-16", 0 ]
 								}
@@ -397,7 +454,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"order" : 1,
+									"order" : 0,
 									"source" : [ "obj-17", 0 ]
 								}
 
@@ -406,7 +463,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
 									"midpoints" : [ 291.833333333333314, 345.0, 591.5, 345.0 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-17", 0 ]
 								}
 
@@ -420,7 +477,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-18", 0 ],
+									"destination" : [ "obj-90", 0 ],
 									"source" : [ "obj-20", 0 ]
 								}
 
@@ -506,8 +563,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-51", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-77", 0 ]
 								}
 
 							}
@@ -523,6 +594,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-30", 0 ],
 									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-92", 0 ]
 								}
 
 							}
@@ -647,7 +725,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 899.0, 710.0 ],
+						"rect" : [ 0.0, 26.0, 938.0, 710.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

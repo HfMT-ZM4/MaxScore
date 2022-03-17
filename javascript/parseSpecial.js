@@ -23,7 +23,7 @@ function parseOpusFile()
 	for (key in json.opus.score){
 	//post(key, JSON.stringify(json.opus.score[key]), "\n");
 	if (key == "part") for (part in json.opus.score[key]) outlet(0, key, json.opus.score[key][part]);
-	if (key == "duration") outlet(0, key, Number(json.opus.score[key]));
+	else if (key == "duration") outlet(0, key, Number(json.opus.score[key]));
 	else outlet(0, key, json.opus.score[key]);
 	}
 	}

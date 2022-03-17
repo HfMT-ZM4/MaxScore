@@ -196,7 +196,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 149.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "7156-" ],
+									"restore" : [ "1122-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -6619,8 +6619,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 582.875, 391.0, 141.0, 22.0 ],
-					"text" : "loadmess basic.cents.txt"
+					"patching_rect" : [ 582.875, 391.0, 147.0, 22.0 ],
+					"text" : "loadmess default.cents.txt"
 				}
 
 			}
@@ -6843,10 +6843,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 319.0, 509.0, 30.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "in 1"
 				}
 
