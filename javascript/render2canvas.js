@@ -1311,12 +1311,12 @@ function anything() {
 			var stemOffset = (msg[7] - msg[6] > 0) ? 0 : -0.5 * msg[4];  
 			for (var s = 0; s < groupcount; s++)
 			{
-				var dest = remap(sg[s], msg[1], msg[6]);
+				var dest = remap(sg[s], msg[1], ((msg[7] - msg[6]) < 0) ? msg[7] : msg[6]);
 				if (dest != -1)
 				{
 					for (var d = 0; d < dest.length; d++) {
 					post("Stem", msg[5], dest[d], 1.5 * msg[4], msg[7] - msg[6], "\n");
- 					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + (msg[7] - msg[6]) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+ 					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + Math.abs(msg[7] - msg[6]) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 					}
 				}
 			}
