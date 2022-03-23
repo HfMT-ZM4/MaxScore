@@ -34,7 +34,8 @@ function fillMenu()
 	Max.outlet("fonts", "clear");
 	for (let i = 0; i < fonts.length; i++) {
 		let extension = fonts[i].path.substring(fonts[i].path.lastIndexOf("."), fonts[i].path.length);
-		if (extension == ".otf" || extension == ".ttf") Max.outlet("fonts", i, fonts[i].postscriptName);
+		if (path.sep === "/" && (extension == ".otf" || extension == ".ttf")) Max.outlet("fonts", i, fonts[i].postscriptName);
+		else Max.outlet("fonts", i, fonts[i].postscriptName);
 		}
 	Max.outlet("fonts", "enddump");		
 	

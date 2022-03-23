@@ -1315,7 +1315,7 @@ function anything() {
 				if (dest != -1)
 				{
 					for (var d = 0; d < dest.length; d++) {
-					post("Stem", msg[5], dest[d], 1.5 * msg[4], msg[7] - msg[6], "\n");
+					//post("Stem", msg[5], dest[d], 1.5 * msg[4], msg[7] - msg[6], "\n");
  					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + Math.abs(msg[7] - msg[6]) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 					}
 				}
@@ -2734,10 +2734,11 @@ function writeSVG(destination)
 {
 	if (destination == "object") {
 	var f = {};
-	for (var s = 1; s <= groupcount; s++) SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
+	//for (var s = 1; s <= groupcount; s++) SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
 	f.svg = SVGString;
 	f.clefs = SVGClefs;
 	f.svgimages = SVGImages;
+	f.picster = SVGGraphics;
 	f.pageSize = [_scoreLayout[4], _scoreLayout[5]];
 	f.setZoom = zoom;
 	f.bgcolor = bcolor;
@@ -2766,14 +2767,12 @@ function writeSVG(destination)
 	for (var i = 0; i < SVGString[s].length; i++) {
 		f.writeline(SVGString[s][i]);
 	}
-	/*
-	for (var i = 0; i < SVGGraphics[s].length; i++) {
-		f.writeline(SVGGraphics[s][i]);
-	}
-	*/
 	for (var i = 0; i < SVGImages2[s].length; i++) {
 		f.writeline("<image x=\"" + SVGImages2[s][i][2] + "\" y=\"" + SVGImages2[s][i][3] + "\" width=\"" + SVGImages2[s][i][4] + "\" height=\"" + SVGImages2[s][i][5] + "\" xlink:href=\"file:///" + SVGImages2[s][i][1].substring(SVGImages2[s][i][1].indexOf(":") + 1) + "\" transform=\"matrix(" + SVGImages2[s][i][6] + ")\"/>");
 	}
+	for (var i = 0; i < SVGGraphics[s].length; i++) {
+		f.writeline(SVGGraphics[s][i]);
+	}	
 	if (pageNumber != "") f.writeline(pageNumber);
 	//if (SVGImages[s].length > 0) f.writeline(SVGImages[s]);
 	f.writeline("</g>");

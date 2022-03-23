@@ -429,6 +429,7 @@ function obj_ref(o)
 	setZoom(o.setZoom);
 	bgcolor = o.bgcolor;
 	SVGString = o.svg;
+	SVGPicster = o.picster;
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
 	groupcount = o.groupcount;
@@ -488,9 +489,12 @@ function writeSVG(destination)
 		f.writeline(SVGString[s][i]);
 	}
 	for (var i = 0; i < SVGImages[s].length; i++) {
-		if (!isFile(pathToScript + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1))) outlet(1, "cp", SVGImages[s][i][1].substring(SVGImages[s][i][1].indexOf(":") + 1), pathToScript + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1));
+		if (!isFile(pathToScript + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1))) outlet(1, "cp", SVGImages[s][i][1].substring(SVGImages[s][i][1].indexOf(":") + 1), pathToScript + mediaFolder + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1));
 		//post("SVGImages", SVGImages[s][i][1].split("/")[SVGImages[s][i][1].split("/").length - 1], "\n");
 		f.writeline("<image x=\"" + SVGImages[s][i][2] + "\" y=\"" + SVGImages[s][i][3] + "\" width=\"" + SVGImages[s][i][4] + "\" height=\"" + SVGImages[s][i][5] + "\" xlink:href=\"" + mediaFolder + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1) + "\" transform=\"matrix(" + SVGImages[s][i][6] + ")\"/>");
+	}
+	for (var i = 0; i < SVGPicster[s].length; i++) {
+		f.writeline(SVGPicster[s][i]);
 	}
 	f.writeline("</g>");
 	}
