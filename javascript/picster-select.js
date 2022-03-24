@@ -2186,27 +2186,27 @@ function anything()
 		userBeans = [];
 		json = JSON.parse(dump.stringify());
 		var key = Object.keys(json);
-		if ((key == "interval" || key == "note") && "userBean" in json[key][0]){
-		var occurence = getAllIndexes(json[key][0][".ordering"], "userBean");
-		for (var i = 0; i < occurence.length; i++) userBeans[i] = json[key][0]["userBean"][i];
-		hold = json[key][0]["@HOLD"];			
+		if ((key == "interval" || key == "note") && "userBean" in json[key]){
+		var occurence = getAllIndexes(json[key][".ordering"], "userBean");
+		for (var i = 0; i < occurence.length; i++) userBeans[i] = json[key]["userBean"][i];
+		hold = json[key]["@HOLD"];			
 		}
 		else if (dumpinfo[0] == "staff") {
-			if (key == "score" && "staffUserBean" in json["score"][0]["measure"][0]["staff"][dumpinfo[1]]){
-					var occurence = getAllIndexes(json["score"][0]["measure"][0]["staff"][dumpinfo[1]][".ordering"], "staffUserBean");
+			if (key == "score" && "staffUserBean" in json["score"]["measure"][0]["staff"][dumpinfo[1]]){
+					var occurence = getAllIndexes(json["score"]["measure"][0]["staff"][dumpinfo[1]][".ordering"], "staffUserBean");
 					for (i = 0; i < occurence.length; i++) {
-					userBeans[i] = json["score"][0]["measure"][0]["staff"][dumpinfo[1]]["staffUserBean"][i];
+					userBeans[i] = json["score"]["measure"][0]["staff"][dumpinfo[1]]["staffUserBean"][i];
 				}
 			}
 		}
 		else if (dumpinfo[0] == "measure"){
 			//post("JSON", JSON.stringify(json), "\n");
-			tempo = json["score"][0]["measure"][0]["@TEMPO"];
-			timesig = json["score"][0]["measure"][0]["@TIMESIG"];
-			if (key == "score" && "measureUserBean" in json["score"][0]["measure"][0]){
-			var occurence = getAllIndexes(json["score"][0]["measure"][0][".ordering"], "measureUserBean");
+			tempo = json["score"]["measure"][0]["@TEMPO"];
+			timesig = json["score"]["measure"][0]["@TIMESIG"];
+			if (key == "score" && "measureUserBean" in json["score"]["measure"][0]){
+			var occurence = getAllIndexes(json["score"]["measure"][0][".ordering"], "measureUserBean");
 			for (i = 0; i < occurence.length; i++) {
-				userBeans[i] = json["score"][0]["measure"][0]["measureUserBean"][i];
+				userBeans[i] = json["score"]["measure"][0]["measureUserBean"][i];
 				}			
 			}
 		}

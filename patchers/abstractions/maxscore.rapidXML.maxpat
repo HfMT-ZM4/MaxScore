@@ -295,8 +295,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 377.0, 276.0, 22.0 ],
-									"text" : "contains jmslscoredoc::0::score::0::measure, bang"
+									"patching_rect" : [ 50.0, 377.0, 263.0, 22.0 ],
+									"text" : "contains jmslscoredoc::score::0::measure, bang"
 								}
 
 							}

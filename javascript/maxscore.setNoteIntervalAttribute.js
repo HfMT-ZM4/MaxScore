@@ -48,17 +48,17 @@ for (var i= 0; i < keys.length; i++)
 		var common = intersect(singleAttribute, noteAttributes);
 		if (common.length)
 		{	
-		var query = dump.get("note::0::@"+attr[k]);
+		var query = dump.get("note::@"+attr[k]);
 		result.push(query);
 		}
 		else
 		{
-		var occurrence = getAllIndexes(dump.get("note::0::.ordering"),"dim").length;
+		var occurrence = getAllIndexes(dump.get("note::.ordering"),"dim").length;
 		for(l=0; l<occurrence; l++)
 		{
-		if (attr[k] == dump.get("note::0::dim::"+l+"::@name"))
+		if (attr[k] == dump.get("note::dim::"+l+"::@name"))
 		{
-		var query = dump.get("note::0::dim::"+l+"::@value");
+		var query = dump.get("note::dim::"+l+"::@value");
 		result.push(query);
 		}
 		}
@@ -78,17 +78,17 @@ for (var i= 0; i < keys.length; i++)
 		var common = intersect(singleAttribute, noteAttributes);
 		if (common.length)
 		{	
-		var query = dump.get("interval::0::@"+attr[k]);
+		var query = dump.get("interval::@"+attr[k]);
 		result.push(query);
 		}
 		else
 		{
-		var occurrence = getAllIndexes(dump.get("interval::0::.ordering"),"dim").length;
+		var occurrence = getAllIndexes(dump.get("interval::.ordering"),"dim").length;
 		for(l=0; l<occurrence; l++)
 		{
-		if (attr[k] == dump.get("interval::0::dim::"+l+"::@name"))
+		if (attr[k] == dump.get("interval::dim::"+l+"::@name"))
 		{
-		var query = dump.get("interval::0::dim::"+l+"::@value");
+		var query = dump.get("interval::dim::"+l+"::@value");
 		result.push(query);
 		}
 		}

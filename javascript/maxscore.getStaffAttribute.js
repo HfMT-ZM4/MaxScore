@@ -14,5 +14,5 @@ var attr = arrayfromargs(messagename, arguments);
 var dump = new Dict();
 dump.name = grab;
 messnamed(grab+"-relay", "getStaffInfo", attr[1], attr[2]);	
-outlet(0, dump.get("staff::0::@"+attr[0]));	
+outlet(0, dump.get("staff::@"+attr[0]));	
 }

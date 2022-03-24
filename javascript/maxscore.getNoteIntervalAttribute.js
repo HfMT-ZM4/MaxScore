@@ -39,9 +39,9 @@ for (var i= 0; i < keys.length; i++)
 	if (attr=="TEXT")
 	{
 	messnamed(grab+"-relay", "getNoteInfo", inf.slice(3));
-	var text = dump.get("note::0::@TEXT");
-	var textoffsetx = dump.get("note::0::@TEXTOFFSETX");
-	var textoffsety = dump.get("note::0::@TEXTOFFSETY");
+	var text = dump.get("note::@TEXT");
+	var textoffsetx = dump.get("note::@TEXTOFFSETX");
+	var textoffsety = dump.get("note::@TEXTOFFSETY");
 	outlet(1, inf.slice(3));
 	outlet(0, text, textoffsetx, textoffsety);		
 	}
@@ -58,13 +58,13 @@ for (var i= 0; i < keys.length; i++)
 	if (attr[0] == "dim")
 		{	
 			var dim = attr[1] - 4;
-			var dimquery = dump.get("note::0::dim::"+dim+"::@value");
+			var dimquery = dump.get("note::dim::"+dim+"::@value");
 			outlet(1, inf.slice(3));
 			outlet(0, dimquery);
 		}
 		else
 		{
-		var query = dump.get("note::0::@"+attr);
+		var query = dump.get("note::@"+attr);
 		//post(dump.stringify(), "\n");
 		outlet(1, inf.slice(3));
 		outlet(0, query);
@@ -75,9 +75,9 @@ for (var i= 0; i < keys.length; i++)
 	messnamed(grab+"-relay", "getIntervalInfo", inf.slice(3));
 	if (attr=="TEXT")
 	{
-	var text = dump.get("interval::0::@TEXT");
-	var textoffsetx = dump.get("interval::0::@TEXTOFFSETX");
-	var textoffsety = dump.get("interval::0::@TEXTOFFSETY");
+	var text = dump.get("interval::@TEXT");
+	var textoffsetx = dump.get("interval::@TEXTOFFSETX");
+	var textoffsety = dump.get("interval::@TEXTOFFSETY");
 	outlet(1, inf.slice(3));
 	outlet(0, text, textoffsetx, textoffsety);		
 	}
@@ -86,13 +86,13 @@ for (var i= 0; i < keys.length; i++)
 		if (attr[0]=="dim")
 		{			
 			var dim = attr[1] - 4;
-			var dimquery = dump.get("interval::0::dim::"+dim+"::@value");
+			var dimquery = dump.get("interval::dim::"+dim+"::@value");
 			outlet(1, inf.slice(3));
 			outlet(0, dimquery);			
 		}	
 		else
 		{
-		var query = dump.get("interval::0::@"+attr);
+		var query = dump.get("interval::@"+attr);
 		outlet(1, inf.slice(3));
 		outlet(0, query);
 		}

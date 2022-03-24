@@ -92,7 +92,7 @@ function setProportionalNotation(b) {
     outlet(0, "setUndoStackEnabled", "false");
     if (b) { //turn proportional notation on
         outlet(0, "dumpScoreAttributes");
-        scoreAttributes = json["jmslscoredoc"][0]["score"][0];
+        scoreAttributes = json["jmslscoredoc"]["score"][0];
         annotation.parse(scoreAttributes["ScoreAnnotation"][0]["@Annotation"]);
         scoreRightMargin = parseFloat(scoreAttributes["@RightMargin"]);
         var ClefsVisible = scoreAttributes["@ClefsVisible"];
@@ -102,7 +102,7 @@ function setProportionalNotation(b) {
 
         if (!proportional) {//notation is currently not proportional
             //annotation.clear();
-            originalScoreAttributes = json["jmslscoredoc"][0]["score"][0];
+            originalScoreAttributes = json["jmslscoredoc"]["score"][0];
             outlet(0, "getScoreAnnotation");
             //outlet(0, "setScoreLeftMargin", playheadPosition);
             outlet(0, "setScoreFirstSystemIndent", 0.);
@@ -124,7 +124,7 @@ function setProportionalNotation(b) {
                 outlet(0, "getMeasureInfo", m);
                 //post("getInfo", JSON.stringify(originalMeasureWidths), json["measure"]["@WIDTH"], json["measure"]["@MEASURELEFTMARGIN"], "\n"); 
                 originalMeasureWidths[m] = [];
-                originalMeasureWidths[m] = [json["measure"][0]["@WIDTH"], json["measure"][0]["@MEASURELEFTMARGIN"]];
+                originalMeasureWidths[m] = [json["measure"]["@WIDTH"], json["measure"]["@MEASURELEFTMARGIN"]];
             }
         }
 
@@ -137,8 +137,8 @@ function setProportionalNotation(b) {
         outlet(0, "getNumMeasures");
         for (var m = 0; m < numMeasures; m++) {
             outlet(0, "getMeasureInfo", m);
-            tempo[m] = json["measure"][0]["@TEMPO"];
-            var timesig = json["measure"][0]["@TIMESIG"];
+            tempo[m] = json["measure"]["@TEMPO"];
+            var timesig = json["measure"]["@TIMESIG"];
             var measureWidth = (60 / tempo[m]) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
             if (m == 0 && ClefsVisible == "true") measureWidth += 40;
             scoreSize += measureWidth;
@@ -167,16 +167,16 @@ function setProportionalNotation(b) {
             }
             //else outlet(0, "getNoteInfo", anchor[2], anchor[3], anchor[4], anchor[5]);
             outlet(0, "getSelectedNoteInfo");
-            var key = json["selectedNotes"][0][".ordering"][0];
-            var hold = parseFloat(json["selectedNotes"][0][key][0]["@HOLD"]) * (60 / tempo[anchor[2]]);
-            var vel = json["selectedNotes"][0][key][0]["@VELOCITY"];
-            var pitch = json["selectedNotes"][0][key][0]["@PITCH"];
+            var key = json["selectedNotes"][".ordering"][0];
+            var hold = parseFloat(json["selectedNotes"][key][0]["@HOLD"]) * (60 / tempo[anchor[2]]);
+            var vel = json["selectedNotes"][key][0]["@VELOCITY"];
+            var pitch = json["selectedNotes"][key][0]["@PITCH"];
             outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-            if ("userBean" in json["selectedNotes"][0][key][0]) {
+            if ("userBean" in json["selectedNotes"][key][0]) {
                 var userBeans = [];
-                var occurence = getAllIndexes(json["selectedNotes"][0][key][0][".ordering"], "userBean");
+                var occurence = getAllIndexes(json["selectedNotes"][key][0][".ordering"], "userBean");
                 for (var i = 0; i < occurence.length; i++) {
-                    userBeans[i] = json["selectedNotes"][0][key][0]["userBean"][i];
+                    userBeans[i] = json["selectedNotes"][key][0]["userBean"][i];
                 }
                 for (var i = 0; i < userBeans.length; i++) {
                     if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -193,15 +193,15 @@ function setProportionalNotation(b) {
                     }
                 }
             }
-            var visibleNote = json["selectedNotes"][0][key][0]["@VISIBLE"];
-            if (json["selectedNotes"][0][key][0]["@ACCINFO"] == 0) outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_NEVER");
+            var visibleNote = json["selectedNotes"][key][0]["@VISIBLE"];
+            if (json["selectedNotes"][key][0]["@ACCINFO"] == 0) outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_NEVER");
             else outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_ALWAYS");
             if (vel == 0. && pitch == 0.) {
                 //outlet(0, "setNoteVisible", "false");
                 selectionBuffer.push(anchor.slice(2));
             } else {
-                if (json["selectedNotes"][0][key][0]["@SLUROUT"] == "true") outlet(0, "slurTransform");
-                if (json["selectedNotes"][0][key][0]["@TIEDOUT"] == "true") {
+                if (json["selectedNotes"][key][0]["@SLUROUT"] == "true") outlet(0, "slurTransform");
+                if (json["selectedNotes"][key][0]["@TIEDOUT"] == "true") {
                     currentAnchor = anchor.slice(2, 7);
                     if (visibleNote == "true") { //if a note/interval is not already held
                         var held = {};
@@ -214,8 +214,8 @@ function setProportionalNotation(b) {
                             nextAnchor = singleAnchor.slice(2, 7);
                             if (currentAnchor[1] != nextAnchor[1]) break;
                             outlet(0, "getSelectedNoteInfo");
-                            held[json["selectedNotes"][0]["note"][0]["@PITCH"]] = [json["selectedNotes"]["note"][0]["@TIEDOUT"], json["selectedNotes"]["note"][0]["@HOLD"]];
-                            if (json["selectedNotes"][0]["note"][0]["@PITCH"] == pitch) {
+                            held[json["selectedNotes"]["note"][0]["@PITCH"]] = [json["selectedNotes"]["note"][0]["@TIEDOUT"], json["selectedNotes"]["note"][0]["@HOLD"]];
+                            if (json["selectedNotes"]["note"][0]["@PITCH"] == pitch) {
                                 //outlet(0, "setNoteVisible", "false");
                                 selectionBuffer.push(nextAnchor);
                             } else {
@@ -223,8 +223,8 @@ function setProportionalNotation(b) {
                                 for (var i = 0; i < chord; i++) {
                                     outlet(0, "selectNextInterval");
                                     outlet(0, "getSelectedNoteInfo");
-                                    held[json["selectedNotes"][0]["interval"][0]["@PITCH"]] = [json["selectedNotes"]["interval"][0]["@TIEDOUT"], json["selectedNotes"]["interval"][0]["@HOLD"]];
-                                    if (json["selectedNotes"][0]["interval"][0]["@PITCH"] == pitch) {
+                                    held[json["selectedNotes"]["interval"][0]["@PITCH"]] = [json["selectedNotes"]["interval"][0]["@TIEDOUT"], json["selectedNotes"]["interval"][0]["@HOLD"]];
+                                    if (json["selectedNotes"]["interval"][0]["@PITCH"] == pitch) {
                                         //outlet(0, "setNoteVisible", "false");
                                         selectionBuffer.push(singleAnchor.slice(2, 6).concat(i));
                                     }
@@ -347,15 +347,15 @@ function setProportionalNotation(b) {
                 if (anchor[6] != -1)
                     for (var i = 0; i <= anchor[6]; i++) outlet(0, "selectNextInterval");
                 outlet(0, "getSelectedNoteInfo");
-                var key = json["selectedNotes"][0][".ordering"][0];
-                var hold = json["selectedNotes"][0][key][0]["@HOLD"];
-                var vel = json["selectedNotes"][0][key][0]["@VELOCITY"];
+                var key = json["selectedNotes"][".ordering"][0];
+                var hold = json["selectedNotes"][key][0]["@HOLD"];
+                var vel = json["selectedNotes"][key][0]["@VELOCITY"];
                 outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-                if ("userBean" in json["selectedNotes"][0][key][0]) {
+                if ("userBean" in json["selectedNotes"][key][0]) {
                     var userBeans = [];
-                    var occurence = getAllIndexes(json["selectedNotes"][0][key][0][".ordering"], "userBean");
+                    var occurence = getAllIndexes(json["selectedNotes"][key][0][".ordering"], "userBean");
                     for (var i = 0; i < occurence.length; i++) {
-                        userBeans[i] = json["selectedNotes"][0][key][0]["userBean"][i];
+                        userBeans[i] = json["selectedNotes"][key][0]["userBean"][i];
                     }
                     for (var i = 0; i < userBeans.length; i++) {
                         if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -433,8 +433,8 @@ function scroll() {
                 outlet(0, "getNumMeasures");
                 for (var m = 0; m < numMeasures; m++) {
                     outlet(0, "getMeasureInfo", m);
-                    var _tempo = json["measure"][0]["@TEMPO"];
-                    var timesig = json["measure"][0]["@TIMESIG"];
+                    var _tempo = json["measure"]["@TEMPO"];
+                    var timesig = json["measure"]["@TIMESIG"];
                     var measureWidth = (60 / _tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
                     if (m == s) scoreOffset = scoreSize;
                     scoreSize += measureWidth;
@@ -459,8 +459,8 @@ function scroll() {
                 outlet(0, "getNumMeasures");
                 for (var m = 0; m < numMeasures; m++) {
                     outlet(0, "getMeasureInfo", m);
-                    var _tempo = json["measure"][0]["@TEMPO"];
-                    var timesig = json["measure"][0]["@TIMESIG"];
+                    var _tempo = json["measure"]["@TEMPO"];
+                    var timesig = json["measure"]["@TIMESIG"];
                     var measureWidth = (60 / _tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
                     //if (m == s) scoreOffset = scoreSize;
                     scoreSize += measureWidth;
@@ -482,8 +482,8 @@ function scroll() {
                 outlet(0, "getNumMeasures");
                 for (var m = 0; m < numMeasures; m++) {
                     outlet(0, "getMeasureInfo", m);
-                    var _tempo = json["measure"][0]["@TEMPO"];
-                    var timesig = json["measure"][0]["@TIMESIG"];
+                    var _tempo = json["measure"]["@TEMPO"];
+                    var timesig = json["measure"]["@TIMESIG"];
                     var measureWidth = (60 / _tempo) * (timesig[0] * 4 / timesig[1]) * timeUnit / factor;
                     //if (m == s) scoreOffset = scoreSize;
                     scoreSize += measureWidth;
@@ -520,7 +520,7 @@ function blankPageTransform(bpt) {
     annotation.set("blankPage", bpt);
     if (bpt) {
         if (renderAllowed) outlet(0, "setRenderAllowed", 0);
-        originalScoreAttributes = json["jmslscoredoc"][0]["score"][0];
+        originalScoreAttributes = json["jmslscoredoc"]["score"][0];
         outlet(0, "getDurationalSpacingBase");
         outlet(0, "setDurationalSpacingBase", 0.385);
         outlet(0, "showTimeSignatures", "false");

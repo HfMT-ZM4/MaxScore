@@ -128,20 +128,20 @@ function init()
 setMenu();
 dump.clear();
 messnamed(grab+"-relay", "getStaffInfo", 0, StaffIndex);
-var instrumentindex = dump.get("staff::0::@"+"INSTRUMENTINDEX");
+var instrumentindex = dump.get("staff::@"+"INSTRUMENTINDEX");
 
 
-var clef = dump.get("staff::0::@"+"CLEF");
+var clef = dump.get("staff::@"+"CLEF");
 this.patcher.getnamed("clef").message("set", clef);	
 
-var keysigtype = dump.get("staff::0::@"+"KEYSIGTYPE");
+var keysigtype = dump.get("staff::@"+"KEYSIGTYPE");
 var sign = 1;
 if (keysigtype==1) 
 {
 sign = -1;	
 }
 
-var keysignumacc = dump.get("staff::0::@"+"KEYSIGNUMACC");
+var keysignumacc = dump.get("staff::@"+"KEYSIGNUMACC");
 ks = keysignumacc * sign + 7;
 
 this.patcher.getnamed("keySignature").message("set", ks);	
@@ -590,10 +590,10 @@ function newEvent(data) {
                 if (keys.length == 1) {
                     if (inf[7] == -1) {
                         messnamed(grab+"-relay", "getNoteInfo", inf.slice(3));
-                        event[5] = dump.get("note::0::dim::1::@value");
+                        event[5] = dump.get("note::dim::1::@value");
                     } else {
                         messnamed(grab+"-relay", "getIntervalInfo", inf.slice(3));
-                        event[5] = dump.get("interval::0::dim::1::@value");
+                        event[5] = dump.get("interval::dim::1::@value");
                     }
                     preview.message(StaffIndex, event);
 					//post("event", event, "\n");
@@ -865,29 +865,29 @@ function getStaffNoteIntervalInfo(i) {
         messnamed(grab+"-relay", "getNoteProperty", "level", inf.slice(3));
         l[8] = dump.get(0)[7];
         messnamed(grab+"-relay", "getStaffInfo", inf.slice(3, 5));
-        l[7] = dump.get("staff::0::@CLEF");
-        l[6] = dump.get("staff::0::@KEYSIGTYPE");
-        l[5] = dump.get("staff::0::@KEYSIGNUMACC");
+        l[7] = dump.get("staff::@CLEF");
+        l[6] = dump.get("staff::@KEYSIGTYPE");
+        l[5] = dump.get("staff::@KEYSIGNUMACC");
         if (inf[7] == -1) {
             messnamed(grab+"-relay", "getNoteInfo", inf.slice(3));
             l[10] = "note";
-            l[9] = dump.get("note::0::@VELOCITY");
-            l[4] = dump.get("note::0::@PITCH");
-            l[3] = dump.get("note::0::@ALTENHARMONIC");
-            l[2] = dump.get("note::0::@ACCPREF");
-            l[1] = dump.get("note::0::@NOTEHEAD");
-            l[0] = dump.get("note::0::dim::1::@value");
+            l[9] = dump.get("note::@VELOCITY");
+            l[4] = dump.get("note::@PITCH");
+            l[3] = dump.get("note::@ALTENHARMONIC");
+            l[2] = dump.get("note::@ACCPREF");
+            l[1] = dump.get("note::@NOTEHEAD");
+            l[0] = dump.get("note::dim::1::@value");
             outlet(0, "selectNote", inf.slice(3, 7));
         } else {
             messnamed(grab+"-relay", "getIntervalInfo", inf.slice(3));
             l[11] = StaffIndex;
             l[10] = "interval";
-            l[9] = dump.get("interval::0::@VELOCITY");
-            l[4] = dump.get("interval::0::@PITCH");
-            l[3] = dump.get("interval::0::@ALTENHARMONIC");
-            l[2] = dump.get("interval::0::@ACCPREF");
-            l[1] = dump.get("interval::0::@NOTEHEAD");
-            l[0] = dump.get("interval::0::dim::1::@value");
+            l[9] = dump.get("interval::@VELOCITY");
+            l[4] = dump.get("interval::@PITCH");
+            l[3] = dump.get("interval::@ALTENHARMONIC");
+            l[2] = dump.get("interval::@ACCPREF");
+            l[1] = dump.get("interval::@NOTEHEAD");
+            l[0] = dump.get("interval::dim::1::@value");
             outlet(0, "selectNote", inf.slice(3, 7));
             for (var j = 0; j < inf[7] + 1; j++) {
                 outlet(0, "selectNextInterval");
