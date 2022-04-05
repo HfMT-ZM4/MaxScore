@@ -96,8 +96,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 587.0, 301.0, 145.0, 24.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 597.0, 316.0, 145.0, 24.0 ],
 									"text" : "expose to pattrstorage"
 								}
 
@@ -121,7 +120,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 496.5, 262.0, 169.0, 22.0 ],
+									"patching_rect" : [ 498.0, 262.0, 169.0, 22.0 ],
 									"text" : "maxscore.info.grab alternative"
 								}
 
@@ -133,7 +132,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 525.5, 294.0, 56.0, 22.0 ],
+									"patching_rect" : [ 534.5, 301.0, 56.0, 22.0 ],
 									"restore" : 									{
 										"u931004218" : [ 											{
 												"jmslscoredoc" : 												{
@@ -790,29 +789,636 @@
 							}
 , 							{
 								"box" : 								{
+									"data" : 									{
+										"jmslscoredoc" : 										{
+											"score" : 											{
+												"0" : 												{
+													"@NAME" : "JMSLMaxScore-4",
+													"@WIDTH" : 320,
+													"@HEIGHT" : 220,
+													"@STAFFS" : 2,
+													"@NUMTRACKSPERSTAFF" : 2,
+													"@InstrumentNamesVisible" : "false",
+													"@TempoVisible" : "true",
+													"@StaffNumbersVisible" : "true",
+													"@MeasureNumbersVisible" : "true",
+													"@SectionBracketsVisible" : "true",
+													"@TimeSignaturesVisible" : "true",
+													"@KeySignaturesVisible" : "true",
+													"@ClefsVisible" : "true",
+													"@ScoreTitleVisible" : "false",
+													"@CourtesyClefsVisible" : "false",
+													"@MeasureNumberOffset" : 1,
+													"@LeftMargin" : 20.0,
+													"@RightMargin" : 20.0,
+													"@TopMargin" : 15.0,
+													"@BottomMargin" : 15.0,
+													"@TopMarginOfFirstPage" : 60.0,
+													"@DrawAllMeasureNumbers" : "false",
+													"@TextFontScaler" : 1.5,
+													"@ScoreSubtitleFontScaler" : 2.0,
+													"@ScoreTitleFontScaler" : 4.0,
+													"@TimesigFontScaler" : 2.5,
+													"@MeasureNumberFontScaler" : 1.5,
+													"@TextFontName" : "SansSerif",
+													"@ScoreSubtitleFontName" : "Serif",
+													"@ScoreTitleFontName" : "Serif",
+													"@TimesigFontName" : "Serif",
+													"@MeasureNumberFontName" : "SansSerif",
+													"@FirstSystemIndent" : 0.0,
+													"@useLegacyMultiTrackOrientation" : "true",
+													"ScoreAnnotation" : 													{
+														"0" : 														{
+															"@CLASSNAME" : "com.softsynth.jmsl.score.ScoreAnnotation",
+															"@Annotation" : "324.3oc4PtrSCCCEDccxWgkWmD4HwCU1QU2vBJU7PHAhENI1QlZ6ajsSATU+2wOZSCeCrwV9bGOZl697L7NlwJ.MFcCBWWQvEd1fAF.iyioxv.R.1Ho5san8rIhSnXunEt.nlPpRP12NNniP7sFg2g.VMZEsS7kF5tQCEmbwIYSSd16oEsl8E5QPQ0QEM8sfDLg4uiHUKVbUwrqKJP9bi9Hnj+WkjhYGShrL2qF5PL0Ge+F.pXspt7HYkOdoEvSCzVgteI0lZd00QINJmWRBjr84YYXIqqmYjBMydx4fpejwegWw3zQoCGwJQqw2tXDvp6K0flklP69bz5Nsgyvs9USTU27+GiVoDfsiCm0FiTuARLe+KPk0wJ68sowbm15LqopTfPIqDA3nhocgIa.qHz5G3b+NHZcd1g7yEt9+QgyOj+a2Lbcb"
+														}
+
+													}
+,
+													"orchestra" : 													{
+														"0" : 														{
+															"@CLASSNAME" : "com.softsynth.jmsl.score.Orchestra",
+															"jmslscoreinstrument" : 															{
+																"0" : 																{
+																	"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
+																	"@InsIndex" : 0,
+																	"@EditEnabled" : "true",
+																	"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
+																	"@Transposition" : 0.0,
+																	"@Name" : "MaxScoreIns-0",
+																	"dim" : 																	{
+																		"0" : 																		{
+																			"@index" : 4,
+																			"@defaultvalue" : 0.0,
+																			"@lowlimit" : 0.0,
+																			"@highlimit" : 3.0,
+																			"@name" : "EventFlag"
+																		}
+,
+																		"1" : 																		{
+																			"@index" : 5,
+																			"@defaultvalue" : -1.0,
+																			"@lowlimit" : -1.0,
+																			"@highlimit" : 127.0,
+																			"@name" : "originalPitch"
+																		}
+,
+																		"2" : 																		{
+																			"@index" : 6,
+																			"@defaultvalue" : -1.0,
+																			"@lowlimit" : -1.0,
+																			"@highlimit" : 10000.0,
+																			"@name" : "index"
+																		}
+
+																	}
+,
+																	".ordering" : [ "dim", "dim", "dim" ]
+																}
+,
+																"1" : 																{
+																	"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
+																	"@InsIndex" : 1,
+																	"@EditEnabled" : "true",
+																	"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
+																	"@Transposition" : 0.0,
+																	"@Name" : "MaxScoreIns-1",
+																	"dim" : 																	{
+																		"0" : 																		{
+																			"@index" : 4,
+																			"@defaultvalue" : 0.0,
+																			"@lowlimit" : 0.0,
+																			"@highlimit" : 3.0,
+																			"@name" : "EventFlag"
+																		}
+,
+																		"1" : 																		{
+																			"@index" : 5,
+																			"@defaultvalue" : -1.0,
+																			"@lowlimit" : -1.0,
+																			"@highlimit" : 127.0,
+																			"@name" : "originalPitch"
+																		}
+,
+																		"2" : 																		{
+																			"@index" : 6,
+																			"@defaultvalue" : -1.0,
+																			"@lowlimit" : -1.0,
+																			"@highlimit" : 10000.0,
+																			"@name" : "index"
+																		}
+
+																	}
+,
+																	".ordering" : [ "dim", "dim", "dim" ]
+																}
+
+															}
+,
+															".ordering" : [ "jmslscoreinstrument", "jmslscoreinstrument" ]
+														}
+
+													}
+,
+													"mixerpanelsettings" : 													{
+														"0" : 														{
+															"panamppair" : 															{
+																"0" : 																{
+																	"@FADERINDEX" : 0,
+																	"@PAN" : 0.5,
+																	"@AMP" : 0.5
+																}
+,
+																"1" : 																{
+																	"@FADERINDEX" : 1,
+																	"@PAN" : 0.5,
+																	"@AMP" : 0.5
+																}
+
+															}
+,
+															".ordering" : [ "panamppair", "panamppair" ]
+														}
+
+													}
+,
+													"staffspacing" : 													{
+														"0" : 														{
+															"@INDEX" : 0,
+															"@ABOVE" : 72.0,
+															"@BELOW" : 72.0
+														}
+,
+														"1" : 														{
+															"@INDEX" : 1,
+															"@ABOVE" : 72.0,
+															"@BELOW" : 72.0
+														}
+
+													}
+,
+													"scoresection" : 													{
+														"0" : 														{
+															"@NAME" : "A",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"1" : 														{
+															"@NAME" : "B",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"2" : 														{
+															"@NAME" : "C",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"3" : 														{
+															"@NAME" : "D",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"4" : 														{
+															"@NAME" : "E",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"5" : 														{
+															"@NAME" : "F",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"6" : 														{
+															"@NAME" : "G",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"7" : 														{
+															"@NAME" : "H",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"8" : 														{
+															"@NAME" : "I",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"9" : 														{
+															"@NAME" : "J",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"10" : 														{
+															"@NAME" : "K",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"11" : 														{
+															"@NAME" : "L",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"12" : 														{
+															"@NAME" : "M",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"13" : 														{
+															"@NAME" : "N",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"14" : 														{
+															"@NAME" : "O",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"15" : 														{
+															"@NAME" : "P",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"16" : 														{
+															"@NAME" : "Q",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"17" : 														{
+															"@NAME" : "R",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"18" : 														{
+															"@NAME" : "S",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"19" : 														{
+															"@NAME" : "T",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"20" : 														{
+															"@NAME" : "U",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"21" : 														{
+															"@NAME" : "V",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"22" : 														{
+															"@NAME" : "W",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"23" : 														{
+															"@NAME" : "X",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"24" : 														{
+															"@NAME" : "Y",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"25" : 														{
+															"@NAME" : "Z",
+															"@START" : 0,
+															"@END" : 0
+														}
+
+													}
+,
+													"measure" : 													{
+														"0" : 														{
+															"@WIDTH" : 561,
+															"@WIDTHSETBYHAND" : "false",
+															"@TIMESIG" : [ 4, 4 ],
+															"@TIMESIGSETBYHAND" : "false",
+															"@TEMPO" : 60.0,
+															"@TEMPOSETBYHAND" : "false",
+															"@REPEATSTART" : "false",
+															"@REPEATEND" : "false",
+															"@NUMREPEATS" : 1,
+															"@BARLINE" : "SINGLE",
+															"@MEASURETEXTX" : 48,
+															"@MEASURETEXTY" : 48,
+															"@MEASURELEFTMARGIN" : 50.0,
+															"staff" : 															{
+																"0" : 																{
+																	"@INDEX" : 0,
+																	"@CLEF" : 0,
+																	"@CLEFSETBYHAND" : "false",
+																	"@INSTRUMENTINDEX" : 0,
+																	"@INSINDEXSETBYHAND" : "false",
+																	"@KEYSIGTYPE" : 0,
+																	"@KEYSIGNUMACC" : 0,
+																	"@KEYSIGSETBYHAND" : "false",
+																	"@EXTENDEDLINESABOVE" : 0,
+																	"@EXTENDEDLINESBELOW" : 0,
+																	"track" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@MultitrackRestAdjustmentY" : 0.0,
+																			"note" : 																			{
+																				"0" : 																				{
+																					"@NOTEDUR" : 2,
+																					"@TUPLET" : 0,
+																					"@DOTS" : 0,
+																					"@ACCINFO" : 0,
+																					"@DURATION" : 1.0,
+																					"@PITCH" : 72.0,
+																					"@VELOCITY" : 0.5,
+																					"@HOLD" : 0.8,
+																					"@BEAMEDOUT" : "false",
+																					"@GLISSOUT" : "false",
+																					"@TIEDOUT" : "false",
+																					"@ACCPREF" : 0,
+																					"@ACCVISPOLICY" : 0,
+																					"@ALTENHARMONIC" : "false",
+																					"@DYN" : 0,
+																					"@SLUROUT" : "false",
+																					"@ISGRACENOTE" : "false",
+																					"@GRACENOTESEPARATIONSCALER" : 2.0,
+																					"@LEDGERLINESVISIBLE" : "true",
+																					"@WEDGE" : "none",
+																					"@OTTAVA" : "none",
+																					"@MARK" : 0,
+																					"@TEXTOFFSETX" : 0,
+																					"@TEXTOFFSETY" : 0,
+																					"@NOTEHEAD" : 0,
+																					"@NOTEHEADSCALE" : 1.0,
+																					"@VISIBLE" : "true",
+																					"@NOTEHEADVISIBLE" : "true",
+																					"@STEMVISIBLE" : "true",
+																					"@OVERRIDELEVEL" : -1,
+																					"@ISOVERRIDELEVEL" : "false",
+																					"@STEMINFOOVERRIDE" : "false",
+																					"@STEMINFO" : 2,
+																					"@LAYOUTSHIFTX" : 0.0,
+																					"dim" : 																					{
+																						"0" : 																						{
+																							"@index" : 4,
+																							"@value" : 0.0,
+																							"@name" : "EventFlag"
+																						}
+,
+																						"1" : 																						{
+																							"@index" : 5,
+																							"@value" : -1.0,
+																							"@name" : "originalPitch"
+																						}
+,
+																						"2" : 																						{
+																							"@index" : 6,
+																							"@value" : -1.0,
+																							"@name" : "index"
+																						}
+
+																					}
+,
+																					".ordering" : [ "dim", "dim", "dim" ]
+																				}
+,
+																				"1" : 																				{
+																					"@NOTEDUR" : 2,
+																					"@TUPLET" : 0,
+																					"@DOTS" : 0,
+																					"@ACCINFO" : 0,
+																					"@DURATION" : 1.0,
+																					"@PITCH" : 71.0,
+																					"@VELOCITY" : 0.5,
+																					"@HOLD" : 0.8,
+																					"@BEAMEDOUT" : "false",
+																					"@GLISSOUT" : "false",
+																					"@TIEDOUT" : "false",
+																					"@ACCPREF" : 0,
+																					"@ACCVISPOLICY" : 0,
+																					"@ALTENHARMONIC" : "false",
+																					"@DYN" : 0,
+																					"@SLUROUT" : "false",
+																					"@ISGRACENOTE" : "false",
+																					"@GRACENOTESEPARATIONSCALER" : 2.0,
+																					"@LEDGERLINESVISIBLE" : "true",
+																					"@WEDGE" : "none",
+																					"@OTTAVA" : "none",
+																					"@MARK" : 0,
+																					"@TEXTOFFSETX" : 0,
+																					"@TEXTOFFSETY" : 0,
+																					"@NOTEHEAD" : 0,
+																					"@NOTEHEADSCALE" : 1.0,
+																					"@VISIBLE" : "true",
+																					"@NOTEHEADVISIBLE" : "true",
+																					"@STEMVISIBLE" : "true",
+																					"@OVERRIDELEVEL" : -1,
+																					"@ISOVERRIDELEVEL" : "false",
+																					"@STEMINFOOVERRIDE" : "false",
+																					"@STEMINFO" : 2,
+																					"@LAYOUTSHIFTX" : 0.0,
+																					"dim" : 																					{
+																						"0" : 																						{
+																							"@index" : 4,
+																							"@value" : 0.0,
+																							"@name" : "EventFlag"
+																						}
+,
+																						"1" : 																						{
+																							"@index" : 5,
+																							"@value" : -1.0,
+																							"@name" : "originalPitch"
+																						}
+,
+																						"2" : 																						{
+																							"@index" : 6,
+																							"@value" : -1.0,
+																							"@name" : "index"
+																						}
+
+																					}
+,
+																					".ordering" : [ "dim", "dim", "dim" ]
+																				}
+
+																			}
+,
+																			".ordering" : [ "note", "note" ]
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+
+																	}
+,
+																	".ordering" : [ "track", "track" ]
+																}
+,
+																"1" : 																{
+																	"@INDEX" : 1,
+																	"@CLEF" : 0,
+																	"@CLEFSETBYHAND" : "false",
+																	"@INSTRUMENTINDEX" : 1,
+																	"@INSINDEXSETBYHAND" : "false",
+																	"@KEYSIGTYPE" : 0,
+																	"@KEYSIGNUMACC" : 0,
+																	"@KEYSIGSETBYHAND" : "false",
+																	"@EXTENDEDLINESABOVE" : 0,
+																	"@EXTENDEDLINESBELOW" : 0,
+																	"track" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+
+																	}
+,
+																	".ordering" : [ "track", "track" ]
+																}
+
+															}
+,
+															".ordering" : [ "staff", "staff" ]
+														}
+,
+														"1" : 														{
+															"@WIDTH" : 450,
+															"@WIDTHSETBYHAND" : "false",
+															"@TIMESIG" : [ 4, 4 ],
+															"@TIMESIGSETBYHAND" : "false",
+															"@TEMPO" : 60.0,
+															"@TEMPOSETBYHAND" : "false",
+															"@REPEATSTART" : "false",
+															"@REPEATEND" : "false",
+															"@NUMREPEATS" : 1,
+															"@BARLINE" : "SINGLE",
+															"@MEASURETEXTX" : 48,
+															"@MEASURETEXTY" : 48,
+															"@MEASURELEFTMARGIN" : 50.0,
+															"staff" : 															{
+																"0" : 																{
+																	"@INDEX" : 0,
+																	"@CLEF" : 0,
+																	"@CLEFSETBYHAND" : "false",
+																	"@INSTRUMENTINDEX" : 0,
+																	"@INSINDEXSETBYHAND" : "false",
+																	"@KEYSIGTYPE" : 0,
+																	"@KEYSIGNUMACC" : 0,
+																	"@KEYSIGSETBYHAND" : "false",
+																	"@EXTENDEDLINESABOVE" : 0,
+																	"@EXTENDEDLINESBELOW" : 0,
+																	"track" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+
+																	}
+,
+																	".ordering" : [ "track", "track" ]
+																}
+,
+																"1" : 																{
+																	"@INDEX" : 1,
+																	"@CLEF" : 0,
+																	"@CLEFSETBYHAND" : "false",
+																	"@INSTRUMENTINDEX" : 1,
+																	"@INSINDEXSETBYHAND" : "false",
+																	"@KEYSIGTYPE" : 0,
+																	"@KEYSIGNUMACC" : 0,
+																	"@KEYSIGSETBYHAND" : "false",
+																	"@EXTENDEDLINESABOVE" : 0,
+																	"@EXTENDEDLINESBELOW" : 0,
+																	"track" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+
+																	}
+,
+																	".ordering" : [ "track", "track" ]
+																}
+
+															}
+,
+															".ordering" : [ "staff", "staff" ]
+														}
+
+													}
+,
+													"scoreUserBean" : 													{
+														"0" : 														{
+															"@CLASSNAME" : "com.algomusic.max.MaxScoreRenderedMessageListener"
+														}
+
+													}
+,
+													".ordering" : [ "ScoreAnnotation", "orchestra", "mixerpanelsettings", "staffspacing", "staffspacing", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "measure", "measure", "scoreUserBean" ]
+												}
+
+											}
+,
+											".ordering" : [ "score" ]
+										}
+
+									}
+,
 									"id" : "obj-9",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 465.0, 294.0, 50.5, 22.0 ],
-									"saved_attribute_attributes" : 									{
-										"valueof" : 										{
-											"parameter_invisible" : 1,
-											"parameter_longname" : "u931004218",
-											"parameter_shortname" : "u931004218",
-											"parameter_type" : 3
-										}
-
-									}
-,
+									"patching_rect" : [ 428.0, 301.0, 89.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"embed" : 0,
-										"parameter_enable" : 1,
+										"embed" : 1,
+										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict",
+									"text" : "dict @embed 1",
 									"varname" : "u931004218"
 								}
 
@@ -840,7 +1446,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 492.5, 184.0, 131.0, 39.0 ],
+									"patching_rect" : [ 468.5, 188.0, 131.0, 39.0 ],
 									"text" : "set and dump score"
 								}
 
@@ -924,7 +1530,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "newScore" ],
-									"patching_rect" : [ 421.0, 321.0, 63.0, 22.0 ],
+									"patching_rect" : [ 384.0, 328.0, 63.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore[1]"
 								}
@@ -946,7 +1552,7 @@
 									"numoutlets" : 4,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 421.0, 367.0, 320.0, 220.0 ],
+									"patching_rect" : [ 384.0, 374.0, 320.0, 220.0 ],
 									"prototypename" : "bcanvas",
 									"varname" : "bcanvas[1]",
 									"viewvisibility" : 1
@@ -961,7 +1567,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 465.0, 232.5, 24.0, 24.0 ]
+									"patching_rect" : [ 428.0, 239.5, 24.0, 24.0 ]
 								}
 
 							}
@@ -995,7 +1601,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 496.5, 234.0, 72.0, 22.0 ],
+									"patching_rect" : [ 498.0, 234.0, 72.0, 22.0 ],
 									"text" : "dumpScore"
 								}
 
@@ -1054,7 +1660,6 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 506.0, 300.0 ],
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -1127,7 +1732,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-43", 0 ],
-									"midpoints" : [ 47.5, 616.0, 14.5, 616.0, 14.5, 309.0, 48.0, 309.0 ],
+									"midpoints" : [ 47.5, 616.0, 20.5, 616.0, 20.5, 309.0, 48.0, 309.0 ],
 									"source" : [ "obj-44", 0 ]
 								}
 
@@ -1142,7 +1747,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-60", 1 ],
-									"midpoints" : [ 445.166666666666686, 357.0, 731.5, 357.0 ],
+									"midpoints" : [ 408.166666666666686, 364.0, 694.5, 364.0 ],
 									"source" : [ "obj-59", 1 ]
 								}
 
@@ -1157,7 +1762,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-59", 0 ],
-									"midpoints" : [ 430.5, 611.5, 397.5, 611.5, 397.5, 302.5, 430.5, 302.5 ],
+									"midpoints" : [ 393.5, 618.5, 366.5, 618.5, 366.5, 309.5, 393.5, 309.5 ],
 									"source" : [ "obj-60", 0 ]
 								}
 
@@ -1998,7 +2603,6 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-9" : [ "u931004218", "u931004218", 0 ],
 			"obj-9::obj-9" : [ "store", "store", 0 ],
 			"parameterbanks" : 			{
 
