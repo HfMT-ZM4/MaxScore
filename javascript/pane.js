@@ -1050,19 +1050,10 @@ function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 	var _cmd = (max["os"]=="macintosh") ? cmd : option;
 	if (idleOut) outlet(1, "mouseIdle",  x - horizontalOffset , y - verticalOffset, shift, ctrl);
     canvasactive = 1;
-    if (_cmd) {
-        // cache mouse position for tracking delta movements
-        DisplayCursor(9);
-    }
-	if (ctrl && max["os"]=="macintosh") {
-    DisplayCursor(4);
-	}
-    if (capsl) {
-        DisplayCursor(6);
-	}
-    if (!ctrl && !capsl && !_cmd) {
-        DisplayCursor(1);
-    }
+    if (_cmd) DisplayCursor(9);
+	else if (ctrl) DisplayCursor(4);
+    else if (capsl) DisplayCursor(6);
+    else if (!ctrl && !capsl && !_cmd) DisplayCursor(1);
 	idl = 0;
 	idlposition = [x, y];
 	//mgraphics.redraw();
