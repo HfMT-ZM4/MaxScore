@@ -44,6 +44,7 @@ var	buttonstrokecolor = "red";
 var buttonstrokewidth = 0.5;
 var buttonfillopacity = 0.2;
 var ref, listener;
+var zl = [1.];
 
 
 if (jsarguments.length >= 1) 
@@ -472,6 +473,10 @@ function obj_ref(o)
 }
 
 
+function zoomlist()
+{
+	zl = arrayfromargs(arguments);
+}	
 
 function writeSVG(destination)
 {
@@ -484,7 +489,10 @@ function writeSVG(destination)
 	//var SVGZoom = 1;
 	f.writeline("<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">");
 	for (var s = 1; s <= groupcount; s++) {
-	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\">");	
+		_zl = (s > zl.length) ? zl[zl.length - 1] * 2 : zl[s - 1] * 2;
+		if (_zl == "default") _zl = 1.;
+		else if (_zl == "current") _zl = zoom;
+	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [_zl, 0., 0., _zl, 0., 0.] + ")\">");	
 	for (var i = 0; i < SVGString[s].length; i++) {
 		f.writeline(SVGString[s][i]);
 	}

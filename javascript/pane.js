@@ -136,6 +136,10 @@ function setattr_bgcolor(r, g, b, a)
 	bgcolor = [r, g, b, a];
 }
 
+function zoomlist()
+{
+	
+}	
 
 function setMediaFolder()
 {

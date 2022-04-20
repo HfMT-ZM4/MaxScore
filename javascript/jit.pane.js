@@ -148,6 +148,11 @@ function setMediaFolder()
 	
 }
 
+function zoomlist()
+{
+	
+}	
+
 function buttonmode(bm)
 {
 	buttonfillcolor = (bm) ? [0.808, 0.898, 0.910, 0.8] : [1., 0., 0., 0.1];
