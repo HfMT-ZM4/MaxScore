@@ -1,6 +1,3 @@
-inlets = 2;
-outlets = 2;
-
 var dict2 = new Dict;
 var json2 = {};
 	
@@ -19,6 +16,5 @@ function dictionary(d)
 	var out = new Dict;
 	out.parse(JSON.stringify(svg));
 	outlet(0, "signalPeer", arg, JSON.stringify(svg));
-	outlet(1, "dictionary", out.name);		
 }
 
