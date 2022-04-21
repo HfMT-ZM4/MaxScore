@@ -44,7 +44,7 @@ var	buttonstrokecolor = "red";
 var buttonstrokewidth = 0.5;
 var buttonfillopacity = 0.2;
 var ref, listener;
-var zl = [1.];
+var zl = [0.5];
 
 
 if (jsarguments.length >= 1) 
@@ -492,7 +492,7 @@ function writeSVG(destination)
 		_zl = (s > zl.length) ? zl[zl.length - 1] * 2 : zl[s - 1] * 2;
 		if (_zl == "default") _zl = 1.;
 		else if (_zl == "current") _zl = zoom;
-	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [_zl, 0., 0., _zl, 0., 0.] + ")\">");	
+	f.writeline("<g id=\"_" + s +  "\" transform=\"matrix(" + [_zl, 0., 0., _zl, 0., 0.] + ")\">");	
 	for (var i = 0; i < SVGString[s].length; i++) {
 		f.writeline(SVGString[s][i]);
 	}
