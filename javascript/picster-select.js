@@ -1,7 +1,7 @@
 inlets = 2;
 outlets = 4;
 
-//include("xml2json");
+include("maxscore.tools");
 include("fitcurve");
 include("pentool");
 include("djsterNotation");
@@ -2575,51 +2575,6 @@ function getStaffBoundingInfo(measureIndex, staffIndex, x, y, width, height, mar
 	staffBoundingInfo = [x, y, width, height, marginX];
 }
 
-function CurveCoeffs(nhops, crv)
-{
-	var CLCCURVE_C1 = 1e-20;
-	var CLCCURVE_C2 = 1.2;
-	var CLCCURVE_C3 = 0.41;
-	var CLCCURVE_C4 = 0.91;
-	this.bbp = 0.;
-	this.mmp = 0.;
-	
-	if (nhops > 0)
-    {
-		var hh, ff, eff, gh;
-		if (crv < 0.)
-		{
-		    if (crv < -1.)
-			crv = -1.;
-		    hh = Math.pow(((CLCCURVE_C1 - crv) * CLCCURVE_C2), CLCCURVE_C3) * CLCCURVE_C4;
-		    ff = hh / (1. - hh);
-		    eff = Math.exp(ff) - 1.;
-		    gh = (Math.exp(ff * .5) - 1.) / eff;
-		    this.bbp = gh * (gh / (1. - (gh + gh)));
-		    this.mmp = 1. / (((Math.exp(ff * (1. / nhops)) - 1.) / (eff * this.bbp)) + 1.);
-		    this.bbp += 1.;
-		}
-		else
-		{
-		    if (crv > 1.)
-			crv = 1.;
-		    hh = Math.pow(((crv + CLCCURVE_C1) * CLCCURVE_C2), CLCCURVE_C3) * CLCCURVE_C4;
-		    ff = hh / (1. - hh);
-		    eff = Math.exp(ff) - 1.;
-		    gh = (Math.exp(ff * .5) - 1.) / eff;
-		    this.bbp = gh * (gh / (1. - (gh + gh)));
-		    this.mmp = ((Math.exp(ff * (1. / nhops)) - 1.) / (eff * this.bbp)) + 1.;
-		}
-    }
-    else if (crv < 0.) {
-		this.bbp = 2.;
-		this.mmp = 1.;
-	}
-    else
-		this.bbp = this.mmp = 1.;
-}
-CurveCoeffs.local = 1;
-
 //new CurveSeg(prev.valy, curr.valy, prev.valx, curr.valx, curr.curve, numCurvePoints);
 function CurveSeg(x0, y0, x1, y1, curve, nhops)
 {
@@ -2665,12 +2620,6 @@ function CurveSeg(x0, y0, x1, y1, curve, nhops)
 }
 CurveSeg.local = 1;
 
-
-function htmlEntities(str)
-{
-    return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;"); //"
-}
-
 function ovalarc(startangle, endangle, cx, cy, r1, r2) {
 		startangle += Math.PI/2.;
 		endangle += Math.PI/2.;
@@ -2684,19 +2633,5 @@ function ovalarc(startangle, endangle, cx, cy, r1, r2) {
         var d = "M" + cx + "," + cy + "M" + x1 + "," + y1 + "A" + r1 + "," + r2 + ",0 ," + big + ",1 " + x2.toFixed(3) + "," + y2.toFixed(3);
 //            + " Z\"";                       // Close path back to (cx,cy)
  		return d;
-}
-
-function getAllIndexes(arr, val) {
-    var indexes = [-1], i;
-	var c = 0;
-	if (typeof arr == "number" && arr == val) indexes = [0];
-    else {for(i = 0; i < arr.length; i++)
-        if (arr[i] == val)
-			{
-            indexes[c] = i;
-			c++;
-			}
-		}
-    return indexes;
 }
 

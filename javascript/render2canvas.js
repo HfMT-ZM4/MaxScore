@@ -6,7 +6,7 @@
 inlets = 4;
 outlets = 3;
 
-//include("xml2json");
+include("maxscore.tools");
 
 var SVGString = {};
 var SVGClefs = {};
@@ -953,40 +953,6 @@ function writeStaffLines()
 			//oldstafflines = stafflines;
 }
 
-function writeStems()
-{
-			if (!isEmpty(stems)){
-			var y = [];
-			for (var key in stems)
-			{
-			y.push(stems[key][1]);
-			}
-			if (stems[key][8] == "STEM_UP") var xoffset	= -0.4;
-			else var xoffset = 0;	
-			if (stems[key][3] == "TAB") var yoffset	= -5;
-			else var yoffset = 0;	
-			var bottom = arrayMax(y);
-			var top = arrayMin(y);
-			//post("heigth", (bottom - top + (26. + yoffset ) * stems[key][2] * 2 ), "\n");
-			//post("didkovsky", bottom - top + (12 * 3.5 + yoffset) * stems[key][2], "\n");
-			for (var s = 0; s < groupcount; s++)
-			{
-			var dest = remap(sg[s], stems[key][5], top);
-			if (dest != -1)
-			{
-			for (var d = 0; d < dest.length; d++) {
-			if (stems[key][2] == 0.5) SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. + xoffset) + "\" y=\"" + (dest[d] - 22) + "\" width=\"" + 0.75 + "\" height=\"" + (bottom - top + 20. + yoffset) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
-			else {
-				var h = bottom - top + (12 * 3.5 + yoffset) * stems[key][2];
-				if (stems[key][8] == "STEM_UP") SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - ((y.length == 1) ? 1.7 : 3) - (12 * 3.5 + yoffset) * stems[key][2]) + "\" width=\"" + 0.5 + "\" height=\"" + h + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
-
-				else SVGString[s + 1].push("<rect x=\"" + (stems[key][0] + 7. * stems[key][2] * 2  + xoffset) + "\" y=\"" + (dest[d] - 22 * stems[key][2] * 2) + "\" width=\"" + 0.5 + "\" height=\"" + (bottom - top + (20. + yoffset) * stems[key][2] * 2 ) + "\" fill=\"" + stems[key].slice(9) + "\" stroke=\"" + stems[key].slice(9) + "\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");	
-				}
-			}
-		}
-	}
-}				
-}
 
 function writeRuler()
 {
@@ -1116,7 +1082,6 @@ function endRenderDump()
 	}
    	outlet(1, "getTitle");
     outlet(1, "getComposer");
-	writeStems();
 	writeStaffLines();
 	writeBarlines();
 	if (prop) writeRuler();
@@ -1340,22 +1305,23 @@ function anything() {
 			}
 			}
             break;
-        case "stem":
-			//stem 83.620689 67. 0.5 Note 0. 0. 0. 0. STEM_UP
-			var index = [msg[0], msg[4], msg[5], msg[6], msg[7], msg[8]];				
-			if (JSON.stringify(index) === JSON.stringify(oldIndex)) {
-				if (annotation.contains("staff-" + msg[5]+"::clef") && annotation.get("staff-"+msg[5]+"::clef") == "TAB") msg[3] = "TAB";
-				else notes++;
-				stems[notes] = msg.concat(frgb);
+        case "Stem":
+			// Stem, measureIndex, staffIndex, trackIndex, noteIndex, zoom, x, y1, y2, isGraceNote, graceNoteIndex
+			if (msg[7] != -1) {
+			var stemOffset = (msg[7] - msg[6] > 0) ? 0 : -0.5 * msg[4];  
+			for (var s = 0; s < groupcount; s++)
+			{
+				var dest = remap(sg[s], msg[1], ((msg[7] - msg[6]) < 0) ? msg[7] : msg[6]);
+				if (dest != -1)
+				{
+					for (var d = 0; d < dest.length; d++) {
+					//post("Stem", msg[5], dest[d], 1.5 * msg[4], msg[7] - msg[6], "\n");
+ 					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + Math.abs(msg[7] - msg[6]) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+					}
+				}
 			}
-			else {
-			writeStems();
-			stems = {};
-			notes = 0;	
-			stems[notes] = msg.concat(frgb);
 			}
-			oldIndex = index;
-            break;
+           break;
         case "barline":
 			//barline 0. 0.5 20. 51. 363. 1.
 			//barline measureIndex zoom x barTop barBottom barThickness
@@ -1377,7 +1343,7 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<rect x=\"" + (msg[9] - 0.3)  + "\" y=\"" + dest[d] + "\" width=\"" + (msg[11] + 1.) + "\" height=\"" + msg[12] + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+			SVGString[s + 1].push("<rect x=\"" + (msg[9] - 0.2)  + "\" y=\"" + (dest[d] - 0.4) + "\" width=\"" + (msg[11] + (2. * msg[8])) + "\" height=\"" + msg[12] + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			}
 			}
 			}
@@ -2277,6 +2243,11 @@ function anything() {
 				}
 				}	
 			else {	
+			if (msgname == "acciaccatura") {
+			//post("acciaccatura1", msg, "\n");
+			if (msg[8] == "STEM_DOWN") msgname = "acciaccaturastemdown";
+			else msgname = "acciaccaturastemup";
+			}
 			if (fontMap.contains(msgname)) var glyph = fontMap.get(msgname);
 			else if (fontExtras.contains(msgname)) var glyph = fontExtras.get(msgname); 
 			else return;
@@ -2360,7 +2331,7 @@ function anything() {
 			if (typeof glyph[i*5+0] == "number") t = htmlEntities(glyph[i*5+0].toString());
             else {
 				//post("msg[2]", messagename, "\n");
-				if (msg[2] < 0.5 && msgname.indexOf("notehead") == 0) var gracenoteOffset = 1;
+				if (msg[2] < 0.5 && msgname.indexOf("notehead") == 0) var gracenoteOffset = 0.6;
 				else var gracenoteOffset = 0;
 				if (glyph[0].length == 1) t = glyph[i*5+0];
 				else t = htmlEntities(glyph[i*5+0]);
@@ -2647,143 +2618,6 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						//SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 1. + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + "none" + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
 }
 
-function CurveCoeffs(nhops, crv)
-{
-	var CLCCURVE_C1 = 1e-20;
-	var CLCCURVE_C2 = 1.2;
-	var CLCCURVE_C3 = 0.41;
-	var CLCCURVE_C4 = 0.91;
-	this.bbp = 0.;
-	this.mmp = 0.;
-	
-	if (nhops > 0)
-    {
-		var hh, ff, eff, gh;
-		if (crv < 0.)
-		{
-		    if (crv < -1.)
-			crv = -1.;
-		    hh = Math.pow(((CLCCURVE_C1 - crv) * CLCCURVE_C2), CLCCURVE_C3) * CLCCURVE_C4;
-		    ff = hh / (1. - hh);
-		    eff = Math.exp(ff) - 1.;
-		    gh = (Math.exp(ff * .5) - 1.) / eff;
-		    this.bbp = gh * (gh / (1. - (gh + gh)));
-		    this.mmp = 1. / (((Math.exp(ff * (1. / nhops)) - 1.) / (eff * this.bbp)) + 1.);
-		    this.bbp += 1.;
-		}
-		else
-		{
-		    if (crv > 1.)
-			crv = 1.;
-		    hh = Math.pow(((crv + CLCCURVE_C1) * CLCCURVE_C2), CLCCURVE_C3) * CLCCURVE_C4;
-		    ff = hh / (1. - hh);
-		    eff = Math.exp(ff) - 1.;
-		    gh = (Math.exp(ff * .5) - 1.) / eff;
-		    this.bbp = gh * (gh / (1. - (gh + gh)));
-		    this.mmp = ((Math.exp(ff * (1. / nhops)) - 1.) / (eff * this.bbp)) + 1.;
-		}
-    }
-    else if (crv < 0.) {
-		this.bbp = 2.;
-		this.mmp = 1.;
-	}
-    else
-		this.bbp = this.mmp = 1.;
-}
-CurveCoeffs.local = 1;
-
-//new CurveSeg(prev.valy, curr.valy, prev.valx, curr.valx, curr.curve, numCurvePoints);
-function CurveSeg(x0, y0, x1, y1, curve, nhops)
-{
-	//post("CurveSeg", x0, y0, x1, y1, curve, nhops, "\n");
-	var hopsize, dy, vv, cx;
-	
-	this.y0 = y0;
-	this.y1 = y1;
-	this.x0 = x0;
-	this.x1 = x1;
-	this.delta = x1-x0;
-	this.nhops = nhops;
-	this.coeffs = new CurveCoeffs(nhops, curve);
-	this.cpa = new Array(nhops); // x/y pairs in val format so that zooming/rescaling won't need a recalc
-	
-	if(this.curve < 0.)
-		dy = this.y0 - this.y1;
-	else
-		dy = this.y1 - this.y0;
-				
-	cx = this.x0;
-	hopsize = this.delta / this.nhops;
-	vv = this.coeffs.bbp;
-				
-	for (var j = 0; j < this.nhops; j++) {
-		var cy = (vv - this.coeffs.bbp) * dy + this.y0;
-						
-		vv *= this.coeffs.mmp;		
-		this.cpa[j] = [cx, cy];
-					
-		cx += hopsize;
-	}	
-}
-CurveSeg.local = 1;
-
-function interp(courbe, v)
-{
-	var i, a;
-	//post(JSON.stringify(courbe), "\n");
-	// less than one point... abort!
-	if (courbe.np < 1)
-		return 0;
-	
-	// 1 point output the Y value.
-	if (courbe.np < 2) {
-		return courbe.pa[0].valy;
-	}
-	
-	if (v < courbe.pa[0].valx) {	// v est plus petit que le premier point
-		return courbe.pa[0].valy;
-	}
-
-	if (v > courbe.pa[courbe.np - 1].valx) {	// v est plus grand que le dernier point
-		return courbe.pa[courbe.np - 1].valy;
-	}
-	
-	for (i = 0, a = 0; i < courbe.np; i++) {
-		if (v > courbe.pa[i].valx)
-			a = i;
-		else
-			break;
-	}
-	tmpRange = courbe.pa[a+1].valy - courbe.pa[a].valy;
-	tmpDomain = courbe.pa[a+1].valx - courbe.pa[a].valx;
-	
-		if(Math.abs(courbe.pa[a+1].curve) < 0.001) { // almost linear
-			return ((v - courbe.pa[a].valx) / tmpDomain) * tmpRange + courbe.pa[a].valy;
-		} else {	
-			var hp, fp, gp, gx;
-			var curve = courbe.pa[a+1].curve;
-			
-			if(curve < 0.) {
-				gx = (courbe.pa[a+1].valx - v) / tmpDomain;
-				
-				hp = Math.pow((1e-20 - curve) * 1.2, 0.41) * 0.91;
-				fp = hp / (1. - hp);
-				gp = (Math.exp(fp * gx) - 1.) / (Math.exp(fp) - 1.);
-				post("courbe1", courbe.pa[a+1].valy - gp * tmpRange, "\n");
-				return courbe.pa[a+1].valy - gp * tmpRange;
-			} else {
-				gx = (v - courbe.pa[a].valx) / tmpDomain;
-				
-				hp = Math.pow((curve + 1e-20) * 1.2, 0.41) * 0.91;
-				fp = hp / (1. - hp);
-				gp = (Math.exp(fp * gx) - 1.) / (Math.exp(fp) - 1.);
-				post("courbe2", courbe.pa[a+1].valy - gp * tmpRange, "\n");			
-				return gp * tmpRange + courbe.pa[a].valy;
-			}
-		}
-}
-interp.local = 1;
-
 function getNoteAreaWidth(m, w)
 {
 	noteAreaWidth = w;
@@ -2900,10 +2734,11 @@ function writeSVG(destination)
 {
 	if (destination == "object") {
 	var f = {};
-	for (var s = 1; s <= groupcount; s++) SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
+	//for (var s = 1; s <= groupcount; s++) SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
 	f.svg = SVGString;
 	f.clefs = SVGClefs;
 	f.svgimages = SVGImages;
+	f.picster = SVGGraphics;
 	f.pageSize = [_scoreLayout[4], _scoreLayout[5]];
 	f.setZoom = zoom;
 	f.bgcolor = bcolor;
@@ -2932,14 +2767,12 @@ function writeSVG(destination)
 	for (var i = 0; i < SVGString[s].length; i++) {
 		f.writeline(SVGString[s][i]);
 	}
-	/*
-	for (var i = 0; i < SVGGraphics[s].length; i++) {
-		f.writeline(SVGGraphics[s][i]);
-	}
-	*/
 	for (var i = 0; i < SVGImages2[s].length; i++) {
 		f.writeline("<image x=\"" + SVGImages2[s][i][2] + "\" y=\"" + SVGImages2[s][i][3] + "\" width=\"" + SVGImages2[s][i][4] + "\" height=\"" + SVGImages2[s][i][5] + "\" xlink:href=\"file:///" + SVGImages2[s][i][1].substring(SVGImages2[s][i][1].indexOf(":") + 1) + "\" transform=\"matrix(" + SVGImages2[s][i][6] + ")\"/>");
 	}
+	for (var i = 0; i < SVGGraphics[s].length; i++) {
+		f.writeline(SVGGraphics[s][i]);
+	}	
 	if (pageNumber != "") f.writeline(pageNumber);
 	//if (SVGImages[s].length > 0) f.writeline(SVGImages[s]);
 	f.writeline("</g>");
@@ -2948,10 +2781,6 @@ function writeSVG(destination)
 	f.close();
 	}
 	}
-}
-
-function htmlEntities(str) {
-    return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;"); //"
 }
 
 function ovalarc(startangle, endangle, cx, cy, r1, r2) {
@@ -3110,19 +2939,6 @@ function cursor()
 	}
 }
 
-function getAllIndexes(arr, val) {
-    var indexes = [-1], i;
-	var c = 0;
-	if (typeof arr == "number" && arr == val) indexes = [0];
-    else {for(i = 0; i < arr.length; i++)
-        if (arr[i] == val)
-			{
-            indexes[c] = i;
-			c++;
-			}
-		}
-    return indexes;
-}
 
 function arrayMin(arr) {
   var len = arr.length, min = Infinity;

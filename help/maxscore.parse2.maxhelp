@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 3,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 1025.0, 726.0 ],
+		"rect" : [ 100.0, 100.0, 1032.0, 721.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,14 +69,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 1025.0, 700.0 ],
+						"rect" : [ 100.0, 126.0, 1032.0, 695.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -134,20 +134,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 298.25, 250.0, 53.0, 22.0 ],
+									"patching_rect" : [ 137.875014999999991, 255.0, 53.0, 22.0 ],
 									"text" : "offset 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-28",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 237.25, 250.0, 55.0, 22.0 ],
-									"text" : "getTree"
 								}
 
 							}
@@ -238,7 +226,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 215.25, 184.0, 97.0, 23.0 ],
+									"patching_rect" : [ 193.25, 183.0, 97.0, 23.0 ],
 									"text" : "dumpScore 0 1"
 								}
 
@@ -252,7 +240,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 132.25, 184.0, 78.0, 23.0 ],
+									"patching_rect" : [ 110.25, 183.0, 78.0, 23.0 ],
 									"text" : "dumpScore"
 								}
 
@@ -266,7 +254,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 32.0, 184.0, 90.0, 23.0 ],
+									"patching_rect" : [ 10.0, 183.0, 90.0, 23.0 ],
 									"text" : "openWindow"
 								}
 
@@ -277,8 +265,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "" ],
-									"patching_rect" : [ 10.0, 231.0, 162.812775999999957, 22.0 ],
+									"outlettype" : [ "", "", "", "newScore" ],
+									"patching_rect" : [ 10.0, 227.0, 162.812775999999957, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore[1]"
 								}
@@ -304,7 +292,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 137.875014999999991, 495.0, 90.0, 22.0 ],
+									"patching_rect" : [ 125.500031000000007, 497.0, 90.0, 22.0 ],
 									"text" : "openWindow"
 								}
 
@@ -315,8 +303,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "" ],
-									"patching_rect" : [ 58.25, 526.0, 67.0, 22.0 ],
+									"outlettype" : [ "", "", "", "newScore" ],
+									"patching_rect" : [ 57.937591999999995, 540.0, 67.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore"
 								}
@@ -329,7 +317,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 58.25, 556.0, 112.0, 22.0 ],
+									"patching_rect" : [ 58.25, 581.0, 112.0, 22.0 ],
 									"text" : "maxscore.canvas",
 									"varname" : "canvas[1]"
 								}
@@ -715,7 +703,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 19.5, 289.0, 3.0, 289.0, 3.0, 224.0, 19.5, 224.0 ],
+									"midpoints" : [ 19.5, 289.0, 3.0, 289.0, 3.0, 219.0, 19.5, 219.0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -723,15 +711,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 246.75, 289.5, 67.437591999999995, 289.5 ],
-									"source" : [ "obj-28", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 307.75, 289.5, 67.437591999999995, 289.5 ],
+									"midpoints" : [ 147.375014999999991, 289.5, 67.437591999999995, 289.5 ],
 									"source" : [ "obj-29", 0 ]
 								}
 
@@ -783,7 +763,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 0 ],
-									"midpoints" : [ 67.75, 584.0, 51.25, 584.0, 51.25, 519.0, 67.75, 519.0 ],
+									"midpoints" : [ 67.75, 609.0, 51.25, 609.0, 51.25, 535.0, 67.437591999999995, 535.0 ],
 									"source" : [ "obj-40", 0 ]
 								}
 
@@ -791,7 +771,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 41.5, 218.5, 19.5, 218.5 ],
+									"midpoints" : [ 19.5, 218.5, 19.5, 218.5 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -799,7 +779,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 141.75, 218.5, 19.5, 218.5 ],
+									"midpoints" : [ 119.75, 218.5, 19.5, 218.5 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -807,7 +787,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 224.75, 218.5, 19.5, 218.5 ],
+									"midpoints" : [ 202.75, 218.5, 19.5, 218.5 ],
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -858,14 +838,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1025.0, 700.0 ],
+						"rect" : [ 0.0, 26.0, 1032.0, 695.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -945,9 +925,98 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
+				"name" : "ExpandExponential.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.Dec.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.FastForward.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.First.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.Inc.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.Last.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.Rewind.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "MaxScore.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "MaxScore.rxml.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "MaxScoreKeyMap.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
+				"patcherrelativepath" : "../patchers/maps",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "MaxScoreNoteheads.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps/Font Mappings",
+				"patcherrelativepath" : "../patchers/maps/Font Mappings",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "boxSize.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "continue_wob.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fwdarrow_wob.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
 				"implicit" : 1
 			}
 , 			{
@@ -963,58 +1032,42 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.parse2.maxpat",
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpstarter.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "iswindows.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "MaxScoreNoteheads.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps/Font Mappings",
-				"patcherrelativepath" : "../patchers/maps/Font Mappings",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "selectInterval.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.empty.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "quote2backslashquote.js",
+				"name" : "jit.pane.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ExpandExponential.maxpat",
+				"name" : "maxscore.bcanvas.hub.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.parseJSON.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../Library/MaxScore",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.json.iter.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
+				"name" : "maxscore.bcanvas.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1026,14 +1079,108 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.bcanvas.maxpat",
+				"name" : "maxscore.empty.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.json.iter.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.parse2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.parseJSON.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.proportionalNotation.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.rapidXML.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.rapidxml.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mouseEvents.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "musicxml2jmsl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mxj.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "n4m.max-fs.js",
+				"bootpath" : "C74:/packages/Node for Max/examples/filesystem",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m_musicxml2jmsl.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
+				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pause_wob.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "picster-init.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
@@ -1047,6 +1194,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "quote2backslashquote.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "render2canvas.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -1054,38 +1208,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.proportionalNotation.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "MaxScoreKeyMap.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
-				"patcherrelativepath" : "../patchers/maps",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mouseEvents.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "boxSize.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jit.pane.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
+				"name" : "selectInterval.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -1096,129 +1222,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "n4m.max-fs.js",
-				"bootpath" : "C74:/packages/Node For Max/examples/filesystem",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "swissarmyknife.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.First.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.Rewind.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.Dec.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.Inc.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.FastForward.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "M4L.Last.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "pause_wob.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fwdarrow_wob.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "continue_wob.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "MaxScore.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "n4m_musicxml2jmsl.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
-				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.xml2json.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.info.recv.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpstarter.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "sadam.empty.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "sadam.rapidXML.mxo",
-				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0

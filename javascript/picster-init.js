@@ -1,4 +1,7 @@
 outlets = 2;
+
+include("maxscore.tools");
+
 var selectionBufferSize = 0;
 var _anchors = {};
 var anchors = {};
@@ -33,6 +36,7 @@ function init() {
 	//outlet(0, "clearSelection");
 	//outlet(0, "getNumStaves");
 	outlet(0, "dumpScore");
+	//post("JSON", JSON.stringify(json), "\n");
 	var numMeasures = getAllIndexes(json["jmslscoredoc"]["score"][0][".ordering"], "measure").length;
 	var numStaves = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0][".ordering"], "staff").length;
 	var numTracks = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0]["staff"][0][".ordering"], "track").length;
@@ -56,7 +60,7 @@ function init() {
 				userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["measureUserBean"][n];
 				e.parse(userBeans[n]["@Message"]);
 				if(e.contains("picster-element[2]::val")) {
-				post("offsets", leftMargin, clefsVisible, (clefsVisible == "true") ? 20 : 0, userBeans[n]["@Xoffset"]/2, e.get("picster-element[1]::val::bounds")[0], "\n");
+				//post("offsets", leftMargin, clefsVisible, (clefsVisible == "true") ? 20 : 0, userBeans[n]["@Xoffset"]/2, e.get("picster-element[1]::val::bounds")[0], "\n");
 				var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
 				var dictArray = [].concat(e.get("picster-element[2]::val"));
 				for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
@@ -159,7 +163,6 @@ function init() {
 							for(var m = 0; m < numIntervals; m++) {
 								outlet(0, "selectNextInterval");
 								_count++;
-								//post("interval", _count, "\n");
 								hold = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m]["@HOLD"] * 1000;
 								userBeans = [];
 								var occurence = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["interval"][m][".ordering"], "userBean");
@@ -269,18 +272,4 @@ function anything()
 		}
 		break;
 	}
-}
-
-function getAllIndexes(arr, val) {
-    var indexes = [-1], i;
-	var c = 0;
-	if (typeof arr == "number" && arr == val) indexes = [0];
-    else {for(i = 0; i < arr.length; i++)
-        if (arr[i] == val)
-			{
-            indexes[c] = i;
-			c++;
-			}
-		}
-    return indexes;
 }

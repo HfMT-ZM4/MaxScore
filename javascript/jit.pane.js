@@ -148,6 +148,11 @@ function setMediaFolder()
 	
 }
 
+function zoomlist()
+{
+	
+}	
+
 function buttonmode(bm)
 {
 	buttonfillcolor = (bm) ? [0.808, 0.898, 0.910, 0.8] : [1., 0., 0., 0.1];
@@ -268,17 +273,18 @@ function obj_ref(o)
 			}
 		svgimages[i][1] = reference;
 	}
-	//var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-	//svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svg += "<g id=\"" + s +  "\">";	
 	svg += o.svg[s].join("");
 	svg += "</g>";
 	svg += "</svg>";
-	//img.setsvg(svg);
 	mgraphics.svg_set("img", svg);
-	//var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-	//svgclefs += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
+	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
+	svg += "<g id=\"" + s +  "\">";	
+	svg += o.picster[s].join("");
+	svg += "</g>";
+	svg += "</svg>";
+	mgraphics.svg_set("img", picster);
 	var svgclefs = "<svg width=\"" + 25 + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + 25 + " " + pageHeight + "\" style=\"background: ivory\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svgclefs += "<g id=\"" + s +  "\">";
 	for (var i = 0; i < o.clefs[s].length; i++) {
@@ -286,7 +292,6 @@ function obj_ref(o)
 	}
 	svgclefs += "</g>";
 	svgclefs += "</svg>";	
-	//clefs.setsvg(svgclefs);	
 	mgraphics.svg_set("clefs", svgclefs);	
 	virgin = 0;
 
@@ -588,6 +593,7 @@ function redraw() {
 		mgraphics.svg_render("img");
 		if (playback) flashingNoteheads();
 		renderImages();
+		mgraphics.svg_render("picster");
 		picsterLabel();
 		paintOnTop();
 		if (highlight) measureSelection();

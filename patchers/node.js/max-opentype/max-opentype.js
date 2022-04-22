@@ -1,8 +1,9 @@
 const opentype = require('opentype.js');
 const path = require('path');
 const Max = require('max-api');
-const fontManager = require('font-manager');
+const fontManager = require('fontmanager-redux');
 const fonts = fontManager.getAvailableFontsSync();
+//const fontKit = require('fontkit');
 
 //import opentype from 'opentype.js'
 
@@ -33,7 +34,8 @@ function fillMenu()
 	Max.outlet("fonts", "clear");
 	for (let i = 0; i < fonts.length; i++) {
 		let extension = fonts[i].path.substring(fonts[i].path.lastIndexOf("."), fonts[i].path.length);
-		if (extension == ".otf" || extension == ".ttf") Max.outlet("fonts", i, fonts[i].postscriptName);
+		if (path.sep === "/" && (extension == ".otf" || extension == ".ttf")) Max.outlet("fonts", i, fonts[i].postscriptName);
+		else Max.outlet("fonts", i, fonts[i].postscriptName);
 		}
 	Max.outlet("fonts", "enddump");		
 	

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 1,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 87.0, 825.0, 664.0 ],
+		"rect" : [ 100.0, 87.0, 854.0, 664.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,6 +42,1845 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 8,
+							"minor" : 3,
+							"revision" : 0,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 100.0, 113.0, 854.0, 638.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"showontab" : 1,
+						"assistshowspatchername" : 0,
+						"boxes" : [ 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubblepoint" : 0.0,
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-17",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 597.0, 316.0, 145.0, 24.0 ],
+									"text" : "expose to pattrstorage"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 14.0,
+									"id" : "obj-16",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 23.5, 72.0, 688.0, 22.0 ],
+									"text" : "As of MaxScore 2.0, a named, parameter-enabled dict can also be used instead of the JavaScript object"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "dictionary" ],
+									"patching_rect" : [ 498.0, 262.0, 169.0, 22.0 ],
+									"text" : "maxscore.info.grab alternative"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 534.5, 301.0, 56.0, 22.0 ],
+									"restore" : 									{
+										"u931004218" : [ 											{
+												"jmslscoredoc" : 												{
+													"score" : 													{
+														"0" : 														{
+															"@NAME" : "JMSLMaxScore-4",
+															"@WIDTH" : 320,
+															"@HEIGHT" : 220,
+															"@STAFFS" : 2,
+															"@NUMTRACKSPERSTAFF" : 2,
+															"@InstrumentNamesVisible" : "false",
+															"@TempoVisible" : "true",
+															"@StaffNumbersVisible" : "true",
+															"@MeasureNumbersVisible" : "true",
+															"@SectionBracketsVisible" : "true",
+															"@TimeSignaturesVisible" : "true",
+															"@KeySignaturesVisible" : "true",
+															"@ClefsVisible" : "true",
+															"@ScoreTitleVisible" : "false",
+															"@CourtesyClefsVisible" : "false",
+															"@MeasureNumberOffset" : 1,
+															"@LeftMargin" : 20.0,
+															"@RightMargin" : 20.0,
+															"@TopMargin" : 15.0,
+															"@BottomMargin" : 15.0,
+															"@TopMarginOfFirstPage" : 60.0,
+															"@DrawAllMeasureNumbers" : "false",
+															"@TextFontScaler" : 1.5,
+															"@ScoreSubtitleFontScaler" : 2.0,
+															"@ScoreTitleFontScaler" : 4.0,
+															"@TimesigFontScaler" : 2.5,
+															"@MeasureNumberFontScaler" : 1.5,
+															"@TextFontName" : "SansSerif",
+															"@ScoreSubtitleFontName" : "Serif",
+															"@ScoreTitleFontName" : "Serif",
+															"@TimesigFontName" : "Serif",
+															"@MeasureNumberFontName" : "SansSerif",
+															"@FirstSystemIndent" : 0.0,
+															"@useLegacyMultiTrackOrientation" : "true",
+															"ScoreAnnotation" : 															{
+																"0" : 																{
+																	"@CLASSNAME" : "com.softsynth.jmsl.score.ScoreAnnotation",
+																	"@Annotation" : "324.3oc4PtrSCCCEDccxWgkWmD4HwCU1QU2vBJU7PHAhENI1QlZ6ajsSATU+2wOZSCeCrwV9bGOZl697L7NlwJ.MFcCBWWQvEd1fAF.iyioxv.R.1Ho5san8rIhSnXunEt.nlPpRP12NNniP7sFg2g.VMZEsS7kF5tQCEmbwIYSSd16oEsl8E5QPQ0QEM8sfDLg4uiHUKVbUwrqKJP9bi9Hnj+WkjhYGShrL2qF5PL0Ge+F.pXspt7HYkOdoEvSCzVgteI0lZd00QINJmWRBjr84YYXIqqmYjBMydx4fpejwegWw3zQoCGwJQqw2tXDvp6K0flklP69bz5Nsgyvs9USTU27+GiVoDfsiCm0FiTuARLe+KPk0wJ68sowbm15LqopTfPIqDA3nhocgIa.qHz5G3b+NHZcd1g7yEt9+QgyOj+a2Lbcb"
+																}
+
+															}
+,
+															"orchestra" : 															{
+																"0" : 																{
+																	"@CLASSNAME" : "com.softsynth.jmsl.score.Orchestra",
+																	"jmslscoreinstrument" : 																	{
+																		"0" : 																		{
+																			"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
+																			"@InsIndex" : 0,
+																			"@EditEnabled" : "true",
+																			"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
+																			"@Transposition" : 0.0,
+																			"@Name" : "MaxScoreIns-0",
+																			"dim" : 																			{
+																				"0" : 																				{
+																					"@index" : 4,
+																					"@defaultvalue" : 0.0,
+																					"@lowlimit" : 0.0,
+																					"@highlimit" : 3.0,
+																					"@name" : "EventFlag"
+																				}
+,
+																				"1" : 																				{
+																					"@index" : 5,
+																					"@defaultvalue" : -1.0,
+																					"@lowlimit" : -1.0,
+																					"@highlimit" : 127.0,
+																					"@name" : "originalPitch"
+																				}
+,
+																				"2" : 																				{
+																					"@index" : 6,
+																					"@defaultvalue" : -1.0,
+																					"@lowlimit" : -1.0,
+																					"@highlimit" : 10000.0,
+																					"@name" : "index"
+																				}
+
+																			}
+,
+																			".ordering" : [ "dim", "dim", "dim" ]
+																		}
+,
+																		"1" : 																		{
+																			"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
+																			"@InsIndex" : 1,
+																			"@EditEnabled" : "true",
+																			"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
+																			"@Transposition" : 0.0,
+																			"@Name" : "MaxScoreIns-1",
+																			"dim" : 																			{
+																				"0" : 																				{
+																					"@index" : 4,
+																					"@defaultvalue" : 0.0,
+																					"@lowlimit" : 0.0,
+																					"@highlimit" : 3.0,
+																					"@name" : "EventFlag"
+																				}
+,
+																				"1" : 																				{
+																					"@index" : 5,
+																					"@defaultvalue" : -1.0,
+																					"@lowlimit" : -1.0,
+																					"@highlimit" : 127.0,
+																					"@name" : "originalPitch"
+																				}
+,
+																				"2" : 																				{
+																					"@index" : 6,
+																					"@defaultvalue" : -1.0,
+																					"@lowlimit" : -1.0,
+																					"@highlimit" : 10000.0,
+																					"@name" : "index"
+																				}
+
+																			}
+,
+																			".ordering" : [ "dim", "dim", "dim" ]
+																		}
+
+																	}
+,
+																	".ordering" : [ "jmslscoreinstrument", "jmslscoreinstrument" ]
+																}
+
+															}
+,
+															"mixerpanelsettings" : 															{
+																"0" : 																{
+																	"panamppair" : 																	{
+																		"0" : 																		{
+																			"@FADERINDEX" : 0,
+																			"@PAN" : 0.5,
+																			"@AMP" : 0.5
+																		}
+,
+																		"1" : 																		{
+																			"@FADERINDEX" : 1,
+																			"@PAN" : 0.5,
+																			"@AMP" : 0.5
+																		}
+
+																	}
+,
+																	".ordering" : [ "panamppair", "panamppair" ]
+																}
+
+															}
+,
+															"staffspacing" : 															{
+																"0" : 																{
+																	"@INDEX" : 0,
+																	"@ABOVE" : 72.0,
+																	"@BELOW" : 72.0
+																}
+,
+																"1" : 																{
+																	"@INDEX" : 1,
+																	"@ABOVE" : 72.0,
+																	"@BELOW" : 72.0
+																}
+
+															}
+,
+															"scoresection" : 															{
+																"0" : 																{
+																	"@NAME" : "A",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"1" : 																{
+																	"@NAME" : "B",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"2" : 																{
+																	"@NAME" : "C",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"3" : 																{
+																	"@NAME" : "D",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"4" : 																{
+																	"@NAME" : "E",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"5" : 																{
+																	"@NAME" : "F",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"6" : 																{
+																	"@NAME" : "G",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"7" : 																{
+																	"@NAME" : "H",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"8" : 																{
+																	"@NAME" : "I",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"9" : 																{
+																	"@NAME" : "J",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"10" : 																{
+																	"@NAME" : "K",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"11" : 																{
+																	"@NAME" : "L",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"12" : 																{
+																	"@NAME" : "M",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"13" : 																{
+																	"@NAME" : "N",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"14" : 																{
+																	"@NAME" : "O",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"15" : 																{
+																	"@NAME" : "P",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"16" : 																{
+																	"@NAME" : "Q",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"17" : 																{
+																	"@NAME" : "R",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"18" : 																{
+																	"@NAME" : "S",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"19" : 																{
+																	"@NAME" : "T",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"20" : 																{
+																	"@NAME" : "U",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"21" : 																{
+																	"@NAME" : "V",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"22" : 																{
+																	"@NAME" : "W",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"23" : 																{
+																	"@NAME" : "X",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"24" : 																{
+																	"@NAME" : "Y",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+,
+																"25" : 																{
+																	"@NAME" : "Z",
+																	"@START" : 0,
+																	"@END" : 0
+																}
+
+															}
+,
+															"measure" : 															{
+																"0" : 																{
+																	"@WIDTH" : 561,
+																	"@WIDTHSETBYHAND" : "false",
+																	"@TIMESIG" : [ 4, 4 ],
+																	"@TIMESIGSETBYHAND" : "false",
+																	"@TEMPO" : 60.0,
+																	"@TEMPOSETBYHAND" : "false",
+																	"@REPEATSTART" : "false",
+																	"@REPEATEND" : "false",
+																	"@NUMREPEATS" : 1,
+																	"@BARLINE" : "SINGLE",
+																	"@MEASURETEXTX" : 48,
+																	"@MEASURETEXTY" : 48,
+																	"@MEASURELEFTMARGIN" : 50.0,
+																	"staff" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@CLEF" : 0,
+																			"@CLEFSETBYHAND" : "false",
+																			"@INSTRUMENTINDEX" : 0,
+																			"@INSINDEXSETBYHAND" : "false",
+																			"@KEYSIGTYPE" : 0,
+																			"@KEYSIGNUMACC" : 0,
+																			"@KEYSIGSETBYHAND" : "false",
+																			"@EXTENDEDLINESABOVE" : 0,
+																			"@EXTENDEDLINESBELOW" : 0,
+																			"track" : 																			{
+																				"0" : 																				{
+																					"@INDEX" : 0,
+																					"@MultitrackRestAdjustmentY" : 0.0,
+																					"note" : 																					{
+																						"0" : 																						{
+																							"@NOTEDUR" : 2,
+																							"@TUPLET" : 0,
+																							"@DOTS" : 0,
+																							"@ACCINFO" : 0,
+																							"@DURATION" : 1.0,
+																							"@PITCH" : 72.0,
+																							"@VELOCITY" : 0.5,
+																							"@HOLD" : 0.8,
+																							"@BEAMEDOUT" : "false",
+																							"@GLISSOUT" : "false",
+																							"@TIEDOUT" : "false",
+																							"@ACCPREF" : 0,
+																							"@ACCVISPOLICY" : 0,
+																							"@ALTENHARMONIC" : "false",
+																							"@DYN" : 0,
+																							"@SLUROUT" : "false",
+																							"@ISGRACENOTE" : "false",
+																							"@GRACENOTESEPARATIONSCALER" : 2.0,
+																							"@LEDGERLINESVISIBLE" : "true",
+																							"@WEDGE" : "none",
+																							"@OTTAVA" : "none",
+																							"@MARK" : 0,
+																							"@TEXTOFFSETX" : 0,
+																							"@TEXTOFFSETY" : 0,
+																							"@NOTEHEAD" : 0,
+																							"@NOTEHEADSCALE" : 1.0,
+																							"@VISIBLE" : "true",
+																							"@NOTEHEADVISIBLE" : "true",
+																							"@STEMVISIBLE" : "true",
+																							"@OVERRIDELEVEL" : -1,
+																							"@ISOVERRIDELEVEL" : "false",
+																							"@STEMINFOOVERRIDE" : "false",
+																							"@STEMINFO" : 2,
+																							"@LAYOUTSHIFTX" : 0.0,
+																							"dim" : 																							{
+																								"0" : 																								{
+																									"@index" : 4,
+																									"@value" : 0.0,
+																									"@name" : "EventFlag"
+																								}
+,
+																								"1" : 																								{
+																									"@index" : 5,
+																									"@value" : -1.0,
+																									"@name" : "originalPitch"
+																								}
+,
+																								"2" : 																								{
+																									"@index" : 6,
+																									"@value" : -1.0,
+																									"@name" : "index"
+																								}
+
+																							}
+,
+																							".ordering" : [ "dim", "dim", "dim" ]
+																						}
+,
+																						"1" : 																						{
+																							"@NOTEDUR" : 2,
+																							"@TUPLET" : 0,
+																							"@DOTS" : 0,
+																							"@ACCINFO" : 0,
+																							"@DURATION" : 1.0,
+																							"@PITCH" : 71.0,
+																							"@VELOCITY" : 0.5,
+																							"@HOLD" : 0.8,
+																							"@BEAMEDOUT" : "false",
+																							"@GLISSOUT" : "false",
+																							"@TIEDOUT" : "false",
+																							"@ACCPREF" : 0,
+																							"@ACCVISPOLICY" : 0,
+																							"@ALTENHARMONIC" : "false",
+																							"@DYN" : 0,
+																							"@SLUROUT" : "false",
+																							"@ISGRACENOTE" : "false",
+																							"@GRACENOTESEPARATIONSCALER" : 2.0,
+																							"@LEDGERLINESVISIBLE" : "true",
+																							"@WEDGE" : "none",
+																							"@OTTAVA" : "none",
+																							"@MARK" : 0,
+																							"@TEXTOFFSETX" : 0,
+																							"@TEXTOFFSETY" : 0,
+																							"@NOTEHEAD" : 0,
+																							"@NOTEHEADSCALE" : 1.0,
+																							"@VISIBLE" : "true",
+																							"@NOTEHEADVISIBLE" : "true",
+																							"@STEMVISIBLE" : "true",
+																							"@OVERRIDELEVEL" : -1,
+																							"@ISOVERRIDELEVEL" : "false",
+																							"@STEMINFOOVERRIDE" : "false",
+																							"@STEMINFO" : 2,
+																							"@LAYOUTSHIFTX" : 0.0,
+																							"dim" : 																							{
+																								"0" : 																								{
+																									"@index" : 4,
+																									"@value" : 0.0,
+																									"@name" : "EventFlag"
+																								}
+,
+																								"1" : 																								{
+																									"@index" : 5,
+																									"@value" : -1.0,
+																									"@name" : "originalPitch"
+																								}
+,
+																								"2" : 																								{
+																									"@index" : 6,
+																									"@value" : -1.0,
+																									"@name" : "index"
+																								}
+
+																							}
+,
+																							".ordering" : [ "dim", "dim", "dim" ]
+																						}
+
+																					}
+,
+																					".ordering" : [ "note", "note" ]
+																				}
+,
+																				"1" : 																				{
+																					"@INDEX" : 1,
+																					"@MultitrackRestAdjustmentY" : 0.0
+																				}
+
+																			}
+,
+																			".ordering" : [ "track", "track" ]
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@CLEF" : 0,
+																			"@CLEFSETBYHAND" : "false",
+																			"@INSTRUMENTINDEX" : 1,
+																			"@INSINDEXSETBYHAND" : "false",
+																			"@KEYSIGTYPE" : 0,
+																			"@KEYSIGNUMACC" : 0,
+																			"@KEYSIGSETBYHAND" : "false",
+																			"@EXTENDEDLINESABOVE" : 0,
+																			"@EXTENDEDLINESBELOW" : 0,
+																			"track" : 																			{
+																				"0" : 																				{
+																					"@INDEX" : 0,
+																					"@MultitrackRestAdjustmentY" : 0.0
+																				}
+,
+																				"1" : 																				{
+																					"@INDEX" : 1,
+																					"@MultitrackRestAdjustmentY" : 0.0
+																				}
+
+																			}
+,
+																			".ordering" : [ "track", "track" ]
+																		}
+
+																	}
+,
+																	".ordering" : [ "staff", "staff" ]
+																}
+,
+																"1" : 																{
+																	"@WIDTH" : 450,
+																	"@WIDTHSETBYHAND" : "false",
+																	"@TIMESIG" : [ 4, 4 ],
+																	"@TIMESIGSETBYHAND" : "false",
+																	"@TEMPO" : 60.0,
+																	"@TEMPOSETBYHAND" : "false",
+																	"@REPEATSTART" : "false",
+																	"@REPEATEND" : "false",
+																	"@NUMREPEATS" : 1,
+																	"@BARLINE" : "SINGLE",
+																	"@MEASURETEXTX" : 48,
+																	"@MEASURETEXTY" : 48,
+																	"@MEASURELEFTMARGIN" : 50.0,
+																	"staff" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@CLEF" : 0,
+																			"@CLEFSETBYHAND" : "false",
+																			"@INSTRUMENTINDEX" : 0,
+																			"@INSINDEXSETBYHAND" : "false",
+																			"@KEYSIGTYPE" : 0,
+																			"@KEYSIGNUMACC" : 0,
+																			"@KEYSIGSETBYHAND" : "false",
+																			"@EXTENDEDLINESABOVE" : 0,
+																			"@EXTENDEDLINESBELOW" : 0,
+																			"track" : 																			{
+																				"0" : 																				{
+																					"@INDEX" : 0,
+																					"@MultitrackRestAdjustmentY" : 0.0
+																				}
+,
+																				"1" : 																				{
+																					"@INDEX" : 1,
+																					"@MultitrackRestAdjustmentY" : 0.0
+																				}
+
+																			}
+,
+																			".ordering" : [ "track", "track" ]
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@CLEF" : 0,
+																			"@CLEFSETBYHAND" : "false",
+																			"@INSTRUMENTINDEX" : 1,
+																			"@INSINDEXSETBYHAND" : "false",
+																			"@KEYSIGTYPE" : 0,
+																			"@KEYSIGNUMACC" : 0,
+																			"@KEYSIGSETBYHAND" : "false",
+																			"@EXTENDEDLINESABOVE" : 0,
+																			"@EXTENDEDLINESBELOW" : 0,
+																			"track" : 																			{
+																				"0" : 																				{
+																					"@INDEX" : 0,
+																					"@MultitrackRestAdjustmentY" : 0.0
+																				}
+,
+																				"1" : 																				{
+																					"@INDEX" : 1,
+																					"@MultitrackRestAdjustmentY" : 0.0
+																				}
+
+																			}
+,
+																			".ordering" : [ "track", "track" ]
+																		}
+
+																	}
+,
+																	".ordering" : [ "staff", "staff" ]
+																}
+
+															}
+,
+															"scoreUserBean" : 															{
+																"0" : 																{
+																	"@CLASSNAME" : "com.algomusic.max.MaxScoreRenderedMessageListener"
+																}
+
+															}
+,
+															".ordering" : [ "ScoreAnnotation", "orchestra", "mixerpanelsettings", "staffspacing", "staffspacing", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "measure", "measure", "scoreUserBean" ]
+														}
+
+													}
+,
+													".ordering" : [ "score" ]
+												}
+
+											}
+ ]
+									}
+,
+									"text" : "autopattr",
+									"varname" : "u541006608"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 806.5, 213.0, 29.5, 22.0 ],
+									"text" : "2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubblepoint" : 0.0,
+									"bubbleside" : 2,
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-11",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 689.0, 140.0, 131.0, 66.0 ],
+									"text" : "store and retrieve score from pattrstorage"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"data" : 									{
+										"jmslscoredoc" : 										{
+											"score" : 											{
+												"0" : 												{
+													"@NAME" : "JMSLMaxScore-4",
+													"@WIDTH" : 320,
+													"@HEIGHT" : 220,
+													"@STAFFS" : 2,
+													"@NUMTRACKSPERSTAFF" : 2,
+													"@InstrumentNamesVisible" : "false",
+													"@TempoVisible" : "true",
+													"@StaffNumbersVisible" : "true",
+													"@MeasureNumbersVisible" : "true",
+													"@SectionBracketsVisible" : "true",
+													"@TimeSignaturesVisible" : "true",
+													"@KeySignaturesVisible" : "true",
+													"@ClefsVisible" : "true",
+													"@ScoreTitleVisible" : "false",
+													"@CourtesyClefsVisible" : "false",
+													"@MeasureNumberOffset" : 1,
+													"@LeftMargin" : 20.0,
+													"@RightMargin" : 20.0,
+													"@TopMargin" : 15.0,
+													"@BottomMargin" : 15.0,
+													"@TopMarginOfFirstPage" : 60.0,
+													"@DrawAllMeasureNumbers" : "false",
+													"@TextFontScaler" : 1.5,
+													"@ScoreSubtitleFontScaler" : 2.0,
+													"@ScoreTitleFontScaler" : 4.0,
+													"@TimesigFontScaler" : 2.5,
+													"@MeasureNumberFontScaler" : 1.5,
+													"@TextFontName" : "SansSerif",
+													"@ScoreSubtitleFontName" : "Serif",
+													"@ScoreTitleFontName" : "Serif",
+													"@TimesigFontName" : "Serif",
+													"@MeasureNumberFontName" : "SansSerif",
+													"@FirstSystemIndent" : 0.0,
+													"@useLegacyMultiTrackOrientation" : "true",
+													"ScoreAnnotation" : 													{
+														"0" : 														{
+															"@CLASSNAME" : "com.softsynth.jmsl.score.ScoreAnnotation",
+															"@Annotation" : "324.3oc4PtrSCCCEDccxWgkWmD4HwCU1QU2vBJU7PHAhENI1QlZ6ajsSATU+2wOZSCeCrwV9bGOZl697L7NlwJ.MFcCBWWQvEd1fAF.iyioxv.R.1Ho5san8rIhSnXunEt.nlPpRP12NNniP7sFg2g.VMZEsS7kF5tQCEmbwIYSSd16oEsl8E5QPQ0QEM8sfDLg4uiHUKVbUwrqKJP9bi9Hnj+WkjhYGShrL2qF5PL0Ge+F.pXspt7HYkOdoEvSCzVgteI0lZd00QINJmWRBjr84YYXIqqmYjBMydx4fpejwegWw3zQoCGwJQqw2tXDvp6K0flklP69bz5Nsgyvs9USTU27+GiVoDfsiCm0FiTuARLe+KPk0wJ68sowbm15LqopTfPIqDA3nhocgIa.qHz5G3b+NHZcd1g7yEt9+QgyOj+a2Lbcb"
+														}
+
+													}
+,
+													"orchestra" : 													{
+														"0" : 														{
+															"@CLASSNAME" : "com.softsynth.jmsl.score.Orchestra",
+															"jmslscoreinstrument" : 															{
+																"0" : 																{
+																	"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
+																	"@InsIndex" : 0,
+																	"@EditEnabled" : "true",
+																	"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
+																	"@Transposition" : 0.0,
+																	"@Name" : "MaxScoreIns-0",
+																	"dim" : 																	{
+																		"0" : 																		{
+																			"@index" : 4,
+																			"@defaultvalue" : 0.0,
+																			"@lowlimit" : 0.0,
+																			"@highlimit" : 3.0,
+																			"@name" : "EventFlag"
+																		}
+,
+																		"1" : 																		{
+																			"@index" : 5,
+																			"@defaultvalue" : -1.0,
+																			"@lowlimit" : -1.0,
+																			"@highlimit" : 127.0,
+																			"@name" : "originalPitch"
+																		}
+,
+																		"2" : 																		{
+																			"@index" : 6,
+																			"@defaultvalue" : -1.0,
+																			"@lowlimit" : -1.0,
+																			"@highlimit" : 10000.0,
+																			"@name" : "index"
+																		}
+
+																	}
+,
+																	".ordering" : [ "dim", "dim", "dim" ]
+																}
+,
+																"1" : 																{
+																	"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
+																	"@InsIndex" : 1,
+																	"@EditEnabled" : "true",
+																	"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
+																	"@Transposition" : 0.0,
+																	"@Name" : "MaxScoreIns-1",
+																	"dim" : 																	{
+																		"0" : 																		{
+																			"@index" : 4,
+																			"@defaultvalue" : 0.0,
+																			"@lowlimit" : 0.0,
+																			"@highlimit" : 3.0,
+																			"@name" : "EventFlag"
+																		}
+,
+																		"1" : 																		{
+																			"@index" : 5,
+																			"@defaultvalue" : -1.0,
+																			"@lowlimit" : -1.0,
+																			"@highlimit" : 127.0,
+																			"@name" : "originalPitch"
+																		}
+,
+																		"2" : 																		{
+																			"@index" : 6,
+																			"@defaultvalue" : -1.0,
+																			"@lowlimit" : -1.0,
+																			"@highlimit" : 10000.0,
+																			"@name" : "index"
+																		}
+
+																	}
+,
+																	".ordering" : [ "dim", "dim", "dim" ]
+																}
+
+															}
+,
+															".ordering" : [ "jmslscoreinstrument", "jmslscoreinstrument" ]
+														}
+
+													}
+,
+													"mixerpanelsettings" : 													{
+														"0" : 														{
+															"panamppair" : 															{
+																"0" : 																{
+																	"@FADERINDEX" : 0,
+																	"@PAN" : 0.5,
+																	"@AMP" : 0.5
+																}
+,
+																"1" : 																{
+																	"@FADERINDEX" : 1,
+																	"@PAN" : 0.5,
+																	"@AMP" : 0.5
+																}
+
+															}
+,
+															".ordering" : [ "panamppair", "panamppair" ]
+														}
+
+													}
+,
+													"staffspacing" : 													{
+														"0" : 														{
+															"@INDEX" : 0,
+															"@ABOVE" : 72.0,
+															"@BELOW" : 72.0
+														}
+,
+														"1" : 														{
+															"@INDEX" : 1,
+															"@ABOVE" : 72.0,
+															"@BELOW" : 72.0
+														}
+
+													}
+,
+													"scoresection" : 													{
+														"0" : 														{
+															"@NAME" : "A",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"1" : 														{
+															"@NAME" : "B",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"2" : 														{
+															"@NAME" : "C",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"3" : 														{
+															"@NAME" : "D",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"4" : 														{
+															"@NAME" : "E",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"5" : 														{
+															"@NAME" : "F",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"6" : 														{
+															"@NAME" : "G",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"7" : 														{
+															"@NAME" : "H",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"8" : 														{
+															"@NAME" : "I",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"9" : 														{
+															"@NAME" : "J",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"10" : 														{
+															"@NAME" : "K",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"11" : 														{
+															"@NAME" : "L",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"12" : 														{
+															"@NAME" : "M",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"13" : 														{
+															"@NAME" : "N",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"14" : 														{
+															"@NAME" : "O",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"15" : 														{
+															"@NAME" : "P",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"16" : 														{
+															"@NAME" : "Q",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"17" : 														{
+															"@NAME" : "R",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"18" : 														{
+															"@NAME" : "S",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"19" : 														{
+															"@NAME" : "T",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"20" : 														{
+															"@NAME" : "U",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"21" : 														{
+															"@NAME" : "V",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"22" : 														{
+															"@NAME" : "W",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"23" : 														{
+															"@NAME" : "X",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"24" : 														{
+															"@NAME" : "Y",
+															"@START" : 0,
+															"@END" : 0
+														}
+,
+														"25" : 														{
+															"@NAME" : "Z",
+															"@START" : 0,
+															"@END" : 0
+														}
+
+													}
+,
+													"measure" : 													{
+														"0" : 														{
+															"@WIDTH" : 561,
+															"@WIDTHSETBYHAND" : "false",
+															"@TIMESIG" : [ 4, 4 ],
+															"@TIMESIGSETBYHAND" : "false",
+															"@TEMPO" : 60.0,
+															"@TEMPOSETBYHAND" : "false",
+															"@REPEATSTART" : "false",
+															"@REPEATEND" : "false",
+															"@NUMREPEATS" : 1,
+															"@BARLINE" : "SINGLE",
+															"@MEASURETEXTX" : 48,
+															"@MEASURETEXTY" : 48,
+															"@MEASURELEFTMARGIN" : 50.0,
+															"staff" : 															{
+																"0" : 																{
+																	"@INDEX" : 0,
+																	"@CLEF" : 0,
+																	"@CLEFSETBYHAND" : "false",
+																	"@INSTRUMENTINDEX" : 0,
+																	"@INSINDEXSETBYHAND" : "false",
+																	"@KEYSIGTYPE" : 0,
+																	"@KEYSIGNUMACC" : 0,
+																	"@KEYSIGSETBYHAND" : "false",
+																	"@EXTENDEDLINESABOVE" : 0,
+																	"@EXTENDEDLINESBELOW" : 0,
+																	"track" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@MultitrackRestAdjustmentY" : 0.0,
+																			"note" : 																			{
+																				"0" : 																				{
+																					"@NOTEDUR" : 2,
+																					"@TUPLET" : 0,
+																					"@DOTS" : 0,
+																					"@ACCINFO" : 0,
+																					"@DURATION" : 1.0,
+																					"@PITCH" : 72.0,
+																					"@VELOCITY" : 0.5,
+																					"@HOLD" : 0.8,
+																					"@BEAMEDOUT" : "false",
+																					"@GLISSOUT" : "false",
+																					"@TIEDOUT" : "false",
+																					"@ACCPREF" : 0,
+																					"@ACCVISPOLICY" : 0,
+																					"@ALTENHARMONIC" : "false",
+																					"@DYN" : 0,
+																					"@SLUROUT" : "false",
+																					"@ISGRACENOTE" : "false",
+																					"@GRACENOTESEPARATIONSCALER" : 2.0,
+																					"@LEDGERLINESVISIBLE" : "true",
+																					"@WEDGE" : "none",
+																					"@OTTAVA" : "none",
+																					"@MARK" : 0,
+																					"@TEXTOFFSETX" : 0,
+																					"@TEXTOFFSETY" : 0,
+																					"@NOTEHEAD" : 0,
+																					"@NOTEHEADSCALE" : 1.0,
+																					"@VISIBLE" : "true",
+																					"@NOTEHEADVISIBLE" : "true",
+																					"@STEMVISIBLE" : "true",
+																					"@OVERRIDELEVEL" : -1,
+																					"@ISOVERRIDELEVEL" : "false",
+																					"@STEMINFOOVERRIDE" : "false",
+																					"@STEMINFO" : 2,
+																					"@LAYOUTSHIFTX" : 0.0,
+																					"dim" : 																					{
+																						"0" : 																						{
+																							"@index" : 4,
+																							"@value" : 0.0,
+																							"@name" : "EventFlag"
+																						}
+,
+																						"1" : 																						{
+																							"@index" : 5,
+																							"@value" : -1.0,
+																							"@name" : "originalPitch"
+																						}
+,
+																						"2" : 																						{
+																							"@index" : 6,
+																							"@value" : -1.0,
+																							"@name" : "index"
+																						}
+
+																					}
+,
+																					".ordering" : [ "dim", "dim", "dim" ]
+																				}
+,
+																				"1" : 																				{
+																					"@NOTEDUR" : 2,
+																					"@TUPLET" : 0,
+																					"@DOTS" : 0,
+																					"@ACCINFO" : 0,
+																					"@DURATION" : 1.0,
+																					"@PITCH" : 71.0,
+																					"@VELOCITY" : 0.5,
+																					"@HOLD" : 0.8,
+																					"@BEAMEDOUT" : "false",
+																					"@GLISSOUT" : "false",
+																					"@TIEDOUT" : "false",
+																					"@ACCPREF" : 0,
+																					"@ACCVISPOLICY" : 0,
+																					"@ALTENHARMONIC" : "false",
+																					"@DYN" : 0,
+																					"@SLUROUT" : "false",
+																					"@ISGRACENOTE" : "false",
+																					"@GRACENOTESEPARATIONSCALER" : 2.0,
+																					"@LEDGERLINESVISIBLE" : "true",
+																					"@WEDGE" : "none",
+																					"@OTTAVA" : "none",
+																					"@MARK" : 0,
+																					"@TEXTOFFSETX" : 0,
+																					"@TEXTOFFSETY" : 0,
+																					"@NOTEHEAD" : 0,
+																					"@NOTEHEADSCALE" : 1.0,
+																					"@VISIBLE" : "true",
+																					"@NOTEHEADVISIBLE" : "true",
+																					"@STEMVISIBLE" : "true",
+																					"@OVERRIDELEVEL" : -1,
+																					"@ISOVERRIDELEVEL" : "false",
+																					"@STEMINFOOVERRIDE" : "false",
+																					"@STEMINFO" : 2,
+																					"@LAYOUTSHIFTX" : 0.0,
+																					"dim" : 																					{
+																						"0" : 																						{
+																							"@index" : 4,
+																							"@value" : 0.0,
+																							"@name" : "EventFlag"
+																						}
+,
+																						"1" : 																						{
+																							"@index" : 5,
+																							"@value" : -1.0,
+																							"@name" : "originalPitch"
+																						}
+,
+																						"2" : 																						{
+																							"@index" : 6,
+																							"@value" : -1.0,
+																							"@name" : "index"
+																						}
+
+																					}
+,
+																					".ordering" : [ "dim", "dim", "dim" ]
+																				}
+
+																			}
+,
+																			".ordering" : [ "note", "note" ]
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+
+																	}
+,
+																	".ordering" : [ "track", "track" ]
+																}
+,
+																"1" : 																{
+																	"@INDEX" : 1,
+																	"@CLEF" : 0,
+																	"@CLEFSETBYHAND" : "false",
+																	"@INSTRUMENTINDEX" : 1,
+																	"@INSINDEXSETBYHAND" : "false",
+																	"@KEYSIGTYPE" : 0,
+																	"@KEYSIGNUMACC" : 0,
+																	"@KEYSIGSETBYHAND" : "false",
+																	"@EXTENDEDLINESABOVE" : 0,
+																	"@EXTENDEDLINESBELOW" : 0,
+																	"track" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+
+																	}
+,
+																	".ordering" : [ "track", "track" ]
+																}
+
+															}
+,
+															".ordering" : [ "staff", "staff" ]
+														}
+,
+														"1" : 														{
+															"@WIDTH" : 450,
+															"@WIDTHSETBYHAND" : "false",
+															"@TIMESIG" : [ 4, 4 ],
+															"@TIMESIGSETBYHAND" : "false",
+															"@TEMPO" : 60.0,
+															"@TEMPOSETBYHAND" : "false",
+															"@REPEATSTART" : "false",
+															"@REPEATEND" : "false",
+															"@NUMREPEATS" : 1,
+															"@BARLINE" : "SINGLE",
+															"@MEASURETEXTX" : 48,
+															"@MEASURETEXTY" : 48,
+															"@MEASURELEFTMARGIN" : 50.0,
+															"staff" : 															{
+																"0" : 																{
+																	"@INDEX" : 0,
+																	"@CLEF" : 0,
+																	"@CLEFSETBYHAND" : "false",
+																	"@INSTRUMENTINDEX" : 0,
+																	"@INSINDEXSETBYHAND" : "false",
+																	"@KEYSIGTYPE" : 0,
+																	"@KEYSIGNUMACC" : 0,
+																	"@KEYSIGSETBYHAND" : "false",
+																	"@EXTENDEDLINESABOVE" : 0,
+																	"@EXTENDEDLINESBELOW" : 0,
+																	"track" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+
+																	}
+,
+																	".ordering" : [ "track", "track" ]
+																}
+,
+																"1" : 																{
+																	"@INDEX" : 1,
+																	"@CLEF" : 0,
+																	"@CLEFSETBYHAND" : "false",
+																	"@INSTRUMENTINDEX" : 1,
+																	"@INSINDEXSETBYHAND" : "false",
+																	"@KEYSIGTYPE" : 0,
+																	"@KEYSIGNUMACC" : 0,
+																	"@KEYSIGSETBYHAND" : "false",
+																	"@EXTENDEDLINESABOVE" : 0,
+																	"@EXTENDEDLINESBELOW" : 0,
+																	"track" : 																	{
+																		"0" : 																		{
+																			"@INDEX" : 0,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+,
+																		"1" : 																		{
+																			"@INDEX" : 1,
+																			"@MultitrackRestAdjustmentY" : 0.0
+																		}
+
+																	}
+,
+																	".ordering" : [ "track", "track" ]
+																}
+
+															}
+,
+															".ordering" : [ "staff", "staff" ]
+														}
+
+													}
+,
+													"scoreUserBean" : 													{
+														"0" : 														{
+															"@CLASSNAME" : "com.algomusic.max.MaxScoreRenderedMessageListener"
+														}
+
+													}
+,
+													".ordering" : [ "ScoreAnnotation", "orchestra", "mixerpanelsettings", "staffspacing", "staffspacing", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "measure", "measure", "scoreUserBean" ]
+												}
+
+											}
+,
+											".ordering" : [ "score" ]
+										}
+
+									}
+,
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "dictionary", "", "", "" ],
+									"patching_rect" : [ 428.0, 301.0, 89.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"embed" : 1,
+										"parameter_enable" : 0,
+										"parameter_mappable" : 0
+									}
+,
+									"text" : "dict @embed 1",
+									"varname" : "u931004218"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 38.5, 215.0, 60.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubblepoint" : 0.0,
+									"bubbleside" : 2,
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-1",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 468.5, 188.0, 131.0, 39.0 ],
+									"text" : "set and dump score"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-31",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 178.0, 173.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-32",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 178.0, 247.0, 81.0, 22.0 ],
+									"text" : "loadScore $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-33",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 178.0, 210.0, 69.0, 22.0 ],
+									"text" : "opendialog"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-90",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 775.0, 213.0, 29.5, 22.0 ],
+									"text" : "1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-88",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 722.0, 213.0, 47.0, 22.0 ],
+									"text" : "store 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-87",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 673.0, 213.0, 47.0, 22.0 ],
+									"text" : "store 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-59",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "newScore" ],
+									"patching_rect" : [ 384.0, 328.0, 63.0, 22.0 ],
+									"text" : "MaxScore",
+									"varname" : "MaxScore[1]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgmode" : 0,
+									"border" : 1,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-60",
+									"lockeddragscroll" : 1,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "maxscore.bcanvas.maxpat",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 384.0, 374.0, 320.0, 220.0 ],
+									"prototypename" : "bcanvas",
+									"varname" : "bcanvas[1]",
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-57",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 428.0, 239.5, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-51",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 673.0, 262.0, 165.0, 35.0 ],
+									"saved_object_attributes" : 									{
+										"client_rect" : [ 756, 321, 1436, 926 ],
+										"parameter_enable" : 0,
+										"parameter_mappable" : 0,
+										"storage_rect" : [ 583, 69, 1034, 197 ]
+									}
+,
+									"text" : "pattrstorage @outputmode 1 @savemode 0",
+									"varname" : "u711014105"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-41",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 498.0, 234.0, 72.0, 22.0 ],
+									"text" : "dumpScore"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-42",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 38.5, 247.0, 121.0, 22.0 ],
+									"text" : "newScore 2 320 220"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-43",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "newScore" ],
+									"patching_rect" : [ 38.5, 316.0, 121.0, 22.0 ],
+									"text" : "MaxScore alternative",
+									"varname" : "MaxScore"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgmode" : 0,
+									"border" : 1,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-44",
+									"lockeddragscroll" : 1,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "maxscore.bcanvas.maxpat",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 38.0, 367.0, 320.0, 220.0 ],
+									"prototypename" : "bcanvas",
+									"varname" : "bcanvas",
+									"viewvisibility" : 1
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 1 ],
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-51", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-42", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-33", 0 ],
+									"source" : [ "obj-31", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-43", 0 ],
+									"midpoints" : [ 187.5, 282.5, 48.0, 282.5 ],
+									"source" : [ "obj-32", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-32", 0 ],
+									"source" : [ "obj-33", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-41", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-43", 0 ],
+									"source" : [ "obj-42", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-44", 1 ],
+									"midpoints" : [ 82.0, 354.0, 348.5, 354.0 ],
+									"source" : [ "obj-43", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-44", 0 ],
+									"source" : [ "obj-43", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-43", 0 ],
+									"midpoints" : [ 47.5, 616.0, 20.5, 616.0, 20.5, 309.0, 48.0, 309.0 ],
+									"source" : [ "obj-44", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"source" : [ "obj-57", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-60", 1 ],
+									"midpoints" : [ 408.166666666666686, 364.0, 694.5, 364.0 ],
+									"source" : [ "obj-59", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-60", 0 ],
+									"source" : [ "obj-59", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-59", 0 ],
+									"midpoints" : [ 393.5, 618.5, 366.5, 618.5, 366.5, 309.5, 393.5, 309.5 ],
+									"source" : [ "obj-60", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-51", 0 ],
+									"source" : [ "obj-87", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-51", 0 ],
+									"source" : [ "obj-88", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-59", 1 ],
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-51", 0 ],
+									"source" : [ "obj-90", 0 ]
+								}
+
+							}
+ ],
+						"styles" : [ 							{
+								"name" : "black on white",
+								"umenu" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "caption text",
+								"default" : 								{
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "section dividers",
+								"default" : 								{
+									"fontface" : [ 3 ],
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 15.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "section info reg",
+								"default" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "titles",
+								"default" : 								{
+									"fontface" : [ 1 ],
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 20.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 138.0, 140.0, 37.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"tags" : ""
+					}
+,
+					"text" : "p dict",
+					"varname" : "pattr"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-8",
@@ -69,14 +1908,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 1,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 113.0, 825.0, 638.0 ],
+						"rect" : [ 0.0, 26.0, 854.0, 638.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -117,8 +1956,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 632.0, 164.5, 131.0, 66.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 657.0, 105.5, 131.0, 66.0 ],
 									"text" : "store and retrieve score from pattrstorage"
 								}
 
@@ -143,7 +1981,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "restoreblob", "JSON.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" ] ],
+									"embedstate" : [ [ "restoreblob", "JSON.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", "zcTvyHI6KpKEQAA==" ] ],
 									"id" : "obj-9",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -151,8 +1989,8 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 465.0, 286.5, 103.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "maxscore.store.js",
-										"parameter_enable" : 0
+										"filename" : "maxscore.store",
+										"parameter_enable" : 1
 									}
 ,
 									"text" : "js maxscore.store",
@@ -212,7 +2050,7 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 38.5, 154.5, 58.0, 22.0 ],
 									"restore" : 									{
-										"store" : [ "JSON.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" ]
+										"store" : [ "JSON.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", "zcTvyHI6KpKEQAA==" ]
 									}
 ,
 									"text" : "autopattr",
@@ -263,7 +2101,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 744.5, 237.5, 29.5, 22.0 ],
+									"patching_rect" : [ 769.5, 178.5, 29.5, 22.0 ],
 									"text" : "2"
 								}
 
@@ -275,7 +2113,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 713.0, 237.5, 29.5, 22.0 ],
+									"patching_rect" : [ 738.0, 178.5, 29.5, 22.0 ],
 									"text" : "1"
 								}
 
@@ -287,7 +2125,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 665.0, 237.5, 47.0, 22.0 ],
+									"patching_rect" : [ 690.0, 178.5, 47.0, 22.0 ],
 									"text" : "store 2"
 								}
 
@@ -299,7 +2137,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 616.0, 237.5, 47.0, 22.0 ],
+									"patching_rect" : [ 641.0, 178.5, 47.0, 22.0 ],
 									"text" : "store 1"
 								}
 
@@ -310,7 +2148,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 421.0, 321.0, 63.0, 22.0 ],
 									"text" : "MaxScore",
 									"varname" : "MaxScore[1]"
@@ -359,12 +2197,12 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 616.0, 286.5, 163.0, 22.0 ],
+									"patching_rect" : [ 641.0, 227.5, 163.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"client_rect" : [ 902, 216, 2055, 1098 ],
+										"client_rect" : [ 756, 321, 1436, 926 ],
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0,
-										"storage_rect" : [ 952, 241, 2152, 802 ]
+										"storage_rect" : [ 583, 69, 1034, 197 ]
 									}
 ,
 									"text" : "pattrstorage @outputmode 1",
@@ -406,7 +2244,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
-									"outlettype" : [ "", "dictionary", "", "newScore" ],
+									"outlettype" : [ "", "", "", "newScore" ],
 									"patching_rect" : [ 38.5, 316.0, 102.0, 22.0 ],
 									"text" : "MaxScore source",
 									"varname" : "MaxScore"
@@ -598,14 +2436,7 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontsize" : [ 12.0 ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -615,7 +2446,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -634,8 +2472,8 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
+									"fontname" : [ "Arial" ],
 									"fontsize" : [ 15.0 ]
 								}
 ,
@@ -655,8 +2493,8 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
+									"fontname" : [ "Arial" ],
 									"fontsize" : [ 20.0 ]
 								}
 ,
@@ -695,7 +2533,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 322.956299000000001, 57.567627000000002 ]
+					"patching_rect" : [ 10.0, 10.0, 322.928009033203125, 57.599853515625 ]
 				}
 
 			}
@@ -709,14 +2547,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 1,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 825.0, 638.0 ],
+						"rect" : [ 0.0, 26.0, 854.0, 638.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -764,23 +2602,37 @@
 			}
  ],
 		"lines" : [  ],
+		"parameters" : 		{
+			"obj-9::obj-9" : [ "store", "store", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"dependency_cache" : [ 			{
-				"name" : "maxscore.store.maxhelp.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../../../hajdu/Documents/Max 8/Snapshots",
-				"type" : "mx@s",
+				"name" : "MaxScore.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Snaphot-1[1].maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../../../hajdu/Documents/Max 8/Snapshots",
-				"type" : "mx@s",
+				"name" : "MaxScore.rxml.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "MaxScoreKeyMap.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
+				"patcherrelativepath" : "../patchers/maps",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
+				"name" : "boxSize.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -791,6 +2643,39 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpstarter.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "iswindows.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "jit.pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.bcanvas.hub.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.bcanvas.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
@@ -798,7 +2683,101 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.info.grab.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.proportionalNotation.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.rapidXML.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.rapidxml.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.store.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.store.maxhelp.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Max for Live Devices/Test Blob Project/data",
+				"patcherrelativepath" : "../../../../../hajdu/Documents/Max 8/Max for Live Devices/Test Blob Project/data",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.store.maxhelp[1].maxsnap",
+				"bootpath" : "~/Documents/Max 8/Max for Live Devices/Test Blob Project/data",
+				"patcherrelativepath" : "../../../../../hajdu/Documents/Max 8/Max for Live Devices/Test Blob Project/data",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mouseEvents.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "musicxml2jmsl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mxj.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "n4m.max-fs.js",
+				"bootpath" : "C74:/packages/Node for Max/examples/filesystem",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m_musicxml2jmsl.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
+				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "picster-init.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
@@ -819,41 +2798,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.bcanvas.hub.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "MaxScoreKeyMap.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
-				"patcherrelativepath" : "../patchers/maps",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mouseEvents.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "boxSize.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jit.pane.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "socket.pane.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -861,115 +2805,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "n4m.max-fs.js",
-				"bootpath" : "C74:/packages/Node for Max/examples/filesystem",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "swissarmyknife.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "MaxScore.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "iswindows.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/externals",
-				"patcherrelativepath" : "../externals",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.xml2json.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.info.recv.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.json2xml.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "formatXML.js",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../Library/MaxScore",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.proportionalNotation.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "picster-init.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "musicxml2jmsl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "n4m_musicxml2jmsl.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
-				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.store.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpstarter.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mxj.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "sadam.rapidXML.mxo",
-				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
@@ -986,7 +2826,7 @@
 				"valuedictionary" : 				{
 					"parameter_values" : 					{
 						"blob" : 						{
-							"content" : [ "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" ]
+							"store" : [ "JSON.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", "zcTvyHI6KpKEQAA==" ]
 						}
 
 					}
@@ -1001,16 +2841,16 @@
 						"filetype" : "C74Snapshot",
 						"version" : 2,
 						"minorversion" : 0,
-						"name" : "Snapshot-1",
+						"name" : "maxscore.store.maxhelp",
 						"origin" : "maxscore.store.maxhelp",
 						"type" : "patcher",
 						"subtype" : "Undefined",
-						"embed" : 1,
+						"embed" : 0,
 						"snapshot" : 						{
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"blob" : 									{
-										"content" : [ "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" ]
+										"store" : [ "JSON.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" ]
 									}
 
 								}
@@ -1020,11 +2860,11 @@
 						}
 ,
 						"fileref" : 						{
-							"name" : "Snaphot-1",
+							"name" : "maxscore.store.maxhelp",
 							"filename" : "maxscore.store.maxhelp.maxsnap",
-							"filepath" : "~/Documents/Max 8/Snapshots",
+							"filepath" : "~/Documents/Max 8/Max for Live Devices/Test Blob Project/data",
 							"filepos" : -1,
-							"snapshotfileid" : "fc4b568f567533242fe3e49041b68bba"
+							"snapshotfileid" : "cc22a5a7c64889dd017930eef01776da"
 						}
 
 					}
@@ -1032,30 +2872,30 @@
 						"filetype" : "C74Snapshot",
 						"version" : 2,
 						"minorversion" : 0,
-						"name" : "Snapshot-2",
+						"name" : "maxscore.store.maxhelp[1]",
 						"origin" : "maxscore.store.maxhelp",
 						"type" : "patcher",
 						"subtype" : "Undefined",
-						"embed" : 1,
-						"fileref" : 						{
-							"name" : "Snaphot-1[1]",
-							"filename" : "Snaphot-1[1].maxsnap",
-							"filepath" : "~/Documents/Max 8/Snapshots",
-							"filepos" : -1,
-							"snapshotfileid" : "4c752c423e81026c0b859b31282b6acc"
-						}
-,
+						"embed" : 0,
 						"snapshot" : 						{
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"blob" : 									{
-										"content" : [ "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" ]
+										"store" : [ "JSON.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", "zcTvyHI6KpKEQAA==" ]
 									}
 
 								}
 
 							}
 
+						}
+,
+						"fileref" : 						{
+							"name" : "maxscore.store.maxhelp[1]",
+							"filename" : "maxscore.store.maxhelp[1].maxsnap",
+							"filepath" : "~/Documents/Max 8/Max for Live Devices/Test Blob Project/data",
+							"filepos" : -1,
+							"snapshotfileid" : "c2f29e1b3a9911fcd881323715952184"
 						}
 
 					}

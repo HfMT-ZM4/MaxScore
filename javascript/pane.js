@@ -136,6 +136,10 @@ function setattr_bgcolor(r, g, b, a)
 	bgcolor = [r, g, b, a];
 }
 
+function zoomlist()
+{
+	
+}	
 
 function setMediaFolder()
 {
@@ -294,6 +298,14 @@ function obj_ref(o)
 	//}
 	svg += "</svg>";
 	img.setsvg(svg);
+	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+	svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
+	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
+	svg += "<g id=\"" + s +  "\">";
+	svg += o.picster[s].join("");
+	svg += "</g>";
+	svg += "</svg>";
+	picster.setsvg(svg);	
 	var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svgclefs += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svgclefs += "<svg width=\"" + 25 + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + 25 + " " + pageHeight + "\" style=\"background: ivory\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
@@ -321,7 +333,7 @@ function clear()
 
 var img = new MGraphicsSVG("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: ivory\" xml:space=\"preserve\"><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 30)\">Create new score or</text><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 90)\">load score from disk</text></svg>");
 var clefs = new MGraphicsSVG();
-
+var picster = new MGraphicsSVG();
 
 var pageWidth = 1200;
 var pageHeight = 800;
@@ -642,6 +654,7 @@ function paint() {
 		mgraphics.svg_render(img);
 		if (playback) flashingNoteheads();
 		renderImages();
+		mgraphics.svg_render(picster);
 		paintOnTop();
 		if (highlight) measureSelection();
 		drawCursors();
@@ -958,7 +971,7 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
 		outlet(2, 1);
 		}
 }
-onclick.local = 1; //private.
+//onclick.local = 1; //private.
 
 function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 {
@@ -1032,7 +1045,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	mgraphics.redraw();
 	last_position = position;
 }
-ondrag.local = 1; //private.
+//ondrag.local = 1; //private.
 
 
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
@@ -1041,19 +1054,10 @@ function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 	var _cmd = (max["os"]=="macintosh") ? cmd : option;
 	if (idleOut) outlet(1, "mouseIdle",  x - horizontalOffset , y - verticalOffset, shift, ctrl);
     canvasactive = 1;
-    if (_cmd) {
-        // cache mouse position for tracking delta movements
-        DisplayCursor(9);
-    }
-	if (ctrl && max["os"]=="macintosh") {
-    DisplayCursor(4);
-	}
-    if (capsl) {
-        DisplayCursor(6);
-	}
-    if (!ctrl && !capsl && !_cmd) {
-        DisplayCursor(1);
-    }
+    if (_cmd) DisplayCursor(9);
+	else if (ctrl) DisplayCursor(4);
+    else if (capsl) DisplayCursor(6);
+    else if (!ctrl && !capsl && !_cmd) DisplayCursor(1);
 	idl = 0;
 	idlposition = [x, y];
 	//mgraphics.redraw();

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 1,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 1267.0, 838.0 ],
+		"rect" : [ 100.0, 87.0, 1267.0, 838.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -70,14 +70,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 1,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 1267.0, 812.0 ],
+						"rect" : [ 100.0, 113.0, 1267.0, 812.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -224,8 +224,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 1,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -375,8 +375,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 1,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -425,7 +425,7 @@
 															}
 , 															{
 																"box" : 																{
-																	"embedstate" : [ [ "restoreblob", "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", "qmNBXGtyUSE8aUF+QAUrnvHDpkIWuFkAoCAA" ] ],
+																	"embedstate" : [ [ "restoreblob", "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", "oCAA" ] ],
 																	"id" : "obj-24",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
@@ -511,14 +511,7 @@
  ],
 														"styles" : [ 															{
 																"name" : "black on white",
-																"number" : 																{
-																	"fontsize" : [ 12.0 ],
-																	"fontname" : [ "Arial" ],
-																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-																}
-,
 																"umenu" : 																{
-																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 																	"bgfillcolor" : 																	{
 																		"type" : "color",
 																		"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -528,7 +521,14 @@
 																		"proportion" : 0.39,
 																		"autogradient" : 0
 																	}
-
+,
+																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+																}
+,
+																"number" : 																{
+																	"fontname" : [ "Arial" ],
+																	"fontsize" : [ 12.0 ],
+																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -537,8 +537,8 @@
 , 															{
 																"name" : "caption text",
 																"default" : 																{
-																	"fontsize" : [ 11.0 ],
-																	"fontface" : [ 2 ]
+																	"fontface" : [ 2 ],
+																	"fontsize" : [ 11.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -547,9 +547,9 @@
 , 															{
 																"name" : "section dividers",
 																"default" : 																{
-																	"fontsize" : [ 15.0 ],
+																	"fontface" : [ 3 ],
 																	"fontname" : [ "Arial" ],
-																	"fontface" : [ 3 ]
+																	"fontsize" : [ 15.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -558,8 +558,8 @@
 , 															{
 																"name" : "section info reg",
 																"default" : 																{
-																	"fontsize" : [ 12.0 ],
-																	"fontname" : [ "Arial" ]
+																	"fontname" : [ "Arial" ],
+																	"fontsize" : [ 12.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -568,9 +568,9 @@
 , 															{
 																"name" : "titles",
 																"default" : 																{
-																	"fontsize" : [ 20.0 ],
+																	"fontface" : [ 1 ],
 																	"fontname" : [ "Arial" ],
-																	"fontface" : [ 1 ]
+																	"fontsize" : [ 20.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -638,8 +638,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 1,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1149,8 +1149,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 1,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1395,8 +1395,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 1,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1697,7 +1697,7 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 476.833333333333371, 394.5, 180.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"initial" : [ 34427 ],
+														"initial" : [ 10746 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -1838,8 +1838,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 1,
+															"minor" : 3,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2104,7 +2104,7 @@
 , 											{
 												"box" : 												{
 													"border" : 0,
-													"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1 ], [ "transparency", 0 ] ],
+													"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1 ] ],
 													"filename" : "pane.js",
 													"id" : "obj-7",
 													"maxclass" : "jsui",
@@ -2715,14 +2715,7 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-												}
-,
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "color",
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -2732,7 +2725,14 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2741,8 +2741,8 @@
 , 											{
 												"name" : "caption text",
 												"default" : 												{
-													"fontsize" : [ 11.0 ],
-													"fontface" : [ 2 ]
+													"fontface" : [ 2 ],
+													"fontsize" : [ 11.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2751,9 +2751,9 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontsize" : [ 15.0 ],
+													"fontface" : [ 3 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 3 ]
+													"fontsize" : [ 15.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2762,8 +2762,8 @@
 , 											{
 												"name" : "section info reg",
 												"default" : 												{
-													"fontsize" : [ 12.0 ],
-													"fontname" : [ "Arial" ]
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2772,9 +2772,9 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontsize" : [ 20.0 ],
+													"fontface" : [ 1 ],
 													"fontname" : [ "Arial" ],
-													"fontface" : [ 1 ]
+													"fontsize" : [ 20.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2859,8 +2859,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 1,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3216,7 +3216,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 385.0, 191.0, 18.0, 62.0 ],
 									"size" : 4,
-									"value" : 1
+									"value" : 3
 								}
 
 							}
@@ -3655,14 +3655,7 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
@@ -3672,7 +3665,14 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3681,8 +3681,8 @@
 , 							{
 								"name" : "caption text",
 								"default" : 								{
-									"fontsize" : [ 11.0 ],
-									"fontface" : [ 2 ]
+									"fontface" : [ 2 ],
+									"fontsize" : [ 11.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3691,9 +3691,9 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontsize" : [ 15.0 ],
+									"fontface" : [ 3 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 3 ]
+									"fontsize" : [ 15.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3702,8 +3702,8 @@
 , 							{
 								"name" : "section info reg",
 								"default" : 								{
-									"fontsize" : [ 12.0 ],
-									"fontname" : [ "Arial" ]
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3712,9 +3712,9 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontsize" : [ 20.0 ],
+									"fontface" : [ 1 ],
 									"fontname" : [ "Arial" ],
-									"fontface" : [ 1 ]
+									"fontsize" : [ 20.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3766,8 +3766,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 1,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3947,96 +3947,7 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.makenote.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "first-int.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "index-player.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "sequenceDumpPlayer.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster",
-				"patcherrelativepath" : "../patchers/Picster",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
-				"patcherrelativepath" : "../patchers/DJster/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.sampler.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.sampler.menus.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.sampler.instrument.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "swissarmyknife.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Sampler.Preferences.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "samplerGUI2.maxpat",
+				"name" : "LtoC.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
 				"type" : "JSON",
@@ -4050,70 +3961,21 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "LtoC.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"name" : "MaxScore.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "multibuffer-stereo.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bank-wavefor.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "first-v2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "panel_normalize.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "panel_loop.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "panel_envelope2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "qn.envelopes.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"name" : "MaxScoreKeyMap.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
+				"patcherrelativepath" : "../patchers/maps",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.multisamples-player.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
-				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.sample-player_v2.maxpat",
+				"name" : "Sampler.Preferences.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
 				"type" : "JSON",
@@ -4127,24 +3989,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "pane.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "picster-select.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "render2canvas.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
+				"name" : "bank-wavefor.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -4155,6 +4003,80 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "divmod.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
+				"patcherrelativepath" : "../patchers/DJster/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "first-int.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Macaque/lib/abstractions",
+				"patcherrelativepath" : "../patchers/Macaque/lib/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "first-v2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "formatXML.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpdetails.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpstarter.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "icanvas.interaction.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "icanvas.queries.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "index-player.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "iswindows.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/externals",
+				"patcherrelativepath" : "../externals",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "jit.pane.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -4162,29 +4084,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "socket.pane.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "n4m.max-fs.js",
-				"bootpath" : "C74:/packages/Node for Max/examples/filesystem",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "MaxScore.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.xml2json.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
+				"name" : "maxscore.bcanvas.hub.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -4203,10 +4105,17 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "formatXML.js",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../Library/MaxScore",
-				"type" : "TEXT",
+				"name" : "maxscore.makenote.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.multisamples-player.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -4217,30 +4126,30 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "picster-init.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "musicxml2jmsl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
+				"name" : "maxscore.sample-player_v2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "n4m_musicxml2jmsl.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
-				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
-				"type" : "TEXT",
+				"name" : "maxscore.sampler.instrument.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "icanvas.queries.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
+				"name" : "maxscore.sampler.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.sampler.menus.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -4252,31 +4161,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "my-loadbang.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
+				"name" : "maxscore.xml2json.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "icanvas.interaction.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.bcanvas.hub.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "MaxScoreKeyMap.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
-				"patcherrelativepath" : "../patchers/maps",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -4287,9 +4175,17 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "helpstarter.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
+				"name" : "multibuffer-stereo.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "musicxml2jmsl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -4297,8 +4193,119 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "my-LtoColl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "my-loadbang.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m.max-fs.js",
+				"bootpath" : "C74:/packages/Node for Max/examples/filesystem",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m_musicxml2jmsl.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
+				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "panel_envelope2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "panel_loop.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "panel_normalize.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "picster-init.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "picster-select.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "qn.envelopes.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "render2canvas.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "sadam.rapidXML.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "samplerGUI2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "sequenceDumpPlayer.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster",
+				"patcherrelativepath" : "../patchers/Picster",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "socket.pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "swissarmyknife.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/MaxScore-Sampler",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0

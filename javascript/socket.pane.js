@@ -1,4 +1,5 @@
 outlets = 2;
+include("maxscore.tools");
 
 var output = new Dict();
 output.name = "output";
@@ -43,6 +44,7 @@ var	buttonstrokecolor = "red";
 var buttonstrokewidth = 0.5;
 var buttonfillopacity = 0.2;
 var ref, listener;
+var zl = [0.5];
 
 
 if (jsarguments.length >= 1) 
@@ -428,6 +430,7 @@ function obj_ref(o)
 	setZoom(o.setZoom);
 	bgcolor = o.bgcolor;
 	SVGString = o.svg;
+	SVGPicster = o.picster;
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
 	groupcount = o.groupcount;
@@ -470,6 +473,10 @@ function obj_ref(o)
 }
 
 
+function zoomlist()
+{
+	zl = arrayfromargs(arguments);
+}	
 
 function writeSVG(destination)
 {
@@ -482,14 +489,20 @@ function writeSVG(destination)
 	//var SVGZoom = 1;
 	f.writeline("<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">");
 	for (var s = 1; s <= groupcount; s++) {
-	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\">");	
+		_zl = (s > zl.length) ? zl[zl.length - 1] * 2 : zl[s - 1] * 2;
+		if (_zl == "default") _zl = 1.;
+		else if (_zl == "current") _zl = zoom;
+	f.writeline("<g id=\"_" + s +  "\" transform=\"matrix(" + [_zl, 0., 0., _zl, 0., 0.] + ")\">");	
 	for (var i = 0; i < SVGString[s].length; i++) {
 		f.writeline(SVGString[s][i]);
 	}
 	for (var i = 0; i < SVGImages[s].length; i++) {
-		if (!isFile(pathToScript + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1))) outlet(1, "cp", SVGImages[s][i][1].substring(SVGImages[s][i][1].indexOf(":") + 1), pathToScript + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1));
+		if (!isFile(pathToScript + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1))) outlet(1, "cp", SVGImages[s][i][1].substring(SVGImages[s][i][1].indexOf(":") + 1), pathToScript + mediaFolder + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1));
 		//post("SVGImages", SVGImages[s][i][1].split("/")[SVGImages[s][i][1].split("/").length - 1], "\n");
 		f.writeline("<image x=\"" + SVGImages[s][i][2] + "\" y=\"" + SVGImages[s][i][3] + "\" width=\"" + SVGImages[s][i][4] + "\" height=\"" + SVGImages[s][i][5] + "\" xlink:href=\"" + mediaFolder + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1) + "\" transform=\"matrix(" + SVGImages[s][i][6] + ")\"/>");
+	}
+	for (var i = 0; i < SVGPicster[s].length; i++) {
+		f.writeline(SVGPicster[s][i]);
 	}
 	f.writeline("</g>");
 	}
@@ -1133,18 +1146,4 @@ function scroll()
 		outlet(0, "dictionary", cursors.name);
 		}
 	}
-}
-
-function getAllIndexes(arr, val) {
-    var indexes = [-1], i;
-	var c = 0;
-	if (typeof arr == "number" && arr == val) indexes = [0];
-    else {for(i = 0; i < arr.length; i++)
-        if (arr[i] == val)
-			{
-            indexes[c] = i;
-			c++;
-			}
-		}
-    return indexes;
 }
