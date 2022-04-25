@@ -7,6 +7,7 @@ var _anchors = {};
 var anchors = {};
 var increment;
 var hold = 0.;
+var json = {};
 
 function dumpExpressions()
 {
@@ -36,7 +37,12 @@ function init() {
 	//outlet(0, "clearSelection");
 	//outlet(0, "getNumStaves");
 	outlet(0, "dumpScore");
-	//post("JSON", JSON.stringify(json), "\n");
+	post("numMeasures", Object.keys(json).length, "\n");
+	if (!Object.keys(json).length)
+	{
+		error("This score could not be parsed\n");
+		return;
+	}
 	var numMeasures = getAllIndexes(json["jmslscoredoc"]["score"][0][".ordering"], "measure").length;
 	var numStaves = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0][".ordering"], "staff").length;
 	var numTracks = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][0]["staff"][0][".ordering"], "track").length;
@@ -150,7 +156,6 @@ function init() {
 								}
 							}
 							outlet(0, "setNoteDimension", 6, _count);
-							//post("note", _count, "\n");
 						} else {
 							if(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["dim"][2]["@value"] != -1) {
 								outlet(0, "setNoteDimension", 6, -1);
@@ -260,14 +265,17 @@ function anything()
 		case "dictionary" :
 		var dump = new Dict;
 		dump.name = msg[0];
-		//post("dump", dump.stringify(), "\n");	
 		userBeans = [];
+		//post("test", dump.get("jmslscoredoc::score::0::measure::0::staff::0::track::0::note::0").stringify(), "\n");
+		//post("test2", JSON.stringify(JSON.parse(dump.get("jmslscoredoc::score::0::measure::0::staff::0::track::0::note::0").stringify())), "\n");
 		json = JSON.parse(dump.stringify());
-		var key = Object.keys(json);
-		if ((key == "interval" || key == "note") && "userBean" in json[key]){
-		var occurence = getAllIndexes(json[key][".ordering"], "userBean");
-		for (var i = 0; i < occurence.length; i++) {
-			userBeans[i] = json[key]["userBean"][i];
+		if (dump.getkeys().indexOf("interval") != -1 && dump.getkeys().indexOf("note") != 1) {
+			var key = Object.keys(json);
+			if ("userBean" in json[key]){
+			var occurence = getAllIndexes(json[key][".ordering"], "userBean");
+			for (var i = 0; i < occurence.length; i++) {
+				userBeans[i] = json[key]["userBean"][i];
+				}
 			}
 		}
 		break;

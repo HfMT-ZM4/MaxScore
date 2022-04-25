@@ -1,41 +1,41 @@
 <?xml version="1.0"?>
 <jmslscoredoc>
 <!-- Saved document from JMSL's programmable music notation editor. Java Music Specification Language by Nick Didkovsky & Phil Burk, available from: http://www.algomusic.com -->
-<score NAME="JMSLMaxScore-3" SUBTITLE="" COMPOSER="" COPYRIGHT="" WIDTH="1000" HEIGHT="800" STAFFS="7" NUMTRACKSPERSTAFF="2" InstrumentNamesVisible="false" TempoVisible="false" StaffNumbersVisible="false" MeasureNumbersVisible="false" SectionBracketsVisible="false" TimeSignaturesVisible="false" KeySignaturesVisible="true" ClefsVisible="true" ScoreTitleVisible="false" CourtesyClefsVisible="false" MeasureNumberOffset="1" LeftMargin="240.0" RightMargin="20.0" TopMargin="15.0" BottomMargin="15.0" TopMarginOfFirstPage="60.0" DrawAllMeasureNumbers="false" TextFontScaler="1.5" ScoreSubtitleFontScaler="2.0" ScoreTitleFontScaler="4.0" TimesigFontScaler="2.5" MeasureNumberFontScaler="1.5" TextFontName="SansSerif" ScoreSubtitleFontName="Serif" ScoreTitleFontName="Serif" TimesigFontName="Serif" MeasureNumberFontName="SansSerif" FirstSystemIndent="0.0" useLegacyMultiTrackOrientation="true" >
+<score NAME="BP Alternate Notations" SUBTITLE=" " COMPOSER="" COPYRIGHT="" WIDTH="1000" HEIGHT="800" STAFFS="7" NUMTRACKSPERSTAFF="2" InstrumentNamesVisible="false" TempoVisible="false" StaffNumbersVisible="true" MeasureNumbersVisible="false" SectionBracketsVisible="false" TimeSignaturesVisible="false" KeySignaturesVisible="true" ClefsVisible="true" ScoreTitleVisible="true" CourtesyClefsVisible="false" MeasureNumberOffset="1" LeftMargin="125.0" RightMargin="20.0" TopMargin="15.0" BottomMargin="15.0" TopMarginOfFirstPage="60.0" DrawAllMeasureNumbers="false" TextFontScaler="1.5" ScoreSubtitleFontScaler="2.0" ScoreTitleFontScaler="4.0" TimesigFontScaler="2.5" MeasureNumberFontScaler="1.5" TextFontName="SansSerif" ScoreSubtitleFontName="Serif" ScoreTitleFontName="Serif" TimesigFontName="Serif" MeasureNumberFontName="SansSerif" FirstSystemIndent="0.0" useLegacyMultiTrackOrientation="true" >
 <ScoreAnnotation CLASSNAME="com.softsynth.jmsl.score.ScoreAnnotation" Annotation="485.3oc2T9zSaCDDE+r8mhU6QThkSIPE8VC4hohznRppTQbXs8ZmsrdGqYWmVDku6r+ALAoTAJoBZ4hs7ad6am4mF4qiinq3nV.JJ4CD5njT5.qVKBs.ZrxLoqPpSLWxTWNmUy6ULhF9WUBiSXTZZRPj+KSEn7hzOhBaBN4lNsnnWeBxV0gLZHEij2WYgMSMYF+mju.MLk2QdcAHAzU+bRZxQGc3f0dMd.w12jKbNqdryzAq8n2jla9FxZ8c8ce+c.Z7iUxA2oL01dA.bVKqPnpmvzgIO48dKFVU0vTmRz0wQQzBovGIcOWOGQk7xZNJEJt99axcpqj9TnS4UrNoI3sQTf1oMb9lSGxE0KMKGZ.2g8NXk+nSatm7taiW4cWtdN9VdnDfK6ZevquUqQHnY4hEHdRXiMOGyTZCNi0D5KRHIgSrqgqLtJyAsvAiOWUYQiO43nahefCi1ZNbhcrHYJ6n5w8l4wIY6BEF+RQg2s0TXxbRwR2HaDE+dwlgfxtM7DXXwK9Zf2kAEF1J+A2ObUc4khUh9+qPeLm1+uCmlsYNMY9SPoYu5TZ7ygRi2EJcFzhLEPNVxPqMyVuR8uw+WN3OyBugdT77IzBtBv2J74vcYW4zroYjOwuJGXX4+kfH9l3aA7o0bcF" >
 </ScoreAnnotation>
 <orchestra CLASSNAME="com.softsynth.jmsl.score.Orchestra" >
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="0" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="MaxScoreIns-0" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="0" EditEnabled="true" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="Eighth-tone" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="2.147483648E9" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="1" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="MaxScoreIns-0" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="1" EditEnabled="true" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="Just Intonation" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="2.147483648E9" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="2" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="MaxScoreIns-0" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="2" EditEnabled="true" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="BP T Clef" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="2.147483648E9" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="3" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="MaxScoreIns-0" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="3" EditEnabled="true" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="BP N Clef" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="2.147483648E9" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="4" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="MaxScoreIns-0" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="4" EditEnabled="true" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="BP S. Cl. Fingering" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="2.147483648E9" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="5" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="MaxScoreIns-0" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="5" EditEnabled="true" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="BP T. Cl. Fingering" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="2.147483648E9" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="6" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="MaxScoreIns-0" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="6" EditEnabled="true" Transposition="0.0" MixerClassName="com.softsynth.jmsl.NullMixer" Name="BP Keyboard" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="2.147483648E9" name="index" />
@@ -83,78 +83,78 @@
 <scoresection NAME="X" START="0" END="0" />
 <scoresection NAME="Y" START="0" END="0" />
 <scoresection NAME="Z" START="0" END="0" />
-<measure WIDTH="1482" WIDTHSETBYHAND="false" TIMESIG="14 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
+<measure WIDTH="1712" WIDTHSETBYHAND="false" TIMESIG="14 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="50.0" >
 <staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="1.0" PITCH="49.97999954223633" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="0.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="51.439998626708984" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="1.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="1.0" PITCH="52.90999984741211" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="2.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="54.369998931884766" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="3.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="55.83000183105469" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="4.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="57.29999923706055" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="5.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="58.7599983215332" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="6.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="1.0" PITCH="60.220001220703125" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="7.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="61.68000030517578" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="8.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="63.150001525878906" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="9.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="6" DURATION="1.0" PITCH="64.61000061035156" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="10.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="2" DURATION="1.0" PITCH="66.06999969482422" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="11.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="7" DURATION="1.0" PITCH="67.54000091552734" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="12.0" name="index" />
 </note>
 <note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="3" DURATION="1.0" PITCH="69.0" VELOCITY="0.5" HOLD="0.800000011920929" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="1" ACCVISPOLICY="0" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="true" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="1" LAYOUTSHIFTX="0.0" TEXT="" >
 <dim index="4" value="0.0" name="EventFlag" />
 <dim index="5" value="-1.0" name="originalPitch" />
-<dim index="6" value="-1.0" name="index" />
+<dim index="6" value="13.0" name="index" />
 </note>
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -235,15 +235,15 @@
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="0.0" Xoffset="0.0" Name="RenderedMessageBean_staff-0-1" Message="group Quicktext[0]" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="0.0" Yoffset="0.0" Name="RenderedMessageBean_staff-0-1" Message="group Quicktext[0]" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="104.0" Xoffset="-356.0" Name="RenderedMessageBean_staff-0-1" Message="frgb 0 0 0 255" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-356.0" Yoffset="104.0" Name="RenderedMessageBean_staff-0-1" Message="frgb 0 0 0 255" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="104.0" Xoffset="-356.0" Name="RenderedMessageBean_staff-0-1" Message="font Arial 14" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-356.0" Yoffset="104.0" Name="RenderedMessageBean_staff-0-1" Message="font Arial 14" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="104.0" Xoffset="-356.0" Name="RenderedMessageBean_staff-0-1" Message="textface regular" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-356.0" Yoffset="104.0" Name="RenderedMessageBean_staff-0-1" Message="textface regular" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="104.0" Xoffset="-356.0" Name="RenderedMessageBean_staff-0-1" Message="writeto 0.0000 0.0000 Helmholtz-Ellis JI notation" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-356.0" Yoffset="104.0" Name="RenderedMessageBean_staff-0-1" Message="writeto 0.0000 0.0000 Helmholtz-Ellis JI notation" >
 </staffUserBean>
 </staff>
 <staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="1" >
@@ -321,15 +321,15 @@
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="0.0" Xoffset="0.0" Name="RenderedMessageBean_staff-0-2" Message="group Quicktext[0]" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="0.0" Yoffset="0.0" Name="RenderedMessageBean_staff-0-2" Message="group Quicktext[0]" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="104.0" Xoffset="-152.0" Name="RenderedMessageBean_staff-0-2" Message="frgb 0 0 0 255" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-152.0" Yoffset="104.0" Name="RenderedMessageBean_staff-0-2" Message="frgb 0 0 0 255" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="104.0" Xoffset="-152.0" Name="RenderedMessageBean_staff-0-2" Message="font Arial 14" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-152.0" Yoffset="104.0" Name="RenderedMessageBean_staff-0-2" Message="font Arial 14" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="104.0" Xoffset="-152.0" Name="RenderedMessageBean_staff-0-2" Message="textface regular" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-152.0" Yoffset="104.0" Name="RenderedMessageBean_staff-0-2" Message="textface regular" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="104.0" Xoffset="-152.0" Name="RenderedMessageBean_staff-0-2" Message="writeto 0.0000 0.0000 BP T-clef" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-152.0" Yoffset="104.0" Name="RenderedMessageBean_staff-0-2" Message="writeto 0.0000 0.0000 BP T-clef" >
 </staffUserBean>
 </staff>
 <staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="1" >
@@ -407,15 +407,15 @@
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="0.0" Xoffset="0.0" Name="RenderedMessageBean_staff-0-3" Message="group Quicktext[0]" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="0.0" Yoffset="0.0" Name="RenderedMessageBean_staff-0-3" Message="group Quicktext[0]" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-154.0" Name="RenderedMessageBean_staff-0-3" Message="frgb 0 0 0 255" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-154.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-3" Message="frgb 0 0 0 255" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-154.0" Name="RenderedMessageBean_staff-0-3" Message="font Arial 14" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-154.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-3" Message="font Arial 14" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-154.0" Name="RenderedMessageBean_staff-0-3" Message="textface regular" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-154.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-3" Message="textface regular" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-154.0" Name="RenderedMessageBean_staff-0-3" Message="writeto 0.0000 0.0000 BP N-clef" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-154.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-3" Message="writeto 0.0000 0.0000 BP N-clef" >
 </staffUserBean>
 </staff>
 <staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -493,15 +493,15 @@
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="0.0" Xoffset="0.0" Name="RenderedMessageBean_staff-0-4" Message="group Quicktext[0]" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="0.0" Yoffset="0.0" Name="RenderedMessageBean_staff-0-4" Message="group Quicktext[0]" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-420.0" Name="RenderedMessageBean_staff-0-4" Message="frgb 0 0 0 255" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-420.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-4" Message="frgb 0 0 0 255" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-420.0" Name="RenderedMessageBean_staff-0-4" Message="font Arial 14" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-420.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-4" Message="font Arial 14" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-420.0" Name="RenderedMessageBean_staff-0-4" Message="textface regular" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-420.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-4" Message="textface regular" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-420.0" Name="RenderedMessageBean_staff-0-4" Message="writeto 0.0000 0.0000 BP Soprano Clarinet Fingerings" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-420.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-4" Message="writeto 0.0000 0.0000 BP Soprano Clarinet Fingerings" >
 </staffUserBean>
 </staff>
 <staff INDEX="5" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="5" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -579,15 +579,15 @@
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="0.0" Xoffset="0.0" Name="RenderedMessageBean_staff-0-5" Message="group Quicktext[0]" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="0.0" Yoffset="0.0" Name="RenderedMessageBean_staff-0-5" Message="group Quicktext[0]" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-386.0" Name="RenderedMessageBean_staff-0-5" Message="frgb 0 0 0 255" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-386.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-5" Message="frgb 0 0 0 255" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-386.0" Name="RenderedMessageBean_staff-0-5" Message="font Arial 14" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-386.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-5" Message="font Arial 14" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-386.0" Name="RenderedMessageBean_staff-0-5" Message="textface regular" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-386.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-5" Message="textface regular" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-386.0" Name="RenderedMessageBean_staff-0-5" Message="writeto 0.0000 0.0000 BP Tenor Clarinet Fingerings" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-386.0" Yoffset="106.0" Name="RenderedMessageBean_staff-0-5" Message="writeto 0.0000 0.0000 BP Tenor Clarinet Fingerings" >
 </staffUserBean>
 </staff>
 <staff INDEX="6" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="6" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -665,26 +665,26 @@
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="0.0" Xoffset="0.0" Name="RenderedMessageBean_staff-0-6" Message="group Quicktext[1]" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="0.0" Yoffset="0.0" Name="RenderedMessageBean_staff-0-6" Message="group Quicktext[1]" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="96.0" Xoffset="-356.0" Name="RenderedMessageBean_staff-0-6" Message="frgb 0 0 0 255" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-356.0" Yoffset="96.0" Name="RenderedMessageBean_staff-0-6" Message="frgb 0 0 0 255" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="96.0" Xoffset="-356.0" Name="RenderedMessageBean_staff-0-6" Message="font Arial 14" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-356.0" Yoffset="96.0" Name="RenderedMessageBean_staff-0-6" Message="font Arial 14" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="96.0" Xoffset="-356.0" Name="RenderedMessageBean_staff-0-6" Message="textface regular" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-356.0" Yoffset="96.0" Name="RenderedMessageBean_staff-0-6" Message="textface regular" >
 </staffUserBean>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="96.0" Xoffset="-356.0" Name="RenderedMessageBean_staff-0-6" Message="writeto 0.0000 0.0000 BP Keyboard | (key 60 = 6022 MIDI cents)" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-356.0" Yoffset="96.0" Name="RenderedMessageBean_staff-0-6" Message="writeto 0.0000 0.0000 BP Keyboard | (key 60 = 6022 MIDI cents)" >
 </staffUserBean>
 </staff>
-<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="0.0" Xoffset="0.0" Name="RenderedMessageBean_measure-0" Message="group Quicktext[0]" >
+<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="0.0" Yoffset="0.0" Name="RenderedMessageBean_measure-0" Message="group Quicktext[0]" >
 </measureUserBean>
-<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-282.0" Name="RenderedMessageBean_measure-0" Message="frgb 0 0 0 255" >
+<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-282.0" Yoffset="106.0" Name="RenderedMessageBean_measure-0" Message="frgb 0 0 0 255" >
 </measureUserBean>
-<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-282.0" Name="RenderedMessageBean_measure-0" Message="font Arial 14" >
+<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-282.0" Yoffset="106.0" Name="RenderedMessageBean_measure-0" Message="font Arial 14" >
 </measureUserBean>
-<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-282.0" Name="RenderedMessageBean_measure-0" Message="textface regular" >
+<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-282.0" Yoffset="106.0" Name="RenderedMessageBean_measure-0" Message="textface regular" >
 </measureUserBean>
-<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Yoffset="106.0" Xoffset="-282.0" Name="RenderedMessageBean_measure-0" Message="writeto 0.0000 0.0000 Eighth-tone notation" >
+<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-282.0" Yoffset="106.0" Name="RenderedMessageBean_measure-0" Message="writeto 0.0000 0.0000 Eighth-tone notation" >
 </measureUserBean>
 </measure>
 <scoreUserBean CLASSNAME="com.algomusic.max.MaxScoreRenderedMessageListener" >
