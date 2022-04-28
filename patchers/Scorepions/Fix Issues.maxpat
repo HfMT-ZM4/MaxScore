@@ -547,7 +547,7 @@
 					"presentation_rect" : [ 40.750015500000018, 340.626465000000053, 98.249984499999982, 50.0 ],
 					"shape" : 2,
 					"size" : 3,
-					"value" : 2
+					"value" : 0
 				}
 
 			}
@@ -673,7 +673,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 105.843414306640625, 187.0, 22.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ "1682397-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -978,6 +978,7 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
@@ -1384,8 +1385,8 @@
 									"numinlets" : 5,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 72.500000000000057, 370.370971468749985, 524.0, 22.0 ],
-									"text" : "route note::0::@DURATION interval::0::@DURATION note::0::@PITCH interval::0::@PITCH"
+									"patching_rect" : [ 72.500000000000057, 370.370971468749985, 444.0, 22.0 ],
+									"text" : "route note::@DURATION interval::@DURATION note::@PITCH interval::@PITCH"
 								}
 
 							}
@@ -1396,8 +1397,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 361.000000000000057, 328.0, 135.0, 22.0 ],
-									"text" : "get interval::0::@PITCH"
+									"patching_rect" : [ 361.000000000000057, 328.0, 122.0, 22.0 ],
+									"text" : "get interval::@PITCH"
 								}
 
 							}
@@ -1408,8 +1409,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 324.000000000000057, 299.0, 120.0, 22.0 ],
-									"text" : "get note::0::@PITCH"
+									"patching_rect" : [ 324.000000000000057, 299.0, 107.0, 22.0 ],
+									"text" : "get note::@PITCH"
 								}
 
 							}
@@ -1459,8 +1460,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 192.000000000000057, 328.0, 161.0, 22.0 ],
-									"text" : "get interval::0::@DURATION"
+									"patching_rect" : [ 192.000000000000057, 328.0, 148.0, 22.0 ],
+									"text" : "get interval::@DURATION"
 								}
 
 							}
@@ -1471,8 +1472,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 155.000000000000057, 299.0, 146.0, 22.0 ],
-									"text" : "get note::0::@DURATION"
+									"patching_rect" : [ 155.000000000000057, 299.0, 132.0, 22.0 ],
+									"text" : "get note::@DURATION"
 								}
 
 							}
@@ -1733,13 +1734,13 @@
 								"name" : "black on white",
 								"umenu" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 ,
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -1862,10 +1863,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 566.0, 88.0, 277.0, 181.0 ],
+					"patching_rect" : [ 566.0, 88.0, 280.0, 181.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 13,
-					"presentation_rect" : [ 6.875015500000018, 132.0, 258.0, 195.0 ],
+					"presentation_rect" : [ 6.875015500000018, 132.0, 260.0, 195.0 ],
 					"text" : "This Scorepion fixes issues that are occasionally encoutered in MaxScore.\n- Fix \"hold times\" by setting values to note durations. Hold time scaler is a factor by which a note's hold time will be adjusted to its written duration.\n- Fix \"original pitch\" by setting this auxiliary note dimension to the pitch of the note.\n- Proportional notation will fix events added after converting a score to proportional notation .\nThis process will be applied to selected notes. ",
 					"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ]
 				}
@@ -1888,7 +1889,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-12",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1900,7 +1901,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-16",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -2236,44 +2237,17 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "MaxScore.rxml.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "Scorepion-Tail-blue.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.rapidXML.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "selectInterval.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]

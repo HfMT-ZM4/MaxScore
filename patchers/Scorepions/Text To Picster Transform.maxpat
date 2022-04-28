@@ -91,8 +91,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 239.000000000000057, 409.0, 313.0, 22.0 ],
-									"text" : "regexp (note|interval)::0::userBean::0::@ @substitute %0"
+									"patching_rect" : [ 239.000000000000057, 409.0, 299.0, 22.0 ],
+									"text" : "regexp (note|interval)::userBean::0::@ @substitute %0"
 								}
 
 							}
@@ -104,7 +104,7 @@
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
 									"patching_rect" : [ 72.500000000000057, 376.0, 241.0, 22.0 ],
-									"text" : "regexp (note|interval)::0::@ @substitute %0"
+									"text" : "regexp (note|interval)::@ @substitute %0"
 								}
 
 							}
@@ -128,8 +128,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 696.0, 352.0, 393.0, 35.0 ],
-									"text" : "get interval::0::userBean::0::@message, get interval::0::userBean::0::@Xoffset, get interval::0::userBean::0::@Yoffset"
+									"patching_rect" : [ 696.0, 352.0, 405.0, 35.0 ],
+									"text" : "get interval::userBean::0::@message, get interval::userBean::0::@Xoffset, get interval::userBean::0::@Yoffset"
 								}
 
 							}
@@ -141,8 +141,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 659.0, 292.5, 402.0, 35.0 ],
-									"text" : "get note::0::userBean::0::@message, get note::0::userBean::0::@Xoffset, get note::0::userBean::0::@Yoffset"
+									"patching_rect" : [ 659.0, 292.5, 395.0, 35.0 ],
+									"text" : "get note::userBean::0::@message, get note::userBean::0::@Xoffset, get note::userBean::0::@Yoffset"
 								}
 
 							}
@@ -192,8 +192,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 192.000000000000057, 334.0, 495.0, 22.0 ],
-									"text" : "get interval::0::@TEXTOFFSETX, get interval::0::@TEXTOFFSETY, get interval::0::@TEXT"
+									"patching_rect" : [ 192.000000000000057, 334.0, 455.0, 22.0 ],
+									"text" : "get interval::@TEXTOFFSETX, get interval::@TEXTOFFSETY, get interval::@TEXT"
 								}
 
 							}
@@ -204,8 +204,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 155.000000000000057, 299.0, 449.0, 22.0 ],
-									"text" : "get note::0::@TEXTOFFSETX, get note::0::@TEXTOFFSETY, get note::0::@TEXT"
+									"patching_rect" : [ 155.000000000000057, 299.0, 409.0, 22.0 ],
+									"text" : "get note::@TEXTOFFSETX, get note::@TEXTOFFSETY, get note::@TEXT"
 								}
 
 							}
@@ -460,13 +460,13 @@
 								"name" : "black on white",
 								"umenu" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 ,
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -1739,13 +1739,13 @@
 								"name" : "black on white",
 								"umenu" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 ,
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -2016,13 +2016,13 @@
 								"name" : "black on white",
 								"umenu" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 ,
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -4048,13 +4048,13 @@
 				"name" : "black on white",
 				"umenu" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -4111,7 +4111,8 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ]
+ ],
+		"editing_bgcolor" : [ 0.76078431372549, 0.76078431372549, 0.76078431372549, 1.0 ]
 	}
 
 }

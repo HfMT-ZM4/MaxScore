@@ -371,6 +371,7 @@ function staffgroups()
 	{
 	flag = 0;
 	setStaffGroup = arrayfromargs(arguments);	
+	//post("setStaffGroup",setStaffGroup, "\n");	
 	if (setStaffGroup[0] != "score" && setStaffGroup[0] != "parts") 
 		{
 		fillObj([].concat(setStaffGroup));
@@ -400,7 +401,6 @@ function fillObj(groups)
 	//post("fillObj-1", groups, groupcount, "\n");	
 	for (var g = 0; g < groupcount; g++)
 	{
-	//post("fillObj", g, groups[g], "\n");	
 		if (typeof groups[g] == "number") sg[g] = [].concat(groups[g]);	
 		else 
 		{
@@ -852,10 +852,29 @@ function writeBarlines()
 	// get top and bottom staves for each staffgroup
 	for (var s = 0; s < groupcount; s++)
 		{
+					mathMin = sg[s][0];
+					if (mathMin < 0) {
+						mathMin = 0;
+						error("wrong lowest staff number n < 0\n")
+						}
+					else if (mathMin > numStaves - 1) {
+						mathMin = numStaves - 1;
+						error("wrong lowest staff number n > " + (numStaves - 1),  "\n")
+						}
+					mathMax = sg[s][sg[s].length - 1];
+					if (mathMax < 0) {
+						mathMax = 0;
+						error("wrong highest staff number n < 0\n")
+						}
+					else if (mathMax > numStaves - 1) {
+						mathMax = numStaves - 1;
+						error("wrong highest staff number n > " + (numStaves - 1),  "\n")
+						}
 		for (var measures in barlines) {	
 			for (var lines in barlines[measures]){
-					mathMin = sg[s][0];
-					mathMax = sg[s][sg[s].length - 1];
+					//post("mathMin/mathMax", mathMin, mathMax, numStaves, "\n");
+					//took out the mathMin/Max block and moved it above
+					//this doesn't seem very efficient to me as certain thing are being calculated for every staff line! Review code!!!
 					var _linesMin = [];
 					var _linesMinFiltered = [];
 					_linesMin = Object.keys(stafflines[measures][mathMin]).sort(function(a, b){return a - b});
@@ -876,6 +895,8 @@ function writeBarlines()
 				for (var br in brackets) {
 					var mathMin = Math.min.apply(Math, brackets[br]);
 					if (mathMin < sg[s][0]) mathMin = sg[s][0];
+					if (mathMin < 0) mathMin = 0;
+					else if (mathMin > numStaves - 1) mathMin = numStaves - 1;
 					var mathMax = Math.max.apply(Math, brackets[br]);
 					if (mathMax > sg[s][sg[s].length - 1]) mathMax = sg[s][sg[s].length - 1];
 					var _linesMin = [];

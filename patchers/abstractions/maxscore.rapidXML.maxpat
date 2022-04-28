@@ -326,7 +326,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 179.5, 315.0, 243.0, 22.0 ],
-									"text" : "route score::0::measure score::0::@RANGE"
+									"text" : "route score::measure score::@RANGE"
 								}
 
 							}
@@ -349,8 +349,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 169.0, 253.0, 255.0, 22.0 ],
-									"text" : "get score::0::@RANGE, get score::0::measure"
+									"patching_rect" : [ 169.0, 253.0, 229.0, 22.0 ],
+									"text" : "get score::@RANGE, get score::measure"
 								}
 
 							}
@@ -1337,13 +1337,13 @@
 				"name" : "black on white",
 				"umenu" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
