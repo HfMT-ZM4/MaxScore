@@ -10,6 +10,7 @@ include("maxscore.tools");
 
 var SVGString = {};
 var SVGClefs = {};
+var SVGLines = {};
 var SVGImages = {};
 var SVGImages2 = {};
 var SVGGraphics = {};
@@ -388,12 +389,14 @@ function fillObj(groups)
 	groupcount = groups.length;
 	SVGClefs = {};
 	SVGString = {};
+	SVGLines = {};
 	SVGGraphics = {}
 	SVGImages = {};
 	SVGImages2 = {};
 	for (var s = 1; s <= groupcount; s++) {
 		SVGClefs[s] = [];
 		SVGString[s] = [];
+		SVGLines[s] = [];
 		SVGGraphics[s] = [];
 		SVGImages[s] = [];
 		SVGImages2[s] = [];
@@ -427,12 +430,14 @@ function fillObj(groups)
 	groupcount = 1;
 	SVGClefs = {};
 	SVGString = {};
+	SVGLines = {};
 	SVGGraphics = {};
 	SVGImages = {};
 	SVGImages2 = {};
 	for (var s = 1; s <= groupcount; s++) {
 		SVGClefs[s] = [];
 		SVGString[s] = [];
+		SVGLines[s] = [];
 		SVGGraphics[s] = [];
 		SVGImages[s] = [];
 		SVGImages2[s] = [];
@@ -891,7 +896,7 @@ function writeBarlines()
 				var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 				var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
 				var _scoreLeftMargin = (_scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
-				if (_scoreLeftMargin == barlines[measures][lines][1]) SVGString[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				if (_scoreLeftMargin == barlines[measures][lines][1]) SVGLines[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {
 					var mathMin = Math.min.apply(Math, brackets[br]);
 					if (mathMin < sg[s][0]) mathMin = sg[s][0];
@@ -918,17 +923,17 @@ function writeBarlines()
 						for (var d = 0; d < dest.length; d++) {
 							//post("barlines", measures, numBrackets, barlines[measures][lines][1], "\n");	
 							//if  (numBrackets > 0)
-							if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGString[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+							if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGLines[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 								if (_scoreLeftMargin == barlines[measures][lines][1]) {
 									if (annotation.contains("staff-" + brackets[br][0] + "::staffgroup")) {
 									switch (annotation.get("staff-" + brackets[br][0] + "::staffgroup")[1]) {
 									case 1: 
-									SVGString[s + 1].push("<path d=\"M34.1,0C19.3,14.5,16.7,30.6,20.2,47.8c2,9.9,4.3,19.7,5,29.7c0.9,15.8-4.7,30-21.9,41c22,14.3,24,32.7,20.5,52.3c-1.8,9.9-4.5,19.7-5.1,29.7c-0.8,12.7,4.2,24.5,14.2,35C21,228,15.4,217.9,11.4,207.1c-4.9-13.2-0.7-26.1,2.4-39.1c1.6-6.8,3.4-13.8,3.2-20.7c0-10.9-4.5-20.9-17-28.6c13.1-8.5,18.2-19.2,17.1-31.2c-0.8-8.1-3-16.2-5.1-24.2c-5.5-20-3.9-38.9,13.1-55.9C27.8,4.7,31,2.4,34.1,0z\" fill=\"" + frgb + "\" transform=\"matrix(" + [0.3, 0., 0., (dest2 - dest) * 0.101911/24, (barlines[measures][lines][1] - 10), dest] + ")\"/>");
+									SVGLines[s + 1].push("<path d=\"M34.1,0C19.3,14.5,16.7,30.6,20.2,47.8c2,9.9,4.3,19.7,5,29.7c0.9,15.8-4.7,30-21.9,41c22,14.3,24,32.7,20.5,52.3c-1.8,9.9-4.5,19.7-5.1,29.7c-0.8,12.7,4.2,24.5,14.2,35C21,228,15.4,217.9,11.4,207.1c-4.9-13.2-0.7-26.1,2.4-39.1c1.6-6.8,3.4-13.8,3.2-20.7c0-10.9-4.5-20.9-17-28.6c13.1-8.5,18.2-19.2,17.1-31.2c-0.8-8.1-3-16.2-5.1-24.2c-5.5-20-3.9-38.9,13.1-55.9C27.8,4.7,31,2.4,34.1,0z\" fill=\"" + frgb + "\" transform=\"matrix(" + [0.3, 0., 0., (dest2 - dest) * 0.101911/24, (barlines[measures][lines][1] - 10), dest] + ")\"/>");
 									break;
 									case 2:
-									SVGString[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
-									SVGString[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
-									SVGString[s + 1].push("<rect x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" width=\"2.\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+									SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
+									SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
+									SVGLines[s + 1].push("<rect x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" width=\"2.\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 									break;	
 									}
 								}
@@ -956,7 +961,7 @@ function writeStaffLines()
 					for (var d = 0; d < dest.length; d++) {
 						path += "M" + stafflines[measures][staves][lines][0] + "," + dest[d] + "H" + stafflines[measures][staves][lines][2].toFixed(1);	
 						if (lineCount > 750) {
-							SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+							SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 							path = "";
 							lineCount = 0;
 									}	
@@ -967,7 +972,7 @@ function writeStaffLines()
 					}
 				}
 			}
-				if (path != "") SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				if (path != "") SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 
 				}	
 			//}
@@ -1034,6 +1039,7 @@ function startRenderDump()
 		//outlet(2, "startRenderDump");
 		renderPage = 1;
 		SVGString = {};
+		SVGLines = {};
 		SVGClefs = {};
 		SVGGraphics = {};
 		SVGImages = {};
@@ -1050,6 +1056,7 @@ function startRenderDump()
 		for (var s = 1; s <= groupcount; s++) {
 			SVGClefs[s] = [];
 			SVGString[s] = [];
+			SVGLines[s] = [];
 			SVGGraphics[s] = [];
 			SVGImages[s] = [];
 			SVGImages2[s] = [];
@@ -1101,8 +1108,8 @@ function endRenderDump()
 		outlet(1, "setNoteFlash", 1);
 		outlet(1, "setTurnPagesDuringPlayback", 1);
 	}
-   	outlet(1, "getTitle");
-    outlet(1, "getComposer");
+   	//outlet(1, "getTitle");
+    //outlet(1, "getComposer");
 	writeStaffLines();
 	writeBarlines();
 	if (prop) writeRuler();
@@ -2757,6 +2764,7 @@ function writeSVG(destination)
 	var f = {};
 	//for (var s = 1; s <= groupcount; s++) SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
 	f.svg = SVGString;
+	f.lines = SVGLines;
 	f.clefs = SVGClefs;
 	f.svgimages = SVGImages;
 	f.picster = SVGGraphics;
@@ -2784,6 +2792,9 @@ function writeSVG(destination)
 	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [SVGZoom, 0., 0., SVGZoom, 0., 0.] + ")\">");	
 	if (prop) for (var i = 0; i < SVGClefs[s].length; i++) { 
 		f.writeline("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + SVGClefs[s][i][0] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + SVGClefs[s][i][1] + "\" fill=\"" + SVGClefs[s][i][2] + "\" fill-opacity=\"1\" transform=\"matrix("+ SVGClefs[s][i][3].join() + ")\" >" + SVGClefs[s][i][4] + "</text>");	
+	}
+	for (var i = 0; i < SVGLines[s].length; i++) {
+		f.writeline(SVGLines[s][i]);
 	}
 	for (var i = 0; i < SVGString[s].length; i++) {
 		f.writeline(SVGString[s][i]);

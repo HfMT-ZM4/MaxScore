@@ -423,13 +423,14 @@ function flashing()
 
 function obj_ref(o)
 {
-	//post("bgcolor", bgcolor, "\n");
 	gc();
 	pageWidth = o.pageSize[0];
 	pageHeight = o.pageSize[1];
 	setZoom(o.setZoom);
 	bgcolor = o.bgcolor;
 	SVGString = o.svg;
+	SVGLines = o.lines;
+	//post("SVGLines", JSON.stringify(SVGLines), "\n");
 	SVGPicster = o.picster;
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
@@ -493,6 +494,9 @@ function writeSVG(destination)
 		if (_zl == "default") _zl = 1.;
 		else if (_zl == "current") _zl = zoom;
 	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [_zl, 0., 0., _zl, 0., 0.] + ")\">");	
+	for (var i = 0; i < SVGLines[s].length; i++) {
+		f.writeline(SVGLines[s][i]);
+	}
 	for (var i = 0; i < SVGString[s].length; i++) {
 		f.writeline(SVGString[s][i]);
 	}
