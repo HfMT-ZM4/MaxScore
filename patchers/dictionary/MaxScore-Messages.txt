@@ -7,7 +7,7 @@ addIntervalToSelection, select "measure (int) staff (int) track (int) note (int)
 addMeasure, measure "timesig_numerator (int) timesig_denominator (int)" "adds a measure to a score with key signature specified" "addMeasure 5 8";
 addNewMaxScoreInstrumentToOrchestra, orchestra - "adds new instrument as the last instrument in the orchestra. Its index will be orchestra size - 1" addNewMaxScoreInstrumentToOrchestra;
 addNote, note "duration (float) pitch (float) amplitude (float) [hold] (float)" "add a note to a staff" "addNote 1. 60. 0.5 0.8";
-addNoteToSelection, select "measure (int) staff (int) track (int) note (int)" "adds a note to a selection" "addNoteToSelection 1 0 0 1";
+addNoteToSelection, select "measure (int) staff (int) track (int) note (int) interval (int) gracenote (int) gracenoteinterval (int). Use index = -1 if not applicable" "adds a note to a selection" "addNoteToSelection 1 0 0 1 -1 0 -1";
 addRenderedMessageToMeasure, measure "measure (int) xOffset (int) yOffset (int) renderedMessage (symbol)" "Arbitrary messages can be passed to canvas by using the addRenderedMessage family of messages. This way, graphics messages can be sent to the lcd object that canvas relies on, or to any other drawing context, for that matter. These messages will be stored in the score file and drawn when the file loads." "addRenderedMessageToMeasure 0 0 0 \"linesegment 0 0 400 400\"";
 addRenderedMessageToNote, note "measure (int) staff (int) track (int) note (int) xOffset (int) yOffset (int)  renderedMessage (symbol)" "Arbitrary messages can be passed to canvas by using the addRenderedMessage family of messages. This way, graphics messages can be sent to the lcd object that canvas relies on, or to any other drawing context, for that matter. These messages will be stored in the score file and drawn when the file loads." "addRenderedMessageToNote 0 0 0 0 0 0 \"linesegment 0 0 400 400\"";
 addRenderedMessageToSelectedNotes, note "xOffset (int) yOffset (int) renderedMessage (symbol)" "Arbitrary messages can be passed to canvas by using the addRenderedMessage family of messages. This way, graphics messages can be sent to the lcd object that canvas relies on, or to any other drawing context, for that matter. These messages will be stored in the score file and drawn when the file loads." "addRenderedMessageToSelectedNotes 0 0 \"write that's funny\"";
@@ -70,12 +70,13 @@ getMeasureBoundingInfo, info "measure (int)" "returns x y width height marginX f
 getMeasureInfo, info "measure (int)" "dumps measure info for given measure in XML format out of the second outlet" "getMeasureInfo 0";
 getMeasureWidth, info "measure (int)" "returns the width for the specified measure" "getMeasureWidth 0";
 getMultiTrackRestAdjustmentY, info "measure (int) staff (int) track (int)" "returns the amount by which a rest in a multitrack measure can be nudged up or down" "getMultiTrackRestAdjustmentY 0 0 0";
-getNoteAnchor, info - "returns for the selected note(s) the x and y coordinates on the canvas, as well as measure, staff, track, note and interval indexes. Interval index = -1 for notes" getNoteAnchor;
+getNoteAnchor, info - "returns for the selected note(s) the x and y coordinates on the canvas, as well as measure, staff, track, note, interval, gracenote and gracenote interval indexes. Index = -1 of not applicable" getNoteAnchor;
 getNoteAreaWidth, info "measure (int)" "returns the note area (width minus left area) for the specified measure" "getNoteAreaWidth 0";
 getNoteInfo, info "measure (int) staff (int) track (int) note (int)" "dumps the attributes for the specified note out of the second outlet in XML format" "getNoteInfo 0 0 0 7";
 getNoteLevel, info - "returns the note level relative to the five staff lines. Bottom line =  124" getNoteLevel;
 getNotePosition, info - "returns measure, staff, track, and note index for selected note(s) or interval(s)" getNotePosition;
 getNoteProperty, info "property (symbol) measure (int)  staff (int)  track (int)  note (int)  interval (int)" "Lets you query note for property without selecting it. Interval index -1 if just root or single note. Currently only 'level' property is supported." "getNoteProperty level 0 0 0 0 -1";
+getNumGraceNotes, info "measure (int) staff (int) track (int) note (int) interval (int) graceNote (int) graceNoteInterval (int)" "returns number of gracenotes as the last element of the array. Returns all position indexes and number of gracenotes as the last element of the array. getNumGraceNotes without params operates on selected notes" getNumGraceNotes;
 getNumInstruments, info - "returns the number of instruments in an orchestra" getNumInstruments;
 getNumIntervals, info "measure (int) staff (int) track (int) note (int)" "returns the number of intervals attached to the note specified" "getNumIntervals 0 2 0 0";
 getNumMeasures, info - "returns the number of measures in a score" getNumMeasures;
@@ -83,8 +84,8 @@ getNumNotes, info "measure (int) staff (int) track (int)" "returns the number of
 getNumStaves, info - "returns the number of staves in a score" getNumStaves;
 getNumTracks, info - "returns the number of tracks in a score" getNumTracks;
 getOrchestraSize, info - "returns number of instruments. Same as getNumInstruments" getOrchestraSize;
-getRenderDelay, info - "returns the time in seconds by which score rendering is delayed. Default = 0." getRenderDelay;
 getRenderAllowed, info - "returns whether rendering is currently allowed or not" getRenderAllowed;
+getRenderDelay, info - "returns the time in seconds by which score rendering is delayed. Default = 0." getRenderDelay;
 getScoreAnnotation, info - "returns annotation string" getScoreAnnotation;
 getScoreBottomMargin, info - "returns bottom score margin in pixels" getScoreBottomMargin;
 getScoreFirstSystemIndent, info - "returns first system indent in pixels" getScoreFirstSystemIndent;
@@ -108,7 +109,7 @@ highlightSelectedStaff, preference "flag (boolean)" "toggles highlighting for se
 insertMeasure, measure "[measure] (int)" "insert a measure before selected measure or measure specified by optional argument" "insertMeasure 5";
 insertNote, note "measure (int) staff (int) track (int) note (int) duration (int) pitch (int) amplitude (int) hold (int)" "insert a note at given position" "insertNote 0 0 0 0 0.5 0. 70. 0.";
 insertStaff, staff "[staff] (int)" "insert a staff before selected staff or staff specified by optional argument" "insertStaff 3";
-isChord, info "measure (int) staff (int) track (int) note (int)" "returns whether the specified note has intervals and its number of intervals" "isChord 0 0 0 7";
+isChord, info "measure (int) staff (int) track (int) note (int) [interval (int), graceNote (int) graceNoteInterval (int)]" "returns whether the specified note has intervals and its number of intervals. Use index = -1 if not applicable. isChord without parameters operates on selected notes" "isChord 0 0 0 7 -1 -1 -1";
 isLegacyMultiTrackOrientation, info - "returns whether useLegacyMultiTrackOrientation is set to false or true" isLegacyMultiTrackOrientation;
 loadBeamGroups, score "path (symbol)" "loads a text file that contains beam groups defined by the user" "loadBeamGroups \"/Users/Shared/Max 7/Library/MaxScore/userbeamgroup.txt\"";
 loadScore, score "path (symbol) [flag] (boolean)" "load a score. The optional second argument specifies whether the score will be drawn right away or only after a \"setRenderAllowed true\" message" "loadScore /Users/hajdu/Desktop/untitled.xml false";

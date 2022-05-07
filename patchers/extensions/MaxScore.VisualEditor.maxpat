@@ -829,6 +829,8 @@
 													"saved_object_attributes" : 													{
 														"autostart" : 1,
 														"defer" : 0,
+														"node_bin_path" : "",
+														"npm_bin_path" : "",
 														"watch" : 0
 													}
 ,
@@ -1221,7 +1223,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.0, 266.0, 470.0, 22.0 ],
-													"restore" : [ "scoreLayout", 3, 0, 3, 0.5, 800, 800 ],
+													"restore" : [ "scoreLayout", 4, 0, 4, 0.5, 800, 800 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -8001,10 +8003,10 @@
 , 											{
 												"box" : 												{
 													"coll_data" : 													{
-														"count" : 31,
+														"count" : 34,
 														"data" : [ 															{
 																"key" : "Mouse actions",
-																"value" : [ "" ]
+																"value" : [  ]
 															}
 , 															{
 																"key" : "double-click",
@@ -8020,7 +8022,7 @@
 															}
 , 															{
 																"key" : "Key strokes",
-																"value" : [ "" ]
+																"value" : [  ]
 															}
 , 															{
 																"key" : 0,
@@ -8043,7 +8045,7 @@
 																"value" : [ "apply ninetuplet" ]
 															}
 , 															{
-																"key" : ".",
+																"key" : "period",
 																"value" : [ "cycle through number of dots (1, 2, 0)" ]
 															}
 , 															{
@@ -8126,6 +8128,18 @@
 																"key" : "down arrow",
 																"value" : [ "change space below selected staff" ]
 															}
+, 															{
+																"key" : "comma",
+																"value" : [ "select next gracenote" ]
+															}
+, 															{
+																"key" : "<",
+																"value" : [ "add next gracenote to selection" ]
+															}
+, 															{
+																"key" : ">",
+																"value" : [ "add all gracenotes to selection" ]
+															}
  ]
 													}
 ,
@@ -8175,7 +8189,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 0.0, 23.0, 562.0, 415.0 ],
 													"rowhead" : 1,
-													"rows" : 31,
+													"rows" : 34,
 													"selmode" : 0,
 													"stcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ]
 												}
@@ -11160,7 +11174,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 345.385444505859368, 677.833312999999976, 398.0, 22.0 ],
-													"restore" : [ "JMSLMaxScore-54" ],
+													"restore" : [ "JMSLMaxScore-649" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -12540,7 +12554,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 247.656784000000016, 265.0, 471.0, 22.0 ],
-									"restore" : [ 122 ],
+									"restore" : [ 120 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -19980,7 +19994,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 9.899963, 333.600035999999989, 398.0, 22.0 ],
-													"restore" : [ "JMSLMaxScore-54" ],
+													"restore" : [ "JMSLMaxScore-649" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
