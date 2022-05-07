@@ -137,7 +137,7 @@ if (mode == "picster" && !blocked) {
 	//renderedMessages.clear();
 	offsets = {};
 	renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
-  	//post("e", renderedMessages.stringify(), "\n");
+  	//post("e", renderedMessages.stringify(), renderedMessages.get(0).length, "\n");
 	if (renderedMessages.stringify().length > 5 && selectionMode) {
 	var keys = renderedMessages.getkeys();
 	for (var i = 0; i < keys.length; i++)
@@ -145,12 +145,12 @@ if (mode == "picster" && !blocked) {
 		format = "sadam.canvas";
 		switch (renderedMessages.get(keys[i])[0]){
 			case "interval" :
-            RenderMessageOffset = [renderedMessages.get(keys[i])[6], renderedMessages.get(keys[i])[7]];
-			if (renderedMessages.get(keys[i]).length == 10) format = "drawsocket";
+            RenderMessageOffset = [renderedMessages.get(keys[i])[8], renderedMessages.get(keys[i])[9]];
+			if (renderedMessages.get(keys[i]).length == 12) format = "drawsocket";
 			break;
 			case "note" :
-            RenderMessageOffset = [renderedMessages.get(keys[i])[5], renderedMessages.get(keys[i])[6]];
-			if (renderedMessages.get(keys[i]).length == 9) format = "drawsocket";
+            RenderMessageOffset = [renderedMessages.get(keys[i])[8], renderedMessages.get(keys[i])[9]];
+			if (renderedMessages.get(keys[i]).length == 12) format = "drawsocket";
 			break;
 			case "staff" :
           	RenderMessageOffset = [renderedMessages.get(keys[i])[3], renderedMessages.get(keys[i])[4]];
@@ -161,7 +161,6 @@ if (mode == "picster" && !blocked) {
 			if (renderedMessages.get(keys[i]).length == 6) format = "drawsocket";
 			break;
 	}
-		//post("F", "\n");
 	var e = new Dict();
 	e.parse(renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
 	if (format == "sadam.canvas") {
@@ -223,6 +222,7 @@ if (mode == "picster" && !blocked) {
 	}
 	if (boundmin[0] <= x && boundmin[1] <= y && boundmax[0] >= x && boundmax[1] >= y) {
 		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4), dictArray[dictArray.length - 1].get("id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
+		//post("F", format, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 6), "\n");
 		offsets[_c] = RenderMessageOffset;
 		_c++;
 		}

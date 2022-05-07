@@ -1,6 +1,7 @@
 inlets = 1;
 outlets = 3;
 
+var attr = [];
 var grab = "";
 var info = new Dict();
 var dump = new Dict();
@@ -22,117 +23,94 @@ function id(a)
 
 function anything()
 {
-var attr = arrayfromargs(messagename, arguments);
+selection.clear();
+info.clear();
+var previousNote = "";
+var noteIndex = -1;
+attr = arrayfromargs(messagename, arguments);
 outlet(1, "setRenderAllowed", 0);
 if (undo == 1) outlet(1, "setUndoStackEnabled", "false");
 ///getSelection
 messnamed(grab+"-relay", "getNoteAnchor");
 selection.clone(dump.name);	
 info.clone(dump.name);	
-
 var keys = info.getkeys();
-if (keys)
-{
-outlet(1, "clearSelection");
+if (keys){
+//post("tra", keys, "\n");
+messnamed(grab+"-relay", "getSelectedNoteInfo");	
 for (var i= 0; i < keys.length; i++)
 {
 	var inf = info.get(keys[i]);
+	if (inf.slice(3, 7).join() != previousNote) noteIndex++;
 	result = [];
-	if (inf[7] == -1)
-	{
-	messnamed(grab+"-relay", "getNoteInfo", inf.slice(3));
-	for (var k = 0; k < attr.length; k++)
-	{
-		var singleAttribute = [];
-		singleAttribute[0] = attr[k];
-		var common = intersect(singleAttribute, noteAttributes);
-		if (common.length)
-		{	
-		var query = dump.get("note::@"+attr[k]);
-		result.push(query);
-		}
-		else
-		{
-		var occurrence = getAllIndexes(dump.get("note::.ordering"),"dim").length;
-		for(l=0; l<occurrence; l++)
-		{
-		if (attr[k] == dump.get("note::dim::"+l+"::@name"))
-		{
-		var query = dump.get("note::dim::"+l+"::@value");
-		result.push(query);
-		}
-		}
-		}
+	if (inf[7] == -1 && inf[8] == -1 && inf[9] == -1) 	{ //note
+		query("selectedNotes::note::" + noteIndex);
+	}
+	else if (inf[7] != -1 && inf[8] == -1 && inf[9] == -1) //interval
+	{ 
+		query("selectedNotes::note::" + noteIndex + "::interval::" + inf[7]);		
+	}
+	else if (inf[7] == -1 && inf[8] != -1 && inf[9] == -1) { //gracenote of note
+		query("selectedNotes::note::" + noteIndex + "::gracenote::" + inf[8]);				
+	}
+	else if (inf[7] != -1 && inf[8] != -1 && inf[9] == -1) { //gracenote of interval
+		query("selectedNotes::note::" + noteIndex + "::interval::" + inf[7] + "::gracenote::" + inf[8]);				
+	}
+	else if (inf[7] == -1 && inf[8] != -1 && inf[9] != -1) { //interval of gracenote of note
+		query("selectedNotes::note::" + noteIndex + "::gracenote::" + inf[8] + "::interval::" + inf[9]);						
+	}
+	else if (inf[7] != -1 && inf[8] != -1 && inf[9] != -1) { //interval of gracenote of interval
+		query("selectedNotes::note::" + noteIndex + "::interval::" + inf[7] + "::gracenote::" + inf[8] + "::interval::" + inf[9]);						
 	}
 	outlet(2, inf.slice(3));
-	outlet(1, "selectNote", inf.slice(3));
+	outlet(1, "clearSelection");
+	outlet(1, "addNoteToSelection", inf.slice(3));
+	//outlet(1, "selectNote", );
 	outlet(0, result);	
+	previousNote = inf.slice(3, 7).join();
 	}
-	else 
-	{
-	messnamed(grab+"-relay", "getIntervalInfo", inf.slice(3));
-	for (var k = 0; k < attr.length; k++)
-	{
-		var singleAttribute = [];
-		singleAttribute[0] = attr[k];
-		var common = intersect(singleAttribute, noteAttributes);
-		if (common.length)
-		{	
-		var query = dump.get("interval::@"+attr[k]);
-		result.push(query);
-		}
-		else
+	restoreSelection();
+	}
+	else {
+		outlet(1, "setRenderAllowed", 1);
+		if (undo) outlet(1, "setUndoStackEnabled", "true");
+		return;
+	}
+	if (render) outlet(1, "setRenderAllowed", 1); 	
+	if (undo) {
+		outlet(1, "setUndoStackEnabled", "true");
+		outlet(1, "saveToUndoStack");
+	}
+}
+
+function query(element)
+{
+		for (var k = 0; k < attr.length; k++)
 		{
-		var occurrence = getAllIndexes(dump.get("interval::.ordering"),"dim").length;
-		for(l=0; l<occurrence; l++)
-		{
-		if (attr[k] == dump.get("interval::dim::"+l+"::@name"))
-		{
-		var query = dump.get("interval::dim::"+l+"::@value");
-		result.push(query);
-		}
-		}
-		}
-	}
-	outlet(2, inf.slice(3));
-	outlet(1, "selectNote", inf.slice(3));
-	for (var j= 0; j < inf[7] + 1; j++)
-	{
-	outlet(1, "selectNextInterval");
-	}
-	outlet(0, result);	
-	}
-}
-restoreSelection();
-}
-else {
-	outlet(1, "setRenderAllowed", 1);
-	if (undo) outlet(1, "setUndoStackEnabled", true);
-	return;
-}
-if (render) outlet(1, "setRenderAllowed", 1); 	
-if (undo) {
-outlet(1, "setUndoStackEnabled", true);
-outlet(1, "saveToUndoStack");
-}
+			//post(attr.length, dump.stringify(), "\n");
+			var singleAttribute = [];
+			singleAttribute[0] = attr[k];
+			var common = intersect(singleAttribute, noteAttributes);
+			if (common.length)
+			{	
+				var _query = dump.get(element + "::@" + attr[k]);
+				result.push(_query);
+			}
+			else
+			{	
+			var occurrence = getAllIndexes(dump.get(element + "::.ordering"),"dim").length;
+			for (var l = 0; l < occurrence; l++) if (attr[k] == dump.get(element + "::dim::" + l + "::@name")) var _query = dump.get(element + "::dim::" + l + "::@value");
+			result.push(_query);
+			}
+		}	
+
 }
 
 function restoreSelection()
 {
-outlet(1, "clearSelection");
-keys = selection.getkeys();
-if (keys)
-{
-for (var i= 0; i < keys.length; i++)
-	{
-	var inf = selection.get(keys[i]);
-	if (inf[6] != -1)
-	{
-	if (inf[7] == -1) outlet(1, "addNoteToSelection", inf.slice(3));
-	else outlet(1, "addIntervalToSelection", inf.slice(3));
-	}
-	}
-}
+	outlet(1, "clearSelection");
+	keys = selection.getkeys();
+	if (keys) for (var i= 0; i < keys.length; i++) outlet(1, "addNoteToSelection", selection.get(keys[i]).slice(3));
 }
 
 function intersect(a, b) {

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 586.0, 172.0, 677.0, 481.0 ],
+		"rect" : [ 461.0, 160.0, 677.0, 481.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "1000-maxscore",
+		"globalpatchername" : "16936-maxscore",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-13",
@@ -704,7 +704,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 192.5, 319.0, 395.0, 22.0 ],
-									"restore" : [ 0.0 ],
+									"restore" : [ 1.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2049,7 +2049,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 105.25, 347.0, 212.0, 20.0 ],
 					"readonly" : 1,
-					"text" : "0. 493439. 76. 0.5 0.5 3. 76. -1.",
+					"text" : "0. 93583944. 65. 0.5 1. 3. 29. -1.",
 					"varname" : "addNote",
 					"wordwrap" : 0
 				}
@@ -2064,7 +2064,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 342.0, 215.5, 289.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"initial" : [ "1000-" ],
+						"initial" : [ "16936-" ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -2366,7 +2366,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 147.0, 87.0, 1560.0, 882.0 ],
+						"rect" : [ 86.0, 87.0, 1560.0, 882.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4289,7 +4289,7 @@
 									"numinlets" : 14,
 									"numoutlets" : 14,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 879.0, 625.0, 548.941176470588061, 35.0 ],
+									"patching_rect" : [ 879.000000000000227, 627.5, 548.941176470588061, 35.0 ],
 									"text" : "routepass sequenceDump setSection playSection setLoopingPlayback start stop loadScorepion sendScorepion setMeasureRange applyStaffStyle updateEditor picster setFileName"
 								}
 
@@ -4301,11 +4301,11 @@
 									"id" : "obj-4",
 									"linecount" : 7,
 									"maxclass" : "newobj",
-									"numinlets" : 54,
-									"numoutlets" : 54,
-									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 33.0, 516.5, 865.0, 102.0 ],
-									"text" : "routepass dumpInstrumentInfo dumpOrchestra dumpScore dumpScoreAttributes getCopyright getCurrentLocation getDrawingAnchor getDurationalSpacingBase getInstrumentName getInstrumentTransposition getIntervalInfo getJMSLAdvanceTime getJMSLLicenseType getJMSLNow getJMSLRealTime getLeftMargin getMeasureInfo getMeasureWidth getNoteAnchor getNoteAreaWidth getNoteInfo getNoteLevel getNotePosition getNumInstruments getNumIntervals getNumMeasures getNumNotes getNumStaves getNumTracks getOrchestraSize getScoreBottomMargin getScoreLeftMargin getScoreRightMargin getScoreTopMargin getScoreTopMarginOfFirstPage getSelectedLocation getSelectedNoteInfo getStaffInfo getStaffSpacing getTitle getSubtitle getComposer getTimeSignature getZoom scanForPlugins getSelectionBufferSize getMeasureBoundingInfo getStaffBoundingInfo getScoreAnnotation isChord getMultiTrackRestAdjustmentY isLegacyMultiTrackOrientation getLayoutShiftX"
+									"numinlets" : 56,
+									"numoutlets" : 56,
+									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 33.0, 516.5, 865.000000000000227, 102.0 ],
+									"text" : "routepass dumpInstrumentInfo dumpOrchestra dumpScore dumpScoreAttributes getCopyright getCurrentLocation getDrawingAnchor getDurationalSpacingBase getInstrumentName getInstrumentTransposition getIntervalInfo getJMSLAdvanceTime getJMSLLicenseType getJMSLNow getJMSLRealTime getLeftMargin getMeasureInfo getMeasureWidth getNoteAnchor getNoteAreaWidth getNoteInfo getNoteLevel getNotePosition getNumInstruments getNumIntervals getNumMeasures getNumNotes getNumStaves getNumTracks getOrchestraSize getScoreBottomMargin getScoreLeftMargin getScoreRightMargin getScoreTopMargin getScoreTopMarginOfFirstPage getSelectedLocation getSelectedNoteInfo getStaffInfo getStaffSpacing getTitle getSubtitle getComposer getTimeSignature getZoom scanForPlugins getSelectionBufferSize getMeasureBoundingInfo getStaffBoundingInfo getScoreAnnotation isChord getMultiTrackRestAdjustmentY isLegacyMultiTrackOrientation getLayoutShiftX getNoteProperty getNumGraceNotes"
 								}
 
 							}
@@ -4877,6 +4877,20 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-4", 55 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-4", 54 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-4", 53 ]
 								}
 
@@ -5307,7 +5321,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 1418.441176470588061, 767.0, 59.880951000000003, 767.0 ],
+									"midpoints" : [ 1418.441176470588289, 767.0, 59.880951000000003, 767.0 ],
 									"source" : [ "obj-5", 13 ]
 								}
 
@@ -5315,7 +5329,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 970.029411764705856, 727.0, 59.880951000000003, 727.0 ],
+									"midpoints" : [ 970.029411764706083, 727.0, 59.880951000000003, 727.0 ],
 									"source" : [ "obj-5", 2 ]
 								}
 
@@ -5323,7 +5337,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 929.264705882352928, 727.0, 59.880951000000003, 727.0 ],
+									"midpoints" : [ 929.264705882353155, 727.0, 59.880951000000003, 727.0 ],
 									"source" : [ "obj-5", 1 ]
 								}
 
@@ -5331,7 +5345,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 888.5, 766.5, 59.880951000000003, 766.5 ],
+									"midpoints" : [ 888.500000000000227, 766.5, 59.880951000000003, 766.5 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -5367,7 +5381,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-48", 0 ],
-									"midpoints" : [ 1255.38235294117635, 693.5, 1353.794117647058783, 693.5 ],
+									"midpoints" : [ 1255.382352941176578, 693.5, 1353.794117647058783, 693.5 ],
 									"source" : [ "obj-5", 9 ]
 								}
 
@@ -5382,7 +5396,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-58", 0 ],
-									"midpoints" : [ 1296.147058823529278, 844.5, 618.479849999999942, 844.5 ],
+									"midpoints" : [ 1296.147058823529505, 844.5, 618.479849999999942, 844.5 ],
 									"source" : [ "obj-5", 10 ]
 								}
 
@@ -5390,7 +5404,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-67", 1 ],
-									"midpoints" : [ 1173.852941176470495, 721.5, 1268.617647058823422, 721.5 ],
+									"midpoints" : [ 1173.852941176470722, 721.5, 1268.617647058823422, 721.5 ],
 									"source" : [ "obj-5", 7 ]
 								}
 
@@ -5398,7 +5412,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-67", 0 ],
-									"midpoints" : [ 1133.088235294117567, 728.0, 1214.617647058823422, 728.0 ],
+									"midpoints" : [ 1133.088235294117794, 728.0, 1214.617647058823422, 728.0 ],
 									"source" : [ "obj-5", 6 ]
 								}
 

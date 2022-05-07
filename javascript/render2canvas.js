@@ -89,6 +89,7 @@ var _frgb = [0, 0, 0]; //check lines 2264, 2265 and 2308 for consistency
 var frgb = "rgb(0, 0, 0)";
 var bcolor = [0.996, 0.996, 0.94, 1];
 var fcolor = [0, 0, 0, 1];
+var lcolor = [0, 0, 0, 1];
 var flcolor = [0.3, 1., 0.3, 0.7];
 var svgstrokewidth = 1.;
 var staffLineColor = [];
@@ -99,9 +100,10 @@ var jcursors = {};
 var cursorAttr = {};
 var renderPage = 1;
 var selectionRectCount = 0;
-//var dumpflag = 0;
-var dumpinfo = ["measure"];
-var json = {};
+var score = new Dict();
+var oldRange = "";
+var graceNoteBuffer = [];
+var _graceNoteCount = 0;
 var tempo = 60;
 var timesig = [4, 4];
 var svg = new Dict();
@@ -1034,64 +1036,166 @@ function setPaperSize()
 	paperSize = arrayfromargs(arguments);
 }
 
+function getMeasureInfo(m)
+{
+	//post("getMeasureInfo", m, "\n");						
+	var prefix = "score::measure::" + m + "::";
+	tempo = score.get(prefix + "@TEMPO");
+	timesig = score.get(prefix + "@TIMESIG");
+	measurewidth = score.get(prefix + "@WIDTH");
+	measureleftmargin = score.get(prefix + "@MEASURELEFTMARGIN");
+	
+}
+
+function getStaffInfo(m, s)
+{
+	//dumpinfo = ["staff", i + _scoreLayout[1], j];
+	//post("getStaffInfo", m, s, "\n");
+	var prefix = "score::measure::" + m + "::staff::" + s + "::";
+	extendedStaffLines[s] = [score.get(prefix + "@EXTENDEDLINESABOVE"), score.get(prefix + "@EXTENDEDLINESBELOW")];
+	clefList[s] = score.get(prefix + "@CLEF");
+	//var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
+	staffInfo[m][s] = [score.get(prefix + "@CLEF"), score.get(prefix + "@KEYSIGNUMACC"), score.get(prefix + "@KEYSIGTYPE")];	
+}
+
+function getNoteInfo(a)
+{
+			//m, s, t, n, i, g, gi
+	//var a = arrayfromargs(arguments);
+	//post("getNoteInfo", a, score.get("score::measure").getkeys(), "\n"); 
+	var m = a[0] - _scoreLayout[1];
+	var s = a[1];
+	var t = a[2];	
+	var n = a[3];
+	var i = a[4];
+	var g = a[5];
+	var gi = a[6];
+ 	if (i == -1 && g == -1 && gi == -1) { //note
+ 		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::";
+ 	}
+	else if (i != -1 && g == -1 && gi == -1) { //interval
+		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::interval::" + i + " ::";
+ 	}
+	else if (i == -1 && g != -1 && gi == -1) { //gracenote of note
+ 		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::gracenote::" + g + "::";
+ 	}
+	else if (i != -1 && g != -1 && gi == -1) { //gracenote of interval
+ 		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::interval::" + i + "::gracenote::" + g + "::";
+ 	}
+	else if (i == -1 && g != -1 && gi != -1) { //interval of gracenote of note
+ 		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::gracenote::" + g + "::interval::" + gi + "::";
+	}
+	else if (i != -1 && g != -1 && gi != -1) { //interval of gracenote of interval
+ 		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::interval::" + i + "::gracenote::" + g + "::interval::" + gi + "::";
+	}
+ 	pitch = score.get(prefix + "@PITCH");
+	accinfo = score.get(prefix + "@ACCINFO");
+	accvis = score.get(prefix + "@ACCVISPOLICY");
+	accpref = score.get(prefix + "@ACCPREF");
+	velocity = score.get(prefix + "@VELOCITY");
+	altenharmonic = score.get(prefix + "@ALTENHARMONIC");
+	if (velocity > 0. && velocity < 1.) velocity = Math.round(velocity * 127);
+	value = score.get(prefix + "dim::1::@value");
+	hold = 	score.get(prefix + "@HOLD");
+	noteProperty = getLevel(pitch, accpref, altenharmonic);
+	//post("getNoteInfo", prefix, pitch, value, "\n");						
+}
+
+
+function getLevel()
+{
+	var level = 0;
+	var a = arrayfromargs(arguments);
+	var pitchclass = a[0] % 12;
+	var octave = Math.floor(a[0] / 12);
+	var pref = a[1]; //ACC_PREFER_FLAT, ACC_PREFER_SHARP
+	var enharm = a[2]; //true, false
+	switch (pitchclass)
+	{
+		case 0:
+			if (a[1] == 1 && a[2] == "false") level = 87 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 88 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 87 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 86 + 0 + 7 * octave;
+		break;
+		case 1:
+			if (a[1] == 1 && a[2] == "false") level = 88 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 88 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 87 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 86 + 0 + 7 * octave;
+		break;
+		case 2:
+			if (a[1] == 1 && a[2] == "false") level = 88 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 89 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 88 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 87 + 0 + 7 * octave;
+		break;
+		case 3:
+			if (a[1] == 1 && a[2] == "false") level = 89 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 90 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 88 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 88 + 0 + 7 * octave;
+		break;
+		case 4:
+			if (a[1] == 1 && a[2] == "false") level = 89 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 90 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 89 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 88 + 0 + 7 * octave;
+		break;
+		case 5:
+			if (a[1] == 1 && a[2] == "false") level = 90 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 91 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 90 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 89 + 0 + 7 * octave;
+		break;
+		case 6:
+			if (a[1] == 1 && a[2] == "false") level = 91 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 91 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 90 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 89 + 0 + 7 * octave;
+		break;
+		case 7:
+			if (a[1] == 1 && a[2] == "false") level = 91 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 92 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 91 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 90 + 0 + 7 * octave;
+		break;
+		case 8:
+			if (a[1] == 1 && a[2] == "false") level = 92 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 92 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 91 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 91 + 0 + 7 * octave;
+		break;
+		case 9:
+			if (a[1] == 1 && a[2] == "false") level = 92 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 93 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 92 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 91 + 0 + 7 * octave;
+		break;
+		case 10:
+			if (a[1] == 1 && a[2] == "false") level = 93 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 94 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 92 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 92 + 0 + 7 * octave;
+		break;
+		case 11:
+			if (a[1] == 1 && a[2] == "false") level = 93 + 0 + 7 * octave;
+			else if (a[1] == 1 && a[2] == "true") level = 94 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "false") level = 93 + 0 + 7 * octave;
+			else if (a[1] == 0 && a[2] == "true") level = 92 + 0 + 7 * octave;
+		break;
+	}
+	return level;
+}
+
 function startRenderDump()
 {		
 		//outlet(2, "startRenderDump");
-		renderPage = 1;
-		SVGString = {};
-		SVGLines = {};
-		SVGClefs = {};
-		SVGGraphics = {};
-		SVGImages = {};
-		SVGImages2 = {};
-		outlet(0, "flashing", "clear");
-		outlet(0, "setImages", "clear");
-		//svgGroups = {};
-		stems = {};
-		stafflines = {};
-		barlines = {};
-		repeatedAccidentals = {};
-		oldMeasureStaff = "";
-		bl = 0;
-		for (var s = 1; s <= groupcount; s++) {
-			SVGClefs[s] = [];
-			SVGString[s] = [];
-			SVGLines[s] = [];
-			SVGGraphics[s] = [];
-			SVGImages[s] = [];
-			SVGImages2[s] = [];
-		}
-		c = 0;
-		annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
-		renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
-		renderedMessages.clear();
-		rm = 0;
-		outlet(1, "getScoreLeftMargin");
-		outlet(1, "getScoreRightMargin");
-		outlet(1, "getScoreFirstSystemIndent");
-		outlet(1, "getScoreAnnotation");
-       	outlet(1, "getNumMeasures");
-       	outlet(1, "getNumStaves");
-		//post("init", _init, numMeasures, numStaves, _scoreLayout, "\n");
- 		//for (var i = 0; i < numMeasures; i++) {
-		//for (var i = scoreLayout[1]; i < scoreLayout[1] + scoreLayout[2]; i++) {
-		if (numMeasures == 0) numMeasures = 1;
-		var _numMeasures = (_init) ? numMeasures : _scoreLayout[2];
-		for (var i = 0; i < _numMeasures; i++) {
-			stafflines[i] = {};
-			barlines[i] = {};
-			staffInfo[i] = {};
-			staffBoundingMatrix[i] = {}; 
-			for (var j = 0; j < numStaves; j++) {
-				stafflines[i][j] = {};
-				staffInfo[i][j] = {};
-				staffBoundingMatrix[i][j] = []; 
-				dumpinfo = ["staff", i + _scoreLayout[1], j];
-				outlet(1, "getStaffInfo", i + _scoreLayout[1], j);
-				if (Object.keys(extendedStaffLines).indexOf(j) != -1) for (var k = 0; k < (5 + Number(extendedStaffLines[j][0]) + Number(extendedStaffLines[j][1])); k++) stafflines[i][j][k] = {};
-		}
-	}
-	if (measurerange[0] != -1) setMeasureRange(measurerange[0], measurerange[1], measurerange[2], measurerange[3]);
+}
+
+function dictionary(d)
+{
+	score.name = d;
 }
 
 function endRenderDump()
@@ -1137,6 +1241,16 @@ function fgcolor(r, g, b, a)
 	outlet(1, "setRenderAllowed", 1);
 }	
 
+function linecolor(r, g, b, a) 
+{
+	lcolor = [r, g, b, a];
+	annotation.set("linecolor", fcolor);
+	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "saveToUndoStack", 1);
+	outlet(1, "setRenderAllowed", 1);
+}	
+
+
 function flashcolor(r, g, b)
 {
 	flcolor = [r, g, b];
@@ -1146,11 +1260,66 @@ function scoreLayout()
 {
 		_scoreLayout = arrayfromargs(arguments);
 		oldstaff = -1;
+		renderPage = 1;
+		SVGString = {};
+		SVGLines = {};
+		SVGClefs = {};
+		SVGGraphics = {};
+		SVGImages = {};
+		SVGImages2 = {};
+		outlet(0, "flashing", "clear");
+		outlet(0, "setImages", "clear");
+		//svgGroups = {};
+		stems = {};
+		stafflines = {};
+		barlines = {};
+		repeatedAccidentals = {};
+		oldMeasureStaff = "";
+		bl = 0;
+		graceNoteBuffer = [];
+		_graceNoteCount = 0;
+		for (var s = 1; s <= groupcount; s++) {
+			SVGClefs[s] = [];
+			SVGString[s] = [];
+			SVGLines[s] = [];
+			SVGGraphics[s] = [];
+			SVGImages[s] = [];
+			SVGImages2[s] = [];
+		}
+		c = 0;
+		annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
+		renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
+		renderedMessages.clear();
+		rm = 0;
+		outlet(1, "getScoreLeftMargin");
+		outlet(1, "getScoreRightMargin");
+		outlet(1, "getScoreFirstSystemIndent");
+		outlet(1, "getScoreAnnotation");
+       	outlet(1, "getNumMeasures");
+       	outlet(1, "getNumStaves");
+		outlet(1, "dumpScore", _scoreLayout.slice(1, 3));
+		//if (!numMeasures) numMeasures = 1;
+		//var _numMeasures = (_init) ? numMeasures : _scoreLayout[2];
+		for (var i = 0; i < _scoreLayout[2]; i++) {
+			stafflines[i] = {};
+			barlines[i] = {};
+			staffInfo[i] = {};
+			staffBoundingMatrix[i] = {}; 
+			for (var j = 0; j < numStaves; j++) {
+				stafflines[i][j] = {};
+				staffInfo[i][j] = {};
+				staffBoundingMatrix[i][j] = []; 
+				getStaffInfo(i, j);
+				if (Object.keys(extendedStaffLines).indexOf(j) != -1) for (var k = 0; k < (5 + Number(extendedStaffLines[j][0]) + Number(extendedStaffLines[j][1])); k++) stafflines[i][j][k] = {};
+		}
+	}
+	if (measurerange[0] != -1) setMeasureRange(measurerange[0], measurerange[1], measurerange[2], measurerange[3]);
 }
 
 function init()
 {
 	_init = 1;
+	oldRange = "";
 }
 
 function anything() {
@@ -1198,51 +1367,23 @@ function anything() {
 			switch (msg[7])
 			{
 				case "$MIDICENTS" :
-				if (currentElement[0] == "note") {
-					dumpinfo = ["note"];
-					outlet(1, "getNoteInfo", currentElement.slice(1));
-				}
-				else {
-					dumpinfo = ["interval"];
-					outlet(1, "getIntervalInfo", currentElement.slice(1));
-				}
+				getNoteInfo(currentElement.slice(1));
 				if (!value) return;
 				noteText = Math.round(value * 100.);
 				break;
 				case "$DEVIATION" :
-				if (currentElement[0] == "note") {
-					dumpinfo = ["note"];
-					outlet(1, "getNoteInfo", currentElement.slice(1));
-				}
-				else {
-					dumpinfo = ["interval"];
-					outlet(1, "getIntervalInfo", currentElement.slice(1));
-				}
+				getNoteInfo(currentElement.slice(1));
 				if (!pitch) return;
 				var diff = value - parseInt(value);
 				noteText = ((diff < 0.5) ? "+" : "") + Math.round((diff < 0.5) ? diff * 100 : (1 - diff) * -100);
 				break;
 				case "$FREQUENCY" :
-				if (currentElement[0] == "note") {
-					dumpinfo = ["note"];
-					outlet(1, "getNoteInfo", currentElement.slice(1));
-				}
-				else {
-					dumpinfo = ["interval"];
-					outlet(1, "getIntervalInfo", currentElement.slice(1));
-				}
+				getNoteInfo(currentElement.slice(1));
 				if (!pitch) return;
 				noteText = (440 * Math.pow(2, (value - 69) / 12)).toFixed(2);
 				break;
 				case "$RATIO" :
-				if (currentElement[0] == "note") {
-					dumpinfo = ["note"];
-					outlet(1, "getNoteInfo", currentElement.slice(1));
-				}
-				else {
-					dumpinfo = ["interval"];
-					outlet(1, "getIntervalInfo", currentElement.slice(1));
-				}
+				getNoteInfo(currentElement.slice(1));
 				if (!pitch) return;
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
@@ -1261,14 +1402,7 @@ function anything() {
 				noteText = cent2ratio.get(Math.round((value - shift) * 100) % frame).slice(1).join("/");
 				break;
 				case "$RATIOWITHDEVIATION" :
-				if (currentElement[0] == "note") {
-					dumpinfo = ["note"];
-					outlet(1, "getNoteInfo", currentElement.slice(1));
-					}
-				else {
-					dumpinfo = ["interval"];
-					outlet(1, "getIntervalInfo", currentElement.slice(1));
-				}
+				getNoteInfo(currentElement.slice(1));
 				if (!pitch) return;
 				if (annotation.contains("staff-"+msg[1]+"::ratio-lookup")) cent2ratio.name = lookupTables[annotation.get("staff-"+msg[1]+"::ratio-lookup")];
 				else cent2ratio.name = "cent2ratio-8";
@@ -1303,7 +1437,7 @@ function anything() {
             break;
         case "StaffLine":
 			//StaffLine measureIndex staffIndex staffLineIndex zoom x1 y1 x2 y2 selected
-			staffLineColor = frgb;
+			staffLineColor = "rgb("+ (lcolor[0] * 255) + "," + (lcolor[1] * 255) + "," + (lcolor[2] * 255) + ")";
 			currentStaff = msg[1];
 			/*
 			if (annotation.contains("staff-" + currentStaff + "::stafflineshidden")) {
@@ -1354,7 +1488,8 @@ function anything() {
 			//barline 0. 0.5 20. 51. 363. 1.
 			//barline measureIndex zoom x barTop barBottom barThickness
 			//post("barlines",  msg, "\n");	
-			barLineColor = frgb;
+			//barLineColor = frgb;
+			barLineColor = "rgb("+ (lcolor[0] * 255) + "," + (lcolor[1] * 255) + "," + (lcolor[2] * 255) + ")";
 			if (msg[0] != oldMeasureIndex) bl = 0;
 			barlines[msg[0] - _scoreLayout[1]][bl] = msg.slice(1);
 			bl++;
@@ -1941,80 +2076,13 @@ function anything() {
 				}
 			}
 		}
-/*
-		else {
-			if (msg[msg.length - 2] == "renderbpf") {
-				}
-			}	
-*/
-            break;
-		case "dictionary" :
-			var dump = new Dict;
-			dump.name = msg[0];
-			json = JSON.parse(dump.stringify());
-			//post("dumpinfo", dumpinfo, JSON.stringify(json), "\n");
-			switch (dumpinfo[0]){
-			case "measure" :
-			//json = xml2json(dump.join(" "));
-			tempo = json["measure"]["@TEMPO"];
-			timesig = json["measure"]["@TIMESIG"];
-			measurewidth = json["measure"]["@WIDTH"];
-			measureleftmargin = json["measure"]["@MEASURELEFTMARGIN"];
-			break;
-			case "staff" :
-			//json = xml2json(dump.join(" "));
-			extendedStaffLines[dumpinfo[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
-			clefList[dumpinfo[2]] = json["staff"]["@CLEF"];
-			var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
-			staffInfo[dumpinfo[1] - measureOffset][dumpinfo[2]] = [json["staff"]["@CLEF"], json["staff"]["@KEYSIGNUMACC"], json["staff"]["@KEYSIGTYPE"]];
-			// for repeated-acc-filter we need CLEF, KEYSIGNUMACC and KEYSIGTYPE in a obj[measure][staff] object
-			break;
-			/*
-			case "getNoteInfo" :
-			if (messagename[1] == "n") {
-			pitch = json["note"]["@PITCH"];
-			accinfo = json["note"]["@ACCINFO"];
-			accvis = json["note"]["@ACCVISPOLICY"];
-			accpref = json["note"]["@ACCPREF"];
-			value = json["note"]["dim"]["1"]["@value"];
-			}
-			else {
-			pitch = json["interval"]["@PITCH"];
-			accinfo = json["interval"]["@ACCINFO"];
-			accvis = json["interval"]["@ACCVISPOLICY"];
-			accpref = json["interval"]["@ACCPREF"];
-			value = json["interval"]["dim"]["1"]["@value"];
-			}
-			break;
-			case "getIntervalInfo" :
-			pitch = json["interval"]["@PITCH"];
-			accinfo = json["interval"]["@ACCINFO"];
-			accvis = json["interval"]["@ACCVISPOLICY"];
-			accpref = json["interval"]["@ACCPREF"];
-			value = json["interval"]["dim"]["1"]["@value"];
-			break;	
-			*/
-			default :
-			//post("dumpinfo-2", dumpinfo, JSON.stringify(json), "\n");
-			pitch = json[dumpinfo[0]]["@PITCH"];
-			accinfo = json[dumpinfo[0]]["@ACCINFO"];
-			accvis = json[dumpinfo[0]]["@ACCVISPOLICY"];
-			accpref = json[dumpinfo[0]]["@ACCPREF"];
-			velocity = json[dumpinfo[0]]["@VELOCITY"];
-			if (velocity > 0. && velocity < 1.) velocity = Math.round(velocity * 127);
-			value = json[dumpinfo[0]]["dim"]["1"]["@value"];
-			hold = 	json[dumpinfo[0]]["@HOLD"];			
-			}
-		break;
+
+        break;
 		case "startdump" :
 		break;
 		case "enddump" :
 			break;
         default:
-		//if (dumpflag == 1) {
-			//dump.push(messagename);
-		//}
-		//else {
 		var msgname = messagename;
 		if (prop) {
 			if (msgname == "noteheadwhite" || msgname == "noteheadwhole") msgname = "noteheadblack";
@@ -2027,26 +2095,26 @@ function anything() {
 				}
 			//else msg[1] += 0.;
 			}
-		//KEEP TRACK OF INCIDENTS OF NOTES AND INTERVALS
+		//KEEP TRACK OF OCCURENCES OF NOTES AND INTERVALS
 		if (msg[3]!= "Staff" && accList.indexOf(msgname) != -1){
 			var Accidental = [];
-			if (msg[3] == "Note") {
+			if (msg[3] == "Note" && msg[7] != -1) { //Note
 				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
-				outlet(1, "getNoteProperty", "level", msg[4], msg[5], msg[6], msg[7], -1);
-				dumpinfo = ["note"];		
-				outlet(1, "getNoteInfo", msg[4], msg[5], msg[6], msg[7]);
+				getNoteInfo([msg[4], msg[5], msg[6], msg[7], -1, -1, -1]);
 				}
-				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7]];
+				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], -1, -1, -1];
 				intervalCount = 0;
+				graceNoteCount = 0;
 				}
-			else if (msg[3] == "Interval") {
+			else if (msg[3] == "Interval" && msg[7] != -1) { //Interval
 				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
-				outlet(1, "getNoteProperty", "level", msg[4], msg[5], msg[6], msg[7], intervalCount);
-				dumpinfo = ["interval"];
-				outlet(1, "getIntervalInfo", msg[4], msg[5], msg[6], msg[7], intervalCount);
+				getNoteInfo([msg[4], msg[5], msg[6], msg[7], intervalCount, -1, -1]);
 				}
-				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount];
+				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount, -1, -1];
 				intervalCount++;
+				}
+			else if ((msg[3] == "Note" || msg[3] == "Interval") && msg[7] != -1) { //Gracenote
+				graceNoteBuffer[_graceNoteCount++] = [msgname].concat(msg);
 				}
 			//post("annotation.get", annotation.get("staff-"+msg[5]+"::micromap"), "\n");
 			if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
@@ -2056,8 +2124,8 @@ function anything() {
 				Accidental.push(BP[Math.round((pitch - parseInt(pitch)) * ((accpref == 1) ? -15 : 15))]);
 				break;
 				case "mM-eighth-tones" :
-				//post("acc", accvis, "\n");
 				Accidental.push(nTET(48, _48TET, accinfo, accpref));				
+				//post("acc", JSON.stringify(Accidental), value, accinfo, accpref, "\n");
 				break;
 				case "mM-JI" :
 				if (value == -1) value = pitch;
@@ -2373,41 +2441,25 @@ function anything() {
 			}
 		  }
        }
-	//}
 	}
 	}
 	else 
 	{
    	switch (messagename) {
-				case "scoreLayout":
-                	outlet(0, "playback", 0);
-					_scoreLayout = msg;
- 					//post("scoreLayout", scoreLayout, "\n");
-           			break;
-                case "frgb":
- 					var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
-           		if (colorcode == 16776960) _frgb = [255 * flcolor[0], 255 * flcolor[1], 255 * flcolor[2]];
-					else _frgb = [msg[0], msg[1], msg[2]];
-                        break;
- 				case ("playheadPosition"):
-                    outlet(0, "playback", 1);
-					outlet(0, "dyn_playhead", msg);
-                    break
-		case "dictionary" :
-			var dump = new Dict;
-			dump.name = msg[0];
-			json = JSON.parse(dump.stringify());
-			if (dumpinfo[0] == "measure") {
-			//json = xml2json(dump.join(" "));
-			tempo = json["measure"]["@TEMPO"];
-			timesig = json["measure"]["@TIMESIG"];
-			}
-			else if (dumpinfo[0] == "staff") {
-			//json = xml2json(dump.join(" "));
-			extendedStaffLines[dumpinfo[2]] = [json["staff"]["@EXTENDEDLINESABOVE"], json["staff"]["@EXTENDEDLINESBELOW"]];
-			 List[dumpinfo[2]] = json["staff"]["@CLEF"];
-			}
-		break;
+		case "scoreLayout":
+        	outlet(0, "playback", 0);
+			_scoreLayout = msg;
+ 			//post("scoreLayout", scoreLayout, "\n");
+           	break;
+            case "frgb":
+ 			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
+           	if (colorcode == 16776960) _frgb = [255 * flcolor[0], 255 * flcolor[1], 255 * flcolor[2]];
+			else _frgb = [msg[0], msg[1], msg[2]];
+             break;
+ 		case "playheadPosition":
+            outlet(0, "playback", 1);
+			outlet(0, "dyn_playhead", msg);
+            break;
 		case "startdump" :
 			//dump = [];
 			//json = {};
@@ -2578,26 +2630,11 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 							velCurve.pa[i].curve = velocity_[6 + (i * 4)];
 						}
 						//post(velocity, velocity_.length, velCurve.np, JSON.stringify(velCurve), "\n");
-						dumpinfo = ["measure"];
 						outlet(1, "getNoteAreaWidth", msg[1]);
-						outlet(1, "getMeasureInfo", msg[1]);
-						/*
-						var currentDrawingAnchor = msg[5];
-						outlet(1, "getNumNotes",  msg.slice(1, 4));
-						if ((numNotes[3] - 1) == msg[4]) {
-						staffBoundingFlag = 1;
-						outlet(1, "getStaffBoundingInfo", msg.slice(1, 3));
-						space = staffBoundingInfo[0] + staffBoundingInfo[2] - msg[5] - 7;
-						staffBoundingFlag = 1;
-							}
-						else {
-						outlet(1, "getDrawingAnchor", msg.slice(1, 4), msg[4] + 1);
-						space = drawingAnchor[4] - currentDrawingAnchor - 7;
-						}
-						*/
-						dumpinfo = [msg[0]];
-						if (msg[0] == "note") outlet(1, "getNoteInfo", msg.slice(1, 5));
-						else outlet(1, "getIntervalInfo", msg.slice(1));
+						//outlet(1, "getMeasureInfo", msg[1]);
+						getMeasureInfo(msg[1] - _scoreLayout[1]);
+						if (msg[0] == "note") getNoteInfo(msg.slice(1, 5).concat([-1, -1, -1]));
+						else getNoteInfo(msg.slice(1).concat([-1, -1]));
 						if (prop) space = hold * 60 / tempo * timeUnit - 7;
 						else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
 						if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
@@ -2771,7 +2808,6 @@ function writeSVG(destination)
 	f.pageSize = [_scoreLayout[4], _scoreLayout[5]];
 	f.setZoom = zoom;
 	f.bgcolor = bcolor;
-	//post("bcolor", f.bgcolor, "\n");
 	f.groupcount = groupcount;
 	outlet(0, "obj_ref", f); 
 	}
@@ -2912,8 +2948,7 @@ function cursor()
 		var startStaff = cursorAttr[id]["@begin"][1];
 		var endStaff = cursorAttr[id]["@end"][1];
 		for (var i = cursorAttr[id]["@begin"][0]; i <= cursorAttr[id]["@end"][0]; i++){
-		dumpinfo = ["measure"];
-		outlet(1, "getMeasureInfo", i);
+		getMeasureInfo(i - _scoreLayout[1]);
 		if (i == cursorAttr[id]["@begin"][0]) {
 			var countin = timesig;
 			var countinInterval = stretch * 60000 / parseFloat(tempo) * 4 / parseFloat(timesig[1]);
@@ -2925,6 +2960,7 @@ function cursor()
 			var to = staffBoundingInfo[2] + staffBoundingInfo[0];
 			var travel = stretch * (60000 / parseFloat(tempo) * (4 * parseFloat(timesig[0]) / parseFloat(timesig[1])));
 			var interval = stretch * 60000 / parseFloat(tempo) * 4 / parseFloat(timesig[1]);
+			post("cursors", i - _scoreLayout[1], from, to, travel, tempo, timesig, "\n");
 			cursorAttr[id]["@trajectory"][i] = [from, to, travel];
 			}			
 			}

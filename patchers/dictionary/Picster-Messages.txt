@@ -17,7 +17,7 @@ filterRepeatedAccidentals, Canvas "flag (int)" "sets for staff styles whether to
 fgcolor, Canvas "rgba (list)" "sets the foreground color for a score" "fgcolor 0.5 0.5 0.5 1";
 draw, Canvas "MGraphics-command (message)" "send MGraphics drawing commands directly to the MaxScore canvas without the need to attach them score elements." "draw set_source_rgba 1 0 0 0.5";
 cursor, Canvas "index (int), mode (symbol) or message" "controls the behavior or cursors. Modes are start, rewind, stop, resume, blink and show. Start the cursor by sending a list consisting of an index and choice of the following attributes: @begin, @end, @passes, @color, @timestretch, @countin" "cursor 0 @begin 0 0 @end 1 1 @passes 3 @color 0. 0. 1. 0.7";
-createStaffGroup, Canvas "index (int) style (int)" "creates a staff group with index n with style m. Current choices are: 0 = no bracket, 1 = brace, 2 = bracket" "createStaffGroup 1 2";
+createStaffGroup, Canvas "index (int) style (int)" "creates a staff group with index n with style m. Current choices are: none, brace, bracket" "createStaffGroup 1 bracket";
 blankPageTransform, Canvas "flag (boolean)" "toggles between a blank page and the display of regular score elements" "blankPageTransform 1";
 bgcolor, Canvas "rgba (list)" "sets the background color for a score" "canvas bgcolor 0.5 0.5 0.5 1";
 autoajust, Canvas "flag (int)" "toggles between automatic adjustment of canvas size. If set to 0 and with the score size larger than the box size scroll bars will appear to allow the viewing of the entire score." "autoajust 0";
