@@ -40,12 +40,24 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-36",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 341.416666666666742, 678.5, 29.5, 22.0 ],
+					"text" : "join"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 478.5, 625.5, 63.0, 22.0 ],
+					"patching_rect" : [ 483.666666666666686, 591.5, 63.0, 22.0 ],
 					"text" : "setWrap 0"
 				}
 
@@ -57,8 +69,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 341.416666666666742, 705.5, 129.0, 22.0 ],
-					"text" : "setScoreLeftMargin $1"
+					"patching_rect" : [ 341.416666666666742, 706.0, 240.0, 22.0 ],
+					"text" : "setScoreLeftMargin $1, setScoreSize $2 $3"
 				}
 
 			}
@@ -69,7 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 341.416666666666742, 674.5, 29.5, 22.0 ],
+					"patching_rect" : [ 341.416666666666742, 648.5, 29.5, 22.0 ],
 					"text" : "f"
 				}
 
@@ -144,7 +156,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1387.890476190476193, 673.0, 95.0, 49.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 0, ",", 0, ",", 0, 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -175,7 +187,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1336.747619047619082, 539.5, 81.0, 22.0 ],
-					"restore" : [ "<none>" ],
+					"restore" : [ "kuroinami.mp3" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -777,7 +789,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"id" : "obj-39",
-					"items" : "T-page_1.jpg",
+					"items" : "kuroinamiSc_1.jpg",
 					"maxclass" : "umenu",
 					"menumode" : 2,
 					"numinlets" : 1,
@@ -961,7 +973,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 351.0, 114.0, 952.0, 786.0 ],
+						"rect" : [ 191.0, 114.0, 952.0, 786.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1247,7 +1259,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 599.0, 109.999999847656227, 324.0, 22.0 ],
-									"restore" : [ "<none>" ],
+									"restore" : [ "kuroinami.mp3" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1287,7 +1299,7 @@
 												"val" : [ 													{
 														"message" : "sf",
 														"editor" : "sf",
-														"value" : [ "kuroinami.aif", 550189.229024943313561, 0.0 ]
+														"value" : [ "", 0.0, 0.0 ]
 													}
  ]
 											}
@@ -2639,7 +2651,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-2",
@@ -2983,13 +2994,13 @@
 								"name" : "black on white",
 								"umenu" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 ,
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -3077,13 +3088,13 @@
 				"box" : 				{
 					"dontreplace" : 1,
 					"id" : "obj-35",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 499.0, 196.0, 336.0, 49.0 ],
-					"text" : "\"Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/I Love Tiffany/\""
+					"patching_rect" : [ 499.0, 196.0, 336.0, 35.0 ],
+					"text" : "\"Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/kuroinami/\""
 				}
 
 			}
@@ -3192,7 +3203,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 108.0, 292.0, 146.0, 22.0 ],
 					"rounded" : 2.0,
-					"text" : "\"I Love Tiffany\"",
+					"text" : "kuroinami",
 					"varname" : "score"
 				}
 
@@ -3246,7 +3257,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 108.0, 318.0, 146.0, 22.0 ],
 					"rounded" : 2.0,
-					"text" : "\"Xiao Fu\"",
+					"text" : "\"lindsay vickery\"",
 					"varname" : "composer"
 				}
 
@@ -3255,7 +3266,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-18",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -3285,7 +3296,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-41",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -3302,7 +3313,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 536.5, 608.0, 324.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 0, ",", 0, ",", 0, 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3955,7 +3966,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
+					"destination" : [ "obj-36", 0 ],
 					"source" : [ "obj-3", 0 ]
 				}
 
@@ -3994,6 +4005,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-40", 0 ],
 					"source" : [ "obj-35", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"source" : [ "obj-36", 0 ]
 				}
 
 			}
@@ -4290,7 +4308,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-36", 1 ],
+					"order" : 1,
+					"source" : [ "obj-89", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-86", 0 ],
+					"order" : 0,
 					"source" : [ "obj-89", 0 ]
 				}
 
@@ -4389,33 +4416,17 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "Scorepion-Tail-blue.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "parseSpecial.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]

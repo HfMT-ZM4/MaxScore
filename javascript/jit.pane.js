@@ -249,6 +249,7 @@ function obj_ref(o)
 	gc();
 	mgraphics.svg_create("img", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	mgraphics.svg_create("clefs", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
+	mgraphics.svg_create("_picster", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	width = this.patcher.box.rect[2] - this.patcher.box.rect[0];
 	height = this.patcher.box.rect[3] - this.patcher.box.rect[1];
 	if (virgin) {
@@ -285,7 +286,8 @@ function obj_ref(o)
 	svg += o.picster[s].join("");
 	svg += "</g>";
 	svg += "</svg>";
-	mgraphics.svg_set("img", picster);
+	//post("picster", svg, "\n");	
+	mgraphics.svg_set("_picster", svg);
 	var svgclefs = "<svg width=\"" + 25 + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + 25 + " " + pageHeight + "\" style=\"background: ivory\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svgclefs += "<g id=\"" + s +  "\">";
 	for (var i = 0; i < o.clefs[s].length; i++) {
@@ -472,7 +474,6 @@ function cursor()
 		tsk[c].interval = grain;
 			if (cursors[c].countin.beats > 0) {
 				count_in[c] = new Task(countin, this, c);
-				//post("interval(cursors[c].countin.interval)", cursors[c].countin.beats * cursors[c].countin.interval / grain, "\n");	
 				count_in[c].interval = grain;
 				maxcount[c] = cursors[c].countin.beats * cursors[c].countin.interval / grain;
 				count_in[c].repeat();
@@ -594,7 +595,7 @@ function redraw() {
 		mgraphics.svg_render("img");
 		if (playback) flashingNoteheads();
 		renderImages();
-		mgraphics.svg_render("picster");
+		mgraphics.svg_render("_picster");
 		picsterLabel();
 		paintOnTop();
 		if (highlight) measureSelection();
