@@ -1,3 +1,28 @@
+function sortIndexes(d, trim)
+{
+	var a = JSON.parse(d.stringify());
+	var b = [];
+	for (var i in a)
+	{
+		b[i] = "";
+		for (var j = trim; j < a[i].length; j++) {
+			var padding = "...."; 
+			if (j < a[i].length - 1) b[i] += (padding + a[i][j]).slice(-4) + ",";
+			else b[i] += (padding + a[i][j]).slice(-4);
+		}
+	}
+	Array.sort(b);
+	for (var i = 0; i < b.length; i++)
+	{
+		a[i] = b[i].split(",");
+		for (var j = 0; j < a[i].length; j++) a[i][j] = Number(a[i][j].slice(a[i][j].lastIndexOf(".") + 1));
+	}
+	var dictout = new Dict;
+	dictout.parse(JSON.stringify(a))
+	return dictout;
+}
+
+
 function getAllIndexes(arr, val) {
     var indexes = [-1], i;
 	var c = 0;

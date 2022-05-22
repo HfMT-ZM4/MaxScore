@@ -3,6 +3,7 @@ outlets = 2;
 
 var grab = "";
 var _query;
+var dump = new Dict();
 
 function id(a)
 {
@@ -21,52 +22,59 @@ function getInfo(i)
 function anything()
 {
 	var noteIndex = -1;
-	var previousEvent = "";
+	var previousNote = "";
 	var attr = arrayfromargs(messagename, arguments);
-	var dump = new Dict();
 	dump.name = grab;
 	messnamed(grab+"-relay", "getNoteAnchor");
 	var info = new Dict();
-	info.clone(dump.name);
+	info = sortIndexes(dump, 3);
 	var keys = info.getkeys();
 	if (keys) {
 	if (attr == "MultitrackRestAdjustmentY") {
-	messnamed(grab + "-relay", "getMultiTrackRestAdjustmentY", info.get(keys[0](3, 6)));
+	messnamed(grab + "-relay", "getMultiTrackRestAdjustmentY", info.get(keys[0]).slice(0, 3));
 	_query = dump.get("0").slice(1);	
 	}		
 	else {
+		outlet(1, "clearSelection");
+		for (var i = 0; i < keys.length; i++) {
+		var inf = info.get(keys[i]);
+		if (inf.slice(0, 4).join() != previousNote) outlet(1, "addNoteToSelection", (inf.slice(0, 4).concat([-1, -1, -1])));
+		previousNote = inf.slice(0, 4).join();
+		}
 		messnamed(grab+"-relay", "getSelectedNoteInfo");	
-		for (var i= 0; i < keys.length; i++) {
-			var inf = info.get(keys[i]);
-			if (inf.slice(3, 7).join() != previousEvent) noteIndex++;
-	if (inf[7] == -1 && inf[8] == -1 && inf[9] == -1) 	{ //note
+		previousNote = "";
+		for (var i = 0; i < keys.length; i++) {
+		var inf = info.get(keys[i]);
+		if (inf.slice(0, 4).join() != previousNote) noteIndex++;
+	post("noteIndex", dump.stringify(), "\n");
+	if (inf[4] == -1 && inf[5] == -1 && inf[6] == -1) 	{ //note
 		query("selectedNotes::note::" + noteIndex, attr);
 	}
-	else if (inf[7] != -1 && inf[8] == -1 && inf[9] == -1) //interval
+	else if (inf[4] != -1 && inf[5] == -1 && inf[6] == -1) //interval
 	{ 
-		query("selectedNotes::note::" + noteIndex + "::interval::" + inf[7], attr);		
+		query("selectedNotes::note::" + noteIndex + "::interval::" + inf[4], attr);		
 	}
-	else if (inf[7] == -1 && inf[8] != -1 && inf[9] == -1) { //gracenote of note
-		query("selectedNotes::note::" + noteIndex + "::gracenote::" + inf[8], attr);				
+	else if (inf[4] == -1 && inf[5] != -1 && inf[6] == -1) { //gracenote of note
+		query("selectedNotes::note::" + noteIndex + "::gracenote::" + inf[5], attr);				
 	}
-	else if (inf[7] != -1 && inf[8] != -1 && inf[9] == -1) { //gracenote of interval
-		query("selectedNotes::note::" + noteIndex + "::interval::" + inf[7] + "::gracenote::" + inf[8], attr);				
+	else if (inf[4] != -1 && inf[5] != -1 && inf[6] == -1) { //gracenote of interval
+		query("selectedNotes::note::" + noteIndex + "::interval::" + inf[4] + "::gracenote::" + inf[5], attr);				
 	}
-	else if (inf[7] == -1 && inf[8] != -1 && inf[9] != -1) { //interval of gracenote of note
-		query("selectedNotes::note::" + noteIndex + "::gracenote::" + inf[8] + "::interval::" + inf[9], attr);						
+	else if (inf[4] == -1 && inf[5] != -1 && inf[6] != -1) { //interval of gracenote of note
+		query("selectedNotes::note::" + noteIndex + "::gracenote::" + inf[5] + "::interval::" + inf[6], attr);						
 	}
-	else if (inf[7] != -1 && inf[8] != -1 && inf[9] != -1) { //interval of gracenote of interval
-		query("selectedNotes::note::" + noteIndex + "::interval::" + inf[7] + "::gracenote::" + inf[8] + "::interval::" + inf[9], attr);						
+	else if (inf[4] != -1 && inf[5] != -1 && inf[6] != -1) { //interval of gracenote of interval
+		query("selectedNotes::note::" + noteIndex + "::interval::" + inf[4] + "::gracenote::" + inf[5] + "::interval::" + inf[6], attr);						
 	}
 	}
+	outlet(1, inf);
+	previousNote = inf.slice(0, 4).join();
 	}
-	outlet(1, inf.slice(3));
 	outlet(0, _query);
-	previousEvent = inf.slice(3, 7).join();
 	}
 }
 
-function query(element) {
+function query(element, attr) {
 	if (attr == "TEXT") {
 	var text = dump.get(element + "::@TEXT");
 	var textoffsetx = dump.get(element + "::@TEXTOFFSETX");
@@ -74,6 +82,7 @@ function query(element) {
 	_query = [text, textoffsetx, textoffsety];		
 	}
 	else {
+	//post("element", element, "\n");
 	if (attr[0] == "dim"){	
 		var dim = attr[1] - 4;
 		_query = dump.get(element + "::dim::" + dim + "::@value");

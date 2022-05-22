@@ -102,8 +102,6 @@ var renderPage = 1;
 var selectionRectCount = 0;
 var score = new Dict();
 var oldRange = "";
-var graceNoteBuffer = [];
-var _graceNoteCount = 0;
 var tempo = 60;
 var timesig = [4, 4];
 var svg = new Dict();
@@ -147,7 +145,10 @@ var accpref = 0;
 var velocity = 0;
 var measurewidth, measureleftmargin, noteAreaWidth;
 var currentElement = [];
+var noteCount = -1;
 var intervalCount = -1;
+var graceNoteCount = -1;
+var graceNoteIntervalCount = -1;
 var keysigaccum = 0;
 var format = "";
 var cent2ratio = new Dict();
@@ -1062,7 +1063,7 @@ function getNoteInfo(a)
 {
 			//m, s, t, n, i, g, gi
 	//var a = arrayfromargs(arguments);
-	//post("getNoteInfo", a, score.get("score::measure").getkeys(), "\n"); 
+	//post("getNoteInfo", a, score.stringify(), "\n"); 
 	var m = a[0] - _scoreLayout[1];
 	var s = a[1];
 	var t = a[2];	
@@ -1074,7 +1075,7 @@ function getNoteInfo(a)
  		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::";
  	}
 	else if (i != -1 && g == -1 && gi == -1) { //interval
-		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::interval::" + i + " ::";
+		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::interval::" + i + "::";
  	}
 	else if (i == -1 && g != -1 && gi == -1) { //gracenote of note
  		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::gracenote::" + g + "::";
@@ -1088,6 +1089,7 @@ function getNoteInfo(a)
 	else if (i != -1 && g != -1 && gi != -1) { //interval of gracenote of interval
  		prefix = "score::measure::" + m + "::staff::" + s + "::track::" + t + "::note::" + n + "::interval::" + i + "::gracenote::" + g + "::interval::" + gi + "::";
 	}
+	//post("getNoteInfo", prefix, "\n");						
  	pitch = score.get(prefix + "@PITCH");
 	accinfo = score.get(prefix + "@ACCINFO");
 	accvis = score.get(prefix + "@ACCVISPOLICY");
@@ -1098,7 +1100,6 @@ function getNoteInfo(a)
 	value = score.get(prefix + "dim::1::@value");
 	hold = 	score.get(prefix + "@HOLD");
 	noteProperty = getLevel(pitch, accpref, altenharmonic);
-	//post("getNoteInfo", prefix, pitch, value, "\n");						
 }
 
 
@@ -1276,8 +1277,6 @@ function scoreLayout()
 		repeatedAccidentals = {};
 		oldMeasureStaff = "";
 		bl = 0;
-		graceNoteBuffer = [];
-		_graceNoteCount = 0;
 		for (var s = 1; s <= groupcount; s++) {
 			SVGClefs[s] = [];
 			SVGString[s] = [];
@@ -2099,24 +2098,26 @@ function anything() {
 		if (msg[3]!= "Staff" && accList.indexOf(msgname) != -1){
 			var Accidental = [];
 			if (msg[3] == "Note" && msg[7] != -1) { //Note
-				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
-				getNoteInfo([msg[4], msg[5], msg[6], msg[7], -1, -1, -1]);
-				}
-				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], -1, -1, -1];
-				intervalCount = 0;
-				graceNoteCount = 0;
+				noteCount = msg[7];
+				intervalCount = -1;
+				graceNoteCount = -1;
+				graceNoteIntervalCount = -1;
 				}
 			else if (msg[3] == "Interval" && msg[7] != -1) { //Interval
-				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
-				getNoteInfo([msg[4], msg[5], msg[6], msg[7], intervalCount, -1, -1]);
-				}
-				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], msg[7], intervalCount, -1, -1];
+				graceNoteCount = -1;
+				graceNoteIntervalCount = -1;
 				intervalCount++;
 				}
-			else if ((msg[3] == "Note" || msg[3] == "Interval") && msg[7] != -1) { //Gracenote
-				graceNoteBuffer[_graceNoteCount++] = [msgname].concat(msg);
+			else if (msg[3] == "Note" && msg[7] == -1) { //Gracenote
+				graceNoteIntervalCount = -1;
+				graceNoteCount++;
 				}
-			//post("annotation.get", annotation.get("staff-"+msg[5]+"::micromap"), "\n");
+			else if (msg[3] == "Interval" && msg[7] == -1) { //Gracenote
+				graceNoteIntervalCount++;
+				}				
+				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none") getNoteInfo([msg[4], msg[5], msg[6], noteCount, intervalCount, graceNoteCount, graceNoteIntervalCount]);
+				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], noteCount, intervalCount, graceNoteCount, graceNoteIntervalCount];
+				//post("currentElement", currentElement, "\n");
 			if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 			if (accvis == 1) return;
 			switch (annotation.get("staff-"+msg[5]+"::micromap")){

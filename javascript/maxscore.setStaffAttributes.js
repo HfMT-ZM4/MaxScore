@@ -255,7 +255,7 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 		styleMenu.message("setsymbol", oldstl);
 		styleMenu.message("clearchecks");
 		currentToneDivision = tonedivisions.names.indexOf(stl) + Count;
-		post("style", currentToneDivision, "\n");
+		//post("style", currentToneDivision, "\n");
 		styleMenu.message("checkitem", currentToneDivision, 1);
 		styleMenu.message("checkitem", currentRatioLookUp, 1);
 		oldCount = tonedivisions.names.indexOf(stl) + Count;
@@ -405,7 +405,7 @@ function _style(stl, flag)
     ss = staffStyles.get(basestyle);
 	if (oldstl != stl) {
     annotation.replace("staff-" + StaffIndex + "::style", stl);
-	post("micromap", stl, basestyle, "\n");
+	//post("micromap", stl, basestyle, "\n");
 	if (styleSetByMenu) annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
     annotation.replace("staff-" + StaffIndex + "::clef", "default");
 	}
@@ -438,7 +438,7 @@ function _style(stl, flag)
  	if (editors.names.indexOf(basestyle) != -1) styleMenu.message("textcolor", 1, 0, 0, 1);
     stylesPatcher.subpatcher().getnamed("scripter").message("showEditor", newstyletype);
 	this.patcher.parentpatcher.parentpatcher.getnamed("chooser").message(1);
-    post("currentstyle", ss[0], "\n");
+    //post("currentstyle", ss[0], "\n");
        switch (ss[0]) {
             case "tablature":
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("bang");
@@ -548,7 +548,7 @@ function _style(stl, flag)
        	var subdivision = 0;
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("bang");
                 if (isAlias(stl)) {
-					post("hello", substyle.split("•")[0], "\n");
+					//post("hello", substyle.split("•")[0], "\n");
                     stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("clef").message("symbol", substyle.split("•")[0]);
                     if (substyle.split("•")[1] == "39ED3") subdivision = 1;
                     else if (substyle.split("•")[1] == "65ED3") subdivision = 2;
@@ -578,7 +578,7 @@ function _style(stl, flag)
                 break;
 		}
 		currVal[newstyletype] = storedValue.get("stored-value");	
-		post("currVal", StaffIndex, JSON.stringify(currVal), "\n");
+		//post("currVal", StaffIndex, JSON.stringify(currVal), "\n");
 	}
 }
     state(stl);
@@ -600,12 +600,12 @@ function isEditor(stl) {
 function retrieve(_styletype)
 {
 	    if (isEditor(_styletype)) {
-     	post("Vals", JSON.stringify(currVal), JSON.stringify(prevVal), "\n");
-   		post("replace", _styletype, currVal[_styletype], "\n");
+     	//post("Vals", JSON.stringify(currVal), JSON.stringify(prevVal), "\n");
+   		//post("replace", _styletype, currVal[_styletype], "\n");
 		if (typeof currVal[_styletype] != "undefined") currentValue.replace("current-value", currVal[_styletype]);
-		else post("don't know what to do", "\n");
+		//else error("don't know what to do", "\n");
 		stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("retrieve").subpatcher().getnamed("current-value").message("bang");
-		if (typeof currVal[_styletype] != "undefined") storedValue.replace("stored-value", currVal[_styletype]); 
+		if (typeof prevVal[styletype] != "undefined") storedValue.replace("stored-value", prevVal[styletype]);
 		stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("retrieve").subpatcher().getnamed("stored-value").message("bang");
 		}
 }
@@ -645,12 +645,12 @@ function newEvent(data) {
 }
 
 function paste(data) {
+    getSelection();
+    addGraceNotes();
 	if (data.value == 118 || data.value == 101) f = 0;
 	else if (data.value == 86) f = 1;
 	else return;
     // make sure there are events pasted in this track
-    getSelection();
-    addGraceNotes();
     if (info.contains("0")) keys = info.getkeys();
 	else return;
     var cont = 0;
@@ -660,7 +660,7 @@ function paste(data) {
             if (inf[1] == StaffIndex) cont = 1;
         }
     }
-    if (cont == 0) return;
+    if (!cont) return;
     outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     keys = info.getkeys();
@@ -669,7 +669,7 @@ function paste(data) {
 	if (f) stylesPatcher.subpatcher().getnamed("noteheadtransform").message(1);
     for (var i = 0; i < keys.length; i++) {
         var inf = info.get(keys[i]);
-        if (info.get(keys[i])[2] == StaffIndex) {
+        if (info.get(keys[i])[1] == StaffIndex) {
 			outlet(0, "clearSelection");
 			outlet(0, "addNoteToSelection", inf);
             list = getStaffNoteIntervalInfo(i);
@@ -689,7 +689,6 @@ function paste(data) {
 			else {
  				list[4] = -1;
 				imap(styletype, null);
- 				post("PASTE", l, "\n"); 
 			}
         }
     }
@@ -719,7 +718,7 @@ function update(data) {
 	retrieve(styletype);
     for (var i = 0; i < keys.length; i++) {
         var inf = info.get(keys[i]);
-		post("update", info.stringify(), "\n"); 
+		//post("update", info.stringify(), "\n"); 
 		outlet(0, "clearSelection");
 		outlet(0, "addNoteToSelection", inf);
         if (inf[1] == StaffIndex) {
@@ -825,7 +824,6 @@ function setClef(stl) {
                     this.patcher.getnamed("clef").message("set", 4);
                     for (var i = 0; i < numMeasures[1]; i++) {
                         outlet(0, "setClef", i, StaffIndex, clf);
- 						post("setClef-2", stl, ss[3], clf, "\n");
                         outlet(0, "setKeySignature", i, StaffIndex, 0, "FLAT_KEY");
                     }
                     break;
@@ -873,12 +871,12 @@ function getInfo() {
 
 function getStaffNoteIntervalInfo(i) {
     var inf = info.get(keys[i]);
-	post("getStaffNoteIntervalInfo", inf, "\n"); 
+	//post("getStaffNoteIntervalInfo", inf, "\n"); 
     messnamed(grab+"-relay", "getStaffInfo", inf.slice(0, 2));
     l[7] = dump.get("staff::@CLEF");
     l[6] = dump.get("staff::@KEYSIGTYPE");
     l[5] = dump.get("staff::@KEYSIGNUMACC");
-	if (inf.slice(0, 4).join() != previousEvent) noteIndex++;
+	//if (inf.slice(0, 4).join() != previousEvent) noteIndex++;
 	if (inf[4] == -1 && inf[5] == -1 && inf[6] == -1) { //note
     	messnamed(grab+"-relay", "getNoteInfo", inf.slice(0, 4));
 		query("note", "note");
@@ -890,7 +888,7 @@ function getStaffNoteIntervalInfo(i) {
 	else if (inf[4] == -1 && inf[5] != -1 && inf[6] == -1) { //gracenote of note
     	messnamed(grab+"-relay", "getSelectedNoteInfo");
 		query("selectedNotes::gracenote::0", "gracenote");				
-		post("inf", inf[4], inf[5], inf[6], l, "\n"); 
+		//post("inf", inf[4], inf[5], inf[6], l, "\n"); 
 	}
 	else if (inf[4] != -1 && inf[5] != -1 && inf[6] == -1) { //gracenote of interval
     	messnamed(grab+"-relay", "getSelectedNoteInfo");
@@ -899,13 +897,13 @@ function getStaffNoteIntervalInfo(i) {
 	else if (inf[4] == -1 && inf[5] != -1 && inf[6] != -1) { //interval of gracenote of note
     	messnamed(grab+"-relay", "getSelectedNoteInfo");
 		query("selectedNotes::interval::0", "gracenoteinterval");						
-		post("inf", inf[4], inf[5], inf[6], l, "\n"); 
+		//post("inf", inf[4], inf[5], inf[6], l, "\n"); 
 	}
 	else if (inf[4] != -1 && inf[5] != -1 && inf[6] != -1) { //interval of gracenote of interval
     	messnamed(grab+"-relay", "getSelectedNoteInfo");
-		query("selectedNotes::interval::0", "intervalgracenoteinterval");						
-	}
-	previousEvent = inf.slice(0, 4).join();
+		query("selectedNotes::interval::0", "intervalgracenoteinterval");
+	}					
+	//previousEvent = inf.slice(0, 4).join();
     return l;
 }
 
@@ -939,7 +937,7 @@ function getLevel()
 			else if (a[1] == 0 && a[2] == "true") level = 86 + 0 + 7 * octave;
 		break;
 		case 1:
-			post("getLevel", a[1], a[2], "\n"); 
+			//post("getLevel", a[1], a[2], "\n"); 
 			if (a[1] == 1 && a[2] == "false") level = 88 + 0 + 7 * octave;
 			else if (a[1] == 1 && a[2] == "true") level = 88 + 0 + 7 * octave;
 			else if (a[1] == 0 && a[2] == "false") level = 87 + 0 + 7 * octave;
@@ -1021,7 +1019,7 @@ function addGraceNotes() {
 			for (var k = 0; k < graceNote[graceNote.length - 1]; k++) {
 				info.replace(j++, graceNote.slice(0, graceNote.length - 3).concat([k, -1]));
     			messnamed(grab+"-relay", "isChord", graceNote.slice(0, graceNote.length - 3).concat([k, -1]));
-				post("addGraceNotes", graceNote.slice(0, graceNote.length - 1), dump.stringify(), "\n"); 
+				//post("addGraceNotes", graceNote.slice(0, graceNote.length - 1), dump.stringify(), "\n"); 
 				for (var m = 0; m < dump.getkeys().length; m++) if (dump.get(m)[dump.get(m).length - 1] != 0) info.replace(j++, graceNote.slice(0, graceNote.length - 3).concat([k, m]));
 				}
 			}
@@ -1036,7 +1034,7 @@ function getSelection() {
 	selection.clear();
 	for (graceNotes in getNumGraceNotes) selection.replace(j++, getNumGraceNotes[graceNotes].slice(1, getNumGraceNotes[graceNotes].length - 1));
 	//post("getSelection", j, selection.stringify(), "\n");
-    outlet(0, "clearSelection");
+    //outlet(0, "clearSelection");
 }
 
 
@@ -1046,7 +1044,7 @@ function restoreSelection() {
         outlet(0, "clearSelection");
         for (var i = 0; i < keys.length; i++) {
 			outlet(0, "addNoteToSelection", selection.get(keys[i]));
-			post("restore", selection.get(keys[i]), "\n");
+			//post("restore", selection.get(keys[i]), "\n");
 		}
         selection.clear();
     }
