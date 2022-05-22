@@ -7,6 +7,7 @@ var attr = [];
 var grab = "";
 var info = new Dict();
 var dump = new Dict();
+var selectedNotes = new Dict();
 var selection = new Dict();
 selection.name = "selection";
 var undo = 1;
@@ -46,8 +47,8 @@ for (var i = 0; i < keys.length; i++) {
 	previousNote = inf.slice(0, 4).join();
 }
 messnamed(grab+"-relay", "getSelectedNoteInfo");
+selectedNotes.clone(dump.name);
 previousNote = "";
-//post("info", info.stringify(), "\n");
 for (var i= 0; i < keys.length; i++)
 {
 	var inf = info.get(keys[i]);
@@ -103,13 +104,19 @@ function query(element)
 			var common = intersect(singleAttribute, noteAttributes);
 			if (common.length)
 			{	
-				var _query = dump.get(element + "::@" + attr[k]);
+				var _query = selectedNotes.get(element + "::@" + attr[k]);
 				result.push(_query);
 			}
 			else
-			{	
-			var occurrence = getAllIndexes(dump.get(element + "::.ordering"),"dim").length;
-			for (var l = 0; l < occurrence; l++) if (attr[k] == dump.get(element + "::dim::" + l + "::@name")) var _query = dump.get(element + "::dim::" + l + "::@value");
+			{
+			if (attr[k].indexOf("userBean") == -1){
+				var occurrence = getAllIndexes(selectedNotes.get(element + "::.ordering"),"dim").length;
+				for (var l = 0; l < occurrence; l++) if (attr[k] == selectedNotes.get(element + "::dim::" + l + "::@name")) var _query = selectedNotes.get(element + "::dim::" + l + "::@value");
+				}
+			else {
+			var _query = selectedNotes.get(element + "::" + attr[k]);	
+			post("info", _query, attr[k], selectedNotes.stringify(), "\n");
+			}
 			result.push(_query);
 			}
 		}	
