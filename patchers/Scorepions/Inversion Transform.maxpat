@@ -131,8 +131,8 @@
 					"id" : "obj-30",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 71.321929931640625, 327.484496999999976, 303.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "maxscore.setNoteIntervalAttribute",
@@ -285,7 +285,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 79.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "1000-" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1003,7 +1003,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-24",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1111,9 +1111,9 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 168.0394287109375, 12.806343078613281, 320.0, 50.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 4,
-					"presentation_rect" : [ 8.25, 138.0, 241.0, 65.0 ],
-					"text" : "This Scorepion creates the inversion of the selected notes.  \nThis process will be applied to selected notes. ",
+					"presentation_linecount" : 5,
+					"presentation_rect" : [ 8.25, 138.0, 241.0, 79.0 ],
+					"text" : "This Scorepion creates an inversion around either the top (up) or the bottom  (down) note of a selection.\nThis process will be applied to selected notes. ",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
 
@@ -1122,7 +1122,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -1215,7 +1215,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 1 ],
-					"midpoints" : [ 364.821929931640625, 472.0, 132.0, 472.0 ],
+					"midpoints" : [ 270.155263264973996, 472.0, 132.0, 472.0 ],
 					"source" : [ "obj-30", 2 ]
 				}
 
@@ -1320,7 +1320,30 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "Scorepion-Tail-blue.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.setNoteIntervalAttribute.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "my-LtoColl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0
 	}
 
 }

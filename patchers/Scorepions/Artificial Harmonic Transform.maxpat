@@ -55,11 +55,11 @@
 					"id" : "obj-9",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 345.321929931640625, 372.8277587890625, 201.0, 22.0 ],
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 345.321929931640625, 372.8277587890625, 203.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "maxscore.setNoteIntervalAttribute",
+						"filename" : "maxscore.setNoteIntervalAttribute.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -263,7 +263,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 79.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "1000-" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1325,7 +1325,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-24",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1505,7 +1505,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 205.71533203125, 38.695205688476562, 291.0, 94.0 ],
+					"patching_rect" : [ 345.821929931640625, 24.695205688476562, 291.0, 94.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 6,
 					"presentation_rect" : [ 11.5, 138.0, 228.0, 94.0 ],
@@ -1518,7 +1518,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -1738,12 +1738,28 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-64", 1 ],
-					"midpoints" : [ 536.821929931640625, 503.0487060546875, 397.321929931640625, 503.0487060546875 ],
+					"midpoints" : [ 477.488596598307311, 503.0487060546875, 397.321929931640625, 503.0487060546875 ],
 					"source" : [ "obj-9", 2 ]
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "Scorepion-Tail-blue.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.setNoteIntervalAttribute.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0
 	}
 
 }

@@ -1,5 +1,5 @@
 inlets = 1;
-outlets = 3;
+outlets = 4;
 
 include("maxscore.tools");
 
@@ -80,6 +80,7 @@ for (var i= 0; i < keys.length; i++)
 	outlet(0, result);	
 	previousNote = inf.slice(0, 4).join();
 	}
+	outlet(3, "bang");
 	restoreSelection();
 	}
 	else {
