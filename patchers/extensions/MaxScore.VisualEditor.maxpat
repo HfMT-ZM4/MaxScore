@@ -829,6 +829,8 @@
 													"saved_object_attributes" : 													{
 														"autostart" : 1,
 														"defer" : 0,
+														"node_bin_path" : "",
+														"npm_bin_path" : "",
 														"watch" : 0
 													}
 ,
@@ -1915,8 +1917,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "pasteAsGraceNotes" ],
-									"patching_rect" : [ 1055.967529296875, 143.0, 145.0, 22.0 ],
-									"text" : "t 118 pasteAsGraceNotes"
+									"patching_rect" : [ 1055.967529296875, 143.0, 137.0, 22.0 ],
+									"text" : "t -1 pasteAsGraceNotes"
 								}
 
 							}
@@ -2074,7 +2076,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 302.28497314453125, 79.0, 541.0, 22.0 ],
-													"restore" : [ 2 ],
+													"restore" : [ 1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -8683,7 +8685,7 @@
 									"numinlets" : 31,
 									"numoutlets" : 31,
 									"outlettype" : [ "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "" ],
-									"patching_rect" : [ 31.967593999999998, 86.0, 1116.0, 49.0 ],
+									"patching_rect" : [ 31.967593999999998, 86.0, 1120.0, 49.0 ],
 									"text" : "sel Undo Redo Copy Cut Paste \"Paste Free Flow\" Delete \"Select All\" dummy \"Clear Selection\" \"Add Measure(s)\" \"Insert Measure(s)\" \"Delete Measure(s)\" \"Insert Staff\" \"Delete Staff\" \"Add Staff\" \"Clear Undo Stack\" Shortcuts \"Transcribe Staff\" \"Sort Staves\" \"Update Live Clips\" dummy \"Make Current\" \"Fit Selected Measures Into One System\" \"Copy Measure And Staff Attributes\" \"Paste Measure And Staff Attributes\" \"Distribute Evenly\" \"Paste Into\" \"Paste As Grace Notes\" \"Detach Grace Notes\""
 								}
 
@@ -8859,7 +8861,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-46", 1 ],
-									"midpoints" : [ 955.634260666666592, 145.0, 1048.092529000000013, 145.0 ],
+									"midpoints" : [ 958.967593999999963, 145.0, 1048.092529000000013, 145.0 ],
 									"source" : [ "obj-2", 25 ]
 								}
 
@@ -9496,7 +9498,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 286.323450666666702, 496.0, 310.725201904762116, 35.0 ],
-									"restore" : [ 2 ],
+									"restore" : [ 1 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -11178,7 +11180,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 345.385444505859368, 677.833312999999976, 398.0, 22.0 ],
-													"restore" : [ "JMSLMaxScore-36" ],
+													"restore" : [ "JMSLMaxScore-30" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -12558,7 +12560,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 247.656784000000016, 265.0, 471.0, 22.0 ],
-									"restore" : [ 118 ],
+									"restore" : [ 127 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -19307,7 +19309,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 146.0, 73.0, 385.0, 35.0 ],
-																	"restore" : [ 2 ],
+																	"restore" : [ 1 ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -19998,7 +20000,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 9.899963, 333.600035999999989, 398.0, 22.0 ],
-													"restore" : [ "JMSLMaxScore-36" ],
+													"restore" : [ "JMSLMaxScore-30" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0

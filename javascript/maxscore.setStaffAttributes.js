@@ -600,8 +600,6 @@ function isEditor(stl) {
 function retrieve(_styletype)
 {
 	    if (isEditor(_styletype)) {
-     	//post("Vals", JSON.stringify(currVal), JSON.stringify(prevVal), "\n");
-   		//post("replace", _styletype, currVal[_styletype], "\n");
 		if (typeof currVal[_styletype] != "undefined") currentValue.replace("current-value", currVal[_styletype]);
 		//else error("don't know what to do", "\n");
 		stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("retrieve").subpatcher().getnamed("current-value").message("bang");
@@ -625,13 +623,16 @@ function newEvent(data) {
         for (var i = 0; i < keys.length; i++) {
             var inf = info.get(keys[i]);
             if (inf[1] == StaffIndex) {
+				//outlet(0, "clearSelection");
+				outlet(0, "addNoteToSelection", inf);
                 list = getStaffNoteIntervalInfo(i);
                 if (list && list[9] != 0) {
                     if (styletype == "tablature") stylesPatcher.subpatcher().getnamed("tablature").subpatcher().getnamed("tmap").message("shiftLocation", list[4], list[0], StaffIndex);
 					else imap(styletype, "parent::" + styletype + "::map");
                 }
                 if (keys.length == 1) {
-                    event[5] = l[0];
+                	list = getStaffNoteIntervalInfo(i);
+                   	event[5] = l[0];
                     preview.message(StaffIndex, event);
                     pitchDisplay.message(event[5]);
                 }
@@ -660,7 +661,10 @@ function paste(data) {
             if (inf[1] == StaffIndex) cont = 1;
         }
     }
-    if (!cont) return;
+    if (!cont) {
+    	restoreSelection();
+		return;
+	}
     outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     keys = info.getkeys();
@@ -673,6 +677,7 @@ function paste(data) {
 			outlet(0, "clearSelection");
 			outlet(0, "addNoteToSelection", inf);
             list = getStaffNoteIntervalInfo(i);
+			//return;
           	if (list[9] != 0) {
                if (styletype == "justintonation") {
 					map("default");
@@ -711,7 +716,10 @@ function update(data) {
             if (inf[1] == StaffIndex) cont = 1;
         }
     }
-    if (!cont) return;
+    if (!cont) {
+    	restoreSelection();
+		return;
+	}
     outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     keys = info.getkeys();
@@ -754,6 +762,8 @@ function update(data) {
 function transform() {
     getSelection(); 
     outlet(0, "selectAllNotesInStaff", StaffIndex);
+    messnamed(grab+"-relay", "getNumGraceNotes");
+	getNumGraceNotes = JSON.parse(dump.stringify());
     addGraceNotes();
     keys = info.getkeys();
 	currVal[newstyletype] = storedValue.get("stored-value");
@@ -772,10 +782,9 @@ function transform() {
 					imap("default", "parent::" + newstyletype + "::map");
                 } 
 				else {
-					if (styletype == "tablature") {
-						stylesPatcher.subpatcher().getnamed("noteheadtransform").message(1);
-					}
+					if (styletype == "tablature") stylesPatcher.subpatcher().getnamed("noteheadtransform").message(1);
 					imap(styletype, "parent::" + newstyletype + "::map");
+ 					//post("transform", list, info.stringify(), "\n"); 
 				}
             }
         }
@@ -884,11 +893,11 @@ function getStaffNoteIntervalInfo(i) {
 	else if (inf[4] != -1 && inf[5] == -1 && inf[6] == -1) { //interval
     	messnamed(grab+"-relay", "getIntervalInfo", inf.slice(0, 5));
 		query("interval", "interval");		
+		//post("inf", dump.stringify(), l, "\n"); 
 	}
 	else if (inf[4] == -1 && inf[5] != -1 && inf[6] == -1) { //gracenote of note
     	messnamed(grab+"-relay", "getSelectedNoteInfo");
 		query("selectedNotes::gracenote::0", "gracenote");				
-		//post("inf", inf[4], inf[5], inf[6], l, "\n"); 
 	}
 	else if (inf[4] != -1 && inf[5] != -1 && inf[6] == -1) { //gracenote of interval
     	messnamed(grab+"-relay", "getSelectedNoteInfo");
@@ -897,7 +906,6 @@ function getStaffNoteIntervalInfo(i) {
 	else if (inf[4] == -1 && inf[5] != -1 && inf[6] != -1) { //interval of gracenote of note
     	messnamed(grab+"-relay", "getSelectedNoteInfo");
 		query("selectedNotes::interval::0", "gracenoteinterval");						
-		//post("inf", inf[4], inf[5], inf[6], l, "\n"); 
 	}
 	else if (inf[4] != -1 && inf[5] != -1 && inf[6] != -1) { //interval of gracenote of interval
     	messnamed(grab+"-relay", "getSelectedNoteInfo");
@@ -917,7 +925,7 @@ function query(element, node) {
     l[1] = dump.get(element + "::@NOTEHEAD");
     l[0] = dump.get(element + "::dim::1::@value");
     l[11] = StaffIndex;
- 	//post("query", l[4], element + "::@PITCH", "\n"); 
+ 	//post("query", l, element + "::@PITCH", "\n"); 
 }
 
 function getLevel()
@@ -1044,7 +1052,6 @@ function restoreSelection() {
         outlet(0, "clearSelection");
         for (var i = 0; i < keys.length; i++) {
 			outlet(0, "addNoteToSelection", selection.get(keys[i]));
-			//post("restore", selection.get(keys[i]), "\n");
 		}
         selection.clear();
     }
@@ -1056,6 +1063,7 @@ function getid() {
 
 function map(_styletype, _StaffIndex)
 {
+	//post("list", list,  _styletype, _StaffIndex, "\n");
 	if (list[0] != -1) stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[0], _StaffIndex);
 	else stylesPatcher.subpatcher().getnamed(_styletype).subpatcher().getnamed("map").message(list[4], _StaffIndex);
 }

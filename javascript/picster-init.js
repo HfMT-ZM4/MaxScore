@@ -37,7 +37,7 @@ function init() {
 	//outlet(0, "clearSelection");
 	//outlet(0, "getNumStaves");
 	outlet(0, "dumpScore");
-	post("numMeasures", Object.keys(json).length, "\n");
+	//post("numMeasures", Object.keys(json).length, "\n");
 	if (!Object.keys(json).length)
 	{
 		error("This score could not be parsed\n");
