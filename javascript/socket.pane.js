@@ -490,10 +490,7 @@ function writeSVG(destination)
 	//var SVGZoom = 1;
 	f.writeline("<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">");
 	for (var s = 1; s <= groupcount; s++) {
-		_zl = (s > zl.length) ? zl[zl.length - 1] * 2 : zl[s - 1] * 2;
-		if (_zl == "default") _zl = 1.;
-		else if (_zl == "current") _zl = zoom;
-	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [_zl, 0., 0., _zl, 0., 0.] + ")\">");	
+	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [thisZoom(s), 0., 0., thisZoom(s), 0., 0.] + ")\">");	
 	for (var i = 0; i < SVGLines[s].length; i++) {
 		f.writeline(SVGLines[s][i]);
 	}
@@ -895,10 +892,10 @@ function renderPlayhead()
 					"parent" : "overlay",
 					"new" : "rect",
 					"id" : "playhead",
-					"x" : playheadPosition,
+					"x" : playheadPosition * thisZoom(s + 1),
 					"y" : 0,
-					"width" : 3.,
-					"height" : pageHeight,
+					"width" : 3. * thisZoom(s + 1),
+					"height" : pageHeight * thisZoom(s + 1),
 					"style" : {
 						"stroke-width" : 0.6,
 						"stroke" : "none",
@@ -912,7 +909,7 @@ function renderPlayhead()
 				//if (shownClefs) {
 				//CLEFS HERE
 				for (var i = 0; i < SVGClefs[s + 1].length; i++) {	
-				//post("o.clefs[s + 1]", s + 1, JSON.stringify(SVGClefs[s + 1][i]),  "\n");
+				//post("clefs", SVGClefs[s + 1][i][3],  "\n");
 				val.push({
 					"parent" : "overlay",
 					"new" : "text",
@@ -922,12 +919,12 @@ function renderPlayhead()
 					"child" : SVGClefs[s + 1][i][4],
 					"style" : 					{
 						"font-family" : SVGClefs[s + 1][i][0],
-						"font-size" : SVGClefs[s + 1][i][1],
+						"font-size" : SVGClefs[s + 1][i][1] * thisZoom(s + 1),
 						"fill" : SVGClefs[s + 1][i][2],
 						"fill-opacity" : fill_opacity
 					}
 					,
-					"transform" : "matrix(" + SVGClefs[s + 1][i][3].join() + ")"
+					"transform" : "matrix(1, 0, 0, 1," + SVGClefs[s + 1][i][3][4]* thisZoom(s + 1) + "," + SVGClefs[s + 1][i][3][5] * thisZoom(s + 1) + ")"
 					});
 				}
 				//}
@@ -948,10 +945,10 @@ function drawBounds()
 					"parent" : "overlay",
 					"new" : "rect",
 					"id" : "bounds",
-					"x" : boundingRectOffset[0],
-					"y" : boundingRectOffset[1],
-					"width" : boundingRect[2],
-					"height" : boundingRect[3],
+					"x" : boundingRectOffset[0] * thisZoom(s + 1),
+					"y" : boundingRectOffset[1] * thisZoom(s + 1),
+					"width" : boundingRect[2] * thisZoom(s + 1),
+					"height" : boundingRect[3] * thisZoom(s + 1),
 					"style" : {
 						"stroke-width" : buttonstrokewidth,
 						"stroke" : buttonstrokecolor,
@@ -1032,7 +1029,7 @@ function scroll()
 				"target" : "#score", 
 				"dur" : 0,
 				"vars" : {
-					"x" : _offset,
+					"x" : _offset * thisZoom(s + 1),
 					"y" : 0,
 					"paused" : "false",
 					"ease" : "linear"
@@ -1051,7 +1048,7 @@ function scroll()
 				"target" : "#score", 
 				"dur" : rDur,
 				"vars" : {
-					"x" : eol,
+					"x" : eol * thisZoom(s + 1),
 					"y" : 0,
 					"paused" : "false",
 					"ease" : "linear",
@@ -1083,7 +1080,6 @@ function scroll()
 			}
 		else rDur = duration;
 		_offset = msg[1];
-		//post("offset", _offset, "\n");
 		//toffset = msg[1] / msg[2];
 		for (var s = 0; s < groupcount; s++)
 		{
@@ -1094,7 +1090,7 @@ function scroll()
 				"target" : "#score", 
 				"dur" : 0,
 				"vars" : {
-					"x" : msg[1],
+					"x" : msg[1] * thisZoom(s + 1),
 					"y" : 0,
 					"paused" : "false",
 					"ease" : "linear"
@@ -1112,14 +1108,14 @@ function scroll()
 		eol = msg[1]
 		for (var s = 0; s < groupcount; s++)
 		{
-				jcursors[s + 1] = {
+			jcursors[s + 1] = {
 				"key" : "tween",
 				"val" : {
 				"id" : "scroll",
 				"target" : "#score", 
 				"dur" : 0,
 				"vars" : {
-					"x" : msg[0],
+					"x" : msg[0] * thisZoom(s + 1),
 					"y" : 0,
 					"paused" : "false",
 					"ease" : "linear"
@@ -1138,7 +1134,7 @@ function scroll()
 				"target" : "#score", 
 				"dur" : duration,
 				"vars" : {
-					"x" : eol,
+					"x" : eol * thisZoom(s + 1),
 					"y" : 0,
 					"paused" : "false",
 					"ease" : "linear",
@@ -1150,4 +1146,12 @@ function scroll()
 		outlet(0, "dictionary", cursors.name);
 		}
 	}
+}
+
+function thisZoom(s)
+{
+	var _zl = (s > zl.length) ? zl[zl.length - 1] * 2 : zl[s - 1] * 2;
+	if (_zl == "default") _zl = 1.;
+	else if (_zl == "current") _zl = zoom;
+	return _zl
 }
