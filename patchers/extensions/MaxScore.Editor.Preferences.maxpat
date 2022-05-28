@@ -85,8 +85,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1602.0, 137.0, 101.0, 22.0 ],
-					"text" : "prepend linecolor"
+					"patching_rect" : [ 1602.0, 137.0, 95.0, 22.0 ],
+					"text" : "prepend bgcolor"
 				}
 
 			}
@@ -109,7 +109,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "list", "bang" ],
-					"patching_rect" : [ 1602.0, 195.0, 158.0, 22.0 ],
+					"patching_rect" : [ 1602.0, 199.0, 158.0, 22.0 ],
 					"text" : "colorpicker @compatibility 0"
 				}
 
@@ -696,7 +696,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1386.0, 155.0, 95.0, 22.0 ],
+					"patching_rect" : [ 1385.0, 156.0, 95.0, 22.0 ],
 					"text" : "prepend bgcolor"
 				}
 
@@ -739,7 +739,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "list", "bang" ],
-					"patching_rect" : [ 1386.0, 213.0, 69.0, 22.0 ],
+					"patching_rect" : [ 1385.0, 214.0, 69.0, 22.0 ],
 					"text" : "colorpicker"
 				}
 
@@ -753,7 +753,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1386.0, 184.0, 100.0, 20.0 ],
+					"patching_rect" : [ 1386.0, 185.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 190.0, 162.0, 20.0 ],
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
@@ -818,7 +818,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "list", "bang" ],
-					"patching_rect" : [ 1325.0, 425.0, 158.0, 22.0 ],
+					"patching_rect" : [ 1325.0, 430.0, 158.0, 22.0 ],
 					"text" : "colorpicker @compatibility 0"
 				}
 
@@ -2738,7 +2738,7 @@
 						"note_value" : [ 2 ],
 						"overdrive" : [ 1 ],
 						"papersize" : [ 3 ],
-						"setComposer" : [ "Xiao", "Fu" ],
+						"setComposer" : [ "lindsay", "vickery" ],
 						"setCopyright" : [ 2022 ],
 						"setDurationalSpacingBase" : [ 0.7 ],
 						"setHoldScaler" : [ 1.0 ],
@@ -2751,7 +2751,7 @@
 						"setScoreTopMargin" : [ 15.0 ],
 						"setScoreTopMarginOfFirstPage" : [ 60.0 ],
 						"setSubtitle" : [ "Geburt", "Leben", "und", "Tod", "der", "Sterne" ],
-						"setTitle" : [ "JMSLMaxScore-10" ],
+						"setTitle" : [ "JMSLMaxScore-26" ],
 						"setTitleVisible" : [ 0 ],
 						"setWrap" : [ 1 ],
 						"showClefs" : [ 1 ],
@@ -3501,7 +3501,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 482.4000244140625, 295.01239013671875, 224.0, 42.0 ],
-									"restore" : [ 127 ],
+									"restore" : [ 35 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7144,7 +7144,7 @@
 					"presentation_rect" : [ 225.0, 65.0, 161.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "Xiao Fu",
+					"text" : "lindsay vickery",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setComposer",
 					"wordwrap" : 0
@@ -7165,7 +7165,7 @@
 					"presentation_rect" : [ 225.0, 15.0, 161.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "JMSLMaxScore-10",
+					"text" : "JMSLMaxScore-26",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setTitle",
 					"wordwrap" : 0
@@ -9712,7 +9712,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-216", 0 ],
-					"midpoints" : [ 1395.5, 246.0, 1500.5, 246.0, 1500.5, 117.0, 1395.5, 117.0 ],
+					"midpoints" : [ 1394.5, 246.0, 1500.5, 246.0, 1500.5, 117.0, 1395.5, 117.0 ],
 					"source" : [ "obj-217", 0 ]
 				}
 

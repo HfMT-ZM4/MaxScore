@@ -4983,13 +4983,13 @@
 												"name" : "black on white",
 												"umenu" : 												{
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
 ,
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -7389,7 +7389,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 									"filename" : "btoggle.js",
 									"id" : "obj-99",
 									"maxclass" : "jsui",
@@ -8008,7 +8008,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 									"filename" : "btoggle.js",
 									"id" : "obj-69",
 									"maxclass" : "jsui",
@@ -8121,7 +8121,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 									"filename" : "btoggle.js",
 									"id" : "obj-66",
 									"maxclass" : "jsui",
@@ -8767,7 +8767,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-15",
-									"items" : [ "UnaryCopyBufferTransform", "com.punosmusic.jmsl.plugins.MelodyToChordTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.AccentThresholdTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.AmplitudeCrescendo", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.DoubleBelowTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.NoteHeadColorTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.RandomDimensionValuesTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.SerialTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.SwitchTracksTransform", ",", "ScoreOperator", "com.softsynth.jmsl.score.operators.AccidentalDisagreementsReporter", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.AbsoluteDurationReporter", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.BinaryMorphOperator", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.DumpSelectedToMusicShape", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.ExtendOttavaRunsByOneNote", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.ExtremeLevelReporter", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.GridEntry", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.MarkovOperator", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.RestReporter", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.TotalSelectedDurations" ],
+									"items" : "<empty>",
 									"labelclick" : 1,
 									"maxclass" : "umenu",
 									"numinlets" : 1,
@@ -17359,7 +17359,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 19.0, 155.0, 57.0, 22.0 ],
-													"text" : "zl ecils 5"
+													"text" : "zl ecils 7"
 												}
 
 											}
@@ -17766,7 +17766,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 234.0, 454.5, 396.0, 50.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Set the MaxScore and maxscore.info.grab abstractions to the same attribute to receive info queries from a MaxScore instance"
 								}
 
@@ -18790,13 +18789,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "first-int.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Macaque/lib/abstractions",
-				"patcherrelativepath" : "../patchers/Macaque/lib/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "fwdarrow_wob.svg",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
 				"patcherrelativepath" : "../media/Images/svg",
@@ -18913,13 +18905,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.xml2json.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "mouseEvents.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -18998,10 +18983,6 @@
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "sadam.rapidXML.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "selectInterval.maxpat",
