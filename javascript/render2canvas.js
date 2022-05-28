@@ -99,6 +99,7 @@ cursors.name = "cursors";
 var jcursors = {};
 var cursorAttr = {};
 var renderPage = 1;
+var renderAllowed = 1;
 var selectionRectCount = 0;
 var score = new Dict();
 var oldRange = "";
@@ -711,12 +712,18 @@ function text_measure(f, fs, t)
 			return mgraphics.text_measure(t);
 }
 
+function getRenderAllowed(b)
+{
+	renderAllowed = (b == "true") ? 1 : 0;
+}
+
 function textfont(tf)
 {
 	textFont = tf;
 	annotation.set("textFont", textFont);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
-	outlet(1, "setRenderAllowed", 1);
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
 
 function musicfont(mf)
@@ -724,7 +731,8 @@ function musicfont(mf)
 	musicFont = mf;
 	annotation.set("musicFont", musicFont);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
-	outlet(1, "setRenderAllowed", 1);
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
 
 function titlefont(tf)
@@ -732,7 +740,8 @@ function titlefont(tf)
 	titleFont = tf;
 	annotation.set("titleFont", titleFont);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
-	outlet(1, "setRenderAllowed", 1);
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
 
 function setUserClef(targetStaff, userClef)
@@ -758,7 +767,8 @@ function setUserClef(targetStaff, userClef)
 		if (annotation.contains("userclefs")) annotation.remove("userclefs");
 		annotation.replace("userclefs::" + userClef, clefDesigner.get(userClef));
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
-		outlet(1, "setRenderAllowed", 1);		
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 	}
 	else {
 		outlet(1, "setRenderAllowed", 0);		
@@ -772,7 +782,8 @@ function setUserClef(targetStaff, userClef)
 		annotation.replace("staff-" + targetStaff + "::clef", "default");
 		//if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
-		outlet(1, "setRenderAllowed", 1);		
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 		}
 }
 
@@ -780,14 +791,16 @@ function setAbbrInstrumentName(_staff, name)
 {
 		annotation.replace("staff-" + _staff + "::abbrInstrName", name);
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
-		outlet(1, "setRenderAllowed", 1);		
+		outlet(1, "getRenderAllowed");
+		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
 
 function setInstrumentNameVerticalPositionOffset(_staff, offset)
 {
 		annotation.replace("staff-" + _staff + "::instrumentNamePositionOffset", offset);
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
-		outlet(1, "setRenderAllowed", 1);		
+		outlet(1, "getRenderAllowed");
+		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
 
 function createStaffGroup(groupID, symbol)
@@ -801,7 +814,8 @@ function assignStaffToStaffGroup(_staff, sG)
 		if (typeof _staffGroup[sG] != "undefined") annotation.replace("staff-" + _staff + "::staffgroup", sG, ["none", "brace", "bracket"].indexOf(_staffGroup[sG]));
 		else annotation.replace("staff-" + _staff + "::staffgroup", sG, 0);
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
-		outlet(1, "setRenderAllowed", 1);			
+		outlet(1, "getRenderAllowed");
+		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
 
 function setToneDivision(targetStaff, toneDivision)

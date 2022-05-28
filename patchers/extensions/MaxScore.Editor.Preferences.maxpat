@@ -2738,7 +2738,7 @@
 						"note_value" : [ 2 ],
 						"overdrive" : [ 1 ],
 						"papersize" : [ 3 ],
-						"setComposer" : [ "lindsay", "vickery" ],
+						"setComposer" : [ "Xiao", "Fu" ],
 						"setCopyright" : [ 2022 ],
 						"setDurationalSpacingBase" : [ 0.7 ],
 						"setHoldScaler" : [ 1.0 ],
@@ -2751,7 +2751,7 @@
 						"setScoreTopMargin" : [ 15.0 ],
 						"setScoreTopMarginOfFirstPage" : [ 60.0 ],
 						"setSubtitle" : [ "Geburt", "Leben", "und", "Tod", "der", "Sterne" ],
-						"setTitle" : [ "JMSLMaxScore-26" ],
+						"setTitle" : [ "JMSLMaxScore-155" ],
 						"setTitleVisible" : [ 0 ],
 						"setWrap" : [ 1 ],
 						"showClefs" : [ 1 ],
@@ -2842,6 +2842,34 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial Bold",
+									"fontsize" : 10.0,
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 482.4000244140625, 109.0, 50.0, 20.0 ],
+									"text" : "deferlow"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial Bold",
+									"fontsize" : 10.0,
+									"id" : "obj-8",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 482.4000244140625, 76.0, 53.0, 20.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial Bold",
 									"fontsize" : 10.0,
@@ -3115,18 +3143,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-37",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 482.4000244140625, 55.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontname" : "Arial Bold",
 									"fontsize" : 10.0,
 									"id" : "obj-33",
@@ -3136,7 +3152,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 482.4000244140625, 145.0, 245.0, 31.0 ],
-									"restore" : [ 10146 ],
+									"restore" : [ 906127 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3501,7 +3517,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 482.4000244140625, 295.01239013671875, 224.0, 42.0 ],
-									"restore" : [ 35 ],
+									"restore" : [ 27 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3911,13 +3927,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-33", 0 ],
-									"source" : [ "obj-37", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-39", 3 ]
 								}
@@ -4000,6 +4009,20 @@
 									"destination" : [ "obj-17", 0 ],
 									"midpoints" : [ 241.71875, 269.0, 78.0, 269.0, 78.0, 496.0, 120.5, 496.0 ],
 									"source" : [ "obj-7", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-33", 0 ],
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -7144,7 +7167,7 @@
 					"presentation_rect" : [ 225.0, 65.0, 161.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "lindsay vickery",
+					"text" : "Xiao Fu",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setComposer",
 					"wordwrap" : 0
@@ -7162,10 +7185,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 560.0, 205.5, 114.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 225.0, 15.0, 161.0, 20.0 ],
+					"presentation_rect" : [ 225.0, 15.0, 225.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "JMSLMaxScore-26",
+					"text" : "JMSLMaxScore-155",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setTitle",
 					"wordwrap" : 0

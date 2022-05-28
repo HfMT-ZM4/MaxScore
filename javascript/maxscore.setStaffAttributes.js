@@ -623,7 +623,7 @@ function newEvent(data) {
         for (var i = 0; i < keys.length; i++) {
             var inf = info.get(keys[i]);
             if (inf[1] == StaffIndex) {
-				//outlet(0, "clearSelection");
+				outlet(0, "clearSelection");
 				outlet(0, "addNoteToSelection", inf);
                 list = getStaffNoteIntervalInfo(i);
                 if (list && list[9] != 0) {
@@ -662,12 +662,12 @@ function paste(data) {
         }
     }
     if (!cont) {
-    	restoreSelection();
+    	//restoreSelection();
 		return;
 	}
     outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
-    keys = info.getkeys();
+    //keys = info.getkeys();
 	retrieve(styletype);
 	if (newstyletype == "percussion") stylesPatcher.subpatcher().getnamed("percussion").subpatcher().getnamed("noteheadtransform").message(0);
 	if (f) stylesPatcher.subpatcher().getnamed("noteheadtransform").message(1);
