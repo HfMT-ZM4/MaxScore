@@ -646,11 +646,11 @@ function newEvent(data) {
 }
 
 function paste(data) {
-    getSelection();
-    addGraceNotes();
 	if (data.value == 118 || data.value == 101) f = 0;
 	else if (data.value == 86) f = 1;
 	else return;
+    getSelection();
+    addGraceNotes();
     // make sure there are events pasted in this track
     if (info.contains("0")) keys = info.getkeys();
 	else return;

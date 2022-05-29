@@ -714,7 +714,7 @@ function text_measure(f, fs, t)
 
 function getRenderAllowed(b)
 {
-	renderAllowed = (b == "true") ? 1 : 0;
+	renderAllowed = b;
 }
 
 function textfont(tf)
@@ -747,8 +747,9 @@ function titlefont(tf)
 function setUserClef(targetStaff, userClef)
 {
 	outlet(1, "getNumMeasures");			
+	outlet(1, "getRenderAllowed");
 	if (clefDesigner.contains(userClef)) {
-		outlet(1, "setRenderAllowed", 0);		
+		if (renderAllowed) outlet(1, "setRenderAllowed", 0);		
 		for (var i = -15; i < 16; i++) outlet(1, "setStaffLineVisible", targetStaff, i, 1); 
 		var selectedClef = clefDesigner.get(userClef);
     	for (var i = 0; i < numMeasures; i++) {
@@ -767,11 +768,10 @@ function setUserClef(targetStaff, userClef)
 		if (annotation.contains("userclefs")) annotation.remove("userclefs");
 		annotation.replace("userclefs::" + userClef, clefDesigner.get(userClef));
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
-	outlet(1, "getRenderAllowed");
-	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
+		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 	}
 	else {
-		outlet(1, "setRenderAllowed", 0);		
+		if (renderAllowed) outlet(1, "setRenderAllowed", 0);		
 		for (var i = -15; i < 16; i++) outlet(1, "setStaffLineVisible", targetStaff, i, 1); 
 		for (var i = 0; i < numMeasures; i++) {
         	outlet(1, "setExtendedStaffLinesAbove", i, targetStaff, 0);
@@ -782,8 +782,7 @@ function setUserClef(targetStaff, userClef)
 		annotation.replace("staff-" + targetStaff + "::clef", "default");
 		//if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
-	outlet(1, "getRenderAllowed");
-	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
+		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 		}
 }
 

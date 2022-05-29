@@ -681,13 +681,13 @@
 								"name" : "black on white",
 								"umenu" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 ,
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -760,19 +760,6 @@
 					}
 ,
 					"text" : "p staffgroup"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial Bold",
-					"fontsize" : 10.0,
-					"id" : "obj-88",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1334.5, 129.0, 82.0, 20.0 ],
-					"text" : "print #1staffattr"
 				}
 
 			}
@@ -898,7 +885,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "<none>", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32" ],
-							"parameter_longname" : "track[2]",
+							"parameter_longname" : "track[312]",
 							"parameter_mmax" : 32,
 							"parameter_shortname" : "track",
 							"parameter_type" : 2
@@ -995,7 +982,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_longname" : "live.text[58]",
+							"parameter_longname" : "live.text[312]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -1313,7 +1300,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "none", "brace", "bracket" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[56]",
+							"parameter_longname" : "live.menu[779]",
 							"parameter_mmax" : 2,
 							"parameter_shortname" : "bracket",
 							"parameter_type" : 2
@@ -1348,7 +1335,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.button[4]",
+							"parameter_longname" : "live.button[312]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.button",
 							"parameter_type" : 2
@@ -1476,7 +1463,7 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[19]",
+							"parameter_longname" : "live.toggle[1412]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -1596,7 +1583,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1286.75, 224.0, 214.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 6 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1848,7 +1835,7 @@
 					"htricolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-54",
 					"maxclass" : "number",
-					"maximum" : 1,
+					"maximum" : 19,
 					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -3613,13 +3600,13 @@
 												"name" : "AudioStatus_Menu",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 														"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
 
 												}
@@ -3631,12 +3618,12 @@
 												"name" : "Audiomix",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
-														"proportion" : 0.39
+														"proportion" : 0.39,
+														"type" : "gradient"
 													}
 
 												}
@@ -3650,13 +3637,13 @@
 													"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 													"bgcolor" : [ 0.904179, 0.895477, 0.842975, 0.56 ],
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 														"color2" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"color" : [ 0.475135, 0.293895, 0.251069, 1.0 ],
@@ -3710,13 +3697,13 @@
 													"accentcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
 													"bgcolor" : [ 0.901961, 0.901961, 0.901961, 1.0 ],
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 														"color2" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"clearcolor" : [ 1.0, 0.947758, 0.687073, 1.0 ],
@@ -3735,13 +3722,13 @@
 													"accentcolor" : [ 0.50764, 0.065317, 0.112129, 1.0 ],
 													"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"color" : [ 0.113725, 0.580392, 0.737255, 1.0 ],
@@ -3760,12 +3747,12 @@
 													"accentcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
 													"bgcolor" : [ 0.83978, 0.839941, 0.839753, 1.0 ],
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"color" : [ 0.839216, 0.839216, 0.839216, 1.0 ],
 														"color1" : [ 0.83978, 0.839941, 0.839753, 1.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"color" : [ 0.839216, 0.839216, 0.839216, 1.0 ],
-														"angle" : 270.0,
-														"proportion" : 0.39
+														"proportion" : 0.39,
+														"type" : "color"
 													}
 ,
 													"color" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
@@ -3975,12 +3962,12 @@
 												"default" : 												{
 													"accentcolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
-														"proportion" : 0.39
+														"proportion" : 0.39,
+														"type" : "gradient"
 													}
 ,
 													"patchlinecolor" : [ 0.439216, 0.74902, 0.254902, 0.898039 ],
@@ -3999,12 +3986,12 @@
 												"name" : "jpatcher002",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.32549, 0.345098, 0.372549, 0.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
-														"proportion" : 0.39
+														"proportion" : 0.39,
+														"type" : "color"
 													}
 ,
 													"clearcolor" : [ 0.32549, 0.345098, 0.372549, 0.0 ],
@@ -4022,13 +4009,13 @@
 													"accentcolor" : [ 0.619608, 0.0, 0.360784, 1.0 ],
 													"bgcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
 														"color" : [ 0.619608, 0.0, 0.360784, 1.0 ],
 														"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
 ,
 													"clearcolor" : [ 0.113725, 0.607843, 0.607843, 1.0 ],
@@ -4849,7 +4836,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1229.0, 82.0, 169.0, 20.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 19 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4906,7 +4893,7 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[20]",
+							"parameter_longname" : "live.toggle[1244]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -4940,7 +4927,7 @@
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[21]",
+							"parameter_longname" : "live.toggle[1410]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -4974,7 +4961,7 @@
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[23]",
+							"parameter_longname" : "live.toggle[1245]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -5059,7 +5046,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "0", "1", "2", "3", "4" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[33]",
+							"parameter_longname" : "live.menu[857]",
 							"parameter_mmax" : 4,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -5165,7 +5152,7 @@
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.toggle[22]",
+							"parameter_longname" : "live.toggle[1411]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
@@ -5195,7 +5182,7 @@
 					"presentation_rect" : [ 114.0, 4.0, 99.0, 19.0 ],
 					"readonly" : 1,
 					"rounded" : 0.0,
-					"text" : "MaxScoreIns-0",
+					"text" : "B1",
 					"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ],
 					"varname" : "instrument"
 				}
@@ -5281,7 +5268,7 @@
 							"parameter_enum" : [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ],
 							"parameter_initial" : [ 7.0 ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[32]",
+							"parameter_longname" : "live.menu[623]",
 							"parameter_mmax" : 15,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -5477,15 +5464,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-81", 0 ],
-					"order" : 1,
-					"source" : [ "obj-128", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-88", 0 ],
-					"order" : 0,
 					"source" : [ "obj-128", 0 ]
 				}
 
@@ -6226,13 +6204,13 @@
 				"name" : "black on white",
 				"umenu" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
