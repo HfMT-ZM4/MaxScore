@@ -873,6 +873,8 @@ function writeBarlines()
 	// get top and bottom staves for each staffgroup
 	for (var s = 0; s < groupcount; s++)
 		{
+		for (var measures in barlines) {	
+			for (var lines in barlines[measures]){
 					mathMin = sg[s][0];
 					if (mathMin < 0) {
 						mathMin = 0;
@@ -891,10 +893,6 @@ function writeBarlines()
 						mathMax = numStaves - 1;
 						error("wrong highest staff number n > " + (numStaves - 1),  "\n")
 						}
-		for (var measures in barlines) {	
-			for (var lines in barlines[measures]){
-					//post("mathMin/mathMax", mathMin, mathMax, numStaves, "\n");
-					//took out the mathMin/Max block and moved it above
 					//this doesn't seem very efficient to me as certain thing are being calculated for every staff line! Review code!!!
 					var _linesMin = [];
 					var _linesMinFiltered = [];
@@ -912,7 +910,8 @@ function writeBarlines()
 				var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 				var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
 				var _scoreLeftMargin = (_scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
-				if (_scoreLeftMargin == barlines[measures][lines][1]) SVGLines[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				//post("_scoreLeftMargin", JSON.stringify(barlines), mathMin, _scoreLeftMargin, barlines[measures][lines][1], dest, dest2, "\n");
+				if (_scoreLeftMargin == barlines[measures][lines][1] && numStaves > 1) SVGLines[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {
 					var mathMin = Math.min.apply(Math, brackets[br]);
 					if (mathMin < sg[s][0]) mathMin = sg[s][0];
