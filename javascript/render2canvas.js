@@ -1794,11 +1794,11 @@ function anything() {
 			}
 			if (format == "drawsocket"){
 			renderedMessages.set(rm++, msg);
+			//post("renderedMessages-1", renderedMessages.stringify(), "\n");					
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
 			if (e.contains("picster-element")) {
 				_key = e.get("picster-element[0]::key");
-				//post("e", _key, e.stringify(), "\n");					
 				svggroupflag = false;
 				var vals = [].concat(e.get("picster-element[0]::val"));
  				for (var i = 0; i < vals.length; i++){
@@ -2107,7 +2107,7 @@ function anything() {
 			//else msg[1] += 0.;
 			}
 		//KEEP TRACK OF OCCURENCES OF NOTES AND INTERVALS
-		if (msg[3]!= "Staff" && accList.indexOf(msgname) != -1){
+		if (msg[3]!= "Staff" && (accList.indexOf(msgname) != -1 || msgname.indexOf("rest") != -1)){
 			var Accidental = [];
 			if (msg[3] == "Note" && msg[7] != -1) { //Note
 				noteCount = msg[7];
