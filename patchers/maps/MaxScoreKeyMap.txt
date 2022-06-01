@@ -1,4 +1,5 @@
 8, delete;
+39, pasteAsGraceNotes;
 44, nextGraceNote;
 60, includeNextGraceNote;
 62, selectAllGraceNotes;

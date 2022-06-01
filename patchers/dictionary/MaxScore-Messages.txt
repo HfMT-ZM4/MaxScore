@@ -66,6 +66,7 @@ getJMSLRealTime, info - "returns current JMSL clock time." getJMSLRealTime;
 getJavaFreeMemMB, info - "returns current free memory available to Java virtual machine. Initial and maximum heap sizes can be set in max.java.config.txt located in ./Cycling '74/java or /Max.app/Contents/Resources/C74/java-classes" getJavaFreeMemMB;
 getLayoutShiftX, info "measure (int) staff (int) track (int) note (int)" "returns the amount by which a note is nudged to the left or right" "getLayoutShiftX 0 0 0 0";
 getLeftMargin, info "measure (int)" "returns the left margin for the specified measure" "getLeftMargin 0";
+getMaxGraceNoteRollbackTime, info - "traverses every note of score and accumulates the max rollback time required to  play gracenotes. Useful to set JMSL clock time advance." getMaxGraceNoteRollbackTime;
 getMeasureBoundingInfo, info "measure (int)" "returns x y width height marginX for measure bounding area" "getMeasureBoundingInfo 0";
 getMeasureInfo, info "measure (int)" "dumps measure info for given measure in XML format out of the second outlet" "getMeasureInfo 0";
 getMeasureWidth, info "measure (int)" "returns the width for the specified measure" "getMeasureWidth 0";
