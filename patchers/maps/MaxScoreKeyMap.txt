@@ -1,8 +1,8 @@
 8, delete;
-39, pasteAsGraceNotes;
 44, nextGraceNote;
 60, includeNextGraceNote;
 62, selectAllGraceNotes;
+92, pasteAsGraceNotes;
 98, beamTransform;
 97, selectAll;
 101, switch "setAccPref ACC_PREFER_FLAT" "setAccPref ACC_PREFER_SHARP";
