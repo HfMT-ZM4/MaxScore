@@ -829,8 +829,6 @@
 													"saved_object_attributes" : 													{
 														"autostart" : 1,
 														"defer" : 0,
-														"node_bin_path" : "",
-														"npm_bin_path" : "",
 														"watch" : 0
 													}
 ,
@@ -1223,7 +1221,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.0, 266.0, 470.0, 22.0 ],
-													"restore" : [ "scoreLayout", 3, 0, 3, 0.5, 800, 800 ],
+													"restore" : [ "scoreLayout", 4, 0, 3, 0.5, 1200, 1600 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -2076,7 +2074,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 302.28497314453125, 79.0, 541.0, 22.0 ],
-													"restore" : [ 0 ],
+													"restore" : [ 12 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -6539,7 +6537,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 397.0, 147.0, 492.0, 22.0 ],
-													"restore" : [ 842, 1191 ],
+													"restore" : [ 1200, 1600 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -9390,7 +9388,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 758.0, 89.0, 932.0, 766.0 ],
+						"rect" : [ 298.0, 87.0, 932.0, 766.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -9502,7 +9500,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 286.323450666666702, 496.0, 310.725201904762116, 35.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ 12 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -10081,7 +10079,7 @@
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_invisible" : 1,
-															"parameter_longname" : "dict[1]",
+															"parameter_longname" : "dict[3]",
 															"parameter_shortname" : "dict",
 															"parameter_type" : 3
 														}
@@ -11184,7 +11182,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 345.385444505859368, 677.833312999999976, 398.0, 22.0 ],
-													"restore" : [ "JMSLMaxScore-14" ],
+													"restore" : [ "Voids - MaxScore pitches, Part 1c.XML" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -14964,7 +14962,7 @@
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 199.0, 199.0, 361.0, 337.0 ],
+																		"rect" : [ 712.0, 234.0, 361.0, 337.0 ],
 																		"bglocked" : 0,
 																		"openinpresentation" : 0,
 																		"default_fontsize" : 12.0,
@@ -15010,7 +15008,7 @@
 																						}
 ,
 																						"classnamespace" : "box",
-																						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+																						"rect" : [ 59.0, 106.0, 591.0, 671.0 ],
 																						"bglocked" : 0,
 																						"openinpresentation" : 0,
 																						"default_fontsize" : 12.0,
@@ -15040,12 +15038,24 @@
 																						"assistshowspatchername" : 0,
 																						"boxes" : [ 																							{
 																								"box" : 																								{
+																									"id" : "obj-1",
+																									"maxclass" : "newobj",
+																									"numinlets" : 1,
+																									"numoutlets" : 1,
+																									"outlettype" : [ "" ],
+																									"patching_rect" : [ 101.0, 114.0, 107.0, 22.0 ],
+																									"text" : "prepend dictionary"
+																								}
+
+																							}
+, 																							{
+																								"box" : 																								{
 																									"id" : "obj-38",
 																									"maxclass" : "newobj",
 																									"numinlets" : 1,
 																									"numoutlets" : 2,
 																									"outlettype" : [ "bang", "" ],
-																									"patching_rect" : [ 69.5, 100.0, 29.5, 22.0 ],
+																									"patching_rect" : [ 69.5, 87.0, 50.5, 22.0 ],
 																									"text" : "t b l"
 																								}
 
@@ -15237,7 +15247,7 @@
 																									"numinlets" : 2,
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
-																									"patching_rect" : [ 69.5, 138.0, 201.0, 22.0 ],
+																									"patching_rect" : [ 69.5, 143.0, 201.0, 22.0 ],
 																									"text" : "get jmslscoredoc::score::0::measure"
 																								}
 
@@ -15269,6 +15279,13 @@
 																							}
  ],
 																						"lines" : [ 																							{
+																								"patchline" : 																								{
+																									"destination" : [ "obj-13", 1 ],
+																									"source" : [ "obj-1", 0 ]
+																								}
+
+																							}
+, 																							{
 																								"patchline" : 																								{
 																									"destination" : [ "obj-13", 0 ],
 																									"source" : [ "obj-12", 0 ]
@@ -15427,15 +15444,15 @@
 																							}
 , 																							{
 																								"patchline" : 																								{
-																									"destination" : [ "obj-12", 0 ],
-																									"source" : [ "obj-38", 0 ]
+																									"destination" : [ "obj-1", 0 ],
+																									"source" : [ "obj-38", 1 ]
 																								}
 
 																							}
 , 																							{
 																								"patchline" : 																								{
-																									"destination" : [ "obj-13", 1 ],
-																									"source" : [ "obj-38", 1 ]
+																									"destination" : [ "obj-12", 0 ],
+																									"source" : [ "obj-38", 0 ]
 																								}
 
 																							}
@@ -19280,7 +19297,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 171.0, 218.40478515625, 233.0, 22.0 ],
-																	"restore" : [ 0 ],
+																	"restore" : [ 1.0 ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -19313,7 +19330,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 146.0, 73.0, 385.0, 35.0 ],
-																	"restore" : [ 0 ],
+																	"restore" : [ 12 ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -20004,7 +20021,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 9.899963, 333.600035999999989, 398.0, 22.0 ],
-													"restore" : [ "JMSLMaxScore-14" ],
+													"restore" : [ "Voids - MaxScore pitches, Part 1c.XML" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -20729,7 +20746,7 @@
 														"valueof" : 														{
 															"parameter_enum" : [ "portrait", "landscape" ],
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.tab[74]",
+															"parameter_longname" : "live.tab[171]",
 															"parameter_mmax" : 1,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
@@ -20913,7 +20930,7 @@
 													"numinlets" : 4,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "bang", "int" ],
-													"patching_rect" : [ 354.9000244140625, 487.0, 214.0, 0.0 ],
+													"patching_rect" : [ 354.9000244140625, 487.0, 214.0, 22.0 ],
 													"text" : "create-pdf-macintosh #0",
 													"varname" : "make-pdf"
 												}

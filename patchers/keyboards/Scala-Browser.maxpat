@@ -5657,7 +5657,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1089.0, 289.0, 451.0, 449.0 ],
+						"rect" : [ 462.0, 340.0, 505.0, 449.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5687,13 +5687,28 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontface" : 0,
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 138.0, 184.5, 49.0, 22.0 ],
+									"text" : "route 0."
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-42",
 									"maxclass" : "button",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 340.0, 183.0, 24.0, 24.0 ]
+									"patching_rect" : [ 364.0, 183.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -5707,7 +5722,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 114.0, 237.0, 36.0, 20.0 ],
+									"patching_rect" : [ 168.0, 258.0, 36.0, 20.0 ],
 									"text" : "round"
 								}
 
@@ -6588,7 +6603,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 340.0, 227.0, 91.0, 22.0 ],
+									"patching_rect" : [ 364.0, 227.0, 91.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -6610,7 +6625,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "int", "bang" ],
-									"patching_rect" : [ 114.0, 298.0, 44.0, 20.0 ],
+									"patching_rect" : [ 168.0, 306.0, 44.0, 20.0 ],
 									"save" : [ "#N", "funbuff", 0, ";" ],
 									"text" : "funbuff"
 								}
@@ -6623,7 +6638,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 34.5, 343.0, 29.5, 22.0 ],
+									"patching_rect" : [ 80.5, 364.0, 29.5, 22.0 ],
 									"text" : "1"
 								}
 
@@ -6634,11 +6649,10 @@
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-13",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 34.5, 401.0, 64.0, 31.0 ],
+									"patching_rect" : [ 80.5, 409.0, 77.0, 20.0 ],
 									"text" : "send #1go"
 								}
 
@@ -6666,7 +6680,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 114.0, 328.0, 36.0, 20.0 ],
+									"patching_rect" : [ 168.0, 336.0, 36.0, 20.0 ],
 									"text" : "/ 100."
 								}
 
@@ -6681,7 +6695,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 114.0, 212.0, 37.0, 20.0 ],
+									"patching_rect" : [ 168.0, 233.0, 37.0, 20.0 ],
 									"text" : "* 100."
 								}
 
@@ -6695,7 +6709,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 114.0, 356.0, 163.0, 20.0 ],
+									"patching_rect" : [ 168.0, 364.0, 163.0, 20.0 ],
 									"text" : "setNoteDimension originalPitch $1"
 								}
 
@@ -6709,7 +6723,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 240.0, 120.0, 134.0, 22.0 ],
+									"patching_rect" : [ 264.0, 93.0, 134.0, 22.0 ],
 									"text" : "sprintf send %stoScore"
 								}
 
@@ -6722,7 +6736,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 114.0, 401.0, 81.0, 20.0 ],
+									"patching_rect" : [ 168.0, 409.0, 81.0, 20.0 ],
 									"text" : "forward toScore"
 								}
 
@@ -6736,7 +6750,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 114.0, 120.0, 117.0, 22.0 ],
+									"patching_rect" : [ 138.0, 93.0, 117.0, 22.0 ],
 									"text" : "sprintf %sfromScore"
 								}
 
@@ -6762,7 +6776,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 114.0, 151.5, 58.0, 20.0 ],
+									"patching_rect" : [ 138.0, 124.5, 58.0, 20.0 ],
 									"text" : "prepend id"
 								}
 
@@ -6775,9 +6789,9 @@
 									"id" : "obj-87",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 114.0, 182.5, 215.0, 22.0 ],
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 138.0, 158.5, 215.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
@@ -6796,12 +6810,28 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 114.0, 17.0, 30.0, 30.0 ]
+									"patching_rect" : [ 138.0, 17.0, 30.0, 30.0 ]
 								}
 
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"order" : 0,
+									"source" : [ "obj-1", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"order" : 1,
+									"source" : [ "obj-1", 1 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 0 ],
 									"source" : [ "obj-10", 0 ]
@@ -6846,7 +6876,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-26", 0 ],
-									"midpoints" : [ 349.5, 273.0, 123.5, 273.0 ],
+									"midpoints" : [ 373.5, 289.0, 177.5, 289.0 ],
 									"source" : [ "obj-32", 0 ]
 								}
 
@@ -6874,7 +6904,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-87", 0 ]
 								}
 
@@ -6888,16 +6918,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
-									"order" : 1,
-									"source" : [ "obj-89", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-87", 0 ],
-									"order" : 0,
 									"source" : [ "obj-89", 0 ]
 								}
 
@@ -7338,7 +7359,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-1",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
@@ -7849,7 +7869,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-71",
-					"items" : [ "cet54a.scl", ",", "tuneable3.scl" ],
+					"items" : [ "12-17.scl", ",", "12-19.scl", ",", "12-22.scl", ",", "12-22h.scl", ",", "12-27.scl", ",", "12-31.scl", ",", "12-31_11.scl", ",", "12-43.scl", ",", "12-46.scl", ",", "12-46p.scl", ",", "12-50.scl", ",", "12-79mos159et.scl", ",", "12-yarman24a.scl", ",", "12-yarman24b.scl", ",", "12-yarman24c.scl", ",", "12-yarman24d.scl", ",", "abell1.scl", ",", "abell2.scl", ",", "abell3.scl", ",", "abell4.scl", ",", "abell5.scl", ",", "abell6.scl", ",", "abell7.scl", ",", "abell8.scl", ",", "abell9.scl", ",", "agricola.scl", ",", "agricola_p.scl", ",", "al-farabi_div2.scl", ",", "alembert.scl", ",", "alembert2.scl", ",", "alves_12.scl", ",", "ammerbach.scl", ",", "ammerbach1.scl", ",", "ammerbach2.scl", ",", "arabic_bastanikar_on_b.scl", ",", "arabic_huzam_on_e.scl", ",", "arabic_segah-mustaar_on_e.scl", ",", "arch_mult.scl", ",", "arch_ptol.scl", ",", "arch_ptol2.scl", ",", "arch_sept.scl", ",", "archytas12.scl", ",", "archytas12sync.scl", ",", "ares12.scl", ",", "ares12opt.scl", ",", "ariel1.scl", ",", "ariel2.scl", ",", "ariel3.scl", ",", "aron-neidhardt.scl", ",", "artusi.scl", ",", "artusi2.scl", ",", "artusi3.scl", ",", "atomschis.scl", ",", "augdimhextrug.scl", ",", "augdommean.scl", ",", "avicenna_diff.scl", ",", "awraamoff.scl", ",", "b12_17.scl", ",", "bagpipe1.scl", ",", "bailey_well.scl", ",", "bailey_well2.scl", ",", "bailey_well3.scl", ",", "banchieri.scl", ",", "barca.scl", ",", "barca_a.scl", ",", "barnes.scl", ",", "barnes2.scl", ",", "barton.scl", ",", "bedos.scl", ",", "bellingwolde.scl", ",", "bellingwolde_org.scl", ",", "bemetzrieder2.scl", ",", "bendeler-b.scl", ",", "bendeler.scl", ",", "bendeler1.scl", ",", "bendeler2.scl", ",", "bendeler3.scl", ",", "bermudo-v.scl", ",", "bermudo.scl", ",", "bermudo2.scl", ",", "bethisy.scl", ",", "biezen.scl", ",", "biezen2.scl", ",", "biezen3.scl", ",", "biezen_chaumont.scl", ",", "biggulp-bunya.scl", ",", "biggulp.scl", ",", "bigler12.scl", ",", "bihex-top.scl", ",", "bihex540.scl", ",", "bihexany-octoid.scl", ",", "bihexany.scl", ",", "bihexanymyna.scl", ",", "billeter.scl", ",", "billeter2.scl", ",", "blueji-cataclysmic.scl", ",", "bluesrag.scl", ",", "bobrova.scl", ",", "bohlen_12.scl", ",", "boomsliter.scl", ",", "bossart-muri.scl", ",", "bossart1.scl", ",", "bossart2.scl", ",", "bossart3.scl", ",", "boulliau.scl", ",", "brac.scl", ",", "breed-bluesji.scl", ",", "breed.scl", ",", "breedball3.scl", ",", "breedt2.scl", ",", "breedt3.scl", ",", "bremmer.scl", ",", "bremmer_ebvt1.scl", ",", "bremmer_ebvt2.scl", ",", "bremmer_ebvt3.scl", ",", "broadwood.scl", ",", "broadwood2.scl", ",", "broadwood3.scl", ",", "broeckaert-pbp.scl", ",", "bruder-vier.scl", ",", "bruder.scl", ",", "burt1.scl", ",", "burt10.scl", ",", "burt11.scl", ",", "burt12.scl", ",", "burt13.scl", ",", "burt14.scl", ",", "burt15.scl", ",", "burt16.scl", ",", "burt2.scl", ",", "burt20.scl", ",", "burt3.scl", ",", "burt4.scl", ",", "burt5.scl", ",", "burt6.scl", ",", "burt7.scl", ",", "burt8.scl", ",", "burt9.scl", ",", "burt_fibo.scl", ",", "buurman.scl", ",", "c225cp.scl", ",", "canton.scl", ",", "cantonpenta.scl", ",", "capurso.scl", ",", "carlos_harm.scl", ",", "carlos_super.scl", ",", "cet100a.scl", ",", "cet100b.scl", ",", "cet11.scl", ",", "cet158.scl", ",", "cet258.scl", ",", "cet69.scl", ",", "cet97.scl", ",", "chahargah.scl", ",", "chalmers_ji1.scl", ",", "chalmers_ji2.scl", ",", "chalmers_ji3.scl", ",", "chalmers_ji4.scl", ",", "chaumont.scl", ",", "chaumont2.scl", ",", "chin_12.scl", ",", "chin_bianzhong.scl", ",", "chin_bianzhong2a.scl", ",", "chin_bianzhong2b.scl", ",", "chin_chime.scl", ",", "chin_ching.scl", ",", "chin_lu.scl", ",", "chin_lu2.scl", ",", "chin_lu3.scl", ",", "chin_lu3a.scl", ",", "chin_lu4.scl", ",", "chin_lu5.scl", ",", "chin_shierlu.scl", ",", "choquel.scl", ",", "circos.scl", ",", "classr.scl", ",", "coleman10.scl", ",", "coleman11.scl", ",", "coleman16.scl", ",", "coleman4.scl", ",", "collapsar.scl", ",", "colonna1.scl", ",", "colonna2.scl", ",", "cons15.scl", ",", "corrette.scl", ",", "corrette2.scl", ",", "corrette3.scl", ",", "coul_12.scl", ",", "coul_12a.scl", ",", "coul_12sup.scl", ",", "couperin.scl", ",", "couperin_org.scl", ",", "cruciform.scl", ",", "cw12_11.scl", ",", "dan_seman.scl", ",", "david7.scl", ",", "de_caus.scl", ",", "dekany-cs.scl", ",", "dent-yn-rwt.scl", ",", "dent.scl", ",", "dent2.scl", ",", "dent3.scl", ",", "dent4.scl", ",", "dent_19otti.scl", ",", "dent_berger.scl", ",", "dent_mean7.scl", ",", "diamisty.scl", ",", "diaphonic_12.scl", ",", "diaphonic_12a.scl", ",", "divine9.scl", ",", "dkring1.scl", ",", "dkring2.scl", ",", "dkring3.scl", ",", "dkring4.scl", ",", "dodeceny.scl", ",", "domdimpajinjschis.scl", ",", "dorian_schl.scl", ",", "douwes.scl", ",", "dowland_12.scl", ",", "dudon_12_of_19-ht.scl", ",", "dudon_19-l_rocky_hwt.scl", ",", "dudon_3-limit_with429.scl", ",", "dudon_afshari.scl", ",", "dudon_aka.scl", ",", "dudon_aksand.scl", ",", "dudon_aluna.scl", ",", "dudon_amlak.scl", ",", "dudon_appalachian.scl", ",", "dudon_are-are_tapping.scl", ",", "dudon_are-are_women1.scl", ",", "dudon_are-are_women2.scl", ",", "dudon_armadillo.scl", ",", "dudon_atlantis.scl", ",", "dudon_aulos.scl", ",", "dudon_baka.scl", ",", "dudon_bala_ribbon.scl", ",", "dudon_balafon_semifo.scl", ",", "dudon_balasept-above.scl", ",", "dudon_balasept-under.scl", ",", "dudon_bambara.scl", ",", "dudon_bayati_in_d.scl", ",", "dudon_baziguzuk.scl", ",", "dudon_bhairav.scl", ",", "dudon_bhairavi.scl", ",", "dudon_bhatiyar.scl", ",", "dudon_bhavapriya.scl", ",", "dudon_brazil.scl", ",", "dudon_burma.scl", ",", "dudon_buzurg.scl", ",", "dudon_byzantine.scl", ",", "dudon_chandrakaus.scl", ",", "dudon_chiffonie.scl", ",", "dudon_chromatic_subh.scl", ",", "dudon_coherent_shrutis.scl", ",", "dudon_cometslendro1.scl", ",", "dudon_cometslendro2.scl", ",", "dudon_comptine.scl", ",", "dudon_comptine_h3.scl", ",", "dudon_country_blues.scl", ",", "dudon_countrysongs.scl", ",", "dudon_crying_commas.scl", ",", "dudon_darbari.scl", ",", "dudon_diatess.scl", ",", "dudon_didymus.scl", ",", "dudon_egyptian_rast.scl", ",", "dudon_evan_thai.scl", ",", "dudon_flamenca.scl", ",", "dudon_fong.scl", ",", "dudon_gayakapriya.scl", ",", "dudon_gnawa-pelog.scl", ",", "dudon_golden_h7eb.scl", ",", "dudon_gulu-nem.scl", ",", "dudon_harm_minor.scl", ",", "dudon_harry.scl", ",", "dudon_hawaiian.scl", ",", "dudon_hiroyoshi.scl", ",", "dudon_homayun.scl", ",", "dudon_hoomi.scl", ",", "dudon_ifbis.scl", ",", "dudon_isrep.scl", ",", "dudon_jamlak.scl", ",", "dudon_jazz.scl", ",", "dudon_jobim.scl", ",", "dudon_jog.scl", ",", "dudon_joged-bumbung.scl", ",", "dudon_kalyana.scl", ",", "dudon_kanakangi.scl", ",", "dudon_kellner_eb.scl", ",", "dudon_kirvanti.scl", ",", "dudon_kora-chimere.scl", ",", "dudon_kora_snd.scl", ",", "dudon_kumoyoshi_19-l.scl", ",", "dudon_lakota.scl", ",", "dudon_liane.scl", ",", "dudon_lucie.scl", ",", "dudon_madhuvanti.scl", ",", "dudon_mahur.scl", ",", "dudon_mandinka.scl", ",", "dudon_marovany.scl", ",", "dudon_marva.scl", ",", "dudon_meancaline.scl", ",", "dudon_melkis.scl", ",", "dudon_melkis_3f.scl", ",", "dudon_meso-iph12.scl", ",", "dudon_michemine.scl", ",", "dudon_mougi.scl", ",", "dudon_mounos.scl", ",", "dudon_nan-kouan.scl", ",", "dudon_napolitan.scl", ",", "dudon_natte.scl", ",", "dudon_nung-phan1.scl", ",", "dudon_nung-phan2.scl", ",", "dudon_okna_hwt.scl", ",", "dudon_over-under_ht.scl", ",", "dudon_pelog_35.scl", ",", "dudon_pelog_59.scl", ",", "dudon_pelog_ambi.scl", ",", "dudon_piphat.scl", ",", "dudon_piphat_min.scl", ",", "dudon_purvi.scl", ",", "dudon_quechua.scl", ",", "dudon_raph.scl", ",", "dudon_rast-mohajira.scl", ",", "dudon_rast_matrix.scl", ",", "dudon_rebab.scl", ",", "dudon_s-n-buzurg.scl", ",", "dudon_saba-c.scl", ",", "dudon_sapaan.scl", ",", "dudon_saqqara.scl", ",", "dudon_satara.scl", ",", "dudon_saung_gauk.scl", ",", "dudon_segah.scl", ",", "dudon_segah_subh.scl", ",", "dudon_septimal_2.scl", ",", "dudon_septimal_3.scl", ",", "dudon_shaku.scl", ",", "dudon_shri_rag.scl", ",", "dudon_shur.scl", ",", "dudon_siam_97.scl", ",", "dudon_simdek.scl", ",", "dudon_sireine_f.scl", ",", "dudon_skisni.scl", ",", "dudon_skisni_hwt.scl", ",", "dudon_slendra.scl", ",", "dudon_slendro_m-mean.scl", ",", "dudon_slendro_matrix.scl", ",", "dudon_smallest_numbers.scl", ",", "dudon_soria.scl", ",", "dudon_soria12.scl", ",", "dudon_sumer.scl", ",", "dudon_synch12.scl", ",", "dudon_tango.scl", ",", "dudon_tibet.scl", ",", "dudon_tielenka.scl", ",", "dudon_timbila.scl", ",", "dudon_tit_fleur.scl", ",", "dudon_todi.scl", ",", "dudon_valiha.scl", ",", "dudon_werckmeister3_eb.scl", ",", "dudon_zurna.scl", ",", "duncan.scl", ",", "duoden12.scl", ",", "duodene.scl", ",", "duodene14-18-21.scl", ",", "duodene3-11_9.scl", ",", "duodene6-7-9.scl", ",", "duodene_min.scl", ",", "duodene_r-45.scl", ",", "duodene_r45.scl", ",", "duodene_skew.scl", ",", "duodene_t.scl", ",", "duodene_w.scl", ",", "duohex.scl", ",", "dwarf12_11.scl", ",", "dwarf12_7.scl", ",", "dwarf12marv.scl", ",", "efg33355.scl", ",", "efg33377.scl", ",", "efg33555.scl", ",", "efg3357.scl", ",", "efg33777.scl", ",", "efg3557.scl", ",", "efg3577.scl", ",", "efg37711.scl", ",", "efg55577.scl", ",", "efg55777.scl", ",", "eikobag.scl", ",", "ekring1.scl", ",", "ekring2.scl", ",", "ekring3.scl", ",", "ekring4.scl", ",", "ekring5.scl", ",", "ekring5bp.scl", ",", "ekring6.scl", ",", "ekring7.scl", ",", "ekring7bp.scl", ",", "elevenplus.scl", ",", "elf12f.scl", ",", "elfkeenanismic12.scl", ",", "elfleapday12f.scl", ",", "elfmagic12.scl", ",", "elfmiracle12.scl", ",", "ellis.scl", ",", "ellis_eb.scl", ",", "ellis_harm.scl", ",", "ellis_mteb.scl", ",", "ellis_r.scl", ",", "erlangen.scl", ",", "erlangen2.scl", ",", "erlich13.scl", ",", "escot.scl", ",", "et-mix6.scl", ",", "euler.scl", ",", "even12a.scl", ",", "even12b.scl", ",", "farey12_101.scl", ",", "farey12_116.scl", ",", "farey12_65.scl", ",", "farey12_80.scl", ",", "finnamore_7.scl", ",", "finnamore_7a.scl", ",", "fisher.scl", ",", "fj-12tet.scl", ",", "flavel.scl", ",", "fogliano1.scl", ",", "fogliano2.scl", ",", "fokker_12.scl", ",", "fokker_12a.scl", ",", "fokker_12b.scl", ",", "fokker_12c.scl", ",", "fokker_12m.scl", ",", "fokker_12t.scl", ",", "fokker_12t2.scl", ",", "foote.scl", ",", "foote2.scl", ",", "fortuna11.scl", ",", "fortuna_a1.scl", ",", "fortuna_a2.scl", ",", "fortuna_bag.scl", ",", "fortuna_eth.scl", ",", "fortuna_sheng.scl", ",", "fortune.scl", ",", "francis_924-1.scl", ",", "francis_924-2.scl", ",", "francis_924-3.scl", ",", "francis_924-4.scl", ",", "francis_r12-14p.scl", ",", "francis_r12-2.scl", ",", "francis_r2-1.scl", ",", "francis_r2-14p.scl", ",", "francis_seal.scl", ",", "francis_suppig.scl", ",", "freiberg.scl", ",", "freivald_sub.scl", ",", "fribourg.scl", ",", "galilei.scl", ",", "gamelan_udan.scl", ",", "ganassi.scl", ",", "genovese_12.scl", ",", "gluck.scl", ",", "goebel.scl", ",", "grady11.scl", ",", "grady_centaur.scl", ",", "grammateus.scl", ",", "graupner.scl", ",", "groenewald.scl", ",", "groenewald_bach.scl", ",", "h12_24.scl", ",", "hahn_7.scl", ",", "hahn_g.scl", ",", "hahnmaxr.scl", ",", "hamilton.scl", ",", "hamilton_jc.scl", ",", "hamilton_jc2.scl", ",", "hammond12.scl", ",", "handblue.scl", ",", "handel.scl", ",", "handel2.scl", ",", "harm12.scl", ",", "harm12_2.scl", ",", "harm15a.scl", ",", "harm20.scl", ",", "harm24.scl", ",", "harm_perkis.scl", ",", "harmd-phr.scl", ",", "harmjc-15.scl", ",", "harmjc-17-2.scl", ",", "harmjc-17.scl", ",", "harmjc-19-2.scl", ",", "harmjc-19.scl", ",", "harmjc-21.scl", ",", "harmjc-23-2.scl", ",", "harmjc-23.scl", ",", "harmjc-25.scl", ",", "harmjc-27.scl", ",", "harmjc-hypod16.scl", ",", "harmjc-hypol20.scl", ",", "harmjc-hypop18.scl", ",", "harmjc-lydian13.scl", ",", "harmjc-mix14.scl", ",", "harmjc-phryg12.scl", ",", "harmonical.scl", ",", "harmonical_up.scl", ",", "harmsub16.scl", ",", "harrison_cinna.scl", ",", "harrison_slye.scl", ",", "harrison_songs.scl", ",", "harrisonj.scl", ",", "harrisonm_rev.scl", ",", "hawkes.scl", ",", "hawkes2.scl", ",", "hawkes3.scl", ",", "hen12.scl", ",", "heun.scl", ",", "hexany2.scl", ",", "hexany3.scl", ",", "hexany4.scl", ",", "hexany5.scl", ",", "hexany6.scl", ",", "hexany7.scl", ",", "hexany8.scl", ",", "hexany_cl.scl", ",", "hexanys.scl", ",", "hexanys2.scl", ",", "hexy.scl", ",", "highschool1-rodan.scl", ",", "highschool2-miracle.scl", ",", "hinsz_gr.scl", ",", "hirashima.scl", ",", "hochgartz.scl", ",", "holder.scl", ",", "holder2.scl", ",", "hummel.scl", ",", "hummel2.scl", ",", "hypo_chrom.scl", ",", "hypo_diat.scl", ",", "hypo_enh.scl", ",", "hypod_chrom.scl", ",", "hypod_diat.scl", ",", "hypod_enh.scl", ",", "hypop_chrom.scl", ",", "hypop_diat.scl", ",", "hypop_enh.scl", ",", "indian-hrdaya1.scl", ",", "indian-hrdaya2.scl", ",", "indian-invrot.scl", ",", "indian-vina.scl", ",", "indian-vina3.scl", ",", "indian_12.scl", ",", "indian_12c.scl", ",", "indian_rot.scl", ",", "interbartolo1.scl", ",", "interbartolo2.scl", ",", "interbartolo3.scl", ",", "italian.scl", ",", "iter21.scl", ",", "janke1.scl", ",", "janke2.scl", ",", "janke3.scl", ",", "janke4.scl", ",", "janke5.scl", ",", "janke6.scl", ",", "janke7.scl", ",", "ji_12.scl", ",", "ji_12a.scl", ",", "ji_12b.scl", ",", "ji_12coh.scl", ",", "jioct12.scl", ",", "jira1.scl", ",", "jira2.scl", ",", "jobin-bach.scl", ",", "johnson-secor_rwt.scl", ",", "johnson_eb.scl", ",", "johnson_ratwell.scl", ",", "johnson_temp.scl", ",", "johnston.scl", ",", "johnston_6-qt_row.scl", ",", "jonsson1.scl", ",", "jonsson2.scl", ",", "jorgensen.scl", ",", "jousse.scl", ",", "jousse2.scl", ",", "kayolonian_12.scl", ",", "keenan_mt.scl", ",", "keenan_t9.scl", ",", "keesred12_5.scl", ",", "kelletat.scl", ",", "kelletat1.scl", ",", "kellner.scl", ",", "kellner_eb.scl", ",", "kellner_org.scl", ",", "kellners.scl", ",", "kepler1.scl", ",", "kepler2.scl", ",", "kepler3.scl", ",", "kilroy.scl", ",", "kirn-stan.scl", ",", "kirnberger.scl", ",", "kirnberger1.scl", ",", "kirnberger2.scl", ",", "kirnberger3.scl", ",", "kirnberger3s.scl", ",", "kirnberger3v.scl", ",", "klais.scl", ",", "klonaris.scl", ",", "kolinski.scl", ",", "koval.scl", ",", "koval2.scl", ",", "koval3.scl", ",", "koval4.scl", ",", "koval5.scl", ",", "koval6.scl", ",", "koval7.scl", ",", "koval8.scl", ",", "koval9.scl", ",", "krousseau2.scl", ",", "kurzweil_arab.scl", ",", "kurzweil_ji.scl", ",", "kurzweil_pelogh.scl", ",", "kurzweil_pelogm.scl", ",", "kurzweil_slen.scl", ",", "kurzweil_tibet.scl", ",", "lambert.scl", ",", "lara.scl", ",", "leftpistol.scl", ",", "legros1.scl", ",", "legros2.scl", ",", "lehman1.scl", ",", "lehman2.scl", ",", "lehman3.scl", ",", "lemba12.scl", ",", "leusden.scl", ",", "levens.scl", ",", "levens2.scl", ",", "ligon.scl", ",", "ligon2.scl", ",", "lindley-ortgies1.scl", ",", "lindley-ortgies2.scl", ",", "lindley1.scl", ",", "lindley2.scl", ",", "lindley_ea.scl", ",", "lindley_sf.scl", ",", "linemarv12.scl", ",", "locomotive.scl", ",", "london-baroque.scl", ",", "lorenzi-m.scl", ",", "lorenzi.scl", ",", "lorina.scl", ",", "lublin.scl", ",", "lucktenberg.scl", ",", "lucy01and07tuned0b5s.scl", ",", "lucy02and14tuned5b0s.scl", ",", "lucy03tuned4b1s.scl", ",", "lucy04and21tuned3b2s.scl", ",", "lucy05tuned2b3s.scl", ",", "lucy06tuned1b4s.scl", ",", "lucy08tuned0b6s.scl", ",", "lucy09tuned0b7s.scl", ",", "lucy10tuned0b8s.scl", ",", "lucy11tuned0b9s.scl", ",", "lucy13Gxtuned0b11s.scl", ",", "lucy15tuned6b0s.scl", ",", "lucy16tuned7b0s.scl", ",", "lucy18Bbbtuned9b0s.scl", ",", "lucy19Bbbtuned10b0s.scl", ",", "lucy20Bbbtuned11b0s.scl", ",", "lucy22tuned4bGs.scl", ",", "lucy23tuned4bDs.scl", ",", "lucy24tuned4bCs.scl", ",", "lucy25tunedAb4s.scl", ",", "lucy26tunedGb4s.scl", ",", "lucy27tunedEb5s.scl", ",", "lucy28tunedDb4s.scl", ",", "lucy29tunedBbAbGbCsDs.scl", ",", "lucy30tunedBbEbGbCsGs.scl", ",", "lucy31tuned3b2sCsAs.scl", ",", "lucy32tuned3b2sDsFs.scl", ",", "lucy33tuned3b2sDsGs.scl", ",", "lucy34tuned3b2sDsAs.scl", ",", "lucy35tuned3b2sFsGs.scl", ",", "lucy36tuned3b2sFsAs.scl", ",", "lucy37tuned3b2sGsAs.scl", ",", "lucy38tuned2b3sDbEb.scl", ",", "lucy39tuned2b3sDbGb.scl", ",", "lucy40tuned2b3sDbAb.scl", ",", "lucy41tuned2b3sDbBb.scl", ",", "lucy42tuned2b3sEbGb.scl", ",", "lucy43tuned2b3sEbAb.scl", ",", "lucy44tuned2b3sGbAb.scl", ",", "lucy45tuned2b3sGbBb.scl", ",", "lucy46tuned2b3sAbBb.scl", ",", "lucy50Bbbtuned6b1sFs.scl", ",", "lucy51Bbbtuned3b3sBbEbDbBbbFsGsFx.scl", ",", "lucy52tuned4b1sAs.scl", ",", "lucy53tuned4b2sCsFCb.scl", ",", "lucy55tuned3b3sCxFb.scl", ",", "lucy56tuned4b3sEs.scl", ",", "lucy57tuned7b0sAbbGbb.scl", ",", "lucy58tuned5b2sEs.scl", ",", "lucy59Bbbtuned9b0sE.scl", ",", "lucy60tuned3b4sEs.scl", ",", "lucy61Bbbtuned8b1s.scl", ",", "lucy62tuned4b3sBbbEs.scl", ",", "lucy63tuned5b0s.scl", ",", "lucy64tuned7b0snoF.scl", ",", "lucy65tuned2b3s.scl", ",", "lumma5.scl", ",", "lumma_12_fun.scl", ",", "lumma_12_moh-ha-ha.scl", ",", "lumma_12_strangeion.scl", ",", "lumma_12p5.scl", ",", "lumma_12p6.scl", ",", "lumma_12p7.scl", ",", "lumma_5151.scl", ",", "lumma_al1.scl", ",", "lumma_al2.scl", ",", "lumma_al3.scl", ",", "lumma_al4.scl", ",", "lumma_al5.scl", ",", "lumma_al6.scl", ",", "lumma_al7.scl", ",", "lumma_magic.scl", ",", "lumma_prism.scl", ",", "lumma_prismkeen.scl", ",", "lumma_prismt.scl", ",", "lumma_stelhex.scl", ",", "lumma_synchtrines+2.scl", ",", "lumma_wt19.scl", ",", "maihingen.scl", ",", "major_clus.scl", ",", "major_wing.scl", ",", "major_wing_lesfip.scl", ",", "makoyan.scl", ",", "malcolm.scl", ",", "malcolm2.scl", ",", "malcolm_ap.scl", ",", "malcolme.scl", ",", "malcolme2.scl", ",", "malcolms.scl", ",", "malerbi.scl", ",", "malgache.scl", ",", "malgache1.scl", ",", "malgache2.scl", ",", "mander.scl", ",", "marissing.scl", ",", "marpurg-1.scl", ",", "marpurg-a.scl", ",", "marpurg-b.scl", ",", "marpurg-c.scl", ",", "marpurg-d.scl", ",", "marpurg-e.scl", ",", "marpurg-g.scl", ",", "marpurg-t1.scl", ",", "marpurg-t11.scl", ",", "marpurg-t12.scl", ",", "marpurg-t1a.scl", ",", "marpurg-t2.scl", ",", "marpurg-t2a.scl", ",", "marpurg-t3.scl", ",", "marpurg-t4.scl", ",", "marpurg-t5.scl", ",", "marpurg-t7.scl", ",", "marpurg-t8.scl", ",", "marpurg-t9.scl", ",", "marpurg.scl", ",", "marpurg1.scl", ",", "marpurg3.scl", ",", "marsh.scl", ",", "marvel12.scl", ",", "marveldene.scl", ",", "maunder1.scl", ",", "maunder2.scl", ",", "mavila12.scl", ",", "mcclain.scl", ",", "mclaren_rath1.scl", ",", "mclaren_rath2.scl", ",", "mean10.scl", ",", "mean11.scl", ",", "mean13.scl", ",", "mean14.scl", ",", "mean14a.scl", ",", "mean16.scl", ",", "mean17.scl", ",", "mean18.scl", ",", "mean19.scl", ",", "mean19r.scl", ",", "mean19t.scl", ",", "mean23.scl", ",", "mean23six.scl", ",", "mean25.scl", ",", "mean26.scl", ",", "mean27.scl", ",", "mean29.scl", ",", "mean2nine.scl", ",", "mean2sev.scl", ",", "mean2seveb.scl", ",", "mean2sevr.scl", ",", "mean4nine.scl", ",", "meanbrat32.scl", ",", "meanbrat32a.scl", ",", "meanbratm32.scl", ",", "meaneb1071.scl", ",", "meaneb1071a.scl", ",", "meaneb341.scl", ",", "meaneb371.scl", ",", "meaneb371a.scl", ",", "meaneb381.scl", ",", "meaneb451.scl", ",", "meaneb471.scl", ",", "meaneb471a.scl", ",", "meaneb471b.scl", ",", "meaneb472.scl", ",", "meaneb472a.scl", ",", "meaneb591.scl", ",", "meaneb732.scl", ",", "meaneb732a.scl", ",", "meaneb742.scl", ",", "meaneb742a.scl", ",", "meaneb781.scl", ",", "meaneb891.scl", ",", "meaneight.scl", ",", "meaneightp.scl", ",", "meanfifth.scl", ",", "meanfifth2.scl", ",", "meanfifth_french.scl", ",", "meanfiftheb.scl", ",", "meangolden.scl", ",", "meangolden_top.scl", ",", "meanhalf.scl", ",", "meanhar2.scl", ",", "meanhar3.scl", ",", "meanharris.scl", ",", "meanhskl.scl", ",", "meanmalc.scl", ",", "meannine.scl", ",", "meannkleis.scl", ",", "meanpi.scl", ",", "meanpi2.scl", ",", "meanpkleis.scl", ",", "meanquar.scl", ",", "meanquareb.scl", ",", "meanquarm23.scl", ",", "meanquarr.scl", ",", "meanquarw2.scl", ",", "meanquarw3.scl", ",", "meanreverse.scl", ",", "meansabat.scl", ",", "meanschis.scl", ",", "meanschis7.scl", ",", "meansept.scl", ",", "meansev.scl", ",", "meansev2.scl", ",", "meanseveb.scl", ",", "meansixth.scl", ",", "meansixtheb.scl", ",", "meansixthm.scl", ",", "meansixthm2.scl", ",", "meansixthpm.scl", ",", "meansixthso.scl", ",", "meanstr.scl", ",", "meanten.scl", ",", "meanthird.scl", ",", "meanthirdeb.scl", ",", "meanthirdp.scl", ",", "meanvar1.scl", ",", "meanvar2.scl", ",", "meanvar3.scl", ",", "meanvar4.scl", ",", "meister-p12.scl", ",", "meister-s4.scl", ",", "meister-s5.scl", ",", "meister-synt.scl", ",", "meister-t.scl", ",", "mercadier.scl", ",", "mercadier2.scl", ",", "merrick.scl", ",", "mersen_l1.scl", ",", "mersen_l2.scl", ",", "mersen_s1.scl", ",", "mersen_s2.scl", ",", "mersenmt1.scl", ",", "mersenmt2.scl", ",", "mersenne-t.scl", ",", "met24c-cs12-archytan-maqam_cup.scl", ",", "mgr12.scl", ",", "miller7.scl", ",", "miller_12.scl", ",", "miller_12a.scl", ",", "miller_12r.scl", ",", "miller_ar1.scl", ",", "miller_ar2.scl", ",", "miller_b1.scl", ",", "miller_b2.scl", ",", "miller_bug.scl", ",", "miller_lazy.scl", ",", "miller_reflections.scl", ",", "millerop.scl", ",", "minerva12.scl", ",", "minor_clus.scl", ",", "minor_wing.scl", ",", "miracle_12.scl", ",", "miracle_12a.scl", ",", "mistyschism.scl", ",", "mmswap.scl", ",", "moantone12.scl", ",", "mobbs-mackenzie.scl", ",", "mohaj-bala_213.scl", ",", "mohaj-bala_443.scl", ",", "mohajira-to-slendro.scl", ",", "montvallon.scl", ",", "monza.scl", ",", "monzo_sumerian_2place12.scl", ",", "monzo_sumerian_simp12.scl", ",", "moore.scl", ",", "morgan.scl", ",", "moscow.scl", ",", "nakika12.scl", ",", "nassarre.scl", ",", "neid-mar-morg.scl", ",", "neidhardt-f10.scl", ",", "neidhardt-f10i.scl", ",", "neidhardt-f11.scl", ",", "neidhardt-f12.scl", ",", "neidhardt-f2.scl", ",", "neidhardt-f3.scl", ",", "neidhardt-f4.scl", ",", "neidhardt-f5.scl", ",", "neidhardt-f6.scl", ",", "neidhardt-f7.scl", ",", "neidhardt-f9.scl", ",", "neidhardt-s1.scl", ",", "neidhardt-s2.scl", ",", "neidhardt-s3.scl", ",", "neidhardt-t1.scl", ",", "neidhardt-t2.scl", ",", "neidhardt-t3.scl", ",", "neidhardt-t4.scl", ",", "neidhardt-t5.scl", ",", "neidhardt1.scl", ",", "neidhardt2.scl", ",", "neidhardt3.scl", ",", "neidhardt4.scl", ",", "neidhardtn.scl", ",", "newcastle.scl", ",", "niederbobritzsch.scl", ",", "norden.scl", ",", "novadene.scl", ",", "novaro_eb.scl", ",", "odd1.scl", ",", "odd2.scl", ",", "odonnell.scl", ",", "ogr12.scl", ",", "oldani.scl", ",", "oljare.scl", ",", "omaha.scl", ",", "omahat.scl", ",", "organ1373a.scl", ",", "organ1373b.scl", ",", "orwell9-12.scl", ",", "pagano_b.scl", ",", "palace.scl", ",", "parapyth12-7.scl", ",", "parapyth12.scl", ",", "parapyth12trans.scl", ",", "parizek_13lqmt.scl", ",", "parizek_17lqmt.scl", ",", "parizek_7lmtd1.scl", ",", "parizek_7lqmtd2.scl", ",", "parizek_cirot.scl", ",", "parizek_epi.scl", ",", "parizek_ji1.scl", ",", "parizek_jiweltmp.scl", ",", "parizek_jiwt2.scl", ",", "parizek_jiwt3.scl", ",", "parizek_meanqr.scl", ",", "parizek_part7_12.scl", ",", "parizek_qmeb1.scl", ",", "parizek_qmeb2.scl", ",", "parizek_qmeb3.scl", ",", "parizek_qmtp12.scl", ",", "parizek_syndiat.scl", ",", "parizek_syntonal.scl", ",", "parizek_temp19.scl", ",", "parizek_well.scl", ",", "part12.scl", ",", "partch-greek.scl", ",", "pelogic2.scl", ",", "penta1.scl", ",", "penta2.scl", ",", "pepper2.scl", ",", "pepper_archytas12.scl", ",", "pepper_jubilee12.scl", ",", "perry.scl", ",", "perry2.scl", ",", "phi_12.scl", ",", "phrygian.scl", ",", "phrygian_enh.scl", ",", "piano7.scl", ",", "pipedum_12.scl", ",", "pipedum_12a.scl", ",", "pipedum_12b.scl", ",", "pipedum_12c.scl", ",", "pipedum_12d.scl", ",", "pipedum_12e.scl", ",", "pipedum_12f.scl", ",", "pipedum_12g.scl", ",", "pipedum_12h.scl", ",", "pipedum_12i.scl", ",", "pipedum_12j.scl", ",", "pipedum_12k.scl", ",", "pipedum_12l.scl", ",", "polansky_owt1.scl", ",", "polansky_owt2.scl", ",", "ponsford1.scl", ",", "ponsford2.scl", ",", "portsmouth.scl", ",", "prelleur.scl", ",", "preston.scl", ",", "preston2.scl", ",", "prime_12.scl", ",", "prinz.scl", ",", "prinz2.scl", ",", "pris.scl", ",", "prisun.scl", ",", "prodigy12.scl", ",", "ptolemy_ext.scl", ",", "pump12_1.scl", ",", "pump12_2.scl", ",", "pyle.scl", ",", "pyramid.scl", ",", "pyramid_down.scl", ",", "pyth_12.scl", ",", "pyth_12s.scl", ",", "pyth_7a.scl", ",", "rain123.scl", ",", "rain159.scl", ",", "raintree.scl", ",", "raintree2.scl", ",", "rameau-flat.scl", ",", "rameau-french.scl", ",", "rameau-gall.scl", ",", "rameau-gall2.scl", ",", "rameau-merc.scl", ",", "rameau-nouv.scl", ",", "rameau-sharp.scl", ",", "rameau.scl", ",", "ramis.scl", ",", "rectsp6.scl", ",", "reinhard.scl", ",", "riccati.scl", ",", "riley_albion.scl", ",", "riley_rosary.scl", ",", "robot_dead.scl", ",", "robot_live.scl", ",", "romieu.scl", ",", "romieu_inv.scl", ",", "rousseau.scl", ",", "rousseau2.scl", ",", "rousseau3.scl", ",", "rousseau4.scl", ",", "rousseauk.scl", ",", "rousseauw.scl", ",", "rsr_12.scl", ",", "rvf4.scl", ",", "rvfj_12.scl", ",", "samad_oghab_dokhtaramme_zurnascale.scl", ",", "sankey.scl", ",", "sauveur.scl", ",", "sauveur2.scl", ",", "sauveur_ji.scl", ",", "scheffer.scl", ",", "schiassi.scl", ",", "schlesinger_jupiter.scl", ",", "schlesinger_mars.scl", ",", "schlesinger_saturn.scl", ",", "schlick-barbour.scl", ",", "schlick-husmann.scl", ",", "schlick-lange.scl", ",", "schlick-ratte.scl", ",", "schlick-schugk.scl", ",", "schlick-tessmer.scl", ",", "schlick2.scl", ",", "schlick3.scl", ",", "schlick3a.scl", ",", "schneegass1.scl", ",", "schneegass2.scl", ",", "schneegass3.scl", ",", "schneider_log.scl", ",", "schulter_12.scl", ",", "schulter_14_13-12.scl", ",", "schulter_44_39-12.scl", ",", "schulter_44_39-12_c.scl", ",", "schulter_O3-zalzalian12_D.scl", ",", "schulter_bamm24b-pegasus12d.scl", ",", "schulter_indigo12.scl", ",", "schulter_met12.scl", ",", "schulter_neogji12.scl", ",", "schulter_piaguilike2.scl", ",", "schulter_qcmqd8_4.scl", ",", "schulter_wilsonistic.scl", ",", "schulter_zarte84.scl", ",", "schulter_zarte84n.scl", ",", "scottd1.scl", ",", "scottd2.scl", ",", "scottd3.scl", ",", "scottd4.scl", ",", "scottr_ebvt.scl", ",", "scottr_lab.scl", ",", "secor12_1.scl", ",", "secor12_2.scl", ",", "secor12_3.scl", ",", "secor1_4tx.scl", ",", "secor1_5tx.scl", ",", "secor5_23stx.scl", ",", "secor5_23tx.scl", ",", "secor5_23wt.scl", ",", "secor_bicycle.scl", ",", "secor_swt149.scl", ",", "secor_vrwt.scl", ",", "secor_wt1-5.scl", ",", "secor_wt1-7.scl", ",", "secor_wt1-7r.scl", ",", "secor_wt10.scl", ",", "secor_wt2-11.scl", ",", "secor_wtpb-24a.scl", ",", "secor_wtpb-24b.scl", ",", "secor_wtpb-24c.scl", ",", "secor_wtpb-24d.scl", ",", "secor_wtpb-24e.scl", ",", "seidel_12.scl", ",", "seikilos.scl", ",", "septenarius440.scl", ",", "septenarius440a.scl", ",", "septenariusGG49.scl", ",", "serafini-11.scl", ",", "serafini-moonsuite.scl", ",", "serafini-q.scl", ",", "serafini-sunday.scl", ",", "sev-elev.scl", ",", "sevish.scl", ",", "sevish_pom.scl", ",", "sevish_whitey.scl", ",", "shahin_adl.scl", ",", "shahin_agin.scl", ",", "shahin_baran.scl", ",", "shahin_wt.scl", ",", "shansx.scl", ",", "sheiman_silver.scl", ",", "sherwood.scl", ",", "siamese.scl", ",", "silbermann1.scl", ",", "silbermann2.scl", ",", "silbermann2a.scl", ",", "silver.scl", ",", "simonton.scl", ",", "simp12.scl", ",", "sintemp6.scl", ",", "sintemp6a.scl", ",", "slen_pel.scl", ",", "slen_pel16.scl", ",", "slen_pel23.scl", ",", "slen_pel_jc.scl", ",", "slen_pel_schmidt.scl", ",", "smith_eh.scl", ",", "smith_mq.scl", ",", "smithgw72i.scl", ",", "smithgw_al-baked.scl", ",", "smithgw_al-fried.scl", ",", "smithgw_asbru.scl", ",", "smithgw_bifrost.scl", ",", "smithgw_cauldron.scl", ",", "smithgw_circu.scl", ",", "smithgw_dhexmarv.scl", ",", "smithgw_duopors.scl", ",", "smithgw_exotic1.scl", ",", "smithgw_glamma.scl", ",", "smithgw_glumma.scl", ",", "smithgw_grail.scl", ",", "smithgw_graileq.scl", ",", "smithgw_grailrms.scl", ",", "smithgw_hahn12.scl", ",", "smithgw_majraj1.scl", ",", "smithgw_majraj2.scl", ",", "smithgw_majraj3.scl", ",", "smithgw_majsyn1.scl", ",", "smithgw_majsyn2.scl", ",", "smithgw_majsyn3.scl", ",", "smithgw_meandin.scl", ",", "smithgw_meanlesfip.scl", ",", "smithgw_meanred.scl", ",", "smithgw_mmt.scl", ",", "smithgw_modmos12a.scl", ",", "smithgw_mush.scl", ",", "smithgw_pel1.scl", ",", "smithgw_pel3.scl", ",", "smithgw_pris.scl", ",", "smithgw_prisa.scl", ",", "smithgw_ragasyn1.scl", ",", "smithgw_ratwell.scl", ",", "smithgw_ratwolf.scl", ",", "smithgw_rectoo.scl", ",", "smithgw_sixtetwoo.scl", ",", "smithgw_starra.scl", ",", "smithgw_starrb.scl", ",", "smithgw_starrc.scl", ",", "smithgw_syndia2.scl", ",", "smithgw_syndia3.scl", ",", "smithgw_syndia4.scl", ",", "smithgw_syndia6.scl", ",", "smithgw_tetra.scl", ",", "smithgw_tr7_13.scl", ",", "smithgw_tr7_13b.scl", ",", "smithgw_tr7_13r.scl", ",", "smithgw_tra.scl", ",", "smithgw_tre.scl", ",", "smithgw_treb.scl", ",", "smithgw_trx.scl", ",", "smithgw_trxb.scl", ",", "smithgw_wa.scl", ",", "smithgw_wa120.scl", ",", "smithgw_wb.scl", ",", "smithgw_well1.scl", ",", "smithgw_whelp1.scl", ",", "smithgw_whelp2.scl", ",", "smithgw_whelp3.scl", ",", "smithgw_wilcmarv11.scl", ",", "smithgw_wilcmarv7.scl", ",", "smithgw_wreckpop.scl", ",", "smithgw_yarman12.scl", ",", "smithj12.scl", ",", "smithj12pt.scl", ",", "sonbirkezsorted.scl", ",", "sorge.scl", ",", "sorge1.scl", ",", "sorge2.scl", ",", "sorge3.scl", ",", "sorge4.scl", ",", "spanyi.scl", ",", "sparschuh-2009well885Hz.scl", ",", "sparschuh-442widefrench5th-a.scl", ",", "sparschuh-442widefrench5th.scl", ",", "sparschuh-885organ.scl", ",", "sparschuh-eleven_eyes.scl", ",", "sparschuh-epimoric7.scl", ",", "sparschuh-eqbeat-fac_ceg.scl", ",", "sparschuh-equalbeating.scl", ",", "sparschuh-gothic440.scl", ",", "sparschuh-jsbloops440.scl", ",", "sparschuh-neovictorian.scl", ",", "sparschuh-neovictorian2.scl", ",", "sparschuh-oldpiano.scl", ",", "sparschuh-pc.scl", ",", "sparschuh-sc.scl", ",", "sparschuh-squiggle_clavichord.scl", ",", "sparschuh-squiggle_harpsichord.scl", ",", "sparschuh-stanhope.scl", ",", "sparschuh-wohltemperiert.scl", ",", "sparschuh_19limwell.scl", ",", "sparschuh_41_23_bi_epi.scl", ",", "sparschuh_5limdodek.scl", ",", "sparschuh_bach19lim.scl", ",", "sparschuh_bach_cup.scl", ",", "sparschuh_dent.scl", ",", "sparschuh_mietke.scl", ",", "sparschuh_wtc.scl", ",", "spec1_14.scl", ",", "spec1_17.scl", ",", "spec1_25.scl", ",", "spec1_33.scl", ",", "spec1_4.scl", ",", "spec1_5.scl", ",", "specr2.scl", ",", "specr3.scl", ",", "stade.scl", ",", "stanhope.scl", ",", "stanhope2.scl", ",", "stanhope_f.scl", ",", "stanhope_m.scl", ",", "stanhope_s.scl", ",", "starling.scl", ",", "starling12.scl", ",", "stelhex-catakleismic.scl", ",", "stelhex2.scl", ",", "stelhex5.scl", ",", "stevin.scl", ",", "strahle.scl", ",", "sub24-12.scl", ",", "sub40.scl", ",", "sub50.scl", ",", "sullivan12.scl", ",", "sullivan_blue.scl", ",", "sullivan_eagle.scl", ",", "sullivan_raven.scl", ",", "sullivan_ravenji.scl", ",", "sullivan_sh.scl", ",", "sullivan_zen.scl", ",", "sullivan_zen2.scl", ",", "super_12.scl", ",", "t-side.scl", ",", "t-side2.scl", ",", "tamil_vi.scl", ",", "tamil_vi2.scl", ",", "tanbur.scl", ",", "tansur.scl", ",", "tapek-ribbon.scl", ",", "taylor_g.scl", ",", "taylor_n.scl", ",", "temp12bf1.scl", ",", "temp12eb46o.scl", ",", "temp12ebf.scl", ",", "temp12ebf4.scl", ",", "temp12ebfo.scl", ",", "temp12ebfo2o.scl", ",", "temp12ebfp.scl", ",", "temp12ebfr.scl", ",", "temp12ep.scl", ",", "temp12fo1o.scl", ",", "temp12fo2o.scl", ",", "temp12k4.scl", ",", "temp12p10.scl", ",", "temp12p6.scl", ",", "temp12p8.scl", ",", "temp12p8a.scl", ",", "temp12rwt.scl", ",", "temp12septendec.scl", ",", "temp12w2b.scl", ",", "temp7-5ebf.scl", ",", "terrain.scl", ",", "tertiadia.scl", ",", "tertiadie.scl", ",", "tetragam-di.scl", ",", "tetragam-enh.scl", ",", "tetragam-hex.scl", ",", "tetragam-py.scl", ",", "tetragam-slpe.scl", ",", "tetragam-slpe2.scl", ",", "tetragam-sp.scl", ",", "tetragam-un.scl", ",", "tetragam13.scl", ",", "tetragam5.scl", ",", "tetragam7.scl", ",", "tetragam8.scl", ",", "tetragam9a.scl", ",", "tetragam9b.scl", ",", "thirds.scl", ",", "thirteendene.scl", ",", "thomas.scl", ",", "thrush12.scl", ",", "tri12-1.scl", ",", "tri12-2.scl", ",", "triangs13.scl", ",", "triaphonic_12.scl", ",", "trost.scl", ",", "tsuda13.scl", ",", "tuners1.scl", ",", "tuners2.scl", ",", "tuners3.scl", ",", "turkish_awjara_on_b.scl", ",", "turkish_bestenigar_on_b.scl", ",", "turkish_segah-huzzam-mustear_on_e.scl", ",", "turkish_segah-huzzam-mustear_v2_on_e.scl", ",", "turkish_segah_on_e.scl", ",", "turko-arabic_(kurdili)hijazkar-suznak-nawruz_neveser_nikriz_on_c.scl", ",", "turko-arabic_hijaz-humayun-zirgule_on_d.scl", ",", "turko-arabic_iraq-awdj_and_ferahnak_on_b.scl", ",", "turko-arabic_kurdi_buselik_nishabur_on_d.scl", ",", "turko-arabic_nihavend(murassah)_zanjaran_on_c.scl", ",", "turko-arabic_rast_huseyni_uzzal-garip.scl", ",", "turko-arabic_saba_on_d.scl", ",", "ultimate12_nr1.scl", ",", "ultimate12_nr2.scl", ",", "ultimate12_nr3.scl", ",", "ultimate12_nr4a.scl", ",", "ultimate12_nr4b.scl", ",", "unimajor.scl", ",", "unimajorpenta.scl", ",", "vaisvil_harm3-26.scl", ",", "val-werck.scl", ",", "valentine.scl", ",", "vallotti-broekaert.scl", ",", "vallotti.scl", ",", "vallotti2.scl", ",", "velde_ji.scl", ",", "veroli-ord.scl", ",", "veroli.scl", ",", "veroli1.scl", ",", "veroli2.scl", ",", "victor_eb.scl", ",", "victorian.scl", ",", "vogelh_b.scl", ",", "vogelh_fisk.scl", ",", "vogelh_hamburg.scl", ",", "vogelh_hmean.scl", ",", "wang-pho.scl", ",", "wegscheider.scl", ",", "wegscheider_1a.scl", ",", "weingarten.scl", ",", "weingarten2.scl", ",", "wendell1.scl", ",", "wendell1r.scl", ",", "wendell2.scl", ",", "wendell2p.scl", ",", "wendell3.scl", ",", "wendell4.scl", ",", "wendell5.scl", ",", "wendell6.scl", ",", "wendell7.scl", ",", "werck3.scl", ",", "werck3_eb.scl", ",", "werck3_ebm.scl", ",", "werck3_mim.scl", ",", "werck3_mod.scl", ",", "werck3_turck.scl", ",", "werck4.scl", ",", "werck5.scl", ",", "werck6.scl", ",", "werck6_cor.scl", ",", "werck6_dup.scl", ",", "werck_cl5.scl", ",", "werck_cl6.scl", ",", "werck_puzzle.scl", ",", "werckmeisterIV_variant.scl", ",", "werckmeisterIV_variant_c.scl", ",", "wicks_eb.scl", ",", "wiegleb-book.scl", ",", "wiegleb.scl", ",", "wier_cl.scl", ",", "wier_j.scl", ",", "wiese1.scl", ",", "wiese3.scl", ",", "wilson_class.scl", ",", "wilson_gh50.scl", ",", "wilson_hexflank.scl", ",", "wronski.scl", ",", "wurschmidt.scl", ",", "yarman-36a_12core.scl", ",", "yarman12-135.scl", ",", "yarman12-159.scl", ",", "yarman_saba.scl", ",", "yasser_diat.scl", ",", "yasser_ji.scl", ",", "yekta.scl", ",", "young-lm_guitar.scl", ",", "young-lm_piano.scl", ",", "young.scl", ",", "young1.scl", ",", "young2.scl", ",", "yugo_bagpipe.scl", ",", "zapf-dent.scl", ",", "zapf.scl", ",", "zeta12.scl", ",", "zwolle.scl", ",", "zwolle2.scl" ],
 					"maxclass" : "chooser",
 					"numinlets" : 1,
 					"numoutlets" : 6,
@@ -8827,8 +8847,8 @@
 			}
 , 			{
 				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
+				"patcherrelativepath" : "../DJster/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}
