@@ -5627,6 +5627,32 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-18",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 36.5, 552.0, 109.0, 23.0 ],
+									"text" : "setUserClef 0 FG"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 5.0, 523.0, 50.5, 20.0 ],
+									"text" : "t l b"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-112",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -6725,85 +6751,6 @@
 ,
 									"text" : "p saveTempFile",
 									"varname" : "u085002414[2]"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-39",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 617.25921630859375, 585.5, 135.0, 20.0 ],
-									"text" : "prepend setScoreAnnotation"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-40",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 617.25921630859375, 556.83062744140625, 128.0, 20.0 ],
-									"text" : "dict.serialize @compress 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"data" : 									{
-										"staff-0" : 										{
-											"ledgerlines" : 1,
-											"style" : "ClefDesigner|FG",
-											"micromap" : "mM-none",
-											"clef" : "FG",
-											"adjust" : 0,
-											"staffgroup" : [ 0, 0 ],
-											"abbrInstrName" : " ",
-											"instrumentNamePositionOffset" : 0,
-											"stafflineshidden" : 											{
-												"2" : 0
-											}
-
-										}
-,
-										"userclefs" : 										{
-											"FG" : 											{
-												"alias" : "<none>",
-												"stafflines" : 												{
-													"above" : 3,
-													"below" : 3,
-													"hidden" : 2
-												}
-,
-												"micromap" : "mM-none",
-												"baseclef" : "ALTO_CLEF",
-												"font" : [ "Bravura", 24 ],
-												"characters" : [ "", "" ],
-												"offsets" : [ 0, -1, 0, -25 ],
-												"transposition" : 0
-											}
-
-										}
-
-									}
-,
-									"id" : "obj-41",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 617.25921630859375, 531.450439453125, 76.0, 20.0 ],
-									"saved_object_attributes" : 									{
-										"embed" : 1,
-										"parameter_enable" : 0,
-										"parameter_mappable" : 0
-									}
-,
-									"text" : "dict @embed 1"
 								}
 
 							}
@@ -15134,6 +15081,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 757.25921630859375, 546.5, 437.0, 59.0 ],
+									"presentation_linecount" : 5,
 									"text" : "newScore 1 800 200, setRenderAllowed false, useMusicGlyphRendererProxy true, handleMusicCurveRendering true, setClef 0 0 ALTO_CLEF, setTempo 0 $1, setTimeSignature 0 $2 $3, showMeasureNumbers true, showStaffNumbers false, extendHoldTimeOfLastNote 1, setInstrumentDimension 0 5 originalPitch -1. 127. -1., setInstrumentDimension 0 6 index -1. 10000. -1., setExtendedStaffLinesAbove 0 0 3, setExtendedStaffLinesBelow 0 0 3, setStaffSpacingAbove 0 120"
 								}
 
@@ -15200,6 +15148,20 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-13", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-65", 0 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-64", 0 ],
 									"midpoints" : [ 107.759201000000004, 415.0, 336.759215999999981, 415.0 ],
 									"source" : [ "obj-149", 0 ]
@@ -15218,6 +15180,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-69", 0 ],
 									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-65", 0 ],
+									"source" : [ "obj-18", 0 ]
 								}
 
 							}
@@ -15439,30 +15408,9 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-27", 0 ],
-									"source" : [ "obj-39", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-64", 0 ],
 									"midpoints" : [ 39.759202999999999, 415.5, 336.759215999999981, 415.5 ],
 									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-39", 0 ],
-									"source" : [ "obj-40", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-40", 0 ],
-									"source" : [ "obj-41", 0 ]
 								}
 
 							}
@@ -15478,13 +15426,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-37", 0 ],
 									"source" : [ "obj-44", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-41", 0 ],
-									"source" : [ "obj-44", 0 ]
 								}
 
 							}
@@ -15511,16 +15452,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-27", 0 ],
-									"source" : [ "obj-56", 1 ]
+									"destination" : [ "obj-13", 0 ],
+									"midpoints" : [ 232.75920099999999, 169.797134, 14.5, 169.797134 ],
+									"source" : [ "obj-56", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-65", 0 ],
-									"midpoints" : [ 232.75920099999999, 169.797134, 13.463187, 169.797134 ],
-									"source" : [ "obj-56", 0 ]
+									"destination" : [ "obj-27", 0 ],
+									"source" : [ "obj-56", 1 ]
 								}
 
 							}
