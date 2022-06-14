@@ -431,7 +431,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 343.0, 317.0, 156.0, 22.0 ],
+									"patching_rect" : [ 343.0, 308.5, 156.0, 22.0 ],
 									"text" : "sprintf get %s::transposition",
 									"varname" : "instrument[4]"
 								}
@@ -444,14 +444,14 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 343.0, 345.0, 130.0, 22.0 ],
+									"patching_rect" : [ 343.0, 345.0, 179.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict clefdesigner.editor"
+									"text" : "dict clefdesigner.editor @quiet 1"
 								}
 
 							}
@@ -1784,7 +1784,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 509.0, 345.0, 177.0, 23.0 ],
+									"patching_rect" : [ 515.5, 345.0, 177.0, 23.0 ],
 									"text" : "clearchecks, checkitem $1 1"
 								}
 
@@ -4416,7 +4416,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 211.5, 426.5, 457.0, 22.0 ],
-									"restore" : [ 11824 ],
+									"restore" : [ 8719 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5030,7 +5030,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 119.0, 84.0, 154.0, 58.0 ],
+									"patching_rect" : [ 119.0, 84.0, 156.0, 58.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 108.0, 172.5, 134.0, 58.0 ],
 									"rounded" : 0.0,
@@ -5754,7 +5754,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-57", 0 ],
-									"order" : 1,
+									"order" : 0,
 									"source" : [ "obj-73", 0 ]
 								}
 
@@ -6510,7 +6510,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 345.700012000000015, 70.0, 264.0, 22.0 ],
-					"restore" : [ -1, 0, 0, "false", -1, 0, 0, 1, 87, 0, "note", 17 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6560,7 +6560,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 420.0, 396.0, 250.0, 22.0 ],
-					"restore" : [ "send" ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6596,7 +6596,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 31.0, 15.0, 216.0, 22.0 ],
-					"restore" : [ 33.889999389648438, 17 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0

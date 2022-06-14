@@ -40,6 +40,26 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
+					"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
+					"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
+					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+					"bgfillcolor_type" : "gradient",
+					"gradient" : 1,
+					"id" : "obj-4",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 225.0, 148.0, 53.0, 22.0 ],
+					"text" : "selectAll"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontface" : 1,
 					"id" : "obj-48",
 					"maxclass" : "comment",
@@ -64,24 +84,12 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-45",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 252.75, 393.0, 32.0, 22.0 ],
-					"text" : "print"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-40",
 					"linecount" : 38,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 695.0, 157.0, 228.0, 516.0 ],
-					"presentation_linecount" : 39,
 					"text" : "------,  \ntupletTransform,  \nsetNumDots,  \n------,  \nsetDuration,  \nsetPitch, \nsetAmoplitude, \nsetHold,  \nsetPrevBeamedOut,  \nsetGlissOut, \nsetTiedOut,  \nsetAccPref,  \nsetAccidentalVisibilityPolicy,  setAltEnharmonicSpelling  \nsetDynamic,  \nsetSlurredOut,  \n------,  setSelectedNoteLedgerLinesVisible,  setCrescOut setDecrescOut\nset8va set8ba,\nsetMark,\nnoteheadTransform, setSelectedNoteheadScale, setNoteVisible,  noteheadVisibilityTransform,  noteStemVisibilityTransform,  setSelectedOverrideLevel, setSelectedOverrideLevel, overrideStemDirection, \noverrideStemDirection, \nsetText  \nsetText \nsetText  \nsetLayoutShiftX\nsetNoteheadColor\nsetNoteheadColor\nsetNoteheadColor\nsetSelectedGraceNoteSeparationScaler"
 				}
 
@@ -137,7 +145,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 299.0, 206.0, 111.0, 22.0 ],
+					"patching_rect" : [ 225.0, 211.0, 111.0, 22.0 ],
 					"text" : "addNote 1. $1 $2 1"
 				}
 
@@ -157,20 +165,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 299.0, 172.0, 112.0, 22.0 ],
+					"patching_rect" : [ 225.0, 177.0, 112.0, 22.0 ],
 					"text" : "72 90, 69 60, 65 30"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-29",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 107.5, 207.0, 93.0, 22.0 ],
-					"text" : "join @triggers 1"
 				}
 
 			}
@@ -193,7 +189,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 181.5, 172.0, 93.0, 22.0 ],
+					"patching_rect" : [ 107.5, 148.0, 93.0, 22.0 ],
 					"text" : "expr $f1 * 0.012"
 				}
 
@@ -205,7 +201,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 181.5, 94.0, 68.0, 22.0 ],
+					"patching_rect" : [ 107.5, 70.0, 68.0, 22.0 ],
 					"text" : "VELOCITY"
 				}
 
@@ -217,7 +213,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 86.5, 138.0, 81.0, 22.0 ],
+					"patching_rect" : [ 182.5, 70.0, 81.0, 22.0 ],
 					"text" : "id setattribute"
 				}
 
@@ -229,9 +225,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 181.5, 138.0, 201.0, 22.0 ],
+					"patching_rect" : [ 107.5, 114.0, 201.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "maxscore.setNoteIntervalAttribute.js",
+						"filename" : "maxscore.setNoteIntervalAttribute",
 						"parameter_enable" : 0
 					}
 ,
@@ -254,7 +250,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 299.0, 241.0, 119.0, 22.0 ],
+					"patching_rect" : [ 225.0, 246.0, 119.0, 22.0 ],
 					"text" : "newScore 2 320 220"
 				}
 
@@ -287,7 +283,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 107.5, 443.0, 320.0, 220.0 ],
+					"patching_rect" : [ 107.0, 443.0, 320.0, 220.0 ],
 					"prototypename" : "bcanvas",
 					"varname" : "bcanvas",
 					"viewvisibility" : 1
@@ -326,8 +322,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 1 ],
-					"midpoints" : [ 152.333333333333343, 431.5, 418.0, 431.5 ],
-					"order" : 0,
+					"midpoints" : [ 152.333333333333343, 431.5, 417.5, 431.5 ],
 					"source" : [ "obj-22", 1 ]
 				}
 
@@ -341,23 +336,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-45", 0 ],
-					"order" : 1,
-					"source" : [ "obj-22", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
-					"midpoints" : [ 117.0, 678.0, 83.5, 678.0, 83.5, 383.0, 117.0, 383.0 ],
+					"midpoints" : [ 116.5, 678.0, 83.5, 678.0, 83.5, 383.0, 117.0, 383.0 ],
 					"source" : [ "obj-23", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-29", 1 ],
+					"destination" : [ "obj-36", 0 ],
 					"source" : [ "obj-25", 0 ]
 				}
 
@@ -366,13 +353,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
 					"source" : [ "obj-28", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-36", 0 ],
-					"source" : [ "obj-29", 0 ]
 				}
 
 			}
@@ -408,6 +388,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
 					"source" : [ "obj-38", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-22", 0 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -527,8 +514,8 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}

@@ -1091,7 +1091,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 480.0, 141.0, 321.0, 22.0 ],
-									"restore" : [ "208806-fromScore" ],
+									"restore" : [ "221052-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2152,7 +2152,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 29.0, 18.0, 321.0, 22.0 ],
-									"restore" : [ "208806-fromScore" ],
+									"restore" : [ "221052-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2555,7 +2555,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 153.0, 346.0, 1290.0, 557.0 ],
+						"rect" : [ 103.0, 222.0, 1290.0, 557.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2601,7 +2601,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 762.0, 291.0, 583.0, 469.0 ],
+										"rect" : [ 534.0, 329.0, 929.0, 525.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2631,25 +2631,14 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
-													"id" : "obj-16",
-													"maxclass" : "newobj",
+													"id" : "obj-18",
+													"linecount" : 2,
+													"maxclass" : "message",
 													"numinlets" : 2,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 449.000012603174582, 174.0, 86.0, 22.0 ],
-													"text" : "route notfound"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-17",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 449.000012603174582, 139.0, 77.0, 22.0 ],
-													"text" : "absolutepath"
+													"patching_rect" : [ 418.696825396825375, 10.000000304687504, 258.0, 35.0 ],
+													"text" : "saveScore \"Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Voids1.XML\""
 												}
 
 											}
@@ -2882,22 +2871,15 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-4", 0 ],
-													"source" : [ "obj-1", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-17", 0 ],
-													"source" : [ "obj-10", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-8", 0 ],
 													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-9", 0 ],
+													"source" : [ "obj-10", 1 ]
 												}
 
 											}
@@ -2931,13 +2913,6 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-9", 0 ],
-													"source" : [ "obj-13", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-8", 0 ],
 													"source" : [ "obj-14", 0 ]
 												}
@@ -2952,15 +2927,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-9", 0 ],
-													"source" : [ "obj-16", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-16", 0 ],
-													"source" : [ "obj-17", 0 ]
+													"destination" : [ "obj-13", 0 ],
+													"source" : [ "obj-18", 0 ]
 												}
 
 											}
@@ -4221,7 +4189,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 58.0, 9.5166015625, 321.0, 22.0 ],
-									"restore" : [ "208806-fromScore" ],
+									"restore" : [ "221052-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5699,7 +5667,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 308.0, 175.0, 321.0, 22.0 ],
-									"restore" : [ "208806-fromScore" ],
+									"restore" : [ "221052-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -6396,7 +6364,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 255.0, 83.5, 169.0, 35.0 ],
-									"restore" : [ "208806-fromScore" ],
+									"restore" : [ "221052-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7470,7 +7438,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 569.5, 5.0, 321.0, 22.0 ],
-									"restore" : [ "208806-fromScore" ],
+									"restore" : [ "221052-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -9314,7 +9282,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 420.696825396825261, 334.0, 232.0, 22.0 ],
-					"restore" : [ "208806-fromScore" ],
+					"restore" : [ "221052-fromScore" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -9418,7 +9386,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "saveToUndoStack" ],
 					"patching_rect" : [ 31.0, 5.0, 30.0, 30.0 ]
 				}
 
@@ -9502,7 +9470,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 117.0, 283.0, 321.0, 22.0 ],
-									"restore" : [ "208806-fromScore" ],
+									"restore" : [ "221052-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0

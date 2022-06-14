@@ -1115,7 +1115,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 71.0, 78.0, 351.0, 35.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/Norden/Samples/Ich mag die Unwetterschlachten.sdif" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1310,7 +1310,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 264.0, 79.0, 1011.0, 900.0 ],
+						"rect" : [ 264.0, 87.0, 1011.0, 900.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 10.0,
@@ -1565,7 +1565,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 604.0, 40.0, 100.0, 29.0 ],
+									"patching_rect" : [ 604.0, 40.0, 100.0, 19.0 ],
 									"text" : "r #1update-display"
 								}
 
@@ -1678,7 +1678,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 604.0, 64.0, 374.0, 20.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ "1TRC" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1817,7 +1817,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 331.0, 28.0, 95.0, 31.0 ],
+									"patching_rect" : [ 331.0, 28.0, 95.0, 20.0 ],
 									"text" : "r #1myfunction"
 								}
 
@@ -1865,7 +1865,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 331.0, 116.0, 406.0, 20.0 ],
-									"restore" : [ 0.0 ],
+									"restore" : [ 4299.447447061538696 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2041,7 +2041,7 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 159.0, 237.0, 100.0, 20.0 ],
-													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", "\u003b", "#X", "domainAndRange", 0.0, 1830.0, 0.0, 2.0, 0.0, 1830.0, 0.0, 10.0, 0.0, 1830.0, 0.0, 1000.0, 0.0, 1830.0, 0.0, 1830.0, 0.0, 1830.0, -4800.0, 4800.0, "\u003b" ],
+													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", "\u003b", "#X", "domainAndRange", 0.0, 9488.435546875, 0.0, 2.0, 0.0, 9488.435546875, 0.0, 10.0, 0.0, 9488.435546875, 0.0, 1000.0, 0.0, 9488.435546875, 0.0, 9488.435546875, 0.0, 9488.435546875, -4800.0, 4800.0, "\u003b" ],
 													"text" : "mxj ej.fplay",
 													"varname" : "ej.play"
 												}
@@ -4827,13 +4827,13 @@
 								"name" : "black on white",
 								"umenu" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 ,
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -6230,16 +6230,13 @@
 			}
 , 			{
 				"box" : 				{
-					"color" : [ 0.611765, 0.701961, 1.0, 1.0 ],
-					"fontname" : "Arial",
-					"fontsize" : 9.0,
 					"id" : "obj-8",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 5,
-					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 67.0, 130.0, 166.0, 19.0 ],
-					"text" : "mxj com.algomusic.max.MaxScore",
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "newScore" ],
+					"patching_rect" : [ 67.0, 130.0, 130.000000000000028, 20.0 ],
+					"text" : "maxscore",
 					"varname" : "MaxScore"
 				}
 
@@ -6526,13 +6523,13 @@
 				"name" : "black on white",
 				"umenu" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]

@@ -1,4 +1,13 @@
 {
+	"Q" : 	{
+		"alias" : "BP chromatic Q clef",
+		"baseclef" : "TREBLE_CLEF",
+		"tritave" : 5,
+		"font" : [ "Greifswaler Deutsche Schrift", 28 ],
+		"characters" : "Q",
+		"offsets" : [ 0, -1 ]
+	}
+,
 	"N" : 	{
 		"alias" : "BP chromatic N clef",
 		"baseclef" : "TREBLE_CLEF",

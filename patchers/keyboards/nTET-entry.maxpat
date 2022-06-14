@@ -1156,7 +1156,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 444.208333333333314, 342.0, 285.0, 22.0 ],
-													"restore" : [ 4998 ],
+													"restore" : [ 6000 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -1383,7 +1383,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 310.958333333333314, 272.0, 286.0, 22.0 ],
-													"restore" : [ 1902.0 ],
+													"restore" : [ 1200.0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -1402,7 +1402,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 355.708333333333314, 307.0, 262.0, 22.0 ],
-													"restore" : [ 13 ],
+													"restore" : [ 12 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -3855,7 +3855,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 81.5, 303.0, 179.0, 22.0 ],
-									"restore" : [ 1902.0 ],
+									"restore" : [ 1200.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3876,7 +3876,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 121.5, 105.0, 240.0, 22.0 ],
-									"restore" : [ 13 ],
+									"restore" : [ 12 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4496,11 +4496,11 @@
 					"patching_rect" : [ 26.0, 18.0, 59.5, 22.0 ],
 					"restore" : 					{
 						"Label[1]" : [ 0 ],
-						"basepitch" : [ 4998 ],
-						"framesize" : [ 1902.0 ],
+						"basepitch" : [ 6000 ],
+						"framesize" : [ 1200.0 ],
 						"microtones" : [ 0 ],
 						"microtones[1]" : [ 0 ],
-						"steps" : [ 13 ]
+						"steps" : [ 12 ]
 					}
 ,
 					"text" : "autopattr",
@@ -5863,8 +5863,8 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}

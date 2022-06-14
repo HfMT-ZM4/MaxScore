@@ -116,10 +116,10 @@ function query(element)
 				}
 			else {
 			var _query = selectedNotes.get(element + "::" + attr[k]);	
-			post("info", _query, attr[k], selectedNotes.stringify(), "\n");
 			}
 			result.push(_query);
 			}
+			//post("info", element, attr[k], selectedNotes.stringify(), "\n");
 		}	
 
 }

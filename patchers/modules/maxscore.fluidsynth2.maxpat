@@ -3,7 +3,7 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 3,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -82,11 +82,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 7.0, 175.0, 303.0, 52.0 ],
 					"saved_attribute_attributes" : 					{
-						"tribordercolor" : 						{
+						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"textcolor" : 						{
+						"tribordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -152,7 +152,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -210,7 +210,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1102,7 +1102,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1461,7 +1461,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1995,7 +1995,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -2185,6 +2185,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-54",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2457,7 +2458,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -2646,6 +2647,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-25",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2971,7 +2973,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -4067,7 +4069,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-23",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
@@ -4424,10 +4426,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 2.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
@@ -4437,6 +4435,10 @@
 						}
 ,
 						"activetextoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -4475,10 +4477,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 211.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
-							"expression" : ""
-						}
-,
 						"activebgcolor" : 						{
 							"expression" : ""
 						}
@@ -4491,9 +4489,13 @@
 							"expression" : ""
 						}
 ,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_longname" : "live.text[20]",
+							"parameter_longname" : "live.text[16]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -4558,6 +4560,7 @@
 			}
 , 			{
 				"box" : 				{
+					"button" : 1,
 					"fontface" : 0,
 					"fontname" : "Gill Sans",
 					"fontsize" : 10.0,
@@ -4607,7 +4610,7 @@
 			}
 , 			{
 				"box" : 				{
-					"autorestore" : "Blackwood - 23 notes FluidSynth Prefs.json",
+					"autorestore" : "ASJFluidSynthPreset.json",
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-7",
@@ -4638,6 +4641,7 @@
 					"enablevscroll" : 1,
 					"id" : "obj-24",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.fluidsynth.menus.maxpat",
 					"numinlets" : 0,
@@ -4659,7 +4663,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "panic" ],
 					"patching_rect" : [ 20.0, 13.0, 25.0, 25.0 ]
 				}
 
@@ -4689,7 +4693,7 @@
 					"restore" : 					{
 						"live.text[2]" : [ 0.0 ],
 						"live.text[3]" : [ 0.0 ],
-						"mc.live.gain~" : [ 1.126640419947464 ]
+						"mc.live.gain~" : [ -10.545275590551178 ]
 					}
 ,
 					"text" : "autopattr fluidsynth",
@@ -4759,6 +4763,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-8",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.fluidsynthGUI.maxpat",
 					"numinlets" : 0,
@@ -4909,10 +4914,10 @@
 		"styles" : [ 			{
 				"name" : "comment_header_white_MaxScore",
 				"default" : 				{
-					"textjustification" : [ 1 ],
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"fontname" : [ "Ableton Sans Light" ],
 					"fontsize" : [ 18.0 ],
-					"fontname" : [ "Ableton Sans Light" ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textjustification" : [ 1 ]
 				}
 ,
 				"parentstyle" : "",
@@ -4921,17 +4926,17 @@
 , 			{
 				"name" : "panel_dark_MS",
 				"default" : 				{
-					"color" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : -90.0,
+						"autogradient" : 0.0,
 						"color" : [ 0.4, 0.4, 0.4, 1.0 ],
 						"color1" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
 						"color2" : [ 0.2, 0.2, 0.2, 1.0 ],
-						"angle" : -90.0,
 						"proportion" : 0.39,
-						"autogradient" : 0.0
+						"type" : "color"
 					}
-
+,
+					"color" : [ 0.0, 0.0, 0.0, 0.0 ]
 				}
 ,
 				"parentstyle" : "",

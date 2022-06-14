@@ -578,7 +578,7 @@ function _style(stl, flag)
                 break;
 		}
 		currVal[newstyletype] = storedValue.get("stored-value");	
-		//post("currVal", StaffIndex, JSON.stringify(currVal), "\n");
+		post("currVal", StaffIndex, JSON.stringify(currVal), "\n");
 	}
 }
     state(stl);

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 3,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 87.0, 703.0, 888.0 ],
+		"rect" : [ 198.0, 87.0, 703.0, 888.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,14 +69,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 113.0, 703.0, 862.0 ],
+						"rect" : [ 198.0, 113.0, 703.0, 862.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -227,16 +227,17 @@
 									"enablevscroll" : 0,
 									"id" : "obj-12",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"offset" : [ 0.0, 0.0 ],
-									"outlettype" : [ "", "", "", "" ],
+									"outlettype" : [ "", "dictionary", "", "" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -273,6 +274,18 @@
 										"assistshowspatchername" : 0,
 										"title" : "maxscore.icanvas",
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-20",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "dictionary" ],
+													"patching_rect" : [ 4.0, 276.0, 111.0, 22.0 ],
+													"text" : "maxscore.xml2json"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-18",
 													"maxclass" : "button",
@@ -359,7 +372,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 277.333332499999983, 76.0, 78.0, 22.0 ],
 													"text" : "my-loadbang"
 												}
@@ -371,19 +384,19 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "dictionary" ],
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
+															"minor" : 3,
 															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 488.0, 580.0, 292.0, 246.0 ],
+														"rect" : [ 715.0, 624.0, 306.0, 234.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -413,44 +426,540 @@
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
+																	"id" : "obj-10",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "dictionary" ],
+																	"patching_rect" : [ 36.0, 64.0, 178.0, 22.0 ],
+																	"text" : "maxscore.info.grab #0grab"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"data" : 																	{
+																		"jmslscoredoc" : 																		{
+																			".ordering" : [ "score" ],
+																			"score" : 																			{
+																				"0" : 																				{
+																					"@NAME" : "JMSLMaxScore-4",
+																					"@WIDTH" : 320,
+																					"@HEIGHT" : 220,
+																					"@STAFFS" : 2,
+																					"@NUMTRACKSPERSTAFF" : 2,
+																					"@InstrumentNamesVisible" : "false",
+																					"@TempoVisible" : "true",
+																					"@StaffNumbersVisible" : "true",
+																					"@MeasureNumbersVisible" : "true",
+																					"@SectionBracketsVisible" : "true",
+																					"@TimeSignaturesVisible" : "true",
+																					"@KeySignaturesVisible" : "true",
+																					"@ClefsVisible" : "true",
+																					"@ScoreTitleVisible" : "false",
+																					"@CourtesyClefsVisible" : "false",
+																					"@MeasureNumberOffset" : 1,
+																					"@LeftMargin" : 20.0,
+																					"@RightMargin" : 20.0,
+																					"@TopMargin" : 15.0,
+																					"@BottomMargin" : 15.0,
+																					"@TopMarginOfFirstPage" : 60.0,
+																					"@DrawAllMeasureNumbers" : "false",
+																					"@TextFontScaler" : 1.5,
+																					"@ScoreSubtitleFontScaler" : 2.0,
+																					"@ScoreTitleFontScaler" : 4.0,
+																					"@TimesigFontScaler" : 2.5,
+																					"@MeasureNumberFontScaler" : 1.5,
+																					"@TextFontName" : "SansSerif",
+																					"@ScoreSubtitleFontName" : "Serif",
+																					"@ScoreTitleFontName" : "Serif",
+																					"@TimesigFontName" : "Serif",
+																					"@MeasureNumberFontName" : "SansSerif",
+																					"@FirstSystemIndent" : 0.0,
+																					"@useLegacyMultiTrackOrientation" : "true",
+																					".ordering" : [ "ScoreAnnotation", "orchestra", "mixerpanelsettings", "staffspacing", "staffspacing", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "measure", "measure", "scoreUserBean" ],
+																					"ScoreAnnotation" : 																					{
+																						"0" : 																						{
+																							"@CLASSNAME" : "com.softsynth.jmsl.score.ScoreAnnotation",
+																							"@Annotation" : "324.3oc4PtrSCCCEDccxWgkWmD4HwCU1QU2vBJU7PHAhENI1QlZ6ajsSATU+2wOZSCeCrwV9bGOZl697L7NlwJ.MFcCBWWQvEd1fAF.iyioxv.R.1Ho5san8rIhSnXunEt.nlPpRP12NNniP7sFg2g.VMZEsS7kF5tQCEmbwIYSSd16oEsl8E5QPQ0QEM8sfDLg4uiHUKVbUwrqKJP9bi9Hnj+WkjhYGShrL2qF5PL0Ge+F.pXspt7HYkOdoEvSCzVgteI0lZd00QINJmWRBjr84YYXIqqmYjBMydx4fpejwegWw3zQoCGwJQqw2tXDvp6K0flklP69bz5Nsgyvs9USTU27+GiVoDfsiCm0FiTuARLe+KPk0wJ68sowbm15LqopTfPIqDA3nhocgIa.qHz5G3b+NHZcd1g7yEt9+QgyOj+a2Lbcb"
+																						}
+
+																					}
+,
+																					"orchestra" : 																					{
+																						"0" : 																						{
+																							"@CLASSNAME" : "com.softsynth.jmsl.score.Orchestra",
+																							".ordering" : [ "jmslscoreinstrument", "jmslscoreinstrument" ],
+																							"jmslscoreinstrument" : 																							{
+																								"0" : 																								{
+																									"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
+																									"@EditEnabled" : "true",
+																									"@InsIndex" : 0,
+																									"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
+																									"@Transposition" : 0.0,
+																									"@Name" : "MaxScoreIns-0",
+																									".ordering" : [ "dim", "dim", "dim" ],
+																									"dim" : 																									{
+																										"0" : 																										{
+																											"@index" : 4,
+																											"@defaultvalue" : 0.0,
+																											"@lowlimit" : 0.0,
+																											"@highlimit" : 3.0,
+																											"@name" : "EventFlag"
+																										}
+,
+																										"1" : 																										{
+																											"@index" : 5,
+																											"@defaultvalue" : -1.0,
+																											"@lowlimit" : -1.0,
+																											"@highlimit" : 127.0,
+																											"@name" : "originalPitch"
+																										}
+,
+																										"2" : 																										{
+																											"@index" : 6,
+																											"@defaultvalue" : -1.0,
+																											"@lowlimit" : -1.0,
+																											"@highlimit" : 10000.0,
+																											"@name" : "index"
+																										}
+
+																									}
+
+																								}
+,
+																								"1" : 																								{
+																									"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
+																									"@EditEnabled" : "true",
+																									"@InsIndex" : 1,
+																									"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
+																									"@Transposition" : 0.0,
+																									"@Name" : "MaxScoreIns-1",
+																									".ordering" : [ "dim", "dim", "dim" ],
+																									"dim" : 																									{
+																										"0" : 																										{
+																											"@index" : 4,
+																											"@defaultvalue" : 0.0,
+																											"@lowlimit" : 0.0,
+																											"@highlimit" : 3.0,
+																											"@name" : "EventFlag"
+																										}
+,
+																										"1" : 																										{
+																											"@index" : 5,
+																											"@defaultvalue" : -1.0,
+																											"@lowlimit" : -1.0,
+																											"@highlimit" : 127.0,
+																											"@name" : "originalPitch"
+																										}
+,
+																										"2" : 																										{
+																											"@index" : 6,
+																											"@defaultvalue" : -1.0,
+																											"@lowlimit" : -1.0,
+																											"@highlimit" : 10000.0,
+																											"@name" : "index"
+																										}
+
+																									}
+
+																								}
+
+																							}
+
+																						}
+
+																					}
+,
+																					"mixerpanelsettings" : 																					{
+																						"0" : 																						{
+																							".ordering" : [ "panamppair", "panamppair" ],
+																							"panamppair" : 																							{
+																								"0" : 																								{
+																									"@FADERINDEX" : 0,
+																									"@PAN" : 0.5,
+																									"@AMP" : 0.5
+																								}
+,
+																								"1" : 																								{
+																									"@FADERINDEX" : 1,
+																									"@PAN" : 0.5,
+																									"@AMP" : 0.5
+																								}
+
+																							}
+
+																						}
+
+																					}
+,
+																					"staffspacing" : 																					{
+																						"0" : 																						{
+																							"@INDEX" : 0,
+																							"@ABOVE" : 72.0,
+																							"@BELOW" : 72.0
+																						}
+,
+																						"1" : 																						{
+																							"@INDEX" : 1,
+																							"@ABOVE" : 72.0,
+																							"@BELOW" : 72.0
+																						}
+
+																					}
+,
+																					"scoresection" : 																					{
+																						"0" : 																						{
+																							"@NAME" : "A",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"1" : 																						{
+																							"@NAME" : "B",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"2" : 																						{
+																							"@NAME" : "C",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"3" : 																						{
+																							"@NAME" : "D",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"4" : 																						{
+																							"@NAME" : "E",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"5" : 																						{
+																							"@NAME" : "F",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"6" : 																						{
+																							"@NAME" : "G",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"7" : 																						{
+																							"@NAME" : "H",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"8" : 																						{
+																							"@NAME" : "I",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"9" : 																						{
+																							"@NAME" : "J",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"10" : 																						{
+																							"@NAME" : "K",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"11" : 																						{
+																							"@NAME" : "L",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"12" : 																						{
+																							"@NAME" : "M",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"13" : 																						{
+																							"@NAME" : "N",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"14" : 																						{
+																							"@NAME" : "O",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"15" : 																						{
+																							"@NAME" : "P",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"16" : 																						{
+																							"@NAME" : "Q",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"17" : 																						{
+																							"@NAME" : "R",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"18" : 																						{
+																							"@NAME" : "S",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"19" : 																						{
+																							"@NAME" : "T",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"20" : 																						{
+																							"@NAME" : "U",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"21" : 																						{
+																							"@NAME" : "V",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"22" : 																						{
+																							"@NAME" : "W",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"23" : 																						{
+																							"@NAME" : "X",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"24" : 																						{
+																							"@NAME" : "Y",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+,
+																						"25" : 																						{
+																							"@NAME" : "Z",
+																							"@START" : 0,
+																							"@END" : 0
+																						}
+
+																					}
+,
+																					"measure" : 																					{
+																						"0" : 																						{
+																							"@WIDTH" : 561,
+																							"@WIDTHSETBYHAND" : "false",
+																							"@TIMESIG" : [ 4, 4 ],
+																							"@TIMESIGSETBYHAND" : "false",
+																							"@TEMPO" : 60.0,
+																							"@TEMPOSETBYHAND" : "false",
+																							"@REPEATSTART" : "false",
+																							"@REPEATEND" : "false",
+																							"@NUMREPEATS" : 1,
+																							"@BARLINE" : "SINGLE",
+																							"@MEASURETEXTX" : 48,
+																							"@MEASURETEXTY" : 48,
+																							"@MEASURELEFTMARGIN" : 50.0,
+																							".ordering" : [ "staff", "staff" ],
+																							"staff" : 																							{
+																								"0" : 																								{
+																									"@INDEX" : 0,
+																									"@CLEF" : 0,
+																									"@CLEFSETBYHAND" : "false",
+																									"@INSTRUMENTINDEX" : 0,
+																									"@INSINDEXSETBYHAND" : "false",
+																									"@KEYSIGTYPE" : 0,
+																									"@KEYSIGNUMACC" : 0,
+																									"@KEYSIGSETBYHAND" : "false",
+																									"@EXTENDEDLINESABOVE" : 0,
+																									"@EXTENDEDLINESBELOW" : 0,
+																									".ordering" : [ "track", "track" ],
+																									"track" : 																									{
+																										"0" : 																										{
+																											"@INDEX" : 0,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+,
+																										"1" : 																										{
+																											"@INDEX" : 1,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+
+																									}
+
+																								}
+,
+																								"1" : 																								{
+																									"@INDEX" : 1,
+																									"@CLEF" : 0,
+																									"@CLEFSETBYHAND" : "false",
+																									"@INSTRUMENTINDEX" : 1,
+																									"@INSINDEXSETBYHAND" : "false",
+																									"@KEYSIGTYPE" : 0,
+																									"@KEYSIGNUMACC" : 0,
+																									"@KEYSIGSETBYHAND" : "false",
+																									"@EXTENDEDLINESABOVE" : 0,
+																									"@EXTENDEDLINESBELOW" : 0,
+																									".ordering" : [ "track", "track" ],
+																									"track" : 																									{
+																										"0" : 																										{
+																											"@INDEX" : 0,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+,
+																										"1" : 																										{
+																											"@INDEX" : 1,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+
+																									}
+
+																								}
+
+																							}
+
+																						}
+,
+																						"1" : 																						{
+																							"@WIDTH" : 450,
+																							"@WIDTHSETBYHAND" : "false",
+																							"@TIMESIG" : [ 4, 4 ],
+																							"@TIMESIGSETBYHAND" : "false",
+																							"@TEMPO" : 60.0,
+																							"@TEMPOSETBYHAND" : "false",
+																							"@REPEATSTART" : "false",
+																							"@REPEATEND" : "false",
+																							"@NUMREPEATS" : 1,
+																							"@BARLINE" : "SINGLE",
+																							"@MEASURETEXTX" : 48,
+																							"@MEASURETEXTY" : 48,
+																							"@MEASURELEFTMARGIN" : 50.0,
+																							".ordering" : [ "staff", "staff" ],
+																							"staff" : 																							{
+																								"0" : 																								{
+																									"@INDEX" : 0,
+																									"@CLEF" : 0,
+																									"@CLEFSETBYHAND" : "false",
+																									"@INSTRUMENTINDEX" : 0,
+																									"@INSINDEXSETBYHAND" : "false",
+																									"@KEYSIGTYPE" : 0,
+																									"@KEYSIGNUMACC" : 0,
+																									"@KEYSIGSETBYHAND" : "false",
+																									"@EXTENDEDLINESABOVE" : 0,
+																									"@EXTENDEDLINESBELOW" : 0,
+																									".ordering" : [ "track", "track" ],
+																									"track" : 																									{
+																										"0" : 																										{
+																											"@INDEX" : 0,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+,
+																										"1" : 																										{
+																											"@INDEX" : 1,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+
+																									}
+
+																								}
+,
+																								"1" : 																								{
+																									"@INDEX" : 1,
+																									"@CLEF" : 0,
+																									"@CLEFSETBYHAND" : "false",
+																									"@INSTRUMENTINDEX" : 1,
+																									"@INSINDEXSETBYHAND" : "false",
+																									"@KEYSIGTYPE" : 0,
+																									"@KEYSIGNUMACC" : 0,
+																									"@KEYSIGSETBYHAND" : "false",
+																									"@EXTENDEDLINESABOVE" : 0,
+																									"@EXTENDEDLINESBELOW" : 0,
+																									".ordering" : [ "track", "track" ],
+																									"track" : 																									{
+																										"0" : 																										{
+																											"@INDEX" : 0,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+,
+																										"1" : 																										{
+																											"@INDEX" : 1,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+
+																									}
+
+																								}
+
+																							}
+
+																						}
+
+																					}
+,
+																					"scoreUserBean" : 																					{
+																						"0" : 																						{
+																							"@CLASSNAME" : "com.algomusic.max.MaxScoreRenderedMessageListener"
+																						}
+
+																					}
+
+																				}
+
+																			}
+
+																		}
+
+																	}
+,
+																	"id" : "obj-9",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 4,
+																	"outlettype" : [ "dictionary", "", "", "" ],
+																	"patching_rect" : [ 36.0, 119.0, 89.0, 22.0 ],
+																	"saved_object_attributes" : 																	{
+																		"embed" : 1,
+																		"parameter_enable" : 0,
+																		"parameter_mappable" : 0
+																	}
+,
+																	"text" : "dict @embed 1",
+																	"varname" : "u931004218"
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"comment" : "",
 																	"id" : "obj-4",
 																	"index" : 2,
 																	"maxclass" : "inlet",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
-																	"outlettype" : [ "bang" ],
-																	"patching_rect" : [ 196.0, 23.0, 30.0, 30.0 ]
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"embedstate" : [ [ "restoreblob", "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" ] ],
-																	"id" : "obj-24",
-																	"maxclass" : "newobj",
-																	"numinlets" : 1,
-																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 127.0, 140.0, 103.0, 22.0 ],
-																	"saved_object_attributes" : 																	{
-																		"filename" : "maxscore.store",
-																		"parameter_enable" : 0
-																	}
-,
-																	"text" : "js maxscore.store"
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"id" : "obj-14",
-																	"maxclass" : "newobj",
-																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 36.0, 72.0, 110.0, 22.0 ],
-																	"text" : "grab 2 #0grab"
+																	"patching_rect" : [ 223.0, 23.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -475,61 +984,61 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 127.0, 175.0, 30.0, 30.0 ]
+																	"patching_rect" : [ 36.0, 157.0, 30.0, 30.0 ]
 																}
 
 															}
  ],
 														"lines" : [ 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-24", 0 ],
-																	"source" : [ "obj-14", 1 ]
+																	"destination" : [ "obj-9", 0 ],
+																	"source" : [ "obj-10", 0 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-36", 0 ],
-																	"source" : [ "obj-24", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-14", 0 ],
+																	"destination" : [ "obj-10", 0 ],
 																	"source" : [ "obj-35", 0 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-24", 0 ],
-																	"midpoints" : [ 205.5, 127.5, 136.5, 127.5 ],
+																	"destination" : [ "obj-9", 0 ],
+																	"midpoints" : [ 232.5, 102.5, 45.5, 102.5 ],
 																	"source" : [ "obj-4", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-36", 0 ],
+																	"source" : [ "obj-9", 0 ]
 																}
 
 															}
  ],
 														"styles" : [ 															{
 																"name" : "black on white",
-																"number" : 																{
-																	"fontname" : [ "Arial" ],
-																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-																	"fontsize" : [ 12.0 ]
-																}
-,
 																"umenu" : 																{
-																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 																	"bgfillcolor" : 																	{
-																		"type" : "color",
+																		"angle" : 270.0,
+																		"autogradient" : 0,
+																		"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 																		"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 																		"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-																		"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-																		"angle" : 270.0,
 																		"proportion" : 0.39,
-																		"autogradient" : 0
+																		"type" : "color"
 																	}
-
+,
+																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+																}
+,
+																"number" : 																{
+																	"fontname" : [ "Arial" ],
+																	"fontsize" : [ 12.0 ],
+																	"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -548,8 +1057,8 @@
 , 															{
 																"name" : "section dividers",
 																"default" : 																{
-																	"fontname" : [ "Arial" ],
 																	"fontface" : [ 3 ],
+																	"fontname" : [ "Arial" ],
 																	"fontsize" : [ 15.0 ]
 																}
 ,
@@ -569,8 +1078,8 @@
 , 															{
 																"name" : "titles",
 																"default" : 																{
-																	"fontname" : [ "Arial" ],
 																	"fontface" : [ 1 ],
+																	"fontname" : [ "Arial" ],
 																	"fontsize" : [ 20.0 ]
 																}
 ,
@@ -622,7 +1131,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 4,
-													"outlettype" : [ "", "dictionary", "", "newScore" ],
+													"outlettype" : [ "", "", "", "newScore" ],
 													"patching_rect" : [ 119.666665999999964, 142.5, 154.0, 22.0 ],
 													"text" : "maxscore #0grab",
 													"varname" : "MaxScore"
@@ -639,7 +1148,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
+															"minor" : 3,
 															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -786,6 +1295,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 0,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -1028,13 +1539,13 @@
 																"name" : "AudioStatus_Menu",
 																"default" : 																{
 																	"bgfillcolor" : 																	{
-																		"type" : "color",
+																		"angle" : 270.0,
+																		"autogradient" : 0,
 																		"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 																		"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 																		"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-																		"angle" : 270.0,
 																		"proportion" : 0.39,
-																		"autogradient" : 0
+																		"type" : "color"
 																	}
 
 																}
@@ -1046,15 +1557,15 @@
 																"name" : "panel_middle",
 																"default" : 																{
 																	"bgfillcolor" : 																	{
-																		"type" : "gradient",
+																		"angle" : 90.0,
+																		"autogradient" : 0,
 																		"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 																		"color1" : [ 0.654902, 0.572549, 0.376471, 1.0 ],
 																		"color2" : [ 0.0, 0.0, 0.0, 1.0 ],
-																		"angle" : 90.0,
 																		"proportion" : 0.390909,
-																		"autogradient" : 0,
 																		"pt1" : [ 0.504951, 0.956522 ],
-																		"pt2" : [ 0.504951, 0.0 ]
+																		"pt2" : [ 0.504951, 0.0 ],
+																		"type" : "gradient"
 																	}
 
 																}
@@ -1066,14 +1577,14 @@
 																"name" : "panel_middle_raw",
 																"default" : 																{
 																	"bgfillcolor" : 																	{
-																		"type" : "gradient",
+																		"angle" : 90.0,
+																		"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 																		"color1" : [ 0.0, 0.0, 0.0, 1.0 ],
 																		"color2" : [ 0.654902, 0.572549, 0.376471, 1.0 ],
-																		"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-																		"angle" : 90.0,
 																		"proportion" : 0.390909,
 																		"pt1" : [ 0.504951, 0.956522 ],
-																		"pt2" : [ 0.504951, 0.0 ]
+																		"pt2" : [ 0.504951, 0.0 ],
+																		"type" : "gradient"
 																	}
 
 																}
@@ -1150,7 +1661,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
+															"minor" : 3,
 															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -1396,7 +1907,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
+															"minor" : 3,
 															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -1698,7 +2209,7 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 476.833333333333371, 394.5, 180.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"initial" : [ 15073 ],
+														"initial" : [ 211641 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -1745,7 +2256,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 0.0, 0.0, 320.0, 220.0 ],
 													"rounded" : 0.0,
-													"types" : [ "TEXT" ],
+													"types" : "TEXT",
 													"varname" : "dropfile"
 												}
 
@@ -1839,7 +2350,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
+															"minor" : 3,
 															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -2105,7 +2616,7 @@
 , 											{
 												"box" : 												{
 													"border" : 0,
-													"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1 ] ],
+													"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1 ], [ "transparency", 0 ] ],
 													"filename" : "pane.js",
 													"id" : "obj-7",
 													"maxclass" : "jsui",
@@ -2422,6 +2933,14 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-43", 0 ],
+													"midpoints" : [ 13.5, 677.25, 362.666665999999964, 677.25 ],
+													"source" : [ "obj-20", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-31", 0 ],
 													"source" : [ "obj-25", 0 ]
 												}
@@ -2653,8 +3172,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-43", 0 ],
-													"midpoints" : [ 13.5, 677.25, 362.666665999999964, 677.25 ],
+													"destination" : [ "obj-20", 0 ],
 													"source" : [ "obj-48", 0 ]
 												}
 
@@ -2707,24 +3225,24 @@
  ],
 										"styles" : [ 											{
 												"name" : "black on white",
-												"number" : 												{
-													"fontname" : [ "Arial" ],
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-													"fontsize" : [ 12.0 ]
-												}
-,
 												"umenu" : 												{
-													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
-
+,
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+												}
+,
+												"number" : 												{
+													"fontname" : [ "Arial" ],
+													"fontsize" : [ 12.0 ],
+													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2743,8 +3261,8 @@
 , 											{
 												"name" : "section dividers",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
 													"fontface" : [ 3 ],
+													"fontname" : [ "Arial" ],
 													"fontsize" : [ 15.0 ]
 												}
 ,
@@ -2764,8 +3282,8 @@
 , 											{
 												"name" : "titles",
 												"default" : 												{
-													"fontname" : [ "Arial" ],
 													"fontface" : [ 1 ],
+													"fontname" : [ "Arial" ],
 													"fontsize" : [ 20.0 ]
 												}
 ,
@@ -2791,6 +3309,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-11",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "maxscore.fluidsynth2.maxpat",
 									"numinlets" : 2,
@@ -2938,24 +3457,24 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"fontname" : [ "Arial" ],
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontsize" : [ 12.0 ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2974,8 +3493,8 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
+									"fontname" : [ "Arial" ],
 									"fontsize" : [ 15.0 ]
 								}
 ,
@@ -2995,8 +3514,8 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
+									"fontname" : [ "Arial" ],
 									"fontsize" : [ 20.0 ]
 								}
 ,
@@ -3045,7 +3564,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3160,10 +3679,54 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
+				"name" : "ASJFluidSynthPreset.json",
+				"bootpath" : "/Users/Shared/Max 8/Library/A Space Journey",
+				"patcherrelativepath" : "../../../Library/A Space Journey",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "MaxScore.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "MaxScore.rxml.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "MaxScoreKeyMap.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
+				"patcherrelativepath" : "../patchers/maps",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "boxSize.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "divmod.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
+				"patcherrelativepath" : "../patchers/DJster/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fixpathissue.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluidsynth~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "helpdetails.js",
@@ -3172,16 +3735,28 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.makenote.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpstarter.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "icanvas.interaction.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "first-int.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Macaque/lib/abstractions",
-				"patcherrelativepath" : "../patchers/Macaque/lib/abstractions",
+				"name" : "icanvas.queries.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -3193,16 +3768,44 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "sequenceDumpPlayer.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster",
-				"patcherrelativepath" : "../patchers/Picster",
+				"name" : "iswindows.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"name" : "jit.pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.bcanvas.hub.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.fluidsynth.instrument.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "../patchers/modules/Components",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.fluidsynth.menus.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "../patchers/modules/Components",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.fluidsynth2-player.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "../patchers/modules/Components",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -3221,42 +3824,108 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fixpathissue.js",
+				"name" : "maxscore.info.grab.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.makenote.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.proportionalNotation.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.fluidsynth.menus.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
-				"patcherrelativepath" : "../patchers/modules/Components",
+				"name" : "maxscore.rapidXML.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.fluidsynth.instrument.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
-				"patcherrelativepath" : "../patchers/modules/Components",
+				"name" : "maxscore.rapidxml.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Blackwood - 23 notes FluidSynth Prefs.json",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/examples/Scores",
-				"patcherrelativepath" : "../examples/Scores",
+				"name" : "maxscore.xml2json.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.fluidsynth2-player.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
-				"patcherrelativepath" : "../patchers/modules/Components",
+				"name" : "mouseEvents.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "musicxml2jmsl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mxj.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "my-LtoColl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "my-loadbang.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
+				"patcherrelativepath" : "../../../Library/MaxScore",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m.max-fs.js",
+				"bootpath" : "C74:/packages/Node for Max/examples/filesystem",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m_musicxml2jmsl.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
+				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "picster-init.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
@@ -3277,17 +3946,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "boxSize.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
+				"name" : "sadam.rapidXML.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "jit.pane.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
+				"name" : "sequenceDumpPlayer.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster",
+				"patcherrelativepath" : "../patchers/Picster",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -3298,147 +3964,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "n4m.max-fs.js",
-				"bootpath" : "C74:/packages/Node For Max/examples/filesystem",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "swissarmyknife.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "MaxScore.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.xml2json.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.info.recv.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.json2xml.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "formatXML.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.proportionalNotation.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "picster-init.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "musicxml2jmsl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../patchers/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "n4m_musicxml2jmsl.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
-				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "icanvas.queries.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.store.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "my-loadbang.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../Library/MaxScore",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "icanvas.interaction.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.bcanvas.hub.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "MaxScoreKeyMap.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
-				"patcherrelativepath" : "../patchers/maps",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mouseEvents.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpstarter.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluidsynth~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "mxj.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "sadam.rapidXML.mxo",
-				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0

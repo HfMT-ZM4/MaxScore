@@ -1374,7 +1374,8 @@ function anything() {
        case "printNoteText":
 			//printNoteText measureIndex staffIndex trackIndex noteIndex zoom x y test
 			var noteText = "";
-			//post("currentElement", currentElement, "\n");
+			//post("msg[7]", msg[7], typeof msg[7], "\n");
+			if (typeof msg[7] == "string" && msg[7].indexOf("\\") == 0) msg[7] = msg[7].slice(msg[7].lastIndexOf("\\") + 1);
 			switch (msg[7])
 			{
 				case "$MIDICENTS" :
@@ -2108,8 +2109,7 @@ function anything() {
 			}
 		//KEEP TRACK OF OCCURENCES OF NOTES AND INTERVALS
 		if (msg[3]!= "Staff" && (accList.indexOf(msgname) != -1 || msgname.indexOf("rest") != -1)){
-			var Accidental = [];
-			if (msg[3] == "Note" && msg[7] != -1) { //Note
+				if (msg[3] == "Note" && msg[7] != -1) { //Note
 				noteCount = msg[7];
 				intervalCount = -1;
 				graceNoteCount = -1;
@@ -2126,10 +2126,13 @@ function anything() {
 				}
 			else if (msg[3] == "Interval" && msg[7] == -1) { //Gracenote
 				graceNoteIntervalCount++;
-				}				
+				}
+		}
+		if (msg[3]!= "Staff" && (accList.indexOf(msgname) != -1)){
+				//if (msgname.indexOf("rest")) post("rest", msgname, "\n");
+				var Accidental = [];
 				if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none") getNoteInfo([msg[4], msg[5], msg[6], noteCount, intervalCount, graceNoteCount, graceNoteIntervalCount]);
 				currentElement = [msg[3].toLowerCase(), msg[4], msg[5], msg[6], noteCount, intervalCount, graceNoteCount, graceNoteIntervalCount];
-				//post("currentElement", currentElement, "\n");
 			if (annotation.contains("staff-"+msg[5]+"::micromap") && annotation.get("staff-"+msg[5]+"::micromap") != "mM-none"){
 			if (accvis == 1) return;
 			switch (annotation.get("staff-"+msg[5]+"::micromap")){
@@ -2429,6 +2432,7 @@ function anything() {
 			{
 				msg[1] = msg[1] - annotation.get("staff-"+msg[5]+"::adjust") * 6 * msg[2];
 			}
+		//if (msgname.indexOf("rest") != -1) post("rest2", msgname, "\n");
 		var multiple = glyph.length / 5;
 			for (var s = 0; s < groupcount; s++)
 			{

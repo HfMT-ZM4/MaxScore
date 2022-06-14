@@ -650,6 +650,37 @@
 						"title" : "Tablature Editor",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-124",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 860.0, 556.468261999999982, 70.0, 22.0 ],
+									"text" : "loadmess 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"colorselectedtext" : 1,
+									"htabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+									"id" : "obj-120",
+									"maxclass" : "tab",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "int", "", "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 860.0, 595.0, 70.0, 21.0 ],
+									"presentation" : 1,
+									"presentation_rect" : [ 175.25, 463.0, 70.0, 21.0 ],
+									"tabcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+									"tabs" : [ "440", "442" ],
+									"varname" : "kammerton"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-1648",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -706,7 +737,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.8, 0.8, 0.8, 1 ] ],
+									"embedstate" : [ [ "bgcolor", 0.8, 0.8, 0.8, 1 ], [ "transparency", 0 ] ],
 									"filename" : "pane.js",
 									"id" : "obj-37",
 									"maxclass" : "jsui",
@@ -714,9 +745,9 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 825.0, 259.0, 200.0, 120.0 ],
+									"patching_rect" : [ 825.0, 259.0, 200.0, 100.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 51.25, 78.0, 200.0, 120.0 ],
+									"presentation_rect" : [ 51.25, 78.0, 200.0, 100.0 ],
 									"varname" : "pane"
 								}
 
@@ -816,7 +847,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 587.5, 358.0, 204.0, 49.0 ],
-									"restore" : [ 10146 ],
+									"restore" : [ 1526 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -908,8 +939,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 576.0, 542.468261999999982, 89.0, 23.0 ],
-									"text" : "receive~ tune"
+									"patching_rect" : [ 576.0, 542.468261999999982, 120.0, 23.0 ],
+									"text" : "receive~ #0-tune"
 								}
 
 							}
@@ -922,11 +953,12 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 214.600006000000008, 395.889403999999956, 58.0, 22.0 ],
 									"restore" : 									{
-										"instrument" : [ 0 ],
+										"dump" : [ 0.0 ],
+										"instrument" : [ 7 ],
 										"interval" : [ 1.0 ],
-										"live.gain~" : [ 0.0 ],
+										"live.gain~" : [ -26.573827031951609 ],
 										"numfrets" : [ 19 ],
-										"numstrings" : [ 6 ],
+										"numstrings" : [ 5 ],
 										"onebang" : [ 1.0 ],
 										"pane" : [ 0, 0 ]
 									}
@@ -946,7 +978,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 627.0, 615.968261999999982, 152.0, 20.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 34.0, 467.0, 46.0, 20.0 ],
+									"presentation_rect" : [ 6.25, 463.0, 46.0, 20.0 ],
 									"text" : "Tuner:",
 									"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ]
 								}
@@ -965,7 +997,7 @@
 									"parameter_enable" : 1,
 									"patching_rect" : [ 576.0, 572.968261999999982, 136.0, 20.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 77.0, 468.0, 136.0, 20.0 ],
+									"presentation_rect" : [ 49.25, 468.0, 124.0, 20.0 ],
 									"saved_attribute_attributes" : 									{
 										"slidercolor" : 										{
 											"expression" : ""
@@ -986,7 +1018,7 @@
 										"valueof" : 										{
 											"parameter_initial" : [ 0.0 ],
 											"parameter_invisible" : 2,
-											"parameter_longname" : "live.gain~[5]",
+											"parameter_longname" : "live.gain~[3]",
 											"parameter_mmax" : 6.0,
 											"parameter_mmin" : -70.0,
 											"parameter_shortname" : "live.gain~",
@@ -2322,7 +2354,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 268.0, 242.0, 561.0, 713.0 ],
+										"rect" : [ 511.0, 87.0, 790.0, 743.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2351,6 +2383,61 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-31",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "int" ],
+													"patching_rect" : [ 556.5, 516.0, 29.5, 22.0 ],
+													"text" : "t b i"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-22",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 556.5, 440.5, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-18",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 353.0, 550.968261999999982, 233.0, 22.0 ],
+													"text" : "expr $f1 + $f2 * 12. * log(442./440.)/log(2.)"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-13",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 3,
+													"outlettype" : [ "", "", "" ],
+													"patching_rect" : [ 556.5, 485.0, 185.0, 22.0 ],
+													"restore" : [ 0 ],
+													"saved_object_attributes" : 													{
+														"parameter_enable" : 0,
+														"parameter_mappable" : 0
+													}
+,
+													"text" : "pattr @bindto parent::kammerton",
+													"varname" : "u566041993"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-3",
 													"maxclass" : "newobj",
@@ -2435,8 +2522,8 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 297.0, 645.968261999999982, 75.0, 23.0 ],
-													"text" : "send~ tune"
+													"patching_rect" : [ 297.0, 697.968261999999982, 106.0, 23.0 ],
+													"text" : "send~ #0-tune"
 												}
 
 											}
@@ -2449,7 +2536,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "signal" ],
-													"patching_rect" : [ 297.0, 614.968261999999982, 75.0, 23.0 ],
+													"patching_rect" : [ 297.0, 666.968261999999982, 75.0, 23.0 ],
 													"text" : "*~"
 												}
 
@@ -2463,7 +2550,7 @@
 													"numinlets" : 5,
 													"numoutlets" : 4,
 													"outlettype" : [ "signal", "signal", "", "" ],
-													"patching_rect" : [ 296.0, 582.835448999999926, 127.0, 23.0 ],
+													"patching_rect" : [ 296.0, 638.835448999999926, 127.0, 23.0 ],
 													"text" : "adsr~ 50 50 0.8 100"
 												}
 
@@ -2477,7 +2564,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "signal" ],
-													"patching_rect" : [ 353.0, 550.5, 37.0, 22.0 ],
+													"patching_rect" : [ 353.0, 610.5, 37.0, 22.0 ],
 													"text" : "saw~"
 												}
 
@@ -2491,7 +2578,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 353.0, 514.0, 34.0, 22.0 ],
+													"patching_rect" : [ 353.0, 582.0, 34.0, 22.0 ],
 													"text" : "mtof",
 													"varname" : "mtof"
 												}
@@ -2504,7 +2591,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 353.0, 449.5, 173.0, 22.0 ],
+													"patching_rect" : [ 353.0, 436.5, 173.0, 22.0 ],
 													"text" : "sprintf bindto parent::string[%i]"
 												}
 
@@ -2516,7 +2603,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 353.0, 480.5, 189.0, 22.0 ],
+													"patching_rect" : [ 353.0, 504.0, 189.0, 22.0 ],
 													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
@@ -2672,6 +2759,13 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
+													"destination" : [ "obj-31", 0 ],
+													"source" : [ "obj-13", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-182", 0 ],
 													"source" : [ "obj-14", 0 ]
 												}
@@ -2686,7 +2780,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-19", 0 ],
+													"destination" : [ "obj-18", 0 ],
 													"source" : [ "obj-15", 0 ]
 												}
 
@@ -2695,6 +2789,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-15", 0 ],
 													"source" : [ "obj-16", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-19", 0 ],
+													"source" : [ "obj-18", 0 ]
 												}
 
 											}
@@ -2791,6 +2892,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-13", 0 ],
+													"source" : [ "obj-22", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-332", 0 ],
 													"source" : [ "obj-222", 0 ]
 												}
@@ -2858,6 +2966,20 @@
 												"patchline" : 												{
 													"destination" : [ "obj-28", 0 ],
 													"source" : [ "obj-30", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-15", 0 ],
+													"source" : [ "obj-31", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-18", 1 ],
+													"source" : [ "obj-31", 1 ]
 												}
 
 											}
@@ -2970,8 +3092,149 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 146.5, 257.5, 58.0, 22.0 ],
 									"restore" : 									{
-										"current-staff" : [ 11 ],
-										"dump" : [ 0.0 ]
+										"annotation" : [ 											{
+												"version" : "1.0",
+												"proportional" : 0,
+												"blankPage" : 0,
+												"timeUnit" : 100.0,
+												"textfont" : "Arial",
+												"musicfont" : "Bravura",
+												"titlefont" : "Times New Roman",
+												"bgcolor" : [ 0.996, 0.996, 0.94, 1.0 ],
+												"fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+												"linecolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+												"setWrap" : 1,
+												"setZoom" : 0.5,
+												"setDurationalSpacingBase" : 0.7,
+												"staff-0" : 												{
+													"ledgerlines" : 1,
+													"style" : "Tablature|BP-double_bass",
+													"micromap" : "mM-none",
+													"adjust" : -1,
+													"clef" : "TAB",
+													"ratio-lookup" : 0,
+													"staffgroup" : [ 0, 0 ],
+													"abbrInstrName" : " ",
+													"instrumentNamePositionOffset" : 0
+												}
+
+											}
+ ],
+										"current-staff" : [ 0 ],
+										"dict" : [ 											{
+												"monochord" : 												{
+													"strings" : [ 62 ],
+													"fret-interval" : 1
+												}
+,
+												"dombra" : 												{
+													"strings" : [ 62, 67 ],
+													"fret-interval" : 1
+												}
+,
+												"domra" : 												{
+													"strings" : [ 64, 69, 74 ],
+													"fret-interval" : 1
+												}
+,
+												"mandolin" : 												{
+													"strings" : [ 55, 62, 69, 76 ],
+													"fret-interval" : 1
+												}
+,
+												"bass guitar" : 												{
+													"strings" : [ 28, 33, 38, 43 ],
+													"fret-interval" : 1
+												}
+,
+												"BP-double_bass" : 												{
+													"strings" : [ 28.030000000000001, 32.420000000000002, 36.810000000000002, 41.200000000000003 ],
+													"fret-interval" : 1.463
+												}
+,
+												"5-string bass guitar" : 												{
+													"strings" : [ 23, 28, 33, 38, 43 ],
+													"fret-interval" : 1
+												}
+,
+												"5-string BP bass guitar" : 												{
+													"strings" : [ 23.640000000000001, 28.030000000000001, 32.420000000000002, 36.810000000000002, 41.200000000000003 ],
+													"fret-interval" : 1
+												}
+,
+												"guitar" : 												{
+													"strings" : [ 40, 45, 50, 55, 59, 64 ],
+													"fret-interval" : 1
+												}
+,
+												"BP-acoustic_guitar" : 												{
+													"strings" : [ 41.201500000000003, 45.590733, 49.979999999999997, 54.369190000000003, 58.758423000000001, 63.147655 ],
+													"fret-interval" : 1.463
+												}
+,
+												"7-string guitar" : 												{
+													"strings" : [ 35, 40, 45, 50, 55, 59, 64 ],
+													"fret-interval" : 1
+												}
+,
+												"8-string guitar" : 												{
+													"strings" : [ 35, 40, 45, 50, 55, 59, 64, 69 ],
+													"fret-interval" : 1
+												}
+,
+												"9-string guitar" : 												{
+													"strings" : [ 30, 35, 40, 45, 50, 55, 59, 64, 69 ],
+													"fret-interval" : 1
+												}
+,
+												"9-string BP electric" : 												{
+													"strings" : [ 36.810001, 41.200001, 45.590000000000003, 49.979999999999997, 54.369999, 58.759998000000003, 63.150002000000001, 67.540001000000004, 71.930000000000007 ],
+													"fret-interval" : 1.46
+												}
+,
+												"10-string guitar (Yepes)" : 												{
+													"strings" : [ 30, 32, 34, 36, 40, 45, 50, 55, 59, 64 ],
+													"fret-interval" : 1
+												}
+,
+												"10-string 41-tone guitar" : 												{
+													"strings" : [ 31.536587000000001, 35.341464999999999, 39.146343000000002, 42.951220999999997, 46.756100000000004, 50.560974000000002, 54.365851999999997, 58.170731000000004, 61.975608999999999, 65.780486999999994 ],
+													"fret-interval" : 0.292688
+												}
+,
+												"11-string alto guitar" : 												{
+													"strings" : [ 34, 36, 38, 39, 41, 43, 48, 53, 58, 62, 67 ],
+													"fret-interval" : 1
+												}
+,
+												"12-string classical guitar" : 												{
+													"strings" : [ 29, 31, 33, 35, 36, 38, 40, 45, 50, 55, 59, 64 ],
+													"fret-interval" : 1
+												}
+,
+												"13-string classical guitar" : 												{
+													"strings" : [ 28, 29, 31, 33, 35, 36, 38, 40, 45, 50, 55, 59, 64 ],
+													"fret-interval" : 1
+												}
+,
+												"14-course archlute" : 												{
+													"strings" : [ 29, 31, 33, 34, 36, 38, 40, 41, 43, 48, 53, 57, 62, 67 ],
+													"fret-interval" : 1
+												}
+,
+												"15-course theorbo" : 												{
+													"strings" : [ 29, 31, 33, 35, 36, 38, 40, 41, 43, 45, 50, 55, 59, 52, 57 ],
+													"fret-interval" : 1
+												}
+,
+												"19-course theorbo" : 												{
+													"strings" : [ 23, 24, 26, 28, 29, 31, 33, 35, 36, 38, 40, 41, 43, 45, 50, 55, 59, 52, 57 ],
+													"fret-interval" : 1
+												}
+
+											}
+ ],
+										"kammerton" : [ 0 ]
 									}
 ,
 									"text" : "autopattr",
@@ -3259,7 +3522,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 507.100006000000008, 123.5, 411.0, 22.0 ],
-									"restore" : [ "16936-" ],
+									"restore" : [ "1288-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3367,7 +3630,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-43",
-									"items" : [ "monochord", ",", "dombra", ",", "domra", ",", "mandolin", ",", "bass guitar", ",", "5-string bass guitar", ",", "guitar", ",", "BP-acoustic_guitar", ",", "7-string guitar", ",", "8-string guitar", ",", "9-string guitar", ",", "9-string BP electric", ",", "10-string guitar (Yepes)", ",", "10-string 41-tone guitar", ",", "11-string alto guitar", ",", "12-string classical guitar", ",", "13-string classical guitar", ",", "14-course archlute", ",", "15-course theorbo", ",", "19-course theorbo", ",", "BP-double_bass" ],
+									"items" : [ "monochord", ",", "dombra", ",", "domra", ",", "mandolin", ",", "bass guitar", ",", "BP-double_bass", ",", "5-string bass guitar", ",", "5-string BP bass guitar", ",", "guitar", ",", "BP-acoustic_guitar", ",", "7-string guitar", ",", "8-string guitar", ",", "9-string guitar", ",", "9-string BP electric", ",", "10-string guitar (Yepes)", ",", "10-string 41-tone guitar", ",", "11-string alto guitar", ",", "12-string classical guitar", ",", "13-string classical guitar", ",", "14-course archlute", ",", "15-course theorbo", ",", "19-course theorbo" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -3494,6 +3757,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1240", 0 ],
 									"source" : [ "obj-1238", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-120", 0 ],
+									"source" : [ "obj-124", 0 ]
 								}
 
 							}
@@ -4390,7 +4660,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 579.0, 114.5, 457.0, 22.0 ],
-									"restore" : [ 10146 ],
+									"restore" : [ 1526 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4614,7 +4884,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 579.0, 50.0, 411.0, 22.0 ],
-									"restore" : [ "16936-" ],
+									"restore" : [ "1288-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7575,7 +7845,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 182.0, 167.0, 219.0, 22.0 ],
-					"restore" : [ "shiftLocation", 74, 49.978000640869141, 7 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -9801,7 +10071,7 @@
 , 														{
 															"new" : "text",
 															"id" : "text_1619550439577",
-															"child" : "6",
+															"child" : "2",
 															"x" : 7,
 															"y" : 6,
 															"font-family" : [ "Verdana" ],
@@ -10399,7 +10669,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 386.400023999999974, 102.0, 264.0, 22.0 ],
-					"restore" : [ 21, 0, 0, "false", 127, 0, 0, 0, 161, 0.5, "gracenote", 0 ],
+					"restore" : [ 30.959999084472656, 0, 0, "false", 64, 0, 0, 0, 124, 0.5, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10556,7 +10826,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 6.0, 128.5, 216.0, 22.0 ],
-					"restore" : [ 49.979999542236328, 7 ],
+					"restore" : [ 30.959999084472656, 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0

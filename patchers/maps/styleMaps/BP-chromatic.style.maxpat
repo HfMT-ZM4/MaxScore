@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 386.0, 131.0, 861.0, 688.0 ],
+		"rect" : [ 283.0, 161.0, 861.0, 688.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1669,7 +1669,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 149.0, 144.0, 344.0, 22.0 ],
-													"restore" : [ "N" ],
+													"restore" : [ "R" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -1819,13 +1819,13 @@
 												"name" : "black on white",
 												"umenu" : 												{
 													"bgfillcolor" : 													{
-														"type" : "color",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 														"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "color"
 													}
 ,
 													"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -2757,7 +2757,7 @@
 									"fontname" : "Greifswaler Deutsche Schrift",
 									"fontsize" : 36.0,
 									"id" : "obj-73",
-									"items" : [ "N", ",", "U", ",", "T", ",", "Z" ],
+									"items" : [ "R", ",", "N", ",", "U", ",", "T", ",", "Z" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -2921,7 +2921,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 51.5, 392.5, 457.0, 22.0 ],
-									"restore" : [ 10146 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3836,13 +3836,13 @@
 								"name" : "black on white",
 								"umenu" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 ,
 									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -4873,17 +4873,61 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "divmod.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
+				"patcherrelativepath" : "../../DJster/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.bindtoID.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.empty.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../../abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "removeAllTablatureMessages.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "µUtil.PitchToStep.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/µUtilities",
+				"patcherrelativepath" : "../../µUtilities",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "µUtil.StepToPitch.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/µUtilities",
+				"patcherrelativepath" : "../../µUtilities",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
