@@ -45,8 +45,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 486.0, 153.0, 171.0, 20.0 ],
-					"text" : "fgcolor 1 1 1 1, bgcolor 0.6 0.6 0.6 1."
+					"patching_rect" : [ 486.0, 153.0, 248.0, 20.0 ],
+					"text" : "fgcolor 1 1 1 1, linecolor 1 1 1 1, bgcolor 0.6 0.6 0.6 1."
 				}
 
 			}
