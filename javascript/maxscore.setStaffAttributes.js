@@ -407,7 +407,7 @@ function _style(stl, flag)
     annotation.replace("staff-" + StaffIndex + "::style", stl);
 	//post("micromap", stl, basestyle, "\n");
 	if (styleSetByMenu) annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
-    annotation.replace("staff-" + StaffIndex + "::clef", "default");
+    if (ss[0] != "BP-keyboard") annotation.replace("staff-" + StaffIndex + "::clef", "default");
 	}
     newstyletype = ss[0];
 	/////////// set ratio lookup tables 
@@ -536,8 +536,11 @@ function _style(stl, flag)
         //if (isEditor(styletype)) stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
     }
     if (oldstl != "virgin") {
-        setClef(stl);
-        setStafflines(newstafflines);
+		//post("hello", ss, "\n");
+        if (ss[1] != "default") {
+		setClef(stl);
+		setStafflines(newstafflines);
+		}
         transform();
     }
 	//else define currVal[newstyletype]
@@ -548,7 +551,6 @@ function _style(stl, flag)
        	var subdivision = 0;
                 stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("onebang").message("bang");
                 if (isAlias(stl)) {
-					//post("hello", substyle.split("•")[0], "\n");
                     stylesPatcher.subpatcher().getnamed(newstyletype).subpatcher().getnamed("editor").subpatcher().getnamed("clef").message("symbol", substyle.split("•")[0]);
                     if (substyle.split("•")[1] == "39ED3") subdivision = 1;
                     else if (substyle.split("•")[1] == "65ED3") subdivision = 2;
@@ -836,8 +838,10 @@ function setClef(stl) {
                         outlet(0, "setKeySignature", i, StaffIndex, 0, "FLAT_KEY");
                     }
                     break;
-                case "BP-chromatic":
+                case "tablature":
+				case "BP-chromatic":
                     clf = "TREBLE_CLEF";
+                    this.patcher.getnamed("clef").message("set", 0);
                     for (var i = 0; i < numMeasures[1]; i++) {
                         outlet(0, "setClef", i, StaffIndex, clf);
                     }

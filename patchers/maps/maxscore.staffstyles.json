@@ -7,7 +7,7 @@
 	"31EDO" : [ "31EDO", 5, "mM-none", "default" ],
 	"BP Alto Kalimba" : [ "BP-alto-kalimba", 5, "mM-none", "PERCUSSION_CLEF" ],
 	"BP chromatic" : [ "BP-chromatic", "editor", "mM-BP", "editor", "editor" ],
-	"BP MIDI Keyboard" : [ "BP-keyboard", 5, "mM-none", "default" ],
+	"BP MIDI Keyboard" : [ "BP-keyboard", default, "mM-none", "default" ],
 	"BP Soprano Clarinet" : [ "BP-soprano-clarinet", 5, "mM-none", "TREBLE_CLEF" ],
 	"BP Tenor Clarinet" : [ "BP-tenor-clarinet", 5, "mM-none", "TREBLE_CLEF" ],
 	"BP Contra Clarinet" : [ "BP-contra-clarinet", 5, "mM-none", "TREBLE_CLEF" ],
