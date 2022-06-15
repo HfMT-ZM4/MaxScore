@@ -1350,8 +1350,9 @@ function anything() {
 			//expr $i1*256*256 + $i2*256 + $i3
 			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
            	if ((colorcode != 0 || fcolor.length == 0 || colorcode == 255 || colorcode == 16756655) && colorcode != 4210752) frgb = "rgb("+ msg[0] + "," + msg[1] + "," + msg[2] + ")";
-			else if (colorcode != 4210752) frgb = "rgb("+ 255 * fcolor[0] + "," + 255 * fcolor[1] + "," + 255 * fcolor[2] + ")";
-          break;
+			else if (colorcode != 4210752) frgb = "rgb("+ Math.round(255 * fcolor[0]) + "," + Math.round(255 * fcolor[1]) + "," + Math.round(255 * fcolor[2]) + ")";
+ 			//post("frgb", frgb, "\n");
+         break;
         case "clearGraphics":
             break;
  		case "tempoqtrequals":
@@ -1374,7 +1375,6 @@ function anything() {
        case "printNoteText":
 			//printNoteText measureIndex staffIndex trackIndex noteIndex zoom x y test
 			var noteText = "";
-			//post("msg[7]", msg[7], typeof msg[7], "\n");
 			if (typeof msg[7] == "string" && msg[7].indexOf("\\") == 0) msg[7] = msg[7].slice(msg[7].lastIndexOf("\\") + 1);
 			switch (msg[7])
 			{
@@ -1807,7 +1807,7 @@ function anything() {
 					var picster = vals[i];
 					if (picster.contains("style")) {
 					if (picster.get("style::stroke") == "$BRGB") {
-					svgstroke = "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")";
+					svgstroke = "rgb("+ parseInt(bcolor[0] * 255) + "," + parseInt(bcolor[1] * 255) + "," + parseInt(bcolor[2] * 255) + ")";
             		svgstrokeopacity = 1.; 
  					}
 					if (picster.get("style::stroke") == "$FRGB") {
@@ -1819,7 +1819,7 @@ function anything() {
             		svgstrokeopacity = picster.get("style::stroke-opacity");
 					}
 					if (picster.get("style::fill") == "$BRGB") {
-					svgfill = "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")";
+					svgfill = "rgb("+ parseInt(bcolor[0] * 255) + "," + parseInt(bcolor[1] * 255) + "," + parseInt(bcolor[2] * 255) + ")";
             		svgfillopacity = 1.;
  					}
 					else if (picster.get("style::fill") == "$FRGB") {
@@ -2466,7 +2466,6 @@ function anything() {
 		case "scoreLayout":
         	outlet(0, "playback", 0);
 			_scoreLayout = msg;
- 			//post("scoreLayout", scoreLayout, "\n");
            	break;
             case "frgb":
  			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
@@ -2516,7 +2515,7 @@ function anything() {
 function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
-			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return element * 255}) + ")";
+			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return Math.round(element * 255)}) + ")";
 			var dasharray = " ";
 			var wave = false;
 			if (picster.contains("style::stroke-dasharray")){
@@ -2546,8 +2545,9 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					var child = group.child[i];
 					svgtransform = "transform=\"" + child.transform + "\"";
 					if (child.hasOwnProperty("style")) {
-					if (child.style.stroke == "$FRGB") svgstroke = frgb;
-					else if (child.style.stroke == "$BRGB") svgstroke = brgb;
+ 					//post("color", frgb, brgb, "\n");
+					if (child.style.stroke == "$FRGB") svgstroke = frgb; //[parseInt(frgb[0]), parseInt(frgb[1]), parseInt(frgb[2])];
+					else if (child.style.stroke == "$BRGB") svgstroke = brgb; //[parseInt(brgb[0]), parseInt(brgb[1]), parseInt(brgb[2])];
 					else svgstroke = child.style.stroke;
 					svgstrokeopacity = child.style["stroke-opacity"];
 					if (child.style.fill == "$FRGB") svgfill = frgb;
