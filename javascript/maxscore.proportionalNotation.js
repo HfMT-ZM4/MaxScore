@@ -202,7 +202,7 @@ function setProportionalNotation(b) {
             } else {
                 if (json["selectedNotes"][key][0]["@SLUROUT"] == "true") outlet(0, "slurTransform");
                 if (json["selectedNotes"][key][0]["@TIEDOUT"] == "true") {
-                    currentAnchor = anchor.slice(2, 7);
+                    currentAnchor = anchor.slice(2, 9);
                     if (visibleNote == "true") { //if a note/interval is not already held
                         var held = {};
                         //var iter = 1;
@@ -211,22 +211,24 @@ function setProportionalNotation(b) {
                             outlet(0, "selectNextNote");
                             single = 1;
                             outlet(0, "getNoteAnchor"); //new
-                            nextAnchor = singleAnchor.slice(2, 7);
+                            nextAnchor = singleAnchor.slice(2, 9);
                             if (currentAnchor[1] != nextAnchor[1]) break;
                             outlet(0, "getSelectedNoteInfo");
                             held[json["selectedNotes"]["note"][0]["@PITCH"]] = [json["selectedNotes"]["note"][0]["@TIEDOUT"], json["selectedNotes"]["note"][0]["@HOLD"]];
-                            if (json["selectedNotes"]["note"][0]["@PITCH"] == pitch) {
+           					//post(JSON.stringify(held), "\n");
+                             if (json["selectedNotes"]["note"][0]["@PITCH"] == pitch) {
                                 //outlet(0, "setNoteVisible", "false");
                                 selectionBuffer.push(nextAnchor);
                             } else {
                                 outlet(0, "isChord", nextAnchor);
+           						//post("nextAnchor", nextAnchor, chord, "\n");
                                 for (var i = 0; i < chord; i++) {
                                     outlet(0, "selectNextInterval");
                                     outlet(0, "getSelectedNoteInfo");
                                     held[json["selectedNotes"]["interval"][0]["@PITCH"]] = [json["selectedNotes"]["interval"][0]["@TIEDOUT"], json["selectedNotes"]["interval"][0]["@HOLD"]];
-                                    if (json["selectedNotes"]["interval"][0]["@PITCH"] == pitch) {
+                                   if (json["selectedNotes"]["interval"][0]["@PITCH"] == pitch) {
                                         //outlet(0, "setNoteVisible", "false");
-                                        selectionBuffer.push(singleAnchor.slice(2, 6).concat(i));
+                                        selectionBuffer.push(singleAnchor.slice(2, 6).concat([i, -1, -1]));
                                     }
                                 }
                             }
@@ -609,10 +611,9 @@ function anything() {
         case "getScoreAnnotation":
             //annotation.clear();
             annotation.parse(msg);
-            //post(annotation.stringify(), "\n");
             break;
         case "isChord":
-            chord = msg[5];
+            chord = msg[8];
             break;
         case "init":
             break;
