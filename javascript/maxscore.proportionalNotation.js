@@ -32,6 +32,7 @@ var scoreRightMargin;
 var blankPage;
 var proportional = 0;
 var clefsvisible = 1;
+var ClefsVisible;
 var verticalLineFlag = 0;
 var phead;
 var staffBoundingInfo = [];
@@ -77,11 +78,13 @@ function setTimeUnit(tu) {
 }
 
 function setSelectedNotesToProportionalNotation() {
+    outlet(0, "getScoreAnnotation");
+	if (annotation.get("proportional")) {
     selection = 1;
     setProportionalNotation(1);
     selection = 0;
+	}
 }
-
 
 function setProportionalNotation(b) {
     //annotation.clear();
@@ -91,15 +94,18 @@ function setProportionalNotation(b) {
     outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     if (b) { //turn proportional notation on
+       sustain.clear();
+		if (!selection) { 
         outlet(0, "dumpScoreAttributes");
         scoreAttributes = json["jmslscoredoc"]["score"][0];
         annotation.parse(scoreAttributes["ScoreAnnotation"][0]["@Annotation"]);
         scoreRightMargin = parseFloat(scoreAttributes["@RightMargin"]);
-        var ClefsVisible = scoreAttributes["@ClefsVisible"];
+        playheadPosition = parseFloat(scoreAttributes["@LeftMargin"]);
+        ClefsVisible = scoreAttributes["@ClefsVisible"];
         annotation.set("proportional", 1);
         annotation.set("timeUnit", timeUnit);
         outlet(3, "setAnnotation", "dictionary", annotation.name);
-
+       	outlet(0, "selectAll");
         if (!proportional) {//notation is currently not proportional
             //annotation.clear();
             originalScoreAttributes = json["jmslscoredoc"]["score"][0];
@@ -122,20 +128,14 @@ function setProportionalNotation(b) {
             outlet(0, "getNumMeasures");
             for (var m = 0; m < numMeasures; m++) {
                 outlet(0, "getMeasureInfo", m);
-                //post("getInfo", JSON.stringify(originalMeasureWidths), json["measure"]["@WIDTH"], json["measure"]["@MEASURELEFTMARGIN"], "\n"); 
                 originalMeasureWidths[m] = [];
                 originalMeasureWidths[m] = [json["measure"]["@WIDTH"], json["measure"]["@MEASURELEFTMARGIN"]];
             }
         }
-
-
-        //count all beats and calculate scoresize and measure width based on timeUnit
-        //outlet(0, "setScoreSize", scoresize);
+ 		}
         scoreSize = 0;
-        sustain.clear();
-
         outlet(0, "getNumMeasures");
-        for (var m = 0; m < numMeasures; m++) {
+       	for (var m = 0; m < numMeasures; m++) {
             outlet(0, "getMeasureInfo", m);
             tempo[m] = json["measure"]["@TEMPO"];
             var timesig = json["measure"]["@TIMESIG"];
@@ -146,17 +146,17 @@ function setProportionalNotation(b) {
             outlet(0, "setMeasureLeftMargin", m, 0.);
             outlet(0, "setBarNone", m, 0);
         }
+        //post("scoreSize", scoreSize, "\n"); 
         increment = 0;
         selectionBuffer = [];
         anchors = {};
         var currentAnchor = [];
         var currentAnchorKey = "";
-        if (!selection) outlet(0, "selectAll");
+        outlet(0, "getNoteAnchor");
         outlet(0, "setBeamedOut", "false");
         outlet(0, "pruneTies");
         outlet(0, "noteStemVisibilityTransform", "false");
         single = 0;
-        outlet(0, "getNoteAnchor");
         outlet(0, "clearSelection");
         for (var event in anchors) {
             var hasPitchBend = false;
@@ -259,7 +259,7 @@ function setProportionalNotation(b) {
                     var _picster = {};
                     attr.new = "path";
                     attr.id = "sustain_0";
-                    attr.d = "M5,3 L" + length + ",3M" + length + ",1L" + length + ",5";
+                    attr.d = "M5.5,3 L" + length + ",3M" + length + ",1L" + length + ",5";
                     attr.style = {};
                     attr.style["stroke"] = "$FRGB";
                     attr.style["stroke-opacity"] = 1.;
@@ -287,12 +287,12 @@ function setProportionalNotation(b) {
         }
         outlet(0, "getSelectionBufferSize");
         if (selectionBufferSize > 0) outlet(0, "setNoteVisible", "false");
-        //post("selectionBuffer", selectionBufferSize, "\n");
+        //post("scoreSize", scoreSize, factor, playheadPosition, scoreRightMargin, "\n"); //ClefsVisible == "true"
         outlet(0, "clearSelection");
-        if (!selection) outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["@HEIGHT"]));
+        outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["@HEIGHT"]));
         outlet(0, "setReceivePlayheadPosition", "false");
         outlet(0, "setNoteFlash", "false");
-        if (!selection) {}
+        //if (!selection) {}
         proportional = 1;
     } 
 	else if (!b) { //turn proportional notation off
@@ -300,7 +300,7 @@ function setProportionalNotation(b) {
         if (proportional) { //notation is currently proportional
             annotation.set("proportional", 0);
             outlet(3, "setAnnotation", "dictionary", annotation.name);
-         	post("proportional", Object.keys(originalScoreAttributes).length, "\n");
+         	//post("proportional", Object.keys(originalScoreAttributes).length, "\n");
           	if (Object.keys(originalScoreAttributes).length) {
 				outlet(0, "setScoreSize", parseFloat(originalScoreAttributes["@WIDTH"]), parseFloat(originalScoreAttributes["@HEIGHT"]));
             	scoreRightMargin = parseFloat(originalScoreAttributes["@RightMargin"]);
@@ -388,7 +388,9 @@ function setProportionalNotation(b) {
             outlet(0, "setUndoStackEnabled", "true");
             outlet(0, "setRenderAllowed", "true");
         }
-    } else if (b == -1) {
+    } 
+/*		
+		else if (b == -1) {
         //
         //not sure whether this is still necessary
         //
@@ -401,6 +403,7 @@ function setProportionalNotation(b) {
         //playhead("show", 1);
         proportional = 1;
     }
+*/
     outlet(0, "setUndoStackEnabled", "true");
     outlet(0, "setRenderAllowed", "true");
 }
@@ -452,7 +455,8 @@ function scroll() {
                     to = -1 * scoreSize * factor * zoom / 0.5
                     dur = (scoreSize - scoreOffset) * factor / timeUnit * 1000. * zoom / 0.5;
                 }
-                outlet(1, "scroll", from, to, dur);
+         		//post("scroll", from, to, dur, "\n");
+               outlet(1, "scroll", from, to, dur);
                 break;
             case "offset":
                 //outlet(2, "offset", msg[1]);

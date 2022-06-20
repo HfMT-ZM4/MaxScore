@@ -440,7 +440,7 @@ function obj_ref(o)
 	writeSVG();
 	for (var s = 1; s <= groupcount; s++)
 		{
-			var val = [];
+		var val = [];
 		 val.push({
        		"new" : "use",
        		"id" : "score",

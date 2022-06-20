@@ -3,7 +3,7 @@ staffgroups, Canvas "staff (int) [staff] (int) …" "sets the staffgroups to be 
 setUserClef, Canvas "user-clef (symbol)" "sets a user clef included in \"Max 8/Packages/MaxScore/patchers/maps/MaxScoreClefDesigner.json\" or included in the score file by name." "setUserClef FFGG";
 setToneDivision, Canvas "staff (int) division (symbol)" "sets a grid for the display of microtonal music. The values can be 24TET (default), 48TET, 72TET-Wyschnegradsky, 72TET-Sims or 96TET" "setToneDivision 0 72TET-Wyschnegradsky";
 setTimeUnit, Canvas "pixels-per-second (float)" "sets the horizontal dimension for proportional notation in pixels per second, the default being 100" "setTimeUnit 24";
-setSelectedNotesToProportionalNotation, Canvas ? ? ?;
+setSelectedNotesToProportionalNotation, Canvas Editor "sets selected notes to proportional notation and resizes measure widths" setSelectedNotesToProportionalNotation;
 setProportionalNotation, Canvas "flag (int)" "sets the score display to proportional notation" "setProportionalNotation 1";
 setMediaFolder, Canvas "path (symbol)" "sets the path of the folder from which the drawsocket webserver serves its scores and other media files" "setMediaFolder \"Users/Shared/Max 8/Library/MaxScore/lib/\"";
 setMeasureRange, Canvas "start-measure (int) start-staff (int) end-measure (int) end-staff (int)" "sets the start and end for a measure range selection." "setMeasureRange 0 0 5 5";
