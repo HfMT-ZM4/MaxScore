@@ -999,10 +999,10 @@ function writeRuler()
 {
 	var path = "";
 	var _time = 0;
-	var j = 0;
 	if (typeof timeUnit != "number") timeUnit = 100;
 	for (var s = 0; s < groupcount; s++)
 	{
+	var j = 0;
 		for (var i = _playhead + 2; i <= _scoreLayout[4] - scoreRightMargin; i += timeUnit) {
 			path += "M" + i + " " + 0 + " V" + 15 + " ";
 			var padding = (j % 60 < 10) ? "0" : "";
@@ -1837,6 +1837,8 @@ function anything() {
 					if (dest != -1)
 					{
 					for (var d = 0; d < dest.length; d++) {
+						svggroupflag = false;
+						//post("svggroupflag", svggroupflag, "\n");					
 						if (_key == "svg") renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
 						else if (_key == "render-expression") renderExpression(msg, s, dest[d], RenderMessageOffset, e);
 								}
@@ -1849,7 +1851,6 @@ function anything() {
 			renderedMessages.set(rm++, msg);
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
-			//post("e", e.stringify(), "\n");					
 			if (e.contains("picster-element")) {
  			var picster = e.get("picster-element");
 			var keys = [];
@@ -2522,7 +2523,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				switch ([].concat(picster.get("style::stroke-dasharray"))[0]) {
 					case -1: 
 					wave = true;
-					//post("wave2", wave, "\n");	
 					break;
 					case 0:
 					break;
@@ -2533,9 +2533,11 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			//var onclick = "";
 			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
 			else transform = (1, 0, 0, 1, 0, 0);
+			//post("_g", svggroupflag, s, "\n");	
 			if (svggroupflag == false) svgtransform = "transform=\"matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")\"";
 			switch (picster.get("new")) {
 				case "g" :
+				//post("g", svggroupflag, s, svgtransform, "\n");	
 				svggroupflag = true;
 				SVGGraphics[s + 1].push("<g id=\"" + picster.get("id") + "\" " + svgtransform + ">");
 				var group = {};
