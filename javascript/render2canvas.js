@@ -997,11 +997,11 @@ function writeStaffLines()
 
 function writeRuler()
 {
-	var path = "";
 	var _time = 0;
 	if (typeof timeUnit != "number") timeUnit = 100;
 	for (var s = 0; s < groupcount; s++)
 	{
+	var path = "";
 	var j = 0;
 		for (var i = _playhead + 2; i <= _scoreLayout[4] - scoreRightMargin; i += timeUnit) {
 			path += "M" + i + " " + 0 + " V" + 15 + " ";
