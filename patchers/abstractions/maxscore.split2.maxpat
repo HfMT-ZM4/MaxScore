@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 220.0, 1334.0, 537.0 ],
+		"rect" : [ 175.0, 223.0, 1334.0, 537.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 348.0, 87.0, 357.0, 756.0 ],
+						"rect" : [ 552.0, 134.0, 357.0, 756.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -334,13 +334,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 59.0, 347.0, 145.0, 22.0 ],
+									"patching_rect" : [ 59.0, 347.0, 141.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
 									}
 ,
-									"text" : "coll 17131score2staves"
+									"text" : "coll #0score2staves"
 								}
 
 							}
@@ -367,13 +367,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 32.0, 245.0, 145.0, 22.0 ],
+									"patching_rect" : [ 32.0, 245.0, 141.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
 									}
 ,
-									"text" : "coll 17131staves2score"
+									"text" : "coll #0staves2score"
 								}
 
 							}
@@ -601,7 +601,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1064.5, 173.0, 75.0, 22.0 ],
+					"patching_rect" : [ 1064.5, 191.0, 75.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -8036,11 +8036,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-4",
+					"linecount" : 12,
 					"maxclass" : "newobj",
 					"numinlets" : 61,
 					"numoutlets" : 61,
 					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 527.0, 435.0, 969.0, 22.0 ],
+					"patching_rect" : [ 527.0, 435.0, 100.0, 169.0 ],
 					"text" : "route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59",
 					"varname" : "route"
 				}
