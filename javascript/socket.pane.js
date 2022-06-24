@@ -1069,6 +1069,7 @@ function scroll()
 			};
 		}
 		}
+		lastAction = "start";
 		cursors.parse(JSON.stringify(jcursors));
 		outlet(0, "dictionary", cursors.name);
 		break;
