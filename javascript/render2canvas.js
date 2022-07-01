@@ -1047,7 +1047,7 @@ function getScoreAnnotation(a)
 	//zoom = annotation.get("setZoom");
 	bcolor = (annotation.contains("bgcolor")) ? annotation.get("bgcolor") : [0.996, 0.996, 0.94, 1];
 	fcolor = (annotation.contains("fgcolor")) ? annotation.get("fgcolor") : [0, 0, 0, 1];
-	linecolor = (annotation.contains("linecolor")) ? annotation.get("linecolor") : [0, 0, 0, 1];
+	lcolor = (annotation.contains("linecolor")) ? annotation.get("linecolor") : [0, 0, 0, 1];
 	musicfont = (annotation.contains("musicfont")) ? annotation.get("musicfont") : "Bravura";
 	textfont = (annotation.contains("textfont")) ? annotation.get("textfont") : "Arial";
 	titlefont = (annotation.contains("titlefont")) ? annotation.get("titlefont") : "Times New Roman";
@@ -1076,7 +1076,6 @@ function setPaperSize()
 
 function getMeasureInfo(m)
 {
-	//post("getMeasureInfo", m, "\n");						
 	var prefix = "score::measure::" + m + "::";
 	tempo = score.get(prefix + "@TEMPO");
 	timesig = score.get(prefix + "@TIMESIG");
@@ -1311,7 +1310,7 @@ function fgcolor(r, g, b, a)
 function linecolor(r, g, b, a) 
 {
 	lcolor = [r, g, b, a];
-	annotation.set("linecolor", fcolor);
+	annotation.set("linecolor", lcolor);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "saveToUndoStack", 1);
 	outlet(1, "setRenderAllowed", 1);
