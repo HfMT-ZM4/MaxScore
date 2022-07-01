@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 87.0, 1023.0, 824.0 ],
+		"rect" : [ 488.0, 87.0, 1023.0, 824.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -7389,7 +7389,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 									"filename" : "btoggle.js",
 									"id" : "obj-99",
 									"maxclass" : "jsui",
@@ -8008,7 +8008,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 									"filename" : "btoggle.js",
 									"id" : "obj-69",
 									"maxclass" : "jsui",
@@ -8121,7 +8121,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+									"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 									"filename" : "btoggle.js",
 									"id" : "obj-66",
 									"maxclass" : "jsui",
@@ -8519,7 +8519,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1023.0, 798.0 ],
+						"rect" : [ 488.0, 113.0, 1023.0, 798.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -8556,22 +8556,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 117.0, 76.0, 85.0, 20.0 ],
+									"patching_rect" : [ 117.0, 111.0, 85.0, 20.0 ],
 									"text" : "JMSL plugins:"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-19",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 117.0, 114.0, 65.0, 22.0 ],
-									"text" : "loadbang"
 								}
 
 							}
@@ -8767,7 +8753,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-15",
-									"items" : "<empty>",
+									"items" : [ "UnaryCopyBufferTransform", "com.punosmusic.jmsl.plugins.MelodyToChordTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.AccentThresholdTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.AmplitudeCrescendo", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.DoubleBelowTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.NoteHeadColorTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.RandomDimensionValuesTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.SerialTransform", ",", "NotePropertiesTransform", "com.punosmusic.jmsl.plugins.SwitchTracksTransform", ",", "ScoreOperator", "com.softsynth.jmsl.score.operators.AccidentalDisagreementsReporter", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.AbsoluteDurationReporter", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.BinaryMorphOperator", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.DumpSelectedToMusicShape", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.ExtendOttavaRunsByOneNote", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.ExtremeLevelReporter", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.GridEntry", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.MarkovOperator", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.RestReporter", ",", "ScoreOperator", "com.punosmusic.jmsl.plugins.TotalSelectedDurations" ],
 									"labelclick" : 1,
 									"maxclass" : "umenu",
 									"numinlets" : 1,
@@ -8868,13 +8854,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-18", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-19", 0 ]
 								}
 
 							}
@@ -16928,7 +16907,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 99.0, 113.0, 1023.0, 798.0 ],
+						"rect" : [ 0.0, 26.0, 1023.0, 798.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -18924,8 +18903,8 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}

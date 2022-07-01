@@ -33,6 +33,7 @@ var blankPage;
 var proportional = 0;
 var clefsvisible = 1;
 var ClefsVisible;
+var showRhythm = 0;
 var verticalLineFlag = 0;
 var phead;
 var staffBoundingInfo = [];
@@ -94,6 +95,9 @@ function setProportionalNotation(b) {
     outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     if (b) { //turn proportional notation on
+	var a = arrayfromargs(arguments);
+	if (a.length == 3) if (a[1] == "@showRhythm") showRhythm = a[2];
+	else showRhythm = 1;
        sustain.clear();
 		if (!selection) { 
         outlet(0, "dumpScoreAttributes");
@@ -103,6 +107,7 @@ function setProportionalNotation(b) {
         playheadPosition = parseFloat(scoreAttributes["@LeftMargin"]);
         ClefsVisible = scoreAttributes["@ClefsVisible"];
         annotation.set("proportional", 1);
+		annotation.set("showRhythmInProportionalNotation", showRhythm);
         annotation.set("timeUnit", timeUnit);
         outlet(3, "setAnnotation", "dictionary", annotation.name);
        	outlet(0, "selectAll");
@@ -113,7 +118,7 @@ function setProportionalNotation(b) {
             //outlet(0, "setScoreLeftMargin", playheadPosition);
             outlet(0, "setScoreFirstSystemIndent", 0.);
             outlet(0, "getDurationalSpacingBase");
-            outlet(0, "setDurationalSpacingBase", 0.385);
+            outlet(0, "setDurationalSpacingBase", 0.4);
             outlet(0, "setWrap", 0);
             outlet(0, "showTimeSignatures", "false");
             outlet(0, "showKeySignatures", "false");
@@ -144,9 +149,10 @@ function setProportionalNotation(b) {
             scoreSize += measureWidth;
             outlet(0, "setMeasureWidth", m, measureWidth);
             outlet(0, "setMeasureLeftMargin", m, 0.);
-            outlet(0, "setBarNone", m, 0);
+            if (!showRhythm) outlet(0, "setBarNone", m, 0);
         }
         //post("scoreSize", scoreSize, "\n"); 
+		if (!showRhythm){
         increment = 0;
         selectionBuffer = [];
         anchors = {};
@@ -287,8 +293,10 @@ function setProportionalNotation(b) {
         }
         outlet(0, "getSelectionBufferSize");
         if (selectionBufferSize > 0) outlet(0, "setNoteVisible", "false");
+		}
         //post("scoreSize", scoreSize, factor, playheadPosition, scoreRightMargin, "\n"); //ClefsVisible == "true"
         outlet(0, "clearSelection");
+
         outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["@HEIGHT"]));
         outlet(0, "setReceivePlayheadPosition", "false");
         outlet(0, "setNoteFlash", "false");

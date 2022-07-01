@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 327.0, 166.0, 670.0, 792.0 ],
+		"rect" : [ 307.0, 87.0, 863.0, 869.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,65 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-56",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 230.5, 747.0, 614.0, 22.0 ],
+					"text" : "sprintf symout <ScoreAnnotation CLASSNAME=\\\"com.softsynth.jmsl.score.ScoreAnnotation\\\" Annotation=\\\"%s\\\"/>"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-51",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 389.5, 532.0, 22.0, 22.0 ],
+					"text" : "t 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-50",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 230.5, 676.0, 83.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "htmlEntities.js",
+						"parameter_enable" : 0
+					}
+,
+					"text" : "js htmlEntities"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 230.5, 711.0, 223.0, 22.0 ],
+					"text" : "dict.serialize @mode json @compress 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 188.499987396825361, 197.0, 86.0, 22.0 ],
+					"patching_rect" : [ 248.499987396825361, 161.0, 86.0, 22.0 ],
 					"text" : "route notfound"
 				}
 
@@ -57,7 +110,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 188.499987396825361, 162.0, 77.0, 22.0 ],
+					"patching_rect" : [ 248.499987396825361, 126.0, 77.0, 22.0 ],
 					"text" : "absolutepath"
 				}
 
@@ -69,8 +122,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 3.5, 80.0, 105.0, 22.0 ],
-					"text" : "loadmess set .xml"
+					"patching_rect" : [ 13.5, 44.0, 161.0, 22.0 ],
+					"text" : "loadmess set .xml .musicxml"
 				}
 
 			}
@@ -81,7 +134,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 116.5, 162.0, 67.0, 22.0 ],
+					"patching_rect" : [ 176.5, 126.0, 67.0, 22.0 ],
 					"text" : "opendialog"
 				}
 
@@ -93,7 +146,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 116.5, 234.0, 101.0, 22.0 ],
+					"patching_rect" : [ 176.5, 198.0, 101.0, 22.0 ],
 					"text" : "prepend filename"
 				}
 
@@ -105,7 +158,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 116.5, 118.0, 91.0, 22.0 ],
+					"patching_rect" : [ 176.5, 82.0, 91.0, 22.0 ],
 					"text" : "route bang"
 				}
 
@@ -117,7 +170,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 116.5, 80.0, 129.0, 22.0 ],
+					"patching_rect" : [ 176.5, 44.0, 129.0, 22.0 ],
 					"text" : "route importMusicXML"
 				}
 
@@ -129,7 +182,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 335.0, 584.0, 22.0, 22.0 ],
+					"patching_rect" : [ 494.0, 532.0, 22.0, 22.0 ],
 					"text" : "t 1"
 				}
 
@@ -141,7 +194,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "int" ],
-					"patching_rect" : [ 225.0, 584.0, 29.5, 22.0 ],
+					"patching_rect" : [ 285.0, 532.0, 29.5, 22.0 ],
 					"text" : "t l 0"
 				}
 
@@ -151,10 +204,10 @@
 					"id" : "obj-19",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 155.5, 656.0, 32.0, 22.0 ],
-					"text" : "gate"
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 207.5, 615.0, 42.0, 22.0 ],
+					"text" : "gate 2"
 				}
 
 			}
@@ -166,7 +219,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 225.0, 656.0, 430.0, 49.0 ],
+					"patching_rect" : [ 285.0, 615.0, 430.0, 49.0 ],
 					"text" : "\"<scoreUserBean CLASSNAME=\\\"com.algomusic.max.MaxScoreRenderedMessageListener\\\">\", </scoreUserBean>"
 				}
 
@@ -175,11 +228,11 @@
 				"box" : 				{
 					"id" : "obj-13",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 225.0, 554.0, 129.0, 22.0 ],
-					"text" : "route <scoreUserBean"
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 285.0, 502.0, 228.0, 22.0 ],
+					"text" : "route <scoreUserBean <ScoreAnnotation"
 				}
 
 			}
@@ -190,7 +243,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 225.0, 526.0, 71.0, 22.0 ],
+					"patching_rect" : [ 285.0, 474.0, 71.0, 22.0 ],
 					"text" : "fromsymbol"
 				}
 
@@ -202,7 +255,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 170.5, 496.0, 73.5, 22.0 ],
+					"patching_rect" : [ 230.5, 441.0, 73.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -214,7 +267,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 225.0, 430.0, 127.0, 22.0 ],
+					"patching_rect" : [ 285.0, 375.0, 127.0, 22.0 ],
 					"text" : "startdump dumpScore"
 				}
 
@@ -226,7 +279,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 116.5, 401.0, 123.0, 22.0 ],
+					"patching_rect" : [ 176.5, 346.0, 123.0, 22.0 ],
 					"text" : "enddump dumpScore"
 				}
 
@@ -238,7 +291,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 225.0, 234.0, 169.0, 22.0 ],
+					"patching_rect" : [ 285.0, 198.0, 169.0, 22.0 ],
 					"text" : "script npm install --save xml-js"
 				}
 
@@ -250,7 +303,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "", "bang" ],
-					"patching_rect" : [ 116.0, 367.0, 128.0, 22.0 ],
+					"patching_rect" : [ 176.0, 312.0, 128.0, 22.0 ],
 					"text" : "t b l b"
 				}
 
@@ -262,7 +315,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 170.5, 464.0, 47.0, 22.0 ],
+					"patching_rect" : [ 230.5, 409.0, 47.0, 22.0 ],
 					"text" : "zl.nth 2"
 				}
 
@@ -274,7 +327,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 170.5, 430.0, 47.0, 22.0 ],
+					"patching_rect" : [ 230.5, 375.0, 47.0, 22.0 ],
 					"text" : "dict.iter"
 				}
 
@@ -286,7 +339,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 255.25, 367.0, 50.5, 22.0 ],
+					"patching_rect" : [ 315.25, 312.0, 50.5, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -304,7 +357,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 116.0, 317.0, 297.5, 22.0 ],
+					"patching_rect" : [ 176.0, 281.0, 297.5, 22.0 ],
 					"text" : "route jmsl skipped"
 				}
 
@@ -316,14 +369,16 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 116.5, 285.0, 263.0, 22.0 ],
+					"patching_rect" : [ 176.5, 249.0, 316.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
-						"defer" : 0,
+						"defer" : 1,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
-					"text" : "node.script n4m_musicxml2jmsl.js @autostart 1"
+					"text" : "node.script n4m_musicxml2jmsl.js @autostart 1 @defer 1"
 				}
 
 			}
@@ -336,7 +391,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 116.5, 20.0, 30.0, 30.0 ]
+					"patching_rect" : [ 176.5, 8.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -348,7 +403,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 116.5, 738.0, 30.0, 30.0 ]
+					"patching_rect" : [ 176.5, 822.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -398,6 +453,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
+					"source" : [ "obj-13", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-51", 0 ],
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -448,6 +510,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
 					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-50", 0 ],
+					"source" : [ "obj-19", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-56", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -537,6 +613,27 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"source" : [ "obj-51", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-56", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-6", 0 ]
 				}
@@ -552,7 +649,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
-					"midpoints" : [ 234.5, 458.5, 126.0, 458.5 ],
+					"midpoints" : [ 294.5, 436.5, 186.0, 436.5 ],
 					"source" : [ "obj-8", 0 ]
 				}
 

@@ -94,6 +94,7 @@ var flcolor = [0.3, 1., 0.3, 0.7];
 var svgstrokewidth = 1.;
 var staffLineColor = [];
 var barLineColor = [];
+var barlineDashArray = "none";
 var cursors = new Dict();
 cursors.name = "cursors";
 var jcursors = {};
@@ -160,6 +161,7 @@ var pageNumber = "";
 var oldMeasureStaff = "";
 var url = "";
 var filterRepeatedAccidentalsFlag = 1;
+var wholeNoteRestInEmptyMeasures = 0;
 var accList = ["natural", "sharp", "flat", "natural", "doubleflat", "doublesharp", "quartertoneflat", "threequartertoneflat", "quartertonesharp", "threequartertonesharp", "no_accidental"];
 var clefDesigner = new Dict();
 clefDesigner.import_json("MaxScoreClefDesigner.json");
@@ -621,6 +623,15 @@ function getScoreLeftMargin(slm)
 	scoreLeftMargin = slm;
 }
 
+function setWholeNoteRestInEmptyMeasures(flag)
+{
+	wholeNoteRestInEmptyMeasures = flag;
+	annotation.set("wholeNoteRestInEmptyMeasures", wholeNoteRestInEmptyMeasures);
+	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
+}
+
 function getScoreRightMargin(srm)
 {
 	scoreRightMargin = srm;
@@ -855,6 +866,15 @@ function setToneDivision(targetStaff, toneDivision)
 	}
 }
 
+function setBarlineDashArray()
+{
+	barlineDashArray = arrayfromargs(arguments).join(" ");
+	annotation.set("barlineDashArray", barlineDashArray);
+	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
+}
+
 function writeBarlines()
 {
 	var brackets = {};
@@ -911,7 +931,7 @@ function writeBarlines()
 				var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
 				var _scoreLeftMargin = (_scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
 				//post("_scoreLeftMargin", JSON.stringify(barlines), mathMin, _scoreLeftMargin, barlines[measures][lines][1], dest, dest2, "\n");
-				if (_scoreLeftMargin == barlines[measures][lines][1] && numStaves > 1) SVGLines[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				if (_scoreLeftMargin == barlines[measures][lines][1] && numStaves > 1) SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {
 					var mathMin = Math.min.apply(Math, brackets[br]);
 					if (mathMin < sg[s][0]) mathMin = sg[s][0];
@@ -938,7 +958,7 @@ function writeBarlines()
 						for (var d = 0; d < dest.length; d++) {
 							//post("barlines", measures, numBrackets, barlines[measures][lines][1], "\n");	
 							//if  (numBrackets > 0)
-							if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGLines[s + 1].push("<rect x=\"" + barlines[measures][lines][1] + "\" y=\"" + dest + "\" width=\"" + barlines[measures][lines][4] * 0.6 + "\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+							if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-dasharray=\"" + barlineDashArray + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 								if (_scoreLeftMargin == barlines[measures][lines][1]) {
 									if (annotation.contains("staff-" + brackets[br][0] + "::staffgroup")) {
 									switch (annotation.get("staff-" + brackets[br][0] + "::staffgroup")[1]) {
@@ -1027,6 +1047,11 @@ function getScoreAnnotation(a)
 	//zoom = annotation.get("setZoom");
 	bcolor = (annotation.contains("bgcolor")) ? annotation.get("bgcolor") : [0.996, 0.996, 0.94, 1];
 	fcolor = (annotation.contains("fgcolor")) ? annotation.get("fgcolor") : [0, 0, 0, 1];
+	linecolor = (annotation.contains("linecolor")) ? annotation.get("linecolor") : [0, 0, 0, 1];
+	musicfont = (annotation.contains("musicfont")) ? annotation.get("musicfont") : "Bravura";
+	textfont = (annotation.contains("textfont")) ? annotation.get("textfont") : "Arial";
+	titlefont = (annotation.contains("titlefont")) ? annotation.get("titlefont") : "Times New Roman";
+	wholeNoteRestInEmptyMeasures = (annotation.contains("wholeNoteRestInEmptyMeasures")) ? annotation.get("wholeNoteRestInEmptyMeasures") : 0;
 }
 
 function getTitle(t)
@@ -1227,6 +1252,7 @@ function endRenderDump()
 	}
    	//outlet(1, "getTitle");
     //outlet(1, "getComposer");
+	if (wholeNoteRestInEmptyMeasures) writeRests();
 	writeStaffLines();
 	writeBarlines();
 	if (prop) writeRuler();
@@ -1234,6 +1260,34 @@ function endRenderDump()
 	renderPage = 0;
 	_init = 0;
 	//gc();
+}
+
+function writeRests()
+{
+	var numTracks = score.get("score::measure::0::staff::0::.ordering").length;
+	//post("score", _scoreLayout, _scoreLayout[2] - _scoreLayout[1], "\n");
+	for (var m = 0; m < _scoreLayout[2]; m++) {
+		for (var st = 0; st < numStaves; st++){
+			var empty = 1;
+			for (var t = 0; t < numTracks; t++) {
+				if (score.contains("score::measure::" + m + "::staff::" + st + "::track::" + t + "::.ordering")) empty = 0;
+			}
+		if (empty) {
+			staffBoundingFlag = 1;
+			outlet(1, "getStaffBoundingInfo", m + _scoreLayout[1], st);
+			for (var s = 0; s < groupcount; s++)
+			{
+				var dest = remap(sg[s], st, staffBoundingInfo[1]); 
+				if (dest != -1)
+					{
+					for (var d = 0; d < dest.length; d++) {
+ 						SVGString[s + 1].push("<rect x=\"" + (staffBoundingInfo[0] + staffBoundingInfo[2]/2 - 4) + "\" y=\"" + (dest[d] + staffBoundingInfo[3]/2 - 6) + "\" width=\"" + 8 + "\" height=\"" + 3 + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 function bgcolor(r, g, b, a) 
@@ -1351,7 +1405,6 @@ function anything() {
 			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
            	if ((colorcode != 0 || fcolor.length == 0 || colorcode == 255 || colorcode == 16756655) && colorcode != 4210752) frgb = "rgb("+ msg[0] + "," + msg[1] + "," + msg[2] + ")";
 			else if (colorcode != 4210752) frgb = "rgb("+ Math.round(255 * fcolor[0]) + "," + Math.round(255 * fcolor[1]) + "," + Math.round(255 * fcolor[2]) + ")";
- 			//post("frgb", frgb, "\n");
          break;
         case "clearGraphics":
             break;

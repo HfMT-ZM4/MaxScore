@@ -10,20 +10,20 @@ Max.addHandler("filename", (filename) => {
     }
     m2j.read_musicxml(filename, function(musicxml_str){
 	    m2j.musicxml2jmsl(musicxml_str, function(jmsl, skipped){
-	        jmsl += "\n";
-	        var lines = (jmsl.match(/.*\n/g)||[])
+            jmsl += "\n";
+            var lines = (jmsl.match(/.*\n/g)||[])
             //Max.post("num_lines = " + lines.length);
-	        //console.log("num lines = " + lines.length);
-	        Max.outlet("skipped", skipped);
-	        //Max.outlet("jmsl", "startdump", "dumpScore");
+            //console.log("num lines = " + lines.length);
+            Max.outlet("skipped", skipped);
+            //Max.outlet("jmsl", "startdump", "dumpScore");
             let d = {}
-	        lines.forEach(function(l, i){
-		        //Max.outlet("jmsl", l.trim());
+            lines.forEach(function(l, i){
+                //Max.outlet("jmsl", l.trim());
                 d[i] = l.trim();
-	        })
+            })
             Max.outlet("jmsl", d);
-	        //Max.outlet("jmsl", "enddump", "dumpScore");
-	     });
+            //Max.outlet("jmsl", "enddump", "dumpScore");
+        });
     });
 });
 
