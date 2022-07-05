@@ -2546,7 +2546,7 @@ function anything() {
 			//dump.push(messagename);
 			//}
 			//else {
-			if (messagename.indexOf("staffnumber" != 1)) return;
+			if (messagename.indexOf("staffnumber" != 1) || msg[4] < _scoreLayout[1]) return;
  				var msgname = messagename;
 			var glyph = fontMap.get(msgname);
 			for (var s = 0; s < groupcount; s++)
