@@ -3,7 +3,7 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 3,
 			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -72,7 +72,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -80,13 +80,13 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_longname" : "live.text[9]",
+							"parameter_longname" : "live.text[113]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
@@ -118,7 +118,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ -1.0, 211.0, 18.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -126,7 +126,7 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -160,15 +160,15 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 7.0, 175.0, 293.0, 52.0 ],
 					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"tribordercolor" : 						{
 							"expression" : ""
 						}
 ,
 						"trioncolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -335,7 +335,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 22.0, 50.0, 100.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -343,14 +343,14 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bordercolor" : 						{
 							"expression" : ""
 						}
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 1,
-							"parameter_longname" : "Edit Button[1]",
+							"parameter_longname" : "Edit Button[7]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Edit Button",
 							"parameter_type" : 2
@@ -376,7 +376,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -481,7 +481,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -532,7 +532,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-4",
-													"linecount" : 6,
+													"linecount" : 7,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
@@ -602,7 +602,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 1155.375, 491.0, 394.0, 35.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/Glas Harmonica/Glas.bank.json" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -647,7 +647,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1224,7 +1224,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1444,7 +1444,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -2101,7 +2101,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -2231,7 +2231,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
+															"minor" : 3,
 															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -2345,7 +2345,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 177.0, 35.0, 115.0, 22.0 ],
+																	"patching_rect" : [ 177.0, 35.0, 121.0, 22.0 ],
 																	"text" : "r #0-poly_init-op"
 																}
 
@@ -2579,7 +2579,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
+															"minor" : 3,
 															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -3303,7 +3303,7 @@
 													"numoutlets" : 34,
 													"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "", "" ],
 													"patching_rect" : [ 68.0, 310.0, 496.0, 22.0 ],
-													"text" : "poly~ maxscore.multisamples-player.maxpat 32 @steal 1 @args #0 legacynotemode 1",
+													"text" : "poly~ maxscore.multisamples-player.maxpat 64 @steal 1 @args #0 legacynotemode 1",
 													"varname" : "poly~"
 												}
 
@@ -3893,7 +3893,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -4159,7 +4159,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -4821,6 +4821,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 2 ],
+									"midpoints" : [ 1408.5555419921875, 486.75, 937.5, 486.75 ],
+									"source" : [ "obj-69", 9 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 2 ],
 									"midpoints" : [ 1361.222208658854242, 487.0, 937.5, 487.0 ],
 									"source" : [ "obj-69", 8 ]
 								}
@@ -4969,7 +4977,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "panic" ],
 					"patching_rect" : [ 13.0, 45.0, 25.0, 25.0 ]
 				}
 
@@ -5173,10 +5181,10 @@
 		"styles" : [ 			{
 				"name" : "comment_header_white_MaxScore",
 				"default" : 				{
-					"fontsize" : [ 18.0 ],
 					"fontname" : [ "Ableton Sans Light" ],
-					"textjustification" : [ 1 ],
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"fontsize" : [ 18.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textjustification" : [ 1 ]
 				}
 ,
 				"parentstyle" : "",
@@ -5185,9 +5193,9 @@
 , 			{
 				"name" : "comment_white",
 				"default" : 				{
-					"fontsize" : [ 10.0 ],
-					"fontname" : [ "Ableton Sans Light" ],
 					"fontface" : [ 0 ],
+					"fontname" : [ "Ableton Sans Light" ],
+					"fontsize" : [ 10.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 ,
@@ -5206,17 +5214,17 @@
 , 			{
 				"name" : "panel_dark_MS",
 				"default" : 				{
-					"color" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : -90.0,
+						"autogradient" : 0.0,
 						"color" : [ 0.4, 0.4, 0.4, 1.0 ],
 						"color1" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
 						"color2" : [ 0.2, 0.2, 0.2, 1.0 ],
-						"angle" : -90.0,
 						"proportion" : 0.39,
-						"autogradient" : 0.0
+						"type" : "color"
 					}
-
+,
+					"color" : [ 0.0, 0.0, 0.0, 0.0 ]
 				}
 ,
 				"parentstyle" : "",

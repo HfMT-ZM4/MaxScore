@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 3,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 90.0, 1250.0, 926.0 ],
+		"rect" : [ 139.0, 109.0, 788.0, 757.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -68,11 +68,11 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 43.0, 248.0, 210.899999856948853, 20.0 ],
 					"saved_attribute_attributes" : 					{
-						"activebgoncolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
-						"textoncolor" : 						{
+						"activebgoncolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -84,7 +84,7 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"textoncolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -146,7 +146,27 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 221.416666666666629, 330.622806549072266, 219.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 						{
+							"stream" : 1,
+							"scale" : "MAJOR",
+							"meter" : [ 2, 2 ],
+							"ostinato" : 0,
+							"outset_pulses" : 1,
+							"metriclarity" : 100,
+							"pulse_length" : 1000,
+							"eventfulness" : 100,
+							"event_length" : 1000,
+							"melody_scope" : 7,
+							"tonic_pitch" : 60,
+							"chordal_weight" : 1,
+							"harmoniclarity" : 100,
+							"pitch_center" : 48,
+							"pitch_range" : 7,
+							"dynamics" : 64,
+							"attenuation" : 12.5,
+							"silent_downbeat" : 0
+						}
+ ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -199,7 +219,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 188.899999856948853, 3.0, 66.692562199684147, 27.0 ],
 					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -207,7 +227,7 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -249,7 +269,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.5, 3.0, 176.5, 27.0 ],
 					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
+						"activebgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -257,7 +277,7 @@
 							"expression" : ""
 						}
 ,
-						"activebgcolor" : 						{
+						"bgcolor" : 						{
 							"expression" : ""
 						}
 ,
@@ -442,7 +462,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 113.416666666666643, 696.0, 239.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ "djster" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -515,6 +535,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
@@ -529,6 +553,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "silent_downbeat"
 				}
@@ -621,7 +646,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 298.416666666666629, 506.0, 66.0, 22.0 ],
-					"restore" : [ "<empty>" ],
+					"restore" : [ "MAJOR" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -702,6 +727,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "none", "talea", "ostinato" ],
 							"parameter_initial" : [ 0 ],
@@ -717,6 +746,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "ostinato"
 				}
@@ -748,6 +778,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1000.0 ],
 							"parameter_initial_enable" : 1,
@@ -763,6 +797,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "pulse_length"
 				}
@@ -798,6 +833,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 43.0, 45.0, 99.0, 20.0 ],
 					"rounded" : 0.0,
+					"text" : "MAJOR",
 					"varname" : "umenu"
 				}
 
@@ -828,6 +864,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 64 ],
 							"parameter_initial_enable" : 1,
@@ -841,6 +881,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "dynamics"
 				}
@@ -872,6 +913,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 12.5 ],
 							"parameter_initial_enable" : 1,
@@ -886,6 +931,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "attenuation"
 				}
@@ -917,6 +963,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 7 ],
 							"parameter_initial_enable" : 1,
@@ -930,6 +980,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "pitch_range"
 				}
@@ -960,6 +1011,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 48 ],
 							"parameter_initial_enable" : 1,
@@ -974,6 +1029,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "pitch_center"
 				}
@@ -1004,6 +1060,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 100 ],
 							"parameter_initial_enable" : 1,
@@ -1017,6 +1077,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "harmoniclarity"
 				}
@@ -1047,6 +1108,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
@@ -1061,6 +1126,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "chordal_weight"
 				}
@@ -1091,6 +1157,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 60 ],
 							"parameter_initial_enable" : 1,
@@ -1104,6 +1174,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "tonic_pitch"
 				}
@@ -1135,6 +1206,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 7 ],
 							"parameter_initial_enable" : 1,
@@ -1148,6 +1223,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "melody_scope"
 				}
@@ -1179,6 +1255,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1000.0 ],
 							"parameter_initial_enable" : 1,
@@ -1194,6 +1274,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "event_length"
 				}
@@ -1225,6 +1306,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 100.0 ],
 							"parameter_initial_enable" : 1,
@@ -1239,6 +1324,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "eventfulness"
 				}
@@ -1270,6 +1356,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 100.0 ],
 							"parameter_initial_enable" : 1,
@@ -1284,6 +1374,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "metriclarity"
 				}
@@ -1315,6 +1406,10 @@
 							"expression" : ""
 						}
 ,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
@@ -1329,6 +1424,7 @@
 
 					}
 ,
+					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"triangle" : 1,
 					"varname" : "outset_pulses"
 				}
@@ -1849,24 +1945,24 @@
  ],
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
-				}
-,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1886,8 +1982,8 @@
 				"name" : "section dividers",
 				"default" : 				{
 					"fontface" : [ 3 ],
-					"fontsize" : [ 15.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1896,8 +1992,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1907,8 +2003,8 @@
 				"name" : "titles",
 				"default" : 				{
 					"fontface" : [ 1 ],
-					"fontsize" : [ 20.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 3,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 227.0, 189.0, 1143.0, 599.0 ],
+		"rect" : [ 527.0, 321.0, 1143.0, 659.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -109,8 +109,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 3,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -567,7 +567,15 @@
 					"patching_rect" : [ -1.949996999999968, 63.0, 34.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 150.5, 45.0, 18.0 ],
-					"text" : "Sync:"
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.live_control_fg"
+						}
+
+					}
+,
+					"text" : "Sync:",
+					"textcolor" : [ 0.862745098039216, 0.862745098039216, 0.862745098039216, 1.0 ]
 				}
 
 			}
@@ -613,6 +621,10 @@
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : "themecolor.live_control_text_selection"
 						}
 ,
 						"valueof" : 						{
@@ -741,6 +753,7 @@
 			}
 , 			{
 				"box" : 				{
+					"activebgcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"id" : "obj-49",
 					"maxclass" : "live.button",
 					"numinlets" : 1,
@@ -751,6 +764,10 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 46.0, 150.5, 15.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : "themecolor.live_lcd_control_fg_zombie"
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_longname" : "live.button",
@@ -772,7 +789,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 100.75, 545.0, 87.0, 20.0 ],
+					"patching_rect" : [ 103.083333333333329, 545.0, 87.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"client_rect" : [ 1187, 252, 1796, 568 ],
 						"parameter_enable" : 0,
@@ -886,8 +903,8 @@
 						"harmoniclarity" : [ 100.0 ],
 						"live.text" : [ 0.0 ],
 						"melody_scope" : [ 7.0 ],
-						"meter" : [ "2+3", 2 ],
-						"metriclarity" : [ 100.0 ],
+						"meter" : [ 2, 2, 2 ],
+						"metriclarity" : [ 44.094488188976449 ],
 						"ostinato" : [ 0.0 ],
 						"outset_pulses" : [ 1.0 ],
 						"pitch_center" : [ 48.0 ],
@@ -897,8 +914,7 @@
 						"tab" : [ -1 ],
 						"time_latch" : [ "pulse" ],
 						"tonic_pitch" : [ 60.0 ],
-						"umenu[1]" : [ 0 ],
-						"umenu[2]" : [ 3 ]
+						"umenu[1]" : [ 0 ]
 					}
 ,
 					"text" : "autopattr",
@@ -1048,8 +1064,7 @@
 						}
 
 					}
-,
-					"varname" : "umenu[2]"
+
 				}
 
 			}
@@ -1062,7 +1077,15 @@
 					"patching_rect" : [ 329.491638000000023, 294.0, 74.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 135.0, 80.0, 18.0 ],
-					"text" : "Tonality Profile"
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.live_control_fg"
+						}
+
+					}
+,
+					"text" : "Tonality Profile",
+					"textcolor" : [ 0.862745098039216, 0.862745098039216, 0.862745098039216, 1.0 ]
 				}
 
 			}
@@ -1162,8 +1185,8 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"bordercolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+					"activebgcolor" : [ 0.4, 0.4, 0.4, 1.0 ],
+					"bordercolor" : [ 0.470588235294118, 0.474509803921569, 0.47843137254902, 1.0 ],
 					"fontsize" : 9.0,
 					"id" : "obj-104",
 					"maxclass" : "live.menu",
@@ -1246,8 +1269,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 3,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1964,7 +1987,15 @@
 					"patching_rect" : [ 443.416687000000024, 213.0, 45.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 77.0, 151.0, 53.0, 18.0 ],
-					"text" : "Presets:"
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.live_control_fg"
+						}
+
+					}
+,
+					"text" : "Presets:",
+					"textcolor" : [ 0.862745098039216, 0.862745098039216, 0.862745098039216, 1.0 ]
 				}
 
 			}
@@ -1974,12 +2005,13 @@
 					"id" : "obj-58",
 					"maxclass" : "preset",
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "preset", "int", "preset", "int" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "preset", "int", "preset", "int", "" ],
 					"patching_rect" : [ 333.416687000000024, 213.0, 100.0, 19.0 ],
 					"pattrstorage" : "µbus",
 					"presentation" : 1,
-					"presentation_rect" : [ 186.0, 150.5, 209.0, 16.5 ]
+					"presentation_rect" : [ 186.0, 150.5, 209.0, 16.5 ],
+					"style" : "section info emph"
 				}
 
 			}
@@ -2007,6 +2039,10 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 151.0, 3.0, 62.0, 19.0 ],
 					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.live_control_fg"
+						}
+,
 						"valueof" : 						{
 							"parameter_invisible" : 1,
 							"parameter_longname" : "Meter open",
@@ -2017,7 +2053,7 @@
 
 					}
 ,
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"textcolor" : [ 0.862745098039216, 0.862745098039216, 0.862745098039216, 1.0 ],
 					"varname" : "Meter open"
 				}
 
@@ -2046,6 +2082,10 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 40.0, 3.0, 52.0, 19.0 ],
 					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.live_control_fg"
+						}
+,
 						"valueof" : 						{
 							"parameter_invisible" : 1,
 							"parameter_longname" : "Scale open",
@@ -2056,7 +2096,7 @@
 
 					}
 ,
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"textcolor" : [ 0.862745098039216, 0.862745098039216, 0.862745098039216, 1.0 ],
 					"varname" : "Scale open"
 				}
 
@@ -2084,8 +2124,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 3,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2479,11 +2519,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "Silent downbeat. The first pulse is always lowest priority, while the second is highest priority.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-47",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -2493,6 +2537,22 @@
 					"presentation_rect" : [ 265.0, 5.0, 32.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
@@ -2519,7 +2579,15 @@
 					"patching_rect" : [ 93.0, 63.0, 22.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 6.0, 5.0, 32.0, 18.0 ],
-					"text" : "On"
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.live_control_fg"
+						}
+
+					}
+,
+					"text" : "On",
+					"textcolor" : [ 0.862745098039216, 0.862745098039216, 0.862745098039216, 1.0 ]
 				}
 
 			}
@@ -2780,7 +2848,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 100.75, 29.0, 55.0, 20.0 ],
-					"restore" : [ "12-31_11" ],
+					"restore" : [ "Lambda" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2818,11 +2886,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "Three choices: none, rhythmic talea, ostinato ",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-29",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -2832,6 +2904,22 @@
 					"presentation_rect" : [ 356.25, 5.0, 40.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "none", "talea", "ostinato" ],
 							"parameter_initial" : [ 0 ],
@@ -2852,11 +2940,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "The interval between pulses of every event generated",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-22",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -2866,6 +2958,22 @@
 					"presentation_rect" : [ 6.0, 50.0, 64.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1000.0 ],
 							"parameter_initial_enable" : 1,
@@ -2886,6 +2994,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.4, 0.4, 0.4, 1.0 ],
 					"fontsize" : 11.0,
 					"id" : "obj-20",
 					"maxclass" : "textedit",
@@ -2897,7 +3006,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 153.0, 18.0, 106.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "2+3 2",
+					"text" : "2 2 2",
 					"varname" : "meter",
 					"wordwrap" : 0
 				}
@@ -2907,9 +3016,14 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"annotation" : " Here one of the scales can be choosen by its name as shown in the Scale Menu. Drag and drop additional Scala file ",
+					"bgcolor" : [ 0.4, 0.4, 0.4, 1 ],
+					"bgfillcolor_color" : [ 0.4, 0.4, 0.4, 1 ],
+					"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
+					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-16",
-					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic", ",", "12-31_11" ],
+					"items" : [ "Lambda", ",", "Harmonic", ",", "Moll_II", ",", "Dur_I", ",", "Moll_I", ",", "Walker_A", ",", "Walker_B", ",", "Walker_I", ",", "Walker_II", ",", "Gamma", ",", "Dur_II", ",", "BP-Chromatic", ",", "BP-Triple", ",", "BP-Quintuple" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -2923,7 +3037,7 @@
 						"valueof" : 						{
 							"parameter_invisible" : 1,
 							"parameter_longname" : "umenu[2]",
-							"parameter_mmax" : 13.0,
+							"parameter_mmax" : 14.0,
 							"parameter_shortname" : "umenu[2]",
 							"parameter_type" : 3
 						}
@@ -2936,11 +3050,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "The central (=average) MIDI-‘velocity’ of the stream.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-27",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -2950,11 +3068,27 @@
 					"presentation_rect" : [ 271.23028564453125, 95.0, 47.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 64 ],
 							"parameter_initial_enable" : 1,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "dynamics[4]",
+							"parameter_longname" : "dynamics",
 							"parameter_shortname" : "dynamics",
 							"parameter_type" : 1,
 							"parameter_unitstyle" : 0
@@ -2969,11 +3103,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "The extent to which the dynamics may deviate from the dynamics value; at minimum ‘metriclarity’  this is decided at random, whereas at maximum ‘metriclarity’ the deviation is related to the ‘indispensability’ of the pulse - the metriclarity is then dynamically amplified; this may be useful in the case of maximum eventfulness where agogic elements are neutralized.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-28",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -2984,11 +3122,27 @@
 					"presentation_rect" : [ 340.0, 95.0, 55.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 12.5 ],
 							"parameter_initial_enable" : 1,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "attenuation[5]",
+							"parameter_longname" : "attenuation",
 							"parameter_mmax" : 100.0,
 							"parameter_shortname" : "attenuation",
 							"parameter_type" : 0,
@@ -3004,11 +3158,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "Set event length",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-26",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3018,11 +3176,27 @@
 					"presentation_rect" : [ 133.0, 95.0, 60.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 7 ],
 							"parameter_initial_enable" : 1,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "pitch_range[4]",
+							"parameter_longname" : "pitch_range",
 							"parameter_shortname" : "pitch_range",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -3037,10 +3211,14 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-25",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3050,6 +3228,22 @@
 					"presentation_rect" : [ 66.0, 95.0, 60.0, 36.0 ],
 					"prototypename" : "pitch",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 48 ],
 							"parameter_initial_enable" : 1,
@@ -3069,11 +3263,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "Analogous to metriclarity, a minimum value accords all pitches in the scale an equal probability, thus weakening the key-feeling; at maximum the opposite is true. Note that this description particularly holds in the case of scales such as the chromatic; a major scale would introduce its own intrinsic key-feeling even at the minimum Parameter value.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-24",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3082,6 +3280,22 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 267.0, 50.0, 71.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 100 ],
 							"parameter_initial_enable" : 1,
@@ -3101,11 +3315,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "Up to a maximum of 3 notes can be played together in each stream. ",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-23",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3114,6 +3332,22 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 197.5, 95.0, 69.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
@@ -3134,10 +3368,14 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-52",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3147,6 +3385,22 @@
 					"presentation_rect" : [ 6.0, 95.0, 55.0, 36.0 ],
 					"prototypename" : "pitch",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 60 ],
 							"parameter_initial_enable" : 1,
@@ -3165,11 +3419,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "The maximum number of semitones permitted between the MIDI number of any event and the one following it.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-13",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3179,11 +3437,27 @@
 					"presentation_rect" : [ 340.0, 50.0, 72.5, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 7 ],
 							"parameter_initial_enable" : 1,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "melody_scope[4]",
+							"parameter_longname" : "melody_scope",
 							"parameter_shortname" : "Melody scope",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -3198,11 +3472,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-12",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3212,6 +3490,22 @@
 					"presentation_rect" : [ 133.0, 50.0, 64.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1000.0 ],
 							"parameter_initial_enable" : 1,
@@ -3232,11 +3526,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "At minimum the stream is inactive, at maximum it is saturated with attacks, e.g. every available pulse in the metre accorded to this stream is played. ",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-11",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3246,6 +3544,22 @@
 					"presentation_rect" : [ 66.0, 50.0, 64.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 100.0 ],
 							"parameter_initial_enable" : 1,
@@ -3265,11 +3579,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "A measure of the resultant clarity of the metre as played in the stream - at minimum all pulses are accorded equal probability and the metre cannot be musically detected, whereas at maximum the opposite is true.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-5",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3279,11 +3597,27 @@
 					"presentation_rect" : [ 197.5, 50.0, 60.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 100.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_linknames" : 1,
-							"parameter_longname" : "metriclarity[5]",
+							"parameter_longname" : "metriclarity",
 							"parameter_mmax" : 100.0,
 							"parameter_shortname" : "metriclarity",
 							"parameter_type" : 0,
@@ -3299,11 +3633,15 @@
 			}
 , 			{
 				"box" : 				{
+					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
+					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "Each meter can be phase-shifted so that the ﬁrst pulse to be attacked on starting a run can be set to this value; e.g. if the metre has 8 pulses and this value is set to E, this is the pulse with which the music will start. The streams can have different outset pulses.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
 					"id" : "obj-1",
 					"maxclass" : "live.dial",
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3313,6 +3651,22 @@
 					"presentation_rect" : [ 310.0, 5.0, 37.0, 36.0 ],
 					"prototypename" : "amount",
 					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"needlecolor" : 						{
+							"expression" : "themecolor.live_macro_title"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
@@ -3333,7 +3687,7 @@
 , 			{
 				"box" : 				{
 					"angle" : 270.0,
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bgcolor" : [ 0.4, 0.4, 0.4, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"id" : "obj-42",
@@ -3344,8 +3698,7 @@
 					"patching_rect" : [ 1086.283325000000104, 28.0, 37.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 404.5, 171.625 ],
-					"proportion" : 0.39,
-					"rounded" : 0
+					"proportion" : 0.39
 				}
 
 			}
@@ -4222,23 +4575,53 @@
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
+					}
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "panel_blue_yellow",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"angle" : -90.0,
+						"autogradient" : 0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"color1" : [ 0.0, 0.078431, 0.321569, 1.0 ],
+						"color2" : [ 0.960784, 0.827451, 0.156863, 1.0 ],
+						"proportion" : 0.736715,
+						"type" : "gradient"
 					}
 
 				}
 ,
-				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "section info emph",
+				"default" : 				{
+					"fontface" : [ 1 ],
+					"fontname" : [ "Helvetica Neue" ],
 					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"textcolor" : [ 0.225893, 0.506614, 0.765943, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
