@@ -57,6 +57,7 @@ horizontalScrollbar.extent = width-verticalScrollbar.span;
 verticalScrollbar.center = verticalScrollbar.extent/2;
 horizontalScrollbar.center = horizontalScrollbar.extent/2;
 
+var previousHorizontalOffset = 0;
 var	buttonfillcolor = [1., 0., 0., 0.1];
 var	buttonstrokecolor = [1., 0., 0., 1.];
 var buttonstrokewidth = 0.5;
@@ -1041,7 +1042,8 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	manual = 1;
 	notifyclients();
 	outlet(1, "offset", horizontalOffset, verticalOffset);
-	outlet(3, "scroll", "pixels", horizontalOffset);
+	if (previousHorizontalOffset != horizontalOffset) outlet(3, "scroll", "pixels", horizontalOffset);
+	previousHorizontalOffset = horizontalOffset;
 	}
 	mgraphics.redraw();
 	last_position = position;

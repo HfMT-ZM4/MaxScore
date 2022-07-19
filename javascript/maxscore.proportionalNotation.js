@@ -71,7 +71,7 @@ if (jsarguments.length >= 1) {
 function showClefs(cl) {
     clefsvisible = cl;
     //playhead("create", currentPlayhead[0], cl);
-    outlet(2, "showClefs", cl);
+    //outlet(2, "showClefs", cl);
 }
 
 function setTimeUnit(tu) {
@@ -434,7 +434,10 @@ function getNoteAnchor() {
 function scroll() {
     //annotation.name = this.patcher.getnamed("instance").getvalueof() + "-annotation";
     outlet(0, "getScoreAnnotation");
-    if (annotation.contains("proportional")) proportional = annotation.get("proportional");
+    if (annotation.contains("proportional")) {
+		proportional = annotation.get("proportional");
+		this.patcher.parentpatcher.getnamed("playback").subpatcher().getnamed("sequenceDump").setvalueof(proportional);
+		}
     if (proportional) {
         var msg = arrayfromargs(arguments);
         var from, to, dur, scoreOffset;
