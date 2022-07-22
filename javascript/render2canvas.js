@@ -1227,7 +1227,7 @@ function getLevel()
 
 function startRenderDump()
 {		
-		//outlet(2, "startRenderDump");
+		renderPage = 1;
 }
 
 function dictionary(d)
@@ -1326,7 +1326,6 @@ function scoreLayout()
 {
 		_scoreLayout = arrayfromargs(arguments);
 		oldstaff = -1;
-		renderPage = 1;
 		SVGString = {};
 		SVGLines = {};
 		SVGClefs = {};
@@ -1335,6 +1334,7 @@ function scoreLayout()
 		SVGImages2 = {};
 		outlet(0, "flashing", "clear");
 		outlet(0, "setImages", "clear");
+		outlet(0, "dyn_playhead", 0, 0, 0, 0);
 		//svgGroups = {};
 		stems = {};
 		stafflines = {};
@@ -1378,6 +1378,13 @@ function scoreLayout()
 		}
 	}
 	if (measurerange[0] != -1) setMeasureRange(measurerange[0], measurerange[1], measurerange[2], measurerange[3]);
+	/*
+			case "scoreLayout":
+			outlet(0, "flashing", "clear");
+        	outlet(0, "playback", 0);
+			_scoreLayout = msg;
+           	break;
+	*/
 }
 
 function init()
@@ -1398,7 +1405,10 @@ function anything() {
 		case "getInstalledMusicFonts" :
 		//init = 0;
 		break;
-
+ 		case "playheadPosition":
+            outlet(0, "playback", 1);
+			outlet(0, "dyn_playhead", msg);
+        break;
         case "frgb":
 			//expr $i1*256*256 + $i2*256 + $i3
 			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
@@ -1511,7 +1521,6 @@ function anything() {
 				}
 			}
 			*/
-			//post("stafflines-1", msg, scoreLayout, msg[0] - scoreLayout[1], "\n");
 			stafflines[msg[0] - _scoreLayout[1]][msg[1]][msg[2]] = [msg[4], msg[5], msg[6], msg[7]];
 			break;
         case "LedgerLine":
@@ -2515,52 +2524,39 @@ function anything() {
 	}
 	else 
 	{
-   	switch (messagename) {
-		case "scoreLayout":
-        	outlet(0, "playback", 0);
-			_scoreLayout = msg;
-           	break;
-            case "frgb":
+  	switch (messagename) {
+       case "frgb":
  			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
-           	if (colorcode == 16776960) _frgb = [255 * flcolor[0], 255 * flcolor[1], 255 * flcolor[2]];
-			else _frgb = [msg[0], msg[1], msg[2]];
+           	if (colorcode == 16776960) _frgb = [flcolor[0], flcolor[1], flcolor[2]];
+			else _frgb = [msg[0]/255, msg[1]/255, msg[2]/255];
              break;
  		case "playheadPosition":
             outlet(0, "playback", 1);
 			outlet(0, "dyn_playhead", msg);
             break;
 		case "startdump" :
-			//dump = [];
-			//json = {};
-			//dumpflag = 1;
 		break;
 		case "enddump" :
-			//dumpflag = 0;
-			break;
+		break;
 		case "barline" :
 		break;
 		case "active" :
 		break;
         default:
-			//if (dumpflag == 1) {
-			//dump.push(messagename);
-			//}
-			//else {
-			if (messagename.indexOf("staffnumber" != 1) || msg[4] < _scoreLayout[1]) return;
- 				var msgname = messagename;
-			var glyph = fontMap.get(msgname);
-			for (var s = 0; s < groupcount; s++)
-			{
-			var dest = remap(sg[s], msg[5], msg[1]);
-			if (dest != -1)
-			{
-			for (var d = 0; d < dest.length; d++) {
-			t = glyph[0];
-			outlet(0, "flashing", glyph[1] + msg[0], glyph[2] + dest[d], glyph[3], glyph[4], _frgb, t);
+			if (messagename.indexOf("staffnumber") != -1 || msg[4] < _scoreLayout[1]) return;
+				var msgname = messagename;
+				var glyph = fontMap.get(msgname);
+					for (var s = 0; s < groupcount; s++)
+					{
+					var dest = remap(sg[s], msg[5], msg[1]);
+					if (dest != -1)
+					{
+					for (var d = 0; d < dest.length; d++) {
+						t = glyph[0];
+						outlet(0, "flashing", glyph[1] + msg[0], glyph[2] + dest[d], _musicfont, glyph[4], _frgb, t);
+					}
+				}
 			}
-			}
-			}
-			//}
 		}
 	}
 }
@@ -2582,10 +2578,8 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					dasharray = " stroke-dasharray=\"" + picster.get("style::stroke-dasharray") + "\" ";
 				}
 			}
-			//var onclick = "";
 			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
 			else transform = (1, 0, 0, 1, 0, 0);
-			//post("_g", svggroupflag, s, "\n");	
 			if (svggroupflag == false) svgtransform = "transform=\"matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")\"";
 			switch (picster.get("new")) {
 				case "g" :
