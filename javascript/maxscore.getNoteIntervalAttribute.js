@@ -31,6 +31,7 @@ function anything()
 	var keys = info.getkeys();
 	if (keys) {
 	if (attr == "MultitrackRestAdjustmentY") {
+	outlet(1, dump.get("0").slice(3, 6));
 	messnamed(grab + "-relay", "getMultiTrackRestAdjustmentY", info.get(keys[0]).slice(0, 3));
 	_query = dump.get("0").slice(1);	
 	}		

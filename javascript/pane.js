@@ -256,7 +256,6 @@ function renderImages()
 	var currentMatrix = get_matrix();
 	set_source_rgba(0., 0., 0., 1.);
 	for (var i = 0; i < _svgimages.length; i++){
-		//post("svgimages", _svgimages[i].slice(6)[0], "\n");
 		transform(_svgimages[i].slice(6)[0]);
 		translate(_svgimages[i][2], _svgimages[i][3]);
 		if (_svgimages[i][0] == "raster") image_surface_draw(ImageCache[_svgimages[i].slice(1, 2)], 0, 0, _svgimages[i].slice(4, 6));
@@ -272,7 +271,7 @@ function obj_ref(o)
 	gc();
 	s = 1;
 	pageSize(o.pageSize[0], o.pageSize[1]);
-	//post("values", hscrollfactor, width,  pageWidth, "\n");
+	//post("o", JSON.stringify(o), "\n");
 	setZoom(o.setZoom);
 	bgcolor = o.bgcolor;
 	_svgimages = o.svgimages[s];
@@ -292,13 +291,12 @@ function obj_ref(o)
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-	//for (var s = 1; s <= o.groupcount; s++) {
 	svg += "<g id=\"" + s +  "\">";
 	svg += o.lines[s].join("");
 	svg += o.svg[s].join("");
 	svg += "</g>";
-	//}
 	svg += "</svg>";
+	//post("svg", svg, "\n");
 	img.setsvg(svg);
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
@@ -307,6 +305,7 @@ function obj_ref(o)
 	svg += o.picster[s].join("");
 	svg += "</g>";
 	svg += "</svg>";
+	
 	picster.setsvg(svg);	
 	var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svgclefs += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";

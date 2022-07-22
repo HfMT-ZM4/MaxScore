@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 180.0, 87.0, 1035.0, 572.0 ],
+		"rect" : [ 270.0, 229.0, 1032.0, 596.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,26 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-26",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 303.200012000000015, 178.0, 19.0, 20.0 ],
+					"text" : "t f"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-14",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 175.0, 401.5, 327.0, 22.0 ],
+					"patching_rect" : [ 175.0, 407.5, 327.0, 22.0 ],
 					"text" : "maxscore.bindtoID parent::parent::parent::parent fromScore",
 					"varname" : "u318031574"
 				}
@@ -122,7 +136,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 303.200012000000015, 449.0, 58.200012000000001, 22.0 ],
+					"patching_rect" : [ 303.200012000000015, 467.0, 58.200012000000001, 22.0 ],
 					"text" : "join"
 				}
 
@@ -151,7 +165,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 303.200012000000015, 40.0, 165.0, 22.0 ],
+					"patching_rect" : [ 303.200012000000015, 31.5, 165.0, 22.0 ],
 					"text" : "loadmess bindto parent::data",
 					"varname" : "imap[1]"
 				}
@@ -167,7 +181,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 303.200012000000015, 93.0, 264.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 0, 0, 0, "false", 0, 0, 0, 0, 87, 0, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -248,8 +262,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 372.200012000000015, 449.0, 250.0, 22.0 ],
-					"restore" : [ 0 ],
+					"patching_rect" : [ 372.200012000000015, 467.0, 250.0, 22.0 ],
+					"restore" : [ "send", "parent::BP-keyboard::map" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -268,21 +282,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 380.200012000000015, 293.5, 88.0, 20.0 ],
+					"patching_rect" : [ 372.200012000000015, 445.0, 88.0, 20.0 ],
 					"text" : "set destination"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-22",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 386.200012000000015, 486.0, 150.0, 20.0 ],
-					"text" : "send to next map"
 				}
 
 			}
@@ -295,7 +296,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 303.200012000000015, 486.0, 69.0, 20.0 ],
+					"patching_rect" : [ 303.200012000000015, 504.0, 69.0, 20.0 ],
 					"text" : "pattrforward"
 				}
 
@@ -335,7 +336,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
-					"patching_rect" : [ 303.200012000000015, 350.0, 32.5, 20.0 ],
+					"patching_rect" : [ 303.200012000000015, 355.0, 32.5, 20.0 ],
 					"text" : "t f f"
 				}
 
@@ -349,7 +350,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 316.700012000000015, 374.0, 176.0, 20.0 ],
+					"patching_rect" : [ 316.700012000000015, 379.0, 176.0, 20.0 ],
 					"text" : "setNoteDimension originalPitch $1"
 				}
 
@@ -379,7 +380,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 26.0, 31.5, 216.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 0.0, 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -469,7 +470,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 303.200012000000015, 179.0, 66.0, 20.0 ],
+					"patching_rect" : [ 303.200012000000015, 202.0, 66.0, 20.0 ],
 					"text" : "routepass 0."
 				}
 
@@ -483,7 +484,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 350.200012000000015, 275.0, 36.0, 20.0 ],
+					"patching_rect" : [ 350.200012000000015, 293.0, 36.0, 20.0 ],
 					"text" : "/ 100."
 				}
 
@@ -497,7 +498,7 @@
 					"numinlets" : 5,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 350.200012000000015, 237.0, 163.0, 20.0 ],
+					"patching_rect" : [ 350.200012000000015, 263.0, 163.0, 20.0 ],
 					"text" : "µUtil.StepToPitch 1902 13 69 6900"
 				}
 
@@ -511,7 +512,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 350.200012000000015, 207.0, 36.0, 20.0 ],
+					"patching_rect" : [ 350.200012000000015, 233.0, 36.0, 20.0 ],
 					"text" : "round"
 				}
 
@@ -596,6 +597,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-3", 1 ]
 				}
@@ -645,7 +653,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-37", 0 ]
 				}
 
@@ -717,7 +725,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
-					"midpoints" : [ 381.700012000000015, 477.75, 312.700012000000015, 477.75 ],
+					"midpoints" : [ 381.700012000000015, 495.75, 312.700012000000015, 495.75 ],
 					"source" : [ "obj-8", 0 ]
 				}
 
@@ -730,36 +738,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "maxscore.bindtoID.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../../extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "removeAllTablatureMessages.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../../extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "µUtil.PitchToStep.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/µUtilities",
-				"patcherrelativepath" : "../../µUtilities",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "µUtil.StepToPitch.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/µUtilities",
-				"patcherrelativepath" : "../../µUtilities",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{

@@ -190,7 +190,7 @@ function ScoreAnnotationAnnotation(ledgerlines = 1,
                                    micromap = "mM-none",
                                    clef = "default",
                                    adjust = 0,
-                                   staffgroup = [],
+                                   staffgroup = [0, 0],
                                    abbrInstrName = " ",
                                    instrumentNamePositionOffset = 0)
 {
@@ -724,6 +724,17 @@ function get_partidx_for_partid(jmsl, partid)
     return -1;
 }
 
+// Convert from MusicXML staff-lines element to
+// JMSL EXTENDEDLINESABOVE and EXTENDEDLINESBELOW
+function stafflines_to_extendedlines(x)
+{
+    let y = [
+        Math.floor(x / 2.0) + -2,
+        Math.floor((x - 1) / 2.0) + -2
+    ];
+    return y;
+}
+
 var musicxml_callbacks =
     {
 	    'score-timewise' : (mxml,jmsl)=>{
@@ -731,7 +742,7 @@ var musicxml_callbacks =
 	        var tempo = 60;
 	        var timesig = "4 4";
 	        var wedges = new Array(jmsl.info.nstaves);
-            var part_group = {};
+            var part_group = {"0" : 0};
 	        for(var i = 0; i < jmsl.info.nstaves; i++){
 		        wedges[i] = "0";
 	        }
@@ -753,9 +764,47 @@ var musicxml_callbacks =
 				              if(!("type" in mxml.attributes) || mxml.attributes.type == "composer"){
 				    	          set_score_attr(jmsl, "COMPOSER", v(mxml));
 				              }
-		  		          }
+		  		          },
+                          'rights' : (mxml,jmsl)=>{
+                              set_score_attr(jmsl, "COPYRIGHT", v(mxml));
+                          }
 		  	          })
 		        },
+                'defaults' : (mxml,jmsl)=>{
+                    T(mxml,jmsl,{
+                        'page-layout' : (mxml,jmsl)=>{
+                            T(mxml,jmsl,{
+                                'page-height' : (mxml,jmsl)=>{
+                                    set_score_attr(jmsl, "HEIGHT", parseInt(v(mxml)));
+                                },
+                                'page-width' : (mxml,jmsl)=>{
+                                    set_score_attr(jmsl, "WIDTH", parseInt(v(mxml)));
+                                },
+                                'page-margins' : (mxml,jmsl)=>{
+                                    if(mxml.attributes != undefined
+                                       && mxml.attributes.type == "even")
+                                    {
+                                        // don't support different margins for recto/verso
+                                        T(mxml,jmsl,{
+                                            'left-margin' : (mxml,jmsl)=>{
+                                                set_score_attr(jmsl, "LeftMargin", parseInt(v(mxml)));
+                                            },
+                                            'right-margin' : (mxml,jmsl)=>{
+                                                set_score_attr(jmsl, "RightMargin", parseInt(v(mxml)));
+                                            },
+                                            'top-margin' : (mxml,jmsl)=>{
+                                                set_score_attr(jmsl, "TopMargin", parseInt(v(mxml)));
+                                            },
+                                            'bottom-margin' : (mxml,jmsl)=>{
+                                                set_score_attr(jmsl, "BottomMargin", parseInt(v(mxml)));
+                                            },
+                                        })
+                                    }
+                                },
+                            })
+                        }
+                    });
+                },
 		        'part-list' : function (mxml, jmsl){
 		            T(mxml, jmsl, {
 		        	    'score-part' : (mxml,jmsl)=>{
@@ -768,7 +817,7 @@ var musicxml_callbacks =
                                     let part_group_arr = [];
                                     for(const k in part_group)
                                     {
-                                        part_group_arr.push(Number(k) - 1);
+                                        part_group_arr.push(Number(k));
                                         part_group_arr.push(part_group[k]);
                                     }
                                     setScoreAnnotationAnnotationProp(jmsl,
@@ -803,7 +852,6 @@ var musicxml_callbacks =
                                 'attributes' : (mxml,jmsl)=>{
                                     type = mxml.type;
                                     number = mxml.number;
-                                    console.log("type = " + type + " number = " + number);
                                     if(type == "start")
                                     {
                                         part_group[number] = undefined;
@@ -830,8 +878,8 @@ var musicxml_callbacks =
 		            __m.attributes.TEMPO = tempo;
 		            __m.attributes.TIMESIG = timesig;
 		            if("width" in mxml.attributes){
-			            // __m.attributes.WIDTH = Math.round(mxml.attributes.width);
-			            // __m.attributes.WIDTHSETBYHAND = true;
+			            __m.attributes.WIDTH = Math.round(Number(mxml.attributes.width) * 2.0);
+			            __m.attributes.WIDTHSETBYHAND = true;
 		            }
 		            var sidx = 0;
 		            T(mxml, jmsl,
@@ -927,7 +975,19 @@ var musicxml_callbacks =
 		    						                                sign + " line: " + line);
 		    				                      }
 						                          set_staff_attribute(jmsl.info, partid, staff, "CLEF", clef);
-		    				                  }
+		    				                  },
+                                              'staff-details' : (mxml,jmsl)=>{
+                                                  T(mxml,jmsl, {
+                                                      'staff-lines' : (mxml,jmsl)=>{
+                                                          let stafflines = Number(v(mxml));
+                                                          let extendedlines = stafflines_to_extendedlines(stafflines);
+                                                          set_staff_attribute(jmsl.info, partid, -1,
+                                                                              "EXTENDEDLINESABOVE", extendedlines[1]);
+                                                          set_staff_attribute(jmsl.info, partid, -1,
+                                                                              "EXTENDEDLINESBELOW", extendedlines[0]);
+                                                      }
+                                                  })
+                                              }
 					                      })
 				                    },
 				                    'barline' : (mxml,jmsl) => {

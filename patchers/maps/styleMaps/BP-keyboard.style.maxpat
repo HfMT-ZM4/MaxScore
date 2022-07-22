@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,20 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 303.0, 184.0, 19.0, 20.0 ],
+					"text" : "t f"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-14",
 					"maxclass" : "newobj",
@@ -167,7 +181,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 303.200012000000015, 93.0, 264.0, 22.0 ],
-					"restore" : [ 49.979999542236328, 0, 0, "false", 71, 0, 0, 0, 128, 0.5, "note", 0 ],
+					"restore" : [ 0, 0, 0, "false", 0, 0, 0, 0, 87, 0, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -249,7 +263,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 372.200012000000015, 449.0, 250.0, 22.0 ],
-					"restore" : [ "send", "parent::clefdesigner::map" ],
+					"restore" : [ "send", "parent::BP-keyboard(A=N)::map" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -268,7 +282,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 380.200012000000015, 293.5, 88.0, 20.0 ],
+					"patching_rect" : [ 380.200012000000015, 329.5, 88.0, 20.0 ],
 					"text" : "set destination"
 				}
 
@@ -379,7 +393,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 26.0, 31.5, 216.0, 22.0 ],
-					"restore" : [ 0.0, 17 ],
+					"restore" : [ 0.0, 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -469,7 +483,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 303.200012000000015, 179.0, 66.0, 20.0 ],
+					"patching_rect" : [ 303.200012000000015, 215.0, 66.0, 20.0 ],
 					"text" : "routepass 0."
 				}
 
@@ -483,7 +497,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 350.200012000000015, 275.0, 36.0, 20.0 ],
+					"patching_rect" : [ 350.200012000000015, 311.0, 36.0, 20.0 ],
 					"text" : "/ 100."
 				}
 
@@ -497,7 +511,7 @@
 					"numinlets" : 5,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 350.200012000000015, 237.0, 165.0, 20.0 ],
+					"patching_rect" : [ 350.200012000000015, 273.0, 165.0, 20.0 ],
 					"text" : "µUtil.StepToPitch 1902 13 60 6022"
 				}
 
@@ -511,7 +525,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 350.200012000000015, 207.0, 36.0, 20.0 ],
+					"patching_rect" : [ 350.200012000000015, 243.0, 36.0, 20.0 ],
 					"text" : "round"
 				}
 
@@ -542,6 +556,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-83", 0 ],
 					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-13", 0 ]
 				}
 
 			}
@@ -645,7 +666,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-37", 0 ]
 				}
 

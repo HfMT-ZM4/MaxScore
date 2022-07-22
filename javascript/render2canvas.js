@@ -67,9 +67,9 @@ post(cent2ratio.get(622), "\n");
 */
 //
 var lookupTables = ["cent2ratio-8", "cent2ratio-14", "cent2ratio-20", "cent2ratio-odd10", "cent2ratio-odd22"];
-var textFont = "Arial";
-var musicFont = "Bravura";
-var titleFont = "Times New Roman";
+var _textFont = "Arial";
+var _musicFont = "Bravura";
+var _titleFont = "Times New Roman";
 var textFontSize = "12.";
 var mgraphics = new JitterObject("jit.mgraphics", 320, 240);
 var setStaffGroup = [];
@@ -730,8 +730,8 @@ function getRenderAllowed(b)
 
 function textfont(tf)
 {
-	textFont = tf;
-	annotation.set("textFont", textFont);
+	_textFont = tf;
+	annotation.set("textFont", _textFont);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
@@ -739,17 +739,18 @@ function textfont(tf)
 
 function musicfont(mf)
 {
-	musicFont = mf;
-	annotation.set("musicFont", musicFont);
+	_musicFont = mf;
+	annotation.set("musicFont", _musicFont);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	post("musicfont", _musicfont, "\n");
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
 
 function titlefont(tf)
 {
-	titleFont = tf;
-	annotation.set("titleFont", titleFont);
+	_titleFont = tf;
+	annotation.set("titleFont", _titleFont);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
@@ -772,7 +773,6 @@ function setUserClef(targetStaff, userClef)
 		annotation.replace("staff-" + targetStaff + "::clef", userClef);
 		annotation.replace("staff-" + targetStaff + "::adjust", selectedClef.get("stafflines").get("above") - selectedClef.get("stafflines").get("below"));
 		var hiddenStaves = [].concat(selectedClef.get("stafflines").get("hidden"));
-		//post("hiddenStaves", hiddenStaves, "\n");
 		//if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
 		for (var i = 0; i < hiddenStaves.length; i++) if (hiddenStaves[i] != "none") outlet(1, "setStaffLineVisible", targetStaff, hiddenStaves[i], 0);
 		//annotation.replace("staff-" + targetStaff + "::stafflineshidden::" + hiddenStaves[i], 0);
@@ -966,8 +966,8 @@ function writeBarlines()
 									SVGLines[s + 1].push("<path d=\"M34.1,0C19.3,14.5,16.7,30.6,20.2,47.8c2,9.9,4.3,19.7,5,29.7c0.9,15.8-4.7,30-21.9,41c22,14.3,24,32.7,20.5,52.3c-1.8,9.9-4.5,19.7-5.1,29.7c-0.8,12.7,4.2,24.5,14.2,35C21,228,15.4,217.9,11.4,207.1c-4.9-13.2-0.7-26.1,2.4-39.1c1.6-6.8,3.4-13.8,3.2-20.7c0-10.9-4.5-20.9-17-28.6c13.1-8.5,18.2-19.2,17.1-31.2c-0.8-8.1-3-16.2-5.1-24.2c-5.5-20-3.9-38.9,13.1-55.9C27.8,4.7,31,2.4,34.1,0z\" fill=\"" + frgb + "\" transform=\"matrix(" + [0.3, 0., 0., (dest2 - dest) * 0.101911/24, (barlines[measures][lines][1] - 10), dest] + ")\"/>");
 									break;
 									case 2:
-									SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
-									SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
+									SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
+									SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
 									SVGLines[s + 1].push("<rect x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" width=\"2.\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 									break;	
 									}
@@ -1027,7 +1027,7 @@ function writeRuler()
 			path += "M" + i + " " + 0 + " V" + 15 + " ";
 			var padding = (j % 60 < 10) ? "0" : "";
 			_time = parseInt(j / 60) + "\'" + padding + j % 60 + "\"";
-			SVGString[s + 1].push("<text x=\"" + i + "\" y=\"" + 25 + "\" text-anchor=\"middle\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
+			SVGString[s + 1].push("<text x=\"" + i + "\" y=\"" + 25 + "\" text-anchor=\"middle\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
 		j++;
 		}	
 		SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -1048,9 +1048,9 @@ function getScoreAnnotation(a)
 	bcolor = (annotation.contains("bgcolor")) ? annotation.get("bgcolor") : [0.996, 0.996, 0.94, 1];
 	fcolor = (annotation.contains("fgcolor")) ? annotation.get("fgcolor") : [0, 0, 0, 1];
 	lcolor = (annotation.contains("linecolor")) ? annotation.get("linecolor") : [0, 0, 0, 1];
-	musicfont = (annotation.contains("musicfont")) ? annotation.get("musicfont") : "Bravura";
-	textfont = (annotation.contains("textfont")) ? annotation.get("textfont") : "Arial";
-	titlefont = (annotation.contains("titlefont")) ? annotation.get("titlefont") : "Times New Roman";
+	_musicfont = (annotation.contains("musicfont")) ? annotation.get("musicfont") : "Bravura";
+	_textfont = (annotation.contains("textfont")) ? annotation.get("textfont") : "Arial";
+	_titlefont = (annotation.contains("titlefont")) ? annotation.get("titlefont") : "Times New Roman";
 	wholeNoteRestInEmptyMeasures = (annotation.contains("wholeNoteRestInEmptyMeasures")) ? annotation.get("wholeNoteRestInEmptyMeasures") : 0;
 }
 
@@ -1412,7 +1412,7 @@ function anything() {
 			{
 			for (var i = 0; i < 2; i++) {
 			var glyph = fontMap.get("tempoqtrequals");
-			SVGString[s + 1].push("<text x=\"" + (glyph[i*5+1] + msg[0]) + "\" y=\"" + (glyph[i*5+2] + msg[1]) + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[i*5+0] + "</text>");
+			SVGString[s + 1].push("<text x=\"" + (glyph[i*5+1] + msg[0]) + "\" y=\"" + (glyph[i*5+2] + msg[1]) + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[i*5+0] + "</text>");
 			}
 			}
 			tempoflag = 1;
@@ -1420,7 +1420,7 @@ function anything() {
         case "writeat":
 			for (var s = 0; s < groupcount; s++)
 			{
-			writeAt(s, textFont, 10., msg[0], msg[1], msg[2]);
+			writeAt(s, _textFont, 10., msg[0], msg[1], msg[2]);
 			}
 			tempoflag = 0;		
             break;
@@ -1494,7 +1494,7 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<text x=\"" + msg[5] + "\" y=\"" + dest[d] + "\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"10\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + noteText + "</text>");
+			SVGString[s + 1].push("<text x=\"" + msg[5] + "\" y=\"" + dest[d] + "\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"10\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + noteText + "</text>");
 			}
 			}
 			}
@@ -1708,8 +1708,8 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 15.5) + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
-			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 21.5) + "\" font-family=\"" + musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
+			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 15.5) + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
+			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 21.5) + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
 			}
 			}
 			}
@@ -1804,21 +1804,21 @@ function anything() {
 			var x = (_scoreLayout[4] - text_measure("Times New Roman", 26, msg[3])[0]) / 2;
 			for (var s = 0; s < groupcount; s++)
 			{
-			writeAt(s, titleFont, 26, x, msg[2] + 15, msg[3]);
+			writeAt(s, _titleFont, 26, x, msg[2] + 15, msg[3]);
 			}
             break;
         case "printScoreSubtitle":
 			var x = (_scoreLayout[4] - text_measure("Times New Roman", 12, msg[3])[0]) / 2;
 			for (var s = 0; s < groupcount; s++)
  			{
-			writeAt(s, titleFont, 12, x, msg[2] + 15, msg[3]);
+			writeAt(s, _titleFont, 12, x, msg[2] + 15, msg[3]);
 			}
            break;
         case "printComposer":
 			var x = _scoreLayout[4] - text_measure("Times New Roman", 12, msg[3])[0] - 30;
 			for (var s = 0; s < groupcount; s++)
 			{
-			writeAt(s, titleFont, 12, x, msg[2] + 15, msg[3]);
+			writeAt(s, _titleFont, 12, x, msg[2] + 15, msg[3]);
 			}
             break;
         case "RenderMessage":
@@ -2421,7 +2421,7 @@ function anything() {
 		if (msgname.indexOf("measurenumber") != -1)
 			{
 				//if (glyph[3] == "$TEXTFONT")
-				writeAt(0, textFont, glyph[4], msg[0] + glyph[1], msg[1] + glyph[2], glyph[0]);
+				writeAt(0, _textFont, glyph[4], msg[0] + glyph[1], msg[1] + glyph[2], glyph[0]);
 				return;
 			}
 		else if (["tr", "al", "te", "ba", "pr"].indexOf(msgname) != -1) { 
@@ -2475,7 +2475,7 @@ function anything() {
 				if (annotation.contains("staff-"+msg[5]+"::abbrInstrName") && msg[4] != 0) _instrumentNames[msg[msg.length - 1]] = annotation.get("staff-"+msg[5]+"::abbrInstrName") != " " ? annotation.get("staff-"+msg[5]+"::abbrInstrName") : instrumentNames[msg[msg.length - 1]];
 				if (msg[msg.length - 1] < _instrumentNames.length && oldstaff != msg[msg.length - 1]){
 				glyph[0] = _instrumentNames[msg[msg.length - 1]];
-				glyph[1] = glyph[1] - text_measure(textFont, 12, _instrumentNames[msg[msg.length - 1]])[0]; 
+				glyph[1] = glyph[1] - text_measure(_textFont, 12, _instrumentNames[msg[msg.length - 1]])[0]; 
 				if (annotation.contains("staff-"+msg[5]+"::instrumentNamePositionOffset")) glyph[2] = glyph[2] + annotation.get("staff-"+msg[5]+"::instrumentNamePositionOffset");
 				oldstaff = msg[msg.length - 1];
 				}
@@ -2502,8 +2502,8 @@ function anything() {
 				if (glyph[0].length == 1) t = glyph[i*5+0];
 				else t = htmlEntities(glyph[i*5+0]);
  				}
-				if (glyph[i*5+3] == "$TEXTFONT") var fontFamily = textFont;
-				else if (glyph[i*5+3] == "$MUSICFONT") var fontFamily = musicFont;
+				if (glyph[i*5+3] == "$TEXTFONT") var fontFamily = _textFont;
+				else if (glyph[i*5+3] == "$MUSICFONT") var fontFamily = _musicFont;
 				else var fontFamily = glyph[i*5+3];
 				if (staticClefs) SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
 				else SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + (gracenoteOffset * 0.5) + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")\" >" + t + "</text>");
@@ -2861,7 +2861,7 @@ function pagenumber()
 	var pn = arrayfromargs(arguments);
 	if (pn[0]) {
 		var y_pos = (pn[2]) ? _scoreLayout[5] - 20 : 20;
-		pageNumber = "<text x=\"" + _scoreLayout[4] / 2 + "\" y=\"" + y_pos + "\" font-family=\"" + textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"12\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + pn[1] + "</text>";
+		pageNumber = "<text x=\"" + _scoreLayout[4] / 2 + "\" y=\"" + y_pos + "\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"12\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + pn[1] + "</text>";
 		}
 	else pageNumber = "";
 }
