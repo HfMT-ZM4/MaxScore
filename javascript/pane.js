@@ -79,7 +79,7 @@ var old_y_pos;
 var selection = 0;
 var shiftclick;
 var controlshift = 0;
-var zoom = 1.;
+var zoom = [ 1., 1. ];
 var idleOut = 0;
 var capsl = 0;
 var bgcolor = [0.996, 0.996, 0.94, 1];
@@ -106,6 +106,8 @@ var pshape = "1: line";
 var boundingRect = [];
 var boundingRectOffset = [0, 0];
 var playheadRect = [];
+var playheadColor = [0.3, 1., 0.3, 0.7];
+var playheadWidth = 3.;
 var playback = 0;
 var flashingNotes = {};
 var lines = {};
@@ -122,6 +124,7 @@ var blnk = new Task(blink, this);
 var maxiter = {};
 var maxcount = {};
 var manual = 0;
+var mouseselection = 1;
 	
 
 tsk["scroll"] = new Task(scrollTask, this, "scroll"); // our main task
@@ -147,11 +150,36 @@ function setMediaFolder()
 
 }
 
+//	157 217 255 128
+
+
+
 function buttonmode(bm)
 {
-	buttonfillcolor = (bm) ? [0.808, 0.898, 0.910, 0.8] : [1., 0., 0., 0.1];
-	buttonstrokecolor = (bm) ? [0.35, 0.35, 0.35, 1.000] : [1., 0., 0., 1.];
-	buttonstrokewidth = (bm) ? 3 : 0.5;
+	switch (bm)
+	{
+		case 0 :
+			buttonfillcolor = [1., 0., 0., 0.1];
+			buttonstrokecolor = [1., 0., 0., 1.];
+			buttonstrokewidth = 0.5;
+			playheadWidth = 3.;
+			playheadColor = [0.3, 1., 0.3, 0.7];
+		break;
+		case 1 :
+			buttonfillcolor = [0.808, 0.898, 0.910, 0.8];
+			buttonstrokecolor = [0.35, 0.35, 0.35, 1.000];
+			buttonstrokewidth = 3;
+			playheadWidth = 3.;
+			playheadColor = [0.3, 1., 0.3, 0.7];
+		break
+		case 2 :
+			buttonfillcolor = [0.615686, 0.85098, 1., 0.501961];
+			buttonstrokecolor = [0.615686, 0.85098, 1., 0.501961];
+			buttonstrokewidth = 0.1;
+			playheadWidth = 1.;
+			playheadColor = [1., 0., 0., 0.7];
+		break
+	}
 }
 
 function setvalueof(v)
@@ -162,6 +190,11 @@ function setvalueof(v)
 function getvalueof()
 {
 	return [horizontalOffset, manual];
+}
+
+function setMouseSelection(flag)
+{
+	mouseselection = flag;
 }
 
 function anything()
@@ -178,7 +211,7 @@ function anything()
 			blnk.schedule(200);
 			}
 		else {
-            boundingRect = [msg[1] * zoom, msg[2] * zoom, (msg[3] - msg[1]) * zoom, (msg[4] - msg[2]) * zoom];
+            boundingRect = [msg[1] * zoom[0], msg[2] * zoom[1], (msg[3] - msg[1]) * zoom[0], (msg[4] - msg[2]) * zoom[1]];
 			}
     	mgraphics.redraw();
 		}
@@ -350,15 +383,15 @@ function pageSize(x, y)
 	pageHeight = y;
 	if (adjust) {
 		var scriptingName = thisbox.varname;
-		this.patcher.message("script", "sendbox", scriptingName, "patching_rect", this.box.getattr("patching_rect")[0], this.box.getattr("patching_rect")[1], pageWidth * zoom, pageHeight * zoom);
-		this.patcher.message("script", "sendbox", scriptingName, "presentation_rect", 0, 0, pageWidth * zoom, pageHeight * zoom);
-		width = pageWidth * zoom;
-		height = pageHeight * zoom;
+		this.patcher.message("script", "sendbox", scriptingName, "patching_rect", this.box.getattr("patching_rect")[0], this.box.getattr("patching_rect")[1], pageWidth * zoom[0], pageHeight * zoom[1]);
+		this.patcher.message("script", "sendbox", scriptingName, "presentation_rect", 0, 0, pageWidth * zoom[0], pageHeight * zoom[1]);
+		width = pageWidth * zoom[0];
+		height = pageHeight * zoom[1];
 		verticalScrollbar.extent = height - horizontalScrollbar.span;
 		horizontalScrollbar.extent = width - verticalScrollbar.span;
 		}
-	horizontalScrollbar.percentage = horizontalScrollbar.extent / (pageWidth * zoom) * ((prop) ? 50 : 100);
-	verticalScrollbar.percentage = verticalScrollbar.extent / (pageHeight * zoom) * 100;
+	horizontalScrollbar.percentage = horizontalScrollbar.extent / (pageWidth * zoom[0]) * ((prop) ? 50 : 100);
+	verticalScrollbar.percentage = verticalScrollbar.extent / (pageHeight * zoom[1]) * 100;
 	if (JSON.stringify([oldPageWidth, oldPageHeight]) != JSON.stringify([pageWidth, pageHeight])) {
 		horizontalOffset = 0;
 		verticalOffset = 0;
@@ -376,19 +409,22 @@ function pageSize(x, y)
 		//horizontalScrollbar.value = (horizontalScrollbar.center-horizontalScrollbar.spacer)/(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*100.;
 		//horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, (200/hscrollfactor - horizontalScrollbar.percentage)/2, 0, horizontalScrollbar.extent / zoom - pageWidth);
 		}
-	horizontalScrollbar.value = scale(horizontalOffset, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom) - pageWidth, horizontalScrollbar.percentage/2, (200 - horizontalScrollbar.percentage)/2);
-	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
+	horizontalScrollbar.value = scale(horizontalOffset, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom[0]) - pageWidth, horizontalScrollbar.percentage/2, (200 - horizontalScrollbar.percentage)/2);
+	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom[1] - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	oldPageWidth = pageWidth;
 	oldPageHeight = pageHeight;
 	//post("horizontalScrollbar-1", horizontalScrollbar.center, hscrollfactor, horizontalScrollbar.percentage/200*horizontalScrollbar.extent+horizontalScrollbar.spacer, "\n");
 }
 
-function setZoom(z)
+function setZoom()
 {
-	zoom = z * 2;
-	outlet(1, "setZoom", z);
+	var z = arrayfromargs(arguments);
+	zoom = (z.length == 1) ? [ z[0] * 2, z[0] * 2] : [ z[0] * 2, z[1] * 2];
+	
+	outlet(1, "setZoom", zoom);
 	//verticalOffset = 0;
 	pageSize(pageWidth, pageHeight);
+	//playheadWidth = playheadWidth * zoom[0] / 2;
 	//post("horizontaloffset", (horizontalScrollbar.center-(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*horizontalScrollbar.percentage/200-horizontalScrollbar.spacer)/horizontalScrollbar.extent*pageWidth*zoom, "\n");
 	//horizontalOffset = (horizontalScrollbar.center-(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*horizontalScrollbar.percentage/200-horizontalScrollbar.spacer)/horizontalScrollbar.extent*pageWidth*zoom;
 	mgraphics.redraw();
@@ -556,13 +592,13 @@ function proportional(p)
 function playhead(x)
 {
 	//playheadRect = [x * zoom, 0, 3 * zoom, height];
-	playheadRect = [x, 0, 3, pageHeight];
+	playheadRect = [x, 0, playheadWidth, pageHeight];
 	mgraphics.redraw();
 }
 
 function dyn_playhead(x, y2, y1, f)
 {
-	playheadRect = [x, y1, 3, y2 - y1];
+	playheadRect = [x, y1, playheadWidth, y2 - y1];
 	mgraphics.redraw();
 }
 
@@ -647,7 +683,7 @@ function paint() {
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
 			}
 		mgraphics.identity_matrix();
-		mgraphics.scale(zoom, zoom);
+		mgraphics.scale(zoom[0], zoom[1]);
 		mgraphics.translate(horizontalOffset, verticalOffset);
 		mgraphics.set_source_rgba(bgcolor);
 		mgraphics.rectangle(0, 0, pageWidth, pageHeight);
@@ -662,15 +698,15 @@ function paint() {
 		drawCountins();
 		if (boundingRect.length > 0) drawBoundingRect();
 		mgraphics.identity_matrix();
-		mgraphics.scale(zoom, zoom);
+		mgraphics.scale(zoom[0], zoom[1]);
 		mgraphics.translate(0, verticalOffset);
 		if (prop || playback) drawPlayhead();
 		if (prop) mgraphics.svg_render(clefs);
 		mgraphics.identity_matrix();
-		selectionRect();
+		if (mouseselection) selectionRect();
 		picsterLabel();
-		var adjustedPageWidth = Math.round(pageWidth * zoom);
-		var adjustedPageHeight = Math.round(pageHeight * zoom);
+		var adjustedPageWidth = Math.round(pageWidth * zoom[0]);
+		var adjustedPageHeight = Math.round(pageHeight * zoom[1]);
 		horizontalScrollbar.visible = adjustedPageWidth > width || prop;
 		verticalScrollbar.visible = adjustedPageHeight > height;
 		if (verticalScrollbar.visible && horizontalScrollbar.visible && !virgin) handle();
@@ -681,7 +717,7 @@ function paint() {
 function drawPlayhead()
 {
            with(mgraphics) {
-				set_source_rgba(0.3, 1., 0.3, 0.7);
+				set_source_rgba(playheadColor);
 				rectangle(playheadRect);
 				fill();
 			}
@@ -920,8 +956,8 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
 	/////////////////////////
 	rect_x[0] = x;
     rect_y[0] = y;
-	x_pos = x / zoom;
-	y_pos = y / zoom;
+	x_pos = x / zoom[0];
+	y_pos = y / zoom[1];
     //  move notes vertically
 	//horizontalScrollbar.visible
 	// four cases:
@@ -936,8 +972,8 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
         controlshift = 1;
         shiftclick = 0;
 		outlet(2, 1);
-        outlet(1, "mousePressed", x / zoom - horizontalOffset , y / zoom - verticalOffset);
-        (!ctrl) ? outlet(1, "singleClick", x / zoom - horizontalOffset, y / zoom - verticalOffset, shift) : outlet(1, "ctrlClick", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+        outlet(1, "mousePressed", x / zoom[0] - horizontalOffset , y / zoom[1] - verticalOffset);
+        (!ctrl) ? outlet(1, "singleClick", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset, shift) : outlet(1, "ctrlClick", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
 		return;
     	}
 		else {
@@ -947,8 +983,8 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
         shiftclick = 0;
         outlet(0, "ctrlKeyDown", 1);
         outlet(0, "shiftKeyDown", 1);
-        outlet(0, "mousePressed", x / zoom - horizontalOffset, y / zoom - verticalOffset);
-		outlet(0, "mouseDragged", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+        outlet(0, "mousePressed", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
+		outlet(0, "mouseDragged", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
 		return;
     	}
     	if (shift && !_cmd && !ctrl) {
@@ -962,13 +998,13 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
        	shiftclick = 0;
         controlshift = 0;
     	outlet(0, "mouseRightButtonDown", 1);
-    	outlet(0, "mousePressed", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+    	outlet(0, "mousePressed", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
 		return;
     	}
    		//post("CASE", "2", "\n");
 		shiftclick = 0;
 		controlshift = 0;
-		outlet(0, "mousePressed",  x / zoom - horizontalOffset, y / zoom - verticalOffset);
+		outlet(0, "mousePressed",  x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
 		outlet(2, 1);
 		}
 }
@@ -987,7 +1023,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	//_zoom = (controlshift) ? 1 : zoom;
     if (!but) {
         selection = 0;
-        outlet(controlshift, "mouseReleased", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+        outlet(controlshift, "mouseReleased", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
 		outlet(controlshift, "mouseRightButtonDown", 0);
         outlet(controlshift, "ctrlKeyDown", 0);
         outlet(controlshift, "shiftKeyDown", 0);
@@ -999,13 +1035,13 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
         if (_cmd) {
             selection = 0;
         	DisplayCursor(9);
-			outlet(0, "mouseDragged", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+			outlet(0, "mouseDragged", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
        } else {
             selection = 1;
 			controlshift = capsl;
 			mgraphics.redraw();
 			//_zoom = (controlshift) ? 1 : zoom;
-			outlet(controlshift, "mouseDragged", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+			outlet(controlshift, "mouseDragged", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
     		//outlet(controlshift, "getSelectedLocation");
         }
     }
@@ -1023,7 +1059,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	horizontalScrollbar.value = (horizontalScrollbar.center-horizontalScrollbar.spacer)/(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*100.;
 	if (horizontalScrollbar.value < horizontalScrollbar.percentage / 2.) horizontalScrollbar.value =  horizontalScrollbar.percentage / 2.;
 	if (horizontalScrollbar.value > 100 - horizontalScrollbar.percentage / 2.) horizontalScrollbar.value =  100 - horizontalScrollbar.percentage / 2.;
-	horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom) - pageWidth);
+	horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom[0]) - pageWidth);
 	}
 
 	if (first_position[0]>horizontalScrollbar.extent && first_position[0]<width){
@@ -1036,7 +1072,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	verticalScrollbar.value = (verticalScrollbar.center-verticalScrollbar.spacer)/(verticalScrollbar.extent-verticalScrollbar.spacer*2)*100.;
 	if (verticalScrollbar.value < verticalScrollbar.percentage / 2.) verticalScrollbar.value =  verticalScrollbar.percentage / 2.;
 	if (verticalScrollbar.value > 100 - verticalScrollbar.percentage / 2.) verticalScrollbar.value =  100 - verticalScrollbar.percentage / 2.;
-	verticalOffset = scale(verticalScrollbar.value, verticalScrollbar.percentage/2, 100 - verticalScrollbar.percentage/2, 0, verticalScrollbar.extent / zoom - pageHeight);
+	verticalOffset = scale(verticalScrollbar.value, verticalScrollbar.percentage/2, 100 - verticalScrollbar.percentage/2, 0, verticalScrollbar.extent / zoom[1] - pageHeight);
 	}
 	manual = 1;
 	notifyclients();
@@ -1054,7 +1090,7 @@ function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 	if (!repeat) outlet(2, "idleout", 0);
 	repeat = 1;
 	var _cmd = (max["os"]=="macintosh") ? cmd : option;
-	if (idleOut) outlet(1, "mouseIdle",  x - horizontalOffset , y - verticalOffset, shift, ctrl);
+	if (idleOut) outlet(1, "mouseIdle",  x / zoom[0] - horizontalOffset , y / zoom[1] - verticalOffset, shift, ctrl);
     canvasactive = 1;
     if (_cmd) DisplayCursor(9);
 	else if (ctrl) DisplayCursor(4);
@@ -1076,10 +1112,10 @@ function onidleout() {
 
 function ondblclick(x, y, but, cmd, shift, capslock, option, ctrl) {
 	//_zoom = (controlshift) ? 1 : zoom;
-    outlet(controlshift, "doubleClick", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+    outlet(controlshift, "doubleClick", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
     outlet(controlshift, "mouseRightButtonDown", 1);
-    outlet(controlshift, "mousePressed", x / zoom - horizontalOffset, y / zoom - verticalOffset);
-    outlet(controlshift, "mouseReleased", x / zoom - horizontalOffset, y / zoom - verticalOffset);
+    outlet(controlshift, "mousePressed", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
+    outlet(controlshift, "mouseReleased", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
     outlet(controlshift, "mouseRightButtonDown", 0);
 }
 ondblclick.local = 1;
