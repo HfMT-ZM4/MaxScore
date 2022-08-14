@@ -2694,14 +2694,24 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 							velCurve.pa[i].valy = velocity_[4 + (i * 4)];
 							velCurve.pa[i].curve = velocity_[6 + (i * 4)];
 						}
-						outlet(1, "getNoteAreaWidth", msg[1]);
-						//post("msg-1", msg, "\n");
 						getMeasureInfo(msg[1] - _scoreLayout[1]);
 						getNoteInfo(msg.slice(1));
-						//if (msg[0] == "note") getNoteInfo(msg);
-						//else getNoteInfo(msg.slice(1).concat([-1, -1]));
-						if (prop) space = hold * 60 / tempo * timeUnit - 7;
-						else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
+						var scaleTo = e.get("picster-element[0]::val::scaleto");
+						var strokeWidth = e.get("picster-element[0]::val::stroke-width");
+						if (scaleTo.length > 5) {
+							//post("split", scaleTo.slice(6, scaleTo.indexOf("_")).split(",").slice(0, 4), scaleTo.slice(scaleTo.indexOf("_") + 1, scaleTo.indexOf(")")).split(",").slice(0, 4), "\n");
+							outlet(1, "getDrawingAnchor", scaleTo.slice(6, scaleTo.indexOf("_")).split(",").slice(0, 4).map(Number));
+							//post("getDrawingAnchor", typeof scaleTo.slice(6, scaleTo.indexOf("_")).split(",")[0], "\n");
+							var noteAnchor1 = drawingAnchor.slice(4,5);
+							outlet(1, "getDrawingAnchor", scaleTo.slice(scaleTo.indexOf("_") + 1, scaleTo.indexOf(")")).split(",").slice(0, 4).map(Number));
+							var noteAnchor2 = drawingAnchor.slice(4,5);
+							space = Math.abs(noteAnchor2 - noteAnchor1);
+							}
+						else {
+							outlet(1, "getNoteAreaWidth", msg[1]);
+							if (prop) space = hold * 60 / tempo * timeUnit - 7;
+							else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
+						}
 						//if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
 						var numPoints = (pitchbend.length - 4) / 4;
 						var moveTo = [pitchbend[3] * space + msg[8] + 7, pitchbend[4] / 300 * -6 + 2 + _dest];
@@ -2729,7 +2739,7 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						for (var i = 1; i < allCurveSegs.length; i++) {
 							var point = (allCurveSegs[i][0] - 7 - msg[8]) / space;
 							//post("point", point, interp(velCurve, point), "\n");
-							thickness = (velocity + interp(velCurve, point) - 1) * 5 / 126 + 1.;
+							thickness = (strokeWidth == "$VELOCITY") ? (velocity + interp(velCurve, point) - 1) * 5 / 126 + 1. : strokeWidth;
 							var displacement = thickness * 0.5 / ((allCurveSegs[i][0] - allCurveSegs[i - 1][0]) / Math.sqrt(Math.pow((allCurveSegs[i][0] - allCurveSegs[i - 1][0]), 2) + Math.pow((allCurveSegs[i][1] - allCurveSegs[i - 1][1]), 2)));
 							//post("displacement1", allCurveSegs[i][0], displacement, "\n");
 							bpf += "L" + [allCurveSegs[i][0].toFixed(2), (allCurveSegs[i][1] - displacement).toFixed(2)];
@@ -2737,7 +2747,7 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						//bpf += "M" + [curveTo[0], curveTo[1] - 4] + "L" + [curveTo[0], curveTo[1] + 4];
 						for (var i = allCurveSegs.length - 1; i >= 0; i--) {
 							var point = (allCurveSegs[i][0] - 7 - msg[8]) / space;
-							thickness = (velocity + (interp(velCurve, point)) - 1) * 5 / 126 + 1.;
+							thickness = (strokeWidth == "$VELOCITY") ? (velocity + (interp(velCurve, point)) - 1) * 5 / 126 + 1. : strokeWidth;
 							if (i < allCurveSegs.length - 1) var displacement = thickness * 0.5 / ((allCurveSegs[i + 1][0] - allCurveSegs[i][0]) / Math.sqrt(Math.pow((allCurveSegs[i + 1][0] - allCurveSegs[i][0]), 2) + Math.pow((allCurveSegs[i + 1][1] - allCurveSegs[i][1]), 2)));
 							//post("displacement2", allCurveSegs[i][0], displacement, "\n");
 							bpf += "L" + [allCurveSegs[i][0].toFixed(2), (allCurveSegs[i][1] + displacement).toFixed(2)];							

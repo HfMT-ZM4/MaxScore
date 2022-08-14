@@ -217,7 +217,7 @@ function anything()
 		}
 	else if (msg[0] == "idleOut") {
 		idleOut = msg[1];
-		}
+		}	
 	else if (msg[0] == "playback") {
 		playback = msg[1];
 		}
@@ -421,7 +421,7 @@ function setZoom()
 	var z = arrayfromargs(arguments);
 	zoom = (z.length == 1) ? [ z[0] * 2, z[0] * 2] : [ z[0] * 2, z[1] * 2];
 	
-	outlet(1, "setZoom", zoom);
+	outlet(1, "setZoom", z[0]);
 	//verticalOffset = 0;
 	pageSize(pageWidth, pageHeight);
 	//playheadWidth = playheadWidth * zoom[0] / 2;
@@ -675,7 +675,6 @@ function countin(arg)
 
 function paint() {
 		if (tsk["scroll"].running) {
-			//post("ticks", ticks["scroll"], "\n");
 			horizontalOffset = (elapsed + ticks["scroll"]) * speed;
 			manual = 0;
 			notifyclients();
@@ -789,7 +788,6 @@ function picsterLabel()
 				set_source_rgba(1., 0., 0., 1.);
 				set_font_size(10);
  				select_font_face("Arial");
-				//post("pshape", pshape, "\n");
 				if (pshape[1]) {
 				move_to(2, 10);
 				text_path(pshape[0] + "   ⤧");
@@ -822,7 +820,8 @@ function selectionRect()
 
 function drawBoundingRect()
 {
-            with(mgraphics) {
+ 			//post("drawBoundingRect", boundingRect, "\n");
+           with(mgraphics) {
               set_line_width(buttonstrokewidth);
              	set_source_rgba(buttonfillcolor);
 				rectangle(boundingRect);

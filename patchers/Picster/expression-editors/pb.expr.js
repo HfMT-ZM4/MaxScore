@@ -9,7 +9,7 @@ var shape = {
 				"shape" : "$EXPRESSION",
 				"scaleto" : "$HOLD",
 				"stroke" : "$FRGB",
-				"stroke-width" : 2
+				"stroke-width" : "$VELOCITY"
 			}
 
 		}

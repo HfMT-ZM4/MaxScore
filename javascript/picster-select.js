@@ -1045,6 +1045,16 @@ function restoreSelection(obj)
 		}
 }
 
+function addPortamento(serialized)
+{
+	outlet(0, "clearSelection");
+	outlet(0, "selectNote", anchors[Object.keys(anchors)[0]].slice(2));
+	outlet(0, "addRenderedMessageToSelectedNotes", 7, 0, serialized);
+	restoreSelection(anchors);
+	outlet(0, "saveToUndoStack");
+	outlet(0, "setRenderAllowed", "true");
+}
+
 function addShape()
 {
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
@@ -1786,6 +1796,61 @@ function anything()
 			outlet(2, "bounds", "hide");
 			outlet(2, "picsterShape", shapes[shape], selectionMode);
 			break;
+			case 47 : //create a pb expression between two selected notes
+			action = "addPortamento";
+			anchors = {};
+			outlet(0, "getScoreAnnotation");
+			outlet(0, "getNoteAnchor");
+			if (Object.keys(anchors).length == 2) {
+			outlet(0, "getSelectedNoteInfo");
+			var keys = Object.keys(json.selectedNotes);
+			var notes = {};
+			//post("anchors", JSON.stringify(anchors), keys, JSON.stringify(json), "\n");
+			notes[0] = {};
+			notes[1] = {};
+			notes[0]["position"] = anchors[Object.keys(anchors)[0]].slice(0,2);
+			notes[1]["position"] = anchors[Object.keys(anchors)[1]].slice(0,2);
+			if (keys[1] == ".ordering") {
+				notes[0]["pitch"] = (json["selectedNotes"][keys[0]][0]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[0]][0]["@PITCH"] : json["selectedNotes"][keys[0]][0]["dim"][1]["@value"];
+				notes[1]["pitch"] = (json["selectedNotes"][keys[0]][1]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[0]][1]["@PITCH"] : json["selectedNotes"][keys[0]][1]["dim"][1]["@value"];
+			}
+			else {
+				notes[0]["pitch"] = (json["selectedNotes"][keys[0]][0]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[0]][0]["@PITCH"] : json["selectedNotes"][keys[0]][0]["dim"][1]["@value"];
+				notes[1]["pitch"] = (json["selectedNotes"][keys[1]][0]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[1]][0]["@PITCH"] : json["selectedNotes"][keys[1]][0]["dim"][1]["@value"];
+			}
+			//post("keys", notes[0]["position"][0], notes[1]["position"][0], timeUnit, "\n");
+			_picster = { "picster-element" : [ 	{
+				"key" : "render-expression",
+				"val" : 			{
+					"id" : "pitchbend_" + cnt(),
+					"shape" : "$EXPRESSION",
+					"scaleto" : "$HOLD(" + anchors[Object.keys(anchors)[0]].slice(2) + "_" + anchors[Object.keys(anchors)[1]].slice(2) + ")", //notes[1]["position"][0] - notes[0]["position"][0])/timeUnit
+					"stroke" : "$FRGB",
+					"stroke-width" : 1
+				}
+			} , 
+			{
+			"key" : "extras",
+			"val" : 			{
+				"bounds" : [ -1, -1, -1, -1 ]
+					}
+				}
+			, {
+			"key" : "expression",
+			"val" : [ 				{
+					"editor" : "pb",
+					"message" : "polybend",
+					"value" : [ "data", 0, 12, 1, -127, 127, 0, 0, 0, 0, 1, (notes[1]["pitch"] - notes[0]["pitch"]) * 100, 0, 0, "curve", "data", 1, 12, 1, -127, 127, 0, 0, 0, 0, 1, 0, 0, 0, "curve" ]
+							}
+ 						]
+					}
+ 				]
+			};
+			edit.parse(JSON.stringify(_picster));
+			outlet(3, "bang");
+			}
+			//post("anchors", Object.keys(anchors).length, keys, JSON.stringify(notes), "\n");
+			break;
 			case 67 :  //copy
 			if (foundobjects.contains("0") && item != -1) {
 				anchors = {};
@@ -1846,13 +1911,6 @@ function anything()
 			//outlet(0, "getNumStaves");
 			dumpinfo = ["staff", foundobjects.get(item)[2]];
 			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
-			/*
-			var key = Object.keys(json);
-			var staves = {};
-			if (numStaves == 1) staves = json["measure"]["staff"];
-			else  staves = json["measure"]["staff"][foundobjects.get(item)[2]];
-			if (!("staffUserBean" in staves)) return;
-			*/
 			if (!(userBeans.length)) return;
 			outlet(0, "removeAllRenderedMessagesFromStaff", foundobjects.get(item).slice(1, 3));
 			//var userBeans = [].concat(staves["staffUserBean"]);
@@ -1876,9 +1934,7 @@ function anything()
 			tempObjArray[i] = JSON.parse(tempDict.stringify());
 			tempObjArray[i].Xoffset = parseFloat(userBeans[i]["@Xoffset"]) * factor;
 			tempObjArray[i].Yoffset = parseFloat(userBeans[i]["@Yoffset"]) * factor;
-			post("Xoffset/Yoffset", anchor, factor, parseFloat(userBeans[i]["@Xoffset"]) * factor, parseFloat(userBeans[i]["@Yoffset"]) * factor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
-			//if (tempDict.get("picster-element[0]::val[0]::id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
-			//else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["@Message"]);
+			//post("Xoffset/Yoffset", anchor, factor, parseFloat(userBeans[i]["@Xoffset"]) * factor, parseFloat(userBeans[i]["@Yoffset"]) * factor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
 			}
 			else return;
 			}
@@ -2186,6 +2242,7 @@ function anything()
 		userBeans = [];
 		json = JSON.parse(dump.stringify());
 		var key = Object.keys(json);
+		//post("key", Object.keys(json), dumpinfo[0], "\n");
 		if ((key == "interval" || key == "note") && "userBean" in json[key]){
 		var occurence = getAllIndexes(json[key][".ordering"], "userBean");
 		for (var i = 0; i < occurence.length; i++) userBeans[i] = json[key]["userBean"][i];
@@ -2229,14 +2286,12 @@ function serializedDict()
 {
 	if (inlet) {
 	var msg = arrayfromargs(arguments);
-	if (action == "update") {
-		reattachRenderedMessage(msg[0]);
-		//init();
-		}
+	if (action == "update") reattachRenderedMessage(msg[0]); //init();
 	else if (action == "rotate") reattachRenderedMessage2(0, 0, msg[0]);
 	else if (action == "mouseReleased") createRenderedMessage(0, 0, 0, msg[0]);
 	else if (action == "addShape") createRenderedMessage(0, offsets[0][0], offsets[0][1], msg[0]);
 	else if (action == "group") createRenderedMessage(0, ".", ".", msg[0]);
+	else if (action == "addPortamento") addPortamento(msg[0]);
 	}
 }
 
@@ -2461,7 +2516,6 @@ function findBoundsToo(d)
 	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) renderOffset = [0, 0];
 		horizontalOffset = 0;
 		verticalOffset = 0;
-	//post("renderOffset", origin, horizontalOffset, verticalOffset, renderOffset, "\n");
 	return [findbounds.boundmin[0] - renderOffset[0] + horizontalOffset, findbounds.boundmin[1] - renderOffset[1] + verticalOffset, findbounds.boundmax[0] - renderOffset[0] + horizontalOffset, findbounds.boundmax[1] - renderOffset[1] + verticalOffset];
 }
 

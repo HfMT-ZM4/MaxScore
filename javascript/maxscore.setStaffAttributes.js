@@ -71,6 +71,7 @@ var oldCount = 0;
 var dumpDict = this.patcher.parentpatcher.parentpatcher.getnamed("preferences").subpatcher().getnamed("annotation").subpatcher().getnamed("dumpdict");
 var ratioLookUp = 0;
 var previousNumStaves = 0;
+var notransform = false;
 var styleSetByMenu = 0;
 var currentRatioLookUp, currentToneDivision;
 var l = [0., 0., 0., "false", 0., 0., 0., 0., 0., "note", 0, 0];
@@ -93,6 +94,7 @@ listener2.method = "transposition";
 var listener3 = new MaxobjListener(pitch, null , update);
 listener3.method = "setPitch";
 var listener4 = new MaxobjListener(addNote, null , newEvent);
+var ID = (Math.random()*1000).toFixed(0);
 
 function setMenu() {
 	Count = 0
@@ -121,11 +123,17 @@ function setMenu() {
 		styleMenu.message("textcolor", 1, 1, 1, 1);
 	}
 	else styleMenu.message("checkitem", oldCount, 1);
-	//post("checkitem", Count, oldCount, "\n");
+}
+
+function setnotransform()
+{
+	notransform = true;
+	//post("notransform", ID, notransform, "\n");
 }
 
 function init()
 {
+//post("virgin", ID, oldstl, notransform, "\n");
 setMenu();
 dump.clear();
 messnamed(grab+"-relay", "getStaffInfo", 0, StaffIndex);
@@ -171,21 +179,24 @@ ledgerlines(1);
 if (annotation.contains("staff-" + StaffIndex + "::micromap")) currentToneDivision = Count + tonedivisions.maps.indexOf(annotation.get("staff-" + StaffIndex + "::micromap"));
 else currentToneDivision = Count;
 styleSetByMenu = 0;
-//post("currentToneDivision", currentToneDivision, "\n");
+
 
 if (annotation.contains("staff-" + StaffIndex + "::ratio-lookup"))  ratioLookUp = (annotation.get("staff-" + StaffIndex + "::ratio-lookup") > 0) ? annotation.get("staff-" + StaffIndex + "::ratio-lookup") - 1 : 0;
 else ratioLookUp = 0;
 
 stl = annotation.get("staff-"+StaffIndex+"::style");
+
 if (stl == "Quarter Tone") stl = "Default";
 if (typeof(stl)!="object" && stl!="*") 
 {
 if (oldstl != stl) state("virgin");	
+post("state", "virgo", "\n");
 setStyle(stl);
 _style(stl, 0);
 }
 else 
 {
+post("state", "other", "\n");
 style("Default");
 _style("Default", 0);
 }
@@ -384,6 +395,7 @@ this.patcher.parentpatcher.parentpatcher.getnamed("tools").subpatcher().getnamed
 
 function state(st) {
     oldstl = st;
+	//post("state", oldstl, "\n");
 }
 
 function setStyle(stl) {
@@ -536,12 +548,13 @@ function _style(stl, flag)
         //if (isEditor(styletype)) stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
     }
     if (oldstl != "virgin") {
-		//post("hello", ss, "\n");
+		//post("hello", ID, ss, notransform, "\n");
         if (ss[1] != "default") {
 		setClef(stl);
 		setStafflines(newstafflines);
 		}
-        transform();
+        if (!notransform) transform();
+		else notransform = false;
     }
 	//else define currVal[newstyletype]
 	else {
@@ -611,6 +624,7 @@ function retrieve(_styletype)
 }
 
 function newEvent(data) {
+	//post("newEvent", data, "\n"); 
     if (data.value[0] == StaffIndex) {
 	var event = data.value.slice(1);
    	outlet(0, "setRenderAllowed", "false");

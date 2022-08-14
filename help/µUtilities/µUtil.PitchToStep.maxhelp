@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 5,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 227.0, 328.0, 672.0, 247.0 ],
+		"rect" : [ 100.0, 100.0, 672.0, 247.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -63,8 +63,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 459.0, 39.0, 131.0, 20.0 ],
-					"text" : "loadmess 1902 13 60 6000"
+					"patching_rect" : [ 459.0, 39.0, 129.0, 20.0 ],
+					"text" : "loadmess 1902 13 69 6900"
 				}
 
 			}
@@ -291,8 +291,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 90.0, 145.0, 101.0, 22.0 ],
-					"text" : "1902 13 60 6000"
+					"patching_rect" : [ 90.0, 145.0, 99.0, 22.0 ],
+					"text" : "1902 13 69 6900"
 				}
 
 			}
@@ -479,8 +479,8 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "µUtil.PitchToStep.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/muUtilities/patchers",
-				"patcherrelativepath" : "../patchers",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/µUtilities",
+				"patcherrelativepath" : "../../patchers/µUtilities",
 				"type" : "JSON",
 				"implicit" : 1
 			}
