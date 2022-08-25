@@ -772,10 +772,13 @@ function setUserClef(targetStaff, userClef)
 		annotation.replace("staff-" + targetStaff + "::style", "ClefDesigner|" + userClef);
 		annotation.replace("staff-" + targetStaff + "::clef", userClef);
 		annotation.replace("staff-" + targetStaff + "::adjust", selectedClef.get("stafflines").get("above") - selectedClef.get("stafflines").get("below"));
+		outlet(1, "setStaffSpacingAbove", targetStaff, selectedClef.get("stafflines").get("above") * 12 + 72);
+ 		outlet(1, "setStaffSpacingBelow", targetStaff, selectedClef.get("stafflines").get("below") * 12 + 72);
 		var hiddenStaves = [].concat(selectedClef.get("stafflines").get("hidden"));
 		//if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
 		for (var i = 0; i < hiddenStaves.length; i++) if (hiddenStaves[i] != "none") outlet(1, "setStaffLineVisible", targetStaff, hiddenStaves[i], 0);
 		//annotation.replace("staff-" + targetStaff + "::stafflineshidden::" + hiddenStaves[i], 0);
+		outlet(1, "setInstrumentTransposition", targetStaff, selectedClef.get("transposition"));
 		if (annotation.contains("userclefs")) annotation.remove("userclefs");
 		annotation.replace("userclefs::" + userClef, clefDesigner.get(userClef));
 		outlet(2, "setAnnotation", "dictionary", annotation.name);
@@ -2543,8 +2546,9 @@ function anything() {
 		case "active" :
 		break;
         default:
-			if (messagename.indexOf("staffnumber") != -1 || msg[4] < _scoreLayout[1]) return;
+			if (messagename.indexOf("staffnumber") != -1 || msg[4] < _scoreLayout[1] || !fontMap.contains(msgname)) return;
 				var msgname = messagename;
+				//post("msgname", messagename, "\n");
 				var glyph = fontMap.get(msgname);
 					for (var s = 0; s < groupcount; s++)
 					{

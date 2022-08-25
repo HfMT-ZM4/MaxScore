@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 283.0, 161.0, 861.0, 688.0 ],
+		"rect" : [ 589.0, 165.0, 861.0, 688.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -94,13 +94,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1124.0, 498.0, 387.0, 385.0 ],
+						"rect" : [ 1062.0, 418.0, 387.0, 385.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -516,7 +516,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -635,7 +635,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1290,7 +1290,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1447,7 +1447,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1669,7 +1669,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 149.0, 144.0, 344.0, 22.0 ],
-													"restore" : [ "R" ],
+													"restore" : [ "N" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -1688,7 +1688,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 104.0, 115.0, 389.0, 22.0 ],
-													"restore" : [ 0 ],
+													"restore" : [ 2 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -2731,6 +2731,70 @@
 									"patching_rect" : [ 201.0, 247.5, 58.0, 22.0 ],
 									"restore" : 									{
 										"annotation" : [ 											{
+												"version" : "1.0",
+												"proportional" : 0,
+												"blankPage" : 0,
+												"timeUnit" : 100.0,
+												"textfont" : "Arial",
+												"musicfont" : "Bravura",
+												"titlefont" : "Times New Roman",
+												"bgcolor" : [ 0.996, 0.996, 0.94, 1.0 ],
+												"fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+												"linecolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+												"setWrap" : 1,
+												"setZoom" : 0.5,
+												"setDurationalSpacingBase" : 0.7,
+												"staff-0" : 												{
+													"ledgerlines" : 1,
+													"style" : "BP chromatic|T",
+													"micromap" : "mM-BP",
+													"adjust" : -1,
+													"clef" : "T",
+													"ratio-lookup" : 0,
+													"staffgroup" : [ 0, 0 ],
+													"abbrInstrName" : " ",
+													"instrumentNamePositionOffset" : 0,
+													"tritave" : 3,
+													"subdivision" : ""
+												}
+,
+												"staff-2" : 												{
+													"ledgerlines" : 1,
+													"style" : "BP chromatic|N",
+													"micromap" : "mM-BP",
+													"adjust" : -1,
+													"clef" : "N",
+													"ratio-lookup" : 0,
+													"staffgroup" : [ 0, 0 ],
+													"abbrInstrName" : " ",
+													"instrumentNamePositionOffset" : 0,
+													"tritave" : 4,
+													"subdivision" : ""
+												}
+,
+												"staff-3" : 												{
+													"ledgerlines" : 1,
+													"style" : "Default",
+													"micromap" : "mM-none",
+													"adjust" : 0,
+													"clef" : "default",
+													"ratio-lookup" : 0,
+													"staffgroup" : [ 0, 0 ],
+													"abbrInstrName" : " ",
+													"instrumentNamePositionOffset" : 0
+												}
+,
+												"staff-1" : 												{
+													"ledgerlines" : 1,
+													"style" : "Default",
+													"micromap" : "mM-none",
+													"adjust" : 0,
+													"clef" : "default",
+													"ratio-lookup" : 0,
+													"staffgroup" : [ 0, 0 ],
+													"abbrInstrName" : " ",
+													"instrumentNamePositionOffset" : 0
+												}
 
 											}
  ],
@@ -2921,7 +2985,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 51.5, 392.5, 457.0, 22.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ 272411 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3020,7 +3084,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 70.5, 769.5, 30.0, 30.0 ]
+									"patching_rect" : [ 70.5, 779.5, 30.0, 30.0 ]
 								}
 
 							}
@@ -4021,7 +4085,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 275.400023999999974, 70.0, 237.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 67.53692626953125, 0, 0, "false", 79, 0, 0, 0, 133, 0.5, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4168,7 +4232,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 502.0, 579.5, 227.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ "send", "parent::BP-chromatic::map" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4298,7 +4362,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 25.5, 29.0, 194.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 77.778461538461542, 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4873,50 +4937,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
-				"patcherrelativepath" : "../../DJster/core",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.bindtoID.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../../extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.empty.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../../abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "removeAllTablatureMessages.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../../extensions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "µUtil.PitchToStep.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/µUtilities",
-				"patcherrelativepath" : "../../µUtilities",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "µUtil.StepToPitch.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/µUtilities",
-				"patcherrelativepath" : "../../µUtilities",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{

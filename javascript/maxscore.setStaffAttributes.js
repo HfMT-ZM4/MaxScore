@@ -190,7 +190,7 @@ if (stl == "Quarter Tone") stl = "Default";
 if (typeof(stl)!="object" && stl!="*") 
 {
 if (oldstl != stl) state("virgin");	
-post("state", "virgo", "\n");
+//post("state", "virgo", "\n");
 setStyle(stl);
 _style(stl, 0);
 }
@@ -338,6 +338,19 @@ outlet(0, "setClef", i, StaffIndex, cf);
 //outlet(0, "clearSelection");
 outlet(0, "setRenderAllowed", "true");
 }
+}
+
+function getCurrentStyleMap()
+{
+	var dict = new Dict;
+	dict.parse(JSON.stringify(currVal));
+	var dict2 = new Dict;
+	dict2.parse(JSON.stringify(prevVal));
+	var dict3 = new Dict;
+	dict3.name = "currentStyleMap";
+	dict3.replace(StaffIndex + "::previous", dict2);
+	dict3.replace(StaffIndex + "::current", dict);
+	post("style map written to a dict named currentStyleMap\n");
 }
 
 function keysig(ks)
@@ -593,6 +606,7 @@ function _style(stl, flag)
                 break;
 		}
 		currVal[newstyletype] = storedValue.get("stored-value");	
+		for (var item in currVal) prevVal[item] = currVal[item]; 
 		post("currVal", StaffIndex, JSON.stringify(currVal), "\n");
 	}
 }
@@ -614,6 +628,13 @@ function isEditor(stl) {
 
 function retrieve(_styletype)
 {
+		//if copying from one staff to another with the same staff-style editor but a different sub style
+		//when changing a staff style or opening a file the currVal and prevVal objects need to be filled with values
+		//currVal[newstyletype] = storedValue.get("stored-value");
+		//
+		//retrieve(styletype);
+		//for (var item in currVal) prevVal[item] = currVal[item]; 
+
 	    if (isEditor(_styletype)) {
 		if (typeof currVal[_styletype] != "undefined") currentValue.replace("current-value", currVal[_styletype]);
 		//else error("don't know what to do", "\n");
