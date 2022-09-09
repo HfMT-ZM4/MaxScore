@@ -46,7 +46,7 @@ var getNumGraceNotes = {};
 var previousEvent = "";
 var editors = 	{
 				styles: ["tablature", "percussion", "clefdesigner", "BP-chromatic"], 
-				names: ["Tablature", "ClefDesigner", "BP chromatic", "Percussion"]
+				names: ["Tablature", "Percussion", "ClefDesigner", "BP chromatic"]
 				};
 var tonedivisions = {
 				names: ["24TET", "48TET", "72TET-Stahnke", "72TET-Sims", "72TET-Wyschnegradsky", "96TET"],
@@ -430,9 +430,9 @@ function _style(stl, flag)
     ss = staffStyles.get(basestyle);
 	if (oldstl != stl) {
     annotation.replace("staff-" + StaffIndex + "::style", stl);
-	//post("micromap", stl, basestyle, "\n");
+	//post("micromap", stl, basestyle, ss[0], "\n");
 	if (styleSetByMenu) annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
-    if (ss[0] != "BP-keyboard") annotation.replace("staff-" + StaffIndex + "::clef", "default");
+    if (ss[0] != "BP-keyboard" && ss[0] != "BP-keyboard(A=N)") annotation.replace("staff-" + StaffIndex + "::clef", "default");
 	}
     newstyletype = ss[0];
 	/////////// set ratio lookup tables 
@@ -561,8 +561,8 @@ function _style(stl, flag)
         //if (isEditor(styletype)) stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
     }
     if (oldstl != "virgin") {
-		//post("hello", ID, ss, notransform, "\n");
         if (ss[1] != "default") {
+		//post("hello", ID, ss, notransform, "\n");
 		setClef(stl);
 		setStafflines(newstafflines);
 		}
