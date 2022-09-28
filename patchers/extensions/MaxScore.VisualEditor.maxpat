@@ -829,6 +829,8 @@
 													"saved_object_attributes" : 													{
 														"autostart" : 1,
 														"defer" : 0,
+														"node_bin_path" : "",
+														"npm_bin_path" : "",
 														"watch" : 0
 													}
 ,
@@ -1221,7 +1223,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 334.0, 266.0, 470.0, 22.0 ],
-													"restore" : [ "scoreLayout", 1, 0, 1, 0.5, 640, 192 ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -2074,7 +2076,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 302.28497314453125, 79.0, 541.0, 22.0 ],
-													"restore" : [ 1 ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -6493,7 +6495,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 496.0, 219.0, 546.0, 22.0 ],
-													"restore" : [ 20.0 ],
+													"restore" : [ 64.0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -6515,7 +6517,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 446.5, 182.0, 537.0, 22.0 ],
-													"restore" : [ 20.0 ],
+													"restore" : [ 72.0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -6537,7 +6539,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 397.0, 147.0, 492.0, 22.0 ],
-													"restore" : [ 640, 192 ],
+													"restore" : [ 842, 1191 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -9481,7 +9483,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 50.0, 100.0, 541.0, 22.0 ],
-													"restore" : [ 1 ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -9652,7 +9654,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 313.0, 661.5, 150.0, 60.0 ],
+									"patching_rect" : [ 313.0, 661.5, 151.0, 60.0 ],
 									"text" : "we need a processing flag here for adding/deleting/inserting staves"
 								}
 
@@ -9741,7 +9743,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 286.323450666666702, 496.0, 310.725201904762116, 35.0 ],
-									"restore" : [ 1 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -10320,7 +10322,7 @@
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_invisible" : 1,
-															"parameter_longname" : "dict[3]",
+															"parameter_longname" : "dict[4]",
 															"parameter_shortname" : "dict",
 															"parameter_type" : 3
 														}
@@ -11423,7 +11425,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 345.385444505859368, 677.833312999999976, 398.0, 22.0 ],
-													"restore" : [ "885951223_122069_29096.zip" ],
+													"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/Raindrops Keep Falling/Raindrops Keep Falling on my Head.mxl" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -12191,8 +12193,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-32", 0 ],
-													"midpoints" : [ 781.718971117187493, 670.916656500000045, 354.885444505859368, 670.916656500000045 ],
+													"destination" : [ "obj-30", 0 ],
+													"midpoints" : [ 781.718971117187493, 517.916656500000045, 354.885444505859368, 517.916656500000045 ],
 													"source" : [ "obj-18", 1 ]
 												}
 
@@ -12803,7 +12805,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 247.656784000000016, 265.0, 471.0, 22.0 ],
-									"restore" : [ 101 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -16796,7 +16798,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 487.29986572265625, 174.0, 22.29986572265625, 18.0 ],
 													"size" : 1,
-													"values" : [ 0 ],
+													"values" : [ 1 ],
 													"varname" : "showtitle"
 												}
 
@@ -19571,7 +19573,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 146.0, 73.0, 385.0, 35.0 ],
-																	"restore" : [ 1 ],
+																	"restore" : [ 0 ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -20060,21 +20062,21 @@
 													"patching_rect" : [ 935.5, 7.0, 59.5, 22.0 ],
 													"restore" : 													{
 														"bottom" : [ 47 ],
-														"from" : [ 9 ],
+														"from" : [ 1 ],
 														"indent" : [ 60 ],
-														"keepsvg" : [ 0 ],
+														"keepsvg" : [ 1 ],
 														"left" : [ 50 ],
 														"orientation" : [ 0.0 ],
 														"overwrite" : [ 1 ],
 														"pagenumberlocation" : [ 1 ],
 														"pagenumbers" : [ 1 ],
-														"pages" : [ 1 ],
+														"pages" : [ 0 ],
 														"paper" : [ "A4" ],
 														"preserve" : [ 0 ],
 														"right" : [ 100 ],
 														"scale" : [ 30 ],
-														"showtitle" : [ 0 ],
-														"to" : [ 15 ],
+														"showtitle" : [ 1 ],
+														"to" : [ 1 ],
 														"top" : [ 100 ]
 													}
 ,
@@ -20262,7 +20264,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 9.899963, 333.600035999999989, 398.0, 22.0 ],
-													"restore" : [ "885951223_122069_29096.zip" ],
+													"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/Raindrops Keep Falling/Raindrops Keep Falling on my Head.mxl" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -20617,7 +20619,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 511.0, 333.0, 18.0, 18.0 ],
 													"size" : 1,
-													"values" : [ 0 ],
+													"values" : [ 1 ],
 													"varname" : "keepsvg"
 												}
 
@@ -20987,7 +20989,7 @@
 														"valueof" : 														{
 															"parameter_enum" : [ "portrait", "landscape" ],
 															"parameter_invisible" : 2,
-															"parameter_longname" : "live.tab",
+															"parameter_longname" : "live.tab[58]",
 															"parameter_mmax" : 1,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
@@ -21111,7 +21113,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 605.800048828125, 38.399993896484375, 47.0, 19.0 ],
 													"rounded" : 0.0,
-													"text" : "15",
+													"text" : "1",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"varname" : "to"
 												}
@@ -21134,7 +21136,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 534.800048828125, 38.399993896484375, 47.0, 19.0 ],
 													"rounded" : 0.0,
-													"text" : "9",
+													"text" : "1",
 													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"varname" : "from"
 												}
@@ -21157,7 +21159,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 477.800018310546875, 19.399993896484375, 49.0, 42.0 ],
 													"size" : 2,
-													"value" : 1,
+													"value" : 0,
 													"varname" : "pages"
 												}
 

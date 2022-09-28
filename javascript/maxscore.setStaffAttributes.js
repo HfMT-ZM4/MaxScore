@@ -607,7 +607,7 @@ function _style(stl, flag)
 		}
 		currVal[newstyletype] = storedValue.get("stored-value");	
 		for (var item in currVal) prevVal[item] = currVal[item]; 
-		post("currVal", StaffIndex, JSON.stringify(currVal), "\n");
+		//post("currVal", StaffIndex, JSON.stringify(currVal), "\n");
 	}
 }
     state(stl);

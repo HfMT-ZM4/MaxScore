@@ -6,11 +6,11 @@ function list()
 {
 	var a = arrayfromargs(arguments);
 	var instance = a[0];
-	post("1", a[1], current[instance], "\n");
+	//post("1", a[1], current[instance], "\n");
 	if (a[1] != "stop" && a[1] != "start"){
 	var osc = {};
 	if (typeof current[instance] == "undefined" || !current[instance]) {
-	post("2", a[1], current[instance], "\n");
+	//post("2", a[1], current[instance], "\n");
 	osc[instance] = {
   "key" : "sound",
   "val" : {
@@ -30,7 +30,7 @@ function list()
   }
 };
 dict.parse(JSON.stringify(osc));
-post("dict", dict.stringify(), "\n");
+//post("dict", dict.stringify(), "\n");
 outlet(0, "dictionary", dict.name);
 current[instance] = 1;
 }

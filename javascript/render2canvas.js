@@ -161,6 +161,7 @@ var pageNumber = "";
 var oldMeasureStaff = "";
 var url = "";
 var filterRepeatedAccidentalsFlag = 1;
+var showRhythmInProportionalNotation = 0;
 var wholeNoteRestInEmptyMeasures = 0;
 var accList = ["natural", "sharp", "flat", "natural", "doubleflat", "doublesharp", "quartertoneflat", "threequartertoneflat", "quartertonesharp", "threequartertonesharp", "no_accidental"];
 var clefDesigner = new Dict();
@@ -831,6 +832,14 @@ function assignStaffToStaffGroup(_staff, sG)
 		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
 
+function setHairpinVerticalOffset(_staff, offset)
+{
+	annotation.replace("staff-" + _staff + "::hairpinVerticalOffset", offset);
+	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);	
+}
+
 function setToneDivision(targetStaff, toneDivision)
 {
 	switch (toneDivision) {
@@ -1055,6 +1064,7 @@ function getScoreAnnotation(a)
 	_textfont = (annotation.contains("textfont")) ? annotation.get("textfont") : "Arial";
 	_titlefont = (annotation.contains("titlefont")) ? annotation.get("titlefont") : "Times New Roman";
 	wholeNoteRestInEmptyMeasures = (annotation.contains("wholeNoteRestInEmptyMeasures")) ? annotation.get("wholeNoteRestInEmptyMeasures") : 0;
+	showRhythmInProportionalNotation = (annotation.contains("showRhythmInProportionalNotation")) ? annotation.get("showRhythmInProportionalNotation") : 0;
 }
 
 function getTitle(t)
@@ -1651,6 +1661,7 @@ function anything() {
         case "cresc":
 			//cresc|decresc measureIndex1 staffIndex1 trackIndex1 noteIndex1 measureIndex2 staffIndex2 trackIndex2 noteIndex2 zoom x1 y x2 startContinued endContinued
 			//cresc 0. 4. 0. 0. 2. 4. 0. 1. 0.5 149.620697 489. 1155. false true
+			var hairpinVerticalOffset = (annotation.contains("staff-" + msg[1] + "::hairpinVerticalOffset")) ? annotation.get("staff-" + msg[1] + "::hairpinVerticalOffset") : 0;
 			var type = 2 * JSON.parse(msg[12]) + JSON.parse(msg[13]);
 			for (var s = 0; s < groupcount; s++)
 			{
@@ -1674,8 +1685,8 @@ function anything() {
 			path = "M0,2.5 L" + stretch + ",5 M" + stretch + ",10 L0,12.5";
 				break;
 			}	
-			//post("SVGString", "<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.6\" fill=\"none\" transform=\"matrix(" + [(msg[11]-msg[9])/-100., 0., 0., 1., msg[11], dest[d]] + ")\"/>\n");
-			SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.6\" fill=\"none\" transform=\"matrix(" + [-1., 0., 0., 1., msg[11], dest[d]] + ")\"/>");
+			//post("hairpinVerticalOffset", hairpinVerticalOffset, dest[d] + hairpinVerticalOffset, "\n");
+			SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"1.0\" fill=\"none\" transform=\"matrix(" + [-1., 0., 0., 1., msg[11], dest[d] + hairpinVerticalOffset] + ")\"/>");
 			}
 			}
 			}			
@@ -1683,6 +1694,7 @@ function anything() {
         case "decresc":
 			//decresc 0. 0. 0. 0. 0. 0. 0. 1. 0.5 157.620697 105. 89.620689 false false
 			//post("type", msg[12], msg[13], JSON.parse(msg[12]), JSON.parse(msg[13]), "\n");	
+			var hairpinVerticalOffset = (annotation.contains("staff-" + msg[1] + "::hairpinVerticalOffset")) ? annotation.get("staff-" + msg[1] + "::hairpinVerticalOffset") : 0;
 			var type = 2 * JSON.parse(msg[12]) + JSON.parse(msg[13]);
 			for (var s = 0; s < groupcount; s++)
 			{
@@ -1706,7 +1718,7 @@ function anything() {
 			path = "M0,2.5 L" + stretch + ",5 M" + stretch + ",10 L0,12.5";
 				break;
 			}	
-			SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.6\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., msg[11], dest[d]] + ")\"/>");
+			SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"1.0\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., msg[11], dest[d] + hairpinVerticalOffset] + ")\"/>");
 			}
 			}
 			}			
@@ -2161,9 +2173,9 @@ function anything() {
 			break;
         default:
 		var msgname = messagename;
-		if (prop) {
+		if (prop && !showRhythmInProportionalNotation) {
 			if (msgname == "noteheadwhite" || msgname == "noteheadwhole") msgname = "noteheadblack";
-			if (msgname == "dot") return;
+			if (msgname == "dot" || msgname == "doubleDot") return;
 		}
 		if (msg[2] != 0.5 && messagename.indexOf("flag") != -1) {
 			if (messagename.indexOf("down") != -1) {
@@ -2686,7 +2698,7 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 {
 						//data 1 12 1. -1200. 1200. 0. 1200. 0 0. 0.698795 -600. 0 0. curve
 						var space = 0;
-						//post(e.stringify(), "\n");
+						var indexes = []; 
 						var pitchbend = e.get("picster-element[2]::val[0]::value").slice(3, e.get("picster-element[2]::val[0]::value").lastIndexOf("data"));
 						var velocity_ = e.get("picster-element[2]::val[0]::value").slice(e.get("picster-element[2]::val[0]::value").lastIndexOf("data") + 3);
 						var velCurve = {};
@@ -2703,11 +2715,15 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						var scaleTo = e.get("picster-element[0]::val::scaleto");
 						var strokeWidth = e.get("picster-element[0]::val::stroke-width");
 						if (scaleTo.length > 5) {
-							//post("split", scaleTo.slice(6, scaleTo.indexOf("_")).split(",").slice(0, 4), scaleTo.slice(scaleTo.indexOf("_") + 1, scaleTo.indexOf(")")).split(",").slice(0, 4), "\n");
-							outlet(1, "getDrawingAnchor", scaleTo.slice(6, scaleTo.indexOf("_")).split(",").slice(0, 4).map(Number));
-							//post("getDrawingAnchor", typeof scaleTo.slice(6, scaleTo.indexOf("_")).split(",")[0], "\n");
+							indexes = scaleTo.slice(6, scaleTo.indexOf("_")).split(",").slice(0, 4).map(Number);
+							indexes[1] = msg[2];
+							//post("indexes", msg, indexes, "\n");
+							outlet(1, "getDrawingAnchor", indexes);
 							var noteAnchor1 = drawingAnchor.slice(4,5);
-							outlet(1, "getDrawingAnchor", scaleTo.slice(scaleTo.indexOf("_") + 1, scaleTo.indexOf(")")).split(",").slice(0, 4).map(Number));
+							//
+							indexes = scaleTo.slice(scaleTo.indexOf("_") + 1, scaleTo.indexOf(")")).split(",").slice(0, 4).map(Number);
+							indexes[1] = msg[2];
+							outlet(1, "getDrawingAnchor", indexes);
 							var noteAnchor2 = drawingAnchor.slice(4,5);
 							space = Math.abs(noteAnchor2 - noteAnchor1);
 							}
@@ -2725,8 +2741,9 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						var allCurveSegs = [];
 						for (var i = 0; i < numPoints - 1; i++){
 							var curvature = pitchbend[10  + i * 4];
-							var curveTo = [pitchbend[7 + i * 4] * space + msg[8] + 7, pitchbend[8 + i * 4] / 300 * -6 + 2 + _dest];
-							//var obj = new CurveSeg(x0, y0, x1, y1, curvature, 12);
+							//var curveTo = [pitchbend[7 + i * 4] * space + msg[8] + 7, pitchbend[8 + i * 4] / 300 * -6 + 2 + _dest];
+							var curveTo = [pitchbend[7 + i * 4] / pitchbend[0] * space + msg[8] + 7, pitchbend[8 + i * 4] / 300 * -6 + 2 + _dest];
+							//post("curveTo", pitchbend, "|", pitchbend[7 + i * 4] / pitchbend[0], curveTo, "\n");
 							var curveSeg = new CurveSeg(oldPoint[0], oldPoint[1], curveTo[0], curveTo[1], curvature, 12);
 							for (var j = 0; j < curveSeg.cpa.length; j++)
 							{
@@ -2759,6 +2776,7 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						bpf += "L" + [allCurveSegs[0][0].toFixed(2), (allCurveSegs[0][1] - thickness/2).toFixed(2)];
 						//bpf += "M" + [curveTo[0], curveTo[1] - 2] + "L" + [curveTo[0], curveTo[1] + 2];
 						SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 0.1 + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + frgb + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
+						//post("d", bpf, "\n");
 						//SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 1. + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + "none" + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
 }
 

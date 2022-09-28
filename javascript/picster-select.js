@@ -1801,30 +1801,41 @@ function anything()
 			anchors = {};
 			outlet(0, "getScoreAnnotation");
 			outlet(0, "getNoteAnchor");
-			if (Object.keys(anchors).length == 2) {
+			if (Object.keys(anchors).length > 0) {
+			dumpinfo = ["measure"];
+			var tempoArray = [];
+			for (var i = 0; i < Object.keys(anchors).length; i++) {
+			outlet(0, "dumpScore", anchors[Object.keys(anchors)[i]][2], 1);	
+			tempoArray[i] = tempo;
+			post("anchors", tempoArray[i], anchors[Object.keys(anchors)[i]][2], "\n");
+			}		
 			outlet(0, "getSelectedNoteInfo");
 			var keys = Object.keys(json.selectedNotes);
 			var notes = {};
-			//post("anchors", JSON.stringify(anchors), keys, JSON.stringify(json), "\n");
+			var totalDur = 0;
 			notes[0] = {};
 			notes[1] = {};
-			notes[0]["position"] = anchors[Object.keys(anchors)[0]].slice(0,2);
-			notes[1]["position"] = anchors[Object.keys(anchors)[1]].slice(0,2);
+			//notes[0]["position"] = anchors[Object.keys(anchors)[0]].slice(0,2);
+			//notes[1]["position"] = anchors[Object.keys(anchors)[1]].slice(0,2);
 			if (keys[1] == ".ordering") {
 				notes[0]["pitch"] = (json["selectedNotes"][keys[0]][0]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[0]][0]["@PITCH"] : json["selectedNotes"][keys[0]][0]["dim"][1]["@value"];
-				notes[1]["pitch"] = (json["selectedNotes"][keys[0]][1]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[0]][1]["@PITCH"] : json["selectedNotes"][keys[0]][1]["dim"][1]["@value"];
+				notes[1]["pitch"] = (json["selectedNotes"][keys[0]][Object.keys(anchors).length - 1]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[0]][Object.keys(anchors).length - 1]["@PITCH"] : json["selectedNotes"][keys[0]][Object.keys(anchors).length - 1]["dim"][1]["@value"];
 			}
 			else {
 				notes[0]["pitch"] = (json["selectedNotes"][keys[0]][0]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[0]][0]["@PITCH"] : json["selectedNotes"][keys[0]][0]["dim"][1]["@value"];
-				notes[1]["pitch"] = (json["selectedNotes"][keys[1]][0]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[1]][0]["@PITCH"] : json["selectedNotes"][keys[1]][0]["dim"][1]["@value"];
+				notes[1]["pitch"] = (json["selectedNotes"][keys[Object.keys(anchors).length - 1]][0]["dim"][1]["@value"] == -1) ? json["selectedNotes"][keys[Object.keys(anchors).length - 1]][0]["@PITCH"] : json["selectedNotes"][keys[Object.keys(anchors).length - 1]][0]["dim"][1]["@value"];
 			}
-			//post("keys", notes[0]["position"][0], notes[1]["position"][0], timeUnit, "\n");
+			for (var i = 0; i < Object.keys(anchors).length - 1; i++) {
+			if (keys[1] == ".ordering") totalDur += json["selectedNotes"][keys[0]][i]["@DURATION"] * 60 / tempoArray[i];
+			else totalDur += json["selectedNotes"][keys[i]][0]["@DURATION"] * 60 / tempoArray[i];
+			post("totalDur",i , totalDur, "\n");
+			}
 			_picster = { "picster-element" : [ 	{
 				"key" : "render-expression",
 				"val" : 			{
 					"id" : "pitchbend_" + cnt(),
 					"shape" : "$EXPRESSION",
-					"scaleto" : "$HOLD(" + anchors[Object.keys(anchors)[0]].slice(2) + "_" + anchors[Object.keys(anchors)[1]].slice(2) + ")", //notes[1]["position"][0] - notes[0]["position"][0])/timeUnit
+					"scaleto" : "$HOLD(" + anchors[Object.keys(anchors)[0]].slice(2) + "_" + anchors[Object.keys(anchors)[Object.keys(anchors).length - 1]].slice(2) + ")", //notes[1]["position"][0] - notes[0]["position"][0])/timeUnit
 					"stroke" : "$FRGB",
 					"stroke-width" : 1
 				}
@@ -1838,9 +1849,9 @@ function anything()
 			, {
 			"key" : "expression",
 			"val" : [ 				{
-					"editor" : "pb",
+					"editor" : "default",
 					"message" : "polybend",
-					"value" : [ "data", 0, 12, 1, -127, 127, 0, 0, 0, 0, 1, (notes[1]["pitch"] - notes[0]["pitch"]) * 100, 0, 0, "curve", "data", 1, 12, 1, -127, 127, 0, 0, 0, 0, 1, 0, 0, 0, "curve" ]
+					"value" : [ "data", 0, 12, totalDur * 1000, -127, 127, 0, 0, 0, 0, totalDur * 1000, (notes[1]["pitch"] - notes[0]["pitch"]) * 100, 0, 0, "curve", "data", 1, 12, totalDur * 1000, -127, 127, 0, 0, 0, 0, totalDur * 1000, 0, 0, 0, "curve" ]
 							}
  						]
 					}
@@ -2589,7 +2600,7 @@ function findBoundsForRenderedExpression(msg, d)
 						//bpf = "M" + moveTo;
 						for (var i = 0; i < numPoints - 1; i++){
 							var curvature = pitchbend[10  + i * 4];
-							var curveTo = [pitchbend[7 + i * 4] * space + msg[5] + 7, pitchbend[8  + i * 4] / 300 * -6 + msg[6] + 2];
+							var curveTo = [pitchbend[7 + i * 4] / pitchbend[0] * space + msg[5] + 7, pitchbend[8  + i * 4] / 300 * -6 + msg[6] + 2];
 							//var obj = new CurveSeg(x0, y0, x1, y1, curvature, 12);
 							var curveSeg = new CurveSeg(oldPoint[0], oldPoint[1], curveTo[0], curveTo[1], curvature, 12);
 							for (var j = 0; j < curveSeg.cpa.length; j++)

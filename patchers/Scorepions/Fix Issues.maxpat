@@ -46,7 +46,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 59.0, 389.626465000000053, 121.0, 20.0 ],
+					"patching_rect" : [ 152.0, 228.0, 121.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 59.0, 395.626465000000053, 121.0, 20.0 ],
 					"text" : "Prune Ties",
@@ -275,7 +275,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 79.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "10319-" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -472,7 +472,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 149.0, 219.0, 121.0, 20.0 ],
+					"patching_rect" : [ 152.0, 206.0, 121.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 59.0, 379.626465000000053, 121.0, 20.0 ],
 					"text" : "Proportional Notation",
@@ -502,7 +502,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 149.0, 197.0, 111.0, 20.0 ],
+					"patching_rect" : [ 152.0, 184.0, 111.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 59.0, 363.626465000000053, 80.0, 20.0 ],
 					"text" : "Original Pitch",
@@ -518,7 +518,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 149.0, 179.626464999999996, 111.0, 20.0 ],
+					"patching_rect" : [ 152.0, 166.626464999999996, 111.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 59.0, 347.626465000000053, 68.500031000000035, 20.0 ],
 					"text" : "Hold Time",
@@ -544,7 +544,7 @@
 					"presentation_rect" : [ 40.750015500000018, 348.626465000000053, 98.249984499999982, 66.0 ],
 					"shape" : 2,
 					"size" : 4,
-					"value" : 0
+					"value" : 3
 				}
 
 			}
@@ -648,7 +648,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 532.0, 219.0, 280.0, 195.0 ],
+					"patching_rect" : [ 532.0, 219.0, 283.0, 195.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 15,
 					"presentation_rect" : [ 6.875015500000018, 122.0, 260.0, 224.0 ],
@@ -674,7 +674,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-12",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -686,7 +686,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-16",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -812,16 +812,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
-					"order" : 1,
-					"source" : [ "obj-21", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-3", 1 ],
-					"midpoints" : [ 116.5, 246.626464999999996, 427.5, 246.626464999999996, 427.5, 65.0, 167.75, 65.0 ],
-					"order" : 0,
 					"source" : [ "obj-21", 0 ]
 				}
 
@@ -829,6 +819,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
+					"order" : 1,
+					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 1 ],
+					"midpoints" : [ 116.5, 278.626464999999996, 427.5, 278.626464999999996, 427.5, 65.0, 167.75, 65.0 ],
 					"order" : 0,
 					"source" : [ "obj-24", 0 ]
 				}
@@ -838,7 +837,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-31", 0 ],
 					"midpoints" : [ 116.5, 280.0, 82.5, 280.0 ],
-					"order" : 1,
+					"order" : 2,
 					"source" : [ "obj-24", 0 ]
 				}
 
@@ -968,6 +967,22 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "Scorepion-Tail-blue.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.setNoteIntervalAttribute.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
