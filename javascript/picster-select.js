@@ -1600,11 +1600,17 @@ function attach()
 function removeAllElements()
 {
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
+	post("measurerange", measurerange, "\n");
 	outlet(0, "getSelectionBufferSize");
 	if (!selectionBufferSize) {
 	if (measurerange[0] == -1) return;
-	if (preference == "staff") outlet(0, "removeAllRenderedMessagesFromStaff", measurerange[0], measurerange[1]);
-	else outlet(0, "removeAllRenderedMessagesFromMeasure", measurerange[0]);
+	for (var i = 0; i < measurerange[2] - measurerange[0] + 1; i++) {
+		for (var j = 0; j < measurerange[3] - measurerange[1] + 1; j++) {
+		if (preference == "staff") outlet(0, "removeAllRenderedMessagesFromStaff", measurerange[0] + i, measurerange[1] + j);
+		else outlet(0, "removeAllRenderedMessagesFromMeasure", measurerange[0] + i);
+		post("i/j", i, j, "\n");
+		}
+	}
 	outlet(0, "saveToUndoStack");
 	outlet(0, "setRenderAllowed", 1);
 	}
@@ -1669,7 +1675,6 @@ function addExpressionToSelectedShape()
 		edit.replace("picster-element::expression::" + expressionCount + "::value", expr.get("value"));
 		edit.replace("picster-element::expression::" + expressionCount + "::autorender", expr.get("autorender"));
 		}
-		//post("dict", edit.stringify(), "\n");
 		action = "update";
 		outlet(3, "bang");
 		//init(); //we may no longer need this!

@@ -3460,7 +3460,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 597.0, 131.0, 373.0, 19.0 ],
-													"restore" : [ "1TRC" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -4909,7 +4909,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 77.0, 64.0, 474.0, 22.0 ],
-																	"restore" : [ "Macintosh HD:/Users/hajdu/Documents/Stuff from Desktop 6/Glocke-mono.sdif" ],
+																	"restore" : [ 0 ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -5060,7 +5060,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 318.0, 582.0, 68.0, 20.0 ],
+													"patching_rect" : [ 318.0, 582.0, 230.5, 20.0 ],
 													"saved_object_attributes" : 													{
 														"description" : "",
 														"digest" : "",
@@ -5102,7 +5102,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 718.0, 522.0, 762.0, 389.0 ],
+														"rect" : [ 581.0, 406.0, 710.0, 286.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -5130,6 +5130,7 @@
 														"style" : "",
 														"subpatcher_template" : "",
 														"assistshowspatchername" : 0,
+														"visible" : 1,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-38",
@@ -5137,8 +5138,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 152.0, 154.894286999999991, 119.0, 22.0 ],
-																	"text" : "newScore $1 800 $2"
+																	"patching_rect" : [ 152.0, 154.894286999999991, 186.0, 22.0 ],
+																	"text" : "newScore $1 4 800 $2 false false"
 																}
 
 															}
@@ -5295,7 +5296,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 466.666747999999984, 567.0, 20.0, 20.0 ],
+													"patching_rect" : [ 732.666747999999984, 541.0, 20.0, 20.0 ],
 													"varname" : "playMIDI"
 												}
 
@@ -5309,7 +5310,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 466.666747999999984, 654.836242999999968, 32.5, 20.0 ],
+													"patching_rect" : [ 732.666747999999984, 628.836242999999968, 32.5, 20.0 ],
 													"text" : "stop",
 													"varname" : "openWindow[2]"
 												}
@@ -5324,7 +5325,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 480.166747999999984, 628.836242999999968, 73.0, 20.0 ],
+													"patching_rect" : [ 746.166747999999984, 602.836242999999968, 73.0, 20.0 ],
 													"text" : "render 0, start",
 													"varname" : "openWindow[1]"
 												}
@@ -5339,7 +5340,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "bang", "" ],
-													"patching_rect" : [ 466.666747999999984, 598.0, 46.0, 20.0 ],
+													"patching_rect" : [ 732.666747999999984, 572.0, 46.0, 20.0 ],
 													"text" : "sel 0 1"
 												}
 
@@ -8394,7 +8395,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-60", 1 ],
-													"midpoints" : [ 539.0, 561.0, 376.5, 561.0 ],
+													"midpoints" : [ 539.0, 561.0, 539.0, 561.0 ],
 													"source" : [ "obj-1", 1 ]
 												}
 
@@ -8452,7 +8453,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-11", 0 ],
-													"midpoints" : [ 489.666747999999984, 742.918091000000004, 128.5, 742.918091000000004 ],
+													"midpoints" : [ 755.666747999999984, 742.918091000000004, 128.5, 742.918091000000004 ],
 													"source" : [ "obj-17", 0 ]
 												}
 
@@ -8481,7 +8482,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-11", 0 ],
-													"midpoints" : [ 476.166747999999984, 742.918091000000004, 128.5, 742.918091000000004 ],
+													"midpoints" : [ 742.166747999999984, 742.918091000000004, 128.5, 742.918091000000004 ],
 													"source" : [ "obj-20", 0 ]
 												}
 
@@ -12759,7 +12760,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 123.0, 156.0, 342.0, 20.0 ],
-									"restore" : [ 33 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -14354,7 +14355,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -14926,7 +14926,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 50.0, 121.0, 413.0, 20.0 ],
-													"restore" : [ "1TRC" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -16688,7 +16688,7 @@
 											}
 , 											{
 												"box" : 												{
-													"addpoints" : [ 0.0, 0.0, 0, 13789.000000000001819, 13789.0, 0 ],
+													"addpoints" : [ 0.0, 0.0, 0, 0.0, 0.0, 0 ],
 													"domain" : 13790.0,
 													"id" : "obj-1",
 													"maxclass" : "function",
@@ -18569,7 +18569,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 511.5, 76.5, 372.0, 20.0 ],
-									"restore" : [ 10.0 ],
+									"restore" : [ 0.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -19623,7 +19623,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 262.285706000000005, 278.0, 238.0, 22.0 ],
-									"restore" : [ "Macintosh HD:/Users/hajdu/Documents/Stuff from Desktop 6/Glocke-mono.sdif" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -19644,7 +19644,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 471.0, 347.0, 249.0, 22.0 ],
-									"restore" : [ "1TRC" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0

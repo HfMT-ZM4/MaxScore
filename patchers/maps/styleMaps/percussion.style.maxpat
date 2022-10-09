@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -175,7 +175,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -747,7 +747,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -909,9 +909,9 @@
 									"numoutlets" : 4,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 21.0, 445.5, 259.0, 60.0 ],
+									"patching_rect" : [ 21.0, 445.0, 256.0, 60.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 0.0, 295.090210000000013, 256.0, 60.0 ],
+									"presentation_rect" : [ 0.083251953125, 298.0, 256.0, 60.0 ],
 									"prototypename" : "bcanvas",
 									"varname" : "bcanvas[1]",
 									"viewvisibility" : 1
@@ -1191,7 +1191,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1746,7 +1746,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2598,7 +2598,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2776,7 +2776,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3320,7 +3320,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4286,7 +4286,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 525.5, 153.33544921875, 457.0, 22.0 ],
-									"restore" : [ 10146 ],
+									"restore" : [ 5219 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4433,6 +4433,7 @@
 									"rounded" : 0.0,
 									"text" : "none",
 									"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ],
+									"valuemode" : 1,
 									"varname" : "hidden"
 								}
 
@@ -4571,7 +4572,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 710.0, 523.0, 94.0, 22.0 ],
-									"restore" : [ "symbol", "GM" ],
+									"restore" : [ "symbol" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5755,7 +5756,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 476.955596923828125, 86.0, 264.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 71, 0, 0, "false", 71, 0, 0, 0, 128, 0.5, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0

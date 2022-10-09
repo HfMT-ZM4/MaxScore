@@ -942,7 +942,6 @@ function writeBarlines()
 				var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 				var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
 				var _scoreLeftMargin = (_scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
-				//post("_scoreLeftMargin", JSON.stringify(barlines), mathMin, _scoreLeftMargin, barlines[measures][lines][1], dest, dest2, "\n");
 				if (_scoreLeftMargin == barlines[measures][lines][1] && numStaves > 1) SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {
 					var mathMin = Math.min.apply(Math, brackets[br]);
@@ -963,6 +962,8 @@ function writeBarlines()
 					for (var i = 0; i < _linesMax.length; i++) {
 						if (stafflines[measures][mathMax][_linesMax[i]].length == 4) _linesMaxFiltered.push(_linesMax[i]);	
 					 }
+					//post("_scoreLeftMargin", measures, "|", mathMax, "|", Object.keys(stafflines[measures][mathMax]), "\n");
+					if (Object.keys(stafflines[measures][mathMax]).length == 0) return;
 					var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 					var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
 					if (dest != -1)

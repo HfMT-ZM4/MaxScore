@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 1,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -146,27 +146,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 221.416666666666629, 330.622806549072266, 219.0, 22.0 ],
-					"restore" : [ 						{
-							"stream" : 1,
-							"scale" : "MAJOR",
-							"meter" : [ 2, 2 ],
-							"ostinato" : 0,
-							"outset_pulses" : 1,
-							"metriclarity" : 100,
-							"pulse_length" : 1000,
-							"eventfulness" : 100,
-							"event_length" : 1000,
-							"melody_scope" : 7,
-							"tonic_pitch" : 60,
-							"chordal_weight" : 1,
-							"harmoniclarity" : 100,
-							"pitch_center" : 48,
-							"pitch_range" : 7,
-							"dynamics" : 64,
-							"attenuation" : 12.5,
-							"silent_downbeat" : 0
-						}
- ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -462,7 +442,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 113.416666666666643, 696.0, 239.0, 22.0 ],
-					"restore" : [ "djster" ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -816,6 +796,7 @@
 					"presentation_rect" : [ 146.0, 45.0, 99.0, 20.0 ],
 					"rounded" : 0.0,
 					"text" : "2 2",
+					"valuemode" : 1,
 					"varname" : "textedit",
 					"wordwrap" : 0
 				}
