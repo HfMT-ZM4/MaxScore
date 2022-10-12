@@ -397,7 +397,7 @@ function jmsl_measure(attrs, staff)
 
 function staff_attrs(INDEX = 0, CLEF = 0,
 		             CLEFSETBYHAND = false,
-		             INSTRUMENTINDEX = 0,
+		             INSTRUMENTINDEX = INDEX,
 		             INSINDEXSETBYHAND = false,
 		             KEYSIGTYPE = 0,
 		             KEYSIGNUMACC = 0,
