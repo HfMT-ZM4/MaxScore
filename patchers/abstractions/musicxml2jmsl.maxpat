@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -71,7 +71,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 230.5, 676.0, 83.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "htmlEntities.js",
+						"filename" : "htmlEntities",
 						"parameter_enable" : 0
 					}
 ,
@@ -334,19 +334,13 @@
 			}
 , 			{
 				"box" : 				{
+					"comment" : "",
 					"id" : "obj-5",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 315.25, 312.0, 50.5, 22.0 ],
-					"saved_object_attributes" : 					{
-						"embed" : 0,
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "dict"
+					"index" : 2,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 315.25, 312.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -373,8 +367,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 1,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
