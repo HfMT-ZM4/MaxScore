@@ -537,6 +537,7 @@ function _style(stl, flag)
             case "clefdesigner":
                 var newstafflines = [clefdesigner.get(substyle + "::stafflines::above"), clefdesigner.get(substyle + "::stafflines::below")];
                 hidden = [].concat(clefdesigner.get(substyle + "::stafflines::hidden"));
+				post("hidden", clefdesigner.stringify(), "\n");
 				if (annotation.contains("userclefs::" + substyle)) {
 					annotation.replace("staff-" + StaffIndex + "::clef", substyle);
 					baseclef = clefdesigner.get(substyle + "::baseclef");
@@ -845,7 +846,6 @@ function setStafflines(n) {
     //set hidden state for select stafflines and set annotation dict
     if (ss[0] == "clefdesigner") {
             for (var i = 0; i < hidden.length; i += 1) {
-				//post("hidden", hidden, "\n");
                 if (hidden[i] != "none") {
 					outlet(0, "setStaffLineVisible", StaffIndex, hidden[i], 0);
                 	annotation.replace("staff-" + StaffIndex + "::stafflineshidden::" + hidden[i], 0);

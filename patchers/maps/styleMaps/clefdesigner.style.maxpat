@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 453.0, 260.0, 886.0, 509.0 ],
+		"rect" : [ 283.0, 232.0, 886.0, 509.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1283,7 +1283,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 367.0, 79.0, 548.0, 614.0 ],
+										"rect" : [ 367.0, 87.0, 548.0, 614.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2057,7 +2057,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 104.0, 353.0, 117.0, 22.0 ],
+													"patching_rect" : [ 104.0, 341.0, 117.0, 22.0 ],
 													"text" : "sprintf stafflines::%s"
 												}
 
@@ -2069,8 +2069,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 104.0, 291.0, 69.0, 22.0 ],
-													"text" : "zl.ecils 1"
+													"patching_rect" : [ 104.0, 289.0, 55.0, 22.0 ],
+													"text" : "zl.slice 1"
 												}
 
 											}
@@ -2093,7 +2093,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 104.0, 424.0, 30.0, 22.0 ],
+													"patching_rect" : [ 104.0, 423.0, 30.0, 22.0 ],
 													"text" : "t b l"
 												}
 
@@ -2117,7 +2117,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 104.0, 552.33544900000004, 97.0, 22.0 ],
+													"patching_rect" : [ 104.0, 562.33544900000004, 97.0, 22.0 ],
 													"text" : "prepend replace"
 												}
 
@@ -2129,7 +2129,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 104.0, 518.33544900000004, 118.0, 22.0 ],
+													"patching_rect" : [ 104.0, 517.33544900000004, 118.0, 22.0 ],
 													"text" : "join"
 												}
 
@@ -2141,7 +2141,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 104.0, 459.0, 40.0, 22.0 ],
+													"patching_rect" : [ 104.0, 458.0, 40.0, 22.0 ],
 													"text" : "zl.reg"
 												}
 
@@ -2165,7 +2165,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 104.0, 489.335448999999983, 87.0, 22.0 ],
+													"patching_rect" : [ 104.0, 488.335448999999983, 87.0, 22.0 ],
 													"text" : "sprintf %s::%s"
 												}
 
@@ -2238,7 +2238,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 104.0, 584.33544900000004, 30.0, 30.0 ]
+													"patching_rect" : [ 104.0, 594.33544900000004, 30.0, 30.0 ]
 												}
 
 											}
@@ -4416,7 +4416,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 211.5, 426.5, 457.0, 22.0 ],
-									"restore" : [ 5219 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5032,7 +5032,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 119.0, 84.0, 158.0, 58.0 ],
+									"patching_rect" : [ 119.0, 84.0, 162.0, 58.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 108.0, 172.5, 134.0, 58.0 ],
 									"rounded" : 0.0,
@@ -6512,7 +6512,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 345.700012000000015, 70.0, 264.0, 22.0 ],
-					"restore" : [ 71, 0, 0, "false", 71, 0, 0, 0, 128, 0.5, "note", 0 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6823,6 +6823,29 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "maxscore.bindtoID.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "my-LtoColl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "removeAllTablatureMessages.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
