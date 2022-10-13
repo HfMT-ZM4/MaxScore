@@ -743,7 +743,7 @@ function musicfont(mf)
 	_musicFont = mf;
 	annotation.set("musicFont", _musicFont);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
-	post("musicfont", _musicfont, "\n");
+	//post("musicfont", _musicfont, "\n");
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }

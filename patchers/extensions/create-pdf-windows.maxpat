@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -85,7 +85,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -779,7 +779,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -997,7 +997,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1468,7 +1468,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1838,7 +1838,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2518,7 +2518,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2753,7 +2753,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2917,7 +2917,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3321,7 +3321,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3958,7 +3958,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4001,7 +4001,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 49.0, 428.5, 44.0, 18.0 ],
+									"patching_rect" : [ 49.0, 428.5, 44.0, 20.0 ],
 									"text" : "del 100"
 								}
 
@@ -4015,7 +4015,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 49.0, 460.0, 726.0, 18.0 ],
+									"patching_rect" : [ 49.0, 460.0, 726.0, 22.0 ],
 									"text" : "mkdir \\\"C:\\\\Users\\\\Georg\\\\Documents\\\\JMSLMaxScore-3-pdf\\\""
 								}
 
@@ -4029,7 +4029,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 49.0, 399.5, 32.5, 18.0 ],
+									"patching_rect" : [ 49.0, 399.5, 32.5, 20.0 ],
 									"text" : "t b l"
 								}
 
@@ -4043,7 +4043,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 49.0, 311.5, 68.0, 18.0 ],
+									"patching_rect" : [ 49.0, 311.5, 68.0, 20.0 ],
 									"text" : "fromsymbol"
 								}
 
@@ -4057,7 +4057,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 130.0, 161.0, 55.0, 18.0 ],
+									"patching_rect" : [ 130.0, 161.0, 55.0, 20.0 ],
 									"text" : "tosymbol"
 								}
 
@@ -4071,7 +4071,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 98.0, 185.0, 51.0, 18.0 ],
+									"patching_rect" : [ 98.0, 185.0, 51.0, 20.0 ],
 									"text" : "zl reg"
 								}
 
@@ -4085,7 +4085,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "", "" ],
-									"patching_rect" : [ 99.0, 84.0, 50.0, 20.0 ],
+									"patching_rect" : [ 99.0, 84.0, 50.0, 22.0 ],
 									"text" : "t b l l"
 								}
 
@@ -4099,7 +4099,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 155.5, 138.0, 116.0, 18.0 ],
+									"patching_rect" : [ 155.5, 138.0, 116.0, 20.0 ],
 									"text" : "sprintf symout %s.pdf"
 								}
 
@@ -4113,7 +4113,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 115.0, 116.0, 73.0, 18.0 ],
+									"patching_rect" : [ 115.0, 116.0, 73.0, 20.0 ],
 									"text" : "regexp .pdf"
 								}
 
@@ -4128,7 +4128,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 49.0, 349.0, 113.0, 18.0 ],
+									"patching_rect" : [ 49.0, 349.0, 113.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "slash2backslash.js",
 										"parameter_enable" : 0
@@ -4147,7 +4147,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 193.75, 250.0, 134.0, 20.0 ],
+									"patching_rect" : [ 196.0, 251.0, 134.0, 22.0 ],
 									"text" : "sprintf symout %s-pdf"
 								}
 
@@ -4160,7 +4160,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 193.75, 349.0, 25.0, 25.0 ]
+									"patching_rect" : [ 196.0, 349.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -4173,7 +4173,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 49.0, 374.5, 80.0, 18.0 ],
+									"patching_rect" : [ 49.0, 374.5, 80.0, 20.0 ],
 									"text" : "prepend mkdir"
 								}
 
@@ -4187,8 +4187,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 49.0, 221.0, 212.0, 18.0 ],
-									"text" : "regexp .pdf @substitute -pdf @tosymbol 1"
+									"patching_rect" : [ 49.0, 221.0, 215.0, 20.0 ],
+									"text" : "regexp \\\\.pdf @substitute -pdf @tosymbol 1"
 								}
 
 							}
@@ -4201,7 +4201,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "int" ],
-									"patching_rect" : [ 49.0, 36.0, 63.0, 17.0 ],
+									"patching_rect" : [ 49.0, 36.0, 63.0, 19.0 ],
 									"text" : "conformpath"
 								}
 
@@ -5415,8 +5415,8 @@
 			}
 , 			{
 				"name" : "maxfolder.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/PatMap/javascript",
-				"patcherrelativepath" : "../../../Quintet.net/patchers/PatMap/javascript",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -5451,13 +5451,13 @@
 				"name" : "black on white",
 				"umenu" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
