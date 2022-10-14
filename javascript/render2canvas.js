@@ -1557,7 +1557,8 @@ function anything() {
         case "Stem":
 			// Stem, measureIndex, staffIndex, trackIndex, noteIndex, zoom, x, y1, y2, isGraceNote, graceNoteIndex
 			if (msg[7] != -1) {
-			var stemOffset = (msg[7] - msg[6] > 0) ? 0 : -0.5 * msg[4];  
+			var stemXOffset = (msg[7] - msg[6] > 0) ? 0 : -0.5 * msg[4];  
+			var stemYOffset = (annotation.get("staff-" + msg[1] + "::style").indexOf("Tablature") != -1) ? -4 : 0;
 			for (var s = 0; s < groupcount; s++)
 			{
 				var dest = remap(sg[s], msg[1], ((msg[7] - msg[6]) < 0) ? msg[7] : msg[6]);
@@ -1565,7 +1566,7 @@ function anything() {
 				{
 					for (var d = 0; d < dest.length; d++) {
 					//post("Stem", msg[5], dest[d], 1.5 * msg[4], msg[7] - msg[6], "\n");
- 					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + Math.abs(msg[7] - msg[6]) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+ 					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemXOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + Math.abs(msg[7] - msg[6] - stemYOffset) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 					}
 				}
 			}
