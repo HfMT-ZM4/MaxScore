@@ -213,8 +213,9 @@ if (_livetrack) this.patcher.getnamed("track").message(_livetrack);
 var sg = annotation.get("staff-"+StaffIndex+"::staffgroup");
 if (sg instanceof Array && sg!="*") 
 {
-this.patcher.getnamed("groupnumber").message(sg[0]);
-this.patcher.getnamed("bracket").message(sg[1]);
+this.patcher.getnamed("groupnumber").message("set", sg[0]);
+if (typeof sg[1] == "number") this.patcher.getnamed("bracket").message("set", sg[1]);
+else this.patcher.getnamed("bracket").message("setsymbol", sg[1]);
 }
 else staffgroup(0, 0);
 
@@ -537,7 +538,7 @@ function _style(stl, flag)
             case "clefdesigner":
                 var newstafflines = [clefdesigner.get(substyle + "::stafflines::above"), clefdesigner.get(substyle + "::stafflines::below")];
                 hidden = [].concat(clefdesigner.get(substyle + "::stafflines::hidden"));
-				post("hidden", clefdesigner.stringify(), "\n");
+				//post("hidden", clefdesigner.stringify(), "\n");
 				if (annotation.contains("userclefs::" + substyle)) {
 					annotation.replace("staff-" + StaffIndex + "::clef", substyle);
 					baseclef = clefdesigner.get(substyle + "::baseclef");
@@ -845,10 +846,10 @@ function setStafflines(n) {
     stafflines = n;
     //set hidden state for select stafflines and set annotation dict
     if (ss[0] == "clefdesigner") {
+            annotation.replace("staff-" + StaffIndex + "::stafflineshidden::" + hidden, 0);
             for (var i = 0; i < hidden.length; i += 1) {
                 if (hidden[i] != "none") {
 					outlet(0, "setStaffLineVisible", StaffIndex, hidden[i], 0);
-                	annotation.replace("staff-" + StaffIndex + "::stafflineshidden::" + hidden[i], 0);
 					}
             	}
         previous = hidden;

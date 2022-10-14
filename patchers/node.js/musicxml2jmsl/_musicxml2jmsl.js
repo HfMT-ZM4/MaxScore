@@ -837,19 +837,37 @@ var musicxml_callbacks =
                                     // this could be hoisted out into its own function if we need
                                     // to edit other attributes in the jmslscoreinstrument element
                                     {
+                                        let partname = undefined;
+                                        if('elements' in mxml)
+                                        {
+                                            partname = mxml.elements[0].text;
+                                        }
+                                        else
+                                        {
+                                            partname = "";
+                                        }
                                         jmsl.elements[0]
                                             .elements[0]
                                             .elements[1]
                                             .elements[score_part_idx]
                                             .attributes
-                                            .Name = mxml.elements[0].text;
+                                            .Name = partname;
                                     }
 		        		        },
                                 'part-abbreviation' : (mxml,jmsl)=>{
+                                    let partabbr = undefined;
+                                    if('elements' in mxml)
+                                    {
+                                        partabbr = mxml.elements[0].text;
+                                    }
+                                    else
+                                    {
+                                        partabbr = "";
+                                    }
                                     setScoreAnnotationAnnotationProp(jmsl,
                                                                      score_part_idx,
                                                                      "abbrInstrName",
-                                                                     mxml.elements[0].text);
+                                                                     partabbr);
                                 }
 		        		    })
 		        	    },
