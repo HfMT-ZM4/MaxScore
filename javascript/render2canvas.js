@@ -68,9 +68,10 @@ post(cent2ratio.get(622), "\n");
 //
 var lookupTables = ["cent2ratio-8", "cent2ratio-14", "cent2ratio-20", "cent2ratio-odd10", "cent2ratio-odd22"];
 var _textFont = "Arial";
+var textFontSize = "12.";
 var _musicFont = "Bravura";
 var _titleFont = "Times New Roman";
-var textFontSize = "12.";
+var _tabfont = ["Verdana", 8];
 var mgraphics = new JitterObject("jit.mgraphics", 320, 240);
 var setStaffGroup = [];
 var _staffGroup = [];
@@ -755,6 +756,15 @@ function titlefont(tf)
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
+}
+
+function tablaturefont()
+{
+	_tabfont = arrayfromargs(arguments);
+	annotation.set("tablatureFont", _tabfont);
+	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);	
 }
 
 function setUserClef(targetStaff, userClef)
@@ -1558,15 +1568,16 @@ function anything() {
 			// Stem, measureIndex, staffIndex, trackIndex, noteIndex, zoom, x, y1, y2, isGraceNote, graceNoteIndex
 			if (msg[7] != -1) {
 			var stemXOffset = (msg[7] - msg[6] > 0) ? 0 : -0.5 * msg[4];  
-			var stemYOffset = (annotation.get("staff-" + msg[1] + "::style").indexOf("Tablature") != -1) ? -4 : 0;
+			//post("Stem", msg[1], annotation.contains("staff-" + msg[1] + "::style"), "\n");
+ 			if (annotation.contains("staff-" + msg[1] + "::style")) var stemYOffset = (annotation.get("staff-" + msg[1] + "::style").indexOf("Tablature") != -1) ? -6 : 0;
+			else var stemYOffset = 0;
 			for (var s = 0; s < groupcount; s++)
 			{
 				var dest = remap(sg[s], msg[1], ((msg[7] - msg[6]) < 0) ? msg[7] : msg[6]);
 				if (dest != -1)
 				{
 					for (var d = 0; d < dest.length; d++) {
-					//post("Stem", msg[5], dest[d], 1.5 * msg[4], msg[7] - msg[6], "\n");
- 					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemXOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + Math.abs(msg[7] - msg[6] - stemYOffset) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemXOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + Math.abs(msg[7] - msg[6] - stemYOffset) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 					}
 				}
 			}
@@ -1917,7 +1928,13 @@ function anything() {
 					for (var d = 0; d < dest.length; d++) {
 						svggroupflag = false;
 						//post("svggroupflag", svggroupflag, "\n");					
-						if (_key == "svg") renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
+						if (_key == "svg") {
+							if (e.get("picster-element[0]::val::id").indexOf("Tablature") != -1) {
+								picster.replace("child[1]::font-family", _tabfont[0]);
+								picster.replace("child[1]::font-size", _tabfont[1]);
+								}
+							renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
+						}
 						else if (_key == "render-expression") renderExpression(msg, s, dest[d], RenderMessageOffset, e);
 								}
 							}
