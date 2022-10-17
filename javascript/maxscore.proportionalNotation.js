@@ -246,7 +246,7 @@ function setProportionalNotation(b) {
                             for (var i = 0; i <= currentAnchor[4]; i++) outlet(0, "selectNextInterval");
                     }
                 }
-                var length = hold * timeUnit - 7;
+                var length = hold * timeUnit - 9.5;
                 //if (length > 200.) post("length", length, hold, timeUnit,  "\n");
                 if (length > 2. && !hasPitchBend) {
                     /*
@@ -265,7 +265,8 @@ function setProportionalNotation(b) {
                     var _picster = {};
                     attr.new = "path";
                     attr.id = "sustain_0";
-                    attr.d = "M5.5,3 L" + length + ",3M" + length + ",1L" + length + ",5";
+                    //attr.d = "M5.5,3 L" + length + ",3M" + length + ",1L" + length + ",5";
+                    attr.d = "M8,3 L" + length + ",3M" + length + ",1L" + length + ",5";
                     attr.style = {};
                     attr.style["stroke"] = "$FRGB";
                     attr.style["stroke-opacity"] = 1.;
