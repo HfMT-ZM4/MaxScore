@@ -563,8 +563,8 @@ function _style(stl, flag)
         //if (isEditor(styletype)) stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
     }
     if (oldstl != "virgin") {
-        if (ss[1] != "default") {
-		//post("hello", ID, ss, notransform, "\n");
+        if (ss[0] != "default") {
+		//post("hello", ID, ss, "\n");
 		setClef(stl);
 		setStafflines(newstafflines);
 		}
@@ -832,6 +832,7 @@ function transform() {
 }
 
 function setStafflines(n) {
+	//post("setStafflines", n, "\n"); 
     var numMeasures = getInfo("getNumMeasures");
 	if (annotation.contains("staff-" + StaffIndex + "::stafflineshidden") == 1) annotation.remove("staff-" + StaffIndex + "::stafflineshidden");
     for (var i = 0; i < numMeasures[1]; i += 1) {
