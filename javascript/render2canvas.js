@@ -918,7 +918,7 @@ function writeBarlines()
 		{
 		for (var measures in barlines) {	
 			for (var lines in barlines[measures]){
-					post("barlines", measures, lines, JSON.stringify(barlines), "\n");
+					//post("barlines", measures, lines, JSON.stringify(barlines), "\n");
 					mathMin = sg[s][0];
 					if (mathMin < 0) {
 						mathMin = 0;
@@ -956,7 +956,7 @@ function writeBarlines()
 				var _scoreLeftMargin = (_scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
 				if (_scoreLeftMargin == barlines[measures][lines][1] && numStaves > 1) SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {	
-					post("bracket", JSON.stringify(brackets), "\n");
+					//post("bracket", JSON.stringify(brackets), "\n");
 					var mathMin = Math.min.apply(Math, brackets[br]);
 					if (mathMin < sg[s][0]) mathMin = sg[s][0];
 					if (mathMin < 0) mathMin = 0;
@@ -975,14 +975,13 @@ function writeBarlines()
 					for (var i = 0; i < _linesMax.length; i++) {
 						if (stafflines[measures][mathMax][_linesMax[i]].length == 4) _linesMaxFiltered.push(_linesMax[i]);	
 					 }
-					post("MathMin", Object.keys(stafflines[measures][mathMin]).length == 0, "\n");	
+					//post("MathMin", Object.keys(stafflines[measures][mathMax]), Object.keys(stafflines[measures][mathMin]), "\n");	
 					if (Object.keys(stafflines[measures][mathMax]).length != 0 && Object.keys(stafflines[measures][mathMin]).length != 0) {
 						var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 						var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
 						if (dest != -1)
 							{
 							for (var d = 0; d < dest.length; d++) {
-								post("barlines", measures, _scoreLeftMargin, barlines[measures][lines][1], "\n");	
 								//if  (numBrackets > 0)
 								if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-dasharray=\"" + barlineDashArray + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 									if (_scoreLeftMargin == barlines[measures][lines][1]) {
@@ -1864,7 +1863,8 @@ function anything() {
             break;
         case "RenderMessage":
 			format = "sadam.canvas";
-			//post("picster-1", msg, "\n");					
+			//post("renderedMessages1", currentElement, msg, "\n");					
+			post("msg", currentElement, "\n");
 			switch (msg[0]){
 				/*
 				case "interval" :
@@ -1875,7 +1875,7 @@ function anything() {
 				case "note" :
            		var RenderMessageOffset = [msg[5], msg[6]];
 				if (msg.length == 9) format = "drawsocket";
-				msg = currentElement.concat(msg.splice(5));
+				msg = [msg[0], msg[1], msg[2], msg[3], msg[4], intervalCount, graceNoteCount, graceNoteIntervalCount].concat(msg.splice(5));
 				break;
 				case "staff" :
             	var RenderMessageOffset = [msg[3], msg[4]];
@@ -1888,7 +1888,7 @@ function anything() {
 			}
 			if (format == "drawsocket"){
 			renderedMessages.set(rm++, msg);
-			//post("renderedMessages-1", renderedMessages.stringify(), "\n");					
+					
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
 			if (e.contains("picster-element")) {
@@ -2241,7 +2241,6 @@ function anything() {
 				break;
 				case "mM-eighth-tones" :
 				Accidental.push(nTET(48, _48TET, accinfo, accpref));				
-				//post("acc", JSON.stringify(Accidental), value, accinfo, accpref, "\n");
 				break;
 				case "mM-JI" :
 				if (value == -1) value = pitch;
