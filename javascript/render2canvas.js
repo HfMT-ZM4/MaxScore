@@ -480,7 +480,7 @@ function getNumStaves(n)
 		numStaves = n;
 		flag = 0;
 		}
-	if (flag == 0)
+	if (!flag)
 	{
 	if (setStaffGroup == "parts") {
 		var parts = [];
@@ -491,9 +491,6 @@ function getNumStaves(n)
 	//post("fillObj", "0-" + (n - 1), "\n");	
 	flag = 1;	
 	}
-//	if (scoreLayout[1] == 0) outlet(1, "getScoreTopMarginOfFirstPage");
-//	else scoreTopMarginOfFirstPage = 0.;
-//	outlet(1, "getScoreTopMargin");	
 	staffBoundingInfoFlag = 0;
 	for (var b = 0; b < n; b++){
 		outlet(1, "getStaffSpacing", b);
@@ -950,19 +947,21 @@ function writeBarlines()
 					for (var i = 0; i < _linesMax.length; i++) {
 						if (stafflines[measures][mathMax][_linesMax[i]].length == 4) _linesMaxFiltered.push(_linesMax[i]);	
 					 }
+				//post("_linesFiltered", _linesMaxFiltered, _linesMinFiltered, "\n");
 				if (_linesMaxFiltered.length == 0 || _linesMinFiltered.length == 0) return;
 				var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 				var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
 				var _scoreLeftMargin = (_scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
 				if (_scoreLeftMargin == barlines[measures][lines][1] && numStaves > 1) SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {	
-					//post("bracket", JSON.stringify(brackets), "\n");
 					var mathMin = Math.min.apply(Math, brackets[br]);
 					if (mathMin < sg[s][0]) mathMin = sg[s][0];
 					if (mathMin < 0) mathMin = 0;
 					else if (mathMin > numStaves - 1) mathMin = numStaves - 1;
 					var mathMax = Math.max.apply(Math, brackets[br]);
 					if (mathMax > sg[s][sg[s].length - 1]) mathMax = sg[s][sg[s].length - 1];
+					//post("staffBoundingInfo", JSON.stringify(staffBoundingMatrix), "\n");
+					//var topLine = stafflines[measures][mathMin]
 					var _linesMin = [];
 					var _linesMinFiltered = [];
 					_linesMin = Object.keys(stafflines[measures][mathMin]).sort(function(a, b){return a - b});
@@ -975,14 +974,23 @@ function writeBarlines()
 					for (var i = 0; i < _linesMax.length; i++) {
 						if (stafflines[measures][mathMax][_linesMax[i]].length == 4) _linesMaxFiltered.push(_linesMax[i]);	
 					 }
-					//post("MathMin", Object.keys(stafflines[measures][mathMax]), Object.keys(stafflines[measures][mathMin]), "\n");	
-					if (Object.keys(stafflines[measures][mathMax]).length != 0 && Object.keys(stafflines[measures][mathMin]).length != 0) {
-						var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
-						var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
+					staffBoundingFlag = 1;
+					var barlineStart, barlineEnd;
+					if (Object.keys(stafflines[measures][mathMin]).length == 0) {
+						outlet(1, "getStaffBoundingInfo", Number(measures), mathMin);
+						barlineStart = staffBoundingInfo[1];
+					}
+					else barlineStart = stafflines[measures][mathMin][_linesMinFiltered[0]][1];
+					if (Object.keys(stafflines[measures][mathMax]).length == 0) {
+						outlet(1, "getStaffBoundingInfo", Number(measures), mathMax);
+						barlineEnd = staffBoundingInfo[1];	
+					}
+					else barlineEnd = stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1];
+						var dest = remap(sg[s], mathMin, barlineStart);
+						var dest2 = remap(sg[s], mathMax, barlineEnd);
 						if (dest != -1)
 							{
 							for (var d = 0; d < dest.length; d++) {
-								//if  (numBrackets > 0)
 								if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-dasharray=\"" + barlineDashArray + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 									if (_scoreLeftMargin == barlines[measures][lines][1]) {
 										if (annotation.contains("staff-" + brackets[br][0] + "::staffgroup")) {
@@ -995,7 +1003,6 @@ function writeBarlines()
 										SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
 										SVGLines[s + 1].push("<rect x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" width=\"2.\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 										break;	
-										}
 									}
 								}
 							}
