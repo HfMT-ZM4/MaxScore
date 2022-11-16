@@ -1871,7 +1871,6 @@ function anything() {
         case "RenderMessage":
 			format = "sadam.canvas";
 			//post("renderedMessages1", currentElement, msg, "\n");					
-			post("msg", currentElement, "\n");
 			switch (msg[0]){
 				/*
 				case "interval" :
