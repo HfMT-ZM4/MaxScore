@@ -943,7 +943,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 480.666666666666686, 104.5, 375.0, 22.0 ],
-									"restore" : [ 1240 ],
+									"restore" : [ 1286 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2010,7 +2010,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "rewind", "start", "stop", "resume" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[92]",
+							"parameter_longname" : "live.tab[123]",
 							"parameter_mmax" : 3,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -4998,7 +4998,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 258.0, 5.0, 348.0, 22.0 ],
-									"restore" : [ 1 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0

@@ -12,10 +12,15 @@ var selection = new Dict();
 selection.name = "selection";
 var undo = 1;
 var render = 1;
+var named = false;
 var noteAttributes = ["NOTEDUR",  "TUPLET",  "DOTS",  "ACCINFO",  "DURATION",  "PITCH",  "VELOCITY", "HOLD",  "BEAMEDOUT",  "GLISSOUT",  "TIEDOUT",  "ACCPREF",  "ACCVISPOLICY",  "ALTENHARMONIC",  "DYN",  "SLUROUT",  "ISGRACENOTE",  "LEDGERLINESVISIBLE", "WEDGE",  "OTTAVA",  "MARK",  "NOTEHEAD",  "NOTEHEADSCALE", "VISIBLE",  "NOTEHEADVISIBLE",  "STEMVISIBLE", "STEMINFOOVERRIDE", "STEMINFO", "TEXT", "TEXTOFFSETX", "TEXTOFFSETY", "OVERRIDELEVEL", "ISOVERRIDELEVEL", "LAYOUTSHIFTX", "NOTEHEADBLUE", "NOTEHEADGREEN", "NOTEHEADRED", "GRACENOTESEPARATIONSCALER"];
 
 if (jsarguments.indexOf("@undo") != -1) undo = jsarguments[jsarguments.indexOf("@undo") + 1];
 if (jsarguments.indexOf("@renderAllowed") != -1) render = jsarguments[jsarguments.indexOf("@renderAllowed") + 1];
+if (jsarguments.indexOf("@name") != -1) {
+	id(jsarguments[jsarguments.indexOf("@name") + 1]);
+	named = true;
+}
 
 function id(a)
 {
@@ -31,8 +36,14 @@ info.clear();
 var previousNote = "";
 var noteIndex = -1;
 attr = arrayfromargs(messagename, arguments);
+///
 outlet(1, "setRenderAllowed", "false");
-if (undo == 1) outlet(1, "setUndoStackEnabled", "false");
+if (named) messnamed(grab, "setRenderAllowed", "false");
+///
+if (undo) {
+	outlet(1, "setUndoStackEnabled", "false");
+	if (named) messnamed(grab, "setUndoStackEnabled", "false");
+}
 ///getSelection
 messnamed(grab+"-relay", "getNoteAnchor");
 //selection.clone(dump.name);	
@@ -40,10 +51,16 @@ selection = sortIndexes(dump, 3);
 info.clone(selection.name);
 var keys = info.getkeys();
 if (keys){
+///
 outlet(1, "clearSelection");
+if (named) messnamed(grab, "clearSelection");
+///
 for (var i = 0; i < keys.length; i++) {
 	var inf = info.get(keys[i]);
-	if (inf.slice(0, 4).join() != previousNote) outlet(1, "addNoteToSelection", (inf.slice(0, 4).concat([-1, -1, -1])));
+	if (inf.slice(0, 4).join() != previousNote) {
+		outlet(1, "addNoteToSelection", (inf.slice(0, 4).concat([-1, -1, -1])));
+		if (named) messnamed(grab, "addNoteToSelection", (inf.slice(0, 4).concat([-1, -1, -1])));
+	}
 	previousNote = inf.slice(0, 4).join();
 }
 messnamed(grab+"-relay", "getSelectedNoteInfo");
@@ -76,6 +93,10 @@ for (var i= 0; i < keys.length; i++)
 	outlet(2, inf);
 	outlet(1, "clearSelection");
 	outlet(1, "addNoteToSelection", inf);
+	if (named) {
+	messnamed(grab, "clearSelection");
+	messnamed(grab, "addNoteToSelection", inf);		
+	}
 	//outlet(1, "selectNote", );
 	outlet(0, result);	
 	previousNote = inf.slice(0, 4).join();
@@ -85,13 +106,24 @@ for (var i= 0; i < keys.length; i++)
 	}
 	else {
 		outlet(1, "setRenderAllowed", "true");
-		if (undo) outlet(1, "setUndoStackEnabled", "true");
+		if (named) messnamed(grab, "setRenderAllowed", "true");
+		if (undo) {
+			outlet(1, "setUndoStackEnabled", "true");
+			if (named) messnamed(grab, "setUndoStackEnabled", "true");
+		}
 		return;
 	}
-	if (render) outlet(1, "setRenderAllowed", "true"); 	
+	if (render) {
+		outlet(1, "setRenderAllowed", "true"); 	
+		messnamed(grab, "setRenderAllowed", "true");
+		}
 	if (undo) {
 		outlet(1, "setUndoStackEnabled", "true");
 		outlet(1, "saveToUndoStack");
+		if (named) {
+		messnamed(grab, "setUndoStackEnabled", "true");
+		messnamed(grab, "saveToUndoStack");		
+		}
 	}
 }
 
@@ -127,8 +159,12 @@ function query(element)
 function restoreSelection()
 {
 	outlet(1, "clearSelection");
+	if (named) messnamed(grab, "clearSelection");
 	keys = selection.getkeys();
-	if (keys) for (var i= 0; i < keys.length; i++) outlet(1, "addNoteToSelection", selection.get(keys[i]));
+	if (keys) for (var i= 0; i < keys.length; i++) {
+		outlet(1, "addNoteToSelection", selection.get(keys[i]));
+		if (named) messnamed(grab, "addNoteToSelection", selection.get(keys[i]));
+	}
 }
 
 function intersect(a, b) {
