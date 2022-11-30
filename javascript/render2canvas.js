@@ -35,6 +35,8 @@ var boundingBoxTop = [];
 var c;
 var userClefs = new Dict();
 userClefs.name = "userClefs";
+var usedFonts = new Dict();
+usedFonts.name = "usedFonts";
 var staticClefs = 0;
 var fontMap = new Dict();
 //fontMap.name = "Bravura";
@@ -658,7 +660,7 @@ function getStaffBoundingInfo(measureIndex, staffIndex, x, y, width, height, mar
 		staffBoundingInfo = [x, y, width, height, marginX];
 		//staffBoundingMatrix[measureIndex - scoreLayout[1]][staffIndex] = [x, y, width, height, marginX];
 		var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
-		//post("staffBoundingMatrix", measureIndex, measureOffset, staffIndex, JSON.stringify(staffBoundingMatrix), "\n");
+		//post("staffBoundingMatrix", measureIndex, measureOffset, staffIndex, x, y, width, height, marginX, JSON.stringify(staffBoundingMatrix), "\n");
 		staffBoundingMatrix[measureIndex - measureOffset][staffIndex] = [x, y, width, height, marginX];
 	}
 }
@@ -977,12 +979,14 @@ function writeBarlines()
 					staffBoundingFlag = 1;
 					var barlineStart, barlineEnd;
 					if (Object.keys(stafflines[measures][mathMin]).length == 0) {
-						outlet(1, "getStaffBoundingInfo", Number(measures), mathMin);
+						var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
+						outlet(1, "getStaffBoundingInfo", Number(measures) + measureOffset, mathMin);
 						barlineStart = staffBoundingInfo[1];
 					}
 					else barlineStart = stafflines[measures][mathMin][_linesMinFiltered[0]][1];
 					if (Object.keys(stafflines[measures][mathMax]).length == 0) {
-						outlet(1, "getStaffBoundingInfo", Number(measures), mathMax);
+						var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
+						outlet(1, "getStaffBoundingInfo", Number(measures) + measureOffset, mathMax);
 						barlineEnd = staffBoundingInfo[1];	
 					}
 					else barlineEnd = stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1];
@@ -1359,6 +1363,9 @@ function flashcolor(r, g, b)
 function scoreLayout()
 {
 		_scoreLayout = arrayfromargs(arguments);
+		usedFonts.replace(_musicFont + "::Regular", 1); 
+		usedFonts.replace(_textFont + "::Regular", 1);  
+		usedFonts.replace(_titleFont + "::Regular", 1);  
 		oldstaff = -1;
 		SVGString = {};
 		SVGLines = {};
@@ -2712,7 +2719,11 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				break;
 				case "text" :
 				if (!(picster.contains("text-anchor"))) picster.replace("text-anchor", "start");
- 				SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-anchor=\"" + picster.get("text-anchor") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + ">" + picster.get("child") + "</text>");
+				if (picster.get("font-style") == "normal" && picster.get("font-weight") == "normal") usedFonts.replace(picster.get("font-family") + "::Regular", 1);
+				else if (picster.get("font-style") == "normal" && picster.get("font-weight") == "bold") usedFonts.replace(picster.get("font-family") + "::Bold", 1);
+				else if (picster.get("font-style") == "italic" && picster.get("font-weight") == "normal") usedFonts.replace(picster.get("font-family") + "::Italic", 1);
+				else if (picster.get("font-style") == "italic" && picster.get("font-weight") == "bold") usedFonts.replace(picster.get("font-family") + "::Bold Italic", 1);
+				SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-anchor=\"" + picster.get("text-anchor") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + ">" + picster.get("child") + "</text>");
 				break;
 				case "image" :
 				var imgtype = (picster.get("href").substr(picster.get("href").lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
@@ -2949,6 +2960,7 @@ function writeSVG(destination)
 		f.writeline("<svg width=\"" + paperSize[0] + "px\" height=\"" + paperSize[1] + "px\" viewBox=\"0 0 " + paperSize[0] + " " + paperSize[1] + "\" style=\"background:" + "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">\n");
 		SVGZoom = paperSize[1] / _scoreLayout[5];
 		}
+	writeDefs(destination, f);
 	for (var s = 1; s <= groupcount; s++) {
 	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [SVGZoom, 0., 0., SVGZoom, 0., 0.] + ")\">");	
 	if (prop) for (var i = 0; i < SVGClefs[s].length; i++) { 
@@ -2976,6 +2988,48 @@ function writeSVG(destination)
 	}
 }
 
+function writeDefs(destination, f)
+{
+
+	var fpath = this.patcher.filepath;
+	var fontsfolderpath = fpath.substring(fpath.indexOf(":") + 1, fpath.indexOf("MaxScore")) + "MaxScore/fonts/";
+	f.writeline("<defs>");
+	var keys = usedFonts.getkeys();
+	var ttffonts = new Dict;
+	ttffonts.name = "ttffonts";
+	for (var i = 0; i < keys.length; i++) {
+		if ([ "Bravura", "Leland", "Petaluma", "NotoColorEmoji-SVG" ].indexOf(keys[i]) == -1) {
+		var fontDescriptors = ttffonts.get(keys[i]);
+		var usedFontStyles = usedFonts.get(keys[i]).getkeys();
+			for (var j = 0; j < fontDescriptors.length; j++) {
+				if (usedFontStyles.indexOf(fontDescriptors[j].get("style")) != -1 ) {
+					var fontname = fontDescriptors[j].get("path").substring(fontDescriptors[j].get("path").lastIndexOf("/") + 1, fontDescriptors[j].get("path").indexOf("."));
+					f.writeline("<font-face font-family=\"" + keys[i] + "\">");
+					f.writeline("<font-face-src>");
+					//post("destination", destination, "\n");
+					f.writeline("<font-face-uri xlink:href=\"" + destination.substring(destination.indexOf(":") + 1, destination.lastIndexOf("/") + 1) + fontname + ".svg#" + fontname.split(" ").join("-") + "\">");
+					f.writeline("<font-face-format string=\"svg\"/>");
+					f.writeline("</font-face-uri>");
+					f.writeline("</font-face-src>");
+					f.writeline("</font-face>");
+				}
+			}	
+		}
+		else {
+			f.writeline("<font-face font-family=\"" + keys[i] + "\">");
+			f.writeline("<font-face-src>");
+			f.writeline("<font-face-uri xlink:href=\"" + fontsfolderpath + keys[i] + ".svg#" + keys[i] + "\">");
+			f.writeline("<font-face-format string=\"svg\"/>");
+			f.writeline("</font-face-uri>");
+			f.writeline("</font-face-src>");
+			f.writeline("</font-face>");			
+		}
+	}
+	f.writeline("</defs>");	
+}
+writeDefs.local = 1;
+
+
 function ovalarc(startangle, endangle, cx, cy, r1, r2) {
 		startangle += Math.PI/2.;
 		endangle += Math.PI/2.;
@@ -2988,7 +3042,8 @@ function ovalarc(startangle, endangle, cx, cy, r1, r2) {
 		if (endangle - startangle > Math.PI) big = 1;
         // This string holds the path details
         var d = "M" + cx + "," + cy + "M" + x1 + "," + y1 + "A" + r1 + "," + r2 + ",0 ," + big + ",1 " + x2 + "," + y2;           
-//            + " Z\"";                       // Close path back to (cx,cy)
+		//+ " Z\"";                       
+		// Close path back to (cx,cy)
  		return d;
 }
 

@@ -31,14 +31,23 @@ Max.addHandler("font", (msg) => {
 
 function fillMenu()
 {
+	let o = {};
 	Max.outlet("fonts", "clear");
 	for (let i = 0; i < fonts.length; i++) {
-		let extension = fonts[i].path.substring(fonts[i].path.lastIndexOf("."), fonts[i].path.length);
-		if (path.sep === "/" && (extension == ".otf" || extension == ".ttf")) Max.outlet("fonts", i, fonts[i].postscriptName);
-		else Max.outlet("fonts", i, fonts[i].postscriptName);
+			let extension = fonts[i].path.substring(fonts[i].path.lastIndexOf("."), fonts[i].path.length);
+			if (extension == ".ttf") {
+				if (fonts[i].family in o) o[fonts[i].family].push(fonts[i]); 
+				else {
+					o[fonts[i].family] = [fonts[i]];
+				}
+				//differentiate between MacOS and Windows
+				//if (path.sep === "/") Max.outlet("fonts", i, fonts[i].family);
+				//else Max.outlet("fonts", i, fonts[i].postscriptName);
+				Max.outlet("fonts", "store", fonts[i].family, 1)
+			}
 		}
 	Max.outlet("fonts", "enddump");		
-	
+	Max.outlet(o);			
 }
 
 fillMenu();

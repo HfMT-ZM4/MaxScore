@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 720.0, 359.0, 761.0, 543.0 ],
+		"rect" : [ 667.0, 281.0, 761.0, 543.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -259,7 +259,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 115.666666666666686, 208.0, 85.0, 22.0 ],
-					"restore" : [ "polybend" ],
+					"restore" : [ "<empty>" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -278,7 +278,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 196.333333333333371, 313.0, 65.0, 22.0 ],
-					"restore" : [ "data", 0, 12, 2750, -127, 127, 0, 0, 0, 0, 2750, -438.899999999999977, 0, 0, "curve", "data", 1, 12, 2750, -127, 127, 0, 0, 0, 0, 2750, 0, 0, 0, "curve" ],
+					"restore" : [ "<empty>" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -308,7 +308,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 0.0, 251.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "polybend",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"valuemode" : 1,
 					"varname" : "textedit[1]",
@@ -361,18 +360,16 @@
 					"fontsize" : 12.0,
 					"id" : "obj-118",
 					"keymode" : 1,
-					"linecount" : 3,
 					"maxclass" : "textedit",
+					"nosymquotes" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 219.333333333333371, 349.0, 264.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 3,
-					"presentation_rect" : [ 3.0, 22.0, 251.0, 19.0 ],
+					"presentation_rect" : [ 3.0, 22.0, 251.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "data 0 12 2750 -127 127 0 0 0 0 2750 -438.9 0 0 curve data 1 12 2750 -127 127 0 0 0 0 2750 0 0 0 curve",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"valuemode" : 1,
 					"varname" : "textedit"

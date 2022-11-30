@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 842.0, 215.0, 908.0, 657.0 ],
+		"rect" : [ 667.0, 145.0, 908.0, 707.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,24 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 106.5, 90.0, 102.0, 22.0 ],
+					"text" : "substitute id send"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 812.0, 517.0, 55.0, 22.0 ],
+					"patching_rect" : [ 812.0, 550.0, 55.0, 22.0 ],
 					"text" : "zl.slice 1"
 				}
 
@@ -57,7 +69,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 812.0, 483.0, 47.0, 22.0 ],
+					"patching_rect" : [ 812.0, 516.0, 47.0, 22.0 ],
 					"text" : "dict.iter"
 				}
 
@@ -69,7 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "dictionary", "dictionary" ],
-					"patching_rect" : [ 741.0, 452.0, 90.0, 22.0 ],
+					"patching_rect" : [ 741.0, 485.0, 90.0, 22.0 ],
 					"text" : "dict.route staff :"
 				}
 
@@ -81,7 +93,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "dictionary", "dictionary" ],
-					"patching_rect" : [ 645.0, 422.0, 115.0, 22.0 ],
+					"patching_rect" : [ 645.0, 455.0, 115.0, 22.0 ],
 					"text" : "dict.route measure :"
 				}
 
@@ -93,7 +105,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "dictionary", "dictionary" ],
-					"patching_rect" : [ 520.0, 391.0, 144.0, 22.0 ],
+					"patching_rect" : [ 520.0, 424.0, 144.0, 22.0 ],
 					"text" : "dict.route selectedNotes :"
 				}
 
@@ -105,7 +117,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "dictionary", "dictionary" ],
-					"patching_rect" : [ 432.0, 360.0, 107.0, 22.0 ],
+					"patching_rect" : [ 432.0, 393.0, 107.0, 22.0 ],
 					"text" : "dict.route interval :"
 				}
 
@@ -117,7 +129,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "dictionary", "dictionary" ],
-					"patching_rect" : [ 360.0, 327.0, 91.0, 22.0 ],
+					"patching_rect" : [ 360.0, 360.0, 91.0, 22.0 ],
 					"text" : "dict.route note :"
 				}
 
@@ -129,7 +141,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "dictionary", "dictionary" ],
-					"patching_rect" : [ 282.0, 296.0, 97.0, 22.0 ],
+					"patching_rect" : [ 282.0, 329.0, 97.0, 22.0 ],
 					"text" : "dict.route score :"
 				}
 
@@ -141,7 +153,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "dictionary", "dictionary" ],
-					"patching_rect" : [ 163.0, 266.0, 138.0, 22.0 ],
+					"patching_rect" : [ 163.0, 299.0, 138.0, 22.0 ],
 					"text" : "dict.route jmslscoredoc :"
 				}
 
@@ -153,7 +165,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 216.0, 132.0, 29.5, 22.0 ],
+					"patching_rect" : [ 216.0, 165.0, 29.5, 22.0 ],
 					"text" : "$2"
 				}
 
@@ -165,7 +177,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 163.0, 226.0, 107.0, 22.0 ],
+					"patching_rect" : [ 163.0, 259.0, 107.0, 22.0 ],
 					"text" : "prepend dictionary"
 				}
 
@@ -177,7 +189,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 163.0, 132.0, 29.5, 22.0 ],
+					"patching_rect" : [ 163.0, 165.0, 29.5, 22.0 ],
 					"text" : "t b l"
 				}
 
@@ -189,7 +201,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 50.0, 102.0, 185.0, 22.0 ],
+					"patching_rect" : [ 50.0, 135.0, 185.0, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -201,7 +213,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 163.0, 188.0, 95.0, 22.0 ],
+					"patching_rect" : [ 163.0, 221.0, 95.0, 22.0 ],
 					"text" : "zl.reg #1"
 				}
 
@@ -213,7 +225,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 132.0, 111.0, 22.0 ],
+					"patching_rect" : [ 50.0, 165.0, 111.0, 22.0 ],
 					"text" : "sprintf %s %s-relay"
 				}
 
@@ -238,7 +250,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 163.0, 607.0, 30.0, 30.0 ]
+					"patching_rect" : [ 163.0, 640.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -248,7 +260,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 50.0, 226.0, 135.0, 22.0 ],
+					"patching_rect" : [ 50.0, 259.0, 135.0, 22.0 ],
 					"text" : "forward #1-relay"
 				}
 
@@ -261,7 +273,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "newScore" ],
 					"patching_rect" : [ 50.0, 18.0, 30.0, 30.0 ]
 				}
 
@@ -269,8 +281,15 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"midpoints" : [ 183.0, 177.0, 59.5, 177.0 ],
+					"midpoints" : [ 183.0, 210.0, 59.5, 210.0 ],
 					"source" : [ "obj-10", 1 ]
 				}
 
@@ -417,15 +436,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
-					"source" : [ "obj-6", 2 ]
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-6", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"source" : [ "obj-6", 1 ]
+					"destination" : [ "obj-10", 0 ],
+					"source" : [ "obj-6", 2 ]
 				}
 
 			}

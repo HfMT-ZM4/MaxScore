@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -221,8 +221,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -258,6 +258,31 @@
 						"assistshowspatchername" : 0,
 						"title" : "Character Browser",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 100.0, 39.355362, 51.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "Bravura"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 100.0, 12.278892000000042, 33.0, 22.0 ],
+									"text" : "Arial"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
@@ -353,8 +378,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -637,7 +662,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 5.5, 4.0, 30.0, 30.0 ]
+									"patching_rect" : [ 5.5, -4.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -767,8 +792,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1417,8 +1442,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-48", 0 ],
 									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-19", 0 ]
 								}
 
 							}
@@ -1702,14 +1741,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 893.0, 380.0, 358.0, 475.0 ],
+						"rect" : [ 1169.0, 380.0, 320.0, 283.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1739,12 +1778,36 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 23.0, 20.0, 72.0, 22.0 ],
+									"text" : "r dumpfonts"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 104.0, 20.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 81.5, 288.0, 92.0, 22.0 ],
+									"patching_rect" : [ 70.0, 148.0, 92.0, 22.0 ],
 									"text" : "symbol Bravura"
 								}
 
@@ -1755,9 +1818,9 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "bang", "clear" ],
-									"patching_rect" : [ 50.0, 192.0, 51.0, 22.0 ],
-									"text" : "t b clear"
+									"outlettype" : [ "dump", "clear" ],
+									"patching_rect" : [ 23.0, 75.0, 186.0, 22.0 ],
+									"text" : "t dump clear"
 								}
 
 							}
@@ -1768,32 +1831,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 314.5, 145.0, 22.0 ],
+									"patching_rect" : [ 38.666666666666657, 175.5, 145.0, 22.0 ],
 									"text" : "substitute symbol append"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-45",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 222.0, 89.0, 22.0 ],
-									"text" : "sort -1 0, dump"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-51",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 163.7513427734375, 89.0, 22.0 ],
-									"text" : "route enddump"
 								}
 
 							}
@@ -1804,43 +1843,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 50.0, 259.5, 50.5, 22.0 ],
+									"patching_rect" : [ 23.0, 111.5, 66.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
 									}
 ,
-									"text" : "coll"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-54",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 135.0, 65.0, 22.0 ],
-									"text" : "route fonts"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-68",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 100.0, 284.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"autostart" : 1,
-										"defer" : 1,
-										"watch" : 0
-									}
-,
-									"text" : "node.script max-opentype.js @autostart 1 @defer 1"
+									"text" : "coll ttffonts"
 								}
 
 							}
@@ -1852,12 +1861,19 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 374.49999977343748, 30.0, 30.0 ]
+									"patching_rect" : [ 38.666666666666657, 236.49999977343748, 30.0, 30.0 ]
 								}
 
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-72", 0 ],
 									"source" : [ "obj-2", 0 ]
@@ -1866,7 +1882,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-45", 0 ],
+									"destination" : [ "obj-53", 0 ],
 									"source" : [ "obj-39", 0 ]
 								}
 
@@ -1874,7 +1890,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-72", 0 ],
+									"midpoints" : [ 199.5, 224.74999988671874, 48.166666666666657, 224.74999988671874 ],
 									"source" : [ "obj-39", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -1882,27 +1906,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-72", 0 ],
 									"source" : [ "obj-44", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-53", 0 ],
-									"source" : [ "obj-45", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-39", 0 ],
-									"source" : [ "obj-51", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-53", 0 ],
-									"source" : [ "obj-51", 1 ]
 								}
 
 							}
@@ -1916,21 +1919,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-44", 0 ],
-									"source" : [ "obj-53", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-51", 0 ],
-									"source" : [ "obj-54", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-54", 0 ],
-									"source" : [ "obj-68", 0 ]
+									"source" : [ "obj-53", 1 ]
 								}
 
 							}
@@ -2460,8 +2449,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2720,8 +2709,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4242,12 +4231,12 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"outputmode" : 1,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 136.671966552734375, 280.87939453125, 372.0, 99.0 ],
+					"patching_rect" : [ 136.671966552734375, 280.87939453125, 160.0, 99.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 24.0, 247.0, 111.0 ],
 					"rounded" : 0.0,
 					"tabmode" : 0,
-					"text" : "test this",
+					"text" : "®",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit"
 				}
@@ -4457,7 +4446,7 @@
 					"bgfillcolor_type" : "color",
 					"hint" : "Font",
 					"id" : "obj-98",
-					"items" : [ "ACaslonPro-Bold", ",", "ACaslonPro-BoldItalic", ",", "ACaslonPro-Italic", ",", "ACaslonPro-Regular", ",", "ACaslonPro-Semibold", ",", "ACaslonPro-SemiboldItalic", ",", "AGaramondPro-Bold", ",", "AGaramondPro-BoldItalic", ",", "AGaramondPro-Italic", ",", "AGaramondPro-Regular", ",", "AbadiMT-CondensedExtraBold", ",", "AbadiMT-CondensedLight", ",", "Academico", ",", "Academico-Bold", ",", "Academico-BoldItalic", ",", "Academico-Italic", ",", "AcademyEngravedLetPlain", ",", "AcademyEngravedLetPlain", ",", "Accidentals", ",", "AdobeArabic-Bold", ",", "AdobeArabic-BoldItalic", ",", "AdobeArabic-Italic", ",", "AdobeArabic-Regular", ",", "AdobeFanHeitiStd-Bold", ",", "AdobeFangsongStd-Regular", ",", "AdobeGothicStd-Bold", ",", "AdobeHebrew-Bold", ",", "AdobeHebrew-BoldItalic", ",", "AdobeHebrew-Italic", ",", "AdobeHebrew-Regular", ",", "AdobeHeitiStd-Regular", ",", "AdobeKaitiStd-Regular", ",", "AdobeMingStd-Light", ",", "AdobeMyungjoStd-Medium", ",", "AdobeSongStd-Light", ",", "AlBayan", ",", "AlBayan-Bold", ",", "AlNile", ",", "AlNile-Bold", ",", "AlTarikh", ",", "AlienScript-Regular", ",", "Aloisen", ",", "AmericanTypewriter", ",", "AmericanTypewriter-Bold", ",", "AmericanTypewriter-Condensed", ",", "AmericanTypewriter-CondensedBold", ",", "AmericanTypewriter-CondensedLight", ",", "AmericanTypewriter-Light", ",", "AmericanTypewriter-Semibold", ",", "AndaleMono", ",", "Apple-Chancery", ",", "AppleBraille", ",", "AppleBraille-Outline6Dot", ",", "AppleBraille-Outline8Dot", ",", "AppleBraille-Pinpoint6Dot", ",", "AppleBraille-Pinpoint8Dot", ",", "AppleCasual", ",", "AppleColorEmoji", ",", "AppleGothic", ",", "AppleMyungjo", ",", "AppleSDGothicNeo-Bold", ",", "AppleSDGothicNeo-ExtraBold", ",", "AppleSDGothicNeo-Heavy", ",", "AppleSDGothicNeo-Light", ",", "AppleSDGothicNeo-Medium", ",", "AppleSDGothicNeo-Regular", ",", "AppleSDGothicNeo-SemiBold", ",", "AppleSDGothicNeo-Thin", ",", "AppleSDGothicNeo-UltraLight", ",", "AppleSymbols", ",", "Arial-Black", ",", "Arial-BoldItalicMT", ",", "Arial-BoldMT", ",", "Arial-ItalicMT", ",", "ArialHebrew", ",", "ArialHebrew-Bold", ",", "ArialHebrew-Light", ",", "ArialHebrewScholar", ",", "ArialHebrewScholar-Bold", ",", "ArialHebrewScholar-Light", ",", "ArialMT", ",", "ArialNarrow", ",", "ArialNarrow-Bold", ",", "ArialNarrow-BoldItalic", ",", "ArialNarrow-Italic", ",", "ArialRoundedMTBold", ",", "ArialUnicodeMS", ",", "Arimo-Bold", ",", "Arimo-BoldItalic", ",", "Arimo-Italic", ",", "Arimo-Medium", ",", "Arimo-MediumItalic", ",", "Arimo-Regular", ",", "Arimo-SemiBold", ",", "Arimo-SemiBoldItalic", ",", "Avenir-Black", ",", "Avenir-BlackOblique", ",", "Avenir-Book", ",", "Avenir-BookOblique", ",", "Avenir-Heavy", ",", "Avenir-HeavyOblique", ",", "Avenir-Light", ",", "Avenir-LightOblique", ",", "Avenir-Medium", ",", "Avenir-MediumOblique", ",", "Avenir-Oblique", ",", "Avenir-Roman", ",", "AvenirNext-Bold", ",", "AvenirNext-BoldItalic", ",", "AvenirNext-DemiBold", ",", "AvenirNext-DemiBoldItalic", ",", "AvenirNext-Heavy", ",", "AvenirNext-HeavyItalic", ",", "AvenirNext-Italic", ",", "AvenirNext-Medium", ",", "AvenirNext-MediumItalic", ",", "AvenirNext-Regular", ",", "AvenirNext-UltraLight", ",", "AvenirNext-UltraLightItalic", ",", "AvenirNextCondensed-Bold", ",", "AvenirNextCondensed-BoldItalic", ",", "AvenirNextCondensed-DemiBold", ",", "AvenirNextCondensed-DemiBoldItalic", ",", "AvenirNextCondensed-Heavy", ",", "AvenirNextCondensed-HeavyItalic", ",", "AvenirNextCondensed-Italic", ",", "AvenirNextCondensed-Medium", ",", "AvenirNextCondensed-MediumItalic", ",", "AvenirNextCondensed-Regular", ",", "AvenirNextCondensed-UltraLight", ",", "AvenirNextCondensed-UltraLightItalic", ",", "Ayuthaya", ",", "Baghdad", ",", "BanglaMN", ",", "BanglaMN-Bold", ",", "BanglaSangamMN", ",", "BanglaSangamMN-Bold", ",", "BankGothic-Light", ",", "BankGothic-Medium", ",", "BaskOldFace", ",", "Baskerville", ",", "Baskerville-Bold", ",", "Baskerville-BoldItalic", ",", "Baskerville-Italic", ",", "Baskerville-SemiBold", ",", "Baskerville-SemiBoldItalic", ",", "Batang", ",", "Bauhaus93", ",", "Beirut", ",", "BellMT", ",", "BellMTBold", ",", "BellMTItalic", ",", "BernardMT-Condensed", ",", "BigCaslon-Medium", ",", "BirchStd", ",", "BlackmoorLetPlain", ",", "BlackoakStd", ",", "BlairMdITCTT-Medium", ",", "BodoniOrnamentsITCTT", ",", "BodoniSvtyTwoITCTT-Bold", ",", "BodoniSvtyTwoITCTT-Book", ",", "BodoniSvtyTwoITCTT-BookIta", ",", "BodoniSvtyTwoOSITCTT-Bold", ",", "BodoniSvtyTwoOSITCTT-Book", ",", "BodoniSvtyTwoOSITCTT-BookIt", ",", "BodoniSvtyTwoSCITCTT-Book", ",", "BookAntiqua", ",", "BookAntiqua-Bold", ",", "BookAntiqua-BoldItalic", ",", "BookAntiqua-Italic", ",", "BookmanOldStyle", ",", "BookmanOldStyle-Bold", ",", "BookmanOldStyle-BoldItalic", ",", "BookmanOldStyle-Italic", ",", "BookshelfSymbolSeven", ",", "BordeauxRomanBoldLetPlain", ",", "Boulez", ",", "BradleyHandITCTT-Bold", ",", "Braggadocio", ",", "Bravura", ",", "Bravura-Text", ",", "BritannicBold", ",", "BroadwayCopyist", ",", "BroadwayCopyistPerc", ",", "BroadwayCopyistText", ",", "BroadwayCopyistTextExt", ",", "BrushScriptMT", ",", "BrushScriptStd", ",", "ByJOSSQ-DMFinBeiJing", ",", "Calibri", ",", "Calibri-Bold", ",", "Calibri-BoldItalic", ",", "Calibri-Italic", ",", "CalisMTBol", ",", "CalistoMT", ",", "CalistoMT-BoldItalic", ",", "CalistoMT-Italic", ",", "Cambria", ",", "Cambria-Bold", ",", "Cambria-BoldItalic", ",", "Cambria-Italic", ",", "Candara", ",", "Candara-Bold", ",", "Candara-BoldItalic", ",", "Candara-Italic", ",", "Century", ",", "CenturyGothic", ",", "CenturyGothic-Bold", ",", "CenturyGothic-BoldItalic", ",", "CenturyGothic-Italic", ",", "CenturySchoolbook", ",", "CenturySchoolbook-Bold", ",", "CenturySchoolbook-BoldItalic", ",", "CenturySchoolbook-Italic", ",", "Chalkboard", ",", "Chalkboard-Bold", ",", "ChalkboardSE-Bold", ",", "ChalkboardSE-Light", ",", "ChalkboardSE-Regular", ",", "Chalkduster", ",", "ChaparralPro-Bold", ",", "ChaparralPro-BoldIt", ",", "ChaparralPro-Italic", ",", "ChaparralPro-Regular", ",", "CharisSIL", ",", "CharisSIL-Bold", ",", "CharisSIL-BoldItalic", ",", "CharisSIL-Italic", ",", "CharlemagneStd-Bold", ",", "Charter-Black", ",", "Charter-BlackItalic", ",", "Charter-Bold", ",", "Charter-BoldItalic", ",", "Charter-Italic", ",", "Charter-Roman", ",", "Cochin", ",", "Cochin-Bold", ",", "Cochin-BoldItalic", ",", "Cochin-Italic", ",", "ColonnaMT", ",", "ComicSansMS", ",", "ComicSansMS-Bold", ",", "Concreta", ",", "Consolas", ",", "Consolas-Bold", ",", "Consolas-BoldItalic", ",", "Consolas-Italic", ",", "Constantia", ",", "Constantia-Bold", ",", "Constantia-BoldItalic", ",", "Constantia-Italic", ",", "CooperBlackMS", ",", "CooperBlackStd", ",", "CooperBlackStd-Italic", ",", "Copperplate", ",", "Copperplate-Bold", ",", "Copperplate-Light", ",", "CopperplateGothic-Bold", ",", "CopperplateGothic-Light", ",", "Corbel", ",", "Corbel-Bold", ",", "Corbel-BoldItalic", ",", "Corbel-Italic", ",", "CorsivaHebrew", ",", "CorsivaHebrew-Bold", ",", "CourierNewPS-BoldItalicMT", ",", "CourierNewPS-BoldMT", ",", "CourierNewPS-ItalicMT", ",", "CourierNewPSMT", ",", "Cracked", ",", "Crimson-Bold", ",", "Crimson-BoldItalic", ",", "Crimson-Italic", ",", "Crimson-Roman", ",", "Crimson-Semibold", ",", "Crimson-SemiboldItalic", ",", "CurlzMT", ",", "Cypher-Regular", ",", "DINAlternate-Bold", ",", "DINCondensed-Bold", ",", "Damascus", ",", "DamascusBold", ",", "DamascusLight", ",", "DamascusMedium", ",", "DamascusSemiBold", ",", "DecoTypeNaskh", ",", "Denemo", ",", "Desdemona", ",", "DevanagariMT", ",", "DevanagariMT-Bold", ",", "DevanagariSangamMN", ",", "DevanagariSangamMN-Bold", ",", "Didot", ",", "Didot-Bold", ",", "Didot-Italic", ",", "DiwanKufi", ",", "DiwanMishafi", ",", "DiwanMishafiGold", ",", "DiwanThuluth", ",", "ELECTRONICA", ",", "EdwardianScriptITC", ",", "Emmentaler-26", ",", "EngraverFontExtras", ",", "EngraverFontSet", ",", "EngraverTextH", ",", "EngraverTextNCS", ",", "EngraverTextT", ",", "EngraverTime", ",", "EngraversMT", ",", "EngraversMT-Bold", ",", "EuphemiaUCAS", ",", "EuphemiaUCAS-Bold", ",", "EuphemiaUCAS-Italic", ",", "EurostileBold", ",", "EurostileRegular", ",", "Farah", ",", "Farisi", ",", "FinaleAlphaNotes", ",", "FinaleCopyistText", ",", "FinaleCopyistTextExt", ",", "FinaleLyrics", ",", "FinaleLyrics-Bold", ",", "FinaleLyrics-Italic", ",", "FinaleMallets", ",", "FinaleNumerics", ",", "FinalePercussion", ",", "FootlightMTLight", ",", "FranklinGothic-Book", ",", "FranklinGothic-BookItalic", ",", "FranklinGothic-Medium", ",", "FranklinGothic-MediumItalic", ",", "Fughetta", ",", "Futura-Bold", ",", "Futura-CondensedExtraBold", ",", "Futura-CondensedMedium", ",", "Futura-Medium", ",", "Futura-MediumItalic", ",", "GB18030Bitmap", ",", "Galvji", ",", "Galvji-Bold", ",", "Galvji-BoldOblique", ",", "Galvji-Oblique", ",", "Garamond", ",", "Garamond-Bold", ",", "Garamond-Italic", ",", "GeezaPro", ",", "GeezaPro-Bold", ",", "Geneva", ",", "Georgia", ",", "Georgia-Bold", ",", "Georgia-BoldItalic", ",", "Georgia-Italic", ",", "GiddyupStd", ",", "GillSans", ",", "GillSans-Bold", ",", "GillSans-BoldItalic", ",", "GillSans-Italic", ",", "GillSans-Light", ",", "GillSans-LightItalic", ",", "GillSans-SemiBold", ",", "GillSans-SemiBoldItalic", ",", "GillSans-UltraBold", ",", "GillSansMT", ",", "GillSansMT-Bold", ",", "GillSansMT-BoldItalic", ",", "GillSansMT-Italic", ",", "GloucesterMT-ExtraCondensed", ",", "Gonville-11", ",", "Gonville-18", ",", "Gonville-26", ",", "Gonville-Brace", ",", "GothamNarrow-Light", ",", "GothamNarrow-Medium", ",", "GoudyOldStyleT-Bold", ",", "GoudyOldStyleT-Italic", ",", "GoudyOldStyleT-Regular", ",", "GranthaSangamMN-Bold", ",", "GranthaSangamMN-Regular", ",", "GreifswalerDeutscheSchrift", ",", "Guido2", ",", "GujaratiMT", ",", "GujaratiMT-Bold", ",", "GujaratiSangamMN", ",", "GujaratiSangamMN-Bold", ",", "Gulim", ",", "GurmukhiMN", ",", "GurmukhiMN-Bold", ",", "GurmukhiSangamMN", ",", "GurmukhiSangamMN-Bold", ",", "HE", ",", "HOYLVT+CircularAir-Bold", ",", "Haettenschweiler", ",", "Handwriting-Dakota", ",", "Harrington", ",", "Helsinki", ",", "HelsinkiMetronome", ",", "HelsinkiSpecial", ",", "HelsinkiText", ",", "Helvetica", ",", "Helvetica-Bold", ",", "Helvetica-BoldOblique", ",", "Helvetica-Light", ",", "Helvetica-LightOblique", ",", "Helvetica-Oblique", ",", "HelveticaNeue", ",", "HelveticaNeue-Bold", ",", "HelveticaNeue-BoldItalic", ",", "HelveticaNeue-CondensedBlack", ",", "HelveticaNeue-CondensedBold", ",", "HelveticaNeue-Italic", ",", "HelveticaNeue-Light", ",", "HelveticaNeue-LightItalic", ",", "HelveticaNeue-Medium", ",", "HelveticaNeue-MediumItalic", ",", "HelveticaNeue-Thin", ",", "HelveticaNeue-ThinItalic", ",", "HelveticaNeue-UltraLight", ",", "HelveticaNeue-UltraLightItalic", ",", "Herculanum", ",", "HiraMaruProN-W4", ",", "HiraMinProN-W3", ",", "HiraMinProN-W6", ",", "HiraginoSans-W0", ",", "HiraginoSans-W1", ",", "HiraginoSans-W2", ",", "HiraginoSans-W3", ",", "HiraginoSans-W4", ",", "HiraginoSans-W5", ",", "HiraginoSans-W6", ",", "HiraginoSans-W7", ",", "HiraginoSans-W8", ",", "HiraginoSans-W9", ",", "HiraginoSansGB-W3", ",", "HiraginoSansGB-W6", ",", "HoboStd", ",", "HoeflerText-Black", ",", "HoeflerText-BlackItalic", ",", "HoeflerText-Italic", ",", "HoeflerText-Ornaments", ",", "HoeflerText-Regular", ",", "ITFDevanagari-Bold", ",", "ITFDevanagari-Book", ",", "ITFDevanagari-Demi", ",", "ITFDevanagari-Light", ",", "ITFDevanagari-Medium", ",", "ITFDevanagariMarathi-Bold", ",", "ITFDevanagariMarathi-Book", ",", "ITFDevanagariMarathi-Demi", ",", "ITFDevanagariMarathi-Light", ",", "ITFDevanagariMarathi-Medium", ",", "Impact", ",", "ImprintMT-Shadow", ",", "InaiMathi", ",", "InaiMathi-Bold", ",", "Inkpen2", ",", "Inkpen2Chords", ",", "Inkpen2Metronome", ",", "Inkpen2Script", ",", "Inkpen2Special", ",", "Inkpen2Text", ",", "Jazz", ",", "JazzCord", ",", "JazzLetPlain", ",", "JazzPerc", ",", "JazzText", ",", "JazzTextExtended", ",", "KEYEJM+airglyphs", ",", "Kailasa", ",", "Kailasa-Bold", ",", "KannadaMN", ",", "KannadaMN-Bold", ",", "KannadaSangamMN", ",", "KannadaSangamMN-Bold", ",", "Kefa-Bold", ",", "Kefa-Regular", ",", "KhmerMN", ",", "KhmerMN-Bold", ",", "KhmerSangamMN", ",", "KinoMT", ",", "KohinoorBangla-Bold", ",", "KohinoorBangla-Light", ",", "KohinoorBangla-Medium", ",", "KohinoorBangla-Regular", ",", "KohinoorBangla-Semibold", ",", "KohinoorDevanagari-Bold", ",", "KohinoorDevanagari-Light", ",", "KohinoorDevanagari-Medium", ",", "KohinoorDevanagari-Regular", ",", "KohinoorDevanagari-Semibold", ",", "KohinoorGujarati-Bold", ",", "KohinoorGujarati-Light", ",", "KohinoorGujarati-Medium", ",", "KohinoorGujarati-Regular", ",", "KohinoorGujarati-Semibold", ",", "KohinoorTelugu-Bold", ",", "KohinoorTelugu-Light", ",", "KohinoorTelugu-Medium", ",", "KohinoorTelugu-Regular", ",", "KohinoorTelugu-Semibold", ",", "Kokonor", ",", "KozGoPr6N-Bold", ",", "KozGoPr6N-ExtraLight", ",", "KozGoPr6N-Heavy", ",", "KozGoPr6N-Light", ",", "KozGoPr6N-Medium", ",", "KozGoPr6N-Regular", ",", "KozGoPro-Bold", ",", "KozGoPro-ExtraLight", ",", "KozGoPro-Heavy", ",", "KozGoPro-Light", ",", "KozGoPro-Medium", ",", "KozGoPro-Regular", ",", "KozMinPr6N-Bold", ",", "KozMinPr6N-ExtraLight", ",", "KozMinPr6N-Heavy", ",", "KozMinPr6N-Light", ",", "KozMinPr6N-Medium", ",", "KozMinPr6N-Regular", ",", "KozMinPro-Bold", ",", "KozMinPro-ExtraLight", ",", "KozMinPro-Heavy", ",", "KozMinPro-Light", ",", "KozMinPro-Medium", ",", "KozMinPro-Regular", ",", "Krungthep", ",", "KufiStandardGK", ",", "LaoMN", ",", "LaoMN-Bold", ",", "LaoSangamMN", ",", "LatinWide", ",", "Lato-Black", ",", "Lato-BlackItalic", ",", "Lato-Bold", ",", "Lato-BoldItalic", ",", "Lato-Hairline", ",", "Lato-HairlineItalic", ",", "Lato-Heavy", ",", "Lato-HeavyItalic", ",", "Lato-Italic", ",", "Lato-Light", ",", "Lato-LightItalic", ",", "Lato-Medium", ",", "Lato-MediumItalic", ",", "Lato-Regular", ",", "Lato-Semibold", ",", "Lato-SemiboldItalic", ",", "Lato-Thin", ",", "Lato-ThinItalic", ",", "Leland", ",", "LetterGothicStd", ",", "LetterGothicStd-Bold", ",", "LetterGothicStd-BoldSlanted", ",", "LetterGothicStd-Slanted", ",", "LiberationMono", ",", "LiberationMono-Bold", ",", "LiberationMono-BoldItalic", ",", "LiberationMono-Italic", ",", "LiberationSans", ",", "LiberationSans-Bold", ",", "LiberationSans-BoldItalic", ",", "LiberationSans-Italic", ",", "LiberationSerif", ",", "LiberationSerif-Bold", ",", "LiberationSerif-BoldItalic", ",", "LiberationSerif-Italic", ",", "LibreBodoni-Bold", ",", "LibreBodoni-BoldItalic", ",", "LibreBodoni-Italic", ",", "LibreBodoni-Regular", ",", "LithosPro-Black", ",", "LithosPro-Regular", ",", "LucidaBlackletter", ",", "LucidaBright", ",", "LucidaBright-Demi", ",", "LucidaBright-DemiItalic", ",", "LucidaBright-Italic", ",", "LucidaCalligraphy-Italic", ",", "LucidaConsole", ",", "LucidaFax", ",", "LucidaFax-Demi", ",", "LucidaFax-DemiItalic", ",", "LucidaFax-Italic", ",", "LucidaGrande", ",", "LucidaGrande-Bold", ",", "LucidaHandwriting-Italic", ",", "LucidaSans", ",", "LucidaSans-Demi", ",", "LucidaSans-DemiItalic", ",", "LucidaSans-Italic", ",", "LucidaSans-Typewriter", ",", "LucidaSans-TypewriterBold", ",", "LucidaSans-TypewriterBoldOblique", ",", "LucidaSans-TypewriterOblique", ",", "LucidaSansUnicode", ",", "Luminari-Regular", ",", "MS-Gothic", ",", "MS-Mincho", ",", "MS-PGothic", ",", "MS-PMincho", ",", "MSReferenceSansSerif", ",", "MSReferenceSpecialty", ",", "MT-Extra", ",", "Maestro", ",", "MaestroPercussion", ",", "MaestroTimes", ",", "MaestroTimes-Bold", ",", "MaestroTimes-BoldItalic", ",", "MaestroTimes-Italic", ",", "MaestroWide", ",", "MalayalamMN", ",", "MalayalamMN-Bold", ",", "MalayalamSangamMN", ",", "MalayalamSangamMN-Bold", ",", "MarkerFelt-Thin", ",", "MarkerFelt-Wide", ",", "Marlett", ",", "MaturaMTScriptCapitals", ",", "Meiryo", ",", "Meiryo-Bold", ",", "Meiryo-BoldItalic", ",", "Meiryo-Italic", ",", "Menlo-Bold", ",", "Menlo-BoldItalic", ",", "Menlo-Italic", ",", "Menlo-Regular", ",", "MesquiteStd", ",", "MetaNormal", ",", "MicrosoftSansSerif", ",", "MinionPro-Bold", ",", "MinionPro-BoldCn", ",", "MinionPro-BoldCnIt", ",", "MinionPro-BoldIt", ",", "MinionPro-It", ",", "MinionPro-Medium", ",", "MinionPro-MediumIt", ",", "MinionPro-Regular", ",", "MinionPro-Semibold", ",", "MinionPro-SemiboldIt", ",", "Mistral", ",", "Modern-Regular", ",", "MonaLisaSolidITCTT", ",", "Monaco", ",", "MonotypeCorsiva", ",", "MonotypeGurmukhi", ",", "MonotypeSorts", ",", "Mshtakan", ",", "MshtakanBold", ",", "MshtakanBoldOblique", ",", "MshtakanOblique", ",", "MuktaMahee-Bold", ",", "MuktaMahee-ExtraBold", ",", "MuktaMahee-ExtraLight", ",", "MuktaMahee-Light", ",", "MuktaMahee-Medium", ",", "MuktaMahee-Regular", ",", "MuktaMahee-SemiBold", ",", "Muna", ",", "MunaBlack", ",", "MunaBold", ",", "MyanmarMN", ",", "MyanmarMN-Bold", ",", "MyanmarSangamMN", ",", "MyanmarSangamMN-Bold", ",", "MyriadPro-Bold", ",", "MyriadPro-BoldCond", ",", "MyriadPro-BoldCondIt", ",", "MyriadPro-BoldIt", ",", "MyriadPro-Cond", ",", "MyriadPro-CondIt", ",", "MyriadPro-It", ",", "MyriadPro-Regular", ",", "MyriadPro-Semibold", ",", "MyriadPro-SemiboldIt", ",", "Nadeem", ",", "NewPeninimMT", ",", "NewPeninimMT-Bold", ",", "NewPeninimMT-BoldInclined", ",", "NewPeninimMT-Inclined", ",", "NewsGothicMT", ",", "NewsGothicMT-Bold", ",", "NewsGothicMT-Italic", ",", "Noteworthy-Bold", ",", "Noteworthy-Light", ",", "NotoNastaliqUrdu", ",", "NotoNastaliqUrdu-Bold", ",", "NotoSansJP-Black", ",", "NotoSansJP-Bold", ",", "NotoSansJP-DemiLight", ",", "NotoSansJP-Light", ",", "NotoSansJP-Medium", ",", "NotoSansJP-Regular", ",", "NotoSansJP-Thin", ",", "NotoSansKannada-Black", ",", "NotoSansKannada-Bold", ",", "NotoSansKannada-ExtraBold", ",", "NotoSansKannada-ExtraLight", ",", "NotoSansKannada-Light", ",", "NotoSansKannada-Medium", ",", "NotoSansKannada-Regular", ",", "NotoSansKannada-SemiBold", ",", "NotoSansKannada-Thin", ",", "NotoSansMyanmar-Black", ",", "NotoSansMyanmar-Bold", ",", "NotoSansMyanmar-ExtraBold", ",", "NotoSansMyanmar-ExtraLight", ",", "NotoSansMyanmar-Light", ",", "NotoSansMyanmar-Medium", ",", "NotoSansMyanmar-Regular", ",", "NotoSansMyanmar-SemiBold", ",", "NotoSansMyanmar-Thin", ",", "NotoSansOriya", ",", "NotoSansOriya-Bold", ",", "NotoSerifMyanmar-Black", ",", "NotoSerifMyanmar-Bold", ",", "NotoSerifMyanmar-ExtraBold", ",", "NotoSerifMyanmar-ExtraLight", ",", "NotoSerifMyanmar-Light", ",", "NotoSerifMyanmar-Medium", ",", "NotoSerifMyanmar-Regular", ",", "NotoSerifMyanmar-SemiBold", ",", "NotoSerifMyanmar-Thin", ",", "NuevaStd-BoldCond", ",", "NuevaStd-BoldCondItalic", ",", "NuevaStd-Cond", ",", "NuevaStd-CondItalic", ",", "OCRAStd", ",", "OMAntonin", ",", "Onyx", ",", "Optima-Bold", ",", "Optima-BoldItalic", ",", "Optima-ExtraBlack", ",", "Optima-Italic", ",", "Optima-Regular", ",", "Opus", ",", "OpusChords", ",", "OpusChordsSans", ",", "OpusChordsSansCondensed", ",", "OpusFiguredBass", ",", "OpusFiguredBassExtras", ",", "OpusFunctionSymbols", ",", "OpusMetronome", ",", "OpusNoteNames", ",", "OpusOrnaments", ",", "OpusPercussion", ",", "OpusPlainChords", ",", "OpusRomanChords", ",", "OpusSpecial", ",", "OpusSpecialExtra", ",", "OpusText", ",", "OratorStd", ",", "OratorStd-Slanted", ",", "OriyaMN", ",", "OriyaMN-Bold", ",", "OriyaSangamMN", ",", "OriyaSangamMN-Bold", ",", "P22Cage-Extras", ",", "P22Cage-Silence", ",", "P22Cage-Text", ",", "PMingLiU", ",", "PTMono-Bold", ",", "PTMono-Regular", ",", "PTSans-Bold", ",", "PTSans-BoldItalic", ",", "PTSans-Caption", ",", "PTSans-CaptionBold", ",", "PTSans-Italic", ",", "PTSans-Narrow", ",", "PTSans-NarrowBold", ",", "PTSans-Regular", ",", "PTSerif-Bold", ",", "PTSerif-BoldItalic", ",", "PTSerif-Caption", ",", "PTSerif-CaptionItalic", ",", "PTSerif-Italic", ",", "PTSerif-Regular", ",", "Palatino-Bold", ",", "Palatino-BoldItalic", ",", "Palatino-Italic", ",", "Palatino-Roman", ",", "Papyrus", ",", "Papyrus-Condensed", ",", "PartyLetPlain", ",", "PartyLetPlain", ",", "Perpetua", ",", "Perpetua-Bold", ",", "Perpetua-BoldItalic", ",", "Perpetua-Italic", ",", "PerpetuaTitlingMT-Bold", ",", "PerpetuaTitlingMT-Light", ",", "Petaluma", ",", "PetalumaScript", ",", "PetalumaText", ",", "Petrucci", ",", "Phosphate-Inline", ",", "Phosphate-Solid", ",", "PingFangHK-Light", ",", "PingFangHK-Medium", ",", "PingFangHK-Regular", ",", "PingFangHK-Semibold", ",", "PingFangHK-Thin", ",", "PingFangHK-Ultralight", ",", "PingFangSC-Light", ",", "PingFangSC-Medium", ",", "PingFangSC-Regular", ",", "PingFangSC-Semibold", ",", "PingFangSC-Thin", ",", "PingFangSC-Ultralight", ",", "PingFangTC-Light", ",", "PingFangTC-Medium", ",", "PingFangTC-Regular", ",", "PingFangTC-Semibold", ",", "PingFangTC-Thin", ",", "PingFangTC-Ultralight", ",", "PlantagenetCherokee", ",", "Playbill", ",", "PoplarStd", ",", "PortagoITCTT", ",", "PrestigeEliteStd-Bd", ",", "PrincetownLET", ",", "Raanana", ",", "RaananaBold", ",", "Reprise", ",", "RepriseChords", ",", "RepriseMetronome", ",", "RepriseRehearsal", ",", "RepriseScript", ",", "RepriseSpecial", ",", "RepriseStamp", ",", "RepriseText", ",", "RepriseTitle", ",", "Rockwell", ",", "Rockwell-Bold", ",", "Rockwell-BoldItalic", ",", "Rockwell-ExtraBold", ",", "Rockwell-Italic", ",", "Rockwell-Regular", ",", "RosewoodStd-Regular", ",", "STHeitiSC-Light", ",", "STHeitiSC-Medium", ",", "STHeitiTC-Light", ",", "STHeitiTC-Medium", ",", "STIXGeneral-Bold", ",", "STIXGeneral-BoldItalic", ",", "STIXGeneral-Italic", ",", "STIXGeneral-Regular", ",", "STIXIntegralsD-Bold", ",", "STIXIntegralsD-Regular", ",", "STIXIntegralsSm-Bold", ",", "STIXIntegralsSm-Regular", ",", "STIXIntegralsUp-Bold", ",", "STIXIntegralsUp-Regular", ",", "STIXIntegralsUpD-Bold", ",", "STIXIntegralsUpD-Regular", ",", "STIXIntegralsUpSm-Bold", ",", "STIXIntegralsUpSm-Regular", ",", "STIXNonUnicode-Bold", ",", "STIXNonUnicode-BoldItalic", ",", "STIXNonUnicode-Italic", ",", "STIXNonUnicode-Regular", ",", "STIXSizeFiveSym-Regular", ",", "STIXSizeFourSym-Bold", ",", "STIXSizeFourSym-Regular", ",", "STIXSizeOneSym-Bold", ",", "STIXSizeOneSym-Regular", ",", "STIXSizeThreeSym-Bold", ",", "STIXSizeThreeSym-Regular", ",", "STIXSizeTwoSym-Bold", ",", "STIXSizeTwoSym-Regular", ",", "STIXVariants-Bold", ",", "STIXVariants-Regular", ",", "STSong", ",", "STSongti-SC-Black", ",", "STSongti-SC-Bold", ",", "STSongti-SC-Light", ",", "STSongti-SC-Regular", ",", "STSongti-TC-Bold", ",", "STSongti-TC-Light", ",", "STSongti-TC-Regular", ",", "Sagittal", ",", "Sana", ",", "SantaFeLetPlain", ",", "Sathu", ",", "SavoyeLetPlain", ",", "SavoyeLetPlain", ",", "ScalaSans-Bold", ",", "ScalaSans-BoldExpert", ",", "ScalaSans-BoldItalic", ",", "ScalaSans-BoldItalicExpert", ",", "ScalaSans-Caps", ",", "ScalaSans-CapsExpert", ",", "ScalaSans-CapsItalic", ",", "ScalaSans-CapsItalicExpert", ",", "ScalaSans-Expert", ",", "ScalaSans-Italic", ",", "ScalaSans-ItalicExpert", ",", "ScalaSans-Regular", ",", "ScalaSansLF-Bold", ",", "ScalaSansLF-BoldItalic", ",", "ScalaSansLF-Caps", ",", "ScalaSansLF-CapsItalic", ",", "ScalaSansLF-Italic", ",", "ScalaSansLF-Regular", ",", "SchoolHouseCursiveB", ",", "SchoolHousePrintedA", ",", "Scriabin", ",", "Scriabin6", ",", "Seville", ",", "ShreeDev0714", ",", "ShreeDev0714-Bold", ",", "ShreeDev0714-BoldItalic", ",", "ShreeDev0714-Italic", ",", "SignPainter-HouseScript", ",", "SignPainter-HouseScriptSemibold", ",", "Silom", ",", "SimSun", ",", "SinhalaMN", ",", "SinhalaMN-Bold", ",", "SinhalaSangamMN", ",", "SinhalaSangamMN-Bold", ",", "Skia-Regular", ",", "Skia-Regular_Black", ",", "Skia-Regular_Black-Condensed", ",", "Skia-Regular_Black-Extended", ",", "Skia-Regular_Bold", ",", "Skia-Regular_Condensed", ",", "Skia-Regular_Extended", ",", "Skia-Regular_Light", ",", "Skia-Regular_Light-Condensed", ",", "Skia-Regular_Light-Extended", ",", "SnellRoundhand", ",", "SnellRoundhand", ",", "SnellRoundhand-Black", ",", "SnellRoundhand-Black", ",", "SnellRoundhand-Bold", ",", "SnellRoundhand-Bold", ",", "Sonata", ",", "Sonora", ",", "Stencil", ",", "StencilStd", ",", "StoneSansITCTT-Bold", ",", "StoneSansITCTT-Semi", ",", "StoneSansITCTT-SemiIta", ",", "SukhumvitSet-Bold", ",", "SukhumvitSet-Light", ",", "SukhumvitSet-Medium", ",", "SukhumvitSet-SemiBold", ",", "SukhumvitSet-Text", ",", "SukhumvitSet-Thin", ",", "Symbol", ",", "SynchroLET", ",", "Tablature", ",", "Tahoma", ",", "Tahoma-Bold", ",", "Tamburo", ",", "TamilMN", ",", "TamilMN-Bold", ",", "TamilSangamMN", ",", "TamilSangamMN-Bold", ",", "TektonPro-Bold", ",", "TektonPro-BoldCond", ",", "TektonPro-BoldExt", ",", "TektonPro-BoldObl", ",", "TeluguMN", ",", "TeluguMN-Bold", ",", "TeluguSangamMN", ",", "TeluguSangamMN-Bold", ",", "Tempera", ",", "Thonburi", ",", "Thonburi-Bold", ",", "Thonburi-Light", ",", "TimesNewRomanPS-BoldItalicMT", ",", "TimesNewRomanPS-BoldMT", ",", "TimesNewRomanPS-ItalicMT", ",", "TimesNewRomanPSMT", ",", "ToppanBunkyuGothicPr6N-DB", ",", "ToppanBunkyuGothicPr6N-Regular", ",", "TrajanPro-Bold", ",", "TrajanPro-Regular", ",", "Trattatello", ",", "Trebuchet-BoldItalic", ",", "TrebuchetMS", ",", "TrebuchetMS-Bold", ",", "TrebuchetMS-Italic", ",", "TwCenMT-Bold", ",", "TwCenMT-BoldItalic", ",", "TwCenMT-Italic", ",", "TwCenMT-Regular", ",", "TypeEmbellishmentsOneLetPlain", ",", "Untitled1", ",", "Verdana", ",", "Verdana-Bold", ",", "Verdana-BoldItalic", ",", "Verdana-Italic", ",", "WW", ",", "Waseem", ",", "WaseemLight", ",", "Webdings", ",", "Wingdings-Regular", ",", "Wingdings2", ",", "Wingdings3", ",", "XNLOZH+FoundersGrotesk-Regular", ",", "XNLOZH+FoundersGrotesk-Semibold", ",", "XVGAXJ+CircularAir-Book", ",", "ZapfDingbatsITC", ",", "Zapfino", ",", "feta26", ",", "mf", ",", "sims" ],
+					"items" : [ "Academy Engraved LET", ",", "Accidentals", ",", "AkayaKanadaka", ",", "AkayaTelivigala", ",", "Alien Script", ",", "Aloisen New", ",", "Andale Mono", ",", "Annai MN", ",", "Apple Braille", ",", "Apple Chancery", ",", "Apple LiGothic", ",", "Apple LiSung", ",", "Apple Symbols", ",", "AppleGothic", ",", "AppleMyungjo", ",", "Arial", ",", "Arial Black", ",", "Arial Narrow", ",", "Arial Rounded MT Bold", ",", "Arial Unicode MS", ",", "Arimo", ",", "Ayuthaya", ",", "Baloo Bhaijaan", ",", "Batang", ",", "BiauKai", ",", "Big Caslon", ",", "Bodoni 72 Smallcaps", ",", "Bodoni Ornaments", ",", "Bookshelf Symbol 7", ",", "Boulez", ",", "Bradley Hand", ",", "Bravura", ",", "BravuraText", ",", "Brush Script MT", ",", "Calibri", ",", "Cambria", ",", "Candara", ",", "Chalkduster", ",", "Charis SIL", ",", "Comic Sans MS", ",", "Consolas", ",", "Constantia", ",", "Corbel", ",", "Courier New", ",", "Cypher", ",", "DIN Alternate", ",", "DIN Condensed", ",", "Denemo", ",", "Diwan Thuluth", ",", "Emmentaler", ",", "Farisi", ",", "Finale Copyist Text", ",", "Finale Copyist Text Ext", ",", "Finale Lyrics", ",", "Finale Numerics", ",", "Franklin Gothic Book", ",", "Franklin Gothic Medium", ",", "GB18030 Bitmap", ",", "Geneva", ",", "Georgia", ",", "Gill Sans MT", ",", "GothamNarrow-Light", ",", "GothamNarrow-Medium", ",", "Gotu", ",", "Greifswaler Deutsche Schrift", ",", "Guido2", ",", "Gulim", ",", "GungSeo", ",", "Gurmukhi MT", ",", "HE", ",", "HOYLVT+CircularAir-Bold", ",", "HeadLineA", ",", "Hei", ",", "Herculanum", ",", "Hoefler Text", ",", "Impact", ",", "Jaini", ",", "Jaini Purva", ",", "KEYEJM+airglyphs", ",", "Kai", ",", "Kavivanar", ",", "Khmer Sangam MN", ",", "Kokonor", ",", "Krungthep", ",", "Lao Sangam MN", ",", "Lato", ",", "Leland", ",", "LiHei Pro", ",", "LiSong Pro", ",", "Liberation Mono", ",", "Liberation Sans", ",", "Liberation Serif", ",", "Lucida Console", ",", "Lucida Sans Unicode", ",", "Luminari", ",", "MS Gothic", ",", "MS Mincho", ",", "MS PGothic", ",", "MS PMincho", ",", "MS Reference Sans Serif", ",", "MS Reference Specialty", ",", "MaestroTimes", ",", "Marlett", ",", "Meiryo", ",", "Microsoft Sans Serif", ",", "Mishafi", ",", "Mishafi Gold", ",", "Modak", ",", "Monaco", ",", "NotoColorEmoji-SVG", ",", "Osaka", ",", "PCMyungjo", ",", "PMingLiU", ",", "Party LET", ",", "Perpetua", ",", "Petaluma", ",", "PilGi", ",", "Plantagenet Cherokee", ",", "STFangsong", ",", "STHeiti", ",", "STIX Two Text", ",", "Sagittal", ",", "Sathu", ",", "Scriabin6", ",", "Silom", ",", "SimSun", ",", "Skia", ",", "Sonata", ",", "Symbol", ",", "Tablature", ",", "Tahoma", ",", "Times New Roman", ",", "Trattatello", ",", "Trebuchet MS", ",", "Tw Cen MT", ",", "Verdana", ",", "WW", ",", "Webdings", ",", "Wingdings", ",", "Wingdings 2", ",", "Wingdings 3", ",", "XNLOZH+FoundersGrotesk-Semibold", ",", "XVGAXJ+CircularAir-Book", ",", "Zapf Dingbats", ",", "Zapfino", ",", "feta26", ",", "mf", ",", "sims" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -4659,7 +4648,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 1 ],
-					"order" : 0,
+					"order" : 2,
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -4725,6 +4714,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-98", 0 ],
+					"disabled" : 1,
 					"source" : [ "obj-34", 4 ]
 				}
 
