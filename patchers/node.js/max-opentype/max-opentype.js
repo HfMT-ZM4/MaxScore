@@ -45,7 +45,7 @@ function fillMenu()
 			}
 			else {
 			let extension = fonts[i].path.substring(fonts[i].path.lastIndexOf("."), fonts[i].path.length);
-			if (extension != ".otf" && extension != ".woff" && extension != ".woff2") {
+			if (extension != ".OTF") {
 				if (fonts[i].family in o) o[fonts[i].family].push(fonts[i]); 
 				else o[fonts[i].family] = [fonts[i]];
 				Max.outlet("fonts", "store", fonts[i].family, 1)
