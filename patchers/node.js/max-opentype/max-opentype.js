@@ -35,17 +35,23 @@ function fillMenu()
 	Max.outlet("fonts", "clear");
 	for (let i = 0; i < fonts.length; i++) {
 			let extension = fonts[i].path.substring(fonts[i].path.lastIndexOf("."), fonts[i].path.length);
+ 			//differentiate between MacOS and Windows
+			if (path.sep === "/") {
 			if (extension == ".ttf") {
 				if (fonts[i].family in o) o[fonts[i].family].push(fonts[i]); 
-				else {
-					o[fonts[i].family] = [fonts[i]];
+				else o[fonts[i].family] = [fonts[i]];
+				Max.outlet("fonts", "store", fonts[i].family, 1)
 				}
-				//differentiate between MacOS and Windows
-				//if (path.sep === "/") Max.outlet("fonts", i, fonts[i].family);
-				//else Max.outlet("fonts", i, fonts[i].postscriptName);
+			}
+			else {
+			let extension = fonts[i].path.substring(fonts[i].path.lastIndexOf("."), fonts[i].path.length);
+			if (extension != ".otf" && extension != ".woff" && extension != ".woff2") {
+				if (fonts[i].family in o) o[fonts[i].family].push(fonts[i]); 
+				else o[fonts[i].family] = [fonts[i]];
 				Max.outlet("fonts", "store", fonts[i].family, 1)
 			}
 		}
+	}
 	Max.outlet("fonts", "enddump");		
 	Max.outlet(o);			
 }
