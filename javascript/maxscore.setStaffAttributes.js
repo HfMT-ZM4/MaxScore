@@ -562,9 +562,9 @@ function _style(stl, flag)
 		//can this ever happen?
         //if (isEditor(styletype)) stylesPatcher.subpatcher().getnamed(styletype).subpatcher().getnamed("editor").subpatcher().getnamed("current-staff").message(StaffIndex);
     }
-    if (oldstl != "virgin") {
-        if (ss[0] != "default") {
-		//post("hello", ID, ss, "\n");
+   if (oldstl != "virgin") {
+        if (newstyletype != "default" || (newstyletype == "default" && styletype != "default")) {
+		//post("styletype-2", styletype, newstyletype, "\n");
 		setClef(stl);
 		setStafflines(newstafflines);
 		}
