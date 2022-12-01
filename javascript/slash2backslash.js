@@ -19,3 +19,11 @@ a[a.length-1] = a[a.length-1] + "\""
 }
 outlet(0, a);
 }
+
+function backslash2slash()
+{
+	a = arrayfromargs(arguments).join(" ");
+	a = a.replace(/\\/g, "/");
+	//for (var i = 0; i < a.length; i++) if (a[i] == "\\") post(a, a.length, a[1], "\n");;
+	outlet(0, a);
+}

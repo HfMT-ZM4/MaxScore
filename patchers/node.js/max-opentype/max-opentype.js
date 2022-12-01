@@ -17,7 +17,7 @@ Max.addHandler("bang", () => {
 
 Max.addHandler("font", (msg) => {
 	Max.outlet("font",  msg);	
-	var foundFont = fontManager.findFontsSync({ postscriptName: msg });
+	var foundFont = fontManager.findFontsSync({ family: msg });
 	Max.outlet("info", foundFont.length, foundFont[0]);
 	if (foundFont.length === 0) {
 		//Max.outlet("info", 0, typeof foundFont);
