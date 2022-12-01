@@ -2564,6 +2564,7 @@ function anything() {
 				if (glyph[i*5+3] == "$TEXTFONT") var fontFamily = _textFont;
 				else if (glyph[i*5+3] == "$MUSICFONT") var fontFamily = _musicFont;
 				else var fontFamily = glyph[i*5+3];
+				usedFonts.replace(fontFamily + "::Regular", 1);
 				if (staticClefs) SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
 				else SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + (gracenoteOffset * 0.5) + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")\" >" + t + "</text>");
 			}
@@ -2998,7 +2999,7 @@ function writeDefs(destination, f)
 	var ttffonts = new Dict;
 	ttffonts.name = "ttffonts";
 	for (var i = 0; i < keys.length; i++) {
-		if ([ "Bravura", "Leland", "Petaluma", "NotoColorEmoji-SVG" ].indexOf(keys[i]) == -1) {
+		if ([ "Bravura", "Leland", "Petaluma", "Noto Color Emoji SVG", "Greifswaler Deutsche Schrift" ].indexOf(keys[i]) == -1) {
 		var fontDescriptors = ttffonts.get(keys[i]);
 		var usedFontStyles = usedFonts.get(keys[i]).getkeys();
 			for (var j = 0; j < fontDescriptors.length; j++) {
@@ -3018,7 +3019,7 @@ function writeDefs(destination, f)
 		else {
 			f.writeline("<font-face font-family=\"" + keys[i] + "\">");
 			f.writeline("<font-face-src>");
-			f.writeline("<font-face-uri xlink:href=\"" + fontsfolderpath + keys[i] + ".svg#" + keys[i] + "\">");
+			f.writeline("<font-face-uri xlink:href=\"" + fontsfolderpath + keys[i] + ".svg#" + keys[i].split(" ").join("-") + "\">");
 			f.writeline("<font-face-format string=\"svg\"/>");
 			f.writeline("</font-face-uri>");
 			f.writeline("</font-face-src>");

@@ -68,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 664.0, 143.0, 959.0, 904.0 ],
+						"rect" : [ 155.0, 124.0, 959.0, 904.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -463,7 +463,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 336.0, 370.0, 59.0, 22.0 ],
+									"patching_rect" : [ 500.0, 366.0, 59.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1003,11 +1003,11 @@
 								"box" : 								{
 									"id" : "obj-47",
 									"maxclass" : "newobj",
-									"numinlets" : 5,
-									"numoutlets" : 5,
-									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 49.0, 331.0, 306.0, 22.0 ],
-									"text" : "route Bravura Leland Petaluma \"Noto Color Emoji SVG\""
+									"numinlets" : 6,
+									"numoutlets" : 6,
+									"outlettype" : [ "", "", "", "", "", "" ],
+									"patching_rect" : [ 49.0, 331.0, 470.0, 22.0 ],
+									"text" : "route Bravura Leland Petaluma \"Noto Color Emoji SVG\" \"Greifswaler Deutsche Schrift\""
 								}
 
 							}
@@ -1117,7 +1117,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-53", 1 ],
-									"midpoints" : [ 103.5, 206.75, 385.5, 206.75 ],
+									"midpoints" : [ 103.5, 206.75, 549.5, 206.75 ],
 									"source" : [ "obj-107", 1 ]
 								}
 
@@ -1331,7 +1331,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-53", 1 ],
-									"midpoints" : [ 69.0, 296.0, 385.5, 296.0 ],
+									"midpoints" : [ 69.0, 296.0, 549.5, 296.0 ],
 									"source" : [ "obj-18", 1 ]
 								}
 
@@ -1411,7 +1411,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-53", 0 ],
-									"source" : [ "obj-47", 4 ]
+									"source" : [ "obj-47", 5 ]
 								}
 
 							}

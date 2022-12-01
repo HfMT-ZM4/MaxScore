@@ -265,7 +265,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 100.0, 39.355362, 51.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Bravura"
 								}
 
@@ -701,6 +700,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -1371,7 +1372,7 @@
 									"colwidth" : 32,
 									"fgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"fontface" : 0,
-									"fontname" : "Bravura",
+									"fontname" : "Noto Color Emoji SVG",
 									"fontsize" : 18.0,
 									"hcellcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 0.58 ],
 									"id" : "obj-1",
@@ -1383,7 +1384,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 0.0, 0.0, 530.0, 436.0 ],
 									"rowheight" : 32,
-									"rows" : 222,
+									"rows" : 233,
 									"sccolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 									"stcolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
@@ -1784,8 +1785,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 197.166666666666629, 163.0, 191.0, 35.0 ],
-									"text" : "append Bravura Leland Petaluma NotoColorEmoji-SVG"
+									"patching_rect" : [ 197.166666666666629, 163.0, 252.833333333333371, 35.0 ],
+									"text" : "append Bravura Leland Petaluma \"Noto Color Emoji SVG\""
 								}
 
 							}
@@ -4282,7 +4283,7 @@
 					"border" : 0.0,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 0.52 ],
 					"fontface" : 0,
-					"fontname" : "Bravura",
+					"fontname" : "Noto Color Emoji SVG",
 					"fontsize" : 24.0,
 					"id" : "obj-29",
 					"maxclass" : "textedit",
@@ -4291,12 +4292,11 @@
 					"outlettype" : [ "", "int", "", "" ],
 					"outputmode" : 1,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 136.671966552734375, 280.87939453125, 161.0, 99.0 ],
+					"patching_rect" : [ 136.671966552734375, 280.87939453125, 167.0, 99.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 24.0, 247.0, 111.0 ],
 					"rounded" : 0.0,
 					"tabmode" : 0,
-					"text" : "®",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "textedit"
 				}
@@ -4506,7 +4506,7 @@
 					"bgfillcolor_type" : "color",
 					"hint" : "Font",
 					"id" : "obj-98",
-					"items" : [ "Academy Engraved LET", ",", "Accidentals", ",", "AkayaKanadaka", ",", "AkayaTelivigala", ",", "Alien Script", ",", "Aloisen New", ",", "Andale Mono", ",", "Annai MN", ",", "Apple Braille", ",", "Apple Chancery", ",", "Apple LiGothic", ",", "Apple LiSung", ",", "Apple Symbols", ",", "AppleGothic", ",", "AppleMyungjo", ",", "Arial", ",", "Arial Black", ",", "Arial Narrow", ",", "Arial Rounded MT Bold", ",", "Arial Unicode MS", ",", "Arimo", ",", "Ayuthaya", ",", "Baloo Bhaijaan", ",", "Batang", ",", "BiauKai", ",", "Big Caslon", ",", "Bodoni 72 Smallcaps", ",", "Bodoni Ornaments", ",", "Bookshelf Symbol 7", ",", "Boulez", ",", "Bradley Hand", ",", "Bravura", ",", "Brush Script MT", ",", "Calibri", ",", "Cambria", ",", "Candara", ",", "Chalkduster", ",", "Charis SIL", ",", "Comic Sans MS", ",", "Consolas", ",", "Constantia", ",", "Corbel", ",", "Courier New", ",", "Cypher", ",", "DIN Alternate", ",", "DIN Condensed", ",", "Denemo", ",", "Diwan Thuluth", ",", "Emmentaler", ",", "Farisi", ",", "Finale Copyist Text", ",", "Finale Copyist Text Ext", ",", "Finale Lyrics", ",", "Finale Numerics", ",", "Franklin Gothic Book", ",", "Franklin Gothic Medium", ",", "GB18030 Bitmap", ",", "Geneva", ",", "Georgia", ",", "Gill Sans MT", ",", "GothamNarrow-Light", ",", "GothamNarrow-Medium", ",", "Gotu", ",", "Greifswaler Deutsche Schrift", ",", "Guido2", ",", "Gulim", ",", "GungSeo", ",", "Gurmukhi MT", ",", "HE", ",", "HOYLVT+CircularAir-Bold", ",", "HeadLineA", ",", "Hei", ",", "Herculanum", ",", "Hoefler Text", ",", "Impact", ",", "Jaini", ",", "Jaini Purva", ",", "KEYEJM+airglyphs", ",", "Kai", ",", "Kavivanar", ",", "Khmer Sangam MN", ",", "Kokonor", ",", "Krungthep", ",", "Lao Sangam MN", ",", "Lato", ",", "Leland", ",", "LiHei Pro", ",", "LiSong Pro", ",", "Liberation Mono", ",", "Liberation Sans", ",", "Liberation Serif", ",", "Lucida Console", ",", "Lucida Sans Unicode", ",", "Luminari", ",", "MS Gothic", ",", "MS Mincho", ",", "MS PGothic", ",", "MS PMincho", ",", "MS Reference Sans Serif", ",", "MS Reference Specialty", ",", "MaestroTimes", ",", "Marlett", ",", "Meiryo", ",", "Microsoft Sans Serif", ",", "Mishafi", ",", "Mishafi Gold", ",", "Modak", ",", "Monaco", ",", "NotoColorEmoji-SVG", ",", "Osaka", ",", "PCMyungjo", ",", "PMingLiU", ",", "Party LET", ",", "Perpetua", ",", "Petaluma", ",", "PilGi", ",", "Plantagenet Cherokee", ",", "STFangsong", ",", "STHeiti", ",", "STIX Two Text", ",", "Sagittal", ",", "Sathu", ",", "Scriabin6", ",", "Silom", ",", "SimSun", ",", "Skia", ",", "Sonata", ",", "Symbol", ",", "Tablature", ",", "Tahoma", ",", "Times New Roman", ",", "Trattatello", ",", "Trebuchet MS", ",", "Tw Cen MT", ",", "Verdana", ",", "WW", ",", "Webdings", ",", "Wingdings", ",", "Wingdings 2", ",", "Wingdings 3", ",", "XNLOZH+FoundersGrotesk-Semibold", ",", "XVGAXJ+CircularAir-Book", ",", "Zapf Dingbats", ",", "Zapfino", ",", "feta26", ",", "mf", ",", "sims" ],
+					"items" : [ "Academy Engraved LET", ",", "Accidentals", ",", "AkayaKanadaka", ",", "AkayaTelivigala", ",", "Alien Script", ",", "Aloisen New", ",", "Andale Mono", ",", "Annai MN", ",", "Apple Braille", ",", "Apple Chancery", ",", "Apple LiGothic", ",", "Apple LiSung", ",", "Apple Symbols", ",", "AppleGothic", ",", "AppleMyungjo", ",", "Arial", ",", "Arial Black", ",", "Arial Narrow", ",", "Arial Rounded MT Bold", ",", "Arial Unicode MS", ",", "Arimo", ",", "Ayuthaya", ",", "Baloo Bhaijaan", ",", "Batang", ",", "BiauKai", ",", "Big Caslon", ",", "Bodoni 72 Smallcaps", ",", "Bodoni Ornaments", ",", "Bookshelf Symbol 7", ",", "Boulez", ",", "Bradley Hand", ",", "Bravura", ",", "Brush Script MT", ",", "Calibri", ",", "Cambria", ",", "Candara", ",", "Chalkduster", ",", "Charis SIL", ",", "Comic Sans MS", ",", "Consolas", ",", "Constantia", ",", "Corbel", ",", "Courier New", ",", "Cypher", ",", "DIN Alternate", ",", "DIN Condensed", ",", "Denemo", ",", "Diwan Thuluth", ",", "Emmentaler", ",", "Farisi", ",", "Finale Copyist Text", ",", "Finale Copyist Text Ext", ",", "Finale Lyrics", ",", "Finale Numerics", ",", "Franklin Gothic Book", ",", "Franklin Gothic Medium", ",", "GB18030 Bitmap", ",", "Geneva", ",", "Georgia", ",", "Gill Sans MT", ",", "GothamNarrow-Light", ",", "GothamNarrow-Medium", ",", "Gotu", ",", "Greifswaler Deutsche Schrift", ",", "Guido2", ",", "Gulim", ",", "GungSeo", ",", "Gurmukhi MT", ",", "HE", ",", "HOYLVT+CircularAir-Bold", ",", "HeadLineA", ",", "Hei", ",", "Herculanum", ",", "Hoefler Text", ",", "Impact", ",", "Jaini", ",", "Jaini Purva", ",", "KEYEJM+airglyphs", ",", "Kai", ",", "Kavivanar", ",", "Khmer Sangam MN", ",", "Kokonor", ",", "Krungthep", ",", "Lao Sangam MN", ",", "Lato", ",", "Leland", ",", "LiHei Pro", ",", "LiSong Pro", ",", "Liberation Mono", ",", "Liberation Sans", ",", "Liberation Serif", ",", "Lucida Console", ",", "Lucida Sans Unicode", ",", "Luminari", ",", "MS Gothic", ",", "MS Mincho", ",", "MS PGothic", ",", "MS PMincho", ",", "MS Reference Sans Serif", ",", "MS Reference Specialty", ",", "MaestroTimes", ",", "Marlett", ",", "Meiryo", ",", "Microsoft Sans Serif", ",", "Mishafi", ",", "Mishafi Gold", ",", "Modak", ",", "Monaco", ",", "Noto Color Emoji SVG", ",", "Osaka", ",", "PCMyungjo", ",", "PMingLiU", ",", "Party LET", ",", "Perpetua", ",", "Petaluma", ",", "PilGi", ",", "Plantagenet Cherokee", ",", "STFangsong", ",", "STHeiti", ",", "STIX Two Text", ",", "Sagittal", ",", "Sathu", ",", "Scriabin6", ",", "Silom", ",", "SimSun", ",", "Skia", ",", "Sonata", ",", "Symbol", ",", "Tablature", ",", "Tahoma", ",", "Times New Roman", ",", "Trattatello", ",", "Trebuchet MS", ",", "Tw Cen MT", ",", "Verdana", ",", "WW", ",", "Webdings", ",", "Wingdings", ",", "Wingdings 2", ",", "Wingdings 3", ",", "XNLOZH+FoundersGrotesk-Semibold", ",", "XVGAXJ+CircularAir-Book", ",", "Zapf Dingbats", ",", "Zapfino", ",", "feta26", ",", "mf", ",", "sims" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
