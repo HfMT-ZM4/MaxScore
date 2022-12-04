@@ -22,6 +22,10 @@ var keys = [];
 var stafflines = [0, 0];
 var staffStyles = new Dict();
 staffStyles.name = "staffStyles";
+var staffStyles2 = new Dict();
+staffStyles2.name = "staffStyles2";
+var staffStylesInUse = new Dict();
+staffStylesInUse.name = "staffStylesInUse";
 var aliases = new Dict();
 aliases.name = "clef.aliases";
 var staff2tablature = new Dict();
@@ -191,14 +195,21 @@ if (typeof(stl)!="object" && stl!="*")
 {
 if (oldstl != stl) state("virgin");	
 //post("state", "virgo", "\n");
-setStyle(stl);
-_style(stl, 0);
+    if (aliases.contains(stl)) stl = aliases.get(stl);
+    var basestyle = stl.split("|")[0];
+ 	this.patcher.getnamed("style").message("setsymbol", basestyle);
+  	//post("setitem", staffStyles.stringify(), "\n");
+   	styletype = staffStyles.contains(basestyle) ? staffStyles.get(basestyle)[0] : "Default";
+   	if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", editors.names.indexOf(basestyle) + 1, stl);
+  	//if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
+
+setStyle(stl, 0);
 }
 else 
 {
-post("state", "other", "\n");
-style("Default");
-_style("Default", 0);
+//post("state", "other", "\n");
+initStyle("Default");
+setStyle("Default", 0);
 }
 
 if (annotation.contains("staff-"+StaffIndex+"::clip") && annotation.get("staff-"+StaffIndex+"::clip" != "*")) {
@@ -250,6 +261,11 @@ dumpDict.message("bang");
 
 function style(stl, flag)
 {
+	initStyle(stl, flag);
+}
+
+function initStyle(stl, flag)
+{
 /*
 The this object can be set manually (flag always 1) and by a style editor (always 0).
 4 scenarios:
@@ -286,10 +302,9 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 	annotation.replace("staff-"+StaffIndex+"::style", stl);			
 	dumpDict.message("bang");
 	if (aliases.contains(stl)) stl = aliases.get(stl);
-	if (isAlias(stl) && flag) _style(stl, 1);
-	//else if (stl == "Just Intonation" && !flag) _style(stl, 0);
-	else if (editors.names.indexOf(stl) != -1) _style(stl, 1);
-	else _style(stl, 0);
+	if (isAlias(stl) && flag) setStyle(stl, 1);
+	else if (editors.names.indexOf(stl) != -1) setStyle(stl, 1);
+	else setStyle(stl, 0);
 	}
 }
 
@@ -297,7 +312,7 @@ function lookup(r) {
 	if (r > 0) r += 1;
 	annotation.replace("staff-" + StaffIndex + "::ratio-lookup", r);
 	dumpDict.message("bang");
-	if (styletype == "justintonation") style("Just Intonation", 0);
+	if (styletype == "justintonation") initStyle("Just Intonation", 0);
 	else outlet(0, "setRenderAllowed", "true");
 }
 
@@ -305,23 +320,23 @@ function clef(cf)
 {
 switch(cf){
 case(0):
-style("Default", 1);
+initStyle("Default", 1);
 cf = "TREBLE_CLEF";
 break;
 case(1):
-style("Default", 1);
+initStyle("Default", 1);
 cf = "ALTO_CLEF";
 break;
 case(2):
-style("Default", 1);
+initStyle("Default", 1);
 cf = "TENOR_CLEF";
 break;
 case(3):
-style("Default", 1);
+initStyle("Default", 1);
 cf = "BASS_CLEF";
 break;
 case(4):
-style("Default", 1);
+initStyle("Default", 1);
 cf = "PERCUSSION_CLEF";
 break;
 
@@ -412,6 +427,7 @@ function state(st) {
 	//post("state", oldstl, "\n");
 }
 
+/*
 function setStyle(stl) {
     if (aliases.contains(stl)) stl = aliases.get(stl);
     var basestyle = stl.split("|")[0];
@@ -421,17 +437,23 @@ function setStyle(stl) {
    	if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", editors.names.indexOf(basestyle) + 1, stl);
   	//if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
 }
+*/
 
-function _style(stl, flag)
+function setStyle(stl, flag)
 {
 	var styleMenu = this.patcher.getnamed("style");
    	if (aliases.contains(stl)) stl = aliases.get(stl);
     var basestyle = stl.split("|")[0];
     var substyle = stl.split("|")[1];
+	//post("stl", stl, "\n");
+	/////////////////////
+	//This sets the staffStylesInUse dictionary 
+	staffStylesInUse.replace(StaffIndex + "::current", staffStyles2.get(basestyle));
+	staffStylesInUse.replace(StaffIndex + "::current::substyle", substyle);
+	/////////////////////
     ss = staffStyles.get(basestyle);
 	if (oldstl != stl) {
     annotation.replace("staff-" + StaffIndex + "::style", stl);
-	//post("micromap", stl, basestyle, ss[0], "\n");
 	if (styleSetByMenu) annotation.replace("staff-" + StaffIndex + "::micromap", ss[2]);
     if (ss[0] != "BP-keyboard" && ss[0] != "BP-keyboard(A=N)") annotation.replace("staff-" + StaffIndex + "::clef", "default");
 	}
