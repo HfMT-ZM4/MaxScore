@@ -125,6 +125,8 @@ var maxiter = {};
 var maxcount = {};
 var manual = 0;
 var mouseselection = 1;
+var incrementers = {};
+var mgraphicsRoutines = [ "append_path", "arc", "arc_negative", "attr_setfill", "clear_surface", "close_path", "curve_to", "device_to_user", "ellipse", "fill", "fill_extents", "fill_preserve", "fill_preserve_with_alpha", "fill_with_alpha", "font_extents", "get_current_point", "get_line_cap", "get_line_join", "get_line_width", "get_matrix", "getfontlist", "identity_matrix", "image_surface_create", "image_surface_destroy", "image_surface_draw", "image_surface_draw_fast", "image_surface_get_size", "in_fill", "line_to", "move_to", "new_path", "ovalarc", "paint", "paint_with_alpha", "parentpaint", "path_roundcorners", "pattern_add_color_stop_rgba", "pattern_create_for_surface", "pattern_create_linear", "pattern_create_radial", "pattern_create_rgba", "pattern_destroy", "pattern_get_extend", "pattern_get_matrix", "pattern_get_type", "pattern_identity_matrix", "pattern_rotate", "pattern_scale", "pattern_set_extend", "pattern_set_matrix", "pattern_translate", "pop_group_to_source", "push_group", "rectangle", "rectangle_rounded", "rel_curve_to", "rel_line_to", "rel_move_to", "restore", "rotate", "save", "scale", "scale_source_rgba", "select_font_face", "set_dash", "set_font_size", "set_line_cap", "set_line_join", "set_line_width", "set_matrix", "set_source", "set_source_rgb", "set_source_rgba", "set_source_surface", "show_text", "stroke", "stroke_preserve", "stroke_preserve_with_alpha", "stroke_with_alpha", "svg_create", "svg_destroy", "svg_get_size", "svg_render", "svg_set", "text_measure", "text_path", "transform", "translate", "translate_source_rgba", "user_to_device", "user_to_device" ];
 	
 
 tsk["scroll"] = new Task(scrollTask, this, "scroll"); // our main task
@@ -199,36 +201,35 @@ function setMouseSelection(flag)
 
 function anything()
 {
+	var _handle;
 	var msg = arrayfromargs(messagename, arguments);
 	if (msg[0] == "bounds") {
-		if (msg[1] == "hide") {
-			boundingRect = [];
- 		}
-		else if (msg[1] == "blink"){
-			//post("TASK", "\n");
-			//blnk.interval = 200;
-			//blnk.repeat(2, 200);
-			blnk.schedule(200);
-			}
-		else {
-            boundingRect = [msg[1] * zoom[0], msg[2] * zoom[1], (msg[3] - msg[1]) * zoom[0], (msg[4] - msg[2]) * zoom[1]];
-			}
+		if (msg[1] == "hide") boundingRect = [];
+		else if (msg[1] == "blink") blnk.schedule(200);
+		else boundingRect = [msg[1] * zoom[0], msg[2] * zoom[1], (msg[3] - msg[1]) * zoom[0], (msg[4] - msg[2]) * zoom[1]];
     	mgraphics.redraw();
 		}
-	else if (msg[0] == "idleOut") {
-		idleOut = msg[1];
-		}	
-	else if (msg[0] == "playback") {
-		playback = msg[1];
-		}
+	else if (msg[0] == "idleOut") idleOut = msg[1];
+	else if (msg[0] == "playback") playback = msg[1];
 	else if (msg[0] == "quintetnet") {
 		//paintOnScore[pons++] = msg.slice(1);
     	//mgraphics.redraw();
 		}
 	else {
-		paintOnScore[pons++] = msg;
-		//pons++;
-    	mgraphics.redraw();
+		if (mgraphicsRoutines.indexOf(msg[0]) != -1) _handle = ["unnamed"];
+		else {
+			_handle = msg[0];
+			msg.shift();
+			}
+		if (paintOnScore.hasOwnProperty(_handle)) {
+			incrementers[_handle] += 1;
+			}
+		else {
+			paintOnScore[_handle] = {};
+			incrementers[_handle] = 0;
+		}
+ 		paintOnScore[_handle][incrementers[_handle]] = msg;
+   		mgraphics.redraw();
 	}
 }
 
@@ -258,7 +259,7 @@ function flashing()
 function clearGraphics()
 {
 	paintOnScore = {};
-	pons = 0;
+	incrementers = {};
     mgraphics.redraw();
 }
 
@@ -360,8 +361,15 @@ function obj_ref(o)
 
 function clear()
 {
-	img.setsvg("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");
-	clearGraphics();
+	var arr = arrayfromargs(arguments);
+	if (arr.length > 0 && paintOnScore.hasOwnProperty(arr[0])){
+		paintOnScore[arr[0]] = {};
+		mgraphics.redraw();
+	}
+	else {
+		img.setsvg("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");
+		clearGraphics();
+	}
 }
 
 
@@ -567,7 +575,6 @@ function cursor()
 		tsk[c].interval = grain;
 			if (cursors[c].countin.beats > 0) {
 				count_in[c] = new Task(countin, this, c);
-				//post("interval(cursors[c].countin.interval)", cursors[c].countin.beats * cursors[c].countin.interval / grain, "\n");
 				count_in[c].interval = grain;
 				maxcount[c] = cursors[c].countin.beats * cursors[c].countin.interval / grain;
 				count_in[c].repeat();
@@ -716,6 +723,7 @@ function paint() {
 function drawPlayhead()
 {
            with(mgraphics) {
+				//post("playheadRect", playheadRect, "\n");
 				set_source_rgba(playheadColor);
 				rectangle(playheadRect);
 				fill();
@@ -851,16 +859,12 @@ function paintOnTop()
 {
 	with(mgraphics) {
 		var currentMatrix = get_matrix();
-		var keys = Object.keys(paintOnScore);
-		for (var i = 0; i < keys.length; i++) {
-		/*
-		if (paintOnScore[keys[i]][0] == "image_surface_draw") eval(paintOnScore[keys[i]][0] + "(\"" + paintOnScore[keys[i]][1] + "\")");
-		else if (paintOnScore[keys[i]][0] == "svg_render") eval(paintOnScore[keys[i]][0] + "(\"" + paintOnScore[keys[i]][1] + "\")");
-		else if (paintOnScore[keys[i]][0] == "select_font_face") eval(paintOnScore[keys[i]][0] + "(\"" + paintOnScore[keys[i]][1] + "\")");
-		*/
-		if (paintOnScore[keys[i]].length == 2) eval(paintOnScore[keys[i]][0] + "(\"" + paintOnScore[keys[i]][1] + "\")");
-		else eval(paintOnScore[keys[i]][0] + "(" + paintOnScore[keys[i]].slice(1, paintOnScore[keys[i]].length).join() + ")");
-		//else post(paintOnScore[keys[i]][0] + "(" + paintOnScore[keys[i]].slice(1, paintOnScore[keys[i]].length).join() + ")\n");
+		for (var _handle in paintOnScore) {
+			var keys = Object.keys(paintOnScore[_handle]);
+			for (var i = 0; i < keys.length; i++) {
+			if (paintOnScore[_handle][keys[i]].length == 2) eval(paintOnScore[_handle][keys[i]][0] + "(\"" + paintOnScore[_handle][keys[i]][1] + "\")");
+			else eval(paintOnScore[_handle][keys[i]][0] + "(" + paintOnScore[_handle][keys[i]].slice(1, paintOnScore[_handle][keys[i]].length).join() + ")");
+			}
 		}
 	set_matrix(currentMatrix);
     }

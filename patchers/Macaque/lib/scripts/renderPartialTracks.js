@@ -165,7 +165,6 @@ function rendersvg()
 	linesegments[1].push("<path d=\"" + _centroid + "\" stroke=\"" + "rgb(0,255,0)" + "\" stroke-width=\"1.\" stroke-opacity=\"1.\"" + "/>");	
 	linesegments[1].push("<path d=\"" + _envelope + "\" stroke=\"" + "rgb(0,255,255)" + "\" stroke-width=\"1.\" stroke-opacity=\"1.\"" + "/>");	
 	var f = {};
-	//post("f.pageSize", [ width, height ], "\n");
 	f.svg = {"1": []};
 	f.lines = linesegments;
 	f.clefs = {"1": []};
@@ -175,6 +174,7 @@ function rendersvg()
 	f.setZoom = zoom;
 	f.bgcolor = bgcolor;
 	f.groupcount = 1;
+	//post("lines", JSON.stringify(f), "\n");
 	outlet(0, "obj_ref", f);
 	outlet(0, "setZoom", zoom2);
 }
@@ -191,7 +191,7 @@ function renderselection()
 	outlet(0, "stroke");
 	//region
 	if (region[1] - region[0] != 0 && selectedmarker == -1) {
-	outlet(0, "set_source_rgba", 1., 0., 0., 0.25);
+	outlet(0, "set_source_rgba", 1., 0., 0., 0.15);
 	outlet(0, "rectangle", region[0], 0, region[1], 256); 
 	outlet(0, "fill");
 	}

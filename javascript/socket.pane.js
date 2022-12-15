@@ -258,6 +258,9 @@ function anything()
 				case "set_source_rgb":
 				source_rgb = [msg[2], msg[3], msg[4], 1];
 				break;
+				case "set_source_rgba":
+				source_rgb = [msg[2], msg[3], msg[4], msg[5]];
+				break;
 				case "move_to":
 				x = msg[2];
 				y = msg[3];
@@ -282,7 +285,7 @@ function anything()
 						"font-family" : f_face,
 						"font-size" : f_size,
 						"fill" : "rgb(" + Math.round(source_rgb[0] * 255) + "," + Math.round(source_rgb[1] * 255) + "," + Math.round(source_rgb[2] * 255) + ")",
-						"fill-opacity" : Math.round(source_rgb[3] * 255)
+						"fill-opacity" : source_rgb[3]
 					}
 					}];
 				var _draw = {"*" : { "key" : "svg", "val" : val}};	
@@ -304,7 +307,7 @@ function anything()
 						"stroke" : "none",
 						"stroke-opacity" : 0.,
 						"fill" : "rgb(" + Math.round(source_rgb[0] * 255) + "," + Math.round(source_rgb[1] * 255) + "," + Math.round(source_rgb[2] * 255) + ")",
-						"fill-opacity" : Math.round(source_rgb[3] * 255)
+						"fill-opacity" : source_rgb[3]
 						}
 					}];	
 				pons++;
