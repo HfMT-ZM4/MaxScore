@@ -2647,7 +2647,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 386.0, 62.0, 340.0, 19.0 ],
-													"restore" : [ 0, 13780 ],
+													"restore" : [ 670, 4500 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -14326,7 +14326,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 317.0, 106.0, 1283.0, 890.0 ],
+						"rect" : [ 500.0, 106.0, 1283.0, 890.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 10.0,
@@ -14354,6 +14354,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-20",
@@ -14554,8 +14555,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 464.5, 547.5, 124.0, 20.0 ],
-									"text" : "snapshot~ 100 @active 1"
+									"patching_rect" : [ 464.5, 547.5, 116.0, 20.0 ],
+									"text" : "snapshot~ 30 @active 1"
 								}
 
 							}
@@ -15782,7 +15783,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 307.0, 151.0, 305.0, 19.0 ],
-													"restore" : [ 0, 13780 ],
+													"restore" : [ 670, 4500 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -15803,7 +15804,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 126.0, 86.0, 46.0, 20.0 ],
-													"restore" : [ 13780.0, -1.0, 1.0, 0.0, 0.0, 0, 13159.999847412111194, 0.0, 0, "linear" ],
+													"restore" : [ 4500.0, -1.0, 1.0, 0.0, 0.0, 0, 4297.532606194085929, 0.0, 0, "linear" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -15816,8 +15817,8 @@
 											}
 , 											{
 												"box" : 												{
-													"addpoints" : [ 0.0, 0.0, 0, 13159.999847412111194, 0.0, 0 ],
-													"domain" : 13780.0,
+													"addpoints" : [ 0.0, 0.0, 0, 4297.532606194085929, 0.0, 0 ],
+													"domain" : 4500.0,
 													"id" : "obj-12",
 													"maxclass" : "function",
 													"numinlets" : 1,
@@ -15840,7 +15841,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 126.0, 37.5, 343.0, 20.0 ],
-													"restore" : [ 13780.0, -1.0, 1.0, 0.0, 0.0, 0, 13159.999847412111194, 0.0, 0, "linear" ],
+													"restore" : [ 4500.0, -1.0, 1.0, 0.0, 0.0, 0, 4297.532606194085929, 0.0, 0, "linear" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -16716,7 +16717,7 @@
 											}
 , 											{
 												"box" : 												{
-													"addpoints" : [ 0.0, 0.0, 0, 13789.999961853027344, 13789.999961853027344, 0 ],
+													"addpoints" : [ 0.0, 0.0, 0, 13789.000000000001819, 13789.0, 0 ],
 													"domain" : 13790.0,
 													"id" : "obj-1",
 													"maxclass" : "function",
@@ -18597,7 +18598,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 511.5, 76.5, 372.0, 20.0 ],
-									"restore" : [ 0.0 ],
+									"restore" : [ 670.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -20346,7 +20347,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 706.0, 194.0, 60.0, 19.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 769, 72, 1483, 1007, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 322, 72, 1036, 1007, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -20412,7 +20413,7 @@
 					"name" : "MacaquePanes-exp.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"offset" : [ 0.0, -794.0 ],
+					"offset" : [ 0.0, -40.0 ],
 					"patching_rect" : [ 34.0, 47.0, 648.0, 360.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 34.0, 47.0, 648.0, 360.0 ],
