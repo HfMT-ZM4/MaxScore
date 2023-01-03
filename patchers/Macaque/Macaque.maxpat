@@ -2647,7 +2647,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 386.0, 62.0, 340.0, 19.0 ],
-													"restore" : [ 100, 3100 ],
+													"restore" : [ 0, 13780 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -3460,7 +3460,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 597.0, 131.0, 373.0, 19.0 ],
-													"restore" : [ "1TRC" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -4909,7 +4909,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 77.0, 64.0, 474.0, 22.0 ],
-																	"restore" : [ "Macintosh HD:/Users/hajdu/Documents/Stuff from Desktop 6/Glocke-mono.sdif" ],
+																	"restore" : [ 0 ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -12759,7 +12759,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 123.0, 156.0, 342.0, 20.0 ],
-									"restore" : [ 33 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -14614,14 +14614,14 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 555.0, 503.5, 273.0, 20.0 ],
+									"patching_rect" : [ 555.0, 503.5, 285.0, 20.0 ],
 									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "pattr @invisible 1 @bindto parent::BeatDetection::syncPlay",
+									"text" : "pattr @invisible 1 @bindto parent::MacaqueMarkers::syncPlay",
 									"varname" : "u210028291"
 								}
 
@@ -14983,7 +14983,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 50.0, 121.0, 413.0, 20.0 ],
-													"restore" : [ "1TRC" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -15800,7 +15800,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 307.0, 120.0, 305.0, 19.0 ],
-													"restore" : [ 100, 3100 ],
+													"restore" : [ 0, 13780 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -15858,7 +15858,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 126.0, 37.5, 343.0, 20.0 ],
-													"restore" : [ 3100.0, -1.0, 1.0, 0.0, 0.0, 0, 14590.102348718224675, 0.0, 0, "linear" ],
+													"restore" : [ 13780.0, -1.0, 1.0, 0.0, 0.0, 0, 64855.358182366820984, 0.0, 0, "linear" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -16698,7 +16698,7 @@
 											}
 , 											{
 												"box" : 												{
-													"addpoints" : [ 0.0, 0.0, 0, 13789.000000000001819, 13789.0, 0 ],
+													"addpoints" : [ 0.0, 0.0, 0, 0.0, 0.0, 0 ],
 													"domain" : 13790.0,
 													"id" : "obj-1",
 													"maxclass" : "function",
@@ -19666,7 +19666,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 262.285706000000005, 278.0, 238.0, 22.0 ],
-									"restore" : [ "Macintosh HD:/Users/hajdu/Documents/Stuff from Desktop 6/Glocke-mono.sdif" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -19687,7 +19687,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 471.0, 347.0, 249.0, 22.0 ],
-									"restore" : [ "1TRC" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -20354,7 +20354,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 706.0, 194.0, 60.0, 19.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 30, 72, 744, 1007, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 309, 72, 1023, 1007, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 

@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 776.5, 635.0, 101.0, 20.0 ],
+					"text" : "setMouseSelection 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -95,7 +107,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 685.0, 530.0, 50.0, 20.0 ],
+					"patching_rect" : [ 665.5, 518.0, 50.0, 20.0 ],
 					"text" : "loadbang"
 				}
 
@@ -107,7 +119,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 757.5, 694.0, 64.0, 20.0 ],
+					"patching_rect" : [ 776.5, 694.0, 64.0, 20.0 ],
 					"text" : "pvar pane[2]"
 				}
 
@@ -119,7 +131,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 685.0, 694.0, 64.0, 20.0 ],
+					"patching_rect" : [ 665.5, 694.0, 64.0, 20.0 ],
 					"text" : "pvar pane[1]"
 				}
 
@@ -197,7 +209,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 714.5, 593.0, 80.0, 20.0 ],
+					"patching_rect" : [ 695.0, 593.0, 80.0, 20.0 ],
 					"text" : "r 1002-selection"
 				}
 
@@ -221,8 +233,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 685.0, 562.0, 304.0, 20.0 ],
-					"text" : "brgb 0 0 0 0, clear, rendersvg, setMouseSelection 0, setHeight 240"
+					"patching_rect" : [ 665.5, 562.0, 206.0, 20.0 ],
+					"text" : "brgb 0 0 0 0, clear, rendersvg, setHeight 240"
 				}
 
 			}
@@ -233,7 +245,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 685.0, 635.0, 105.0, 20.0 ],
+					"patching_rect" : [ 665.5, 635.0, 105.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "renderPartialTracks",
 						"parameter_enable" : 0
@@ -1391,7 +1403,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-97",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
@@ -1676,7 +1687,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 445.500000000000057, 39.0, 351.0, 20.0 ],
-									"restore" : [ 1499.997546621229958 ],
+									"restore" : [ 0.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1847,7 +1858,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 9.0,
 									"id" : "obj-37",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -2932,6 +2942,7 @@
 					"maxclass" : "flonum",
 					"maximum" : 2.0,
 					"minimum" : 0.232052212389564,
+					"numdecimalplaces" : 2,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -7492,7 +7503,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 9.0,
 									"id" : "obj-25",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -7687,7 +7697,6 @@
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-6",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -8227,7 +8236,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 215.0, 1150.0, 342.0, 20.0 ],
-					"restore" : [ 33 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -8396,7 +8405,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 661.0, 146.0, 342.0, 20.0 ],
-					"restore" : [ 33 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -8682,7 +8691,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 660.25, 656.5, 374.0, 20.0 ],
-									"restore" : [ 33 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -8879,7 +8888,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-37",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -9153,7 +9161,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 457.0, 244.0, 413.0, 20.0 ],
-									"restore" : [ "1TRC" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -9884,7 +9892,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 284.5, 309.0, 410.0, 20.0 ],
-													"restore" : [ 33 ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -11313,14 +11321,14 @@
 						"domain_length" : [ 13800.0 ],
 						"dynamics" : [ 1 ],
 						"first/average" : [ 1 ],
-						"functions" : [ 5, 5, 2, 2, 2, 2, 2, "Amplitude", 0, 13789.999961853027344, 0, 2, 100, 0.1, 0, 1, 0, 13789.000000000001819, 1, 0, "Spectral Stretching", 0, 13789.999961853027344, 0, 10, 100, 0.1, 0, 2, 0, 13789.000000000001819, 2, 0, "Reference Frequency", 0, 13789.999961853027344, 0, 1000, 100, 0.1, 0, 55, 0, 13789.000000000001819, 55, 0, "Trajectory", 0, 13789.999961853027344, 0, 13789.999961853027344, 100, 0.1, 0, 0, 0, 13789.000000000001819, 13789, 0, "Transposition", 0, 13789.999961853027344, -4800, 4800, 100, 0.1, 0, 0, 0, 13789.000000000001819, 0, 0 ],
+						"functions" : [ 5, 5, 2, 2, 2, 2, 2, "Amplitude", 0, 13789.999961853027344, 0, 2, 100, 0.1, 0, 1, 0, 0, 1, 0, "Spectral Stretching", 0, 13789.999961853027344, 0, 10, 100, 0.1, 0, 2, 0, 0, 2, 0, "Reference Frequency", 0, 13789.999961853027344, 0, 1000, 100, 0.1, 0, 55, 0, 0, 55, 0, "Trajectory", 0, 13789.999961853027344, 0, 13789.999961853027344, 100, 0.1, 0, 0, 0, 0, 0, 0, "Transposition", 0, 13789.999961853027344, -4800, 4800, 100, 0.1, 0, 0, 0, 0, 0, 0 ],
 						"m_grain" : [ 125.0 ],
 						"minRequired" : [ 1 ],
 						"noise-floor" : [ 0.0 ],
 						"note_value" : [ 2 ],
 						"pane" : [ 0, 0 ],
 						"pane[1]" : [ 0, 0 ],
-						"pane[2]" : [ -79, 0 ],
+						"pane[2]" : [ 0, 0 ],
 						"partialLabel" : [ 0 ],
 						"quartertones" : [ 1 ],
 						"relevant-tracks" : [ 33 ],
@@ -11331,7 +11339,7 @@
 						"tolerance" : [ 10 ],
 						"vel_tolerance" : [ 20 ],
 						"view" : [ 0 ],
-						"zoom" : [ 0.6 ]
+						"zoom" : [ 0.5 ]
 					}
 ,
 					"text" : "autopattr settings",
@@ -11438,7 +11446,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-107",
-					"items" : "Glocke-mono.sdif",
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"menumode" : 2,
 					"numinlets" : 1,
@@ -11655,7 +11663,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 114.0, 30.0, 365.0, 18.0 ],
-									"restore" : [ "Macintosh HD:/Users/hajdu/Documents/Stuff from Desktop 6/Glocke-mono.sdif" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -12245,7 +12253,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "CreateNFunctions", 5, "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", 0, 2, 0, 13789.999961853027344, 0, 10, 0, 13789.999961853027344, 0, 1000, 0, 13789.999961853027344, 0, 13789.999961853027344, 0, 13789.999961853027344, -4800, 4800, 0, 13789.999961853027344 ], [ "SetColor", 0, "brgb", 0, 0, 0 ], [ "SetColor", 0, "frgb", 150, 211, 110 ], [ "SetColor", 0, "rgb2", 150, 211, 110 ], [ "SetColor", 0, "rgb3", 255, 0, 0 ], [ "SetColor", 0, "rgb4", 150, 211, 110 ], [ "SetColor", 0, "rgb5", 255, 255, 255 ], [ "SetColor", 0, "rgb6", 107, 107, 107 ], [ "SetColor", 1, "brgb", 0, 0, 0 ], [ "SetColor", 1, "frgb", 255, 19, 120 ], [ "SetColor", 1, "rgb2", 255, 19, 120 ], [ "SetColor", 1, "rgb3", 255, 0, 0 ], [ "SetColor", 1, "rgb4", 255, 19, 120 ], [ "SetColor", 1, "rgb5", 128, 128, 128 ], [ "SetColor", 1, "rgb6", 255, 0, 0 ], [ "SetColor", 2, "brgb", 0, 0, 0 ], [ "SetColor", 2, "frgb", 225, 162, 137 ], [ "SetColor", 2, "rgb2", 225, 162, 137 ], [ "SetColor", 2, "rgb3", 255, 0, 0 ], [ "SetColor", 2, "rgb4", 225, 162, 137 ], [ "SetColor", 2, "rgb5", 128, 128, 128 ], [ "SetColor", 2, "rgb6", 255, 0, 0 ], [ "SetColor", 3, "brgb", 0, 0, 0 ], [ "SetColor", 3, "frgb", 206, 229, 232 ], [ "SetColor", 3, "rgb2", 206, 229, 232 ], [ "SetColor", 3, "rgb3", 255, 0, 0 ], [ "SetColor", 3, "rgb4", 206, 229, 232 ], [ "SetColor", 3, "rgb5", 128, 128, 128 ], [ "SetColor", 3, "rgb6", 107, 107, 107 ], [ "SetColor", 4, "brgb", 0, 0, 0 ], [ "SetColor", 4, "frgb", 180, 160, 210 ], [ "SetColor", 4, "rgb2", 180, 160, 210 ], [ "SetColor", 4, "rgb3", 255, 0, 0 ], [ "SetColor", 4, "rgb4", 180, 160, 210 ], [ "SetColor", 4, "rgb5", 128, 128, 128 ], [ "SetColor", 4, "rgb6", 107, 107, 107 ], [ "fsaa", 1 ], [ "redrawon" ], [ "mode", 0 ], [ "bordersync", 0 ], [ "clickadd", 1 ], [ "notifyrecalled", 0 ], [ "numcurvepoints", 12 ], [ "grid", 0 ], [ "outputmode", 0 ], [ "hiddenpoint", 0 ], [ "drawtoedges", 0 ], [ "legend", 1 ], [ "mousereport", 1 ], [ "ghost", 30 ], [ "snap2grid", 0 ], [ "pointsize", 5 ], [ "cacheddrawing", 0 ], [ "timedisplay", 0 ], [ "nbfunction", 5 ], [ "clicksustain", 1 ], [ "autocursor", 1 ], [ "clickmove", 1 ], [ "movemode", 0 ], [ "autosustain", 0 ] ],
+					"embedstate" : [ [ "CreateNFunctions", 5, "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", 0, 2, 0, 13789.999961853027344, 0, 10, 0, 13789.999961853027344, 0, 1000, 0, 13789.999961853027344, 0, 13789.999961853027344, 0, 13789.999961853027344, -4800, 4800, 0, 13789.999961853027344 ], [ "SetColor", 0, "brgb", 0, 0, 0 ], [ "SetColor", 0, "frgb", 150, 211, 110 ], [ "SetColor", 0, "rgb2", 150, 211, 110 ], [ "SetColor", 0, "rgb3", 255, 0, 0 ], [ "SetColor", 0, "rgb4", 150, 211, 110 ], [ "SetColor", 0, "rgb5", 255, 255, 255 ], [ "SetColor", 0, "rgb6", 107, 107, 107 ], [ "SetColor", 1, "brgb", 0, 0, 0 ], [ "SetColor", 1, "frgb", 255, 19, 120 ], [ "SetColor", 1, "rgb2", 255, 19, 120 ], [ "SetColor", 1, "rgb3", 255, 0, 0 ], [ "SetColor", 1, "rgb4", 255, 19, 120 ], [ "SetColor", 1, "rgb5", 128, 128, 128 ], [ "SetColor", 1, "rgb6", 255, 0, 0 ], [ "SetColor", 2, "brgb", 0, 0, 0 ], [ "SetColor", 2, "frgb", 225, 162, 137 ], [ "SetColor", 2, "rgb2", 225, 162, 137 ], [ "SetColor", 2, "rgb3", 255, 0, 0 ], [ "SetColor", 2, "rgb4", 225, 162, 137 ], [ "SetColor", 2, "rgb5", 128, 128, 128 ], [ "SetColor", 2, "rgb6", 255, 0, 0 ], [ "SetColor", 3, "brgb", 0, 0, 0 ], [ "SetColor", 3, "frgb", 206, 229, 232 ], [ "SetColor", 3, "rgb2", 206, 229, 232 ], [ "SetColor", 3, "rgb3", 255, 0, 0 ], [ "SetColor", 3, "rgb4", 206, 229, 232 ], [ "SetColor", 3, "rgb5", 128, 128, 128 ], [ "SetColor", 3, "rgb6", 107, 107, 107 ], [ "SetColor", 4, "brgb", 0, 0, 0 ], [ "SetColor", 4, "frgb", 180, 160, 210 ], [ "SetColor", 4, "rgb2", 180, 160, 210 ], [ "SetColor", 4, "rgb3", 255, 0, 0 ], [ "SetColor", 4, "rgb4", 180, 160, 210 ], [ "SetColor", 4, "rgb5", 128, 128, 128 ], [ "SetColor", 4, "rgb6", 107, 107, 107 ], [ "fsaa", 1 ], [ "redrawon" ], [ "ghost", 30 ], [ "grid", 0 ], [ "cacheddrawing", 0 ], [ "timedisplay", 0 ], [ "outputmode", 0 ], [ "mousereport", 1 ], [ "movemode", 0 ], [ "clickmove", 1 ], [ "autocursor", 1 ], [ "clicksustain", 1 ], [ "autosustain", 0 ], [ "legend", 1 ], [ "clickadd", 1 ], [ "pointsize", 5 ], [ "bordersync", 0 ], [ "notifyrecalled", 0 ], [ "numcurvepoints", 12 ], [ "hiddenpoint", 0 ], [ "drawtoedges", 0 ], [ "mode", 0 ], [ "nbfunction", 5 ], [ "snap2grid", 0 ] ],
 					"filename" : "ej.function.js",
 					"id" : "obj-108",
 					"maxclass" : "jsui",
@@ -12324,7 +12332,17 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-30", 0 ],
+					"midpoints" : [ 675.0, 549.0, 786.0, 549.0 ],
+					"order" : 0,
+					"source" : [ "obj-103", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-76", 0 ],
+					"order" : 1,
 					"source" : [ "obj-103", 0 ]
 				}
 
@@ -12697,6 +12715,22 @@
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-88", 0 ],
+					"order" : 1,
+					"source" : [ "obj-30", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-90", 0 ],
+					"order" : 0,
+					"source" : [ "obj-30", 0 ]
 				}
 
 			}

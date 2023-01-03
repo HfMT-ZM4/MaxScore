@@ -1325,7 +1325,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 365.0, 87.0, 1011.0, 900.0 ],
+						"rect" : [ 365.0, 106.0, 1011.0, 900.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 10.0,
@@ -1372,12 +1372,11 @@
 									"fontname" : "Arial",
 									"fontsize" : 9.0,
 									"id" : "obj-67",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 604.0, 40.0, 100.0, 19.0 ],
+									"patching_rect" : [ 604.0, 40.0, 101.0, 19.0 ],
 									"text" : "r #1update-display"
 								}
 
@@ -1677,7 +1676,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 331.0, 140.0, 404.0, 20.0 ],
-									"restore" : [ 1860.0 ],
+									"restore" : [ 0.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4008,7 +4007,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 347.0, 698.5, 589.0, 29.0 ],
-									"text" : "newScore 1 1 640 192 false false, setUserClef 0 FG, setTempo 0 720, setMeasureWidth 0 1200, showMeasureNumbers 0, showStaffNumbers 0, showTimeSignatures 0, showTempo 0, highlightSelectedStaff false, setStaffSpacingAbove 0 160"
+									"text" : "newScore 1 1 640 192 false false, setUserClef 0 FG, setTempo 0 720, setMeasureWidth 0 1200, showMeasureNumbers 0, showStaffNumbers 0, showTimeSignatures 0, showTempo 0, highlightSelectedStaff false, setStaffSpacingAbove 0 180"
 								}
 
 							}
