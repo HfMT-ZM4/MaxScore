@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 630.0, 106.0, 710.0, 635.0 ],
+		"rect" : [ 319.0, 215.0, 835.0, 635.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -77,7 +77,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 630.0, 132.0, 710.0, 609.0 ],
+						"rect" : [ 319.0, 241.0, 835.0, 609.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -108,6 +108,75 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-44",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 683.0, 393.5, 140.0, 60.0 ],
+									"presentation_linecount" : 3,
+									"text" : "use _ if you don't want to change currently stored pitchbend or volume value"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-40",
+									"maxclass" : "number",
+									"maximum" : 127,
+									"minimum" : -127,
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 683.0, 308.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-43",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 683.0, 337.0, 124.0, 22.0 ],
+									"text" : "polybend 6050 _ $1 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-37",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 683.0, 251.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-39",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 683.0, 279.0, 124.0, 22.0 ],
+									"text" : "polybend 6050 $1 _ 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-45",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -124,7 +193,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 543.5, 393.5, 149.0, 47.0 ],
+									"patching_rect" : [ 534.0, 393.5, 131.0, 47.0 ],
 									"text" : "pitchbend (-1 to 1, corresponding to -4800 to 4800 cents)"
 								}
 
@@ -296,11 +365,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-9",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 594.0, 251.0, 64.0, 20.0 ],
-									"text" : "bend pitch"
+									"patching_rect" : [ 594.0, 245.5, 64.0, 33.0 ],
+									"text" : "pitchbend in cents"
 								}
 
 							}
@@ -745,8 +815,23 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-37", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-35", 0 ],
 									"source" : [ "obj-38", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-39", 0 ]
 								}
 
 							}
@@ -760,9 +845,24 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-43", 0 ],
+									"source" : [ "obj-40", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-33", 5 ],
 									"midpoints" : [ 553.0, 501.5, 523.5, 501.5 ],
 									"source" : [ "obj-41", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-43", 0 ]
 								}
 
 							}
@@ -835,7 +935,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 710.0, 609.0 ],
+						"rect" : [ 0.0, 26.0, 835.0, 609.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

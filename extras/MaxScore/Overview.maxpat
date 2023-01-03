@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -68,8 +68,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -450,8 +450,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -863,7 +863,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 6.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "maxscore.makenote", "maxscore.fluidsynth2", "maxscore.sampler", "maxscore.2contimbre", "maxscore.tonejs" ],
+					"tabs" : [ "maxscore.makenote", "maxscore.fluidsynth", "maxscore.sampler", "maxscore.2contimbre", "maxscore.tonejs" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 

@@ -159,7 +159,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 139.0, 106.0, 1266.0, 957.0 ],
+						"rect" : [ 157.0, 138.0, 1266.0, 957.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -188,6 +188,17 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-20",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 886.0, 306.0, 150.0, 20.0 ],
+									"text" : "MIDI CC 10 \tPan (MSB)"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-9",
 									"maxclass" : "newobj",
@@ -1297,10 +1308,10 @@
 									"id" : "obj-117",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "int", "int", "int", "int" ],
-									"patching_rect" : [ 678.5, 135.0, 71.0, 22.0 ],
-									"text" : "unpack i i i i"
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "", "", "" ],
+									"patching_rect" : [ 678.5, 135.0, 88.333333333333371, 22.0 ],
+									"text" : "unjoin 4"
 								}
 
 							}
@@ -1311,8 +1322,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 630.75, 224.0, 52.0, 22.0 ],
-									"text" : "pack i i i"
+									"patching_rect" : [ 630.75, 224.0, 67.0, 22.0 ],
+									"text" : "join 3"
 								}
 
 							}
@@ -4394,7 +4405,7 @@
 					"restore" : 					{
 						"live.text[2]" : [ 0.0 ],
 						"live.text[3]" : [ 0.0 ],
-						"mc.live.gain~" : [ -10.545275590551178 ]
+						"mc.live.gain~" : [ -34.538582677165316 ]
 					}
 ,
 					"text" : "autopattr fluidsynth",

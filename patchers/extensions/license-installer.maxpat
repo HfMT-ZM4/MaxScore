@@ -2,14 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 3,
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 121.0, 395.0, 275.0, 245.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 891.0, 440.0, 275.0, 245.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -36,7 +37,24 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 41.0, 185.0, 33.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"shell" : "(default)"
+					}
+,
+					"text" : "shell"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-9",
 					"maxclass" : "message",
@@ -44,24 +62,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 41.0, 51.0, 153.0, 22.0 ],
-					"style" : "",
 					"text" : "JMSL_License_installer.jar"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"color" : [ 0.698039, 1.0, 0.0, 1.0 ],
-					"fontname" : "Arial Bold",
-					"fontsize" : 10.0,
-					"id" : "obj-7",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 41.0, 183.0, 88.0, 20.0 ],
-					"style" : "",
-					"text" : "mxj shellAccess"
 				}
 
 			}
@@ -75,7 +76,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "int" ],
 					"patching_rect" : [ 41.0, 117.0, 135.0, 22.0 ],
-					"style" : "",
 					"text" : "conformpath slash boot"
 				}
 
@@ -89,8 +89,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 41.0, 13.0, 25.0, 25.0 ],
-					"style" : ""
+					"patching_rect" : [ 41.0, 13.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -104,7 +103,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 41.0, 150.0, 102.0, 22.0 ],
-					"style" : "",
 					"text" : "prepend java -jar"
 				}
 
@@ -117,7 +115,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 41.0, 85.0, 79.0, 22.0 ],
-					"style" : "",
 					"text" : "absolutepath"
 				}
 
@@ -126,17 +123,13 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-1", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-11", 0 ]
 				}
 
@@ -144,8 +137,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -153,8 +144,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -162,13 +151,18 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-9", 0 ]
 				}
 
 			}
- ]
+ ],
+		"saved_attribute_attributes" : 		{
+			"default_plcolor" : 			{
+				"expression" : ""
+			}
+
+		}
+
 	}
 
 }

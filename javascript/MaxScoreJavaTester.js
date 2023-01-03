@@ -49,7 +49,7 @@ function bang()
 			outlet(1, 1);
 //			post("No matching Java jdk detected.\n");
 //			post("Please download Java 32-bit; Link: Windows Offline.\n");
-			outlet(0, "https://www.azul.com/downloads/");
+			outlet(0, "https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html#license-lightbox");
 		}
 		else
 		{
@@ -74,7 +74,7 @@ function bang()
 			outlet(1, 2);
 //			post("No matching Java jdk detected.\n");
 //			post("Please download Java 64-bit; Link: Windows Offline (64-bit)\n");
-			outlet(0, "https://www.azul.com/downloads/"); 
+			outlet(0, "https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html#license-lightbox"); 
 		}
 		else
 		{
