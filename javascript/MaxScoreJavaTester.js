@@ -14,14 +14,15 @@ function bang()
 	fnames.push(f.filename);
   	}
 	f.close();
-	var jdkExist = fnames.join(" ").indexOf("jdk");
-	if (jdkExist == -1) 
+	var jdkExist = (fnames.join(" ").indexOf("jdk") == -1);
+	if (jdkExist) 
 		{
 			outlet(1, 0);
 //			post("No Java jdk detected.\n");
 //			post("Please install Java for Mac OS X.\n");
 //			post("Oracle Java is NOT supported by Max on Mac OS X.\n");
-			outlet(0, "https://support.apple.com/kb/DL1572?locale=en_US");
+			if (max.arch == "arm64") outlet(0, "https://cdn.azul.com/zulu/bin/zulu19.30.11-ca-jdk19.0.1-macosx_aarch64.dmg?_gl=1*83kdpl*_ga*MTMxNjMxNzMwMS4xNjcyOTE5MTQ0*_ga_42DEGWGYD5*MTY3MjkxOTE0My4xLjEuMTY3MjkxOTE2Ni4zNy4wLjA.");
+			else outlet(0, "https://cdn.azul.com/zulu/bin/zulu19.30.11-ca-jdk19.0.1-macosx_x64.dmg?_gl=1*4imiiw*_ga*MTMxNjMxNzMwMS4xNjcyOTE5MTQ0*_ga_42DEGWGYD5*MTY3MjkxOTE0My4xLjEuMTY3MjkxOTMwMS41NS4wLjA.");
 		}
 		else
 		{
@@ -43,7 +44,7 @@ function bang()
 		fnames.push(f.filename);
   		}
 		f.close();				
-		var jdkExist = fnames.join(" ").indexOf("jdk");
+		var jdkExist = (fnames.join(" ").indexOf("jdk") == -1) || (fnames.join(" ").indexOf("1.8") == -1) ;
 		if (jdkExist == -1) 
 		{
 			outlet(1, 1);
@@ -54,7 +55,6 @@ function bang()
 		else
 		{
 			outlet(1, 3);
-//			post("Your Java installation seems to be in order.\n");
 		}
 		}
 		else
@@ -68,7 +68,7 @@ function bang()
 		fnames.push(f.filename);
   		}
 		f.close();				
-		var jdkExist = fnames.join(" ").indexOf("jdk");
+		var jdkExist = (fnames.join(" ").indexOf("jdk") == -1) || (fnames.join(" ").indexOf("1.8") == -1) ;
 		if (jdkExist == -1) 
 		{
 			outlet(1, 2);
