@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 245.0, 287.0, 1181.0, 550.0 ],
+		"rect" : [ 245.0, 287.0, 1391.0, 613.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,7 +42,7 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patcher" : 					{
@@ -50,13 +50,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 534.0, 329.0, 929.0, 525.0 ],
+						"rect" : [ 167.0, 342.0, 929.0, 525.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -85,6 +85,79 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 596.000012603174582, 57.0, 134.0, 22.0 ],
+									"text" : "loadmess set .midi .mid"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-23",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 732.000012603174582, 139.0, 67.0, 22.0 ],
+									"text" : "opendialog"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 732.000012603174582, 207.0, 153.0, 22.0 ],
+									"text" : "prepend transcribeMIDIFile"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 732.000012603174582, 95.0, 96.999999999999943, 22.0 ],
+									"text" : "route bang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-21",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 732.000012603174582, 57.0, 137.0, 22.0 ],
+									"text" : "route transcribeMIDIFile"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-17",
+									"index" : 3,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 732.000012603174582, 10.000000304687504, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "newobj",
@@ -212,8 +285,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 26.000012603174639, 57.0, 105.0, 22.0 ],
-									"text" : "loadmess set .xml"
+									"patching_rect" : [ 1.000012603174639, 57.0, 136.0, 22.0 ],
+									"text" : "loadmess set .xml .XML"
 								}
 
 							}
@@ -402,6 +475,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -441,6 +521,48 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-23", 0 ],
+									"source" : [ "obj-22", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-24", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-23", 0 ],
+									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-26", 1 ]
 								}
 
 							}
@@ -511,18 +633,14 @@
 								}
 
 							}
- ],
-						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
-						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
+ ]
 					}
 ,
-					"patching_rect" : [ 995.108571428571167, 431.775512999999989, 88.000000000000227, 22.0 ],
+					"patching_rect" : [ 985.394285714285616, 432.775512999999989, 152.142857142857338, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -542,7 +660,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -803,11 +921,11 @@
 				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "newobj",
-					"numinlets" : 7,
-					"numoutlets" : 7,
-					"outlettype" : [ "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 719.108571428571395, 397.5, 433.0, 22.0 ],
-					"text" : "routepass newScore importMusicXML grab getid loadScore saveScore"
+					"numinlets" : 8,
+					"numoutlets" : 8,
+					"outlettype" : [ "", "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 719.108571428571395, 397.5, 485.0, 22.0 ],
+					"text" : "routepass newScore importMusicXML grab getid loadScore saveScore transcribeMIDIFile"
 				}
 
 			}
@@ -916,7 +1034,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 788.108571428571395, 474.5, 30.0, 30.0 ]
+					"patching_rect" : [ 785.67999999999995, 474.5, 30.0, 30.0 ]
 				}
 
 			}
@@ -928,7 +1046,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 857.108571428571281, 474.5, 30.0, 30.0 ]
+					"patching_rect" : [ 852.251428571428505, 474.5, 30.0, 30.0 ]
 				}
 
 			}
@@ -940,7 +1058,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 926.108571428571281, 474.5, 30.0, 30.0 ]
+					"patching_rect" : [ 918.822857142857174, 474.5, 30.0, 30.0 ]
 				}
 
 			}
@@ -952,7 +1070,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1133.108571428571395, 474.5, 30.0, 30.0 ]
+					"patching_rect" : [ 985.394285714285616, 474.5, 30.0, 30.0 ]
 				}
 
 			}
@@ -1041,6 +1159,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 2 ],
+					"source" : [ "obj-12", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 1 ],
 					"source" : [ "obj-12", 5 ]
 				}
@@ -1084,7 +1209,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-50", 0 ],
-					"source" : [ "obj-12", 6 ]
+					"midpoints" : [ 1194.608571428571395, 463.5, 994.894285714285616, 463.5 ],
+					"source" : [ "obj-12", 7 ]
 				}
 
 			}

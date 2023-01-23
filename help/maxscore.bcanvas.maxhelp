@@ -917,7 +917,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 391.100000083446503, 25.0, 125.0, 20.0 ],
+									"patching_rect" : [ 389.100000083446503, 25.0, 125.0, 20.0 ],
 									"text" : "• proportional notation"
 								}
 
@@ -928,7 +928,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 268.5, 25.0, 111.0, 20.0 ],
+									"patching_rect" : [ 266.5, 25.0, 111.0, 20.0 ],
 									"text" : "• graphical notation"
 								}
 
@@ -6507,7 +6507,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 132.0, 1380.0, 805.0 ],
+						"rect" : [ 0.0, 26.0, 1380.0, 805.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6542,7 +6542,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 306.00000011920929, 103.0, 59.599998652935028, 20.0 ],
+									"patching_rect" : [ 301.00000011920929, 103.0, 59.599998652935028, 20.0 ],
 									"text" : "Click for:"
 								}
 
@@ -7553,7 +7553,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 148.25, 597.5, 321.0, 48.0 ],
-									"text" : "/stdout : \"received socket close /1 FDkqyl9W8zq1+M/ZruVZ5A==\""
+									"text" : "/stdout : \"received socket close /1 deP0fkliXTcATD7BBVfV4Q==\""
 								}
 
 							}
@@ -7659,7 +7659,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 491.600000083446503, 103.0, 125.0, 20.0 ],
+									"patching_rect" : [ 486.600000083446503, 103.0, 125.0, 20.0 ],
 									"text" : "• proportional notation"
 								}
 
@@ -7670,7 +7670,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 369.0, 103.0, 111.0, 20.0 ],
+									"patching_rect" : [ 364.0, 103.0, 111.0, 20.0 ],
 									"text" : "• graphical notation"
 								}
 
@@ -15468,7 +15468,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1380.0, 805.0 ],
+						"rect" : [ 100.0, 132.0, 1380.0, 805.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
