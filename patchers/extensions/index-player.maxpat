@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 322.0, 87.0, 508.0, 816.0 ],
+		"rect" : [ 322.0, 106.0, 508.0, 816.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,8 +49,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -501,14 +501,30 @@
 								}
 
 							}
- ]
+ ],
+						"saved_attribute_attributes" : 						{
+							"default_plcolor" : 							{
+								"expression" : ""
+							}
+
+						}
+
 					}
 ,
 					"patching_rect" : [ 170.0, 163.0, 91.0, 22.0 ],
+					"saved_attribute_attributes" : 					{
+						"default_plcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -524,6 +540,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 68.5, 5.0, 28.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in 2"
 				}
 
@@ -700,13 +720,14 @@
 				"box" : 				{
 					"chans" : 2,
 					"data" : [ 						{
-							"addpoints_with_curve" : [ 0.0, 0.0, 0, 0.995, 271.966527196652976, -1000.0, 0, -0.7, 418.410041841003988, 300.0, 0, 0.0, 627.61506276150601, -600.0, 0, -0.67, 1000.0, -1100.0, 0, 0.5 ]
+							"addpoints_with_curve" : [ 16.736000000000001, 0.0, 0, 0.995, 4000.0, 0.0, 0, -0.7 ]
 						}
 , 						{
-							"addpoints_with_curve" : [ 0.0, 0.0, 0, 0.0 ]
+							"addpoints_with_curve" : [ 0.0, -127.0, 0, 0.0, 4000.0, 127.0, 0, 0.0 ]
 						}
  ],
 					"displaychan" : 2,
+					"domain" : 4000.0,
 					"id" : "obj-52",
 					"maxclass" : "mc.function",
 					"mode" : 1,
@@ -715,7 +736,7 @@
 					"outlettype" : [ "float", "", "", "bang", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 159.5, 442.184464275836945, 200.0, 118.0 ],
-					"range" : [ -1200.0, 1200.0 ],
+					"range" : [ -127.0, 127.0 ],
 					"varname" : "bpf"
 				}
 
@@ -812,7 +833,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 170.0, 218.0, 40.0, 22.0 ],
-					"restore" : [ "data", 0, 24, 1000.0, -1200.0, 1200.0, 0.0, 0.0, 0, 0.995, 271.966527196652976, -1000.0, 0, -0.7, 418.410041841003988, 300.0, 0, 0.0, 627.61506276150601, -600.0, 0, -0.67, 1000.0, -1100.0, 0, 0.5, "curve", "data", 1, 8, 1000.0, -1200.0, 1200.0, 0.0, 0.0, 0, 0.0, "curve" ],
+					"restore" : [ "data", 0, 12, 4000.0, -127.0, 127.0, 16.736000000000001, 0.0, 0, 0.995, 4000.0, 0.0, 0, -0.7, "curve", "data", 1, 12, 4000.0, -127.0, 127.0, 0.0, -127.0, 0, 0.0, 4000.0, 127.0, 0, 0.0, "curve" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -831,6 +852,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 159.5, 5.0, 28.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in 1"
 				}
 
@@ -842,6 +867,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 145.83331298828125, 746.0, 35.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "out 1"
 				}
 
@@ -1105,13 +1134,13 @@
 				"name" : "black on white",
 				"umenu" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 ,
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
@@ -1168,7 +1197,14 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ]
+ ],
+		"saved_attribute_attributes" : 		{
+			"default_plcolor" : 			{
+				"expression" : ""
+			}
+
+		}
+
 	}
 
 }

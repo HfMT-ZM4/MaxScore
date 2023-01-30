@@ -2756,12 +2756,14 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						var strokeWidth = e.get("picster-element[0]::val::stroke-width");
 						if (scaleTo.length > 5) {
 							indexes = scaleTo.slice(6, scaleTo.indexOf("_")).split(",").slice(0, 4).map(Number);
+							var startMeasure = indexes[0];
+							indexes[0] = msg[1];
 							indexes[1] = msg[2];
-							//post("indexes", msg, indexes, "\n");
 							outlet(1, "getDrawingAnchor", indexes);
 							var noteAnchor1 = drawingAnchor.slice(4,5);
 							//
 							indexes = scaleTo.slice(scaleTo.indexOf("_") + 1, scaleTo.indexOf(")")).split(",").slice(0, 4).map(Number);
+							indexes[0] = msg[1] + (indexes[0] - startMeasure);
 							indexes[1] = msg[2];
 							outlet(1, "getDrawingAnchor", indexes);
 							var noteAnchor2 = drawingAnchor.slice(4,5);
@@ -2772,6 +2774,7 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 							if (prop) space = hold * 60 / tempo * timeUnit - 7;
 							else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
 						}
+						//post("noteAnchor", msg[2], indexes, noteAnchor1, noteAnchor2, "\n");
 						//if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
 						var numPoints = (pitchbend.length - 4) / 4;
 						var moveTo = [pitchbend[3] * space + msg[8] + 7, pitchbend[4] / 300 * -6 + 2 + _dest];
