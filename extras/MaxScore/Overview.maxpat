@@ -412,7 +412,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "maxscore.net.send", "maxscore.net.recv", "drawsocket" ],
+					"tabs" : [ "drawsocket", "maxscore.tonejs.oscil", "maxscore.tonejs.sfplay", "maxscore.tonejs.sampler" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -430,11 +430,11 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 769.0, 123.0, 225.0, 29.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 238.0, 220.0, 146.0, 20.0 ],
+					"presentation_rect" : [ 238.0, 220.0, 156.0, 20.0 ],
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"tabs" : [ "More Parsing & Storing" ],
+					"tabs" : [ "More Parsing & Network" ],
 					"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -777,7 +777,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "musicxml2jmsl", "maxscore.bachToMaxScore", "maxscore.store" ],
+					"tabs" : [ "musicxml2jmsl", "maxscore.bachToMaxScore", "maxscore.net.send", "maxscore.net.recv" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -798,7 +798,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"tabs" : [ "Miscellaneous" ],
+					"tabs" : [ "Drawsocket" ],
 					"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -863,7 +863,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 6.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "maxscore.makenote", "maxscore.fluidsynth", "maxscore.sampler", "maxscore.2contimbre", "maxscore.tonejs" ],
+					"tabs" : [ "maxscore.makenote", "maxscore.fluidsynth", "maxscore.sampler", "maxscore.2contimbre" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -990,7 +990,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 493.0, 58.0, 134.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 445.4554443359375, 498.013127360182352, 237.5445556640625, 18.0 ]
+					"presentation_rect" : [ 445.4554443359375, 499.513127360182352, 237.5445556640625, 18.0 ]
 				}
 
 			}
@@ -1021,7 +1021,7 @@
 					"patching_rect" : [ 236.0, 18.0, 455.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 445.4554443359375, 496.513127360182352, 237.0, 21.0 ],
-					"text" : "© 2022, Georg Hajdu & Nick Didkovsky",
+					"text" : "© 2023, Georg Hajdu & Nick Didkovsky",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ],
 					"textjustification" : 2
 				}
@@ -1193,6 +1193,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-26", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-28", 1 ]
 				}
 
 			}

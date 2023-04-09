@@ -7,7 +7,7 @@ function list()
 {
 	var a = arrayfromargs(arguments);
 	var instance = a[0];
-	post("1", type, "\n");
+	//post("1", type, "\n");
 	if (a[1] != "stop" && a[1] != "start"){
 	var osc = {};
 	if (typeof current[instance] == "undefined" || !current[instance]) {

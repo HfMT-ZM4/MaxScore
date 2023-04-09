@@ -902,6 +902,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 128.5, 77.0, 103.0, 22.0 ],
+									"text" : "picster draw clear"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-64",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -5070,7 +5082,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 104.0, 446.0, 686.0 ],
+										"rect" : [ 59.0, 106.0, 446.0, 686.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -5105,8 +5117,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 48.0, 572.0, 92.0, 22.0 ],
-													"text" : "prepend mouse"
+													"patching_rect" : [ 48.0, 579.0, 133.0, 22.0 ],
+													"text" : "prepend mouse ondrag"
 												}
 
 											}
@@ -6024,8 +6036,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 40.0, 53.0, 125.0, 22.0 ],
-									"text" : "newScore 2 1800 200"
+									"patching_rect" : [ 40.0, 53.0, 119.0, 22.0 ],
+									"text" : "newScore 2 600 200"
 								}
 
 							}
@@ -6378,6 +6390,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-34", 0 ],
+									"midpoints" : [ 35.0, 149.0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-26", 0 ],
 									"source" : [ "obj-9", 2 ]
 								}
@@ -6507,7 +6527,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1380.0, 805.0 ],
+						"rect" : [ 100.0, 132.0, 1380.0, 805.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6537,6 +6557,62 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-56",
+									"maxclass" : "toggle",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 1226.6666259765625, 311.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-57",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1226.6666259765625, 343.0, 127.0, 22.0 ],
+									"text" : "picster buttonmode $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "toggle",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 1226.6666259765625, 248.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
+									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_autogradient" : 0.0,
+									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
+									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_type" : "gradient",
+									"gradient" : 1,
+									"id" : "obj-29",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1226.6666259765625, 282.0, 136.0, 22.0 ],
+									"text" : "blankPageTransform $1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-64",
 									"maxclass" : "comment",
@@ -6823,7 +6899,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1086.0, 165.0, 141.0, 127.0 ],
+									"patching_rect" : [ 1086.0, 165.0, 138.0, 127.0 ],
 									"text" : "Each staffgroup can have an individual zoom value associated with. The default is 0.5,  \"current\" refers to the current zoom applied to the MaxScore canvas via the setZoom message."
 								}
 
@@ -6867,6 +6943,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-51",
+									"int" : 1,
 									"maxclass" : "gswitch2",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -7547,13 +7624,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-15",
-									"linecount" : 2,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 148.25, 597.5, 321.0, 48.0 ],
-									"text" : "/stdout : \"received socket close /1 deP0fkliXTcATD7BBVfV4Q==\""
+									"patching_rect" : [ 148.25, 597.5, 321.0, 34.0 ]
 								}
 
 							}
@@ -11806,6 +11881,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-66", 0 ],
 									"source" : [ "obj-175", 1 ]
 								}
@@ -11853,6 +11935,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-34", 0 ],
 									"source" : [ "obj-28", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-34", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-29", 0 ]
 								}
 
 							}
@@ -12042,6 +12132,21 @@
 									"destination" : [ "obj-143", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-55", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-57", 0 ],
+									"source" : [ "obj-56", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-34", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-57", 0 ]
 								}
 
 							}
@@ -15468,7 +15573,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 132.0, 1380.0, 805.0 ],
+						"rect" : [ 0.0, 26.0, 1380.0, 805.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
