@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 132.0, 241.0, 1354.0, 659.0 ],
+		"rect" : [ 62.0, 264.0, 1354.0, 659.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -89,7 +89,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+					"activebgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 					"annotation" : "Event length given in ms or percentage of pulse length",
 					"appearance" : 1,
 					"id" : "obj-122",
@@ -141,7 +141,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 137.0, 72.0, 29.0 ],
+					"patching_rect" : [ 4.75, 17.0, 72.0, 29.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 6.0, 134.0, 109.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
@@ -224,9 +224,10 @@
 					"annotation" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
+					"hidden" : 1,
 					"id" : "obj-110",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -285,7 +286,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 369.0, 55.0, 38.0, 18.0 ],
+					"patching_rect" : [ 73.75, 49.0, 38.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 357.5, 2.0, 46.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
@@ -327,8 +328,8 @@
 , 			{
 				"box" : 				{
 					"annotation" : "Turn event generation on/off",
-					"bordercolor" : [ 1.0, 0.709803921568627, 0.196078431372549, 1.0 ],
-					"focusbordercolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
+					"bordercolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
+					"focusbordercolor" : [ 0.627450980392157, 0.627450980392157, 0.627450980392157, 1.0 ],
 					"id" : "obj-109",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -897,7 +898,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.050003000000032, 112.0, 32.0, 18.0 ],
+					"patching_rect" : [ 4.75, 49.0, 32.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 6.0, 150.5, 43.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
@@ -939,6 +940,7 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+					"activetextcolor" : [ 0.07843137254902, 0.07843137254902, 0.07843137254902, 1.0 ],
 					"hint" : "Load Scala browser to add more scales",
 					"id" : "obj-88",
 					"maxclass" : "live.text",
@@ -1086,7 +1088,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 1.0, 0.709803921568627, 0.196078431372549, 1.0 ],
+					"activebgcolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
 					"id" : "obj-49",
 					"maxclass" : "live.button",
 					"numinlets" : 1,
@@ -1230,28 +1232,27 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 506.541687000000024, 262.0, 50.5, 20.0 ],
 					"restore" : 					{
-						"Metriclarity" : [ 100.0 ],
-						"attenuation" : [ 20.0 ],
-						"choice" : [ 1.0 ],
+						"attenuation" : [ 65.35433070866145 ],
+						"choice" : [ 0.0 ],
 						"chordal_weight" : [ 1.0 ],
-						"dynamics" : [ 64.0 ],
+						"dynamics" : [ 95.0 ],
 						"event_length_percent" : [ 99.999999999999901 ],
 						"event_length_time" : [ 999.999999999999545 ],
-						"eventfulness" : [ 100.0 ],
+						"eventfulness" : [ 98.425196850393718 ],
 						"harmoniclarity" : [ 100.0 ],
 						"live.text" : [ 0.0 ],
-						"melody_scope" : [ 7.000000000000036 ],
-						"meter" : [ "2 2 2" ],
+						"melody_scope" : [ 10.000000000000036 ],
+						"meter" : [ "2 2" ],
+						"metriclarity" : [ 100.0 ],
 						"ostinato" : [ 0.0 ],
-						"outset_pulses" : [ 1.0 ],
-						"pitch_center" : [ 60.0 ],
-						"pitch_range" : [ 7.0 ],
-						"pulse_length" : [ 6140.547048333155544 ],
-						"scales" : [ "" ],
+						"outset_pulses" : [ 3.0 ],
+						"pitch_center" : [ 69.0 ],
+						"pitch_range" : [ 25.999999999999989 ],
+						"pulse_length" : [ 611.762507590617247 ],
 						"silent_downbeat" : [ 0.0 ],
-						"stream" : [ 0.0 ],
+						"stream" : [ 1.0 ],
 						"time_latch" : [ "pulse" ],
-						"tonic_pitch" : [ 60.0 ],
+						"tonic_pitch" : [ 69.0 ],
 						"umenu" : [ 0 ],
 						"umenu[1]" : [ 0 ]
 					}
@@ -1293,7 +1294,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "int" ],
-					"patching_rect" : [ 32.75, 141.0, 41.0, 20.0 ],
+					"patching_rect" : [ 32.75, 136.5, 41.0, 20.0 ],
 					"text" : "change"
 				}
 
@@ -2885,8 +2886,8 @@
 , 			{
 				"box" : 				{
 					"annotation" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
-					"bordercolor" : [ 1.0, 0.709803921568627, 0.196078431372549, 1.0 ],
-					"focusbordercolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
+					"bordercolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
+					"focusbordercolor" : [ 0.627450980392157, 0.627450980392157, 0.627450980392157, 1.0 ],
 					"id" : "obj-47",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -2930,7 +2931,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 102.0, 112.0, 21.0, 18.0 ],
+					"patching_rect" : [ 42.75, 49.0, 21.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 7.0, 2.0, 32.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
@@ -3157,7 +3158,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 109.75, 78.0, 55.0, 20.0 ],
-					"restore" : [ "pentatonic" ],
+					"restore" : [ "12of41" ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -3205,7 +3206,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+					"activebgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 					"annotation" : "Ostinato: modes are none, talea (rhythmic ostinato) and ostinato (melodic ostinato)",
 					"appearance" : 1,
 					"id" : "obj-29",
@@ -3256,7 +3257,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-22",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3333,7 +3334,7 @@
 
 					}
 ,
-					"text" : "2 2 2",
+					"text" : "2 2",
 					"varname" : "meter",
 					"wordwrap" : 0
 				}
@@ -3350,7 +3351,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-16",
-					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic" ],
+					"items" : [ "Lambda", ",", "BP-Chromatic", ",", "BP-Quintuple", ",", "41EDO", ",", "12of41", ",", "7of41", ",", "5of41", ",", "12-yarman24c" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3362,9 +3363,9 @@
 					"presentation_rect" : [ 38.0, 18.0, 104.0, 21.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_enum" : [ "pentatonic", "whole-tone", "major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "minor-harmonic", "locrian", "gipsy", "octatonic", "whole-half-half", "chromatic" ],
+							"parameter_enum" : [ "Lambda", "BP-Chromatic", "BP-Quintuple", "41EDO", "12of41", "7of41", "5of41", "12-yarman24c" ],
 							"parameter_longname" : "umenu[2]",
-							"parameter_mmax" : 13,
+							"parameter_mmax" : 7,
 							"parameter_shortname" : "umenu[2]",
 							"parameter_type" : 2
 						}
@@ -3385,7 +3386,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-27",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3444,7 +3445,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-28",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3503,7 +3504,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-26",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3562,7 +3563,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-25",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3622,7 +3623,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-24",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3679,7 +3680,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-23",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3739,7 +3740,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-52",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3798,7 +3799,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-13",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3854,10 +3855,9 @@
 					"annotation" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
 					"appearance" : 1,
 					"fontsize" : 9.0,
-					"hidden" : 1,
 					"id" : "obj-12",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3917,7 +3917,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-11",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -3976,7 +3976,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-5",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -4009,7 +4009,6 @@
 						"valueof" : 						{
 							"parameter_initial" : [ 100.0 ],
 							"parameter_initial_enable" : 1,
-							"parameter_linknames" : 1,
 							"parameter_longname" : "Metriclarity",
 							"parameter_mmax" : 100.0,
 							"parameter_shortname" : "Metriclarity",
@@ -4021,7 +4020,7 @@
 ,
 					"textcolor" : [ 0.968627, 0.968627, 0.968627, 1.0 ],
 					"triangle" : 1,
-					"varname" : "Metriclarity"
+					"varname" : "metriclarity"
 				}
 
 			}
@@ -4295,7 +4294,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-68", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -4409,7 +4408,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-73", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-26", 0 ]
 				}
 

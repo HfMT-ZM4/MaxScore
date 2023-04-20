@@ -1946,9 +1946,11 @@ function anything() {
 						svggroupflag = false;
 						//post("svggroupflag", svggroupflag, "\n");					
 						if (_key == "svg") {
-							if (e.get("picster-element[0]::val::id").indexOf("Tablature") != -1) {
-								picster.replace("child[1]::font-family", _tabfont[0]);
-								picster.replace("child[1]::font-size", _tabfont[1]);
+							if (e.contains("picster-element[0]::val::id")){
+								if (e.get("picster-element[0]::val::id").indexOf("Tablature") != -1) {
+									picster.replace("child[1]::font-family", _tabfont[0]);
+									picster.replace("child[1]::font-size", _tabfont[1]);
+									}
 								}
 							renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
 						}
