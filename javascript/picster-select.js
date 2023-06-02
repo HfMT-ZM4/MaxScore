@@ -1727,7 +1727,7 @@ function removeAllExpressionsFromSelectedShape()
 		}
 }
 
-function capslock(caps)
+function capsLock(caps)
 {
 	//post("foundobjects.1", status, foundobjects.stringify(), "\n");
 	if (status == "regular") {
@@ -1865,7 +1865,6 @@ function anything()
 			edit.parse(JSON.stringify(_picster));
 			outlet(3, "bang");
 			}
-			//post("anchors", Object.keys(anchors).length, keys, JSON.stringify(notes), "\n");
 			break;
 			case 67 :  //copy
 			if (foundobjects.contains("0") && item != -1) {

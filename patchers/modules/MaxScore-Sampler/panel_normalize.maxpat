@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 122.0, 203.0, 49.0, 22.0 ],
+					"text" : "route 0."
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-27",
 					"maxclass" : "newobj",
@@ -389,7 +401,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 152.0, 155.0, 85.0, 20.0 ],
+					"patching_rect" : [ 121.0, 155.0, 85.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 7.0, 22.0, 79.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
@@ -435,14 +447,7 @@
 					"patching_rect" : [ 26.0, 389.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 1.0, 216.0, 44.5 ],
-					"proportion" : 0.39,
-					"saved_attribute_attributes" : 					{
-						"bgfillcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-
+					"proportion" : 0.39
 				}
 
 			}
@@ -581,6 +586,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-6", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-43", 0 ],
 					"source" : [ "obj-66", 0 ]
 				}
@@ -595,7 +607,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
+					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-76", 0 ]
 				}
 
@@ -612,22 +624,7 @@
 			}
  ],
 		"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-		"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
-		"saved_attribute_attributes" : 		{
-			"default_plcolor" : 			{
-				"expression" : ""
-			}
-,
-			"editing_bgcolor" : 			{
-				"expression" : ""
-			}
-,
-			"locked_bgcolor" : 			{
-				"expression" : ""
-			}
-
-		}
-
+		"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ]
 	}
 
 }

@@ -934,7 +934,7 @@ function vbar()
 
 /////////////////////////////////////////////////////
 
-function capslock(c)
+function capsLock(c)
 {
 
 	capsl =	c;
@@ -951,6 +951,7 @@ function capslock(c)
 
 function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
 {
+	//post("modifiers", x,y,but,cmd,shift,capslock,option,ctrl, "\n");
 	var _cmd = (max["os"]=="macintosh") ? cmd : option;
 	idl = !but;
 	position = [x, y];

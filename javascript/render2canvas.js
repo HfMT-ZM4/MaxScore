@@ -2835,7 +2835,6 @@ function nTET(steps, system)
 				var accidental = accList[accinfo];
 				var deviation = pitch % 12 - [0, 0, 2, 2, 4, 5, 5, 7, 7, 9, 9, 11][parseInt(pitch % 12)];
 				var stammton = [0, 0, 2, 2, 4, 5, 5, 7, 7, 9, 9, 11][parseInt(pitch % 12)];
-				//post("stammton-1", stammton, accidental, deviation, "\n");
 				if (accidental.indexOf("double") != -1) {
 					if (accidental == "doubleflat") {
 						if (stammton == 4 || stammton == 11) stammton += 3;
@@ -2956,7 +2955,9 @@ function writeSVG(destination)
 	else
 	{
 	var f = new File(destination, "write", "TEXT");
+	post("destination", destination, "\n");
 	if (f.isopen) {
+	post("destination2", destination, "\n");
 	f.eof = 0;
 	f.writeline("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
 	f.writeline("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">");

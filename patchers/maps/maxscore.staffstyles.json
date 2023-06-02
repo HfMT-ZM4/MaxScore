@@ -14,5 +14,6 @@
 	"Tablature" : [ "tablature", "editor", "mM-none", "TAB-clef" ],
 	"Percussion" : [ "percussion", "editor", "mM-none", "PERCUSSION_CLEF" ],
 	"ClefDesigner" : [ "clefdesigner", "editor", "mM-none", "editor", "editor" ],
-	"BP chromatic" : [ "BP-chromatic", "editor", "mM-BP", "editor", "editor" ]
+	"BP chromatic" : [ "BP-chromatic", "editor", "mM-BP", "editor", "editor" ],
+	"Carlos Alpha Kalimba" : [ "carlos-alpha-kalimba", 5, "mM-none", "PERCUSSION_CLEF" ]
 }
