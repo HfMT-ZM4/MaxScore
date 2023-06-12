@@ -1,48 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="880px" height="200px" viewBox="0 0 880 200" style="background:rgb(253.98,253.98,239.7)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<svg width="974px" height="200px" viewBox="0 0 974 200" style="background:rgb(253.98,253.98,239.7)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <g id="1" transform="matrix(1,0,0,1,0,0)">
-<text x="62" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'00"</text>
-<text x="162" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'01"</text>
-<text x="262" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'02"</text>
-<text x="362" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'03"</text>
-<text x="462" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'04"</text>
-<text x="562" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'05"</text>
-<text x="662" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'06"</text>
-<text x="762" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'07"</text>
-<path d="M62 0 V15 M162 0 V15 M262 0 V15 M362 0 V15 M462 0 V15 M562 0 V15 M662 0 V15 M762 0 V15 " stroke="rgb(0,0,0)" stroke-width="0.4" fill="none" transform="matrix(1,0,0,1,0,0)"/>
-<rect x="79" y="32" width="4" height="53" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="99" y="34" width="20" height="5" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="130" y="55" width="38" height="5" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="249" y="31" width="3" height="51" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="344" y="39" width="11" height="7" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="407" y="40" width="6" height="20" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="442" y="43" width="66" height="19" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="561" y="71" width="8" height="6" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="608" y="53" width="6" height="9" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="667" y="75" width="57" height="4" stroke="rgb(0,0,0)" stroke-width="1" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="152.5" cy="71.5" rx="4.5" ry="4.5" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="286.5" cy="30.5" rx="5.5" ry="5.5" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="355" cy="65" rx="24" ry="3" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="473.5" cy="71" rx="5.5" ry="5" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="562.5" cy="49.5" rx="26.5" ry="2.5" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="750" y="38" width="7" height="40" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="683" y="57" width="23" height="4" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="214" y="46" width="6" height="25" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M93,171L95,135,125,170,93,171" stroke="rgb(251,2,7)" stroke-width="1" stroke-opacity="1" fill="rgb(251,2,7)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M125,127 L153,167" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M240,171 L293,134" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M362,139 L422,172" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<path d="M565,171 L631,120" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,131,4)"/>
-<path d="M565,171 L631,120" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,155,7)"/>
-<path d="M565,171 L631,120" stroke="rgb(251,2,7)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,106,1)"/>
-<path d="M176,138L192,175,215,140,224,169,176,138" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<text x="464" y="157" font-family="Arial" font-size="24" font-style="normal" font-weight="normal" text-decoration="none" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,-131,4)">bang!</text>
-<ellipse cx="455" cy="153.5" rx="10" ry="9.5" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<ellipse cx="501.5" cy="150" rx="29.5" ry="3" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
-<rect x="499" y="155" width="9" height="18" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,37,-5)"/>
-<path d="M547,138 L588,170" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,212,4)"/>
-<path d="M547,138 L588,170" stroke="rgb(0,0,0)" stroke-width="4" stroke-opacity="1" fill="none" fill-opacity="1" transform="matrix(1,0,0,1,111,2)"/>
-<rect x="598" y="133" width="9" height="39" stroke="rgb(255,0,0)" stroke-width="4" stroke-opacity="1" fill="rgb(255,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,40,0)"/>
+<path d="M60,75H160.0M60,69H160.0M60,63H160.0M60,57H160.0M60,51H160.0M160,75H560.0M160,69H560.0M160,63H560.0M160,57H560.0M160,51H560.0M560,75H960.0M560,69H960.0M560,63H960.0M560,57H960.0M560,51H960.0" stroke="rgb(0,0,0)" stroke-width="0.8" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,160,66)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,157,93)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,220,60)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,280,75)" ></text>
+<path d="M337.6000061035156,81 L350.3999938964844,81" stroke="rgb(0,0,0)" stroke-width="0.6" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,340,84)" ></text>
+<path d="M0,0 L174,7.5 L0,15" stroke="rgb(0,0,0)" stroke-width="1.0" fill="none" transform="matrix(-1,0,0,1,340,105)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,400,66)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,397,93)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="18" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,400,50)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,478,51)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,478,41)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,560,60)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,557,93)" ></text>
+<text x="80" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'00"</text>
+<text x="180" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'01"</text>
+<text x="280" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'02"</text>
+<text x="380" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'03"</text>
+<text x="480" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'04"</text>
+<text x="580" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'05"</text>
+<text x="680" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'06"</text>
+<text x="780" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'07"</text>
+<text x="880" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'08"</text>
+<path d="M80 0 V15 M180 0 V15 M280 0 V15 M380 0 V15 M480 0 V15 M580 0 V15 M680 0 V15 M780 0 V15 M880 0 V15 " stroke="rgb(0,0,0)" stroke-width="0.4" fill="none" transform="matrix(1,0,0,1,0,0)"/>
+<path id="sustain_0" d="M5,3 L38,3M38,1L38,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,162,63)"/>
+<path id="sustain_0" d="M5,3 L38,3M38,1L38,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,222,57)"/>
+<path id="sustain_0" d="M5,3 L38,3M38,1L38,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,282,72)"/>
+<path id="sustain_0" d="M5,3 L38,3M38,1L38,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,342,81)"/>
+<path id="sustain_0" d="M5,3 L83,3M83,1L83,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,402,63)"/>
+<path id="sustain_0" d="M5,3 L83,3M83,1L83,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,480,48)"/>
+<path id="sustain_0" d="M5,3 L353,3M353,1L353,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,562,57)"/>
+</g>
+<g id="2" transform="matrix(1,0,0,1,0,0)">
+<path d="M60,75H160.0M60,69H160.0M60,63H160.0M60,57H160.0M60,51H160.0M160,75H560.0M160,69H560.0M160,63H560.0M160,57H560.0M160,51H560.0M560,75H960.0M560,69H960.0M560,63H960.0M560,57H960.0M560,51H960.0" stroke="rgb(0,0,0)" stroke-width="0.8" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,160,60)" ></text>
+<path d="M277.6000061035156,81 L290.3999938964844,81" stroke="rgb(0,0,0)" stroke-width="0.6" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<path d="M277.6000061035156,87 L290.3999938964844,87" stroke="rgb(0,0,0)" stroke-width="0.6" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,280,87)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,280,72)" ></text>
+<path d="M475.6000061035156,81 L488.3999938964844,81" stroke="rgb(0,0,0)" stroke-width="0.6" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<path d="M475.6000061035156,87 L488.3999938964844,87" stroke="rgb(0,0,0)" stroke-width="0.6" fill="rgb(0,0,0)" transform="matrix(1,0,0,1,0,0)"/>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,478,90)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,475,105)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,478,72)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,478,54)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,560.3,53.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,557,93)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,584.0999877929687,65.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,602.3,62.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,623.3,53.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,644.3,53.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,668.0999877929687,65.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,686.3,62.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,707.3,53.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,728.3,53.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,752.0999877929687,65.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,770.3,62.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,791.3,53.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,812.3,53.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,836.0999877929687,65.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,854.3,62.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="14.40000057220459" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,875.3,53.4)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,896,60)" ></text>
+<text x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,893,93)" ></text>
+<path d="M0,0 L330,7.5 L0,15" stroke="rgb(0,0,0)" stroke-width="1.0" fill="none" transform="matrix(1,0,0,1,566,105)"/>
+<text x="80" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'00"</text>
+<text x="180" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'01"</text>
+<text x="280" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'02"</text>
+<text x="380" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'03"</text>
+<text x="480" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'04"</text>
+<text x="580" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'05"</text>
+<text x="680" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'06"</text>
+<text x="780" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'07"</text>
+<text x="880" y="25" text-anchor="middle" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,0,0)" >0'08"</text>
+<path d="M80 0 V15 M180 0 V15 M280 0 V15 M380 0 V15 M480 0 V15 M580 0 V15 M680 0 V15 M780 0 V15 M880 0 V15 " stroke="rgb(0,0,0)" stroke-width="0.4" fill="none" transform="matrix(1,0,0,1,0,0)"/>
+<path id="sustain_0" d="M5,3 L173,3M173,1L173,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,162,57)"/>
+<path id="sustain_0" d="M5,3 L173,3M173,1L173,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,282,84)"/>
+<path id="sustain_0" d="M5,3 L173,3M173,1L173,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,282,69)"/>
+<path id="sustain_0" d="M5,3 L83,3M83,1L83,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,480,87)"/>
+<path id="sustain_0" d="M5,3 L83,3M83,1L83,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,480,69)"/>
+<path id="sustain_0" d="M5,3 L83,3M83,1L83,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,480,51)"/>
+<path id="sustain_0" d="M5,3 L173,3M173,1L173,5" stroke="rgb(0,0,0)" stroke-width="2" stroke-opacity="1" fill="null" fill-opacity="null" transform="matrix(1,0,0,1,898,57)"/>
 </g>
 </svg>

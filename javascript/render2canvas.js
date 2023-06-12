@@ -3006,7 +3006,7 @@ function writeDefs(destination, f)
 	ttffonts.name = "ttffonts";
 	for (var i = 0; i < keys.length; i++) {
 		if ([ "Bravura", "Leland", "Petaluma", "Noto Color Emoji SVG", "Greifswaler Deutsche Schrift" ].indexOf(keys[i]) == -1) {
-		var fontDescriptors = ttffonts.get(keys[i]);
+		var fontDescriptors = (ttffonts.contains(keys[i])) ? ttffonts.get(keys[i]) : ttffonts.get("Arial");
 		var usedFontStyles = usedFonts.get(keys[i]).getkeys();
 			for (var j = 0; j < fontDescriptors.length; j++) {
 				if (usedFontStyles.indexOf(fontDescriptors[j].get("style")) != -1 ) {

@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 413.0, 106.0, 830.0, 730.0 ],
+		"rect" : [ 744.0, 115.0, 830.0, 730.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 152.0, 456.0, 68.0, 22.0 ],
+					"patching_rect" : [ 218.5, 457.0, 68.0, 22.0 ],
 					"text" : "set append"
 				}
 
@@ -57,7 +57,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 85.0, 456.0, 61.0, 22.0 ],
+					"patching_rect" : [ 151.5, 457.0, 61.0, 22.0 ],
 					"text" : "set import"
 				}
 
@@ -69,7 +69,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 9.0, 377.5, 86.0, 22.0 ],
+					"patching_rect" : [ 54.5, 426.5, 86.0, 22.0 ],
 					"text" : "route <empty>"
 				}
 
@@ -81,7 +81,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 85.0, 425.5, 105.0, 22.0 ],
+					"patching_rect" : [ 151.5, 426.5, 153.0, 22.0 ],
 					"text" : "sel Import Append"
 				}
 
@@ -105,7 +105,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 55.0, 534.0, 145.0, 22.0 ],
+					"patching_rect" : [ 121.5, 530.0, 145.0, 22.0 ],
 					"text" : "pattrforward editor::admin"
 				}
 
@@ -117,7 +117,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 55.0, 498.0, 89.0, 22.0 ],
+					"patching_rect" : [ 121.5, 499.0, 89.0, 22.0 ],
 					"text" : "prepend import"
 				}
 
@@ -152,7 +152,7 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 111.0, 340.0, 100.0, 50.0 ],
+					"patching_rect" : [ 111.0, 361.0, 100.0, 50.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 16.0, 72.0, 689.0, 123.0 ],
 					"rounded" : 0.0,
@@ -422,7 +422,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -695,7 +695,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -754,7 +754,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 256.0, 246.0, 485.0, 22.0 ],
-									"restore" : [ "test.instr" ],
+									"restore" : [ "Trombone.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1016,7 +1016,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1139,7 +1139,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 411.333333333333314, 366.0, 270.0, 22.0 ],
-									"restore" : [ 5, "Triangle_A#3.gr.mp3" ],
+									"restore" : [ 1, "01  Tenor Trombone.aif" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1171,7 +1171,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 401.0, 594.0, 197.0, 22.0 ],
-									"restore" : [ "1779-clientbuffer.5" ],
+									"restore" : [ "2745-clientbuffer.1" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1326,7 +1326,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2422,7 +2422,7 @@
 
 					}
 ,
-					"text" : "Save or Load a Bank !",
+					"text" : "Trombone.bank.json",
 					"varname" : "dict-name"
 				}
 
@@ -2440,7 +2440,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2494,7 +2494,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 329.928571428571445, 120.5, 288.0, 22.0 ],
-									"restore" : [ "test.instr" ],
+									"restore" : [ "Trombone.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3136,7 +3136,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 16.0, 241.0, 708.5, 138.0 ],
 					"rowhead" : 1,
-					"rows" : 5,
+					"rows" : 12,
 					"selmode" : 5,
 					"selsync" : 0,
 					"stcolor" : [ 0.619607843137255, 0.768627450980392, 0.937254901960784, 1.0 ],
@@ -3261,7 +3261,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1014.0, 456.0, 237.0, 22.0 ],
-					"restore" : [ 1779 ],
+					"restore" : [ 2745 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3286,7 +3286,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3320,6 +3320,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-17",
@@ -3332,7 +3333,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4021,7 +4022,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 304.0, 192.0, 216.0, 22.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/Meiyan/Trombone.bank.json" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4067,7 +4068,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 571.0, 384.0, 485.0, 22.0 ],
-									"restore" : [ "test.instr" ],
+									"restore" : [ "Trombone.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4161,7 +4162,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 605.0, 289.0, 485.0, 22.0 ],
-									"restore" : [ "test.instr" ],
+									"restore" : [ "Trombone.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4195,7 +4196,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4963,7 +4964,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5059,7 +5060,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 313.43182373046875, 219.0, 526.0, 22.0 ],
-													"restore" : [ "test.instr" ],
+													"restore" : [ "Trombone.instr" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5106,7 +5107,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 1133.0, 277.0, 473.0, 35.0 ],
-													"restore" : [ "test.instr" ],
+													"restore" : [ "Trombone.instr" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5166,7 +5167,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 842.6666259765625, 155.0, 526.0, 22.0 ],
-													"restore" : [ "test.instr" ],
+													"restore" : [ "Trombone.instr" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5189,7 +5190,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 2,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5832,7 +5833,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 757.93182373046875, 61.0, 497.0, 22.0 ],
-													"restore" : [ 5, "Triangle_A#3.gr.mp3" ],
+													"restore" : [ 1, "01  Tenor Trombone.aif" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -7345,7 +7346,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-70", 0 ],
-					"midpoints" : [ 472.5, 419.0, 94.5, 419.0 ],
+					"midpoints" : [ 472.5, 419.0, 161.0, 419.0 ],
 					"order" : 1,
 					"source" : [ "obj-12", 1 ]
 				}
@@ -7491,6 +7492,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
+					"midpoints" : [ 161.0, 488.5, 131.0, 488.5 ],
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -7564,6 +7566,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
+					"midpoints" : [ 228.0, 488.5, 131.0, 488.5 ],
 					"source" : [ "obj-8", 0 ]
 				}
 

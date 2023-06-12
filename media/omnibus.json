@@ -1,0 +1,43 @@
+{
+	"pattrstorage" : 	{
+		"name" : "omnibus",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"scale" : [ 13 ],
+					"attenuation" : [ 25.0 ],
+					"chordal_weight" : [ 1.0 ],
+					"dynamics" : [ 74.0 ],
+					"event_length" : [ 593.661417322834723 ],
+					"eventfulness" : [ 100.0 ],
+					"harmoniclarity" : [ 100.0 ],
+					"interp-attenuation" : [ 1 ],
+					"interp-chordal-weight" : [ 0 ],
+					"interp-dynamics" : [ 1 ],
+					"interp-event-length" : [ 1 ],
+					"interp-eventfulness" : [ 1 ],
+					"interp-harmoniclarity" : [ 1 ],
+					"interp-melody-scope" : [ 1 ],
+					"interp-metriclarity" : [ 1 ],
+					"interp-pitch-center" : [ 1 ],
+					"interp-pitch-range" : [ 1 ],
+					"interp-tonic-pitch" : [ 1 ],
+					"melody_scope" : [ 8.0 ],
+					"meter-menu" : [ 0 ],
+					"metriclarity" : [ 81.889763779527584 ],
+					"ostinato" : [ 0.0 ],
+					"outset" : [ 1.0 ],
+					"pitch_center" : [ 60.0 ],
+					"pitch_range" : [ 8.0 ],
+					"silent_downbeat" : [ 0.0 ],
+					"tonic_pitch" : [ 60.0 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}

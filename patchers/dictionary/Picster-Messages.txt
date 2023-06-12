@@ -20,6 +20,7 @@ filterRepeatedAccidentals, Canvas "flag (int)" "sets for staff styles whether to
 flashcolor, Canvas "rgba (list)" "sets the note head color for a score flashing during playback" "flashcolor 0.5 0.5 0.5 1";
 font, Picster "setting (symbol)" "sets the font for Picster text" "picster font Arial";
 fontsize, Picster "setting (float)" "sets the font size for Picster text" "picster fontsize 20";
+getid, "Core extended" - "gets the id of a MaxScore object for use with maxscore.infograb queries" "getid";
 grab, "Core extended" "name (symbol)" "sets the name of a receive object from which to grab MaxScore query messages" "grab 1000-grabber";
 importXML, "Core extended" "path (symbol)" "imports an musicXML file" "importXML \"/Users/Shared/Max 8/Library/MaxScore/userbeamgroup.xml\"";
 init, Picster - "initializes Picster by assigning an index to each expression and dumping them as a dictionary out of the 4th outlet of maxscore.bcanvas. This dictionary is used by maxscore.makenote to associate the index dimension of a note/interval with a particular expression." "picster init";
@@ -44,6 +45,7 @@ setMeasureRange, Canvas "start-measure (int) start-staff (int) end-measure (int)
 setMediaFolder, Canvas "path (symbol)" "sets the path of the folder from which the drawsocket webserver serves its scores and other media files" "setMediaFolder \"Users/Shared/Max 8/Library/MaxScore/lib/\"";
 setProportionalNotation, Canvas "flag (int)" "sets the score display to proportional notation. The optional showRhythm @attribute toggles rhythmic display on/off. The default is off." "setProportionalNotation 1";
 setSelectedNotesToProportionalNotation, Canvas Editor "sets selected notes to proportional notation and resizes measure widths.  The optional showRhythm @attribute toggles rhythmic display on/off. The default is off." setSelectedNotesToProportionalNotation;
+setSoundingPitchToPitch, "Core extended" - "sets originalPitch note attribute to its (displayed) pitch" setSoundingPitchToPitch;
 setTimeUnit, Canvas "pixels-per-second (float)" "sets the horizontal dimension for proportional notation in pixels per second, the default being 100" "setTimeUnit 24";
 setToneDivision, Canvas "staff (int) division (symbol)" "sets a grid for the display of microtonal music. The values can be 24TET (default), 48TET, 72TET-Wyschnegradsky, 72TET-Sims or 96TET" "setToneDivision 0 72TET-Wyschnegradsky";
 setUserClef, Canvas "user-clef (symbol)" "sets a user clef included in \"Max 8/Packages/MaxScore/patchers/maps/MaxScoreClefDesigner.json\" or included in the score file by name." "setUserClef FFGG";
