@@ -22,9 +22,10 @@ function anything() {
                     }
                 }
             }
+            post("XML type not supported\n");
         }
         else {
-            post("XML type not supported\n");
+            post("Can't open XML file\n");
         }
     }
     else if (path.match(/\.zip/i)) {
