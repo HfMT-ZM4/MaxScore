@@ -2,14 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
+			"major" : 8,
+			"minor" : 5,
 			"revision" : 4,
-			"architecture" : "x86",
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 100.0, 1048.0, 582.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 100.0, 106.0, 1048.0, 582.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -36,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -44,8 +46,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 544.0, 184.0, 153.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 544.0, 184.0, 153.0, 34.0 ],
 					"text" : "Argument: Initial meter\r"
 				}
 
@@ -59,7 +60,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 355.0, 225.0, 20.0 ],
-					"style" : "",
 					"text" : "Partially based on work by Joe Saracino",
 					"textcolor" : [ 0.6, 0.6, 1.0, 1.0 ]
 				}
@@ -74,7 +74,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 544.0, 205.0, 279.0, 20.0 ],
-					"style" : "",
 					"text" : "Double-click for an example with explanation"
 				}
 
@@ -91,13 +90,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
+							"major" : 8,
+							"minor" : 5,
 							"revision" : 4,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
+						"classnamespace" : "box",
 						"rect" : [ 420.0, 217.0, 939.0, 544.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -125,7 +125,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-85",
@@ -134,8 +134,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 65.5, 413.0, 34.0, 22.0 ],
-									"style" : "",
+									"patching_rect" : [ 65.5, 413.0, 34.0, 20.0 ],
 									"triscale" : 0.9
 								}
 
@@ -159,7 +158,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 310.0, 407.0, 112.0, 20.0 ],
-									"style" : "",
 									"text" : "for 3rd stratum:"
 								}
 
@@ -173,7 +171,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 308.0, 393.0, 112.0, 20.0 ],
-									"style" : "",
 									"text" : "for 2nd stratum:"
 								}
 
@@ -187,7 +184,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 226.0, 379.0, 216.0, 20.0 ],
-									"style" : "",
 									"text" : "Indispensability for 1st stratum:"
 								}
 
@@ -201,7 +197,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 572.0, 271.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "3"
 								}
 
@@ -215,7 +210,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.0, 271.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "2"
 								}
 
@@ -229,7 +223,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 300.0, 271.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "1"
 								}
 
@@ -243,7 +236,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 241.0, 271.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "0"
 								}
 
@@ -257,7 +249,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 195.0, 272.0, 50.0, 20.0 ],
-									"style" : "",
 									"text" : "Depth:"
 								}
 
@@ -271,7 +262,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 394.0, 505.0, 161.0, 20.0 ],
-									"style" : "",
 									"text" : "Rotate last element:"
 								}
 
@@ -285,7 +275,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 394.0, 520.0, 162.0, 20.0 ],
-									"style" : "",
 									"text" : "11 0 4 8 2 6 10 1 5 9 3 7"
 								}
 
@@ -299,7 +288,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 397.0, 490.0, 162.0, 20.0 ],
-									"style" : "",
 									"text" : "0 4 8 2 6 10 1 5 9 3 7 11"
 								}
 
@@ -313,7 +301,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 397.0, 443.0, 149.0, 20.0 ],
-									"style" : "",
 									"text" : "0 0 0 0 0 0 1 1 1 1 1 1"
 								}
 
@@ -327,7 +314,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 397.0, 472.0, 149.0, 20.0 ],
-									"style" : "",
 									"text" : "0 4 8 0 4 8 0 4 8 0 4 8"
 								}
 
@@ -341,7 +327,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 397.0, 457.0, 149.0, 20.0 ],
-									"style" : "",
 									"text" : "0 0 0 2 2 2 0 0 0 2 2 2"
 								}
 
@@ -355,7 +340,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 525.0, 408.0, 373.0, 20.0 ],
-									"style" : "",
 									"text" : "x1x2x2 (product of stratification divisors of depth 0 to 2)"
 								}
 
@@ -369,7 +353,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 525.0, 393.0, 357.0, 20.0 ],
-									"style" : "",
 									"text" : "x1x2 (product of stratification divisors of depth 0 and 1)"
 								}
 
@@ -383,7 +366,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 525.0, 379.0, 232.0, 20.0 ],
-									"style" : "",
 									"text" : "x1 (stratification divisor of depth 0)"
 								}
 
@@ -397,7 +379,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 397.0, 379.0, 149.0, 20.0 ],
-									"style" : "",
 									"text" : "0 0 0 0 0 0 1 1 1 1 1 1"
 								}
 
@@ -411,7 +392,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 397.0, 408.0, 149.0, 20.0 ],
-									"style" : "",
 									"text" : "0 1 2 0 1 2 0 1 2 0 1 2"
 								}
 
@@ -425,7 +405,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 397.0, 393.0, 148.0, 20.0 ],
-									"style" : "",
 									"text" : "0 0 0 1 1 1 0 0 0 1 1 1"
 								}
 
@@ -439,7 +418,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 8.0, 230.0, 77.0, 20.0 ],
-									"style" : "",
 									"text" : "Calculation:"
 								}
 
@@ -454,7 +432,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 238.0, 323.0, 699.0, 47.0 ],
-									"style" : "",
 									"text" : "Prime indispensability for duple meter: 1 0;\rPrime indispensability for triple meter: 2 0 1;\rCaveat: When calculating the indispensability for a given meter, write first beat last and rotate back when done adding the values."
 								}
 
@@ -468,7 +445,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 435.0, 81.0, 317.0, 20.0 ],
-									"style" : "",
 									"text" : "*Stratification divisor of depth 0 is always 1."
 								}
 
@@ -482,7 +458,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 119.0, 286.0, 153.0, 20.0 ],
-									"style" : "",
 									"text" : "Stratification divisors:"
 								}
 
@@ -496,7 +471,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 206.0, 42.0, 59.0, 20.0 ],
-									"style" : "",
 									"text" : "Depth*:"
 								}
 
@@ -510,7 +484,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 231.0, 158.0, 96.0, 20.0 ],
-									"style" : "",
 									"text" : "Pulse number:"
 								}
 
@@ -524,7 +497,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 359.0, 42.0, 56.0, 20.0 ],
-									"style" : "",
 									"text" : "Meter"
 								}
 
@@ -538,7 +510,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 361.0, 82.0, 56.0, 20.0 ],
-									"style" : "",
 									"text" : "12/16"
 								}
 
@@ -552,7 +523,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 361.0, 69.0, 42.0, 20.0 ],
-									"style" : "",
 									"text" : "6/8 "
 								}
 
@@ -567,7 +537,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 115.0, 361.0, 42.0, 22.0 ],
-									"style" : "",
 									"text" : "2 2 3"
 								}
 
@@ -582,7 +551,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 104.0, 345.0, 41.0, 22.0 ],
-									"style" : "",
 									"text" : "2 3 2"
 								}
 
@@ -596,7 +564,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 34.0, 63.0, 20.0 ],
-									"style" : "",
 									"text" : "Example:"
 								}
 
@@ -609,8 +576,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 23.0, 413.0, 34.0, 22.0 ],
-									"style" : "",
+									"patching_rect" : [ 23.0, 413.0, 34.0, 20.0 ],
 									"triscale" : 0.9
 								}
 
@@ -625,7 +591,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "bang" ],
 									"patching_rect" : [ 23.0, 386.0, 104.0, 22.0 ],
-									"style" : "",
 									"text" : "dispenser 3 2 2"
 								}
 
@@ -640,8 +605,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 87.0, 38.0, 15.0, 15.0 ],
-									"style" : ""
+									"patching_rect" : [ 87.0, 38.0, 15.0, 15.0 ]
 								}
 
 							}
@@ -654,7 +618,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 248.0, 42.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "1"
 								}
 
@@ -668,7 +631,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 145.0, 56.0, 270.0, 20.0 ],
-									"style" : "",
 									"text" : "prime stratification: 3 x 2 x 2 x 1 x 1 x 1"
 								}
 
@@ -682,7 +644,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 361.0, 57.0, 42.0, 20.0 ],
-									"style" : "",
 									"text" : "3/4 "
 								}
 
@@ -697,7 +658,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 249.0, 68.0, 119.0, 33.0 ],
-									"style" : "",
 									"text" : "2 x 3 x 2 x 1 x 1 x 1 2 x 2 x 3 x 1 x 1 x 1"
 								}
 
@@ -711,7 +671,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 458.0, 238.0, 20.0, 20.0 ],
-									"style" : "",
 									"text" : "="
 								}
 
@@ -725,7 +684,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 331.0, 238.0, 20.0, 20.0 ],
-									"style" : "",
 									"text" : "="
 								}
 
@@ -739,7 +697,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 265.0, 238.0, 20.0, 20.0 ],
-									"style" : "",
 									"text" : "="
 								}
 
@@ -753,7 +710,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 191.0, 241.0, 55.0, 20.0 ],
-									"style" : "",
 									"text" : "12/16:"
 								}
 
@@ -767,7 +723,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 264.0, 285.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "x"
 								}
 
@@ -781,7 +736,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 328.0, 285.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "x"
 								}
 
@@ -795,7 +749,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.0, 285.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "2"
 								}
 
@@ -809,7 +762,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 241.0, 285.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "1"
 								}
 
@@ -823,7 +775,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 300.0, 285.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "2"
 								}
 
@@ -837,7 +788,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 572.0, 285.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "3"
 								}
 
@@ -851,7 +801,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 456.0, 285.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "x"
 								}
 
@@ -865,7 +814,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 287.0, 42.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "3"
 								}
 
@@ -879,7 +827,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 268.0, 42.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "2"
 								}
 
@@ -893,7 +840,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 307.0, 42.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "4"
 								}
 
@@ -907,7 +853,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 327.0, 42.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "5"
 								}
 
@@ -921,7 +866,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 346.0, 42.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "6"
 								}
 
@@ -936,7 +880,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 248.0, 103.0, 281.0, 47.0 ],
-									"style" : "",
 									"text" : "In this example, each meter has 12 pulses. However, their respective prime stratifications are different, yielding different indispensabilities."
 								}
 
@@ -951,7 +894,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 331.0, 158.0, 19.0, 60.0 ],
-									"style" : "",
 									"text" : "2 0 0 0"
 								}
 
@@ -966,7 +908,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 343.0, 158.0, 19.0, 60.0 ],
-									"style" : "",
 									"text" : "3 6 6 4"
 								}
 
@@ -981,7 +922,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 315.0, 158.0, 25.0, 60.0 ],
-									"style" : "",
 									"text" : "1 11 11 11"
 								}
 
@@ -996,7 +936,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 355.0, 158.0, 19.0, 60.0 ],
-									"style" : "",
 									"text" : "4 3 2 8"
 								}
 
@@ -1011,7 +950,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 367.0, 158.0, 19.0, 60.0 ],
-									"style" : "",
 									"text" : "5 9 8 2"
 								}
 
@@ -1025,7 +963,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 230.0, 199.0, 109.0, 20.0 ],
-									"style" : "",
 									"text" : "12/16 (2x2x3):"
 								}
 
@@ -1039,7 +976,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 242.0, 184.0, 89.0, 20.0 ],
-									"style" : "",
 									"text" : "6/8 (2x3x2):"
 								}
 
@@ -1053,7 +989,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 242.0, 170.0, 90.0, 20.0 ],
-									"style" : "",
 									"text" : "3/4 (3x2x2):"
 								}
 
@@ -1067,8 +1002,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 92.435524, 328.0, 41.0, 22.0 ],
-									"style" : "",
+									"patching_rect" : [ 92.435524000000001, 328.0, 41.0, 22.0 ],
 									"text" : "3 2 2"
 								}
 
@@ -1083,7 +1017,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 379.0, 158.0, 19.0, 60.0 ],
-									"style" : "",
 									"text" : "6 1 4 6"
 								}
 
@@ -1098,7 +1031,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 391.0, 158.0, 26.0, 60.0 ],
-									"style" : "",
 									"text" : "7 \n7 10 10"
 								}
 
@@ -1113,7 +1045,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 407.0, 158.0, 19.0, 60.0 ],
-									"style" : "",
 									"text" : "8 4 1 1"
 								}
 
@@ -1128,7 +1059,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 421.0, 158.0, 25.0, 60.0 ],
-									"style" : "",
 									"text" : "9 10 7 \n5"
 								}
 
@@ -1143,7 +1073,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 439.0, 158.0, 25.0, 60.0 ],
-									"style" : "",
 									"text" : "10 2 \n3 \n9"
 								}
 
@@ -1158,7 +1087,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 457.0, 158.0, 24.0, 60.0 ],
-									"style" : "",
 									"text" : "11 8 9 3"
 								}
 
@@ -1173,7 +1101,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 475.0, 158.0, 25.0, 60.0 ],
-									"style" : "",
 									"text" : "12 5 \n5 \n7"
 								}
 
@@ -1188,8 +1115,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 23.0, 359.0, 37.0, 22.0 ],
-									"style" : "",
+									"patching_rect" : [ 23.0, 359.0, 37.0, 20.0 ],
 									"triscale" : 0.9
 								}
 
@@ -1203,7 +1129,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 445.0, 423.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "↓"
 								}
 
@@ -1231,7 +1156,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 497.0, 169.0, 126.0, 47.0 ],
-									"style" : "",
 									"text" : "indispensabilities are in ascending order;\r0-lowest, 11-highest"
 								}
 
@@ -1288,11 +1212,9 @@
 						"digest" : "",
 						"fontsize" : 10.0,
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p example"
 				}
 
@@ -1306,7 +1228,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 133.0, 193.0, 286.0, 20.0 ],
-					"style" : "",
 					"text" : "send number of pulses out of the second outlet"
 				}
 
@@ -1321,7 +1242,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 67.0, 192.0, 67.0, 22.0 ],
-					"style" : "",
 					"text" : "getpulses"
 				}
 
@@ -1336,7 +1256,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 57.0, 148.0, 61.0, 22.0 ],
-					"style" : "",
 					"text" : "loadbang"
 				}
 
@@ -1351,7 +1270,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 137.0, 224.0, 104.0, 22.0 ],
-					"style" : "",
 					"text" : "habanera 3+2 2"
 				}
 
@@ -1366,7 +1284,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 311.0, 156.0, 227.0, 33.0 ],
-					"style" : "",
 					"text" : "append meter named habanera with user-defined indispensability values"
 				}
 
@@ -1381,7 +1298,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 51.0, 128.0, 44.0, 22.0 ],
-					"style" : "",
 					"text" : "dumpt"
 				}
 
@@ -1396,7 +1312,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 51.0, 109.0, 39.0, 22.0 ],
-					"style" : "",
 					"text" : "dump"
 				}
 
@@ -1411,7 +1326,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 16.0, 83.0, 37.0, 20.0 ],
-					"style" : "",
 					"triscale" : 0.9
 				}
 
@@ -1425,7 +1339,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 53.0, 84.0, 56.0, 20.0 ],
-					"style" : "",
 					"text" : "pulse# n"
 				}
 
@@ -1439,7 +1352,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 100.0, 112.0, 164.0, 20.0 ],
-					"style" : "",
 					"text" : "dumps values sequentially"
 				}
 
@@ -1453,7 +1365,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 100.0, 129.0, 259.0, 20.0 ],
-					"style" : "",
 					"text" : "dumps values with index (for tables)"
 				}
 
@@ -1467,7 +1378,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 544.0, 246.0, 187.0, 20.0 ],
-					"style" : "",
 					"text" : "Double-click to view equation"
 				}
 
@@ -1484,13 +1394,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
+							"major" : 8,
+							"minor" : 5,
 							"revision" : 4,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
+						"classnamespace" : "box",
 						"rect" : [ 598.0, 429.0, 550.0, 342.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1518,6 +1429,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -1528,7 +1440,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 42.0, 251.0, 277.0, 33.0 ],
-									"style" : "",
 									"text" : "sub h (x) is the indispensability of the xth pulse of a bar of first order with the prime stratification of h"
 								}
 
@@ -1542,7 +1453,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 28.0, 199.0, 309.0, 20.0 ],
-									"style" : "",
 									"text" : "n is the position in the bar of the pulse in question"
 								}
 
@@ -1556,7 +1466,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 28.0, 218.0, 293.0, 20.0 ],
-									"style" : "",
 									"text" : "q sub j is the stratification divisor on level j"
 								}
 
@@ -1570,7 +1479,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 28.0, 236.0, 319.0, 20.0 ],
-									"style" : "",
 									"text" : "z is the depth of stratification (number of levels)"
 								}
 
@@ -1584,7 +1492,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 28.0, 255.0, 19.0, 18.0 ],
-									"style" : "",
 									"text" : "Ψ"
 								}
 
@@ -1599,8 +1506,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 21.0, 21.0, 15.0, 15.0 ],
-									"style" : ""
+									"patching_rect" : [ 21.0, 21.0, 15.0, 15.0 ]
 								}
 
 							}
@@ -1614,7 +1520,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 29.0, 289.0, 299.0, 33.0 ],
-									"style" : "",
 									"text" : "For further explanation see Barlow, C. (1987). Two essays on theory. Computer Music Journal, 11, 44-60."
 								}
 
@@ -1643,11 +1548,9 @@
 						"digest" : "",
 						"fontsize" : 10.0,
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p equation"
 				}
 
@@ -1662,7 +1565,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 344.0, 134.0, 22.0 ],
-					"style" : "",
 					"text" : "print indispensibility"
 				}
 
@@ -1677,7 +1579,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 47.0, 323.0, 150.0, 22.0 ],
-					"style" : "",
 					"text" : "print number-of-pulses"
 				}
 
@@ -1692,7 +1593,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 78.0, 303.0, 106.0, 22.0 ],
-					"style" : "",
 					"text" : "print down-beat"
 				}
 
@@ -1707,7 +1607,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 82.0, 247.0, 42.0, 22.0 ],
-					"style" : "",
 					"text" : "7 5 2"
 				}
 
@@ -1722,7 +1621,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 68.0, 224.0, 63.0, 22.0 ],
-					"style" : "",
 					"text" : "habanera"
 				}
 
@@ -1737,7 +1635,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 57.0, 170.0, 246.0, 22.0 ],
-					"style" : "",
 					"text" : "append-meter habanera 7 3 0 6 4 1 5 2"
 				}
 
@@ -1752,7 +1649,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 136.0, 247.0, 100.0, 22.0 ],
-					"style" : "",
 					"text" : "2+3+2 habanera"
 				}
 
@@ -1768,7 +1664,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "bang" ],
 					"patching_rect" : [ 16.0, 279.0, 81.0, 22.0 ],
-					"style" : "",
 					"text" : "dispenser 3"
 				}
 
@@ -1782,7 +1677,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 338.0, 135.0, 20.0 ],
-					"style" : "",
 					"text" : "© 2007 Georg Hajdu",
 					"textcolor" : [ 0.6, 0.6, 1.0, 1.0 ]
 				}
@@ -1797,7 +1691,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 11.0, 43.0, 402.0, 20.0 ],
-					"style" : "",
 					"text" : "Abstraction based on Clarence Barlow's concept of metric indispensability"
 				}
 
@@ -1811,7 +1704,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 17.0, 67.0, 20.0 ],
-					"style" : "",
 					"text" : "dispenser",
 					"textcolor" : [ 0.082353, 0.219608, 0.035294, 1.0 ]
 				}
@@ -1829,8 +1721,7 @@
 					"patching_rect" : [ 5.0, 14.0, 422.0, 49.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
@@ -1844,7 +1735,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 544.0, 67.0, 329.0, 114.0 ],
-					"style" : "",
 					"text" : "Dispenser uses multiplicative (e.g. 2 3) as well as additive meters (2+3) and lets the user define their own (e.g. habanera). The meters need to be broken down to their prime divisors, i.e. quadruple meter needs to be understood as \"2 2\", or compound 6/8 meter as \"2 3.\" While prime divisors in multiplicative meters can go up to 41, the prime numbers used in additive meters are restricted to 2 and 3. \rMeters can be freely combined up to a depth of 6 strata."
 				}
 
@@ -1858,7 +1748,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 252.0, 223.0, 157.0, 20.0 ],
-					"style" : "",
 					"text" : "right inlet: set meter"
 				}
 
@@ -1957,122 +1846,122 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "dispenser.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Mod.2.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "reader.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "psi-functions.txt",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "dumper.2.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Inside.3.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "TIE.7.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Pof_(Qi)(i=0toz-r-1).2.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Total-Internal-Equation.6.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "reader2.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
+				"name" : "AdditiveMeter2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Inner-Equation.5.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Inside.3.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Mod.2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Pof_(Qi)(i=0toz-r-1).2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pof_(Qj)(j=1toz).2.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pof_(Qz+1-k)(k=0tor).2.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Qz+1-k2.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Qz-r2.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "AdditiveMeter2.maxpat",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
+				"name" : "TIE.7.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Total-Internal-Equation.6.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "composite-meters.txt",
-				"bootpath" : "/Users/Shared/Max 7/Packages/DJster+/patchers/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "dispenser.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "dumper.2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "psi-functions.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "reader.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "reader2.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
 				"implicit" : 1
 			}
  ],

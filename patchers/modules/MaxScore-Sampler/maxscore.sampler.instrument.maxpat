@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 10,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 633.0, 414.0, 619.0, 703.0 ],
+		"rect" : [ 432.0, 117.0, 619.0, 703.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -60,7 +60,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 20.0, 44.0, 201.0, 22.0 ],
-					"restore" : [ 1, 2 ],
+					"restore" : [ "1 2" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -113,10 +113,20 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
-					"parameter_enable" : 0,
+					"parameter_enable" : 1,
 					"patching_rect" : [ 374.0, 149.0, 66.0, 23.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 104.0, 9.468084335327148, 46.0, 21.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_invisible" : 1,
+							"parameter_longname" : "channels",
+							"parameter_shortname" : "channels",
+							"parameter_type" : 3
+						}
+
+					}
+,
 					"text" : "1 2",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1,
@@ -221,7 +231,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 20.0, 11.0, 217.0, 22.0 ],
-					"restore" : [ "<none>" ],
+					"restore" : [ "" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -320,8 +330,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 10,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -356,6 +366,18 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 288.0, 341.0, 35.0, 22.0 ],
+									"text" : "clear"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-17",
 									"maxclass" : "newobj",
@@ -418,7 +440,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 19.0, 14.0, 237.0, 49.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ 1799 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -579,6 +601,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"midpoints" : [ 297.5, 435.0, 104.5, 435.0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-17", 0 ]
 								}
@@ -707,7 +737,7 @@
 					"patching_rect" : [ 282.0, 149.0, 77.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 0.0, 79.0, 18.0 ],
-					"text" : "Instrument 32:",
+					"text" : "Instrument 1:",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -727,16 +757,28 @@
 					"fontname" : "Ableton Sans Light",
 					"fontsize" : 10.0,
 					"id" : "obj-25",
-					"items" : "<none>",
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
+					"parameter_enable" : 1,
 					"patching_rect" : [ 95.0, 149.0, 120.0, 20.0 ],
 					"pattrmode" : 1,
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 13.468084335327148, 100.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_enum" : [ "0", "1" ],
+							"parameter_invisible" : 1,
+							"parameter_longname" : "instrument",
+							"parameter_mmax" : 5.0,
+							"parameter_shortname" : "instrument",
+							"parameter_type" : 3
+						}
+
+					}
+,
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "instrument"
 				}
@@ -908,18 +950,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "swissarmyknife.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
-		"bgcolor" : [ 0.32549, 0.345098, 0.372549, 0.0 ],
-		"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ]
+ ]
 	}
 
 }

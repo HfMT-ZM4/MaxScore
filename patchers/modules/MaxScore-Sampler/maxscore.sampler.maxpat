@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 61.0, 309.0, 1134.0, 592.0 ],
+		"rect" : [ 151.0, 160.0, 1134.0, 592.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -70,7 +70,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 621.0, 313.5, 24.0, 24.0 ]
+					"patching_rect" : [ 621.0, 302.5, 24.0, 24.0 ]
 				}
 
 			}
@@ -82,8 +82,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 621.0, 349.0, 255.0, 35.0 ],
-					"restore" : [ 2745 ],
+					"patching_rect" : [ 621.0, 342.5, 255.0, 35.0 ],
+					"restore" : [ 1799 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -145,6 +145,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[38]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
@@ -256,6 +257,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[9]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
@@ -302,6 +304,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[16]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
@@ -465,7 +468,7 @@
 						"client_rect" : [ 1187, 252, 1796, 568 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 69, 1034, 197 ]
+						"storage_rect" : [ 780, 524, 1380, 824 ]
 					}
 ,
 					"text" : "pattrstorage Sampler",
@@ -507,7 +510,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_invisible" : 1,
+							"parameter_invisible" : 2,
 							"parameter_longname" : "Edit Button[1]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Edit Button",
@@ -535,13 +538,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 966.0, 516.0, 763.0, 337.0 ],
+						"rect" : [ 583.0, 388.0, 763.0, 337.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -571,6 +574,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 622.0, 119.0, 35.0, 22.0 ],
+									"text" : "#0"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -593,13 +608,13 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 721.0, 204.0, 904.0, 725.0 ],
+										"rect" : [ 574.0, 100.0, 904.0, 725.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -941,7 +956,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 4,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1278,7 +1293,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 4,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1847,7 +1862,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2014,7 +2029,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 4,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2586,7 +2601,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 4,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3693,7 +3708,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4322,7 +4337,7 @@
 									"numoutlets" : 34,
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "", "" ],
 									"patching_rect" : [ 87.0, 169.0, 526.0, 22.0 ],
-									"text" : "poly~ maxscore.multisamples-player.maxpat 64 @steal 0 @args 27248 @legacynotemode 1",
+									"text" : "poly~ maxscore.multisamples-player.maxpat 64 @steal 0 @args #0 @legacynotemode 1",
 									"varname" : "poly~"
 								}
 
@@ -4787,7 +4802,7 @@
 						"live.text[1]" : [ 0.0 ],
 						"live.text[2]" : [ 0.0 ],
 						"live.text[3]" : [ 0.0 ],
-						"mc.live.gain~" : [ 0.790551181102359 ]
+						"mc.live.gain~" : [ -1.52230971128607 ]
 					}
 ,
 					"text" : "autopattr sampler",

@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 202.0, 106.0, 1225.0, 930.0 ],
+		"rect" : [ 112.0, 100.0, 1225.0, 727.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -431,7 +431,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -948,6 +948,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "<", ">" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.tab[12]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.tab",
@@ -1182,7 +1183,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1345,7 +1346,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2215,6 +2216,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "Loop & Start", "Envelope", "Edit" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.tab[9]",
 							"parameter_mmax" : 2,
 							"parameter_shortname" : "live.tab[1]",
@@ -2261,6 +2263,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[6]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
@@ -2392,7 +2395,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}

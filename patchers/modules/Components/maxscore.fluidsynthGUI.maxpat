@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 10,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 490.0, 573.0, 588.0, 466.0 ],
+		"rect" : [ 399.0, 206.0, 588.0, 466.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -73,14 +73,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 10,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 983.0, 239.0, 717.0, 649.0 ],
+						"rect" : [ 744.0, 164.0, 717.0, 649.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -110,6 +110,67 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-39",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 132.0, 235.0, 73.0, 22.0 ],
+									"text" : "route preset"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-32",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 111.0, 179.0, 73.0, 22.0 ],
+									"text" : "info presets"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 132.0, 267.0, 68.0, 22.0 ],
+									"text" : "s #1info"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 111.0, 150.0, 83.0, 22.0 ],
+									"text" : "r #1getinfo"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 111.0, 205.0, 50.5, 22.0 ],
+									"text" : "grab 3"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -119,8 +180,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -908,6 +969,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-32", 0 ],
+									"source" : [ "obj-24", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-36", 0 ],
 									"source" : [ "obj-25", 0 ]
 								}
@@ -972,6 +1040,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-32", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-34", 0 ]
 								}
@@ -993,6 +1068,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"midpoints" : [ 237.166655999999989, 557.0, 15.833328, 557.0, 15.833328, 283.0, 41.833328000000002, 283.0 ],
 									"source" : [ "obj-4", 0 ]
@@ -1003,6 +1085,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-6", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-6", 2 ]
 								}
 
 							}
@@ -1050,7 +1146,6 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
-					"activebgoncolor" : [ 1.0, 0.709803921568627, 0.196078431372549, 1.0 ],
 					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"annotation" : "Press this button to load sound bank",
 					"bordercolor" : [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 0.0 ],
@@ -1066,10 +1161,22 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 5.0, 15.0, 121.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 1,
-							"parameter_longname" : "Edit Button[2]",
+							"parameter_longname" : "Edit Button[3]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Edit Button",
 							"parameter_type" : 2
@@ -1098,28 +1205,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"obj-22" : [ "Edit Button[2]", "Edit Button", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "fixpathissue.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluidsynth~.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"autosave" : 0,
 		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ]
 	}
 

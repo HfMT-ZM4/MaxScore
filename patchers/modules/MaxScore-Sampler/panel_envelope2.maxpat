@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -196,6 +196,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[17]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text[33]",
@@ -242,6 +243,7 @@
 ,
 						"valueof" : 						{
 							"parameter_initial" : [ 7 ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.numbox[15]",
 							"parameter_mmax" : 9.0,
 							"parameter_mmin" : 1.0,

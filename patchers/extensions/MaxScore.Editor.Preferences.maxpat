@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 1,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -52,7 +52,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -148,7 +148,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 274.0, 180.0, 160.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "symbol \"Times New Roman\""
 								}
 
@@ -316,7 +315,9 @@
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -442,6 +443,25 @@
 					"patching_rect" : [ 1602.0, 166.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 165.0, 162.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"textovercolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -794,7 +814,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-222",
 					"maxclass" : "jsui",
@@ -1072,6 +1092,25 @@
 					"patching_rect" : [ 1386.0, 185.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 190.0, 162.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"textovercolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -1167,6 +1206,25 @@
 					"patching_rect" : [ 1325.0, 396.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 141.0, 162.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"textovercolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -1237,6 +1295,25 @@
 					"patching_rect" : [ 1500.0, 400.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 115.0, 162.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"textovercolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -1271,7 +1348,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1316,7 +1393,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 38.0, 43.0, 412.0, 22.0 ],
-									"restore" : [ 0.4 ],
+									"restore" : [ 0.5 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1368,18 +1445,16 @@
 								}
 
 							}
- ],
-						"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 462.0, 482.78314208984375, 48.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -1400,7 +1475,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1600,18 +1675,16 @@
 								}
 
 							}
- ],
-						"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 740.0, 227.5, 60.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -1832,6 +1905,25 @@
 					"patching_rect" : [ 1175.0, 186.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 90.0, 162.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"textovercolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -1866,7 +1958,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1914,7 +2006,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2191,18 +2283,16 @@
 												}
 
 											}
- ],
-										"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-										"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
+ ]
 									}
 ,
 									"patching_rect" : [ 50.0, 103.0, 107.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
-										"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"globalpatchername" : "",
-										"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+										"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"tags" : ""
 									}
 ,
@@ -2251,18 +2341,16 @@
 								}
 
 							}
- ],
-						"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 515.0, 750.0, 105.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -2303,7 +2391,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2866,19 +2954,17 @@
 								}
 
 							}
- ],
-						"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 515.0, 717.5, 179.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"fontsize" : 10.0,
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -3011,6 +3097,13 @@
 					"patching_rect" : [ 1072.0, 553.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 562.0, 162.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"text" : "Clear",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -3047,39 +3140,39 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 675.0, 227.5, 58.0, 22.0 ],
 					"restore" : 					{
-						"drawAllMeasureNumbers" : [ 1 ],
+						"drawAllMeasureNumbers" : [ 0 ],
 						"handleMusicCurveRendering" : [ 1 ],
 						"markSlots" : [ 0 ],
 						"minRequired" : [ 0 ],
 						"note_value" : [ 2 ],
 						"overdrive" : [ 1 ],
 						"papersize" : [ 3 ],
-						"setComposer" : [ "Georg Hajdu" ],
+						"setComposer" : [ "lindsay vickery" ],
 						"setCopyright" : [ "2022" ],
-						"setDurationalSpacingBase" : [ 0.388 ],
+						"setDurationalSpacingBase" : [ 0.7 ],
 						"setHoldScaler" : [ 1.0 ],
 						"setJMSLAdvanceTime" : [ 1.0 ],
 						"setMeasureNumberOffset" : [ 1 ],
-						"setScoreBottomMargin" : [ 72.0 ],
+						"setScoreBottomMargin" : [ 15.0 ],
 						"setScoreFirstSystemIndent" : [ 0.0 ],
-						"setScoreLeftMargin" : [ 100.0 ],
-						"setScoreRightMargin" : [ 62.0 ],
-						"setScoreTopMargin" : [ 36.0 ],
+						"setScoreLeftMargin" : [ 20.0 ],
+						"setScoreRightMargin" : [ 20.0 ],
+						"setScoreTopMargin" : [ 15.0 ],
 						"setScoreTopMarginOfFirstPage" : [ 60.0 ],
-						"setSubtitle" : [ "for Chinese Ensemble and Electronics" ],
-						"setTitle" : [ "Summer 2021" ],
-						"setTitleVisible" : [ 1 ],
+						"setSubtitle" : [ "Geburt Leben und Tod der Sterne" ],
+						"setTitle" : [ "JMSLMaxScore-17" ],
+						"setTitleVisible" : [ 0 ],
 						"setWrap" : [ 1 ],
-						"showClefs" : [ 0 ],
-						"showCourtesyClefs" : [ 1 ],
+						"showClefs" : [ 1 ],
+						"showCourtesyClefs" : [ 0 ],
 						"showInstruments" : [ 0 ],
 						"showKeySignatures" : [ 0 ],
-						"showMeasureNumbers" : [ 0 ],
-						"showSectionBrackets" : [ 0 ],
+						"showMeasureNumbers" : [ 1 ],
+						"showSectionBrackets" : [ 1 ],
 						"showStaffNumbers" : [ 1 ],
-						"showTempo" : [ 0 ],
-						"showTimeSignatures" : [ 0 ],
-						"showrhythm" : [ 1 ],
+						"showTempo" : [ 1 ],
+						"showTimeSignatures" : [ 1 ],
+						"showrhythm" : [ 0 ],
 						"slashedGraceNotes" : [ 1 ],
 						"subdivision" : [ 3 ],
 						"svgoutput" : [ 1, 0, 0 ],
@@ -3124,7 +3217,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3214,7 +3307,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3379,7 +3472,9 @@
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"globalpatchername" : "",
+										"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"tags" : ""
 									}
 ,
@@ -3469,7 +3564,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 482.4000244140625, 145.0, 245.0, 31.0 ],
-									"restore" : [ 1240 ],
+									"restore" : [ 12646 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3494,7 +3589,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3652,7 +3747,9 @@
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"globalpatchername" : "",
+										"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"tags" : ""
 									}
 ,
@@ -3834,7 +3931,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 482.4000244140625, 295.01239013671875, 224.0, 42.0 ],
-									"restore" : [ 127 ],
+									"restore" : [ 108 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4413,10 +4510,32 @@
 							}
  ],
 						"bgcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ],
-						"editing_bgcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
+						"editing_bgcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ],
+						"saved_attribute_attributes" : 						{
+							"editing_bgcolor" : 							{
+								"expression" : ""
+							}
+,
+							"locked_bgcolor" : 							{
+								"expression" : ""
+							}
+
+						}
+
 					}
 ,
 					"patching_rect" : [ 1072.0, 521.0, 250.0, 22.0 ],
+					"saved_attribute_attributes" : 					{
+						"editing_bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"locked_bgcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4597,7 +4716,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-118",
 					"maxclass" : "jsui",
@@ -4774,6 +4893,13 @@
 					"patching_rect" : [ 257.416707333333306, 699.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 301.0, 56.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"text" : "Set...",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -4825,7 +4951,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5482,18 +5608,16 @@
 								"parentstyle" : "",
 								"multi" : 0
 							}
- ],
-						"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 9.5, 834.0, 70.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -5764,7 +5888,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-135",
 					"maxclass" : "jsui",
@@ -5808,13 +5932,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 996.0, 512.0, 451.0, 326.0 ],
+						"rect" : [ 787.0, 202.0, 391.0, 403.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5846,12 +5970,26 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
+									"id" : "obj-11",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 50.0, 49.0, 54.0, 22.0 ],
+									"text" : "deferlow"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 42.0, 73.0, 22.0 ],
+									"patching_rect" : [ 50.0, 82.0, 73.0, 22.0 ],
 									"text" : "fromsymbol"
 								}
 
@@ -5865,7 +6003,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 124.0, 256.0, 22.0 ],
+									"patching_rect" : [ 50.0, 183.0, 256.0, 22.0 ],
 									"text" : "checkedcolor 0.804 0.898 0.91 1, ignoreclick 0"
 								}
 
@@ -5879,7 +6017,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 87.0, 148.0, 256.0, 22.0 ],
+									"patching_rect" : [ 87.0, 207.0, 256.0, 22.0 ],
 									"text" : "checkedcolor 0.404 0.498 0.51 1, ignoreclick 1"
 								}
 
@@ -5894,7 +6032,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 262.0, 155.0, 22.0 ],
+									"patching_rect" : [ 50.0, 321.0, 155.0, 22.0 ],
 									"text" : "pattrforward parent::update"
 								}
 
@@ -5908,7 +6046,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 65.0, 202.0, 97.0, 22.0 ],
+									"patching_rect" : [ 65.0, 261.0, 97.0, 22.0 ],
 									"text" : "textcolor 1 1 1 1."
 								}
 
@@ -5922,7 +6060,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 102.0, 175.0, 127.0, 22.0 ],
+									"patching_rect" : [ 102.0, 234.0, 127.0, 22.0 ],
 									"text" : "textcolor 0.3 0.3 0.3 1."
 								}
 
@@ -5936,7 +6074,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 87.0, 98.0, 34.0, 22.0 ],
+									"patching_rect" : [ 87.0, 157.0, 34.0, 22.0 ],
 									"text" : "t b b"
 								}
 
@@ -5950,7 +6088,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 50.0, 97.0, 34.0, 22.0 ],
+									"patching_rect" : [ 50.0, 156.0, 34.0, 22.0 ],
 									"text" : "t b b"
 								}
 
@@ -5964,7 +6102,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 67.0, 56.0, 22.0 ],
+									"patching_rect" : [ 50.0, 122.0, 56.0, 22.0 ],
 									"text" : "route int"
 								}
 
@@ -5992,7 +6130,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 102.0, 233.0, 181.0, 22.0 ],
+									"patching_rect" : [ 102.0, 292.0, 181.0, 22.0 ],
 									"text" : "pattrforward parent::updatelabel"
 								}
 
@@ -6015,6 +6153,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
 									"source" : [ "obj-133", 0 ]
 								}
 
@@ -6108,18 +6253,16 @@
 								"parentstyle" : "",
 								"multi" : 0
 							}
- ],
-						"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 9.5, 810.0, 57.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -6130,10 +6273,9 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.404, 0.498, 0.51, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.404, 0.498, 0.51, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-128",
-					"ignoreclick" : 1,
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -6158,7 +6300,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 431.0, 596.0, 155.0, 20.0 ],
 					"text" : "Automatic Live Clip Update",
-					"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "updatelabel"
 				}
 
@@ -6195,7 +6337,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-13",
 					"maxclass" : "jsui",
@@ -6238,7 +6380,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -6387,18 +6529,16 @@
 								}
 
 							}
- ],
-						"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 724.0, 477.0, 94.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -6620,7 +6760,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-97",
 					"maxclass" : "jsui",
@@ -6754,7 +6894,7 @@
 					"presentation_rect" : [ 225.0, 40.0, 185.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "for Chinese Ensemble and Electronics",
+					"text" : "Geburt Leben und Tod der Sterne",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setSubtitle",
 					"wordwrap" : 0
@@ -6832,7 +6972,7 @@
 					"presentation_rect" : [ 225.0, 190.0, 162.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "62.",
+					"text" : "20.",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"valuemode" : 1,
 					"varname" : "setScoreRightMargin"
@@ -6981,7 +7121,7 @@
 					"presentation_rect" : [ 225.0, 240.0, 162.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "72.",
+					"text" : "15.",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"valuemode" : 1,
 					"varname" : "setScoreBottomMargin"
@@ -7003,7 +7143,7 @@
 					"presentation_rect" : [ 225.0, 215.0, 162.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "36.",
+					"text" : "15.",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"valuemode" : 1,
 					"varname" : "setScoreTopMargin"
@@ -7025,7 +7165,7 @@
 					"presentation_rect" : [ 225.0, 165.0, 162.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "100.",
+					"text" : "20.",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"valuemode" : 1,
 					"varname" : "setScoreLeftMargin"
@@ -7144,7 +7284,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"hidden" : 1,
 					"id" : "obj-56",
@@ -7462,7 +7602,7 @@
 					"presentation_rect" : [ 225.0, 65.0, 172.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "Georg Hajdu",
+					"text" : "lindsay vickery",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setComposer",
 					"wordwrap" : 0
@@ -7483,7 +7623,7 @@
 					"presentation_rect" : [ 225.0, 15.0, 225.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "Summer 2021",
+					"text" : "JMSLMaxScore-17",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setTitle",
 					"wordwrap" : 0
@@ -7521,7 +7661,7 @@
 					"presentation_rect" : [ 312.0, 116.0, 75.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "1800 1100",
+					"text" : "800 800",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"valuemode" : 1,
 					"varname" : "canvassize",
@@ -7843,7 +7983,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-11",
 					"maxclass" : "jsui",
@@ -7858,7 +7998,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-12",
 					"maxclass" : "jsui",
@@ -7901,7 +8041,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-87",
 					"maxclass" : "jsui",
@@ -7932,7 +8072,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-75",
 					"maxclass" : "jsui",
@@ -7963,7 +8103,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-239",
 					"maxclass" : "jsui",
@@ -7980,7 +8120,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-14",
 					"maxclass" : "jsui",
@@ -7997,7 +8137,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-15",
 					"maxclass" : "jsui",
@@ -8014,7 +8154,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-240",
 					"maxclass" : "jsui",
@@ -8031,7 +8171,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-17",
 					"maxclass" : "jsui",
@@ -8048,7 +8188,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-18",
 					"maxclass" : "jsui",
@@ -8065,7 +8205,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-241",
 					"maxclass" : "jsui",
@@ -8192,7 +8332,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -8299,7 +8439,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8499,7 +8639,9 @@
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"globalpatchername" : "",
+										"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"tags" : ""
 									}
 ,
@@ -8521,7 +8663,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8721,7 +8863,9 @@
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"globalpatchername" : "",
+										"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"tags" : ""
 									}
 ,
@@ -9157,7 +9301,9 @@
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
+						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -9179,6 +9325,17 @@
 					"patching_rect" : [ 997.5, 659.5, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 600.0, 637.0, 137.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"text" : "Open Preferences...",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -9200,6 +9357,17 @@
 					"patching_rect" : [ 894.5, 659.5, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 300.0, 637.0, 137.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"text" : "Save Preferences as...",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -9221,6 +9389,17 @@
 					"patching_rect" : [ 1100.5, 659.5, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 450.0, 637.0, 137.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"text" : "Attribute List",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -9242,6 +9421,17 @@
 					"patching_rect" : [ 791.5, 659.5, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 150.0, 637.0, 137.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"text" : "Save Preferences",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -10938,7 +11128,18 @@
 			}
  ],
 		"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
-		"editing_bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ]
+		"editing_bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+		"saved_attribute_attributes" : 		{
+			"editing_bgcolor" : 			{
+				"expression" : ""
+			}
+,
+			"locked_bgcolor" : 			{
+				"expression" : ""
+			}
+
+		}
+
 	}
 
 }

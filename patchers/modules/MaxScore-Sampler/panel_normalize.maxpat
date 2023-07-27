@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -310,6 +310,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[23]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text[19]",
@@ -356,6 +357,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[5]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text[19]",
@@ -418,6 +420,7 @@
 						}
 ,
 						"valueof" : 						{
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.numbox[8]",
 							"parameter_mmax" : 1.0,
 							"parameter_shortname" : "live.numbox[4]",
@@ -622,9 +625,7 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ],
-		"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-		"editing_bgcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ]
+ ]
 	}
 
 }

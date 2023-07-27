@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 744.0, 115.0, 830.0, 730.0 ],
+		"rect" : [ 228.0, 100.0, 830.0, 730.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -298,7 +298,7 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 1,
 					"parameter_mappable" : 0,
-					"patching_rect" : [ 709.0, 302.666664123535156, 8.0, 11.333335876464844 ],
+					"patching_rect" : [ 314.5, 271.166664123535156, 22.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 351.0, 411.33331298828125, 7.999999523162842, 9.66667652130127 ],
 					"rounded" : 20.0,
@@ -311,6 +311,7 @@
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_initial" : [ 1.0 ],
 							"parameter_initial_enable" : 1,
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.toggle[1]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.toggle",
@@ -422,7 +423,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -695,7 +696,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -754,7 +755,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 256.0, 246.0, 485.0, 22.0 ],
-									"restore" : [ "Trombone.instr" ],
+									"restore" : [ "3angle.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1016,7 +1017,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1139,7 +1140,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 411.333333333333314, 366.0, 270.0, 22.0 ],
-									"restore" : [ 1, "01  Tenor Trombone.aif" ],
+									"restore" : [ 1, "Triangle_A#3.gr.mp3" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1171,7 +1172,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 401.0, 594.0, 197.0, 22.0 ],
-									"restore" : [ "2745-clientbuffer.1" ],
+									"restore" : [ "1799-clientbuffer.1" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1326,7 +1327,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2403,6 +2404,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 1,
+					"parameter_mappable" : 0,
 					"patching_rect" : [ 238.5, 312.0, 232.0, 30.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 14.5, 16.0, 714.0, 31.0 ],
@@ -2414,6 +2416,7 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[34]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
@@ -2422,7 +2425,7 @@
 
 					}
 ,
-					"text" : "Trombone.bank.json",
+					"text" : "Five.bank.txt",
 					"varname" : "dict-name"
 				}
 
@@ -2440,7 +2443,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2494,7 +2497,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 329.928571428571445, 120.5, 288.0, 22.0 ],
-									"restore" : [ "Trombone.instr" ],
+									"restore" : [ "3angle.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3105,7 +3108,7 @@
 					"offset" : 0,
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 512.0, 292.0, 525.0, 34.0 ],
+					"patching_rect" : [ 512.0, 291.0, 525.0, 34.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 34.5, 385.0, 675.0, 41.0 ],
 					"range" : 128,
@@ -3136,7 +3139,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 16.0, 241.0, 708.5, 138.0 ],
 					"rowhead" : 1,
-					"rows" : 12,
+					"rows" : 1,
 					"selmode" : 5,
 					"selsync" : 0,
 					"stcolor" : [ 0.619607843137255, 0.768627450980392, 0.937254901960784, 1.0 ],
@@ -3171,7 +3174,7 @@
 					"presentation_rect" : [ 16.0, 72.0, 708.5, 123.0 ],
 					"rowhead" : 1,
 					"rowheight" : 20,
-					"rows" : 1,
+					"rows" : 5,
 					"selmode" : 3,
 					"stcolor" : [ 0.619607843137255, 0.768627450980392, 0.937254901960784, 1.0 ],
 					"textcolor" : [ 0.082353, 0.098039, 0.0, 1.0 ],
@@ -3216,7 +3219,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 712.5, 384.0, 271.5, 21.0 ],
+					"patching_rect" : [ 712.5, 383.0, 271.5, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 16.0, 196.0, 711.0, 20.0 ],
 					"rounded" : 0.0,
@@ -3261,7 +3264,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1014.0, 456.0, 237.0, 22.0 ],
-					"restore" : [ 2745 ],
+					"restore" : [ 1799 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3286,13 +3289,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 499.0, 214.0, 1115.0, 735.0 ],
+						"rect" : [ 261.0, 124.0, 1115.0, 735.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3320,8 +3323,31 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "zlclear" ],
+									"patching_rect" : [ 304.0, 154.0, 60.0, 22.0 ],
+									"text" : "t l zlclear"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 304.0, 208.0, 60.0, 22.0 ],
+									"text" : "zl.change"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-17",
 									"maxclass" : "newobj",
@@ -3333,7 +3359,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4021,10 +4047,20 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 304.0, 192.0, 216.0, 22.0 ],
-									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/Meiyan/Trombone.bank.json" ],
+									"patching_rect" : [ 304.0, 181.0, 216.0, 22.0 ],
+									"restore" : [ "Macintosh HD:/Users/hajdu/Library/Mobile Documents/com~apple~CloudDocs/Documents/Max 8/Packages/Quintet.net/patchers/Projects/Five/Five.bank.txt" ],
+									"saved_attribute_attributes" : 									{
+										"valueof" : 										{
+											"parameter_invisible" : 1,
+											"parameter_longname" : "bank",
+											"parameter_shortname" : "bank",
+											"parameter_type" : 3
+										}
+
+									}
+,
 									"saved_object_attributes" : 									{
-										"parameter_enable" : 0,
+										"parameter_enable" : 1,
 										"parameter_mappable" : 0
 									}
 ,
@@ -4068,7 +4104,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 571.0, 384.0, 485.0, 22.0 ],
-									"restore" : [ "Trombone.instr" ],
+									"restore" : [ "3angle.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4162,7 +4198,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 605.0, 289.0, 485.0, 22.0 ],
-									"restore" : [ "Trombone.instr" ],
+									"restore" : [ "3angle.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4196,7 +4232,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4623,7 +4659,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 469.0, 117.0, 95.0, 22.0 ],
+									"patching_rect" : [ 469.0, 111.0, 95.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4881,7 +4917,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 304.0, 226.0, 29.5, 22.0 ],
+									"patching_rect" : [ 304.0, 239.0, 29.5, 22.0 ],
 									"text" : "t l l"
 								}
 
@@ -4923,7 +4959,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 304.0, 160.0, 67.0, 22.0 ],
+									"patching_rect" : [ 304.0, 126.0, 67.0, 22.0 ],
 									"text" : "opendialog"
 								}
 
@@ -4949,7 +4985,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 355.0, 4.0, 30.0, 30.0 ]
+									"patching_rect" : [ 367.0, 4.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -4964,7 +5000,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5060,7 +5096,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 313.43182373046875, 219.0, 526.0, 22.0 ],
-													"restore" : [ "Trombone.instr" ],
+													"restore" : [ "3angle.instr" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5107,7 +5143,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 1133.0, 277.0, 473.0, 35.0 ],
-													"restore" : [ "Trombone.instr" ],
+													"restore" : [ "3angle.instr" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5167,7 +5203,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 842.6666259765625, 155.0, 526.0, 22.0 ],
-													"restore" : [ "Trombone.instr" ],
+													"restore" : [ "3angle.instr" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5190,7 +5226,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 4,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5833,7 +5869,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 757.93182373046875, 61.0, 497.0, 22.0 ],
-													"restore" : [ 1, "01  Tenor Trombone.aif" ],
+													"restore" : [ 1, "Triangle_A#3.gr.mp3" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -6682,6 +6718,13 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-10", 1 ]
 								}
@@ -6818,7 +6861,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 364.5, 149.0, 682.5, 149.0 ],
+									"midpoints" : [ 376.5, 143.0, 682.5, 143.0 ],
 									"source" : [ "obj-18", 0 ]
 								}
 
@@ -7027,7 +7070,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-20", 0 ],
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -7076,7 +7119,21 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1", 1 ],
+									"source" : [ "obj-8", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-9", 0 ]
 								}
 

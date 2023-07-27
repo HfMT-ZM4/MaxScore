@@ -752,8 +752,9 @@ function paintOnTop()
 		mgraphics.set_matrix(currentMatrix);
 }
 
-function capslock(c)
+function capsLock(c)
 {
+	
 }
 
 

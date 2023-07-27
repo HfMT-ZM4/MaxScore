@@ -302,7 +302,7 @@ function renderImages()
 function obj_ref(o)
 {
 
-	gc();
+	//gc();
 	s = 1;
 	pageSize(o.pageSize[0], o.pageSize[1]);
 	//post("o", JSON.stringify(o), "\n");
@@ -356,7 +356,98 @@ function obj_ref(o)
 	clefs.setsvg(svgclefs);
 
 	virgin = 0;
-	mgraphics.redraw();
+	//mgraphics.redraw();
+}
+
+
+function bang()
+{
+	var code = {
+			"new" : "g",
+			"id" : "groupie",
+			"child" : [ 				{
+					"new" : "rect",
+					"id" : "rect",
+					"x" : 5,
+					"y" : 5,
+					"width" : 100,
+					"height" : 100,
+					"fill" : "red"
+				}
+	, 				{
+					"id" : "clef",
+					"new" : "text",
+					"text" : "&#xE050",
+					"class" : "bravura_text",
+					"x" : 40,
+					"y" : 50
+				}
+	, 				{
+					"new" : "g",
+					"id" : "gg",
+					"child" : [ 						{
+							"new" : "rect",
+							"id" : "rec2t",
+							"x" : 5,
+							"y" : 100,
+							"width" : 100,
+							"height" : 100,
+							"fill" : "red"
+						}
+	, 						{
+							"id" : "cle2f",
+							"new" : "text",
+							"text" : "&#xE050",
+							"class" : "bravura_text",
+							"x" : 40,
+							"y" : 600
+						}
+ 	]
+				}
+ 	]
+	}
+
+	ds2svg([].concat(code));
+}
+
+var string = "";
+function ds2svg(code)
+{
+	string = "";
+	var textElement = false;
+	ds2svgiterate(code);
+	post("string", textElement, code.length, i, string, "\n");
+	return string;
+}
+
+function ds2svgiterate(code)
+{
+	for (var i = 0; i < code.length; i++) { 
+	//post("code-1", JSON.stringify(code[i]), "\n");
+	textElement = false;
+	string += "<" + code[i]["new"];
+	for (var element in code[i]) {
+	if (element != "new") {
+		if (element == "text") textElement = true; 		
+		else if (element == "style") {
+			string += " " + element + "=\"";
+			for (var property in code[i].style) string += property + ": " + code[i].style[property] + ";";
+			string += "\"";
+			}
+		else if (element == "child") {
+			string += ">";
+			//post("child", JSON.stringify(code[i].child), "\n");
+			ds2svgiterate(code[i].child);
+			string += "</g>";
+			return;
+			}
+		else string += " " + element + "=\"" + code[i][element] + "\"";
+		}
+	}
+	//post("code-2", JSON.stringify(code[i]), "\n");
+	if (!textElement) string += "/>";
+	else string += ">" + code[i].text + "</text>";
+	}
 }
 
 function clear()

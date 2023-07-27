@@ -114,11 +114,11 @@ function setCurrentInstr(ins) {
 function readInstr() {
   instrDict.clear();
   instrDict.pull_from_coll('old_instr');
-  post("instrDict", instrDict.stringify(), "\n");
+  //post("instrDict", instrDict.stringify(), "\n");
 
   for (var i = 1; i <= instrDict.getkeys().length; i++) {
     var sampleArray = instrDict.get(i.toString());
-   post("instrDict", instrDict.get(i.toString()), instrDict.getsize(i.toString()), "\n");
+   //post("instrDict", instrDict.get(i.toString()), instrDict.getsize(i.toString()), "\n");
    if (sampleArray.length == 4) {
 	  envelopeLengthChange = true; // envelope needs to adjust to sample length
       var envelopePresets = new Dict('envelope-presets');
@@ -143,6 +143,7 @@ function readInstr() {
 
 function endBankDump() {
   loadBank();
+  envelopeLengthChange = false;
 }
 
 
@@ -167,14 +168,14 @@ function loadBank()
 	}
 	var dump = pb.dump();
 
-	// fix envelope according to sample length for old bank formats (James's addition)
+	// fix envelope according to sample length for old bank formats (James' addition)
 	for (var i = 0; i < dump.length / 6; i++){
 		clientbuffersoundindex.set(dump[i * 6 + 2], dump[i * 6 + 1]);
-		//post(dump);
+		//post("length", dump.length, envelopeLengthChange, "\n");
 		if (envelopeLengthChange) {
 			var sampleLength = dump[i*6+3];
 			var envelope = bank.get(bankinstrkeys[0] + "::" + (i+1) + "::envelope");
-			post("envelope: "+envelope+"\n");
+			//post("envelope:", bankinstrkeys[0] + "::" + (i+1) + "::envelope", envelope, "\n");
 			var ratio = sampleLength / envelope[0];
 			envelope[0] = sampleLength;
 			envelope[envelope.length-4] = sampleLength;
