@@ -701,22 +701,6 @@ function remap(staffGroup, staffIndex, position)
 	else return idx;
 }
 
-function writeAt(s, font, fs, x, y, t)
-{
-			var a = arrayfromargs(arguments);
-			s = a[0];
-			font = a[1];
-			fs = a[2];
-			x = a[3];
-			y = a[4];
-			t = a.slice(5).join(" ");
-			if (typeof t == "number") t = parseInt(t);
- 			if(t.toString().length >= 1){
-			var xoffset = (tempoflag == 1) ? 10. : 0.;
-			SVGString[s + 1].push("<text x=\"" + (x + xoffset) + "\" y=\"" + y + "\" font-family=\"" + font + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + fs + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + htmlEntities(t) + "</text>");
-			}
-}
-
 function text_measure(f, fs, t)
 {
 			mgraphics.select_font_face(f);
@@ -954,7 +938,19 @@ function writeBarlines()
 				var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 				var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
 				var _scoreLeftMargin = (_scoreLayout[1] == 0 && measures == 0) ? scoreLeftMargin + scoreFirstSystemIndent : scoreLeftMargin;
-				if (_scoreLeftMargin == barlines[measures][lines][1] && numStaves > 1) SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				if (_scoreLeftMargin == barlines[measures][lines][1] && numStaves > 1) 	SVGLines[s + 1].push({
+					"new" : "line",
+					"id" : "barline-" + idcount++,
+					"x1" : barlines[measures][lines][1],
+					"y1" : dest[0],
+					"x2" : barlines[measures][lines][1], 
+					"y2" : dest2[0],
+					"stroke" : barLineColor,
+					"stroke-width" : barlines[measures][lines][4] * 0.6,
+					"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+					}
+					);
+				//SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {	
 					var mathMin = Math.min.apply(Math, brackets[br]);
 					if (mathMin < sg[s][0]) mathMin = sg[s][0];
@@ -962,7 +958,6 @@ function writeBarlines()
 					else if (mathMin > numStaves - 1) mathMin = numStaves - 1;
 					var mathMax = Math.max.apply(Math, brackets[br]);
 					if (mathMax > sg[s][sg[s].length - 1]) mathMax = sg[s][sg[s].length - 1];
-					//post("staffBoundingInfo", JSON.stringify(staffBoundingMatrix), "\n");
 					//var topLine = stafflines[measures][mathMin]
 					var _linesMin = [];
 					var _linesMinFiltered = [];
@@ -992,20 +987,79 @@ function writeBarlines()
 					else barlineEnd = stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1];
 						var dest = remap(sg[s], mathMin, barlineStart);
 						var dest2 = remap(sg[s], mathMax, barlineEnd);
+						//post("dest.length", dest, dest.length, "\n");
 						if (dest != -1)
 							{
 							for (var d = 0; d < dest.length; d++) {
-								if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-dasharray=\"" + barlineDashArray + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+								if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGLines[s + 1].push({
+								"new" : "line",
+								"id" : "barline-" + idcount++,
+								"x1" : barlines[measures][lines][1],
+								"y1" : dest[0],
+								"x2" : barlines[measures][lines][1], 
+								"y2" : dest2[0],
+								"stroke" : barLineColor,
+								"stroke-width" : barlines[measures][lines][4] * 0.6,
+								"stroke-dasharray" : barlineDashArray,
+								"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+								}
+								);
+								//SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-dasharray=\"" + barlineDashArray + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 									if (_scoreLeftMargin == barlines[measures][lines][1]) {
 										if (annotation.contains("staff-" + brackets[br][0] + "::staffgroup")) {
 										switch (annotation.get("staff-" + brackets[br][0] + "::staffgroup")[1]) {
 										case 1: case "brace":
-										SVGLines[s + 1].push("<path d=\"M34.1,0C19.3,14.5,16.7,30.6,20.2,47.8c2,9.9,4.3,19.7,5,29.7c0.9,15.8-4.7,30-21.9,41c22,14.3,24,32.7,20.5,52.3c-1.8,9.9-4.5,19.7-5.1,29.7c-0.8,12.7,4.2,24.5,14.2,35C21,228,15.4,217.9,11.4,207.1c-4.9-13.2-0.7-26.1,2.4-39.1c1.6-6.8,3.4-13.8,3.2-20.7c0-10.9-4.5-20.9-17-28.6c13.1-8.5,18.2-19.2,17.1-31.2c-0.8-8.1-3-16.2-5.1-24.2c-5.5-20-3.9-38.9,13.1-55.9C27.8,4.7,31,2.4,34.1,0z\" fill=\"" + frgb + "\" transform=\"matrix(" + [0.3, 0., 0., (dest2 - dest) * 0.101911/24, (barlines[measures][lines][1] - 10), dest] + ")\"/>");
+										SVGLines[s + 1].push({
+										"new" : "path",
+										"id" : "brace-" + idcount++,
+										"d" : "M34.1,0C19.3,14.5,16.7,30.6,20.2,47.8c2,9.9,4.3,19.7,5,29.7c0.9,15.8-4.7,30-21.9,41c22,14.3,24,32.7,20.5,52.3c-1.8,9.9-4.5,19.7-5.1,29.7c-0.8,12.7,4.2,24.5,14.2,35C21,228,15.4,217.9,11.4,207.1c-4.9-13.2-0.7-26.1,2.4-39.1c1.6-6.8,3.4-13.8,3.2-20.7c0-10.9-4.5-20.9-17-28.6c13.1-8.5,18.2-19.2,17.1-31.2c-0.8-8.1-3-16.2-5.1-24.2c-5.5-20-3.9-38.9,13.1-55.9C27.8,4.7,31,2.4,34.1,0z",
+										"fill" : frgb, 
+										"fill-opacity" : 1, 
+										"transform" : "matrix(" + [0.3, 0., 0., (dest2 - dest) * 0.101911/24, (barlines[measures][lines][1] - 10), dest] + ")"
+										}
+										);
 										break;
 										case 2: case "bracket":
-										SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
-										SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
-										SVGLines[s + 1].push("<rect x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" width=\"2.\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+										SVGLines[s + 1].push({
+										"new" : "g",
+										"id" : "bracket-" + idcount++,
+										"fill" : barLineColor,
+										"child" : [ 				{
+											"new" : "rect",
+											"id" : "middle",
+											"x" : barlines[measures][lines][1] - 4,
+											"y" : dest[0],
+											"width" : 2,
+											"height" : dest2 - dest
+											}
+										, 				{
+											"id" : "top",
+											"new" : "text",
+											"text" : "",
+											"font-family" : _musicFont,
+											"font-style" : "normal",
+ 											"font-weight" : "normal",
+											"font-size" : 18,
+											"x" : barlines[measures][lines][1] - 4,
+											"y" : dest[0]
+											}
+										, 	{
+											"id" : "bottom",
+											"new" : "text",
+											"text" : "",
+											"font-family" : _musicFont,
+											"font-style" : "normal",
+ 											"font-weight" : "normal",
+											"font-size" : 18,
+											"x" : barlines[measures][lines][1] - 4,
+											"y" : dest2[0]
+											}
+ 											]
+											}
+											);
+										//SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
+										//SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
+										//SVGLines[s + 1].push("<rect x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" width=\"2.\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 										break;	
 									}
 								}
@@ -1033,22 +1087,41 @@ function writeStaffLines()
 					for (var d = 0; d < dest.length; d++) {
 						path += "M" + stafflines[measures][staves][lines][0] + "," + dest[d] + "H" + stafflines[measures][staves][lines][2].toFixed(1);	
 						if (lineCount > 750) {
-							SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+							SVGLines[s + 1].push({
+							"new" : "path",
+							"id" : "stafflines-" + idcount++,
+							"d" : path,
+							"stroke" : staffLineColor, 
+							"stroke-width" : 0.8, 
+							"fill" : staffLineColor, 
+							"fill-opacity" : 1, 
+							"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+							}
+							);
+							//SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 							path = "";
 							lineCount = 0;
-									}	
-						else lineCount++;			
-								}
+							}	
+							else lineCount++;			
 							}
 						}
 					}
 				}
 			}
-				if (path != "") SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
-
-				}	
-			//}
-			//oldstafflines = stafflines;
+		}
+		if (path != "") SVGLines[s + 1].push({
+			"new" : "path",
+			"id" : "stafflines-" + idcount++,
+			"d" : path,
+			"stroke" : staffLineColor, 
+			"stroke-width" : 0.8, 
+			"fill" : staffLineColor, 
+			"fill-opacity" : 1, 
+			"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+			}
+			);
+			//SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+	}	
 }
 
 
@@ -1064,10 +1137,37 @@ function writeRuler()
 			path += "M" + i + " " + 0 + " V" + 15 + " ";
 			var padding = (j % 60 < 10) ? "0" : "";
 			_time = parseInt(j / 60) + "\'" + padding + j % 60 + "\"";
-			SVGString[s + 1].push("<text x=\"" + i + "\" y=\"" + 25 + "\" text-anchor=\"middle\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
+			SVGString[s + 1].push({
+				"new" : "text",
+				"id" : "rulerText-" + idcount++,
+				"x" : i,
+				"y" : 25,
+				"text" : _time,
+				"font-family" : _textFont,
+				"font-style" : "normal",
+				"font-weight" : "normal", 
+				"text-anchor" : "middle",
+				"font-size" : 10,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				}
+			);
+			//SVGString[s + 1].push("<text x=\"" + i + "\" y=\"" + 25 + "\" text-anchor=\"middle\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
 		j++;
 		}	
-		SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+		SVGString[s + 1].push({
+			"new" : "path",
+			"id" : "rulerLine-" + idcount++,
+			"d" : path,
+			"stroke" : frgb,
+			"stroke-width" : 0.4,
+			"fill" : frgb, 
+			"fill-opacity" : 1, 
+			"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+			}
+		);
+		//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 	}
 }
 
@@ -1318,8 +1418,20 @@ function writeRests()
 				if (dest != -1)
 					{
 					for (var d = 0; d < dest.length; d++) {
- 						SVGString[s + 1].push("<rect x=\"" + (staffBoundingInfo[0] + staffBoundingInfo[2]/2 - 4) + "\" y=\"" + (dest[d] + staffBoundingInfo[3]/2 - 6) + "\" width=\"" + 8 + "\" height=\"" + 3 + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
-						}
+					SVGString[s + 1].push({
+					"new" : "rect",
+					"id" : "rest-" + idcount++,
+					"x" : staffBoundingInfo[0] + staffBoundingInfo[2]/2 - 4,
+					"y" : dest[d] + staffBoundingInfo[3]/2 - 6,
+					"width" : 8, 
+					"height" : 3,
+					"stroke" : "none",
+					"fill" : frgb, 
+					"fill-opacity" : 1, 
+					"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+					}
+					);
+					}
 					}
 				}
 			}
@@ -1367,6 +1479,7 @@ function scoreLayout()
 		usedFonts.replace(_textFont + "::Regular", 1);  
 		usedFonts.replace(_titleFont + "::Regular", 1);  
 		oldstaff = -1;
+		idcount = 0;
 		SVGString = {};
 		SVGLines = {};
 		SVGClefs = {};
@@ -1434,6 +1547,50 @@ function init()
 	oldRange = "";
 }
 
+/*
+			css.push({
+    			"selector" : ".writeAt",
+    			"props" : {
+				"font-family" : font,
+				"font-style" : "normal",
+				"font-weight" : "normal", 
+				"font-size" : fs
+    			}
+  			});
+*/
+
+function writeAt(s, font, fs, x, y, t)
+{
+			var a = arrayfromargs(arguments);
+			s = a[0];
+			font = a[1];
+			fs = a[2];
+			x = a[3];
+			y = a[4];
+			t = a.slice(5).join(" ");
+			if (typeof t == "number") t = parseInt(t);
+ 			if(t.toString().length >= 1){
+			var xoffset = (tempoflag == 1) ? 10. : 0.;
+			
+			SVGString[s + 1].push({
+				"new" : "text",
+				"id" : "writeAt-" + idcount++,
+				"x" : x + xoffset,
+				"y" : y,
+				"text" : htmlEntities(t),
+				"font-family" : font,
+				"font-style" : "normal",
+				"font-weight" : "normal", 
+				"font-size" : fs,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				}
+			);
+			//SVGString[s + 1].push("<text x=\"" + (x + xoffset) + "\" y=\"" + y + "\" font-family=\"" + font + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + fs + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + htmlEntities(t) + "</text>");
+			}
+}
+
 function anything() {
     var msg = arrayfromargs(arguments);
 	if (renderPage){
@@ -1461,9 +1618,24 @@ function anything() {
  		case "tempoqtrequals":
 			for (var s = 0; s < groupcount; s++)
 			{
+			//create group
 			for (var i = 0; i < 2; i++) {
 			var glyph = fontMap.get("tempoqtrequals");
-			SVGString[s + 1].push("<text x=\"" + (glyph[i*5+1] + msg[0]) + "\" y=\"" + (glyph[i*5+2] + msg[1]) + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[i*5+0] + "</text>");
+			SVGString[s + 1].push({
+				"new" : "text",
+				"id" : "tempoqtrequals-" + idcount++,
+				"x" : glyph[i*5+1] + msg[0],
+				"y" : glyph[i*5+2] + msg[1],
+				"text" : glyph[i*5+0],
+				"font-family" : _musicFont,
+				"font-style" : "normal",
+				"font-weight" : "normal", 
+				"font-size" : glyph[i*5+4],
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				}
+			);
 			}
 			}
 			tempoflag = 1;
@@ -1545,7 +1717,22 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<text x=\"" + msg[5] + "\" y=\"" + dest[d] + "\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"10\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + noteText + "</text>");
+				
+				SVGString[s + 1].push({
+				"new" : "text",
+				"id" : "printNoteText-" + idcount++,
+				"x" : msg[5],
+				"y" : dest[d],
+				"text" : noteText,
+				"font-family" : _textFont,
+				"font-style" : "normal",
+				"font-weight" : "normal", 
+				"font-size" : 10,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				}
+			);
 			}
 			}
 			}
@@ -1576,7 +1763,17 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M" + (msg[6] - 1) + "," + dest[d] + " L" + (msg[8] + 2) + "," + dest[d] + "\" stroke=\"" + frgb + "\" stroke-width=\"0.6\" fill=\"" + frgb + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "LedgerLine-" + idcount++,
+				"d" : "M" + (msg[6] - 1) + "," + dest[d] + " L" + (msg[8] + 2) + "," + dest[d],
+				"stroke" : frgb,
+				"stroke-width" : 0.6,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				}
+			);
 			}
 			}
 			}
@@ -1593,10 +1790,22 @@ function anything() {
 				var dest = remap(sg[s], msg[1], ((msg[7] - msg[6]) < 0) ? msg[7] : msg[6]);
 				if (dest != -1)
 				{
-					for (var d = 0; d < dest.length; d++) {
-					SVGString[s + 1].push("<rect x=\"" + (msg[5] + stemXOffset) + "\" y=\"" + dest[d] + "\" width=\"" + 1.8 * msg[4] + "\" height=\"" + Math.abs(msg[7] - msg[6] - stemYOffset) + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
-					}
+				for (var d = 0; d < dest.length; d++) {
+				SVGString[s + 1].push({
+				"new" : "rect",
+				"id" : "Stem-" + idcount++,
+				"x" : msg[5] + stemXOffset,
+				"y" : dest[d],
+				"width" : 1.8 * msg[4], 
+				"height" : Math.abs(msg[7] - msg[6] - stemYOffset),
+				"stroke" : "none",
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
 				}
+			);
+			}
+			}
 			}
 			}
            break;
@@ -1622,7 +1831,19 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<rect x=\"" + (msg[9] - 0.2)  + "\" y=\"" + (dest[d] - 0.4) + "\" width=\"" + (msg[11] + (2. * msg[8])) + "\" height=\"" + msg[12] + "\" fill=\"" + frgb + "\" stroke=\"none\" fill-opacity=\"1.0\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "rect",
+				"id" : "Beam-" + idcount++,
+				"x" : msg[9] - 0.2,
+				"y" : dest[d] - 0.4,
+				"width" : msg[11] + (2. * msg[8]), 
+				"height" : msg[12],
+				"stroke" : "none",
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				}
+			);
 			}
 			}
 			}
@@ -1637,7 +1858,17 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"" + frgb + "\" transform=\"matrix(" + [Math.abs(msg[11])/100., 0., 0., orient, msg[9], dest[d] + 7] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "Slur-" + idcount++,
+				"d" : "M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1",
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(" + [Math.abs(msg[11])/100., 0., 0., orient, msg[9], dest[d] + 7] + ")"
+				}
+			);
 			}
 			}
 			}
@@ -1654,7 +1885,17 @@ function anything() {
 			{
 			var compress = (msg[11] < 30) ? 1.5 : 1;
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"" + frgb + "\" transform=\"matrix(" + [msg[11]/100., 0., 0., orient/compress, msg[9], dest[d] + 7] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "Tie-" + idcount++,
+				"d" : "M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1",
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(" + [msg[11]/100., 0., 0., orient/compress, msg[9], dest[d] + 7] + ")"
+				}
+			);
 			}
 			}
 			}
@@ -1668,7 +1909,17 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"" + frgb + "\" transform=\"matrix(" + [msg[7]/100., 0., 0., orient, msg[5], dest[d] + 7.] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "TieOut-" + idcount++,
+				"d" : "M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1",
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(" + [msg[7]/100., 0., 0., orient, msg[5], dest[d] + 7.] + ")"
+				}
+			);
 			}
 			}
 			}
@@ -1683,7 +1934,17 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"" + frgb + "\" transform=\"matrix(" + [0.2, 0., 0., orient, msg[5] - 20, dest[d] + 7.] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "TieIn-" + idcount++,
+				"d" : "M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1",
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(" + [0.2, 0., 0., orient, msg[5] - 20, dest[d] + 7.] + ")"
+				}
+			);
 			}
 			}
 			}
@@ -1715,8 +1976,16 @@ function anything() {
 			path = "M0,2.5 L" + stretch + ",5 M" + stretch + ",10 L0,12.5";
 				break;
 			}	
-			//post("hairpinVerticalOffset", hairpinVerticalOffset, dest[d] + hairpinVerticalOffset, "\n");
-			SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"1.0\" fill=\"none\" transform=\"matrix(" + [-1., 0., 0., 1., msg[11], dest[d] + hairpinVerticalOffset] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "cresc-" + idcount++,
+				"d" : path,
+				"stroke" : frgb,
+				"stroke-width" : 1.,
+				"fill" : "none", 
+				"transform" : "matrix(" + [-1., 0., 0., 1., msg[11], dest[d] + hairpinVerticalOffset] + ")"
+				}
+			);
 			}
 			}
 			}			
@@ -1748,7 +2017,16 @@ function anything() {
 			path = "M0,2.5 L" + stretch + ",5 M" + stretch + ",10 L0,12.5";
 				break;
 			}	
-			SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"1.0\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., msg[11], dest[d] + hairpinVerticalOffset] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "decresc-" + idcount++,
+				"d" : path,
+				"stroke" : frgb,
+				"stroke-width" : 1.,
+				"fill" : "none", 
+				"transform" : "matrix(" + [1., 0., 0., 1., msg[11], dest[d] + hairpinVerticalOffset] + ")"
+				}
+			);
 			}
 			}
 			}			
@@ -1762,8 +2040,34 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 15.5) + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
-			SVGString[s + 1].push("<text x=\"" + (glyph[1] + msg[3] - 1.5) + "\" y=\"" + (glyph[2] + dest[d] + 21.5) + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + (glyph[4] - 6) + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + glyph[0] + "</text>");
+				
+			SVGString[s + 1].push({
+					"new" : "g",
+					"id" : "RepeatDots" + idcount++,
+					"fill" : frgb,
+					"fill-opacity" : 1, 
+					"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+					"child" : [ {
+							"id" : "dot-1",
+							"new" : "text",
+							"text" : glyph[0],
+							"font-family" : _musicFont,
+							"font-size" : glyph[4] - 6, 
+							"x" : glyph[1] + msg[3] - 1.5,
+							"y" : glyph[2] + dest[d] + 15.5
+							}, 						
+							{
+							"id" : "dot-2",
+							"new" : "text",
+							"text" : glyph[0],
+							"font-family" : _musicFont,
+							"font-size" : glyph[4] - 6,
+							"x" : glyph[1] + msg[3] - 1.5,
+							"y" : glyph[2] + dest[d] + 21.5
+						}
+ 					]
+				}
+			);
 			}
 			}
 			}
@@ -1777,7 +2081,16 @@ function anything() {
 			{
 			for (var d = 0; d < dest.length; d++) {
 			var dest2 =dest[d] + msg[12] - msg[10];
-			SVGString[s + 1].push("<path d=\"M" + msg[9] + "," + dest[d] + " L" + msg[11] + "," + dest2 + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "Gliss-" + idcount++,
+				"d" : "M" + msg[9] + "," + dest[d] + " L" + msg[11] + "," + dest2,
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : "none", 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				}
+			);
             }
 			}
 			}
@@ -1792,7 +2105,17 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M0,6L0,0,42,0M58,0 L100,0 L100,6\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [(msg[12] - msg[9])/100., 0., 0., orient, msg[9], dest[d] - orient * 6] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "TupletBracket-" + idcount++,
+				"d" : "M0,6L0,0,42,0M58,0 L100,0 L100,6",
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : "none", 
+				"transform" : "matrix(" + [(msg[12] - msg[9])/100., 0., 0., orient, msg[9], dest[d] - orient * 6] + ")",
+				}
+			);
+			//SVGString[s + 1].push("<path d=\"M0,6L0,0,42,0M58,0 L100,0 L100,6\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [(msg[12] - msg[9])/100., 0., 0., orient, msg[9], dest[d] - orient * 6] + ")\"/>");
 			}
 			}
 			}
@@ -1808,7 +2131,17 @@ function anything() {
 			var path = "";
 			for (var i = 0; i < parseInt((msg[11] - msg[9]) / 12); i++) path = path + "M" + (msg[9] + i * 12)  + "," + dest[d] + " L" + (msg[9] + i * 12 + 6)  + "," + dest[d] + " ";
 			path += "M" + (msg[11] - (msg[11] - msg[9]) % 12)  + "," + dest[d] + " L" + msg[11] + "," + dest[d];
-			SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "OttavaAltaLine-" + idcount++,
+				"d" : path,
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : "none", 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				}
+			);
+			//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			}
 			}
 			}
@@ -1820,7 +2153,17 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) + 6) + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "OttavaAltaHook-" + idcount++,
+				"d" : "M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) + 6),
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : "none", 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				}
+			);
+			//SVGString[s + 1].push("<path d=\"M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) + 6) + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			}
 			}
 			}
@@ -1835,7 +2178,17 @@ function anything() {
 			var path = "";
 			for (var i = 0; i < parseInt((msg[11] - msg[9]) / 12); i++) path = path + "M" + (msg[9] + i * 12)  + "," + dest[d] + " L" + (msg[9] + i * 12 + 6)  + "," + dest[d] + " ";
 			path += "M" + (msg[11] - (msg[11] - msg[9]) % 12)  + "," + dest[d] + " L" + msg[11] + "," + dest[d];
-			SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "OttavaBassaLine-" + idcount++,
+				"d" : path,
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : "none", 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				}
+			);
+			//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			//post("path", parseInt((msg[11] - msg[9]) / 12), "M" + (msg[11] - (msg[11] - msg[9]) % 12)  + "," + dest[d] + " L" + msg[11] + "," + dest[d], "\n");		
 			}
 			}
@@ -1848,7 +2201,17 @@ function anything() {
 			if (dest != -1)
 			{
 			for (var d = 0; d < dest.length; d++) {
-			SVGString[s + 1].push("<path d=\"M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) - 6) + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+				SVGString[s + 1].push({
+				"new" : "path",
+				"id" : "OttavaAltaHook-" + idcount++,
+				"d" : "M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) - 6),
+				"stroke" : frgb,
+				"stroke-width" : 0.4,
+				"fill" : "none", 
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				}
+			);
+			//SVGString[s + 1].push("<path d=\"M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) - 6) + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			}
 			}
 			}
@@ -2115,29 +2478,108 @@ function anything() {
 					switch (Object.keys(svgelement).toString()){
 						case "path" :
 							svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + origin[0] + RenderMessageOffset[0], transform[5] + origin[1] + dest[d]];
-							SVGGraphics[s + 1].push("<path d=\"" + svgelement.path + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + svgstrokewidth + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"/>");
+							//SVGGraphics[s + 1].push("<path d=\"" + svgelement.path + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + svgstrokewidth + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"/>");
+							SVGGraphics[s + 1].push({
+							"new" : "path",
+							"id" : "PicsterPath-" + idcount++,
+							"d" : svgelement.path,
+							"stroke" : svgstroke,
+							"stroke-width" : svgstrokewidth,
+							"stroke-opacity" : svgstrokeopacity,
+							"fill" : svgfill, 
+							"fill-opacity" : svgfillopacity,
+							"transform" : "matrix(" + svgtransform + ")",
+								}
+							);
 							break;
 						case "rectangle" :
 							svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + origin[0] + RenderMessageOffset[0], transform[5] + origin[1] + dest[d]];
-							SVGGraphics[s + 1].push("<rect x=\"" + svgelement.rectangle[0] + "\" y=\"" + svgelement.rectangle[1] + "\" width=\"" + svgelement.rectangle[2] + "\" height=\"" + svgelement.rectangle[3] + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + svgstrokewidth + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"/>");
+							//SVGGraphics[s + 1].push("<rect x=\"" + svgelement.rectangle[0] + "\" y=\"" + svgelement.rectangle[1] + "\" width=\"" + svgelement.rectangle[2] + "\" height=\"" + svgelement.rectangle[3] + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + svgstrokewidth + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"/>");
+							SVGGraphics[s + 1].push({
+							"new" : "rect",
+							"id" : "PicsterRect-" + idcount++,
+							"x" : svgelement.rectangle[0],
+							"y" : svgelement.rectangle[1],
+							"width" : svgelement.rectangle[2], 
+							"height" : svgelement.rectangle[3],
+							"stroke" : svgstroke,
+							"stroke-width" : svgstrokewidth,
+							"stroke-opacity" : svgstrokeopacity,
+							"fill" : svgfill, 
+							"fill-opacity" : svgfillopacity,
+							"transform" : "matrix(" + svgtransform + ")",
+							}
+							);
 							break;
 						case "ellipse" :
 							svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + origin[0] + RenderMessageOffset[0], transform[5] + origin[1] + dest[d]];
-							SVGGraphics[s + 1].push("<ellipse cx=\"" + svgelement.ellipse[0] + "\" cy=\"" + svgelement.ellipse[1] + "\" rx=\"" + svgelement.ellipse[2] + "\" ry=\"" + svgelement.ellipse[3] + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + svgstrokewidth + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"/>");
+							//SVGGraphics[s + 1].push("<ellipse cx=\"" + svgelement.ellipse[0] + "\" cy=\"" + svgelement.ellipse[1] + "\" rx=\"" + svgelement.ellipse[2] + "\" ry=\"" + svgelement.ellipse[3] + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + svgstrokewidth + "\" stroke-opacity=\"" + svgstrokeopacity + "\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\"/>");
+							SVGGraphics[s + 1].push({
+							"new" : "ellipse",
+							"id" : "PicsterEllipse-" + idcount++,
+							"cx" : svgelement.rectangle[0],
+							"cy" : svgelement.rectangle[1],
+							"rx" : svgelement.rectangle[2], 
+							"ry" : svgelement.rectangle[3],
+							"stroke" : svgstroke,
+							"stroke-width" : svgstrokewidth,
+							"stroke-opacity" : svgstrokeopacity,
+							"fill" : svgfill, 
+							"fill-opacity" : svgfillopacity,
+							"transform" : "matrix(" + svgtransform + ")",
+							}
+							);
 							break;
 						case "text" :
  							svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + dest[d]];
-							SVGGraphics[s + 1].push("<text x=\"" + svgelement.text[0] + "\" y=\"" + svgelement.text[1] + "\" font-family=\"" + svgfontfamily + "\" font-size=\"" + svgfontsize + "\" font-style=\"" + svgfontstyle[0] + "\" font-weight=\"" + svgfontstyle[1] + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\">" + svgelement.text[2] + "</text>");
-							//post ("<text x=\"" + svgelement.text[0] + "\" y=\"" + svgelement.text[1] + "\" font-family=\"" + svgfontfamily + "\" font-size=\"" + svgfontsize + "\" font-style=\"" + svgfontstyle[0] + "\" font-weight=\"" + svgfontstyle[1] + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\">" + svgelement.text[2] + "</text>", "\n");
+							//SVGGraphics[s + 1].push("<text x=\"" + svgelement.text[0] + "\" y=\"" + svgelement.text[1] + "\" font-family=\"" + svgfontfamily + "\" font-size=\"" + svgfontsize + "\" font-style=\"" + svgfontstyle[0] + "\" font-weight=\"" + svgfontstyle[1] + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\">" + svgelement.text[2] + "</text>");
+							SVGGraphics[s + 1].push({
+								"new" : "text",
+								"id" : "PicsterText-" + idcount++,
+								"x" : svgelement.text[0],
+								"y" : svgelement.text[1],
+								"text" : svgelement.text[2],
+								"font-family" : svgfontfamily,
+								"font-style" : svgfontstyle[0],
+								"font-weight" : svgfontstyle[1], 
+								"font-size" : svgfontsize,
+								"text-decoration" : "none",
+								"fill" : svgfill, 
+								"fill-opacity" : svgfillopacity, 
+								"transform" : "matrix(" + svgtransform + ")",
+								}
+							);							//post ("<text x=\"" + svgelement.text[0] + "\" y=\"" + svgelement.text[1] + "\" font-family=\"" + svgfontfamily + "\" font-size=\"" + svgfontsize + "\" font-style=\"" + svgfontstyle[0] + "\" font-weight=\"" + svgfontstyle[1] + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\">" + svgelement.text[2] + "</text>", "\n");
 							break;
 						case "img" :
 							svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + dest[d]];
-							SVGImages[s + 1].push(["raster", svgelement.img[0], origin[0], origin[1], svgelement.img[1], svgelement.img[2], svgtransform]);
+							//SVGImages[s + 1].push(["raster", svgelement.img[0], origin[0], origin[1], svgelement.img[1], svgelement.img[2], svgtransform]);
+							SVGImages[s + 1].push({
+							"new" : "image",
+							"id" : "image" + idcount++,
+							"x" : origin[0],
+							"y" : origin[1],
+							"width" : svgelement.img[1],
+							"height" : svgelement.img[2],
+							"href" : svgelement.img[0],
+							"transform" : "matrix(" + svgtransform + ")"
+							}
+							);
 							SVGImages2[s + 1].push(["raster", svgelement.img[0], origin[0], origin[1], svgelement.img[1], svgelement.img[2], svgtransform]);
 							break;
 						case "svg" :
 							svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + dest[d]];
- 							SVGImages[s + 1].push(["svg", svgelement.svg[0], origin[0], origin[1], svgelement.svg[1], svgelement.svg[2], svgtransform]);
+ 							//SVGImages[s + 1].push(["svg", svgelement.svg[0], origin[0], origin[1], svgelement.svg[1], svgelement.svg[2], svgtransform]);
+							SVGImages[s + 1].push({
+							"new" : "image",
+							"id" : "image" + idcount++,
+							"x" : origin[0],
+							"y" : origin[1],
+							"width" : svgelement.svg[1],
+							"height" : svgelement.svg[2],
+							"href" : svgelement.svg[0],
+							"transform" : "matrix(" + svgtransform + ")"
+							}
+							);
 							SVGImages2[s + 1].push(["svg", svgelement.svg[0], origin[0], origin[1], svgelement.svg[1], svgelement.svg[2], svgtransform]);
 							break;
 								}
@@ -2194,11 +2636,25 @@ function anything() {
 							//post("_text0", _text,  "\n");
 								}
 							}
-						SVGGraphics[s + 1].push("<text x=\"" + (Number(RenderMessageOffset[0]) + Number(_textx)) + "\" y=\"" + (Number(_texty) + Number(dest)) + "\" font-family=\"" + _font + "\" font-size=\"" + _fontsize + "\" fill=\"" + _textcolor + "\" fill-opacity=\"" + _opacity + "\" transform=\"matrix(1, 0, 0, 1, 0, 0)\">" + _text + "</text>");
+						SVGString[s + 1].push({
+						"new" : "text",
+						"id" : "legacypicsterelement-" + idcount++,
+						"x" : Number(RenderMessageOffset[0]) + Number(_textx),
+						"y" : Number(_texty) + Number(dest),
+						"text" : _text,
+						"font-family" : _font,
+						"font-style" : "normal",
+						"font-weight" : "normal", 
+						"font-size" : _fontsize,
+						"fill" : _textcolor, 
+						"fill-opacity" : _opacity, 
+						"transform" : "matrix(1, 0, 0, 1, 0, 0)"
+						}
+						);
 					break;
 					}
-						}
-						}
+					}
+					}
 					}
 				}
 			}
@@ -2557,7 +3013,6 @@ function anything() {
 			for (var i = 0; i < multiple; i++) {
 			if (typeof glyph[i*5+0] == "number") t = htmlEntities(glyph[i*5+0].toString());
             else {
-				//post("msg[2]", messagename, "\n");
 				if (msg[2] < 0.5 && msgname.indexOf("notehead") == 0) var gracenoteOffset = 0.6;
 				else var gracenoteOffset = 0;
 				if (glyph[0].length == 1) t = glyph[i*5+0];
@@ -2567,8 +3022,38 @@ function anything() {
 				else if (glyph[i*5+3] == "$MUSICFONT") var fontFamily = _musicFont;
 				else var fontFamily = glyph[i*5+3];
 				usedFonts.replace(fontFamily + "::Regular", 1);
-				if (staticClefs) SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
-				else SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + (gracenoteOffset * 0.5) + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")\" >" + t + "</text>");
+				if (staticClefs) SVGClefs[s + 1].push({
+				"new" : "text",
+				"id" : "clefs-" + idcount++,
+				"x" : 0,
+				"y" : 0,
+				"text" : t,
+				"font-family" : fontFamily,
+				"font-style" : "normal",
+				"font-weight" : "normal", 
+				"font-size" : glyph[i*5+4] * msg[2] * 2,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(" + [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]] + ")",
+				}
+				);
+				//SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
+				else SVGString[s + 1].push({
+				"new" : "text",
+				"id" : "text-" + idcount++,
+				"x" : 0,
+				"y" : 0,
+				"text" : t,
+				"font-family" : fontFamily,
+				"font-style" : "normal",
+				"font-weight" : "normal", 
+				"font-size" : glyph[i*5+4] * msg[2] * 2,
+				"fill" : frgb, 
+				"fill-opacity" : 1, 
+				"transform" : "matrix(" + [1., 0., 0., 1., glyph[i*5+1] + (gracenoteOffset * 0.5) + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")",
+				}
+			);
+			//SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + (gracenoteOffset * 0.5) + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")\" >" + t + "</text>");
 			}
 			}
 		  }
@@ -2621,50 +3106,32 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return Math.round(element * 255)}) + ")";
 			var dasharray = " ";
 			var wave = false;
-			if (picster.contains("style::stroke-dasharray")){
-				switch ([].concat(picster.get("style::stroke-dasharray"))[0]) {
-					case -1: 
-					wave = true;
-					break;
-					case 0:
-					break;
-					default: 
-					dasharray = " stroke-dasharray=\"" + picster.get("style::stroke-dasharray") + "\" ";
-				}
+			if (picster.contains("style")){
+				if (picster.get("style::stroke") == "$FRGB") picster.replace("style::stroke", frgb); 
+				else if (picster.get("style::stroke") == "$BRGB") picster.replace("style::stroke", brgb); 
+				if (picster.get("style::fill") == "$FRGB") picster.replace("style::fill", frgb); 
+				else if (picster.get("style::fill") == "$BRGB") picster.replace("style::fill", brgb);
 			}
+			if (picster.contains("style::stroke-dasharray")) if (picster.get("style::stroke-dasharray")[0] == -1) wave = true;
 			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
 			else transform = (1, 0, 0, 1, 0, 0);
-			if (svggroupflag == false) svgtransform = "transform=\"matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")\"";
+			if (svggroupflag == false) svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")";
 			switch (picster.get("new")) {
 				case "g" :
-				//post("g", svggroupflag, s, svgtransform, "\n");	
-				svggroupflag = true;
-				SVGGraphics[s + 1].push("<g id=\"" + picster.get("id") + "\" " + svgtransform + ">");
-				var group = {};
-				var tempDict = new Dict();
-				group = JSON.parse(picster.stringify());
-				for (var i = 0; i < group.child.length; i++) {
-					var child = group.child[i];
-					svgtransform = "transform=\"" + child.transform + "\"";
-					if (child.hasOwnProperty("style")) {
- 					//post("color", frgb, brgb, "\n");
-					if (child.style.stroke == "$FRGB") svgstroke = frgb; //[parseInt(frgb[0]), parseInt(frgb[1]), parseInt(frgb[2])];
-					else if (child.style.stroke == "$BRGB") svgstroke = brgb; //[parseInt(brgb[0]), parseInt(brgb[1]), parseInt(brgb[2])];
-					else svgstroke = child.style.stroke;
-					svgstrokeopacity = child.style["stroke-opacity"];
-					if (child.style.fill == "$FRGB") svgfill = frgb;
-					else if (child.style.fill == "$BRGB") svgfill = brgb;
-					else svgfill = child.style.fill;
-					svgfillopacity = child.style["fill-opacity"];
-					}
-					tempDict.clear();
-					tempDict.parse(JSON.stringify(child));
-					renderDrawSocket(s, _dest, RenderMessageOffset, tempDict);
-					}
-				SVGGraphics[s + 1].push("</g>");
+				if (picster.contains("child::style")){
+					if (picster.get("child::style::stroke") == "$FRGB") picster.replace("child::style::stroke", frgb); 
+					else if (picster.get("child::style::stroke") == "$BRGB") picster.replace("child::style::stroke", brgb); 
+					if (picster.get("child::style::fill") == "$FRGB") picster.replace("child::style::fill", frgb); 
+					else if (picster.get("child::style::fill") == "$BRGB") picster.replace("child::style::fill", brgb); 
+				}
+				picster.replace("transform", svgtransform);
+				SVGGraphics[s + 1].push(JSON.parse(picster.stringify()));
 				break;
 				case "marker" :
-				SVGGraphics[s + 1].push("<marker id=\"" + picster.get("id") + "\" markerWidth=\"" + picster.get("markerWidth") + "\" markerHeight=\"" + picster.get("markerHeight") + "\" refX=\"" + picster.get("refX") + "\" refY=\"" + picster.get("refY") + "\" markerUnits=\"" + picster.get("markerUnits") + "\" >");
+				post("I'm a marker and I'm not supported!\n");	
+				/*
+				//SVGGraphics[s + 1].push("<marker id=\"" + picster.get("id") + "\" markerWidth=\"" + picster.get("markerWidth") + "\" markerHeight=\"" + picster.get("markerHeight") + "\" refX=\"" + picster.get("refX") + "\" refY=\"" + picster.get("refY") + "\" markerUnits=\"" + picster.get("markerUnits") + "\" >");
+				SVGGraphics[s + 1].push(picster);
 				var group = {};
 				var tempDict = new Dict();
 				url = picster.get("id");
@@ -2679,11 +3146,12 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				tempDict.parse(JSON.stringify(child));
 				renderDrawSocket(s, _dest, RenderMessageOffset, tempDict);
 				SVGGraphics[s + 1].push("</marker>");
+				*/
 				break;
 				case "line" :
 				if (wave){
-				SVGGraphics[s + 1].push("<g id=\"" + picster.get("id") + "\" " + svgtransform + ">");
-				//post("wave1", picster.get("x1"), picster.get("x2"), Math.floor(Math.sqrt(Math.pow(picster.get("x2") - picster.get("x1"), 2) + Math.pow(picster.get("y2") - picster.get("y1"), 2)) / 8.5), "\n");	
+				var child = [];
+				//SVGGraphics[s + 1].push("<g id=\"" + picster.get("id") + "\" " + svgtransform + ">");
 				/////////////////
 				for (var i = 0; i < Math.floor(Math.sqrt(Math.pow(picster.get("x2") - picster.get("x1"), 2) + Math.pow(picster.get("y2") - picster.get("y1"), 2)) / 8.5); i++){
 				var _d = "M 129.9,189.5 C 103.9,189.5 88.7,205.42 63.5,238.06 L 33.1,217.1 C 47.9,195.5 57.9,182.62 75.5,169.18 C 91.427778,157.15296 111.9,145.02 135.101,145.02 C 172.276,145.02 192.278,161.973 223.101,185.82 C 253.501,209.34 274.702,219.421 293.901,219.421 C 302.301,219.421 317.28256,215.01581 327.102,207.101 C 340.22141,197.96521 349.502,185.981 363.502,163.42 L 394.302,187.26 C 377.902,212.22 367.102,224.3 353.902,235.82 C 333.502,254.06 314.702,264.381 288.702,264.381 C 218.652,264.38 187.714,189.5 129.9,189.5 z ";
@@ -2694,31 +3162,60 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				var rotation = Math.asin(sign_x * (picster.get("y2") - picster.get("y1"))/Math.sqrt(Math.pow(sign_x * (picster.get("y2") - picster.get("y1")),2)+Math.pow(sign_y * (picster.get("x2") - picster.get("x1")),2)))/Math.PI*180;				
 				if (sign_x == -1) transform_ = "transform=\"translate(" + (sign_x * (i + 1) * a + Math.sin(rotation/360*Math.PI*2) * 10)+ ", " + (sign_y * (i + 1) * b - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)\"";	
 				else transform_ = "transform=\"translate(" + (sign_x * i * a + Math.sin(rotation/360*Math.PI*2) * 10) + ", " + (sign_y * (i * b) - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)\"";
-				//post("ellipse", transform_, _d, "\n");
-				SVGGraphics[s + 1].push("<path id=\"" + "wave" + i + "\" d=\"" + _d + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgstroke + "\" fill-opacity=\"" + svgstrokeopacity + "\" " + transform_ + onclick + "/>");
+				//child.push("<path id=\"" + "wave" + i + "\" d=\"" + _d + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgstroke + "\" fill-opacity=\"" + svgstrokeopacity + "\" " + transform_ + onclick + "/>");
+				child.push({
+				"new" : "path",
+				"id" : "wave" + i,
+				"d" : _d,
+				"stroke" : (picster.get("style::stroke") == "$FRGB") ? frgb : picster.get("style::stroke"),
+				"stroke-width" : 0.1,
+				"fill" : (picster.get("style::fill") == "$FRGB") ? frgb : picster.get("style::fill"),
+				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				});
 				}
 				/////////////////
-								
-				SVGGraphics[s + 1].push("</g>");
+				SVGGraphics[s + 1].push({
+				"new" : "g",
+				"id" : picster.get("id"),
+				"transform" : svgtransform,
+				"child" : child
+				});								
+				//SVGGraphics[s + 1].push("</g>");
 				}
-				else SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + svgtransform + onclick + "/>");
+				else 
+				{
+				picster.replace("transform", svgtransform);
+				SVGGraphics[s + 1].push(JSON.parse(picster.stringify()));
+				}
+				//SVGGraphics[s + 1].push("<line id=\"" + picster.get("id") + "\" x1=\"" + picster.get("x1") + "\" y1=\"" + picster.get("y1") + "\" x2=\"" + picster.get("x2") + "\" y2=\"" + picster.get("y2") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + svgtransform + onclick + "/>");
 				break;
 				case "rect" :
-				var roundedness = (picster.contains("rx")) ? picster.get("rx") : 0;
-				SVGGraphics[s + 1].push("<rect id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" rx=\"" + roundedness + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");
+				//var roundedness = (picster.contains("rx")) ? picster.get("rx") : 0;
+				//SVGGraphics[s + 1].push("<rect id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" width=\"" + picster.get("width") + "\" height=\"" + picster.get("height") + "\" rx=\"" + roundedness + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");
+				picster.replace("transform", svgtransform);
+				SVGGraphics[s + 1].push(JSON.parse(picster.stringify()));
 				break;
 				case "ellipse" :
-				SVGGraphics[s + 1].push("<ellipse id=\"" + picster.get("id") + "\" cx=\"" + picster.get("cx") + "\" cy=\"" + picster.get("cy") + "\" rx=\"" + picster.get("rx") + "\" ry=\"" + picster.get("ry") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");
+				//SVGGraphics[s + 1].push("<ellipse id=\"" + picster.get("id") + "\" cx=\"" + picster.get("cx") + "\" cy=\"" + picster.get("cy") + "\" rx=\"" + picster.get("rx") + "\" ry=\"" + picster.get("ry") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");
+				picster.replace("transform", svgtransform);
+				SVGGraphics[s + 1].push(JSON.parse(picster.stringify()));
 				break;
 				case "polyline" :
-				SVGGraphics[s + 1].push("<polyline id=\"" + picster.get("id") + "\" points=\"" + picster.get("points") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");
+				//SVGGraphics[s + 1].push("<polyline id=\"" + picster.get("id") + "\" points=\"" + picster.get("points") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + "/>");
+				picster.replace("transform", svgtransform);
+				SVGGraphics[s + 1].push(JSON.parse(picster.stringify()));
 				break;
 				case "path" :
+				/*
 				var marker = "";
 				if (picster.contains("marker-start")) marker += "marker-start=\"url(#" + url + ")\" ";
 				if (picster.contains("marker-mid")) marker += "marker-mid=\"url(#" + url + ")\" ";
 				if (picster.contains("marker-end")) marker += "marker-end=\"url(#" + url + ")\"";
 				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + marker + svgtransform + onclick + "/>");
+				*/
+				picster.replace("transform", svgtransform);
+				SVGGraphics[s + 1].push(JSON.parse(picster.stringify()));
+				//post("picster", JSON.stringify(SVGGraphics), "\n");	
 				break;
 				case "text" :
 				if (!(picster.contains("text-anchor"))) picster.replace("text-anchor", "start");
@@ -2726,12 +3223,41 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				else if (picster.get("font-style") == "normal" && picster.get("font-weight") == "bold") usedFonts.replace(picster.get("font-family") + "::Bold", 1);
 				else if (picster.get("font-style") == "italic" && picster.get("font-weight") == "normal") usedFonts.replace(picster.get("font-family") + "::Italic", 1);
 				else if (picster.get("font-style") == "italic" && picster.get("font-weight") == "bold") usedFonts.replace(picster.get("font-family") + "::Bold Italic", 1);
-				SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-anchor=\"" + picster.get("text-anchor") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + ">" + picster.get("child") + "</text>");
+				//SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-anchor=\"" + picster.get("text-anchor") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + ">" + picster.get("child") + "</text>");
+				if (picster.contains("child")) {
+					picster.replace("text", picster.get("child"));	
+					picster.remove("child");	
+				}
+				picster.replace("transform", svgtransform);
+				SVGGraphics[s + 1].push(JSON.parse(picster.stringify()));
 				break;
 				case "image" :
-				var imgtype = (picster.get("href").substr(picster.get("href").lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
- 				SVGImages[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest]]);
-				SVGImages2[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest]]);
+				var href = picster.get("href");
+				var imgtype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
+ 				//SVGImages[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest]]);
+				SVGImages[s + 1].push({
+				"new" : "image",
+				"id" : imgtype + "-" + idcount,
+				"x" : picster.get("x"),
+				"y" : picster.get("y"),
+				"width" : picster.get("width"),
+				"height" : picster.get("height"),
+				"href" : href,
+				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
+				}
+				);
+				SVGImages2[s + 1].push({
+				"new" : "image",
+				"id" : imgtype + "-" + idcount++,
+				"x" : picster.get("x"),
+				"y" : picster.get("y"),
+				"width" : picster.get("width"),
+				"height" : picster.get("height"),
+				"href" : "file://" + href.substring(href.indexOf(":") + 1),
+				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
+				}
+				);				
+				//post("SVGImages", JSON.stringify(SVGImages), "\n");
 				break;	
 	}
 }
@@ -2820,9 +3346,17 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						}
 						bpf += "L" + [allCurveSegs[0][0].toFixed(2), (allCurveSegs[0][1] - thickness/2).toFixed(2)];
 						//bpf += "M" + [curveTo[0], curveTo[1] - 2] + "L" + [curveTo[0], curveTo[1] + 2];
-						SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 0.1 + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + frgb + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
-						//post("d", bpf, "\n");
-						//SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 1. + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + "none" + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
+						SVGString[s + 1].push({
+						"new" : "path",
+						"id" : "bpf-" + idcount++,
+						"d" : bpf,
+						"stroke" : frgb,
+						"stroke-width" : 0.1,
+						"fill" : frgb, 
+						"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+						}
+						);
+						//SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 0.1 + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + frgb + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
 }
 
 function getNoteAreaWidth(m, w)
@@ -2954,6 +3488,8 @@ function writeSVG(destination)
 	}
 	else
 	{
+	///REWRITE!!
+	///Drawsocket to SVG
 	var f = new File(destination, "write", "TEXT");
 	post("destination", destination, "\n");
 	if (f.isopen) {
@@ -2970,21 +3506,11 @@ function writeSVG(destination)
 	writeDefs(destination, f);
 	for (var s = 1; s <= groupcount; s++) {
 	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [SVGZoom, 0., 0., SVGZoom, 0., 0.] + ")\">");	
-	if (prop) for (var i = 0; i < SVGClefs[s].length; i++) { 
-		f.writeline("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + SVGClefs[s][i][0] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + SVGClefs[s][i][1] + "\" fill=\"" + SVGClefs[s][i][2] + "\" fill-opacity=\"1\" transform=\"matrix("+ SVGClefs[s][i][3].join() + ")\" >" + SVGClefs[s][i][4] + "</text>");	
-	}
-	for (var i = 0; i < SVGLines[s].length; i++) {
-		f.writeline(SVGLines[s][i]);
-	}
-	for (var i = 0; i < SVGString[s].length; i++) {
-		f.writeline(SVGString[s][i]);
-	}
-	for (var i = 0; i < SVGImages2[s].length; i++) {
-		f.writeline("<image x=\"" + SVGImages2[s][i][2] + "\" y=\"" + SVGImages2[s][i][3] + "\" width=\"" + SVGImages2[s][i][4] + "\" height=\"" + SVGImages2[s][i][5] + "\" xlink:href=\"file:///" + SVGImages2[s][i][1].substring(SVGImages2[s][i][1].indexOf(":") + 1) + "\" transform=\"matrix(" + SVGImages2[s][i][6] + ")\"/>");
-	}
-	for (var i = 0; i < SVGGraphics[s].length; i++) {
-		f.writeline(SVGGraphics[s][i]);
-	}	
+	if (prop) for (var i = 0; i < SVGClefs[s].length; i++) f.writeline(ds2svg(SVGClefs[s][i]));
+	for (var i = 0; i < SVGLines[s].length; i++) f.writeline(ds2svg(SVGLines[s][i]));
+	for (var i = 0; i < SVGString[s].length; i++) f.writeline(ds2svg(SVGString[s][i]));
+	for (var i = 0; i < SVGImages2[s].length; i++) f.writeline(ds2svg(SVGImages2[s][i]));
+	for (var i = 0; i < SVGGraphics[s].length; i++) f.writeline(ds2svg(SVGGraphics[s][i]));
 	if (pageNumber != "") f.writeline(pageNumber);
 	//if (SVGImages[s].length > 0) f.writeline(SVGImages[s]);
 	f.writeline("</g>");

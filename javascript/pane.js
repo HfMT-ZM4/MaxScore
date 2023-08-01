@@ -1,7 +1,7 @@
 inlets = 2;
 outlets = 4;
 
-
+include("maxscore.tools");
 
 function Scrollbar()
 {
@@ -290,10 +290,11 @@ function renderImages()
 	var currentMatrix = get_matrix();
 	set_source_rgba(0., 0., 0., 1.);
 	for (var i = 0; i < _svgimages.length; i++){
-		transform(_svgimages[i].slice(6)[0]);
-		translate(_svgimages[i][2], _svgimages[i][3]);
-		if (_svgimages[i][0] == "raster") image_surface_draw(ImageCache[_svgimages[i].slice(1, 2)], 0, 0, _svgimages[i].slice(4, 6));
-  		else svg_render(ImageCache[_svgimages[i].slice(1, 2)]);
+		//transform(_svgimages[i].slice(6)[0]);
+		transform(_svgimages[i].transform.slice(_svgimages[i].transform.indexOf("(") + 1, _svgimages[i].transform.length).split(","));		
+		translate(_svgimages[i].x, _svgimages[i].y);
+		if (_svgimages[i].id.indexOf("raster") != -1) image_surface_draw(ImageCache[_svgimages[i].href], 0, 0, _svgimages[i].width, _svgimages[i].height);
+  		else svg_render(ImageCache[_svgimages[i].href]);
 		set_matrix(currentMatrix);
 		}
 	}
@@ -305,51 +306,48 @@ function obj_ref(o)
 	//gc();
 	s = 1;
 	pageSize(o.pageSize[0], o.pageSize[1]);
-	//post("o", JSON.stringify(o), "\n");
 	setZoom(o.setZoom);
 	bgcolor = o.bgcolor;
 	_svgimages = o.svgimages[s];
 	for (var i = 0; i < _svgimages.length; i++) {
-		//var temp = _svgimages[i][1].slice(0, _svgimages[i][1].lastIndexOf(".")).split("/");
-		var temp = _svgimages[i][1].split("/");
+		var temp = _svgimages[i].href.split("/");
 		var reference = temp[temp.length - 1];
 		if (!ImageCache.hasOwnProperty(reference)) {
-			post("caught you", "\n");
-			if (_svgimages[i][0] == "raster") ImageCache[reference] = new Image(reference);
+			//post("caught you", "\n");
+			if (_svgimages[i].id.indexOf("raster") != -1) ImageCache[reference] = new Image(reference);
 			else ImageCache[reference] = new MGraphicsSVG(reference);
 			}
-		_svgimages[i][1] = reference;
-		//SVGImages[imgcount] = svgimages;
-		//imgcount++;
+		_svgimages[i].href = reference;
 	}
+	//post("o", JSON.stringify(o.lines), "\n", ds2svg(o.lines[s]), "\n");
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svg += "<g id=\"" + s +  "\">";
-	svg += o.lines[s].join("");
-	svg += o.svg[s].join("");
+	svg += ds2svg(o.lines[s]);
+	svg += ds2svg(o.svg[s]);
 	svg += "</g>";
 	svg += "</svg>";
-	//post("svg", svg, "\n");
+
 	img.setsvg(svg);
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svg += "<g id=\"" + s +  "\">";
-	svg += o.picster[s].join("");
+	svg += ds2svg(o.picster[s]);
 	svg += "</g>";
 	svg += "</svg>";
-	
+	outlet(2, svg);
 	picster.setsvg(svg);	
 	var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svgclefs += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svgclefs += "<svg width=\"" + 25 + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + 25 + " " + pageHeight + "\" style=\"background: ivory\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	//for (var s = 1; s <= o.groupcount; s++) {
 	svgclefs += "<g id=\"" + s +  "\">";
-	for (var i = 0; i < o.clefs[s].length; i++) {
-	svgclefs += "<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + o.clefs[s][i][0] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + o.clefs[s][i][1] + "\" fill=\"" + o.clefs[s][i][2] + "\" fill-opacity=\"1\" transform=\"matrix("+ o.clefs[s][i][3].join() + ")\" >" + o.clefs[s][i][4] + "</text>";
-	}
-	//svgclefs += o.clefs.join("");
+	svgclefs += ds2svg(o.clefs[s]);
+	//for (var i = 0; i < o.clefs[s].length; i++) {
+	//svgclefs += "<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + o.clefs[s][i][0] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + o.clefs[s][i][1] + "\" fill=\"" + o.clefs[s][i][2] + "\" fill-opacity=\"1\" transform=\"matrix("+ o.clefs[s][i][3].join() + ")\" >" + o.clefs[s][i][4] + "</text>";
+	//}
 	svgclefs += "</g>";
 	//}
 	svgclefs += "</svg>";
@@ -357,97 +355,6 @@ function obj_ref(o)
 
 	virgin = 0;
 	//mgraphics.redraw();
-}
-
-
-function bang()
-{
-	var code = {
-			"new" : "g",
-			"id" : "groupie",
-			"child" : [ 				{
-					"new" : "rect",
-					"id" : "rect",
-					"x" : 5,
-					"y" : 5,
-					"width" : 100,
-					"height" : 100,
-					"fill" : "red"
-				}
-	, 				{
-					"id" : "clef",
-					"new" : "text",
-					"text" : "&#xE050",
-					"class" : "bravura_text",
-					"x" : 40,
-					"y" : 50
-				}
-	, 				{
-					"new" : "g",
-					"id" : "gg",
-					"child" : [ 						{
-							"new" : "rect",
-							"id" : "rec2t",
-							"x" : 5,
-							"y" : 100,
-							"width" : 100,
-							"height" : 100,
-							"fill" : "red"
-						}
-	, 						{
-							"id" : "cle2f",
-							"new" : "text",
-							"text" : "&#xE050",
-							"class" : "bravura_text",
-							"x" : 40,
-							"y" : 600
-						}
- 	]
-				}
- 	]
-	}
-
-	ds2svg([].concat(code));
-}
-
-var string = "";
-function ds2svg(code)
-{
-	string = "";
-	var textElement = false;
-	ds2svgiterate(code);
-	post("string", textElement, code.length, i, string, "\n");
-	return string;
-}
-
-function ds2svgiterate(code)
-{
-	for (var i = 0; i < code.length; i++) { 
-	//post("code-1", JSON.stringify(code[i]), "\n");
-	textElement = false;
-	string += "<" + code[i]["new"];
-	for (var element in code[i]) {
-	if (element != "new") {
-		if (element == "text") textElement = true; 		
-		else if (element == "style") {
-			string += " " + element + "=\"";
-			for (var property in code[i].style) string += property + ": " + code[i].style[property] + ";";
-			string += "\"";
-			}
-		else if (element == "child") {
-			string += ">";
-			//post("child", JSON.stringify(code[i].child), "\n");
-			ds2svgiterate(code[i].child);
-			string += "</g>";
-			return;
-			}
-		else string += " " + element + "=\"" + code[i][element] + "\"";
-		}
-	}
-	//post("code-2", JSON.stringify(code[i]), "\n");
-	if (!textElement) string += "/>";
-	else string += ">" + code[i].text + "</text>";
-	}
 }
 
 function clear()

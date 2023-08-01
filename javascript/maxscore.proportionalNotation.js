@@ -90,9 +90,11 @@ function setSelectedNotesToProportionalNotation() {
 function setProportionalNotation(b) {
     //annotation.clear();
     //annotation.name =  this.patcher.getnamed("instance").getvalueof() + "-annotation";
-    outlet(0, "getScoreAnnotation");
+   outlet(0, "getScoreAnnotation");
+   //post("annotation", annotation.stringify(), "\n"); 
     if (annotation.contains("blankPage")) blankPage = annotation.get("blankPage");
-    outlet(0, "setRenderAllowed", "false");
+    if (annotation.contains("proportional")) proportional = annotation.get("proportional");
+   outlet(0, "setRenderAllowed", "false");
     outlet(0, "setUndoStackEnabled", "false");
     if (b) { //turn proportional notation on
 	var a = arrayfromargs(arguments);
@@ -111,7 +113,8 @@ function setProportionalNotation(b) {
         annotation.set("timeUnit", timeUnit);
         outlet(3, "setAnnotation", "dictionary", annotation.name);
        	outlet(0, "selectAll");
-        if (!proportional) {//notation is currently not proportional
+    	//post("previously proportional?", proportional, "\n"); 
+       if (!proportional) {//notation is currently not proportional
             //annotation.clear();
             originalScoreAttributes = json["jmslscoredoc"]["score"][0];
             outlet(0, "getScoreAnnotation");
@@ -151,18 +154,18 @@ function setProportionalNotation(b) {
             outlet(0, "setMeasureLeftMargin", m, 0.);
             if (!showRhythm) outlet(0, "setBarNone", m, 0);
         }
-        //post("scoreSize", scoreSize, "\n"); 
 		if (!showRhythm){
         increment = 0;
         selectionBuffer = [];
         anchors = {};
-        var currentAnchor = [];
+       var currentAnchor = [];
         var currentAnchorKey = "";
-        outlet(0, "getNoteAnchor");
-        outlet(0, "setBeamedOut", "false");
+        single = 0;
+       outlet(0, "getNoteAnchor");
+     	//post("anchors", JSON.stringify(anchors), "\n"); 
+       outlet(0, "setBeamedOut", "false");
         outlet(0, "pruneTies");
         outlet(0, "noteStemVisibilityTransform", "false");
-        single = 0;
         outlet(0, "clearSelection");
         for (var event in anchors) {
             var hasPitchBend = false;
@@ -426,6 +429,7 @@ function setAnnotation(a) {
 }
 
 function getNoteAnchor() {
+    //post("getNoteAnchor", single, "|", arrayfromargs(arguments), "\n");
     if (!single) {
         anchors[increment] = arrayfromargs(arguments);
         increment++;
@@ -467,7 +471,6 @@ function scroll() {
                     to = -1 * scoreSize * factor * zoom / 0.5
                     dur = (scoreSize - scoreOffset) * factor / timeUnit * 1000. * zoom / 0.5;
                 }
-         		//post("scroll", from, to, dur, "\n");
                outlet(1, "scroll", from, to, dur);
                 break;
             case "offset":

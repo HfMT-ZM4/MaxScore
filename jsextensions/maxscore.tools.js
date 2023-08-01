@@ -1,3 +1,44 @@
+var string = "";
+function ds2svg(code)
+{
+	if (!Array.isArray(code)) code = [].concat(code);
+	string = "";
+	var textElement = false;
+	ds2svgiterate(code);
+	//post("string", textElement, code.length, i, string, "\n");
+	return string;
+}
+
+function ds2svgiterate(code)
+{
+	for (var i = 0; i < code.length; i++) { 
+	textElement = false;
+	group = false;
+	string += "<" + code[i]["new"];
+	for (var element in code[i]) {
+	if (element != "new") {
+		if (element == "text") textElement = true; 		
+		else if (element == "style") {
+			string += " " + element + "=\"";
+			for (var property in code[i].style) string += property + ": " + code[i].style[property] + ";";
+			string += "\"";
+			}
+		else if (element == "child") {
+			string += ">";
+			ds2svgiterate(code[i].child);
+			string += "</g>";
+			group = true;
+			}
+		else string += " " + element + "=\"" + code[i][element] + "\"";
+		}
+	}
+	if (group == false) {
+		if (!textElement) string += "/>";
+		else string += ">" + code[i].text + "</text>";
+		}
+	}
+}
+
 function sortIndexes(d, trim)
 {
 	var a = JSON.parse(d.stringify());

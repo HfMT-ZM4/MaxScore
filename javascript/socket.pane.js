@@ -426,33 +426,40 @@ function flashing()
 
 function obj_ref(o)
 {
-	gc();
+	//gc();
 	pageWidth = o.pageSize[0];
 	pageHeight = o.pageSize[1];
 	setZoom(o.setZoom);
 	bgcolor = o.bgcolor;
 	SVGString = o.svg;
 	SVGLines = o.lines;
-	//post("SVGLines", JSON.stringify(SVGLines), "\n");
 	SVGPicster = o.picster;
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
+	//Check whether images are already in the media folder. If not copy them there.
+	for (var s = 1; s <= groupcount; s++) {
+		for (var i = 0; i < SVGImages[s].length; i++) {
+		//post("isfile", isFile(pathToScript + mediaFolder, SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1)), "\n");
+		if (!isFile(pathToScript + mediaFolder, SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1))) outlet(1, "cp", SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].indexOf(":") + 1), pathToScript + mediaFolder + SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1));
+		SVGImages[s][i]["href"] = mediaFolder + SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1);
+		}
+	}
 	groupcount = o.groupcount;
 	var clear = {"key" : "remove", "val" : "main"};
 	var joutput = {};
-	writeSVG();
+	//writeSVG();
 	for (var s = 1; s <= groupcount; s++)
 		{
 		var val = [];
-		 val.push({
-       		"new" : "use",
-       		"id" : "score",
-       		"href" : mediaFolder + svgFile+"#" + s
-   		});
 		val.push({
 			"parent" : "main-svg",
 			"new" : "g",
 			"id" : "back"
+			});
+		val.push({
+			"parent" : "main-svg",
+			"new" : "g",
+			"id" : "score"
 			});
 		val.push({
 			"parent" : "main-svg",
@@ -468,6 +475,12 @@ function obj_ref(o)
 			"id" : "svg",
 			"style" : { "background" : "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")" } 
 			});
+		val.push({
+ 			"parent" : "score",
+   			"new" : "g",
+    		"id" : "score-" + s,
+    		"child" : o.lines[s].concat(o.svg[s], o.svgimages[s], o.picster[s])
+			});
 		joutput[s] = [clear, {"key" : "svg", "val" : val}];
 	}
 	output.parse(JSON.stringify(joutput));
@@ -482,48 +495,17 @@ function zoomlist()
 	zl = arrayfromargs(arguments);
 }	
 
-function writeSVG(destination)
+function isFile(path, filename)
 {
-	f = new File(pathToScript + mediaFolder + svgFile, "write", "TEXT");
-	post("path", pathToScript + mediaFolder, "\n");
-	if (f.isopen) {
-	f.eof = 0;
-	f.writeline("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
-	f.writeline("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">");
-	//var SVGZoom = 1;
-	f.writeline("<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">");
-	for (var s = 1; s <= groupcount; s++) {
-	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [thisZoom(s), 0., 0., thisZoom(s), 0., 0.] + ")\">");	
-	for (var i = 0; i < SVGLines[s].length; i++) {
-		f.writeline(SVGLines[s][i]);
-	}
-	for (var i = 0; i < SVGString[s].length; i++) {
-		f.writeline(SVGString[s][i]);
-	}
-	for (var i = 0; i < SVGImages[s].length; i++) {
-		if (!isFile(pathToScript + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1))) outlet(1, "cp", SVGImages[s][i][1].substring(SVGImages[s][i][1].indexOf(":") + 1), pathToScript + mediaFolder + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1));
-		//post("SVGImages", SVGImages[s][i][1].split("/")[SVGImages[s][i][1].split("/").length - 1], "\n");
-		f.writeline("<image x=\"" + SVGImages[s][i][2] + "\" y=\"" + SVGImages[s][i][3] + "\" width=\"" + SVGImages[s][i][4] + "\" height=\"" + SVGImages[s][i][5] + "\" xlink:href=\"" + mediaFolder + SVGImages[s][i][1].substring(SVGImages[s][i][1].lastIndexOf("/") + 1) + "\" transform=\"matrix(" + SVGImages[s][i][6] + ")\"/>");
-	}
-	for (var i = 0; i < SVGPicster[s].length; i++) {
-		f.writeline(SVGPicster[s][i]);
-	}
-	f.writeline("</g>");
-	}
-	f.writeline("</svg>");	
-	f.close();
-	}
-}
-
-function isFile(s)
-{
-	var f = new File(s);
-	if (f.isopen) {
-		f.close();
-		return true;
-	} else {
-		return false;
-	}
+	var f = new Folder(path);
+	var folder = [];
+	while (!f.end) {
+    folder.push(f.filename);
+    f.next();
+  	}
+	//post("folder", mediaFolder, folder, filename, "\n");
+	return (folder.indexOf(filename) == -1) ? false : true;
+	f.close ();
 }
 
 function countin(arg)
@@ -746,7 +728,6 @@ function cursor()
 		d.name = msg[2];
 		cursobj[c] = JSON.parse(d.stringify());
 		if (Object.keys(cursobj[c]).length > 0) {
-		//post("cursor.countin.beats", cursobj[c].countin.beats, "\n");
 		for (var sgm in cursobj[c].segments){
 		tweens.push({
 			"target" : "#cursor-" + msg[0],
@@ -912,22 +893,22 @@ function renderPlayhead()
 				//if (shownClefs) {
 				//CLEFS HERE
 				for (var i = 0; i < SVGClefs[s + 1].length; i++) {	
-				//post("clefs", SVGClefs[s + 1][i][3],  "\n");
+				var svgtransform = SVGClefs[s + 1][i]["transform"].slice(SVGClefs[s + 1][i]["transform"].indexOf("(") + 1, SVGClefs[s + 1][i]["transform"].indexOf(")")).split(",");
 				val.push({
 					"parent" : "overlay",
 					"new" : "text",
 					"id" : "clef-" + i,
 					"x" : 0,
 					"y" : 0,
-					"child" : SVGClefs[s + 1][i][4],
+					"child" : SVGClefs[s + 1][i]["text"],
 					"style" : 					{
-						"font-family" : SVGClefs[s + 1][i][0],
-						"font-size" : SVGClefs[s + 1][i][1] * thisZoom(s + 1),
-						"fill" : SVGClefs[s + 1][i][2],
+						"font-family" : SVGClefs[s + 1][i]["font-family"],
+						"font-size" : SVGClefs[s + 1][i]["font-size"] * thisZoom(s + 1),
+						"fill" : SVGClefs[s + 1][i]["fill"],
 						"fill-opacity" : fill_opacity
 					}
 					,
-					"transform" : "matrix(1, 0, 0, 1," + SVGClefs[s + 1][i][3][4]* thisZoom(s + 1) + "," + SVGClefs[s + 1][i][3][5] * thisZoom(s + 1) + ")"
+					"transform" : "matrix(1, 0, 0, 1," + svgtransform[4] * thisZoom(s + 1) + "," + svgtransform[5] * thisZoom(s + 1) + ")"
 					});
 				}
 				//}

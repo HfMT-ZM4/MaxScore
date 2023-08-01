@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="320px" height="240px" viewBox="0 0 320 240" style="background:rgb(253.98,253.98,239.7)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+
+<defs>
+<font-face font-family="Bravura">
+<font-face-src>
+<font-face-uri xlink:href="/Users/Shared/Max 8/Library/MaxScore/fonts/Bravura.svg#Bravura">
+<font-face-format string="svg"/>
+</font-face-uri>
+</font-face-src>
+</font-face>
+<font-face font-family="Arial">
+<font-face-src>
+<font-face-uri xlink:href="/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg/Arial.svg#Arial">
+<font-face-format string="svg"/>
+</font-face-uri>
+</font-face-src>
+</font-face>
+<font-face font-family="Times New Roman">
+<font-face-src>
+<font-face-uri xlink:href="/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg/Times New Roman.svg#Times-New-Roman">
+<font-face-format string="svg"/>
+</font-face-uri>
+</font-face-src>
+</font-face>
+</defs>
+<g id="1" transform="matrix(1,0,0,1,0,0)">
+<path id="stafflines-17" d="M20,75H300.7M20,69H300.7M20,63H300.7M20,57H300.7M20,51H300.7M20,171H300.7M20,165H300.7M20,159H300.7M20,153H300.7M20,147H300.7" stroke="rgb(0,0,0)" stroke-width="0.8" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1. 0. 0. 1. 0. 0.)"/>
+<line id="barline-18" x1="300.6607971191406" y1="51" x2="300.6607971191406" y2="171" stroke="rgb(0,0,0)" stroke-width="0.6" stroke-dasharray="none" transform="matrix(1. 0. 0. 1. 0. 0.)"/>
+<line id="barline-19" x1="20" y1="51" x2="20" y2="171" stroke="rgb(0,0,0)" stroke-width="0.6" transform="matrix(1. 0. 0. 1. 0. 0.)"/>
+<text id="writeAt-0" x="20" y="39" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1. 0. 0. 1. 0. 0.)">1</text>
+<text id="writeAt-1" x="20" y="33" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1. 0. 0. 1. 0. 0.)">  &lt;&lt;</text>
+<text id="writeAt-2" x="280.6607971191406" y="33" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1. 0. 0. 1. 0. 0.)">&gt;&gt;</text>
+<text id="tempoqtrequals-3" x="20" y="21" font-family="Bravura" font-style="normal" font-weight="normal" font-size="12" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1. 0. 0. 1. 0. 0.)"></text>
+<text id="tempoqtrequals-4" x="25" y="21" font-family="Bravura" font-style="normal" font-weight="normal" font-size="8" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1. 0. 0. 1. 0. 0.)"></text>
+<text id="writeAt-5" x="30" y="24" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1. 0. 0. 1. 0. 0.)">60.0</text>
+<text id="text-6" x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,22,69.95999908447266)"></text>
+<text id="text-7" x="0" y="0" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,-78.6953125,65)">MaxScoreIns-0</text>
+<text id="text-8" x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,43,57)"></text>
+<text id="text-9" x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,43,69)"></text>
+<text id="text-10" x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,83.62068939208984,63)"></text>
+<rect id="Stem-12" x="83.62068939208984" y="63" width="0.9" height="21" stroke="none" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1. 0. 0. 1. 0. 0.)"/>
+<text id="text-13" x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,22,165.9600067138672)"></text>
+<text id="text-14" x="0" y="0" font-family="Arial" font-style="normal" font-weight="normal" font-size="10" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,-78.6953125,161)">MaxScoreIns-1</text>
+<text id="text-15" x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,43,153)"></text>
+<text id="text-16" x="0" y="0" font-family="Bravura" font-style="normal" font-weight="normal" font-size="24" fill="rgb(0,0,0)" fill-opacity="1" transform="matrix(1,0,0,1,43,165)"></text>
+<line id="Picster-Element_1690485428356" x1="0" y1="0" x2="69" y2="50" style="stroke: rgb(0,0,0);stroke-opacity: 1;stroke-width: 2;" transform="matrix(1,0,0,1,107,59)"/>
+<rect id="Picster-Element_1690488596365" x="0" y="0" width="39" height="35" style="stroke: rgb(0,0,0);stroke-opacity: 1;stroke-width: 2;fill: none;fill-opacity: 1;" transform="matrix(1,0,0,1,100,89)"/>
+<path id="Picster-Element_1690488601958" d="M 0 0 C 8.24612449716851,-32.98449798867404,25.282638229908567,9.572453923363812,30,8 C 36.823155287899425,5.725614904033526,47.81974252906119,-14.740036781562686,53,-14 C 59.27210791022661,-13.103984584253341,75.48783072653556,4.512169273464433,81,-1 C 85.35292798707694,-5.352927987076936,94.34752425920007,-28.739163971199993,101,-28 C 107.17543682403759,-27.313840352884714,118.2438210683865,-19.42438210683865,124,-20 C 137.55045159218167,-21.355045159218168,154.45559795168322,-36.91119590336646,161,-50" style="stroke: rgb(0,0,0);stroke-opacity: 1;stroke-width: 2;fill: none;fill-opacity: 1;" transform="matrix(1,0,0,1,86,166)"/>
+<text id="Picster-Element_1690494203053" x="0" y="0" font-family="Arial" font-size="18" font-weight="normal" font-style="normal" text-anchor="start" style="fill: rgb(0,0,0);fill-opacity: 1;" transform="matrix(1,0,0,1,26,118)">text</text>
+<text id="Picster-Element_1690494203840" x="0" y="0" font-family="Arial" font-size="18" font-weight="normal" font-style="normal" text-anchor="start" style="fill: rgb(0,0,0);fill-opacity: 1;" transform="matrix(1,0,0,1,59,109)">text</text>
+<text id="Picster-Element_1690494206424" x="0" y="0" font-family="Arial" font-size="18" font-weight="normal" font-style="normal" text-anchor="start" style="fill: rgb(0,0,0);fill-opacity: 1;" transform="matrix(1,0,0,1,38,106)">text</text>
+<text id="Picster-Element_1690494207345" x="0" y="0" font-family="Arial" font-size="18" font-weight="normal" font-style="normal" text-anchor="start" style="fill: rgb(0,0,0);fill-opacity: 1;" transform="matrix(1,0,0,1,60,129)">text</text>
+<text id="Picster-Element_1690494208157" x="0" y="0" font-family="Arial" font-size="18" font-weight="normal" font-style="normal" text-anchor="start" style="fill: rgb(0,0,0);fill-opacity: 1;" transform="matrix(1,0,0,1,66,197)">text</text>
+</g>
+</svg>

@@ -3,6 +3,7 @@ outlets = 2;
 include("maxscore.tools");
 
 var selectionBufferSize = 0;
+var renderAllowed = 1;
 var _anchors = {};
 var anchors = {};
 var increment;
@@ -32,7 +33,9 @@ function init() {
 	outlet(0, "getNoteAnchor");
 	for(var key in anchors) if(anchors[key][5] != -1) _anchors[key] = anchors[key];
 	}
-	outlet(0, "setRenderAllowed", 0);
+	outlet(0, "getSelectionBufferSize");
+	outlet(0, "getRenderAllowed");
+	if (renderAllowed) outlet (0, "setRenderAllowed", 0);
 	//outlet(0, "resortChords", 0);
 	//outlet(0, "clearSelection");
 	//outlet(0, "getNumStaves");
@@ -234,7 +237,7 @@ function init() {
 	outlet(1, "dictionary", expr.name);
 	outlet(0, "clearSelection");
 	if (selectionBufferSize > 0) restoreSelection(_anchors);
-	outlet(0, "setRenderAllowed", 1);
+	if (renderAllowed) outlet(0, "setRenderAllowed", 1);
 	//mode = currentMode;
 }
 
@@ -258,7 +261,9 @@ function anything()
 		case "getSelectionBufferSize" :
 			selectionBufferSize = msg[0];
 		break;
-		case "getNoteAnchor" :
+		case "getRenderAllowed" :
+			renderAllowed = msg[0];
+		break;		case "getNoteAnchor" :
 		anchors[increment] = arrayfromargs(arguments);
 		increment++;
 		break;

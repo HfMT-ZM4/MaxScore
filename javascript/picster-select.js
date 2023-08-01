@@ -15,6 +15,7 @@ var mgraphics = new JitterObject("jit.mgraphics", 2000, 2000);
 var findbounds = new JitterObject("jit.findbounds");
 var outmatrix = new JitterMatrix(4, "char", 2000, 2000);
 var import = new JitterMatrix(4, "char", 2000, 2000);
+import.adapt = 1;
 mgraphics.svg_create("img", "<svg></svg>");
 var svg = new Dict();
 svg.name = "svg";
