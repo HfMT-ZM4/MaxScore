@@ -337,7 +337,7 @@ function obj_ref(o)
 	svg += ds2svg(o.picster[s]);
 	svg += "</g>";
 	svg += "</svg>";
-	outlet(2, svg);
+	//outlet(2, svg);
 	picster.setsvg(svg);	
 	var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svgclefs += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";

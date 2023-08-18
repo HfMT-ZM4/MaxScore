@@ -246,7 +246,7 @@ function setImages(img)
 
 function obj_ref(o)
 {
-	gc();
+	//gc();
 	mgraphics.svg_create("img", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	mgraphics.svg_create("clefs", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	mgraphics.svg_create("_picster", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
@@ -276,23 +276,21 @@ function obj_ref(o)
 	}
 	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svg += "<g id=\"" + s +  "\">";	
-	svg += o.lines[s].join("");
-	svg += o.svg[s].join("");
+	svg += ds2svg(o.lines[s]);
+	svg += ds2svg(o.svg[s]);
 	svg += "</g>";
 	svg += "</svg>";
 	mgraphics.svg_set("img", svg);
 	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svg += "<g id=\"" + s +  "\">";	
-	svg += o.picster[s].join("");
+	svg += ds2svg(o.picster[s]);
 	svg += "</g>";
 	svg += "</svg>";
 	//post("picster", svg, "\n");	
 	mgraphics.svg_set("_picster", svg);
 	var svgclefs = "<svg width=\"" + 25 + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + 25 + " " + pageHeight + "\" style=\"background: ivory\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svgclefs += "<g id=\"" + s +  "\">";
-	for (var i = 0; i < o.clefs[s].length; i++) {
-	svgclefs += "<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + o.clefs[s][i][0] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + o.clefs[s][i][1] + "\" fill=\"" + o.clefs[s][i][2] + "\" fill-opacity=\"1\" transform=\"matrix("+ o.clefs[s][i][3].join() + ")\" >" + o.clefs[s][i][4] + "</text>";	
-	}
+	svgclefs += ds2svg(o.clefs[s]);
 	svgclefs += "</g>";
 	svgclefs += "</svg>";	
 	mgraphics.svg_set("clefs", svgclefs);	

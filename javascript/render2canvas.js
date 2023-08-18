@@ -3040,7 +3040,7 @@ function anything() {
 				//SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
 				else SVGString[s + 1].push({
 				"new" : "text",
-				"id" : "text-" + idcount++,
+				"id" : t + idcount++,
 				"x" : 0,
 				"y" : 0,
 				"text" : t,
