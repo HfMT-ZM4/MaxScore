@@ -42,7 +42,7 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.498039, 0.498039, 0.498039, 0.26 ],
-					"buffername" : "44936-clientbuffer.5",
+					"buffername" : "3565909-clientbuffer.2",
 					"gridcolor" : [ 0.862745098039216, 0.870588235294118, 0.87843137254902, 0.3 ],
 					"id" : "obj-157",
 					"maxclass" : "waveform~",
@@ -51,8 +51,8 @@
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 					"patching_rect" : [ 531.00006099999996, 743.5, 141.0, 50.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 722.0, 85.0 ],
-					"selectioncolor" : [ 0.192, 0.51, 0.867, 0.5 ],
+					"presentation_rect" : [ 0.0, 1.0, 722.0, 170.0 ],
+					"selectioncolor" : [ 0.675, 0.804, 0.945, 0.5 ],
 					"setmode" : 2,
 					"ticks" : 1,
 					"varname" : "Loop",
@@ -204,7 +204,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 302.5, -110.5, 411.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1, "Clarinet_E4.gr.mp3" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -291,7 +291,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 101.0, 472.5, 187.0, 22.0 ],
-					"restore" : [ 5070.0, 0.0, 1.0, 0.0, 0.0, 0, 20.0, 1.0, 0, 5020.0, 1.0, 2, 5070.0, 0.0, 0, "linear" ],
+					"restore" : [ 6000.0, 0.0, 1.0, 0.0, 0.0, 0, 2000.0, 1.0, 0, 4000.0, 1.0, 2, 6000.0, 0.0, 0, "linear" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -636,6 +636,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-2",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
@@ -927,7 +928,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgoncolor" : [ 0.192, 0.51, 0.867, 1.0 ],
+					"activebgoncolor" : [ 0.675, 0.804, 0.945, 1.0 ],
 					"fontname" : "Avenir Next Regular",
 					"fontsize" : 10.0,
 					"id" : "obj-17",
@@ -1166,7 +1167,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1072.25, 743.5, 94.0, 22.0 ],
+					"patching_rect" : [ 1072.25, 743.5, 107.0, 22.0 ],
 					"text" : "r #1-this_init"
 				}
 
@@ -2052,7 +2053,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 886.0, 676.5, 131.0, 22.0 ],
+					"patching_rect" : [ 886.0, 676.5, 144.0, 22.0 ],
 					"text" : "r #1-interaction_init"
 				}
 
@@ -2180,7 +2181,7 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
-					"activebgoncolor" : [ 0.192, 0.51, 0.867, 1.0 ],
+					"activebgoncolor" : [ 0.675, 0.804, 0.945, 1.0 ],
 					"bgcolor" : [ 0.498039, 0.6, 0.6, 1.0 ],
 					"id" : "obj-78",
 					"maxclass" : "live.tab",
@@ -2235,7 +2236,7 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
-					"activebgoncolor" : [ 0.192, 0.51, 0.867, 1.0 ],
+					"activebgoncolor" : [ 0.675, 0.804, 0.945, 1.0 ],
 					"activetextcolor" : [ 0.082353, 0.098039, 0.098039, 1.0 ],
 					"fontname" : "Avenir Next Regular",
 					"fontsize" : 12.0,
@@ -2895,7 +2896,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 129.5, 91.0, 188.0, 22.0 ],
+					"patching_rect" : [ 129.5, 91.0, 201.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -2944,7 +2945,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 858.0, 625.75, 146.0, 22.0 ],
-					"restore" : [ 0, 1 ],
+					"restore" : [ 0, 0.0, 0.0, 0.0, 0, "Clarinet_E4.gr.mp3" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2963,9 +2964,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
+					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 954.875, 334.0, 139.25, 22.0 ],
-					"text" : "t 1 s s"
+					"text" : "t s s s"
 				}
 
 			}
@@ -3021,7 +3022,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 719.5, 651.0, 165.0, 22.0 ],
+					"patching_rect" : [ 719.5, 651.0, 178.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"precision" : 6
@@ -3071,7 +3072,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 327.0, -53.0, 165.0, 22.0 ],
+					"patching_rect" : [ 327.0, -53.0, 178.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"precision" : 6
@@ -3130,6 +3131,7 @@
 					"bgcolor" : [ 0.498039, 0.498039, 0.498039, 0.26 ],
 					"buffername" : "44936-clientbuffer.5",
 					"gridcolor" : [ 0.862745098039216, 0.870588235294118, 0.87843137254902, 0.3 ],
+					"hidden" : 1,
 					"id" : "obj-8",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -3138,7 +3140,7 @@
 					"patching_rect" : [ 486.0, 834.0, 131.0, 55.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 85.0, 722.0, 85.0 ],
-					"selectioncolor" : [ 0.192, 0.51, 0.867, 0.5 ],
+					"selectioncolor" : [ 0.675, 0.804, 0.945, 0.5 ],
 					"setmode" : 2,
 					"varname" : "Loop2",
 					"vticks" : 0,
@@ -3148,9 +3150,9 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints" : [ 0.0, 0.0, 0, 20.0, 1.0, 0, 5020.0, 1.0, 2, 5070.0, 0.0, 0 ],
+					"addpoints" : [ 0.0, 0.0, 0, 2000.0, 1.0, 0, 4000.0, 1.0, 2, 6000.0, 0.0, 0 ],
 					"bgcolor" : [ 0.8, 0.8, 0.8, 0.0 ],
-					"domain" : 5070.0,
+					"domain" : 6000.0,
 					"gridcolor" : [ 0.501961, 0.501961, 0.501961, 0.5 ],
 					"id" : "obj-4",
 					"linecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -3240,7 +3242,7 @@
 					"patching_rect" : [ 838.0, 801.5, 252.0, 82.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 14.0, 720.0, 158.0 ],
-					"setminmax" : [ 0.0, 22193.62890625 ],
+					"setminmax" : [ 0.0, 29910.203125 ],
 					"slidercolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"varname" : "Position"
 				}
