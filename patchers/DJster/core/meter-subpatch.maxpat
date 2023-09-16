@@ -46,8 +46,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 243.0, 948.0, 52.0, 18.0 ],
-					"text" : "s meters_"
+					"patching_rect" : [ 243.0, 948.0, 69.0, 18.0 ],
+					"text" : "s #1meters"
 				}
 
 			}
@@ -231,8 +231,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 140.0, 532.0, 82.0, 18.0 ],
-					"text" : "s append-meter"
+					"patching_rect" : [ 140.0, 532.0, 101.0, 18.0 ],
+					"text" : "s #1append-meter"
 				}
 
 			}

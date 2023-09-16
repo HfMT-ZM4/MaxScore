@@ -2926,7 +2926,6 @@ function anything() {
 				}	
 			else {	
 			if (msgname == "acciaccatura") {
-			//post("acciaccatura1", msg, "\n");
 			if (msg[8] == "STEM_DOWN") msgname = "acciaccaturastemdown";
 			else msgname = "acciaccaturastemup";
 			}
@@ -3102,6 +3101,7 @@ function anything() {
 
 function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
+			//post("acciaccatura1", msg, "\n");
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
 			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return Math.round(element * 255)}) + ")";
 			var dasharray = " ";

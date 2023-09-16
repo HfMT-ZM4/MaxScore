@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -104,7 +104,8 @@
 
 					}
 ,
-					"text" : "Open DB"
+					"text" : "Open DB",
+					"varname" : "live.text"
 				}
 
 			}
@@ -119,8 +120,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -431,7 +432,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 201.586456298828125, 4.0, 98.159408569335938, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "user",
+					"text" : "*",
 					"wordwrap" : 0
 				}
 
@@ -699,8 +700,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1237,7 +1238,7 @@
 					}
 ,
 					"text" : "Search",
-					"varname" : "live.text"
+					"varname" : "live.text[1]"
 				}
 
 			}
@@ -1311,8 +1312,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2779,14 +2780,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 977.0, 208.0, 967.0, 772.0 ],
+						"rect" : [ 400.0, 100.0, 967.0, 772.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2847,8 +2848,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 373.0, 461.0, 304.0, 22.0 ],
-									"text" : "sprintf replace picster-element[0]::val::child[1]::child %i¢"
+									"patching_rect" : [ 373.0, 461.0, 299.0, 22.0 ],
+									"text" : "sprintf replace picster-element[0]::val::child[1]::text %i¢"
 								}
 
 							}
@@ -2871,8 +2872,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 312.83331298828125, 429.5, 261.0, 22.0 ],
-									"text" : "replace picster-element[0]::val::child[0]::child $1"
+									"patching_rect" : [ 312.83331298828125, 429.5, 256.0, 22.0 ],
+									"text" : "replace picster-element[0]::val::child[0]::text $1"
 								}
 
 							}
@@ -2900,7 +2901,7 @@
 												"child" : [ 													{
 														"new" : "text",
 														"id" : "text_0",
-														"child" : "—",
+														"text" : "2/1",
 														"x" : -6.285714285714286,
 														"y" : -45,
 														"transform" : "matrix(1,0,0,1,0,0)",
@@ -2917,7 +2918,7 @@
 , 													{
 														"new" : "text",
 														"id" : "Picster-Element_1",
-														"child" : "1200¢",
+														"text" : "1200¢",
 														"x" : -3.142857142857143,
 														"y" : -30,
 														"transform" : "matrix(1,0,0,1,0,0)",
@@ -2979,8 +2980,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3025,8 +3026,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 0,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4186,8 +4187,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4920,8 +4921,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5818,8 +5819,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5906,8 +5907,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6198,8 +6199,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 0,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6335,8 +6336,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 0,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -7307,8 +7308,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7427,7 +7428,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 118.5, 113.0, 240.0, 22.0 ],
-									"restore" : [ 6 ],
+									"restore" : [ 41 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7984,7 +7985,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 6.0, 26.0, 778.620849609375, 33.0 ],
 					"rounded" : 0.0,
-					"text" : "Erv Wilson Scale made with Wilsonic",
+					"text" : "Quadratic Corners 13-limit. Chalmers '96",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -8037,7 +8038,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-71",
-					"items" : [ "user_6_equal_divisions_of_2_1.scl", ",", "user_Hn-4+Hn-6_44_25_26_31", ",", "user_Hn-4+Hn-8_69_37_43_23_26_60", ",", "user_MOS_0.088974_0_8-2", ",", "user_MOS_0.824951_0_5", ",", "user_MOS_0.831721_0_7-1", ",", "user_MOS_0.913926_0_1-2", ",", "user_Persian17NorthIndian25Parameswa", ",", "user_brun3:_G1:0.0838", ",", "G0:1", ",", "O:1", ",", "AB", ",", "L:7", ",", "NPO=8", ",", "M=0.scl", ",", "user_brun3_G1_0.5059_G0_0.6596_O_1_AB_NPO_19_M_7-2", ",", "user_brun3_G1_0.5277_G0_0.7507_O_1_A", ",", "user_brun3_G1_0.6347_G0_0.7255_O_1_A", ",", "user_brun3_G1_0.6581_G0_0.8214_O_1_A", ",", "user_brun3_G1_0.7924_G0_0.8433_O_1_A", ",", "user_brun3_G1_0.9211_G0_1_O_1_AC_NPO", ",", "user_cpg_0x1_1x0+1x1", ",", "user_cpg_Harmonic_4x1_12x0+1x1", ",", "user_dekany_2_5_fib_trip_4.50-1", ",", "user_hexagonal37", ",", "user_hexany_5_4.05353307723999_7.053", ",", "user_tetradic_diamond_3_5_76_9-2" ],
+					"items" : [ "fokker_41.scl", ",", "fokker_41a.scl", ",", "fokker_41b.scl" ],
 					"maxclass" : "chooser",
 					"numinlets" : 1,
 					"numoutlets" : 6,
@@ -8192,15 +8193,16 @@
 					"patching_rect" : [ 4.0, 11.0, 59.5, 22.0 ],
 					"restore" : 					{
 						"Label[1]" : [ 0 ],
-						"chooser" : [ 0 ],
+						"chooser" : [ 5 ],
 						"framesize" : [ 1200.0 ],
 						"live.tab" : [ 0.0 ],
 						"live.tab[1]" : [ 0.0 ],
 						"live.text" : [ 0.0 ],
+						"live.text[1]" : [ 0.0 ],
 						"microtones[1]" : [ 0 ],
 						"microtones[2]" : [ 1 ],
 						"start" : [ 6000 ],
-						"steps" : [ 6 ]
+						"steps" : [ 41 ]
 					}
 ,
 					"text" : "autopattr",
@@ -9061,9 +9063,16 @@
 			}
 , 			{
 				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
-				"patcherrelativepath" : "../DJster/core",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../extensions",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "djsterNotation.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
+				"patcherrelativepath" : "../../jsextensions",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -9071,6 +9080,13 @@
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
 				"patcherrelativepath" : "../../media/Images/svg",
 				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "htmlEntities.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -9084,6 +9100,13 @@
 				"name" : "jit.pane.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "max-opentype.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/max-opentype",
+				"patcherrelativepath" : "../node.js/max-opentype",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -9103,6 +9126,13 @@
 			}
 , 			{
 				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.messagehub.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../extensions",
 				"type" : "JSON",
@@ -9137,6 +9167,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.tools.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
+				"patcherrelativepath" : "../../jsextensions",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "mouseEvents.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -9156,8 +9193,8 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
