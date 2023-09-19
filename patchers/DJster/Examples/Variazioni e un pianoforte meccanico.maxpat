@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 100.0, 1439.0, 765.0 ],
+		"rect" : [ 35.0, 100.0, 1439.0, 800.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 86.0, 482.0, 388.0, 22.0 ],
+					"patching_rect" : [ 515.0, 461.0, 388.0, 22.0 ],
 					"text" : "instrument \"Piano 1 \" 1, instrument \"Piano 1 \" 2, instrument \"Piano 1 \" 3"
 				}
 
@@ -220,7 +220,7 @@
 					"maxclass" : "mc.ezdac~",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 483.0, 717.0, 45.0, 45.0 ]
+					"patching_rect" : [ 483.0, 748.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -240,7 +240,7 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 483.0, 482.0, 318.0, 228.0 ],
+					"patching_rect" : [ 483.0, 513.0, 318.0, 228.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 977.0, 693.0, 319.0, 229.0 ],
 					"varname" : "maxscore.fluidsynth",
