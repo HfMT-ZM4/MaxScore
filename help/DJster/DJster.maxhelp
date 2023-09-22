@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 994.0, 721.0 ],
+		"rect" : [ 100.0, 100.0, 972.0, 721.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,62 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"dontreplace" : 1,
+					"id" : "obj-52",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 447.0, 504.600006000000008, 119.0, 22.0 ],
+					"text" : "varname Djster.µbus"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-50",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 391.0, 424.600006000000008, 166.0, 22.0 ],
+					"text" : "routepass dictionary varname"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-49",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "dictionary", "", "", "" ],
+					"patching_rect" : [ 391.0, 504.600006000000008, 50.5, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-48",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 805.0, 645.0, 85.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "dump_params"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-47",
 					"maxclass" : "comment",
@@ -81,8 +137,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 513.004798904853715, 346.600006000000008, 69.0, 20.0 ],
-					"text" : "varname"
+					"patching_rect" : [ 507.004798904853715, 346.600006000000008, 71.0, 20.0 ],
+					"text" : "dump outlet"
 				}
 
 			}
@@ -118,19 +174,6 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 60.0, 346.600006000000008, 99.0, 20.0 ],
 					"text" : "note and velocity"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-38",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 437.004798904853715, 384.0, 74.0, 22.0 ],
-					"presentation_linecount" : 2,
-					"text" : "Djster.µbus"
 				}
 
 			}
@@ -705,7 +748,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "", "bang", "", "" ],
+					"outlettype" : [ "", "bang", "", "dictionary" ],
 					"patching_rect" : [ 45.8047869048537, 169.600006000000008, 465.200012000000015, 171.399993999999992 ],
 					"varname" : "Djster.µbus",
 					"viewvisibility" : 1
@@ -912,7 +955,29 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-48", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-49", 0 ],
+					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 1 ],
+					"midpoints" : [ 474.0, 480.100006000000008, 556.5, 480.100006000000008 ],
+					"source" : [ "obj-50", 1 ]
 				}
 
 			}
@@ -932,7 +997,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-38", 1 ],
+					"destination" : [ "obj-50", 0 ],
+					"midpoints" : [ 501.504798904853715, 397.300003000000004, 400.5, 397.300003000000004 ],
 					"source" : [ "obj-55", 3 ]
 				}
 
@@ -954,6 +1020,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-55", 0 ],
+					"midpoints" : [ 603.5, 495.0, 568.40239345242685, 495.0, 568.40239345242685, 158.600006000000008, 55.3047869048537, 158.600006000000008 ],
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -1249,7 +1316,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "harmonic-energy-profile-15.txt",
+				"name" : "harmonic-energy-profile.txt",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Profiles",
 				"patcherrelativepath" : "../../patchers/DJster/Profiles",
 				"type" : "TEXT",
@@ -1373,8 +1440,8 @@
 			}
 , 			{
 				"name" : "scale-subpatch-exp.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Library/DJster",
-				"patcherrelativepath" : "../../../../Library/DJster",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
+				"patcherrelativepath" : "../../patchers/DJster/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}

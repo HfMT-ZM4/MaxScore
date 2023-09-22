@@ -40,6 +40,32 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 136.0, 318.0, 40.0, 22.0 ],
+					"text" : "* 127."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "float" ],
+					"patching_rect" : [ 136.0, 287.180816671874936, 57.0, 22.0 ],
+					"text" : "split 0. 1."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-30",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -197,7 +223,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 79.843414306640625, 187.0, 22.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ "2249-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -383,8 +409,8 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 136.0, 317.180816671874936, 107.0, 22.0 ],
-					"text" : "scale 0 127 0 1.27"
+					"patching_rect" : [ 136.0, 355.180816671874936, 110.0, 22.0 ],
+					"text" : "scale 0 127 0. 1.27"
 				}
 
 			}
@@ -397,8 +423,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 136.0, 385.3554076718749, 154.0, 22.0 ],
-					"text" : "prepend setNoteheadScale"
+					"patching_rect" : [ 136.0, 398.3554076718749, 201.0, 22.0 ],
+					"text" : "prepend setSelectedNoteheadScale"
 				}
 
 			}
@@ -407,15 +433,15 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-2",
-					"linecount" : 12,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 532.0, 219.0, 287.0, 181.0 ],
+					"patching_rect" : [ 382.0, 222.0, 291.0, 65.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 15,
-					"presentation_rect" : [ 6.875015500000018, 122.0, 260.0, 224.0 ],
-					"text" : "This Scorepion fixes issues that will sometimes manifest themselves in MaxScore.\n- Fix \"hold times\" by setting values to note durations. Hold time scaler is a factor by which a note's hold time will be adjusted to its written duration.\n- Fix \"original pitch\" by setting this auxiliary note dimension to the pitch of the note.\n- Proportional notation will fix events added after converting a score to proportional notation.\n- Prune ties will remove \"rogue\" ties.\nThis process will be applied to selected notes. ",
+					"presentation_linecount" : 5,
+					"presentation_rect" : [ 6.875015500000018, 122.0, 260.0, 79.0 ],
+					"text" : "This Scorepion changes the size of note head according to its velocity.\n\nThis process will be applied to selected notes. ",
 					"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ]
 				}
 
@@ -428,7 +454,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 173.0, 475.370971468749985, 78.0, 20.0 ],
+					"patching_rect" : [ 125.5, 530.370971468749985, 78.0, 20.0 ],
 					"text" : "to MaxScore"
 				}
 
@@ -437,11 +463,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-12",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 136.0, 470.370971468749985, 30.0, 30.0 ]
+					"patching_rect" : [ 136.0, 483.370971468749985, 30.0, 30.0 ]
 				}
 
 			}
@@ -449,7 +475,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-16",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -473,7 +499,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 136.0, 111.040283203125, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 96.5, 427.0, 51.0, 20.0 ],
+					"presentation_rect" : [ 84.375015500000018, 427.0, 102.0, 20.0 ],
 					"text" : "Apply Transform",
 					"textcolor" : [ 1.0, 0.968627450980392, 0.968627450980392, 1.0 ],
 					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -519,6 +545,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-3", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
 					"source" : [ "obj-30", 1 ]
 				}
@@ -526,7 +566,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
+					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-30", 0 ]
 				}
 
@@ -547,35 +587,19 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
 					"source" : [ "obj-6", 0 ]
 				}
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "Scorepion-Tail-blue.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.setNoteIntervalAttribute.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.tools.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
-				"patcherrelativepath" : "../../jsextensions",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
