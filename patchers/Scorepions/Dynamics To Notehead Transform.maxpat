@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"openrect" : [ 486.0, 253.0, 269.0, 468.0 ],
+		"openrect" : [ 486.0, 253.0, 269.0, 316.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -223,7 +223,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 79.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "2249-" ],
+									"restore" : [ "1194-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -409,8 +409,8 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 136.0, 355.180816671874936, 110.0, 22.0 ],
-					"text" : "scale 0 127 0. 1.27"
+					"patching_rect" : [ 136.0, 355.180816671874936, 117.0, 22.0 ],
+					"text" : "scale 0 127 0.4 1.33"
 				}
 
 			}
@@ -441,7 +441,7 @@
 					"presentation" : 1,
 					"presentation_linecount" : 5,
 					"presentation_rect" : [ 6.875015500000018, 122.0, 260.0, 79.0 ],
-					"text" : "This Scorepion changes the size of note head according to its velocity.\n\nThis process will be applied to selected notes. ",
+					"text" : "This Scorepion scales the size of note head according to its velocity.\n\nThis process will be applied to selected notes. ",
 					"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ]
 				}
 
@@ -499,7 +499,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 136.0, 111.040283203125, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 84.375015500000018, 427.0, 102.0, 20.0 ],
+					"presentation_rect" : [ 84.375015500000018, 248.0, 102.0, 20.0 ],
 					"text" : "Apply Transform",
 					"textcolor" : [ 1.0, 0.968627450980392, 0.968627450980392, 1.0 ],
 					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -667,7 +667,8 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ]
+ ],
+		"editing_bgcolor" : [ 0.623529411764706, 0.623529411764706, 0.623529411764706, 1.0 ]
 	}
 
 }
