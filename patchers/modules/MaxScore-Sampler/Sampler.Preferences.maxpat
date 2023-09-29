@@ -4,15 +4,15 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 293.0, 72.0, 749.0, 670.0 ],
+		"rect" : [ 580.0, 273.0, 601.0, 489.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -50,11 +50,13 @@
 					"lockeddragscroll" : 1,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "samplerGUI2.maxpat",
-					"numinlets" : 0,
+					"name" : "samplerGUI3.maxpat",
+					"numinlets" : 1,
 					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 3.0, -10.0, 743.0, 668.0 ],
+					"offset" : [ 0.0, -321.0 ],
+					"patching_rect" : [ 1.0, 2.0, 743.0, 668.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1.0, 2.0, 743.0, 668.0 ],
 					"varname" : "Sampler",
 					"viewvisibility" : 1
 				}

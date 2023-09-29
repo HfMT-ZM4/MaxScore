@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 309.0, 106.0, 992.0, 924.0 ],
+		"rect" : [ 310.0, 100.0, 992.0, 764.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -130,7 +130,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -239,13 +239,12 @@
 								"box" : 								{
 									"color" : [ 0.305882, 0.560784, 0.529412, 1.0 ],
 									"id" : "obj-85",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 415.0, 309.0, 439.0, 49.0 ],
-									"text" : "pattrforward parent::parent::parent::parent::Preferences::Sampler::bank-waveform-editor::cursor"
+									"patching_rect" : [ 415.0, 309.0, 423.0, 22.0 ],
+									"text" : "pattrforward parent::parent::parent::parent::GUI::bank-waveform-editor::cursor"
 								}
 
 							}
@@ -272,14 +271,14 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 479.5, 44.0, 380.0, 49.0 ],
-									"restore" : [ "1181-clientbuffer.117" ],
+									"patching_rect" : [ 479.5, 44.0, 346.0, 49.0 ],
+									"restore" : [ "82257-clientbuffer.1" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "pattr @bindto parent::parent::parent::parent::Preferences::Sampler::samples::clientbuffer-name @invisible 1 @autorestore 0",
+									"text" : "pattr @bindto parent::parent::parent::parent::GUI::samples::clientbuffer-name @invisible 1 @autorestore 0",
 									"varname" : "u180007228"
 								}
 
@@ -552,7 +551,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1095,7 +1094,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2120,13 +2119,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 190.0, 199.0, 768.0, 602.0 ],
+						"rect" : [ 190.0, 199.0, 793.0, 672.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2155,6 +2154,32 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-23",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 258.666666666666629, 433.236084000000005, 60.0, 22.0 ],
+									"text" : "zl.change"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-20",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 319.0, 317.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-18",
 									"maxclass" : "button",
@@ -2288,7 +2313,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 35.0, 291.0, 55.0, 22.0 ],
+									"patching_rect" : [ 18.0, 291.0, 55.0, 22.0 ],
 									"text" : "Bell-1.aif"
 								}
 
@@ -2300,7 +2325,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 86.333333333333371, 394.736084000000005, 73.0, 22.0 ],
+									"patching_rect" : [ 69.0, 450.736084000000005, 73.0, 22.0 ],
 									"text" : "prepend get"
 								}
 
@@ -2314,7 +2339,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 86.333333333333371, 448.5, 150.0, 22.0 ],
+									"patching_rect" : [ 69.0, 504.5, 150.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
@@ -2356,7 +2381,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 35.0, 448.5, 41.0, 22.0 ],
+									"patching_rect" : [ 17.666666666666629, 504.5, 41.0, 22.0 ],
 									"text" : "zl join"
 								}
 
@@ -2366,10 +2391,10 @@
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 35.0, 360.236084000000005, 70.0, 22.0 ],
-									"text" : "t s s"
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "bang" ],
+									"patching_rect" : [ 18.0, 360.236084000000005, 121.0, 22.0 ],
+									"text" : "t s s b"
 								}
 
 							}
@@ -2381,7 +2406,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 496.0, 516.0, 30.0, 30.0 ]
+									"patching_rect" : [ 495.666666666666629, 572.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2393,7 +2418,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 401.0, 516.0, 30.0, 30.0 ]
+									"patching_rect" : [ 400.666666666666629, 572.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2405,7 +2430,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 35.0, 516.0, 30.0, 30.0 ]
+									"patching_rect" : [ 17.666666666666629, 572.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2429,7 +2454,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 211.0, 516.0, 30.0, 30.0 ]
+									"patching_rect" : [ 210.666666666666629, 572.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2489,7 +2514,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 175.5, 516.0, 30.0, 30.0 ]
+									"patching_rect" : [ 175.166666666666629, 572.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2501,7 +2526,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 130.0, 516.0, 30.0, 30.0 ]
+									"patching_rect" : [ 112.666666666666629, 572.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2514,7 +2539,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 259.0, 406.236084000000005, 215.0, 22.0 ],
+									"patching_rect" : [ 258.666666666666629, 462.236084000000005, 215.0, 22.0 ],
 									"text" : "sprintf name %i-clientbuffersoundindex"
 								}
 
@@ -2525,19 +2550,18 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-36",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 259.0, 365.236084000000005, 486.0, 35.0 ],
-									"restore" : [ 27378 ],
+									"patching_rect" : [ 258.666666666666629, 404.236084000000005, 474.0, 22.0 ],
+									"restore" : [ 82257 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "pattr @bindto parent::parent::parent::parent::Preferences::Sampler::instance @invisible 1 @autorestore 0",
+									"text" : "pattr @bindto parent::parent::parent::parent::GUI::instance @invisible 1 @autorestore 0",
 									"varname" : "u339007263"
 								}
 
@@ -2551,7 +2575,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 130.0, 485.0, 47.0, 22.0 ],
+									"patching_rect" : [ 112.666666666666629, 541.0, 47.0, 22.0 ],
 									"text" : "zl.nth 2"
 								}
 
@@ -2665,7 +2689,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
-									"midpoints" : [ 157.75, 358.0, 185.0, 358.0 ],
+									"midpoints" : [ 157.75, 454.0, 184.666666666666629, 454.0 ],
 									"source" : [ "obj-14", 1 ]
 								}
 
@@ -2744,6 +2768,28 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-36", 0 ],
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-53", 0 ],
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-36", 0 ],
+									"midpoints" : [ 129.5, 391.0, 268.166666666666629, 391.0 ],
+									"source" : [ "obj-3", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-3", 0 ]
 								}
@@ -2758,7 +2804,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-53", 0 ],
+									"destination" : [ "obj-23", 0 ],
 									"source" : [ "obj-36", 0 ]
 								}
 
@@ -2766,7 +2812,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-44", 0 ],
-									"midpoints" : [ 220.5, 427.0, 220.5, 427.0 ],
+									"midpoints" : [ 220.5, 427.0, 220.166666666666629, 427.0 ],
 									"source" : [ "obj-39", 0 ]
 								}
 
@@ -2781,7 +2827,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 1 ],
-									"midpoints" : [ 177.25, 427.868042000000003, 66.5, 427.868042000000003 ],
+									"midpoints" : [ 177.25, 427.868042000000003, 49.166666666666629, 427.868042000000003 ],
 									"source" : [ "obj-41", 0 ]
 								}
 
@@ -2838,7 +2884,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 268.5, 436.736084000000005, 95.833333333333371, 436.736084000000005 ],
+									"midpoints" : [ 268.166666666666629, 494.736084000000005, 78.5, 494.736084000000005 ],
 									"source" : [ "obj-53", 0 ]
 								}
 
@@ -2994,7 +3040,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3390,19 +3436,19 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-1",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 363.0, 9.0, 517.0, 49.0 ],
-									"restore" : [ 1, 0.0, 0.0, 0.0, 1 ],
+									"patching_rect" : [ 363.0, 18.0, 508.0, 35.0 ],
+									"restore" : [ 0, 0.0, 0.0, 0.0, 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "pattr @bindto parent::parent::parent::parent::Preferences::Sampler::bank-waveform-editor::setloop @invisible 1 @autorestore 0",
+									"text" : "pattr @bindto parent::parent::parent::parent::GUI::bank-waveform-editor::setloop @invisible 1 @autorestore 0",
 									"varname" : "u842007277"
 								}
 
@@ -3756,7 +3802,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3822,7 +3868,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 254.5, 312.0, 187.0, 22.0 ],
-									"restore" : [ 2359.727783203125, 0.0, 1.0, 0.0, 0.0, 0, 0.0, 1.0, 0, 1429.835100000000011, 1.0, 2, 2359.727800000000116, 0.0, 0, "linear" ],
+									"restore" : [ 4088.888916015625, 0.0, 1.0, 0.0, 0.0, 0, 0.0, 1.0, 0, 2835.655999999999949, 1.0, 2, 4088.888899999999921, 0.0, 0, "linear" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3845,7 +3891,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 2,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4663,8 +4709,8 @@
 							}
 , 							{
 								"box" : 								{
-									"addpoints" : [ 0.0, 0.0, 0, 0.0, 1.0, 0, 1429.835100000000011, 1.0, 2, 2359.727800000000116, 0.0, 0 ],
-									"domain" : 2359.727783203125,
+									"addpoints" : [ 0.0, 0.0, 0, 0.0, 1.0, 0, 2835.655999999999949, 1.0, 2, 4088.888899999999921, 0.0, 0 ],
+									"domain" : 4088.888916015625,
 									"id" : "obj-52",
 									"maxclass" : "function",
 									"numinlets" : 1,

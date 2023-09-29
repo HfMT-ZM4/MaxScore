@@ -186,14 +186,10 @@ function loadBank()
 			bank.replace(bankinstrkeys[0] + "::" + (i+1) + "::envelope", envelope);
 		}
 	}
-
-	for (var i = 0; i < 32; i++) {	
-		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("clear");
-		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("append", "<none>");
-		for (var j = 0; j < bankinstrkeys.length; j++) {
-		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("append", bankinstrkeys[j]);			
-		}
-		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message(0);			
+	var menu = this.patcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus");
+	for (var i = 0; i < 32; i++) {
+		menu.subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", ["<none>"].concat(bankinstrkeys));			
+		menu.subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message(0);			
 	}
 	//this.patcher.parentpatcher.getnamed("instrument-list-1").message("select", -1, -1);
 	outlet(0, "instrument", "clear");	
@@ -208,7 +204,7 @@ function symbol(instr)
 	outlet(0, "instrument", "clear");	
 	outlet(0, "notify_cellblock", 0, bankinstrkeys.length - 1);
 	for (var i = 0; i < 32; i++) {	
-		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("append", instr);			
+		this.patcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", ["<none>"].concat(bankinstrkeys,[instr]));			
 	}
 }
 
@@ -225,7 +221,7 @@ function import(instr)
 		clientbuffersoundindex.set(dump[i * 6 + 2], dump[i * 6 + 1]);
 	}	
 	for (var i = 0; i < 32; i++) {	
-		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("append", instr);			
+		this.patcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", ["<none>"].concat(bankinstrkeys, [instr]));			
 	}
 	outlet(0, "bank", bank.getkeys().length, instr);
 }
@@ -260,7 +256,8 @@ function append(source, target)
 
 function updateinstrument(u)
 {
-	var currentInstrumentName = this.patcher.parentpatcher.getnamed("instrument").subpatcher().getnamed("current-instrument").getvalueof();
+	var bankinstrkeys = [].concat(bank.getkeys());
+	var currentInstrumentName = bankinstrkeys[this.patcher.parentpatcher.getnamed("instrument").subpatcher().getnamed("current-instrument").getvalueof() - 1];
 	var currentInstrument = new Dict;
 	currentInstrument.pull_from_coll(jsarguments[1] + "-current-instrument");
 	var currentInstrumentkeys = currentInstrument.getkeys();
@@ -345,8 +342,8 @@ function clearall(instr)
 	bank.clear();
     pb.clear();
 	for (var i = 0; i < 32; i++) {	
-		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("clear");
-		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("append", "<none>");
+		//this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("clear");
+		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", [ "<none>", "..."]);
 	}
 }
 

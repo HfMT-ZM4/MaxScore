@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
+			"minor" : 5,
 			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 38.0, 79.0, 478.0, 965.0 ],
+		"rect" : [ 325.0, 100.0, 478.0, 770.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -65,7 +66,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
+							"minor" : 5,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -99,6 +100,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -184,6 +186,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-17",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -300,12 +303,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-36",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 0.0, 182.0, 23.0 ],
 					"varname" : "0-instrument",
 					"viewvisibility" : 1
 				}
@@ -321,12 +325,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-37",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 37.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 25.0, 182.0, 23.0 ],
 					"varname" : "1-instrument",
 					"viewvisibility" : 1
 				}
@@ -342,12 +347,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-38",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 74.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 50.0, 182.0, 23.0 ],
 					"varname" : "2-instrument",
 					"viewvisibility" : 1
 				}
@@ -363,12 +369,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-39",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 111.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 75.0, 182.0, 23.0 ],
 					"varname" : "3-instrument",
 					"viewvisibility" : 1
 				}
@@ -384,12 +391,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-40",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 148.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 100.0, 182.0, 23.0 ],
 					"varname" : "4-instrument",
 					"viewvisibility" : 1
 				}
@@ -405,12 +413,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-41",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 185.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 125.0, 182.0, 23.0 ],
 					"varname" : "5-instrument",
 					"viewvisibility" : 1
 				}
@@ -426,12 +435,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-42",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 222.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 150.0, 182.0, 23.0 ],
 					"varname" : "6-instrument",
 					"viewvisibility" : 1
 				}
@@ -447,12 +457,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-43",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 259.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 175.0, 182.0, 23.0 ],
 					"varname" : "7-instrument",
 					"viewvisibility" : 1
 				}
@@ -468,12 +479,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-44",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 296.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 200.0, 182.0, 23.0 ],
 					"varname" : "8-instrument",
 					"viewvisibility" : 1
 				}
@@ -489,12 +501,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-45",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 333.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 225.0, 182.0, 23.0 ],
 					"varname" : "9-instrument",
 					"viewvisibility" : 1
 				}
@@ -510,12 +523,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-46",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 370.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 250.0, 182.0, 23.0 ],
 					"varname" : "10-instrument",
 					"viewvisibility" : 1
 				}
@@ -531,12 +545,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-47",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 407.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 275.0, 182.0, 23.0 ],
 					"varname" : "11-instrument",
 					"viewvisibility" : 1
 				}
@@ -552,12 +567,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-48",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 444.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 300.0, 182.0, 23.0 ],
 					"varname" : "12-instrument",
 					"viewvisibility" : 1
 				}
@@ -573,12 +589,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-49",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 481.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 325.0, 182.0, 23.0 ],
 					"varname" : "13-instrument",
 					"viewvisibility" : 1
 				}
@@ -594,12 +611,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-50",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 518.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 350.0, 182.0, 23.0 ],
 					"varname" : "14-instrument",
 					"viewvisibility" : 1
 				}
@@ -615,12 +633,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-51",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 555.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 375.0, 182.0, 23.0 ],
 					"varname" : "15-instrument",
 					"viewvisibility" : 1
 				}
@@ -636,12 +655,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-52",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 592.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 400.0, 182.0, 23.0 ],
 					"varname" : "16-instrument",
 					"viewvisibility" : 1
 				}
@@ -657,12 +677,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-53",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 629.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 425.0, 182.0, 23.0 ],
 					"varname" : "17-instrument",
 					"viewvisibility" : 1
 				}
@@ -678,12 +699,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-54",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 666.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 450.0, 182.0, 23.0 ],
 					"varname" : "18-instrument",
 					"viewvisibility" : 1
 				}
@@ -699,12 +721,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-55",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 703.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 475.0, 182.0, 23.0 ],
 					"varname" : "19-instrument",
 					"viewvisibility" : 1
 				}
@@ -720,12 +743,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-56",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 740.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 500.0, 182.0, 23.0 ],
 					"varname" : "20-instrument",
 					"viewvisibility" : 1
 				}
@@ -741,12 +765,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-57",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 777.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 525.0, 182.0, 23.0 ],
 					"varname" : "21-instrument",
 					"viewvisibility" : 1
 				}
@@ -762,12 +787,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-58",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 814.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 550.0, 182.0, 23.0 ],
 					"varname" : "22-instrument",
 					"viewvisibility" : 1
 				}
@@ -783,12 +809,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-59",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 851.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 575.0, 182.0, 23.0 ],
 					"varname" : "23-instrument",
 					"viewvisibility" : 1
 				}
@@ -804,12 +831,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-60",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 888.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 600.0, 182.0, 23.0 ],
 					"varname" : "24-instrument",
 					"viewvisibility" : 1
 				}
@@ -825,12 +853,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-61",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 925.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 625.0, 182.0, 23.0 ],
 					"varname" : "25-instrument",
 					"viewvisibility" : 1
 				}
@@ -846,12 +875,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-62",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 962.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 650.0, 182.0, 23.0 ],
 					"varname" : "26-instrument",
 					"viewvisibility" : 1
 				}
@@ -867,12 +897,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-63",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 999.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 675.0, 182.0, 23.0 ],
 					"varname" : "27-instrument",
 					"viewvisibility" : 1
 				}
@@ -888,12 +919,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-64",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 1036.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 700.0, 182.0, 23.0 ],
 					"varname" : "28-instrument",
 					"viewvisibility" : 1
 				}
@@ -909,12 +941,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-65",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 1073.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 725.0, 182.0, 23.0 ],
 					"varname" : "29-instrument",
 					"viewvisibility" : 1
 				}
@@ -930,12 +963,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-66",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 1110.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 750.0, 182.0, 23.0 ],
 					"varname" : "30-instrument",
 					"viewvisibility" : 1
 				}
@@ -951,12 +985,13 @@
 					"enablevscroll" : 0,
 					"id" : "obj-67",
 					"lockeddragscroll" : 1,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "maxscore.sampler.instrument.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 1147.0, 205.0, 35.0 ],
+					"patching_rect" : [ 0.0, 775.0, 182.0, 23.0 ],
 					"varname" : "31-instrument",
 					"viewvisibility" : 1
 				}

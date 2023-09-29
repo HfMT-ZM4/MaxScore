@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 54.0, 100.0, 1424.0, 734.0 ],
+		"rect" : [ 300.0, 201.0, 1424.0, 734.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -134,7 +134,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.192, 0.51, 0.867, 1.0 ],
+					"bgcolor" : [ 0.675, 0.804, 0.945, 1.0 ],
 					"fontface" : 1,
 					"fontname" : "Avenir Next",
 					"fontsize" : 9.5,
@@ -146,7 +146,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1258.638916015625, 215.699999999999989, 109.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 119.999999910593033, 3.166666656732559, 96.5, 11.999999940395355 ],
+					"presentation_rect" : [ 121.0, 1.0, 96.5, 12.0 ],
 					"rounded" : 8.0,
 					"text" : "Start loop End loop",
 					"textcolor" : [ 0.07843137254902, 0.101960784313725, 0.101960784313725, 1.0 ],
@@ -2144,13 +2144,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-13",
-									"linecount" : 6,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 701.0, 121.0, 50.0, 62.0 ],
-									"text" : "1 1 471.026772 4474.754331 0. 0"
+									"text" : "0 1 0. 0. 0. 0"
 								}
 
 							}
@@ -5305,7 +5305,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 263.10906982421875, 213.0, 47.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 74.0, 22.0, 42.0, 20.0 ],
+					"presentation_rect" : [ 74.0, 19.0, 42.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -5322,7 +5322,7 @@
 						"valueof" : 						{
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.numbox[10]",
-							"parameter_mmax" : 29910.200000000000728,
+							"parameter_mmax" : 29936.330000000001746,
 							"parameter_shortname" : "live.numbox",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -5338,7 +5338,7 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.498039215686275, 0.498039215686275, 0.498039215686275, 1.0 ],
-					"activeslidercolor" : [ 0.192, 0.51, 0.867, 1.0 ],
+					"activeslidercolor" : [ 0.675, 0.804, 0.945, 1.0 ],
 					"appearance" : 2,
 					"fontname" : "Avenir Next Regular",
 					"fontsize" : 12.0,
@@ -5350,7 +5350,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 535.25, 186.466720581054688, 47.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 169.0, 22.0, 41.0, 20.0 ],
+					"presentation_rect" : [ 169.0, 19.0, 41.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -5363,7 +5363,7 @@
 						"valueof" : 						{
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.numbox[11]",
-							"parameter_mmax" : 29910.200000000000728,
+							"parameter_mmax" : 29936.330000000001746,
 							"parameter_shortname" : "live.numbox",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -5378,7 +5378,7 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
-					"activeslidercolor" : [ 0.192, 0.51, 0.867, 1.0 ],
+					"activeslidercolor" : [ 0.675, 0.804, 0.945, 1.0 ],
 					"appearance" : 2,
 					"fontname" : "Avenir Next Regular",
 					"fontsize" : 12.0,
@@ -5390,7 +5390,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 436.0, 186.466720581054688, 47.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 123.0, 22.0, 41.0, 20.0 ],
+					"presentation_rect" : [ 123.0, 19.0, 41.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -5403,7 +5403,7 @@
 						"valueof" : 						{
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.numbox[9]",
-							"parameter_mmax" : 29910.200000000000728,
+							"parameter_mmax" : 29936.330000000001746,
 							"parameter_shortname" : "live.numbox",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -5656,9 +5656,9 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 106.0, 120.0, 85.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 46.0, -1.0, 77.0, 20.0 ],
+					"presentation_rect" : [ 46.0, -2.0, 77.0, 20.0 ],
 					"text" : "Start point",
-					"textcolor" : [ 0.08, 0.1, 0.1, 1.0 ],
+					"textcolor" : [ 0.08, 0.1, 0.1, 0.5 ],
 					"textjustification" : 1,
 					"varname" : "label-start-point"
 				}
@@ -5675,6 +5675,7 @@
 					"fontname" : "Avenir Next Regular",
 					"fontsize" : 12.0,
 					"id" : "obj-5",
+					"ignoreclick" : 1,
 					"maxclass" : "live.text",
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -5682,7 +5683,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 342.25, 44.299999999999997, 40.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 45.0, 22.0, 31.0, 20.0 ],
+					"presentation_rect" : [ 45.0, 19.0, 31.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -5739,7 +5740,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.609064153930667, 1.799999999999997, 5.0, 100.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 4.0, 16.5, 214.600006103515625, 5.0 ],
+					"presentation_rect" : [ 4.0, 13.5, 214.600006103515625, 5.0 ],
 					"saved_attribute_attributes" : 					{
 						"linecolor" : 						{
 							"expression" : ""
@@ -5886,7 +5887,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 58.0, 105.0, 1553.0, 846.0 ],
+						"rect" : [ 34.0, 105.0, 1553.0, 846.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7158,7 +7159,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 56.299997329711914, 1.799999999999997, 5.0, 100.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 44.0, 1.0, 5.0, 44.5 ],
+					"presentation_rect" : [ 42.0, 1.0, 5.0, 44.5 ],
 					"saved_attribute_attributes" : 					{
 						"linecolor" : 						{
 							"expression" : ""
@@ -7180,7 +7181,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 142.60906982421875, 148.0, 122.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, -1.0, 40.0, 20.0 ],
+					"presentation_rect" : [ 2.0, -2.0, 40.0, 20.0 ],
 					"text" : "Loop",
 					"textcolor" : [ 0.082353003323078, 0.098039001226425, 0.098039001226425, 1.0 ],
 					"textjustification" : 1
@@ -7198,8 +7199,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.799997329711914, 148.0, 124.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 167.0, 1.0, 53.0, 20.0 ],
-					"text" : "End loop",
+					"presentation_rect" : [ 167.0, -1.0, 53.0, 20.0 ],
+					"text" : "End",
 					"textcolor" : [ 0.082353003323078, 0.098039001226425, 0.098039001226425, 1.0 ],
 					"textjustification" : 1,
 					"varname" : "label-end-loop"
@@ -7217,8 +7218,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.799997329711914, 120.0, 84.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 117.0, 1.0, 57.0, 20.0 ],
-					"text" : "Start loop",
+					"presentation_rect" : [ 117.0, -1.0, 57.0, 20.0 ],
+					"text" : "Start",
 					"textcolor" : [ 0.082353003323078, 0.098039001226425, 0.098039001226425, 1.0 ],
 					"textjustification" : 1,
 					"varname" : "label-start-loop"
@@ -7242,7 +7243,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 38.799997329711914, 285.0, 40.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 6.0, 22.0, 34.599998474121094, 18.0 ],
+					"presentation_rect" : [ 6.0, 19.0, 34.599998474121094, 18.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -7290,7 +7291,6 @@
 				"box" : 				{
 					"angle" : 0.0,
 					"bgcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
-					"border" : 1,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"id" : "obj-1",
 					"maxclass" : "panel",
@@ -7300,7 +7300,8 @@
 					"patching_rect" : [ 69.39093017578125, 39.0, 43.0, 36.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 1.0, 216.0, 44.5 ],
-					"proportion" : 0.39
+					"proportion" : 0.39,
+					"rounded" : 0
 				}
 
 			}

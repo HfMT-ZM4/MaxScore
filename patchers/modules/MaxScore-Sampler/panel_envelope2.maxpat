@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 301.0, 112.0, 592.0, 444.0 ],
+		"rect" : [ 588.0, 318.0, 592.0, 444.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -180,7 +180,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 116.5, 169.0, 40.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 133.199996948242188, 22.0, 80.800003051757812, 19.0 ],
+					"presentation_rect" : [ 133.199996948242188, 19.0, 80.800003051757812, 19.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -227,7 +227,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 212.5, 69.0, 44.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 58.5, 22.0, 62.0, 20.0 ],
+					"presentation_rect" : [ 58.5, 19.0, 62.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -306,7 +306,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 372.0, 39.0, 5.0, 100.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 17.0, 212.800003051757812, 5.0 ],
+					"presentation_rect" : [ 5.0, 15.0, 212.800003051757812, 5.0 ],
 					"saved_attribute_attributes" : 					{
 						"linecolor" : 						{
 							"expression" : ""
@@ -328,7 +328,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 393.5, 93.0, 122.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 8.0, 21.0, 43.0, 20.0 ],
+					"presentation_rect" : [ 8.0, 18.0, 43.0, 20.0 ],
 					"text" : "Preset",
 					"textcolor" : [ 0.082353003323078, 0.082353003323078, 0.098039001226425, 1.0 ],
 					"textjustification" : 1
@@ -346,7 +346,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 393.5, 69.0, 124.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 8.0, 1.0, 214.0, 20.0 ],
+					"presentation_rect" : [ 8.0, -1.0, 214.0, 20.0 ],
 					"text" : "Envelope",
 					"textcolor" : [ 0.082353003323078, 0.082353003323078, 0.098039001226425, 1.0 ],
 					"textjustification" : 1
@@ -358,7 +358,6 @@
 					"angle" : 0.0,
 					"background" : 1,
 					"bgcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
-					"border" : 1,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"id" : "obj-39",
 					"maxclass" : "panel",
@@ -368,7 +367,8 @@
 					"patching_rect" : [ 422.0, 39.0, 34.0, 23.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 1.0, 216.0, 44.5 ],
-					"proportion" : 0.39
+					"proportion" : 0.39,
+					"rounded" : 0
 				}
 
 			}

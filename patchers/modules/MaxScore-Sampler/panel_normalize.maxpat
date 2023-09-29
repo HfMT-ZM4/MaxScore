@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 178.0, 695.0, 553.0 ],
+		"rect" : [ 632.0, 265.0, 695.0, 553.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -119,7 +119,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 286.5, 424.0, 5.0, 100.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 3.0, 17.0, 215.800003051757812, 5.0 ],
+					"presentation_rect" : [ 3.0, 15.0, 215.800003051757812, 5.0 ],
 					"saved_attribute_attributes" : 					{
 						"linecolor" : 						{
 							"expression" : ""
@@ -294,7 +294,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 269.0, 155.0, 40.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 152.0, 22.0, 58.0, 17.0 ],
+					"presentation_rect" : [ 152.0, 19.0, 58.0, 17.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -341,7 +341,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 269.0, 91.0, 40.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 88.0, 22.0, 58.0, 17.0 ],
+					"presentation_rect" : [ 88.0, 19.0, 58.0, 17.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -405,7 +405,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 121.0, 155.0, 85.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 7.0, 22.0, 79.0, 20.0 ],
+					"presentation_rect" : [ 7.0, 18.0, 79.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -440,7 +440,6 @@
 					"angle" : 0.0,
 					"background" : 1,
 					"bgcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
-					"border" : 1,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"id" : "obj-8",
 					"maxclass" : "panel",
@@ -450,7 +449,8 @@
 					"patching_rect" : [ 26.0, 389.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 1.0, 216.0, 44.5 ],
-					"proportion" : 0.39
+					"proportion" : 0.39,
+					"rounded" : 0
 				}
 
 			}

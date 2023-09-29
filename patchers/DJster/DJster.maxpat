@@ -890,7 +890,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 284.5, 404.0, 347.0, 22.0 ],
-									"restore" : [ 180.0 ],
+									"restore" : [ 1000.000000000000227 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1434,7 +1434,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 153.733337000000006, 299.0, 180.0, 22.0 ],
-									"presentation_linecount" : 3,
 									"text" : "send parent::pitch_center, $1 $2"
 								}
 
@@ -1447,7 +1446,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 124.61669900000004, 269.0, 173.0, 22.0 ],
-									"presentation_linecount" : 3,
 									"text" : "send parent::tonic_pitch, $1 $2"
 								}
 
@@ -1460,7 +1458,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 80.733337000000006, 242.0, 178.0, 22.0 ],
-									"presentation_linecount" : 3,
 									"text" : "send parent::pitch_range, $1 $2"
 								}
 
@@ -2474,7 +2471,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 154.75, 97.0, 57.0, 20.0 ],
-					"restore" : [ "my-meter" ],
+					"restore" : [ "2 2 2" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3649,29 +3646,28 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 534.983368000000041, 265.5, 50.5, 20.0 ],
 					"restore" : 					{
-						"attenuation" : [ 79.527559055118019 ],
+						"attenuation" : [ 12.5 ],
 						"chordal_weight" : [ 0.0 ],
-						"dynamics" : [ 119.0 ],
-						"event_length" : [ 14.15525307106042 ],
+						"dynamics" : [ 64.0 ],
+						"event_length" : [ 100.000000000000028 ],
 						"event_length_display_style" : [ 1.0 ],
 						"eventfulness" : [ 100.0 ],
-						"harmoniclarity" : [ 0.0 ],
-						"melodic_cohesion" : [ -32.283464566928984 ],
-						"melody_scope" : [ 6.0 ],
+						"harmoniclarity" : [ 100.0 ],
+						"melodic_cohesion" : [ 0.0 ],
+						"melody_scope" : [ 7.0 ],
 						"meters" : [ 							{
 								"my-meter" : [ 105, 1, 48, 64, 38, 52, 91, 25, 38, 84, 17, 67, 83, 39, 95, 88, 13, 40, 74, 31, 57, 99, 12, 58, 83, 25, 59, 89, 71, 59, 104, 5, 58, 69, 34, 82, 77, 18, 41, 78, 18, 58, 94, 29, 72, 103, 18, 48, 71, 82, 38, 102, 17, 62, 80, 23, 80, 81, 46, 64, 105, 7, 47, 82, 26, 59, 98, 26, 53, 79, 51, 35, 90, 32, 74, 94, 9, 69, 54, 39, 51, 99, 18, 57, 100, 14, 63, 87, 49, 67, 101, 30, 36, 78, 31, 63, 101, 23, 90, 75, 27, 58, 95, 43, 75 ]
 							}
  ],
 						"metriclarity" : [ 100.0 ],
-						"ostinato" : [ 2.0 ],
+						"ostinato" : [ 0.0 ],
 						"ostinato-buffer" : [ 0.0 ],
 						"outset_pulses" : [ 1.0 ],
 						"overlap" : [ 1.0 ],
-						"pitch_center" : [ 36.999999999999986 ],
-						"pitch_range" : [ 10.0 ],
-						"precision" : [ 0.0 ],
-						"preset_tab" : [ 0.0 ],
-						"pulse_length" : [ 180.0 ],
+						"pitch_center" : [ 60.0 ],
+						"pitch_range" : [ 7.0 ],
+						"precision" : [ 1.0 ],
+						"pulse_length" : [ 1000.000000000000227 ],
 						"scale" : [ "chromatic" ],
 						"scales" : [ 							{
 								"pentatonic" : 								{
@@ -7604,7 +7600,7 @@
 						"sorted" : [ 1.0 ],
 						"stream" : [ 0.0 ],
 						"subdivisions" : [ "1" ],
-						"tonic_pitch" : [ 55.000000000000014 ],
+						"tonic_pitch" : [ 60.0 ],
 						"use_transport" : [ 0.0 ]
 					}
 ,
@@ -9549,7 +9545,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 121.0, 22.0, 78.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "my-meter",
+					"text" : "2 2 2",
 					"varname" : "textedit",
 					"wordwrap" : 0
 				}
@@ -9721,7 +9717,7 @@
 							"parameter_shortname" : "Pitch Range",
 							"parameter_type" : 0,
 							"parameter_units" : "st",
-							"parameter_unitstyle" : 7
+							"parameter_unitstyle" : 9
 						}
 
 					}
@@ -9781,7 +9777,7 @@
 							"parameter_shortname" : "Pitch Center",
 							"parameter_type" : 0,
 							"parameter_units" : "nt",
-							"parameter_unitstyle" : 8
+							"parameter_unitstyle" : 9
 						}
 
 					}
@@ -9897,7 +9893,7 @@
 							"parameter_shortname" : "Tonic Pitch",
 							"parameter_type" : 0,
 							"parameter_units" : "nt",
-							"parameter_unitstyle" : 8
+							"parameter_unitstyle" : 9
 						}
 
 					}
@@ -9955,7 +9951,7 @@
 							"parameter_shortname" : "Melody Scope",
 							"parameter_type" : 0,
 							"parameter_units" : "st",
-							"parameter_unitstyle" : 7
+							"parameter_unitstyle" : 9
 						}
 
 					}
@@ -10116,7 +10112,7 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Outset Pulses",
-							"parameter_mmax" : 12.0,
+							"parameter_mmax" : 8.0,
 							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "Outset Pulses",
 							"parameter_type" : 1,
@@ -10176,7 +10172,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-16",
-					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic", ",", "Lambda", ",", "Harmonic", ",", "Moll_II", ",", "Dur_I", ",", "Moll_I", ",", "Walker_A", ",", "Walker_B", ",", "Walker_I", ",", "Walker_II", ",", "Gamma", ",", "Dur_II", ",", "BP-Chromatic", ",", "BP-Triple", ",", "BP-Quintuple" ],
+					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -10188,9 +10184,9 @@
 					"presentation_rect" : [ 32.0, 21.0, 77.0, 21.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_enum" : [ "pentatonic", "whole-tone", "major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "minor-harmonic", "locrian", "gipsy", "octatonic", "whole-half-half", "chromatic", "Lambda", "Harmonic", "Moll_II", "Dur_I", "Moll_I", "Walker_A", "Walker_B", "Walker_I", "Walker_II", "Gamma", "Dur_II", "BP-Chromatic", "BP-Triple", "BP-Quintuple" ],
+							"parameter_enum" : [ "pentatonic", "whole-tone", "major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "minor-harmonic", "locrian", "gipsy", "octatonic", "whole-half-half", "chromatic" ],
 							"parameter_longname" : "Scale",
-							"parameter_mmax" : 27,
+							"parameter_mmax" : 13,
 							"parameter_shortname" : "Scale",
 							"parameter_type" : 2
 						}
