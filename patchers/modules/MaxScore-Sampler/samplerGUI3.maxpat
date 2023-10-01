@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 626.0, 330.0, 1250.0, 730.0 ],
+		"rect" : [ 734.0, 100.0, 1250.0, 730.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -877,7 +877,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 256.0, 246.0, 485.0, 22.0 ],
-									"restore" : [ "Venus_Pad.instr" ],
+									"restore" : [ "Giorgos.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1263,7 +1263,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 411.333333333333314, 366.0, 270.0, 22.0 ],
-									"restore" : [ 1, "Synth Venus Pad.aif" ],
+									"restore" : [ 1, "beep.wav" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1295,7 +1295,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 401.0, 594.0, 197.0, 22.0 ],
-									"restore" : [ "82257-clientbuffer.34" ],
+									"restore" : [ "82257-clientbuffer.1" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2580,7 +2580,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 329.928571428571445, 120.5, 288.0, 22.0 ],
-									"restore" : [ "Venus_Pad.instr" ],
+									"restore" : [ "Giorgos.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3223,7 +3223,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 62.0, 169.0, 541.5, 97.0 ],
 					"rowhead" : 1,
-					"rows" : 1,
+					"rows" : 20,
 					"saved_attribute_attributes" : 					{
 						"bgcolor" : 						{
 							"expression" : "themecolor.live_surface_bg"
@@ -3305,7 +3305,7 @@
 					"presentation_rect" : [ 62.0, 1.0, 543.0, 151.0 ],
 					"rowhead" : 1,
 					"rowheight" : 19,
-					"rows" : 20,
+					"rows" : 14,
 					"saved_attribute_attributes" : 					{
 						"bgcolor" : 						{
 							"expression" : "themecolor.live_surface_bg"
@@ -3377,7 +3377,7 @@
 					"offset" : [ 0.0, -11.0 ],
 					"patching_rect" : [ 389.5, 489.0, 725.0, 219.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 4.0, 311.49998950958252, 608.0, 156.0 ],
+					"presentation_rect" : [ 4.0, 311.49998950958252, 608.0, 167.0 ],
 					"varname" : "bank-waveform-editor",
 					"viewvisibility" : 1
 				}
@@ -4255,7 +4255,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 304.0, 181.0, 216.0, 22.0 ],
-									"restore" : [ "Macintosh HD:/Users/hajdu/Library/Mobile Documents/com~apple~CloudDocs/Documents/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Tutorial.bank.txt" ],
+									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Triangle/Triangle.bank.txt" ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_invisible" : 1,
@@ -4311,7 +4311,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 586.454545454545496, 384.0, 485.0, 22.0 ],
-									"restore" : [ "Venus_Pad.instr" ],
+									"restore" : [ "Giorgos.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4405,7 +4405,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 623.545454545454618, 273.0, 485.0, 22.0 ],
-									"restore" : [ "Venus_Pad.instr" ],
+									"restore" : [ "Giorgos.instr" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5304,7 +5304,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 313.43182373046875, 219.0, 526.0, 22.0 ],
-													"restore" : [ "Venus_Pad.instr" ],
+													"restore" : [ "Giorgos.instr" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5351,7 +5351,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 1133.0, 277.0, 473.0, 35.0 ],
-													"restore" : [ "Venus_Pad.instr" ],
+													"restore" : [ "Giorgos.instr" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5411,7 +5411,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 842.6666259765625, 155.0, 526.0, 22.0 ],
-													"restore" : [ "Venus_Pad.instr" ],
+													"restore" : [ "Giorgos.instr" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -6077,7 +6077,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 757.93182373046875, 61.0, 497.0, 22.0 ],
-													"restore" : [ 1, "Synth Venus Pad.aif" ],
+													"restore" : [ 1, "beep.wav" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0

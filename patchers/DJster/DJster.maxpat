@@ -63,7 +63,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"activebgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 					"annotation" : "Event length given in ms or percentage of pulse length",
 					"appearance" : 1,
 					"id" : "obj-53",
@@ -396,7 +396,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 660.0, 151.0, 801.0, 601.0 ],
+						"rect" : [ 349.0, 100.0, 766.0, 463.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -425,6 +425,41 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 534.000000000000114, 332.0, 83.0, 22.0 ],
+									"text" : "print transport"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 512.000000000000114, 288.0, 54.0, 22.0 ],
+									"text" : "deferlow"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 512.000000000000114, 247.0, 61.0, 22.0 ],
+									"text" : "pipe 1000"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "newobj",
@@ -651,6 +686,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"order" : 0,
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"order" : 1,
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-12", 0 ]
 								}
@@ -674,6 +725,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
 									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -716,17 +774,17 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
-									"order" : 0,
+									"destination" : [ "obj-16", 0 ],
+									"midpoints" : [ 521.500000000000114, 200.0, 94.5, 200.0 ],
+									"order" : 3,
 									"source" : [ "obj-6", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
-									"midpoints" : [ 521.500000000000114, 200.0, 94.5, 200.0 ],
-									"order" : 3,
+									"destination" : [ "obj-2", 0 ],
+									"order" : 0,
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -890,7 +948,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 284.5, 404.0, 347.0, 22.0 ],
-									"restore" : [ 1000.000000000000227 ],
+									"restore" : [ 199.999999999999943 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2063,7 +2121,7 @@
 				"box" : 				{
 					"annotation" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 					"bordercolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
-					"focusbordercolor" : [ 0.627450980392157, 0.627450980392157, 0.627450980392157, 1.0 ],
+					"focusbordercolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"id" : "obj-217",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -2124,18 +2182,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-214",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 708.958344000000011, 118.0, 29.5, 20.0 ],
-					"text" : "+ 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"fontname" : "Ableton Sans Medium",
 					"fontsize" : 9.5,
 					"id" : "obj-207",
@@ -2159,7 +2205,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"activebgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 					"annotation" : "Set the number of intervals in a chord. A maximum of 5 notes can be played together in each stream. ",
 					"appearance" : 2,
 					"bordercolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
@@ -2191,9 +2237,10 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Chordal Weight",
-							"parameter_mmax" : 4,
+							"parameter_mmax" : 5.0,
+							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "Chordal Weight",
-							"parameter_type" : 2,
+							"parameter_type" : 1,
 							"parameter_unitstyle" : 9
 						}
 
@@ -2256,7 +2303,7 @@
 				"box" : 				{
 					"annotation" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 					"bordercolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
-					"focusbordercolor" : [ 0.627450980392157, 0.627450980392157, 0.627450980392157, 1.0 ],
+					"focusbordercolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"id" : "obj-155",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -2331,7 +2378,7 @@
 				"box" : 				{
 					"annotation" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 					"bordercolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
-					"focusbordercolor" : [ 0.627450980392157, 0.627450980392157, 0.627450980392157, 1.0 ],
+					"focusbordercolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"id" : "obj-136",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -2401,7 +2448,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-77",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -2471,7 +2518,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 154.75, 97.0, 57.0, 20.0 ],
-					"restore" : [ "2 2 2" ],
+					"restore" : [ "2" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2496,7 +2543,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"activebgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 					"annotation" : "Ostinato Buffer: Switch between different buffers",
 					"appearance" : 1,
 					"id" : "obj-128",
@@ -2541,7 +2588,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"activebgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 					"annotation" : "Event length given in ms or percentage of pulse length",
 					"appearance" : 1,
 					"id" : "obj-122",
@@ -2678,7 +2725,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-110",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -2781,7 +2828,7 @@
 					"activebgoncolor" : [ 1.0, 0.71, 0.196, 1.0 ],
 					"annotation" : "Turn event generation on/off",
 					"bordercolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
-					"focusbordercolor" : [ 0.627450980392157, 0.627450980392157, 0.627450980392157, 1.0 ],
+					"focusbordercolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"id" : "obj-109",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -2813,9 +2860,9 @@
 							"parameter_info" : "Turn event generation on/off",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
-							"parameter_longname" : "stream",
+							"parameter_longname" : "Play",
 							"parameter_mmax" : 1,
-							"parameter_shortname" : "stream",
+							"parameter_shortname" : "Play",
 							"parameter_type" : 2
 						}
 
@@ -3304,7 +3351,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "time", "pulse" ],
 							"parameter_invisible" : 1,
-							"parameter_longname" : "menu",
+							"parameter_longname" : "Sync Type",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "menu",
 							"parameter_type" : 2
@@ -3366,7 +3413,6 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
-					"activetextcolor" : [ 0.07843137254902, 0.07843137254902, 0.07843137254902, 1.0 ],
 					"hint" : "Load Scala browser to add more scales",
 					"id" : "obj-88",
 					"maxclass" : "live.text",
@@ -3391,9 +3437,9 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "Open Scala Browser",
+							"parameter_longname" : "Scala Browser",
 							"parameter_mmax" : 1,
-							"parameter_shortname" : "Open Scala Browser",
+							"parameter_shortname" : "Scala Browser",
 							"parameter_type" : 2
 						}
 
@@ -3533,9 +3579,9 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.button",
+							"parameter_longname" : "Sync",
 							"parameter_mmax" : 1,
-							"parameter_shortname" : "live.button",
+							"parameter_shortname" : "Sync",
 							"parameter_type" : 2
 						}
 
@@ -3646,10 +3692,10 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 534.983368000000041, 265.5, 50.5, 20.0 ],
 					"restore" : 					{
-						"attenuation" : [ 12.5 ],
-						"chordal_weight" : [ 0.0 ],
-						"dynamics" : [ 64.0 ],
-						"event_length" : [ 100.000000000000028 ],
+						"attenuation" : [ 39.409448818897594 ],
+						"chordal_weight" : [ 1.0 ],
+						"dynamics" : [ 77.0 ],
+						"event_length" : [ 701.026811043231078 ],
 						"event_length_display_style" : [ 1.0 ],
 						"eventfulness" : [ 100.0 ],
 						"harmoniclarity" : [ 100.0 ],
@@ -3667,8 +3713,8 @@
 						"pitch_center" : [ 60.0 ],
 						"pitch_range" : [ 7.0 ],
 						"precision" : [ 1.0 ],
-						"pulse_length" : [ 1000.000000000000227 ],
-						"scale" : [ "chromatic" ],
+						"pulse_length" : [ 199.999999999999943 ],
+						"scale" : [ "pentatonic" ],
 						"scales" : [ 							{
 								"pentatonic" : 								{
 									"1" : [ -9600, 1, 256, -126 ],
@@ -7597,11 +7643,11 @@
 							}
  ],
 						"silent_downbeat" : [ 0.0 ],
-						"sorted" : [ 1.0 ],
-						"stream" : [ 0.0 ],
+						"sorted" : [ 0.0 ],
+						"stream" : [ 1.0 ],
 						"subdivisions" : [ "1" ],
 						"tonic_pitch" : [ 60.0 ],
-						"use_transport" : [ 0.0 ]
+						"use_transport" : [ 1.0 ]
 					}
 ,
 					"text" : "autopattr",
@@ -7629,7 +7675,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "dictionary" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 53.75, 365.0, 30.0, 30.0 ]
 				}
 
@@ -7851,9 +7897,9 @@
 							"parameter_enum" : [ "Narrow", "Wide", "Odd Narrow", "Odd Wide" ],
 							"parameter_info" : "Tonality Profile. A narrow profile assumes that small intervals can be clearly differentiated. ",
 							"parameter_invisible" : 1,
-							"parameter_longname" : "umenu",
+							"parameter_longname" : "Tonality Profile",
 							"parameter_mmax" : 3,
-							"parameter_shortname" : "umenu",
+							"parameter_shortname" : "Tonality Profile",
 							"parameter_type" : 2
 						}
 
@@ -8594,7 +8640,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"activebgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 					"annotation" : "Event length given in ms or percentage of pulse length",
 					"button" : 1,
 					"id" : "obj-56",
@@ -8624,7 +8670,7 @@
 							"parameter_enum" : [ "init", "read", "write" ],
 							"parameter_info" : "Event length given in ms or percentage of pulse length",
 							"parameter_invisible" : 2,
-							"parameter_longname" : "Preset Tab",
+							"parameter_longname" : "Precision[1]",
 							"parameter_mmax" : 2,
 							"parameter_shortname" : "Preset Tab",
 							"parameter_type" : 2,
@@ -9165,7 +9211,7 @@
 				"box" : 				{
 					"annotation" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 					"bordercolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
-					"focusbordercolor" : [ 0.627450980392157, 0.627450980392157, 0.627450980392157, 1.0 ],
+					"focusbordercolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"id" : "obj-47",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -9419,7 +9465,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"activebgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 					"annotation" : "Ostinato: modes are none, talea (rhythmic ostinato) and ostinato (melodic ostinato)",
 					"appearance" : 1,
 					"id" : "obj-29",
@@ -9467,11 +9513,12 @@
 					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"annotation" : "The time interval between pulses",
 					"appearance" : 1,
-					"dialcolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
+					"dialcolor" : [ 0.117647058823529, 0.117647058823529, 0.117647058823529, 1.0 ],
 					"fontsize" : 9.0,
 					"id" : "obj-22",
+					"ignoreclick" : 1,
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -9545,7 +9592,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 121.0, 22.0, 78.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "2 2 2",
+					"text" : "2",
 					"varname" : "textedit",
 					"wordwrap" : 0
 				}
@@ -9561,7 +9608,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-27",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -9620,7 +9667,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-28",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -9679,7 +9726,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-26",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -9738,7 +9785,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-25",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -9798,7 +9845,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-24",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -9855,7 +9902,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-52",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -9914,7 +9961,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-13",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -9972,7 +10019,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-11",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -10031,7 +10078,7 @@
 					"fontsize" : 9.0,
 					"id" : "obj-5",
 					"maxclass" : "live.dial",
-					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"needlecolor" : [ 0.282352941176471, 0.282352941176471, 0.282352941176471, 1.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
@@ -10081,7 +10128,7 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"activebgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 					"annotation" : "Outset pulses: This parameter allows the metric profile for the given meter to be set to the indicated pulse number. If set to 2, the metric profile is shifted by 1. The downbeat would  have the probablity of the second pulse, the second pulse that of the third pulse and so on.",
 					"appearance" : 2,
 					"bordercolor" : [ 0.952941176470588, 0.580392156862745, 0.125490196078431, 1.0 ],
@@ -10172,7 +10219,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-16",
-					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic" ],
+					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic", ",", "Lambda", ",", "Harmonic", ",", "Moll_II", ",", "Dur_I", ",", "Moll_I", ",", "Walker_A", ",", "Walker_B", ",", "Walker_I", ",", "Walker_II", ",", "Gamma", ",", "Dur_II", ",", "BP-Chromatic", ",", "BP-Triple", ",", "BP-Quintuple" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -10184,9 +10231,9 @@
 					"presentation_rect" : [ 32.0, 21.0, 77.0, 21.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_enum" : [ "pentatonic", "whole-tone", "major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "minor-harmonic", "locrian", "gipsy", "octatonic", "whole-half-half", "chromatic" ],
+							"parameter_enum" : [ "pentatonic", "whole-tone", "major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "minor-harmonic", "locrian", "gipsy", "octatonic", "whole-half-half", "chromatic", "Lambda", "Harmonic", "Moll_II", "Dur_I", "Moll_I", "Walker_A", "Walker_B", "Walker_I", "Walker_II", "Gamma", "Dur_II", "BP-Chromatic", "BP-Triple", "BP-Quintuple" ],
 							"parameter_longname" : "Scale",
-							"parameter_mmax" : 13,
+							"parameter_mmax" : 27,
 							"parameter_shortname" : "Scale",
 							"parameter_type" : 2
 						}
@@ -10672,7 +10719,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-214", 0 ],
+					"destination" : [ "obj-33", 0 ],
 					"source" : [ "obj-206", 0 ]
 				}
 
@@ -10681,13 +10728,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-31", 0 ],
 					"source" : [ "obj-21", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"source" : [ "obj-214", 0 ]
 				}
 
 			}
