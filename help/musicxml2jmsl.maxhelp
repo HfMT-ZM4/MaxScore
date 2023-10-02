@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 369.0, 87.0, 687.0, 803.0 ],
+		"rect" : [ 100.0, 100.0, 687.0, 803.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -85,14 +85,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 369.0, 113.0, 687.0, 777.0 ],
+						"rect" : [ 100.0, 126.0, 687.0, 777.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -138,8 +138,8 @@
 									"id" : "obj-24",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 92.0, 282.0, 86.0, 22.0 ],
 									"text" : "musicxml2jmsl"
 								}
@@ -185,12 +185,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 419.0, 152.0, 206.0, 74.0 ],
-									"text" : "The XML transcoder is included in the MaxScore abstraction and can be used by sending it the \nimportMusicXML <file-path> message."
+									"patching_rect" : [ 419.0, 177.0, 206.0, 60.0 ],
+									"text" : "Send the \nimportMusicXML <file-path> message to MaxScore. If no file path is given, a dialog will open."
 								}
 
 							}
@@ -336,8 +336,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -421,6 +421,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "htmlEntities.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "iswindows.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
@@ -429,6 +436,13 @@
 			}
 , 			{
 				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.messagehub.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
@@ -456,6 +470,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.setNoteIntervalAttribute.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.tools.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
+				"patcherrelativepath" : "../jsextensions",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "musicxml2jmsl.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
@@ -468,8 +496,8 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
 				"type" : "JSON",
 				"implicit" : 1
 			}

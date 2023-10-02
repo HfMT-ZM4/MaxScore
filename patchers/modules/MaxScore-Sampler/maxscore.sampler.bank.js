@@ -212,6 +212,7 @@ function import(instr)
 {
 	//post(tempbank.get(instr).stringify(),"\n");
 	bank.replace(instr, tempbank.get(instr));
+	var bankinstrkeys = [].concat(bank.getkeys());
 	for (var i = 0; i < bank.get(instr).getkeys().length; i++) {
 		pb.append(bank.get(instr + "::" + bank.get(instr).getkeys()[i] + "::sample"));
 	}
@@ -342,8 +343,7 @@ function clearall(instr)
 	bank.clear();
     pb.clear();
 	for (var i = 0; i < 32; i++) {	
-		//this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("clear");
-		this.patcher.parentpatcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", [ "<none>", "..."]);
+		this.patcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", [ "<none>", "..."]);
 	}
 }
 

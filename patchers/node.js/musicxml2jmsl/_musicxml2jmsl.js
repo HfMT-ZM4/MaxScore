@@ -747,12 +747,15 @@ var musicxml_callbacks =
 		        wedges[i] = "0";
 	        }
 	        T(mxml, jmsl, {
-		        'work' : function (mxml, jmsl){
+		  	    'movement-title' : (mxml,jmsl)=>{
+				    set_score_attr(jmsl, "NAME", v(mxml));
+		  		 },		        
+				'work' : function (mxml, jmsl){
 		  	        T(mxml,
 		  	          jmsl,
 		  	          {
 		  		          'work-title' : (mxml,jmsl)=>{
-				              set_score_attr(jmsl, "NAME", v(mxml));
+				              //set_score_attr(jmsl, "NAME", v(mxml));
 		  		          },
 		  	          })
 		        },
