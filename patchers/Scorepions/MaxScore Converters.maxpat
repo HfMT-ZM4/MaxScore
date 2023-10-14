@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"comment" : "",
+					"id" : "obj-4",
+					"index" : 0,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 40.0, 592.0, 30.0, 30.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-28",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -49,8 +61,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -515,7 +527,6 @@
 					}
 ,
 					"patching_rect" : [ 388.0, 362.0, 65.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -545,7 +556,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 32.5, 307.0, 219.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 31.5, 307.0, 219.0, 20.0 ],
+					"presentation_rect" : [ 32.5, 307.0, 219.0, 20.0 ],
 					"rounded" : 0.0,
 					"segmented" : 1,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -606,8 +617,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -772,7 +783,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 32.5, 267.0, 310.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 385.0, 265.0, 22.0 ],
+					"presentation_rect" : [ 32.5, 267.0, 310.0, 22.0 ],
 					"text" : "Pre-2020 XML To MaxScore 2.0 Format",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -795,7 +806,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 32.5, 219.0, 219.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 330.0, 219.0, 20.0 ],
+					"presentation_rect" : [ 32.5, 219.0, 219.0, 20.0 ],
 					"rounded" : 0.0,
 					"segmented" : 1,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -813,7 +824,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 32.5, 180.0, 204.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 298.0, 204.0, 22.0 ],
+					"presentation_rect" : [ 32.5, 180.0, 204.0, 22.0 ],
 					"text" : "SVG To Picster Converter",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -836,7 +847,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 32.5, 132.0, 219.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 243.0, 219.0, 20.0 ],
+					"presentation_rect" : [ 32.5, 132.0, 219.0, 20.0 ],
 					"rounded" : 0.0,
 					"segmented" : 1,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -854,7 +865,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 32.5, 94.0, 240.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 12.0, 212.0, 240.0, 22.0 ],
+					"presentation_rect" : [ 32.5, 94.0, 240.0, 22.0 ],
 					"text" : "Pre-2012 Quintet.net Parts To Picster",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -871,7 +882,7 @@
 					"patching_rect" : [ 495.0, 32.0, 178.0, 178.0 ],
 					"pic" : "Scorepion-Tail-blue.svg",
 					"presentation" : 1,
-					"presentation_rect" : [ 75.0, 6.0, 100.0, 114.0 ]
+					"presentation_rect" : [ 28.0, -2.0, 69.0, 88.0 ]
 				}
 
 			}
@@ -886,8 +897,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 109.0, 4.0, 201.0, 53.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 12.0, 122.0, 243.0, 38.0 ],
+					"presentation_linecount" : 3,
+					"presentation_rect" : [ 109.0, 4.0, 201.0, 53.0 ],
 					"text" : "This Scorepion features a number of converters between variousformats.",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
@@ -937,16 +948,9 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "Scorepion-Tail-blue.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../../media/Images/svg",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.convertOldVersions.js",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../../Library/MaxScore",
+				"name" : "Maestro-Character-Map.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Data",
+				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Data",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -958,31 +962,21 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "Scorepion-Tail-blue.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "bezier.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "draw-beams-check-cases.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/notation",
 				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/notation",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "notator.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/notation",
-				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/notation",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxobj-test.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Macaque/lib/scripts",
-				"patcherrelativepath" : "../Macaque/lib/scripts",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Maestro-Character-Map.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Data",
-				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Data",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -997,6 +991,35 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "maxobj-test.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Macaque/lib/scripts",
+				"patcherrelativepath" : "../Macaque/lib/scripts",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.convertOldVersions.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "multisplit.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "mxj.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "notator.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/notation",
+				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/notation",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "strchr.mxo",
 				"type" : "iLaX"
 			}
@@ -1008,36 +1031,28 @@
 				"name" : "strrcut.mxo",
 				"type" : "iLaX"
 			}
-, 			{
-				"name" : "multisplit.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "bezier.mxo",
-				"type" : "iLaX"
-			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
-				}
-,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1046,8 +1061,8 @@
 , 			{
 				"name" : "caption text",
 				"default" : 				{
-					"fontsize" : [ 11.0 ],
-					"fontface" : [ 2 ]
+					"fontface" : [ 2 ],
+					"fontsize" : [ 11.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1056,9 +1071,9 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
-					"fontsize" : [ 15.0 ],
+					"fontface" : [ 3 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 3 ]
+					"fontsize" : [ 15.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1067,8 +1082,8 @@
 , 			{
 				"name" : "section info reg",
 				"default" : 				{
-					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1077,9 +1092,9 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
-					"fontsize" : [ 20.0 ],
+					"fontface" : [ 1 ],
 					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ]
+					"fontsize" : [ 20.0 ]
 				}
 ,
 				"parentstyle" : "",

@@ -40,6 +40,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 20.0, 44.0, 94.0, 22.0 ],
+					"text" : "prepend symbol"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 20.0, 77.0, 91.0, 22.0 ],
+					"text" : "pvar instrument"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-30",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -109,7 +133,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 241.75, 11.0, 282.0, 22.0 ],
-					"restore" : [ "live" ],
+					"restore" : [ "max" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -190,7 +214,6 @@
 			}
 , 			{
 				"box" : 				{
-					"hidden" : 1,
 					"id" : "obj-8",
 					"maxclass" : "live.menu",
 					"numinlets" : 1,
@@ -206,7 +229,7 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[62]",
+							"parameter_longname" : "live.menu[74]",
 							"parameter_mmax" : 31,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -220,7 +243,6 @@
 			}
 , 			{
 				"box" : 				{
-					"hidden" : 1,
 					"id" : "obj-7",
 					"maxclass" : "live.menu",
 					"numinlets" : 1,
@@ -236,7 +258,7 @@
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[63]",
+							"parameter_longname" : "live.menu[73]",
 							"parameter_mmax" : 31,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
@@ -282,7 +304,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 20.0, 44.0, 201.0, 22.0 ],
+					"patching_rect" : [ 20.0, 108.0, 201.0, 22.0 ],
 					"restore" : [ 0, 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -303,14 +325,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 20.0, 11.0, 217.0, 22.0 ],
-					"restore" : [ 0.0 ],
+					"patching_rect" : [ 20.0, 11.0, 194.0, 22.0 ],
+					"restore" : [ "Prelude-I.instr" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "pattr setinstrument @bindto instrument",
+					"text" : "pattr setinstrument @autorestore 0",
 					"varname" : "setinstrument"
 				}
 
@@ -366,7 +388,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 71.0, 333.5, 230.0, 22.0 ],
+					"patching_rect" : [ 71.0, 333.5, 237.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"precision" : 6
@@ -402,7 +424,7 @@
 					"patching_rect" : [ 583.75, 289.0, 86.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ -1.0, 5.968084335327148, 37.0, 18.0 ],
-					"text" : "Instr:",
+					"text" : "1:",
 					"textcolor" : [ 0.831372549019608, 0.831372549019608, 0.831372549019608, 1.0 ],
 					"varname" : "index"
 				}
@@ -410,7 +432,6 @@
 			}
 , 			{
 				"box" : 				{
-					"activebgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
 					"annotation" : "Select instrument from current sound bank",
 					"fontsize" : 10.0,
 					"id" : "obj-25",
@@ -421,16 +442,12 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 18.0, 261.5, 199.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 32.0, 6.968084, 151.0, 15.0 ],
+					"presentation_rect" : [ 22.0, 6.968084, 106.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
-						"activebgcolor" : 						{
-							"expression" : ""
-						}
-,
 						"valueof" : 						{
 							"parameter_enum" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 							"parameter_info" : "Select instrument from current sound bank",
-							"parameter_longname" : "Instrument",
+							"parameter_longname" : "Instrument[24]",
 							"parameter_mmax" : 99,
 							"parameter_shortname" : "instrument",
 							"parameter_type" : 2
@@ -493,6 +510,13 @@
 					"destination" : [ "obj-8", 0 ],
 					"midpoints" : [ 401.75, 352.5, 527.5, 352.5, 527.5, 186.5, 396.25, 186.5 ],
 					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -598,6 +622,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}

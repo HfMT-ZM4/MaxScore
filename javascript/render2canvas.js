@@ -41,6 +41,7 @@ var staticClefs = 0;
 var fontMap = new Dict();
 //fontMap.name = "Bravura";
 fontMap.import_json("MaxScoreDefaultMap.json");
+//post("fontMap", fontMap.stringify(), "\n");
 var fontExtras = new Dict();
 //fontExtras.name = "Extras";
 fontExtras.import_json("MaxScoreFontExtras.json");
@@ -63,7 +64,6 @@ cent2ratio_odd22.name = "cent2ratio-odd22";
 cent2ratio_odd22.import_json("cent2ratio-odd22.json");
 /*
 cent2ratio.name = "cent2ratio-odd22";
-post(cent2ratio.get(622), "\n");
 cent2ratio.name = "cent2ratio-20";
 post(cent2ratio.get(622), "\n");
 */
@@ -2667,6 +2667,7 @@ function anything() {
 			break;
         default:
 		var msgname = messagename;
+		var glyph = [];
 		if (prop && !showRhythmInProportionalNotation) {
 			if (msgname == "noteheadwhite" || msgname == "noteheadwhole") msgname = "noteheadblack";
 			if (msgname == "dot" || msgname == "doubleDot") return;
@@ -2858,7 +2859,6 @@ function anything() {
 				break;
 				}
 				if (!Accidental.length) Accidental.push("natural_pyth"); 
-				var glyph = [];
 				//	filter-repeated-accidentals //
 				if (filterRepeatedAccidentalsFlag && accvis != 2) {
 				var keySigType = "";
@@ -2891,7 +2891,6 @@ function anything() {
 				oldMeasureStaff = JSON.stringify([msg[4],msg[5]]);
 				var theResult = -1;
 				var stringifiedAccidental = JSON.stringify(Accidental);
-				//post("filterRepeatedAccidentals", Object.keys(filterRepeatedAccidentals).indexOf("116"), JSON.stringify(filterRepeatedAccidentals), "\n");
 				if (Object.keys(repeatedAccidentals).indexOf(JSON.stringify(noteProperty[6] - levelOffset)) != -1) {
 					if (repeatedAccidentals[noteProperty[6] - levelOffset] == stringifiedAccidental) theResult = 1;
 					else theResult = 0;
@@ -2899,7 +2898,6 @@ function anything() {
 				repeatedAccidentals[noteProperty[6] - levelOffset] = stringifiedAccidental;
 				if (theResult == 1 || (theResult == -1 && stringifiedAccidental == "natural")) return;
 				}
-				//
 				for (var i = 0; i < Accidental.length; i++){
 				if (fontMap.contains(Accidental[i])) {
 					glyph[i * 5] = fontMap.get(Accidental[i])[0];
@@ -2919,8 +2917,8 @@ function anything() {
 				}
 				}
 				else {
-				if (fontMap.contains(msgname)) var glyph = fontMap.get(msgname);
-				else if (fontExtras.contains(msgname)) var glyph = fontExtras.get(msgname); 
+				if (fontMap.contains(msgname)) glyph = fontMap.get(msgname);
+				else if (fontExtras.contains(msgname)) glyph = fontExtras.get(msgname); 
 				else return;
 				}
 				}	
@@ -2929,14 +2927,14 @@ function anything() {
 			if (msg[8] == "STEM_DOWN") msgname = "acciaccaturastemdown";
 			else msgname = "acciaccaturastemup";
 			}
-			if (fontMap.contains(msgname)) var glyph = fontMap.get(msgname);
-			else if (fontExtras.contains(msgname)) var glyph = fontExtras.get(msgname); 
+			//post("2926", msgname, fontMap.contains(msgname), fontExtras.contains(msgname), "\n");
+			if (fontMap.contains(msgname)) glyph = fontMap.get(msgname);
+			else if (fontExtras.contains(msgname)) glyph = fontExtras.get(msgname); 
 			else return;
 			}
 		staticClefs = 0;
 		if (msgname.indexOf("measurenumber") != -1)
 			{
-				//if (glyph[3] == "$TEXTFONT")
 				writeAt(0, _textFont, glyph[4], msg[0] + glyph[1], msg[1] + glyph[2], glyph[0]);
 				return;
 			}
@@ -2950,7 +2948,7 @@ function anything() {
 					glyph[i * 5 + 2] = Number(uc[2].split(" ")[i]);
  					glyph[i * 5 + 3] = uc[3]; 
 					glyph[i * 5 + 4] = uc[4];
-					}				
+					}	
 			}
 			else if (annotation.contains("userclefs::" + annotation.get("staff-"+msg[5]+"::clef"))){
 				var ann = annotation.get("userclefs::" + annotation.get("staff-"+msg[5]+"::clef"));
@@ -2989,6 +2987,7 @@ function anything() {
 				var	_instrumentNames = [];
 				for (var i = 0; i < instrumentNames.length; i++) _instrumentNames.push(instrumentNames[i]);
 				if (annotation.contains("staff-"+msg[5]+"::abbrInstrName") && msg[4] != 0) _instrumentNames[msg[msg.length - 1]] = annotation.get("staff-"+msg[5]+"::abbrInstrName") != " " ? annotation.get("staff-"+msg[5]+"::abbrInstrName") : instrumentNames[msg[msg.length - 1]];
+				//post("glyph", msg, "|", msg[msg.length - 1], _instrumentNames.length, oldstaff, "\n");
 				if (msg[msg.length - 1] < _instrumentNames.length && oldstaff != msg[msg.length - 1]){
 				glyph[0] = _instrumentNames[msg[msg.length - 1]];
 				glyph[1] = glyph[1] - text_measure(_textFont, 12, _instrumentNames[msg[msg.length - 1]])[0]; 
@@ -3023,7 +3022,7 @@ function anything() {
 				usedFonts.replace(fontFamily + "::Regular", 1);
 				if (staticClefs) SVGClefs[s + 1].push({
 				"new" : "text",
-				"id" : "clefs-" + idcount++,
+				"id" : "clef-" + idcount++,
 				"x" : 0,
 				"y" : 0,
 				"text" : t,
@@ -3039,7 +3038,7 @@ function anything() {
 				//SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
 				else SVGString[s + 1].push({
 				"new" : "text",
-				"id" : t + idcount++,
+				"id" : "glyph-" + idcount++,
 				"x" : 0,
 				"y" : 0,
 				"text" : t,

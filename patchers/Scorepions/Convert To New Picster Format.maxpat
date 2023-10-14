@@ -155,7 +155,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 171.0, 289.484496999999976, 303.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "maxscore.setNoteIntervalAttribute",
+						"filename" : "maxscore.setNoteIntervalAttribute.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -556,7 +556,7 @@
 					"presentation_rect" : [ 35.25119906384657, 265.514026907608013, 168.485434830188751, 34.0 ],
 					"shape" : 2,
 					"size" : 2,
-					"value" : 0
+					"value" : 1
 				}
 
 			}
@@ -578,7 +578,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 438.0, 87.0, 830.0, 915.0 ],
+						"rect" : [ 438.0, 100.0, 830.0, 915.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

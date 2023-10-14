@@ -1351,7 +1351,7 @@ function addShape()
 				outlet(3, "bang");
 			break;
 			case "text":
-				//post("offsets", offsets[0], "\n");
+				post("fontsize", Array.isArray(fontsize), "\n");
 				var text = htmlEntities(msg[3]);
 				var attr = {};
 				attr.new = "text";
@@ -1359,8 +1359,10 @@ function addShape()
 				attr.child = text;
 				attr.x = toffsets[0];
 				attr.y = toffsets[1];
-				attr["font-family"] = font;
-				attr["font-size"] = fontsize;
+				if (Array.isArray(font)) attr["font-family"] = font[0];
+				else attr["font-family"] = font;
+				if (Array.isArray(fontsize)) attr["font-size"] = fontsize[0];
+				else attr["font-size"] = fontsize;
 				attr["font-weight"] = "normal";
 				attr["font-style"] = "normal";
 				attr["text-anchor"] = "start";

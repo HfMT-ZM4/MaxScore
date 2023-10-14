@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 757.0, 109.0, 972.0, 727.0 ],
+		"rect" : [ 233.0, 100.0, 972.0, 727.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,9 +40,9 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"addpoints" : [ 0.0, 0.0, 0, 2000.0, 1.0, 0, 3226.890756302520913, 1.0, 0, 4000.0, 1.0, 2, 6000.0, 0.0, 0 ],
+					"addpoints" : [ 0.0, 0.0, 0, 0.0, 1.0, 0, 2835.655999999999949, 1.0, 2, 4088.888899999999921, 0.0, 0 ],
 					"bgcolor" : [ 0.8, 0.8, 0.8, 0.0 ],
-					"domain" : 6000.0,
+					"domain" : 4088.888916015625,
 					"gridcolor" : [ 0.501961, 0.501961, 0.501961, 0.5 ],
 					"id" : "obj-4",
 					"linecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -54,7 +54,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 236.0, 511.0, 121.5, 56.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ -4.0, 16.0, 607.0, 103.0 ],
+					"presentation_rect" : [ 0.0, 16.0, 602.0, 103.0 ],
 					"varname" : "Envelope"
 				}
 
@@ -202,7 +202,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 302.5, -110.5, 411.0, 22.0 ],
-					"restore" : [ 1, "Triangle_A#3.gr.mp3" ],
+					"restore" : [ 1, "Short-Bell_1.aif" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -289,7 +289,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 101.0, 472.5, 187.0, 22.0 ],
-					"restore" : [ 6000.0, 0.0, 1.0, 0.0, 0.0, 0, 2000.0, 1.0, 0, 3226.890756302520913, 1.0, 0, 4000.0, 1.0, 2, 6000.0, 0.0, 0, "linear" ],
+					"restore" : [ 4088.888916015625, 0.0, 1.0, 0.0, 0.0, 0, 0.0, 1.0, 0, 2835.655999999999949, 1.0, 2, 4088.888899999999921, 0.0, 0, "linear" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -639,7 +639,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 50.0, 439.0, 116.0, 35.0 ],
+									"patching_rect" : [ 50.0, 439.0, 114.0, 35.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
@@ -2191,7 +2191,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 886.0, 711.0, 139.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 136.0, 216.0, 21.0 ],
+					"presentation_rect" : [ 3.0, 136.0, 216.0, 21.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -3127,10 +3127,9 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.498039, 0.498039, 0.498039, 0.26 ],
-					"buffername" : "82257-clientbuffer.1",
+					"buffername" : "7976-clientbuffer.3",
 					"chanoffset" : 2,
 					"gridcolor" : [ 0.862745098039216, 0.870588235294118, 0.87843137254902, 0.3 ],
-					"hidden" : 1,
 					"id" : "obj-8",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -3138,7 +3137,7 @@
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 					"patching_rect" : [ 486.0, 834.0, 131.0, 55.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 63.0, 600.0, 58.0 ],
+					"presentation_rect" : [ 3.0, 63.0, 600.0, 58.0 ],
 					"selectioncolor" : [ 0.675, 0.804, 0.945, 0.5 ],
 					"setmode" : 2,
 					"varname" : "Loop2",
@@ -3151,7 +3150,7 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.498039, 0.498039, 0.498039, 0.26 ],
-					"buffername" : "82257-clientbuffer.1",
+					"buffername" : "7976-clientbuffer.3",
 					"gridcolor" : [ 0.862745098039216, 0.870588235294118, 0.87843137254902, 0.3 ],
 					"id" : "obj-157",
 					"maxclass" : "waveform~",
@@ -3160,7 +3159,7 @@
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 					"patching_rect" : [ 531.00006099999996, 743.5, 141.0, 50.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 5.0, 600.0, 117.0 ],
+					"presentation_rect" : [ 3.0, 5.0, 600.0, 58.0 ],
 					"selectioncolor" : [ 0.675, 0.804, 0.945, 0.5 ],
 					"setmode" : 2,
 					"ticks" : 1,
@@ -3243,7 +3242,7 @@
 					"patching_rect" : [ 838.0, 801.5, 252.0, 82.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 3.0, 2.0, 600.0, 116.0 ],
-					"setminmax" : [ 0.0, 29910.203125 ],
+					"setminmax" : [ 0.0, 4088.888916015625 ],
 					"slidercolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"varname" : "Position"
 				}

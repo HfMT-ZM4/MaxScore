@@ -98,7 +98,8 @@ for (var i= 0; i < keys.length; i++)
 	messnamed(grab, "addNoteToSelection", inf);		
 	}
 	//outlet(1, "selectNote", );
-	outlet(0, result);	
+	if (Array.isArray(result[0])) outlet(0, result[0].concat(result.slice(1)));
+	else outlet(0, result);	
 	previousNote = inf.slice(0, 4).join();
 	}
 	outlet(3, "bang");
@@ -151,7 +152,7 @@ function query(element)
 			}
 			result.push(_query);
 			}
-			//post("info", element, attr[k], selectedNotes.stringify(), "\n");
+			post("info", _query, "\n");
 		}	
 
 }
