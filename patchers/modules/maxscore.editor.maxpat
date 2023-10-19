@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 614.0, 113.0, 677.0, 481.0 ],
+		"rect" : [ 380.0, 100.0, 677.0, 481.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "6723522-maxscore",
+		"globalpatchername" : "4946-maxscore",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-13",
@@ -2101,7 +2101,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 342.0, 215.5, 297.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"initial" : [ "6723522-" ],
+						"initial" : [ "4946-" ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -2403,7 +2403,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 100.0, 1560.0, 882.0 ],
+						"rect" : [ 34.0, 100.0, 1444.0, 814.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3678,7 +3678,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 108.0, 202.0, 563.0, 22.0 ],
-													"restore" : [ 0, 0, 2, 0 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -4441,7 +4441,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 260.299296709677435, 151.0, 103.0, 22.0 ],
+									"patching_rect" : [ 253.792942848484813, 151.0, 103.0, 22.0 ],
 									"text" : "canvassize $2 $3"
 								}
 
@@ -4602,11 +4602,11 @@
 									"id" : "obj-3",
 									"linecount" : 7,
 									"maxclass" : "newobj",
-									"numinlets" : 33,
-									"numoutlets" : 33,
-									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 22.944458000000001, 39.0, 605.035391999999888, 102.0 ],
-									"text" : "routepass handleMusicCurveRendering setComposer setCopyright setSubtitle setTitle setTitleVisible setDurationForMouseEntry setDurationalSpacingBase setHoldScaler setMeasureNumberOffset setScoreBottomMargin setScoreLeftMargin setScoreRightMargin setScoreSize setScoreTopMargin setScoreTopMarginOfFirstPage setScoreFirstSystemIndent setSelectionBufferNoteColor setWrap setZoom showClefs showCourtesyClefs showInstruments showKeySignatures showMeasureNumbers showSectionBrackets showStaffNumbers showTempo showTimeSignatures useMusicGlyphRendererProxy setJMSLAdvanceTime useLegacyMultiTrackOrientation"
+									"numinlets" : 34,
+									"numoutlets" : 34,
+									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 22.944458000000001, 39.0, 604.999999999999886, 102.0 ],
+									"text" : "routepass handleMusicCurveRendering setComposer setCopyright setSubtitle setTitle setTitleVisible setDurationForMouseEntry setDurationalSpacingBase setHoldScaler setMeasureNumberOffset setScoreBottomMargin setScoreLeftMargin setScoreRightMargin setScoreSize setScoreTopMargin setScoreTopMarginOfFirstPage setScoreFirstSystemIndent setSelectionBufferNoteColor setWrap setZoom showClefs showCourtesyClefs showInstruments showKeySignatures showMeasureNumbers showSectionBrackets showStaffNumbers showTempo showTimeSignatures useMusicGlyphRendererProxy setJMSLAdvanceTime useLegacyMultiTrackOrientation showWholeNoteRestsInEmptyMeasures"
 								}
 
 							}
@@ -4873,6 +4873,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
+									"source" : [ "obj-3", 33 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
 									"source" : [ "obj-3", 32 ]
 								}
 

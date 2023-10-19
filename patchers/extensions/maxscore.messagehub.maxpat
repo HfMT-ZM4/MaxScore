@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 245.0, 287.0, 1391.0, 613.0 ],
+		"rect" : [ 87.0, 287.0, 1234.0, 570.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,7 +50,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -660,7 +660,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1082,8 +1082,8 @@
 					"numinlets" : 40,
 					"numoutlets" : 40,
 					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 24.0, 107.5, 714.400902255639153, 76.0 ],
-					"text" : "routepass setHairpinVerticalOffset setBarlineDashArray setWholeNoteRestInEmptyMeasures mouse writeSVG picster textfont staffgroups zoomlist setUserClef setToneDivision setTimeUnit setSelectedNotesToProportionalNotation setProportionalNotation setMediaFolder setInstrumentNameVerticalPositionOffset setAbbrInstrumentName scroll output musicfont flashcolor filterRepeatedAccidentals fgcolor linecolor draw cursor createStaffGroup blankPageTransform bgcolor autoadjust assignStaffToStaffGroup getTimeUnit setSelectedStaff setWrap setDurationalSpacingBase setZoom start stop playSection"
+					"patching_rect" : [ 24.0, 107.5, 714.108571428571395, 76.0 ],
+					"text" : "routepass setHairpinVerticalOffset setBarlineDashArray showWholeNoteRestsInEmptyMeasures mouse writeSVG picster textfont staffgroups zoomlist setUserClef setToneDivision setTimeUnit setSelectedNotesToProportionalNotation setProportionalNotation setMediaFolder setInstrumentNameVerticalPositionOffset setAbbrInstrumentName scroll output musicfont flashcolor filterRepeatedAccidentals fgcolor linecolor draw cursor createStaffGroup blankPageTransform bgcolor autoadjust assignStaffToStaffGroup getTimeUnit setSelectedStaff setWrap setDurationalSpacingBase setZoom start stop playSection"
 				}
 
 			}

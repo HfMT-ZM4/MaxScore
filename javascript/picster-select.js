@@ -1351,12 +1351,12 @@ function addShape()
 				outlet(3, "bang");
 			break;
 			case "text":
-				post("fontsize", Array.isArray(fontsize), "\n");
+				//post("fontsize", Array.isArray(fontsize), "\n");
 				var text = htmlEntities(msg[3]);
 				var attr = {};
 				attr.new = "text";
 				attr.id = "Picster-Element_" + num;
-				attr.child = text;
+				attr.text = text;
 				attr.x = toffsets[0];
 				attr.y = toffsets[1];
 				if (Array.isArray(font)) attr["font-family"] = font[0];

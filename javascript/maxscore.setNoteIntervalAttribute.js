@@ -152,7 +152,7 @@ function query(element)
 			}
 			result.push(_query);
 			}
-			post("info", _query, "\n");
+			//post("info", _query, "\n");
 		}	
 
 }

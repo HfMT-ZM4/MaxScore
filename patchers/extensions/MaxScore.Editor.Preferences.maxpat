@@ -42,6 +42,52 @@
 		"title" : "Preferences",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-173",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 703.0, 801.0, 240.0, 22.0 ],
+					"text" : "showWholeNoteRestsInEmptyMeasures $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-109",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 706.5, 836.0, 142.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 49.5, 624.0, 141.0, 20.0 ],
+					"text" : "Show Whole Note Rests ",
+					"textcolor" : [ 0.996078431606293, 0.996078431606293, 0.996078431606293, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.29, 0.31, 0.302, 1.0 ],
+					"hint" : "Show shole note rests in empty measures",
+					"id" : "obj-108",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 703.0, 765.0, 25.0, 25.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 225.0, 622.0, 22.0, 22.0 ],
+					"uncheckedcolor" : [ 0.376, 0.384, 0.4, 1.0 ],
+					"varname" : "showWholeNoteRestsInEmptyMeasures"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-265",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -308,7 +354,9 @@
 								}
 
 							}
- ]
+ ],
+						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 265.0, 463.0, 67.0, 22.0 ],
@@ -344,6 +392,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.290196078431373, 0.309803921568627, 0.301960784313725, 1.0 ],
 					"id" : "obj-164",
 					"maxclass" : "toggle",
 					"numinlets" : 1,
@@ -443,25 +492,6 @@
 					"patching_rect" : [ 1602.0, 166.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 165.0, 162.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textoncolor" : 						{
-							"expression" : ""
-						}
-,
-						"textovercolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -701,7 +731,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1149.5, 732.5, 74.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 431.0, 515.0, 171.0, 20.0 ],
+					"presentation_rect" : [ 431.0, 523.0, 171.0, 20.0 ],
 					"text" : "SVG output",
 					"textcolor" : [ 0.996078431606293, 0.996078431606293, 0.996078431606293, 1.0 ]
 				}
@@ -814,7 +844,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-222",
 					"maxclass" : "jsui",
@@ -1092,25 +1122,6 @@
 					"patching_rect" : [ 1386.0, 185.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 190.0, 162.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textoncolor" : 						{
-							"expression" : ""
-						}
-,
-						"textovercolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -1206,25 +1217,6 @@
 					"patching_rect" : [ 1325.0, 396.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 141.0, 162.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textoncolor" : 						{
-							"expression" : ""
-						}
-,
-						"textovercolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -1295,25 +1287,6 @@
 					"patching_rect" : [ 1500.0, 400.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 115.0, 162.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textoncolor" : 						{
-							"expression" : ""
-						}
-,
-						"textovercolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -1445,7 +1418,9 @@
 								}
 
 							}
- ]
+ ],
+						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 462.0, 482.78314208984375, 48.0, 22.0 ],
@@ -1675,7 +1650,9 @@
 								}
 
 							}
- ]
+ ],
+						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 740.0, 227.5, 60.0, 22.0 ],
@@ -1905,25 +1882,6 @@
 					"patching_rect" : [ 1175.0, 186.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 90.0, 162.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textoncolor" : 						{
-							"expression" : ""
-						}
-,
-						"textovercolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
 					"textcolor" : [ 0.490196, 0.498039, 0.517647, 0.0 ],
 					"textoncolor" : [ 0.803922, 0.898039, 0.909804, 0.0 ],
 					"textovercolor" : [ 0.815686, 0.858824, 0.34902, 0.0 ]
@@ -2283,7 +2241,9 @@
 												}
 
 											}
- ]
+ ],
+										"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 									}
 ,
 									"patching_rect" : [ 50.0, 103.0, 107.0, 20.0 ],
@@ -2341,7 +2301,9 @@
 								}
 
 							}
- ]
+ ],
+						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 515.0, 750.0, 105.0, 22.0 ],
@@ -2954,7 +2916,9 @@
 								}
 
 							}
- ]
+ ],
+						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 515.0, 717.5, 179.0, 20.0 ],
@@ -3097,13 +3061,6 @@
 					"patching_rect" : [ 1072.0, 553.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 562.0, 162.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"textcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
 					"text" : "Clear",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -3142,16 +3099,15 @@
 					"restore" : 					{
 						"drawAllMeasureNumbers" : [ 0 ],
 						"handleMusicCurveRendering" : [ 1 ],
-						"markSlots" : [ 0 ],
 						"minRequired" : [ 0 ],
 						"note_value" : [ 2 ],
 						"overdrive" : [ 1 ],
 						"papersize" : [ 3 ],
-						"setComposer" : [ "lindsay vickery" ],
-						"setCopyright" : [ "2022" ],
+						"setComposer" : [ "Georg Hajdu" ],
+						"setCopyright" : [ "©2011" ],
 						"setDurationalSpacingBase" : [ 0.7 ],
 						"setHoldScaler" : [ 1.0 ],
-						"setJMSLAdvanceTime" : [ 1.0 ],
+						"setJMSLAdvanceTime" : [ 0.0 ],
 						"setMeasureNumberOffset" : [ 1 ],
 						"setScoreBottomMargin" : [ 15.0 ],
 						"setScoreFirstSystemIndent" : [ 0.0 ],
@@ -3159,8 +3115,8 @@
 						"setScoreRightMargin" : [ 20.0 ],
 						"setScoreTopMargin" : [ 15.0 ],
 						"setScoreTopMarginOfFirstPage" : [ 60.0 ],
-						"setSubtitle" : [ "Geburt Leben und Tod der Sterne" ],
-						"setTitle" : [ "JMSLMaxScore-17" ],
+						"setSubtitle" : [ "null" ],
+						"setTitle" : [ "JMSLMaxScore-11" ],
 						"setTitleVisible" : [ 0 ],
 						"setWrap" : [ 1 ],
 						"showClefs" : [ 1 ],
@@ -3172,6 +3128,7 @@
 						"showStaffNumbers" : [ 1 ],
 						"showTempo" : [ 1 ],
 						"showTimeSignatures" : [ 1 ],
+						"showWholeNoteRestsInEmptyMeasures" : [ 0 ],
 						"showrhythm" : [ 0 ],
 						"slashedGraceNotes" : [ 1 ],
 						"subdivision" : [ 3 ],
@@ -3179,7 +3136,7 @@
 						"textfont" : [ "Arial" ],
 						"timeunit" : [ 100.0 ],
 						"titlefont" : [ "Times New Roman" ],
-						"update" : [ 0 ],
+						"update" : [ 1 ],
 						"useLegacyMultiTrackOrientation" : [ 1 ],
 						"useMusicGlyphRenderer" : [ 1 ],
 						"useMusicGlyphRendererProxy" : [ 1 ]
@@ -3465,7 +3422,9 @@
 												}
 
 											}
- ]
+ ],
+										"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 									}
 ,
 									"patching_rect" : [ 207.833333333333343, 502.0, 80.000000000000028, 20.0 ],
@@ -3564,7 +3523,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 482.4000244140625, 145.0, 245.0, 31.0 ],
-									"restore" : [ 12646 ],
+									"restore" : [ 5188 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3740,7 +3699,9 @@
 												}
 
 											}
- ]
+ ],
+										"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 									}
 ,
 									"patching_rect" : [ 173.0625, 64.0, 97.0, 20.0 ],
@@ -3931,7 +3892,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 482.4000244140625, 295.01239013671875, 224.0, 42.0 ],
-									"restore" : [ 108 ],
+									"restore" : [ 35 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4510,32 +4471,10 @@
 							}
  ],
 						"bgcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ],
-						"editing_bgcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ],
-						"saved_attribute_attributes" : 						{
-							"editing_bgcolor" : 							{
-								"expression" : ""
-							}
-,
-							"locked_bgcolor" : 							{
-								"expression" : ""
-							}
-
-						}
-
+						"editing_bgcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 1072.0, 521.0, 250.0, 22.0 ],
-					"saved_attribute_attributes" : 					{
-						"editing_bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"locked_bgcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4634,54 +4573,6 @@
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-176",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "parent::bcanvas::process::RenderedMessage::switch::show-sequenced" ],
-					"patching_rect" : [ 431.0, 27.0, 395.0, 22.0 ],
-					"text" : "t parent::bcanvas::process::RenderedMessage::switch::show-sequenced"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"hidden" : 1,
-					"id" : "obj-173",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 462.0, 9.0, 197.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 450.0, 700.0, 197.0, 20.0 ],
-					"text" : "Mark Sequenced Messages (Slots)",
-					"textcolor" : [ 0.996078431606293, 0.996078431606293, 0.996078431606293, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"hidden" : 1,
-					"id" : "obj-174",
-					"maxclass" : "toggle",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 431.0, 4.5, 22.0, 22.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 650.0, 700.0, 22.0, 22.0 ],
-					"varname" : "markSlots"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-157",
@@ -4716,7 +4607,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-118",
 					"maxclass" : "jsui",
@@ -4893,13 +4784,6 @@
 					"patching_rect" : [ 257.416707333333306, 699.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 631.0, 301.0, 56.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"textcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
 					"text" : "Set...",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -5608,7 +5492,9 @@
 								"parentstyle" : "",
 								"multi" : 0
 							}
- ]
+ ],
+						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 9.5, 834.0, 70.0, 22.0 ],
@@ -5628,6 +5514,7 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.290196078431373, 0.309803921568627, 0.301960784313725, 1.0 ],
 					"id" : "obj-133",
 					"maxclass" : "toggle",
 					"numinlets" : 1,
@@ -5741,10 +5628,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1131.0, 411.0, 111.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 225.0, 90.0, 161.0, 20.0 ],
+					"presentation_rect" : [ 225.0, 90.0, 162.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "2022",
+					"text" : "©2011",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setCopyright",
 					"wordwrap" : 0
@@ -5888,7 +5775,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-135",
 					"maxclass" : "jsui",
@@ -6253,7 +6140,9 @@
 								"parentstyle" : "",
 								"multi" : 0
 							}
- ]
+ ],
+						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 9.5, 810.0, 57.0, 22.0 ],
@@ -6273,9 +6162,10 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.404, 0.498, 0.51, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.404, 0.498, 0.51, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-128",
+					"ignoreclick" : 1,
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -6300,7 +6190,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 431.0, 596.0, 155.0, 20.0 ],
 					"text" : "Automatic Live Clip Update",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
 					"varname" : "updatelabel"
 				}
 
@@ -6337,7 +6227,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-13",
 					"maxclass" : "jsui",
@@ -6529,7 +6419,9 @@
 								}
 
 							}
- ]
+ ],
+						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 724.0, 477.0, 94.0, 22.0 ],
@@ -6760,7 +6652,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-97",
 					"maxclass" : "jsui",
@@ -6891,10 +6783,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 926.0, 384.0, 111.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 225.0, 40.0, 185.0, 20.0 ],
+					"presentation_rect" : [ 225.0, 40.0, 163.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "Geburt Leben und Tod der Sterne",
+					"text" : "null",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setSubtitle",
 					"wordwrap" : 0
@@ -7284,7 +7176,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"hidden" : 1,
 					"id" : "obj-56",
@@ -7599,10 +7491,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 860.0, 248.0, 159.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 225.0, 65.0, 172.0, 20.0 ],
+					"presentation_rect" : [ 225.0, 65.0, 163.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "lindsay vickery",
+					"text" : "Georg Hajdu",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setComposer",
 					"wordwrap" : 0
@@ -7620,10 +7512,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 560.0, 205.5, 114.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 225.0, 15.0, 225.0, 20.0 ],
+					"presentation_rect" : [ 225.0, 15.0, 164.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "JMSLMaxScore-17",
+					"text" : "JMSLMaxScore-11",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setTitle",
 					"wordwrap" : 0
@@ -7983,7 +7875,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-11",
 					"maxclass" : "jsui",
@@ -7998,7 +7890,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-12",
 					"maxclass" : "jsui",
@@ -8041,7 +7933,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-87",
 					"maxclass" : "jsui",
@@ -8072,7 +7964,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-75",
 					"maxclass" : "jsui",
@@ -8103,7 +7995,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-239",
 					"maxclass" : "jsui",
@@ -8120,7 +8012,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-14",
 					"maxclass" : "jsui",
@@ -8137,7 +8029,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-15",
 					"maxclass" : "jsui",
@@ -8154,7 +8046,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-240",
 					"maxclass" : "jsui",
@@ -8171,7 +8063,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-17",
 					"maxclass" : "jsui",
@@ -8188,7 +8080,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-18",
 					"maxclass" : "jsui",
@@ -8205,7 +8097,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-241",
 					"maxclass" : "jsui",
@@ -8632,7 +8524,9 @@
 												}
 
 											}
- ]
+ ],
+										"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 									}
 ,
 									"patching_rect" : [ 48.0, 66.0, 115.0, 22.0 ],
@@ -8856,7 +8750,9 @@
 												}
 
 											}
- ]
+ ],
+										"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 									}
 ,
 									"patching_rect" : [ 607.0, 121.0, 115.0, 22.0 ],
@@ -9294,7 +9190,9 @@
 								"parentstyle" : "",
 								"multi" : 0
 							}
- ]
+ ],
+						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 791.5, 723.5, 294.0, 22.0 ],
@@ -9324,18 +9222,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 997.5, 659.5, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 600.0, 637.0, 137.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
+					"presentation_rect" : [ 600.0, 661.0, 137.0, 20.0 ],
 					"text" : "Open Preferences...",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -9356,18 +9243,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 894.5, 659.5, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 300.0, 637.0, 137.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
+					"presentation_rect" : [ 300.0, 661.0, 137.0, 20.0 ],
 					"text" : "Save Preferences as...",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -9388,18 +9264,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1100.5, 659.5, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 450.0, 637.0, 137.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
+					"presentation_rect" : [ 450.0, 661.0, 137.0, 20.0 ],
 					"text" : "Attribute List",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -9420,18 +9285,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 791.5, 659.5, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 637.0, 137.0, 20.0 ],
-					"saved_attribute_attributes" : 					{
-						"bgcolor" : 						{
-							"expression" : ""
-						}
-,
-						"textcolor" : 						{
-							"expression" : ""
-						}
-
-					}
-,
+					"presentation_rect" : [ 150.0, 661.0, 137.0, 20.0 ],
 					"text" : "Save Preferences",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"texton" : "Sync Stop",
@@ -9480,6 +9334,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-97", 0 ],
 					"source" : [ "obj-105", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-173", 0 ],
+					"source" : [ "obj-108", 0 ]
 				}
 
 			}
@@ -9887,8 +9748,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-176", 0 ],
-					"source" : [ "obj-174", 0 ]
+					"destination" : [ "obj-30", 0 ],
+					"source" : [ "obj-173", 0 ]
 				}
 
 			}
@@ -11128,18 +10989,7 @@
 			}
  ],
 		"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
-		"editing_bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
-		"saved_attribute_attributes" : 		{
-			"editing_bgcolor" : 			{
-				"expression" : ""
-			}
-,
-			"locked_bgcolor" : 			{
-				"expression" : ""
-			}
-
-		}
-
+		"editing_bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ]
 	}
 
 }

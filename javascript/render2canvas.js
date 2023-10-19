@@ -165,7 +165,7 @@ var oldMeasureStaff = "";
 var url = "";
 var filterRepeatedAccidentalsFlag = 1;
 var showRhythmInProportionalNotation = 0;
-var wholeNoteRestInEmptyMeasures = 0;
+var wholeNoteRestsInEmptyMeasures = 0;
 var accList = ["natural", "sharp", "flat", "natural", "doubleflat", "doublesharp", "quartertoneflat", "threequartertoneflat", "quartertonesharp", "threequartertonesharp", "no_accidental"];
 var clefDesigner = new Dict();
 clefDesigner.import_json("MaxScoreClefDesigner.json");
@@ -624,10 +624,10 @@ function getScoreLeftMargin(slm)
 	scoreLeftMargin = slm;
 }
 
-function setWholeNoteRestInEmptyMeasures(flag)
+function showWholeNoteRestsInEmptyMeasures(flag)
 {
-	wholeNoteRestInEmptyMeasures = flag;
-	annotation.set("wholeNoteRestInEmptyMeasures", wholeNoteRestInEmptyMeasures);
+	wholeNoteRestsInEmptyMeasures = flag;
+	annotation.set("wholeNoteRestsInEmptyMeasures", wholeNoteRestsInEmptyMeasures);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
@@ -1188,7 +1188,7 @@ function getScoreAnnotation(a)
 	_musicfont = (annotation.contains("musicfont")) ? annotation.get("musicfont") : "Bravura";
 	_textfont = (annotation.contains("textfont")) ? annotation.get("textfont") : "Arial";
 	_titlefont = (annotation.contains("titlefont")) ? annotation.get("titlefont") : "Times New Roman";
-	wholeNoteRestInEmptyMeasures = (annotation.contains("wholeNoteRestInEmptyMeasures")) ? annotation.get("wholeNoteRestInEmptyMeasures") : 0;
+	wholeNoteRestsInEmptyMeasures = (annotation.contains("wholeNoteRestsInEmptyMeasures")) ? annotation.get("wholeNoteRestsInEmptyMeasures") : 0;
 	showRhythmInProportionalNotation = (annotation.contains("showRhythmInProportionalNotation")) ? annotation.get("showRhythmInProportionalNotation") : 0;
 }
 
@@ -1389,7 +1389,7 @@ function endRenderDump()
 	}
    	//outlet(1, "getTitle");
     //outlet(1, "getComposer");
-	if (wholeNoteRestInEmptyMeasures) writeRests();
+	if (wholeNoteRestsInEmptyMeasures) writeRests();
 	writeStaffLines();
 	writeBarlines();
 	if (prop) writeRuler();
@@ -1568,10 +1568,14 @@ function writeAt(s, font, fs, x, y, t)
 			x = a[3];
 			y = a[4];
 			t = a.slice(5).join(" ");
+			if (t.search(/\b\d+x\b/g) != -1)
+			{
+				fs += 4;
+				x += 10;
+			}
 			if (typeof t == "number") t = parseInt(t);
  			if(t.toString().length >= 1){
 			var xoffset = (tempoflag == 1) ? 10. : 0.;
-			
 			SVGString[s + 1].push({
 				"new" : "text",
 				"id" : "writeAt-" + idcount++,
@@ -1587,7 +1591,6 @@ function writeAt(s, font, fs, x, y, t)
 				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
 				}
 			);
-			//SVGString[s + 1].push("<text x=\"" + (x + xoffset) + "\" y=\"" + y + "\" font-family=\"" + font + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + fs + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + htmlEntities(t) + "</text>");
 			}
 }
 
@@ -2086,7 +2089,7 @@ function anything() {
 				"id" : "Gliss-" + idcount++,
 				"d" : "M" + msg[9] + "," + dest[d] + " L" + msg[11] + "," + dest2,
 				"stroke" : frgb,
-				"stroke-width" : 0.4,
+				"stroke-width" : 0.8,
 				"fill" : "none", 
 				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
 				}
