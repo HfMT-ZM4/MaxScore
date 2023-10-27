@@ -627,7 +627,7 @@ function getScoreLeftMargin(slm)
 function showWholeNoteRestsInEmptyMeasures(flag)
 {
 	wholeNoteRestsInEmptyMeasures = flag;
-	annotation.set("wholeNoteRestsInEmptyMeasures", wholeNoteRestsInEmptyMeasures);
+	annotation.set("showWholeNoteRestsInEmptyMeasures", wholeNoteRestsInEmptyMeasures);
 	outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
@@ -1181,14 +1181,19 @@ function getScoreAnnotation(a)
 	annotation.parse(a);
 	prop = annotation.get("proportional");
 	timeUnit = annotation.get("timeUnit");
-	//zoom = annotation.get("setZoom");
+	if (_init) {
+		if (annotation.contains("setLoopingPlayback")) outlet(1, "setLoopingPlayback", annotation.get("setLoopingPlayback"));
+		if (annotation.contains("setZoom")) outlet(1, "setZoom", annotation.get("setZoom"));//zoom value is needed by render2canvas!!!!!
+		if (annotation.contains("setWrap")) outlet(1, "setWrap", annotation.get("setWrap"));
+		if (annotation.contains("setDurationalSpacingBase")) outlet(1, "setDurationalSpacingBase", annotation.get("setDurationalSpacingBase"));
+	}
 	bcolor = (annotation.contains("bgcolor")) ? annotation.get("bgcolor") : [0.996, 0.996, 0.94, 1];
 	fcolor = (annotation.contains("fgcolor")) ? annotation.get("fgcolor") : [0, 0, 0, 1];
 	lcolor = (annotation.contains("linecolor")) ? annotation.get("linecolor") : [0, 0, 0, 1];
 	_musicfont = (annotation.contains("musicfont")) ? annotation.get("musicfont") : "Bravura";
 	_textfont = (annotation.contains("textfont")) ? annotation.get("textfont") : "Arial";
 	_titlefont = (annotation.contains("titlefont")) ? annotation.get("titlefont") : "Times New Roman";
-	wholeNoteRestsInEmptyMeasures = (annotation.contains("wholeNoteRestsInEmptyMeasures")) ? annotation.get("wholeNoteRestsInEmptyMeasures") : 0;
+	wholeNoteRestsInEmptyMeasures = (annotation.contains("showWholeNoteRestsInEmptyMeasures")) ? annotation.get("showWholeNoteRestsInEmptyMeasures") : 0;
 	showRhythmInProportionalNotation = (annotation.contains("showRhythmInProportionalNotation")) ? annotation.get("showRhythmInProportionalNotation") : 0;
 }
 

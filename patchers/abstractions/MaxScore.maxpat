@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,7 +50,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -539,7 +539,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1274,7 +1274,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 986.0, 95.0, 321.0, 22.0 ],
-									"restore" : [ "3090-fromScore" ],
+									"restore" : [ "4490-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1951,7 +1951,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2160,7 +2160,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2337,7 +2337,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2491,7 +2491,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 237.75, 243.0, 250.0, 35.0 ],
+									"patching_rect" : [ 237.75, 243.0, 254.0, 35.0 ],
 									"text" : "routepass dumpScore getSelectionBufferSize getNoteAnchor getRenderAllowed"
 								}
 
@@ -2517,7 +2517,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 29.0, 18.0, 321.0, 22.0 ],
-									"restore" : [ "3090-fromScore" ],
+									"restore" : [ "4490-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2561,7 +2561,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 238.0, 197.4833984375, 287.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "picster-init.js",
+										"filename" : "picster-init",
 										"parameter_enable" : 0
 									}
 ,
@@ -2934,7 +2934,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3134,7 +3134,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 58.0, 9.5166015625, 321.0, 22.0 ],
-									"restore" : [ "3090-fromScore" ],
+									"restore" : [ "4490-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3169,7 +3169,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3737,7 +3737,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4118,7 +4118,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4189,7 +4189,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4641,7 +4641,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 308.0, 175.0, 321.0, 22.0 ],
-									"restore" : [ "3090-fromScore" ],
+									"restore" : [ "4490-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5284,13 +5284,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 413.0, 473.0, 478.0 ],
+						"rect" : [ 145.0, 238.0, 587.0, 536.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5346,13 +5346,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 255.0, 83.5, 169.0, 35.0 ],
-									"restore" : [ "3090-fromScore" ],
+									"patching_rect" : [ 255.0, 83.5, 321.0, 22.0 ],
+									"restore" : [ "4490-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5390,12 +5389,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-55",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 135.666666666666657, 198.0, 115.0, 35.0 ],
+									"patching_rect" : [ 135.666666666666657, 198.0, 144.999999999999972, 22.0 ],
 									"text" : "grab 2 #0-grabber"
 								}
 
@@ -5407,7 +5405,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 135.666666666666657, 269.0, 88.0, 22.0 ],
+									"patching_rect" : [ 261.666666666666629, 262.0, 88.0, 22.0 ],
 									"text" : "dict.deserialize"
 								}
 
@@ -5419,7 +5417,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 135.666666666666657, 235.0, 47.0, 22.0 ],
+									"patching_rect" : [ 261.666666666666629, 233.0, 47.0, 22.0 ],
 									"text" : "zl.nth 2"
 								}
 
@@ -5467,7 +5465,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 70.0, 303.0, 84.666666666666657, 22.0 ],
+									"patching_rect" : [ 70.0, 303.0, 210.666666666666629, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
@@ -5682,7 +5680,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 164.478730158730144, 199.0, 90.0, 22.0 ],
+					"patching_rect" : [ 164.478730158730144, 209.0, 90.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -5718,13 +5716,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 368.0, 111.0, 651.0, 702.0 ],
+						"rect" : [ 488.0, 134.0, 651.0, 702.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5887,13 +5885,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-30",
-									"linecount" : 4,
+									"linecount" : 5,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 190.333333333333314, 88.0, 452.0, 62.0 ],
-									"text" : "set version \"1.0\", set proportional 0, set blankPage 0, set timeUnit 100., set textfont Arial, set musicfont Bravura, set titlefont \"Times New Roman\", set bgcolor 0.996 0.996 0.94 1., set fgcolor 0. 0. 0. 1., set linecolor 0. 0. 0. 1., set setWrap 1, set setZoom 0.5, set setDurationalSpacingBase 0.7"
+									"patching_rect" : [ 190.333333333333314, 88.0, 458.0, 76.0 ],
+									"text" : "set version \"1.0\", set proportional 0, set blankPage 0, set timeUnit 100., set textfont Arial, set musicfont Bravura, set titlefont \"Times New Roman\", set bgcolor 0.996 0.996 0.94 1., set fgcolor 0. 0. 0. 1., set linecolor 0. 0. 0. 1., set setWrap 1, set setZoom 0.5, set setDurationalSpacingBase 0.7, set setLoopingPlayback 0, set showWholeNoteRestsInEmptyMeasures 0, set showRhythmInProportionalNotation 0"
 								}
 
 							}
@@ -6339,7 +6337,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -6397,7 +6395,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7160,7 +7158,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 569.5, 5.0, 321.0, 22.0 ],
-									"restore" : [ "3090-fromScore" ],
+									"restore" : [ "4490-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -9141,7 +9139,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 420.696825396825261, 351.0, 232.0, 22.0 ],
-					"restore" : [ "3090-fromScore" ],
+					"restore" : [ "4490-fromScore" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -9274,7 +9272,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -9329,7 +9327,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 117.0, 283.0, 321.0, 22.0 ],
-									"restore" : [ "3090-fromScore" ],
+									"restore" : [ "4490-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0

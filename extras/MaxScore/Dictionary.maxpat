@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 200.0, 53.0, 1088.0, 716.0 ],
+		"rect" : [ 200.0, 66.0, 1088.0, 716.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -73,11 +73,11 @@
 					"fontsize" : 12.0,
 					"id" : "obj-47",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 180.5, 463.0, 44.0, 22.0 ],
-					"text" : "sel 0 1"
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 193.0, 465.0, 73.0, 22.0 ],
+					"text" : "sel previous"
 				}
 
 			}
@@ -105,11 +105,11 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 180.5, 436.0, 162.0, 19.0 ],
+					"patching_rect" : [ 180.5, 436.0, 44.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 864.0, 2.0, 223.0, 15.0 ],
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"tabs" : [ "next", "previous" ]
+					"tabs" : [ "previous", "next" ]
 				}
 
 			}
@@ -376,7 +376,7 @@
 					"presentation_rect" : [ 0.0, 0.0, 222.0, 20.0 ],
 					"prototypename" : "Classic",
 					"rounded" : 0.0,
-					"text" : "measure",
+					"text" : "loop",
 					"textcolor" : [ 0.988235294117647, 0.988235294117647, 1.0, 1.0 ],
 					"varname" : "search"
 				}
@@ -606,7 +606,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 664.0, 1086.0, 44.0 ],
 					"rounded" : 0.0,
-					"text" : "setSingleBar | measure (int) | set barline to single | setSingleBar 0",
+					"text" : "setLoopingPlayback | flag (boolean) | turn looping on on/off. When no section is set, the entire score will be looped | setLoopingPlayback true",
 					"textcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
 				}
 
@@ -784,7 +784,7 @@
 					"presentation_rect" : [ 1.0, 41.0, 1086.0, 621.0 ],
 					"rowhead" : 1,
 					"rowheight" : 20,
-					"rows" : 293,
+					"rows" : 296,
 					"selmode" : 3,
 					"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"stcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -1102,7 +1102,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-47", 0 ],
-					"source" : [ "obj-43", 0 ]
+					"source" : [ "obj-43", 1 ]
 				}
 
 			}
@@ -1132,14 +1132,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-46", 0 ],
-					"source" : [ "obj-47", 0 ]
+					"source" : [ "obj-47", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-56", 0 ],
-					"source" : [ "obj-47", 1 ]
+					"source" : [ "obj-47", 0 ]
 				}
 
 			}
@@ -1262,17 +1262,17 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "Picster-Messages.txt",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/dictionary",
 				"patcherrelativepath" : "../../patchers/dictionary",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "my-LtoColl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"type" : "JSON",
 				"implicit" : 1
 			}
  ],

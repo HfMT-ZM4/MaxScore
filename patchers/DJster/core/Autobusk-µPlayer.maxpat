@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 309.0, 100.0, 825.0, 813.0 ],
+		"rect" : [ 356.0, 100.0, 825.0, 813.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -2382,7 +2382,7 @@
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 411.5, 460.0, 13.0, 35.0 ],
-									"varname" : "coherence"
+									"varname" : "cohesion"
 								}
 
 							}
@@ -2438,12 +2438,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-119",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 461.5, 574.0, 29.5, 35.0 ],
+									"patching_rect" : [ 461.5, 574.0, 32.0, 22.0 ],
 									"text" : "t b b"
 								}
 
@@ -2517,18 +2516,6 @@
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 461.75, 706.0, 43.0, 22.0 ],
 									"text" : "grab 2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-82",
-									"linecount" : 4,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 685.75, 396.0, 193.0, 60.0 ],
-									"text" : "find index, what if it's no longer present for the next pulse? Maybe band limited without melody_scope?"
 								}
 
 							}
@@ -2811,7 +2798,7 @@
 													"patching_rect" : [ 33.5, 403.5, 64.0, 64.0 ],
 													"range" : 11,
 													"size" : 3,
-													"table_data" : [ 0, 10, 0, 0 ]
+													"table_data" : [ 0, 3, 0, 7 ]
 												}
 
 											}
@@ -3029,46 +3016,18 @@
 												}
 
 											}
- ],
-										"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
-										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
+ ]
 									}
 ,
 									"patching_rect" : [ 340.5, 503.0, 85.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
-										"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"globalpatchername" : "",
-										"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 										"tags" : ""
 									}
 ,
 									"text" : "p randomness"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-47",
-									"linecount" : 9,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 677.0, 495.0, 195.0, 127.0 ],
-									"text" : "potential issue:\nwhen in sequence mode: \nfunbuff needs to contain entire range-limited sequence, not just subset.\nSolution: store output from funbuff and find entry in coll sort-list. Send prev or next and get second item from coll"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-38",
-									"maxclass" : "number",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 12.0, 695.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -3079,7 +3038,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 388.0, 745.5, 50.5, 22.0 ],
+									"patching_rect" : [ 381.5, 745.5, 50.5, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -3108,7 +3067,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 116.391975000000002, 171.0, 113.0, 22.0 ],
+									"patching_rect" : [ 116.391975000000002, 171.0, 119.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -3860,7 +3819,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "848288-autobus", "" ],
+									"outlettype" : [ "3097-autobus", "" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -3905,12 +3864,12 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-41",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "848288-autobus" ],
-													"patching_rect" : [ 149.833333333333371, 110.0, 95.0, 35.0 ],
+													"outlettype" : [ "3097-autobus" ],
+													"patching_rect" : [ 149.833333333333371, 110.0, 81.0, 49.0 ],
 													"text" : "t #0-autobus"
 												}
 
@@ -4069,11 +4028,12 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-4",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
-													"patching_rect" : [ 92.0, 424.0, 113.0, 22.0 ],
+													"patching_rect" : [ 92.0, 424.0, 97.0, 35.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
 														"precision" : 6
@@ -5493,7 +5453,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-63", 0 ],
-									"midpoints" : [ 397.5, 779.25, 46.333328000000002, 779.25 ],
+									"midpoints" : [ 391.0, 779.25, 46.333328000000002, 779.25 ],
 									"source" : [ "obj-20", 0 ]
 								}
 
@@ -5553,13 +5513,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-30", 0 ],
 									"source" : [ "obj-37", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-77", 0 ],
-									"source" : [ "obj-38", 0 ]
 								}
 
 							}
@@ -5942,18 +5895,14 @@
 								}
 
 							}
- ],
-						"bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
-						"editing_bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 110.0, 643.090880999999968, 290.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 						"tags" : ""
 					}
 ,
