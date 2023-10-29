@@ -436,6 +436,8 @@ function obj_ref(o)
 	SVGPicster = o.picster;
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
+	groupcount = o.groupcount;
+	//post("SVGImages", JSON.stringify(SVGImages), groupcount, "\n");
 	//Check whether images are already in the media folder. If not copy them there.
 	for (var s = 1; s <= groupcount; s++) {
 		for (var i = 0; i < SVGImages[s].length; i++) {
@@ -444,7 +446,6 @@ function obj_ref(o)
 		SVGImages[s][i]["href"] = mediaFolder + SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1);
 		}
 	}
-	groupcount = o.groupcount;
 	var clear = {"key" : "remove", "val" : "main"};
 	var joutput = {};
 	//writeSVG();
