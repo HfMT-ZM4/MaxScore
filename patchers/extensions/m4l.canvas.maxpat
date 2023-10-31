@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 6,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -81,7 +81,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -303,7 +303,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -563,7 +563,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -952,7 +952,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 45.25, 332.0, 312.0, 22.0 ],
-									"restore" : [ 100.0 ],
+									"restore" : [ 400.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -983,7 +983,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 480.666666666666686, 104.5, 375.0, 22.0 ],
-									"restore" : [ 1242 ],
+									"restore" : [ 923852 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2050,7 +2050,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "rewind", "start", "stop", "resume" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[123]",
+							"parameter_longname" : "live.tab[31]",
 							"parameter_mmax" : 3,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -2206,7 +2206,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2622,7 +2622,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2998,7 +2998,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3679,7 +3679,7 @@
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[2]",
+							"parameter_longname" : "live.tab[8]",
 							"parameter_mmax" : 2,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -3733,7 +3733,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "first", "rewind", "dec", "inc", "fastforward", "last" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.tab[9]",
+							"parameter_longname" : "live.tab[4]",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
@@ -3791,7 +3791,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3890,7 +3890,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4348,7 +4348,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5049,7 +5049,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 258.0, 5.0, 348.0, 22.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ 1 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5201,7 +5201,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 58.0, 402.0, 450.0, 22.0 ],
-									"restore" : [ 1, 0, 1, 0.5, 800, 800 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5958,7 +5958,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "dumpScore" ],
 					"patching_rect" : [ 340.0, 31.0, 25.0, 25.0 ]
 				}
 
@@ -6054,7 +6054,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -6278,7 +6278,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7207,7 +7207,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7371,7 +7371,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 418.0, 40.0, 449.0, 22.0 ],
-													"restore" : [ 800, 800 ],
+													"restore" : [ 842, 1191 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -8665,7 +8665,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 325.333343505859375, 205.0, 216.0, 20.0 ],
-									"restore" : [ 1, 0, 1, 0.5, 800, 800 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0

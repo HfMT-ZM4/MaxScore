@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 100.0, 1251.0, 717.0 ],
+		"rect" : [ 310.0, 100.0, 1251.0, 717.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 329.316681000000017, 535.0, 54.0, 20.0 ],
+					"text" : "symbol $1"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-123",
 					"maxclass" : "newobj",
@@ -324,7 +336,7 @@
 							"parameter_enum" : [ "note", "hires" ],
 							"parameter_info" : "Event length given in ms or percentage of pulse length",
 							"parameter_invisible" : 2,
-							"parameter_longname" : "Precision",
+							"parameter_longname" : "umenu[1]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Precision",
 							"parameter_type" : 2,
@@ -1172,7 +1184,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 284.5, 404.0, 347.0, 22.0 ],
-									"restore" : [ 199.999999999999943 ],
+									"restore" : [ 102.320574162679407 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2712,7 +2724,7 @@
 							"parameter_info" : "A measure of the preservation of the scale used as input for the stocastic process. The values range from -1 (preserved sequence played backward)  to 0 (weighted randomness) to 1 (preserved sequence played forward).\nThe scale can be represented either as an ascending sequence or as sequence, the order of which depending on its members' harmonic distance from the tonic or an arbitrarily assignedpriority value (use the Sort switch to toggle between these modes).\n",
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
-							"parameter_longname" : "Melodic Cohesion",
+							"parameter_longname" : "Cohesion",
 							"parameter_mmax" : 100.0,
 							"parameter_mmin" : -100.0,
 							"parameter_shortname" : "Melodic Cohesion",
@@ -2748,7 +2760,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 154.75, 97.0, 57.0, 20.0 ],
-					"restore" : [ "2 2 2" ],
+					"restore" : [ "7 5 3" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2804,8 +2816,7 @@
 							"parameter_longname" : "Ostinato Buffer",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "Ostinato Buffer",
-							"parameter_type" : 2,
-							"parameter_unitstyle" : 9
+							"parameter_type" : 2
 						}
 
 					}
@@ -2990,7 +3001,7 @@
 							"parameter_info" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
 							"parameter_initial" : [ 100 ],
 							"parameter_initial_enable" : 1,
-							"parameter_longname" : "Event Length",
+							"parameter_longname" : "Event Length Percent",
 							"parameter_mmax" : 1000.0,
 							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "Event Length",
@@ -3090,7 +3101,7 @@
 							"parameter_info" : "Turn event generation on/off",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
-							"parameter_longname" : "Play",
+							"parameter_longname" : "stream",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Play",
 							"parameter_type" : 2
@@ -3551,9 +3562,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "int", "bang" ],
-					"patching_rect" : [ 329.316681000000017, 512.5, 29.5, 20.0 ],
-					"text" : "t i b"
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 329.316681000000017, 509.5, 76.5, 20.0 ],
+					"text" : "t l b"
 				}
 
 			}
@@ -3564,7 +3575,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 339.816681000000017, 542.0, 79.0, 20.0 ],
+					"patching_rect" : [ 386.816681000000017, 535.0, 79.0, 20.0 ],
 					"text" : "send time_latch"
 				}
 
@@ -3585,7 +3596,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "time", "pulse" ],
 							"parameter_invisible" : 1,
-							"parameter_longname" : "Sync Type",
+							"parameter_longname" : "menu",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "menu",
 							"parameter_type" : 2
@@ -3671,7 +3682,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "Scala Browser",
+							"parameter_longname" : "live.text",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Scala Browser",
 							"parameter_type" : 2
@@ -3813,7 +3824,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "Sync",
+							"parameter_longname" : "live.button",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Sync",
 							"parameter_type" : 2
@@ -3827,6 +3838,7 @@
 			}
 , 			{
 				"box" : 				{
+					"autorestore" : "µbus.json",
 					"id" : "obj-79",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -3929,7 +3941,7 @@
 						"attenuation" : [ 12.5 ],
 						"chordal_weight" : [ 1.0 ],
 						"dynamics" : [ 64.0 ],
-						"event_length" : [ 701.026811043231078 ],
+						"event_length" : [ 100.000000000000028 ],
 						"event_length_display_style" : [ 1.0 ],
 						"eventfulness" : [ 100.0 ],
 						"harmoniclarity" : [ 100.0 ],
@@ -3946,8 +3958,8 @@
 						"overlap" : [ 1.0 ],
 						"pitch_center" : [ 60.0 ],
 						"pitch_range" : [ 7.0 ],
-						"precision" : [ 0.0 ],
-						"pulse_length" : [ 199.999999999999943 ],
+						"precision" : [ 1.0 ],
+						"pulse_length" : [ 102.320574162679407 ],
 						"scale" : [ "pentatonic" ],
 						"scales" : [ 							{
 								"pentatonic" : 								{
@@ -8953,7 +8965,7 @@
 							}
  ],
 						"silent_downbeat" : [ 0.0 ],
-						"sorted" : [ 1.0 ],
+						"sorted" : [ 0.0 ],
 						"stream" : [ 0.0 ],
 						"subdivision" : [ "2+3" ],
 						"tonic_pitch" : [ 60.0 ],
@@ -9208,7 +9220,7 @@
 							"parameter_enum" : [ "Narrow", "Wide", "Odd Narrow", "Odd Wide" ],
 							"parameter_info" : "Tonality Profile. A narrow profile assumes that small intervals can be clearly differentiated. ",
 							"parameter_invisible" : 1,
-							"parameter_longname" : "Tonality Profile",
+							"parameter_longname" : "umenu",
 							"parameter_mmax" : 3,
 							"parameter_shortname" : "Tonality Profile",
 							"parameter_type" : 2
@@ -10869,7 +10881,7 @@
 						"valueof" : 						{
 							"parameter_exponent" : 6.5,
 							"parameter_info" : "The time interval between pulses",
-							"parameter_initial" : [ 1000.0 ],
+							"parameter_initial" : [ 200 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Pulse Length",
 							"parameter_mmax" : 20000.0,
@@ -10906,7 +10918,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 121.0, 22.0, 78.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "2 2 2",
+					"text" : "7 5 3",
 					"varname" : "textedit",
 					"wordwrap" : 0
 				}
@@ -11078,7 +11090,7 @@
 							"parameter_shortname" : "Pitch Range",
 							"parameter_type" : 0,
 							"parameter_units" : "st",
-							"parameter_unitstyle" : 7
+							"parameter_unitstyle" : 9
 						}
 
 					}
@@ -11138,7 +11150,7 @@
 							"parameter_shortname" : "Pitch Center",
 							"parameter_type" : 0,
 							"parameter_units" : "nt",
-							"parameter_unitstyle" : 8
+							"parameter_unitstyle" : 9
 						}
 
 					}
@@ -11254,7 +11266,7 @@
 							"parameter_shortname" : "Tonic Pitch",
 							"parameter_type" : 0,
 							"parameter_units" : "nt",
-							"parameter_unitstyle" : 8
+							"parameter_unitstyle" : 9
 						}
 
 					}
@@ -11312,7 +11324,7 @@
 							"parameter_shortname" : "Melody Scope",
 							"parameter_type" : 0,
 							"parameter_units" : "st",
-							"parameter_unitstyle" : 7
+							"parameter_unitstyle" : 9
 						}
 
 					}
@@ -11473,7 +11485,7 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Outset Pulses",
-							"parameter_mmax" : 8.0,
+							"parameter_mmax" : 105.0,
 							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "Outset Pulses",
 							"parameter_type" : 1,
@@ -11533,7 +11545,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-16",
-					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic" ],
+					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic", ",", "Lambda", ",", "Harmonic", ",", "Moll_II", ",", "Dur_I", ",", "Moll_I", ",", "Walker_A", ",", "Walker_B", ",", "Walker_I", ",", "Walker_II", ",", "Gamma", ",", "Dur_II", ",", "BP-Chromatic", ",", "BP-Triple", ",", "BP-Quintuple", ",", "pipedum_67" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -11545,9 +11557,9 @@
 					"presentation_rect" : [ 32.0, 21.0, 77.0, 21.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_enum" : [ "pentatonic", "whole-tone", "major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "minor-harmonic", "locrian", "gipsy", "octatonic", "whole-half-half", "chromatic" ],
-							"parameter_longname" : "Scale",
-							"parameter_mmax" : 13,
+							"parameter_enum" : [ "pentatonic", "whole-tone", "major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "minor-harmonic", "locrian", "gipsy", "octatonic", "whole-half-half", "chromatic", "Lambda", "Harmonic", "Moll_II", "Dur_I", "Moll_I", "Walker_A", "Walker_B", "Walker_I", "Walker_II", "Gamma", "Dur_II", "BP-Chromatic", "BP-Triple", "BP-Quintuple", "pipedum_67" ],
+							"parameter_longname" : "umenu[2]",
+							"parameter_mmax" : 28,
 							"parameter_shortname" : "Scale",
 							"parameter_type" : 2
 						}
@@ -11599,6 +11611,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-61", 0 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-61", 0 ],
 					"source" : [ "obj-100", 0 ]
 				}
 
@@ -11612,15 +11631,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-100", 0 ],
-					"source" : [ "obj-102", 1 ]
+					"destination" : [ "obj-10", 0 ],
+					"source" : [ "obj-102", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-61", 0 ],
-					"source" : [ "obj-102", 0 ]
+					"destination" : [ "obj-100", 0 ],
+					"source" : [ "obj-102", 1 ]
 				}
 
 			}
