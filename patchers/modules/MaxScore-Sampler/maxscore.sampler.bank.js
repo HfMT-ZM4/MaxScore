@@ -257,8 +257,10 @@ function append(source, target)
 
 function updateinstrument(u)
 {
-	var bankinstrkeys = [].concat(bank.getkeys());
-	var currentInstrumentName = bankinstrkeys[this.patcher.parentpatcher.getnamed("instrument").subpatcher().getnamed("current-instrument").getvalueof() - 1];
+	//var bankinstrkeys = [].concat(bank.getkeys());
+	//var currentInstrumentName = bankinstrkeys[this.patcher.parentpatcher.getnamed("instrument").subpatcher().getnamed("current-instrument").getvalueof() - 1];
+	var currentInstrumentName = this.patcher.parentpatcher.getnamed("instrument").subpatcher().getnamed("current-instrument").getvalueof();
+	//post("currentInstrumentName", bankinstrkeys, currentInstrumentName, this.patcher.parentpatcher.getnamed("instrument").subpatcher().getnamed("current-instrument").getvalueof(), "\n");
 	var currentInstrument = new Dict;
 	currentInstrument.pull_from_coll(jsarguments[1] + "-current-instrument");
 	var currentInstrumentkeys = currentInstrument.getkeys();

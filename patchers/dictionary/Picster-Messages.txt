@@ -3,7 +3,7 @@
 [text-decoration], Picster "setting (symbol)" "sets the text decoration for Picster text. Values can be none, underline, line-through or overline." "picster text-decoration underline";
 addExpressionToSelectedShape, Picster "expression (dictionary)" "adds an expression in dictionary format to a selected Picster element. The dictionary needs to consist of the keys editor, message and value." "picster addExpressionToSelectedShape dictionary u706020643";
 addShape, Picster "x (int) y (int) shape (symbol) argument(list)" "creates one of the following shapes at the x/y positions in the score: line, rectangle, rounded_rectangle, oval, arc, polygon, fitcurve, text, image, bezierCurve. The dimensions given by the argument are always in respect to given x/y positions." "picster addShape 50 50 rounded_rectangle 0 0 34 56";
-applyStaffStyle, Editor "staff (int)" "applies the current staff style notes and intervals added by messages to the Editor" "applyStaffStyle 0";
+applyStaffStyle, Editor "staff (int)" "applies the current staff style for notes and intervals added by messages to the Editor" "applyStaffStyle 0";
 arc, Picster "start-angle (radians) end-angle (radians)" "sets the arc for the Picster arc shape" "picster arc 0 -2.616797";
 assignStaffToStaffGroup, Canvas "staff (int) staffgroup (int)" "assigns a staff to a staff group canvas" "assignStaffToStaffGroup 2 1";
 attach, Picster - - -;
@@ -20,7 +20,7 @@ filterRepeatedAccidentals, Canvas "flag (int)" "sets for staff styles whether to
 flashcolor, Canvas "rgba (list)" "sets the note head color for a score flashing during playback" "flashcolor 0.5 0.5 0.5 1";
 font, Picster "setting (symbol)" "sets the font for Picster text" "picster font Arial";
 fontsize, Picster "setting (float)" "sets the font size for Picster text" "picster fontsize 20";
-getid, "Core extended" - "gets the id of a MaxScore object for use with maxscore.infograb queries" "getid";
+getid, "Core extended" - "gets the id of a MaxScore object for use with maxscore.infograb queries" getid;
 grab, "Core extended" "name (symbol)" "sets the name of a receive object from which to grab MaxScore query messages" "grab 1000-grabber";
 importXML, "Core extended" "path (symbol)" "imports an musicXML file" "importXML \"/Users/Shared/Max 8/Library/MaxScore/userbeamgroup.xml\"";
 init, Picster - "initializes Picster by assigning an index to each expression and dumping them as a dictionary out of the 4th outlet of maxscore.bcanvas. This dictionary is used by maxscore.makenote to associate the index dimension of a note/interval with a particular expression." "picster init";
