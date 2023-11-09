@@ -200,11 +200,12 @@ function symbol(instr)
 {
 	bank.replace(instr, "*");
 	var bankinstrkeys = [].concat(bank.getkeys());
+	//post("symbol", ["<none>"].concat(bankinstrkeys), "\n");
 	outlet(0, "bank", bankinstrkeys.length, instr);
 	outlet(0, "instrument", "clear");	
 	outlet(0, "notify_cellblock", 0, bankinstrkeys.length - 1);
 	for (var i = 0; i < 32; i++) {	
-		this.patcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", ["<none>"].concat(bankinstrkeys,[instr]));			
+		this.patcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", ["<none>"].concat(bankinstrkeys));			
 	}
 }
 
@@ -222,7 +223,7 @@ function import(instr)
 		clientbuffersoundindex.set(dump[i * 6 + 2], dump[i * 6 + 1]);
 	}	
 	for (var i = 0; i < 32; i++) {	
-		this.patcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", ["<none>"].concat(bankinstrkeys, [instr]));			
+		this.patcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus").subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", ["<none>"].concat(bankinstrkeys));			
 	}
 	outlet(0, "bank", bank.getkeys().length, instr);
 }
@@ -267,7 +268,6 @@ function updateinstrument(u)
 	if (currentInstrument.contains("1")) {
 	post("updateInstrument called", u, "\n");
 	
-	//post("updateinstrument, currentInstrument.get(u)[5] ==", currentInstrument.get(u)[5], "\n");
 	//sample : root_key : key_zone_floor : vel_zone_floor : envelope : loop : start : direction : timestretch :
 	if (u == "all") {
 		for (var i = 0; i < currentInstrumentkeys.length;  i++)
