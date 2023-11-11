@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 310.0, 100.0, 1251.0, 717.0 ],
+		"rect" : [ 99.0, 100.0, 1251.0, 717.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -62,7 +62,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -634,7 +634,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1118,7 +1118,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1184,7 +1184,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 284.5, 404.0, 347.0, 22.0 ],
-									"restore" : [ 102.320574162679407 ],
+									"restore" : [ 199.999999999999943 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1690,13 +1690,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 45.0, 418.0, 841.0, 436.0 ],
+						"rect" : [ 337.0, 230.0, 841.0, 436.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2760,7 +2760,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 154.75, 97.0, 57.0, 20.0 ],
-					"restore" : [ "7 5 3" ],
+					"restore" : [ "2 2 2" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2816,7 +2816,8 @@
 							"parameter_longname" : "Ostinato Buffer",
 							"parameter_mmax" : 5,
 							"parameter_shortname" : "Ostinato Buffer",
-							"parameter_type" : 2
+							"parameter_type" : 2,
+							"parameter_unitstyle" : 9
 						}
 
 					}
@@ -2999,7 +3000,7 @@
 						"valueof" : 						{
 							"parameter_exponent" : 6.5,
 							"parameter_info" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
-							"parameter_initial" : [ 100 ],
+							"parameter_initial" : [ 95 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Event Length Percent",
 							"parameter_mmax" : 1000.0,
@@ -3185,7 +3186,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3838,7 +3839,6 @@
 			}
 , 			{
 				"box" : 				{
-					"autorestore" : "µbus.json",
 					"id" : "obj-79",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -3941,12 +3941,12 @@
 						"attenuation" : [ 12.5 ],
 						"chordal_weight" : [ 1.0 ],
 						"dynamics" : [ 64.0 ],
-						"event_length" : [ 100.000000000000028 ],
+						"event_length" : [ 94.999999999999986 ],
 						"event_length_display_style" : [ 1.0 ],
 						"eventfulness" : [ 100.0 ],
-						"harmoniclarity" : [ 100.0 ],
+						"harmoniclarity" : [ 50.0 ],
 						"melodic_cohesion" : [ 0.0 ],
-						"melody_scope" : [ 7.0 ],
+						"melody_scope" : [ 7.000000000000002 ],
 						"meters" : [ 							{
 								"my-meter" : [ 105, 1, 74, 56, 76, 48, 95, 78, 32, 95, 18, 94, 87, 64, 104, 41, 53, 44, 93, 50, 54, 103, 13, 81, 79, 44, 69, 94, 99, 46, 102, 21, 91, 76, 64, 99, 42, 53, 44, 96, 28, 76, 102, 25, 88, 85, 76, 62, 84, 104, 9, 101, 26, 90, 84, 33, 96, 67, 76, 60, 104, 31, 70, 101, 26, 64, 92, 79, 69, 91, 95, 19, 96, 36, 92, 84, 39, 96, 40, 75, 34, 103, 44, 78, 105, 8, 84, 85, 84, 69, 98, 88, 30, 92, 40, 68, 96, 54, 104, 69, 47, 63, 102, 62, 85 ]
 							}
@@ -3957,9 +3957,9 @@
 						"outset_pulses" : [ 1.0 ],
 						"overlap" : [ 1.0 ],
 						"pitch_center" : [ 60.0 ],
-						"pitch_range" : [ 7.0 ],
-						"precision" : [ 1.0 ],
-						"pulse_length" : [ 102.320574162679407 ],
+						"pitch_range" : [ 7.000000000000002 ],
+						"precision" : [ 0.0 ],
+						"pulse_length" : [ 199.999999999999943 ],
 						"scale" : [ "pentatonic" ],
 						"scales" : [ 							{
 								"pentatonic" : 								{
@@ -8965,7 +8965,7 @@
 							}
  ],
 						"silent_downbeat" : [ 0.0 ],
-						"sorted" : [ 0.0 ],
+						"sorted" : [ 1.0 ],
 						"stream" : [ 0.0 ],
 						"subdivision" : [ "2+3" ],
 						"tonic_pitch" : [ 60.0 ],
@@ -9246,7 +9246,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -10143,7 +10143,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -10918,7 +10918,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 121.0, 22.0, 78.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "7 5 3",
+					"text" : "2 2 2",
 					"varname" : "textedit",
 					"wordwrap" : 0
 				}
@@ -11083,14 +11083,16 @@
 						}
 ,
 						"valueof" : 						{
+							"parameter_exponent" : 2.0,
 							"parameter_info" : "The interval in semitones (floating point) from the pitch center defining the range the melody is allowed to move in.",
 							"parameter_initial" : [ 7 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Pitch Range",
+							"parameter_mmax" : 96.0,
 							"parameter_shortname" : "Pitch Range",
 							"parameter_type" : 0,
 							"parameter_units" : "st",
-							"parameter_unitstyle" : 9
+							"parameter_unitstyle" : 7
 						}
 
 					}
@@ -11150,7 +11152,7 @@
 							"parameter_shortname" : "Pitch Center",
 							"parameter_type" : 0,
 							"parameter_units" : "nt",
-							"parameter_unitstyle" : 9
+							"parameter_unitstyle" : 8
 						}
 
 					}
@@ -11201,7 +11203,7 @@
 						}
 ,
 						"valueof" : 						{
-							"parameter_initial" : [ 100 ],
+							"parameter_initial" : [ 50 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Harmoniclarity",
 							"parameter_mmax" : 100.0,
@@ -11266,7 +11268,7 @@
 							"parameter_shortname" : "Tonic Pitch",
 							"parameter_type" : 0,
 							"parameter_units" : "nt",
-							"parameter_unitstyle" : 9
+							"parameter_unitstyle" : 8
 						}
 
 					}
@@ -11318,13 +11320,15 @@
 						}
 ,
 						"valueof" : 						{
+							"parameter_exponent" : 2.0,
 							"parameter_initial" : [ 7 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Melody Scope",
+							"parameter_mmax" : 96.0,
 							"parameter_shortname" : "Melody Scope",
 							"parameter_type" : 0,
 							"parameter_units" : "st",
-							"parameter_unitstyle" : 9
+							"parameter_unitstyle" : 7
 						}
 
 					}
@@ -11485,7 +11489,7 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Outset Pulses",
-							"parameter_mmax" : 105.0,
+							"parameter_mmax" : 8.0,
 							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "Outset Pulses",
 							"parameter_type" : 1,
@@ -11545,7 +11549,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-16",
-					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic", ",", "Lambda", ",", "Harmonic", ",", "Moll_II", ",", "Dur_I", ",", "Moll_I", ",", "Walker_A", ",", "Walker_B", ",", "Walker_I", ",", "Walker_II", ",", "Gamma", ",", "Dur_II", ",", "BP-Chromatic", ",", "BP-Triple", ",", "BP-Quintuple", ",", "pipedum_67" ],
+					"items" : [ "pentatonic", ",", "whole-tone", ",", "major", ",", "dorian", ",", "phrygian", ",", "lydian", ",", "mixolydian", ",", "aeolian", ",", "minor-harmonic", ",", "locrian", ",", "gipsy", ",", "octatonic", ",", "whole-half-half", ",", "chromatic" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -11557,9 +11561,9 @@
 					"presentation_rect" : [ 32.0, 21.0, 77.0, 21.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_enum" : [ "pentatonic", "whole-tone", "major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "minor-harmonic", "locrian", "gipsy", "octatonic", "whole-half-half", "chromatic", "Lambda", "Harmonic", "Moll_II", "Dur_I", "Moll_I", "Walker_A", "Walker_B", "Walker_I", "Walker_II", "Gamma", "Dur_II", "BP-Chromatic", "BP-Triple", "BP-Quintuple", "pipedum_67" ],
+							"parameter_enum" : [ "pentatonic", "whole-tone", "major", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "minor-harmonic", "locrian", "gipsy", "octatonic", "whole-half-half", "chromatic" ],
 							"parameter_longname" : "umenu[2]",
-							"parameter_mmax" : 28,
+							"parameter_mmax" : 13,
 							"parameter_shortname" : "Scale",
 							"parameter_type" : 2
 						}
