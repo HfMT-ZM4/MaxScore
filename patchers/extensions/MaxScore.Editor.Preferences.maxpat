@@ -843,7 +843,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-222",
 					"maxclass" : "jsui",
@@ -2986,7 +2986,7 @@
 						"setScoreTopMargin" : [ 15.0 ],
 						"setScoreTopMarginOfFirstPage" : [ 60.0 ],
 						"setSubtitle" : [ "null" ],
-						"setTitle" : [ "JMSLMaxScore-14" ],
+						"setTitle" : [ "JMSLMaxScore-12" ],
 						"setTitleVisible" : [ 0 ],
 						"setWrap" : [ 1 ],
 						"showClefs" : [ 1 ],
@@ -2998,7 +2998,7 @@
 						"showStaffNumbers" : [ 1 ],
 						"showTempo" : [ 1 ],
 						"showTimeSignatures" : [ 1 ],
-						"showWholeNoteRestsInEmptyMeasures" : [ 1 ],
+						"showWholeNoteRestsInEmptyMeasures" : [ 0 ],
 						"showrhythm" : [ 0 ],
 						"slashedGraceNotes" : [ 1 ],
 						"subdivision" : [ 3 ],
@@ -3403,7 +3403,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 482.4000244140625, 159.0, 245.0, 31.0 ],
-									"restore" : [ 1242 ],
+									"restore" : [ 4378 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4483,7 +4483,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-118",
 					"maxclass" : "jsui",
@@ -4783,7 +4783,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 366.0, 77.0, 531.0, 22.0 ],
-									"restore" : [ 2 ],
+									"restore" : [ 4 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5651,7 +5651,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-135",
 					"maxclass" : "jsui",
@@ -6038,7 +6038,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.404, 0.498, 0.51, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.404, 0.498, 0.51, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.404, 0.498, 0.51, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.404, 0.498, 0.51, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-128",
 					"ignoreclick" : 1,
@@ -6103,7 +6103,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-13",
 					"maxclass" : "jsui",
@@ -6528,7 +6528,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-97",
 					"maxclass" : "jsui",
@@ -7052,7 +7052,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"hidden" : 1,
 					"id" : "obj-56",
@@ -7391,7 +7391,7 @@
 					"presentation_rect" : [ 225.0, 15.0, 164.0, 20.0 ],
 					"rounded" : 0.0,
 					"style" : "black on white",
-					"text" : "JMSLMaxScore-14",
+					"text" : "JMSLMaxScore-12",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "setTitle",
 					"wordwrap" : 0
@@ -7751,7 +7751,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-11",
 					"maxclass" : "jsui",
@@ -7766,7 +7766,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-12",
 					"maxclass" : "jsui",
@@ -7809,7 +7809,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-87",
 					"maxclass" : "jsui",
@@ -7840,7 +7840,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-75",
 					"maxclass" : "jsui",
@@ -7871,7 +7871,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-239",
 					"maxclass" : "jsui",
@@ -7888,7 +7888,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-14",
 					"maxclass" : "jsui",
@@ -7905,7 +7905,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-15",
 					"maxclass" : "jsui",
@@ -7922,7 +7922,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-240",
 					"maxclass" : "jsui",
@@ -7939,7 +7939,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-17",
 					"maxclass" : "jsui",
@@ -7956,7 +7956,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-18",
 					"maxclass" : "jsui",
@@ -7973,7 +7973,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ], [ "bgcolor", 0.29, 0.31, 0.302, 1 ], [ "checkedcolor", 0.804, 0.898, 0.91, 1 ], [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ] ],
 					"filename" : "btoggle.js",
 					"id" : "obj-241",
 					"maxclass" : "jsui",
