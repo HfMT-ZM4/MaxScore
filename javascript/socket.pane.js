@@ -480,6 +480,7 @@ function obj_ref(o)
  			"parent" : "score",
    			"new" : "g",
     		"id" : "score-" + s,
+			"transform" : "matrix(" + [thisZoom(s), 0, 0, thisZoom(s), 0, 0] + ")",
     		"child" : o.lines[s].concat(o.svg[s], o.svgimages[s], o.picster[s])
 			});
 		joutput[s] = [clear, {"key" : "svg", "val" : val}];
