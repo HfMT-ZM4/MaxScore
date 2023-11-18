@@ -3213,6 +3213,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				SVGGraphics[s + 1].push(JSON.parse(picster.stringify()));
 				break;
 				case "path" :
+				//post("path", picster.get("d").indexOf("NaN"), "\n");
 				/*
 				var marker = "";
 				if (picster.contains("marker-start")) marker += "marker-start=\"url(#" + url + ")\" ";
@@ -3220,8 +3221,10 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				if (picster.contains("marker-end")) marker += "marker-end=\"url(#" + url + ")\"";
 				SVGGraphics[s + 1].push("<path id=\"" + picster.get("id") + "\" d=\"" + picster.get("d") + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + marker + svgtransform + onclick + "/>");
 				*/
+				if (picster.get("d").indexOf("NaN") == -1) {
 				picster.replace("transform", svgtransform);
 				SVGGraphics[s + 1].push(JSON.parse(picster.stringify()));
+				}
 				//post("picster", JSON.stringify(SVGGraphics), "\n");	
 				break;
 				case "text" :
@@ -3264,7 +3267,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
 				}
 				);				
-				//post("SVGImages", JSON.stringify(SVGImages), "\n");
 				break;	
 	}
 }

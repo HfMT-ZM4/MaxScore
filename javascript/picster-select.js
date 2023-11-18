@@ -1351,26 +1351,55 @@ function addShape()
 				outlet(3, "bang");
 			break;
 			case "text":
-				//post("fontsize", Array.isArray(fontsize), "\n");
+				//post("found number of double vertical lines: ", msg[3].split("||").length - 1 , "\n");
 				var text = htmlEntities(msg[3]);
 				var attr = {};
-				attr.new = "text";
-				attr.id = "Picster-Element_" + num;
-				attr.text = text;
-				attr.x = toffsets[0];
-				attr.y = toffsets[1];
-				if (Array.isArray(font)) attr["font-family"] = font[0];
-				else attr["font-family"] = font;
-				if (Array.isArray(fontsize)) attr["font-size"] = fontsize[0];
-				else attr["font-size"] = fontsize;
-				attr["font-weight"] = "normal";
-				attr["font-style"] = "normal";
-				attr["text-anchor"] = "start";
-				//attr.rotate = 0;
-				attr.style = {};
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-				attr.style["fill-opacity"] = color[3];
-				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				if (text.indexOf("||") != -1) {
+					attr.new = "g";
+					attr.id = "Picster-Element_" + num;
+					attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+					attr.child = [];
+					var splitText = text.split("||");
+					for (var i = 0; i < splitText.length; i++) {
+						attr.child[i] = {};
+						attr.child[i].new = "text";
+						attr.child[i].id = "Picster-Element_" + num;
+						attr.child[i].text = splitText[i];
+						attr.child[i].x = toffsets[0];
+						attr.child[i].y = toffsets[1];
+						if (Array.isArray(font)) attr.child[i]["font-family"] = font[0];
+						else attr.child[i]["font-family"] = font;
+						if (Array.isArray(fontsize)) attr.child[i]["font-size"] = fontsize[0];
+						else attr.child[i]["font-size"] = fontsize;
+						attr.child[i]["font-weight"] = "normal";
+						attr.child[i]["font-style"] = "normal";
+						attr.child[i]["text-anchor"] = "start";
+					//attr.rotate = 0;
+						attr.child[i].style = {};
+						attr.child[i].style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+						attr.child[i].style["fill-opacity"] = color[3];
+						attr.child[i].transform = "matrix(" + [1, 0, 0, 1, 0, attr.child[i]["font-size"] * i] + ")";
+						}
+				}
+				else {
+					attr.new = "text";
+					attr.id = "Picster-Element_" + num;
+					attr.text = text;
+					attr.x = toffsets[0];
+					attr.y = toffsets[1];
+					if (Array.isArray(font)) attr["font-family"] = font[0];
+					else attr["font-family"] = font;
+					if (Array.isArray(fontsize)) attr["font-size"] = fontsize[0];
+					else attr["font-size"] = fontsize;
+					attr["font-weight"] = "normal";
+					attr["font-style"] = "normal";
+					attr["text-anchor"] = "start";
+					//attr.rotate = 0;
+					attr.style = {};
+					attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+					attr.style["fill-opacity"] = color[3];
+					attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+				}
 				_picster["picster-element"] = [];
 				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
@@ -1379,6 +1408,7 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
+				post("picster", JSON.stringify(_picster), "\n");
 				outlet(3, "bang");
 				break;
 			case "image":

@@ -1,0 +1,176 @@
+{
+	"Celeste-wav.instr" : 	{
+		"1" : 		{
+			"sample" : "Celeste Db2.wav",
+			"root_key" : 49,
+			"key_zone_floor" : 49,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 2645.124755859375, 0, 1, 0, 0, 0, 0, 1, 0, 1490.684700000000021, 1, 2, 2645.12480000000005, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"2" : 		{
+			"sample" : "Celeste Gb2.wav",
+			"root_key" : 54,
+			"key_zone_floor" : 54,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 2470.589600000000246, 0, 1, 0, 0, 0, 0, 1, 0, 1298.106299999999919, 1, 2, 2470.589600000000246, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"3" : 		{
+			"sample" : "Celeste B2.wav",
+			"root_key" : 59,
+			"key_zone_floor" : 59,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 2633.469500000000153, 0, 1, 0, 0, 0, 0, 1, 0, 1517.592499999999973, 1, 2, 2633.469500000000153, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"4" : 		{
+			"sample" : "Celeste E3.wav",
+			"root_key" : 64,
+			"key_zone_floor" : 64,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 2585.895799999999781, 0, 1, 0, 0, 0, 0, 1, 0, 1767.759299999999939, 1, 2, 2585.895799999999781, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"5" : 		{
+			"sample" : "Celeste A3.wav",
+			"root_key" : 69,
+			"key_zone_floor" : 69,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 2204.55789999999979, 0, 1, 0, 0, 0, 0, 1, 0, 1183.237300000000005, 1, 2, 2204.55789999999979, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"6" : 		{
+			"sample" : "Celeste D4.wav",
+			"root_key" : 74,
+			"key_zone_floor" : 74,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 2391.90480000000025, 0, 1, 0, 0, 0, 0, 1, 0, 1500.008100000000013, 1, 2, 2391.90480000000025, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"7" : 		{
+			"sample" : "Celeste G4.wav",
+			"root_key" : 79,
+			"key_zone_floor" : 79,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 2325.419399999999769, 0, 1, 0, 0, 0, 0, 1, 0, 1356.494599999999991, 1, 2, 2325.419399999999769, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+
+	}
+,
+	"Cymbales_Antiques-wav.instr" : 	{
+		"1" : 		{
+			"sample" : "Antique Cym Single C3.wav",
+			"root_key" : 60,
+			"key_zone_floor" : 60,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 4335.102000000000771, 0, 1, 0, 0, 0, 0, 1, 0, 6.123, 1, 0, 2969.667400000000271, 1, 2, 4335.102000000000771, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"2" : 		{
+			"sample" : "Antique Cym Single E3.wav",
+			"root_key" : 64,
+			"key_zone_floor" : 64,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 5070, 0, 1, 0, 0, 0, 0, 1, 0, 3942.720200000000204, 1, 2, 5070, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"3" : 		{
+			"sample" : "Antique Cym Single Ab3.wav",
+			"root_key" : 68,
+			"key_zone_floor" : 68,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 3993.922900000000027, 0, 1, 0, 0, 0, 0, 1, 0, 2905.184099999999944, 1, 2, 3993.922900000000027, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"4" : 		{
+			"sample" : "Antique Cym Single C4.wav",
+			"root_key" : 72,
+			"key_zone_floor" : 72,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 3983.764199999999619, 0, 1, 0, 0, 0, 0, 1, 0, 2700.857199999999921, 1, 2, 3983.764199999999619, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"5" : 		{
+			"sample" : "Antique Cym Single E4.wav",
+			"root_key" : 76,
+			"key_zone_floor" : 76,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 4744.603000000000065, 0, 1, 0, 0, 0, 0, 1, 0, 3531.646499999999833, 1, 2, 4744.603000000000065, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"6" : 		{
+			"sample" : "Antique Cym Single Ab4.wav",
+			"root_key" : 80,
+			"key_zone_floor" : 80,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 4053.333200000000033, 0, 1, 0, 0, 0, 0, 1, 0, 2919.77390000000014, 0.9925, 2, 4053.333200000000033, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"7" : 		{
+			"sample" : "Antique Cym Single C5.wav",
+			"root_key" : 84,
+			"key_zone_floor" : 84,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 3801.541699999999764, 0, 1, 0, 0, 0, 0, 1, 0, 2663.226799999999912, 1, 2, 3801.541699999999764, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+
+	}
+
+}

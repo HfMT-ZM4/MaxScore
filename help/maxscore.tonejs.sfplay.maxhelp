@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 106.0, 704.0, 579.0 ],
+		"rect" : [ 100.0, 100.0, 704.0, 579.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -70,13 +70,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 132.0, 704.0, 553.0 ],
+						"rect" : [ 100.0, 126.0, 704.0, 553.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -113,7 +113,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 202.0, 245.5, 231.0, 51.0 ],
+									"patching_rect" : [ 388.0, 206.5, 231.0, 51.0 ],
 									"text" : "Arguments are: destination, file name, offset, start time (currently always 0, no matter the value), duration"
 								}
 
@@ -136,7 +136,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 202.0, 169.0, 150.0, 20.0 ],
+									"patching_rect" : [ 202.0, 194.0, 150.0, 20.0 ],
 									"text" : "same as"
 								}
 
@@ -148,7 +148,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 202.0, 222.0, 135.0, 22.0 ],
+									"patching_rect" : [ 202.0, 260.0, 135.0, 22.0 ],
 									"text" : "start 0 brushes.mp3 0 0"
 								}
 
@@ -160,7 +160,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 202.0, 195.0, 175.0, 22.0 ],
+									"patching_rect" : [ 202.0, 221.0, 175.0, 22.0 ],
 									"text" : "start -1 brushes.mp3 0 0 10000"
 								}
 
@@ -172,7 +172,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 202.0, 318.0, 37.0, 22.0 ],
+									"patching_rect" : [ 202.0, 325.0, 37.0, 22.0 ],
 									"text" : "panic"
 								}
 
@@ -184,7 +184,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 14.0, 318.0, 123.0, 22.0 ],
+									"patching_rect" : [ 14.0, 325.0, 123.0, 22.0 ],
 									"text" : "dispose brushes.mp3"
 								}
 
@@ -196,7 +196,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 14.0, 260.0, 179.0, 22.0 ],
+									"patching_rect" : [ 14.0, 224.0, 179.0, 22.0 ],
 									"text" : "start /* brushes.mp3 0 0 100000"
 								}
 
@@ -220,7 +220,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 14.0, 228.0, 138.0, 22.0 ],
+									"patching_rect" : [ 14.0, 260.0, 138.0, 22.0 ],
 									"text" : "start /1 brushes.mp3 0 0"
 								}
 
@@ -232,7 +232,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 14.0, 201.0, 152.0, 22.0 ],
+									"patching_rect" : [ 14.0, 177.0, 152.0, 22.0 ],
 									"text" : "upload public/brushes.mp3"
 								}
 
@@ -245,7 +245,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 449.0, 266.0, 244.0, 20.0 ],
+									"patching_rect" : [ 449.0, 290.0, 244.0, 20.0 ],
 									"text" : "Set URL after starting the drawsocket server"
 								}
 
@@ -269,7 +269,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 485.0, 319.0, 211.0, 22.0 ],
+									"patching_rect" : [ 485.0, 343.0, 211.0, 22.0 ],
 									"text" : "url localhost:3002/1?wait_for_event=1"
 								}
 
@@ -281,7 +281,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 449.0, 292.0, 211.0, 22.0 ],
+									"patching_rect" : [ 449.0, 316.0, 211.0, 22.0 ],
 									"text" : "url localhost:3002/2?wait_for_event=1"
 								}
 
@@ -345,7 +345,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 449.0, 355.0, 193.0, 102.0 ],
+									"patching_rect" : [ 449.0, 379.0, 193.0, 102.0 ],
 									"rendermode" : 0,
 									"url" : "localhost:3002/1?wait_for_event=1"
 								}
@@ -362,7 +362,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 448.0, 354.0, 195.0, 104.0 ],
+									"patching_rect" : [ 448.0, 378.0, 195.0, 104.0 ],
 									"proportion" : 0.5,
 									"rounded" : 0
 								}
@@ -637,7 +637,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 2,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
