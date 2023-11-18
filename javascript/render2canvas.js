@@ -947,7 +947,7 @@ function writeBarlines()
 					"y2" : dest2[0],
 					"stroke" : barLineColor,
 					"stroke-width" : barlines[measures][lines][4] * 0.6,
-					"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+					"transform" : "matrix(1 0 0 1 0 0)"
 					}
 					);
 				//SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -1001,7 +1001,7 @@ function writeBarlines()
 								"stroke" : barLineColor,
 								"stroke-width" : barlines[measures][lines][4] * 0.6,
 								"stroke-dasharray" : barlineDashArray,
-								"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+								"transform" : "matrix(1 0 0 1 0 0)"
 								}
 								);
 								//SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-dasharray=\"" + barlineDashArray + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -1095,7 +1095,7 @@ function writeStaffLines()
 							"stroke-width" : 0.8, 
 							"fill" : staffLineColor, 
 							"fill-opacity" : 1, 
-							"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+							"transform" : "matrix(1 0 0 1 0 0)"
 							}
 							);
 							//SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -1117,7 +1117,7 @@ function writeStaffLines()
 			"stroke-width" : 0.8, 
 			"fill" : staffLineColor, 
 			"fill-opacity" : 1, 
-			"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+			"transform" : "matrix(1 0 0 1 0 0)"
 			}
 			);
 			//SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -1150,7 +1150,7 @@ function writeRuler()
 				"font-size" : 10,
 				"fill" : frgb, 
 				"fill-opacity" : 1, 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				"transform" : "matrix(1 0 0 1 0 0)"
 				}
 			);
 			//SVGString[s + 1].push("<text x=\"" + i + "\" y=\"" + 25 + "\" text-anchor=\"middle\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
@@ -1164,7 +1164,7 @@ function writeRuler()
 			"stroke-width" : 0.4,
 			"fill" : frgb, 
 			"fill-opacity" : 1, 
-			"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+			"transform" : "matrix(1 0 0 1 0 0)"
 			}
 		);
 		//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -1433,7 +1433,7 @@ function writeRests()
 					"stroke" : "none",
 					"fill" : frgb, 
 					"fill-opacity" : 1, 
-					"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+					"transform" : "matrix(1 0 0 1 0 0)"
 					}
 					);
 					}
@@ -1593,7 +1593,7 @@ function writeAt(s, font, fs, x, y, t)
 				"font-size" : fs,
 				"fill" : frgb, 
 				"fill-opacity" : 1, 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				"transform" : "matrix(1 0 0 1 0 0)"
 				}
 			);
 			}
@@ -1641,7 +1641,7 @@ function anything() {
 				"font-size" : glyph[i*5+4],
 				"fill" : frgb, 
 				"fill-opacity" : 1, 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				"transform" : "matrix(1 0 0 1 0 0)"
 				}
 			);
 			}
@@ -1738,7 +1738,7 @@ function anything() {
 				"font-size" : 10,
 				"fill" : frgb, 
 				"fill-opacity" : 1, 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				"transform" : "matrix(1 0 0 1 0 0)"
 				}
 			);
 			}
@@ -1779,7 +1779,7 @@ function anything() {
 				"stroke-width" : 0.6,
 				"fill" : frgb, 
 				"fill-opacity" : 1, 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				"transform" : "matrix(1 0 0 1 0 0)"
 				}
 			);
 			}
@@ -1809,7 +1809,7 @@ function anything() {
 				"stroke" : "none",
 				"fill" : frgb, 
 				"fill-opacity" : 1, 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				"transform" : "matrix(1 0 0 1 0 0)"
 				}
 			);
 			}
@@ -1849,7 +1849,7 @@ function anything() {
 				"stroke" : "none",
 				"fill" : frgb, 
 				"fill-opacity" : 1, 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)"
+				"transform" : "matrix(1 0 0 1 0 0)"
 				}
 			);
 			}
@@ -2054,7 +2054,7 @@ function anything() {
 					"id" : "RepeatDots" + idcount++,
 					"fill" : frgb,
 					"fill-opacity" : 1, 
-					"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+					"transform" : "matrix(1 0 0 1 0 0)",
 					"child" : [ {
 							"id" : "dot-1",
 							"new" : "text",
@@ -2096,7 +2096,7 @@ function anything() {
 				"stroke" : frgb,
 				"stroke-width" : 0.8,
 				"fill" : "none", 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				"transform" : "matrix(1 0 0 1 0 0)",
 				}
 			);
             }
@@ -2146,7 +2146,7 @@ function anything() {
 				"stroke" : frgb,
 				"stroke-width" : 0.4,
 				"fill" : "none", 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				"transform" : "matrix(1 0 0 1 0 0)",
 				}
 			);
 			//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -2168,7 +2168,7 @@ function anything() {
 				"stroke" : frgb,
 				"stroke-width" : 0.4,
 				"fill" : "none", 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				"transform" : "matrix(1 0 0 1 0 0)",
 				}
 			);
 			//SVGString[s + 1].push("<path d=\"M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) + 6) + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -2193,7 +2193,7 @@ function anything() {
 				"stroke" : frgb,
 				"stroke-width" : 0.4,
 				"fill" : "none", 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				"transform" : "matrix(1 0 0 1 0 0)",
 				}
 			);
 			//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -2216,7 +2216,7 @@ function anything() {
 				"stroke" : frgb,
 				"stroke-width" : 0.4,
 				"fill" : "none", 
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				"transform" : "matrix(1 0 0 1 0 0)",
 				}
 			);
 			//SVGString[s + 1].push("<path d=\"M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) - 6) + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
@@ -3177,7 +3177,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"stroke" : (picster.get("style::stroke") == "$FRGB") ? frgb : picster.get("style::stroke"),
 				"stroke-width" : 0.1,
 				"fill" : (picster.get("style::fill") == "$FRGB") ? frgb : picster.get("style::fill"),
-				"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+				"transform" : "matrix(1 0 0 1 0 0)",
 				});
 				}
 				/////////////////
@@ -3362,7 +3362,7 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						"stroke" : frgb,
 						"stroke-width" : 0.1,
 						"fill" : frgb, 
-						"transform" : "matrix(1. 0. 0. 1. 0. 0.)",
+						"transform" : "matrix(1 0 0 1 0 0)",
 						}
 						);
 						//SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 0.1 + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + frgb + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
