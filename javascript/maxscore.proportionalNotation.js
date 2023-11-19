@@ -429,7 +429,6 @@ function setAnnotation(a) {
 }
 
 function getNoteAnchor() {
-    //post("getNoteAnchor", single, "|", arrayfromargs(arguments), "\n");
     if (!single) {
         anchors[increment] = arrayfromargs(arguments);
         increment++;
@@ -439,7 +438,7 @@ function getNoteAnchor() {
 function scroll() {
     //annotation.name = this.patcher.getnamed("instance").getvalueof() + "-annotation";
     outlet(0, "getScoreAnnotation");
-    if (annotation.contains("proportional")) {
+   if (annotation.contains("proportional")) {
 		proportional = annotation.get("proportional");
 		this.patcher.parentpatcher.getnamed("playback").subpatcher().getnamed("sequenceDump").setvalueof(proportional);
 		}
@@ -628,8 +627,8 @@ function anything() {
             //playhead("moveto", msg[0] - 23);
             break;
         case "getScoreAnnotation":
-            //annotation.clear();
-            annotation.parse(msg);
+            annotation.parse(msg[0]);
+			//post("proportional", msg, annotation.stringify(), annotation.get("proportional"), "\n");
             break;
         case "isChord":
             chord = msg[8];

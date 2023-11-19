@@ -1822,7 +1822,7 @@ function anything()
 	if (mode == "picster") {
    	switch (messagename) {
 	case "getScoreAnnotation" :
-		annotation.parse(msg);
+		annotation.parse(msg[0]);
 		prop = annotation.get("proportional");
 		timeUnit = annotation.get("timeUnit");
 		//post("timeUnit", annotation.stringify(), timeUnit, "\n");

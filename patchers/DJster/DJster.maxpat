@@ -40,6 +40,46 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"activebgcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+					"hint" : "Clear Scales menu",
+					"id" : "obj-32",
+					"maxclass" : "live.text",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"parameter_mappable" : 0,
+					"patching_rect" : [ 738.487476000000015, 507.0, 15.0, 15.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 104.5, 24.0, 15.0, 14.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : "themecolor.live_control_text_selection"
+						}
+,
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
+							"parameter_longname" : "live.text[1]",
+							"parameter_mmax" : 1,
+							"parameter_shortname" : "Clear Scales",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "C",
+					"varname" : "clear_scales"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -3000,7 +3040,7 @@
 						"valueof" : 						{
 							"parameter_exponent" : 6.5,
 							"parameter_info" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
-							"parameter_initial" : [ 95 ],
+							"parameter_initial" : [ 100 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Event Length Percent",
 							"parameter_mmax" : 1000.0,
@@ -3670,7 +3710,7 @@
 					"parameter_mappable" : 0,
 					"patching_rect" : [ 1157.145843000000013, 352.083333104848862, 15.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 101.0, 4.0, 15.0, 14.0 ],
+					"presentation_rect" : [ 105.0, 4.0, 15.0, 14.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -11532,7 +11572,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 781.487476000000129, 435.25, 68.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 32.0, 21.0, 72.0, 20.0 ],
+					"presentation_rect" : [ 32.0, 21.0, 65.0, 20.0 ],
 					"rounded" : 0.0,
 					"varname" : "drop-scale"
 				}
@@ -12356,6 +12396,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-104", 0 ],
 					"hidden" : 1,
+					"order" : 2,
+					"source" : [ "obj-62", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
 					"order" : 1,
 					"source" : [ "obj-62", 1 ]
 				}
@@ -12364,14 +12412,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-49", 0 ],
-					"order" : 5,
-					"source" : [ "obj-62", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-56", 0 ],
 					"order" : 6,
 					"source" : [ "obj-62", 1 ]
 				}
@@ -12379,15 +12419,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-70", 0 ],
-					"order" : 2,
+					"destination" : [ "obj-56", 0 ],
+					"order" : 7,
 					"source" : [ "obj-62", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-71", 0 ],
+					"destination" : [ "obj-70", 0 ],
 					"order" : 3,
 					"source" : [ "obj-62", 1 ]
 				}
@@ -12395,8 +12435,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-87", 0 ],
+					"destination" : [ "obj-71", 0 ],
 					"order" : 4,
+					"source" : [ "obj-62", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-87", 0 ],
+					"order" : 5,
 					"source" : [ "obj-62", 1 ]
 				}
 
