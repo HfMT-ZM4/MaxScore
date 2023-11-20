@@ -50,7 +50,7 @@
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 1,
 					"parameter_mappable" : 0,
-					"patching_rect" : [ 738.487476000000015, 507.0, 15.0, 15.0 ],
+					"patching_rect" : [ 741.087476000000038, 507.0, 15.0, 15.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 104.5, 24.0, 15.0, 14.0 ],
 					"saved_attribute_attributes" : 					{
@@ -12177,6 +12177,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-31", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-95", 3 ],
+					"source" : [ "obj-32", 0 ]
 				}
 
 			}
