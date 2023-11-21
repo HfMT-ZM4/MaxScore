@@ -189,7 +189,7 @@ function loadBank()
 	var menu = this.patcher.parentpatcher.parentpatcher.getnamed("maxscore.sampler.menus");
 	for (var i = 0; i < 32; i++) {
 		menu.subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message("_parameter_range", ["<none>"].concat(bankinstrkeys));			
-		menu.subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message(0);			
+		//menu.subpatcher().getnamed(i+"-instrument").subpatcher().getnamed("instrument").message(0);			
 	}
 	//this.patcher.parentpatcher.getnamed("instrument-list-1").message("select", -1, -1);
 	outlet(0, "instrument", "clear");	
