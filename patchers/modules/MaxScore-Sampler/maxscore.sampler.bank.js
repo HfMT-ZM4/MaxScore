@@ -6,6 +6,9 @@ tempbank.name = jsarguments[1] + "-temp";
 var pb = new PolyBuffer(jsarguments[1] + "-clientbuffer");
 var clientbuffersoundindex = new Dict;
 clientbuffersoundindex.name = jsarguments[1] + "-clientbuffersoundindex";
+var currentInstr = "";
+var instrDict = new Dict();
+var previousStringifiedDict = "";
 
 // read bank from old or new formats: (code from James)
 
@@ -65,8 +68,20 @@ function parseLoop(loopString) {
   return loopArray;
 }
 
-// When json is imported, check if json bank is in correct format:
 
+function dictionary(d)
+{
+	bank.name = d;
+	var stringifiedDict = bank.stringify();
+  	if (stringifiedDict != previousStringifiedDict) 
+	{
+		loadBank();
+		previousStringifiedDict = stringifiedDict;
+	}
+	else post("Dictionary content did not change. Not reloading.\n");
+}
+
+// When json is imported, check if json bank is in correct format:
 function readJsonInstr(filePath) {
   bank.clear();
   bank.import_json(filePath);
@@ -104,9 +119,6 @@ function readJsonInstr(filePath) {
 
 // When txt is imported:
 
-var currentInstr = "";
-var instrDict = new Dict();
-
 function setCurrentInstr(ins) {
   currentInstr = ins/*.replace('.instr', '')*/; // removing ".instr" causes problems?
 }
@@ -126,9 +138,7 @@ function readInstr() {
       sampleArray[3] = 0;
       sampleArray[4] = envelopePresets.get(preset);
     }
-    else if (sampleArray.length == 7) {
-      sampleArray.splice(3, 0, 0);
-    }
+    else if (sampleArray.length == 7) sampleArray.splice(3, 0, 0);
     bank.replace(currentInstr+"::"+i+"::sample", sampleArray[0]);
     bank.replace(currentInstr+"::"+i+"::root_key", sampleArray[1]);
     bank.replace(currentInstr+"::"+i+"::key_zone_floor", sampleArray[2]);
