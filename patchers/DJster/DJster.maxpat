@@ -1224,7 +1224,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 284.5, 404.0, 347.0, 22.0 ],
-									"restore" : [ 199.999999999999943 ],
+									"restore" : [ 31.249999999999982 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2356,18 +2356,14 @@
 								}
 
 							}
- ],
-						"bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
-						"editing_bgcolor" : [ 0.76078431372549, 0.76078431372549, 0.76078431372549, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 863.15002400000003, 320.5, 72.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.76078431372549, 0.76078431372549, 0.76078431372549, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -2980,7 +2976,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1026.470916500000385, 405.0, 87.0, 20.0 ],
+					"patching_rect" : [ 1026.470916500000158, 402.5, 87.0, 20.0 ],
 					"text" : "pvar pulse_length"
 				}
 
@@ -3886,7 +3882,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 133.083333333333314, 611.0, 154.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 4, 44, 358, 172 ],
+						"client_rect" : [ 1071, 252, 1680, 568 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 780, 524, 1380, 824 ]
@@ -3984,7 +3980,7 @@
 						"event_length" : [ 100.000000000000028 ],
 						"event_length_display_style" : [ 1.0 ],
 						"eventfulness" : [ 100.0 ],
-						"harmoniclarity" : [ 100.0 ],
+						"harmoniclarity" : [ 0.0 ],
 						"melodic_cohesion" : [ 0.0 ],
 						"melody_scope" : [ 7.000000000000002 ],
 						"meters" : [ 							{
@@ -3999,7 +3995,7 @@
 						"pitch_center" : [ 60.0 ],
 						"pitch_range" : [ 7.000000000000002 ],
 						"precision" : [ 0.0 ],
-						"pulse_length" : [ 199.999999999999943 ],
+						"pulse_length" : [ 31.249999999999982 ],
 						"scale" : [ "pentatonic" ],
 						"scales" : [ 							{
 								"pentatonic" : 								{
@@ -9006,7 +9002,7 @@
  ],
 						"silent_downbeat" : [ 0.0 ],
 						"sorted" : [ 0.0 ],
-						"stream" : [ 0.0 ],
+						"stream" : [ 1.0 ],
 						"subdivision" : [ "2+3" ],
 						"tonic_pitch" : [ 60.0 ],
 						"use_transport" : [ 0.0 ]
@@ -10021,7 +10017,7 @@
 					"outlettype" : [ "", "", "float" ],
 					"parameter_enable" : 1,
 					"parameter_mappable" : 0,
-					"patching_rect" : [ 43.024993999999992, 522.0, 75.450012000000015, 21.666666209697723 ],
+					"patching_rect" : [ 43.024993999999992, 530.0, 75.450012000000015, 13.666666209697723 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 182.0, 152.0, 78.544708013534546, 15.5 ],
 					"saved_attribute_attributes" : 					{

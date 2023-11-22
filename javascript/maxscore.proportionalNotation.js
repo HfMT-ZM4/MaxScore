@@ -386,19 +386,21 @@ function setProportionalNotation(b) {
                     }
                 }
             }
+			if (!showRhythm) {
             outlet(0, "selectAll");
             outlet(0, "setNoteVisible", "true");
             outlet(0, "setAccidentalVisibilityPolicy", "ACCIDENTAL_SHOW_NORMAL");
             outlet(0, "noteStemVisibilityTransform", "true");
             outlet(0, "autoBeamTransform");
+            outlet(0, "clearSelection");
+            outlet(0, "setUndoStackEnabled", "true");
+            outlet(0, "setRenderAllowed", "true");
+			}
             outlet(0, "setReceivePlayheadPosition", "true");
             outlet(0, "setNoteFlash", "true");
             outlet(1, "proportional", 0);
             selection = 0;
             proportional = 0;
-            outlet(0, "clearSelection");
-            outlet(0, "setUndoStackEnabled", "true");
-            outlet(0, "setRenderAllowed", "true");
         }
     } 
 /*		
