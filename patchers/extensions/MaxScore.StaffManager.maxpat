@@ -90,7 +90,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 462.0, 287.0, 987.0, 472.0 ],
+						"rect" : [ 462.0, 287.0, 933.0, 513.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -118,7 +118,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-9",
@@ -380,7 +379,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 372.500000000000114, 428.0, 30.0, 30.0 ]
+									"patching_rect" : [ 372.500000000000114, 433.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -404,7 +403,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 132.375, 428.0, 30.0, 30.0 ]
+									"patching_rect" : [ 132.375, 433.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -1178,7 +1177,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 814.5, 60.0, 219.0, 22.0 ],
-									"restore" : [ 1, 0 ],
+									"restore" : [ 2, 1 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1364,7 +1363,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 146.0, 530.0, 337.0, 22.0 ],
-									"restore" : [ 1 ],
+									"restore" : [ 2 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2034,7 +2033,7 @@
 , 											{
 												"box" : 												{
 													"angle" : 0.0,
-													"bgcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
+													"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 													"id" : "obj-1",
 													"maxclass" : "panel",
 													"mode" : 0,
