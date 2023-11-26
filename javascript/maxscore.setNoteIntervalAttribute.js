@@ -21,6 +21,8 @@ if (jsarguments.indexOf("@name") != -1) {
 	id(jsarguments[jsarguments.indexOf("@name") + 1]);
 	named = true;
 }
+post("render", jsarguments, render, "\n");
+
 
 function id(a)
 {
@@ -132,7 +134,6 @@ function query(element)
 {
 		for (var k = 0; k < attr.length; k++)
 		{
-			//post(attr.length, dump.stringify(), "\n");
 			var singleAttribute = [];
 			singleAttribute[0] = attr[k];
 			var common = intersect(singleAttribute, noteAttributes);

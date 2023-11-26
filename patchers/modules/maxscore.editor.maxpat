@@ -813,7 +813,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 221.0, 652.0, 101.0, 22.0 ],
-									"restore" : [ 0.0 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2081,7 +2081,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 105.25, 347.0, 81.0, 22.0 ],
-					"restore" : [ 0.0, 934271.0, 71.0, 0.5, 1.0, 3.0, 71.0, -1.0 ],
+					"restore" : [ 0.0, 179181472.0, 0.0, 0.0, 0.237499997019768, 3.0, -1.0, -1.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3818,171 +3818,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-49",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patcher" : 									{
-										"fileversion" : 1,
-										"appversion" : 										{
-											"major" : 8,
-											"minor" : 5,
-											"revision" : 6,
-											"architecture" : "x64",
-											"modernui" : 1
-										}
-,
-										"classnamespace" : "box",
-										"rect" : [ 59.0, 104.0, 861.0, 352.0 ],
-										"bglocked" : 0,
-										"openinpresentation" : 0,
-										"default_fontsize" : 12.0,
-										"default_fontface" : 0,
-										"default_fontname" : "Arial",
-										"gridonopen" : 1,
-										"gridsize" : [ 15.0, 15.0 ],
-										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
-										"statusbarvisible" : 2,
-										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
-										"boxanimatetime" : 200,
-										"enablehscroll" : 1,
-										"enablevscroll" : 1,
-										"devicewidth" : 0.0,
-										"description" : "",
-										"digest" : "",
-										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
-										"assistshowspatchername" : 0,
-										"boxes" : [ 											{
-												"box" : 												{
-													"id" : "obj-13",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 141.0, 116.0, 22.0 ],
-													"text" : "setRenderAllowed 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 0,
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-22",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 108.0, 202.0, 563.0, 22.0 ],
-													"restore" : [ -1, -1, -1, -1 ],
-													"saved_object_attributes" : 													{
-														"parameter_enable" : 0,
-														"parameter_mappable" : 0
-													}
-,
-													"text" : "pattr @bindto parent::parent::m4l-canvas::bcanvas::measurerange @invisible 1 @autorestore 0 @thru 0",
-													"varname" : "u258023968"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 0,
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-25",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 100.0, 77.0, 22.0 ],
-													"text" : "zl slice 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"comment" : "",
-													"id" : "obj-17",
-													"index" : 1,
-													"maxclass" : "inlet",
-													"numinlets" : 0,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"comment" : "",
-													"id" : "obj-48",
-													"index" : 1,
-													"maxclass" : "outlet",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 194.0, 30.0, 30.0 ]
-												}
-
-											}
- ],
-										"lines" : [ 											{
-												"patchline" : 												{
-													"destination" : [ "obj-48", 0 ],
-													"source" : [ "obj-13", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-25", 0 ],
-													"source" : [ "obj-17", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-13", 0 ],
-													"source" : [ "obj-25", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-22", 0 ],
-													"source" : [ "obj-25", 1 ]
-												}
-
-											}
- ]
-									}
-,
-									"patching_rect" : [ 1205.117647058823422, 697.0, 96.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"description" : "",
-										"digest" : "",
-										"globalpatchername" : "",
-										"tags" : ""
-									}
-,
-									"text" : "p measurerange",
-									"varname" : "measurerange"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -4754,7 +4589,7 @@
 									"numoutlets" : 15,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
 									"patching_rect" : [ 879.000000000000227, 627.5, 589.705882352940534, 35.0 ],
-									"text" : "routepass sequenceDump setSection playSection setLoopingPlayback start stop loadScorepion sendScorepion setMeasureRange applyStaffStyle updateEditor picster setFileName setProportionalNotation"
+									"text" : "routepass sequenceDump setSection playSection setLoopingPlayback start stop loadScorepion sendScorepion - applyStaffStyle updateEditor picster setFileName setProportionalNotation"
 								}
 
 							}
@@ -5045,7 +4880,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
-									"midpoints" : [ 1377.676470588235361, 699.0, 1327.617647058823422, 699.0 ],
+									"midpoints" : [ 1377.676470588235361, 761.0, 1327.617647058823422, 761.0 ],
 									"source" : [ "obj-25", 0 ]
 								}
 
@@ -5806,14 +5641,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 1214.617647058823422, 767.0, 59.880951000000003, 767.0 ],
-									"source" : [ "obj-49", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
 									"midpoints" : [ 1459.205882352940762, 767.0, 59.880951000000003, 767.0 ],
 									"source" : [ "obj-5", 14 ]
 								}
@@ -5883,13 +5710,6 @@
 									"destination" : [ "obj-48", 0 ],
 									"midpoints" : [ 1255.38235294117635, 693.5, 1353.794117647058783, 693.5 ],
 									"source" : [ "obj-5", 9 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-49", 0 ],
-									"source" : [ "obj-5", 8 ]
 								}
 
 							}

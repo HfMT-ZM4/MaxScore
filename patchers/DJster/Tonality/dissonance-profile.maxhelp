@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 808.0, 622.0 ],
+		"rect" : [ 162.0, 128.0, 1186.0, 795.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -634,8 +634,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1022,7 +1022,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 13.0, 355.0, 93.0, 19.0 ],
+					"patching_rect" : [ 13.0, 355.0, 82.0, 19.0 ],
 					"text" : "dissonance-profile"
 				}
 
@@ -1251,7 +1251,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-41", 1 ],
-					"midpoints" : [ 344.5, 341.0, 59.5, 341.0 ],
+					"midpoints" : [ 344.5, 341.0, 54.0, 341.0 ],
 					"source" : [ "obj-26", 0 ]
 				}
 
@@ -1259,7 +1259,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-41", 2 ],
-					"midpoints" : [ 563.5, 346.0, 96.5, 346.0 ],
+					"midpoints" : [ 563.5, 346.0, 85.5, 346.0 ],
 					"source" : [ "obj-27", 0 ]
 				}
 
@@ -1369,10 +1369,10 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "dissonance-profile.pat",
+				"name" : "dissonance-profile.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Tonality",
 				"patcherrelativepath" : ".",
-				"type" : "maxb",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -1388,8 +1388,8 @@
 			}
 , 			{
 				"name" : "packback.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../../abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}

@@ -16,7 +16,7 @@ var info = new Dict();
 var dump = new Dict();
 dump.name = grab;
 var selection = new Dict();
-selection.name = "selection";
+//selection.name = "selection";
 var events = new Dict();
 var keys = [];
 var stafflines = [0, 0];
@@ -237,8 +237,8 @@ else abbrInstrName(" ");
 var offset = annotation.get("staff-"+StaffIndex+"::instrumentNamePositionOffset"); 
 if (typeof(offset)!="object" && offset!="*") this.patcher.getnamed("instrumentnamepositionoffset").message(offset);
 else instrumentnamepositionoffset(0);
-
-this.patcher.parentpatcher.getnamed("done").message("bang");
+post("done", "init", "\n");
+this.patcher.parentpatcher.getnamed("done").message("initialize");
 }
 
 function clip(clp)
@@ -283,7 +283,6 @@ The this object can be set manually (flag always 1) and by a style editor (alway
 		styleMenu.message("setsymbol", oldstl);
 		styleMenu.message("clearchecks");
 		currentToneDivision = tonedivisions.names.indexOf(stl) + Count;
-		//post("style", currentToneDivision, "\n");
 		styleMenu.message("checkitem", currentToneDivision, 1);
 		styleMenu.message("checkitem", currentRatioLookUp, 1);
 		oldCount = tonedivisions.names.indexOf(stl) + Count;
@@ -424,7 +423,6 @@ this.patcher.parentpatcher.parentpatcher.getnamed("tools").subpatcher().getnamed
 
 function state(st) {
     oldstl = st;
-	//post("state", oldstl, "\n");
 }
 
 /*
@@ -638,9 +636,8 @@ function setStyle(stl, flag)
     styletype = newstyletype;
 	previousNumStaves = this.patcher.parentpatcher.getnamed("numstaves").getvalueof();
 	dumpDict.message("bang");
-    outlet(0, "setUndoStackEnabled", "true");
-    outlet(0, "setRenderAllowed", "true");
-}
+	done();
+}	
 
 function isAlias(stl) {
     return stl.length != stl.split("|")[0].length;
@@ -701,8 +698,7 @@ function newEvent(data) {
         }
     }
     restoreSelection();
-    outlet(0, "setUndoStackEnabled", "true");
-    outlet(0, "setRenderAllowed", "true");
+	done();
 	}
 }
 
@@ -761,13 +757,12 @@ function paste(data) {
 	stylesPatcher.subpatcher().getnamed("percussion").subpatcher().getnamed("noteheadtransform").message(1);
 	stylesPatcher.subpatcher().getnamed("noteheadtransform").message(0);
     restoreSelection();
-    outlet(0, "setUndoStackEnabled", "true");
-    outlet(0, "setRenderAllowed", "true");
+	done();
 }
 
 function update(data) {
-    getSelection();
-    addGraceNotes();
+	getSelection();
+	addGraceNotes();
     if (info.contains("0")) keys = info.getkeys();
 	else return;
     var cont = 0;
@@ -815,9 +810,7 @@ function update(data) {
         }
     }
     restoreSelection();
-    outlet(0, "setUndoStackEnabled", "true");
-    outlet(0, "setRenderAllowed", "true");
-
+	done();
 }
 
 function transform() {
@@ -1099,25 +1092,35 @@ function addGraceNotes() {
 }
 
 function getSelection() {
-    messnamed(grab+"-relay", "getNumGraceNotes");
+	//we should probably just get the selection pertaining to this staff if it contains events.
+	//iterate through all staves. The last staff triggers rendering.
+    messnamed(grab+"-relay", "getNumGraceNotes"); //getNumGraceNotes also gives us the indexes for each event which is what we need here.
 	getNumGraceNotes = JSON.parse(dump.stringify());
 	var j = 0;
 	selection.clear();
 	for (graceNotes in getNumGraceNotes) selection.replace(j++, getNumGraceNotes[graceNotes].slice(1, getNumGraceNotes[graceNotes].length - 1));
-	//post("getSelection", j, selection.stringify(), "\n");
+	//post("getSelection", JSON.stringify(getNumGraceNotes), selection.stringify(), "\n");
     //outlet(0, "clearSelection");
 }
 
 
 function restoreSelection() {
+    outlet(0, "setRenderAllowed", "false");
     keys = selection.getkeys();
     if (keys) {
         outlet(0, "clearSelection");
         for (var i = 0; i < keys.length; i++) {
+			//if (selection.get(keys[i])[1] == StaffIndex) 
 			outlet(0, "addNoteToSelection", selection.get(keys[i]));
+			//post("selection", selection.get(keys[i]), StaffIndex, "\n");
 		}
         selection.clear();
     }
+}
+
+function done()
+{
+	this.patcher.parentpatcher.getnamed("done").message("render");
 }
 
 function getid() {
