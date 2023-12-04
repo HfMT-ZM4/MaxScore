@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -52,13 +52,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 609.0, 458.0, 495.0, 503.0 ],
+						"rect" : [ 588.0, 289.0, 495.0, 503.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -126,7 +126,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -418,7 +418,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -593,13 +593,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 151.0, 271.0, 223.0, 20.0 ],
+									"patching_rect" : [ 151.0, 271.0, 217.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 0"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 0"
 								}
 
 							}
@@ -846,7 +846,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1493,7 +1493,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1581,7 +1581,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2293,7 +2293,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2381,7 +2381,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3367,7 +3367,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3537,7 +3537,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3684,7 +3684,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4584,7 +4584,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4696,7 +4696,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5691,7 +5691,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5775,7 +5775,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 146.333328247070312, 70.0, 448.0, 20.0 ],
-													"restore" : [ 0, 0, 0, 0 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5837,7 +5837,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 395.83331298828125, 92.0, 476.0, 20.0 ],
-													"restore" : [ 0, 0, 0, 0 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5872,7 +5872,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6417,7 +6417,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -8380,7 +8380,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8755,7 +8755,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9191,7 +9191,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9627,7 +9627,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10023,7 +10023,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -11169,7 +11169,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -11695,7 +11695,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -13036,7 +13036,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -13079,13 +13079,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 170.039489500000002, 205.0, 223.0, 20.0 ],
+									"patching_rect" : [ 170.039489500000002, 205.0, 217.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 0"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 0"
 								}
 
 							}
@@ -13144,7 +13144,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -13926,7 +13926,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -14034,7 +14034,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -14382,7 +14382,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -14442,7 +14442,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -14935,7 +14935,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -15101,7 +15101,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -15470,7 +15470,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -15617,7 +15617,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 10.0, 142.0, 541.0, 22.0 ],
-													"restore" : [ 1 ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -16428,7 +16428,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -16798,13 +16798,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 73.0, 162.0, 267.0, 22.0 ],
+									"patching_rect" : [ 73.0, 162.0, 259.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 0"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 0"
 								}
 
 							}
@@ -16845,13 +16845,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 116.357146999999998, 288.0, 267.0, 22.0 ],
+									"patching_rect" : [ 116.357146999999998, 288.0, 259.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 0"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 0"
 								}
 
 							}
@@ -16864,13 +16864,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 159.714279000000005, 391.0, 265.0, 22.0 ],
+									"patching_rect" : [ 159.714279000000005, 391.0, 259.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 1"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 1"
 								}
 
 							}
@@ -16888,7 +16888,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -17067,7 +17067,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -17249,7 +17249,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -17548,7 +17548,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-141", 0 ],
-									"midpoints" : [ 208.523813666666683, 346.0, 82.5, 346.0 ],
+									"midpoints" : [ 205.857146999999998, 346.0, 82.5, 346.0 ],
 									"source" : [ "obj-16", 1 ]
 								}
 
@@ -17577,7 +17577,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-141", 0 ],
-									"midpoints" : [ 165.166666666666686, 231.0, 82.5, 231.0 ],
+									"midpoints" : [ 162.5, 231.0, 82.5, 231.0 ],
 									"source" : [ "obj-19", 1 ]
 								}
 
@@ -17667,7 +17667,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-141", 0 ],
-									"midpoints" : [ 251.214279000000005, 466.0, 82.5, 466.0 ],
+									"midpoints" : [ 249.214279000000005, 466.0, 82.5, 466.0 ],
 									"source" : [ "obj-45", 1 ]
 								}
 
@@ -18090,13 +18090,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 270.0, 357.0, 716.0, 521.0 ],
+						"rect" : [ 409.0, 131.0, 716.0, 521.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -18202,13 +18202,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 202.0, 338.644608000000005, 223.0, 20.0 ],
+									"patching_rect" : [ 202.0, 338.644608000000005, 217.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 0"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 0"
 								}
 
 							}
@@ -18249,13 +18249,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 354.0, 217.644608000000005, 223.0, 20.0 ],
+									"patching_rect" : [ 354.0, 217.644608000000005, 217.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 0"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 0"
 								}
 
 							}
@@ -18297,13 +18297,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 50.0, 155.644608000000005, 223.0, 20.0 ],
+									"patching_rect" : [ 50.0, 155.644608000000005, 217.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 0"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 0"
 								}
 
 							}
@@ -18330,13 +18330,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 278.0, 155.644608000000005, 223.0, 20.0 ],
+									"patching_rect" : [ 278.0, 155.644608000000005, 217.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 1"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 1"
 								}
 
 							}
@@ -18354,7 +18354,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -18560,7 +18560,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -18690,7 +18690,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -19829,7 +19829,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -20010,7 +20010,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -20185,13 +20185,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 126.0, 213.644608000000005, 223.0, 20.0 ],
+									"patching_rect" : [ 126.0, 213.644608000000005, 217.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "maxscore.setNoteIntervalAttribute.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js maxscore.setNoteIntervalAttribute.js @undo 0"
+									"text" : "js maxscore.setNoteIntervalAttribute.js ^undo 0"
 								}
 
 							}
@@ -20237,7 +20237,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -20474,7 +20474,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -20556,7 +20556,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 279.0, 463.0, 235.583333333333371, 49.0 ],
-													"restore" : [ 279421 ],
+													"restore" : [ 2546 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -20607,7 +20607,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 41.399999999999999, 253.0, 37.0, 22.0 ],
-													"presentation_linecount" : 2,
 													"text" : "show"
 												}
 
@@ -21025,7 +21024,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 416.600000000000023, 178.0, 338.0, 35.0 ],
-													"restore" : [ 0, 0, 0, 0 ],
+													"restore" : [ -1, -1, -1, -1 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -22079,7 +22078,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -22137,7 +22136,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -22727,7 +22726,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -22771,7 +22770,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 662.0, 140.0, 364.0, 35.0 ],
-													"restore" : [ 279421 ],
+													"restore" : [ 2546 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -22794,7 +22793,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}

@@ -21,6 +21,12 @@ if (jsarguments.indexOf("@name") != -1) {
 	id(jsarguments[jsarguments.indexOf("@name") + 1]);
 	named = true;
 }
+if (jsarguments.indexOf("^undo") != -1) undo = jsarguments[jsarguments.indexOf("^undo") + 1];
+if (jsarguments.indexOf("^renderAllowed") != -1) render = jsarguments[jsarguments.indexOf("^renderAllowed") + 1];
+if (jsarguments.indexOf("^name") != -1) {
+	id(jsarguments[jsarguments.indexOf("^name") + 1]);
+	named = true;
+}
 post("render", jsarguments, render, "\n");
 
 

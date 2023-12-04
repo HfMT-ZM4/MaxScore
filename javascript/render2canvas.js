@@ -661,7 +661,7 @@ function getStaffBoundingInfo(measureIndex, staffIndex, x, y, width, height, mar
 		//staffBoundingMatrix[measureIndex - scoreLayout[1]][staffIndex] = [x, y, width, height, marginX];
 		var measureOffset = (typeof _scoreLayout[1] == "undefined") ? 0 : _scoreLayout[1];
 		//post("staffBoundingMatrix", measureIndex, measureOffset, staffIndex, x, y, width, height, marginX, JSON.stringify(staffBoundingMatrix), "\n");
-		staffBoundingMatrix[measureIndex - measureOffset][staffIndex] = [x, y, width, height, marginX];
+		if (Object.keys(staffBoundingMatrix).length > 0) staffBoundingMatrix[measureIndex - measureOffset][staffIndex] = [x, y, width, height, marginX];
 	}
 }
 
