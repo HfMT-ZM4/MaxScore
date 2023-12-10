@@ -152,18 +152,18 @@ function write(t)
 
 function rendersvg()
 {
-	linesegments[1].push("<path d=\"" + coloredTracks[0] + "\" stroke=\"" + "rgb(72,0,255)" + "\" stroke-width=\"1.\" stroke-opacity=\"0.4\"" + "/>");
-	linesegments[1].push("<path d=\"" + coloredTracks[1] + "\" stroke=\"" + "rgb(0,48,255)" + "\" stroke-width=\"1.\" stroke-opacity=\"0.5\"" + "/>");
-	linesegments[1].push("<path d=\"" + coloredTracks[2] + "\" stroke=\"" + "rgb(0,168,255)" + "\" stroke-width=\"1.\" stroke-opacity=\"0.6\"" + "/>");
-	linesegments[1].push("<path d=\"" + coloredTracks[3] + "\" stroke=\"" + "rgb(0,255,216)" + "\" stroke-width=\"1.\" stroke-opacity=\"0.7.\"" + "/>");
-	linesegments[1].push("<path d=\"" + coloredTracks[4] + "\" stroke=\"" + "rgb(0,255,96)" + "\" stroke-width=\"1.\" stroke-opacity=\"0.8\"" + "/>");
-	linesegments[1].push("<path d=\"" + coloredTracks[5] + "\" stroke=\"" + "rgb(24,255,0)" + "\" stroke-width=\"1.\" stroke-opacity=\"0.9\"" + "/>");
-	linesegments[1].push("<path d=\"" + coloredTracks[6] + "\" stroke=\"" + "rgb(150,255,0)" + "\" stroke-width=\"1.\" stroke-opacity=\"1.0\"" + "/>");
-	linesegments[1].push("<path d=\"" + coloredTracks[7] + "\" stroke=\"" + "rgb(255,240,0)" + "\" stroke-width=\"1.\" stroke-opacity=\"1.0\"" + "/>");
-	linesegments[1].push("<path d=\"" + coloredTracks[8] + "\" stroke=\"" + "rgb(255,120,0)" + "\" stroke-width=\"1.\" stroke-opacity=\"1.0\"" + "/>");
-	linesegments[1].push("<path d=\"" + coloredTracks[9] + "\" stroke=\"" + "rgb(255,0, 0)" + "\" stroke-width=\"1.\" stroke-opacity=\"1.0\"" + "/>");
-	linesegments[1].push("<path d=\"" + _centroid + "\" stroke=\"" + "rgb(0,255,0)" + "\" stroke-width=\"1.\" stroke-opacity=\"1.\"" + "/>");	
-	linesegments[1].push("<path d=\"" + _envelope + "\" stroke=\"" + "rgb(0,255,255)" + "\" stroke-width=\"1.\" stroke-opacity=\"1.\"" + "/>");	
+	pushLineSegments(coloredTracks[0], "rgb(72,0,255)", 0.4);
+	pushLineSegments(coloredTracks[1], "rgb(0,48,255)", 0.5);
+	pushLineSegments(coloredTracks[2], "rgb(0,168,255)", 0.6);
+	pushLineSegments(coloredTracks[3], "rgb(0,255,216)", 0.7);
+	pushLineSegments(coloredTracks[4], "rgb(0,255,96)", 0.8);
+	pushLineSegments(coloredTracks[5], "rgb(24,255,0)", 0.9);
+	pushLineSegments(coloredTracks[6], "rgb(150,255,0)", 1.0);
+	pushLineSegments(coloredTracks[7], "rgb(255,240,0)", 1.0);
+	pushLineSegments(coloredTracks[8], "rgb(255,120,0)", 1.0);
+	pushLineSegments(coloredTracks[9], "rgb(255,0, 0)", 1.0);
+	pushLineSegments(_centroid, "rgb(0,255,0)", 1.0);
+	pushLineSegments(_envelope, "rgb(0,255,255)", 1.0);	
 	var f = {};
 	f.svg = {"1": []};
 	f.lines = linesegments;
@@ -177,6 +177,17 @@ function rendersvg()
 	//post("lines", JSON.stringify(f), "\n");
 	outlet(0, "obj_ref", f);
 	outlet(0, "setZoom", zoom2);
+}
+
+function pushLineSegments(path, frgb, opacity)
+{
+		linesegments[1].push({
+			"new" : "path",
+			"d" : path,
+			"stroke" : frgb,
+			"stroke-width" : 1.,
+			"stroke-opacity" : opacity, 
+			});
 }
 
 function renderselection()

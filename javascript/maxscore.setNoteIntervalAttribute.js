@@ -27,7 +27,7 @@ if (jsarguments.indexOf("^name") != -1) {
 	id(jsarguments[jsarguments.indexOf("^name") + 1]);
 	named = true;
 }
-post("render", jsarguments, render, "\n");
+//post("render", jsarguments, render, "\n");
 
 
 function id(a)

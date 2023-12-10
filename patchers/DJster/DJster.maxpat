@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 158.0, 122.0, 1320.0, 716.0 ],
+		"rect" : [ 131.0, 100.0, 1320.0, 716.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -42,6 +42,7 @@
 				"box" : 				{
 					"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 					"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+					"bgfillcolor_autogradient" : 0.0,
 					"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 					"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
@@ -419,7 +420,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 965.0, 329.0, 513.0, 278.0 ],
+						"rect" : [ 79.0, 206.0, 826.0, 503.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -449,12 +450,85 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-20",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 382.566649999999981, 178.0, 119.0, 22.0 ],
+									"text" : "0.047 0.424 0.847 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 256.566649999999981, 178.0, 119.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "0.745 0.745 0.745 1."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 663.566649999999981, 278.0, 142.0, 22.0 ],
+									"text" : "prepend activefgdialcolor"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 663.566649999999981, 178.0, 116.0, 22.0 ],
+									"text" : "\"Control Needle Off\""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 468.0, 278.0, 132.0, 22.0 ],
+									"text" : "prepend activedialcolor"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 256.566649999999981, 278.0, 149.0, 22.0 ],
+									"text" : "prepend activeneedlecolor"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 339.566649999999981, 129.0, 155.0, 22.0 ],
+									"patching_rect" : [ 506.566649999999981, 178.0, 155.0, 22.0 ],
 									"text" : "textcolor \"Text Background\""
 								}
 
@@ -466,7 +540,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 213.566649999999981, 96.0, 145.0, 22.0 ],
+									"patching_rect" : [ 256.566649999999981, 87.0, 145.0, 22.0 ],
 									"text" : "sel 0"
 								}
 
@@ -478,32 +552,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 213.566649999999981, 129.0, 116.0, 22.0 ],
+									"patching_rect" : [ 138.566649999999981, 178.0, 116.0, 22.0 ],
 									"text" : "textcolor \"Print Text\""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-54",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 129.0, 57.0, 22.0 ],
-									"text" : "active $1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-36",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
-									"patching_rect" : [ 50.0, 100.0, 29.5, 22.0 ],
-									"text" : "!= 1"
 								}
 
 							}
@@ -514,7 +564,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 117.566649999999981, 129.0, 82.0, 22.0 ],
+									"patching_rect" : [ 50.0, 178.0, 82.0, 22.0 ],
 									"text" : "ignoreclick $1"
 								}
 
@@ -540,7 +590,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 210.0, 30.0, 30.0 ]
+									"patching_rect" : [ 256.566649999999981, 432.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -577,15 +627,93 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-36", 0 ],
+									"destination" : [ "obj-114", 0 ],
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-114", 0 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
 									"order" : 2,
-									"source" : [ "obj-103", 0 ]
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"order" : 1,
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"order" : 0,
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-114", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"order" : 1,
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"order" : 0,
+									"source" : [ "obj-18", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"order" : 2,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"order" : 0,
+									"source" : [ "obj-2", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"order" : 1,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"order" : 0,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -593,7 +721,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
+									"order" : 1,
 									"source" : [ "obj-2", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-20", 0 ]
 								}
 
 							}
@@ -604,32 +740,14 @@
 								}
 
 							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-54", 0 ],
-									"source" : [ "obj-36", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-114", 0 ],
-									"source" : [ "obj-54", 0 ]
-								}
-
-							}
- ],
-						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
-						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 424.883330999999998, 41.0, 43.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -1444,7 +1562,6 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-6",
 					"items" : [ "Use", "Global", "Transport:" ],
-					"labelclick" : 1,
 					"maxclass" : "umenu",
 					"menumode" : 2,
 					"numinlets" : 1,
@@ -1534,7 +1651,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 284.5, 404.0, 347.0, 22.0 ],
-									"restore" : [ 93.749999999999986 ],
+									"restore" : [ 199.999999999999972 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2879,7 +2996,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "1", "2", "3", "2 2", "2+3", "3+2", "2 3", "3 2", "2+2+3", "2+3+2", "3+2+2", "2 2 2", "2+3+3", "3+2+3", "3+3+2", "3 3", "2 5", "11", "3 2 2", "2 3 2", "2 2 3", "my-meter" ],
-							"parameter_longname" : "Subdivisions",
+							"parameter_longname" : "Subdivision",
 							"parameter_mmax" : 21,
 							"parameter_shortname" : "Subdivision",
 							"parameter_type" : 2
@@ -3075,7 +3192,7 @@
 							"parameter_info" : "A measure of the preservation of the scale used as input for the stocastic process. The values range from -1 (preserved sequence played backward)  to 0 (weighted randomness) to 1 (preserved sequence played forward).\nThe scale can be represented either as an ascending sequence or as sequence, the order of which depending on its members' harmonic distance from the tonic or an arbitrarily assignedpriority value (use the Sort switch to toggle between these modes).\n",
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
-							"parameter_longname" : "Cohesion",
+							"parameter_longname" : "Melodic Cohesion",
 							"parameter_mmax" : 100.0,
 							"parameter_mmin" : -100.0,
 							"parameter_shortname" : "Melodic Cohesion",
@@ -3111,7 +3228,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 154.75, 97.0, 57.0, 20.0 ],
-					"restore" : [ "2 2" ],
+					"restore" : [ "2 2 2" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3292,7 +3409,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1026.470916500000158, 402.5, 257.0, 20.0 ],
-					"restore" : [ 93.749999999999986 ],
+					"restore" : [ 199.999999999999972 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3360,7 +3477,7 @@
 							"parameter_info" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
 							"parameter_initial" : [ 99 ],
 							"parameter_initial_enable" : 1,
-							"parameter_longname" : "Event Length Percent",
+							"parameter_longname" : "Event Length",
 							"parameter_mmax" : 1000.0,
 							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "Event Length",
@@ -3460,7 +3577,7 @@
 							"parameter_info" : "Turn event generation on/off",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
-							"parameter_longname" : "stream",
+							"parameter_longname" : "Play",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Play",
 							"parameter_type" : 2
@@ -3955,7 +4072,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "time", "pulse" ],
 							"parameter_invisible" : 1,
-							"parameter_longname" : "menu",
+							"parameter_longname" : "Sync Type",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "menu",
 							"parameter_type" : 2
@@ -4042,7 +4159,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.text",
+							"parameter_longname" : "Scala Browser",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Scala Browser",
 							"parameter_type" : 2
@@ -4184,7 +4301,7 @@
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.button",
+							"parameter_longname" : "Sync",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "Sync",
 							"parameter_type" : 2
@@ -8633,9 +8750,9 @@
 						"silent_downbeat" : [ 0.0 ],
 						"sorted" : [ 0.0 ],
 						"stream" : [ 0.0 ],
-						"subdivision" : [ "2 2" ],
-						"tonic_pitch" : [ 60.0 ],
-						"use_transport" : [ 1.0 ]
+						"subdivision" : [ "2 2 2" ],
+						"tonic_pitch" : [ 36.0 ],
+						"use_transport" : [ 0.0 ]
 					}
 ,
 					"text" : "autopattr",
@@ -8886,7 +9003,7 @@
 							"parameter_enum" : [ "Narrow", "Wide", "Odd Narrow", "Odd Wide" ],
 							"parameter_info" : "Tonality Profile. A narrow profile assumes that small intervals can be clearly differentiated. ",
 							"parameter_invisible" : 1,
-							"parameter_longname" : "umenu",
+							"parameter_longname" : "Tonality Profile",
 							"parameter_mmax" : 3,
 							"parameter_shortname" : "Tonality Profile",
 							"parameter_type" : 2
@@ -10501,15 +10618,14 @@
 			}
 , 			{
 				"box" : 				{
-					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
-					"activeneedlecolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"activedialcolor" : [ 0.047, 0.424, 0.847, 1.0 ],
+					"activefgdialcolor" : [ 0.745, 0.745, 0.745, 1.0 ],
+					"activeneedlecolor" : [ 0.745, 0.745, 0.745, 1.0 ],
 					"annotation" : "The time interval between pulses",
 					"appearance" : 1,
 					"dialcolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
 					"fontsize" : 9.0,
 					"id" : "obj-22",
-					"ignoreclick" : 1,
 					"maxclass" : "live.dial",
 					"needlecolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
 					"numinlets" : 1,
@@ -10542,7 +10658,7 @@
 						}
 ,
 						"textcolor" : 						{
-							"expression" : "themecolor.live_control_text_bg"
+							"expression" : "themecolor.maxwindow_posttext"
 						}
 ,
 						"valueof" : 						{
@@ -10560,7 +10676,7 @@
 
 					}
 ,
-					"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"textcolor" : [ 0.968627, 0.968627, 0.968627, 1.0 ],
 					"triangle" : 1,
 					"varname" : "pulse_length"
 				}
@@ -10585,7 +10701,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 121.0, 22.0, 78.0, 20.0 ],
 					"rounded" : 0.0,
-					"text" : "2 2",
+					"text" : "2 2 2",
 					"varname" : "textedit",
 					"wordwrap" : 0
 				}
@@ -10929,7 +11045,7 @@
 ,
 						"valueof" : 						{
 							"parameter_info" : "The MIDI pitch (floating point) the selected tonality profile is anchored on. ",
-							"parameter_initial" : [ 60 ],
+							"parameter_initial" : [ 36 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Tonic Pitch",
 							"parameter_shortname" : "Tonic Pitch",
@@ -11156,7 +11272,7 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Outset Pulses",
-							"parameter_mmax" : 16.0,
+							"parameter_mmax" : 8.0,
 							"parameter_mmin" : 1.0,
 							"parameter_shortname" : "Outset Pulses",
 							"parameter_type" : 1,
@@ -11255,7 +11371,14 @@
 					"patching_rect" : [ 1269.645843000000013, 239.5, 37.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 0.0, 464.5, 171.625 ],
-					"proportion" : 0.39
+					"proportion" : 0.39,
+					"saved_attribute_attributes" : 					{
+						"bgfillcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+
 				}
 
 			}
