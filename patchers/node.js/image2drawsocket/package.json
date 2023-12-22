@@ -1,0 +1,16 @@
+{
+  "name": "image2drawsocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "image2drawsocket.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "image-size": "^1.0.2",
+    "image-to-base64": "^2.2.0",
+    "xml-js": "^1.6.11"
+  }
+}

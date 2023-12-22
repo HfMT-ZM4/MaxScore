@@ -73,7 +73,8 @@ function dictionary(d)
 {
 	bank.name = d;
 	var stringifiedDict = bank.stringify();
-  	if (stringifiedDict != previousStringifiedDict) 
+	//post("stringifiedDict", stringifiedDict.length, "\n");
+  	if (stringifiedDict != previousStringifiedDict && stringifiedDict.length > 8) 
 	{
 		loadBank();
 		previousStringifiedDict = stringifiedDict;

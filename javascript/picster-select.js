@@ -54,6 +54,7 @@ var blocked = 0;
 var stroke = 0;
 var shapes = ["0: polycurve", "1: line", "2: rect", "3: orect", "4: oval", "5: arc", "6: poly", "7: fhand", "8: text", "9: img", "b: bracket", "h: hairpin"];
 var preference = "staff";
+var embedimage = 1;
 var property = "stroke";
 var dasharray = [0];
 var color = [0, 0, 0, 1];
@@ -138,9 +139,8 @@ if (mode == "picster" && !blocked) {
 	//renderedMessages.clear();
 	offsets = {};
 	renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
-  	//post("e", renderedMessages.stringify(), renderedMessages.get(0).length, "\n");
-	if (renderedMessages.stringify().length > 5 && selectionMode) {
-	var keys = renderedMessages.getkeys();
+	if (renderedMessages.stringify().length > 8 && selectionMode) {
+ 	var keys = renderedMessages.getkeys();
 	for (var i = 0; i < keys.length; i++)
 	{
 		format = "sadam.canvas";
@@ -203,8 +203,6 @@ if (mode == "picster" && !blocked) {
 		foundBounds[3] += RenderMessageOffset[1];
 		var boundmin = [foundBounds[0], foundBounds[1]];
 		var boundmax = [foundBounds[2], foundBounds[3]];
-		//var boundmin = [foundBounds[0] - horizontalOffset, foundBounds[1] - verticalOffset];
-		//var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
 	}
 	else {
 		_key = e.get("picster-element[0]::key");
@@ -222,19 +220,19 @@ if (mode == "picster" && !blocked) {
 		var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
 	}
 	if (boundmin[0] <= x && boundmin[1] <= y && boundmax[0] >= x && boundmax[1] >= y) {
-		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4), dictArray[dictArray.length - 1].get("id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
+ 		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4).concat(dictArray[dictArray.length - 1].get("id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]));
 		//post("F", format, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 6), "\n");
 		offsets[_c] = RenderMessageOffset;
 		_c++;
 		}
 		}
 	}
-	//post("_c", _c, "\n");
 	if (_c > 0) {
 		item = clicks % _c;
 		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
 		outlet(0, "clearSelection");
 		if (!buttonMode) {
+		//post("_c", _c, foundobjects.stringify(), foundobjects.get(item)[0], "\n");
 		switch (foundobjects.get(item)[0]){
 			case "interval" :
 			outlet(0, "selectNote", foundobjects.get(item).slice(1, 6));
@@ -291,7 +289,7 @@ if (mode == "picster" && !blocked) {
 function ctrlClick(x, y)
 {
 	if (mode == "picster") {
-		post("item", item, "\n");
+		//post("item", item, "\n");
 		if (item != -1)  {
 		clicks++;
 		singleClick(x, y, 0);
@@ -504,7 +502,6 @@ if (mode == "picster") {
 	action = "mouseReleased";
 	//suppress dragging for pitchbend curves
 	var dragged = !(JSON.stringify(origin) == JSON.stringify([x, y]));
-	//post("dragged", dragged, origin, [x, y], "\n");
 	if (item != -1 && dragged)  {
 	switch (foundobjects.get(item)[0]){
 		case "interval" :
@@ -636,7 +633,9 @@ if (mode == "picster") {
 				}
 				break;
 			case 6 :
+				post("blocked", click, blocked, "\n");
 				var temp = [];
+				if (click == "ctrl" && !blocked) return;
 				if (click == "single") {
 				blocked = 1;
 				polyclicks[clickcount] = [x, y];
@@ -1413,6 +1412,20 @@ function addShape()
 				break;
 			case "image":
 			var _dim = [];
+			if (embedimage) {
+			var dict = new Dict;
+			dict.name = msg[4];
+			_picster = {};
+			_picster["picster-element"] = [];
+			_picster["picster-element"][0] = {};
+			_picster["picster-element"][0] = JSON.parse(dict.stringify());
+			_picster["picster-element"][0]["val"]["id"] = dict.get("val::id") + "_" + cnt();
+			_picster["picster-element"][1] = {};
+			_picster["picster-element"][1].key = "extras";
+			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+			//post("picsterElement",  msg[3], JSON.stringify(_picster), "\n");
+			}
+			else {			
 			var pictype = (msg[3].split(".")[msg[3].split(".").length - 1].toLowerCase() == "svg") ? "svg" : "raster";
 			if (pictype != "svg") {
 				import.importmovie(msg[3]);
@@ -1444,11 +1457,11 @@ function addShape()
 				var sep = "";
 				sep = (inner.indexOf(",") == -1) ? " " : ",";
 				_dim = [quotes[found + 1].split(sep)[2], quotes[found + 1].split(sep)[3]]
-			}
+				}
 				var attr = {};
 				attr.new = "image";
 				attr.id = "Picster-Element_" + num;
-				attr.href = msg[3];
+				attr["xlink:href"] = msg[3];
 				attr.x = 0; // msg[0]
 				attr.y = 0; // msg[1]
 				attr.width = Number(_dim[0]);
@@ -1461,6 +1474,7 @@ function addShape()
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : [0, 0, Number(_dim[0]), Number(_dim[1])]};
+				}
 				edit.parse(JSON.stringify(_picster));
 				outlet(3, "bang");
 			break;
@@ -1615,7 +1629,6 @@ function attach()
 				else offsets[0] = [ anchor[1] / factor, anchor[2] / factor ];
 				}
 				else if (selectionBufferSize != 0) {
-		//post("elem", elem, edit.stringify(), "\n");
 					increment = 0;
 					anchors = {};
 					outlet(0, "getNoteAnchor");
@@ -1779,6 +1792,9 @@ function anything()
 	switch (messagename) {
 	case "preference" :
 	preference = msg;
+		break;
+	case "embedimage" :
+	embedimage = msg;
 		break;
 	case "property" :
 	property = msg;
@@ -2238,9 +2254,13 @@ function anything()
 			var num = cnt();
 			var _dim = [];
 			var pictype = (msg[0].split(".")[msg[0].split(".").length - 1].toLowerCase() == "svg") ? "svg" : "raster";
-			if (pictype != "svg") {
+			if (embedimage) {
+				addShape(origin[0], origin[1], "image", msg[0], msg[1]);
+			}
+			else if (pictype != "svg") {
 				import.importmovie(msg);
 				var _dim = import.dim;
+				addShape(origin[0], origin[1], "image", msg[0]);
 			}
 			else {
 				var f = new File(msg);
@@ -2265,9 +2285,9 @@ function anything()
 				}
 				else return;
 				_dim = [ Number(quotes[found + 1].replace(/,/g, "").split(" ")[2]), Number(quotes[found + 1].replace(/,/g, "").split(" ")[3]) ];
+				addShape(origin[0], origin[1], "image", msg[0]);
 				//dim = [line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[2], line.slice(foundquotes[0] + 1, foundquotes[1]).split(" ")[3]];
 			}
-				addShape(origin[0], origin[1], "image", msg[0]);
 			}
 		break;
 	case "library" :

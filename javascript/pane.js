@@ -293,9 +293,10 @@ function renderImages()
 		//transform(_svgimages[i].slice(6)[0]);
 		transform(_svgimages[i].transform.slice(_svgimages[i].transform.indexOf("(") + 1, _svgimages[i].transform.length).split(","));		
 		translate(_svgimages[i].x, _svgimages[i].y);
-		if (_svgimages[i].id.indexOf("raster") != -1) image_surface_draw(ImageCache[_svgimages[i].href], 0, 0, _svgimages[i].width, _svgimages[i].height);
-  		else svg_render(ImageCache[_svgimages[i].href]);
+ 		if (_svgimages[i].id.indexOf("raster") != -1) image_surface_draw(ImageCache[_svgimages[i]["xlink:href"]], 0, 0, _svgimages[i].width, _svgimages[i].height);
+  		else svg_render(ImageCache[_svgimages[i]["xlink:href"]]);
 		set_matrix(currentMatrix);
+		//
 		}
 	}
 }
@@ -309,21 +310,22 @@ function obj_ref(o)
 	setZoom(o.setZoom);
 	bgcolor = o.bgcolor;
 	_svgimages = o.svgimages[s];
+	//post("o", JSON.stringify(o.picster), "\n");
 	for (var i = 0; i < _svgimages.length; i++) {
-		var temp = _svgimages[i].href.split("/");
+		if (_svgimages[i]["xlink:href"].indexOf("data") != 0) {
+		var temp = _svgimages[i]["xlink:href"].split("/");
 		var reference = temp[temp.length - 1];
 		if (!ImageCache.hasOwnProperty(reference)) {
-			//post("caught you", "\n");
 			if (_svgimages[i].id.indexOf("raster") != -1) ImageCache[reference] = new Image(reference);
 			else ImageCache[reference] = new MGraphicsSVG(reference);
 			}
-		_svgimages[i].href = reference;
+		_svgimages[i]["xlink:href"] = reference;
+		}
 	}
-	//post("o", JSON.stringify(o.lines), "\n", ds2svg(o.lines[s]), "\n");
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-	svg += "<g id=\"" + s +  "\">";
+	svg += "<g id=\"" + s +  "_\">";
 	svg += ds2svg(o.lines[s]);
 	svg += ds2svg(o.svg[s]);
 	svg += "</g>";
@@ -333,17 +335,17 @@ function obj_ref(o)
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-	svg += "<g id=\"" + s +  "\">";
+	svg += "<g id=\"" + s +  "_\">";
 	svg += ds2svg(o.picster[s]);
 	svg += "</g>";
 	svg += "</svg>";
-	//outlet(2, svg);
+	//post("SVG", svg, "\n");
 	picster.setsvg(svg);	
 	var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	svgclefs += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svgclefs += "<svg width=\"" + 25 + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + 25 + " " + pageHeight + "\" style=\"background: ivory\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	//for (var s = 1; s <= o.groupcount; s++) {
-	svgclefs += "<g id=\"" + s +  "\">";
+	svgclefs += "<g id=\"" + s +  "_\">";
 	svgclefs += ds2svg(o.clefs[s]);
 	//for (var i = 0; i < o.clefs[s].length; i++) {
 	//svgclefs += "<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + o.clefs[s][i][0] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + o.clefs[s][i][1] + "\" fill=\"" + o.clefs[s][i][2] + "\" fill-opacity=\"1\" transform=\"matrix("+ o.clefs[s][i][3].join() + ")\" >" + o.clefs[s][i][4] + "</text>";

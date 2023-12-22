@@ -2304,7 +2304,7 @@ function anything() {
 					{
 					for (var d = 0; d < dest.length; d++) {
 						svggroupflag = false;
-						//post("svggroupflag", svggroupflag, "\n");					
+						//post("E", e.stringify(), "\n");					
 						if (_key == "svg") {
 							if (e.contains("picster-element[0]::val::id")){
 								if (e.get("picster-element[0]::val::id").indexOf("Tablature") != -1) {
@@ -2557,7 +2557,7 @@ function anything() {
 							"y" : origin[1],
 							"width" : svgelement.img[1],
 							"height" : svgelement.img[2],
-							"href" : svgelement.img[0],
+							"xlink:href" : svgelement.img[0],
 							"transform" : "matrix(" + svgtransform + ")"
 							}
 							);
@@ -2573,7 +2573,7 @@ function anything() {
 							"y" : origin[1],
 							"width" : svgelement.svg[1],
 							"height" : svgelement.svg[2],
-							"href" : svgelement.svg[0],
+							"xlink:href" : svgelement.svg[0],
 							"transform" : "matrix(" + svgtransform + ")"
 							}
 							);
@@ -3235,8 +3235,23 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				SVGGraphics[s + 1].push(jpicster);
 				break;
 				case "image" :
-				var href = picster.get("href");
-				var imgtype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
+				var href = picster.get("xlink:href");
+				var imgtype = "";
+				if (!href.indexOf("data")) {
+				SVGGraphics[s + 1].push({
+				"new" : "image",
+				"id" : "raster-" + idcount,
+				"x" : picster.get("x"),
+				"y" : picster.get("y"),
+				"width" : picster.get("width"),
+				"height" : picster.get("height"),
+				"xlink:href" : href,
+				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
+				}
+				);					
+				}
+				else {
+				imgtype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
  				//SVGImages[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest]]);
 				SVGImages[s + 1].push({
 				"new" : "image",
@@ -3245,7 +3260,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"y" : picster.get("y"),
 				"width" : picster.get("width"),
 				"height" : picster.get("height"),
-				"href" : href,
+				"xlink:href" : href,
 				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
 				}
 				);
@@ -3256,10 +3271,11 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"y" : picster.get("y"),
 				"width" : picster.get("width"),
 				"height" : picster.get("height"),
-				"href" : "file://" + href.substring(href.indexOf(":") + 1),
+				"xlink:href" : "file://" + href.substring(href.indexOf(":") + 1),
 				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
 				}
-				);				
+				);	
+				}			
 				break;	
 	}
 }
