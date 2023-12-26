@@ -263,13 +263,13 @@ function bang() {
       text.id = groupId+"_meter_text_"+j;
       if (typeof(djsterAttributes.meter[j]) == "number") {
         if (djsterAttributes.meter[j] < 10) {
-          text.child = text_array[djsterAttributes.meter[j]];
+          text.text = text_array[djsterAttributes.meter[j]];
         }
         else {
           text["font-size"] = 17*currentSize;
           var ones = djsterAttributes.meter[j]%10;
           var tens = (djsterAttributes.meter[j]-ones)/10;
-          text.child = text_array[tens]+text_array[ones];
+          text.text = text_array[tens]+text_array[ones];
         }
       }
       else if (typeof(djsterAttributes.meter[j]) == "string") {
@@ -280,7 +280,7 @@ function bang() {
           temp = temp.replace(re, text_array[k]);
         }
         temp = temp.replace(/\+/g,"");
-        text.child = temp;
+        text.text = temp;
       }
       outputPicster["picster-element"][0]["val"]["child"].push(text);
     }
@@ -317,16 +317,16 @@ function bang() {
     }
     var smaller = JSON.parse('{"new":"text","x":'+currentSize*89+',"y":'+currentSize*54+',"font-style":"normal","font-weight":"normal","text-anchor":"end","font-family":"Arial","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.event.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     smaller.id = groupId+"_event_smaller";
-    smaller.child = Math.round(Math.min(djsterAttributes.event_length, djsterAttributes.pulse_length));
+    smaller.text = Math.round(Math.min(djsterAttributes.event_length, djsterAttributes.pulse_length));
     outputPicster["picster-element"][0]["val"]["child"].push(smaller);
     var larger = JSON.parse('{"new":"text","x":'+currentSize*114+',"y":'+currentSize*54+',"font-style":"normal","font-weight":"normal","text-anchor":"end","font-family":"Arial","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.event.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     larger.id = groupId+"_event_larger";
-    larger.child = Math.round(Math.max(djsterAttributes.event_length, djsterAttributes.pulse_length));
+    larger.text = Math.round(Math.max(djsterAttributes.event_length, djsterAttributes.pulse_length));
     outputPicster["picster-element"][0]["val"]["child"].push(larger);
   }
 
   //main notehead
-  var notehead = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*55+',"font-family":"Bravura","font-style":"normal","font-weight":"normal","child":"","font-size":'+currentSize*28+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+  var notehead = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*55+',"font-family":"Bravura","font-style":"normal","font-weight":"normal","text":"","font-size":'+currentSize*28+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
   notehead.id = groupId+"_notehead";
   outputPicster["picster-element"][0]["val"]["child"].push(notehead);
 
@@ -334,7 +334,7 @@ function bang() {
   if ("chordal_weight" in djsterAttributes && djsterAttributes.chordal_weight > 1) {
     for (var j = 1; j < djsterAttributes.chordal_weight; j++) {
       var y = 54 - j*5;
-      var chordal_weight = JSON.parse('{"new":"text","x":'+currentSize*57+',"y":'+currentSize*y+',"font-family":"Bravura","font-style":"normal","font-weight":"normal","child":"","font-size":'+currentSize*18+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+      var chordal_weight = JSON.parse('{"new":"text","x":'+currentSize*57+',"y":'+currentSize*y+',"font-family":"Bravura","font-style":"normal","font-weight":"normal","text":"","font-size":'+currentSize*18+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
       chordal_weight.id = groupId+"_chordal_weight_"+i;
       outputPicster["picster-element"][0]["val"]["child"].push(chordal_weight);
     }
@@ -342,7 +342,7 @@ function bang() {
 
   //silent downbeat
   if ("silent_downbeat" in djsterAttributes && djsterAttributes.silent_downbeat == 1) {
-    var silent_downbeat = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*21+',"child":"","font-family":"Bravura","font-style":"normal","font-weight":"normal","font-size":'+currentSize*25+',"style":{"fill":"'+colorPalette.meter.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var silent_downbeat = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*21+',"text":"","font-family":"Bravura","font-style":"normal","font-weight":"normal","font-size":'+currentSize*25+',"style":{"fill":"'+colorPalette.meter.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     silent_downbeat.id = groupId+"_silent_downbeat";
     outputPicster["picster-element"][0]["val"]["child"].push(silent_downbeat);
   }
@@ -365,7 +365,7 @@ function bang() {
   if ("melody_scope" in djsterAttributes) {
     var melody_scope = JSON.parse('{"new":"text","x":'+currentSize*28+',"y":'+currentSize*42+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     melody_scope.id = groupId+"_melody_scope";
-    melody_scope.child = "±"+parseFloat(djsterAttributes.melody_scope.toFixed(2));
+    melody_scope.text = "±"+parseFloat(djsterAttributes.melody_scope.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(melody_scope);
   }
 
@@ -373,11 +373,11 @@ function bang() {
   if ("pitch_range" in djsterAttributes && "pitch_center" in djsterAttributes) {
     var pitch_max = JSON.parse('{"new":"text","x":'+currentSize*26+',"y":'+currentSize*26+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     pitch_max.id = groupId+"_pitch_max";
-    pitch_max.child = parseFloat((djsterAttributes.pitch_center+djsterAttributes.pitch_range).toFixed(2));
+    pitch_max.text = parseFloat((djsterAttributes.pitch_center+djsterAttributes.pitch_range).toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(pitch_max);
     var pitch_min = JSON.parse('{"new":"text","x":'+currentSize*26+',"y":'+currentSize*68+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     pitch_min.id = groupId+"_pitch_min";
-    pitch_min.child = parseFloat((djsterAttributes.pitch_center-djsterAttributes.pitch_range).toFixed(2));
+    pitch_min.text = parseFloat((djsterAttributes.pitch_center-djsterAttributes.pitch_range).toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(pitch_min);
   }
 
@@ -385,7 +385,7 @@ function bang() {
   if ("tonic_pitch" in djsterAttributes) {
     var tonic_pitch = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*55+',"font-style":"normal","font-weight":"normal","text-anchor":"end","font-family":"Arial","font-size":'+currentSize*11+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     tonic_pitch.id = groupId+"_tonic_pitch";
-    tonic_pitch.child = parseFloat(djsterAttributes.tonic_pitch.toFixed(2));
+    tonic_pitch.text = parseFloat(djsterAttributes.tonic_pitch.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(tonic_pitch);
   }
 
@@ -394,8 +394,8 @@ function bang() {
     if (djsterAttributes.scale == "<empty>") djsterAttributes.scale = " ";
     var element = JSON.parse('{"new":"text","x":'+currentSize*5+',"y":'+currentSize*11+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     element.id = groupId+"_scale";
-    element.child = djsterAttributes.scale;
-    if (element.child.length > 12) element.y = -2;
+    element.text = djsterAttributes.scale;
+    if (element.text.length > 12) element.y = -2;
     outputPicster["picster-element"][0]["val"]["child"].push(element);
   }
 
@@ -409,7 +409,7 @@ function bang() {
     border.id = groupId+"_dynamics_border";
     outputPicster["picster-element"][0]["val"]["child"].push(border);
 
-    var text = JSON.parse('{"new":"text","x":'+currentSize*7+',"y":'+currentSize*83+',"child":"D","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.dynamics.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var text = JSON.parse('{"new":"text","x":'+currentSize*7+',"y":'+currentSize*83+',"text":"D","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.dynamics.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     text.id = groupId+"_dynamics_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
 
@@ -425,7 +425,7 @@ function bang() {
     border.id = groupId+"_attenuation_border";
     outputPicster["picster-element"][0]["val"]["child"].push(border);
 
-    var text = JSON.parse('{"new":"text","x":'+currentSize*64+',"y":'+currentSize*83+',"child":"A","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.dynamics.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var text = JSON.parse('{"new":"text","x":'+currentSize*64+',"y":'+currentSize*83+',"text":"A","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.dynamics.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     text.id = groupId+"_attenuation_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
   }
@@ -440,7 +440,7 @@ function bang() {
     border.id = groupId+"_eventfulness_border";
     outputPicster["picster-element"][0]["val"]["child"].push(border);
 
-    var text = JSON.parse('{"new":"text","x":'+currentSize*64+',"y":'+currentSize*69+',"child":"E","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.event.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var text = JSON.parse('{"new":"text","x":'+currentSize*64+',"y":'+currentSize*69+',"text":"E","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.event.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     text.id = groupId+"_eventfulness_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
   }
@@ -456,7 +456,7 @@ function bang() {
     border.id = groupId+"_harmoniclarity_border";
     outputPicster["picster-element"][0]["val"]["child"].push(border);
 
-    var text = JSON.parse('{"new":"text","x":'+currentSize*7+',"y":'+currentSize*67+',"child":"H","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.pitch.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var text = JSON.parse('{"new":"text","x":'+currentSize*7+',"y":'+currentSize*67+',"text":"H","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.pitch.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     text.id = groupId+"_harmoniclarity_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
   }
@@ -472,7 +472,7 @@ function bang() {
     border.id = groupId+"_metriclarity_border";
     outputPicster["picster-element"][0]["val"]["child"].push(border);
 
-    var text = JSON.parse('{"new":"text","x":'+currentSize*64+',"y":'+currentSize*11+',"child":"M","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.meter.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var text = JSON.parse('{"new":"text","x":'+currentSize*64+',"y":'+currentSize*11+',"text":"M","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.meter.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     text.id = groupId+"_metriclarity_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
   }
