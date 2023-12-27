@@ -1353,61 +1353,33 @@ function addShape()
 				//post("found number of double vertical lines: ", msg[3].split("||").length - 1 , "\n");
 				var text = htmlEntities(msg[3]);
 				var attr = {};
-				if (text.indexOf("||") != -1) {
-					attr.new = "g";
-					attr.id = "Picster-Element_" + num;
-					attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-					attr.child = [];
-					var splitText = text.split("||");
-					for (var i = 0; i < splitText.length; i++) {
-						attr.child[i] = {};
-						attr.child[i].new = "text";
-						attr.child[i].id = "Picster-Element_" + num;
-						attr.child[i].text = splitText[i];
-						attr.child[i].x = toffsets[0];
-						attr.child[i].y = toffsets[1];
-						if (Array.isArray(font)) attr.child[i]["font-family"] = font[0];
-						else attr.child[i]["font-family"] = font;
-						if (Array.isArray(fontsize)) attr.child[i]["font-size"] = fontsize[0];
-						else attr.child[i]["font-size"] = fontsize;
-						attr.child[i]["font-weight"] = "normal";
-						attr.child[i]["font-style"] = "normal";
-						attr.child[i]["text-anchor"] = "start";
-					//attr.rotate = 0;
-						attr.child[i].style = {};
-						attr.child[i].style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-						attr.child[i].style["fill-opacity"] = color[3];
-						attr.child[i].transform = "matrix(" + [1, 0, 0, 1, 0, attr.child[i]["font-size"] * i] + ")";
-						}
-				}
-				else {
-					attr.new = "text";
-					attr.id = "Picster-Element_" + num;
-					attr.text = text;
-					attr.x = toffsets[0];
-					attr.y = toffsets[1];
-					if (Array.isArray(font)) attr["font-family"] = font[0];
-					else attr["font-family"] = font;
-					if (Array.isArray(fontsize)) attr["font-size"] = fontsize[0];
-					else attr["font-size"] = fontsize;
-					attr["font-weight"] = "normal";
-					attr["font-style"] = "normal";
-					attr["text-anchor"] = "start";
-					//attr.rotate = 0;
-					attr.style = {};
-					attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
-					attr.style["fill-opacity"] = color[3];
-					attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-				}
+				attr.new = "text";
+				attr.id = "Picster-Element_" + num;
+				attr.text = text;
+				attr.x = toffsets[0];
+				attr.y = toffsets[1];
+				if (Array.isArray(font)) attr["font-family"] = font[0];
+				else attr["font-family"] = font;
+				if (Array.isArray(fontsize)) attr["font-size"] = fontsize[0];
+				else attr["font-size"] = fontsize;
+				attr["font-weight"] = "normal";
+				attr["font-style"] = "normal";
+				attr["text-anchor"] = "start";
+				//attr.rotate = 0;
+				attr.style = {};
+				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill-opacity"] = color[3];
+				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
 				_picster["picster-element"][0] = {};
 				_picster["picster-element"][0]["key"] = "svg";
 				_picster["picster-element"][0]["val"] = attr;
 				_picster["picster-element"][1] = {};
 				_picster["picster-element"][1].key = "extras";
-				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
+				//_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
+				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
-				post("picster", JSON.stringify(_picster), "\n");
+				//post("picster", JSON.stringify(_picster), "\n");
 				outlet(3, "bang");
 				break;
 			case "image":
@@ -1423,7 +1395,7 @@ function addShape()
 			_picster["picster-element"][1] = {};
 			_picster["picster-element"][1].key = "extras";
 			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
-			//post("picsterElement",  msg[3], JSON.stringify(_picster), "\n");
+			post("picsterElement",  JSON.stringify(_picster), "\n");
 			}
 			else {			
 			var pictype = (msg[3].split(".")[msg[3].split(".").length - 1].toLowerCase() == "svg") ? "svg" : "raster";
@@ -2165,8 +2137,11 @@ function anything()
 			action = "update";
 			var updatedDict = new Dict();
 			updatedDict.name = "picster-editor";
-			//Fix!
-			if (updatedDict.contains("picster-element::bounds")) updatedDict.remove("picster-element::bounds");
+			var tempDict = new Dict();
+			tempDict.parse(foundobjects.get(item).pop());
+			temp2 = tempDict.get("picster-element[0]::val");
+			if (updatedDict.contains("picster-element[1]::val::bounds")) updatedDict.replace("picster-element[1]::val::bounds", findBoundsToo(JSON.parse(temp2.stringify())));
+			//post("key", foundobjects.get(item).pop(), "\n");
 			outlet(3, "bang");
 			break;
 			case 86 :
@@ -2217,7 +2192,7 @@ function anything()
 				outlet(2, "idleOut", 1);
 			break;
 			case 8 :
-				//fix: script textedit on top of bcanvas; remove if no longer in use; store text in variable and restore when textedit is created again
+				//script textedit on top of bcanvas; remove if no longer in use; store text in variable and restore when textedit is created again
 				var b = this.patcher.box.rect;
 				textedit = this.patcher.parentpatcher.newdefault(0, 0, "textedit");
 				textedit.varname = id + "-textedit";
@@ -2310,7 +2285,6 @@ function anything()
 		userBeans = [];
 		json = JSON.parse(dump.stringify());
 		var key = Object.keys(json);
-		//post("key", Object.keys(json), dumpinfo[0], "\n");
 		if ((key == "interval" || key == "note") && "userBean" in json[key]){
 		var occurence = getAllIndexes(json[key][".ordering"], "userBean");
 		for (var i = 0; i < occurence.length; i++) userBeans[i] = json[key]["userBean"][i];
@@ -2564,18 +2538,18 @@ function findBounds(d)
 
 function findBoundsToo(d)
 {
-	SVGString = [];
+	//SVGString = [];
 	var renderOffset = [600, 600];
-	renderDrawSocket(d);
-	if (svggroupflag == true) SVGString.push("</g>");
+	//renderDrawSocket(d);
+	//if (svggroupflag == true) SVGString.push("</g>");
 	var svg = "<svg><g transform = \"matrix(1,0,0,1," + renderOffset[0] + "," + renderOffset[1] + ")\">";
-	svg += SVGString.join("");
+	svg += ds2svg(d);
 	svg += "</g></svg>";
+	//post("svg", JSON.stringify(d), "\n");
 	//img.setsvg(svg);
 	mgraphics.svg_set("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
 	mgraphics.paint();
-	//post("svg", svg, "\n");
 	mgraphics.svg_render("img");
 
 	mgraphics.matrixcalc(outmatrix, outmatrix);

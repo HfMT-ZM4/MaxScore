@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -58,7 +58,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 693.416666666666742, 419.0, 162.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "getInstrumentInfo, startdump"
 				}
 
@@ -98,8 +97,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1236,7 +1235,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 1 ],
-					"midpoints" : [ 305.5, 373.33056640625, 364.166666666666686, 373.33056640625 ],
+					"midpoints" : [ 305.5, 313.33056640625, 364.166666666666686, 313.33056640625 ],
 					"source" : [ "obj-2", 3 ]
 				}
 

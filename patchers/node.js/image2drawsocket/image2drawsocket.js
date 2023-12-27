@@ -66,18 +66,20 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
     try {
         const svgFile = fs.readFileSync(userpath+infile, 'utf8');
         const svgJS = convert.xml2js(svgFile, { ignoreComment: true, compact: false });
-
-        hrefPathPrefix = hrefPath;
-        if( hrefPathPrefix != "" && !hrefPathPrefix.endsWith("/") )
-            hrefPathPrefix += "/";
-
+		let value = {};
+		let css = {};
+		let viewBox = getViewBox(svgJS);
+		Max.post(getSVGElements(svgJS));
+		value.new = "g";
+		value.id = infile.substring(infile.lastIndexOf('/') + 1);
+		value.transform = "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")";
+		value.child = procElements(getSVGElements(svgJS));
         let svgObj = {
             key: 'svg',
-            val: procElements( getSVGElements(svgJS) )[0]
+            val: value
         }
-	svgObj.val.id = infile.substring(infile.lastIndexOf('/') + 1);
-	Max.outlet(svgObj);
-   
+		Max.outlet(svgObj);
+ 		//Max.outlet(svgJS);
     }
     catch(err)
     {
@@ -108,6 +110,19 @@ function styleStr2obj(style_)
     return ret;
 }
 
+function css2obj(style_)
+{
+	let ret = {};
+    let tok = style_.split('.');
+	for (let i = 1; i < tok.length; i++) {
+		let key = tok[i].slice(0, tok[i].indexOf("{"));
+		let v = styleStr2obj(tok[i].slice(tok[i].indexOf("{") + 1, tok[i].indexOf("}")));
+		ret[key] = v;
+		};
+
+	return ret;	
+}
+
 /**
  * 
  * @param {array/object} el_array - XML elements to be processed
@@ -119,9 +134,14 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
     if( !Array.isArray(el_array) )
         el_array = [ el_array ];
 
+	for (let i = el_array.length - 1; i >= 0; i--) {
+		//Max.post(JSON.stringify(el_array[i]));
+		if (el_array[i].name == 'metadata' || el_array[i].name == 'defs' || el_array[i].name == 'title') el_array.splice(i, 1);
+	}
+
     return el_array.map( n => {
         let obj_ = {};
-        if( n.hasOwnProperty('name') )
+       if( n.hasOwnProperty('name') ) // && (n.name != 'metadata') && (n.name != 'defs')
             obj_.new = n.name;
         
         if( n.hasOwnProperty('attributes') )
@@ -137,6 +157,18 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
                     case 'style':
                         obj_.style = styleStr2obj(n.attributes[k]);
                     break;
+					case 'type':
+						//if (n.attributes[k] == 'text/css') 
+						if (n.attributes[k] == 'text/css') {
+							css = css2obj(n.elements[0].text);
+							//Max.post("type", Object.keys(css2obj(n.elements[0].text)), css.st0);
+							}
+					break;
+					case 'class':
+						obj_.style = css[n.attributes[k]];
+						//obj_.bogus = 'test';
+					 	//Max.post(n.attributes[k].length, JSON.stringify(css));
+					break;
                     case 'xlink:href':
                     case 'href':
                         if( typeof _ret_reflist !== 'undefined' && n.attributes[k].startsWith('#') )
@@ -161,11 +193,18 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
                        
         }
 
-        if( n.hasOwnProperty('elements') )
-            if( obj_.new == "text" )
-                obj_.text = n.elements[0].text;
-            else
-                obj_.child = procElements(n.elements, artboard_index, _ret_reflist);
+        if( n.hasOwnProperty('elements') ) {
+            if( obj_.new == "text" ) {
+				if (n.elements[0].type == 'text' ) obj_.text = n.elements[0].text;
+				else if (n.elements[0].type == 'element' &&  n.elements[0].name == 'tspan') {
+					obj_.text = "";
+					for (let t in n.elements) {
+						obj_.text = obj_.text + n.elements[t].elements[0].text + "||";
+					}
+				}
+			}
+            else obj_.child = procElements(n.elements, artboard_index, _ret_reflist);
+			}
 
         return obj_;
 
@@ -180,6 +219,17 @@ function getSVGElements(doc_)
         if( e.type == "element" && e.name == "svg" && e.elements )
         {
             return e.elements;
+        }
+    }
+}
+
+function getViewBox(doc_)
+{
+    for( let e of doc_.elements )
+    {
+        if( e.type == "element" && e.name == "svg" )
+        {
+            return e.attributes.viewBox;
         }
     }
 }

@@ -3097,6 +3097,7 @@ function anything() {
 
 function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
+			//post("picster", picster.stringify(), "\n");
 			var jpicster = {};
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
 			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return Math.round(element * 255)}) + ")";
@@ -3111,8 +3112,8 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			if (picster.contains("style::stroke-dasharray")) if (picster.get("style::stroke-dasharray")[0] == -1) wave = true;
 			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
 			else transform = [1, 0, 0, 1, 0, 0];
+			//traverse picster and look for instances of text containing "||"
 			if (svggroupflag == false) svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")";
-			//post("_dest", _dest, svggroupflag, picster.get("transform"), transform, svgtransform, "\n");
 				switch (picster.get("new")) {
 				case "g" :
 				if (picster.contains("child::style")){
@@ -3124,6 +3125,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
+				//post("jpicster", JSON.stringify(jpicster), "\n");
 				break;
 				case "marker" :
 				post("I'm a marker and I'm not supported!\n");	
@@ -3230,7 +3232,8 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					picster.replace("text", picster.get("child"));	
 					picster.remove("child");	
 				}
-				jpicster = JSON.parse(picster.stringify());
+				if (picster.get("text").indexOf("||") != -1) jpicster = tspan(picster); 		
+				else jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
 				break;
@@ -3278,6 +3281,27 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				}			
 				break;	
 	}
+}
+
+function tspan(dict)
+{
+	var textGroupDict = new Dict;
+	var textGroupObj = {};
+	textGroupObj.new = "g";
+	textGroupObj.id = dict.get("id");
+	textGroupObj.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+	textGroupObj.child = [];
+	var splitText = dict.get("text").split("||");
+	for (var i = 0; i < splitText.length; i++) {
+		textGroupObj.child[i] = {};
+		textGroupObj.child[i].new = "text";
+		textGroupObj.child[i].id = dict.get("id") + "-" + i;
+		textGroupObj.child[i].text = splitText[i];
+		textGroupObj.child[i].x = 0;
+		textGroupObj.child[i].y = 0;
+		textGroupObj.child[i].transform = "matrix(" + [1, 0, 0, 1, 0, dict.get("font-size") * i] + ")";
+	}
+	return textGroupObj;
 }
 
 function renderExpression(msg, s, _dest, RenderMessageOffset, e)
