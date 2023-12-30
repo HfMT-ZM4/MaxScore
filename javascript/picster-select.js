@@ -10,7 +10,6 @@ var output = new Dict();
 output.name = "output";
 SVGString = [];
 SVGImages = [];
-//var ImageCache = {};
 var mgraphics = new JitterObject("jit.mgraphics", 2000, 2000);
 var findbounds = new JitterObject("jit.findbounds");
 var outmatrix = new JitterMatrix(4, "char", 2000, 2000);
@@ -41,6 +40,8 @@ var selectionBufferSize = 0;
 var mode = "maxscore";
 var edit = new Dict();
 edit.name = "picster-editor";
+var imageCache = new Dict;
+imageCache.name = "imageCache";
 var shape = 1;
 var action = "single";
 var anchors = {};
@@ -164,6 +165,7 @@ if (mode == "picster" && !blocked) {
 	}
 	var e = new Dict();
 	e.parse(renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
+	//post("bounds", e.stringify(), "\n");
 	if (format == "sadam.canvas") {
 	var picster = e.get("picster-element");
 	var pkeys = picster.getkeys();
@@ -191,6 +193,7 @@ if (mode == "picster" && !blocked) {
 		}
 	}
 	else {
+	if (!e.contains("picster-element")) return;
 	if (Array.isArray(e.get("picster-element[0]::val"))) var dictArray = e.get("picster-element[0]::val");
 	else var dictArray = [].concat(e.get("picster-element[0]::val"));
  	var vals = [];
@@ -206,7 +209,6 @@ if (mode == "picster" && !blocked) {
 	}
 	else {
 		_key = e.get("picster-element[0]::key");
-		//post("vals", JSON.stringify(vals), "\n");
 		if (_key == "svg") {
 		if (vals[0]["id"].indexOf("sustain") == 0) var foundBounds = [-1, -1, -1, -1];
 		else var foundBounds = findBoundsToo(vals);
@@ -512,9 +514,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") == -1 && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
  			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["@Message"]);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -529,9 +534,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") == -1 && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["@Message"]);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -549,9 +557,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered" == -1) && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["@Message"]);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -567,9 +578,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") == -1 && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["@Message"]);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -731,8 +745,11 @@ function deleteSelectedItem()
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -746,8 +763,11 @@ function deleteSelectedItem()
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -762,8 +782,11 @@ function deleteSelectedItem()
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -778,8 +801,11 @@ function deleteSelectedItem()
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -808,9 +834,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), serialized);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -825,9 +854,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), serialized);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -844,9 +876,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), serialized);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -862,9 +897,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), serialized);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -893,9 +931,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]) + translate[0] / zoom, parseFloat(userBeans[i]["@Yoffset"]) + translate[1] / zoom, serialized);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -910,9 +951,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
- 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
+ 			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
+			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]) + translate[0] / zoom, parseFloat(userBeans[i]["@Yoffset"]) + translate[1] / zoom, serialized);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -928,9 +972,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), serialized);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -946,9 +993,12 @@ if (mode == "picster") {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
 			else outlet(0, "addRenderedMessageToStaff", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), serialized);
+			}
 			}
 			else {
 			if (userBeans[i]["@Message"].indexOf(foundobjects.get(item)[foundobjects.get(item).length - 6]) == -1) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -1387,6 +1437,16 @@ function addShape()
 			if (embedimage) {
 			var dict = new Dict;
 			dict.name = msg[4];
+			if (dict.contains("data")) {
+				_picster = {};
+				_picster["image-segment"] = {};
+				_picster["image-segment"].reference = dict.get("reference");
+				_picster["image-segment"].index = dict.get("index");
+				_picster["image-segment"].numsegments = dict.get("numsegments");
+				_picster["image-segment"].data = dict.get("data");
+			}
+			else 
+			{ 
 			_picster = {};
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {};
@@ -1395,7 +1455,8 @@ function addShape()
 			_picster["picster-element"][1] = {};
 			_picster["picster-element"][1].key = "extras";
 			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
-			post("picsterElement",  JSON.stringify(_picster), "\n");
+			//post("picsterElement",  JSON.stringify(_picster), "\n");
+			}
 			}
 			else {			
 			var pictype = (msg[3].split(".")[msg[3].split(".").length - 1].toLowerCase() == "svg") ? "svg" : "raster";
@@ -2538,14 +2599,20 @@ function findBounds(d)
 
 function findBoundsToo(d)
 {
-	//SVGString = [];
+
 	var renderOffset = [600, 600];
-	//renderDrawSocket(d);
-	//if (svggroupflag == true) SVGString.push("</g>");
+	//post("pre-D", JSON.stringify(d), "\n");
+	if (Array.isArray(d)) {
+		if (d[0].new == "text" && d[0].text.indexOf("||") != -1) d[0] = splitText(d[0]);
+		if (d[0].new == "image" && !d[0]["xlink:href"].indexOf("reference")) {
+			d[0]["xlink:href"] = "data:image/png;base64," + imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("");
+		}
+	}
+	else if (d.new == "g") iterateGroup(d);
+	//post("post-D", JSON.stringify(d), "\n");
 	var svg = "<svg><g transform = \"matrix(1,0,0,1," + renderOffset[0] + "," + renderOffset[1] + ")\">";
 	svg += ds2svg(d);
 	svg += "</g></svg>";
-	//post("svg", JSON.stringify(d), "\n");
 	//img.setsvg(svg);
 	mgraphics.svg_set("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
@@ -2561,6 +2628,35 @@ function findBoundsToo(d)
 	return [findbounds.boundmin[0] - renderOffset[0] + horizontalOffset, findbounds.boundmin[1] - renderOffset[1] + verticalOffset, findbounds.boundmax[0] - renderOffset[0] + horizontalOffset, findbounds.boundmax[1] - renderOffset[1] + verticalOffset];
 }
 
+function iterateGroup(obj)
+{
+	for (var i = 0; i < obj.child.length; i++) {
+	if (obj.child[i].hasOwnProperty("text") && obj.child[i].text.indexOf("||") != -1) obj.child[i] = splitText(obj.child[i]); 	
+	if (obj.child[i].hasOwnProperty("child")) iterateGroup(obj.child[i]);
+	}
+}
+
+function splitText(obj)
+{
+	var textGroup = {};
+	textGroup.new = "g";
+	textGroup.id = obj.id;
+	textGroup.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+	textGroup.child = [];
+	var splittext = obj.text.split("||");
+	for (var i = 0; i < splittext.length; i++) {
+		textGroup.child[i] = {};
+		textGroup.child[i].new = "text";
+		textGroup.child[i].id = obj.id + "-" + i;
+		textGroup.child[i].text = splittext[i];
+		textGroup.child[i].x = 0;
+		textGroup.child[i].y = 0;
+		textGroup.child[i].transform = "matrix(" + [1, 0, 0, 1, 0, obj["font-size"] * i] + ")";
+	}
+	return textGroup;
+}
+
+/*
 function renderDrawSocket(d)
 {
 	for (var i = 0; i < d.length; i++){
@@ -2605,6 +2701,7 @@ function renderDrawSocket(d)
 		}
 	}
 }
+*/
 
 function findBoundsForRenderedExpression(msg, d)
 {

@@ -156,7 +156,10 @@ var graceNoteCount = -1;
 var graceNoteIntervalCount = -1;
 var keysigaccum = 0;
 var format = "";
-var cent2ratio = new Dict();
+var data = [];
+var imageCache = new Dict;
+imageCache.name = "imageCache";
+var cent2ratio = new Dict;
 var staffInfo = {};
 var noteProperty = [];
 var repeatedAccidentals = {};
@@ -2260,11 +2263,19 @@ function anything() {
 				break;
 			}
 			if (format == "drawsocket"){
-			renderedMessages.set(rm++, msg);
-					
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
-			if (e.contains("picster-element")) {
+			if (e.contains("image-segment")){
+				//post("e", e.get("image-segment::reference"), "\n");	
+				var reference = e.get("image-segment::reference");
+				if (imageCache.contains(reference)) return;
+				data.push(e.get("image-segment::data"));
+				if (e.get("image-segment::index") != e.get("image-segment::numsegments")) return;
+				imageCache.replace(reference, data);
+				data = [];
+			}
+			else if (e.contains("picster-element")) {
+				renderedMessages.set(rm++, msg);
 				_key = e.get("picster-element[0]::key");
 				svggroupflag = false;
 				var vals = [].concat(e.get("picster-element[0]::val"));
@@ -3097,7 +3108,6 @@ function anything() {
 
 function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
-			//post("picster", picster.stringify(), "\n");
 			var jpicster = {};
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
 			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return Math.round(element * 255)}) + ")";
@@ -3109,7 +3119,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				if (picster.get("style::fill") == "$FRGB") picster.replace("style::fill", frgb); 
 				else if (picster.get("style::fill") == "$BRGB") picster.replace("style::fill", brgb);
 			}
-			if (picster.contains("style::stroke-dasharray")) if (picster.get("style::stroke-dasharray")[0] == -1) wave = true;
+			if (picster.contains("style::stroke-dasharray")) if (picster.get("style::stroke-dasharray") == -1) wave = true;
 			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
 			else transform = [1, 0, 0, 1, 0, 0];
 			//traverse picster and look for instances of text containing "||"
@@ -3124,6 +3134,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				}
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
+				iterateGroup(jpicster);
 				SVGGraphics[s + 1].push(jpicster);
 				//post("jpicster", JSON.stringify(jpicster), "\n");
 				break;
@@ -3160,20 +3171,20 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				var a = (picster.get("y2") - picster.get("y1") == 0) ? 8.5 : Math.sqrt(72.25 - 72.25 / (Math.pow((picster.get("x2") - picster.get("x1")) / (picster.get("y2") - picster.get("y1")), 2) + 1));
 				var b = (picster.get("x2") - picster.get("x1") == 0) ? 8.5 : Math.sqrt(72.25 / (Math.pow((picster.get("x2") - picster.get("x1")) / (picster.get("y2") - picster.get("y1")), 2) + 1));
 				var rotation = Math.asin(sign_x * (picster.get("y2") - picster.get("y1"))/Math.sqrt(Math.pow(sign_x * (picster.get("y2") - picster.get("y1")),2)+Math.pow(sign_y * (picster.get("x2") - picster.get("x1")),2)))/Math.PI*180;				
-				if (sign_x == -1) transform_ = "transform=\"translate(" + (sign_x * (i + 1) * a + Math.sin(rotation/360*Math.PI*2) * 10)+ ", " + (sign_y * (i + 1) * b - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)\"";	
-				else transform_ = "transform=\"translate(" + (sign_x * i * a + Math.sin(rotation/360*Math.PI*2) * 10) + ", " + (sign_y * (i * b) - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)\"";
+				if (sign_x == -1) transform_ = "translate(" + (sign_x * (i + 1) * a + Math.sin(rotation/360*Math.PI*2) * 10)+ ", " + (sign_y * (i + 1) * b - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)";	
+				else transform_ = "translate(" + (sign_x * i * a + Math.sin(rotation/360*Math.PI*2) * 10) + ", " + (sign_y * (i * b) - 7) + ") scale(0.03, 0.03) rotate(" + rotation + ", 0, 0)";
 				//child.push("<path id=\"" + "wave" + i + "\" d=\"" + _d + "\" stroke=\"" + svgstroke + "\" stroke-width=\"" + picster.get("style::stroke-width") + "\" stroke-opacity=\"" + svgstrokeopacity + "\"" + dasharray + "fill=\"" + svgstroke + "\" fill-opacity=\"" + svgstrokeopacity + "\" " + transform_ + onclick + "/>");
 				child.push({
 				"new" : "path",
 				"id" : "wave" + i,
 				"d" : _d,
 				"stroke" : (picster.get("style::stroke") == "$FRGB") ? frgb : picster.get("style::stroke"),
-				"stroke-width" : 0.1,
-				"fill" : (picster.get("style::fill") == "$FRGB") ? frgb : picster.get("style::fill"),
-				"transform" : "matrix(1 0 0 1 0 0)",
+				"stroke-width" : picster.get("style::stroke"),
+				//"fill" : (picster.get("style::stroke") == "$FRGB") ? frgb : picster.get("style::fill"),
+				"transform" : transform_,
 				});
 				}
-				/////////////////
+				//post("WAVE", JSON.stringify(child), "\n");				/////////////////
 				SVGGraphics[s + 1].push({
 				"new" : "g",
 				"id" : picster.get("id"),
@@ -3219,7 +3230,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
 				}
-				//post("picster", JSON.stringify(SVGGraphics), "\n");	
 				break;
 				case "text" :
 				if (!(picster.contains("text-anchor"))) picster.replace("text-anchor", "start");
@@ -3232,8 +3242,8 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					picster.replace("text", picster.get("child"));	
 					picster.remove("child");	
 				}
-				if (picster.get("text").indexOf("||") != -1) jpicster = tspan(picster); 		
-				else jpicster = JSON.parse(picster.stringify());
+				jpicster = JSON.parse(picster.stringify());
+				if (jpicster.text.indexOf("||") != -1) jpicster = splitText(jpicster); 		
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
 				break;
@@ -3249,6 +3259,21 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"width" : picster.get("width"),
 				"height" : picster.get("height"),
 				"xlink:href" : href,
+				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
+				}
+				);					
+				}
+				else if (!href.indexOf("reference")) {
+				var reference = href.slice(href.indexOf(":") + 1);
+				//post("href", href, imageCache.get(href.slice(href.indexOf(":") + 1)).length, "\n");
+				SVGGraphics[s + 1].push({
+				"new" : "image",
+				"id" : "raster-" + idcount,
+				"x" : picster.get("x"),
+				"y" : picster.get("y"),
+				"width" : picster.get("width"),
+				"height" : picster.get("height"),
+				"xlink:href" : "data:image/png;base64," + imageCache.get(reference).join(''),
 				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
 				}
 				);					
@@ -3283,25 +3308,32 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 	}
 }
 
-function tspan(dict)
+function iterateGroup(obj)
 {
-	var textGroupDict = new Dict;
-	var textGroupObj = {};
-	textGroupObj.new = "g";
-	textGroupObj.id = dict.get("id");
-	textGroupObj.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
-	textGroupObj.child = [];
-	var splitText = dict.get("text").split("||");
-	for (var i = 0; i < splitText.length; i++) {
-		textGroupObj.child[i] = {};
-		textGroupObj.child[i].new = "text";
-		textGroupObj.child[i].id = dict.get("id") + "-" + i;
-		textGroupObj.child[i].text = splitText[i];
-		textGroupObj.child[i].x = 0;
-		textGroupObj.child[i].y = 0;
-		textGroupObj.child[i].transform = "matrix(" + [1, 0, 0, 1, 0, dict.get("font-size") * i] + ")";
+	for (var i = 0; i < obj.child.length; i++) {
+	if (obj.child[i].hasOwnProperty("text") && obj.child[i].text.indexOf("||") != -1) obj.child[i] = splitText(obj.child[i]); 	
+	if (obj.child[i].hasOwnProperty("child")) iterateGroup(obj.child[i]);
 	}
-	return textGroupObj;
+}
+
+function splitText(obj)
+{
+	var textGroup = {};
+	textGroup.new = "g";
+	textGroup.id = obj.id;
+	textGroup.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+	textGroup.child = [];
+	var splittext = obj.text.split("||");
+	for (var i = 0; i < splittext.length; i++) {
+		textGroup.child[i] = {};
+		textGroup.child[i].new = "text";
+		textGroup.child[i].id = obj.id + "-" + i;
+		textGroup.child[i].text = splittext[i];
+		textGroup.child[i].x = 0;
+		textGroup.child[i].y = 0;
+		textGroup.child[i].transform = "matrix(" + [1, 0, 0, 1, 0, obj["font-size"] * i] + ")";
+	}
+	return textGroup;
 }
 
 function renderExpression(msg, s, _dest, RenderMessageOffset, e)
@@ -3344,7 +3376,6 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 							if (prop) space = hold * 60 / tempo * timeUnit - 7;
 							else space = noteAreaWidth / (timesig[0] / timesig[1]) / 8 * hold - 7;
 						}
-						//post("noteAnchor", msg[2], indexes, noteAnchor1, noteAnchor2, "\n");
 						//if (msg[0] == "interval") msg = msg.slice(0, 5).concat(msg.slice(6));
 						var numPoints = (pitchbend.length - 4) / 4;
 						var moveTo = [pitchbend[3] * space + msg[8] + 7, pitchbend[4] / 300 * -6 + 2 + _dest];
@@ -3547,7 +3578,7 @@ function writeSVG(destination)
 		}
 	writeDefs(destination, f);
 	for (var s = 1; s <= groupcount; s++) {
-	f.writeline("<g id=\"" + s +  "\" transform=\"matrix(" + [SVGZoom, 0., 0., SVGZoom, 0., 0.] + ")\">");	
+	f.writeline("<g id=\"_" + s +  "\" transform=\"matrix(" + [SVGZoom, 0., 0., SVGZoom, 0., 0.] + ")\">");	
 	if (prop) for (var i = 0; i < SVGClefs[s].length; i++) f.writeline(ds2svg(SVGClefs[s][i]));
 	for (var i = 0; i < SVGLines[s].length; i++) f.writeline(ds2svg(SVGLines[s][i]));
 	for (var i = 0; i < SVGString[s].length; i++) f.writeline(ds2svg(SVGString[s][i]));

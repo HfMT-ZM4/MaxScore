@@ -24,11 +24,13 @@ if (userpath.length > 0) {
 let hrefPathPrefix;
 
 Max.addHandler("img2drawsocket", (msg) => {
+	let filename = msg.substring(msg.lastIndexOf('/') + 1);
+	let seg = {};
 	let img = {
 			"key" : "svg",
 			"val" : 			{
 				"new" : "image",
-				"id" : msg.substring(msg.lastIndexOf('/') + 1),
+				"id" : (isNaN(filename.charAt(0))) ? filename : "_" + filename,
 				"xlink:href" : "",
 				"x" : 0,
 				"y" : 0,
@@ -37,18 +39,35 @@ Max.addHandler("img2drawsocket", (msg) => {
 				"transform" : "matrix(1,0,0,1,0,0)"
 			}
 	};
-	
+			
 imageToBase64(msg) // Path to the image
     .then(
         (response) => {
-            //console.log(response); // "cGF0aC90by9maWxlLmpwZw=="
- 		sizeOf(msg, (err, dimensions) => {
-  		//console.log(JSON.stringify(dimensions));
-		img.val["xlink:href"] = 'data:image/' + dimensions.type + ';base64,' + response;
-		img.val.width = dimensions.width;
-		img.val.height = dimensions.height;
-		Max.post("Dims ", img.val.width, img.val.height, JSON.stringify(dimensions));
-		Max.outlet(img);
+        //console.log(response); // "cGF0aC90by9maWxlLmpwZw=="
+ 		Max.post(response.length);
+		sizeOf(msg, (err, dimensions) => {
+ 		if (response.length < 28000)
+		{
+			img.val["xlink:href"] = 'data:image/' + dimensions.type + ';base64,' + response;
+			img.val.width = dimensions.width;
+			img.val.height = dimensions.height;
+			//Max.post("Dims ", img.val.width, img.val.height, JSON.stringify(dimensions));
+			Max.outlet(img);
+		}
+		else {
+			let segments = stringToChunks(response, 28000);
+			for (let i = 0; i < segments.length; i++) {
+				seg.reference = msg;
+				seg.index = i + 1;
+				seg.numsegments = segments.length;
+				seg.data = segments[i];
+				Max.outlet(seg);
+			}
+			img.val["xlink:href"] = 'reference:' + msg;
+			img.val.width = dimensions.width;
+			img.val.height = dimensions.height;
+			Max.outlet(img);
+		}
 		});
       }
     )
@@ -65,13 +84,14 @@ imageToBase64(msg) // Path to the image
 Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=false, hrefPath="") => {
     try {
         const svgFile = fs.readFileSync(userpath+infile, 'utf8');
-        const svgJS = convert.xml2js(svgFile, { ignoreComment: true, compact: false });
+       	const svgJS = convert.xml2js(svgFile.replaceAll('&', '&amp;'), { ignoreComment: true, compact: false });
 		let value = {};
 		let css = {};
 		let viewBox = getViewBox(svgJS);
-		Max.post(getSVGElements(svgJS));
+ 		//Max.post(svgJS);
 		value.new = "g";
-		value.id = infile.substring(infile.lastIndexOf('/') + 1);
+		let filename = infile.substring(infile.lastIndexOf('/') + 1);
+		value.id = "_" + filename;
 		value.transform = "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")";
 		value.child = procElements(getSVGElements(svgJS));
         let svgObj = {
@@ -195,11 +215,11 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
 
         if( n.hasOwnProperty('elements') ) {
             if( obj_.new == "text" ) {
-				if (n.elements[0].type == 'text' ) obj_.text = n.elements[0].text;
+				if (n.elements[0].type == 'text' ) obj_.text = htmlEntities(n.elements[0].text);
 				else if (n.elements[0].type == 'element' &&  n.elements[0].name == 'tspan') {
 					obj_.text = "";
 					for (let t in n.elements) {
-						obj_.text = obj_.text + n.elements[t].elements[0].text + "||";
+						obj_.text = htmlEntities(obj_.text + n.elements[t].elements[0].text + "||");
 					}
 				}
 			}
@@ -234,3 +254,15 @@ function getViewBox(doc_)
     }
 }
 
+function htmlEntities(str) {
+    return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;"); //"
+}
+
+function stringToChunks(string, chunkSize) {
+    const chunks = [];
+    while (string.length > 0) {
+        chunks.push(string.substring(0, chunkSize));
+        string = string.substring(chunkSize, string.length);
+    }
+    return chunks;
+}
