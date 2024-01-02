@@ -745,7 +745,13 @@ function deleteSelectedItem()
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
-			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) {
+				var tempDict2 = new Dict();
+				tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+				if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+				outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+				}
+			}
 			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -763,7 +769,13 @@ function deleteSelectedItem()
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
-			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) {
+				var tempDict2 = new Dict();
+				tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+				if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+				outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+				}
+			}
 			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -782,7 +794,13 @@ function deleteSelectedItem()
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
-			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) {
+				var tempDict2 = new Dict();
+				tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+				if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+				outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+				}
+			}
 			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -801,7 +819,13 @@ function deleteSelectedItem()
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 			var tempDict = new Dict();
 			tempDict.parse(userBeans[i]["@Message"]);
-			if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+			if (tempDict.contains("image-segment")) {
+				var tempDict2 = new Dict();
+				tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+				if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+				outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+				}
+			}
 			else {
 			var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
 			if (tempVal[tempVal.length - 1].get("id") != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
@@ -825,7 +849,6 @@ function reattachRenderedMessage(serialized)
 	//post("reattachRenderedMessage", "\n");
 if (mode == "picster") {
 	if (item != -1)  {
-	//post("foundobjects.2", foundobjects.stringify(), "\n");
 	switch (foundobjects.get(item)[0]){
 		case "interval" :
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
@@ -1451,7 +1474,7 @@ function addShape()
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {};
 			_picster["picster-element"][0] = JSON.parse(dict.stringify());
-			_picster["picster-element"][0]["val"]["id"] = dict.get("val::id") + "_" + cnt();
+			_picster["picster-element"][0]["val"]["id"] = dict.get("val::id") + "_" + num;
 			_picster["picster-element"][1] = {};
 			_picster["picster-element"][1].key = "extras";
 			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
@@ -1459,7 +1482,7 @@ function addShape()
 			}
 			}
 			else {			
-			var pictype = (msg[3].split(".")[msg[3].split(".").length - 1].toLowerCase() == "svg") ? "svg" : "raster";
+			var pictype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
 			if (pictype != "svg") {
 				import.importmovie(msg[3]);
 				var _dim = import.dim;
@@ -2190,7 +2213,7 @@ function anything()
 				}
 			}
 			break;
-			case 83 : 	//s
+			case 83 : //s
 			preference = "staff";
 			break;
 			case 85 : //u = update: serialize picster-editor dict, format message, reattach to score element and redraw bounding rect, clear dict
@@ -2205,10 +2228,10 @@ function anything()
 			//post("key", foundobjects.get(item).pop(), "\n");
 			outlet(3, "bang");
 			break;
-			case 86 :
+			case 86 : //v
 			if (cp.copy != "undefined") createRenderedMessage(1, cp.copy[0], cp.copy[1], cp.copy[2]);
 			break;
-			case 88 :
+			case 88 : //x
 			if (foundobjects.contains("0") && item != -1) {
 				anchors = {};
 				if (foundobjects.get(item)[0] == "note" || foundobjects.get(item)[0] == "interval") {
@@ -2224,17 +2247,17 @@ function anything()
 				deleteSelectedItem();
 			}
 			break;
-			case 89 :
+			case 89 : //y
 			outlet(2, "bounds", "hide");
 			outlet(0, "redo");
 			outlet(0, "setRenderAllowed", 1);
 			break;
-			case 90 :
+			case 90 : //z
 			outlet(2, "bounds", "hide");
 			outlet(0, "undo");
 			outlet(0, "setRenderAllowed", 1);
 			break;
-			case 127 : case 8 :
+			case 127 : case 8 : //del
 			if (foundobjects.contains("0") && item != -1) deleteSelectedItem();
 			break;
 			default :
@@ -2289,11 +2312,13 @@ function anything()
 			if (shape == 9) {
 			var num = cnt();
 			var _dim = [];
-			var pictype = (msg[0].split(".")[msg[0].split(".").length - 1].toLowerCase() == "svg") ? "svg" : "raster";
-			if (embedimage) {
+			var pictype = "";
+			if (msg[0] == "dictionary") pictype = "embedded";
+			else pictype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
+			if (pictype == "embedded") {
 				addShape(origin[0], origin[1], "image", msg[0], msg[1]);
 			}
-			else if (pictype != "svg") {
+			else if (pictype == "raster") {
 				import.importmovie(msg);
 				var _dim = import.dim;
 				addShape(origin[0], origin[1], "image", msg[0]);

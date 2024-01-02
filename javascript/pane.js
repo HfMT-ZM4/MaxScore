@@ -91,6 +91,7 @@ var sm = 0;
 var _svgimages = [];
 var _SVGImages = {};
 var ImageCache = {};
+var embeddedImages = [];
 var imgcount = 0;
 var tsk = [];
 var ticks = {};
@@ -128,6 +129,16 @@ var mouseselection = 1;
 var incrementers = {};
 var mgraphicsRoutines = [ "append_path", "arc", "arc_negative", "attr_setfill", "clear_surface", "close_path", "curve_to", "device_to_user", "ellipse", "fill", "fill_extents", "fill_preserve", "fill_preserve_with_alpha", "fill_with_alpha", "font_extents", "get_current_point", "get_line_cap", "get_line_join", "get_line_width", "get_matrix", "getfontlist", "identity_matrix", "image_surface_create", "image_surface_destroy", "image_surface_draw", "image_surface_draw_fast", "image_surface_get_size", "in_fill", "line_to", "move_to", "new_path", "ovalarc", "paint", "paint_with_alpha", "parentpaint", "path_roundcorners", "pattern_add_color_stop_rgba", "pattern_create_for_surface", "pattern_create_linear", "pattern_create_radial", "pattern_create_rgba", "pattern_destroy", "pattern_get_extend", "pattern_get_matrix", "pattern_get_type", "pattern_identity_matrix", "pattern_rotate", "pattern_scale", "pattern_set_extend", "pattern_set_matrix", "pattern_translate", "pop_group_to_source", "push_group", "rectangle", "rectangle_rounded", "rel_curve_to", "rel_line_to", "rel_move_to", "restore", "rotate", "save", "scale", "scale_source_rgba", "select_font_face", "set_dash", "set_font_size", "set_line_cap", "set_line_join", "set_line_width", "set_matrix", "set_source", "set_source_rgb", "set_source_rgba", "set_source_surface", "show_text", "stroke", "stroke_preserve", "stroke_preserve_with_alpha", "stroke_with_alpha", "svg_create", "svg_destroy", "svg_get_size", "svg_render", "svg_set", "text_measure", "text_path", "transform", "translate", "translate_source_rgba", "user_to_device", "user_to_device" ];
 	
+var img = new MGraphicsSVG("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: ivory\" xml:space=\"preserve\"><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 30)\">Create new score or</text><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 90)\">load score from disk</text></svg>");
+var clefs = new MGraphicsSVG();
+var picster = new MGraphicsSVG();
+var embedded = new MGraphicsSVG();
+
+var pageWidth = 1200;
+var pageHeight = 800;
+var oldPageWidth = 0;
+var oldPageHeight = 0;
+pageSize(pageWidth, pageHeight);
 
 tsk["scroll"] = new Task(scrollTask, this, "scroll"); // our main task
 
@@ -151,9 +162,6 @@ function setMediaFolder()
 {
 
 }
-
-//	157 217 255 128
-
 
 
 function buttonmode(bm)
@@ -278,10 +286,10 @@ function setMeasureSelection(ms)
 
 function setImages(img)
 {
-			if (img == "clear") {
-				_SVGImages = {};
-				imgcount = 0;
-			}
+	if (img == "clear") {
+		_SVGImages = {};
+		imgcount = 0;
+	}
 }
 
 function renderImages()
@@ -290,29 +298,28 @@ function renderImages()
 	var currentMatrix = get_matrix();
 	set_source_rgba(0., 0., 0., 1.);
 	for (var i = 0; i < _svgimages.length; i++){
-		//transform(_svgimages[i].slice(6)[0]);
-		transform(_svgimages[i].transform.slice(_svgimages[i].transform.indexOf("(") + 1, _svgimages[i].transform.length).split(","));		
-		translate(_svgimages[i].x, _svgimages[i].y);
- 		if (_svgimages[i].id.indexOf("raster") != -1) image_surface_draw(ImageCache[_svgimages[i]["xlink:href"]], 0, 0, _svgimages[i].width, _svgimages[i].height);
-  		else svg_render(ImageCache[_svgimages[i]["xlink:href"]]);
-		set_matrix(currentMatrix);
-		//
+		if (_svgimages[i]["id"].indexOf("embedded") == -1) {
+			transform(_svgimages[i].transform.slice(_svgimages[i].transform.indexOf("(") + 1, _svgimages[i].transform.length).split(","));		
+			translate(_svgimages[i].x, _svgimages[i].y);
+ 			if (_svgimages[i].id.indexOf("raster") != -1) image_surface_draw(ImageCache[_svgimages[i]["xlink:href"]], 0, 0, _svgimages[i].width, _svgimages[i].height);
+  			else svg_render(ImageCache[_svgimages[i]["xlink:href"]]);
+			set_matrix(currentMatrix);
+			}
 		}
 	}
 }
 
 function obj_ref(o)
 {
-
-	//gc();
 	s = 1;
 	pageSize(o.pageSize[0], o.pageSize[1]);
 	setZoom(o.setZoom);
 	bgcolor = o.bgcolor;
 	_svgimages = o.svgimages[s];
+	embeddedImages = [];
 	//post("o", JSON.stringify(o.picster), "\n");
 	for (var i = 0; i < _svgimages.length; i++) {
-		if (_svgimages[i]["xlink:href"].indexOf("data") != 0) {
+		if (_svgimages[i]["id"].indexOf("embedded") == -1) {
 		var temp = _svgimages[i]["xlink:href"].split("/");
 		var reference = temp[temp.length - 1];
 		if (!ImageCache.hasOwnProperty(reference)) {
@@ -321,42 +328,48 @@ function obj_ref(o)
 			}
 		_svgimages[i]["xlink:href"] = reference;
 		}
+		embeddedImages.push(_svgimages[i]);
 	}
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-	svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
+	//svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-	svg += "<g id=\"" + s +  "_\">";
+	svg += "<g id=\"_" + s +  "\">";
 	svg += ds2svg(o.lines[s]);
 	svg += ds2svg(o.svg[s]);
 	svg += "</g>";
 	svg += "</svg>";
-
 	img.setsvg(svg);
+	
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-	svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
+	//svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-	svg += "<g id=\"" + s +  "_\">";
+	svg += "<g id=\"_" + s +  "\">";
 	svg += ds2svg(o.picster[s]);
 	svg += "</g>";
 	svg += "</svg>";
 	//post("picster", svg, "\n");
-	picster.setsvg(svg);	
+	picster.setsvg(svg);
+		
+	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+	//svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
+	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
+	svg += "<g id=\"_" + s +  "\">";
+	svg += ds2svg(embeddedImages);
+	svg += "</g>";
+	svg += "</svg>";
+	//post("picster", svg, "\n");
+	embedded.setsvg(svg);
+
 	var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-	svgclefs += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
+	//svgclefs += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svgclefs += "<svg width=\"" + 25 + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + 25 + " " + pageHeight + "\" style=\"background: ivory\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-	//for (var s = 1; s <= o.groupcount; s++) {
-	svgclefs += "<g id=\"" + s +  "_\">";
+	svgclefs += "<g id=\"_" + s +  "\">";
 	svgclefs += ds2svg(o.clefs[s]);
-	//for (var i = 0; i < o.clefs[s].length; i++) {
-	//svgclefs += "<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + o.clefs[s][i][0] + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + o.clefs[s][i][1] + "\" fill=\"" + o.clefs[s][i][2] + "\" fill-opacity=\"1\" transform=\"matrix("+ o.clefs[s][i][3].join() + ")\" >" + o.clefs[s][i][4] + "</text>";
-	//}
 	svgclefs += "</g>";
-	//}
 	svgclefs += "</svg>";
 	clefs.setsvg(svgclefs);
 
 	virgin = 0;
-	//mgraphics.redraw();
 }
 
 function clear()
@@ -371,17 +384,6 @@ function clear()
 		clearGraphics();
 	}
 }
-
-
-var img = new MGraphicsSVG("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: ivory\" xml:space=\"preserve\"><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 30)\">Create new score or</text><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 90)\">load score from disk</text></svg>");
-var clefs = new MGraphicsSVG();
-var picster = new MGraphicsSVG();
-
-var pageWidth = 1200;
-var pageHeight = 800;
-var oldPageWidth = 0;
-var oldPageHeight = 0;
-pageSize(pageWidth, pageHeight);
 
 //[percentage/2, (200 - percentage)/2]
 
@@ -697,6 +699,7 @@ function paint() {
 		mgraphics.svg_render(img);
 		if (playback) flashingNoteheads();
 		renderImages();
+		mgraphics.svg_render(embedded);
 		mgraphics.svg_render(picster);
 		paintOnTop();
 		if (highlight) measureSelection();

@@ -73,6 +73,7 @@ var sm = 0;
 var svgimages = [];
 var SVGImages = {};
 var ImageCache = {};
+var embeddedImages = [];
 var imgcount = 0;
 var tsk = [];
 var ticks = {};
@@ -246,10 +247,11 @@ function setImages(img)
 
 function obj_ref(o)
 {
-	//gc();
+	embeddedImages = [];
 	mgraphics.svg_create("img", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	mgraphics.svg_create("clefs", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	mgraphics.svg_create("_picster", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
+	mgraphics.svg_create("embedded", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	width = this.patcher.box.rect[2] - this.patcher.box.rect[0];
 	height = this.patcher.box.rect[3] - this.patcher.box.rect[1];
 	if (virgin) {
@@ -266,6 +268,7 @@ function obj_ref(o)
 	bgcolor = o.bgcolor;
 	svgimages = o.svgimages[s];
 	for (var i = 0; i < svgimages.length; i++) {
+		if (_svgimages[i]["xlink:href"].indexOf("data") != 0) {
 		var temp = svgimages[i][1].split("/");
 		var reference = temp[temp.length - 1];
 		if (!ImageCache.hasOwnProperty(reference)) {
@@ -273,6 +276,8 @@ function obj_ref(o)
 			ImageCache[reference] = svgimages[i][1];
 			}
 		svgimages[i][1] = reference;
+		}
+		embeddedImages.push(_svgimages[i]);
 	}
 	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svg += "<g id=\"" + s +  "\">";	
@@ -281,13 +286,21 @@ function obj_ref(o)
 	svg += "</g>";
 	svg += "</svg>";
 	mgraphics.svg_set("img", svg);
+	
 	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svg += "<g id=\"" + s +  "\">";	
 	svg += ds2svg(o.picster[s]);
 	svg += "</g>";
 	svg += "</svg>";
-	//post("picster", svg, "\n");	
 	mgraphics.svg_set("_picster", svg);
+
+	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
+	svg += "<g id=\"" + s +  "\">";	
+	svg += ds2svg(embeddedImages);
+	svg += "</g>";
+	svg += "</svg>";
+	mgraphics.svg_set("embedded", svg);
+
 	var svgclefs = "<svg width=\"" + 25 + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + 25 + " " + pageHeight + "\" style=\"background: ivory\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svgclefs += "<g id=\"" + s +  "\">";
 	svgclefs += ds2svg(o.clefs[s]);
@@ -593,6 +606,7 @@ function redraw() {
 		mgraphics.svg_render("img");
 		if (playback) flashingNoteheads();
 		renderImages();
+		mgraphics.svg_render("embedded");
 		mgraphics.svg_render("_picster");
 		picsterLabel();
 		paintOnTop();

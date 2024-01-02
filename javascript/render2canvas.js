@@ -2240,7 +2240,7 @@ function anything() {
             break;
         case "RenderMessage":
 			format = "sadam.canvas";
-			//post("renderedMessages1", currentElement, msg, "\n");					
+			//post("renderedMessages1", msg, "\n");					
 			switch (msg[0]){
 				/*
 				case "interval" :
@@ -2275,6 +2275,7 @@ function anything() {
 				data = [];
 			}
 			else if (e.contains("picster-element")) {
+			//post("E", e.stringify(), "\n");					
 				renderedMessages.set(rm++, msg);
 				_key = e.get("picster-element[0]::key");
 				svggroupflag = false;
@@ -2315,7 +2316,6 @@ function anything() {
 					{
 					for (var d = 0; d < dest.length; d++) {
 						svggroupflag = false;
-						//post("E", e.stringify(), "\n");					
 						if (_key == "svg") {
 							if (e.contains("picster-element[0]::val::id")){
 								if (e.get("picster-element[0]::val::id").indexOf("Tablature") != -1) {
@@ -2470,13 +2470,10 @@ function anything() {
 								path = path + command[1] + "," + command[2] + "," + command[3] + "," + command[4]+  "," + command[5] + "," + command[6];
 								mode = "C";
                                break;
+                            case "embedded":
                             case "raster":
-								//imageTable[command[1].split('/')[command[1].split('/').length - 1]] = [command[1].substring(command[1].indexOf(":") + 1), info.get("a")[0], info.get("b")[1]];
-								svgelement.img = [command[1], info.get("a")[0], info.get("b")[1]];
-                                break;
-                            case "svg":
-								//imageTable[command[1].split('/')[command[1].split('/').length - 1]] = [command[1].substring(command[1].indexOf(":") + 1), info.get("a")[0], info.get("b")[1]];
- 								svgelement.svg = [command[1], info.get("a")[0], info.get("b")[1]];
+                           	case "svg":
+								svgelement.svg = [command[1], info.get("a")[0], info.get("b")[1]];
                                break;
                         	}
 						}
@@ -2540,7 +2537,6 @@ function anything() {
 							break;
 						case "text" :
  							svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + dest[d]];
-							//SVGGraphics[s + 1].push("<text x=\"" + svgelement.text[0] + "\" y=\"" + svgelement.text[1] + "\" font-family=\"" + svgfontfamily + "\" font-size=\"" + svgfontsize + "\" font-style=\"" + svgfontstyle[0] + "\" font-weight=\"" + svgfontstyle[1] + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\">" + svgelement.text[2] + "</text>");
 							SVGGraphics[s + 1].push({
 								"new" : "text",
 								"id" : "PicsterText-" + idcount++,
@@ -2556,11 +2552,10 @@ function anything() {
 								"fill-opacity" : svgfillopacity, 
 								"transform" : "matrix(" + svgtransform + ")",
 								}
-							);							//post ("<text x=\"" + svgelement.text[0] + "\" y=\"" + svgelement.text[1] + "\" font-family=\"" + svgfontfamily + "\" font-size=\"" + svgfontsize + "\" font-style=\"" + svgfontstyle[0] + "\" font-weight=\"" + svgfontstyle[1] + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" transform=\"matrix(" + svgtransform + ")\">" + svgelement.text[2] + "</text>", "\n");
+							);
 							break;
 						case "img" :
 							svgtransform = [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + dest[d]];
-							//SVGImages[s + 1].push(["raster", svgelement.img[0], origin[0], origin[1], svgelement.img[1], svgelement.img[2], svgtransform]);
 							SVGImages[s + 1].push({
 							"new" : "image",
 							"id" : "image" + idcount++,
@@ -3253,7 +3248,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				if (!href.indexOf("data")) {
 				SVGGraphics[s + 1].push({
 				"new" : "image",
-				"id" : "raster-" + idcount,
+				"id" : "embedded-" + idcount++,
 				"x" : picster.get("x"),
 				"y" : picster.get("y"),
 				"width" : picster.get("width"),
@@ -3264,11 +3259,11 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				);					
 				}
 				else if (!href.indexOf("reference")) {
+				//post("picster", picster.stringify(), "\n");
 				var reference = href.slice(href.indexOf(":") + 1);
-				//post("href", href, imageCache.get(href.slice(href.indexOf(":") + 1)).length, "\n");
-				SVGGraphics[s + 1].push({
+				SVGImages[s + 1].push({
 				"new" : "image",
-				"id" : "raster-" + idcount,
+				"id" : "embedded-" + idcount++,
 				"x" : picster.get("x"),
 				"y" : picster.get("y"),
 				"width" : picster.get("width"),
@@ -3277,13 +3272,24 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
 				}
 				);					
+				SVGImages2[s + 1].push({
+				"new" : "image",
+				"id" : "embedded-" + idcount++,
+				"x" : picster.get("x"),
+				"y" : picster.get("y"),
+				"width" : picster.get("width"),
+				"height" : picster.get("height"),
+				"xlink:href" : "data:image/png;base64," + imageCache.get(reference).join(''),
+				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
+				}
+				);
 				}
 				else {
 				imgtype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
  				//SVGImages[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest]]);
 				SVGImages[s + 1].push({
 				"new" : "image",
-				"id" : imgtype + "-" + idcount,
+				"id" : imgtype + "-" + idcount++,
 				"x" : picster.get("x"),
 				"y" : picster.get("y"),
 				"width" : picster.get("width"),
@@ -3559,14 +3565,11 @@ function writeSVG(destination)
 	f.groupcount = groupcount;
 	outlet(0, "obj_ref", f); 
 	}
-	else
+	else if (destination !== undefined)
 	{
-	///REWRITE!!
-	///Drawsocket to SVG
 	var f = new File(destination, "write", "TEXT");
-	post("destination", destination, "\n");
+	//post("SVGImages2", JSON.stringify(SVGImages2), "\n");
 	if (f.isopen) {
-	post("destination2", destination, "\n");
 	f.eof = 0;
 	f.writeline("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
 	f.writeline("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">");
@@ -3582,10 +3585,16 @@ function writeSVG(destination)
 	if (prop) for (var i = 0; i < SVGClefs[s].length; i++) f.writeline(ds2svg(SVGClefs[s][i]));
 	for (var i = 0; i < SVGLines[s].length; i++) f.writeline(ds2svg(SVGLines[s][i]));
 	for (var i = 0; i < SVGString[s].length; i++) f.writeline(ds2svg(SVGString[s][i]));
-	for (var i = 0; i < SVGImages2[s].length; i++) f.writeline(ds2svg(SVGImages2[s][i]));
+	for (var i = 0; i < SVGImages2[s].length; i++) {
+		if (!SVGImages2[s][i]["id"].indexOf("embedded")) {
+			var el = stringToChunks(ds2svg(SVGImages2[s][i]), 32767);
+			for (var j = 0; j < el.length; j++) f.writeline(el[j]);
+		}
+		else f.writeline(ds2svg(SVGImages2[s][i]));
+		}
 	for (var i = 0; i < SVGGraphics[s].length; i++) f.writeline(ds2svg(SVGGraphics[s][i]));
 	if (pageNumber != "") f.writeline(pageNumber);
-	//if (SVGImages[s].length > 0) f.writeline(SVGImages[s]);
+	if (SVGImages[s].length > 0) f.writeline(SVGImages[s]);
 	f.writeline("</g>");
 	}
 	f.writeline("</svg>");	
@@ -3593,6 +3602,16 @@ function writeSVG(destination)
 	}
 	}
 }
+
+function stringToChunks(string, chunkSize) {
+    var chunks = [];
+    while (string.length > 0) {
+        chunks.push(string.substring(0, chunkSize));
+        string = string.substring(chunkSize, string.length);
+    }
+    return chunks;
+}
+
 
 function writeDefs(destination, f)
 {
