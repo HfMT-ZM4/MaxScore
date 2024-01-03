@@ -1048,7 +1048,7 @@ function createRenderedMessage(f, x, y, serialized)
 		anchor = anchors[event];
 		outlet(0, "selectNote", anchor[2], anchor[3], anchor[4], anchor[5]);
 		if (anchor[6] != -1) for (var i = 0; i <= anchor[6]; i++) outlet(0, "selectNextInterval");
-		if (f) outlet(0, "addRenderedMessageToSelectedNotes", x, y, serialized);
+		if (f) for (var i = 0; i < serialized.length; i++) outlet(0, "addRenderedMessageToSelectedNotes", x, y, serialized[i]);
 		else {
 		if (x == "." || y == ".") outlet(0, "addRenderedMessageToSelectedNotes", 0, 0, serialized);
 		else outlet(0, "addRenderedMessageToSelectedNotes", x - anchor[0]/factor, y - anchor[1]/factor, serialized);
@@ -1074,8 +1074,10 @@ function createRenderedMessage(f, x, y, serialized)
 		anchor = anchors[event];
 		//subtract anchor from origin
 		if (f) {
-			if (preference == "staff") outlet(0, "addRenderedMessageToStaff", anchor[0], anchor[1], x, y, serialized);
-			else outlet(0, "addRenderedMessageToMeasure", anchor[0], x, y, serialized);
+			for (var i = 0; i < serialized.length; i++) {
+				if (preference == "staff") outlet(0, "addRenderedMessageToStaff", anchor[0], anchor[1], x, y, serialized);
+				else outlet(0, "addRenderedMessageToMeasure", anchor[0], x, y, serialized);
+				}
 			}
 		else {
 		if (x == "." || y == ".") {
@@ -1974,28 +1976,55 @@ function anything()
 			case 67 :  //copy
 			if (foundobjects.contains("0") && item != -1) {
 				anchors = {};
+				var element = [foundobjects.get(item)[foundobjects.get(item).length - 1]];
 				if (foundobjects.get(item)[0] == "note" || foundobjects.get(item)[0] == "interval") {
 					outlet(0, "getNoteAnchor");
 					anchor = anchors[increment - 1];
-					cp.copy = [-anchor[0] / factor, -anchor[1] / factor, foundobjects.get(item)[foundobjects.get(item).length - 1]];
-					//cp.copy = [(offsets[item][0] - anchor[0]) / factor, (offsets[item][1] - anchor[1]) / factor, foundobjects.get(item)[foundobjects.get(item).length - 1]];
+					//cp.copy = [-anchor[0] / factor, -anchor[1] / factor, foundobjects.get(item)[foundobjects.get(item).length - 1]];
+					//
+					outlet(0, (foundobjects.get(item)[0] == "note") ? "getNoteInfo" : "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+					for (var i = 0; i < userBeans.length; i++) {
+						var tempDict = new Dict();
+						tempDict.parse(userBeans[i]["@Message"]);
+						if (tempDict.contains("image-segment")) {
+							var tempDict2 = new Dict();
+							tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+							if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+								element.push(userBeans[i]["@Message"]);
+							}
+						}
+					}
+					//
+					cp.copy = [(offsets[item][0] - anchor[0]) / factor, (offsets[item][1] - anchor[1]) / factor, element];
 				}
 				else {
 					outlet(0, "getDrawingAnchor",  foundobjects.get(item)[1], foundobjects.get(item)[2]);
 					anchor = anchors[increment - 1];
-					cp.copy = [(offsets[item][0] - anchor[2]) / factor, (offsets[item][1] - anchor[3]) / factor, foundobjects.get(item)[foundobjects.get(item).length - 1]];
+					outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
+					for (var i = 0; i < userBeans.length; i++) {
+						var tempDict = new Dict();
+						tempDict.parse(userBeans[i]["@Message"]);
+						if (tempDict.contains("image-segment")) {
+							var tempDict2 = new Dict();
+							tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+							if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+								element.push(userBeans[i]["@Message"]);
+							}
+						}
+					}
+					cp.copy = [(offsets[item][0] - anchor[2]) / factor, (offsets[item][1] - anchor[3]) / factor, element];
 				}
 			}
 			break;
-			case 68 : //create Djster Notation
+			case 68 : //d = create Djster Notation
 			createDjsterNotation();
 			break;
-			case 69 :  //edit
+			case 69 :  //e = edit
 			if (foundobjects.contains("0") && item != -1) edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 			status = "editing";
 			outlet(3, "edit");
 			break;
-			case 71 : //group
+			case 71 : //g = group
 			edit.clear();
 			var tempDict = new Dict();
 			var tempObjArray = [];
@@ -2225,7 +2254,6 @@ function anything()
 			tempDict.parse(foundobjects.get(item).pop());
 			temp2 = tempDict.get("picster-element[0]::val");
 			if (updatedDict.contains("picster-element[1]::val::bounds")) updatedDict.replace("picster-element[1]::val::bounds", findBoundsToo(JSON.parse(temp2.stringify())));
-			//post("key", foundobjects.get(item).pop(), "\n");
 			outlet(3, "bang");
 			break;
 			case 86 : //v
@@ -2234,17 +2262,44 @@ function anything()
 			case 88 : //x
 			if (foundobjects.contains("0") && item != -1) {
 				anchors = {};
+				var element = [foundobjects.get(item)[foundobjects.get(item).length - 1]];
 				if (foundobjects.get(item)[0] == "note" || foundobjects.get(item)[0] == "interval") {
 					outlet(0, "getNoteAnchor");
 					anchor = anchors[increment - 1];
-					cp.copy = [-anchor[0] / factor, -anchor[1] / factor, foundobjects.get(item)[foundobjects.get(item).length - 1]];
+					//cp.copy = [-anchor[0] / factor, -anchor[1] / factor, foundobjects.get(item)[foundobjects.get(item).length - 1]];
+					//
+					outlet(0, (foundobjects.get(item)[0] == "note") ? "getNoteInfo" : "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+					for (var i = 0; i < userBeans.length; i++) {
+						var tempDict = new Dict();
+						tempDict.parse(userBeans[i]["@Message"]);
+						if (tempDict.contains("image-segment")) {
+							var tempDict2 = new Dict();
+							tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+							if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+								element.push(userBeans[i]["@Message"]);
+							}
+						}
+					}
+					cp.copy = [(offsets[item][0] - anchor[0]) / factor, (offsets[item][1] - anchor[1]) / factor, element];
 				}
 				else {
 					outlet(0, "getDrawingAnchor",  foundobjects.get(item)[1], foundobjects.get(item)[2]);
 					anchor = anchors[increment - 1];
-					cp.copy = [(offsets[item][0] - anchor[2]) / factor, (offsets[item][1] - anchor[3]) / factor, foundobjects.get(item)[foundobjects.get(item).length - 1]];
+					outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
+					for (var i = 0; i < userBeans.length; i++) {
+						var tempDict = new Dict();
+						tempDict.parse(userBeans[i]["@Message"]);
+						if (tempDict.contains("image-segment")) {
+							var tempDict2 = new Dict();
+							tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+							if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+								element.push(userBeans[i]["@Message"]);
+							}
+						}
+					}
+					cp.copy = [(offsets[item][0] - anchor[2]) / factor, (offsets[item][1] - anchor[3]) / factor, element];
 				}
-				deleteSelectedItem();
+			deleteSelectedItem();
 			}
 			break;
 			case 89 : //y
