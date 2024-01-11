@@ -3258,7 +3258,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				}
 				);					
 				}
-				else if (!href.indexOf("reference")) {
+				else if (!href.indexOf("reference")) { //if "reference" is at index 0
 				//post("picster", picster.stringify(), "\n");
 				var reference = href.slice(href.indexOf(":") + 1);
 				SVGImages[s + 1].push({
@@ -3317,7 +3317,10 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 function iterateGroup(obj)
 {
 	for (var i = 0; i < obj.child.length; i++) {
-	if (obj.child[i].hasOwnProperty("text") && obj.child[i].text.indexOf("||") != -1) obj.child[i] = splitText(obj.child[i]); 	
+	if (obj.child[i].hasOwnProperty("text")) {
+		if (typeof obj.child[i].text != "string") return;
+		if (obj.child[i].text.indexOf("||") != -1) obj.child[i] = splitText(obj.child[i]); 	
+	}
 	if (obj.child[i].hasOwnProperty("child")) iterateGroup(obj.child[i]);
 	}
 }

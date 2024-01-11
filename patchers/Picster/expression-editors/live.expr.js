@@ -55,7 +55,7 @@ var textBox = {
 , 					{
 						"new" : "text",
 						"id" : "Picster-Element_Template-text",
-						"child" : "message value",
+						"text" : "message value",
 						"x" : 2,
 						"y" : 11,
 						"font-family" : [ "Arial" ],
@@ -199,7 +199,7 @@ var bpfShape = {
 					"fill" : "$FRGB",
 					"fill-opacity" : 1
 				},
-				"child" : '',
+				"text" : '',
 				"transform" : "matrix(1,0,0,1,0," + (yoffset - height) + ")"
 			}	]
 		} ]

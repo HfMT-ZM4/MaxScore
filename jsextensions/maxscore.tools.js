@@ -13,6 +13,7 @@ function ds2svgiterate(code)
 {
 	for (var i = 0; i < code.length; i++) { 
 	textElement = false;
+	lastNew = "";
 	group = false;
 	string += "<" + code[i]["new"];
 	for (var element in code[i]) {
@@ -26,11 +27,14 @@ function ds2svgiterate(code)
 		else if (element == "child") {
 			string += ">";
 			ds2svgiterate(code[i].child);
-			string += "</g>";
+			//the following line can lead to issues when attributes are stated after the child element
+			//make sure that all attributes are processed before it gets written
+			string += (lastNew == "g") ? "</g>" : "</svg>";
 			group = true;
 			}
 		else string += " " + element + "=\"" + code[i][element] + "\"";
 		}
+		else lastNew = code[i]["new"];
 	}
 	if (group == false) {
 		if (!textElement) string += "/>";

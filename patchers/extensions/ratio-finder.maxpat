@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 566.0, 196.0, 439.0, 689.0 ],
+		"rect" : [ 366.0, 146.0, 421.0, 639.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -79,7 +80,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-13",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -249,7 +250,8 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 255.0, 200.0, 59.5, 22.0 ],
 					"saved_object_attributes" : 					{
-						"embed" : 1
+						"embed" : 1,
+						"precision" : 6
 					}
 ,
 					"text" : "coll"
@@ -434,11 +436,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-140",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 116.0, 23.0, 25.0, 25.0 ]
 				}
 
@@ -447,11 +449,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-141",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 52.0, 23.0, 25.0, 25.0 ]
 				}
 
@@ -460,11 +462,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-142",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 113.333333333333329, 617.0, 25.0, 25.0 ]
+					"patching_rect" : [ 113.0, 595.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -715,14 +717,9 @@
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "", -1 ],
-					"source" : [ "obj-26", 1 ]
-				}
-
-			}
- ]
+ ],
+		"dependency_cache" : [  ],
+		"autosave" : 0
 	}
 
 }

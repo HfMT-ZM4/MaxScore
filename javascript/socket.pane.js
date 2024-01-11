@@ -445,8 +445,10 @@ function obj_ref(o)
 	for (var s = 1; s <= groupcount; s++) {
 		for (var i = 0; i < SVGImages[s].length; i++) {
 		//post("isfile", isFile(pathToScript + mediaFolder, SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1)), "\n");
-		if (!isFile(pathToScript + mediaFolder, SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1))) outlet(1, "cp", SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].indexOf(":") + 1), pathToScript + mediaFolder + SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1));
-		SVGImages[s][i]["href"] = mediaFolder + SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1);
+		if (SVGImages[s][i]["xlink:href"].slice(0, 4) != "data") {
+			if (!isFile(pathToScript + mediaFolder, SVGImages[s][i]["xlink:href"].substring(SVGImages[s][i]["xlink:href"].lastIndexOf("/") + 1))) outlet(1, "cp", SVGImages[s][i]["xlink:href"].substring(SVGImages[s][i]["xlink:href"].indexOf(":") + 1), pathToScript + mediaFolder + SVGImages[s][i]["xlink:href"].substring(SVGImages[s][i]["xlink:href"].lastIndexOf("/") + 1));
+			SVGImages[s][i]["xlink:href"] = mediaFolder + SVGImages[s][i]["xlink:href"].substring(SVGImages[s][i]["xlink:href"].lastIndexOf("/") + 1);
+			}
 		}
 	}
 	var clear = {"key" : "remove", "val" : "main"};

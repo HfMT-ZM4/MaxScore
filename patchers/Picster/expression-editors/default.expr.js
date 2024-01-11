@@ -28,7 +28,7 @@ var shape = {
 , 					{
 						"new" : "text",
 						"id" : "Picster-Element_1607700288185",
-						"child" : "message value",
+						"text" : "message value",
 						"x" : 2,
 						"y" : 11,
 						"font-family" : [ "Arial" ],
@@ -75,7 +75,7 @@ function anything()
 	shape["picster-element"][0]["val"]["child"][0]["id"] = "Picster-Element_" + parseInt(date.getTime()) + 1;
 	shape["picster-element"][0]["val"]["child"][0]["width"] = text_measure("Arial", 10, a.join(" "))[0] + 4;
 	shape["picster-element"][0]["val"]["child"][1]["id"] = "Picster-Element_" + parseInt(date.getTime()) + 2;
-	shape["picster-element"][0]["val"]["child"][1]["child"] = a.join(" ");
+	shape["picster-element"][0]["val"]["child"][1]["text"] = a.join(" ");
 	//post("arguments", JSON.stringify(arguments), "\n");
 	shape["picster-element"][2]["val"][0]["message"] = a[0];
 	shape["picster-element"][2]["val"][0]["value"] = arrayfromargs(arguments).join(" ");
