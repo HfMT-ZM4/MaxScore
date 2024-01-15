@@ -3325,6 +3325,10 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 function iterateGroup(obj)
 {
 	for (var i = 0; i < obj.child.length; i++) {
+	if (obj.child[i].hasOwnProperty("child")) {
+		obj.child[i].text = obj.child[i].child;	
+		delete obj.child[i].child;
+	}
 	if (obj.child[i].hasOwnProperty("text")) {
 		if (typeof obj.child[i].text != "string") return;
 		if (obj.child[i].text.indexOf("||") != -1) obj.child[i] = splitText(obj.child[i]); 	
@@ -3579,7 +3583,6 @@ function writeSVG(destination)
 	else if (destination !== undefined)
 	{
 	var f = new File(destination, "write", "TEXT");
-	//post("SVGImages2", JSON.stringify(SVGImages2), "\n");
 	if (f.isopen) {
 	f.eof = 0;
 	f.writeline("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
