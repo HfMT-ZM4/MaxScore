@@ -29,7 +29,8 @@ function ds2svgiterate(code)
 			ds2svgiterate(code[i].child);
 			//the following line can lead to issues when attributes are stated after the child element
 			//make sure that all attributes are processed before it gets written
-			string += (lastNew == "g") ? "</g>" : "</svg>";
+			//doesn't work: string += (lastNew == "g") ? "</g>" : "</svg>";
+			string += "</g>";
 			group = true;
 			}
 		else string += " " + element + "=\"" + code[i][element] + "\"";

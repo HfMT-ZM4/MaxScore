@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 370.0, 263.0, 998.0, 600.0 ],
+		"rect" : [ 178.0, 124.0, 998.0, 600.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -62,8 +62,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -612,8 +612,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -737,7 +737,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolor", 0.8, 0.8, 0.8, 1 ], [ "transparency", 0 ] ],
+									"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.8, 0.8, 0.8, 1 ] ],
 									"filename" : "pane.js",
 									"id" : "obj-37",
 									"maxclass" : "jsui",
@@ -745,9 +745,9 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 825.0, 259.0, 200.0, 100.0 ],
+									"patching_rect" : [ 825.0, 259.0, 200.0, 120.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 51.25, 78.0, 200.0, 100.0 ],
+									"presentation_rect" : [ 51.25, 78.0, 200.0, 120.0 ],
 									"varname" : "pane"
 								}
 
@@ -847,7 +847,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 587.5, 358.0, 204.0, 49.0 ],
-									"restore" : [ 1526 ],
+									"restore" : [ 69538 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -939,7 +939,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 576.0, 542.468261999999982, 120.0, 23.0 ],
+									"patching_rect" : [ 576.0, 542.468261999999982, 127.0, 23.0 ],
 									"text" : "receive~ #0-tune"
 								}
 
@@ -954,11 +954,12 @@
 									"patching_rect" : [ 214.600006000000008, 395.889403999999956, 58.0, 22.0 ],
 									"restore" : 									{
 										"dump" : [ 0.0 ],
-										"instrument" : [ 7 ],
+										"instrument" : [ 8 ],
 										"interval" : [ 1.0 ],
+										"kammerton" : [ 0 ],
 										"live.gain~" : [ -26.573827031951609 ],
 										"numfrets" : [ 19 ],
-										"numstrings" : [ 5 ],
+										"numstrings" : [ 6 ],
 										"onebang" : [ 1.0 ],
 										"pane" : [ 0, 0 ]
 									}
@@ -1088,8 +1089,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1382,8 +1383,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2347,8 +2348,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2519,6 +2520,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 13.0,
 													"id" : "obj-20",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -2604,7 +2606,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 353.0, 504.0, 189.0, 22.0 ],
-													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -3103,17 +3104,20 @@
 												"bgcolor" : [ 0.996, 0.996, 0.94, 1.0 ],
 												"fgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 												"linecolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-												"setWrap" : 1,
+												"setWrap" : "true",
 												"setZoom" : 0.5,
 												"setDurationalSpacingBase" : 0.7,
+												"setLoopingPlayback" : 0,
+												"showWholeNoteRestsInEmptyMeasures" : 0,
+												"showRhythmInProportionalNotation" : 0,
 												"staff-0" : 												{
 													"ledgerlines" : 1,
-													"style" : "Tablature|BP-double_bass",
+													"style" : "Tablature|guitar",
 													"micromap" : "mM-none",
 													"adjust" : -1,
 													"clef" : "TAB",
 													"ratio-lookup" : 0,
-													"staffgroup" : [ 0, 0 ],
+													"staffgroup" : [ 0, -1 ],
 													"abbrInstrName" : " ",
 													"instrumentNamePositionOffset" : 0
 												}
@@ -3154,12 +3158,12 @@
 ,
 												"5-string bass guitar" : 												{
 													"strings" : [ 23, 28, 33, 38, 43 ],
-													"fret-interval" : 1
+													"fret-interval" : 1.463
 												}
 ,
 												"5-string BP bass guitar" : 												{
 													"strings" : [ 23.640000000000001, 28.030000000000001, 32.420000000000002, 36.810000000000002, 41.200000000000003 ],
-													"fret-interval" : 1
+													"fret-interval" : 1.463
 												}
 ,
 												"guitar" : 												{
@@ -3168,7 +3172,7 @@
 												}
 ,
 												"BP-acoustic_guitar" : 												{
-													"strings" : [ 41.201500000000003, 45.590733, 49.979999999999997, 54.369190000000003, 58.758423000000001, 63.147655 ],
+													"strings" : [ 41.200000000000003, 45.590000000000003, 49.979999999999997, 54.369999999999997, 58.759999999999998, 63.149999999999999 ],
 													"fret-interval" : 1.463
 												}
 ,
@@ -3188,7 +3192,7 @@
 												}
 ,
 												"9-string BP electric" : 												{
-													"strings" : [ 36.810001, 41.200001, 45.590000000000003, 49.979999999999997, 54.369999, 58.759998000000003, 63.150002000000001, 67.540001000000004, 71.930000000000007 ],
+													"strings" : [ 36.810000000000002, 41.200000000000003, 45.590000000000003, 49.979999999999997, 54.369999999999997, 58.759999999999998, 63.149999999999999, 67.540000000000006, 71.930000000000007 ],
 													"fret-interval" : 1.46
 												}
 ,
@@ -3198,7 +3202,7 @@
 												}
 ,
 												"10-string 41-tone guitar" : 												{
-													"strings" : [ 31.536587000000001, 35.341464999999999, 39.146343000000002, 42.951220999999997, 46.756100000000004, 50.560974000000002, 54.365851999999997, 58.170731000000004, 61.975608999999999, 65.780486999999994 ],
+													"strings" : [ 31.539999999999999, 35.341999999999999, 39.149999999999999, 42.950000000000003, 46.759999999999998, 50.560000000000002, 54.369999999999997, 58.170000000000002, 61.979999999999997, 65.780000000000001 ],
 													"fret-interval" : 0.292688
 												}
 ,
@@ -3231,10 +3235,24 @@
 													"strings" : [ 23, 24, 26, 28, 29, 31, 33, 35, 36, 38, 40, 41, 43, 45, 50, 55, 59, 52, 57 ],
 													"fret-interval" : 1
 												}
+,
+												"BP Violin" : 												{
+													"strings" : [ 54.369999999999997, 61.689999999999998, 69, 76.319999999999993 ],
+													"fret-interval" : 1.463
+												}
+,
+												"BP Viola" : 												{
+													"strings" : [ 47.049999999999997, 54.369999999999997, 61.689999999999998, 69 ],
+													"fret-interval" : 1.463
+												}
+,
+												"BP Cello" : 												{
+													"strings" : [ 38.280000000000001, 44.130000000000003, 49.979999999999997, 55.829999999999998 ],
+													"fret-interval" : 1.463
+												}
 
 											}
- ],
-										"kammerton" : [ 0 ]
+ ]
 									}
 ,
 									"text" : "autopattr",
@@ -3522,7 +3540,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 507.100006000000008, 123.5, 411.0, 22.0 ],
-									"restore" : [ "1288-" ],
+									"restore" : [ "69296-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3630,7 +3648,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-43",
-									"items" : [ "monochord", ",", "dombra", ",", "domra", ",", "mandolin", ",", "bass guitar", ",", "BP-double_bass", ",", "5-string bass guitar", ",", "5-string BP bass guitar", ",", "guitar", ",", "BP-acoustic_guitar", ",", "7-string guitar", ",", "8-string guitar", ",", "9-string guitar", ",", "9-string BP electric", ",", "10-string guitar (Yepes)", ",", "10-string 41-tone guitar", ",", "11-string alto guitar", ",", "12-string classical guitar", ",", "13-string classical guitar", ",", "14-course archlute", ",", "15-course theorbo", ",", "19-course theorbo" ],
+									"items" : [ "monochord", ",", "dombra", ",", "domra", ",", "mandolin", ",", "bass guitar", ",", "BP-double_bass", ",", "5-string bass guitar", ",", "5-string BP bass guitar", ",", "guitar", ",", "BP-acoustic_guitar", ",", "7-string guitar", ",", "8-string guitar", ",", "9-string guitar", ",", "9-string BP electric", ",", "10-string guitar (Yepes)", ",", "10-string 41-tone guitar", ",", "11-string alto guitar", ",", "12-string classical guitar", ",", "13-string classical guitar", ",", "14-course archlute", ",", "15-course theorbo", ",", "19-course theorbo", ",", "BP Violin", ",", "BP Viola", ",", "BP Cello" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -4535,8 +4553,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4660,7 +4678,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 579.0, 114.5, 457.0, 22.0 ],
-									"restore" : [ 1526 ],
+									"restore" : [ 69538 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4884,7 +4902,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 579.0, 50.0, 411.0, 22.0 ],
-									"restore" : [ "1288-" ],
+									"restore" : [ "69296-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5690,8 +5708,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5761,8 +5779,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6033,8 +6051,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6102,8 +6120,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 191.333330666666654, 637.0, 222.0, 22.0 ],
-													"text" : "get picster-element[0]::val::child[1]::child"
+													"patching_rect" : [ 191.333330666666654, 637.0, 217.0, 22.0 ],
+													"text" : "get picster-element[0]::val::child[1]::text"
 												}
 
 											}
@@ -7895,8 +7913,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7954,8 +7972,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8226,14 +8244,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 231.0, 90.0, 735.0, 845.0 ],
+										"rect" : [ 231.0, 100.0, 735.0, 845.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -8282,8 +8300,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 191.333330666666654, 637.0, 222.0, 22.0 ],
-													"text" : "get picster-element[0]::val::child[1]::child"
+													"patching_rect" : [ 191.333330666666654, 637.0, 217.0, 22.0 ],
+													"text" : "get picster-element[0]::val::child[1]::text"
 												}
 
 											}
@@ -9323,14 +9341,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 351.0, 87.0, 1120.0, 874.0 ],
+						"rect" : [ 351.0, 100.0, 1120.0, 874.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -9418,8 +9436,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10071,7 +10089,7 @@
 , 														{
 															"new" : "text",
 															"id" : "text_1619550439577",
-															"child" : "2",
+															"text" : "0",
 															"x" : 7,
 															"y" : 6,
 															"font-family" : [ "Verdana" ],
@@ -10133,13 +10151,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-9",
-									"linecount" : 2,
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 49.0, 578.6634521484375, 485.0, 35.0 ],
-									"text" : "set picster-element[0]::val::child[0]::x $2, set picster-element[0]::val::child[0]::width $3, set picster-element[0]::val::child[1]::child $1, set picster-element[0]::val::child[1]::x $4, bang"
+									"patching_rect" : [ 49.0, 563.6634521484375, 249.0, 62.0 ],
+									"text" : "set picster-element[0]::val::child[0]::x $2, set picster-element[0]::val::child[0]::width $3, set picster-element[0]::val::child[1]::text $1, set picster-element[0]::val::child[1]::x $4, bang"
 								}
 
 							}
@@ -10669,7 +10687,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 386.400023999999974, 102.0, 264.0, 22.0 ],
-					"restore" : [ 30.959999084472656, 0, 0, "false", 64, 0, 0, 0, 124, 0.5, "note", 0 ],
+					"restore" : [ 65, 0, 0, "false", 77, 0, 0, 0, 132, 0.5, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10739,7 +10757,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 565.0, 446.0, 250.0, 22.0 ],
-					"restore" : [ "send" ],
+					"restore" : [ "send", "parent::tablature::map" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10826,7 +10844,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 6.0, 128.5, 216.0, 22.0 ],
-					"restore" : [ 30.959999084472656, 0 ],
+					"restore" : [ 64.0, 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
