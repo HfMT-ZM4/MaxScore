@@ -3121,6 +3121,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			if (svggroupflag == false) svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")";
 				switch (picster.get("new")) {
 				case "g" :
+				//post("picster", picster.stringify(), "\n");
 				if (Array.isArray(picster.get("child"))) for (var i = 0; i < picster.get("child").length; i++) {
 				if (picster.contains("child[" + i + "]::style")){
 					if (picster.get("child[" + i + "]::style::stroke") == "$FRGB") picster.replace("child[" + i + "]::style::stroke", frgb); 
@@ -3267,7 +3268,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				);					
 				}
 				else if (!href.indexOf("reference")) { //if "reference" is at index 0
-				//post("picster", picster.stringify(), "\n");
 				var reference = href.slice(href.indexOf(":") + 1);
 				SVGImages[s + 1].push({
 				"new" : "image",
@@ -3294,8 +3294,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				}
 				else {
 				imgtype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
- 				//SVGImages[s + 1].push([imgtype, picster.get("href"), picster.get("x"), picster.get("y"), picster.get("width"), picster.get("height"), [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest]]);
-				SVGImages[s + 1].push({
+ 				SVGImages[s + 1].push({
 				"new" : "image",
 				"id" : imgtype + "-" + idcount++,
 				"x" : picster.get("x"),
@@ -3325,7 +3324,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 function iterateGroup(obj)
 {
 	for (var i = 0; i < obj.child.length; i++) {
-	if (obj.child[i].hasOwnProperty("child")) {
+	if (obj.child[i].hasOwnProperty("child") && obj.child[i].new == "text")  {
 		obj.child[i].text = obj.child[i].child;	
 		delete obj.child[i].child;
 	}

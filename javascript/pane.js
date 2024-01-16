@@ -357,7 +357,6 @@ function obj_ref(o)
 	svg += ds2svg(embeddedImages);
 	svg += "</g>";
 	svg += "</svg>";
-	//post("picster", svg, "\n");
 	embedded.setsvg(svg);
 
 	var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
