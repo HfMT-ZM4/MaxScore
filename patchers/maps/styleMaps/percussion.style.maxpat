@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 192.0, 164.0, 854.0, 582.0 ],
+		"rect" : [ 624.0, 213.0, 854.0, 582.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -174,8 +174,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -746,14 +746,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"openrect" : [ 389.0, 255.0, 255.0, 482.0 ],
+						"openrect" : [ 389.0, 255.0, 255.0, 444.365589737892151 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -783,6 +783,32 @@
 						"assistshowspatchername" : 0,
 						"title" : "Percussion Map",
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial ",
+									"id" : "obj-8",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 84.634388327598572, 366.010758996009827, 212.0, 20.0 ],
+									"text" : "setParent editor 0 30 0 0, autoadjust 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial ",
+									"id" : "obj-14",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 84.912159323692322, 335.510758996009827, 58.0, 20.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "button",
@@ -847,7 +873,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 511.166656494140625, 36.0, 219.0, 20.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 2.0, 30.0, 248.0, 20.0 ],
+									"presentation_rect" : [ 2.0, 36.0, 248.0, 20.0 ],
 									"rounded" : 0.0,
 									"segmented" : 1,
 									"tabcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
@@ -909,9 +935,9 @@
 									"numoutlets" : 4,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 21.0, 445.0, 256.0, 60.0 ],
+									"patching_rect" : [ -7.00000508626303, 454.0, 256.0, 60.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 0.083251953125, 298.0, 256.0, 60.0 ],
+									"presentation_rect" : [ -0.083251953125, 264.0, 256.0, 60.0 ],
 									"prototypename" : "bcanvas",
 									"varname" : "bcanvas[1]",
 									"viewvisibility" : 1
@@ -1023,7 +1049,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 238.333328247070312, 601.0, 72.0, 21.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 2.083251953125, 265.3402099609375, 52.0, 21.0 ],
+									"presentation_rect" : [ 2.0, 237.3402099609375, 52.0, 21.0 ],
 									"text" : "Events:",
 									"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ]
 								}
@@ -1174,7 +1200,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 645.1666259765625, 86.313232421875, 89.0, 23.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 110.083251953125, 266.3402099609375, 139.916748046875, 23.0 ],
+									"presentation_rect" : [ 110.0, 236.3402099609375, 139.916748046875, 23.0 ],
 									"textcolor" : [ 1.0, 0.984313725490196, 0.984313725490196, 1.0 ]
 								}
 
@@ -1190,14 +1216,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 879.0, 181.0, 747.0, 576.0 ],
+										"rect" : [ 731.0, 181.0, 747.0, 576.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1657,7 +1683,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 26.0, 355.0, 208.333328247070312, 22.0 ],
+									"patching_rect" : [ 26.0, 307.688169956207275, 208.333328247070312, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1691,7 +1717,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 107.0, 536.148681640625, 145.0, 21.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 2.0, 1.0, 105.0, 21.0 ],
+									"presentation_rect" : [ 2.0, 7.0, 105.0, 21.0 ],
 									"text" : "Percussion Map:",
 									"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ]
 								}
@@ -1710,7 +1736,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 26.0, 662.0, 118.0, 22.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 179.0, 365.0902099609375, 71.0, 22.0 ],
+									"presentation_rect" : [ 178.916748046875, 331.0902099609375, 71.0, 22.0 ],
 									"rounded" : 0.0,
 									"text" : "<none>",
 									"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ],
@@ -1728,7 +1754,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 26.0, 631.0, 71.0, 21.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 129.0, 364.0902099609375, 40.0, 21.0 ],
+									"presentation_rect" : [ 128.916748046875, 330.0902099609375, 40.0, 21.0 ],
 									"text" : "Alias:",
 									"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ]
 								}
@@ -1745,8 +1771,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2597,8 +2623,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2775,8 +2801,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3319,8 +3345,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3923,7 +3949,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 377.166656494140625, 35.851318359375, 100.0, 20.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 71.625, 446.8402099609375, 100.0, 20.0 ],
+									"presentation_rect" : [ 71.541748046875, 416.8402099609375, 100.0, 20.0 ],
 									"text" : "Add Map",
 									"textcolor" : [ 1.0, 0.984313725490196, 0.984313725490196, 1.0 ],
 									"texton" : "",
@@ -4168,7 +4194,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 784.5, 371.0, 140.0, 23.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 110.083251953125, 1.0, 139.916748046875, 23.0 ],
+									"presentation_rect" : [ 110.083251953125, 7.0, 139.916748046875, 23.0 ],
 									"textcolor" : [ 1.0, 0.984313725490196, 0.984313725490196, 1.0 ],
 									"varname" : "umenu"
 								}
@@ -4286,7 +4312,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 525.5, 153.33544921875, 457.0, 22.0 ],
-									"restore" : [ 5219 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4372,7 +4398,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 26.0, 567.0, 118.0, 22.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 53.083251953125, 366.0902099609375, 72.0, 19.0 ],
+									"presentation_rect" : [ 53.0, 332.0902099609375, 72.0, 19.0 ],
 									"rounded" : 0.0,
 									"text" : "Triangle",
 									"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ],
@@ -4390,7 +4416,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 26.0, 536.0, 72.0, 21.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 1.083251953125, 364.0902099609375, 47.0, 21.0 ],
+									"presentation_rect" : [ 1.0, 330.0902099609375, 47.0, 21.0 ],
 									"text" : "Name:",
 									"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ]
 								}
@@ -4409,7 +4435,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 158.5, 631.0, 54.0, 23.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 83.083251953125, 416.0902099609375, 42.0, 23.0 ],
+									"presentation_rect" : [ 83.0, 382.0902099609375, 42.0, 23.0 ],
 									"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ],
 									"tricolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 									"varname" : "below"
@@ -4429,7 +4455,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 213.333328247070312, 631.0, 97.0, 23.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 143.083251953125, 416.0902099609375, 78.0, 22.0 ],
+									"presentation_rect" : [ 143.0, 382.0902099609375, 78.0, 22.0 ],
 									"rounded" : 0.0,
 									"text" : "none",
 									"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ],
@@ -4451,7 +4477,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 99.0, 631.0, 54.0, 23.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 21.4166259765625, 416.0902099609375, 42.0, 23.0 ],
+									"presentation_rect" : [ 21.3333740234375, 382.0902099609375, 42.0, 23.0 ],
 									"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ],
 									"tricolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 									"varname" : "above"
@@ -4467,7 +4493,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 26.0, 601.0, 197.0, 21.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 21.4166259765625, 392.0902099609375, 197.0, 21.0 ],
+									"presentation_rect" : [ 21.3333740234375, 358.0902099609375, 197.0, 21.0 ],
 									"text" : "Staff lines (above/below/hidden):",
 									"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ]
 								}
@@ -4624,9 +4650,9 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "list", "", "", "" ],
 									"outmode" : 1,
-									"patching_rect" : [ 26.0, 117.0, 254.0, 204.0 ],
+									"patching_rect" : [ 26.0, 85.0, 254.0, 204.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 1.0, 60.3402099609375, 254.0, 199.0 ],
+									"presentation_rect" : [ 1.0, 66.3402099609375, 254.0, 163.0 ],
 									"rows" : 47,
 									"sccolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 									"selmode" : 3,
@@ -4672,18 +4698,6 @@
 									"presentation_rect" : [ 771.0, 81.851318359375, 288.16650390625, 236.648681640625 ],
 									"proportion" : 0.5,
 									"rounded" : 0
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-14",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 247.083328247070312, 78.148681640625, 29.5, 22.0 ],
-									"text" : "col"
 								}
 
 							}
@@ -4903,7 +4917,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
+									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -5224,7 +5238,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-214", 1 ],
-									"midpoints" : [ 524.166748046875, 459.0, 290.500038146972656, 459.0, 290.500038146972656, 344.0, 224.833328247070312, 344.0 ],
+									"midpoints" : [ 524.166748046875, 459.0, 290.500038146972656, 459.0, 290.500038146972656, 297.763438820838928, 224.833328247070312, 297.763438820838928 ],
 									"source" : [ "obj-42", 3 ]
 								}
 
@@ -5389,6 +5403,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-148", 0 ],
 									"source" : [ "obj-79", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-8", 0 ]
 								}
 
 							}
@@ -5644,7 +5665,7 @@
 ,
 					"patching_rect" : [ 232.0, 33.0, 134.1500244140625, 53.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 261.1500244140625, 471.0 ],
+					"presentation_rect" : [ 0.0, 1.0, 261.1500244140625, 481.0 ],
 					"varname" : "editor",
 					"viewvisibility" : 1
 				}
@@ -5756,7 +5777,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 476.955596923828125, 86.0, 264.0, 22.0 ],
-					"restore" : [ 71, 0, 0, "false", 71, 0, 0, 0, 128, 0.5, "note", 0 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6623,6 +6644,239 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "MaxScore.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../../abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "MaxScore.rxml.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "MaxScoreKeyMap.txt",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
+				"patcherrelativepath" : "..",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "boxSize.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "djsterNotation.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
+				"patcherrelativepath" : "../../../jsextensions",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "htmlEntities.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "image2drawsocket.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/image2drawsocket",
+				"patcherrelativepath" : "../../node.js/image2drawsocket",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "iswindows.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../../abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "jit.pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "max-opentype.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/max-opentype",
+				"patcherrelativepath" : "../../node.js/max-opentype",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.bcanvas.hub.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.bcanvas.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../../abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.bindtoID.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.messagehub.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.proportionalNotation.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.rapidXML.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../../abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.rapidxml.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../../abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.setNoteIntervalAttribute.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.tools.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
+				"patcherrelativepath" : "../../../jsextensions",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mouseEvents.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "musicxml2jmsl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../../abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mxj.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "my-LtoColl.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m.max-fs.js",
+				"bootpath" : "C74:/packages/Node for Max/examples/filesystem",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m_musicxml2jmsl.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
+				"patcherrelativepath" : "../../node.js/musicxml2jmsl",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "packback.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../../abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "picster-init.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "picster-select.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "removeAllTablatureMessages.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "render2canvas.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "socket.pane.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "swissarmyknife.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{
