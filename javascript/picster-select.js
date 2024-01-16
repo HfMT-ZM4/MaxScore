@@ -2683,7 +2683,15 @@ function findBoundsToo(d)
 	var renderOffset = [600, 600];
 	//post("pre-D", JSON.stringify(d), "\n");
 	if (Array.isArray(d)) {
-		if (d[0].new == "text" && d[0].text.indexOf("||") != -1) d[0] = splitText(d[0]);
+		if (d[0].new == "text") {
+			if (d[0].hasOwnProperty("text")) {
+				if (d[0].text.indexOf("||") != -1) d[0] = splitText(d[0]);
+			}
+			else if (d[0].hasOwnProperty("child")) {
+				d[0].text = d[0].child;	
+				delete d[0].child;
+			}
+		}
 		if (d[0].new == "image" && !d[0]["xlink:href"].indexOf("reference")) {
 			d[0]["xlink:href"] = "data:image/png;base64," + imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("");
 		}
@@ -2711,7 +2719,14 @@ function findBoundsToo(d)
 function iterateGroup(obj)
 {
 	for (var i = 0; i < obj.child.length; i++) {
-	if (obj.child[i].hasOwnProperty("text") && obj.child[i].text.indexOf("||") != -1) obj.child[i] = splitText(obj.child[i]); 	
+	if (obj.child[i].hasOwnProperty("child") && obj.child[i].new == "text")  {
+		obj.child[i].text = obj.child[i].child;	
+		delete obj.child[i].child;
+	}
+	if (obj.child[i].hasOwnProperty("text")) {
+		if (typeof obj.child[i].text != "string") return;
+		if (obj.child[i].text.indexOf("||") != -1) obj.child[i] = splitText(obj.child[i]); 	
+	}
 	if (obj.child[i].hasOwnProperty("child")) iterateGroup(obj.child[i]);
 	}
 }
