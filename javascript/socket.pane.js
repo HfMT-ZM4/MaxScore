@@ -867,15 +867,15 @@ function cursor()
 
 function playhead(x)
 {
-	playheadPosition = x
+	playheadPosition = x;
 }
 
 function renderPlayhead()
 {
-			//post("groupcount", groupcount, "\n");
 			var color = [0.2, 1, 0.2, 1];
 			if (prop) var fill_opacity = (playheadPosition == 0) ? 0 : Math.round(color[3] * 255);
 			else var fill_opacity = 0;
+			post("prop", prop, playheadPosition, fill_opacity, "\n");
 			for (var s = 0; s < groupcount; s++)
 			{
 			jcursors[s + 1] = {};			
