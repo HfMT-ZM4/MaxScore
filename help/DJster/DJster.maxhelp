@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 972.0, 721.0 ],
+		"rect" : [ 34.0, 100.0, 972.0, 721.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,8 +46,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 447.0, 504.600006000000008, 119.0, 22.0 ],
-					"text" : "varname Djster.µbus"
+					"patching_rect" : [ 447.0, 504.600006000000008, 119.0, 22.0 ]
 				}
 
 			}
@@ -68,11 +67,12 @@
 					"id" : "obj-49",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 391.0, 504.600006000000008, 50.5, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -89,7 +89,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 805.0, 645.0, 85.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "dump_params"
 				}
 
@@ -101,7 +100,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 700.0, 57.476189255714417, 252.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "replaces the pitch set for a given scale name"
 				}
 
@@ -114,7 +112,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 219.0, 45.476189255714417, 326.0, 33.0 ],
-					"presentation_linecount" : 5,
 					"text" : "name and cent values. These values will be converted into a pitch set spanning the range from -9600 to 9600 cents"
 				}
 
@@ -150,7 +147,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 359.271461571520376, 346.600006000000008, 102.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "pulse # and indispensability"
 				}
 
@@ -185,7 +181,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 312.271461571520376, 384.0, 50.0, 22.0 ],
-					"text" : "1 7"
+					"text" : "4 1"
 				}
 
 			}
@@ -652,21 +648,24 @@
 , 			{
 				"box" : 				{
 					"data" : 					{
-						"1" : [ 0, 1, 1, 0 ],
-						"2" : [ 100, 1, 1, 0 ],
-						"3" : [ 700, 1, 1, 0 ],
-						"4" : [ 600, 1, 1, 0 ],
-						"5" : [ 1100, 1, 1, 0 ]
+						"1" : [ 0, 1, 1, -1 ],
+						"2" : [ 100, 1, 1, -2 ],
+						"3" : [ 700, 1, 1, -3 ],
+						"4" : [ 600, 1, 1, -4 ],
+						"5" : [ 1100, 1, 1, -5 ],
+						"6" : [ 500, 1, 1, -6 ],
+						"7" : [ 600, 1, 1, -7 ]
 					}
 ,
 					"id" : "obj-100",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 635.0, 56.476189255714417, 50.5, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 1,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -1063,8 +1062,8 @@
  ],
 		"parameters" : 		{
 			"obj-55::obj-1" : [ "Outset Pulses", "Outset Pulses", 0 ],
-			"obj-55::obj-104" : [ "umenu", "umenu", 0 ],
-			"obj-55::obj-109" : [ "stream", "stream", 0 ],
+			"obj-55::obj-104" : [ "umenu", "Tonality Profile", 0 ],
+			"obj-55::obj-109" : [ "stream", "Play", 0 ],
 			"obj-55::obj-11" : [ "Eventfulness", "Eventfulness", 0 ],
 			"obj-55::obj-110" : [ "Event Length Percent", "Event Length", 0 ],
 			"obj-55::obj-122" : [ "Choice", "Choice", 0 ],
@@ -1072,8 +1071,10 @@
 			"obj-55::obj-13" : [ "Melody Scope", "Melody Scope", 0 ],
 			"obj-55::obj-136" : [ "Sorted", "Sorted", 0 ],
 			"obj-55::obj-155" : [ "Use Transport", "Use Transport", 0 ],
-			"obj-55::obj-158" : [ "Subdivisions", "Subdivisions", 0 ],
+			"obj-55::obj-158" : [ "Subdivisions", "Subdivision", 0 ],
 			"obj-55::obj-16" : [ "Scale", "Scale", 0 ],
+			"obj-55::obj-187" : [ "meters", "meters", 0 ],
+			"obj-55::obj-188" : [ "Pitchsets", "Pitchsets", 0 ],
 			"obj-55::obj-206" : [ "Chordal Weight", "Chordal Weight", 0 ],
 			"obj-55::obj-217" : [ "Overlap", "Overlap", 0 ],
 			"obj-55::obj-22" : [ "Pulse Length", "Pulse Length", 0 ],
@@ -1083,17 +1084,16 @@
 			"obj-55::obj-27" : [ "Dynamics", "Dynamics", 0 ],
 			"obj-55::obj-28" : [ "Attenuation", "Attenuation", 0 ],
 			"obj-55::obj-29" : [ "Ostinato", "Ostinato", 0 ],
-			"obj-55::obj-30" : [ "Scales", "Scales", 0 ],
+			"obj-55::obj-32" : [ "live.text[1]", "Clear Scales", 0 ],
 			"obj-55::obj-47" : [ "Silent Downbeat", "Silent Downbeat", 0 ],
-			"obj-55::obj-49" : [ "live.button", "live.button", 0 ],
+			"obj-55::obj-49" : [ "live.button", "Sync", 0 ],
 			"obj-55::obj-5" : [ "Metriclarity", "Metriclarity", 0 ],
 			"obj-55::obj-52" : [ "Tonic Pitch", "Tonic Pitch", 0 ],
+			"obj-55::obj-53" : [ "Precision", "Precision", 0 ],
+			"obj-55::obj-56" : [ "Precision[1]", "Preset Tab", 0 ],
 			"obj-55::obj-77" : [ "Cohesion", "Melodic Cohesion", 0 ],
 			"obj-55::obj-87" : [ "menu", "menu", 0 ],
-			"obj-55::obj-88" : [ "live.text", "Open Scala Browser", 0 ],
-			"obj-55::obj-95::obj-110" : [ "Scales[1]", "Scales", 0 ],
-			"obj-55::obj-96::obj-51" : [ "Meters", "Meters", 0 ],
-			"obj-55::obj-96::obj-84" : [ "Meters[1]", "Meters", 0 ],
+			"obj-55::obj-88" : [ "live.text", "Scala Browser", 0 ],
 			"obj-70::obj-10" : [ "live.text[41]", "live.text", 0 ],
 			"obj-70::obj-11" : [ "mc.live.gain~[3]", "mc.live.gain~", 0 ],
 			"obj-70::obj-24::obj-10::obj-7" : [ "sound[24]", "sound", 0 ],
@@ -1141,6 +1141,10 @@
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-55::obj-1" : 				{
+					"parameter_range" : [ 1, 4 ]
+				}
+,
 				"obj-55::obj-110" : 				{
 					"parameter_initial" : 100,
 					"parameter_longname" : "Event Length Percent",
@@ -1148,10 +1152,26 @@
 					"parameter_unitstyle" : 5
 				}
 ,
+				"obj-55::obj-13" : 				{
+					"parameter_unitstyle" : 7
+				}
+,
 				"obj-55::obj-16" : 				{
 					"parameter_invisible" : 0,
 					"parameter_modmode" : 0,
 					"parameter_unitstyle" : 10
+				}
+,
+				"obj-55::obj-25" : 				{
+					"parameter_unitstyle" : 8
+				}
+,
+				"obj-55::obj-26" : 				{
+					"parameter_unitstyle" : 7
+				}
+,
+				"obj-55::obj-52" : 				{
+					"parameter_unitstyle" : 8
 				}
 ,
 				"obj-55::obj-77" : 				{
@@ -1176,8 +1196,8 @@
 			}
 , 			{
 				"name" : "AdditiveMeter2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1197,77 +1217,80 @@
 			}
 , 			{
 				"name" : "Inner-Equation.5.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Inside.3.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Mod.2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pof_(Qi)(i=0toz-r-1).2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pof_(Qj)(j=1toz).2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pof_(Qz+1-k)(k=0tor).2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Qz+1-k2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Qz-r2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "TIE.7.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Total-Internal-Equation.6.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bytecount.mxo",
-				"type" : "iLaX"
+				"name" : "bytecount.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
+				"patcherrelativepath" : "../../patchers/DJster/core",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "composite-meters.txt",
@@ -1278,15 +1301,15 @@
 			}
 , 			{
 				"name" : "dispenser.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
+				"patcherrelativepath" : "../../patchers/DJster/core",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1299,8 +1322,8 @@
 			}
 , 			{
 				"name" : "dumper.2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1404,6 +1427,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "platform.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "primefactors.txt",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps/microMaps",
 				"patcherrelativepath" : "../../patchers/maps/microMaps",
@@ -1419,15 +1449,15 @@
 			}
 , 			{
 				"name" : "reader.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "reader2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
-				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
+				"patcherrelativepath" : "../../patchers/DJster/dispenser",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1447,13 +1477,6 @@
 			}
 , 			{
 				"name" : "scriptingname.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "swissarmyknife.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",

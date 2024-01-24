@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 109.0, 154.0, 640.0, 480.0 ],
+		"rect" : [ 100.0, 100.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,12 +49,13 @@
 					"id" : "obj-1",
 					"linecount" : 3,
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 207.0, 124.0, 223.0, 196.0 ],
+					"patching_rect" : [ 203.5, 138.0, 223.0, 196.0 ],
 					"presentation_linecount" : 3,
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
@@ -86,6 +87,9 @@
 							"origname" : "~/Music/Ableton/User Library/LiveScore/LiveScore.Hub.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
+									"Pitch Bend Range" : 48.0,
+									"enable MPE" : 0.0,
+									"live.text" : 0.0,
 									"blob" : 									{
 										"live-path" : [ 0.0 ],
 										"live-path[1]" : [ 0.0 ],
@@ -96,7 +100,8 @@
 								}
 
 							}
-
+,
+							"active" : 1
 						}
 ,
 						"snapshotlist" : 						{
@@ -115,6 +120,9 @@
 										"origname" : "~/Music/Ableton/User Library/LiveScore/LiveScore.Hub.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
+												"Pitch Bend Range" : 48.0,
+												"enable MPE" : 0.0,
+												"live.text" : 0.0,
 												"blob" : 												{
 													"live-path" : [ 0.0 ],
 													"live-path[1]" : [ 0.0 ],
@@ -125,7 +133,8 @@
 											}
 
 										}
-
+,
+										"active" : 1
 									}
 ,
 									"fileref" : 									{
@@ -172,13 +181,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "LiveScore.Hub.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../../../hajdu/Documents/Max 8/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "LiveScore.Hub.amxd",
 				"bootpath" : "~/Music/Ableton/User Library/LiveScore",
 				"patcherrelativepath" : "../../../../../hajdu/Music/Ableton/User Library/LiveScore",
@@ -186,13 +188,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "M4L.api.DeviceParameter.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
+				"name" : "LiveScore.Hub.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../../../hajdu/Documents/Max 8/Snapshots",
+				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "M4L.api.SaveLivePath.maxpat",
+				"name" : "M4L.api.DeviceParameter.maxpat",
 				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
@@ -204,29 +207,56 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "M4L.api.SaveInteger.maxpat",
-				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "M4L.api.GetParameterNames.maxpat",
 				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "index-player.maxpat",
+				"name" : "M4L.api.SaveInteger.maxpat",
+				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "M4L.api.SaveLivePath.maxpat",
+				"bootpath" : "C74:/patchers/m4l/LiveAPI resources/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Scorepion-Tail-blue.svg",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"patcherrelativepath" : "../media/Images/svg",
+				"type" : "svg",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "divmod.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Scorepion-Tail-black.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
-				"patcherrelativepath" : "../media/Images/svg",
-				"type" : "svg",
+				"name" : "live-params-player.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.note2midi.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "packback.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
  ],

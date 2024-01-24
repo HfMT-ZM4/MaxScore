@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 2,
+			"minor" : 6,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -68,8 +68,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 2,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -450,8 +450,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 2,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -990,7 +990,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 493.0, 58.0, 134.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 445.4554443359375, 499.513127360182352, 237.5445556640625, 18.0 ]
+					"presentation_rect" : [ 445.18316650390625, 498.013127360182352, 237.5445556640625, 18.0 ]
 				}
 
 			}
@@ -1021,7 +1021,7 @@
 					"patching_rect" : [ 236.0, 18.0, 455.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 445.4554443359375, 496.513127360182352, 237.0, 21.0 ],
-					"text" : "© 2023, Georg Hajdu & Nick Didkovsky",
+					"text" : "© 2024, Georg Hajdu & Nick Didkovsky",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ],
 					"textjustification" : 2
 				}
