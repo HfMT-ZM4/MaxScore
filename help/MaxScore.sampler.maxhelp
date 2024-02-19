@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 243.0, 882.0, 570.0 ],
+		"rect" : [ 100.0, 100.0, 1099.0, 570.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,14 +69,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 269.0, 882.0, 544.0 ],
+						"rect" : [ 100.0, 126.0, 1099.0, 544.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -107,13 +107,95 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-22",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 164.0, 186.0, 105.0, 22.0 ],
+									"text" : "bank sine.bank.txt"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-21",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 636.0, 152.5, 164.0, 20.0 ],
+									"text" : "with additional panning info"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-20",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 630.5, 186.0, 175.0, 22.0 ],
+									"text" : "instrument Bell-2.instr 2 3 -50 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-18",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 462.5, 146.0, 164.0, 33.0 ],
+									"text" : "with additional info for audio  output channels"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-17",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 310.0, 152.5, 145.0, 20.0 ],
+									"text" : "set instrument for voice 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-15",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 463.5, 186.0, 155.0, 22.0 ],
+									"text" : "instrument Bell-2.instr 2 3 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-24",
 									"maxclass" : "number",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 515.0, 186.0, 50.0, 22.0 ]
+									"patching_rect" : [ 516.0, 219.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -126,7 +208,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 405.0, 265.0, 82.0, 22.0 ],
+									"patching_rect" : [ 406.0, 249.0, 82.0, 22.0 ],
 									"text" : "note 6000 0 2"
 								}
 
@@ -140,7 +222,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 405.0, 239.0, 89.0, 22.0 ],
+									"patching_rect" : [ 406.0, 223.0, 89.0, 22.0 ],
 									"text" : "note 6000 72 2"
 								}
 
@@ -150,10 +232,11 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-37",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 515.0, 161.0, 217.0, 20.0 ],
+									"patching_rect" : [ 651.0, 242.0, 125.0, 33.0 ],
 									"text" : "polyphonic pitchbend deviation in cents"
 								}
 
@@ -167,8 +250,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 309.0, 186.0, 157.0, 22.0 ],
-									"text" : "instrument Dreamers.instr 1"
+									"patching_rect" : [ 310.0, 186.0, 135.0, 22.0 ],
+									"text" : "instrument Bell-2.instr 1"
 								}
 
 							}
@@ -181,21 +264,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 44.0, 186.0, 119.0, 22.0 ],
-									"text" : "bank tutorial.bank.txt"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-25",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 515.0, 241.0, 257.0, 20.0 ],
-									"text" : "per channel pitch deviation and volume control"
+									"patching_rect" : [ 45.0, 186.0, 117.0, 22.0 ],
+									"text" : "bank bells.bank.json"
 								}
 
 							}
@@ -208,36 +278,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 515.0, 214.0, 124.0, 22.0 ],
+									"patching_rect" : [ 516.0, 249.0, 124.0, 22.0 ],
 									"text" : "polybend 6000 $1 0 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-17",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 309.0, 213.0, 91.0, 22.0 ],
-									"text" : "panorama $1 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-15",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 515.0, 265.0, 81.0, 22.0 ],
-									"text" : "bend 80 72 1"
 								}
 
 							}
@@ -250,7 +292,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 309.0, 265.0, 84.0, 22.0 ],
+									"patching_rect" : [ 310.0, 249.0, 84.0, 22.0 ],
 									"text" : "note 6000 0 1"
 								}
 
@@ -264,7 +306,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 309.0, 239.0, 91.0, 22.0 ],
+									"patching_rect" : [ 310.0, 223.0, 91.0, 22.0 ],
 									"text" : "note 6000 72 1"
 								}
 
@@ -275,7 +317,7 @@
 									"maxclass" : "mc.ezdac~",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 44.0, 487.0, 45.0, 45.0 ],
+									"patching_rect" : [ 45.0, 481.0, 45.0, 45.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 233.0, 51.0, 45.0, 45.0 ]
 								}
@@ -289,7 +331,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 147.0, 218.0, 150.0, 20.0 ],
+									"patching_rect" : [ 148.0, 227.0, 150.0, 20.0 ],
 									"text" : "stop all sound"
 								}
 
@@ -303,7 +345,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 44.0, 217.0, 39.0, 22.0 ],
+									"patching_rect" : [ 45.0, 223.0, 39.0, 22.0 ],
 									"text" : "panic"
 								}
 
@@ -316,7 +358,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 147.0, 250.0, 150.0, 20.0 ],
+									"patching_rect" : [ 148.0, 250.0, 150.0, 20.0 ],
 									"text" : "read and write settings file"
 								}
 
@@ -330,7 +372,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 90.0, 249.0, 36.0, 22.0 ],
+									"patching_rect" : [ 91.0, 249.0, 36.0, 22.0 ],
 									"text" : "write"
 								}
 
@@ -344,7 +386,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 44.0, 249.0, 35.0, 22.0 ],
+									"patching_rect" : [ 45.0, 249.0, 35.0, 22.0 ],
 									"text" : "read"
 								}
 
@@ -365,7 +407,7 @@
 									"numoutlets" : 2,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "multichannelsignal", "dictionary" ],
-									"patching_rect" : [ 44.0, 310.0, 806.0, 167.0 ],
+									"patching_rect" : [ 45.0, 296.0, 837.0, 175.0 ],
 									"varname" : "maxscore.sampler",
 									"viewvisibility" : 1
 								}
@@ -424,7 +466,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"hidden" : 1,
-									"source" : [ "obj-17", 0 ]
+									"source" : [ "obj-19", 0 ]
 								}
 
 							}
@@ -432,7 +474,15 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"hidden" : 1,
-									"source" : [ "obj-19", 0 ]
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-22", 0 ]
 								}
 
 							}
@@ -544,14 +594,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 882.0, 544.0 ],
+						"rect" : [ 0.0, 26.0, 1099.0, 544.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -603,100 +653,164 @@
 			"obj-2::obj-3::obj-10" : [ "live.text[24]", "live.text", 0 ],
 			"obj-2::obj-3::obj-2" : [ "live.text[38]", "live.text", 0 ],
 			"obj-2::obj-3::obj-23" : [ "live.tab", "live.tab", 0 ],
+			"obj-2::obj-3::obj-24::obj-36::obj-17" : [ "Pan[31]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-36::obj-25" : [ "Instrument[31]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-36::obj-39" : [ "892206-stored-instrument[36]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-36::obj-7" : [ "live.menu[57]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-36::obj-8" : [ "live.menu[56]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-37::obj-17" : [ "Pan[30]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-37::obj-25" : [ "Instrument[30]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-37::obj-39" : [ "892206-stored-instrument[30]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-37::obj-7" : [ "live.menu[55]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-37::obj-8" : [ "live.menu[54]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-38::obj-17" : [ "Pan[29]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-38::obj-25" : [ "Instrument[29]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-38::obj-39" : [ "892206-stored-instrument[29]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-38::obj-7" : [ "live.menu[68]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-38::obj-8" : [ "live.menu[53]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-39::obj-17" : [ "Pan[28]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-39::obj-25" : [ "Instrument[28]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-39::obj-39" : [ "892206-stored-instrument[28]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-39::obj-7" : [ "live.menu[67]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-39::obj-8" : [ "live.menu[66]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-40::obj-17" : [ "Pan[27]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-40::obj-25" : [ "Instrument[27]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-40::obj-39" : [ "892206-stored-instrument[27]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-40::obj-7" : [ "live.menu[64]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-40::obj-8" : [ "live.menu[65]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-41::obj-17" : [ "Pan[26]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-41::obj-25" : [ "Instrument[26]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-41::obj-39" : [ "892206-stored-instrument[26]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-41::obj-7" : [ "live.menu[52]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-41::obj-8" : [ "live.menu[51]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-42::obj-17" : [ "Pan[25]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-42::obj-25" : [ "Instrument[25]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-42::obj-39" : [ "892206-stored-instrument[25]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-42::obj-7" : [ "live.menu[50]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-42::obj-8" : [ "live.menu[49]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-43::obj-17" : [ "Pan[24]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-43::obj-25" : [ "Instrument[24]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-43::obj-39" : [ "892206-stored-instrument[24]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-43::obj-7" : [ "live.menu[48]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-43::obj-8" : [ "live.menu[47]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-44::obj-17" : [ "Pan[23]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-44::obj-25" : [ "Instrument[23]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-44::obj-39" : [ "892206-stored-instrument[23]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-44::obj-7" : [ "live.menu[45]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-44::obj-8" : [ "live.menu[46]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-45::obj-17" : [ "Pan[22]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-45::obj-25" : [ "Instrument[22]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-45::obj-39" : [ "892206-stored-instrument[22]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-45::obj-7" : [ "live.menu[44]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-45::obj-8" : [ "live.menu[43]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-46::obj-17" : [ "Pan[21]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-46::obj-25" : [ "Instrument[21]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-46::obj-39" : [ "892206-stored-instrument[21]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-46::obj-7" : [ "live.menu[41]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-46::obj-8" : [ "live.menu[42]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-47::obj-17" : [ "Pan[20]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-47::obj-25" : [ "Instrument[20]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-47::obj-39" : [ "892206-stored-instrument[20]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-47::obj-7" : [ "live.menu[40]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-47::obj-8" : [ "live.menu[39]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-48::obj-17" : [ "Pan[19]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-48::obj-25" : [ "Instrument[19]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-48::obj-39" : [ "892206-stored-instrument[19]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-48::obj-7" : [ "live.menu[38]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-48::obj-8" : [ "live.menu[37]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-49::obj-17" : [ "Pan[18]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-49::obj-25" : [ "Instrument[18]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-49::obj-39" : [ "892206-stored-instrument[18]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-49::obj-7" : [ "live.menu[35]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-49::obj-8" : [ "live.menu[36]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-50::obj-17" : [ "Pan[17]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-50::obj-25" : [ "Instrument[17]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-50::obj-39" : [ "892206-stored-instrument[17]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-50::obj-7" : [ "live.menu[33]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-50::obj-8" : [ "live.menu[34]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-51::obj-17" : [ "Pan[16]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-51::obj-25" : [ "Instrument[16]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-51::obj-39" : [ "892206-stored-instrument[16]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-51::obj-7" : [ "live.menu[32]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-51::obj-8" : [ "live.menu[31]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-52::obj-17" : [ "Pan[15]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-52::obj-25" : [ "Instrument[15]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-52::obj-39" : [ "892206-stored-instrument[15]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-52::obj-7" : [ "live.menu[30]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-52::obj-8" : [ "live.menu[29]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-53::obj-17" : [ "Pan[14]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-53::obj-25" : [ "Instrument[14]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-53::obj-39" : [ "892206-stored-instrument[14]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-53::obj-7" : [ "live.menu[27]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-53::obj-8" : [ "live.menu[28]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-54::obj-17" : [ "Pan[13]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-54::obj-25" : [ "Instrument[13]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-54::obj-39" : [ "892206-stored-instrument[13]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-54::obj-7" : [ "live.menu[26]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-54::obj-8" : [ "live.menu[25]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-55::obj-17" : [ "Pan[12]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-55::obj-25" : [ "Instrument[12]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-55::obj-39" : [ "892206-stored-instrument[12]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-55::obj-7" : [ "live.menu[24]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-55::obj-8" : [ "live.menu[23]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-56::obj-17" : [ "Pan[11]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-56::obj-25" : [ "Instrument[11]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-56::obj-39" : [ "892206-stored-instrument[11]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-56::obj-7" : [ "live.menu[22]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-56::obj-8" : [ "live.menu[21]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-57::obj-17" : [ "Pan[10]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-57::obj-25" : [ "Instrument[10]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-57::obj-39" : [ "892206-stored-instrument[10]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-57::obj-7" : [ "live.menu[19]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-57::obj-8" : [ "live.menu[20]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-58::obj-17" : [ "Pan[9]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-58::obj-25" : [ "Instrument[9]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-58::obj-39" : [ "892206-stored-instrument[9]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-58::obj-7" : [ "live.menu[18]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-58::obj-8" : [ "live.menu[17]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-59::obj-17" : [ "Pan[8]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-59::obj-25" : [ "Instrument[8]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-59::obj-39" : [ "892206-stored-instrument[8]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-59::obj-7" : [ "live.menu[16]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-59::obj-8" : [ "live.menu[15]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-60::obj-17" : [ "Pan[7]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-60::obj-25" : [ "Instrument[7]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-60::obj-39" : [ "892206-stored-instrument[7]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-60::obj-7" : [ "live.menu[14]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-60::obj-8" : [ "live.menu[13]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-61::obj-17" : [ "Pan[6]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-61::obj-25" : [ "Instrument[6]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-61::obj-39" : [ "892206-stored-instrument[6]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-61::obj-7" : [ "live.menu[12]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-61::obj-8" : [ "live.menu[11]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-62::obj-17" : [ "Pan[5]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-62::obj-25" : [ "Instrument[5]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-62::obj-39" : [ "892206-stored-instrument[5]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-62::obj-7" : [ "live.menu[10]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-62::obj-8" : [ "live.menu[9]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-63::obj-17" : [ "Pan[4]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-63::obj-25" : [ "Instrument[4]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-63::obj-39" : [ "892206-stored-instrument[4]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-63::obj-7" : [ "live.menu[7]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-63::obj-8" : [ "live.menu[8]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-64::obj-17" : [ "Pan[3]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-64::obj-25" : [ "Instrument[3]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-64::obj-39" : [ "892206-stored-instrument[3]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-64::obj-7" : [ "live.menu[6]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-64::obj-8" : [ "live.menu[5]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-65::obj-17" : [ "Pan[2]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-65::obj-25" : [ "Instrument[2]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-65::obj-39" : [ "892206-stored-instrument[2]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-65::obj-7" : [ "live.menu[4]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-65::obj-8" : [ "live.menu[3]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-66::obj-17" : [ "Pan[1]", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-66::obj-25" : [ "Instrument[1]", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-66::obj-39" : [ "892206-stored-instrument[1]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-66::obj-7" : [ "live.menu[2]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-66::obj-8" : [ "live.menu[1]", "live.menu", 0 ],
+			"obj-2::obj-3::obj-24::obj-67::obj-17" : [ "Pan", "Pan", 0 ],
 			"obj-2::obj-3::obj-24::obj-67::obj-25" : [ "Instrument", "instrument", 0 ],
+			"obj-2::obj-3::obj-24::obj-67::obj-39" : [ "892206-stored-instrument[35]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-3::obj-24::obj-67::obj-7" : [ "live.menu[63]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-24::obj-67::obj-8" : [ "live.menu[62]", "live.menu", 0 ],
 			"obj-2::obj-3::obj-4" : [ "live.text[15]", "live.text", 0 ],
@@ -715,7 +829,7 @@
 			"obj-2::obj-3::obj-43::obj-17::obj-53::obj-76" : [ "live.numbox[8]", "live.numbox[4]", 0 ],
 			"obj-2::obj-3::obj-43::obj-17::obj-78" : [ "live.tab[9]", "live.tab[1]", 0 ],
 			"obj-2::obj-3::obj-43::obj-29" : [ "live.toggle[1]", "live.toggle", 0 ],
-			"obj-2::obj-3::obj-43::obj-89::obj-6" : [ "bank", "bank", 0 ],
+			"obj-2::obj-3::obj-43::obj-89::obj-49" : [ "dict", "dict", 0 ],
 			"obj-2::obj-3::obj-45" : [ "icon", "icon", 0 ],
 			"parameterbanks" : 			{
 
@@ -730,11 +844,15 @@
 					"parameter_longname" : "live.text[38]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-36::obj-17" : 				{
+					"parameter_longname" : "Pan[31]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-36::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[31]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -747,11 +865,15 @@
 					"parameter_longname" : "live.menu[56]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-37::obj-17" : 				{
+					"parameter_longname" : "Pan[30]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-37::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[30]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -764,11 +886,15 @@
 					"parameter_longname" : "live.menu[54]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-38::obj-17" : 				{
+					"parameter_longname" : "Pan[29]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-38::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[29]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -781,11 +907,15 @@
 					"parameter_longname" : "live.menu[53]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-39::obj-17" : 				{
+					"parameter_longname" : "Pan[28]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-39::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[28]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -798,11 +928,15 @@
 					"parameter_longname" : "live.menu[66]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-40::obj-17" : 				{
+					"parameter_longname" : "Pan[27]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-40::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[27]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -815,11 +949,15 @@
 					"parameter_longname" : "live.menu[65]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-41::obj-17" : 				{
+					"parameter_longname" : "Pan[26]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-41::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[26]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -832,11 +970,15 @@
 					"parameter_longname" : "live.menu[51]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-42::obj-17" : 				{
+					"parameter_longname" : "Pan[25]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-42::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[25]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -849,11 +991,15 @@
 					"parameter_longname" : "live.menu[49]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-43::obj-17" : 				{
+					"parameter_longname" : "Pan[24]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-43::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[24]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -866,11 +1012,15 @@
 					"parameter_longname" : "live.menu[47]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-44::obj-17" : 				{
+					"parameter_longname" : "Pan[23]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-44::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[23]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -883,11 +1033,15 @@
 					"parameter_longname" : "live.menu[46]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-45::obj-17" : 				{
+					"parameter_longname" : "Pan[22]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-45::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[22]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -900,11 +1054,15 @@
 					"parameter_longname" : "live.menu[43]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-46::obj-17" : 				{
+					"parameter_longname" : "Pan[21]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-46::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[21]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -917,11 +1075,15 @@
 					"parameter_longname" : "live.menu[42]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-47::obj-17" : 				{
+					"parameter_longname" : "Pan[20]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-47::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[20]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -934,11 +1096,15 @@
 					"parameter_longname" : "live.menu[39]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-48::obj-17" : 				{
+					"parameter_longname" : "Pan[19]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-48::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[19]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -951,11 +1117,15 @@
 					"parameter_longname" : "live.menu[37]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-49::obj-17" : 				{
+					"parameter_longname" : "Pan[18]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-49::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[18]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -968,11 +1138,15 @@
 					"parameter_longname" : "live.menu[36]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-50::obj-17" : 				{
+					"parameter_longname" : "Pan[17]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-50::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[17]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -985,11 +1159,15 @@
 					"parameter_longname" : "live.menu[34]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-51::obj-17" : 				{
+					"parameter_longname" : "Pan[16]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-51::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[16]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1002,11 +1180,15 @@
 					"parameter_longname" : "live.menu[31]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-52::obj-17" : 				{
+					"parameter_longname" : "Pan[15]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-52::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[15]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1019,11 +1201,15 @@
 					"parameter_longname" : "live.menu[29]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-53::obj-17" : 				{
+					"parameter_longname" : "Pan[14]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-53::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[14]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1036,11 +1222,15 @@
 					"parameter_longname" : "live.menu[28]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-54::obj-17" : 				{
+					"parameter_longname" : "Pan[13]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-54::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[13]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1053,11 +1243,15 @@
 					"parameter_longname" : "live.menu[25]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-55::obj-17" : 				{
+					"parameter_longname" : "Pan[12]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-55::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[12]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1070,11 +1264,15 @@
 					"parameter_longname" : "live.menu[23]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-56::obj-17" : 				{
+					"parameter_longname" : "Pan[11]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-56::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[11]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1087,11 +1285,15 @@
 					"parameter_longname" : "live.menu[21]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-57::obj-17" : 				{
+					"parameter_longname" : "Pan[10]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-57::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[10]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1104,11 +1306,15 @@
 					"parameter_longname" : "live.menu[20]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-58::obj-17" : 				{
+					"parameter_longname" : "Pan[9]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-58::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[9]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1121,11 +1327,15 @@
 					"parameter_longname" : "live.menu[17]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-59::obj-17" : 				{
+					"parameter_longname" : "Pan[8]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-59::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[8]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1138,11 +1348,15 @@
 					"parameter_longname" : "live.menu[15]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-60::obj-17" : 				{
+					"parameter_longname" : "Pan[7]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-60::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[7]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1155,11 +1369,15 @@
 					"parameter_longname" : "live.menu[13]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-61::obj-17" : 				{
+					"parameter_longname" : "Pan[6]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-61::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[6]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1172,11 +1390,15 @@
 					"parameter_longname" : "live.menu[11]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-62::obj-17" : 				{
+					"parameter_longname" : "Pan[5]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-62::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[5]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1189,11 +1411,15 @@
 					"parameter_longname" : "live.menu[9]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-63::obj-17" : 				{
+					"parameter_longname" : "Pan[4]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-63::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[4]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1206,11 +1432,15 @@
 					"parameter_longname" : "live.menu[8]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-64::obj-17" : 				{
+					"parameter_longname" : "Pan[3]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-64::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[3]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1223,11 +1453,15 @@
 					"parameter_longname" : "live.menu[5]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-65::obj-17" : 				{
+					"parameter_longname" : "Pan[2]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-65::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[2]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1240,11 +1474,15 @@
 					"parameter_longname" : "live.menu[3]"
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-66::obj-17" : 				{
+					"parameter_longname" : "Pan[1]"
+				}
+,
 				"obj-2::obj-3::obj-24::obj-66::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[1]",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
@@ -1259,14 +1497,35 @@
 ,
 				"obj-2::obj-3::obj-24::obj-67::obj-25" : 				{
 					"parameter_invisible" : 0,
+					"parameter_longname" : "Instrument",
 					"parameter_modmode" : 0,
-					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+					"parameter_range" : [ "<none>", "Bell-1.instr", "Bell-2.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
 ,
+				"obj-2::obj-3::obj-24::obj-67::obj-7" : 				{
+					"parameter_longname" : "live.menu[63]"
+				}
+,
+				"obj-2::obj-3::obj-24::obj-67::obj-8" : 				{
+					"parameter_longname" : "live.menu[62]"
+				}
+,
 				"obj-2::obj-3::obj-40" : 				{
 					"parameter_longname" : "live.text[16]"
+				}
+,
+				"obj-2::obj-3::obj-43::obj-17::obj-3::obj-24" : 				{
+					"parameter_range" : [ 0.0, 18433.740000000001601 ]
+				}
+,
+				"obj-2::obj-3::obj-43::obj-17::obj-3::obj-27" : 				{
+					"parameter_range" : [ 0.0, 18433.740000000001601 ]
+				}
+,
+				"obj-2::obj-3::obj-43::obj-17::obj-3::obj-6" : 				{
+					"parameter_range" : [ 0.0, 18433.740000000001601 ]
 				}
 
 			}
@@ -1275,13 +1534,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Bandoneon.instr",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial/Instruments",
-				"patcherrelativepath" : "../../Quintet.net/patchers/Projects/Tutorial/Instruments",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "Sampler.json",
 				"bootpath" : "/Users/Shared/Max 8/Library/Summer 2021",
 				"patcherrelativepath" : "../../../Library/Summer 2021",
@@ -1293,13 +1545,6 @@
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
 				"patcherrelativepath" : "../media/Images/svg",
 				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Tutorial.bank.txt",
-				"bootpath" : "~/Library/Mobile Documents/com~apple~CloudDocs/Documents/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial",
-				"patcherrelativepath" : "../../../../../hajdu/Library/Mobile Documents/com~apple~CloudDocs/Documents/Max 8/Packages/Quintet.net/patchers/Projects/Tutorial",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -1357,6 +1602,13 @@
 			}
 , 			{
 				"name" : "maxscore.sampler.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.sampler.menus.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",

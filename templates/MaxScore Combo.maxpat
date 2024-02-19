@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 6,
+			"minor" : 6,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 50.0, 100.0, 1191.0, 584.0 ],
+		"rect" : [ 50.0, 100.0, 1320.0, 584.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -130,7 +130,7 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "multichannelsignal", "" ],
-					"patching_rect" : [ 854.0, 251.0, 318.0, 228.0 ],
+					"patching_rect" : [ 909.0, 251.0, 318.0, 228.0 ],
 					"varname" : "maxscore.fluidsynth",
 					"viewvisibility" : 1
 				}
@@ -185,7 +185,7 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "multichannelsignal", "dictionary" ],
-					"patching_rect" : [ 32.0, 279.0, 815.0, 172.0 ],
+					"patching_rect" : [ 32.0, 279.0, 836.0, 169.0 ],
 					"varname" : "maxscore.sampler",
 					"viewvisibility" : 1
 				}
@@ -227,7 +227,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 863.5, 498.5, 40.5, 498.5 ],
+					"midpoints" : [ 918.5, 498.5, 40.5, 498.5 ],
 					"source" : [ "obj-3", 0 ]
 				}
 
@@ -270,7 +270,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"midpoints" : [ 62.0, 233.5, 863.5, 233.5 ],
+					"midpoints" : [ 62.0, 233.5, 918.5, 233.5 ],
 					"source" : [ "obj-9", 1 ]
 				}
 
@@ -280,100 +280,164 @@
 			"obj-2::obj-10" : [ "live.text[38]", "live.text", 0 ],
 			"obj-2::obj-2" : [ "live.text[9]", "live.text", 0 ],
 			"obj-2::obj-23" : [ "live.tab", "live.tab", 0 ],
+			"obj-2::obj-24::obj-36::obj-17" : [ "Pan[31]", "Pan", 0 ],
 			"obj-2::obj-24::obj-36::obj-25" : [ "Instrument[32]", "instrument", 0 ],
+			"obj-2::obj-24::obj-36::obj-39" : [ "892206-stored-instrument[28]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-36::obj-7" : [ "live.menu[121]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-36::obj-8" : [ "live.menu[120]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-37::obj-17" : [ "Pan[30]", "Pan", 0 ],
 			"obj-2::obj-24::obj-37::obj-25" : [ "Instrument[31]", "instrument", 0 ],
+			"obj-2::obj-24::obj-37::obj-39" : [ "892206-stored-instrument[27]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-37::obj-7" : [ "live.menu[118]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-37::obj-8" : [ "live.menu[119]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-38::obj-17" : [ "Pan[29]", "Pan", 0 ],
 			"obj-2::obj-24::obj-38::obj-25" : [ "Instrument[30]", "instrument", 0 ],
+			"obj-2::obj-24::obj-38::obj-39" : [ "892206-stored-instrument[26]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-38::obj-7" : [ "live.menu[116]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-38::obj-8" : [ "live.menu[117]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-39::obj-17" : [ "Pan[28]", "Pan", 0 ],
 			"obj-2::obj-24::obj-39::obj-25" : [ "Instrument[29]", "instrument", 0 ],
+			"obj-2::obj-24::obj-39::obj-39" : [ "892206-stored-instrument[25]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-39::obj-7" : [ "live.menu[114]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-39::obj-8" : [ "live.menu[115]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-40::obj-17" : [ "Pan[27]", "Pan", 0 ],
 			"obj-2::obj-24::obj-40::obj-25" : [ "Instrument[28]", "instrument", 0 ],
+			"obj-2::obj-24::obj-40::obj-39" : [ "892206-stored-instrument[24]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-40::obj-7" : [ "live.menu[112]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-40::obj-8" : [ "live.menu[113]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-41::obj-17" : [ "Pan[26]", "Pan", 0 ],
 			"obj-2::obj-24::obj-41::obj-25" : [ "Instrument[27]", "instrument", 0 ],
+			"obj-2::obj-24::obj-41::obj-39" : [ "892206-stored-instrument[23]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-41::obj-7" : [ "live.menu[110]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-41::obj-8" : [ "live.menu[111]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-42::obj-17" : [ "Pan[25]", "Pan", 0 ],
 			"obj-2::obj-24::obj-42::obj-25" : [ "Instrument[26]", "instrument", 0 ],
+			"obj-2::obj-24::obj-42::obj-39" : [ "892206-stored-instrument[22]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-42::obj-7" : [ "live.menu[108]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-42::obj-8" : [ "live.menu[109]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-43::obj-17" : [ "Pan[24]", "Pan", 0 ],
 			"obj-2::obj-24::obj-43::obj-25" : [ "Instrument[25]", "instrument", 0 ],
+			"obj-2::obj-24::obj-43::obj-39" : [ "892206-stored-instrument[21]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-43::obj-7" : [ "live.menu[106]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-43::obj-8" : [ "live.menu[107]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-44::obj-17" : [ "Pan[23]", "Pan", 0 ],
 			"obj-2::obj-24::obj-44::obj-25" : [ "Instrument[23]", "instrument", 0 ],
+			"obj-2::obj-24::obj-44::obj-39" : [ "892206-stored-instrument[20]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-44::obj-7" : [ "live.menu[104]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-44::obj-8" : [ "live.menu[105]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-45::obj-17" : [ "Pan[22]", "Pan", 0 ],
 			"obj-2::obj-24::obj-45::obj-25" : [ "Instrument[22]", "instrument", 0 ],
+			"obj-2::obj-24::obj-45::obj-39" : [ "892206-stored-instrument[19]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-45::obj-7" : [ "live.menu[102]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-45::obj-8" : [ "live.menu[103]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-46::obj-17" : [ "Pan[21]", "Pan", 0 ],
 			"obj-2::obj-24::obj-46::obj-25" : [ "Instrument[21]", "instrument", 0 ],
+			"obj-2::obj-24::obj-46::obj-39" : [ "892206-stored-instrument[18]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-46::obj-7" : [ "live.menu[100]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-46::obj-8" : [ "live.menu[101]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-47::obj-17" : [ "Pan[20]", "Pan", 0 ],
 			"obj-2::obj-24::obj-47::obj-25" : [ "Instrument[20]", "instrument", 0 ],
+			"obj-2::obj-24::obj-47::obj-39" : [ "892206-stored-instrument[17]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-47::obj-7" : [ "live.menu[98]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-47::obj-8" : [ "live.menu[99]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-48::obj-17" : [ "Pan[19]", "Pan", 0 ],
 			"obj-2::obj-24::obj-48::obj-25" : [ "Instrument[19]", "instrument", 0 ],
+			"obj-2::obj-24::obj-48::obj-39" : [ "892206-stored-instrument[16]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-48::obj-7" : [ "live.menu[97]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-48::obj-8" : [ "live.menu[96]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-49::obj-17" : [ "Pan[18]", "Pan", 0 ],
 			"obj-2::obj-24::obj-49::obj-25" : [ "Instrument[18]", "instrument", 0 ],
+			"obj-2::obj-24::obj-49::obj-39" : [ "892206-stored-instrument[15]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-49::obj-7" : [ "live.menu[94]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-49::obj-8" : [ "live.menu[95]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-50::obj-17" : [ "Pan[17]", "Pan", 0 ],
 			"obj-2::obj-24::obj-50::obj-25" : [ "Instrument[17]", "instrument", 0 ],
+			"obj-2::obj-24::obj-50::obj-39" : [ "892206-stored-instrument[14]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-50::obj-7" : [ "live.menu[92]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-50::obj-8" : [ "live.menu[93]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-51::obj-17" : [ "Pan[16]", "Pan", 0 ],
 			"obj-2::obj-24::obj-51::obj-25" : [ "Instrument[16]", "instrument", 0 ],
+			"obj-2::obj-24::obj-51::obj-39" : [ "892206-stored-instrument[13]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-51::obj-7" : [ "live.menu[90]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-51::obj-8" : [ "live.menu[91]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-52::obj-17" : [ "Pan[15]", "Pan", 0 ],
 			"obj-2::obj-24::obj-52::obj-25" : [ "Instrument[15]", "instrument", 0 ],
+			"obj-2::obj-24::obj-52::obj-39" : [ "892206-stored-instrument[12]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-52::obj-7" : [ "live.menu[88]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-52::obj-8" : [ "live.menu[89]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-53::obj-17" : [ "Pan[14]", "Pan", 0 ],
 			"obj-2::obj-24::obj-53::obj-25" : [ "Instrument[14]", "instrument", 0 ],
+			"obj-2::obj-24::obj-53::obj-39" : [ "892206-stored-instrument[11]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-53::obj-7" : [ "live.menu[86]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-53::obj-8" : [ "live.menu[87]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-54::obj-17" : [ "Pan[13]", "Pan", 0 ],
 			"obj-2::obj-24::obj-54::obj-25" : [ "Instrument[13]", "instrument", 0 ],
+			"obj-2::obj-24::obj-54::obj-39" : [ "892206-stored-instrument[10]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-54::obj-7" : [ "live.menu[84]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-54::obj-8" : [ "live.menu[85]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-55::obj-17" : [ "Pan[12]", "Pan", 0 ],
 			"obj-2::obj-24::obj-55::obj-25" : [ "Instrument[12]", "instrument", 0 ],
+			"obj-2::obj-24::obj-55::obj-39" : [ "892206-stored-instrument[9]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-55::obj-7" : [ "live.menu[20]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-55::obj-8" : [ "live.menu[83]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-56::obj-17" : [ "Pan[11]", "Pan", 0 ],
 			"obj-2::obj-24::obj-56::obj-25" : [ "Instrument[11]", "instrument", 0 ],
+			"obj-2::obj-24::obj-56::obj-39" : [ "892206-stored-instrument[8]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-56::obj-7" : [ "live.menu[81]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-56::obj-8" : [ "live.menu[82]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-57::obj-17" : [ "Pan[10]", "Pan", 0 ],
 			"obj-2::obj-24::obj-57::obj-25" : [ "Instrument[10]", "instrument", 0 ],
+			"obj-2::obj-24::obj-57::obj-39" : [ "892206-stored-instrument[7]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-57::obj-7" : [ "live.menu[19]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-57::obj-8" : [ "live.menu[80]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-58::obj-17" : [ "Pan[9]", "Pan", 0 ],
 			"obj-2::obj-24::obj-58::obj-25" : [ "Instrument[9]", "instrument", 0 ],
+			"obj-2::obj-24::obj-58::obj-39" : [ "892206-stored-instrument[6]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-58::obj-7" : [ "live.menu[17]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-58::obj-8" : [ "live.menu[18]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-59::obj-17" : [ "Pan[8]", "Pan", 0 ],
 			"obj-2::obj-24::obj-59::obj-25" : [ "Instrument[8]", "instrument", 0 ],
+			"obj-2::obj-24::obj-59::obj-39" : [ "892206-stored-instrument[5]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-59::obj-7" : [ "live.menu[15]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-59::obj-8" : [ "live.menu[16]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-60::obj-17" : [ "Pan[7]", "Pan", 0 ],
 			"obj-2::obj-24::obj-60::obj-25" : [ "Instrument[7]", "instrument", 0 ],
+			"obj-2::obj-24::obj-60::obj-39" : [ "892206-stored-instrument[4]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-60::obj-7" : [ "live.menu[13]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-60::obj-8" : [ "live.menu[14]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-61::obj-17" : [ "Pan[6]", "Pan", 0 ],
 			"obj-2::obj-24::obj-61::obj-25" : [ "Instrument[6]", "instrument", 0 ],
+			"obj-2::obj-24::obj-61::obj-39" : [ "892206-stored-instrument[38]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-61::obj-7" : [ "live.menu[11]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-61::obj-8" : [ "live.menu[12]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-62::obj-17" : [ "Pan[5]", "Pan", 0 ],
 			"obj-2::obj-24::obj-62::obj-25" : [ "Instrument[5]", "instrument", 0 ],
+			"obj-2::obj-24::obj-62::obj-39" : [ "892206-stored-instrument[37]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-62::obj-7" : [ "live.menu[10]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-62::obj-8" : [ "live.menu[9]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-63::obj-17" : [ "Pan[4]", "Pan", 0 ],
 			"obj-2::obj-24::obj-63::obj-25" : [ "Instrument[4]", "instrument", 0 ],
+			"obj-2::obj-24::obj-63::obj-39" : [ "892206-stored-instrument[36]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-63::obj-7" : [ "live.menu[7]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-63::obj-8" : [ "live.menu[8]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-64::obj-17" : [ "Pan[3]", "Pan", 0 ],
 			"obj-2::obj-24::obj-64::obj-25" : [ "Instrument[3]", "instrument", 0 ],
+			"obj-2::obj-24::obj-64::obj-39" : [ "892206-stored-instrument[3]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-64::obj-7" : [ "live.menu[5]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-64::obj-8" : [ "live.menu[6]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-65::obj-17" : [ "Pan[2]", "Pan", 0 ],
 			"obj-2::obj-24::obj-65::obj-25" : [ "Instrument[2]", "instrument", 0 ],
+			"obj-2::obj-24::obj-65::obj-39" : [ "892206-stored-instrument[2]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-65::obj-7" : [ "live.menu[3]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-65::obj-8" : [ "live.menu[4]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-66::obj-17" : [ "Pan[1]", "Pan", 0 ],
 			"obj-2::obj-24::obj-66::obj-25" : [ "Instrument[1]", "instrument", 0 ],
+			"obj-2::obj-24::obj-66::obj-39" : [ "892206-stored-instrument[1]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-66::obj-7" : [ "live.menu[1]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-66::obj-8" : [ "live.menu[2]", "live.menu", 0 ],
+			"obj-2::obj-24::obj-67::obj-17" : [ "Pan", "Pan", 0 ],
 			"obj-2::obj-24::obj-67::obj-25" : [ "Instrument[24]", "instrument", 0 ],
+			"obj-2::obj-24::obj-67::obj-39" : [ "892206-stored-instrument[35]", "892206-stored-instrument", 0 ],
 			"obj-2::obj-24::obj-67::obj-7" : [ "live.menu[73]", "live.menu", 0 ],
 			"obj-2::obj-24::obj-67::obj-8" : [ "live.menu[74]", "live.menu", 0 ],
 			"obj-2::obj-4" : [ "live.text[15]", "live.text", 0 ],
@@ -392,7 +456,7 @@
 			"obj-2::obj-43::obj-17::obj-53::obj-76" : [ "live.numbox[8]", "live.numbox[4]", 0 ],
 			"obj-2::obj-43::obj-17::obj-78" : [ "live.tab[9]", "live.tab[1]", 0 ],
 			"obj-2::obj-43::obj-29" : [ "live.toggle[1]", "live.toggle", 0 ],
-			"obj-2::obj-43::obj-89::obj-6" : [ "bank", "bank", 0 ],
+			"obj-2::obj-43::obj-89::obj-49" : [ "dict", "dict", 0 ],
 			"obj-2::obj-45" : [ "icon", "icon", 0 ],
 			"obj-3::obj-10" : [ "live.text[41]", "live.text", 0 ],
 			"obj-3::obj-11" : [ "mc.live.gain~[1]", "mc.live.gain~", 0 ],
@@ -511,6 +575,18 @@
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-2::obj-10" : 				{
+					"parameter_longname" : "live.text[38]"
+				}
+,
+				"obj-2::obj-2" : 				{
+					"parameter_longname" : "live.text[9]"
+				}
+,
+				"obj-2::obj-24::obj-36::obj-17" : 				{
+					"parameter_longname" : "Pan[31]"
+				}
+,
 				"obj-2::obj-24::obj-36::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[32]",
@@ -526,6 +602,10 @@
 ,
 				"obj-2::obj-24::obj-36::obj-8" : 				{
 					"parameter_longname" : "live.menu[120]"
+				}
+,
+				"obj-2::obj-24::obj-37::obj-17" : 				{
+					"parameter_longname" : "Pan[30]"
 				}
 ,
 				"obj-2::obj-24::obj-37::obj-25" : 				{
@@ -545,6 +625,10 @@
 					"parameter_longname" : "live.menu[119]"
 				}
 ,
+				"obj-2::obj-24::obj-38::obj-17" : 				{
+					"parameter_longname" : "Pan[29]"
+				}
+,
 				"obj-2::obj-24::obj-38::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[30]",
@@ -560,6 +644,10 @@
 ,
 				"obj-2::obj-24::obj-38::obj-8" : 				{
 					"parameter_longname" : "live.menu[117]"
+				}
+,
+				"obj-2::obj-24::obj-39::obj-17" : 				{
+					"parameter_longname" : "Pan[28]"
 				}
 ,
 				"obj-2::obj-24::obj-39::obj-25" : 				{
@@ -579,6 +667,10 @@
 					"parameter_longname" : "live.menu[115]"
 				}
 ,
+				"obj-2::obj-24::obj-40::obj-17" : 				{
+					"parameter_longname" : "Pan[27]"
+				}
+,
 				"obj-2::obj-24::obj-40::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[28]",
@@ -594,6 +686,10 @@
 ,
 				"obj-2::obj-24::obj-40::obj-8" : 				{
 					"parameter_longname" : "live.menu[113]"
+				}
+,
+				"obj-2::obj-24::obj-41::obj-17" : 				{
+					"parameter_longname" : "Pan[26]"
 				}
 ,
 				"obj-2::obj-24::obj-41::obj-25" : 				{
@@ -613,6 +709,10 @@
 					"parameter_longname" : "live.menu[111]"
 				}
 ,
+				"obj-2::obj-24::obj-42::obj-17" : 				{
+					"parameter_longname" : "Pan[25]"
+				}
+,
 				"obj-2::obj-24::obj-42::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[26]",
@@ -628,6 +728,10 @@
 ,
 				"obj-2::obj-24::obj-42::obj-8" : 				{
 					"parameter_longname" : "live.menu[109]"
+				}
+,
+				"obj-2::obj-24::obj-43::obj-17" : 				{
+					"parameter_longname" : "Pan[24]"
 				}
 ,
 				"obj-2::obj-24::obj-43::obj-25" : 				{
@@ -647,6 +751,10 @@
 					"parameter_longname" : "live.menu[107]"
 				}
 ,
+				"obj-2::obj-24::obj-44::obj-17" : 				{
+					"parameter_longname" : "Pan[23]"
+				}
+,
 				"obj-2::obj-24::obj-44::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[23]",
@@ -662,6 +770,10 @@
 ,
 				"obj-2::obj-24::obj-44::obj-8" : 				{
 					"parameter_longname" : "live.menu[105]"
+				}
+,
+				"obj-2::obj-24::obj-45::obj-17" : 				{
+					"parameter_longname" : "Pan[22]"
 				}
 ,
 				"obj-2::obj-24::obj-45::obj-25" : 				{
@@ -681,6 +793,10 @@
 					"parameter_longname" : "live.menu[103]"
 				}
 ,
+				"obj-2::obj-24::obj-46::obj-17" : 				{
+					"parameter_longname" : "Pan[21]"
+				}
+,
 				"obj-2::obj-24::obj-46::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[21]",
@@ -696,6 +812,10 @@
 ,
 				"obj-2::obj-24::obj-46::obj-8" : 				{
 					"parameter_longname" : "live.menu[101]"
+				}
+,
+				"obj-2::obj-24::obj-47::obj-17" : 				{
+					"parameter_longname" : "Pan[20]"
 				}
 ,
 				"obj-2::obj-24::obj-47::obj-25" : 				{
@@ -715,6 +835,10 @@
 					"parameter_longname" : "live.menu[99]"
 				}
 ,
+				"obj-2::obj-24::obj-48::obj-17" : 				{
+					"parameter_longname" : "Pan[19]"
+				}
+,
 				"obj-2::obj-24::obj-48::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[19]",
@@ -730,6 +854,10 @@
 ,
 				"obj-2::obj-24::obj-48::obj-8" : 				{
 					"parameter_longname" : "live.menu[96]"
+				}
+,
+				"obj-2::obj-24::obj-49::obj-17" : 				{
+					"parameter_longname" : "Pan[18]"
 				}
 ,
 				"obj-2::obj-24::obj-49::obj-25" : 				{
@@ -749,6 +877,10 @@
 					"parameter_longname" : "live.menu[95]"
 				}
 ,
+				"obj-2::obj-24::obj-50::obj-17" : 				{
+					"parameter_longname" : "Pan[17]"
+				}
+,
 				"obj-2::obj-24::obj-50::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[17]",
@@ -764,6 +896,10 @@
 ,
 				"obj-2::obj-24::obj-50::obj-8" : 				{
 					"parameter_longname" : "live.menu[93]"
+				}
+,
+				"obj-2::obj-24::obj-51::obj-17" : 				{
+					"parameter_longname" : "Pan[16]"
 				}
 ,
 				"obj-2::obj-24::obj-51::obj-25" : 				{
@@ -783,6 +919,10 @@
 					"parameter_longname" : "live.menu[91]"
 				}
 ,
+				"obj-2::obj-24::obj-52::obj-17" : 				{
+					"parameter_longname" : "Pan[15]"
+				}
+,
 				"obj-2::obj-24::obj-52::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[15]",
@@ -798,6 +938,10 @@
 ,
 				"obj-2::obj-24::obj-52::obj-8" : 				{
 					"parameter_longname" : "live.menu[89]"
+				}
+,
+				"obj-2::obj-24::obj-53::obj-17" : 				{
+					"parameter_longname" : "Pan[14]"
 				}
 ,
 				"obj-2::obj-24::obj-53::obj-25" : 				{
@@ -817,6 +961,10 @@
 					"parameter_longname" : "live.menu[87]"
 				}
 ,
+				"obj-2::obj-24::obj-54::obj-17" : 				{
+					"parameter_longname" : "Pan[13]"
+				}
+,
 				"obj-2::obj-24::obj-54::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[13]",
@@ -832,6 +980,10 @@
 ,
 				"obj-2::obj-24::obj-54::obj-8" : 				{
 					"parameter_longname" : "live.menu[85]"
+				}
+,
+				"obj-2::obj-24::obj-55::obj-17" : 				{
+					"parameter_longname" : "Pan[12]"
 				}
 ,
 				"obj-2::obj-24::obj-55::obj-25" : 				{
@@ -851,6 +1003,10 @@
 					"parameter_longname" : "live.menu[83]"
 				}
 ,
+				"obj-2::obj-24::obj-56::obj-17" : 				{
+					"parameter_longname" : "Pan[11]"
+				}
+,
 				"obj-2::obj-24::obj-56::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[11]",
@@ -866,6 +1022,10 @@
 ,
 				"obj-2::obj-24::obj-56::obj-8" : 				{
 					"parameter_longname" : "live.menu[82]"
+				}
+,
+				"obj-2::obj-24::obj-57::obj-17" : 				{
+					"parameter_longname" : "Pan[10]"
 				}
 ,
 				"obj-2::obj-24::obj-57::obj-25" : 				{
@@ -885,6 +1045,10 @@
 					"parameter_longname" : "live.menu[80]"
 				}
 ,
+				"obj-2::obj-24::obj-58::obj-17" : 				{
+					"parameter_longname" : "Pan[9]"
+				}
+,
 				"obj-2::obj-24::obj-58::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[9]",
@@ -900,6 +1064,10 @@
 ,
 				"obj-2::obj-24::obj-58::obj-8" : 				{
 					"parameter_longname" : "live.menu[18]"
+				}
+,
+				"obj-2::obj-24::obj-59::obj-17" : 				{
+					"parameter_longname" : "Pan[8]"
 				}
 ,
 				"obj-2::obj-24::obj-59::obj-25" : 				{
@@ -919,6 +1087,10 @@
 					"parameter_longname" : "live.menu[16]"
 				}
 ,
+				"obj-2::obj-24::obj-60::obj-17" : 				{
+					"parameter_longname" : "Pan[7]"
+				}
+,
 				"obj-2::obj-24::obj-60::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[7]",
@@ -934,6 +1106,10 @@
 ,
 				"obj-2::obj-24::obj-60::obj-8" : 				{
 					"parameter_longname" : "live.menu[14]"
+				}
+,
+				"obj-2::obj-24::obj-61::obj-17" : 				{
+					"parameter_longname" : "Pan[6]"
 				}
 ,
 				"obj-2::obj-24::obj-61::obj-25" : 				{
@@ -953,6 +1129,10 @@
 					"parameter_longname" : "live.menu[12]"
 				}
 ,
+				"obj-2::obj-24::obj-62::obj-17" : 				{
+					"parameter_longname" : "Pan[5]"
+				}
+,
 				"obj-2::obj-24::obj-62::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[5]",
@@ -968,6 +1148,10 @@
 ,
 				"obj-2::obj-24::obj-62::obj-8" : 				{
 					"parameter_longname" : "live.menu[9]"
+				}
+,
+				"obj-2::obj-24::obj-63::obj-17" : 				{
+					"parameter_longname" : "Pan[4]"
 				}
 ,
 				"obj-2::obj-24::obj-63::obj-25" : 				{
@@ -987,6 +1171,10 @@
 					"parameter_longname" : "live.menu[8]"
 				}
 ,
+				"obj-2::obj-24::obj-64::obj-17" : 				{
+					"parameter_longname" : "Pan[3]"
+				}
+,
 				"obj-2::obj-24::obj-64::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[3]",
@@ -1004,6 +1192,10 @@
 					"parameter_longname" : "live.menu[6]"
 				}
 ,
+				"obj-2::obj-24::obj-65::obj-17" : 				{
+					"parameter_longname" : "Pan[2]"
+				}
+,
 				"obj-2::obj-24::obj-65::obj-25" : 				{
 					"parameter_invisible" : 0,
 					"parameter_longname" : "Instrument[2]",
@@ -1019,6 +1211,10 @@
 ,
 				"obj-2::obj-24::obj-65::obj-8" : 				{
 					"parameter_longname" : "live.menu[4]"
+				}
+,
+				"obj-2::obj-24::obj-66::obj-17" : 				{
+					"parameter_longname" : "Pan[1]"
 				}
 ,
 				"obj-2::obj-24::obj-66::obj-25" : 				{
@@ -1040,10 +1236,19 @@
 ,
 				"obj-2::obj-24::obj-67::obj-25" : 				{
 					"parameter_invisible" : 0,
+					"parameter_longname" : "Instrument[24]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
+				}
+,
+				"obj-2::obj-24::obj-67::obj-7" : 				{
+					"parameter_longname" : "live.menu[73]"
+				}
+,
+				"obj-2::obj-24::obj-67::obj-8" : 				{
+					"parameter_longname" : "live.menu[74]"
 				}
 ,
 				"obj-3::obj-11" : 				{
@@ -2091,6 +2296,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "image2drawsocket.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/image2drawsocket",
+				"patcherrelativepath" : "../patchers/node.js/image2drawsocket",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "index-player.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
@@ -2399,10 +2611,24 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.sampler.menus.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.setNoteIntervalAttribute.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.shortcuts.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -3023,10 +3249,6 @@
 				"patcherrelativepath" : "../media/Images/svg_inverted",
 				"type" : "svg",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "shell.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "singlebarline_inv.svg",

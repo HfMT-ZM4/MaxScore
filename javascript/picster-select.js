@@ -2709,7 +2709,7 @@ function findBoundsToo(d)
 
 	mgraphics.matrixcalc(outmatrix, outmatrix);
 	findbounds.matrixcalc(outmatrix, outmatrix);
-	//post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
+	//post("FIND", svg, [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
 	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) renderOffset = [0, 0];
 		horizontalOffset = 0;
 		verticalOffset = 0;

@@ -1,0 +1,56 @@
+{
+	"Bell-1.instr" : 	{
+		"1" : 		{
+			"sample" : "Bell-1.aif",
+			"root_key" : 54,
+			"key_zone_floor" : 54,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 18433.7421875, 0, 1, 0, 0, 0, 72.716899999999995, 1, 0, 15022.979600000000573, 1, 2, 18433.742300000001705, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"2" : 		{
+			"sample" : "Bell-2.aif",
+			"root_key" : 66,
+			"key_zone_floor" : 66,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 14494.149499999999534, 0, 1, 0, 0, 0, 0, 1, 0, 11280.051799999999275, 1, 2, 14494.149499999999534, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+
+	}
+,
+	"Bell-2.instr" : 	{
+		"1" : 		{
+			"sample" : "Short-Bell_1.aif",
+			"root_key" : 66,
+			"key_zone_floor" : 66,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 4088.888899999999921, 0, 1, 0, 0, 0, 0, 1, 0, 2835.655999999999949, 1, 2, 4088.888899999999921, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"2" : 		{
+			"sample" : "Short-Bell_2.aif",
+			"root_key" : 78,
+			"key_zone_floor" : 78,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 3880.272200000000339, 0, 1, 0, 0, 0, 0, 1, 0, 2614.251200000000154, 0.9925, 2, 3880.272200000000339, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+
+	}
+
+}

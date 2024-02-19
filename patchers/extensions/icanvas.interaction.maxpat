@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
+			"minor" : 6,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 73.0, 248.0, 1400.0, 591.0 ],
+		"rect" : [ 52.0, 165.0, 1324.0, 591.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,9 +44,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 1202.0, 217.0, 22.0, 22.0 ],
-					"text" : "t b"
+					"outlettype" : [ "dumpScore" ],
+					"patching_rect" : [ 1202.0, 217.0, 77.0, 22.0 ],
+					"text" : "t dumpScore"
 				}
 
 			}
@@ -110,14 +110,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 6,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 50.0, 79.0, 775.0, 346.0 ],
+						"rect" : [ 134.0, 172.0, 775.0, 346.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -193,7 +193,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "dictionary" ],
 									"patching_rect" : [ 23.0, 7.0, 25.0, 25.0 ]
 								}
 
@@ -549,7 +549,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 366.0, 353.0, 48.0, 22.0 ],
+					"patching_rect" : [ 366.0, 361.0, 48.0, 22.0 ],
 					"text" : "del 100"
 				}
 
@@ -647,7 +647,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "dictionary" ],
 					"patching_rect" : [ 21.0, 18.0, 30.0, 30.0 ]
 				}
 
@@ -684,7 +684,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 768.0, 77.0, 379.0, 22.0 ],
-					"restore" : [ 27 ],
+					"restore" : [ 127 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1029,6 +1029,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-3", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"midpoints" : [ 1211.5, 488.0, 375.5, 488.0 ],
+					"source" : [ "obj-31", 0 ]
 				}
 
 			}
