@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -146,7 +146,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 359.271461571520376, 346.600006000000008, 102.0, 33.0 ],
+					"patching_rect" : [ 377.0, 346.600006000000008, 102.0, 33.0 ],
 					"text" : "pulse # and indispensability"
 				}
 
@@ -157,7 +157,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 209.0, 346.600006000000008, 99.0, 20.0 ],
+					"patching_rect" : [ 215.0, 346.600006000000008, 99.0, 20.0 ],
 					"text" : "downbeat"
 				}
 
@@ -180,7 +180,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 312.271461571520376, 384.0, 50.0, 22.0 ],
+					"patching_rect" : [ 334.934928968284567, 384.0, 50.0, 22.0 ],
 					"text" : "4 1"
 				}
 
@@ -193,7 +193,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 194.538124238187038, 384.0, 24.0, 24.0 ]
+					"patching_rect" : [ 205.869857936569133, 383.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -748,7 +748,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "bang", "", "dictionary" ],
-					"patching_rect" : [ 45.8047869048537, 169.600006000000008, 465.200012000000015, 171.399993999999992 ],
+					"patching_rect" : [ 45.8047869048537, 169.600006000000008, 499.1952130951463, 172.0 ],
 					"varname" : "Djster.µbus",
 					"viewvisibility" : 1
 				}
@@ -997,7 +997,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-50", 0 ],
-					"midpoints" : [ 501.504798904853715, 397.300003000000004, 400.5, 397.300003000000004 ],
+					"midpoints" : [ 535.5, 397.300003000000004, 400.5, 397.300003000000004 ],
 					"source" : [ "obj-55", 3 ]
 				}
 
@@ -1066,11 +1066,13 @@
 			"obj-55::obj-109" : [ "stream", "Play", 0 ],
 			"obj-55::obj-11" : [ "Eventfulness", "Eventfulness", 0 ],
 			"obj-55::obj-110" : [ "Event Length Percent", "Event Length", 0 ],
-			"obj-55::obj-122" : [ "Choice", "Choice", 0 ],
+			"obj-55::obj-115" : [ "live.toggle", "live.toggle", 0 ],
+			"obj-55::obj-122" : [ "Choice", "Event Length Display Style", 0 ],
 			"obj-55::obj-128" : [ "Ostinato Buffer", "Ostinato Buffer", 0 ],
 			"obj-55::obj-13" : [ "Melody Scope", "Melody Scope", 0 ],
 			"obj-55::obj-136" : [ "Sorted", "Sorted", 0 ],
 			"obj-55::obj-155" : [ "Use Transport", "Use Transport", 0 ],
+			"obj-55::obj-157" : [ "Instance", "Instance", 0 ],
 			"obj-55::obj-158" : [ "Subdivisions", "Subdivision", 0 ],
 			"obj-55::obj-16" : [ "Scale", "Scale", 0 ],
 			"obj-55::obj-187" : [ "meters", "meters", 0 ],
@@ -1142,11 +1144,11 @@
 ,
 			"parameter_overrides" : 			{
 				"obj-55::obj-1" : 				{
-					"parameter_range" : [ 1, 4 ]
+					"parameter_range" : [ 1, 8 ]
 				}
 ,
 				"obj-55::obj-110" : 				{
-					"parameter_initial" : 100,
+					"parameter_initial" : 99,
 					"parameter_longname" : "Event Length Percent",
 					"parameter_range" : [ 1.0, 1000.0 ],
 					"parameter_unitstyle" : 5
@@ -1172,6 +1174,10 @@
 ,
 				"obj-55::obj-52" : 				{
 					"parameter_unitstyle" : 8
+				}
+,
+				"obj-55::obj-56" : 				{
+					"parameter_longname" : "Precision[1]"
 				}
 ,
 				"obj-55::obj-77" : 				{
@@ -1339,7 +1345,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "harmonic-energy-profile.txt",
+				"name" : "harmonic-energy-profile-15.txt",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Profiles",
 				"patcherrelativepath" : "../../patchers/DJster/Profiles",
 				"type" : "TEXT",
