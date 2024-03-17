@@ -1148,13 +1148,11 @@ function onwheel(x, y, wheel_inc_x, wheel_inc_y, cmd, shift, caps, opt, ctrl)
 		else if (horizontalOffset < -pageWidth) horizontalOffset = -pageWidth;
 	}
 	else {
-		if (horizontalOffset > 0) horizontalOffset = 0;
+		if (!horizontalScrollbar.visible || horizontalOffset > 0) horizontalOffset = 0;
 		else if (horizontalOffset < horizontalScrollbar.extent/zoom[0] - pageWidth) horizontalOffset = horizontalScrollbar.extent/zoom[0] - pageWidth;
 	}
-	if (verticalOffset > 0) verticalOffset = 0;
+	if (!verticalScrollbar.visible || verticalOffset > 0) verticalOffset = 0;
 	else if (verticalOffset < verticalScrollbar.extent/zoom[1] - pageHeight) verticalOffset = verticalScrollbar.extent/zoom[1] - pageHeight;	
-	//horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
-	//verticalScrollbar.value = scale(-verticalOffset, 0, pageHeight, verticalScrollbar.percentage/2, 100 - verticalScrollbar.percentage/2);
 	horizontalScrollbar.value = scale(horizontalOffset, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom[0]) - pageWidth, horizontalScrollbar.percentage/2, (200 - horizontalScrollbar.percentage)/2);
 	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom[1] - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	notifyclients();
