@@ -1193,7 +1193,8 @@ function addShape()
 				if (dasharray[0] == -1) _picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				else _picster["picster-element"][1].val = {"bounds" : [ coords[0] - margin, coords[1] - margin , coords[2] + margin, coords[3] + margin ]};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				//outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
 				break;
 			case "rectangle":
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
@@ -1227,7 +1228,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : coords};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				//outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
 				break;
 			case "rounded_rectangle":
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
@@ -1263,7 +1265,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : coords};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				//outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
 				break;
 			case "oval":
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
@@ -1296,7 +1299,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : coords};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 				break;
 			case "arc":
 				var attr = {};
@@ -1325,7 +1329,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 				break;
 			case "polygon":
 				polyclicks = [];
@@ -1358,7 +1363,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 				break;
 			case "polyline":
 				polyclicks = [];
@@ -1382,7 +1388,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 				break;
 			case "fitcurve":
 				polyclicks = [];
@@ -1422,7 +1429,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 			break;
 			case "text":
 				//post("found number of double vertical lines: ", msg[3].split("||").length - 1 , "\n");
@@ -1454,14 +1462,15 @@ function addShape()
 				//_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
-				//post("picster", JSON.stringify(_picster), "\n");
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 				break;
 			case "image":
 			var _dim = [];
-			if (embedimage) {
+			if (embedimage != 0) {
 			var dict = new Dict;
 			dict.name = msg[4];
+			//post("href",  msg, "\n");
 			if (dict.contains("data")) {
 				_picster = {};
 				_picster["image-segment"] = {};
@@ -1472,6 +1481,7 @@ function addShape()
 			}
 			else 
 			{ 
+			post("picster", dict.stringify(), "\n");
 			_picster = {};
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {};
@@ -1480,10 +1490,10 @@ function addShape()
 			_picster["picster-element"][1] = {};
 			_picster["picster-element"][1].key = "extras";
 			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
-			//post("picsterElement",  JSON.stringify(_picster), "\n");
 			}
 			}
 			else {			
+			var href = msg[3];
 			var pictype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
 			if (pictype != "svg") {
 				import.importmovie(msg[3]);
@@ -1534,7 +1544,8 @@ function addShape()
 				_picster["picster-element"][1].val = {"bounds" : [0, 0, Number(_dim[0]), Number(_dim[1])]};
 				}
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 			break;
 			case "bezierCurve":
 				segments = msg[3];
@@ -1568,7 +1579,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 			break;
 			case "bracket" :
 				//addShape(origin[0], origin[1], "bracket", 0, 0, x - origin[0], y - origin[1]);
@@ -1599,7 +1611,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : coords};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 			break;
 			case "hairpin" :
 				//addShape(origin[0], origin[1], "bracket", 0, 0, x - origin[0], y - origin[1]);
@@ -1630,7 +1643,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : coords};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 			break;
 			case "path" :
 				var attr = {};
@@ -1658,7 +1672,8 @@ function addShape()
 				_picster["picster-element"][1].key = "extras";
 				_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 				edit.parse(JSON.stringify(_picster));
-				outlet(3, "bang");
+				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+				//outlet(3, "bang");
 			break;
 			}
 }
@@ -1695,9 +1710,9 @@ function attach()
 					offsets[0] = [ anchor[0] / factor, anchor[1] / factor ];
 				}
 			}
-		if (foundobjects.contains("0")) action = "update";
-		else action = "addShape";
-		outlet(3, "bang");
+		if (foundobjects.contains("0")) reattachRenderedMessage(edit.stringify_compressed());
+		else createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
+		//outlet(3, "bang");
 		mode = currentMode;
 }
 
@@ -1744,7 +1759,7 @@ function rotate(angle)
 	for (var i = 0; i < keys.length; i++) if (keys[i] != "bounds" && keys[i] != "name" && keys[i] != "expression") elem = keys[i];
 	edit.replace("picster-element::" + elem + "::info::transform", matrix);
 	}
-	outlet(3, "bang");
+	reattachRenderedMessage(edit.stringify_compressed());
 	}
 }
 
@@ -1780,7 +1795,8 @@ function addExpressionToSelectedShape()
 		edit.replace("picster-element::expression::" + expressionCount + "::autorender", expr.get("autorender"));
 		}
 		action = "update";
-		outlet(3, "bang");
+		reattachRenderedMessage(edit.stringify_compressed());
+		//outlet(3, "bang");
 		//init(); //we may no longer need this!
 		}
 }
@@ -1812,7 +1828,8 @@ function replaceExpressionsForSelectedShape()
 			edit.replace("picster-element::expression", expr);
 			}
 		action = "update";
-		outlet(3, "bang");
+		reattachRenderedMessage(edit.stringify_compressed());
+		//outlet(3, "bang");
 		//init(); //we may no longer need this!
 	}
 }
@@ -1826,14 +1843,14 @@ function removeAllExpressionsFromSelectedShape()
 		if (edit.contains("picster-element[0]::val")) edit.remove("picster-element[2]");
 		else edit.remove("picster-element::expression");
 		action = "update";
-		outlet(3, "bang");
+		reattachRenderedMessage(edit.stringify_compressed());
+		//outlet(3, "bang");
 		//init();
 		}
 }
 
 function capsLock(caps)
 {
-	//post("foundobjects.1", status, foundobjects.stringify(), "\n");
 	if (status == "regular") {
 		mode = caps ? "picster" : "maxscore";
 		if (mode == "picster") outlet(2, "picsterShape", shapes[shape], selectionMode);
@@ -1853,6 +1870,7 @@ function anything()
 		break;
 	case "embedimage" :
 	embedimage = msg;
+	post("embedimage", embedimage, "\n");
 		break;
 	case "property" :
 	property = msg;
@@ -1863,7 +1881,8 @@ function anything()
 		if (edit.contains("picster-element[0]::val")) {
 			edit.replace("picster-element[0]::val::onclick", msg);
 			action = "update";
-			outlet(3, "bang");
+			reattachRenderedMessage(edit.stringify_compressed());
+			//outlet(3, "bang");
 			}
 		}
 		break;
@@ -1970,7 +1989,8 @@ function anything()
  				]
 			};
 			edit.parse(JSON.stringify(_picster));
-			outlet(3, "bang");
+			addPortamento(edit.stringify_compressed());
+			//outlet(3, "bang");
 			}
 			break;
 			case 67 :  //copy
@@ -2122,7 +2142,8 @@ function anything()
 			}
 			edit.parse(JSON.stringify(_picster));
 			action = "group";
-			outlet(3, "bang");
+			createRenderedMessage(0, ".", ".", edit.stringify_compressed());
+			//outlet(3, "bang");
 			//post("xy", foundobjects.get(item)[4], foundobjects.get(item)[5], "\n");
 			//singleClick(foundobjects.get(item)[4] + 1, foundobjects.get(item)[5] + 1, 0);
 			// restore picster preference
@@ -2254,7 +2275,8 @@ function anything()
 			tempDict.parse(foundobjects.get(item).pop());
 			temp2 = tempDict.get("picster-element[0]::val");
 			if (updatedDict.contains("picster-element[1]::val::bounds")) updatedDict.replace("picster-element[1]::val::bounds", findBoundsToo(JSON.parse(temp2.stringify())));
-			outlet(3, "bang");
+			reattachRenderedMessage(edit.stringify_compressed());
+			//outlet(3, "bang");
 			break;
 			case 86 : //v
 			if (cp.copy != "undefined") createRenderedMessage(1, cp.copy[0], cp.copy[1], cp.copy[2]);
@@ -2368,6 +2390,7 @@ function anything()
 			var num = cnt();
 			var _dim = [];
 			var pictype = "";
+			var href = msg[0];
 			if (msg[0] == "dictionary") pictype = "embedded";
 			else pictype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
 			if (pictype == "embedded") {

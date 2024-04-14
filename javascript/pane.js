@@ -23,8 +23,6 @@ this.round = 8;
 this.value = 0;
 }
 
-	//value/100*(extent-44)+22 = center;
-
 
 mgraphics.init();				// initialize mgraphics
 mgraphics.relative_coords = 0;	// coordinate system: x, y, width height
@@ -64,7 +62,7 @@ var buttonstrokewidth = 0.5;
 var horizontalOffset = 0;
 var verticalOffset =0;
 var virgin = 1;
-var _virgin = true;
+var init = 1;
 var idl = 0;
 var idlposition = [];
 var position = [];
@@ -314,10 +312,11 @@ function obj_ref(o)
 	s = 1;
 	pageSize(o.pageSize[0], o.pageSize[1]);
 	setZoom(o.setZoom);
+	init = o.init;
+	//post("init", init, "\n");
 	bgcolor = o.bgcolor;
 	_svgimages = o.svgimages[s];
 	embeddedImages = [];
-	//post("o", JSON.stringify(o.picster), "\n");
 	for (var i = 0; i < _svgimages.length; i++) {
 		if (_svgimages[i]["id"].indexOf("embedded") == -1) {
 		var temp = _svgimages[i]["xlink:href"].split("/");
@@ -384,8 +383,6 @@ function clear()
 	}
 }
 
-//[percentage/2, (200 - percentage)/2]
-
 function pageSize(x, y)
 {
 	pageWidth = x;
@@ -401,47 +398,47 @@ function pageSize(x, y)
 		}
 	horizontalScrollbar.percentage = horizontalScrollbar.extent / (pageWidth * zoom[0]) * ((prop) ? 50 : 100);
 	verticalScrollbar.percentage = verticalScrollbar.extent / (pageHeight * zoom[1]) * 100;
-	if (JSON.stringify([oldPageWidth, oldPageHeight]) != JSON.stringify([pageWidth, pageHeight])) {
+	//if (JSON.stringify([oldPageWidth, oldPageHeight]) != JSON.stringify([pageWidth, pageHeight]))
+	if (init) {	
 		horizontalOffset = 0;
 		verticalOffset = 0;
-		if (!virgin) {
-			manual = 0;
-			notifyclients();
-			outlet(1, "offset", horizontalOffset, verticalOffset);
-			}
-		}
-		else {
-		// to be done when in an enlightened moment
-		//horizontalOffset = -100;
-		//verticalOffset = 0;			
-		//horizontalScrollbar.center = horizontalScrollbar.percentage/200*horizontalScrollbar.extent+horizontalScrollbar.spacer;
-		//horizontalScrollbar.value = (horizontalScrollbar.center-horizontalScrollbar.spacer)/(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*100.;
-		//horizontalOffset = scale(horizontalScrollbar.value, horizontalScrollbar.percentage/2, (200/hscrollfactor - horizontalScrollbar.percentage)/2, 0, horizontalScrollbar.extent / zoom - pageWidth);
+		//post("visible", width, height, "\n");
+		manual = 0;
+		notifyclients();
+		//outlet(1, "offset", horizontalOffset, verticalOffset);
+		clickOnScrollbar();
 		}
 	horizontalScrollbar.value = scale(horizontalOffset, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom[0]) - pageWidth, horizontalScrollbar.percentage/2, (200 - horizontalScrollbar.percentage)/2);
 	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom[1] - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	oldPageWidth = pageWidth;
 	oldPageHeight = pageHeight;
-	//post("horizontalScrollbar-1", horizontalScrollbar.center, hscrollfactor, horizontalScrollbar.percentage/200*horizontalScrollbar.extent+horizontalScrollbar.spacer, "\n");
 }
 
 function setZoom()
 {
 	var z = arrayfromargs(arguments);
 	zoom = (z.length == 1) ? [ z[0] * 2, z[0] * 2] : [ z[0] * 2, z[1] * 2];
-	
 	outlet(1, "setZoom", z[0]);
-	//verticalOffset = 0;
 	pageSize(pageWidth, pageHeight);
-	//playheadWidth = playheadWidth * zoom[0] / 2;
-	//post("horizontaloffset", (horizontalScrollbar.center-(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*horizontalScrollbar.percentage/200-horizontalScrollbar.spacer)/horizontalScrollbar.extent*pageWidth*zoom, "\n");
-	//horizontalOffset = (horizontalScrollbar.center-(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*horizontalScrollbar.percentage/200-horizontalScrollbar.spacer)/horizontalScrollbar.extent*pageWidth*zoom;
 	mgraphics.redraw();
 }
 
 function scale(x, inputmin, inputmax, outputmin, outputmax)
 {
 	return (x - inputmin) / (inputmax - inputmin) * (outputmax - outputmin) + outputmin;
+}
+
+function clickOnScrollbar()
+{
+	if (horizontalScrollbar.visible) {
+		onclick(0, height, 1, 0, 0, 0, 0, 0);
+		ondrag(0, height, 1, 0, 0, 0, 0, 0);
+		}
+	else if (verticalScrollbar.visible)
+		{
+		onclick(width, 0, 1, 0, 0, 0, 0, 0);
+		ondrag(width, 0, 1, 0, 0, 0, 0, 0);
+		}	
 }
 
 /////////////////////////////////////////////////////
@@ -453,6 +450,7 @@ function scroll()
 		case "stop" :
 			tsk["scroll"].cancel();
 			elapsed += ticks["scroll"];
+			clickOnScrollbar();
 			break;
 		case "play" :
 			var times = 0;
@@ -473,6 +471,7 @@ function scroll()
 			outlet(1, "offset", horizontalOffset, verticalOffset);
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
 			mgraphics.redraw();
+			clickOnScrollbar();
 			break;
 		default :
 		if (msg.length == 3) {
@@ -938,15 +937,9 @@ function vbar()
 
 function capsLock(c)
 {
-
 	capsl =	c;
-	if (capsl) {
-   		DisplayCursor(6);
-		}
-		else
-		{
-   		DisplayCursor(1);
-	}
+	if (capsl) DisplayCursor(6);
+	else DisplayCursor(1);
 	mgraphics.redraw();
 }
 
@@ -1059,9 +1052,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	if (position[0] >= horizontalScrollbar.center - (horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*horizontalScrollbar.percentage/200 && position[0] <= horizontalScrollbar.center+((horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*horizontalScrollbar.percentage/100./2.)){
 		horizontalScrollbar.center += (position[0] - last_position[0]);
 	}
-	else {
-		horizontalScrollbar.center = position[0];
-		}
+	else horizontalScrollbar.center = position[0];
 	horizontalScrollbar.value = (horizontalScrollbar.center-horizontalScrollbar.spacer)/(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*100.;
 	if (horizontalScrollbar.value < horizontalScrollbar.percentage / 2.) horizontalScrollbar.value =  horizontalScrollbar.percentage / 2.;
 	if (horizontalScrollbar.value > 100 - horizontalScrollbar.percentage / 2.) horizontalScrollbar.value =  100 - horizontalScrollbar.percentage / 2.;
@@ -1072,9 +1063,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	if (position[1] >= verticalScrollbar.center - (verticalScrollbar.extent-verticalScrollbar.spacer*2)*verticalScrollbar.percentage/200 && position[1] <= verticalScrollbar.center+((verticalScrollbar.extent-verticalScrollbar.spacer*2)*verticalScrollbar.percentage/100./2.)){
 	verticalScrollbar.center += (position[1] - last_position[1]);
 	}
-	else {
-		verticalScrollbar.center = position[1];
-		}
+	else verticalScrollbar.center = position[1];
 	verticalScrollbar.value = (verticalScrollbar.center-verticalScrollbar.spacer)/(verticalScrollbar.extent-verticalScrollbar.spacer*2)*100.;
 	if (verticalScrollbar.value < verticalScrollbar.percentage / 2.) verticalScrollbar.value =  verticalScrollbar.percentage / 2.;
 	if (verticalScrollbar.value > 100 - verticalScrollbar.percentage / 2.) verticalScrollbar.value =  100 - verticalScrollbar.percentage / 2.;
@@ -1141,8 +1130,8 @@ onresize.local = 1; //private
 function onwheel(x, y, wheel_inc_x, wheel_inc_y, cmd, shift, caps, opt, ctrl)
 {
 	//consider prop and zoom
-	horizontalOffset += wheel_inc_x * 10;
-	verticalOffset += wheel_inc_y * 10;
+	horizontalOffset += wheel_inc_x * 20;
+	verticalOffset += wheel_inc_y * 20;
 	if (prop){
 		if (horizontalOffset > 0) horizontalOffset = 0;
 		else if (horizontalOffset < -pageWidth) horizontalOffset = -pageWidth;

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -69,7 +69,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -451,7 +451,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -885,7 +885,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "maxscore.canvas", "maxscore.bcanvas", "maxscore.icanvas" ],
+					"tabs" : [ "maxscore.bcanvas", "maxscore.canvas", "maxscore.icanvas" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 

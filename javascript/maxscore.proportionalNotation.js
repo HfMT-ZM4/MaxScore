@@ -1,5 +1,5 @@
-inlets = 3;
-outlets = 4;
+inlets = 2;
+outlets = 3;
 
 include("maxscore.tools");
 var tempo = [];
@@ -111,7 +111,7 @@ function setProportionalNotation(b) {
         annotation.set("proportional", 1);
 		annotation.set("showRhythmInProportionalNotation", showRhythm);
         annotation.set("timeUnit", timeUnit);
-        outlet(3, "setAnnotation", "dictionary", annotation.name);
+        outlet(0, "setScoreAnnotation", annotation.stringify_compressed());
        	outlet(0, "selectAll");
     	//post("previously proportional?", proportional, "\n"); 
        if (!proportional) {//notation is currently not proportional
@@ -285,8 +285,8 @@ function setProportionalNotation(b) {
                         "bounds": [-1, -1, -1, -1]
                     };
                     sustain.parse(JSON.stringify(_picster));
-                    outlet(3, "setSustain", "dictionary", sustain.name);
-
+					outlet(0, "addRenderedMessageToSelectedNotes", 4, 0, sustain.stringify_compressed());
+                    //outlet(3, "setSustain", "dictionary", sustain.name);
                 }
             }
         }
@@ -311,7 +311,7 @@ function setProportionalNotation(b) {
 		proportional = annotation.get("proportional");
         if (proportional) { //notation is currently proportional
             annotation.set("proportional", 0);
-            outlet(3, "setAnnotation", "dictionary", annotation.name);
+        outlet(0, "setScoreAnnotation", annotation.stringify_compressed());
          	//post("proportional", Object.keys(originalScoreAttributes).length, "\n");
           	if (Object.keys(originalScoreAttributes).length) {
 				outlet(0, "setScoreSize", parseFloat(originalScoreAttributes["@WIDTH"]), parseFloat(originalScoreAttributes["@HEIGHT"]));
@@ -420,14 +420,6 @@ function setProportionalNotation(b) {
 */
     outlet(0, "setUndoStackEnabled", "true");
     outlet(0, "setRenderAllowed", "true");
-}
-
-function setSustain(d) {
-    outlet(0, "addRenderedMessageToSelectedNotes", 4, 0, d);
-}
-
-function setAnnotation(a) {
-    outlet(0, "setScoreAnnotation", a);
 }
 
 function getNoteAnchor() {
@@ -568,7 +560,7 @@ function blankPageTransform(bpt) {
                 annotation.replace("staff-" + s + "::stafflineshidden::" + i, 0);
             }
         }
-        outlet(3, "setAnnotation", "dictionary", annotation.name);
+        outlet(0, "setScoreAnnotation", annotation.stringify_compressed());
         //outlet(0, "setUndoStackEnabled", 1);
         //outlet(0, "saveToUndoStack");
         if (renderAllowed) outlet(0, "setRenderAllowed", 1);
@@ -598,7 +590,7 @@ function blankPageTransform(bpt) {
                 outlet(0, "setStaffLineVisible", s, i, 1);
             }
         }
-        outlet(3, "setAnnotation", "dictionary", annotation.name);
+        outlet(0, "setScoreAnnotation", annotation.stringify_compressed());
         //outlet(0, "setUndoStackEnabled", 1);
         //outlet(0, "saveToUndoStack");
         if (renderAllowed) outlet(0, "setRenderAllowed", 1);

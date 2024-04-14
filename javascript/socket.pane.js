@@ -95,8 +95,8 @@ function listenerobj(data)
 {
 	if (data.value[1]) {
 		_offset = data.value[0];
-		//post("data", data.value[0], "\n");
-		scroll("offset", data.value[0]);
+		//post("data", _offset, "\n");
+		scroll("offset", _offset);
 		lastAction = "offset";
 		}
 }
@@ -492,6 +492,7 @@ function obj_ref(o)
 	}
 	output.parse(JSON.stringify(joutput));
 	outlet(0, "dictionary", output.name);
+	scroll("offset", _offset);
 	renderPlayhead();
 	drawBounds();
 }

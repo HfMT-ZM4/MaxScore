@@ -3,8 +3,8 @@
 // many thanks to Emmanuel Jourdan for making the code for the ej.function object 
 // available through a creative commons license (http://www.e--j.com)
 
-inlets = 4;
-outlets = 3;
+inlets = 3;
+outlets = 2;
 
 include("maxscore.tools");
 
@@ -368,11 +368,6 @@ if (jsarguments.length >= 1)
 		}
 }
 
-function setAnnotation(a)
-{
-	outlet(1, "setScoreAnnotation", a);
-}
-
 function filterInt(value) {
   	if (/^(\-|\+)?([0-9]+|Infinity)$/.test(value)) return Number(value);
   	else return NaN;
@@ -631,7 +626,8 @@ function showWholeNoteRestsInEmptyMeasures(flag)
 {
 	wholeNoteRestsInEmptyMeasures = flag;
 	annotation.set("showWholeNoteRestsInEmptyMeasures", wholeNoteRestsInEmptyMeasures);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
@@ -720,7 +716,8 @@ function textfont(tf)
 {
 	_textFont = tf;
 	annotation.set("textFont", _textFont);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
@@ -729,8 +726,8 @@ function musicfont(mf)
 {
 	_musicFont = mf;
 	annotation.set("musicFont", _musicFont);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
-	//post("musicfont", _musicfont, "\n");
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
@@ -739,7 +736,8 @@ function titlefont(tf)
 {
 	_titleFont = tf;
 	annotation.set("titleFont", _titleFont);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
@@ -748,7 +746,8 @@ function tablaturefont()
 {
 	_tabfont = arrayfromargs(arguments);
 	annotation.set("tablatureFont", _tabfont);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);	
 }
@@ -778,7 +777,8 @@ function setUserClef(targetStaff, userClef)
 		outlet(1, "setInstrumentTransposition", targetStaff, selectedClef.get("transposition"));
 		if (annotation.contains("userclefs")) annotation.remove("userclefs");
 		annotation.replace("userclefs::" + userClef, clefDesigner.get(userClef));
-		outlet(2, "setAnnotation", "dictionary", annotation.name);
+		//outlet(2, "setAnnotation", "dictionary", annotation.name);
+		outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 	}
 	else {
@@ -792,7 +792,8 @@ function setUserClef(targetStaff, userClef)
 		annotation.replace("staff-" + targetStaff + "::style", "Default");
 		annotation.replace("staff-" + targetStaff + "::clef", "default");
 		//if (annotation.contains("staff-" + targetStaff + "::stafflineshidden")) annotation.remove("staff-" + targetStaff + "::stafflineshidden");
-		outlet(2, "setAnnotation", "dictionary", annotation.name);
+		//outlet(2, "setAnnotation", "dictionary", annotation.name);
+		outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 		}
 }
@@ -800,7 +801,8 @@ function setUserClef(targetStaff, userClef)
 function setAbbrInstrumentName(_staff, name)
 {
 		annotation.replace("staff-" + _staff + "::abbrInstrName", name);
-		outlet(2, "setAnnotation", "dictionary", annotation.name);
+		//outlet(2, "setAnnotation", "dictionary", annotation.name);
+		outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 		outlet(1, "getRenderAllowed");
 		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
@@ -808,7 +810,8 @@ function setAbbrInstrumentName(_staff, name)
 function setInstrumentNameVerticalPositionOffset(_staff, offset)
 {
 		annotation.replace("staff-" + _staff + "::instrumentNamePositionOffset", offset);
-		outlet(2, "setAnnotation", "dictionary", annotation.name);
+		//outlet(2, "setAnnotation", "dictionary", annotation.name);
+		outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 		outlet(1, "getRenderAllowed");
 		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
@@ -823,7 +826,8 @@ function assignStaffToStaffGroup(_staff, sG)
 {
 		if (typeof _staffGroup[sG] != "undefined") annotation.replace("staff-" + _staff + "::staffgroup", sG, ["none", "brace", "bracket"].indexOf(_staffGroup[sG]));
 		else annotation.replace("staff-" + _staff + "::staffgroup", sG, 0);
-		outlet(2, "setAnnotation", "dictionary", annotation.name);
+		//outlet(2, "setAnnotation", "dictionary", annotation.name);
+		outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 		outlet(1, "getRenderAllowed");
 		if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
@@ -831,7 +835,8 @@ function assignStaffToStaffGroup(_staff, sG)
 function setHairpinVerticalOffset(_staff, offset)
 {
 	annotation.replace("staff-" + _staff + "::hairpinVerticalOffset", offset);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);	
 }
@@ -841,32 +846,38 @@ function setToneDivision(targetStaff, toneDivision)
 	switch (toneDivision) {
 		case "24TET":
 			annotation.replace("staff-" + targetStaff + "::micromap", "mM-none");
-			outlet(2, "setAnnotation", "dictionary", annotation.name);
+			//outlet(2, "setAnnotation", "dictionary", annotation.name);
+			outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 			outlet(1, "setRenderAllowed", 1);		
 		break;
 		case "48TET":
 			annotation.replace("staff-" + targetStaff + "::micromap", "mM-eighth-tones");
-			outlet(2, "setAnnotation", "dictionary", annotation.name);
+			//outlet(2, "setAnnotation", "dictionary", annotation.name);
+			outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 			outlet(1, "setRenderAllowed", 1);		
 		break;
 		case "72TET-Stahnke":
 			annotation.replace("staff-" + targetStaff + "::micromap", "mM-Stahnke");
-			outlet(2, "setAnnotation", "dictionary", annotation.name);
+			//outlet(2, "setAnnotation", "dictionary", annotation.name);
+			outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 			outlet(1, "setRenderAllowed", 1);		
 		break;
 		case "72TET-Sims":
 			annotation.replace("staff-" + targetStaff + "::micromap", "mM-SIMS");
-			outlet(2, "setAnnotation", "dictionary", annotation.name);
+			//outlet(2, "setAnnotation", "dictionary", annotation.name);
+			outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 			outlet(1, "setRenderAllowed", 1);		
 		break;
 		case "72TET-Wyschnegradsky":
 			annotation.replace("staff-" + targetStaff + "::micromap", "mM-Wysch");
-			outlet(2, "setAnnotation", "dictionary", annotation.name);
+			//outlet(2, "setAnnotation", "dictionary", annotation.name);
+			outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 			outlet(1, "setRenderAllowed", 1);		
 		break;
 		case "96TET":
 			annotation.replace("staff-" + targetStaff + "::micromap", "mM-sagittal");
-			outlet(2, "setAnnotation", "dictionary", annotation.name);
+			//outlet(2, "setAnnotation", "dictionary", annotation.name);
+			outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 			outlet(1, "setRenderAllowed", 1);		
 		break;
 		default: 
@@ -878,7 +889,8 @@ function setBarlineDashArray()
 {
 	barlineDashArray = arrayfromargs(arguments).join(" ");
 	annotation.set("barlineDashArray", barlineDashArray);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "getRenderAllowed");
 	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
 }
@@ -1451,7 +1463,8 @@ function bgcolor(r, g, b, a)
 {
 	bcolor = [r, g, b, a];
 	annotation.set("bgcolor", bcolor);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "saveToUndoStack", 1);
 	outlet(1, "setRenderAllowed", 1);
 }	
@@ -1460,7 +1473,8 @@ function fgcolor(r, g, b, a)
 {
 	fcolor = [r, g, b, a];
 	annotation.set("fgcolor", fcolor);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "saveToUndoStack", 1);
 	outlet(1, "setRenderAllowed", 1);
 }	
@@ -1469,7 +1483,8 @@ function linecolor(r, g, b, a)
 {
 	lcolor = [r, g, b, a];
 	annotation.set("linecolor", lcolor);
-	outlet(2, "setAnnotation", "dictionary", annotation.name);
+	//outlet(2, "setAnnotation", "dictionary", annotation.name);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "saveToUndoStack", 1);
 	outlet(1, "setRenderAllowed", 1);
 }	
@@ -3221,7 +3236,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				SVGGraphics[s + 1].push(jpicster);
 				break;
 				case "path" :
-				//post("path", picster.get("d").indexOf("NaN"), "\n");
 				/*
 				var marker = "";
 				if (picster.contains("marker-start")) marker += "marker-start=\"url(#" + url + ")\" ";
@@ -3565,6 +3579,7 @@ function pagenumber()
 
 function writeSVG(destination)
 {
+	//post("init", _init, "\n");
 	if (destination == "object") {
 	var f = {};
 	//for (var s = 1; s <= groupcount; s++) SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
@@ -3577,6 +3592,7 @@ function writeSVG(destination)
 	f.setZoom = zoom;
 	f.bgcolor = bcolor;
 	f.groupcount = groupcount;
+	f.init = _init;
 	outlet(0, "obj_ref", f); 
 	}
 	else if (destination !== undefined)

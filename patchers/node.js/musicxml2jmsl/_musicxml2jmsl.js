@@ -616,7 +616,7 @@ function notetype_to_notedur(notetype)
 {
     switch(notetype){
     case "breve":
-    	return -1;
+    	return 0;
     case "whole":
     	return 0
     case "half":
@@ -641,7 +641,7 @@ function notetype_to_duration(notetype)
 {
     switch(notetype){
     case "breve":
-    	return -1;
+    	return 8;
     case "whole":
     	return 4;
     case "half":

@@ -2,7 +2,7 @@ inlets = 1;
 outlets = 1;
 
 
-
+/*
 function Scrollbar()
 {
 this.position = [0, 0];
@@ -22,6 +22,7 @@ this.spacer = 3;
 this.round = 8;
 this.value = 0;
 }
+*/
 
 setinletassist(0, "render dumps");
 setinletassist(1, "modifier keys");
@@ -31,7 +32,7 @@ setoutletassist(2, "mouse state");
 
 declareattribute("bgcolor",null, "setattr_bgcolor", 1);
 
-
+/*
 var verticalScrollbar = new Scrollbar();
 verticalScrollbar.type = "modern";
 verticalScrollbar.orientation = "vertical";
@@ -42,12 +43,14 @@ verticalScrollbar.extent = height-horizontalScrollbar.span;
 horizontalScrollbar.extent = width-verticalScrollbar.span;
 verticalScrollbar.center = verticalScrollbar.extent/2;
 horizontalScrollbar.center = horizontalScrollbar.extent/2;
+*/
 
 var mgraphics = new JitterObject("jit.mgraphics", 600, 400);
 var outmatrix = new JitterMatrix(4, "char", 600, 400);
 var horizontalOffset = 0;
 var verticalOffset =0;
 var virgin = 1;
+var init = 1;
 var idl = 0;
 var idlposition = [];
 var position = [];
@@ -128,8 +131,8 @@ function shortDelay()
 function listenerobj(data)
 {
 	if (data.value[1]) {
-		_offset = data.value;
-		scroll("offset", data.value);
+		_offset = data.value[0];
+		scroll("offset", _offset);
 		lastAction = "offset";
 		}
 }
@@ -263,6 +266,7 @@ function obj_ref(o)
 	s = 1;
 	pageSize(o.pageSize[0], o.pageSize[1]);
 	setZoom(o.setZoom);
+	init = o.init;
 	outmatrix.dim = [pageWidth, pageHeight];
 	mgraphics.dim = [pageWidth, pageHeight];
 	bgcolor = o.bgcolor;
@@ -323,18 +327,20 @@ function pageSize(x, y)
 {
 	pageWidth = x;
 	pageHeight = y;	
+	/*
 	if (adjust) {
 		var scriptingName = thisbox.varname;
 		this.patcher.message("script", "sendbox", scriptingName, "patching_rect", this.box.getattr("patching_rect")[0], this.box.getattr("patching_rect")[1], pageWidth * zoom, pageHeight * zoom);
 		this.patcher.message("script", "sendbox", scriptingName, "presentation_rect", 0, 0, pageWidth * zoom, pageHeight * zoom);
 		width = pageWidth * zoom;
 		height = pageHeight * zoom;
-		verticalScrollbar.extent = height-horizontalScrollbar.span;
-		horizontalScrollbar.extent = width-verticalScrollbar.span;
+		//verticalScrollbar.extent = height-horizontalScrollbar.span;
+		//horizontalScrollbar.extent = width-verticalScrollbar.span;
 		}
 	horizontalScrollbar.percentage = horizontalScrollbar.extent/x*(100/hscrollfactor)/zoom;
 	verticalScrollbar.percentage = verticalScrollbar.extent/y*100/zoom;
-	if (JSON.stringify([oldPageWidth,oldPageHeight]) != JSON.stringify([pageWidth,pageHeight])) {
+	*/
+	if (init) {
 		horizontalOffset = 0;
 		verticalOffset = 0;
 		}
@@ -360,6 +366,7 @@ function scroll()
 {
 	if (this.patcher.getnamed("output").getvalueof().join("").indexOf("021") != -1) {
 	var msg = arrayfromargs(arguments);
+	//post("horizontalOffset-1", horizontalOffset, msg, "\n");
 	switch (msg[0]) {
 		case "stop" :
 			tsk["scroll"].cancel(); 
@@ -379,14 +386,14 @@ function scroll()
 			break;
 		case "offset" :
 			horizontalOffset = msg[1];
-			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
+			//horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
 			elapsed = msg[1] / speed;
 			redraw();
 			break;
 		default :
 		if (msg.length == 3) {
 			horizontalOffset = msg[0];
-			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
+			//horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
 			elapsed = msg[0] / speed;
 			line = msg;
 			//elapsed = 0;
@@ -592,8 +599,8 @@ function redraw() {
 		//post("virgin", virgin, "\n");
 		if (!virgin && tsk["scroll"].running) {
 			horizontalOffset = (elapsed + ticks["scroll"]) * speed;
-			//post("horizontalOffset", horizontalOffset, "\n");
-			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);			
+			//post("horizontalOffset", elapsed, ticks["scroll"], speed, "\n");
+			//horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);			
 			}
 		mgraphics.set_source_rgba(1., 1., 0.94, 1.);
 		mgraphics.paint();
@@ -693,12 +700,14 @@ function measureSelection()
 				}
 }
 
+/*
 function handle()
 {
 				mgraphics.set_source_rgba(horizontalScrollbar.bgcolor);
 				mgraphics.rectangle(width - horizontalScrollbar.span, height - verticalScrollbar.span, width, height);
 				mgraphics.fill();
 }
+*/
 
 function picsterLabel()
 {
@@ -775,8 +784,8 @@ function boxsize(w, h)
 {
 	width = w;
 	height = h;
-	verticalScrollbar.extent = height-horizontalScrollbar.span;
-	horizontalScrollbar.extent = width-verticalScrollbar.span;
+	//verticalScrollbar.extent = height-horizontalScrollbar.span;
+	//horizontalScrollbar.extent = width-verticalScrollbar.span;
 	//post("w/h", width, height, "\n");		
 	pageSize(pageWidth, pageHeight);
 	//outlet(1, "dim", width, height);
