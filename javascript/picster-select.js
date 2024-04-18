@@ -1481,7 +1481,7 @@ function addShape()
 			}
 			else 
 			{ 
-			post("picster", dict.stringify(), "\n");
+			//post("picster", dict.stringify(), "\n");
 			_picster = {};
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {};

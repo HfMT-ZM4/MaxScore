@@ -3135,16 +3135,24 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			//traverse picster and look for instances of text containing "||"
 			if (svggroupflag == false) svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")";
 				switch (picster.get("new")) {
-				case "g" :
+				case "svg" :
 				//post("picster", picster.stringify(), "\n");
+				var _i;
+				for (var i = 0; i < picster.get("child").length; i++) if (picster.get("child[" + i + "]::new") == "g") _i = i;
+				picster = picster.get("child[" + _i + "]");
+				//what happens to svg attributes (viewbox etc?)
+				//how to handle css?
+				//what happens to defs?
+				//what happens to scripts?
+				case "g" :
 				if (Array.isArray(picster.get("child"))) for (var i = 0; i < picster.get("child").length; i++) {
 				if (picster.contains("child[" + i + "]::style")){
 					if (picster.get("child[" + i + "]::style::stroke") == "$FRGB") picster.replace("child[" + i + "]::style::stroke", frgb); 
 					else if (picster.get("child[" + i + "]::style::stroke") == "$BRGB") picster.replace("child[" + i + "]::style::stroke", brgb); 
 					if (picster.get("child[" + i + "]::style::fill") == "$FRGB") picster.replace("child[" + i + "]::style::fill", frgb); 
 					else if (picster.get("child[" + i + "]::style::fill") == "$BRGB") picster.replace("child[" + i + "]::style::fill", brgb); 
-				}				}
-				
+				}
+				}
 				if (picster.contains("child::style")){
 					if (picster.get("child::style::stroke") == "$FRGB") picster.replace("child::style::stroke", frgb); 
 					else if (picster.get("child::style::stroke") == "$BRGB") picster.replace("child::style::stroke", brgb); 

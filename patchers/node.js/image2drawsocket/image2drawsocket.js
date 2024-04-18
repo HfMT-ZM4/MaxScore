@@ -87,13 +87,25 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
        	const svgJS = convert.xml2js(svgFile.replaceAll('&', '&amp;'), { ignoreComment: true, compact: false });
 		let value = {};
 		let css = {};
+		let _procElements = [];
+		let _procElements2 = [];
 		let viewBox = getViewBox(svgJS);
- 		//Max.post(svgJS);
-		value.new = "g";
-		let filename = infile.substring(infile.lastIndexOf('/') + 1);
+		let SVGAttributes = getSVGAttributes(svgJS);
+		value.new = "svg";
+		for (attribute in SVGAttributes){
+			value[attribute] = SVGAttributes[attribute];
+		}
+ 		let filename = infile.substring(infile.lastIndexOf('/') + 1);
 		value.id = "_" + filename;
-		value.transform = "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")";
-		value.child = procElements(getSVGElements(svgJS));
+		value.child = [];
+		_procElements = procElements(getSVGElements(svgJS));
+		//Max.post(_procElements);
+		for (let element = 0; element < _procElements.length; element++){
+			if (_procElements[element].new == "defs") value.child.push(_procElements[element]);
+			if (_procElements[element].new == "script") value.child.push(_procElements[element]);
+			else _procElements2.push(_procElements[element]);
+		}
+		value.child.push({"new" : "g", "transform" : "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")", "child" : _procElements2});
         let svgObj = {
             key: 'svg',
             val: value
@@ -156,7 +168,7 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
 
 	for (let i = el_array.length - 1; i >= 0; i--) {
 		//Max.post(JSON.stringify(el_array[i]));
-		if (el_array[i].name == 'metadata' || el_array[i].name == 'defs' || el_array[i].name == 'title') el_array.splice(i, 1);
+		if (el_array[i].name == 'metadata' || el_array[i].name == 'title') el_array.splice(i, 1);
 	}
 
     return el_array.map( n => {
@@ -253,6 +265,18 @@ function getViewBox(doc_)
         }
     }
 }
+
+function getSVGAttributes(doc_)
+{
+    for( let e of doc_.elements )
+    {
+        if( e.type == "element" && e.name == "svg" )
+        {
+            return e.attributes;
+        }
+    }
+}
+
 
 function htmlEntities(str) {
     return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;"); //"
