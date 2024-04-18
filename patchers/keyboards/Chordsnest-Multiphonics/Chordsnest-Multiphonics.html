@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+  We start with a basic html 'page' that is the size of the jweb object,
+  but has no scrollbars nor floating content.
+-->
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            width: 800px;
+            height: 600px;
+            --main-color: #00597e;
+            --light1: color-mix(in srgb, var(--main-color) 80%, white);
+            --light2: color-mix(in srgb, var(--main-color) 60%, white);
+            --light3: color-mix(in srgb, var(--main-color) 40%, white);
+            --light4: color-mix(in srgb, var(--main-color) 20%, white);
+        }
+
+        html,
+        body {
+            background-color: lightgray;
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            border: 0;
+            overflow: hidden;
+            /*  Disable scrollbars */
+            display: block;
+            /* No floating content on sides */
+            font-family: "Montserrat", sans-serif;
+        }
+
+        text {
+            fill: var(--main-color);
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            user-select: none;
+        }
+
+        .page-body {
+            transition: all 0.5s;
+        }
+        .hidden-right {
+            transform: translate(800px, 0px);
+        }
+        .hidden-transparent {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #header-logo {
+            width: 200px;
+            x: 300px;
+            y: 20px;
+            transition: all 0.5s;
+        }
+
+        #header-title {
+            font-size: 25px;
+            text-anchor: middle;
+            transition: all 0.5s;
+        }
+        
+        #header-line {
+            stroke: gray;
+            stroke-width: 1px;
+            transition: all 0.5s;
+        }
+
+        .small-header #header-logo {
+            transform: scale(0.8) translateX(-120px);
+        }
+        .small-header #header-title {
+            transform: scale(0.8) translate(200px, -98px);
+        }
+        .small-header #header-line {
+            transform: translateY(-72px);
+        }
+
+        .body-title {
+            font-size: 25px;
+            font-weight: bold;
+            text-anchor: middle;
+            transition: all 0.5s;
+        }
+        .body-subtitle {
+            font-size: 20px;
+            font-weight: light;
+            text-anchor: middle;
+            transition: all 0.5s;
+        }
+
+        .select-label {
+            display: none;
+            font-size: 30px;
+            font-weight: bolder;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            fill: white;
+        }
+        .select:hover .select-label {
+            display: inherit;
+        }
+
+        .select-circle {
+            r: 120px;
+        }
+
+        .select{
+            transition: all 0.5s;
+        }
+
+
+        .select:hover .select-bg {
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+
+        .select.instrument-selected {
+            transform: translate(100px, 275px) scale(0.3);
+        }
+
+        #info-button:hover g {
+            transform: scale(1.2);
+        }
+        .info-g {
+            transition: all 0.5s;
+        }
+
+        .filter-category {
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+        .filter-category text {
+            stroke: none;
+        }
+
+        .filter-category:hover .category-bg {
+            opacity: 0.5;
+            transform: scale(1.1);
+        }
+        .category-label {
+            display: none;
+            font-size: 25px;
+            font-weight: bolder;
+            fill: white;
+        }
+        .filter-category:hover .category-label {
+            display: inherit;
+        }
+
+        .category-circle {
+            r: 80px;
+        }
+
+        #dynamics-g {
+            transform: translate(400px, 320px);
+            fill: var(--light3);
+        }
+
+        .pitch {
+            display: none;
+            transform: translate(200px, 400px);
+            stroke-width: 5px;
+            stroke: darkmagenta;
+            fill: pink;
+            text-anchor: middle;
+        }
+
+        .pitch-circle {
+            r: 100px;
+        }
+
+        .pitch-text {
+            stroke: none;
+            font-family: Bravura;
+            font-size: 100px;
+            fill: darkmagenta;
+        }
+
+        .pitch-stafflines {
+            transform: translate(0px, 50px);
+        }
+
+        .pitch-notehead {
+            transform: translate(15px, 12.5px);
+        }
+
+        .pitch-accidental {
+            transform: translate(-15px, 12.5px);
+        }
+
+        /* filter category options display toggle */
+        .option {
+            display: none;
+        }
+        .filter-category:hover .option {
+            display: inherit;
+        }
+        .option.option-selected .option {
+            display: inherit;
+        }
+
+        .option:hover g {
+            transform: scale(1.2);
+        }
+
+        .option circle {
+            r: 30px;
+        }
+
+        .option.option-selected circle {
+            stroke-width: 5px;
+            stroke: var(--main-color);
+        }
+
+        #dynamics-g .option text {
+            font-family: Bravura;
+            fill: var(--light1);
+            font-size: 50px;
+        }
+
+        .pitch .option text {
+            stroke: none;
+            fill: darkmagenta;
+            font-size: 40px;
+            transform: translate(0px, 15px);
+        }
+    </style>
+</head>
+
+<body>
+    <svg class="main" viewBox="0 0 800 600" overflow="hidden">
+        <g class="header" id="header">
+            <image id="header-logo" href="images/logo.png"/>
+            <text id="header-title" x="400" y="200">Multiphonics Palette for MaxScore</text>
+            <line id="header-line" x1="100" x2="700" y1="220" y2="220" />
+        </g>
+        <g class="page-body" id="select-instrument-page">
+            <text class="body-title" id="select-instrument-title" x="400" y="260">Select Instrument</text>
+            <g class="select instrument" id="instrument-clar" transform="translate(230,430)">
+                <g class="select-bg" id="instrument-clar-bg">
+                    <circle class="select-circle" fill="var(--light4)" />
+                    <image class="icon" id="instrument-clarinet-icon" href="images/instrument-clarinet.png" x="-60" y="-100"/>
+                </g>
+                <text class="select-label" id="instrument-clar-label">Bb Clarinet</text>
+            </g>
+            <g class="select instrument" id="instrument-bassclar" transform="translate(570,430)">
+                <g class="select-bg" id="instrument-bassclar-bg">
+                    <circle class="select-circle" fill="var(--light1)" />
+                    <image class="icon" id="instrument-bassclar-icon" href="images/instrument-bassclar.png" x="-60" y="-100"/>
+                </g>
+                <text class="select-label" id="instrument-bassclar-label">Bass Clarinet</text>
+            </g>
+        </g>
+        <g class="page-body hidden-right" id="select-search-page">
+            <text class="body-title" id="select-search-title" x="400" y="260">Select Search Method</text>
+            <image class="back-button" id="search-back" href="images/back-button.png" x="20" y="370" />
+            <g class="select search" id="search-sound" transform="translate(230,430)">
+                <g class="select-bg" id="search-sound-bg">
+                    <circle class="select-circle" fill="var(--light2)" />
+                    <image class="icon" id="search-sound-icon" href="images/search-by-sound.png" x="-102" y="-65"/>
+                </g>
+                <text class="select-label" id="search-fingering-label">Search by sound</text>
+            </g>
+            <g class="select search" id="search-fingering" transform="translate(570,430)">
+                <g class="select-bg" id="search-fingering-bg">
+                    <circle class="select-circle" fill="var(--light3)" />
+                    <image class="icon" id="search-fingering-icon" href="images/search-by-fingering.png" x="-53" y="-115"/>
+                </g>
+                <text class="select-label" id="search-fingering-label">Search by fingering</text>
+            </g>
+        </g>
+        <g class="page-body hidden-right" id="search-sound-page">
+            <text class="body-title" id="search-sound-title" x="400" y="190">Search by Sound</text>
+            <text class="body-subtitle" id="search-sound-subtitle" x="400" y="220">Choose filters</text>
+            <image class="back-button" id="sound-back" href="images/back-button.png" x="20" y="370" />
+            <g class="filter-category sound-filter" id="dynamics-g">
+                <g class="category-bg" id="dynamics-bg">
+                    <circle class="category-circle"></circle>
+                    <image class="icon" id="dynamics-icon" href="images/category-dynamics.svg" x="-60" y="-22" width="120"/>
+                    <text class="category-label" id="dynamics-label">Dynamics</text>
+                </g>
+                <g class="filter-options" id="dynamics-options">
+                    <g class="option" id="dynamics-pp" transform="translate(-70, 50)">
+                        <g>
+                            <circle />
+                            <text></text>
+                        </g>
+                    </g>
+                    <g class="option" id="dynamics-mf" transform="translate(0, 70)">
+                        <g>
+                            <circle />
+                            <text></text>
+                        </g>
+                    </g>
+                    <g class="option" id="dynamics-ff" transform="translate(70, 50)">
+                        <g>
+                            <circle />
+                            <text></text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g class="pitch sound-filter" id="pitch">
+                <circle class="pitch-circle"></circle>
+                <g class="pitch-text">
+                    <text class="pitch-stafflines"></text>
+                    <text class="pitch-notehead"></text>
+                    <text class="pitch-accidental"></text>
+                </g>
+                <g class="options" id="pitch-options">
+                    <g class="option" id="pitch-A" transform="translate(-70, 0)">
+                        <g>
+                            <circle />
+                            <text>A</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-Asharp">
+                        <g>
+                            <circle />
+                            <text>A#</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-B" transform="translate(70, 0)">
+                        <g>
+                            <circle />
+                            <text>B</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="info-button" transform="translate(750,205)" onclick="mouseEvents.infoClick()">
+                <g>
+                    <circle fill="var(--light2)" r="15" />
+                    <text font-size="20" fill="white" font-weight="bolder" text-anchor="middle" y="8">i</text>
+                </g>
+            </g>
+            <g id="info-g" class="info-g hidden-transparent">
+                <rect class="dim-page" id="dim-page-sound" x="0" y="0" width="100%" height="100%" fill="black" fill-opacity="0.5" />
+                <rect id="info-bg" x="50" y="50" width="700" height="500" fill="white" fill-opacity="0.8" />
+                <text class="close-button" id="close-info-button" x="90" y="90" font-size="50px" fill="darkgray" text-anchor="middle" dominant-baseline="middle" onclick="mouseEvents.infoClose()">✕</text>
+            </g>
+        </g>
+        <g class="page-body hidden-right" id="search-by-fingering-page">
+        </g>
+    </svg>
+
+    <script>
+        var mouseEvents = {
+            instrumentClick: function (element) {
+                element.classList.add('instrument-selected');
+                currentFilter.instrument = element.id;
+                document.getElementById('select-instrument-title').classList.add('hidden-transparent');
+                for (var instr of document.querySelectorAll('.instrument')) {
+                    if (instr.id != currentFilter.instrument) {
+                        instr.classList.add('hidden-transparent');
+                    }
+                }
+                document.getElementById('select-search-page').classList.remove('hidden-right');
+            },
+            searchBackClick: function () {
+                document.getElementById('select-search-page').classList.add('hidden-right');
+                document.getElementById('select-instrument-title').classList.remove('hidden-transparent');
+                for (var instr of document.querySelectorAll('.instrument')) {
+                    instr.classList.remove('hidden-transparent', 'instrument-selected');
+                }
+                currentFilter.instrument = null;
+            },
+            searchMethodClick: function (method) {
+                document.getElementById('select-search-page').classList.add('hidden-transparent');
+                document.getElementById('search-'+method+'-page').classList.remove('hidden-right');
+                document.getElementById('header').classList.add('small-header');
+                currentFilter.searchMethod = method;
+            },
+            searchMethodBackClick: function () {
+                document.getElementById('search-sound-page').classList.add('hidden-right');
+                //document.getElementById('search-fingering-page').classList.add('hidden-right');
+                document.getElementById('header').classList.remove('small-header');
+                document.getElementById('select-search-page').classList.remove('hidden-transparent');
+                currentFilter.searchMethod = null;
+            },
+            infoClick: function() {
+                for (var e of document.querySelectorAll('.info-g')) {
+                    if (e.classList.contains('hidden-transparent')) {
+                        e.classList.remove('hidden-transparent');
+                    }
+                }
+            },
+            infoClose: function() {
+                for (var e of document.querySelectorAll('.info-g')) {
+                    if (!e.classList.contains('hidden-transparent')) {
+                        e.classList.add('hidden-transparent');
+                    }
+                }
+            },
+            optionClick: function (element) {
+                if (!element.classList.contains('option-selected')) {
+                    element.classList.add('option-selected');
+                }
+                else element.classList.remove('option-selected');
+            }
+        }
+
+        var currentFilter = {
+            instrument: null,
+            searchMethod: null,
+
+        }
+
+        // select instrument page actions
+        for (var instr of document.querySelectorAll('.instrument')) {
+            instr.addEventListener('click', mouseEvents.instrumentClick.bind(this, instr), false);
+        }
+        // select search page actions
+        document.getElementById('search-back').addEventListener('click', mouseEvents.searchBackClick.bind(this), false);
+        document.getElementById('search-sound').addEventListener('click', mouseEvents.searchMethodClick.bind(this, 'sound'), false);
+        document.getElementById('search-fingering').addEventListener('click', mouseEvents.searchMethodClick.bind(this, 'fingering'), false);
+
+        // search by sound page actions
+        document.getElementById('sound-back').addEventListener('click', mouseEvents.searchMethodBackClick.bind(this), false);
+
+    </script>
+</body>
+
+</html>
