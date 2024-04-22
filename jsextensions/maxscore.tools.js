@@ -1,4 +1,7 @@
 var string = "";
+var depth = 0;
+var endTags = [];
+
 function ds2svg(code)
 {
 	if (!Array.isArray(code)) code = [].concat(code);
@@ -11,6 +14,7 @@ function ds2svg(code)
 
 function ds2svgiterate(code)
 {
+	depth++;
 	for (var i = 0; i < code.length; i++) { 
 	textElement = false;
 	lastNew = "";
@@ -29,13 +33,19 @@ function ds2svgiterate(code)
 			ds2svgiterate(code[i].child);
 			//the following line can lead to issues when attributes are stated after the child element
 			//make sure that all attributes are processed before it gets written
-			//doesn't work: string += (lastNew == "g") ? "</g>" : "</svg>";
-			string += "</g>";
+			depth--;
+			//post("endTag", endTags[depth], "\n");	
+			string += "</" + endTags[depth] + ">";
 			group = true;
+			
 			}
 		else string += " " + element + "=\"" + code[i][element] + "\"";
 		}
-		else lastNew = code[i]["new"];
+		else {
+			lastNew = code[i]["new"];
+			endTags[depth] = lastNew;
+			//post("lastNew", lastNew, depth, "\n");
+			}
 	}
 	if (group == false) {
 		if (!textElement) string += "/>";

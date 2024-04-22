@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 278.0, 66.0, 815.0, 731.0 ],
+		"rect" : [ 205.0, 66.0, 815.0, 731.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -375,8 +375,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -610,8 +608,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -989,7 +985,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 350.333332999999925, 474.0, 85.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "socket.pane.js",
+						"filename" : "socket.pane",
 						"parameter_enable" : 0
 					}
 ,
@@ -1007,7 +1003,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 500.499999984558031, 470.0, 59.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "jit.pane",
+						"filename" : "jit.pane.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -1033,7 +1029,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 413.0, 157.0, 1065.0, 791.0 ],
+						"rect" : [ 118.0, 100.0, 1065.0, 791.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1062,6 +1058,45 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 498.0, 430.0, 35.0, 22.0 ],
+									"text" : "clear"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 557.0, 232.0, 317.0, 35.0 ],
+									"presentation_linecount" : 2,
+									"text" : "svg2drawsocket \"/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg/percussion.svg\""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 551.0, 181.0, 463.0, 35.0 ],
+									"text" : "svg2drawsocket /Users/hajdu/Documents/batik-1.16/samples/tests/spec/scripting/gradientsUpdate.svg"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-48",
 									"maxclass" : "newobj",
@@ -1296,7 +1331,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 98.0, 359.0, 974.0, 600.0 ],
+										"rect" : [ 115.0, 100.0, 974.0, 600.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2107,6 +2142,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-41", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -2175,6 +2217,13 @@
 									"destination" : [ "obj-28", 0 ],
 									"midpoints" : [ 369.5, 653.5, 200.5, 653.5 ],
 									"source" : [ "obj-25", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"source" : [ "obj-26", 0 ]
 								}
 
 							}
@@ -2346,6 +2395,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-6", 0 ]
 								}
@@ -2432,7 +2488,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 972.0, 200.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 330.0 ],
 					"readonly" : 1,
 					"rounded" : 0.0,
 					"text" : "partch-scale.xml",
@@ -2828,7 +2884,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 71.666665999999964, 289.5, 213.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "render2canvas",
+						"filename" : "render2canvas.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -2871,7 +2927,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 78.166665999999964, 470.0, 146.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "picster-select",
+						"filename" : "picster-select.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -2883,7 +2939,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1 ] ],
+					"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1.0 ] ],
 					"filename" : "pane.js",
 					"id" : "obj-7",
 					"maxclass" : "jsui",
@@ -2893,7 +2949,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 728.0, 496.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 330.0 ],
 					"varname" : "pane"
 				}
 

@@ -14,6 +14,7 @@ var SVGLines = {};
 var SVGImages = {};
 var SVGImages2 = {};
 var SVGGraphics = {};
+var SVGDefs = {};
 var output = new Dict();
 output.name = "output";
 var svgGroups = {};
@@ -399,6 +400,7 @@ function fillObj(groups)
 	SVGString = {};
 	SVGLines = {};
 	SVGGraphics = {}
+ 	SVGDefs = {};
 	SVGImages = {};
 	SVGImages2 = {};
 	for (var s = 1; s <= groupcount; s++) {
@@ -406,6 +408,7 @@ function fillObj(groups)
 		SVGString[s] = [];
 		SVGLines[s] = [];
 		SVGGraphics[s] = [];
+ 		SVGDefs[s] = [];
 		SVGImages[s] = [];
 		SVGImages2[s] = [];
 	}
@@ -440,6 +443,7 @@ function fillObj(groups)
 	SVGString = {};
 	SVGLines = {};
 	SVGGraphics = {};
+ 	SVGDefs = {};
 	SVGImages = {};
 	SVGImages2 = {};
 	for (var s = 1; s <= groupcount; s++) {
@@ -447,6 +451,7 @@ function fillObj(groups)
 		SVGString[s] = [];
 		SVGLines[s] = [];
 		SVGGraphics[s] = [];
+ 		SVGDefs[s] = [];
 		SVGImages[s] = [];
 		SVGImages2[s] = [];
 	}
@@ -1507,6 +1512,7 @@ function scoreLayout()
 		SVGLines = {};
 		SVGClefs = {};
 		SVGGraphics = {};
+ 		SVGDefs = {};
 		SVGImages = {};
 		SVGImages2 = {};
 		outlet(0, "flashing", "clear");
@@ -1524,6 +1530,7 @@ function scoreLayout()
 			SVGString[s] = [];
 			SVGLines[s] = [];
 			SVGGraphics[s] = [];
+ 			SVGDefs[s] = [];
 			SVGImages[s] = [];
 			SVGImages2[s] = [];
 		}
@@ -3136,13 +3143,18 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			if (svggroupflag == false) svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")";
 				switch (picster.get("new")) {
 				case "svg" :
-				//post("picster", picster.stringify(), "\n");
 				var _i;
-				for (var i = 0; i < picster.get("child").length; i++) if (picster.get("child[" + i + "]::new") == "g") _i = i;
+				var defs = {};
+			    var keys = picster.getkeys();
+				for (var i = 0; i < keys.length; i++) if (picster.get(keys[i]) != "child") defs[keys[i]] = picster.get(keys[i]);
+				//post("jpicster", JSON.stringify(defs), "\n");
+				for (var i = 0; i < picster.get("child").length; i++) {
+					if (picster.get("child[" + i + "]::new") == "g") _i = i;
+					else if (picster.get("child[" + i + "]::new") == "defs") defs.child = JSON.parse(picster.get("child[" + i + "]").stringify());
+					}
+				SVGDefs[s + 1].push(defs);
 				picster = picster.get("child[" + _i + "]");
-				//what happens to svg attributes (viewbox etc?)
 				//how to handle css?
-				//what happens to defs?
 				//what happens to scripts?
 				case "g" :
 				if (Array.isArray(picster.get("child"))) for (var i = 0; i < picster.get("child").length; i++) {
@@ -3163,7 +3175,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster.transform = svgtransform;
 				iterateGroup(jpicster);
 				SVGGraphics[s + 1].push(jpicster);
-				//post("jpicster", JSON.stringify(jpicster), "\n");
 				break;
 				case "marker" :
 				post("I'm a marker and I'm not supported!\n");	
@@ -3596,6 +3607,7 @@ function writeSVG(destination)
 	f.clefs = SVGClefs;
 	f.svgimages = SVGImages;
 	f.picster = SVGGraphics;
+	f.defs = SVGDefs;
 	f.pageSize = [_scoreLayout[4], _scoreLayout[5]];
 	f.setZoom = zoom;
 	f.bgcolor = bcolor;

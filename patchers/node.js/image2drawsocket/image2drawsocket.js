@@ -95,14 +95,17 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		for (attribute in SVGAttributes){
 			value[attribute] = SVGAttributes[attribute];
 		}
+		value["picster:scale"] = "1,1";
  		let filename = infile.substring(infile.lastIndexOf('/') + 1);
 		value.id = "_" + filename;
 		value.child = [];
+		
+		//Max.post(JSON.stringify(getSVGElements(svgJS)));
 		_procElements = procElements(getSVGElements(svgJS));
-		//Max.post(_procElements);
 		for (let element = 0; element < _procElements.length; element++){
 			if (_procElements[element].new == "defs") value.child.push(_procElements[element]);
-			if (_procElements[element].new == "script") value.child.push(_procElements[element]);
+			else if (_procElements[element].new == "script") value.child.push(_procElements[element]);
+			else if (_procElements[element].new =="sodipodi:namedview") value.child.push(_procElements[element]);
 			else _procElements2.push(_procElements[element]);
 		}
 		value.child.push({"new" : "g", "transform" : "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")", "child" : _procElements2});
@@ -163,19 +166,18 @@ function css2obj(style_)
  */
 function procElements(el_array, artboard_index = "", _ret_reflist = [])
 {
-    if( !Array.isArray(el_array) )
+   if( !Array.isArray(el_array) )
         el_array = [ el_array ];
 
 	for (let i = el_array.length - 1; i >= 0; i--) {
-		//Max.post(JSON.stringify(el_array[i]));
 		if (el_array[i].name == 'metadata' || el_array[i].name == 'title') el_array.splice(i, 1);
 	}
-
+ 
     return el_array.map( n => {
         let obj_ = {};
        if( n.hasOwnProperty('name') ) // && (n.name != 'metadata') && (n.name != 'defs')
             obj_.new = n.name;
-        
+       
         if( n.hasOwnProperty('attributes') )
         {
             for( let k in n.attributes )
@@ -183,24 +185,27 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
 
                 switch(k)
                 {
+ 					/*
                     case 'id':
                         obj_.id =`${n.attributes[k]}_${artboard_index}`;
                     break;
+					*/
                     case 'style':
-                        obj_.style = styleStr2obj(n.attributes[k]);
+                  	obj_.style = styleStr2obj(n.attributes[k]);
                     break;
 					case 'type':
-						//if (n.attributes[k] == 'text/css') 
 						if (n.attributes[k] == 'text/css') {
 							css = css2obj(n.elements[0].text);
 							//Max.post("type", Object.keys(css2obj(n.elements[0].text)), css.st0);
 							}
 					break;
+					/*
 					case 'class':
+					 	Max.post(n.attributes[k]);
 						obj_.style = css[n.attributes[k]];
 						//obj_.bogus = 'test';
-					 	//Max.post(n.attributes[k].length, JSON.stringify(css));
 					break;
+
                     case 'xlink:href':
                     case 'href':
                         if( typeof _ret_reflist !== 'undefined' && n.attributes[k].startsWith('#') )
@@ -210,9 +215,8 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
                         }
                         else
                             obj_[k] = `${hrefPathPrefix}${n.attributes[k]}`;
-
-
                     break;
+					*/
                     default:
                         obj_[k] = n.attributes[k];
                     break;
@@ -224,10 +228,10 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
            
                        
         }
-
+ 
         if( n.hasOwnProperty('elements') ) {
             if( obj_.new == "text" ) {
-				if (n.elements[0].type == 'text' ) obj_.text = htmlEntities(n.elements[0].text);
+  				if (n.elements[0].type == 'text' ) obj_.text = htmlEntities(n.elements[0].text);
 				else if (n.elements[0].type == 'element' &&  n.elements[0].name == 'tspan') {
 					obj_.text = "";
 					for (let t in n.elements) {
@@ -235,6 +239,13 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
 					}
 				}
 			}
+			else if (obj_.new == "style" ) {
+ 				//Max.post(JSON.stringify(n.elements[0]));
+			if (n.elements[0].type == "text" ){
+					}
+				//Max.post(JSON.stringify(n.elements[0].text));
+				obj_.text = n.elements[0].text;
+				}
             else obj_.child = procElements(n.elements, artboard_index, _ret_reflist);
 			}
 
