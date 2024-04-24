@@ -126,6 +126,7 @@ var manual = 0;
 var mouseselection = 1;
 var incrementers = {};
 var pScale = [];
+var pOffset = []
 var mgraphicsRoutines = [ "append_path", "arc", "arc_negative", "attr_setfill", "clear_surface", "close_path", "curve_to", "device_to_user", "ellipse", "fill", "fill_extents", "fill_preserve", "fill_preserve_with_alpha", "fill_with_alpha", "font_extents", "get_current_point", "get_line_cap", "get_line_join", "get_line_width", "get_matrix", "getfontlist", "identity_matrix", "image_surface_create", "image_surface_destroy", "image_surface_draw", "image_surface_draw_fast", "image_surface_get_size", "in_fill", "line_to", "move_to", "new_path", "ovalarc", "paint", "paint_with_alpha", "parentpaint", "path_roundcorners", "pattern_add_color_stop_rgba", "pattern_create_for_surface", "pattern_create_linear", "pattern_create_radial", "pattern_create_rgba", "pattern_destroy", "pattern_get_extend", "pattern_get_matrix", "pattern_get_type", "pattern_identity_matrix", "pattern_rotate", "pattern_scale", "pattern_set_extend", "pattern_set_matrix", "pattern_translate", "pop_group_to_source", "push_group", "rectangle", "rectangle_rounded", "rel_curve_to", "rel_line_to", "rel_move_to", "restore", "rotate", "save", "scale", "scale_source_rgba", "select_font_face", "set_dash", "set_font_size", "set_line_cap", "set_line_join", "set_line_width", "set_matrix", "set_source", "set_source_rgb", "set_source_rgba", "set_source_surface", "show_text", "stroke", "stroke_preserve", "stroke_preserve_with_alpha", "stroke_with_alpha", "svg_create", "svg_destroy", "svg_get_size", "svg_render", "svg_set", "text_measure", "text_path", "transform", "translate", "translate_source_rgba", "user_to_device", "user_to_device" ];
 	
 var img = new MGraphicsSVG("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: ivory\" xml:space=\"preserve\"><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 30)\">Create new score or</text><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 90)\">load score from disk</text></svg>");
@@ -343,26 +344,30 @@ function obj_ref(o)
 	//ISSUE: create separate SVG objects and assign to picster which needs to be an array of MGraphics objects. Set scaling factor separately for every element of array.
 	picster = [];
 	pScale = [];
+	pOffset = [];
+	//post("o.picster[s]", o.picster[s][i].new, JSON.stringify(o.defs[s][i]), "\n");
 	for (var i = 0; i < o.picster[s].length; i++) {
-	post("o.picster[s]", i, JSON.stringify(o.defs[s][i]), "\n");
 		picster[i] = new MGraphicsSVG();
 		pScale[i] = [1, 1];
+		pOffset[i] = o.defs[s][i]["picster:offset"].split(",");
 		var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 		svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 		//svg += "<svg width=\"" + o.defs[s][0].width + "\" height=\"" + o.defs[s][0].height + "\" viewBox=\"" + o.defs[s][0].viewBox + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-		if (o.defs[s].length > 0 && !Array.isArray(o.defs[s][i].child)) {
+			if (o.defs[s][i].hasOwnProperty("new")) {
+			if (o.defs[s].length > 0 && !Array.isArray(o.defs[s][i].child)) {
 			pScale[i] = o.defs[s][i]["picster:scale"].split(",");
 			var transform = o.picster[s][i].transform.slice(7, -1).split(",").map(Number);
 			for (var j = 0; j < o.defs[s][i].child.child.length; j++) {
 				if (Object.keys(o.defs[s][i].child.child[j]).indexOf("gradientTransform") != -1) {
 					o.defs[s][i].child.child[j].gradientTransform = gradientTransform(o.defs[s][i].child.child[j].gradientTransform, transform);
 				}
-			}
 		svg += ds2svg(o.defs[s][i].child);
 		}
+	}
+	}
 	svg += ds2svg(o.picster[s][i]);
 	svg += "</svg>";
-	post("svg", svg, "\n");
+	//post("svg", svg, "\n");
 	picster[i].setsvg(svg);
 	}
 		
@@ -388,9 +393,8 @@ function obj_ref(o)
 }
 
 function gradientTransform(string, translate) {
-	//post("obj1", translate, string, "\n");
 	string += " translate(" + translate[4] + " " + translate[5] + ")";
-	post("obj2", string, "\n");
+	//post("obj2", string, "\n");
 	return string;
 }
 
@@ -723,8 +727,9 @@ function paint() {
 		mgraphics.svg_render(embedded);
 		var m = mgraphics.get_matrix();
 		for (var i = 0; i < picster.length; i++) {
-		mgraphics.scale(pScale[i]);		
-		post("pscale", pScale[i], "\n");
+		mgraphics.translate(pOffset[i]);	
+		mgraphics.scale(pScale[i]);
+		//post("pscale", pScale[i], "\n");
 		mgraphics.svg_render(picster[i]);
 		mgraphics.set_matrix(m);
 		}

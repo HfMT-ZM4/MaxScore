@@ -165,7 +165,6 @@ if (mode == "picster" && !blocked) {
 	}
 	var e = new Dict();
 	e.parse(renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
-	//post("bounds", e.stringify(), "\n");
 	if (format == "sadam.canvas") {
 	var picster = e.get("picster-element");
 	var pkeys = picster.getkeys();
@@ -2275,8 +2274,8 @@ function anything()
 			tempDict.parse(foundobjects.get(item).pop());
 			temp2 = tempDict.get("picster-element[0]::val");
 			if (updatedDict.contains("picster-element[1]::val::bounds")) updatedDict.replace("picster-element[1]::val::bounds", findBoundsToo(JSON.parse(temp2.stringify())));
-			reattachRenderedMessage(edit.stringify_compressed());
-			//outlet(3, "bang");
+			reattachRenderedMessage(updatedDict.stringify_compressed());
+			/// DOESN'T SEEM TO WORK
 			break;
 			case 86 : //v
 			if (cp.copy != "undefined") createRenderedMessage(1, cp.copy[0], cp.copy[1], cp.copy[2]);
@@ -2702,26 +2701,46 @@ function findBounds(d)
 
 function findBoundsToo(d)
 {
-
 	var renderOffset = [600, 600];
-	//post("pre-D", JSON.stringify(d), "\n");
-	if (Array.isArray(d)) {
-		if (d[0].new == "text") {
-			if (d[0].hasOwnProperty("text")) {
-				if (d[0].text.indexOf("||") != -1) d[0] = splitText(d[0]);
-			}
-			else if (d[0].hasOwnProperty("child")) {
-				d[0].text = d[0].child;	
-				delete d[0].child;
-			}
+	var scale = [1, 1];
+	if (!Array.isArray(d)) d = [].concat(d);
+	switch (d[0].new) {
+	case "text" :
+		if (d[0].hasOwnProperty("text")) {
+			if (d[0].text.indexOf("||") != -1) d[0] = splitText(d[0]);
 		}
-		if (d[0].new == "image" && !d[0]["xlink:href"].indexOf("reference")) {
+		else if (d[0].hasOwnProperty("child")) {
+			d[0].text = d[0].child;	
+			delete d[0].child;
+		}
+	break;
+	case "image" :
+		if (!d[0]["xlink:href"].indexOf("reference")) {
 			d[0]["xlink:href"] = "data:image/png;base64," + imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("");
 		}
+	break;
+	case "svg" :
+		//if (d[0].hasOwnProperty("picster:scale")) 
+		scale = d[0]["picster:scale"].split(",");
+		var _i;
+		var defs = {};
+		var keys = Object.keys(d[0]);
+		for (var i = 0; i < keys.length; i++) if (d[0][keys[i]] != "child") defs[keys[i]] = d[0][keys[i]];
+		//post("jpicster", JSON.stringify(defs), "\n");
+		for (var i = 0; i < d[0]["child"].length; i++) {
+			if (d[0]["child"][i].new == "g") _i = i;
+			else if (d[0]["child"][i].new == "defs") defs.child = d[0]["child"][i];
+			}
+		d[0] = d[0]["child"][_i];
+	case "g" :
+		iterateGroup(d[0]);
+	break;
 	}
-	else if (d.new == "g") iterateGroup(d);
 	//post("post-D", JSON.stringify(d), "\n");
-	var svg = "<svg><g transform = \"matrix(1,0,0,1," + renderOffset[0] + "," + renderOffset[1] + ")\">";
+	///THIS DOESN'T WORK. THEREFORE EXTRACT G AND APPLY TRANSFORM
+	//post("pre-D", JSON.stringify(d[0]), "\n");
+	var svg = "<svg><g transform = \"matrix(" + scale[0] + ",0,0," + scale[1] + "," + renderOffset[0] + "," + renderOffset[1] + ")\">";
+	///
 	svg += ds2svg(d);
 	svg += "</g></svg>";
 	//img.setsvg(svg);

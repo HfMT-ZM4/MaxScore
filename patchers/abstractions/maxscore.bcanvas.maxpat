@@ -375,6 +375,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -608,6 +610,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -1029,7 +1033,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 118.0, 100.0, 1065.0, 791.0 ],
+						"rect" : [ 171.0, 100.0, 1065.0, 791.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1057,6 +1061,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-26",
@@ -1078,7 +1083,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 557.0, 232.0, 317.0, 35.0 ],
-									"presentation_linecount" : 2,
 									"text" : "svg2drawsocket \"/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg/percussion.svg\""
 								}
 
@@ -2939,7 +2943,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1.0 ] ],
+					"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1.0 ], [ "transparency", 0 ] ],
 					"filename" : "pane.js",
 					"id" : "obj-7",
 					"maxclass" : "jsui",

@@ -436,15 +436,14 @@ function obj_ref(o)
 	bgcolor = o.bgcolor;
 	SVGString = o.svg;
 	SVGLines = o.lines;
-	SVGPicster = o.picster;
+	SVGPicster = JSON.parse(JSON.stringify(o.picster));
+	SVGDefs = JSON.parse(JSON.stringify(o.defs));
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
 	groupcount = o.groupcount;
-	//post("SVGImages", JSON.stringify(SVGImages), groupcount, "\n");
 	//Check whether images are already in the media folder. If not copy them there.
 	for (var s = 1; s <= groupcount; s++) {
 		for (var i = 0; i < SVGImages[s].length; i++) {
-		//post("isfile", isFile(pathToScript + mediaFolder, SVGImages[s][i]["href"].substring(SVGImages[s][i]["href"].lastIndexOf("/") + 1)), "\n");
 		if (SVGImages[s][i]["xlink:href"].slice(0, 4) != "data") {
 			if (!isFile(pathToScript + mediaFolder, SVGImages[s][i]["xlink:href"].substring(SVGImages[s][i]["xlink:href"].lastIndexOf("/") + 1))) outlet(1, "cp", SVGImages[s][i]["xlink:href"].substring(SVGImages[s][i]["xlink:href"].indexOf(":") + 1), pathToScript + mediaFolder + SVGImages[s][i]["xlink:href"].substring(SVGImages[s][i]["xlink:href"].lastIndexOf("/") + 1));
 			SVGImages[s][i]["xlink:href"] = mediaFolder + SVGImages[s][i]["xlink:href"].substring(SVGImages[s][i]["xlink:href"].lastIndexOf("/") + 1);
@@ -456,6 +455,16 @@ function obj_ref(o)
 	//writeSVG();
 	for (var s = 1; s <= groupcount; s++)
 		{
+		for (var i = 0; i < SVGPicster[s].length; i++) {
+		var scale = (o.defs[s][i]).hasOwnProperty("picster:scale") ? o.defs[s][i]["picster:scale"].split(",") : [1, 1];
+		var translate = o.defs[s][i]["picster:offset"];
+		SVGPicster[s][i].transform = "matrix(" + scale[0] + ",0,0," + scale[1] + "," + translate + ")";
+		if (SVGDefs[s][i].hasOwnProperty("child")) {
+			post("SVGImages", JSON.stringify(SVGDefs), groupcount, "\n");
+			SVGDefs[s][i].child.new = "g";
+			SVGDefs[s][i].child.parent = "defs";
+			}
+		}
 		var val = [];
 		val.push({
 			"parent" : "main-svg",
@@ -486,11 +495,12 @@ function obj_ref(o)
    			"new" : "g",
     		"id" : "score-" + s,
 			"transform" : "matrix(" + [thisZoom(s), 0, 0, thisZoom(s), 0, 0] + ")",
-    		"child" : o.lines[s].concat(o.svg[s], o.svgimages[s], o.picster[s])
+    		"child" : o.lines[s].concat(o.svg[s], o.svgimages[s], SVGDefs[s], SVGPicster[s])
 			});
 		joutput[s] = [clear, {"key" : "svg", "val" : val}];
 	}
 	output.parse(JSON.stringify(joutput));
+	
 	outlet(0, "dictionary", output.name);
 	scroll("offset", _offset);
 	renderPlayhead();

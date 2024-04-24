@@ -117,6 +117,9 @@ var maxcount = {};
 var	buttonfillcolor = [1., 0., 0., 0.1];
 var	buttonstrokecolor = [1., 0., 0., 1.];
 var buttonstrokewidth = 0.5;
+var pCount = 0;
+var pScale = [];
+var pOffset = []
 var ref, listener;
 
 var waitasecond = new Task(shortDelay, this);
@@ -253,7 +256,6 @@ function obj_ref(o)
 	embeddedImages = [];
 	mgraphics.svg_create("img", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	mgraphics.svg_create("clefs", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
-	mgraphics.svg_create("_picster", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	mgraphics.svg_create("embedded", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	width = this.patcher.box.rect[2] - this.patcher.box.rect[0];
 	height = this.patcher.box.rect[3] - this.patcher.box.rect[1];
@@ -291,12 +293,33 @@ function obj_ref(o)
 	svg += "</svg>";
 	mgraphics.svg_set("img", svg);
 	
-	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-	svg += "<g id=\"" + s +  "\">";	
-	svg += ds2svg(o.picster[s]);
-	svg += "</g>";
+	pScale = [];
+	pOffset = [];
+	//post("o.picster[s]", o.picster[s][i].new, JSON.stringify(o.defs[s][i]), "\n");
+	pCount = o.picster[s].length;
+	for (var i = 0; i < pCount; i++) {
+		pScale[i] = [1, 1];
+		pOffset[i] = o.defs[s][i]["picster:offset"].split(",");
+		var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
+		svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
+		//svg += "<svg width=\"" + o.defs[s][0].width + "\" height=\"" + o.defs[s][0].height + "\" viewBox=\"" + o.defs[s][0].viewBox + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
+			if (o.defs[s][i].hasOwnProperty("new")) {
+			if (o.defs[s].length > 0 && !Array.isArray(o.defs[s][i].child)) {
+			pScale[i] = o.defs[s][i]["picster:scale"].split(",");
+			var transform = o.picster[s][i].transform.slice(7, -1).split(",").map(Number);
+			for (var j = 0; j < o.defs[s][i].child.child.length; j++) {
+				if (Object.keys(o.defs[s][i].child.child[j]).indexOf("gradientTransform") != -1) {
+					o.defs[s][i].child.child[j].gradientTransform = gradientTransform(o.defs[s][i].child.child[j].gradientTransform, transform);
+				}
+		svg += ds2svg(o.defs[s][i].child);
+		}
+	}
+	}
+	svg += ds2svg(o.picster[s][i]);
 	svg += "</svg>";
-	mgraphics.svg_set("_picster", svg);
+	mgraphics.svg_create("_picster[" + i + "]", "<svg></svg>");	
+	mgraphics.svg_set("_picster[" + i + "]", svg);
+	}
 
 	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svg += "<g id=\"" + s +  "\">";	
@@ -321,6 +344,12 @@ function clear()
 	//img.setsvg("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");
 	mgraphics.svg_set("img", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	clearGraphics();
+}
+
+function gradientTransform(string, translate) {
+	string += " translate(" + translate[4] + " " + translate[5] + ")";
+	//post("obj2", string, "\n");
+	return string;
 }
 
 function pageSize(x, y)
@@ -614,7 +643,13 @@ function redraw() {
 		if (playback) flashingNoteheads();
 		renderImages();
 		mgraphics.svg_render("embedded");
-		mgraphics.svg_render("_picster");
+		var m = mgraphics.get_matrix();
+		for (var i = 0; i < pCount; i++) {
+		mgraphics.translate(pOffset[i]);	
+		mgraphics.scale(pScale[i]);
+		mgraphics.svg_render("_picster[" + i + "]");
+		mgraphics.set_matrix(m);
+		}
 		picsterLabel();
 		paintOnTop();
 		if (highlight) measureSelection();

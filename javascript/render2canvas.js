@@ -3125,6 +3125,7 @@ function anything() {
 
 function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
+			var defs = {};
 			var jpicster = {};
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
 			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return Math.round(element * 255)}) + ")";
@@ -3137,14 +3138,20 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				else if (picster.get("style::fill") == "$BRGB") picster.replace("style::fill", brgb);
 			}
 			if (picster.contains("style::stroke-dasharray")) if (picster.get("style::stroke-dasharray") == -1) wave = true;
+			///
+			///
 			if (picster.contains("transform")) transform = picster.get("transform").substr(picster.get("transform").indexOf("(") + 1, picster.get("transform").lastIndexOf(")") - picster.get("transform").indexOf("(") - 1).split(",").map(Number);
 			else transform = [1, 0, 0, 1, 0, 0];
 			//traverse picster and look for instances of text containing "||"
-			if (svggroupflag == false) svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")";
+			if (svggroupflag == false) {
+				svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4], transform[5]] + ")";
+				defs["picster:offset"] = [RenderMessageOffset[0], _dest].join(",");
+			}
+			///
+			///
 				switch (picster.get("new")) {
 				case "svg" :
 				var _i;
-				var defs = {};
 			    var keys = picster.getkeys();
 				for (var i = 0; i < keys.length; i++) if (picster.get(keys[i]) != "child") defs[keys[i]] = picster.get(keys[i]);
 				//post("jpicster", JSON.stringify(defs), "\n");
@@ -3152,7 +3159,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					if (picster.get("child[" + i + "]::new") == "g") _i = i;
 					else if (picster.get("child[" + i + "]::new") == "defs") defs.child = JSON.parse(picster.get("child[" + i + "]").stringify());
 					}
-				SVGDefs[s + 1].push(defs);
 				picster = picster.get("child[" + _i + "]");
 				//how to handle css?
 				//what happens to scripts?
@@ -3175,6 +3181,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster.transform = svgtransform;
 				iterateGroup(jpicster);
 				SVGGraphics[s + 1].push(jpicster);
+				SVGDefs[s + 1].push(defs);
 				break;
 				case "marker" :
 				post("I'm a marker and I'm not supported!\n");	
@@ -3236,6 +3243,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
+				SVGDefs[s + 1].push(defs);
 				}
 				break;
 				case "rect" :
@@ -3243,16 +3251,19 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
+				SVGDefs[s + 1].push(defs);
 				break;
 				case "ellipse" :
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
+				SVGDefs[s + 1].push(defs);
 				break;
 				case "polyline" :
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
+				SVGDefs[s + 1].push(defs);
 				break;
 				case "path" :
 				/*
@@ -3266,6 +3277,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
+				SVGDefs[s + 1].push(defs);
 				}
 				break;
 				case "text" :
@@ -3283,6 +3295,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				if (jpicster.text.indexOf("||") != -1) jpicster = splitText(jpicster); 		
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
+				SVGDefs[s + 1].push(defs);
 				break;
 				case "image" :
 				var href = picster.get("xlink:href");
@@ -3299,6 +3312,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
 				}
 				);					
+				SVGDefs[s + 1].push(defs);
 				}
 				else if (!href.indexOf("reference")) { //if "reference" is at index 0
 				var reference = href.slice(href.indexOf(":") + 1);
