@@ -3612,7 +3612,6 @@ function pagenumber()
 
 function writeSVG(destination)
 {
-	//post("init", _init, "\n");
 	if (destination == "object") {
 	var f = {};
 	//for (var s = 1; s <= groupcount; s++) SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
@@ -3655,7 +3654,20 @@ function writeSVG(destination)
 		}
 		else f.writeline(ds2svg(SVGImages2[s][i]));
 		}
-	for (var i = 0; i < SVGGraphics[s].length; i++) f.writeline(ds2svg(SVGGraphics[s][i]));
+	var SVGGraphics_ = JSON.parse(JSON.stringify(SVGGraphics));
+	for (var i = 0; i < SVGGraphics_[s].length; i++) {
+		var scale = (SVGDefs[s][i]).hasOwnProperty("picster:scale") ? SVGDefs[s][i]["picster:scale"].split(",") : "1,1";
+		var translate = SVGDefs[s][i]["picster:offset"];
+		SVGGraphics_[s][i].transform = SVGGraphics_[s][i].transform + " translate("  + translate + ") scale(" + scale + ")";
+		if (SVGDefs[s][i].hasOwnProperty("viewBox")) {
+			f.writeline("<svg>");
+			if (SVGDefs[s][i].hasOwnProperty("child")) f.writeline(ds2svg(SVGDefs[s][i].child));
+			f.writeline(ds2svg(SVGGraphics_[s][i]));
+			f.writeline("</svg>");	
+		//We may want to iterate through svg elements as they easily reach size >32k
+		}
+		else f.writeline(ds2svg(SVGGraphics_[s][i]));
+		}
 	if (pageNumber != "") f.writeline(pageNumber);
 	if (SVGImages[s].length > 0) f.writeline(SVGImages[s]);
 	f.writeline("</g>");
@@ -3694,7 +3706,6 @@ function writeDefs(destination, f)
 					var fontname = fontDescriptors[j].get("path").substring(fontDescriptors[j].get("path").lastIndexOf("/") + 1, fontDescriptors[j].get("path").indexOf("."));
 					f.writeline("<font-face font-family=\"" + keys[i] + "\">");
 					f.writeline("<font-face-src>");
-					//post("destination", destination, "\n");
 					f.writeline("<font-face-uri xlink:href=\"" + destination.substring(destination.indexOf(":") + 1, destination.lastIndexOf("/") + 1) + fontname + ".svg#" + fontname.split(" ").join("-") + "\">");
 					f.writeline("<font-face-format string=\"svg\"/>");
 					f.writeline("</font-face-uri>");

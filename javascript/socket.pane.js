@@ -460,7 +460,7 @@ function obj_ref(o)
 		var translate = o.defs[s][i]["picster:offset"];
 		SVGPicster[s][i].transform = "matrix(" + scale[0] + ",0,0," + scale[1] + "," + translate + ")";
 		if (SVGDefs[s][i].hasOwnProperty("child")) {
-			post("SVGImages", JSON.stringify(SVGDefs), groupcount, "\n");
+			//post("SVGImages", JSON.stringify(SVGDefs), groupcount, "\n");
 			SVGDefs[s][i].child.new = "g";
 			SVGDefs[s][i].child.parent = "defs";
 			}

@@ -20,9 +20,13 @@ function ds2svgiterate(code)
 	lastNew = "";
 	group = false;
 	string += "<" + code[i]["new"];
+	var endTag = "";
 	for (var element in code[i]) {
 	if (element != "new") {
-		if (element == "text") textElement = true; 		
+		if (element == "text") {
+			textElement = true; 
+			endTag = "</" + code[i].new + ">";
+			}		
 		else if (element == "style") {
 			string += " " + element + "=\"";
 			for (var property in code[i].style) string += property + ": " + code[i].style[property] + ";";
@@ -49,7 +53,7 @@ function ds2svgiterate(code)
 	}
 	if (group == false) {
 		if (!textElement) string += "/>";
-		else string += ">" + code[i].text + "</text>";
+		else string += ">" + code[i].text + endTag;
 		}
 	}
 }
