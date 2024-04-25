@@ -3660,7 +3660,14 @@ function writeSVG(destination)
 		var translate = SVGDefs[s][i]["picster:offset"];
 		SVGGraphics_[s][i].transform = SVGGraphics_[s][i].transform + " translate("  + translate + ") scale(" + scale + ")";
 		if (SVGDefs[s][i].hasOwnProperty("viewBox")) {
-			f.writeline("<svg>");
+			var SVGAttrs = JSON.parse(JSON.stringify(SVGDefs[s][i]));
+			delete SVGAttrs["picster:offset"];
+			delete SVGAttrs["picster:scale"];
+			delete SVGAttrs["width"];
+			delete SVGAttrs["height"];
+			delete SVGAttrs["viewBox"];
+			post("svg", ds2svg(SVGAttrs).slice(0, -6), "\n");
+			f.writeline(ds2svg(SVGAttrs).slice(0, -6));
 			if (SVGDefs[s][i].hasOwnProperty("child")) f.writeline(ds2svg(SVGDefs[s][i].child));
 			f.writeline(ds2svg(SVGGraphics_[s][i]));
 			f.writeline("</svg>");	
