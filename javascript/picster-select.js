@@ -287,6 +287,11 @@ if (mode == "picster" && !blocked) {
 	}
 }
 
+function dblClick()
+{
+	click = "double";
+}
+
 function ctrlClick(x, y)
 {
 	if (mode == "picster") {
@@ -680,7 +685,7 @@ if (mode == "picster") {
 				addShape(origin[0], origin[1], "text", text);
 				break;
 			case 9 :
-				this.patcher.getnamed("opendialog").message("bang");
+				if (click == "double") this.patcher.getnamed("opendialog").message("bang");
 				break;
 			case 0 :
 				var temp = [];

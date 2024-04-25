@@ -1141,6 +1141,7 @@ function onidleout() {
 
 function ondblclick(x, y, but, cmd, shift, capslock, option, ctrl) {
 	//_zoom = (controlshift) ? 1 : zoom;
+	outlet(1, "dblClick");
     outlet(controlshift, "doubleClick", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
     outlet(controlshift, "mouseRightButtonDown", 1);
     outlet(controlshift, "mousePressed", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
