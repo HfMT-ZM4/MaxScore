@@ -33,6 +33,8 @@
             display: block;
             /* No floating content on sides */
             font-family: "Montserrat", sans-serif;
+            text-anchor: middle;
+            dominant-baseline: middle;
         }
 
         text {
@@ -88,13 +90,16 @@
         .body-title {
             font-size: 25px;
             font-weight: bold;
-            text-anchor: middle;
             transition: all 0.5s;
         }
         .body-subtitle {
             font-size: 20px;
             font-weight: light;
-            text-anchor: middle;
+            transition: all 0.5s;
+        }
+        .body-resultscount {
+            font-size: 20px;
+            font-weight: light;
             transition: all 0.5s;
         }
 
@@ -102,8 +107,6 @@
             display: none;
             font-size: 30px;
             font-weight: bolder;
-            text-anchor: middle;
-            dominant-baseline: middle;
             fill: white;
         }
         .select:hover .select-label {
@@ -128,17 +131,32 @@
             transform: translate(100px, 275px) scale(0.3);
         }
 
-        #info-button:hover g {
+        .button-small:hover g {
             transform: scale(1.2);
         }
-        .info-g {
-            transition: all 0.5s;
+        .button-small text {
+            font-size: 20;
+            fill: white;
+            font-weight: bolder;
+        }
+        .button-small circle {
+            fill: var(--light2);
+            r: 15px;
         }
 
-        .filter-category {
-            text-anchor: middle;
-            dominant-baseline: middle;
+        .info-g {
+            transition: all 0.5s;
+        } 
+        .info-tagtitle {
+            text-anchor: start;
+            font-size: 13px;
+            font-weight: bold;
         }
+        .info-tagdescription {
+            text-anchor: start;
+            font-size: 13px;
+        }
+
         .filter-category text {
             stroke: none;
         }
@@ -161,41 +179,17 @@
             r: 80px;
         }
 
+        #pitch-g {
+            transform: translate(220px, 310px);
+            fill: var(--light2);
+        }
         #dynamics-g {
-            transform: translate(400px, 320px);
-            fill: var(--light3);
+            transform: translate(400px, 310px);
+            fill: var(--light4);
         }
-
-        .pitch {
-            display: none;
-            transform: translate(200px, 400px);
-            stroke-width: 5px;
-            stroke: darkmagenta;
-            fill: pink;
-            text-anchor: middle;
-        }
-
-        .pitch-circle {
-            r: 100px;
-        }
-
-        .pitch-text {
-            stroke: none;
-            font-family: Bravura;
-            font-size: 100px;
-            fill: darkmagenta;
-        }
-
-        .pitch-stafflines {
-            transform: translate(0px, 50px);
-        }
-
-        .pitch-notehead {
-            transform: translate(15px, 12.5px);
-        }
-
-        .pitch-accidental {
-            transform: translate(-15px, 12.5px);
+        #difficulty-g {
+            transform: translate(580px, 310px);
+            fill: var(--light1);
         }
 
         /* filter category options display toggle */
@@ -205,7 +199,7 @@
         .filter-category:hover .option {
             display: inherit;
         }
-        .option.option-selected .option {
+        .option.option-selected {
             display: inherit;
         }
 
@@ -222,17 +216,36 @@
             stroke: var(--main-color);
         }
 
-        #dynamics-g .option text {
-            font-family: Bravura;
-            fill: var(--light1);
-            font-size: 50px;
+        .option text {
+            fill: var(--light4);
+            font-weight: bold;
+            font-size: large;
         }
 
-        .pitch .option text {
+        .tag-g circle {
             stroke: none;
-            fill: darkmagenta;
-            font-size: 40px;
-            transform: translate(0px, 15px);
+            fill: var(--light3);
+            r: 35px;
+        }
+        .tag-g.tag-selected circle {
+            stroke: var(--main-color);
+            stroke-width: 5px;
+        }
+
+        .tag-g text {
+            fill: white;
+            font-weight: bold;
+        }
+
+        .tag-g:hover g {
+            transform: scale(1.2);
+        }
+
+        #dynamics-g .option text {
+            font-family: Bravura;
+            font-weight: normal;
+            fill: var(--light1);
+            font-size: 50px;
         }
     </style>
 </head>
@@ -280,9 +293,10 @@
             </g>
         </g>
         <g class="page-body hidden-right" id="search-sound-page">
-            <text class="body-title" id="search-sound-title" x="400" y="190">Search by Sound</text>
-            <text class="body-subtitle" id="search-sound-subtitle" x="400" y="220">Choose filters</text>
-            <image class="back-button" id="sound-back" href="images/back-button.png" x="20" y="370" />
+            <text class="body-title" id="search-sound-title" x="400" y="180">Search by Sound</text>
+            <text class="body-subtitle" id="search-sound-subtitle" x="400" y="210">Choose filters</text>
+            <image class="back-button" id="sound-back" href="images/back-button.png" x="20" y="340" />
+            <text class="body-resultscount" id="search-sound-resultscount" x="400" y="585">0 result(s)</text>
             <g class="filter-category sound-filter" id="dynamics-g">
                 <g class="category-bg" id="dynamics-bg">
                     <circle class="category-circle"></circle>
@@ -310,27 +324,26 @@
                     </g>
                 </g>
             </g>
-            <g class="pitch sound-filter" id="pitch">
-                <circle class="pitch-circle"></circle>
-                <g class="pitch-text">
-                    <text class="pitch-stafflines"></text>
-                    <text class="pitch-notehead"></text>
-                    <text class="pitch-accidental"></text>
+            <g class="filter-category sound-filter" id="pitch-g">
+                <g class="category-bg" id="pitch-bg">
+                    <circle class="category-circle"></circle>
+                    <image class="icon" id="pitch-icon" href="images/category-pitch.svg" x="-36" y="-40" width="72"/>
+                    <text class="category-label" id="pitch-label">Included pitch</text>
                 </g>
-                <g class="options" id="pitch-options">
-                    <g class="option" id="pitch-A" transform="translate(-70, 0)">
+                <g class="filter-options" id="pitch-options">
+                    <g class="option" id="pitch-A" transform="translate(-70, 50)">
                         <g>
                             <circle />
                             <text>A</text>
                         </g>
                     </g>
-                    <g class="option" id="pitch-Asharp">
+                    <g class="option" id="pitch-A#" transform="translate(0, 70)">
                         <g>
                             <circle />
                             <text>A#</text>
                         </g>
                     </g>
-                    <g class="option" id="pitch-B" transform="translate(70, 0)">
+                    <g class="option" id="pitch-B" transform="translate(70, 50)">
                         <g>
                             <circle />
                             <text>B</text>
@@ -338,20 +351,184 @@
                     </g>
                 </g>
             </g>
-            <g id="info-button" transform="translate(750,205)" onclick="mouseEvents.infoClick()">
+            <g class="filter-category sound-filter" id="difficulty-g">
+                <g class="category-bg" id="difficulty-bg">
+                    <circle class="category-circle"></circle>
+                    <image class="icon" id="difficulty-icon" href="images/category-difficulty.svg" x="-26" y="-45" width="52"/>
+                    <text class="category-label" id="difficulty-label">Difficulty</text>
+                </g>
+                <g class="filter-options" id="difficulty-options">
+                    <g class="option" id="difficulty-1" transform="translate(-70, 50)">
+                        <g>
+                            <circle />
+                            <text>1</text>
+                        </g>
+                    </g>
+                    <g class="option" id="difficulty-2" transform="translate(0, 70)">
+                        <g>
+                            <circle />
+                            <text>2</text>
+                        </g>
+                    </g>
+                    <g class="option" id="difficulty-3" transform="translate(70, 50)">
+                        <g>
+                            <circle />
+                            <text>3</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g class="filter-tags">
+                <g class="tag-g" id="tag-dyad" transform="translate(145, 450)">
+                    <g>
+                        <circle />
+                        <text>Dyad</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-pure" transform="translate(230, 450)">
+                    <g>
+                        <circle />
+                        <text>Pure</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-stubborn" transform="translate(315, 450)">
+                    <g>
+                        <circle />
+                        <text>Stubborn</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-bendable" transform="translate(400, 450)">
+                    <g>
+                        <circle />
+                        <text>Bendable</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-fragile" transform="translate(485, 450)">
+                    <g>
+                        <circle />
+                        <text>Fragile</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-topdown" transform="translate(570, 450)">
+                    <g>
+                        <circle />
+                        <text>
+                            <tspan x="0" y="-10">Top</tspan>
+                            <tspan x="0" y="10">down</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-rattle" transform="translate(655, 450)">
+                    <g>
+                        <circle />
+                        <text>Rattle</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-vibrating" transform="translate(145, 530)">
+                    <g>
+                        <circle />
+                        <text>Vibrating</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-prompt" transform="translate(230, 530)">
+                    <g>
+                        <circle />
+                        <text>Prompt</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-fuzzyoctave" transform="translate(315, 530)">
+                    <g>
+                        <circle />
+                        <text>
+                            <tspan x="0" y="-10">Fuzzy</tspan>
+                            <tspan x="0" y="10">octave</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-extreme" transform="translate(400, 530)">
+                    <g>
+                        <circle />
+                        <text>Extreme</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-spectral" transform="translate(485, 530)">
+                    <g>
+                        <circle />
+                        <text>Spectral</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-buzz" transform="translate(570, 530)">
+                    <g>
+                        <circle />
+                        <text>Buzz</text>
+                    </g>
+                </g>
+                <g class="tag-g" id="tag-glissando" transform="translate(655, 530)">
+                    <g>
+                        <circle />
+                        <text>Glissando</text>
+                    </g>
+                </g>
+            </g>
+            <g id="info-button" class="button-small" transform="translate(750,205)" onclick="mouseEvents.infoClick()">
                 <g>
-                    <circle fill="var(--light2)" r="15" />
-                    <text font-size="20" fill="white" font-weight="bolder" text-anchor="middle" y="8">i</text>
+                    <circle />
+                    <text y="2">i</text>
+                </g>
+            </g>
+            <g id="clear-button" class="button-small" transform="translate(700,205)" onclick="mouseEvents.soundClearClick()">
+                <g>
+                    <circle />
+                    <text y="1">C</text>
                 </g>
             </g>
             <g id="info-g" class="info-g hidden-transparent">
                 <rect id="dim-page-sound" x="0" y="0" width="100%" height="100%" fill="black" fill-opacity="0.5" />
                 <rect id="info-bg" x="50" y="50" width="700" height="500" fill="white" fill-opacity="0.8" />
                 <text class="close-button" id="close-info-button" x="90" y="90" font-size="50px" fill="darkgray" text-anchor="middle" dominant-baseline="middle" onclick="mouseEvents.infoClose()">✕</text>
-                <text class="info-text" id="info-text">test</text>
+                <text class="info-tagtitles" id="info-text" x="100" y="110">
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Dyad</tspan>
+                    <tspan x="100" dy="3em" class="info-tagtitle">Pure</tspan>
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Stubborn</tspan>
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Bendable</tspan>
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Fragile</tspan>
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Top down</tspan>
+                    <tspan x="100" dy="4.2em" class="info-tagtitle">Rattle</tspan>
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Vibrating</tspan>
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Prompt</tspan>
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Fuzzy octave</tspan>
+                    <tspan x="100" dy="3em" class="info-tagtitle">Extreme</tspan>
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Spectral</tspan>
+                    <tspan x="100" dy="3em" class="info-tagtitle">Buzz</tspan>
+                    <tspan x="100" dy="1.8em" class="info-tagtitle">Glissando</tspan>
+                </text>
+                <text class="info-tagdescriptions" id="info-text" x="210" y="110">
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">a soft close dyad multiphonic with two prominent pitches, no more than</tspan>
+                    <tspan x="210" dy="1.2em" class="info-tagdescription">an octave between them</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">a pure, clean sound</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">needs strong support from diaphragm and embouchure to sound</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">the top pitch of this multiphonic can be bent downwards by the player</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">the pitches of this multiphonic don’t stay constant</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">most multiphonics start easily on the bottom (base tone) and then the</tspan>
+                    <tspan x="210" dy="1.2em" class="info-tagdescription">top pitches can be overblown. Multiphonics with the topdown tag can</tspan>
+                    <tspan x="210" dy="1.2em" class="info-tagdescription">be started on the top pitch</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">a rattling, buzzing sound in the multiphonic</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">similar to a rattle, but more pulses</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">the multiphonic speaks quickly with both main pitches at the same time</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">octaves multiphonics are very rare on the clarinet, but these fuzzy octaves</tspan>
+                    <tspan x="210" dy="1.2em" class="info-tagdescription">come close</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">these multiphonics are the most difficult to get both pitches sounding well</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">these multiphonics have a kind of spectral sound, they are overblown</tspan>
+                    <tspan x="210" dy="1.2em" class="info-tagdescription">multiphonics with a stable fundamental</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">very buzzy, distorted multiphonics</tspan>
+                    <tspan x="210" dy="1.8em" class="info-tagdescription">these multiphonics are capable of upward glissandi</tspan>
+                </text>
             </g>
         </g>
-        <g class="page-body hidden-right" id="search-by-fingering-page">
+        <g class="page-body hidden-right" id="search-fingering-page">
+            <text class="body-title" id="search-fingering-title" x="400" y="180">Search by Fingering</text>
+            <text class="body-subtitle" id="search-fingering-subtitle" x="400" y="210">Toggle keys</text>
+            <image class="back-button" id="fingering-back" href="images/back-button.png" x="20" y="340" />
         </g>
     </svg>
 
@@ -382,12 +559,22 @@
                 document.getElementById('header').classList.add('small-header');
                 currentFilter.searchMethod = method;
             },
-            searchMethodBackClick: function () {
-                document.getElementById('search-sound-page').classList.add('hidden-right');
-                //document.getElementById('search-fingering-page').classList.add('hidden-right');
+            searchMethodBackClick: function (method) {
+                document.getElementById('search-'+method+'-page').classList.add('hidden-right');
                 document.getElementById('header').classList.remove('small-header');
                 document.getElementById('select-search-page').classList.remove('hidden-transparent');
                 currentFilter.searchMethod = null;
+                currentFilter.sound = {tags: []};
+                currentFilter.fingering = [];
+            },
+            soundClearClick: function() {
+                for (var option of document.querySelectorAll('.option-selected')) {
+                    option.classList.remove('option-selected');
+                }
+                for (var tag of document.querySelectorAll('.tag-selected')) {
+                    tag.classList.remove('tag-selected');
+                }
+                currentFilter.sound = {tags:[]};
             },
             infoClick: function() {
                 for (var e of document.querySelectorAll('.info-g')) {
@@ -403,18 +590,40 @@
                     }
                 }
             },
-            optionClick: function (element) {
-                if (!element.classList.contains('option-selected')) {
-                    element.classList.add('option-selected');
+            optionClick: function (option) {
+                if (!option.classList.contains('option-selected')) {
+                    // only 1 option allowed per category
+                    for (var child of option.parentElement.children) {
+                        if (child.classList.contains('option-selected')) child.classList.remove('option-selected');
+                    }
+                    option.classList.add('option-selected');
+                    var keyval = option.id.split('-');
+                    currentFilter.sound[keyval[0]] = keyval[1];
                 }
-                else element.classList.remove('option-selected');
+                else {
+                    option.classList.remove('option-selected');
+                    currentFilter.sound[option.id.split('-')[0]] = null;
+                }
+            },
+            tagClick: function(tag) {
+                if (!tag.classList.contains('tag-selected')) {
+                    tag.classList.add('tag-selected');
+                    currentFilter.sounds.tags.push(tag.id.split('-')[1]);
+                }
+                else {
+                    tag.classList.remove('tag-selected');
+                    currentFilter.sounds.tags.splice(currentFilter.sounds.tags.indexOf(tag.id.split('-')[1]), 1);
+                }
             }
         }
 
         var currentFilter = {
             instrument: null,
             searchMethod: null,
-
+            sound: {
+                tags: []
+            },
+            fingering: []
         }
 
         // select instrument page actions
@@ -427,7 +636,16 @@
         document.getElementById('search-fingering').addEventListener('click', mouseEvents.searchMethodClick.bind(this, 'fingering'), false);
 
         // search by sound page actions
-        document.getElementById('sound-back').addEventListener('click', mouseEvents.searchMethodBackClick.bind(this), false);
+        document.getElementById('sound-back').addEventListener('click', mouseEvents.searchMethodBackClick.bind(this, 'sound'), false);
+        for (var option of document.querySelectorAll('.option')) {
+            option.addEventListener('click', mouseEvents.optionClick.bind(this, option), false);
+        }
+        for (var tag of document.querySelectorAll('.tag-g')) {
+            tag.addEventListener('click', mouseEvents.tagClick.bind(this, tag), false);
+        }
+
+        // search by fingering page actions
+        document.getElementById('fingering-back').addEventListener('click', mouseEvents.searchMethodBackClick.bind(this, 'fingering'), false);
 
     </script>
 </body>
