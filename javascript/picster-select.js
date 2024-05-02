@@ -1485,7 +1485,7 @@ function addShape()
 			}
 			else 
 			{ 
-			//post("picster", dict.stringify(), "\n");
+			//post("picster", dict.stringify().length, "\n");
 			_picster = {};
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {};
@@ -1528,7 +1528,7 @@ function addShape()
 				var inner = quotes[found + 1];
 				var sep = "";
 				sep = (inner.indexOf(",") == -1) ? " " : ",";
-				_dim = [quotes[found + 1].split(sep)[2], quotes[found + 1].split(sep)[3]]
+				_dim = [quotes[found + 1].split(sep)[2], quotes[found + 1].split(sep)[3]];
 				}
 				var attr = {};
 				attr.new = "image";
@@ -2492,6 +2492,7 @@ function dumpexpressions()
 	outlet(1, "dump");
 }
 
+/*
 function serializedDict()
 {
 	if (inlet) {
@@ -2503,7 +2504,7 @@ function serializedDict()
 	else if (action == "group") createRenderedMessage(0, ".", ".", msg[0]);
 	else if (action == "addPortamento") addPortamento(msg[0]);
 	}
-}
+*/
 
 function getSelectionBufferSize(s)
 {

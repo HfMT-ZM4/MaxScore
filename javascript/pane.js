@@ -345,30 +345,17 @@ function obj_ref(o)
 	picster = [];
 	pScale = [];
 	pOffset = [];
-	//post("o.picster[s]", o.picster[s][i].new, JSON.stringify(o.defs[s][i]), "\n");
+	//post("o.picster[s]", JSON.stringify(o.picster[s][i]), "\n");
 	for (var i = 0; i < o.picster[s].length; i++) {
-		picster[i] = new MGraphicsSVG();
-		pScale[i] = [1, 1];
-		pOffset[i] = o.defs[s][i]["picster:offset"].split(",");
+		pOffset[i] = o.transforms[s][i]["picster:offset"].split(",");
+		pScale[i] = o.transforms[s][i].hasOwnProperty("picster:scale") ? o.transforms[s][i]["picster:scale"].split(",") : [1, 1];
 		var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 		svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-		//svg += "<svg width=\"" + o.defs[s][0].width + "\" height=\"" + o.defs[s][0].height + "\" viewBox=\"" + o.defs[s][0].viewBox + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
-			if (o.defs[s][i].hasOwnProperty("new")) {
-			if (o.defs[s].length > 0 && !Array.isArray(o.defs[s][i].child)) {
-			pScale[i] = o.defs[s][i]["picster:scale"].split(",");
-			var transform = o.picster[s][i].transform.slice(7, -1).split(",").map(Number);
-			for (var j = 0; j < o.defs[s][i].child.child.length; j++) {
-				if (Object.keys(o.defs[s][i].child.child[j]).indexOf("gradientTransform") != -1) {
-					o.defs[s][i].child.child[j].gradientTransform = gradientTransform(o.defs[s][i].child.child[j].gradientTransform, transform);
-				}
-		svg += ds2svg(o.defs[s][i].child);
-		}
-	}
-	}
-	svg += ds2svg(o.picster[s][i]);
-	svg += "</svg>";
+		svg += ds2svg(o.picster[s][i]);
+		svg += "</svg>";
 	//post("svg", svg, "\n");
-	picster[i].setsvg(svg);
+		picster[i] = new MGraphicsSVG();
+		picster[i].setsvg(svg);
 	}
 		
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";

@@ -14,7 +14,7 @@ var SVGLines = {};
 var SVGImages = {};
 var SVGImages2 = {};
 var SVGGraphics = {};
-var SVGDefs = {};
+var SVGTransforms = {};
 var output = new Dict();
 output.name = "output";
 var svgGroups = {};
@@ -400,7 +400,7 @@ function fillObj(groups)
 	SVGString = {};
 	SVGLines = {};
 	SVGGraphics = {}
- 	SVGDefs = {};
+ 	SVGTransforms = {};
 	SVGImages = {};
 	SVGImages2 = {};
 	for (var s = 1; s <= groupcount; s++) {
@@ -408,7 +408,7 @@ function fillObj(groups)
 		SVGString[s] = [];
 		SVGLines[s] = [];
 		SVGGraphics[s] = [];
- 		SVGDefs[s] = [];
+ 		SVGTransforms[s] = [];
 		SVGImages[s] = [];
 		SVGImages2[s] = [];
 	}
@@ -443,7 +443,7 @@ function fillObj(groups)
 	SVGString = {};
 	SVGLines = {};
 	SVGGraphics = {};
- 	SVGDefs = {};
+ 	SVGTransforms = {};
 	SVGImages = {};
 	SVGImages2 = {};
 	for (var s = 1; s <= groupcount; s++) {
@@ -451,7 +451,7 @@ function fillObj(groups)
 		SVGString[s] = [];
 		SVGLines[s] = [];
 		SVGGraphics[s] = [];
- 		SVGDefs[s] = [];
+ 		SVGTransforms[s] = [];
 		SVGImages[s] = [];
 		SVGImages2[s] = [];
 	}
@@ -1512,7 +1512,7 @@ function scoreLayout()
 		SVGLines = {};
 		SVGClefs = {};
 		SVGGraphics = {};
- 		SVGDefs = {};
+ 		SVGTransforms = {};
 		SVGImages = {};
 		SVGImages2 = {};
 		outlet(0, "flashing", "clear");
@@ -1530,7 +1530,7 @@ function scoreLayout()
 			SVGString[s] = [];
 			SVGLines[s] = [];
 			SVGGraphics[s] = [];
- 			SVGDefs[s] = [];
+ 			SVGTransforms[s] = [];
 			SVGImages[s] = [];
 			SVGImages2[s] = [];
 		}
@@ -3125,7 +3125,7 @@ function anything() {
 
 function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 {
-			var defs = {};
+			var transf = {};
 			var jpicster = {};
 			var onclick = (picster.contains("onclick")) ? " onclick=" + picster.get("onclick") : "";
 			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return Math.round(element * 255)}) + ")";
@@ -3145,23 +3145,29 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			//traverse picster and look for instances of text containing "||"
 			if (svggroupflag == false) {
 				svgtransform = "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4], transform[5]] + ")";
-				defs["picster:offset"] = [RenderMessageOffset[0], _dest].join(",");
+				transf["picster:offset"] = [RenderMessageOffset[0], _dest].join(",");
 			}
 			///
 			///
 				switch (picster.get("new")) {
 				case "svg" :
+				/*
 				var _i;
 			    var keys = picster.getkeys();
-				for (var i = 0; i < keys.length; i++) if (picster.get(keys[i]) != "child") defs[keys[i]] = picster.get(keys[i]);
-				//post("jpicster", JSON.stringify(defs), "\n");
+				for (var i = 0; i < keys.length; i++) if (picster.get(keys[i]) != "child") transf[keys[i]] = picster.get(keys[i]);
 				for (var i = 0; i < picster.get("child").length; i++) {
 					if (picster.get("child[" + i + "]::new") == "g") _i = i;
-					else if (picster.get("child[" + i + "]::new") == "defs") defs.child = JSON.parse(picster.get("child[" + i + "]").stringify());
+					else if (picster.get("child[" + i + "]::new") == "defs") transf.child = JSON.parse(picster.get("child[" + i + "]").stringify());
 					}
 				picster = picster.get("child[" + _i + "]");
-				//how to handle css?
-				//what happens to scripts?
+				*/
+				jpicster = JSON.parse(picster.stringify());
+				jpicster.transform = svgtransform;
+				//post("jpicster", JSON.stringify(jpicster), "\n");
+				//iterateGroup(jpicster);
+				SVGGraphics[s + 1].push(jpicster);
+				SVGTransforms[s + 1].push(transf);
+				break;
 				case "g" :
 				if (Array.isArray(picster.get("child"))) for (var i = 0; i < picster.get("child").length; i++) {
 				if (picster.contains("child[" + i + "]::style")){
@@ -3181,7 +3187,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster.transform = svgtransform;
 				iterateGroup(jpicster);
 				SVGGraphics[s + 1].push(jpicster);
-				SVGDefs[s + 1].push(defs);
+				SVGTransforms[s + 1].push(transf);
 				break;
 				case "marker" :
 				post("I'm a marker and I'm not supported!\n");	
@@ -3243,7 +3249,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
-				SVGDefs[s + 1].push(defs);
+				SVGTransforms[s + 1].push(transf);
 				}
 				break;
 				case "rect" :
@@ -3251,19 +3257,19 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
-				SVGDefs[s + 1].push(defs);
+				SVGTransforms[s + 1].push(transf);
 				break;
 				case "ellipse" :
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
-				SVGDefs[s + 1].push(defs);
+				SVGTransforms[s + 1].push(transf);
 				break;
 				case "polyline" :
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
-				SVGDefs[s + 1].push(defs);
+				SVGTransforms[s + 1].push(transf);
 				break;
 				case "path" :
 				/*
@@ -3277,7 +3283,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
-				SVGDefs[s + 1].push(defs);
+				SVGTransforms[s + 1].push(transf);
 				}
 				break;
 				case "text" :
@@ -3295,7 +3301,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				if (jpicster.text.indexOf("||") != -1) jpicster = splitText(jpicster); 		
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
-				SVGDefs[s + 1].push(defs);
+				SVGTransforms[s + 1].push(transf);
 				break;
 				case "image" :
 				var href = picster.get("xlink:href");
@@ -3312,7 +3318,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
 				}
 				);					
-				SVGDefs[s + 1].push(defs);
+				SVGTransforms[s + 1].push(transf);
 				}
 				else if (!href.indexOf("reference")) { //if "reference" is at index 0
 				var reference = href.slice(href.indexOf(":") + 1);
@@ -3620,7 +3626,7 @@ function writeSVG(destination)
 	f.clefs = SVGClefs;
 	f.svgimages = SVGImages;
 	f.picster = SVGGraphics;
-	f.defs = SVGDefs;
+	f.transforms = SVGTransforms;
 	f.pageSize = [_scoreLayout[4], _scoreLayout[5]];
 	f.setZoom = zoom;
 	f.bgcolor = bcolor;
@@ -3656,24 +3662,27 @@ function writeSVG(destination)
 		}
 	var SVGGraphics_ = JSON.parse(JSON.stringify(SVGGraphics));
 	for (var i = 0; i < SVGGraphics_[s].length; i++) {
-		var scale = (SVGDefs[s][i]).hasOwnProperty("picster:scale") ? SVGDefs[s][i]["picster:scale"].split(",") : "1,1";
-		var translate = SVGDefs[s][i]["picster:offset"];
-		SVGGraphics_[s][i].transform = SVGGraphics_[s][i].transform + " translate("  + translate + ") scale(" + scale + ")";
-		if (SVGDefs[s][i].hasOwnProperty("viewBox")) {
-			var SVGAttrs = JSON.parse(JSON.stringify(SVGDefs[s][i]));
-			delete SVGAttrs["picster:offset"];
-			delete SVGAttrs["picster:scale"];
-			delete SVGAttrs["width"];
-			delete SVGAttrs["height"];
-			delete SVGAttrs["viewBox"];
-			post("svg", ds2svg(SVGAttrs).slice(0, -6), "\n");
-			f.writeline(ds2svg(SVGAttrs).slice(0, -6));
-			if (SVGDefs[s][i].hasOwnProperty("child")) f.writeline(ds2svg(SVGDefs[s][i].child));
+		var scale = (SVGTransforms[s][i]).hasOwnProperty("picster:scale") ? SVGTransforms[s][i]["picster:scale"].split(",") : "1,1";
+		var translate = SVGTransforms[s][i]["picster:offset"];
+		if (SVGGraphics_[s][i].hasOwnProperty("viewBox")) {
+			//var SVGAttrs = JSON.parse(JSON.stringify(SVGTransforms[s][i]));
+			delete SVGGraphics_[s][i]["picster:offset"];
+			delete SVGGraphics_[s][i]["picster:scale"];
+			delete SVGGraphics_[s][i]["width"];
+			delete SVGGraphics_[s][i]["height"];
+			delete SVGGraphics_[s][i]["viewBox"];
+			//post("svg", ds2svg(SVGAttrs).slice(0, -6), "\n");
+			//f.writeline(ds2svg(SVGAttrs).slice(0, -6));
+			//if (SVGTransforms[s][i].hasOwnProperty("child")) f.writeline(ds2svg(SVGTransforms[s][i].child));
+			f.writeline("<g transform=\"" + SVGGraphics_[s][i].transform + " translate("  + translate + ") scale(" + scale + ")\">");
 			f.writeline(ds2svg(SVGGraphics_[s][i]));
-			f.writeline("</svg>");	
+			f.writeline("</g>");	
 		//We may want to iterate through svg elements as they easily reach size >32k
 		}
-		else f.writeline(ds2svg(SVGGraphics_[s][i]));
+		else {
+			SVGGraphics_[s][i].transform = SVGGraphics_[s][i].transform + " translate("  + translate + ") scale(" + scale + ")";
+			f.writeline(ds2svg(SVGGraphics_[s][i]));
+			}
 		}
 	if (pageNumber != "") f.writeline(pageNumber);
 	if (SVGImages[s].length > 0) f.writeline(SVGImages[s]);

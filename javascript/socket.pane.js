@@ -437,7 +437,7 @@ function obj_ref(o)
 	SVGString = o.svg;
 	SVGLines = o.lines;
 	SVGPicster = JSON.parse(JSON.stringify(o.picster));
-	SVGDefs = JSON.parse(JSON.stringify(o.defs));
+	SVGDefs = JSON.parse(JSON.stringify(o.transforms));
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
 	groupcount = o.groupcount;
@@ -456,13 +456,33 @@ function obj_ref(o)
 	for (var s = 1; s <= groupcount; s++)
 		{
 		for (var i = 0; i < SVGPicster[s].length; i++) {
-		var scale = (o.defs[s][i]).hasOwnProperty("picster:scale") ? o.defs[s][i]["picster:scale"].split(",") : [1, 1];
-		var translate = o.defs[s][i]["picster:offset"];
-		SVGPicster[s][i].transform = "matrix(" + scale[0] + ",0,0," + scale[1] + "," + translate + ")";
-		if (SVGDefs[s][i].hasOwnProperty("child")) {
-			//post("SVGImages", JSON.stringify(SVGDefs), groupcount, "\n");
-			SVGDefs[s][i].child.new = "g";
-			SVGDefs[s][i].child.parent = "defs";
+		var scale = (o.transforms[s][i]).hasOwnProperty("picster:scale") ? o.transforms[s][i]["picster:scale"].split(",") : [1, 1];
+		var translate = o.transforms[s][i]["picster:offset"];
+		SVGDefs[s][i] = {};
+		//ONLY IF NEW != SVG
+		if (SVGPicster[s][i].new != "svg") SVGPicster[s][i].transform = "matrix(" + scale[0] + ",0,0," + scale[1] + "," + translate + ")";
+		else {
+			if (SVGPicster[s][i].hasOwnProperty("child")) {
+				//WRAP SVG IN G WITH TRANSFORM
+				var temp = JSON.parse(JSON.stringify(o.picster[s][i]));
+				//post("SVGImages", JSON.stringify(SVGDefs), "\n");
+				delete temp["picster:offset"];
+				delete temp["picster:scale"];
+				delete temp["width"];
+				delete temp["height"];
+				delete temp["viewBox"];
+				SVGPicster[s][i] = {"new" : "g"};
+				for (var j = 0; j < temp.child.length; j++) {
+					if (temp.child[j].new == "defs") {
+						SVGDefs[s][i].new = "g";
+						SVGDefs[s][i].parent = "defs";
+						SVGDefs[s][i].child = temp.child[j];
+						temp.child[j] = {};
+						}
+					}
+				SVGPicster[s][i].transform = "matrix(" + scale[0] + ",0,0," + scale[1] + "," + translate + ")";
+				SVGPicster[s][i].child = temp;
+				}
 			}
 		}
 		var val = [];

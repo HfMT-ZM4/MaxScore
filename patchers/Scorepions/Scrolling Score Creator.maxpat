@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 1,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 408.0, 72.0, 1627.0, 970.0 ],
+		"rect" : [ 0.0, 66.0, 1512.0, 916.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -49,14 +49,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 465.0, 112.0, 1017.0, 940.0 ],
+						"rect" : [ 461.0, 100.0, 1017.0, 848.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -87,13 +87,13 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-53",
-									"linecount" : 4,
+									"linecount" : 5,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 124.0, 960.0, 875.0, 62.0 ],
-									"text" : "19 265.3occQEsZBCCE84zuhPdZCpKUkApO6f8vDDJ6owPRau1dmsoxMQsEw+80jVYEjQHWtmSNbtImbMfINhoFKPSfRnBzVAeE+KNicMfwXhCPqiPXNmKB8LmUkNF1fBlPCW7RvJUNzKhIvLO21Aueq26cQ2Ouff8dEaTon1VaJ3uudk7SCPFYbghfL4FUCeg7CLgTTqCEmVSfbMjhIPI2i1VpZApu2HObhpQspB+qKNMKY2rnW94X98Y23Fbz.ncL3BlYKbDylO+062T.yK7oxxkKF3rjRa1WSU9mPkxRXySSCi5V95yBmtaAAtR3CgIzzYf4+xyj5S5LS+2vjogi17uGYaG3Vvu.UNyac. 0 3"
+									"patching_rect" : [ 124.0, 960.0, 875.0, 76.0 ],
+									"text" : "4 276.3ocuREsZCBCE843WQHOsAZi8gM574NXCZgBs6ownD0qlzpQIIypT5+9LQsHL1qiPtbOmb3dtI2b0CQpEIZCnBfBnDjFBNB+IFgt5gPHxYnyRPzM4DeGSCqvxfFUfHR3hShnjkCChPDQpia2Xsecn1GCmNmqfLmhsrDgzTo432VGQ+PCJMcOmofT5VVKdEciHVwTcVz9jJEPWCIhXn.6P6JXcfZHWSeGuopAvGDYYLYG8PPceKc7oEmpymLt05Z3HnaN3hH0vsDurZhhChbt6E44vINihI0YUpRW6WxLJQ6CK8C6Wt3i2cpPHOG8+eQsteyyyF7+0bDZ66e8eMJiq9VlpG9ADrze1F+0rx1Ct48Ss8YIt 0 0"
 								}
 
 							}
@@ -132,8 +132,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 1,
+											"minor" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -485,11 +485,12 @@
 									"id" : "obj-100",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 125.0, 76.0, 106.0, 22.0 ],
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
+									"patching_rect" : [ 125.0, 76.0, 120.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
@@ -607,7 +608,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 532.5, 302.0, 308.0, 22.0 ],
-									"restore" : [ 160 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -662,8 +663,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 432.0, 672.536194000000023, 257.0, 116.0 ],
-									"text" : "replace picster-element[0]::val::href $1, replace picster-element[0]::val::width $2, replace picster-element[0]::val::height $3, replace picster-element[2]::val[0]::editor sf, replace picster-element[2]::val[0]::message sf, replace picster-element[2]::val[0]::value[0] $4, replace picster-element[2]::val[0]::value[1] $5, replace picster-element[2]::val[0]::value[2] $6"
+									"patching_rect" : [ 432.0, 672.536194000000023, 259.0, 116.0 ],
+									"text" : "replace picster-element[0]::val::xlink:href $1, replace picster-element[0]::val::width $2, replace picster-element[0]::val::height $3, replace picster-element[2]::val[0]::editor sf, replace picster-element[2]::val[0]::message sf, replace picster-element[2]::val[0]::value[0] $4, replace picster-element[2]::val[0]::value[1] $5, replace picster-element[2]::val[0]::value[2] $6"
 								}
 
 							}
@@ -819,7 +820,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 597.0, 338.0, 324.0, 22.0 ],
-									"restore" : [ "kuroinami.wav" ],
+									"restore" : [ "<none>" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -838,7 +839,7 @@
 												"val" : 												{
 													"new" : "image",
 													"id" : "Picster-Element_0",
-													"href" : "Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/kuroinami/kuroinamiScdb_1.jpg",
+													"xlink:href" : "Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/kuroinami/kuroinamiScdb_1.jpg",
 													"x" : 0,
 													"y" : 0,
 													"width" : 2335,
@@ -869,11 +870,12 @@
 									"id" : "obj-7",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
 									"patching_rect" : [ 411.5, 800.536194000000023, 89.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 1,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
@@ -892,8 +894,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 1,
+											"minor" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1005,11 +1007,12 @@
 													"id" : "obj-20",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
 													"patching_rect" : [ 50.0, 253.5, 50.5, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -1128,7 +1131,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 216.5, 338.0, 355.0, 22.0 ],
-									"restore" : [ 160 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1214,8 +1217,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 158.5, 696.536194000000023, 233.0, 49.0 ],
-									"text" : "replace picster-element[0]::val::href $1, replace picster-element[0]::val::width $2, replace picster-element[0]::val::height $3"
+									"patching_rect" : [ 158.5, 696.536194000000023, 247.0, 49.0 ],
+									"text" : "replace picster-element[0]::val::xlink:href $1, replace picster-element[0]::val::width $2, replace picster-element[0]::val::height $3"
 								}
 
 							}
@@ -1227,11 +1230,11 @@
 												"val" : 												{
 													"new" : "image",
 													"id" : "Picster-Element_0",
-													"href" : "Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/kuroinami/kuroinamiScdb_20.jpg",
+													"xlink:href" : "Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/I Love Tiffany/T-page_5.jpg",
 													"x" : 0,
 													"y" : 0,
-													"width" : 2335,
-													"height" : 998,
+													"width" : 980,
+													"height" : 600,
 													"transform" : "matrix(1,0,0,1,0,0)"
 												}
 
@@ -1249,11 +1252,12 @@
 									"id" : "obj-131",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
 									"patching_rect" : [ 139.5, 800.536194000000023, 89.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 1,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
@@ -1769,14 +1773,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 415.0, 511.0, 427.0, 562.0 ],
+						"rect" : [ 415.0, 386.0, 427.0, 562.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1869,11 +1873,12 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 28.0, 488.0, 106.0, 22.0 ],
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
+									"patching_rect" : [ 28.0, 488.0, 120.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
@@ -1889,7 +1894,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 123.0, 89.0, 96.0, 22.0 ],
+									"patching_rect" : [ 123.0, 89.0, 110.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -2164,7 +2169,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 158.166666666666686, 119.5, 279.73214285714289, 119.5 ],
+									"midpoints" : [ 162.833333333333314, 119.5, 279.73214285714289, 119.5 ],
 									"source" : [ "obj-48", 1 ]
 								}
 
@@ -2243,7 +2248,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 711.0, 762.5, 96.0, 22.0 ],
+					"patching_rect" : [ 711.0, 762.5, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"precision" : 6
@@ -2272,7 +2277,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 1448.033333333333076, 603.0, 96.0, 22.0 ],
+					"patching_rect" : [ 1448.033333333333076, 603.0, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"precision" : 6
@@ -2459,7 +2464,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1396.890476190475965, 737.0, 230.0, 22.0 ],
-					"restore" : [ 0, ",", 0, ",", 0, 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2490,7 +2495,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1345.747619047619082, 539.5, 81.0, 22.0 ],
-					"restore" : [ "kuroinami.wav" ],
+					"restore" : [ "<none>" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2954,7 +2959,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"id" : "obj-39",
-					"items" : "kuroinamiSc_1.jpg",
+					"items" : "T-page_1.jpg",
 					"maxclass" : "umenu",
 					"menumode" : 2,
 					"numinlets" : 1,
@@ -3517,8 +3522,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3989,13 +3994,13 @@
 				"box" : 				{
 					"dontreplace" : 1,
 					"id" : "obj-35",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 508.0, 196.0, 336.0, 35.0 ],
-					"text" : "\"Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/kuroinami/\""
+					"patching_rect" : [ 508.0, 180.0, 336.0, 49.0 ],
+					"text" : "\"Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/I Love Tiffany/\""
 				}
 
 			}
@@ -4104,7 +4109,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 108.0, 292.0, 146.0, 22.0 ],
 					"rounded" : 2.0,
-					"text" : "kuroinami",
+					"text" : "\"I Love Tiffany\"",
 					"varname" : "score"
 				}
 
@@ -4158,7 +4163,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 108.0, 318.0, 146.0, 22.0 ],
 					"rounded" : 2.0,
-					"text" : "\"lindsay vickery\"",
+					"text" : "\"Xiao Fu\"",
 					"varname" : "composer"
 				}
 
@@ -4214,7 +4219,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 545.5, 608.0, 324.0, 22.0 ],
-					"restore" : [ 0, ",", 0, ",", 0, 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0

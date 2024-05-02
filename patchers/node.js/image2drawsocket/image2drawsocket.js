@@ -11,7 +11,7 @@ const convert = require('xml-js');
 const imageToBase64 = require('image-to-base64');
 const sizeOf = require('image-size');
 const Max = require('max-api');
-
+const LZString = require('lz-string');
 
 let userpath = process.argv.slice(2) == "default" ? "" : process.argv.slice(2);
 
@@ -88,9 +88,10 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		let value = {};
 		let css = {};
 		let _procElements = [];
-		let _procElements2 = [];
-		let viewBox = getViewBox(svgJS);
+		//let _procElements2 = [];
+		let viewBox = getViewBox(svgJS).split(" ");
 		let SVGAttributes = getSVGAttributes(svgJS);
+		Max.post(JSON.stringify(SVGAttributes.viewBox), viewBox);
 		value.new = "svg";
 		for (attribute in SVGAttributes){
 			value[attribute] = SVGAttributes[attribute];
@@ -99,8 +100,7 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
  		let filename = infile.substring(infile.lastIndexOf('/') + 1);
 		value.id = "_" + filename;
 		value.child = [];
-		
-		//Max.post(JSON.stringify(getSVGElements(svgJS)));
+		/*
 		_procElements = procElements(getSVGElements(svgJS));
 		for (let element = 0; element < _procElements.length; element++){
 			if (_procElements[element].new == "defs") value.child.push(_procElements[element]);
@@ -109,13 +109,45 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 			else _procElements2.push(_procElements[element]);
 		}
 		value.child.push({"new" : "g", "transform" : "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")", "child" : _procElements2});
+		*/
+		value.child = procElements(getSVGElements(svgJS));
         let svgObj = {
             key: 'svg',
             val: value
         }
-		Max.outlet(svgObj);
- 		//Max.outlet(svgJS);
-    }
+		if (JSON.stringify(svgObj).length < 32000)
+		{
+			Max.outlet(svgObj);
+ 			//Max.outlet(svgJS);
+		}
+		else {
+			let img = {
+				"key" : "svg",
+				"val" : 			{
+					"new" : "image",
+					"id" : (isNaN(filename.charAt(0))) ? filename : "_" + filename,
+					"xlink:href" : "",
+					"width" : "",
+					"height" : "",
+					"transform" : "matrix(1,0,0,1,0,0)"
+				}
+			};
+			let segments = stringToChunks(LZString.compressToBase64(JSON.stringify(svgObj)), 32000);
+			let seg = {};
+			//Max.post(stringToChunks(LZString.compressToBase64(JSON.stringify(value)), 32000));
+			for (let i = 0; i < segments.length; i++) {
+				seg.reference = infile;
+				seg.index = i + 1;
+				seg.numsegments = segments.length;
+				seg.data = segments[i];
+				Max.outlet(seg);
+			}
+			img.val["xlink:href"] = 'reference:' + infile;
+			img.val.width = Number(viewBox[2]);
+			img.val.height = Number(viewBox[3]);
+			Max.outlet(img);
+		}
+   }
     catch(err)
     {
         Max.post(err);
