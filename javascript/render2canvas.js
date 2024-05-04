@@ -3151,21 +3151,12 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 			///
 				switch (picster.get("new")) {
 				case "svg" :
-				/*
-				var _i;
-			    var keys = picster.getkeys();
-				for (var i = 0; i < keys.length; i++) if (picster.get(keys[i]) != "child") transf[keys[i]] = picster.get(keys[i]);
-				for (var i = 0; i < picster.get("child").length; i++) {
-					if (picster.get("child[" + i + "]::new") == "g") _i = i;
-					else if (picster.get("child[" + i + "]::new") == "defs") transf.child = JSON.parse(picster.get("child[" + i + "]").stringify());
-					}
-				picster = picster.get("child[" + _i + "]");
-				*/
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				//post("jpicster", JSON.stringify(jpicster), "\n");
 				//iterateGroup(jpicster);
 				SVGGraphics[s + 1].push(jpicster);
+				transf["picster:scale"] = (jpicster.hasOwnProperty("picster:scale")) ? jpicster["picster:scale"] : "1,1";
 				SVGTransforms[s + 1].push(transf);
 				break;
 				case "g" :
@@ -3322,6 +3313,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				}
 				else if (!href.indexOf("reference")) { //if "reference" is at index 0
 				var reference = href.slice(href.indexOf(":") + 1);
+				if (href.substr(href.lastIndexOf(".") + 1).toLowerCase() != "svg") {
 				SVGImages[s + 1].push({
 				"new" : "image",
 				"id" : "embedded-" + idcount++,
@@ -3344,6 +3336,16 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
 				}
 				);
+				}
+				else {	
+					jpicster = JSON.parse(LZString.decompressFromBase64(imageCache.get(reference).join(''))).val;
+					jpicster.transform = svgtransform;
+					//post("jpicster", LZString.decompressFromBase64(imageCache.get(reference).join('')).length, "\n");
+					//iterateGroup(jpicster);
+					SVGGraphics[s + 1].push(jpicster);
+					SVGTransforms[s + 1].push(transf);
+					}
+					
 				}
 				else {
 				imgtype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
@@ -3662,7 +3664,7 @@ function writeSVG(destination)
 		}
 	var SVGGraphics_ = JSON.parse(JSON.stringify(SVGGraphics));
 	for (var i = 0; i < SVGGraphics_[s].length; i++) {
-		var scale = (SVGTransforms[s][i]).hasOwnProperty("picster:scale") ? SVGTransforms[s][i]["picster:scale"].split(",") : "1,1";
+		var scale = (SVGTransforms[s][i]).hasOwnProperty("picster:scale") ? SVGTransforms[s][i]["picster:scale"] : "1,1";
 		var translate = SVGTransforms[s][i]["picster:offset"];
 		if (SVGGraphics_[s][i].hasOwnProperty("viewBox")) {
 			//var SVGAttrs = JSON.parse(JSON.stringify(SVGTransforms[s][i]));
@@ -3675,9 +3677,11 @@ function writeSVG(destination)
 			//f.writeline(ds2svg(SVGAttrs).slice(0, -6));
 			//if (SVGTransforms[s][i].hasOwnProperty("child")) f.writeline(ds2svg(SVGTransforms[s][i].child));
 			f.writeline("<g transform=\"" + SVGGraphics_[s][i].transform + " translate("  + translate + ") scale(" + scale + ")\">");
-			f.writeline(ds2svg(SVGGraphics_[s][i]));
+			var svgstring = ds2svg(SVGGraphics_[s][i]);
+			var left = getAllIndexes(svgstring, "<");
+			var right = getAllIndexes(svgstring, ">");
+			for (var j = 0; j < left.length; j++) f.writeline(svgstring.substring(left[j], right[j] + 1));
 			f.writeline("</g>");	
-		//We may want to iterate through svg elements as they easily reach size >32k
 		}
 		else {
 			SVGGraphics_[s][i].transform = SVGGraphics_[s][i].transform + " translate("  + translate + ") scale(" + scale + ")";

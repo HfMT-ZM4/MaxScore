@@ -2722,34 +2722,44 @@ function findBoundsToo(d)
 	break;
 	case "image" :
 		if (!d[0]["xlink:href"].indexOf("reference")) {
+			if ((d[0]["xlink:href"].substr(d[0]["xlink:href"].lastIndexOf(".") + 1).toLowerCase() != "svg")) {
 			d[0]["xlink:href"] = "data:image/png;base64," + imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("");
+			}
+			else {
+			d[0] = JSON.parse(LZString.decompressFromBase64(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join(""))).val;
+			}
 		}
 	break;
 	case "svg" :
 		//if (d[0].hasOwnProperty("picster:scale")) 
 		scale = d[0]["picster:scale"].split(",");
+		for (var i = 0; i < d[0]["child"].length; i++) {
+			if (d[0]["child"][i].new == "defs") delete d[0]["child"][i].child;
+		}
+		//post("jpicster", JSON.stringify(d[0]), "\n");
+	/*
 		var _i;
 		var defs = {};
 		var keys = Object.keys(d[0]);
 		for (var i = 0; i < keys.length; i++) if (d[0][keys[i]] != "child") defs[keys[i]] = d[0][keys[i]];
-		//post("jpicster", JSON.stringify(defs), "\n");
 		for (var i = 0; i < d[0]["child"].length; i++) {
 			if (d[0]["child"][i].new == "g") _i = i;
 			else if (d[0]["child"][i].new == "defs") defs.child = d[0]["child"][i];
 			}
 		d[0] = d[0]["child"][_i];
+	*/
+	break;	
 	case "g" :
 		iterateGroup(d[0]);
 	break;
 	}
 	//post("post-D", JSON.stringify(d), "\n");
-	///THIS DOESN'T WORK. THEREFORE EXTRACT G AND APPLY TRANSFORM
-	//post("pre-D", JSON.stringify(d[0]), "\n");
 	var svg = "<svg><g transform = \"matrix(" + scale[0] + ",0,0," + scale[1] + "," + renderOffset[0] + "," + renderOffset[1] + ")\">";
 	///
 	svg += ds2svg(d);
 	svg += "</g></svg>";
 	//img.setsvg(svg);
+	//post("post-D", svg, "\n");
 	mgraphics.svg_set("img", svg);
 	mgraphics.set_source_rgba(1, 1, 1, 1);
 	mgraphics.paint();

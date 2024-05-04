@@ -91,10 +91,13 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		//let _procElements2 = [];
 		let viewBox = getViewBox(svgJS).split(" ");
 		let SVGAttributes = getSVGAttributes(svgJS);
-		Max.post(JSON.stringify(SVGAttributes.viewBox), viewBox);
+		let SVGDoctype = getSVGDoctype(svgJS);
 		value.new = "svg";
 		for (attribute in SVGAttributes){
-			value[attribute] = SVGAttributes[attribute];
+			if (SVGAttributes[attribute].indexOf("&") == 0 && SVGAttributes[attribute].indexOf(";") == SVGAttributes[attribute].length - 1) {
+				value[attribute] = SVGDoctype[SVGAttributes[attribute].slice(1, -1)];
+			}
+			else value[attribute] = SVGAttributes[attribute];
 		}
 		value["picster:scale"] = "1,1";
  		let filename = infile.substring(infile.lastIndexOf('/') + 1);
@@ -110,8 +113,9 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		}
 		value.child.push({"new" : "g", "transform" : "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")", "child" : _procElements2});
 		*/
-		value.child = procElements(getSVGElements(svgJS));
-        let svgObj = {
+		Max.post(JSON.stringify(getSVGElements(svgJS)));
+ 		value.child = procElements(getSVGElements(svgJS));
+       let svgObj = {
             key: 'svg',
             val: value
         }
@@ -132,9 +136,10 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 					"transform" : "matrix(1,0,0,1,0,0)"
 				}
 			};
-			let segments = stringToChunks(LZString.compressToBase64(JSON.stringify(svgObj)), 32000);
+			let stringified = JSON.stringify(svgObj).replace(/\\n|\\t|\\r|/g, "");
+			let segments = stringToChunks(LZString.compressToBase64(stringified), 32000);
+			//Max.post(LZString.decompressFromBase64(segments.join("")).length);
 			let seg = {};
-			//Max.post(stringToChunks(LZString.compressToBase64(JSON.stringify(value)), 32000));
 			for (let i = 0; i < segments.length; i++) {
 				seg.reference = infile;
 				seg.index = i + 1;
@@ -267,9 +272,13 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
 				else if (n.elements[0].type == 'element' &&  n.elements[0].name == 'tspan') {
 					obj_.text = "";
 					for (let t in n.elements) {
-						obj_.text = htmlEntities(obj_.text + n.elements[t].elements[0].text + "||");
+						for (let u in n.elements[t].elements) {
+						if (n.elements[t].elements[u].hasOwnProperty("text")) obj_.text += htmlEntities(n.elements[t].elements[u].text + "||");
+						}
 					}
 				}
+			obj_.text = obj_.text.slice(0, -2);
+			Max.post(JSON.stringify(obj_.text));
 			}
 			else if (obj_.new == "style" ) {
  				//Max.post(JSON.stringify(n.elements[0]));
@@ -316,6 +325,23 @@ function getSVGAttributes(doc_)
         if( e.type == "element" && e.name == "svg" )
         {
             return e.attributes;
+        }
+    }
+}
+
+function getSVGDoctype(doc_)
+{
+ 	for( let e of doc_.elements )
+    {
+        if( e.type == "doctype" )
+        {
+            let dtarray = e.doctype.replace( /(^.*\[|\].*$)/g, "" ).replace(/\n|\t|\r|/g, "").split(">");
+			let dtobj = {};
+			for (let i = 0; i < dtarray.length - 1; i++) {
+				let dtentity = dtarray[i].split(" ");
+				dtobj[dtentity[1]] = dtentity[2].replace(/\"/g, "");
+				}
+			return dtobj;
         }
     }
 }
