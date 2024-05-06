@@ -114,7 +114,7 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		value.child.push({"new" : "g", "transform" : "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")", "child" : _procElements2});
 		*/
  		value.child = procElements(getSVGElements(svgJS));
-		Max.post(JSON.stringify(value));
+		//Max.post(JSON.stringify(value));
 		splitText(value);
         let svgObj = {
             key: 'svg',
