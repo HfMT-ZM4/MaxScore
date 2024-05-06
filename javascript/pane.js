@@ -345,7 +345,7 @@ function obj_ref(o)
 	picster = [];
 	pScale = [];
 	pOffset = [];
-	//post("o.picster[s]", JSON.stringify(o.picster[s][i]).length, "\n");
+	//post("o.picster[s]", JSON.stringify(o.picster[s][i]), "\n");
 	for (var i = 0; i < o.picster[s].length; i++) {
 		pOffset[i] = o.transforms[s][i]["picster:offset"].split(",");
 		pScale[i] = o.transforms[s][i].hasOwnProperty("picster:scale") ? o.transforms[s][i]["picster:scale"].split(",") : [1, 1];
@@ -353,7 +353,7 @@ function obj_ref(o)
 		svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 		svg += ds2svg(o.picster[s][i]);
 		svg += "</svg>";
-		//post("svg", JSON.stringify(o.transforms[s][i]), "\n");
+		//post("svg", svg, "\n");
 		picster[i] = new MGraphicsSVG();
 		picster[i].setsvg(svg);
 	}

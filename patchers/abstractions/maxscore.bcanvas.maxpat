@@ -322,7 +322,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 30.0, 607.0, 187.0, 22.0 ],
-					"restore" : [ "partch-scale.xml" ],
+					"restore" : [ "/Users/hajdu/Documents/batik-1.16/samples/3D.svg" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -375,8 +375,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -610,8 +608,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -989,7 +985,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 350.333332999999925, 474.0, 85.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "socket.pane",
+						"filename" : "socket.pane.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -1033,7 +1029,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 171.0, 100.0, 1065.0, 791.0 ],
+						"rect" : [ 164.0, 100.0, 1065.0, 791.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1064,6 +1060,39 @@
 						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-15",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "n4m.monitor.maxpat",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 561.0, 474.0, 400.0, 220.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 557.0, 423.0, 143.0, 22.0 ],
+									"text" : "script npm install lz-string"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-26",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -1090,13 +1119,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-5",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 551.0, 181.0, 463.0, 35.0 ],
-									"text" : "svg2drawsocket /Users/hajdu/Documents/batik-1.16/samples/tests/spec/scripting/gradientsUpdate.svg"
+									"patching_rect" : [ 551.0, 181.0, 376.0, 22.0 ],
+									"text" : "svg2drawsocket \"/Users/Shared/Max 8/Library/MaxScore/Wing2.svg\""
 								}
 
 							}
@@ -2006,8 +2034,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -2126,6 +2152,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-14", 1 ]
 								}
 
 							}
@@ -2483,7 +2523,7 @@
 					"bordercolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
 					"id" : "obj-1",
 					"ignoreclick" : 1,
-					"linecount" : 2,
+					"linecount" : 4,
 					"maxclass" : "textedit",
 					"nosymquotes" : 1,
 					"numinlets" : 1,
@@ -2492,10 +2532,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 320.0, 330.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 800.0, 800.0 ],
 					"readonly" : 1,
 					"rounded" : 0.0,
-					"text" : "partch-scale.xml",
+					"text" : "/Users/hajdu/Documents/batik-1.16/samples/3D.svg",
 					"textcolor" : [ 0.968627450980392, 0.968627450980392, 0.968627450980392, 0.0 ],
 					"varname" : "dropfile"
 				}
@@ -2622,7 +2662,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 84.0, 129.0, 640.0, 480.0 ],
+						"rect" : [ 685.0, 357.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2654,12 +2694,54 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.0,
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 222.500004589557648, 204.000006079673767, 21.0, 21.0 ],
+									"text" : "t 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 11.0,
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "", "", "" ],
+									"patching_rect" : [ 154.000004589557648, 168.000005006790161, 156.0, 21.0 ],
+									"text" : "regexp (.SVG|.svg|.png|.PNG)"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 11.0,
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 182.000005424022675, 308.666675865650177, 201.0, 21.0 ],
+									"text" : "prepend picster addShape 50 50 image"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 11.0,
 									"id" : "obj-33",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 71.0, 247.5, 105.0, 21.0 ],
+									"patching_rect" : [ 71.33333545923233, 308.666675865650177, 105.0, 21.0 ],
 									"text" : "prepend loadScore"
 								}
 
@@ -2673,7 +2755,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 123.0, 160.5, 34.0, 21.0 ],
+									"patching_rect" : [ 123.0, 204.000006079673767, 21.0, 21.0 ],
 									"text" : "t 1"
 								}
 
@@ -2685,10 +2767,10 @@
 									"id" : "obj-30",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 71.0, 191.5, 38.0, 21.0 ],
-									"text" : "gate"
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 71.33333545923233, 252.666674196720123, 39.0, 21.0 ],
+									"text" : "gate 2"
 								}
 
 							}
@@ -2741,12 +2823,19 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 71.0, 300.5, 30.0, 30.0 ]
+									"patching_rect" : [ 71.33333545923233, 362.000010788440704, 30.0, 30.0 ]
 								}
 
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
 									"source" : [ "obj-14", 0 ]
@@ -2770,7 +2859,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-30", 1 ],
-									"midpoints" : [ 59.5, 164.25, 99.5, 164.25 ],
+									"midpoints" : [ 59.5, 164.25, 100.83333545923233, 164.25 ],
 									"source" : [ "obj-27", 0 ]
 								}
 
@@ -2779,6 +2868,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-31", 0 ],
 									"source" : [ "obj-29", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-29", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-30", 1 ]
 								}
 
 							}
@@ -2800,6 +2903,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"source" : [ "obj-33", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-4", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-30", 0 ],
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -2953,7 +3070,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 320.0, 330.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 1117.0, 846.0 ],
 					"varname" : "pane"
 				}
 

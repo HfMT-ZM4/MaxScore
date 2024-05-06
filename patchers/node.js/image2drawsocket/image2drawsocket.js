@@ -89,7 +89,7 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		let css = {};
 		let _procElements = [];
 		//let _procElements2 = [];
-		let viewBox = getViewBox(svgJS).split(" ");
+		//let viewBox = getViewBox(svgJS).split(" ");
 		let SVGAttributes = getSVGAttributes(svgJS);
 		let SVGDoctype = getSVGDoctype(svgJS);
 		value.new = "svg";
@@ -113,9 +113,10 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		}
 		value.child.push({"new" : "g", "transform" : "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")", "child" : _procElements2});
 		*/
-		Max.post(JSON.stringify(getSVGElements(svgJS)));
  		value.child = procElements(getSVGElements(svgJS));
-       let svgObj = {
+		Max.post(JSON.stringify(value));
+		splitText(value);
+        let svgObj = {
             key: 'svg',
             val: value
         }
@@ -137,7 +138,7 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 				}
 			};
 			let stringified = JSON.stringify(svgObj).replace(/\\n|\\t|\\r|/g, "");
-			let segments = stringToChunks(LZString.compressToBase64(stringified), 32000);
+			let segments = stringToChunks(stringified, 32000);
 			//Max.post(LZString.decompressFromBase64(segments.join("")).length);
 			let seg = {};
 			for (let i = 0; i < segments.length; i++) {
@@ -148,8 +149,8 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 				Max.outlet(seg);
 			}
 			img.val["xlink:href"] = 'reference:' + infile;
-			img.val.width = Number(viewBox[2]);
-			img.val.height = Number(viewBox[3]);
+			img.val.width = SVGAttributes.hasOwnProperty("width") ? SVGAttributes.width : Number(SVGAttributes.viewBox.split(" ")[2]);
+			img.val.height = SVGAttributes.hasOwnProperty("height") ? SVGAttributes.height : Number(SVGAttributes.viewBox.split(" ")[3]);
 			Max.outlet(img);
 		}
    }
@@ -268,7 +269,8 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
  
         if( n.hasOwnProperty('elements') ) {
             if( obj_.new == "text" ) {
-  				if (n.elements[0].type == 'text' ) obj_.text = htmlEntities(n.elements[0].text);
+ 			//Max.post(JSON.stringify(n.elements[0]));
+ 				if (n.elements[0].type == 'text' ) obj_.text = htmlEntities(n.elements[0].text);
 				else if (n.elements[0].type == 'element' &&  n.elements[0].name == 'tspan') {
 					obj_.text = "";
 					for (let t in n.elements) {
@@ -276,9 +278,8 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
 						if (n.elements[t].elements[u].hasOwnProperty("text")) obj_.text += htmlEntities(n.elements[t].elements[u].text + "||");
 						}
 					}
+				obj_.text = obj_.text.slice(0, -2);
 				}
-			obj_.text = obj_.text.slice(0, -2);
-			Max.post(JSON.stringify(obj_.text));
 			}
 			else if (obj_.new == "style" ) {
  				//Max.post(JSON.stringify(n.elements[0]));
@@ -295,6 +296,41 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
     });
 }
 
+function splitText(obj)
+{
+ 	for (var i = 0; i < obj.child.length; i++) {
+	if (obj.child[i].hasOwnProperty("text")) {
+		if (typeof obj.child[i].text != "string") return;
+		if (obj.child[i].text.indexOf("||") != -1) obj.child[i] = splitIntoTextGroup(obj.child[i]); 	
+	}
+	if (obj.child[i].hasOwnProperty("child")) splitText(obj.child[i]);
+	}
+}
+
+function splitIntoTextGroup(obj)
+{
+	//Max.post("2", JSON.stringify(obj));
+	let textGroup = {};
+	textGroup.new = "g";
+	textGroup.id = obj.id;
+	textGroup.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+	let textStyle = {};
+	textGroup.style = obj.style;
+	textGroup.child = [];
+ 	let offset = (obj.hasOwnProperty("font-size")) ? obj["font-size"] : (obj.style.hasOwnProperty("font-size")) ? parseFloat(obj.style["font-size"]) : 12;
+	let splittext = obj.text.split("||");
+	for (let i = 0; i < splittext.length; i++) {
+		textGroup.child[i] = {};
+		textGroup.child[i].new = "text";
+		textGroup.child[i].id = obj.id + "-" + i;
+		textGroup.child[i].text = splittext[i];
+		textGroup.child[i].x = 0;
+		textGroup.child[i].y = 0;
+		let y = parseFloat(obj.y) + 1.5 * offset * i;
+		textGroup.child[i].transform = "matrix(1,0,0,1," + obj.x + "," + y + ")";
+	}
+	return textGroup;
+}
 
 function getSVGElements(doc_)
 {
@@ -303,17 +339,6 @@ function getSVGElements(doc_)
         if( e.type == "element" && e.name == "svg" && e.elements )
         {
             return e.elements;
-        }
-    }
-}
-
-function getViewBox(doc_)
-{
-    for( let e of doc_.elements )
-    {
-        if( e.type == "element" && e.name == "svg" )
-        {
-            return e.attributes.viewBox;
         }
     }
 }
@@ -346,9 +371,10 @@ function getSVGDoctype(doc_)
     }
 }
 
-
+//"ONLY APPLY IF TEXT IS NOT ALREADY AN HTML ENTITY
 function htmlEntities(str) {
-    return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;"); //"
+	if (str.indexOf("&") == -1 && str.indexOf(";") == -1) return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;"); //";
+	else return str;
 }
 
 function stringToChunks(string, chunkSize) {

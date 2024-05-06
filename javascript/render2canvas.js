@@ -3152,7 +3152,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				switch (picster.get("new")) {
 				case "svg" :
 				jpicster = JSON.parse(picster.stringify());
-				jpicster.transform = svgtransform;
+				//jpicster.transform = svgtransform;
 				//post("jpicster", JSON.stringify(jpicster), "\n");
 				//iterateGroup(jpicster);
 				SVGGraphics[s + 1].push(jpicster);
@@ -3338,7 +3338,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				);
 				}
 				else {	
-					jpicster = JSON.parse(LZString.decompressFromBase64(imageCache.get(reference).join(''))).val;
+					jpicster = JSON.parse(imageCache.get(reference).join('')).val;
 					jpicster.transform = svgtransform;
 					//post("jpicster", LZString.decompressFromBase64(imageCache.get(reference).join('')).length, "\n");
 					//iterateGroup(jpicster);

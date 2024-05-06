@@ -2726,7 +2726,7 @@ function findBoundsToo(d)
 			d[0]["xlink:href"] = "data:image/png;base64," + imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("");
 			}
 			else {
-			d[0] = JSON.parse(LZString.decompressFromBase64(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join(""))).val;
+			d[0] = JSON.parse(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("")).val;
 			}
 		}
 	break;
