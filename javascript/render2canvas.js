@@ -3340,6 +3340,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				else {	
 					jpicster = JSON.parse(imageCache.get(reference).join('')).val;
 					jpicster.transform = svgtransform;
+					transf["picster:scale"] = picster.get("picster:scale");
 					//post("jpicster", LZString.decompressFromBase64(imageCache.get(reference).join('')).length, "\n");
 					//iterateGroup(jpicster);
 					SVGGraphics[s + 1].push(jpicster);
@@ -3666,25 +3667,26 @@ function writeSVG(destination)
 	for (var i = 0; i < SVGGraphics_[s].length; i++) {
 		var scale = (SVGTransforms[s][i]).hasOwnProperty("picster:scale") ? SVGTransforms[s][i]["picster:scale"] : "1,1";
 		var translate = SVGTransforms[s][i]["picster:offset"];
-		if (SVGGraphics_[s][i].hasOwnProperty("viewBox")) {
+		if (SVGGraphics_[s][i].hasOwnProperty("child")) {
 			//var SVGAttrs = JSON.parse(JSON.stringify(SVGTransforms[s][i]));
 			delete SVGGraphics_[s][i]["picster:offset"];
 			delete SVGGraphics_[s][i]["picster:scale"];
 			delete SVGGraphics_[s][i]["width"];
 			delete SVGGraphics_[s][i]["height"];
 			delete SVGGraphics_[s][i]["viewBox"];
-			//post("svg", ds2svg(SVGAttrs).slice(0, -6), "\n");
 			//f.writeline(ds2svg(SVGAttrs).slice(0, -6));
 			//if (SVGTransforms[s][i].hasOwnProperty("child")) f.writeline(ds2svg(SVGTransforms[s][i].child));
-			f.writeline("<g transform=\"" + SVGGraphics_[s][i].transform + " translate("  + translate + ") scale(" + scale + ")\">");
+			f.writeline("<g transform=\"" + "translate("  + translate + ") scale(" + scale + ")\">");
 			var svgstring = ds2svg(SVGGraphics_[s][i]);
-			var left = getAllIndexes(svgstring, "<");
-			var right = getAllIndexes(svgstring, ">");
-			for (var j = 0; j < left.length; j++) f.writeline(svgstring.substring(left[j], right[j] + 1));
+			var butt = locations("><", svgstring);
+			//post("svg", butt[butt.length - 1] + 1, svgstring.length, "\n");
+			f.writeline(svgstring.substring(0, butt[0] + 1));
+			for (var j = 0; j < butt.length - 1; j++) f.writeline(svgstring.substring(butt[j] + 1, butt[j + 1] + 1));
+			f.writeline(svgstring.substring(butt[butt.length - 1] + 1), svgstring.length);
 			f.writeline("</g>");	
 		}
 		else {
-			SVGGraphics_[s][i].transform = SVGGraphics_[s][i].transform + " translate("  + translate + ") scale(" + scale + ")";
+			SVGGraphics_[s][i].transform = SVGGraphics_[s][i].transform + "translate("  + translate + ") scale(" + scale + ")";
 			f.writeline(ds2svg(SVGGraphics_[s][i]));
 			}
 		}
@@ -3705,6 +3707,12 @@ function stringToChunks(string, chunkSize) {
         string = string.substring(chunkSize, string.length);
     }
     return chunks;
+}
+
+function locations(substring, string){
+  var a = [], i = -1;
+  while((i = string.indexOf(substring, i + 1)) >= 0) a.push(i);
+  return a;
 }
 
 

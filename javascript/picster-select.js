@@ -233,7 +233,7 @@ if (mode == "picster" && !blocked) {
 		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
 		outlet(0, "clearSelection");
 		if (!buttonMode) {
-		//post("_c", _c, foundobjects.stringify(), foundobjects.get(item)[0], "\n");
+		//post("_c", foundobjects.stringify(), "\n");
 		switch (foundobjects.get(item)[0]){
 			case "interval" :
 			outlet(0, "selectNote", foundobjects.get(item).slice(1, 6));
@@ -752,8 +752,10 @@ function deleteSelectedItem()
 			if (tempDict.contains("image-segment")) {
 				var tempDict2 = new Dict();
 				tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
-				if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
-				outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+				if (tempDict2.contains("picster-element[0]::val::xlink:href")) {
+					if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+					outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+					}
 				}
 			}
 			else {
@@ -776,8 +778,10 @@ function deleteSelectedItem()
 			if (tempDict.contains("image-segment")) {
 				var tempDict2 = new Dict();
 				tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
-				if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
-				outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+				if (tempDict2.contains("picster-element[0]::val::xlink:href")) {
+					if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+					outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+					}
 				}
 			}
 			else {
@@ -801,8 +805,11 @@ function deleteSelectedItem()
 			if (tempDict.contains("image-segment")) {
 				var tempDict2 = new Dict();
 				tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
-				if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
-				outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+				//post("tempDict", tempDict2.stringify(),"\n");
+				if (tempDict2.contains("picster-element[0]::val::xlink:href")) {
+					if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+					outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+					}
 				}
 			}
 			else {
@@ -826,8 +833,10 @@ function deleteSelectedItem()
 			if (tempDict.contains("image-segment")) {
 				var tempDict2 = new Dict();
 				tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
-				if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
-				outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+				if (tempDict2.contains("picster-element[0]::val::xlink:href")) {
+					if (tempDict.get("image-segment::reference") != tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+					outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+					}
 				}
 			}
 			else {
@@ -2031,8 +2040,10 @@ function anything()
 						if (tempDict.contains("image-segment")) {
 							var tempDict2 = new Dict();
 							tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
-							if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+							if (tempDict2.contains("picster-element[0]::val::xlink:href")) {
+								if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
 								element.push(userBeans[i]["@Message"]);
+								}
 							}
 						}
 					}
@@ -2301,8 +2312,10 @@ function anything()
 						if (tempDict.contains("image-segment")) {
 							var tempDict2 = new Dict();
 							tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
-							if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
-								element.push(userBeans[i]["@Message"]);
+							if (tempDict2.contains("picster-element[0]::val::xlink:href")) {
+								if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+									element.push(userBeans[i]["@Message"]);
+								}
 							}
 						}
 					}
@@ -2318,8 +2331,10 @@ function anything()
 						if (tempDict.contains("image-segment")) {
 							var tempDict2 = new Dict();
 							tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
-							if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
-								element.push(userBeans[i]["@Message"]);
+							if (tempDict2.contains("picster-element[0]::val::xlink:href")) {
+								if (tempDict.get("image-segment::reference") == tempDict2.get("picster-element[0]::val::xlink:href").slice(tempDict2.get("picster-element[0]::val::xlink:href").indexOf(":") + 1)) {
+									element.push(userBeans[i]["@Message"]);
+								}
 							}
 						}
 					}
@@ -2707,6 +2722,7 @@ function findBounds(d)
 
 function findBoundsToo(d)
 {
+	//post("jpicster", JSON.stringify(d[0]), "\n");
 	var renderOffset = [600, 600];
 	var scale = [1, 1];
 	if (!Array.isArray(d)) d = [].concat(d);
@@ -2726,6 +2742,7 @@ function findBoundsToo(d)
 			d[0]["xlink:href"] = "data:image/png;base64," + imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("");
 			}
 			else {
+			scale = d[0]["picster:scale"].split(",");
 			d[0] = JSON.parse(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("")).val;
 			}
 		}
@@ -2736,7 +2753,6 @@ function findBoundsToo(d)
 		for (var i = 0; i < d[0]["child"].length; i++) {
 			if (d[0]["child"][i].new == "defs") delete d[0]["child"][i].child;
 		}
-		//post("jpicster", JSON.stringify(d[0]), "\n");
 	/*
 		var _i;
 		var defs = {};
@@ -2753,7 +2769,7 @@ function findBoundsToo(d)
 		iterateGroup(d[0]);
 	break;
 	}
-	//post("post-D", JSON.stringify(d), "\n");
+	//post("post-D", scale, "\n");
 	var svg = "<svg><g transform = \"matrix(" + scale[0] + ",0,0," + scale[1] + "," + renderOffset[0] + "," + renderOffset[1] + ")\">";
 	///
 	svg += ds2svg(d);

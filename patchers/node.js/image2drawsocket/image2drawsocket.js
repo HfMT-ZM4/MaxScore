@@ -134,6 +134,7 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 					"xlink:href" : "",
 					"width" : "",
 					"height" : "",
+					"picster:scale" : "1,1",
 					"transform" : "matrix(1,0,0,1,0,0)"
 				}
 			};

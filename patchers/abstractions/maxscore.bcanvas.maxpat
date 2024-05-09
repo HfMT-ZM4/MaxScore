@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 205.0, 66.0, 815.0, 731.0 ],
+		"rect" : [ 250.0, 66.0, 815.0, 731.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -322,7 +322,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 30.0, 607.0, 187.0, 22.0 ],
-					"restore" : [ "/Users/hajdu/Documents/batik-1.16/samples/3D.svg" ],
+					"restore" : [ "440px-A-D-A_Flow.svg" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1029,7 +1029,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 164.0, 100.0, 1065.0, 791.0 ],
+						"rect" : [ 563.0, 100.0, 1065.0, 791.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1057,7 +1057,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bgmode" : 0,
@@ -2523,7 +2522,7 @@
 					"bordercolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
 					"id" : "obj-1",
 					"ignoreclick" : 1,
-					"linecount" : 4,
+					"linecount" : 2,
 					"maxclass" : "textedit",
 					"nosymquotes" : 1,
 					"numinlets" : 1,
@@ -2535,7 +2534,7 @@
 					"presentation_rect" : [ 0.0, 0.0, 800.0, 800.0 ],
 					"readonly" : 1,
 					"rounded" : 0.0,
-					"text" : "/Users/hajdu/Documents/batik-1.16/samples/3D.svg",
+					"text" : "440px-A-D-A_Flow.svg",
 					"textcolor" : [ 0.968627450980392, 0.968627450980392, 0.968627450980392, 0.0 ],
 					"varname" : "dropfile"
 				}
@@ -2662,7 +2661,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 685.0, 357.0, 640.0, 480.0 ],
+						"rect" : [ 432.0, 211.0, 530.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2691,6 +2690,18 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 50.0, 52.0, 77.0, 22.0 ],
+									"text" : "absolutepath"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.0,
@@ -2727,8 +2738,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 182.000005424022675, 308.666675865650177, 201.0, 21.0 ],
-									"text" : "prepend picster addShape 50 50 image"
+									"patching_rect" : [ 182.000005424022675, 308.666675865650177, 183.0, 21.0 ],
+									"text" : "prepend picster addShape . . image"
 								}
 
 							}
@@ -2811,7 +2822,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+									"patching_rect" : [ 50.0, 6.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -2837,7 +2848,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-27", 0 ],
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -2917,6 +2928,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-30", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -3070,7 +3088,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 1117.0, 846.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 837.0, 846.0 ],
 					"varname" : "pane"
 				}
 
