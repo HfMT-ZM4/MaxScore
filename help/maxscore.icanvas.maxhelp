@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 198.0, 87.0, 703.0, 888.0 ],
+		"rect" : [ 134.0, 100.0, 807.0, 848.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,14 +69,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 198.0, 113.0, 703.0, 862.0 ],
+						"rect" : [ 134.0, 126.0, 807.0, 822.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -237,8 +237,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -353,11 +353,12 @@
 													"id" : "obj-8",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
 													"patching_rect" : [ 475.833333333333371, 456.0, 144.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -389,8 +390,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 0,
+															"minor" : 6,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -431,7 +432,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "dictionary" ],
-																	"patching_rect" : [ 36.0, 64.0, 178.0, 22.0 ],
+																	"patching_rect" : [ 106.0, 80.0, 178.0, 22.0 ],
 																	"text" : "maxscore.info.grab #0grab"
 																}
 
@@ -440,10 +441,9 @@
 																"box" : 																{
 																	"data" : 																	{
 																		"jmslscoredoc" : 																		{
-																			".ordering" : [ "score" ],
 																			"score" : 																			{
 																				"0" : 																				{
-																					"@NAME" : "JMSLMaxScore-4",
+																					"@NAME" : "JMSLMaxScore-31",
 																					"@WIDTH" : 320,
 																					"@HEIGHT" : 220,
 																					"@STAFFS" : 2,
@@ -477,11 +477,10 @@
 																					"@MeasureNumberFontName" : "SansSerif",
 																					"@FirstSystemIndent" : 0.0,
 																					"@useLegacyMultiTrackOrientation" : "true",
-																					".ordering" : [ "ScoreAnnotation", "orchestra", "mixerpanelsettings", "staffspacing", "staffspacing", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "measure", "measure", "scoreUserBean" ],
 																					"ScoreAnnotation" : 																					{
 																						"0" : 																						{
 																							"@CLASSNAME" : "com.softsynth.jmsl.score.ScoreAnnotation",
-																							"@Annotation" : "324.3oc4PtrSCCCEDccxWgkWmD4HwCU1QU2vBJU7PHAhENI1QlZ6ajsSATU+2wOZSCeCrwV9bGOZl697L7NlwJ.MFcCBWWQvEd1fAF.iyioxv.R.1Ho5san8rIhSnXunEt.nlPpRP12NNniP7sFg2g.VMZEsS7kF5tQCEmbwIYSSd16oEsl8E5QPQ0QEM8sfDLg4uiHUKVbUwrqKJP9bi9Hnj+WkjhYGShrL2qF5PL0Ge+F.pXspt7HYkOdoEvSCzVgteI0lZd00QINJmWRBjr84YYXIqqmYjBMydx4fpejwegWw3zQoCGwJQqw2tXDvp6K0flklP69bz5Nsgyvs9USTU27+GiVoDfsiCm0FiTuARLe+KPk0wJ68sowbm15LqopTfPIqDA3nhocgIa.qHz5G3b+NHZcd1g7yEt9+QgyOj+a2Lbcb"
+																							"@Annotation" : "385.3oc4Q9yaBCCDEeN4SgkmCQAo9GQ2JhNfTghnsBoV0AmvkfK19hrcfhP7cu1NP.15dWrk+cOe9dOuONhtAzFNpnjGHz9oYzDGqVi0n15vLguPlGlKXp0yXUPGwxkv6Jt0C5mkk1BgerknJ.oOp4tN3wxFCuniOTy1znYz1tXEPWk2b8zPlBaIyQISETjWUfBT6q+IIKcvf6RtX6lDhatIe4UVdsxrjKV5DI3J3OHy.1EZVcvbGO+Ahxf6Su8HYjyEs4zq0rBtpZHyzFPo2eTxyHV6JLSv1kyJV2kdlU31EqPALEsvbvXMiUOIqs6l.LSiFLWob9pc1UxwpYW703tX3wOKzxJK6k4OGsONxYUXYEn8F1bxGdU6DgYjNBJYMBKMfk7BsKxCFlJmzSgJnsBa42MF6oWIhV39uBpVd48CAQOAhqapOqMLRUZrk4R6DRu9g.1027b8XkwpmxjsCDosUbOrQBJquxLzv817kxRWbFZcbzg3yFt++CCGeH9W6bPAlC"
 																						}
 
 																					}
@@ -489,16 +488,14 @@
 																					"orchestra" : 																					{
 																						"0" : 																						{
 																							"@CLASSNAME" : "com.softsynth.jmsl.score.Orchestra",
-																							".ordering" : [ "jmslscoreinstrument", "jmslscoreinstrument" ],
 																							"jmslscoreinstrument" : 																							{
 																								"0" : 																								{
 																									"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
 																									"@EditEnabled" : "true",
 																									"@InsIndex" : 0,
+																									"@Name" : "MaxScoreIns-0",
 																									"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
 																									"@Transposition" : 0.0,
-																									"@Name" : "MaxScoreIns-0",
-																									".ordering" : [ "dim", "dim", "dim" ],
 																									"dim" : 																									{
 																										"0" : 																										{
 																											"@index" : 4,
@@ -525,17 +522,17 @@
 																										}
 
 																									}
-
+,
+																									".ordering" : [ "dim", "dim", "dim" ]
 																								}
 ,
 																								"1" : 																								{
 																									"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
 																									"@EditEnabled" : "true",
 																									"@InsIndex" : 1,
+																									"@Name" : "MaxScoreIns-1",
 																									"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
 																									"@Transposition" : 0.0,
-																									"@Name" : "MaxScoreIns-1",
-																									".ordering" : [ "dim", "dim", "dim" ],
 																									"dim" : 																									{
 																										"0" : 																										{
 																											"@index" : 4,
@@ -562,18 +559,19 @@
 																										}
 
 																									}
-
+,
+																									".ordering" : [ "dim", "dim", "dim" ]
 																								}
 
 																							}
-
+,
+																							".ordering" : [ "jmslscoreinstrument", "jmslscoreinstrument" ]
 																						}
 
 																					}
 ,
 																					"mixerpanelsettings" : 																					{
 																						"0" : 																						{
-																							".ordering" : [ "panamppair", "panamppair" ],
 																							"panamppair" : 																							{
 																								"0" : 																								{
 																									"@FADERINDEX" : 0,
@@ -588,7 +586,8 @@
 																								}
 
 																							}
-
+,
+																							".ordering" : [ "panamppair", "panamppair" ]
 																						}
 
 																					}
@@ -782,7 +781,6 @@
 																							"@MEASURETEXTX" : 48,
 																							"@MEASURETEXTY" : 48,
 																							"@MEASURELEFTMARGIN" : 50.0,
-																							".ordering" : [ "staff", "staff" ],
 																							"staff" : 																							{
 																								"0" : 																								{
 																									"@INDEX" : 0,
@@ -795,11 +793,250 @@
 																									"@KEYSIGSETBYHAND" : "false",
 																									"@EXTENDEDLINESABOVE" : 0,
 																									"@EXTENDEDLINESBELOW" : 0,
-																									".ordering" : [ "track", "track" ],
 																									"track" : 																									{
 																										"0" : 																										{
 																											"@INDEX" : 0,
-																											"@MultitrackRestAdjustmentY" : 0.0
+																											"@MultitrackRestAdjustmentY" : 0.0,
+																											"note" : 																											{
+																												"0" : 																												{
+																													"@NOTEDUR" : 2,
+																													"@TUPLET" : 0,
+																													"@DOTS" : 0,
+																													"@ACCINFO" : 0,
+																													"@DURATION" : 1.0,
+																													"@PITCH" : 71.0,
+																													"@VELOCITY" : 0.5,
+																													"@HOLD" : 1.0,
+																													"@BEAMEDOUT" : "false",
+																													"@GLISSOUT" : "false",
+																													"@TIEDOUT" : "false",
+																													"@ACCPREF" : 0,
+																													"@ACCVISPOLICY" : 0,
+																													"@ALTENHARMONIC" : "false",
+																													"@DYN" : 0,
+																													"@SLUROUT" : "false",
+																													"@ISGRACENOTE" : "false",
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
+																													"@LEDGERLINESVISIBLE" : "true",
+																													"@WEDGE" : "none",
+																													"@OTTAVA" : "none",
+																													"@MARK" : 0,
+																													"@TEXTOFFSETX" : 0,
+																													"@TEXTOFFSETY" : 0,
+																													"@NOTEHEAD" : 0,
+																													"@NOTEHEADSCALE" : 1.0,
+																													"@VISIBLE" : "true",
+																													"@NOTEHEADVISIBLE" : "true",
+																													"@STEMVISIBLE" : "true",
+																													"@OVERRIDELEVEL" : -1,
+																													"@ISOVERRIDELEVEL" : "false",
+																													"@STEMINFOOVERRIDE" : "false",
+																													"@STEMINFO" : 2,
+																													"@LAYOUTSHIFTX" : 0.0,
+																													"dim" : 																													{
+																														"0" : 																														{
+																															"@index" : 4,
+																															"@value" : 0.0,
+																															"@name" : "EventFlag"
+																														}
+,
+																														"1" : 																														{
+																															"@index" : 5,
+																															"@value" : -1.0,
+																															"@name" : "originalPitch"
+																														}
+,
+																														"2" : 																														{
+																															"@index" : 6,
+																															"@value" : -1.0,
+																															"@name" : "index"
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim" ]
+																												}
+,
+																												"1" : 																												{
+																													"@NOTEDUR" : 2,
+																													"@TUPLET" : 0,
+																													"@DOTS" : 0,
+																													"@ACCINFO" : 0,
+																													"@DURATION" : 1.0,
+																													"@PITCH" : 69.0,
+																													"@VELOCITY" : 0.5,
+																													"@HOLD" : 1.0,
+																													"@BEAMEDOUT" : "false",
+																													"@GLISSOUT" : "false",
+																													"@TIEDOUT" : "false",
+																													"@ACCPREF" : 0,
+																													"@ACCVISPOLICY" : 0,
+																													"@ALTENHARMONIC" : "false",
+																													"@DYN" : 0,
+																													"@SLUROUT" : "false",
+																													"@ISGRACENOTE" : "false",
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
+																													"@LEDGERLINESVISIBLE" : "true",
+																													"@WEDGE" : "none",
+																													"@OTTAVA" : "none",
+																													"@MARK" : 0,
+																													"@TEXTOFFSETX" : 0,
+																													"@TEXTOFFSETY" : 0,
+																													"@NOTEHEAD" : 0,
+																													"@NOTEHEADSCALE" : 1.0,
+																													"@VISIBLE" : "true",
+																													"@NOTEHEADVISIBLE" : "true",
+																													"@STEMVISIBLE" : "true",
+																													"@OVERRIDELEVEL" : -1,
+																													"@ISOVERRIDELEVEL" : "false",
+																													"@STEMINFOOVERRIDE" : "false",
+																													"@STEMINFO" : 1,
+																													"@LAYOUTSHIFTX" : 0.0,
+																													"dim" : 																													{
+																														"0" : 																														{
+																															"@index" : 4,
+																															"@value" : 0.0,
+																															"@name" : "EventFlag"
+																														}
+,
+																														"1" : 																														{
+																															"@index" : 5,
+																															"@value" : -1.0,
+																															"@name" : "originalPitch"
+																														}
+,
+																														"2" : 																														{
+																															"@index" : 6,
+																															"@value" : -1.0,
+																															"@name" : "index"
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim" ]
+																												}
+,
+																												"2" : 																												{
+																													"@NOTEDUR" : 2,
+																													"@TUPLET" : 0,
+																													"@DOTS" : 0,
+																													"@ACCINFO" : 0,
+																													"@DURATION" : 1.0,
+																													"@PITCH" : 72.0,
+																													"@VELOCITY" : 0.5,
+																													"@HOLD" : 1.0,
+																													"@BEAMEDOUT" : "false",
+																													"@GLISSOUT" : "false",
+																													"@TIEDOUT" : "false",
+																													"@ACCPREF" : 0,
+																													"@ACCVISPOLICY" : 0,
+																													"@ALTENHARMONIC" : "false",
+																													"@DYN" : 0,
+																													"@SLUROUT" : "false",
+																													"@ISGRACENOTE" : "false",
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
+																													"@LEDGERLINESVISIBLE" : "true",
+																													"@WEDGE" : "none",
+																													"@OTTAVA" : "none",
+																													"@MARK" : 0,
+																													"@TEXTOFFSETX" : 0,
+																													"@TEXTOFFSETY" : 0,
+																													"@NOTEHEAD" : 0,
+																													"@NOTEHEADSCALE" : 1.0,
+																													"@VISIBLE" : "true",
+																													"@NOTEHEADVISIBLE" : "true",
+																													"@STEMVISIBLE" : "true",
+																													"@OVERRIDELEVEL" : -1,
+																													"@ISOVERRIDELEVEL" : "false",
+																													"@STEMINFOOVERRIDE" : "false",
+																													"@STEMINFO" : 2,
+																													"@LAYOUTSHIFTX" : 0.0,
+																													"dim" : 																													{
+																														"0" : 																														{
+																															"@index" : 4,
+																															"@value" : 0.0,
+																															"@name" : "EventFlag"
+																														}
+,
+																														"1" : 																														{
+																															"@index" : 5,
+																															"@value" : -1.0,
+																															"@name" : "originalPitch"
+																														}
+,
+																														"2" : 																														{
+																															"@index" : 6,
+																															"@value" : -1.0,
+																															"@name" : "index"
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim" ]
+																												}
+,
+																												"3" : 																												{
+																													"@NOTEDUR" : 2,
+																													"@TUPLET" : 0,
+																													"@DOTS" : 0,
+																													"@ACCINFO" : 0,
+																													"@DURATION" : 1.0,
+																													"@PITCH" : 69.0,
+																													"@VELOCITY" : 0.5,
+																													"@HOLD" : 1.0,
+																													"@BEAMEDOUT" : "false",
+																													"@GLISSOUT" : "false",
+																													"@TIEDOUT" : "false",
+																													"@ACCPREF" : 0,
+																													"@ACCVISPOLICY" : 0,
+																													"@ALTENHARMONIC" : "false",
+																													"@DYN" : 0,
+																													"@SLUROUT" : "false",
+																													"@ISGRACENOTE" : "false",
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
+																													"@LEDGERLINESVISIBLE" : "true",
+																													"@WEDGE" : "none",
+																													"@OTTAVA" : "none",
+																													"@MARK" : 0,
+																													"@TEXTOFFSETX" : 0,
+																													"@TEXTOFFSETY" : 0,
+																													"@NOTEHEAD" : 0,
+																													"@NOTEHEADSCALE" : 1.0,
+																													"@VISIBLE" : "true",
+																													"@NOTEHEADVISIBLE" : "true",
+																													"@STEMVISIBLE" : "true",
+																													"@OVERRIDELEVEL" : -1,
+																													"@ISOVERRIDELEVEL" : "false",
+																													"@STEMINFOOVERRIDE" : "false",
+																													"@STEMINFO" : 1,
+																													"@LAYOUTSHIFTX" : 0.0,
+																													"dim" : 																													{
+																														"0" : 																														{
+																															"@index" : 4,
+																															"@value" : 0.0,
+																															"@name" : "EventFlag"
+																														}
+,
+																														"1" : 																														{
+																															"@index" : 5,
+																															"@value" : -1.0,
+																															"@name" : "originalPitch"
+																														}
+,
+																														"2" : 																														{
+																															"@index" : 6,
+																															"@value" : -1.0,
+																															"@name" : "index"
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim" ]
+																												}
+
+																											}
+,
+																											".ordering" : [ "note", "note", "note", "note" ]
 																										}
 ,
 																										"1" : 																										{
@@ -808,7 +1045,8 @@
 																										}
 
 																									}
-
+,
+																									".ordering" : [ "track", "track" ]
 																								}
 ,
 																								"1" : 																								{
@@ -822,11 +1060,250 @@
 																									"@KEYSIGSETBYHAND" : "false",
 																									"@EXTENDEDLINESABOVE" : 0,
 																									"@EXTENDEDLINESBELOW" : 0,
-																									".ordering" : [ "track", "track" ],
 																									"track" : 																									{
 																										"0" : 																										{
 																											"@INDEX" : 0,
-																											"@MultitrackRestAdjustmentY" : 0.0
+																											"@MultitrackRestAdjustmentY" : 0.0,
+																											"note" : 																											{
+																												"0" : 																												{
+																													"@NOTEDUR" : 2,
+																													"@TUPLET" : 0,
+																													"@DOTS" : 0,
+																													"@ACCINFO" : 0,
+																													"@DURATION" : 1.0,
+																													"@PITCH" : 72.0,
+																													"@VELOCITY" : 0.5,
+																													"@HOLD" : 1.0,
+																													"@BEAMEDOUT" : "false",
+																													"@GLISSOUT" : "false",
+																													"@TIEDOUT" : "false",
+																													"@ACCPREF" : 0,
+																													"@ACCVISPOLICY" : 0,
+																													"@ALTENHARMONIC" : "false",
+																													"@DYN" : 0,
+																													"@SLUROUT" : "false",
+																													"@ISGRACENOTE" : "false",
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
+																													"@LEDGERLINESVISIBLE" : "true",
+																													"@WEDGE" : "none",
+																													"@OTTAVA" : "none",
+																													"@MARK" : 0,
+																													"@TEXTOFFSETX" : 0,
+																													"@TEXTOFFSETY" : 0,
+																													"@NOTEHEAD" : 0,
+																													"@NOTEHEADSCALE" : 1.0,
+																													"@VISIBLE" : "true",
+																													"@NOTEHEADVISIBLE" : "true",
+																													"@STEMVISIBLE" : "true",
+																													"@OVERRIDELEVEL" : -1,
+																													"@ISOVERRIDELEVEL" : "false",
+																													"@STEMINFOOVERRIDE" : "false",
+																													"@STEMINFO" : 2,
+																													"@LAYOUTSHIFTX" : 0.0,
+																													"dim" : 																													{
+																														"0" : 																														{
+																															"@index" : 4,
+																															"@value" : 0.0,
+																															"@name" : "EventFlag"
+																														}
+,
+																														"1" : 																														{
+																															"@index" : 5,
+																															"@value" : -1.0,
+																															"@name" : "originalPitch"
+																														}
+,
+																														"2" : 																														{
+																															"@index" : 6,
+																															"@value" : -1.0,
+																															"@name" : "index"
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim" ]
+																												}
+,
+																												"1" : 																												{
+																													"@NOTEDUR" : 2,
+																													"@TUPLET" : 0,
+																													"@DOTS" : 0,
+																													"@ACCINFO" : 0,
+																													"@DURATION" : 1.0,
+																													"@PITCH" : 72.0,
+																													"@VELOCITY" : 0.5,
+																													"@HOLD" : 1.0,
+																													"@BEAMEDOUT" : "false",
+																													"@GLISSOUT" : "false",
+																													"@TIEDOUT" : "false",
+																													"@ACCPREF" : 0,
+																													"@ACCVISPOLICY" : 0,
+																													"@ALTENHARMONIC" : "false",
+																													"@DYN" : 0,
+																													"@SLUROUT" : "false",
+																													"@ISGRACENOTE" : "false",
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
+																													"@LEDGERLINESVISIBLE" : "true",
+																													"@WEDGE" : "none",
+																													"@OTTAVA" : "none",
+																													"@MARK" : 0,
+																													"@TEXTOFFSETX" : 0,
+																													"@TEXTOFFSETY" : 0,
+																													"@NOTEHEAD" : 0,
+																													"@NOTEHEADSCALE" : 1.0,
+																													"@VISIBLE" : "true",
+																													"@NOTEHEADVISIBLE" : "true",
+																													"@STEMVISIBLE" : "true",
+																													"@OVERRIDELEVEL" : -1,
+																													"@ISOVERRIDELEVEL" : "false",
+																													"@STEMINFOOVERRIDE" : "false",
+																													"@STEMINFO" : 2,
+																													"@LAYOUTSHIFTX" : 0.0,
+																													"dim" : 																													{
+																														"0" : 																														{
+																															"@index" : 4,
+																															"@value" : 0.0,
+																															"@name" : "EventFlag"
+																														}
+,
+																														"1" : 																														{
+																															"@index" : 5,
+																															"@value" : -1.0,
+																															"@name" : "originalPitch"
+																														}
+,
+																														"2" : 																														{
+																															"@index" : 6,
+																															"@value" : -1.0,
+																															"@name" : "index"
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim" ]
+																												}
+,
+																												"2" : 																												{
+																													"@NOTEDUR" : 2,
+																													"@TUPLET" : 0,
+																													"@DOTS" : 0,
+																													"@ACCINFO" : 0,
+																													"@DURATION" : 1.0,
+																													"@PITCH" : 67.0,
+																													"@VELOCITY" : 0.5,
+																													"@HOLD" : 1.0,
+																													"@BEAMEDOUT" : "false",
+																													"@GLISSOUT" : "false",
+																													"@TIEDOUT" : "false",
+																													"@ACCPREF" : 0,
+																													"@ACCVISPOLICY" : 0,
+																													"@ALTENHARMONIC" : "false",
+																													"@DYN" : 0,
+																													"@SLUROUT" : "false",
+																													"@ISGRACENOTE" : "false",
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
+																													"@LEDGERLINESVISIBLE" : "true",
+																													"@WEDGE" : "none",
+																													"@OTTAVA" : "none",
+																													"@MARK" : 0,
+																													"@TEXTOFFSETX" : 0,
+																													"@TEXTOFFSETY" : 0,
+																													"@NOTEHEAD" : 0,
+																													"@NOTEHEADSCALE" : 1.0,
+																													"@VISIBLE" : "true",
+																													"@NOTEHEADVISIBLE" : "true",
+																													"@STEMVISIBLE" : "true",
+																													"@OVERRIDELEVEL" : -1,
+																													"@ISOVERRIDELEVEL" : "false",
+																													"@STEMINFOOVERRIDE" : "false",
+																													"@STEMINFO" : 1,
+																													"@LAYOUTSHIFTX" : 0.0,
+																													"dim" : 																													{
+																														"0" : 																														{
+																															"@index" : 4,
+																															"@value" : 0.0,
+																															"@name" : "EventFlag"
+																														}
+,
+																														"1" : 																														{
+																															"@index" : 5,
+																															"@value" : -1.0,
+																															"@name" : "originalPitch"
+																														}
+,
+																														"2" : 																														{
+																															"@index" : 6,
+																															"@value" : -1.0,
+																															"@name" : "index"
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim" ]
+																												}
+,
+																												"3" : 																												{
+																													"@NOTEDUR" : 2,
+																													"@TUPLET" : 0,
+																													"@DOTS" : 0,
+																													"@ACCINFO" : 0,
+																													"@DURATION" : 1.0,
+																													"@PITCH" : 77.0,
+																													"@VELOCITY" : 0.5,
+																													"@HOLD" : 1.0,
+																													"@BEAMEDOUT" : "false",
+																													"@GLISSOUT" : "false",
+																													"@TIEDOUT" : "false",
+																													"@ACCPREF" : 0,
+																													"@ACCVISPOLICY" : 0,
+																													"@ALTENHARMONIC" : "false",
+																													"@DYN" : 0,
+																													"@SLUROUT" : "false",
+																													"@ISGRACENOTE" : "false",
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
+																													"@LEDGERLINESVISIBLE" : "true",
+																													"@WEDGE" : "none",
+																													"@OTTAVA" : "none",
+																													"@MARK" : 0,
+																													"@TEXTOFFSETX" : 0,
+																													"@TEXTOFFSETY" : 0,
+																													"@NOTEHEAD" : 0,
+																													"@NOTEHEADSCALE" : 1.0,
+																													"@VISIBLE" : "true",
+																													"@NOTEHEADVISIBLE" : "true",
+																													"@STEMVISIBLE" : "true",
+																													"@OVERRIDELEVEL" : -1,
+																													"@ISOVERRIDELEVEL" : "false",
+																													"@STEMINFOOVERRIDE" : "false",
+																													"@STEMINFO" : 2,
+																													"@LAYOUTSHIFTX" : 0.0,
+																													"dim" : 																													{
+																														"0" : 																														{
+																															"@index" : 4,
+																															"@value" : 0.0,
+																															"@name" : "EventFlag"
+																														}
+,
+																														"1" : 																														{
+																															"@index" : 5,
+																															"@value" : -1.0,
+																															"@name" : "originalPitch"
+																														}
+,
+																														"2" : 																														{
+																															"@index" : 6,
+																															"@value" : -1.0,
+																															"@name" : "index"
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim" ]
+																												}
+
+																											}
+,
+																											".ordering" : [ "note", "note", "note", "note" ]
 																										}
 ,
 																										"1" : 																										{
@@ -835,11 +1312,13 @@
 																										}
 
 																									}
-
+,
+																									".ordering" : [ "track", "track" ]
 																								}
 
 																							}
-
+,
+																							".ordering" : [ "staff", "staff" ]
 																						}
 ,
 																						"1" : 																						{
@@ -856,7 +1335,6 @@
 																							"@MEASURETEXTX" : 48,
 																							"@MEASURETEXTY" : 48,
 																							"@MEASURELEFTMARGIN" : 50.0,
-																							".ordering" : [ "staff", "staff" ],
 																							"staff" : 																							{
 																								"0" : 																								{
 																									"@INDEX" : 0,
@@ -869,7 +1347,6 @@
 																									"@KEYSIGSETBYHAND" : "false",
 																									"@EXTENDEDLINESABOVE" : 0,
 																									"@EXTENDEDLINESBELOW" : 0,
-																									".ordering" : [ "track", "track" ],
 																									"track" : 																									{
 																										"0" : 																										{
 																											"@INDEX" : 0,
@@ -882,7 +1359,8 @@
 																										}
 
 																									}
-
+,
+																									".ordering" : [ "track", "track" ]
 																								}
 ,
 																								"1" : 																								{
@@ -896,7 +1374,6 @@
 																									"@KEYSIGSETBYHAND" : "false",
 																									"@EXTENDEDLINESABOVE" : 0,
 																									"@EXTENDEDLINESBELOW" : 0,
-																									".ordering" : [ "track", "track" ],
 																									"track" : 																									{
 																										"0" : 																										{
 																											"@INDEX" : 0,
@@ -909,11 +1386,13 @@
 																										}
 
 																									}
-
+,
+																									".ordering" : [ "track", "track" ]
 																								}
 
 																							}
-
+,
+																							".ordering" : [ "staff", "staff" ]
 																						}
 
 																					}
@@ -924,11 +1403,13 @@
 																						}
 
 																					}
-
+,
+																					".ordering" : [ "ScoreAnnotation", "orchestra", "mixerpanelsettings", "staffspacing", "staffspacing", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "measure", "measure", "scoreUserBean" ]
 																				}
 
 																			}
-
+,
+																			".ordering" : [ "score" ]
 																		}
 
 																	}
@@ -936,11 +1417,12 @@
 																	"id" : "obj-9",
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
-																	"numoutlets" : 4,
-																	"outlettype" : [ "dictionary", "", "", "" ],
-																	"patching_rect" : [ 36.0, 119.0, 89.0, 22.0 ],
+																	"numoutlets" : 5,
+																	"outlettype" : [ "dictionary", "", "", "", "" ],
+																	"patching_rect" : [ 36.0, 155.0, 89.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 1,
+																		"legacy" : 1,
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
 																	}
@@ -972,7 +1454,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "dumpScore" ],
-																	"patching_rect" : [ 36.0, 23.0, 30.0, 30.0 ]
+																	"patching_rect" : [ 106.0, 39.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -984,14 +1466,14 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 36.0, 157.0, 30.0, 30.0 ]
+																	"patching_rect" : [ 36.0, 193.0, 30.0, 30.0 ]
 																}
 
 															}
  ],
 														"lines" : [ 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-9", 0 ],
+																	"destination" : [ "obj-9", 1 ],
 																	"source" : [ "obj-10", 0 ]
 																}
 
@@ -1006,7 +1488,7 @@
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-9", 0 ],
-																	"midpoints" : [ 232.5, 102.5, 45.5, 102.5 ],
+																	"midpoints" : [ 232.5, 131.5, 45.5, 131.5 ],
 																	"source" : [ "obj-4", 0 ]
 																}
 
@@ -1107,7 +1589,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
+													"outlettype" : [ "dictionary", "" ],
 													"patching_rect" : [ 4.0, 76.0, 135.0, 22.0 ],
 													"text" : "icanvas.queries #0"
 												}
@@ -1148,8 +1630,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 0,
+															"minor" : 6,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1624,11 +2106,12 @@
 													"id" : "obj-24",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
 													"patching_rect" : [ 475.833333333333371, 425.0, 81.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -1661,8 +2144,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 0,
+															"minor" : 6,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1907,8 +2390,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 0,
+															"minor" : 6,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2082,11 +2565,12 @@
 																	"id" : "obj-13",
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
-																	"numoutlets" : 4,
-																	"outlettype" : [ "dictionary", "", "", "" ],
+																	"numoutlets" : 5,
+																	"outlettype" : [ "dictionary", "", "", "", "" ],
 																	"patching_rect" : [ 50.000006000000042, 165.0, 100.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
+																		"legacy" : 1,
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
 																	}
@@ -2209,7 +2693,7 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 476.833333333333371, 394.5, 180.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"initial" : [ 211641 ],
+														"initial" : [ 9632 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -2350,8 +2834,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 0,
+															"minor" : 6,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2581,9 +3065,9 @@
 												"box" : 												{
 													"id" : "obj-3",
 													"maxclass" : "newobj",
-													"numinlets" : 4,
-													"numoutlets" : 3,
-													"outlettype" : [ "", "", "" ],
+													"numinlets" : 3,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 158.999999015441858, 394.5, 215.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"filename" : "render2canvas",
@@ -2616,7 +3100,7 @@
 , 											{
 												"box" : 												{
 													"border" : 0,
-													"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1 ], [ "transparency", 0 ] ],
+													"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1.0 ] ],
 													"filename" : "pane.js",
 													"id" : "obj-7",
 													"maxclass" : "jsui",
@@ -2769,7 +3253,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-3", 1 ],
-													"midpoints" : [ 335.309523142857074, 330.25, 233.833332348775173, 330.25 ],
+													"midpoints" : [ 335.309523142857074, 330.25, 266.499999015441858, 330.25 ],
 													"source" : [ "obj-11", 6 ]
 												}
 
@@ -2785,7 +3269,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-3", 2 ],
-													"midpoints" : [ 266.595237428571409, 351.0, 299.166665682108487, 351.0 ],
+													"midpoints" : [ 266.595237428571409, 351.0, 364.499999015441858, 351.0 ],
 													"source" : [ "obj-11", 4 ]
 												}
 
@@ -2817,13 +3301,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-46", 0 ],
 													"source" : [ "obj-12", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-3", 3 ],
-													"source" : [ "obj-13", 0 ]
 												}
 
 											}
@@ -2988,13 +3465,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-30", 0 ],
 													"source" : [ "obj-29", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-13", 0 ],
-													"source" : [ "obj-3", 2 ]
 												}
 
 											}
@@ -3180,7 +3650,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-3", 1 ],
-													"midpoints" : [ 321.833332499999983, 384.25, 233.833332348775173, 384.25 ],
+													"midpoints" : [ 321.833332499999983, 384.25, 266.499999015441858, 384.25 ],
 													"source" : [ "obj-5", 0 ]
 												}
 
@@ -3564,14 +4034,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 703.0, 862.0 ],
+						"rect" : [ 0.0, 26.0, 807.0, 822.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3661,6 +4131,10 @@
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-11::obj-11::obj-11" : 				{
+					"parameter_longname" : "mc.live.gain~[1]"
+				}
+,
 				"obj-11::obj-11::obj-40" : 				{
 					"parameter_longname" : "live.text[20]"
 				}
@@ -3712,9 +4186,23 @@
 			}
 , 			{
 				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
-				"patcherrelativepath" : "../patchers/DJster/core",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "djsterNotation.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
+				"patcherrelativepath" : "../jsextensions",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fitcurve.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions/xytocurveto",
+				"patcherrelativepath" : "../jsextensions/xytocurveto",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -3743,6 +4231,13 @@
 , 			{
 				"name" : "helpstarter.js",
 				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "htmlEntities.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -3845,6 +4340,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.messagehub.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.note2midi.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.proportionalNotation.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -3863,6 +4372,20 @@
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.setNoteIntervalAttribute.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.tools.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
+				"patcherrelativepath" : "../jsextensions",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -3899,8 +4422,8 @@
 			}
 , 			{
 				"name" : "my-loadbang.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../Library/MaxScore",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -3918,9 +4441,23 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "packback.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "pane.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pentool.js",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions/xytocurveto",
+				"patcherrelativepath" : "../jsextensions/xytocurveto",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

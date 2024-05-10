@@ -3227,6 +3227,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				});
 				}
 				//post("WAVE", JSON.stringify(child), "\n");				/////////////////
+				SVGTransforms[s + 1].push(transf);
 				SVGGraphics[s + 1].push({
 				"new" : "g",
 				"id" : picster.get("id"),
