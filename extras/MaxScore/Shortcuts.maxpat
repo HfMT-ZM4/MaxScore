@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 288.0, 132.0, 562.0, 438.0 ],
+		"rect" : [ 279.0, 66.0, 562.0, 438.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -408,7 +408,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 23.0, 562.0, 415.0 ],
 					"rowhead" : 1,
-					"rows" : 35,
+					"rows" : 24,
 					"selmode" : 0,
 					"stcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ]
 				}
@@ -417,46 +417,50 @@
 , 			{
 				"box" : 				{
 					"coll_data" : 					{
-						"count" : 23,
+						"count" : 24,
 						"data" : [ 							{
 								"key" : "period",
 								"value" : [ "toggle selection mode" ]
 							}
 , 							{
 								"key" : 0,
-								"value" : [ "create Bezier curves" ]
+								"value" : [ "Bezier tool" ]
+							}
+, 							{
+								"key" : 1,
+								"value" : [ "line tool" ]
 							}
 , 							{
 								"key" : 2,
-								"value" : [ "draw a rectangle" ]
+								"value" : [ "rectangle tool" ]
 							}
 , 							{
 								"key" : 3,
-								"value" : [ "draw a rounded rectangle" ]
+								"value" : [ "rounded rectangle tool" ]
 							}
 , 							{
 								"key" : 4,
-								"value" : [ "draw an ellipse" ]
+								"value" : [ "ellipse tool" ]
 							}
 , 							{
 								"key" : 5,
-								"value" : [ "draw an arc" ]
+								"value" : [ "arc tool" ]
 							}
 , 							{
 								"key" : 6,
-								"value" : [ "draw a polygon" ]
+								"value" : [ "polygon tool" ]
 							}
 , 							{
 								"key" : 7,
-								"value" : [ "draw a freehand shape with curve fitting" ]
+								"value" : [ "freehand tool" ]
 							}
 , 							{
 								"key" : 8,
-								"value" : [ "add text" ]
+								"value" : [ "text tool" ]
 							}
 , 							{
 								"key" : 9,
-								"value" : [ "insert a picture (bitmap or svg)" ]
+								"value" : [ "image tool (.png or .svg)" ]
 							}
 , 							{
 								"key" : "c",
@@ -549,11 +553,11 @@
 					"comment" : "",
 					"hidden" : 1,
 					"id" : "obj-16",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 54.0, 94.0, 25.0, 25.0 ]
 				}
 
@@ -682,6 +686,8 @@
 
 			}
  ],
+		"dependency_cache" : [  ],
+		"autosave" : 0,
 		"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 		"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
 	}

@@ -3222,7 +3222,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"d" : _d,
 				"stroke" : (picster.get("style::stroke") == "$FRGB") ? frgb : picster.get("style::stroke"),
 				"stroke-width" : picster.get("style::stroke"),
-				//"fill" : (picster.get("style::stroke") == "$FRGB") ? frgb : picster.get("style::fill"),
+				"fill" : (picster.get("style::stroke") == "$FRGB") ? frgb : picster.get("style::stroke"),
 				"transform" : transform_,
 				});
 				}
@@ -3299,6 +3299,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				var href = picster.get("xlink:href");
 				var imgtype = "";
 				if (!href.indexOf("data")) {
+				//post("jpicster", transform, [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest], "\n");
 				SVGGraphics[s + 1].push({
 				"new" : "image",
 				"id" : "embedded-" + idcount++,
@@ -3307,7 +3308,8 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"width" : picster.get("width"),
 				"height" : picster.get("height"),
 				"xlink:href" : href,
-				"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
+				//"transform" : "matrix(" + [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest] + ")"
+				"transform" : ""
 				}
 				);					
 				SVGTransforms[s + 1].push(transf);
@@ -3342,7 +3344,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					jpicster = JSON.parse(imageCache.get(reference).join('')).val;
 					jpicster.transform = svgtransform;
 					transf["picster:scale"] = picster.get("picster:scale");
-					//post("jpicster", LZString.decompressFromBase64(imageCache.get(reference).join('')).length, "\n");
 					//iterateGroup(jpicster);
 					SVGGraphics[s + 1].push(jpicster);
 					SVGTransforms[s + 1].push(transf);

@@ -170,6 +170,7 @@ function buttonmode(bm)
 
 function anything()
 {
+	if (virgin) return;
 	var msg = arrayfromargs(messagename, arguments);
 	if (msg[0] == "bounds") {
 		if (msg[1] == "hide") {

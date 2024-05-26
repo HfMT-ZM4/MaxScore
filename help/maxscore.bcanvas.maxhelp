@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 37.0, 100.0, 1373.0, 815.0 ],
+		"rect" : [ 34.0, 100.0, 1259.0, 815.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1373.0, 789.0 ],
+						"rect" : [ 0.0, 26.0, 1259.0, 789.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -871,7 +871,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 37.0, 126.0, 1373.0, 789.0 ],
+						"rect" : [ 0.0, 26.0, 1259.0, 789.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6253,7 +6253,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1373.0, 789.0 ],
+						"rect" : [ 0.0, 26.0, 1259.0, 789.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7388,11 +7388,13 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-15",
+									"linecount" : 2,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 148.25, 607.0, 321.0, 34.0 ]
+									"patching_rect" : [ 148.25, 607.0, 321.0, 48.0 ],
+									"text" : "/stdout : \"received socket close /1 9SGP1SrdnsyMgOaXwTGIEA==\""
 								}
 
 							}
@@ -11828,7 +11830,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1373.0, 789.0 ],
+						"rect" : [ 34.0, 126.0, 1259.0, 789.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -11858,6 +11860,532 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
+									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_autogradient" : 0.0,
+									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
+									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_type" : "gradient",
+									"gradient" : 1,
+									"id" : "obj-67",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 11.0, 8.0, 89.0, 22.0 ],
+									"text" : "getNoteAnchor"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-65",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 921.5, 8.5, 344.0, 35.0 ],
+									"presentation_linecount" : 3,
+									"text" : "picster addShape . . image \"Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/media/Images/png/beamgroup.png\""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-63",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 742.0, 571.0, 32.0, 22.0 ],
+									"text" : "print"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-62",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 833.0, 35.5, 75.0, 22.0 ],
+									"text" : "1 3 1 6 2 9 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-60",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 833.0, 63.0, 185.0, 22.0 ],
+									"text" : "prepend picster stroke-dasharray"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-96",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1120.0, 323.0, 116.0, 22.0 ],
+									"text" : "setRenderAllowed 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-92",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 897.0, 194.0, 318.0, 22.0 ],
+									"text" : "picster findElementByID Picster-Element_1716044322540"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubbleside" : 2,
+									"id" : "obj-86",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 914.0, 89.0, 209.0, 66.0 ],
+									"text" : "Individual properties can be modified after a picster object has been created"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-85",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 8,
+											"minor" : 6,
+											"revision" : 2,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 173.0, 149.0, 864.0, 586.0 ],
+										"bglocked" : 0,
+										"openinpresentation" : 0,
+										"default_fontsize" : 12.0,
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"gridonopen" : 1,
+										"gridsize" : [ 15.0, 15.0 ],
+										"gridsnaponopen" : 1,
+										"objectsnaponopen" : 1,
+										"statusbarvisible" : 2,
+										"toolbarvisible" : 1,
+										"lefttoolbarpinned" : 0,
+										"toptoolbarpinned" : 0,
+										"righttoolbarpinned" : 0,
+										"bottomtoolbarpinned" : 0,
+										"toolbars_unpinned_last_save" : 0,
+										"tallnewobj" : 0,
+										"boxanimatetime" : 200,
+										"enablehscroll" : 1,
+										"enablevscroll" : 1,
+										"devicewidth" : 0.0,
+										"description" : "",
+										"digest" : "",
+										"tags" : "",
+										"style" : "",
+										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
+										"boxes" : [ 											{
+												"box" : 												{
+													"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
+													"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+													"bgfillcolor_autogradient" : 0.0,
+													"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
+													"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
+													"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+													"bgfillcolor_type" : "gradient",
+													"gradient" : 1,
+													"id" : "obj-6",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 470.0, 72.0, 88.0, 22.0 ],
+													"text" : "picster rotate 5"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 470.0, 19.0, 274.0, 20.0 ],
+													"text" : "Transforms"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-14",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 88.0, 349.0, 359.0, 20.0 ],
+													"text" : "and then..."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-13",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 322.0, 83.0, 22.0 ],
+													"text" : "picster key 71"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-11",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 88.0, 284.0, 341.0, 33.0 ],
+													"text" : "Now with caps-lock on, select object in the parent window and press \"g\" to group all objects attached to the top staff or send "
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-10",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 62.0, 215.0, 359.0, 33.0 ],
+													"text" : "In parent window, create new score, apply blankPageTransform, select top staff and send ..."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-43",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 73.0, 255.0, 446.0, 22.0 ],
+													"text" : "picster addShape 50 50 line 0 0 150 165, picster addShape 50 50 line 0 165 150 0"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-8",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 50.0, 19.0, 274.0, 20.0 ],
+													"text" : "1. with caps-lock off: select staff, measure or note"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-7",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 62.0, 191.0, 342.0, 20.0 ],
+													"text" : "this also works with groups and embedded svg objects as well:"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-5",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 50.0, 46.0, 299.0, 20.0 ],
+													"text" : "2. with caps-lock on: create text and change properties"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-42",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 72.0, 213.0, 22.0 ],
+													"text" : "picster addShape 50 50 text whatsapp"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"bubble" : 1,
+													"id" : "obj-4",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 263.0, 483.0, 150.0, 37.0 ],
+													"text" : " Edits can be inspected here"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
+													"patching_rect" : [ 152.0, 490.0, 100.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"embed" : 0,
+														"legacy" : 0,
+														"parameter_enable" : 0,
+														"parameter_mappable" : 0
+													}
+,
+													"text" : "dict picster-editor"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 263.0, 444.0, 150.0, 33.0 ],
+													"text" : "send a the Picster element as Max dictionary"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-83",
+													"maxclass" : "number",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 189.0, 153.0, 50.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-81",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 153.0, 135.0, 22.0 ],
+													"text" : "picster setProperty x $1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-74",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 125.0, 257.0, 22.0 ],
+													"text" : "picster setProperty style::fill rgb(255\\,127\\,127)"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-70",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 98.0, 286.0, 22.0 ],
+													"text" : "picster setProperty text \"This is working quite nicely\""
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-64",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 376.0, 269.0, 22.0 ],
+													"text" : "picster setProperty child[1]::style::stroke-width 10"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-63",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 407.0, 296.0, 22.0 ],
+													"text" : "picster setProperty child[0]::style::stroke rgb(255\\,0\\,0)"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-60",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 101.0, 449.0, 155.0, 22.0 ],
+													"text" : "picster getSelectedElement"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-84",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 50.0, 509.0, 30.0, 30.0 ]
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-13", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-42", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-43", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-60", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-63", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-64", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-70", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-74", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-81", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-81", 0 ],
+													"source" : [ "obj-83", 0 ]
+												}
+
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 937.0, 158.0, 146.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"description" : "",
+										"digest" : "",
+										"globalpatchername" : "",
+										"tags" : ""
+									}
+,
+									"text" : "p set-individual-properties"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-71",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 32.0, 538.0, 147.0, 22.0 ],
+									"text" : "route getSelectedElement"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-56",
 									"maxclass" : "newobj",
@@ -11953,7 +12481,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 575.0, 337.0, 35.0 ],
+									"patching_rect" : [ 386.0, 591.0, 337.0, 35.0 ],
 									"text" : "picster addShape 60 100 path \"M 10,30 A 20,20 0,0,1 50,30A 20,20 0,0,1 90,30Q 90,60 50,90Q 10,60 10,30 z\""
 								}
 
@@ -12156,11 +12684,12 @@
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
 									"id" : "obj-34",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 522.1666259765625, 723.0, 392.0, 20.0 ],
+									"patching_rect" : [ 498.0, 737.0, 412.0, 24.0 ],
 									"text" : "Dump expressions for playback into the maxscore.makenote abstraction"
 								}
 
@@ -12172,7 +12701,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 638.5, 438.5, 170.0, 22.0 ],
+									"patching_rect" : [ 608.0, 455.0, 170.0, 22.0 ],
 									"text" : "picster addShape . . text HMM"
 								}
 
@@ -12180,12 +12709,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-80",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 663.5, 17.0, 233.0, 33.0 ],
-									"text" : "set preferences for picster shapes before sending  actual drawing messages"
+									"patching_rect" : [ 655.0, 8.5, 174.0, 47.0 ],
+									"text" : "set preferences for picster shapes before sending actual drawing messages"
 								}
 
 							}
@@ -12325,26 +12854,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
-									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
-									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
-									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
-									"bgfillcolor_type" : "gradient",
-									"gradient" : 1,
-									"id" : "obj-14",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 356.5, 41.0, 95.0, 22.0 ],
-									"text" : "picster rotate 90"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "toggle",
 									"numinlets" : 1,
@@ -12373,7 +12882,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 32.5, 586.5, 320.0, 126.0 ]
+									"patching_rect" : [ 32.0, 609.5, 320.0, 126.0 ]
 								}
 
 							}
@@ -12457,7 +12966,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 696.5, 275.0, 22.0 ],
+									"patching_rect" : [ 386.0, 713.0, 275.0, 22.0 ],
 									"text" : "picster removeAllExpressionsFromSelectedShape"
 								}
 
@@ -12469,7 +12978,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 722.0, 104.0, 22.0 ],
+									"patching_rect" : [ 386.0, 738.0, 104.0, 22.0 ],
 									"text" : "dumpExpressions"
 								}
 
@@ -12480,7 +12989,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 416.5, 619.0, 94.0, 20.0 ],
+									"patching_rect" : [ 387.0, 629.0, 94.0, 20.0 ],
 									"text" : "addExpressions"
 								}
 
@@ -12492,7 +13001,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 518.833333333333371, 612.0, 40.0, 22.0 ],
+									"patching_rect" : [ 488.0, 628.0, 40.0, 22.0 ],
 									"text" : "sfplay"
 								}
 
@@ -12504,7 +13013,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 621.166666666666629, 612.0, 72.0, 22.0 ],
+									"patching_rect" : [ 590.0, 628.0, 72.0, 22.0 ],
 									"text" : "START.mp3"
 								}
 
@@ -12516,7 +13025,7 @@
 									"numinlets" : 4,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 416.5, 641.0, 326.0, 22.0 ],
+									"patching_rect" : [ 386.0, 657.0, 326.0, 22.0 ],
 									"text" : "dict.pack editor : default message : value : @triggers 0 1"
 								}
 
@@ -12528,7 +13037,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 669.0, 268.0, 22.0 ],
+									"patching_rect" : [ 386.0, 685.0, 268.0, 22.0 ],
 									"text" : "prepend picster addExpressionToSelectedShape"
 								}
 
@@ -12540,7 +13049,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 522.1666259765625, 45.0, 106.0, 22.0 ],
+									"patching_rect" : [ 518.0, 39.0, 106.0, 22.0 ],
 									"text" : "picster property fill"
 								}
 
@@ -12552,7 +13061,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 356.5, 149.0, 130.0, 22.0 ],
+									"patching_rect" : [ 333.5, 94.0, 130.0, 22.0 ],
 									"text" : "picster preference staff"
 								}
 
@@ -12564,20 +13073,22 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 356.5, 123.0, 155.0, 22.0 ],
+									"patching_rect" : [ 333.5, 70.0, 155.0, 22.0 ],
 									"text" : "picster preference measure"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
+									"bubbleside" : 2,
 									"id" : "obj-69",
-									"linecount" : 4,
+									"linecount" : 5,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 416.5, 182.0, 334.0, 60.0 ],
-									"text" : "picster addShape offset0 offset1 shape attributes\nif offset0 or offset1 are numbers a shape will be drawn in relative to the origin (upper left-hand corner), if they are periods (.), it will be drawn relative to its score element."
+									"patching_rect" : [ 373.0, 176.0, 456.0, 93.0 ],
+									"text" : "picster addShape x y shape attributes\nif x or y are numbers a shape will be drawn relative to the origin (upper left-hand corner), if they are periods (.), it will be drawn at the origin of the score element. A period with a postive or negative number denotes an offset from the origin, such as .+50 or .-78."
 								}
 
 							}
@@ -12588,7 +13099,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 638.5, 247.0, 191.0, 22.0 ],
+									"patching_rect" : [ 612.0, 263.0, 191.0, 22.0 ],
 									"text" : "picster addShape . . line 0 0 34 56"
 								}
 
@@ -12601,7 +13112,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 520.5, 322.0, 49.0 ],
+									"patching_rect" : [ 386.0, 537.0, 322.0, 49.0 ],
 									"text" : "picster addShape 50 50 image \"Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg/beamgroup.svg\""
 								}
 
@@ -12614,7 +13125,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 466.5, 322.0, 49.0 ],
+									"patching_rect" : [ 386.0, 483.0, 322.0, 49.0 ],
 									"text" : "picster addShape 50 50 image \"Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/media/Images/png/beamgroup.png\""
 								}
 
@@ -12626,7 +13137,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 438.5, 213.0, 22.0 ],
+									"patching_rect" : [ 386.0, 455.0, 213.0, 22.0 ],
 									"text" : "picster addShape 50 50 text whatsapp"
 								}
 
@@ -12638,7 +13149,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 412.5, 266.0, 22.0 ],
+									"patching_rect" : [ 386.0, 429.0, 266.0, 22.0 ],
 									"text" : "picster addShape 50 50 polyline 0 0 34 56 78 89"
 								}
 
@@ -12650,7 +13161,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 385.5, 267.0, 22.0 ],
+									"patching_rect" : [ 386.0, 402.0, 267.0, 22.0 ],
 									"text" : "picster addShape 50 50 polygon 0 0 34 56 78 89"
 								}
 
@@ -12662,7 +13173,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 358.5, 209.0, 22.0 ],
+									"patching_rect" : [ 386.0, 375.0, 209.0, 22.0 ],
 									"text" : "picster addShape 50 50 arc 0 0 34 56"
 								}
 
@@ -12674,7 +13185,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 332.0, 214.0, 22.0 ],
+									"patching_rect" : [ 386.0, 348.0, 214.0, 22.0 ],
 									"text" : "picster addShape 50 50 oval 0 0 34 56"
 								}
 
@@ -12686,7 +13197,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 278.0, 241.0, 22.0 ],
+									"patching_rect" : [ 386.0, 294.0, 241.0, 22.0 ],
 									"text" : "picster addShape 50 50 rectangle 0 0 34 56"
 								}
 
@@ -12698,7 +13209,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 304.0, 292.0, 22.0 ],
+									"patching_rect" : [ 386.0, 320.0, 292.0, 22.0 ],
 									"text" : "picster addShape 50 50 rounded_rectangle 0 0 34 56"
 								}
 
@@ -12710,7 +13221,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 247.0, 211.0, 22.0 ],
+									"patching_rect" : [ 386.0, 263.0, 211.0, 22.0 ],
 									"text" : "picster addShape 50 50 line 0 0 34 56"
 								}
 
@@ -12722,7 +13233,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 522.1666259765625, 21.0, 127.0, 22.0 ],
+									"patching_rect" : [ 518.0, 15.0, 127.0, 22.0 ],
 									"text" : "picster property stroke"
 								}
 
@@ -12734,7 +13245,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 356.5, 68.0, 113.0, 22.0 ],
+									"patching_rect" : [ 333.5, 15.0, 113.0, 22.0 ],
 									"text" : "picster color 1 0 0 1"
 								}
 
@@ -12746,7 +13257,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 522.1666259765625, 149.0, 105.0, 22.0 ],
+									"patching_rect" : [ 518.0, 143.0, 105.0, 22.0 ],
 									"text" : "picster fontsize 18"
 								}
 
@@ -12758,7 +13269,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 522.1666259765625, 124.0, 94.0, 22.0 ],
+									"patching_rect" : [ 518.0, 118.0, 94.0, 22.0 ],
 									"text" : "picster font Arial"
 								}
 
@@ -12770,7 +13281,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 522.1666259765625, 98.0, 133.0, 22.0 ],
+									"patching_rect" : [ 518.0, 92.0, 133.0, 22.0 ],
 									"text" : "picster roundedness 20"
 								}
 
@@ -12782,8 +13293,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 522.1666259765625, 72.0, 99.0, 22.0 ],
-									"text" : "picster pensize 1"
+									"patching_rect" : [ 518.0, 66.0, 99.0, 22.0 ],
+									"text" : "picster pensize 5"
 								}
 
 							}
@@ -12794,7 +13305,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 356.5, 96.0, 123.0, 22.0 ],
+									"patching_rect" : [ 333.5, 43.0, 123.0, 22.0 ],
 									"text" : "picster color 1 0.5 0 1"
 								}
 
@@ -12894,13 +13405,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"source" : [ "obj-14", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-15", 0 ]
 								}
 
@@ -12979,6 +13483,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
+									"order" : 0,
 									"source" : [ "obj-23", 0 ]
 								}
 
@@ -12987,6 +13492,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-51", 0 ],
 									"source" : [ "obj-23", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-71", 0 ],
+									"order" : 1,
+									"source" : [ "obj-23", 0 ]
 								}
 
 							}
@@ -13161,7 +13674,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
-									"midpoints" : [ 343.0, 569.0, 42.0, 569.0 ],
+									"midpoints" : [ 343.0, 594.0, 41.5, 594.0 ],
 									"source" : [ "obj-51", 0 ]
 								}
 
@@ -13211,7 +13724,42 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-60", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-60", 0 ],
+									"source" : [ "obj-62", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-65", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-67", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-71", 0 ]
 								}
 
 							}
@@ -13246,7 +13794,28 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-85", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-92", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-96", 0 ]
 								}
 
 							}
@@ -13351,7 +13920,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1373.0, 789.0 ],
+						"rect" : [ 0.0, 26.0, 1259.0, 789.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -14134,7 +14703,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1373.0, 789.0 ],
+						"rect" : [ 0.0, 26.0, 1259.0, 789.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -15170,7 +15739,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1373.0, 789.0 ],
+						"rect" : [ 0.0, 26.0, 1259.0, 789.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -15603,7 +16172,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1373.0, 789.0 ],
+						"rect" : [ 0.0, 26.0, 1259.0, 789.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -15732,6 +16301,12 @@
 				"bootpath" : "/Users/Shared/Max 8/Packages/drawsocket-max/patchers",
 				"patcherrelativepath" : "../../drawsocket-max/patchers",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fit_jweb_to_bounds.js",
+				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -15889,6 +16464,12 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "n4m.monitor.maxpat",
+				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "n4m_musicxml2jmsl.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
 				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
@@ -15959,6 +16540,12 @@
 				"name" : "render2canvas.js",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "resize_n4m_monitor_patcher.js",
+				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

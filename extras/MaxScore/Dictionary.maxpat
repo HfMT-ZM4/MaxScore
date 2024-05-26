@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -376,7 +376,6 @@
 					"presentation_rect" : [ 0.0, 0.0, 222.0, 20.0 ],
 					"prototypename" : "Classic",
 					"rounded" : 0.0,
-					"text" : "loop",
 					"textcolor" : [ 0.988235294117647, 0.988235294117647, 1.0, 1.0 ],
 					"varname" : "search"
 				}
@@ -606,7 +605,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 664.0, 1086.0, 44.0 ],
 					"rounded" : 0.0,
-					"text" : "setLoopingPlayback | flag (boolean) | turn looping on on/off. When no section is set, the entire score will be looped | setLoopingPlayback true",
+					"text" : "GlissandoTransform | - | toggle glissando out for selected notes | GlissandoTransform",
 					"textcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
 				}
 
@@ -1270,8 +1269,8 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
-				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}

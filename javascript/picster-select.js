@@ -89,6 +89,8 @@ var staffBoundingInfo = [];
 var noteAreaWidth = 0;
 var hold = 0;
 var currentMeasure = -1;
+var currentID = "";
+var addedShape = [];
 var annotation = new Dict;
 var timeUnit, prop, timesig, tempo, editor;
 var status = "regular";
@@ -115,8 +117,6 @@ function singleClick(x, y, shift)
 editor = "";
 status = "regular";
 if (mode == "picster" && !blocked) {
-	//lcd = this.patcher.getnamed("pane");
-	//svggroupflag = false;
 	outlet(0, "getScoreAnnotation");
 	outlet(2, "bounds", "hide");
 	click = "single";
@@ -135,9 +135,7 @@ if (mode == "picster" && !blocked) {
 	}
 	var _c = 0;
 	item = -1;
-	//output.clear();
 	foundobjects.clear();
-	//renderedMessages.clear();
 	offsets = {};
 	renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
 	if (renderedMessages.stringify().length > 8 && selectionMode) {
@@ -309,6 +307,189 @@ function ctrlClick(x, y)
 			}
 		}
 	}
+}
+
+function findElementByID(id)
+{
+	//post("ID", id, renderedMessages.stringify(), "\n");
+	editor = "";
+	status = "regular";
+	//outlet(0, "getScoreAnnotation");
+	outlet(2, "bounds", "hide");
+	click = "single";
+	currentMeasure = -1;
+	origin = [x, y];
+	var _c = 0;
+	item = -1;
+	offsets = {};
+ 	foundobjects.clear();
+	//renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
+	if (renderedMessages.stringify().length <= 8 && !addedShape.length) return;
+	var e = new Dict();
+	if (renderedMessages.stringify().length > 8 && selectionMode) {
+	var keys = renderedMessages.getkeys();
+	for (var i = 0; i < keys.length; i++)
+	{
+		switch (renderedMessages.get(keys[i])[0]){
+			case "interval" :
+            RenderMessageOffset = [renderedMessages.get(keys[i])[8], renderedMessages.get(keys[i])[9]];
+			break;
+			case "note" :
+            RenderMessageOffset = [renderedMessages.get(keys[i])[8], renderedMessages.get(keys[i])[9]];
+			break;
+			case "staff" :
+          	RenderMessageOffset = [renderedMessages.get(keys[i])[3], renderedMessages.get(keys[i])[4]];
+			break;
+			case "measure" :
+            RenderMessageOffset = [renderedMessages.get(keys[i])[2], renderedMessages.get(keys[i])[3]];
+			break;
+	}
+	e.parse(renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
+	
+	if (!e.contains("picster-element")) return;
+	if (Array.isArray(e.get("picster-element[0]::val"))) var dictArray = e.get("picster-element[0]::val");
+	else var dictArray = [].concat(e.get("picster-element[0]::val"));
+ 	var vals = [];
+	for (var k = 0; k < dictArray.length; k++) vals.push(JSON.parse(dictArray[k].stringify()));
+	//post("ID", vals[0].id, id, renderedMessages.get(keys[i]).slice(0, -6), "\n");
+	
+	
+	if (e.get("picster-element[1]::val::bounds[0]") != -1 && vals[0]["transform"] == "matrix(1,0,0,1,0,0)") {
+		var foundBounds = e.get("picster-element[1]::val::bounds");
+		foundBounds[0] += RenderMessageOffset[0];
+		foundBounds[1] += RenderMessageOffset[1];
+		foundBounds[2] += RenderMessageOffset[0];
+		foundBounds[3] += RenderMessageOffset[1];
+		var boundmin = [foundBounds[0], foundBounds[1]];
+		var boundmax = [foundBounds[2], foundBounds[3]];
+	}
+	else {
+		_key = e.get("picster-element[0]::key");
+		if (_key == "svg") {
+		if (vals[0]["id"].indexOf("sustain") == 0) var foundBounds = [-1, -1, -1, -1];
+		else var foundBounds = findBoundsToo(vals);
+		}
+		else if (_key == "render-expression") var foundBounds = findBoundsForRenderedExpression(renderedMessages.get(keys[i]).slice(0, -1), e);
+		foundBounds[0] += RenderMessageOffset[0];
+		foundBounds[1] += RenderMessageOffset[1];
+		foundBounds[2] += RenderMessageOffset[0];
+		foundBounds[3] += RenderMessageOffset[1];
+		var boundmin = [foundBounds[0] - horizontalOffset, foundBounds[1] - verticalOffset];
+		var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
+	}
+	
+	if (vals[0]["id"] === id) {
+ 		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4).concat(dictArray[dictArray.length - 1].get("id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]));
+		//post("foundobjects", renderedMessages.stringify(), foundobjects.stringify(), "\n");		
+		offsets[_c] = RenderMessageOffset;
+		_c++;
+		}
+	}
+	}
+	else //addedShape.length > 0
+	{ 
+		switch (addedShape[0]){
+			case "interval" :
+            RenderMessageOffset = [addedShape[8], addedShape[9]];
+			break;
+			case "note" :
+            RenderMessageOffset = [addedShape[8], addedShape[9]];
+			break;
+			case "staff" :
+          	RenderMessageOffset = [addedShape[3], addedShape[4]];
+			break;
+			case "measure" :
+            RenderMessageOffset = [addedShape[2], addedShape[3]];
+			break;
+	}
+	e.parse(addedShape[addedShape.length - 1]);
+	_c = 1;
+	if (!e.contains("picster-element")) return;
+	if (Array.isArray(e.get("picster-element[0]::val"))) var dictArray = e.get("picster-element[0]::val");
+	else var dictArray = [].concat(e.get("picster-element[0]::val"));
+ 	var vals = [];
+	for (var k = 0; k < dictArray.length; k++) vals.push(JSON.parse(dictArray[k].stringify()));
+	//post("ID", vals[0].id, id, renderedMessages.get(keys[i]).slice(0, -6), "\n");
+	
+	
+	if (e.get("picster-element[1]::val::bounds[0]") != -1 && vals[0]["transform"] == "matrix(1,0,0,1,0,0)") {
+		var foundBounds = e.get("picster-element[1]::val::bounds");
+		foundBounds[0] += RenderMessageOffset[0];
+		foundBounds[1] += RenderMessageOffset[1];
+		foundBounds[2] += RenderMessageOffset[0];
+		foundBounds[3] += RenderMessageOffset[1];
+		var boundmin = [foundBounds[0], foundBounds[1]];
+		var boundmax = [foundBounds[2], foundBounds[3]];
+	}
+	else {
+		_key = e.get("picster-element[0]::key");
+		if (_key == "svg") {
+		if (vals[0]["id"].indexOf("sustain") == 0) var foundBounds = [-1, -1, -1, -1];
+		else var foundBounds = findBoundsToo(vals);
+		}
+		//else if (_key == "render-expression") var foundBounds = findBoundsForRenderedExpression(renderedMessages.get(keys[i]).slice(0, -1), e);
+		foundBounds[0] += RenderMessageOffset[0];
+		foundBounds[1] += RenderMessageOffset[1];
+		foundBounds[2] += RenderMessageOffset[0];
+		foundBounds[3] += RenderMessageOffset[1];
+		var boundmin = [foundBounds[0] - horizontalOffset, foundBounds[1] - verticalOffset];
+		var boundmax = [foundBounds[2] - horizontalOffset, foundBounds[3] - verticalOffset];
+	}
+	foundobjects.replace(0, addedShape.slice(0, -4).concat(dictArray[dictArray.length - 1].get("id"), boundmin, boundmax, addedShape[addedShape.length - 1]));
+	//post("addedShape", RenderMessageOffset, horizontalOffset, verticalOffset, addedShape, "\n");		
+ 	}
+	 	
+	if (_c > 0) {
+		item = clicks % _c;
+		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
+		outlet(0, "clearSelection");
+		if (!buttonMode) {
+		switch (foundobjects.get(item)[0]){
+			case "interval" :
+			outlet(0, "selectNote", foundobjects.get(item).slice(1, 6));
+ 			outlet(0, "setSelectedStaff", foundobjects.get(item).slice(1, 3));
+			this.patcher.getnamed("measurerange").setvalueof(foundobjects.get(item)[1], foundobjects.get(item)[2], foundobjects.get(item)[1], foundobjects.get(item)[2]);
+			for (var i = 0; i <= foundobjects.get(item)[5]; i++) outlet(0, "selectNextInterval");
+			break;
+			case "note" :
+			outlet(0, "selectNote", foundobjects.get(item).slice(1, 5));
+ 			outlet(0, "setSelectedStaff", foundobjects.get(item).slice(1, 3));
+			this.patcher.getnamed("measurerange").setvalueof(foundobjects.get(item)[1], foundobjects.get(item)[2], foundobjects.get(item)[1], foundobjects.get(item)[2]);
+			break;
+			case "staff" :
+ 			outlet(0, "setSelectedStaff", foundobjects.get(item).slice(1, 3));
+			this.patcher.getnamed("measurerange").setvalueof(foundobjects.get(item)[1], foundobjects.get(item)[2], foundobjects.get(item)[1], foundobjects.get(item)[2]);
+			break;
+			case "measure" :
+ 			outlet(0, "getNumStaves");
+			outlet(0, "setSelectedStaff", foundobjects.get(item)[1], 0);
+			this.patcher.getnamed("measurerange").setvalueof(foundobjects.get(item)[1], 0, foundobjects.get(item)[1], numStaves - 1);
+			break;
+		}
+		}
+		outlet(1, foundobjects.get(item).slice(0, -5));
+		var tempDict2 = new Dict();
+		tempDict2.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+		if (tempDict2.contains("picster-element[2]::val")) {
+			editor = tempDict2.get("picster-element[2]::val[0]::editor");
+			var o = {};
+			var o2 = {};
+			o = JSON.parse(tempDict2.stringify());
+			for (var i = 0; i < o["picster-element"][2]["val"].length; i++) {
+				o2[i + 1] = {};
+				o2[i + 1] = o["picster-element"][2]["val"][i];
+				delete o2[i + 1]["id"];
+				}
+				var tempDict = new Dict();
+				tempDict.parse(JSON.stringify(o2));
+				//post("tempDict", tempDict2.stringify(), "O2", JSON.stringify(o), o["picster-element"][2]["val"].length, "\n");
+			outlet(1, "expression", foundobjects.get(item)[2], "dictionary", tempDict.name);
+			}
+		else outlet(1, "expression", "clear");
+		}
+		else {
+			clicks = 0;
+		}
 }
 
 function offset(h, v)
@@ -1063,8 +1244,8 @@ function createRenderedMessage(f, x, y, serialized)
 		if (anchor[6] != -1) for (var i = 0; i <= anchor[6]; i++) outlet(0, "selectNextInterval");
 		if (f) for (var i = 0; i < serialized.length; i++) outlet(0, "addRenderedMessageToSelectedNotes", x, y, serialized[i]);
 		else {
-		if (x == "." || y == ".") outlet(0, "addRenderedMessageToSelectedNotes", 0, 0, serialized);
-		else outlet(0, "addRenderedMessageToSelectedNotes", x - anchor[0]/factor, y - anchor[1]/factor, serialized);
+			outlet(0, "addRenderedMessageToSelectedNotes", (!isNaN(x)) ? x - anchor[0]/factor : (x.length > 1) ? parseFloat(x.slice(1)) : 0, (!isNaN(y)) ? y - anchor[1]/factor : (y.length > 1) ? parseFloat(y.slice(1)) : 0, serialized);
+			addedShape = [(anchor[6] != -1) ? "interval" : "note", anchor[2], anchor[3], anchor[4], anchor[5], anchor[6], anchor[7], anchor[8], (!isNaN(x)) ? x * factor : (x.length > 1) ? parseFloat(x.slice(1)) : 0, (!isNaN(y)) ? y * factor : (y.length > 1) ? parseFloat(y.slice(1)) : 0, factor, serialized];
 		}
 		this.patcher.getnamed("pane").message("clearGraphics");
 		}
@@ -1074,12 +1255,12 @@ function createRenderedMessage(f, x, y, serialized)
 	}
 	else if (!selectionBufferSize && measurerange[0] != -1)
 		{
+			//post("serialized", "\n");
 			increment = 0;
 			anchors = {};
 			for (var i = measurerange[0]; i <= measurerange[2]; i++) {
 				for (var j = measurerange[1]; j <= measurerange[3]; j++) {
- 				//post("preference", preference, "\n");
-				if (preference == "staff") outlet(0, "getDrawingAnchor", measurerange[0], measurerange[1]);
+ 				if (preference == "staff") outlet(0, "getDrawingAnchor", measurerange[0], measurerange[1]);
 				else outlet(0, "getDrawingAnchor", measurerange[0]);
 				}
 			}
@@ -1093,22 +1274,24 @@ function createRenderedMessage(f, x, y, serialized)
 				}
 			}
 		else {
-		if (x == "." || y == ".") {
-			if (preference == "staff") outlet(0, "addRenderedMessageToStaff", anchor[0], anchor[1], 0, 0, serialized);
-			else outlet(0, "addRenderedMessageToMeasure", anchor[0], 0, 0, serialized);
+			if (preference == "staff") {
+				outlet(0, "addRenderedMessageToStaff", anchor[0], anchor[1], (!isNaN(x)) ? x - anchor[2]/factor : (x.length > 1) ? parseFloat(x.slice(1)) : 0, (!isNaN(y)) ? y - anchor[3]/factor : (y.length > 1) ? parseFloat(y.slice(1)) : 0, serialized);
+				addedShape = ["staff", anchor[0], anchor[1], (!isNaN(x)) ? x * factor : (x.length > 1) ? parseFloat(x.slice(1)) : 0, (!isNaN(y)) ? y * factor : (y.length > 1) ? parseFloat(y.slice(1)) : 0, factor, serialized];
+				//post("anchors", x, y, anchor, x - anchor[2]/factor, y - anchor[3]/factor, "\n");
 			}
-		else {
-			//post("serialized", f, anchor, "\n");
-			if (preference == "staff") outlet(0, "addRenderedMessageToStaff", anchor[0], anchor[1], x - anchor[2]/factor, y - anchor[3]/factor, serialized);
-			else outlet(0, "addRenderedMessageToMeasure", anchor[0], x - anchor[1]/factor, y - anchor[2]/factor, serialized);
+			else {
+				outlet(0, "addRenderedMessageToMeasure", anchor[0], (!isNaN(x)) ? x - anchor[1]/factor : (x.length > 1) ? parseFloat(x.slice(1)) : 0, (!isNaN(y)) ? y - anchor[2]/factor : (y.length > 1) ? parseFloat(y.slice(1)) : 0, serialized);
+				addedShape = ["measure", anchor[0], (!isNaN(x)) ? x - anchor[1]/factor : (x.length > 1) ? parseFloat(x.slice(1)) : 0, (!isNaN(y)) ? y - anchor[2]/factor : (y.length > 1) ? parseFloat(y.slice(1)) : 0, factor, serialized];
 			}
 		}
-		outlet(2, "clearGraphics");
+ 		outlet(2, "clearGraphics");
 		}
 		outlet(0, "saveToUndoStack");
 		outlet(0, "setRenderAllowed", "true");
+		//post("RM", renderedMessages.stringify(), "\n");
 	}
 	else outlet(2, "clearGraphics");
+	findElementByID(currentID);
 }
 
 function cnt()
@@ -1147,11 +1330,14 @@ function addShape()
 {
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
 	var num = cnt();
+	currentID = "Picster-Element_" + num;
 	var msg = arrayfromargs(arguments);
 	var toffsets = [0, 0];
 	edit.clear();
 	outlet(0, "getSelectionBufferSize");
-	if (msg[0] == "." || msg[1] == ".") {
+	if (isNaN(msg[0]) || isNaN(msg[1])) {
+		var delta_x = (msg[0].length > 1) ? parseFloat(msg[0].slice(1)) : 0;
+		var delta_y = (msg[1].length > 1) ? parseFloat(msg[1].slice(1)) : 0;
 		if (!selectionBufferSize) {
 			post("measurerange", measurerange, "\n");
 			if (measurerange[0] == -1) return;
@@ -1162,8 +1348,8 @@ function addShape()
 				for(var event in anchors){
 					anchor = anchors[event];
 				}
-				if (preference == "staff") offsets[0] = [ anchor[2] / factor, anchor[3] / factor];
-				else offsets[0] = [ anchor[1] / factor, anchor[2] / factor ];
+				if (preference == "staff") offsets[0] = [ anchor[2] / factor + delta_x, anchor[3] / factor + delta_y];
+				else offsets[0] = [ anchor[1] / factor + delta_x, anchor[2] / factor + delta_y];
 				//toffsets = [0, 0];
 				}
 				else if (selectionBufferSize != 0) {
@@ -1172,12 +1358,13 @@ function addShape()
 					outlet(0, "getNoteAnchor");
 					for(var event in anchors){
 					anchor = anchors[event];
-					offsets[0] = [ anchor[0] / factor, anchor[1] / factor ];
+					offsets[0] = [ anchor[0] / factor + delta_x, anchor[1] / factor + delta_y];
 				}
 				//toffsets = [0, 0];
 			}
 		}
 			else offsets[0] = [msg[0] / factor , msg[1] / factor];
+			post("offsets", offsets[0], "\n");
 			action = "addShape";
 			switch (msg[2]){
 			case "line":
@@ -1185,7 +1372,7 @@ function addShape()
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
 				attr.new = "line";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.x1 = msg[3];
 				attr.y1 = msg[4];
 				attr.x2 = msg[5];
@@ -1214,7 +1401,7 @@ function addShape()
 				//post("coords", coords, msg.slice(3), "\n");
 				var attr = {};
 				attr.new = "rect";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.x = msg[3];
 				attr.y = msg[4];
 				attr.width = Math.abs(msg[5] - msg[3]);
@@ -1249,7 +1436,7 @@ function addShape()
 				//post("coords", coords, msg.slice(3), "\n");
 				var attr = {};
 				attr.new = "rect";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.x = msg[3];
 				attr.y = msg[4];
 				attr.width = Math.abs(msg[5] - msg[3]);
@@ -1285,7 +1472,7 @@ function addShape()
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
 				attr.new = "ellipse";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.cx = msg[3] + (msg[5] - msg[3]) / 2;
 				attr.cy = msg[4] + (msg[6] - msg[4]) / 2;
 				attr.rx = (msg[5] - msg[3]) / 2;
@@ -1318,7 +1505,7 @@ function addShape()
 			case "arc":
 				var attr = {};
 				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.d = ovalarc(arc[0], arc[1], msg[3] + (msg[5] - msg[3])/2, msg[4] + (msg[6] - msg[4])/2, (msg[5] - msg[3])/2, (msg[6] - msg[4])/2);
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -1352,7 +1539,7 @@ function addShape()
 				polyclicks.push([msg[3], msg[4]]);
 				var attr = {};
 				attr.new = "polyline";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.points = polyclicks.join(" ");
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -1385,7 +1572,7 @@ function addShape()
 				else for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
 				var attr = {};
 				attr.new = "polyline";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.points = polyclicks.join(" ");
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -1418,7 +1605,7 @@ function addShape()
 				//post(d+"\n");
 				var attr = {};
 				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.d = d;
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -1450,7 +1637,7 @@ function addShape()
 				var text = htmlEntities(msg[3]);
 				var attr = {};
 				attr.new = "text";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.text = text;
 				attr.x = toffsets[0];
 				attr.y = toffsets[1];
@@ -1495,11 +1682,12 @@ function addShape()
 			else 
 			{ 
 			//post("picster", dict.stringify().length, "\n");
+			currentID = dict.get("val::id") + "_" + num
 			_picster = {};
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {};
 			_picster["picster-element"][0] = JSON.parse(dict.stringify());
-			_picster["picster-element"][0]["val"]["id"] = dict.get("val::id") + "_" + num;
+			_picster["picster-element"][0]["val"]["id"] = currentID;
 			_picster["picster-element"][1] = {};
 			_picster["picster-element"][1].key = "extras";
 			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
@@ -1541,7 +1729,7 @@ function addShape()
 				}
 				var attr = {};
 				attr.new = "image";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr["xlink:href"] = msg[3];
 				attr.x = 0; // msg[0]
 				attr.y = 0; // msg[1]
@@ -1564,7 +1752,7 @@ function addShape()
 				segments = msg[3];
 				var attr = {};
 				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				var d = "M 0,0";
 				//for (var i = 0; i < segments.length; i++) d += " C " + segments[i][0]+" "+segments[i][1]+", "+segments[i][2]+" "+segments[i][3]+", "+segments[i][4]+" "+segments[i][5];
 				for (var i = 0; i < segments.length; i++) d += " C " + segments[i];
@@ -1600,7 +1788,7 @@ function addShape()
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
 				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.d = "M" + [msg[3],msg[4]] + " V" + msg[6] + " H" + msg[5] + " V" + msg[4];
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -1632,7 +1820,7 @@ function addShape()
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
 				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.d = "M" + [msg[5], msg[6]] + " L" + [msg[3],msg[4] + (msg[6] - msg[4])/2] + " L" + [msg[5], msg[4]];
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -1662,7 +1850,7 @@ function addShape()
 			case "path" :
 				var attr = {};
 				attr.new = "path";
-				attr.id = "Picster-Element_" + num;
+				attr.id = currentID;
 				attr.d = msg[3];
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
@@ -2165,13 +2353,19 @@ function anything()
 			outlet(2, "bounds", "hide");
 			}
 			break;
+			case 73 : //i
+			if (foundobjects.contains("0") && item != -1) {
+				edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1])
+				outlet(0, "getSelectedElement", "dictionary", edit.name);
+			}
+			break;
 			case 76 : //l
 			if (foundobjects.contains("0") && item != -1) this.patcher.getnamed("savedialog").message("bang");
 			break;
 			case 77 : //m
 			preference = "measure";
 			break;
-			case 82 : //r
+			case 82 : //r (convert into trajectory)
 			if (foundobjects.contains("0") && item != -1) {
 				edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 				if (edit.contains("picster-element[0]::val")) {
@@ -2294,6 +2488,7 @@ function anything()
 			/// DOESN'T SEEM TO WORK
 			break;
 			case 86 : //v
+			post("JSON", JSON.stringify(cp.copy), "\n");
 			if (cp.copy != "undefined") createRenderedMessage(1, cp.copy[0], cp.copy[1], cp.copy[2]);
 			break;
 			case 88 : //x
@@ -2482,14 +2677,15 @@ function anything()
 			}
 		}
 		else if (dumpinfo[0] == "measure"){
-			//post("JSON", JSON.stringify(json), "\n");
-			tempo = json["score"]["measure"][0]["@TEMPO"];
-			timesig = json["score"]["measure"][0]["@TIMESIG"];
-			if (key == "score" && "measureUserBean" in json["score"]["measure"][0]){
-			var occurence = getAllIndexes(json["score"]["measure"][0][".ordering"], "measureUserBean");
-			for (i = 0; i < occurence.length; i++) {
-				userBeans[i] = json["score"]["measure"][0]["measureUserBean"][i];
-				}			
+			if (json.hasOwnProperty("score")) {
+				tempo = json["score"]["measure"][0]["@TEMPO"];
+				timesig = json["score"]["measure"][0]["@TIMESIG"];
+				if (key == "score" && "measureUserBean" in json["score"]["measure"][0]){
+				var occurence = getAllIndexes(json["score"]["measure"][0][".ordering"], "measureUserBean");
+				for (i = 0; i < occurence.length; i++) {
+					userBeans[i] = json["score"]["measure"][0]["measureUserBean"][i];
+					}			
+				}
 			}
 		}
 		break;
@@ -2502,24 +2698,35 @@ function anything()
 }
 }
 
+function getSelectedElement()
+{
+	if (foundobjects.contains("0") && item != -1) {
+		edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+		outlet(0, "getSelectedElement", "dictionary", edit.name);
+	}
+}
+
+function setProperty()
+{
+	var a = arrayfromargs(arguments);
+	if (foundobjects.contains("0") && item != -1) {
+		edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+		if (edit.contains("picster-element[0]::val::" + a[0])) edit.replace("picster-element[0]::val::" + a[0], a[1]);
+		var compressed = edit.stringify_compressed();
+ 		reattachRenderedMessage(compressed);
+		var temp = foundobjects.get(item);
+		temp[temp.length - 1] = compressed;
+		foundobjects.replace(item, temp);
+		post("EDIT-1", currentID, "\n");
+		//findElementByID(currentID);
+	}
+}
+
+
 function dumpexpressions()
 {
 	outlet(1, "dump");
 }
-
-/*
-function serializedDict()
-{
-	if (inlet) {
-	var msg = arrayfromargs(arguments);
-	if (action == "update") reattachRenderedMessage(msg[0]); //init();
-	else if (action == "rotate") reattachRenderedMessage2(0, 0, msg[0]);
-	else if (action == "mouseReleased") createRenderedMessage(0, 0, 0, msg[0]);
-	else if (action == "addShape") createRenderedMessage(0, offsets[0][0], offsets[0][1], msg[0]);
-	else if (action == "group") createRenderedMessage(0, ".", ".", msg[0]);
-	else if (action == "addPortamento") addPortamento(msg[0]);
-	}
-*/
 
 function getSelectionBufferSize(s)
 {
@@ -2581,7 +2788,6 @@ function findBounds(d)
 					var path = "";
 					var mode = "none";
 					var svgelement = {};
- 					//post("origin", origin, "\n");
             		var origin = info.get("origin");
             		var transform = info.get("transform");
                    	for (var i = 0; i < ckeys.length; i++) {
