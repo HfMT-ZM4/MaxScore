@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 300.0, 201.0, 1424.0, 734.0 ],
+		"rect" : [ 420.0, 100.0, 1424.0, 734.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -93,11 +93,12 @@
 					"id" : "obj-96",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 1144.0, 184.199999999999989, 201.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -113,8 +114,8 @@
 					"id" : "obj-46",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 9,
-					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+					"numoutlets" : 10,
+					"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int", "" ],
 					"patching_rect" : [ 1204.666666666666742, 241.899993896484375, 103.0, 22.0 ],
 					"text" : "info~"
 				}
@@ -138,6 +139,7 @@
 					"fontface" : 1,
 					"fontname" : "Avenir Next",
 					"fontsize" : 9.5,
+					"hint" : "Click to use loop points from aif file",
 					"id" : "obj-33",
 					"maxclass" : "textbutton",
 					"numinlets" : 1,
@@ -277,8 +279,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -488,8 +490,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -702,7 +704,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1231.138916015625, 485.0, 185.0, 49.0 ],
-					"restore" : [ "set", 0 ],
+					"restore" : [ "set", 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -724,8 +726,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1253,8 +1255,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1453,7 +1455,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 462.0, 17.5, 163.0, 62.0 ],
-									"restore" : [ "set", 0 ],
+									"restore" : [ "set", 1 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2093,8 +2095,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2144,13 +2146,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-13",
-									"linecount" : 2,
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 701.0, 121.0, 50.0, 62.0 ],
-									"text" : "0 1 0. 0. 0. 0"
+									"text" : "0 1 0. 0. 18433.74 1"
 								}
 
 							}
@@ -2457,8 +2459,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 5,
+											"minor" : 6,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2820,7 +2822,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 478.5, 46.0, 194.0, 49.0 ],
-									"restore" : [ "set", 0 ],
+									"restore" : [ "set", 1 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4146,8 +4148,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5305,7 +5307,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 263.10906982421875, 213.0, 47.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 74.0, 19.0, 42.0, 20.0 ],
+					"presentation_rect" : [ 74.0, 17.0, 42.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -5322,7 +5324,8 @@
 						"valueof" : 						{
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.numbox[10]",
-							"parameter_mmax" : 29936.330000000001746,
+							"parameter_mmax" : 18433.740000000001601,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.numbox",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -5350,7 +5353,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 535.25, 186.466720581054688, 47.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 169.0, 19.0, 41.0, 20.0 ],
+					"presentation_rect" : [ 169.0, 17.0, 41.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -5363,7 +5366,8 @@
 						"valueof" : 						{
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.numbox[11]",
-							"parameter_mmax" : 29936.330000000001746,
+							"parameter_mmax" : 18433.740000000001601,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.numbox",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -5390,7 +5394,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 436.0, 186.466720581054688, 47.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 123.0, 19.0, 41.0, 20.0 ],
+					"presentation_rect" : [ 123.0, 17.0, 41.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -5403,7 +5407,8 @@
 						"valueof" : 						{
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.numbox[9]",
-							"parameter_mmax" : 29936.330000000001746,
+							"parameter_mmax" : 18433.740000000001601,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.numbox",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -5683,7 +5688,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 342.25, 44.299999999999997, 40.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 45.0, 19.0, 31.0, 20.0 ],
+					"presentation_rect" : [ 45.0, 17.0, 31.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -5718,6 +5723,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[33]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
 						}
@@ -5880,8 +5886,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7243,7 +7249,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 38.799997329711914, 285.0, 40.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 6.0, 19.0, 34.599998474121094, 18.0 ],
+					"presentation_rect" : [ 6.0, 17.0, 35.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -7274,6 +7280,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[32]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
 						}
@@ -8332,9 +8339,7 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ],
-		"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-		"editing_bgcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
+ ]
 	}
 
 }

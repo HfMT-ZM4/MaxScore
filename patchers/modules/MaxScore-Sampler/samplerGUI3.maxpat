@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 176.0, 100.0, 1179.0, 730.0 ],
+		"rect" : [ 371.0, 100.0, 1179.0, 730.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -62,7 +62,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -355,7 +355,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.254901960784314, 0.576470588235294, 0.901960784313726, 1.0 ],
+					"bgcolor" : [ 0.309803921568627, 0.63921568627451, 0.988235294117647, 1.0 ],
 					"hidden" : 1,
 					"id" : "obj-20",
 					"maxclass" : "textbutton",
@@ -383,7 +383,7 @@
 , 			{
 				"box" : 				{
 					"autopopulate" : 1,
-					"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
 					"fontface" : 1,
 					"fontname" : "Ableton Sans Medium",
 					"fontsize" : 9.5,
@@ -412,7 +412,7 @@
 					}
 ,
 					"selectioncolor" : [ 0.082673951983452, 0.363330066204071, 0.824637830257416, 1.0 ],
-					"stripecolor" : [ 0.07843137254902, 0.07843137254902, 0.07843137254902, 1.0 ],
+					"stripecolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"useselectioncolor" : 1,
 					"varname" : "chooser"
@@ -836,6 +836,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.toggle[1]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
 						}
@@ -911,7 +912,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1184,7 +1185,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1506,7 +1507,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1660,7 +1661,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 413.333333333333314, 339.0, 270.0, 22.0 ],
-									"restore" : [ 3, "Tutorial.bank.txt" ],
+									"restore" : [ 1, "Bell-1.aif" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1692,7 +1693,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 403.0, 567.0, 197.0, 22.0 ],
-									"restore" : [ "3479263-clientbuffer.1" ],
+									"restore" : [ "2932583-clientbuffer.1" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1847,7 +1848,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2921,7 +2922,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3630,17 +3631,16 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
-					"bordercolor" : [ 0.176470588235294, 0.176470588235294, 0.176470588235294, 1.0 ],
+					"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+					"bordercolor" : [ 0.352941176470588, 0.352941176470588, 0.352941176470588, 1.0 ],
 					"coldef" : [ [ 0, 16, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 1, 154, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 2, 49, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 3, 50, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 4, 49, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 5, 49, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 6, 30, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 7, 33, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 8, 50, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 9, 60, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ] ],
 					"colwidth" : 104,
-					"fgcolor" : [ 0.87843137254902, 0.87843137254902, 0.87843137254902, 1.0 ],
 					"fontface" : 0,
 					"fontname" : "Avenir Next Regular",
 					"fontsize" : 10.0,
-					"gridlinecolor" : [ 0.176470588235294, 0.176470588235294, 0.176470588235294, 1.0 ],
-					"hcellcolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
-					"headercolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"gridlinecolor" : [ 0.352941176470588, 0.352941176470588, 0.352941176470588, 1.0 ],
+					"hcellcolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"headercolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
 					"hscroll" : 0,
 					"id" : "obj-30",
 					"maxclass" : "jit.cellblock",
@@ -3696,12 +3696,11 @@
 
 					}
 ,
-					"sccolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"sccolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
 					"selmode" : 5,
 					"selsync" : 0,
-					"sgcolor" : [ 0.87843137254902, 0.87843137254902, 0.87843137254902, 1.0 ],
-					"stcolor" : [ 0.933333333333333, 0.933333333333333, 0.933333333333333, 1.0 ],
-					"textcolor" : [ 0.933333333333333, 0.933333333333333, 0.933333333333333, 1.0 ],
+					"sgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"stcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "SampleList-1",
 					"vscroll" : 0,
 					"vsync" : 0
@@ -3710,18 +3709,17 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
-					"bordercolor" : [ 0.176470588235294, 0.176470588235294, 0.176470588235294, 1.0 ],
+					"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
+					"bordercolor" : [ 0.352941176470588, 0.352941176470588, 0.352941176470588, 1.0 ],
 					"coldef" : [ [ 0, 47, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 0, -1, -1 ], [ 1, 646, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 0, -1, -1 ] ],
 					"cols" : 2,
 					"colwidth" : 256,
-					"fgcolor" : [ 0.87843137254902, 0.87843137254902, 0.87843137254902, 1.0 ],
 					"fontface" : 1,
 					"fontname" : "Ableton Sans Medium",
 					"fontsize" : 9.5,
-					"gridlinecolor" : [ 0.176470588235294, 0.176470588235294, 0.176470588235294, 1.0 ],
-					"hcellcolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
-					"headercolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"gridlinecolor" : [ 0.352941176470588, 0.352941176470588, 0.352941176470588, 1.0 ],
+					"hcellcolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+					"headercolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
 					"hscroll" : 0,
 					"id" : "obj-19",
 					"maxclass" : "jit.cellblock",
@@ -3778,11 +3776,10 @@
 
 					}
 ,
-					"sccolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
+					"sccolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
 					"selmode" : 3,
-					"sgcolor" : [ 0.87843137254902, 0.87843137254902, 0.87843137254902, 1.0 ],
-					"stcolor" : [ 0.933333333333333, 0.933333333333333, 0.933333333333333, 1.0 ],
-					"textcolor" : [ 0.87843137254902, 0.87843137254902, 0.87843137254902, 1.0 ],
+					"sgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"stcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "instrument-list-1",
 					"vscroll" : 0
 				}
@@ -3803,7 +3800,7 @@
 					"name" : "bank-waveform.maxpat",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"offset" : [ 0.0, -11.0 ],
+					"offset" : [ 1.0, 1.0 ],
 					"patching_rect" : [ 391.5, 524.0, 602.0, 151.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 311.49998950958252, 608.0, 167.0 ],
@@ -3818,7 +3815,7 @@
 					"fontface" : 1,
 					"fontname" : "Ableton Sans Medium",
 					"fontsize" : 9.5,
-					"htabcolor" : [ 0.549019607843137, 0.792156862745098, 0.847058823529412, 1.0 ],
+					"htabcolor" : [ 0.780392156862745, 0.929411764705882, 1.0, 1.0 ],
 					"id" : "obj-14",
 					"maxclass" : "tab",
 					"numinlets" : 1,
@@ -3844,9 +3841,9 @@
 
 					}
 ,
-					"tabcolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"tabcolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
 					"tabs" : [ "⇩ Empty", "Sort", "Delete", "Clear" ],
-					"textcolor" : [ 0.933333333333333, 0.933333333333333, 0.933333333333333, 1.0 ],
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "live.tab[1]"
 				}
 
@@ -3861,7 +3858,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1057.0, 428.0, 237.0, 22.0 ],
-					"restore" : [ 3479263 ],
+					"restore" : [ 2932583 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3887,7 +3884,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4000,7 +3997,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4846,7 +4843,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5297,6 +5294,7 @@
 										"valueof" : 										{
 											"parameter_invisible" : 1,
 											"parameter_longname" : "dict",
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "dict",
 											"parameter_type" : 3
 										}
@@ -5591,7 +5589,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5817,7 +5815,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6460,7 +6458,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 757.93182373046875, 61.0, 497.0, 22.0 ],
-													"restore" : [ 3, "Tutorial.bank.txt" ],
+													"restore" : [ 1, "Bell-1.aif" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -7927,7 +7925,7 @@
 					"fontface" : 1,
 					"fontname" : "Ableton Sans Medium",
 					"fontsize" : 9.5,
-					"htabcolor" : [ 0.549019607843137, 0.792156862745098, 0.847058823529412, 1.0 ],
+					"htabcolor" : [ 0.780392156862745, 0.929411764705882, 1.0, 1.0 ],
 					"id" : "obj-12",
 					"maxclass" : "tab",
 					"numinlets" : 1,
@@ -7953,9 +7951,9 @@
 
 					}
 ,
-					"tabcolor" : [ 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0 ],
+					"tabcolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
 					"tabs" : [ "New", "Open", "Import", "Append", "Save", "Rename", "Remove", "Clear All" ],
-					"textcolor" : [ 0.933333333333333, 0.933333333333333, 0.933333333333333, 1.0 ],
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "live.tab"
 				}
 
