@@ -14,6 +14,7 @@ var result = new SQLResult;
 
 var currentFilter = new Dict('currentFilter');
 var resultsDict = new Dict('results');
+var selectedDict = new Dict('selected')
 
 //open a file-based DB
 function opendb(x)
@@ -24,18 +25,6 @@ function opendb(x)
 function closedb()
 {
 	sqlite.close();
-}
-
-function searchTest() {
-	var testObj = {
-		instrument: 'clar-bb',
-		searchMethod: 'sound',
-		sound: {
-			dynamics: 2,
-			tags: ['dyad']
-		}
-	}
-	searchFilter(testObj);
 }
 
 function updateNumrecords() {
@@ -59,7 +48,7 @@ function searchFilter() {
 	}
 	else if (currentFilter.get("searchMethod") == 'fingering') { // fingering searches are exact matches in any order
 		var fingering = currentFilter.get("fingering");
-		var notList = ['a', 'G', 'r', '0', '1', '2', '3', 'c', '¡', '€', '#', '¢', '4', '5', '6', 'F', 'e', 'g', 'f', '!', 'O', 'P', 'U', 'I'];
+		var notList = ['a', 'G', 'r', '0', '1', '2', '3', 'c', '¡', '€', '£', '¢', '4', '5', '6', 'F', 'e', 'g', 'f', '§', 'O', 'P', 'U', 'I'];
 		if (Array.isArray(fingering)) {
 			for (var i = 0; i < fingering.length; i++) {
 				filterArray.push("fingering LIKE '%" + fingering[i] + "%'");
@@ -94,4 +83,22 @@ function getResults() {
 	}
 	resultsDict.parse(JSON.stringify(resultsObj));
 	outlet(2, 'results');
+}
+
+function getIndex(index) {
+	sqlite.exec("SELECT * FROM dumpster WHERE rowid = "+index, result);
+	post(result.value(3, 0));
+	var selectedObj = {
+		index: index,
+		instrument: result.value(1, 0),
+		dynamicsMin: result.value(2, 0),
+		dynamicsMax: result.value(3, 0),
+		difficulty: result.value(4, 0),
+		tags: result.value(6, 0),
+		fingering: result.value(7, 0),
+		pitchWritten: result.value(8, 0),
+		pitchMidicent: result.value(9, 0)
+	}
+	selectedDict.parse(JSON.stringify(selectedObj));
+	outlet(1, 'playSelected');
 }
