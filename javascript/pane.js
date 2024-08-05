@@ -353,7 +353,6 @@ function obj_ref(o)
 		svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 		svg += ds2svg(o.picster[s][i]);
 		svg += "</svg>";
-		//post("pScale", pScale[i], "\n");
 		picster[i] = new MGraphicsSVG();
 		picster[i].setsvg(svg);
 	}
@@ -365,6 +364,7 @@ function obj_ref(o)
 	svg += ds2svg(embeddedImages);
 	svg += "</g>";
 	svg += "</svg>";
+	//post("pScale", pScale, svg, "\n");
 	embedded.setsvg(svg);
 
 	var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
@@ -475,10 +475,26 @@ function scroll()
 			elapsed = horizontalOffset / speed;
 			ticks["scroll"] = 0;
 			tsk["scroll"].interval = grain;
-			maxiter["scroll"] = times - 1;
+			maxiter["scroll"] = times;
 			tsk["scroll"].repeat(-1);
 			break;
+		case "to" :
+			if (msg[2] < horizontalOffset) {
+			var times = 0;
+			//post("msg", msg, "\n");
+			line = [0, msg[2], msg[3]];
+			times = line[2] / grain;
+			speed = (msg[2] - horizontalOffset) / times;
+			elapsed = horizontalOffset / speed;
+			ticks["scroll"] = 0;
+			tsk["scroll"].interval = grain;
+			maxiter["scroll"] = times;
+			tsk["scroll"].repeat(-1);
+			}
+			else scroll("offset", msg[2]);
+			break;
 		case "offset" :
+			//post("offset", msg, "\n");
 			horizontalOffset = msg[1];
 			manual = 0;
 			notifyclients();
@@ -486,6 +502,10 @@ function scroll()
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
 			mgraphics.redraw();
 			clickOnScrollbar();
+			break;
+		case "dictionary" :
+			var timeline = new Dict;
+			timeline.name = msg[1];
 			break;
 		default :
 		if (msg.length == 3) {
@@ -500,7 +520,7 @@ function scroll()
 			tsk["scroll"].interval = grain;
 			var times = msg[2] / grain;
 			speed = (msg[1] - horizontalOffset) / times;
-			maxiter["scroll"] = times - 1;
+			maxiter["scroll"] = times;
 			tsk["scroll"].repeat(-1);
 			}
 		}
@@ -700,6 +720,7 @@ function paint() {
 			manual = 0;
 			notifyclients();
 			outlet(1, "offset", horizontalOffset, verticalOffset);
+			outlet(0, "scroll", "pixels", horizontalOffset);
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
 			}
 		mgraphics.identity_matrix();
@@ -1093,7 +1114,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	manual = 1;
 	notifyclients();
 	outlet(1, "offset", horizontalOffset, verticalOffset);
-	if (previousHorizontalOffset != horizontalOffset) outlet(3, "scroll", "pixels", horizontalOffset);
+	if (previousHorizontalOffset != horizontalOffset) outlet(0, "scroll", "pixels", horizontalOffset);
 	previousHorizontalOffset = horizontalOffset;
 	}
 	mgraphics.redraw();

@@ -398,8 +398,23 @@ function scroll()
 			elapsed = horizontalOffset / speed;
 			ticks["scroll"] = 0;
 			tsk["scroll"].interval = grain; 
-			maxiter["scroll"] = times - 1;
+			maxiter["scroll"] = times;
 			tsk["scroll"].repeat(-1);
+			break;
+		case "to" :
+			if (msg[2] < horizontalOffset) {
+			var times = 0;
+			//post("msg", msg, "\n");
+			line = [0, msg[2], msg[3]];
+			times = line[2] / grain;
+			speed = (msg[2] - horizontalOffset) / times;
+			elapsed = horizontalOffset / speed;
+			//post(horizontalOffset, times, speed, elapsed, "\n");
+			ticks["scroll"] = 0;
+			tsk["scroll"].interval = grain;
+			maxiter["scroll"] = times;
+			tsk["scroll"].repeat(-1);
+			}
 			break;
 		case "offset" :
 			horizontalOffset = msg[1];
@@ -418,7 +433,7 @@ function scroll()
 			var times = msg[2] / grain;
 			//var remainder = msg[2] % grain;
 			speed = (msg[1] - msg[0]) / times;
-			maxiter["scroll"] = times - 1;
+			maxiter["scroll"] = times;
 			//tsk["scroll"].repeat(times - 1);
 			tsk["scroll"].repeat(-1);
 			}

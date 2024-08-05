@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 322.0, 242.0, 1002.0, 583.0 ],
+		"rect" : [ 278.0, 100.0, 1002.0, 583.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -169,7 +169,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 305.118103000000019, 89.0, 264.0, 22.0 ],
-					"restore" : [ 76, 0, 0, "false", 77, 0, 0, 0, 132, 0.5, "interval", 0 ],
+					"restore" : [ 55.830001831054688, 0, 0, "false", 56.0, 0, 0, 0, 119, 90.0, "note", 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -201,30 +201,17 @@
 					"id" : "obj-42",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 578.0, 104.0, 88.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
 					"text" : "dict staffStyles"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 10.0,
-					"id" : "obj-11",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 203.0, 183.0, 47.0, 20.0 ],
-					"text" : "- 877.85"
 				}
 
 			}
@@ -259,126 +246,138 @@
 , 			{
 				"box" : 				{
 					"coll_data" : 					{
-						"count" : 30,
+						"count" : 33,
 						"data" : [ 							{
-								"key" : 4852,
+								"key" : 3974,
 								"value" : [ 51 ]
 							}
 , 							{
-								"key" : 4998,
+								"key" : 4120,
 								"value" : [ 52 ]
 							}
 , 							{
-								"key" : 5144,
+								"key" : 4266,
 								"value" : [ 53 ]
 							}
 , 							{
-								"key" : 5290,
+								"key" : 4412,
 								"value" : [ 54 ]
 							}
 , 							{
-								"key" : 5437,
+								"key" : 4559,
 								"value" : [ 55 ]
 							}
 , 							{
-								"key" : 5583,
+								"key" : 4705,
 								"value" : [ 56 ]
 							}
 , 							{
-								"key" : 5729,
+								"key" : 4851,
 								"value" : [ 57 ]
 							}
 , 							{
-								"key" : 5876,
+								"key" : 4998,
 								"value" : [ 58 ]
 							}
 , 							{
-								"key" : 6022,
+								"key" : 5144,
 								"value" : [ 60 ]
 							}
 , 							{
-								"key" : 6168,
+								"key" : 5290,
 								"value" : [ 62 ]
 							}
 , 							{
-								"key" : 6315,
+								"key" : 5437,
 								"value" : [ 64 ]
 							}
 , 							{
-								"key" : 6461,
+								"key" : 5583,
 								"value" : [ 65 ]
 							}
 , 							{
-								"key" : 6607,
+								"key" : 5729,
 								"value" : [ 67 ]
 							}
 , 							{
-								"key" : 6754,
+								"key" : 5876,
 								"value" : [ 69 ]
 							}
 , 							{
-								"key" : 6900,
+								"key" : 6022,
 								"value" : [ 71 ]
 							}
 , 							{
-								"key" : 7046,
+								"key" : 6168,
 								"value" : [ 72 ]
 							}
 , 							{
-								"key" : 7192,
+								"key" : 6314,
 								"value" : [ 73 ]
 							}
 , 							{
-								"key" : 7339,
+								"key" : 6461,
 								"value" : [ 74 ]
 							}
 , 							{
-								"key" : 7485,
+								"key" : 6607,
 								"value" : [ 75 ]
 							}
 , 							{
-								"key" : 7631,
+								"key" : 6753,
 								"value" : [ 76 ]
 							}
 , 							{
-								"key" : 7778,
+								"key" : 6900,
 								"value" : [ 77 ]
 							}
 , 							{
-								"key" : 7924,
+								"key" : 7046,
 								"value" : [ 79 ]
 							}
 , 							{
-								"key" : 8070,
+								"key" : 7192,
 								"value" : [ 81 ]
 							}
 , 							{
-								"key" : 8217,
+								"key" : 7339,
 								"value" : [ 83 ]
 							}
 , 							{
-								"key" : 8363,
+								"key" : 7485,
 								"value" : [ 84 ]
 							}
 , 							{
-								"key" : 8509,
+								"key" : 7631,
 								"value" : [ 85 ]
 							}
 , 							{
-								"key" : 8656,
+								"key" : 7778,
 								"value" : [ 86 ]
 							}
 , 							{
-								"key" : 8802,
+								"key" : 7924,
 								"value" : [ 88 ]
 							}
 , 							{
-								"key" : 8948,
+								"key" : 8070,
 								"value" : [ 90 ]
 							}
 , 							{
-								"key" : 9094,
+								"key" : 8216,
+								"value" : [ 91 ]
+							}
+, 							{
+								"key" : 8363,
 								"value" : [ 92 ]
+							}
+, 							{
+								"key" : 8509,
+								"value" : [ 93 ]
+							}
+, 							{
+								"key" : 8656,
+								"value" : [ 95 ]
 							}
  ]
 					}
@@ -404,26 +403,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 10.0,
-					"id" : "obj-21",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 436.118103000000019, 184.0, 33.0, 20.0 ],
-					"text" : "- 878"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 10.0,
 					"id" : "obj-26",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 402.118103000000019, 217.0, 53.0, 20.0 ],
+					"patching_rect" : [ 402.118103000000019, 208.0, 53.0, 20.0 ],
 					"text" : "pack i i"
 				}
 
@@ -445,126 +430,138 @@
 , 			{
 				"box" : 				{
 					"coll_data" : 					{
-						"count" : 30,
+						"count" : 33,
 						"data" : [ 							{
-								"key" : 4852,
+								"key" : 3974,
 								"value" : [ 51 ]
 							}
 , 							{
-								"key" : 4998,
+								"key" : 4120,
 								"value" : [ 52 ]
 							}
 , 							{
-								"key" : 5144,
+								"key" : 4266,
 								"value" : [ 53 ]
 							}
 , 							{
-								"key" : 5290,
+								"key" : 4412,
 								"value" : [ 54 ]
 							}
 , 							{
-								"key" : 5437,
+								"key" : 4559,
 								"value" : [ 55 ]
 							}
 , 							{
-								"key" : 5583,
+								"key" : 4705,
 								"value" : [ 56 ]
 							}
 , 							{
-								"key" : 5729,
+								"key" : 4851,
 								"value" : [ 57 ]
 							}
 , 							{
-								"key" : 5876,
+								"key" : 4998,
 								"value" : [ 58 ]
 							}
 , 							{
-								"key" : 6022,
+								"key" : 5144,
 								"value" : [ 60 ]
 							}
 , 							{
-								"key" : 6168,
+								"key" : 5290,
 								"value" : [ 62 ]
 							}
 , 							{
-								"key" : 6315,
+								"key" : 5437,
 								"value" : [ 64 ]
 							}
 , 							{
-								"key" : 6461,
+								"key" : 5583,
 								"value" : [ 65 ]
 							}
 , 							{
-								"key" : 6607,
+								"key" : 5729,
 								"value" : [ 67 ]
 							}
 , 							{
-								"key" : 6754,
+								"key" : 5876,
 								"value" : [ 69 ]
 							}
 , 							{
-								"key" : 6900,
+								"key" : 6022,
 								"value" : [ 71 ]
 							}
 , 							{
-								"key" : 7046,
+								"key" : 6168,
 								"value" : [ 72 ]
 							}
 , 							{
-								"key" : 7192,
+								"key" : 6314,
 								"value" : [ 73 ]
 							}
 , 							{
-								"key" : 7339,
+								"key" : 6461,
 								"value" : [ 74 ]
 							}
 , 							{
-								"key" : 7485,
+								"key" : 6607,
 								"value" : [ 75 ]
 							}
 , 							{
-								"key" : 7631,
+								"key" : 6753,
 								"value" : [ 76 ]
 							}
 , 							{
-								"key" : 7778,
+								"key" : 6900,
 								"value" : [ 77 ]
 							}
 , 							{
-								"key" : 7924,
+								"key" : 7046,
 								"value" : [ 79 ]
 							}
 , 							{
-								"key" : 8070,
+								"key" : 7192,
 								"value" : [ 81 ]
 							}
 , 							{
-								"key" : 8217,
+								"key" : 7339,
 								"value" : [ 83 ]
 							}
 , 							{
-								"key" : 8363,
+								"key" : 7485,
 								"value" : [ 84 ]
 							}
 , 							{
-								"key" : 8509,
+								"key" : 7631,
 								"value" : [ 85 ]
 							}
 , 							{
-								"key" : 8656,
+								"key" : 7778,
 								"value" : [ 86 ]
 							}
 , 							{
-								"key" : 8802,
+								"key" : 7924,
 								"value" : [ 88 ]
 							}
 , 							{
-								"key" : 8948,
+								"key" : 8070,
 								"value" : [ 90 ]
 							}
 , 							{
-								"key" : 9094,
+								"key" : 8216,
+								"value" : [ 91 ]
+							}
+, 							{
+								"key" : 8363,
 								"value" : [ 92 ]
+							}
+, 							{
+								"key" : 8509,
+								"value" : [ 93 ]
+							}
+, 							{
+								"key" : 8656,
+								"value" : [ 95 ]
 							}
  ]
 					}
@@ -934,13 +931,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-29", 1 ],
-					"source" : [ "obj-11", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-12", 0 ]
 				}
@@ -990,13 +980,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 1 ],
-					"source" : [ "obj-21", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-24", 0 ]
 				}
@@ -1025,7 +1008,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
+					"destination" : [ "obj-26", 1 ],
 					"source" : [ "obj-28", 1 ]
 				}
 
@@ -1088,7 +1071,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
+					"destination" : [ "obj-29", 1 ],
 					"source" : [ "obj-36", 1 ]
 				}
 
@@ -1202,24 +1185,24 @@
  ],
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
-				}
-,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

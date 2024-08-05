@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 250.0, 66.0, 815.0, 731.0 ],
+		"rect" : [ 587.0, 72.0, 815.0, 731.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -50,7 +50,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -375,6 +375,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -414,7 +416,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 400.0, 289.5, 117.0, 22.0 ],
+					"patching_rect" : [ 400.0, 289.5, 123.0, 22.0 ],
 					"text" : "loadmess #0"
 				}
 
@@ -439,7 +441,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 400.0, 377.5, 144.0, 22.0 ],
+					"patching_rect" : [ 400.0, 377.5, 151.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 1,
@@ -462,7 +464,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -608,6 +610,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -1023,7 +1027,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1356,7 +1360,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2033,6 +2037,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -2531,7 +2537,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 800.0, 800.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 974.0, 200.0 ],
 					"readonly" : 1,
 					"rounded" : 0.0,
 					"text" : "440px-A-D-A_Flow.svg",
@@ -2655,7 +2661,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2958,10 +2964,10 @@
 					"id" : "obj-9",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 3.166665999999964, 434.0, 244.0, 22.0 ],
-					"text" : "pvar pane 4"
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 3.166665999999964, 434.0, 169.0, 22.0 ],
+					"text" : "pvar pane 3"
 				}
 
 			}
@@ -3023,7 +3029,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 71.666665999999964, 289.5, 213.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "render2canvas.js",
+						"filename" : "render2canvas",
 						"parameter_enable" : 0
 					}
 ,
@@ -3066,7 +3072,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 78.166665999999964, 470.0, 146.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "picster-select.js",
+						"filename" : "picster-select",
 						"parameter_enable" : 0
 					}
 ,
@@ -3078,7 +3084,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1.0 ], [ "transparency", 0 ] ],
+					"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1 ] ],
 					"filename" : "pane.js",
 					"id" : "obj-7",
 					"maxclass" : "jsui",
@@ -3088,7 +3094,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 837.0, 846.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 736.0, 485.0 ],
 					"varname" : "pane"
 				}
 
@@ -3464,14 +3470,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-34", 0 ],
 					"source" : [ "obj-9", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"midpoints" : [ 237.666665999999964, 667.0, 196.166665999999964, 667.0 ],
-					"source" : [ "obj-9", 3 ]
 				}
 
 			}

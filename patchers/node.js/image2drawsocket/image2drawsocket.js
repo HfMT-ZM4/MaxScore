@@ -24,7 +24,7 @@ if (userpath.length > 0) {
 let hrefPathPrefix;
 
 Max.addHandler("img2drawsocket", (msg) => {
-	let filename = msg.substring(msg.lastIndexOf('/') + 1);
+	let filename = msg.substring(msg.lastIndexOf('/') + 1).replace(/\s/g, '').replace(/[\[()\]]/g, '');
 	let seg = {};
 	let img = {
 			"key" : "svg",
@@ -100,7 +100,8 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 			else value[attribute] = SVGAttributes[attribute];
 		}
 		value["picster:scale"] = "1,1";
- 		let filename = infile.substring(infile.lastIndexOf('/') + 1);
+ 		let filename = infile.substring(infile.lastIndexOf('/') + 1).replace(/\s/g, '').replace(/[\[()\]]/g, '');
+		Max.post(filename);
 		value.id = "_" + filename;
 		value.child = [];
 		/*
@@ -114,7 +115,6 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		value.child.push({"new" : "g", "transform" : "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")", "child" : _procElements2});
 		*/
  		value.child = procElements(getSVGElements(svgJS));
-		//Max.post(JSON.stringify(value));
 		splitText(value);
         let svgObj = {
             key: 'svg',
@@ -143,13 +143,13 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 			//Max.post(LZString.decompressFromBase64(segments.join("")).length);
 			let seg = {};
 			for (let i = 0; i < segments.length; i++) {
-				seg.reference = infile;
+				seg.reference = infile.replace(/\s/g, '').replace(/[\[()\]]/g, '');
 				seg.index = i + 1;
 				seg.numsegments = segments.length;
 				seg.data = segments[i];
 				Max.outlet(seg);
 			}
-			img.val["xlink:href"] = 'reference:' + infile;
+			img.val["xlink:href"] = 'reference:' + infile.replace(/\s/g, '').replace(/[\[()\]]/g, '');
 			img.val.width = SVGAttributes.hasOwnProperty("width") ? SVGAttributes.width : Number(SVGAttributes.viewBox.split(" ")[2]);
 			img.val.height = SVGAttributes.hasOwnProperty("height") ? SVGAttributes.height : Number(SVGAttributes.viewBox.split(" ")[3]);
 			Max.outlet(img);

@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 6,
+			"minor" : 6,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -49,8 +49,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 6,
+							"minor" : 6,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -659,8 +659,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 6,
+							"minor" : 6,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -902,7 +902,7 @@
 						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 325.609756097560989, 354.5, 46.0, 22.0 ],
+					"patching_rect" : [ 334.785714285714278, 355.0, 46.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -986,7 +986,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 329.921142857142854, 474.5, 30.0, 30.0 ]
+					"patching_rect" : [ 345.285714285714278, 474.5, 30.0, 30.0 ]
 				}
 
 			}
@@ -1079,11 +1079,11 @@
 					"id" : "obj-2",
 					"linecount" : 6,
 					"maxclass" : "newobj",
-					"numinlets" : 42,
-					"numoutlets" : 42,
-					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+					"numinlets" : 43,
+					"numoutlets" : 43,
+					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
 					"patching_rect" : [ 24.0, 107.5, 706.0, 89.0 ],
-					"text" : "routepass setMeasureRange setHairpinVerticalOffset setBarlineDashArray showWholeNoteRestsInEmptyMeasures mouse writeSVG picster textfont staffgroups zoomlist setUserClef setToneDivision setTimeUnit setSelectedNotesToProportionalNotation setProportionalNotation setMediaFolder setInstrumentNameVerticalPositionOffset setAbbrInstrumentName scroll output musicfont flashcolor filterRepeatedAccidentals fgcolor linecolor draw cursor createStaffGroup blankPageTransform bgcolor autoadjust assignStaffToStaffGroup getTimeUnit setSelectedStaff setWrap setDurationalSpacingBase setZoom setLoopingPlayback start stop playSection"
+					"text" : "routepass setMeasureRange setHairpinVerticalOffset showRuler setBarlineDashArray showWholeNoteRestsInEmptyMeasures mouse writeSVG picster textfont staffgroups zoomlist setUserClef setToneDivision setTimeUnit setSelectedNotesToProportionalNotation setProportionalNotation setMediaFolder setInstrumentNameVerticalPositionOffset setAbbrInstrumentName scroll output musicfont flashcolor filterRepeatedAccidentals fgcolor linecolor draw cursor createStaffGroup blankPageTransform bgcolor autoadjust assignStaffToStaffGroup getTimeUnit setSelectedStaff setWrap setDurationalSpacingBase setZoom setLoopingPlayback start stop playSection"
 				}
 
 			}
@@ -1094,7 +1094,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 325.609756097560989, 319.0, 29.5, 22.0 ],
+					"patching_rect" : [ 334.785714285714278, 319.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -1118,7 +1118,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 576.951219512195166, 319.0, 29.5, 22.0 ],
+					"patching_rect" : [ 580.14285714285711, 319.0, 29.5, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -1231,14 +1231,21 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"source" : [ "obj-2", 33 ]
+					"source" : [ "obj-2", 34 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-2", 41 ]
+					"source" : [ "obj-2", 42 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-33", 0 ],
+					"source" : [ "obj-2", 38 ]
 				}
 
 			}
@@ -1265,8 +1272,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"source" : [ "obj-2", 34 ]
+					"destination" : [ "obj-34", 0 ],
+					"source" : [ "obj-2", 41 ]
 				}
 
 			}
@@ -1286,8 +1293,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-34", 0 ],
-					"source" : [ "obj-2", 38 ]
+					"destination" : [ "obj-39", 0 ],
+					"source" : [ "obj-2", 32 ]
 				}
 
 			}
@@ -1308,7 +1315,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-39", 0 ],
-					"source" : [ "obj-2", 29 ]
+					"source" : [ "obj-2", 28 ]
 				}
 
 			}
@@ -1371,7 +1378,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-39", 0 ],
-					"source" : [ "obj-2", 19 ]
+					"source" : [ "obj-2", 18 ]
 				}
 
 			}
@@ -1392,7 +1399,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-39", 0 ],
-					"source" : [ "obj-2", 15 ]
+					"source" : [ "obj-2", 12 ]
 				}
 
 			}
@@ -1483,14 +1490,21 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"source" : [ "obj-2", 18 ]
+					"source" : [ "obj-2", 19 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-41", 0 ],
-					"source" : [ "obj-2", 32 ]
+					"source" : [ "obj-2", 33 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-41", 0 ],
+					"source" : [ "obj-2", 15 ]
 				}
 
 			}
@@ -1510,15 +1524,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-41", 0 ],
-					"source" : [ "obj-2", 12 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
-					"source" : [ "obj-2", 28 ]
+					"source" : [ "obj-2", 29 ]
 				}
 
 			}

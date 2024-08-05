@@ -442,6 +442,7 @@ function obj_ref(o)
 	SVGImages = o.svgimages;
 	groupcount = o.groupcount;
 	//Check whether images are already in the media folder. If not copy them there.
+	//post("mediafolder", pathToScript + mediaFolder, "\n");
 	for (var s = 1; s <= groupcount; s++) {
 		for (var i = 0; i < SVGImages[s].length; i++) {
 		if (SVGImages[s][i]["xlink:href"].slice(0, 4) != "data") {
@@ -465,7 +466,6 @@ function obj_ref(o)
 			if (SVGPicster[s][i].hasOwnProperty("child")) {
 				//WRAP SVG IN G WITH TRANSFORM
 				var temp = JSON.parse(JSON.stringify(o.picster[s][i]));
-				//post("SVGImages", JSON.stringify(SVGDefs), "\n");
 				delete temp["picster:offset"];
 				delete temp["picster:scale"];
 				delete temp["width"];
@@ -1004,7 +1004,6 @@ function drawBounds()
 						},
 					"transform" : "translate(0, 0)"
 					}];
-				//post("g", sg[s], clefs[clefList[sg[s][i]]], "\n");
 				jcursors[s + 1] = {"key" : "svg", "val" : val};
 			}		
 	}
@@ -1017,7 +1016,6 @@ function scroll()
 	//post("matrix", this.patcher.getnamed("output").getvalueof().join(""), "\n");
 	if (this.patcher.getnamed("output").getvalueof().join("").indexOf("011") != -1) {
 	var msg = arrayfromargs(arguments);
-	//post("msg", msg, lastAction, "\n");
 	cursors.clear();
 	jcursors = {};			
 	switch (msg[0]){
@@ -1124,8 +1122,11 @@ function scroll()
 		cursors.parse(JSON.stringify(jcursors));
 		outlet(0, "dictionary", cursors.name);	
 		break;
-	//this is my start message msg[0] should be start position, but I don't see how I can 
+	case "to" :
+		scroll(msg[1], msg[2], msg[3]);
+		break;
 	default:
+		//post("scroll", msg, "\n");
 		lastAction = "start";
 		duration = msg[2]/1000;
 		eol = msg[1]

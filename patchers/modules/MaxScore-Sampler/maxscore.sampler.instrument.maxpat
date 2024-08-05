@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 121.0, 205.0, 1224.0, 513.0 ],
+		"rect" : [ 385.0, 232.0, 982.0, 523.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 538.916666666666629, 148.0, 56.0, 22.0 ],
+					"restore" : 					{
+						"instrument" : [ 0.0 ],
+						"pan" : [ 0.000000000000022 ]
+					}
+,
+					"text" : "autopattr",
+					"varname" : "u405029614"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-37",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 275.333341538906097, 40.0, 29.5, 22.0 ],
+					"patching_rect" : [ 397.833338618278503, 38.0, 29.5, 22.0 ],
 					"text" : "live"
 				}
 
@@ -63,9 +81,10 @@
 					"presentation_rect" : [ 176.0, 6.666667, 27.333334000000001, 15.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_longname" : "Pan",
+							"parameter_longname" : "Pan[31]",
 							"parameter_mmax" : 50.0,
 							"parameter_mmin" : -50.0,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "Pan",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 6
@@ -84,12 +103,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 205.0, 335.0, 333.0, 22.0 ],
-					"restore" : [ 0 ],
+					"patching_rect" : [ 205.0, 335.0, 341.0, 22.0 ],
+					"restore" : [ "<none>" ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
-							"parameter_longname" : "892206-stored-instrument[35]",
+							"parameter_longname" : "892206-stored-instrument[30]",
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "892206-stored-instrument",
 							"parameter_type" : 3
 						}
@@ -102,7 +122,7 @@
 					}
 ,
 					"text" : "pattr #0-stored-instrument @autorestore 0 @invisible 1",
-					"varname" : "1041-stored-instrument"
+					"varname" : "10752691-stored-instrument"
 				}
 
 			}
@@ -115,30 +135,6 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 175.0, 293.0, 49.0, 22.0 ],
 					"text" : "route ..."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 87.0, 49.0, 94.0, 22.0 ],
-					"text" : "prepend symbol"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-15",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 87.0, 82.0, 91.0, 22.0 ],
-					"text" : "pvar instrument"
 				}
 
 			}
@@ -309,8 +305,9 @@
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[65]",
+							"parameter_longname" : "live.menu[53]",
 							"parameter_mmax" : 31,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
 						}
@@ -338,8 +335,9 @@
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
-							"parameter_longname" : "live.menu[66]",
+							"parameter_longname" : "live.menu[52]",
 							"parameter_mmax" : 31,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
 						}
@@ -372,48 +370,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 85.0, 184.0, 306.0, 76.0 ],
 					"text" : "_parameter_range ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ..."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-10",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 87.0, 113.0, 201.0, 22.0 ],
-					"restore" : [ 0, 1 ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr setchannels @bindto channels",
-					"varname" : "setchannels"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 87.0, 16.0, 194.0, 22.0 ],
-					"restore" : [ 0 ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr setinstrument @autorestore 0",
-					"varname" : "setinstrument"
 				}
 
 			}
@@ -468,7 +424,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 177.333338618278503, 420.666679203510284, 237.0, 22.0 ],
+					"patching_rect" : [ 177.333338618278503, 420.666679203510284, 250.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"precision" : 6
@@ -525,10 +481,11 @@
 					"presentation_rect" : [ 18.0, 6.666667, 106.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_enum" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
+							"parameter_enum" : [ "<none>", "Bell-1.instr", "Bell-2.instr", "Hi_Voweler.instr", "Dreamers.instr", "Kalimbell.instr", "Wave_4.instr", "Dark_Monkey.instr", "Digi_Vocal.instr", "Mini_Moog.instr", "Synth_1980.instr", "E-Pad.instr", "Equinox.instr", "Galaxis.instr", "Venus_Pad.instr", "Celeste.instr", "percussion_glockenspiel_Glockenspiel-beaters_ordinario.instr", "Marimba.instr", "Stopped_Piano.instr", "Cymbales_Antiques.instr", "FretSound.instr", "Bandoneon.instr" ],
 							"parameter_info" : "Select instrument from current sound bank",
-							"parameter_longname" : "Instrument[32]",
-							"parameter_mmax" : 99,
+							"parameter_longname" : "Instrument[26]",
+							"parameter_mmax" : 21,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "instrument",
 							"parameter_type" : 2
 						}
@@ -595,13 +552,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-15", 0 ],
-					"source" : [ "obj-16", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-4", 4 ],
 					"source" : [ "obj-17", 0 ]
 				}
@@ -626,6 +576,22 @@
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"order" : 1,
+					"source" : [ "obj-20", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"order" : 0,
+					"source" : [ "obj-20", 1 ]
 				}
 
 			}
@@ -730,13 +696,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-5", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
-					"source" : [ "obj-6", 0 ]
 				}
 
 			}

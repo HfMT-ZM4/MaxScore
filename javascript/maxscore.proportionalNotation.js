@@ -6,6 +6,7 @@ var tempo = [];
 var originalMeasureWidths = [];
 var factor = 0.5;
 var zoom = 0.5;
+var pixels = 0;
 var renderAllowed = 1;
 var selection = 0;
 //var dump = ;
@@ -466,7 +467,7 @@ function scroll() {
                 }
                outlet(1, "scroll", from, to, dur);
                 break;
-            case "offset":
+            case "offset" :
                 //outlet(2, "offset", msg[1]);
                 var s = (typeof msg[1] == "undefined") ? 0 : msg[1];
                 scoreSize = 0.;
@@ -484,14 +485,15 @@ function scroll() {
                 dur = scoreSize * factor / timeUnit * 1000. * zoom / 0.5;
                 outlet(1, "scroll", "offset", -s * timeUnit * zoom / 0.5, timeUnit, 0, to, dur);
                 break;
-            case "stop":
+            case "stop" :
                 //outlet(2, "stop");
                 outlet(1, "scroll", "stop");
                 break;
-            case "rewind":
-                outlet(1, "scroll", "offset", 0, timeUnit);
+            case "rewind" :
+ 				pixels = 0;
+               	outlet(1, "scroll", "offset", 0, timeUnit);
                 break;
-            case "resume":
+            case "resume" :
                 scoreSize = 0.;
                 outlet(0, "getNumMeasures");
                 for (var m = 0; m < numMeasures; m++) {
@@ -503,10 +505,24 @@ function scroll() {
                     scoreSize += measureWidth;
                 }
                 //from = -1 * scoreOffset * factor  * zoom / 0.5;
-                to = -1 * scoreSize * factor * zoom / 0.5
+                to = -1 * scoreSize * factor * zoom / 0.5;
                 dur = scoreSize * factor / timeUnit * 1000. * zoom / 0.5;
                 outlet(1, "scroll", "play", timeUnit, to, dur);
                 break;
+			case "pixels" :
+				//js: pixels  -554.13  63.50
+				pixels = msg[1];
+			break;
+            case "to" :
+                to = -1 * msg[1] * timeUnit * zoom / 0.5;
+                dur = (msg[1] + pixels / timeUnit) * 1000. * zoom / 0.5;
+ 				//post("pixels", msg, timeUnit, "\n");
+               	outlet(1, "scroll", "to", pixels, to, dur);
+                break;
+			case "timeline" :
+				//scroll timeline rewind | playto 10 | pause 2 | offset 20 | resume
+				var timeline = new Dict;
+				break;
             case "rate":
                 break;
         }

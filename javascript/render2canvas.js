@@ -121,6 +121,7 @@ var	scoreTitle = "";
 var	composer = "";
 var prop = 0;
 var _playhead = 0;
+var _showRuler = 1;
 var oldstaff = -1;
 var stafflines = {};
 var oldMeasureIndex = -1; 
@@ -1033,7 +1034,7 @@ function writeBarlines()
 										"new" : "path",
 										"id" : "brace-" + idcount++,
 										"d" : "M34.1,0C19.3,14.5,16.7,30.6,20.2,47.8c2,9.9,4.3,19.7,5,29.7c0.9,15.8-4.7,30-21.9,41c22,14.3,24,32.7,20.5,52.3c-1.8,9.9-4.5,19.7-5.1,29.7c-0.8,12.7,4.2,24.5,14.2,35C21,228,15.4,217.9,11.4,207.1c-4.9-13.2-0.7-26.1,2.4-39.1c1.6-6.8,3.4-13.8,3.2-20.7c0-10.9-4.5-20.9-17-28.6c13.1-8.5,18.2-19.2,17.1-31.2c-0.8-8.1-3-16.2-5.1-24.2c-5.5-20-3.9-38.9,13.1-55.9C27.8,4.7,31,2.4,34.1,0z",
-										"fill" : frgb, 
+										"fill" : barLineColor, 
 										"fill-opacity" : 1, 
 										"transform" : "matrix(" + [0.3, 0., 0., (dest2 - dest) * 0.101911/24, (barlines[measures][lines][1] - 10), dest] + ")"
 										}
@@ -1144,9 +1145,19 @@ function writeStaffLines()
 	}	
 }
 
+function showRuler(show)
+{
+	_showRuler = show;
+	annotation.set("showRuler", show);
+	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
+	outlet(1, "saveToUndoStack", 1);
+	outlet(1, "getRenderAllowed");
+	if (renderAllowed) outlet(1, "setRenderAllowed", 1);
+}
 
 function writeRuler()
 {
+	if (_showRuler) {
 	var _time = 0;
 	if (typeof timeUnit != "number") timeUnit = 100;
 	for (var s = 0; s < groupcount; s++)
@@ -1188,6 +1199,7 @@ function writeRuler()
 			}
 		);
 		//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
+		}
 	}
 }
 
@@ -1215,6 +1227,7 @@ function getScoreAnnotation(a)
 	_titlefont = (annotation.contains("titlefont")) ? annotation.get("titlefont") : "Times New Roman";
 	wholeNoteRestsInEmptyMeasures = (annotation.contains("showWholeNoteRestsInEmptyMeasures")) ? annotation.get("showWholeNoteRestsInEmptyMeasures") : 0;
 	showRhythmInProportionalNotation = (annotation.contains("showRhythmInProportionalNotation")) ? annotation.get("showRhythmInProportionalNotation") : 0;
+	_showRuler = (annotation.contains("showRuler")) ? annotation.get("showRuler") : 1;
 }
 
 function getTitle(t)
@@ -1468,7 +1481,6 @@ function bgcolor(r, g, b, a)
 {
 	bcolor = [r, g, b, a];
 	annotation.set("bgcolor", bcolor);
-	//outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "saveToUndoStack", 1);
 	outlet(1, "setRenderAllowed", 1);
@@ -1478,7 +1490,6 @@ function fgcolor(r, g, b, a)
 {
 	fcolor = [r, g, b, a];
 	annotation.set("fgcolor", fcolor);
-	//outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "saveToUndoStack", 1);
 	outlet(1, "setRenderAllowed", 1);
@@ -1488,7 +1499,6 @@ function linecolor(r, g, b, a)
 {
 	lcolor = [r, g, b, a];
 	annotation.set("linecolor", lcolor);
-	//outlet(2, "setAnnotation", "dictionary", annotation.name);
 	outlet(1, "setScoreAnnotation", annotation.stringify_compressed());
 	outlet(1, "saveToUndoStack", 1);
 	outlet(1, "setRenderAllowed", 1);
@@ -2287,8 +2297,8 @@ function anything() {
 			if (format == "drawsocket"){
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
+				//post("e", e.stringify(), "\n");	
 			if (e.contains("image-segment")){
-				//post("e", e.get("image-segment::reference"), "\n");	
 				var reference = e.get("image-segment::reference");
 				if (imageCache.contains(reference)) return;
 				data.push(e.get("image-segment::data"));
@@ -2297,8 +2307,8 @@ function anything() {
 				data = [];
 			}
 			else if (e.contains("picster-element")) {
-			//post("E", e.stringify(), "\n");					
 				renderedMessages.set(rm++, msg);
+				//post("renderedMessages", renderedMessages.stringify(), "\n");					
 				_key = e.get("picster-element[0]::key");
 				svggroupflag = false;
 				var vals = [].concat(e.get("picster-element[0]::val"));
@@ -3226,7 +3236,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				"transform" : transform_,
 				});
 				}
-				//post("WAVE", JSON.stringify(child), "\n");				/////////////////
 				SVGTransforms[s + 1].push(transf);
 				SVGGraphics[s + 1].push({
 				"new" : "g",
@@ -3341,6 +3350,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				);
 				}
 				else {	
+					//post("reference", reference, (reference === "/Users/ingastenoien/Desktop/SVG/Artboard 11.svg"), "\n");
 					jpicster = JSON.parse(imageCache.get(reference).join('')).val;
 					jpicster.transform = svgtransform;
 					transf["picster:scale"] = picster.get("picster:scale");

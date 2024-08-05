@@ -10,10 +10,10 @@ var output = new Dict();
 output.name = "output";
 SVGString = [];
 SVGImages = [];
-var mgraphics = new JitterObject("jit.mgraphics", 2000, 2000);
+var mgraphics = new JitterObject("jit.mgraphics", 4000, 2000);
 var findbounds = new JitterObject("jit.findbounds");
-var outmatrix = new JitterMatrix(4, "char", 2000, 2000);
-var import = new JitterMatrix(4, "char", 2000, 2000);
+var outmatrix = new JitterMatrix(4, "char", 4000, 2000);
+var import = new JitterMatrix(4, "char", 4000, 2000);
 import.adapt = 1;
 mgraphics.svg_create("img", "<svg></svg>");
 var svg = new Dict();
@@ -162,6 +162,7 @@ if (mode == "picster" && !blocked) {
 			break;
 	}
 	var e = new Dict();
+	//post("renderedMessages", renderedMessages.stringify(), "\n");
 	e.parse(renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
 	if (format == "sadam.canvas") {
 	var picster = e.get("picster-element");
@@ -220,7 +221,6 @@ if (mode == "picster" && !blocked) {
 	}
 	if (boundmin[0] <= x && boundmin[1] <= y && boundmax[0] >= x && boundmax[1] >= y) {
  		foundobjects.replace(_c, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 4).concat(dictArray[dictArray.length - 1].get("id"), boundmin, boundmax, renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]));
-		//post("F", format, renderedMessages.get(keys[i]).slice(0, renderedMessages.get(keys[i]).length - 6), "\n");
 		offsets[_c] = RenderMessageOffset;
 		_c++;
 		}
@@ -240,8 +240,10 @@ if (mode == "picster" && !blocked) {
 			for (var i = 0; i <= foundobjects.get(item)[5]; i++) outlet(0, "selectNextInterval");
 			break;
 			case "note" :
-			outlet(0, "selectNote", foundobjects.get(item).slice(1, 5));
- 			outlet(0, "setSelectedStaff", foundobjects.get(item).slice(1, 3));
+			//outlet(0, "selectNote", foundobjects.get(item).slice(1, 5));
+			outlet(0, "clearSelection");
+			outlet(0, "addNoteToSelection", foundobjects.get(item).slice(1, 8));
+   			outlet(0, "setSelectedStaff", foundobjects.get(item).slice(1, 3));
 			this.patcher.getnamed("measurerange").setvalueof(foundobjects.get(item)[1], foundobjects.get(item)[2], foundobjects.get(item)[1], foundobjects.get(item)[2]);
 			break;
 			case "staff" :
@@ -318,7 +320,7 @@ function findElementByID(id)
 	outlet(2, "bounds", "hide");
 	click = "single";
 	currentMeasure = -1;
-	origin = [x, y];
+	//origin = [x, y];
 	var _c = 0;
 	item = -1;
 	offsets = {};
@@ -445,12 +447,14 @@ function findElementByID(id)
 		outlet(0, "clearSelection");
 		if (!buttonMode) {
 		switch (foundobjects.get(item)[0]){
+			/*
 			case "interval" :
 			outlet(0, "selectNote", foundobjects.get(item).slice(1, 6));
  			outlet(0, "setSelectedStaff", foundobjects.get(item).slice(1, 3));
 			this.patcher.getnamed("measurerange").setvalueof(foundobjects.get(item)[1], foundobjects.get(item)[2], foundobjects.get(item)[1], foundobjects.get(item)[2]);
 			for (var i = 0; i <= foundobjects.get(item)[5]; i++) outlet(0, "selectNextInterval");
 			break;
+			*/
 			case "note" :
 			outlet(0, "selectNote", foundobjects.get(item).slice(1, 5));
  			outlet(0, "setSelectedStaff", foundobjects.get(item).slice(1, 3));
@@ -690,7 +694,9 @@ if (mode == "picster") {
 	//suppress dragging for pitchbend curves
 	var dragged = !(JSON.stringify(origin) == JSON.stringify([x, y]));
 	if (item != -1 && dragged)  {
+	//post("note", foundobjects.get(item)[5], "\n");
 	switch (foundobjects.get(item)[0]){
+		/*
 		case "interval" :
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
@@ -712,8 +718,10 @@ if (mode == "picster") {
 				}
 			}
 		break;
+		*/
 		case "note" :
-			outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			//post("userBeans-1", (foundobjects.get(item)[5] == -1) ? "getNoteInfo" : "getIntervalInfo", "\n");
+			outlet(0, (foundobjects.get(item)[5] == -1) ? "getNoteInfo" : "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["@Message"].indexOf("rendered") == -1 && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -923,6 +931,7 @@ function deleteSelectedItem()
 {
 	if (mode == "picster") {
 	switch (foundobjects.get(item)[0]){
+		/*
 		case "interval" :
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
@@ -949,8 +958,10 @@ function deleteSelectedItem()
 				}
 			}
 		break;
+		*/
 		case "note" :
-			outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			//outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			outlet(0, (foundobjects.get(item)[5] == -1) ? "getNoteInfo" : "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -1044,6 +1055,7 @@ function reattachRenderedMessage(serialized)
 if (mode == "picster") {
 	if (item != -1)  {
 	switch (foundobjects.get(item)[0]){
+		/*
 		case "interval" :
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
@@ -1064,8 +1076,10 @@ if (mode == "picster") {
 				}
 			}
 		break;
+		*/
 		case "note" :
-			outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			//outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			outlet(0, (foundobjects.get(item)[5] == -1) ? "getNoteInfo" : "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -1137,10 +1151,11 @@ if (mode == "picster") {
 
 function reattachRenderedMessage2(x, y, serialized)
 {
-	//post("reattachRenderedMessage2", "\n");
+	post("reattachRenderedMessage2", "\n");
 if (mode == "picster") {
 	if (item != -1)  {
 	switch (foundobjects.get(item)[0]){
+		/*
 		case "interval" :
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
@@ -1161,8 +1176,10 @@ if (mode == "picster") {
 				}
 			}
 		break;
+		*/
 		case "note" :
-			outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			//outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			outlet(0, (foundobjects.get(item)[5] == -1) ? "getNoteInfo" : "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["@Message"].indexOf("rendered") && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
@@ -1339,7 +1356,7 @@ function addShape()
 		var delta_x = (msg[0].length > 1) ? parseFloat(msg[0].slice(1)) : 0;
 		var delta_y = (msg[1].length > 1) ? parseFloat(msg[1].slice(1)) : 0;
 		if (!selectionBufferSize) {
-			post("measurerange", measurerange, "\n");
+			//post("measurerange", measurerange, "\n");
 			if (measurerange[0] == -1) return;
 				increment = 0;
 				anchors = {};
@@ -1364,7 +1381,7 @@ function addShape()
 			}
 		}
 			else offsets[0] = [msg[0] / factor , msg[1] / factor];
-			post("offsets", offsets[0], "\n");
+			//post("offsets", offsets[0], "\n");
 			action = "addShape";
 			switch (msg[2]){
 			case "line":
@@ -2253,27 +2270,20 @@ function anything()
 			var tempObjArray = [];
 			if (foundobjects.contains("0") && item != -1) {
 			switch (foundobjects.get(item)[0]){
+			/*
 			case "interval" :
 			outlet(0, "getNoteAnchor");
 			anchor = anchors[0];
 			outlet(0, "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
-			/*
-			var key = Object.keys(json);
-			if (!("userBean" in json[key])) return;
-			//var userBeans = [].concat(json[key]["userBean"]);
-			*/
 			if (!(userBeans.length)) return;
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			break;
+			*/
 			case "note" :
 			outlet(0, "getNoteAnchor");
 			anchor = anchors[0];
-			outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
-			/*
-			var key = Object.keys(json);
-			if (!("userBean" in json[key])) return;
-			//var userBeans = [].concat(json[key]["userBean"]);
-			*/
+			//outlet(0, "getNoteInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			outlet(0, (foundobjects.get(item)[5] == -1) ? "getNoteInfo" : "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			if (!(userBeans.length)) return;			
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			break;
@@ -2484,6 +2494,7 @@ function anything()
 			tempDict.parse(foundobjects.get(item).pop());
 			temp2 = tempDict.get("picster-element[0]::val");
 			if (updatedDict.contains("picster-element[1]::val::bounds")) updatedDict.replace("picster-element[1]::val::bounds", findBoundsToo(JSON.parse(temp2.stringify())));
+			//post("jpicster1", temp2.stringify(), "\n");
 			reattachRenderedMessage(updatedDict.stringify_compressed());
 			/// DOESN'T SEEM TO WORK
 			break;
@@ -2759,7 +2770,7 @@ function setZoom(z)
 
 function findBounds(d)
 {
-           	var svgfill = "none";
+          	var svgfill = "none";
             var svgfillopacity = 1.;
            	var svgstroke = "none";
             var svgstrokeopacity = 1.;
@@ -2928,7 +2939,6 @@ function findBounds(d)
 
 function findBoundsToo(d)
 {
-	//post("jpicster", JSON.stringify(d[0]), "\n");
 	var renderOffset = [600, 600];
 	var scale = [1, 1];
 	if (!Array.isArray(d)) d = [].concat(d);
@@ -2949,9 +2959,34 @@ function findBoundsToo(d)
 			}
 			else {
 			scale = d[0]["picster:scale"].split(",");
+			//post(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1), "\n");
 			d[0] = JSON.parse(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("")).val;
 			}
 		}
+		else {
+		var x = d[0]["x"];
+		var y = d[0]["y"];
+		var width = d[0]["width"];
+		var height = d[0]["height"];
+		var transform = d[0]["transform"];
+		d[0] = {
+				"new" : "rect",
+				"id" : "Picster-Element_1718432189589",
+				"x" : x,
+				"y" : y,
+				"width" : width,
+				"height" : height,
+				"style" : 				{
+					"stroke" : "rgb(0,0,0)",
+					"stroke-opacity" : 1,
+					"stroke-width" : 2,
+					"fill" : "black",
+					"fill-opacity" : 1
+				},
+				"transform" : transform
+			};
+		}
+ 		//post("jpicster", JSON.stringify(d[0]), "\n");
 	break;
 	case "svg" :
 		//if (d[0].hasOwnProperty("picster:scale")) 
@@ -3031,52 +3066,6 @@ function splitText(obj)
 	return textGroup;
 }
 
-/*
-function renderDrawSocket(d)
-{
-	for (var i = 0; i < d.length; i++){
-	var _d = d[i];
-	//post("_d1", JSON.stringify(_d), "\n");
-	var svgtransform = _d["transform"];
-	switch (_d.new) {
-		case "line" :
-		SVGString.push("<line x1=\"" + _d["x1"] + "\" y1=\"" + _d["y1"] + "\" x2=\"" + _d["x2"] + "\" y2=\"" + _d["y2"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
-		break;
-		case "rect" :
-		SVGString.push("<rect x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" width=\"" + _d["width"] + "\" height=\"" + _d["height"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
-		break;
-		case "ellipse" :
-		SVGString.push("<ellipse cx=\"" + _d["cx"] + "\" cy=\"" + _d["cy"] + "\" rx=\"" + _d["rx"] + "\" ry=\"" + _d["ry"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
-		break;
-		case "polyline" :
-		SVGString.push("<polyline points=\"" + _d["points"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
-		break;
-		case "path" :
-		SVGString.push("<path d=\"" + _d["d"] + "\" stroke=\"" + _d["style"]["stroke"] + "\" stroke-width=\"" + _d["style"]["stroke-width"] + "\" stroke-opacity=\"" + _d["style"]["stroke-opacity"] + "\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\"/>");
-		break;
-		case "text" :
-		if (!(_d.hasOwnProperty("text-anchor"))) _d["text-anchor"] = "start";
- 		SVGString.push("<text x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" font-family=\"" + _d["font-family"] + "\" font-size=\"" + _d["font-size"] + "\" font-style=\"" + _d["font-style"] + "\" font-weight=\"" + _d["font-weight"] + "\" text-anchor=\"" + _d["text-anchor"] + "\" text-decoration=\"none\" fill=\"" + _d["style"]["fill"] + "\" fill-opacity=\"" + _d["style"]["fill-opacity"] + "\" transform=\"" + svgtransform + "\">" + _d["child"] + "</text>");
-		break;
-		case "image" :
-		SVGString.push("<rect x=\"" + _d["x"] + "\" y=\"" + _d["y"] + "\" width=\"" + _d["width"] + "\" height=\"" + _d["height"] + "\" stroke=\"none\" stroke-width=\"1.\" stroke-opacity=\"1.\" fill=\"black\" fill-opacity=\"1.\" transform=\"" + svgtransform + "\"/>");
-		break;
-		case "g" :
-		svggroupflag = true;
-		SVGString.push("<g transform=\"" + svgtransform + "\">");
-		var _e = [];
-		for (var j = 0; j < _d.child.length; j++) {
-		//post("child", JSON.stringify(child), "\n");
-		//var child = _d.child[j];
-		_e.push(_d.child[j]);
-		//_e[j].transform = _d["transform"];
-		}
-		renderDrawSocket(_e);
-		break;
-		}
-	}
-}
-*/
 
 function findBoundsForRenderedExpression(msg, d)
 {

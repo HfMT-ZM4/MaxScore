@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 65.0, 149.0, 1207.0, 648.0 ],
+		"rect" : [ 156.0, 208.0, 1207.0, 648.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -340,7 +340,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 57.5, 117.0, 485.0, 22.0 ],
-									"restore" : [ 1, "sine2.aif" ],
+									"restore" : [ 1, "Bell-1.aif" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1106,7 +1106,7 @@
 					"patching_rect" : [ 281.0, 14.0, 166.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 373.0, -1.0, 309.25, 22.0 ],
-					"text" : "sine2.aif",
+					"text" : "Tutorial.bank.json",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1,
 					"varname" : "title"
@@ -1301,7 +1301,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 196.0, 288.0, 311.0, 22.0 ],
-					"restore" : [ 2932583 ],
+					"restore" : [ 10752684 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1550,7 +1550,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 13.0, 380.5, 123.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 903, 252, 1512, 568 ],
+						"client_rect" : [ 1049, 490, 1658, 806 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 780, 524, 1380, 824 ]
@@ -4415,7 +4415,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 669.0, 287.0, 758.0, 717.0 ],
+														"rect" : [ 318.0, 115.0, 758.0, 717.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -4444,6 +4444,18 @@
 														"subpatcher_template" : "",
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
+																"box" : 																{
+																	"id" : "obj-20",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 98.0, 607.0, 94.0, 22.0 ],
+																	"text" : "prepend symbol"
+																}
+
+															}
+, 															{
 																"box" : 																{
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
@@ -4646,8 +4658,8 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 185.0, 579.0, 488.0, 22.0 ],
-																	"text" : "sprintf send parent::parent::parent::maxscore.sampler.menus::%i-instrument::setchannels"
+																	"patching_rect" : [ 185.0, 579.0, 467.0, 22.0 ],
+																	"text" : "sprintf send parent::parent::parent::maxscore.sampler.menus::%i-instrument::channels"
 																}
 
 															}
@@ -4777,7 +4789,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 126.0, 547.0, 491.0, 22.0 ],
-																	"text" : "sprintf send parent::parent::parent::maxscore.sampler.menus::%i-instrument::setinstrument"
+																	"text" : "sprintf send parent::parent::parent::maxscore.sampler.menus::%i-instrument::instrument"
 																}
 
 															}
@@ -4915,6 +4927,13 @@
 															}
 , 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-1", 0 ],
+																	"source" : [ "obj-20", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"destination" : [ "obj-15", 0 ],
 																	"midpoints" : [ 319.5, 604.0, 257.5, 604.0 ],
 																	"source" : [ "obj-22", 0 ]
@@ -5037,7 +5056,7 @@
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-1", 0 ],
+																	"destination" : [ "obj-20", 0 ],
 																	"source" : [ "obj-7", 0 ]
 																}
 
@@ -5523,7 +5542,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 32,
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 87.0, 188.0, 517.970674486805137, 22.0 ],
+									"patching_rect" : [ 87.0, 188.0, 522.0, 22.0 ],
 									"text" : "poly~ maxscore.multisamples-player.maxpat 16 @steal 0 @args #0 @legacynotemode 0",
 									"varname" : "poly~"
 								}
@@ -5874,7 +5893,7 @@
 					"name" : "samplerGUI3.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"offset" : [ 0.0, -316.0 ],
+					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 249.0, 220.5, 220.0, 37.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 232.0, 17.0, 603.0, 153.0 ],

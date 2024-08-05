@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -240,7 +240,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 336.655263333333323, 230.440429999999992, 255.0, 22.0 ],
+					"patching_rect" : [ 282.655272999999909, 235.0, 255.0, 22.0 ],
 					"text" : "KEYSIGNUMACC $1 $2, KEYSIGTYPE $1 $2"
 				}
 
@@ -269,13 +269,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 147.321930000000009, 193.484496999999976, 303.0, 22.0 ],
+					"patching_rect" : [ 147.321930000000009, 193.484496999999976, 222.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "maxscore.setNoteIntervalAttribute",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js maxscore.setNoteIntervalAttribute @renderAllowed 0"
+					"text" : "js maxscore.setNoteIntervalAttribute"
 				}
 
 			}
@@ -290,8 +290,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -421,7 +421,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 79.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "5461-" ],
+									"restore" : [ "1000-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1079,7 +1079,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
-					"midpoints" : [ 251.488596666666695, 681.287689173828085, 123.821930000000009, 681.287689173828085 ],
+					"midpoints" : [ 224.488596666666695, 681.287689173828085, 123.821930000000009, 681.287689173828085 ],
 					"source" : [ "obj-30", 1 ]
 				}
 
