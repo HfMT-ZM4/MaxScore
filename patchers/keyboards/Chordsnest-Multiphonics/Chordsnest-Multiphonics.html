@@ -127,10 +127,6 @@
             transform: scale(1.1);
         }
 
-        .select.instrument-selected {
-            transform: translate(100px, 275px) scale(0.3);
-        }
-
         .button-small:hover g {
             transform: scale(1.2);
         }
@@ -157,6 +153,39 @@
             font-size: 13px;
         }
 
+        .go-button-g:hover g {
+            transform: scale(1.1);
+        }
+        .go-button-g text {
+            fill: var(--light4);
+            font-weight: bolder;
+        }
+
+        /* search by fingering toggles */
+        #search-fingering-keys {
+            stroke: var(--main-color);
+            stroke-width: 3px;
+            fill: var(--light1);
+            fill-opacity: 0;
+            transform: translate(315px, 230px) scale(0.68);
+        }
+        #search-fingering-keys.bassclar {
+            transform: translate(320px, 230px) scale(0.65);
+        }
+        #search-fingering-keys #search-bassclar-keygroups {
+            display: none;
+        }
+        #search-fingering-keys.bassclar #search-bassclar-keygroups {
+            display: inherit;
+        }
+        .search-fingering-key:hover {
+            stroke-width: 5px;
+        }
+        .search-fingering-key.key-selected {
+            fill-opacity: 1;
+        }
+
+        /* search by sound filters */
         .filter-category text {
             stroke: none;
         }
@@ -176,7 +205,7 @@
         }
 
         .category-circle {
-            r: 80px;
+            r: 75px;
         }
 
         #pitch-g {
@@ -208,7 +237,7 @@
         }
 
         .option circle {
-            r: 30px;
+            r: 25px;
         }
 
         .option.option-selected circle {
@@ -219,7 +248,7 @@
         .option text {
             fill: var(--light4);
             font-weight: bold;
-            font-size: large;
+            font-size: 20px;
         }
 
         .tag-g circle {
@@ -240,12 +269,206 @@
         .tag-g:hover g {
             transform: scale(1.2);
         }
-
+        #pitch-g .option circle {
+            r: 20px;
+        }
         #dynamics-g .option text {
             font-family: Bravura;
             font-weight: normal;
             fill: var(--light1);
-            font-size: 50px;
+            font-size: 40px;
+        }
+
+        .results-g {
+            transition: all 0.5s;
+        }
+        .result-box:hover g.result-box-g {
+            transform: scale(1.1);
+        }
+        .result-box-bg {
+            x: -120px;
+            y: -70px;
+            width: 240px;
+            height: 140px;
+            rx: 10px;
+            ry: 10px;
+            fill: var(--light4);
+            stroke-width: 5px;
+            stroke: none;
+        }
+        .result-box.result-selected .result-box-bg {
+            stroke: var(--main-color);
+        }
+
+        .result-box-index {
+            fill: darkgray;
+            transform: translate(-100px, -50px);
+        }
+        .result-box-tags {
+            text-anchor: start;
+            font-size: 12px;
+            transform: translate(55px, -70px);
+        }
+        .result-box-pitch {
+            font-family: Bravura;
+            text-anchor: start;
+            dominant-baseline: auto;
+            font-size: 40px;
+            transform: translate(-45px, 10px);
+        }
+        .result-ledger-line {
+            stroke: var(--main-color);
+            stroke-width: 2px;
+        }
+        .result-box-dynamics-min {
+            font-family: Bravura;
+            font-size: 40px;
+            dominant-baseline: auto;
+            text-anchor: end;
+            transform: translate(-15px, 55px);
+        }
+        .result-box-dynamics-max {
+            font-family: Bravura;
+            font-size: 40px;
+            dominant-baseline: auto;
+            text-anchor: start;
+            transform: translate(15px, 55px);
+        }
+        .result-box-dynamics-line {
+            stroke-width: 2px;
+            stroke: var(--main-color);
+        }
+        .result-box-difficulty rect {
+            stroke-width: 2px;
+            stroke: var(--main-color);
+            width: 10px;
+        }
+        .result-box-fingering {
+            stroke: var(--main-color);
+            stroke-width: 4px;
+            --display-bassclar: none;
+            --key-a: none;
+            --key-G: none;
+            --key-r: none;
+            --key-0: none;
+            --key-1: none;
+            --key-2: none;
+            --key-3: none;
+            --key-c: none;
+            --key-¡: none;
+            --key-€: none;
+            --key-£: none;
+            --key-¢: none;
+            --key-4: none;
+            --key-5: none;
+            --key-6: none;
+            --key-F: none;
+            --key-e: none;
+            --key-g: none;
+            --key-f: none;
+            --key-§: none;
+            --key-O: none;
+            --key-P: none;
+            --key-U: none;
+            --key-I: none;
+            --keygroup-aG: none;
+            --keygroup-¡€£¢: none;
+            --keygroup-FegfUI: none;
+            --keygroup-OP: none;
+        }
+        .result-box-fingering.display-bassclar {
+            --display-bassclar: inherit;
+        }
+        .result-box-fingering.key-a {
+            --key-a: var(--main-color);
+            --keygroup-aG: inherit;
+        }
+        .result-box-fingering.key-G {
+            --key-G: var(--main-color);
+            --keygroup-aG: inherit;
+        }
+        .result-box-fingering.key-r {
+            --key-r: var(--main-color);
+        }
+        .result-box-fingering.key-0 {
+            --key-0: var(--main-color);
+        }
+        .result-box-fingering.key-1 {
+            --key-1: var(--main-color);
+        }
+        .result-box-fingering.key-2 {
+            --key-2: var(--main-color);
+        }
+        .result-box-fingering.key-3 {
+            --key-3: var(--main-color);
+        }
+        .result-box-fingering.key-c {
+            --key-c: inherit;
+        }
+        .result-box-fingering.key-¡ {
+            --key-¡: var(--main-color);
+            --keygroup-¡€£¢: inherit;
+        }
+        .result-box-fingering.key-€ {
+            --key-€: var(--main-color);
+            --keygroup-¡€£¢: inherit;
+        }
+        .result-box-fingering.key-£ {
+            --key-£: var(--main-color);
+            --keygroup-¡€£¢: inherit;
+        }
+        .result-box-fingering.key-¢ {
+            --key-¢: var(--main-color);
+            --keygroup-¡€£¢: inherit;
+        }
+        .result-box-fingering.key-4 {
+            --key-4: var(--main-color);
+        }
+        .result-box-fingering.key-5 {
+            --key-5: var(--main-color);
+        }
+        .result-box-fingering.key-6 {
+            --key-6: var(--main-color);
+        }
+        .result-box-fingering.key-F {
+            --key-F: var(--main-color);
+            --keygroup-FegfUI: inherit;
+        }
+        .result-box-fingering.key-e {
+            --key-e: var(--main-color);
+            --keygroup-FegfUI: inherit;
+        }
+        .result-box-fingering.key-g {
+            --key-g: var(--main-color);
+            --keygroup-FegfUI: inherit;
+        }
+        .result-box-fingering.key-f {
+            --key-f: var(--main-color);
+            --keygroup-FegfUI: inherit;
+        }
+        .result-box-fingering.key-§ {
+            --key-§: inherit;
+        }
+        .result-box-fingering.key-O {
+            --key-O: var(--main-color);
+            --keygroup-OP: inherit;
+        }
+        .result-box-fingering.key-P {
+            --key-P: var(--main-color);
+            --keygroup-OP: inherit;
+        }
+        .result-box-fingering.key-U {
+            --key-U: var(--main-color);
+            --keygroup-FegfUI: inherit;
+        }
+        .result-box-fingering.key-I {
+            --key-I: var(--main-color);
+            --keygroup-FegfUI: inherit;
+        }
+
+        .results-navigation-number {
+            font-size: 20px;
+            font-weight: light;
         }
     </style>
 </head>
@@ -259,14 +482,14 @@
         </g>
         <g class="page-body" id="select-instrument-page">
             <text class="body-title" id="select-instrument-title" x="400" y="260">Select Instrument</text>
-            <g class="select instrument" id="instrument-clar" transform="translate(230,430)">
+            <g class="select instrument" id="clar-bb" transform="translate(230,430)">
                 <g class="select-bg" id="instrument-clar-bg">
                     <circle class="select-circle" fill="var(--light4)" />
                     <image class="icon" id="instrument-clarinet-icon" href="images/instrument-clarinet.png" x="-60" y="-100"/>
                 </g>
                 <text class="select-label" id="instrument-clar-label">Bb Clarinet</text>
             </g>
-            <g class="select instrument" id="instrument-bassclar" transform="translate(570,430)">
+            <g class="select instrument" id="clar-bass" transform="translate(570,430)">
                 <g class="select-bg" id="instrument-bassclar-bg">
                     <circle class="select-circle" fill="var(--light1)" />
                     <image class="icon" id="instrument-bassclar-icon" href="images/instrument-bassclar.png" x="-60" y="-100"/>
@@ -296,7 +519,13 @@
             <text class="body-title" id="search-sound-title" x="400" y="180">Search by Sound</text>
             <text class="body-subtitle" id="search-sound-subtitle" x="400" y="210">Choose filters</text>
             <image class="back-button" id="sound-back" href="images/back-button.png" x="20" y="340" />
-            <text class="body-resultscount" id="search-sound-resultscount" x="400" y="585">0 result(s)</text>
+            <text class="body-resultscount" id="search-sound-resultscount" x="400" y="575">0 result(s)</text>
+            <g class="go-button-g" transform="translate(780,380)">
+                <g>
+                    <polygon class="go-button-bg" id="sound-go-button" points="0,0 -30,-30 -30,-15 -70,-15 -70,15 -30,15 -30,30" fill="var(--light1)"></polygon>
+                    <text x="-50" y="2">GO</text>
+                </g>
+            </g>
             <g class="filter-category sound-filter" id="dynamics-g">
                 <g class="category-bg" id="dynamics-bg">
                     <circle class="category-circle"></circle>
@@ -304,19 +533,19 @@
                     <text class="category-label" id="dynamics-label">Dynamics</text>
                 </g>
                 <g class="filter-options" id="dynamics-options">
-                    <g class="option" id="dynamics-pp" transform="translate(-70, 50)">
+                    <g class="option" id="dynamics-1" transform="translate(-70, 50)">
                         <g>
                             <circle />
                             <text></text>
                         </g>
                     </g>
-                    <g class="option" id="dynamics-mf" transform="translate(0, 70)">
+                    <g class="option" id="dynamics-2" transform="translate(0, 70)">
                         <g>
                             <circle />
                             <text></text>
                         </g>
                     </g>
-                    <g class="option" id="dynamics-ff" transform="translate(70, 50)">
+                    <g class="option" id="dynamics-3" transform="translate(70, 50)">
                         <g>
                             <circle />
                             <text></text>
@@ -328,22 +557,76 @@
                 <g class="category-bg" id="pitch-bg">
                     <circle class="category-circle"></circle>
                     <image class="icon" id="pitch-icon" href="images/category-pitch.svg" x="-36" y="-40" width="72"/>
-                    <text class="category-label" id="pitch-label">Included pitch</text>
+                    <text class="category-label" id="pitch-label">Pitch</text>
                 </g>
                 <g class="filter-options" id="pitch-options">
-                    <g class="option" id="pitch-A" transform="translate(-70, 50)">
+                    <g class="option" id="pitch-0" transform="translate(0, 70)">
+                        <g>
+                            <circle />
+                            <text>C</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-1" transform="translate(35, 61)">
+                        <g>
+                            <circle />
+                            <text>C#</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-2" transform="translate(61, 35)">
+                        <g>
+                            <circle />
+                            <text>D</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-3" transform="translate(70, 0)">
+                        <g>
+                            <circle />
+                            <text>Eb</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-4" transform="translate(61, -35)">
+                        <g>
+                            <circle />
+                            <text>E</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-5" transform="translate(35, -61)">
+                        <g>
+                            <circle />
+                            <text>F</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-6" transform="translate(0, -70)">
+                        <g>
+                            <circle />
+                            <text>F#</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-7" transform="translate(-35, -61)">
+                        <g>
+                            <circle />
+                            <text>G</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-8" transform="translate(-61, -35)">
+                        <g>
+                            <circle />
+                            <text>Ab</text>
+                        </g>
+                    </g>
+                    <g class="option" id="pitch-9" transform="translate(-70, 0)">
                         <g>
                             <circle />
                             <text>A</text>
                         </g>
                     </g>
-                    <g class="option" id="pitch-A#" transform="translate(0, 70)">
+                    <g class="option" id="pitch-10" transform="translate(-61, 35)">
                         <g>
                             <circle />
-                            <text>A#</text>
+                            <text>Bb</text>
                         </g>
                     </g>
-                    <g class="option" id="pitch-B" transform="translate(70, 50)">
+                    <g class="option" id="pitch-11" transform="translate(-35, 61)">
                         <g>
                             <circle />
                             <text>B</text>
@@ -379,37 +662,37 @@
                 </g>
             </g>
             <g class="filter-tags">
-                <g class="tag-g" id="tag-dyad" transform="translate(145, 450)">
+                <g class="tag-g" id="tag-dyad" transform="translate(145, 440)">
                     <g>
                         <circle />
                         <text>Dyad</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-pure" transform="translate(230, 450)">
+                <g class="tag-g" id="tag-pure" transform="translate(230, 440)">
                     <g>
                         <circle />
                         <text>Pure</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-stubborn" transform="translate(315, 450)">
+                <g class="tag-g" id="tag-stubborn" transform="translate(315, 440)">
                     <g>
                         <circle />
                         <text>Stubborn</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-bendable" transform="translate(400, 450)">
+                <g class="tag-g" id="tag-bendable" transform="translate(400, 440)">
                     <g>
                         <circle />
                         <text>Bendable</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-fragile" transform="translate(485, 450)">
+                <g class="tag-g" id="tag-fragile" transform="translate(485, 440)">
                     <g>
                         <circle />
                         <text>Fragile</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-topdown" transform="translate(570, 450)">
+                <g class="tag-g" id="tag-topdown" transform="translate(570, 440)">
                     <g>
                         <circle />
                         <text>
@@ -418,25 +701,25 @@
                         </text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-rattle" transform="translate(655, 450)">
+                <g class="tag-g" id="tag-rattle" transform="translate(655, 440)">
                     <g>
                         <circle />
                         <text>Rattle</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-vibrating" transform="translate(145, 530)">
+                <g class="tag-g" id="tag-vibrating" transform="translate(145, 520)">
                     <g>
                         <circle />
                         <text>Vibrating</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-prompt" transform="translate(230, 530)">
+                <g class="tag-g" id="tag-prompt" transform="translate(230, 520)">
                     <g>
                         <circle />
                         <text>Prompt</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-fuzzyoctave" transform="translate(315, 530)">
+                <g class="tag-g" id="tag-fuzzyoctave" transform="translate(315, 520)">
                     <g>
                         <circle />
                         <text>
@@ -445,25 +728,25 @@
                         </text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-extreme" transform="translate(400, 530)">
+                <g class="tag-g" id="tag-extreme" transform="translate(400, 520)">
                     <g>
                         <circle />
                         <text>Extreme</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-spectral" transform="translate(485, 530)">
+                <g class="tag-g" id="tag-spectral" transform="translate(485, 520)">
                     <g>
                         <circle />
                         <text>Spectral</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-buzz" transform="translate(570, 530)">
+                <g class="tag-g" id="tag-buzz" transform="translate(570, 520)">
                     <g>
                         <circle />
                         <text>Buzz</text>
                     </g>
                 </g>
-                <g class="tag-g" id="tag-glissando" transform="translate(655, 530)">
+                <g class="tag-g" id="tag-glissando" transform="translate(655, 520)">
                     <g>
                         <circle />
                         <text>Glissando</text>
@@ -476,7 +759,7 @@
                     <text y="2">i</text>
                 </g>
             </g>
-            <g id="clear-button" class="button-small" transform="translate(700,205)" onclick="mouseEvents.soundClearClick()">
+            <g id="sound-clear-button" class="button-small" transform="translate(700,205)" onclick="mouseEvents.soundClearClick()">
                 <g>
                     <circle />
                     <text y="1">C</text>
@@ -525,11 +808,189 @@
                 </text>
             </g>
         </g>
+        <g class="page-body hidden-right" id="results-sound-page">
+            <text class="body-title" id="results-sound-title" x="400" y="180">Search by Sound</text>
+            <text class="body-subtitle" id="results-sound-subtitle" x="400" y="210">Results</text>
+            <image class="back-button" id="results-sound-back" href="images/back-button.png" x="20" y="160" width="30"/>
+            <g class="small-icons" id="results-sound-icons"></g>
+            <g class="results-g" id="results-sound-g"></g>
+            <g class="results-navigation" id="results-sound-navigation">
+                <image class="results-navigation-button" id="results-sound-navigation-previous" href="images/back-button.png" x="300" y="555" width="20" />
+                <image class="results-navigation-button" id="results-sound-navigation-next" href="images/forward-button.png" x="480" y="555" width="20" />
+                <text class="results-navigation-number" id="results-sound-navigation-number" x="400" y="575"></text>
+            </g>
+            <g class="go-button-g" id="sound-add-button" display="none" transform="translate(700,570)">
+                <g>
+                    <polygon class="go-button-bg" points="0,0 -30,-30 -30,-15 -80,-15 -80,15 -30,15 -30,30" fill="var(--light1)"></polygon>
+                    <text x="-50" y="2">ADD</text>
+                </g>
+            </g>
+        </g>
         <g class="page-body hidden-right" id="search-fingering-page">
             <text class="body-title" id="search-fingering-title" x="400" y="180">Search by Fingering</text>
-            <text class="body-subtitle" id="search-fingering-subtitle" x="400" y="210">Toggle keys</text>
+            <text class="body-subtitle" id="search-fingering-subtitle" x="400" y="210">Toggle keys to include in fingering</text>
             <image class="back-button" id="fingering-back" href="images/back-button.png" x="20" y="340" />
+            <text class="body-resultscount" id="search-fingering-resultscount" x="550" y="380">0 result(s)</text>
+            <g class="go-button-g" transform="translate(700,380)">
+                <g>
+                    <polygon class="go-button-bg" id="fingering-go-button" points="0,0 -30,-30 -30,-15 -70,-15 -70,15 -30,15 -30,30" fill="var(--light1)"></polygon>
+                    <text x="-50" y="2">GO</text>
+                </g>
+            </g>
+            <g id="fingering-clear-button" class="button-small" transform="translate(520,260)" onclick="mouseEvents.fingeringClearClick()">
+                <g>
+                    <circle />
+                    <text y="1">C</text>
+                </g>
+            </g>
+            <g id="search-fingering-toggles">
+                <rect id="search-fingering-toggles-bg" x="320" y="230" width="160" height="360" rx="30px" ry="30px" fill="var(--light4)"/>
+                <g id="search-fingering-keys">
+                    <g id="search-keygroup-aG">
+                        <path id="search-key-a" class="search-fingering-key"
+                            d="M138.58 71.55C141.8634 71.60563 145.5272 68.392 146.8325 64.5526C152.9966 46.4216 145.2289 28.6266 138.58 25.2816C131.931 28.9406 124.163 46.7356 130.3275 64.8666C131.6328 68.706 135.2966 71.6054 138.58 71.5497C138.58 71.5497 138.58 71.55 138.58 71.55" />
+                        <path id="search-key-G" class="search-fingering-key"
+                            d="M167.24 24.234C172.9393 29.4641 173.9518 37.938 172.6824 45.202C170.667 57.318 166.5491 68.855 168.186 81.873C169.3169 87.459 171.7801 94.303 177.1486 97.07C182.1816 98.5505 185.7645 94.7154 187.8616 88.6401C190.9225 79.6713 190.4945 70.0021 189.777 60.6951C188.1194 47.3941 182.3996 35.0301 175.805 23.5141C174.545 20.9589 172.1218 17.8525 168.8947 18.6969C166.6994 19.31111 165.465 22.5557 167.2407 24.2337C167.2407 24.2337 167.24 24.234 167.24 24.234" />
+                    </g>
+                    <g id="search-keygroup-r0">
+                        <path id="search-key-r" class="search-fingering-key"
+                            d="M84.0 6.3622C78.2778 37.7662 72.556 60.6062 75.4168 86.3002C76.07071 92.7971 80.1209 103.5292 84.0 103.4302C88.184 103.32316 91.8096 93.2482 92.5832 86.3002C95.4443 60.6062 89.7221 37.7662 84.0 6.3622C84.0 6.3622 84.0 6.3622 84.0 6.3622"/>
+                        <path id="search-key-0" class="search-fingering-key"
+                            d="M84.0 154.92C95.581 154.92 105.0 145.5011 105.0 133.92C105.0 122.3389 95.5811 112.92 84.0 112.92C72.419 112.92 63.0 122.3389 63.0 133.92C63.0 145.5011 72.4189 154.92 84.0 154.92C84.0 154.92 84.0 154.92 84.0 154.92" />
+                    </g>
+                    <path id="search-key-1" class="search-fingering-key"
+                        d="M138.58 124.36C150.161 124.36 159.58 114.9411 159.58 103.36C159.58 91.779 150.1611 82.36 138.58 82.36C126.9989 82.36 117.58 91.7789 117.58 103.36C117.58 114.941 126.9989 124.36 138.58 124.36C138.58 124.36 138.58 124.36 138.58 124.36" />
+                    <path id="search-key-2" class="search-fingering-key"
+                        d="M138.58 185.47C150.161 185.47 159.58 176.0511 159.58 164.47C159.58 152.8889 150.1611 143.47 138.58 143.47C126.9989 143.47 117.58 152.8889 117.58 164.47C117.58 176.0511 126.9989 185.47 138.58 185.47C138.58 185.47 138.58 185.47 138.58 185.47" />
+                    <path id="search-key-3" class="search-fingering-key"
+                        d="M138.58 245.47C150.161 245.47 159.58 236.0511 159.58 224.47C159.58 212.8889 150.1611 203.47 138.58 203.47C126.9989 203.47 117.58 212.8889 117.58 224.47C117.58 236.0511 126.9989 245.47 138.58 245.47C138.58 245.47 138.58 245.47 138.58 245.47" />
+                    <path id="search-key-c" class="search-fingering-key"
+                        d="M147.73 254.78C162.881 258.854 173.899 262.9281 186.295 260.891C189.4294 260.42543 194.6068 257.5418 194.5589 254.78C194.5073 251.8011 189.6469 249.2198 186.295 248.669C173.899 246.632 162.881 250.706 147.73 254.78C147.73 254.78 147.73 254.78 147.73 254.78" />
+                    <line id="key-separator" x1="157.23" y1="268.22" x2="119.92" y2="268.22" />
+                    <g id="search-keygroup-¡€#¢">
+                        <path id="search-key-¡" class="search-fingering-key"
+                            d="M103.06 243.64C103.06 247.2522 97.8409 250.1603 91.358 250.1603C84.8751 250.1603 79.656 247.2523 79.656 243.64C79.656 240.0278 84.8751 237.1197 91.358 237.1197C97.8409 237.1197 103.06 240.0277 103.06 243.64C103.06 243.64 103.06 243.64 103.06 243.64" />
+                        <path id="search-key-€" class="search-fingering-key"
+                            d="M103.06 260.27C103.06 263.8822 97.8409 266.7903 91.358 266.7903C84.8751 266.7903 79.656 263.8822 79.656 260.27C79.656 256.6578 84.8751 253.7497 91.358 253.7497C97.8409 253.7497 103.06 256.6578 103.06 260.27C103.06 260.27 103.06 260.27 103.06 260.27" />
+                        <path id="search-key-#" class="search-fingering-key"
+                            d="M104.69 276.89C104.69 280.5022 98.7432 283.4103 91.356 283.4103C83.9688 283.4103 78.022 280.5023 78.022 276.89C78.022 273.2778 83.9688 270.3697 91.356 270.3697C98.7432 270.3697 104.69 273.2777 104.69 276.89C104.69 276.89 104.69 276.89 104.69 276.89" />
+                        <path id="search-key-¢" class="search-fingering-key"
+                            d="M104.69 293.52C104.69 297.1322 98.7432 300.0403 91.356 300.0403C83.9688 300.0403 78.022 297.1323 78.022 293.52C78.022 289.9078 83.9688 286.9997 91.356 286.9997C98.7432 286.9997 104.69 289.9077 104.69 293.52C104.69 293.52 104.69 293.52 104.69 293.52" />
+                    </g>
+                    <path id="search-key-4" class="search-fingering-key"
+                        d="M138.58 332.96C150.161 332.96 159.58 323.5411 159.58 311.96C159.58 300.3789 150.1611 290.96 138.58 290.96C126.9989 290.96 117.58 300.3789 117.58 311.96C117.58 323.5411 126.9989 332.96 138.58 332.96C138.58 332.96 138.58 332.96 138.58 332.96" />
+                    <path id="search-key-5" class="search-fingering-key"
+                        d="M138.58 394.08C150.161 394.08 159.58 384.6611 159.58 373.08C159.58 361.4989 150.1611 352.08 138.58 352.08C126.9989 352.08 117.58 361.4989 117.58 373.08C117.58 384.6611 126.9989 394.08 138.58 394.08C138.58 394.08 138.58 394.08 138.58 394.08" />
+                    <path id="search-key-6" class="search-fingering-key"
+                        d="M138.58 453.47C150.161 453.47 159.58 444.0511 159.58 432.47C159.58 420.8889 150.1611 411.47 138.58 411.47C126.9989 411.47 117.58 420.8889 117.58 432.47C117.58 444.0511 126.9989 453.47 138.58 453.47C138.58 453.47 138.58 453.47 138.58 453.47" />
+                    <g id="search-keygroup-Fegf">
+                        <path id="search-key-F" class="search-fingering-key"
+                            d="M91.070312 458.26953C83.462266 458.18563 77.777031 460.17375 77.429688 465.15625C74.353727 480.96609 115.06852 489.46362 128.64062 483.50195C115.48448 480.45545 103.68233 473.93656 105.39062 465.15625C105.51576 463.36128 106.33865 461.95745 107.68945 460.89648C101.96504 459.29594 96.099091 458.32498 91.070312 458.26953C91.070312 458.26953 91.070312 458.26953 91.070312 458.26953" />
+                        <path id="search-key-e" class="search-fingering-key"
+                            d="M91.070312 487.89844C83.462266 487.81454 77.777031 489.80266 77.429688 494.78516C74.353727 510.59499 115.06852 519.09448 128.64062 513.13281C115.48448 510.08631 103.68233 503.56547 105.39062 494.78516C105.51576 492.99019 106.33865 491.58831 107.68945 490.52734C101.96504 488.9268 96.099091 487.95389 91.070312 487.89844C91.070312 487.89844 91.070312 487.89844 91.070312 487.89844" />
+                        <path id="search-key-g" class="search-fingering-key"
+                            d="M160.84 479.11C158.3383 492.176 101.785 483.685 105.39 465.156C106.5015 449.212 162.261 463.9237 160.84 479.11C160.84 479.11 160.84 479.11 160.84 479.11" />
+                        <path id="search-key-f" class="search-fingering-key"
+                            d="M160.84 508.74C158.3383 521.806 101.785 513.315 105.39 494.786C106.5015 478.842 162.261 493.5537 160.84 508.74C160.84 508.74 160.84 508.74 160.84 508.74" />
+                    </g>
+                    <g id="search-bassclar-keygroups">
+                        <path id="search-key-!" class="search-fingering-key"
+                            d="M138.58008 82.359375C126.99898 82.359375 117.58008 91.778275 117.58008 103.35938C117.58008 114.94038 126.99898 124.35938 138.58008 124.35938C150.16108 124.35938 159.58008 114.94047 159.58008 103.35938C159.58008 91.778375 150.16118 82.359375 138.58008 82.359375C138.58008 82.359375 138.58008 82.359375 138.58008 82.359375M138.58008 94.216797C143.62418 94.216797 147.72656 98.319281 147.72656 103.36328C147.72656 108.40738 143.62408 112.50977 138.58008 112.50977C133.53598 112.50977 129.43359 108.40728 129.43359 103.36328C129.43359 98.319181 133.53598 94.216797 138.58008 94.216797C138.58008 94.216797 138.58008 94.216797 138.58008 94.216797" />
+                        <g id="search-keygroup-OP">
+                            <path id="search-key-O" class="search-fingering-key"
+                                d="M46.876 366.42C46.876 366.42 62.876 366.42 62.876 366.42C69.524 366.42 74.876 371.772 74.876 378.42C74.876 378.42 74.876 384.42 74.876 384.42C74.876 391.068 69.524 396.42 62.876 396.42C62.876 396.42 46.876 396.42 46.876 396.42C40.228 396.42 34.876 391.068 34.876 384.42C34.876 384.42 34.876 378.42 34.876 378.42C34.876 371.772 40.228 366.42 46.876 366.42C46.876 366.42 46.876 366.42 46.876 366.42" />
+                            <path id="search-key-P" class="search-fingering-key"
+                                d="M46.876 400.42C46.876 400.42 62.876 400.42 62.876 400.42C69.524 400.42 74.876 405.772 74.876 412.42C74.876 412.42 74.876 418.42 74.876 418.42C74.876 425.068 69.524 430.42 62.876 430.42C62.876 430.42 46.876 430.42 46.876 430.42C40.228 430.42 34.876 425.068 34.876 418.42C34.876 418.42 34.876 412.42 34.876 412.42C34.876 405.772 40.228 400.42 46.876 400.42C46.876 400.42 46.876 400.42 46.876 400.42" />
+                        </g>
+                        <g id="search-keygroup-UI">
+                            <path id="search-key-U" class="search-fingering-key"
+                                d="M91.070312 517.5293C83.462266 517.4454 77.777031 519.43352 77.429688 524.41602C74.353904 540.22495 115.06423 548.72333 128.63867 542.76367C115.48325 539.71699 103.68241 533.19593 105.39062 524.41602C105.51576 522.62105 106.33865 521.21721 107.68945 520.15625C101.96504 518.5557 96.099091 517.58474 91.070312 517.5293C91.070312 517.5293 91.070312 517.5293 91.070312 517.5293" />
+                            <path id="search-key-I" class="search-fingering-key"
+                                d="M160.84 538.37C158.3383 551.436 101.785 542.945 105.39 524.416C106.5015 508.472 162.261 523.1837 160.84 538.37C160.84 538.37 160.84 538.37 160.84 538.37" />
+                        </g>
+                    </g>
+                </g>
+            </g>
         </g>
+        <g class="page-body hidden-right" id="results-fingering-page">
+            <text class="body-title" id="results-fingering-title" x="400" y="180">Search by Fingering</text>
+            <text class="body-subtitle" id="results-fingering-subtitle" x="400" y="210">Result</text>
+            <image class="back-button" id="results-fingering-back" href="images/back-button.png" x="20" y="340" />
+            <g class="results-g" id="results-fingering-g"></g>
+            <g class="go-button-g" id="fingering-add-button" display="none" transform="translate(450,530)">
+                <g>
+                    <polygon class="go-button-bg" points="0,0 -30,-30 -30,-15 -80,-15 -80,15 -30,15 -30,30" fill="var(--light1)"></polygon>
+                    <text x="-50" y="2">ADD</text>
+                </g>
+            </g>
+        </g>
+        <defs>
+            <g id="def-fingering">
+                <g id="keygroup-aG" display="var(--keygroup-aG)">
+                    <path id="key-a" fill="var(--key-a)"
+                        d="M138.58 71.55C141.8634 71.60563 145.5272 68.392 146.8325 64.5526C152.9966 46.4216 145.2289 28.6266 138.58 25.2816C131.931 28.9406 124.163 46.7356 130.3275 64.8666C131.6328 68.706 135.2966 71.6054 138.58 71.5497C138.58 71.5497 138.58 71.55 138.58 71.55" />
+                    <path id="key-G" fill="var(--key-G)"
+                        d="M167.24 24.234C172.9393 29.4641 173.9518 37.938 172.6824 45.202C170.667 57.318 166.5491 68.855 168.186 81.873C169.3169 87.459 171.7801 94.303 177.1486 97.07C182.1816 98.5505 185.7645 94.7154 187.8616 88.6401C190.9225 79.6713 190.4945 70.0021 189.777 60.6951C188.1194 47.3941 182.3996 35.0301 175.805 23.5141C174.545 20.9589 172.1218 17.8525 168.8947 18.6969C166.6994 19.31111 165.465 22.5557 167.2407 24.2337C167.2407 24.2337 167.24 24.234 167.24 24.234" />
+                </g>
+                <g id="keygroup-r0">
+                    <path id="key-r" fill="var(--key-r)"
+                        d="M84.0 6.3622C78.2778 37.7662 72.556 60.6062 75.4168 86.3002C76.07071 92.7971 80.1209 103.5292 84.0 103.4302C88.184 103.32316 91.8096 93.2482 92.5832 86.3002C95.4443 60.6062 89.7221 37.7662 84.0 6.3622C84.0 6.3622 84.0 6.3622 84.0 6.3622"/>
+                    <path id="key-0" fill="var(--key-0)"
+                        d="M84.0 154.92C95.581 154.92 105.0 145.5011 105.0 133.92C105.0 122.3389 95.5811 112.92 84.0 112.92C72.419 112.92 63.0 122.3389 63.0 133.92C63.0 145.5011 72.4189 154.92 84.0 154.92C84.0 154.92 84.0 154.92 84.0 154.92" />
+                </g>
+                <path id="key-1" fill="var(--key-1)"
+                    d="M138.58 124.36C150.161 124.36 159.58 114.9411 159.58 103.36C159.58 91.779 150.1611 82.36 138.58 82.36C126.9989 82.36 117.58 91.7789 117.58 103.36C117.58 114.941 126.9989 124.36 138.58 124.36C138.58 124.36 138.58 124.36 138.58 124.36" />
+                <path id="key-2" fill="var(--key-2)"
+                    d="M138.58 185.47C150.161 185.47 159.58 176.0511 159.58 164.47C159.58 152.8889 150.1611 143.47 138.58 143.47C126.9989 143.47 117.58 152.8889 117.58 164.47C117.58 176.0511 126.9989 185.47 138.58 185.47C138.58 185.47 138.58 185.47 138.58 185.47" />
+                <path id="key-3" fill="var(--key-3)"
+                    d="M138.58 245.47C150.161 245.47 159.58 236.0511 159.58 224.47C159.58 212.8889 150.1611 203.47 138.58 203.47C126.9989 203.47 117.58 212.8889 117.58 224.47C117.58 236.0511 126.9989 245.47 138.58 245.47C138.58 245.47 138.58 245.47 138.58 245.47" />
+                <path id="key-c" display="var(--key-c)" fill="var(--main-color)"
+                    d="M147.73 254.78C162.881 258.854 173.899 262.9281 186.295 260.891C189.4294 260.42543 194.6068 257.5418 194.5589 254.78C194.5073 251.8011 189.6469 249.2198 186.295 248.669C173.899 246.632 162.881 250.706 147.73 254.78C147.73 254.78 147.73 254.78 147.73 254.78" />
+                <line id="key-separator" x1="157.23" y1="268.22" x2="119.92" y2="268.22" />
+                <g id="keygroup-¡€£¢" display="var(--keygroup-¡€£¢)">
+                    <path id="key-¡" fill="var(--key-¡)"
+                        d="M103.06 243.64C103.06 247.2522 97.8409 250.1603 91.358 250.1603C84.8751 250.1603 79.656 247.2523 79.656 243.64C79.656 240.0278 84.8751 237.1197 91.358 237.1197C97.8409 237.1197 103.06 240.0277 103.06 243.64C103.06 243.64 103.06 243.64 103.06 243.64" />
+                    <path id="key-€" fill="var(--key-€)"
+                        d="M103.06 260.27C103.06 263.8822 97.8409 266.7903 91.358 266.7903C84.8751 266.7903 79.656 263.8822 79.656 260.27C79.656 256.6578 84.8751 253.7497 91.358 253.7497C97.8409 253.7497 103.06 256.6578 103.06 260.27C103.06 260.27 103.06 260.27 103.06 260.27" />
+                    <path id="key-£" fill="var(--key-£)"
+                        d="M104.69 276.89C104.69 280.5022 98.7432 283.4103 91.356 283.4103C83.9688 283.4103 78.022 280.5023 78.022 276.89C78.022 273.2778 83.9688 270.3697 91.356 270.3697C98.7432 270.3697 104.69 273.2777 104.69 276.89C104.69 276.89 104.69 276.89 104.69 276.89" />
+                    <path id="key-¢" fill="var(--key-¢)"
+                        d="M104.69 293.52C104.69 297.1322 98.7432 300.0403 91.356 300.0403C83.9688 300.0403 78.022 297.1323 78.022 293.52C78.022 289.9078 83.9688 286.9997 91.356 286.9997C98.7432 286.9997 104.69 289.9077 104.69 293.52C104.69 293.52 104.69 293.52 104.69 293.52" />
+                </g>
+                <path id="key-4" fill="var(--key-4)"
+                    d="M138.58 332.96C150.161 332.96 159.58 323.5411 159.58 311.96C159.58 300.3789 150.1611 290.96 138.58 290.96C126.9989 290.96 117.58 300.3789 117.58 311.96C117.58 323.5411 126.9989 332.96 138.58 332.96C138.58 332.96 138.58 332.96 138.58 332.96" />
+                <path id="key-5" fill="var(--key-5)"
+                    d="M138.58 394.08C150.161 394.08 159.58 384.6611 159.58 373.08C159.58 361.4989 150.1611 352.08 138.58 352.08C126.9989 352.08 117.58 361.4989 117.58 373.08C117.58 384.6611 126.9989 394.08 138.58 394.08C138.58 394.08 138.58 394.08 138.58 394.08" />
+                <path id="key-6" fill="var(--key-6)"
+                    d="M138.58 453.47C150.161 453.47 159.58 444.0511 159.58 432.47C159.58 420.8889 150.1611 411.47 138.58 411.47C126.9989 411.47 117.58 420.8889 117.58 432.47C117.58 444.0511 126.9989 453.47 138.58 453.47C138.58 453.47 138.58 453.47 138.58 453.47" />
+                <g id="keygroup-Fegf" display="var(--keygroup-FegfUI)">
+                    <path id="key-F" fill="var(--key-F)"
+                        d="M91.070312 458.26953C83.462266 458.18563 77.777031 460.17375 77.429688 465.15625C74.353727 480.96609 115.06852 489.46362 128.64062 483.50195C115.48448 480.45545 103.68233 473.93656 105.39062 465.15625C105.51576 463.36128 106.33865 461.95745 107.68945 460.89648C101.96504 459.29594 96.099091 458.32498 91.070312 458.26953C91.070312 458.26953 91.070312 458.26953 91.070312 458.26953" />
+                    <path id="key-e" fill="var(--key-e)"
+                        d="M91.070312 487.89844C83.462266 487.81454 77.777031 489.80266 77.429688 494.78516C74.353727 510.59499 115.06852 519.09448 128.64062 513.13281C115.48448 510.08631 103.68233 503.56547 105.39062 494.78516C105.51576 492.99019 106.33865 491.58831 107.68945 490.52734C101.96504 488.9268 96.099091 487.95389 91.070312 487.89844C91.070312 487.89844 91.070312 487.89844 91.070312 487.89844" />
+                    <path id="key-g" fill="var(--key-g)"
+                        d="M160.84 479.11C158.3383 492.176 101.785 483.685 105.39 465.156C106.5015 449.212 162.261 463.9237 160.84 479.11C160.84 479.11 160.84 479.11 160.84 479.11" />
+                    <path id="key-f" fill="var(--key-f)"
+                        d="M160.84 508.74C158.3383 521.806 101.785 513.315 105.39 494.786C106.5015 478.842 162.261 493.5537 160.84 508.74C160.84 508.74 160.84 508.74 160.84 508.74" />
+                </g>
+                <g id="bassclar-keygroups" display="var(--display-bassclar)">
+                    <path id="key-§" display="var(--key-§)" fill="var(--main-color)"
+                        d="M138.58008 82.359375C126.99898 82.359375 117.58008 91.778275 117.58008 103.35938C117.58008 114.94038 126.99898 124.35938 138.58008 124.35938C150.16108 124.35938 159.58008 114.94047 159.58008 103.35938C159.58008 91.778375 150.16118 82.359375 138.58008 82.359375C138.58008 82.359375 138.58008 82.359375 138.58008 82.359375M138.58008 94.216797C143.62418 94.216797 147.72656 98.319281 147.72656 103.36328C147.72656 108.40738 143.62408 112.50977 138.58008 112.50977C133.53598 112.50977 129.43359 108.40728 129.43359 103.36328C129.43359 98.319181 133.53598 94.216797 138.58008 94.216797C138.58008 94.216797 138.58008 94.216797 138.58008 94.216797" />
+                    <g id="keygroup-OP" display="var(--keygroup-OP)">
+                        <path id="key-O" fill="var(--key-O)"
+                            d="M46.876 366.42C46.876 366.42 62.876 366.42 62.876 366.42C69.524 366.42 74.876 371.772 74.876 378.42C74.876 378.42 74.876 384.42 74.876 384.42C74.876 391.068 69.524 396.42 62.876 396.42C62.876 396.42 46.876 396.42 46.876 396.42C40.228 396.42 34.876 391.068 34.876 384.42C34.876 384.42 34.876 378.42 34.876 378.42C34.876 371.772 40.228 366.42 46.876 366.42C46.876 366.42 46.876 366.42 46.876 366.42" />
+                        <path id="key-P" fill="var(--key-P)"
+                            d="M46.876 400.42C46.876 400.42 62.876 400.42 62.876 400.42C69.524 400.42 74.876 405.772 74.876 412.42C74.876 412.42 74.876 418.42 74.876 418.42C74.876 425.068 69.524 430.42 62.876 430.42C62.876 430.42 46.876 430.42 46.876 430.42C40.228 430.42 34.876 425.068 34.876 418.42C34.876 418.42 34.876 412.42 34.876 412.42C34.876 405.772 40.228 400.42 46.876 400.42C46.876 400.42 46.876 400.42 46.876 400.42" />
+                    </g>
+                    <g id="keygroup-UI" display="var(--keygroup-FegfUI)">
+                        <path id="key-U" fill="var(--key-U)"
+                            d="M91.070312 517.5293C83.462266 517.4454 77.777031 519.43352 77.429688 524.41602C74.353904 540.22495 115.06423 548.72333 128.63867 542.76367C115.48325 539.71699 103.68241 533.19593 105.39062 524.41602C105.51576 522.62105 106.33865 521.21721 107.68945 520.15625C101.96504 518.5557 96.099091 517.58474 91.070312 517.5293C91.070312 517.5293 91.070312 517.5293 91.070312 517.5293" />
+                        <path id="key-I" fill="var(--key-I)"
+                            d="M160.84 538.37C158.3383 551.436 101.785 542.945 105.39 524.416C106.5015 508.472 162.261 523.1837 160.84 538.37C160.84 538.37 160.84 538.37 160.84 538.37" />
+                    </g>
+                </g>
+            </g>
+        </defs>
     </svg>
 
     <script>
@@ -537,20 +998,14 @@
             instrumentClick: function (element) {
                 element.classList.add('instrument-selected');
                 currentFilter.instrument = element.id;
-                document.getElementById('select-instrument-title').classList.add('hidden-transparent');
-                for (var instr of document.querySelectorAll('.instrument')) {
-                    if (instr.id != currentFilter.instrument) {
-                        instr.classList.add('hidden-transparent');
-                    }
-                }
+                if (element.id == 'clar-bass') document.getElementById('search-fingering-keys').classList.add('bassclar');
+                else document.getElementById('search-fingering-keys').classList.remove('bassclar');
+                document.getElementById('select-instrument-page').classList.add('hidden-transparent');
                 document.getElementById('select-search-page').classList.remove('hidden-right');
             },
             searchBackClick: function () {
                 document.getElementById('select-search-page').classList.add('hidden-right');
-                document.getElementById('select-instrument-title').classList.remove('hidden-transparent');
-                for (var instr of document.querySelectorAll('.instrument')) {
-                    instr.classList.remove('hidden-transparent', 'instrument-selected');
-                }
+                document.getElementById('select-instrument-page').classList.remove('hidden-transparent');
                 currentFilter.instrument = null;
             },
             searchMethodClick: function (method) {
@@ -558,14 +1013,15 @@
                 document.getElementById('search-'+method+'-page').classList.remove('hidden-right');
                 document.getElementById('header').classList.add('small-header');
                 currentFilter.searchMethod = method;
+                updateNumrecords();
             },
             searchMethodBackClick: function (method) {
                 document.getElementById('search-'+method+'-page').classList.add('hidden-right');
                 document.getElementById('header').classList.remove('small-header');
                 document.getElementById('select-search-page').classList.remove('hidden-transparent');
                 currentFilter.searchMethod = null;
-                currentFilter.sound = {tags: []};
-                currentFilter.fingering = [];
+                if (method == 'sound') mouseEvents.soundClearClick();
+                else if (method == 'fingering') mouseEvents.fingeringClearClick();
             },
             soundClearClick: function() {
                 for (var option of document.querySelectorAll('.option-selected')) {
@@ -575,6 +1031,7 @@
                     tag.classList.remove('tag-selected');
                 }
                 currentFilter.sound = {tags:[]};
+                updateNumrecords();
             },
             infoClick: function() {
                 for (var e of document.querySelectorAll('.info-g')) {
@@ -604,16 +1061,85 @@
                     option.classList.remove('option-selected');
                     currentFilter.sound[option.id.split('-')[0]] = null;
                 }
+                updateNumrecords();
             },
             tagClick: function(tag) {
                 if (!tag.classList.contains('tag-selected')) {
                     tag.classList.add('tag-selected');
-                    currentFilter.sounds.tags.push(tag.id.split('-')[1]);
+                    currentFilter.sound.tags.push(tag.id.split('-')[1]);
                 }
                 else {
                     tag.classList.remove('tag-selected');
-                    currentFilter.sounds.tags.splice(currentFilter.sounds.tags.indexOf(tag.id.split('-')[1]), 1);
+                    currentFilter.sound.tags.splice(currentFilter.sound.tags.indexOf(tag.id.split('-')[1]), 1);
                 }
+                updateNumrecords();
+            },
+            fingeringKeyClick: function(element) {
+                var keyName = element.id.split('-')[2]; // id format: search-key-[keyname]
+                if (!element.classList.contains('key-selected')) {
+                    element.classList.add('key-selected');
+                    currentFilter.fingering.push(keyName);
+                    if (currentFilter.fingering.includes('1') && currentFilter.fingering.includes('!')) {
+                        if (keyName == '1') {
+                            document.getElementById('search-key-!').classList.remove('key-selected');
+                            currentFilter.fingering.splice(currentFilter.fingering.indexOf('!'), 1);
+                        }
+                        else if (keyName == '!') {
+                            document.getElementById('search-key-1').classList.remove('key-selected');
+                            currentFilter.fingering.splice(currentFilter.fingering.indexOf('1'), 1);
+                        }
+                    }
+                }
+                else {
+                    element.classList.remove('key-selected');
+                    currentFilter.fingering.splice(currentFilter.fingering.indexOf(keyName), 1);
+                }
+                updateNumrecords();
+            },
+            fingeringClearClick: function() {
+                for (var key of document.querySelectorAll('.search-fingering-key')) {
+                    key.classList.remove('key-selected');
+                }
+                currentFilter.fingering = [];
+                updateNumrecords();
+            },
+            goClick: function(method) {
+                getResults();
+                document.getElementById('search-'+method+'-page').classList.add('hidden-transparent');
+                document.getElementById('results-'+method+'-page').classList.remove('hidden-right');
+            },
+            resultsBackClick: function(method) {
+                document.getElementById('results-'+method+'-page').classList.add('hidden-right');
+                document.getElementById('search-'+method+'-page').classList.remove('hidden-transparent');
+                if (method == 'sound') {
+                    document.getElementById('results-sound-g').style.transform = '';
+                }
+                //var resultsG = document.getElementById('results-'+method+'-g');
+                for (var box of document.querySelectorAll('.result-box')) {
+                    box.remove();
+                }
+                //resultPageDisplay.currentPage = 0; // refreshed when clicked on GO, not needed
+            },
+            resultsNavigationClick: function(method, direction) {
+                if (direction == 'back') {
+                    resultPageDisplay.currentPage -= 1;
+                }
+                else if (direction == 'forward') {
+                    resultPageDisplay.currentPage += 1;
+                }
+                document.getElementById('results-'+method+'-g').style.transform = 'translateX('+(-800*resultPageDisplay.currentPage)+'px)';
+                updateResultNavigation(method);
+            },
+            resultBoxClick: function(element) {
+                for (var res of document.querySelectorAll('.result-selected')) {
+                    res.classList.remove('result-selected');
+                }
+                element.classList.add('result-selected');
+                document.getElementById(currentFilter.searchMethod+'-add-button').setAttribute('display', 'inherit');
+                window.max.outlet('sqlite', 'getIndex', Number(element.dataset.index));
+            },
+            addClick: function() {
+                window.max.outlet('maxscore', 'addSelected');
             }
         }
 
@@ -624,6 +1150,263 @@
                 tags: []
             },
             fingering: []
+        }
+
+        var resultPageDisplay = {
+            numResults: 0,
+            maxPage: 0,
+            currentPage: 0
+        }
+
+        // send numrecords request to sqlite and receive from 'numrecords' inlet
+        function updateNumrecords() {
+            window.max.setDict('currentFilter', currentFilter);
+            window.max.outlet('sqlite', 'updateNumrecords');
+        }
+
+        // send query request to sqlite, return js object
+        function getResults() {
+            window.max.outlet('sqlite', 'getResults');
+        }
+
+        var svgNS = "http://www.w3.org/2000/svg";  
+        function drawResults(method, results) {
+            var resultsG = document.getElementById('results-'+method+'-g');
+            if (!Array.isArray(results.results)) {
+                window.max.outlet("error", "results::results dict not an array");
+                return;
+            }
+            if (method=='sound') {
+                resultPageDisplay.numResults = results.results.length;
+                resultPageDisplay.maxPage = Math.ceil(resultPageDisplay.numResults/6) - 1;
+                resultPageDisplay.currentPage = 0;
+                updateResultNavigation();
+            }
+            for (var i = 0; i < results.results.length; i++) {
+                // set up result box and rect
+                var newResult = document.createElementNS(svgNS, 'g');
+                newResult.classList.add('result-box');
+                newResult.dataset.index = results.results[i].index;
+                var resultGrid = resultGridPosition(i);
+                if (method=='sound') newResult.setAttributeNS(null, 'transform', 'translate('+resultGrid[0]+','+resultGrid[1]+')');
+                else if (method=='fingering') newResult.setAttributeNS(null, 'transform', 'translate(400,350) scale(1.5)');
+                var newResultG = document.createElementNS(svgNS, 'g');
+                newResultG.classList.add('result-box-g')
+                var newRect = document.createElementNS(svgNS, 'rect');
+                newRect.classList.add('result-box-bg');
+                newResultG.appendChild(newRect);
+
+                // box info
+                // index
+                var newIndex = document.createElementNS(svgNS, 'text');
+                newIndex.classList.add('result-box-index');
+                newIndex.textContent = results.results[i].index;
+                newResultG.appendChild(newIndex);
+
+                // tags
+                var newTags = document.createElementNS(svgNS, 'text');
+                newTags.classList.add('result-box-tags');
+                var tags = results.results[i].tags.split(' ');
+                if (tags.length > 5) newTags.style.fontSize = 10;
+                for (var j = 0; j < tags.length; j++) {
+                    var newTspan = document.createElementNS(svgNS, 'tspan');
+                    newTspan.setAttributeNS(null, 'x', 0);
+                    newTspan.setAttributeNS(null, 'dy', '1.5em');
+                    newTspan.textContent = tags[j];
+                    newTags.appendChild(newTspan);
+                }
+                newResultG.appendChild(newTags);
+
+                // pitch
+                newResultG.appendChild(drawPitch(results.results[i].pitchWritten));
+
+                // dynamics
+                var newDynamics = document.createElementNS(svgNS, 'g');
+                newDynamics.classList.add('result-box-dynamics');
+                var newDynamicsMin = document.createElementNS(svgNS, 'text');
+                newDynamicsMin.classList.add('result-box-dynamics-min');
+                newDynamicsMin.textContent = parseDynamics(results.results[i].dynamicsMin);
+                newDynamics.appendChild(newDynamicsMin);
+                var newDynamicsMax = document.createElementNS(svgNS, 'text');
+                newDynamicsMax.classList.add('result-box-dynamics-max');
+                newDynamicsMax.textContent = parseDynamics(results.results[i].dynamicsMax);
+                newDynamics.appendChild(newDynamicsMax);
+                var newDynamicsLine = document.createElementNS(svgNS, 'line');
+                newDynamicsLine.classList.add('result-box-dynamics-line');
+                newDynamicsLine.setAttribute('x1', -12);
+                newDynamicsLine.setAttribute('x2', 12);
+                newDynamicsLine.setAttribute('y1', 50);
+                newDynamicsLine.setAttribute('y2', 50);
+                newDynamics.appendChild(newDynamicsLine);
+                newResultG.appendChild(newDynamics);
+
+                // difficulty
+                var difficultyLevel = Number(results.results[i].difficulty);
+                var newDifficulty = document.createElementNS(svgNS, 'g');
+                newDifficulty.classList.add('result-box-difficulty');
+                var newDifficultyLevel1 = document.createElementNS(svgNS, 'rect');
+                newDifficultyLevel1.setAttribute('x', 60);
+                newDifficultyLevel1.setAttribute('y', 55);
+                newDifficultyLevel1.style.height = 10;
+                newDifficultyLevel1.style.fill = 'var(--main-color)';
+                newDifficulty.appendChild(newDifficultyLevel1);
+                var newDifficultyLevel2 = document.createElementNS(svgNS, 'rect');
+                newDifficultyLevel2.setAttribute('x', 75);
+                newDifficultyLevel2.setAttribute('y', 45);
+                newDifficultyLevel2.style.height = 20;
+                newDifficultyLevel2.style.fill = (difficultyLevel >= 2) ? 'var(--main-color)' : 'none';
+                newDifficulty.appendChild(newDifficultyLevel2);
+                var newDifficultyLevel3 = document.createElementNS(svgNS, 'rect');
+                newDifficultyLevel3.setAttribute('x', 90);
+                newDifficultyLevel3.setAttribute('y', 35);
+                newDifficultyLevel3.style.height = 30;
+                newDifficultyLevel3.style.fill = (difficultyLevel == 3) ? 'var(--main-color)' : 'none';
+                newDifficulty.appendChild(newDifficultyLevel3);
+                newResultG.appendChild(newDifficulty);           
+                
+                var xlinkNS = "http://www.w3.org/1999/xlink";
+                // fingerings
+                var newFingering = document.createElementNS(svgNS, 'g');
+                newFingering.classList.add('result-box-fingering');
+                var newFingeringUse = document.createElementNS(svgNS, 'use');
+                newFingeringUse.setAttributeNS(xlinkNS, 'xlink:href', '#def-fingering');
+                newFingering.appendChild(newFingeringUse);
+                if (results.results[i].instrument == 'clar-bass') {
+                    newFingering.classList.add('display-bassclar');
+                    newFingering.setAttributeNS(null, 'transform', 'translate(-100,-60) scale(0.23)');
+                }
+                else {
+                    newFingering.setAttributeNS(null, 'transform', 'translate(-100,-67) scale(0.26)');
+                }
+                var keyList = results.results[i].fingering.split('');
+                for (var j = 0; j < keyList.length; j++) {
+                    newFingering.classList.add('key-'+keyList[j]);
+                }
+                newResultG.appendChild(newFingering);
+
+                // add to root level g
+                newResult.appendChild(newResultG);
+                document.getElementById('results-'+method+'-g').appendChild(newResult);
+                newResult.addEventListener('click', mouseEvents.resultBoxClick.bind(this, newResult), false);
+            }
+        }
+
+        function parseDynamics(dynamicsText) {
+            // smufl dynamics glyphs
+            var dynamicsDef = {
+                'pp': '',
+                'p': '',
+                'mp': '',
+                'mf': '',
+                'f': '',
+                'ff': ''
+            }
+            return dynamicsDef[dynamicsText];
+        }
+
+        function drawPitch(pitchWritten) {
+            //window.max.outlet('debug', 'pitchWritten', pitchWritten);
+
+            var pitches = pitchWritten.split(' ');
+            var newPitch = document.createElementNS(svgNS, 'g');
+            newPitch.classList.add('result-box-pitch');
+
+            // staff lines
+            var newStaffLines = document.createElementNS(svgNS, 'text');
+            newStaffLines.textContent = ''; //staff lines
+            newPitch.appendChild(newStaffLines);
+
+            // clef
+            var newClef = document.createElementNS(svgNS, 'text');
+            newClef.textContent = ''; //treble clef
+            newClef.style.transform = 'translate(5px, -10px)'; // anchor on G
+            newPitch.appendChild(newClef);
+
+            // noteheads and accidentals
+            var pitchDef = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
+            var accidentalDef = {
+                '!': '',
+                '@': '',
+                '£': '',
+                '$': '',
+                '%': '',
+                '^': '',
+                '&': '',
+                '*': '',
+                '_': '',
+                '+': ''
+            }
+            var staffPositions = [];
+            var ledgerLines = [];
+            var second = false;
+            //var accidentalCount = 0;
+            for (var i = 0; i < pitches.length; i++) {
+                var newNoteHead = document.createElementNS(svgNS, 'text');
+                newNoteHead.textContent = '';
+                var position = pitchDef.indexOf(pitches[i].match(/[a-g]/i)[0].toLowerCase()) + 7*(Number(pitches[i].match('[0-9]')[0])-4); // staff position 0 is middle C
+                for (var s of staffPositions) {
+                    if (Math.abs(position - s) <= 1) second = true;
+                }
+                staffPositions.push(position);
+
+                // prepare for ledger lines
+                if (position >= 12) ledgerLines.push(Math.floor((position-10)/2));
+                if (position <= 0) ledgerLines.push(-Math.floor(position/-2) - 1);
+
+                newNoteHead.style.transform = 'translate('+(second?70:60)+'px,'+(10-5*position)+'px)';
+                newPitch.appendChild(newNoteHead);
+
+                var accidentalShorthand = pitches[i].match('[!@£\$%\^&\*_\+]');
+                if (Array.isArray(accidentalShorthand)) {
+                    var newAccidental = document.createElementNS(svgNS, 'text');
+                    newAccidental.textContent = accidentalDef[accidentalShorthand[0]];
+                    newAccidental.style.transform = 'translate('+(38+11*i)+'px, '+(10-5*position)+'px)';
+                    newPitch.appendChild(newAccidental);
+                }
+            }
+
+            // ledger lines
+            for (var i = 0; i < ledgerLines.length; i++) {
+                if (ledgerLines[i] > 0) {
+                    for (var j = 1; j <= ledgerLines[i]; j++) {
+                        var newLedgerLine = document.createElementNS(svgNS, 'line');
+                        newLedgerLine.classList.add('result-ledger-line');
+                        newLedgerLine.setAttribute('x1', 55);
+                        newLedgerLine.setAttribute('x2', 76);
+                        newLedgerLine.setAttribute('y1', -40-10*j);
+                        newLedgerLine.setAttribute('y2', -40-10*j);
+                        newPitch.appendChild(newLedgerLine);
+                    }
+                }
+                else if (ledgerLines[i] < 0) {
+                    for (var j = 1; j <= -ledgerLines[i]; j++) {
+                        var newLedgerLine = document.createElementNS(svgNS, 'line');
+                        newLedgerLine.classList.add('result-ledger-line');
+                        newLedgerLine.setAttribute('x1', 55);
+                        newLedgerLine.setAttribute('x2', 76);
+                        newLedgerLine.setAttribute('y1', 10*j);
+                        newLedgerLine.setAttribute('y2', 10*j);
+                        newPitch.appendChild(newLedgerLine);
+                    }
+                }
+            }
+            return newPitch;
+        }
+
+        function resultGridPosition(n) {
+            var page = Math.floor(n / 6);
+            var column = n % 3;
+            var row = Math.floor(n % 6 / 3);
+            return [140 + page*800 + column*260, 300 + 160*row];
+        }
+
+        function updateResultNavigation() {
+            if (resultPageDisplay.currentPage >= resultPageDisplay.maxPage) document.getElementById('results-sound-navigation-next').setAttribute('display', 'none');
+            else document.getElementById('results-sound-navigation-next').setAttribute('display', 'true');
+            if (resultPageDisplay.currentPage <= 0) document.getElementById('results-sound-navigation-previous').setAttribute('display', 'none');
+            else document.getElementById('results-sound-navigation-previous').setAttribute('display', 'true');
+            if (resultPageDisplay.numResults == 0) document.getElementById('results-sound-navigation-number').textContent = 'No results';
+            else document.getElementById('results-sound-navigation-number').textContent = (resultPageDisplay.currentPage*6+1) + '–' + (Math.min(resultPageDisplay.currentPage*6+6, resultPageDisplay.numResults)) + ' / ' + resultPageDisplay.numResults;
         }
 
         // select instrument page actions
@@ -643,10 +1426,34 @@
         for (var tag of document.querySelectorAll('.tag-g')) {
             tag.addEventListener('click', mouseEvents.tagClick.bind(this, tag), false);
         }
+        document.getElementById('sound-go-button').addEventListener('click', mouseEvents.goClick.bind(this, 'sound'), false);
 
         // search by fingering page actions
         document.getElementById('fingering-back').addEventListener('click', mouseEvents.searchMethodBackClick.bind(this, 'fingering'), false);
+        for (var key of document.querySelectorAll('.search-fingering-key')) {
+            key.addEventListener('click', mouseEvents.fingeringKeyClick.bind(this, key), false);
+        }
+        document.getElementById('fingering-go-button').addEventListener('click', mouseEvents.goClick.bind(this, 'fingering'), false);
 
+        // sound results page actions
+        document.getElementById('results-sound-back').addEventListener('click', mouseEvents.resultsBackClick.bind(this, 'sound'), false);
+        document.getElementById('results-sound-navigation-previous').addEventListener('click', mouseEvents.resultsNavigationClick.bind(this, 'sound', 'back'), false);
+        document.getElementById('results-sound-navigation-next').addEventListener('click', mouseEvents.resultsNavigationClick.bind(this, 'sound', 'forward'), false);
+        document.getElementById('sound-add-button').addEventListener('click', mouseEvents.addClick.bind(this), false);
+
+        // fingering results page actions
+        document.getElementById('results-fingering-back').addEventListener('click', mouseEvents.resultsBackClick.bind(this, 'fingering'), false);
+        document.getElementById('fingering-add-button').addEventListener('click', mouseEvents.addClick.bind(this), false);
+
+        // from sqlite
+        window.max.bindInlet('numrecords', function (numrecords) {
+            document.getElementById('search-'+currentFilter.searchMethod+'-resultscount').textContent = numrecords + ' result(s)';
+        });
+        window.max.bindInlet('results', function () {
+            window.max.getDict('results', function (results) {
+                drawResults(currentFilter.searchMethod, results);
+            })
+        });
     </script>
 </body>
 
