@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 106.0, 1429.0, 830.0 ],
+		"rect" : [ 34.0, 100.0, 1429.0, 830.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -6253,7 +6253,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 132.0, 1429.0, 804.0 ],
+						"rect" : [ 0.0, 26.0, 1429.0, 804.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7425,13 +7425,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-15",
-									"linecount" : 2,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 148.25, 607.0, 321.0, 48.0 ],
-									"text" : "/stdout : \"received socket close /1 TKyKzAwZSfy+/C7Q8lvOfQ==\""
+									"patching_rect" : [ 148.25, 607.0, 321.0, 34.0 ]
 								}
 
 							}
@@ -11890,7 +11888,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1429.0, 804.0 ],
+						"rect" : [ 34.0, 126.0, 1429.0, 804.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -11921,21 +11919,25 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
-									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
-									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
-									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
-									"bgfillcolor_type" : "gradient",
-									"gradient" : 1,
-									"id" : "obj-67",
+									"id" : "obj-57",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 11.0, 8.0, 89.0, 22.0 ],
-									"text" : "getNoteAnchor"
+									"patching_rect" : [ 1019.0, 278.0, 88.0, 22.0 ],
+									"text" : "bgcolor 1 1 1 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1019.0, 305.0, 88.0, 22.0 ],
+									"text" : "bgcolor 0 0 1 1"
 								}
 
 							}
@@ -11949,17 +11951,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 921.5, 8.5, 344.0, 35.0 ],
 									"text" : "picster addShape . . image \"Macintosh HD:/Users/Shared/Max 8/Packages/MaxScore/media/Images/png/beamgroup.png\""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-63",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 742.0, 571.0, 32.0, 22.0 ],
-									"text" : "print"
 								}
 
 							}
@@ -11989,25 +11980,13 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-96",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 1120.0, 323.0, 116.0, 22.0 ],
-									"text" : "setRenderAllowed 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-92",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 897.0, 194.0, 318.0, 22.0 ],
-									"text" : "picster findElementByID Picster-Element_1716044322540"
+									"patching_rect" : [ 897.0, 194.0, 317.0, 22.0 ],
+									"text" : "picster findElementByID Picster-Element_1725811219232"
 								}
 
 							}
@@ -12043,7 +12022,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 173.0, 149.0, 864.0, 586.0 ],
+										"rect" : [ 373.0, 182.0, 864.0, 586.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -12214,7 +12193,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 263.0, 483.0, 150.0, 37.0 ],
+													"patching_rect" : [ 263.0, 483.0, 153.0, 37.0 ],
 													"text" : " Edits can be inspected here"
 												}
 
@@ -13464,6 +13443,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-15", 0 ]
 								}
 
@@ -13769,6 +13755,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-57", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-58", 0 ]
 								}
 
@@ -13798,13 +13791,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
 									"source" : [ "obj-65", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-22", 0 ],
-									"source" : [ "obj-67", 0 ]
 								}
 
 							}
@@ -13868,13 +13854,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-92", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-22", 0 ],
-									"source" : [ "obj-96", 0 ]
 								}
 
 							}

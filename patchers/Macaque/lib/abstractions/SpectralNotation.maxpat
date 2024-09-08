@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 535.0, 135.0, 821.0, 501.0 ],
+		"rect" : [ 268.0, 100.0, 821.0, 501.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -283,8 +283,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -483,14 +483,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 809.0, 70.0, 363.0, 232.0 ],
+						"rect" : [ 134.0, 172.0, 363.0, 232.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -527,7 +527,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 213.0, 102.0, 72.0, 18.0 ],
+									"patching_rect" : [ 213.0, 102.0, 72.0, 22.0 ],
 									"text" : "renumber 1"
 								}
 
@@ -541,7 +541,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 50.0, 59.0, 182.0, 20.0 ],
+									"patching_rect" : [ 50.0, 59.0, 182.0, 22.0 ],
 									"text" : "t b b"
 								}
 
@@ -555,7 +555,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 205.0, 142.0, 17.0 ],
+									"patching_rect" : [ 50.0, 205.0, 142.0, 19.0 ],
 									"text" : "pattrforward parent::process::coll"
 								}
 
@@ -573,8 +573,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 5,
+											"minor" : 6,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -741,7 +741,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 111.0, 104.0, 80.0, 17.0 ],
+									"patching_rect" : [ 111.0, 104.0, 80.0, 19.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -762,7 +762,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 113.0, 16.0, 118.0, 17.0 ],
+									"patching_rect" : [ 113.0, 16.0, 118.0, 19.0 ],
 									"text" : "loadmess name untitled.txt"
 								}
 
@@ -776,7 +776,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "int" ],
-									"patching_rect" : [ 50.0, 145.0, 114.0, 17.0 ],
+									"patching_rect" : [ 50.0, 145.0, 114.0, 19.0 ],
 									"text" : "conformpath slash boot"
 								}
 
@@ -790,7 +790,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 168.0, 65.0, 17.0 ],
+									"patching_rect" : [ 50.0, 168.0, 65.0, 19.0 ],
 									"text" : "prepend write"
 								}
 
@@ -804,7 +804,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "bang" ],
-									"patching_rect" : [ 50.0, 103.0, 57.0, 17.0 ],
+									"patching_rect" : [ 50.0, 103.0, 57.0, 19.0 ],
 									"text" : "savedialog"
 								}
 
@@ -961,8 +961,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1130,7 +1130,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 71.0, 78.0, 351.0, 35.0 ],
-									"restore" : [ "Macintosh HD:/Users/hajdu/Library/Mobile Documents/com~apple~CloudDocs/Documents/Max 8/Packages/MaxScore/patchers/Macaque/lib/Glocke-mono.sdif" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1318,8 +1318,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1489,7 +1489,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 604.0, 64.0, 374.0, 20.0 ],
-									"restore" : [ "1TRC" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1676,7 +1676,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 331.0, 140.0, 404.0, 20.0 ],
-									"restore" : [ 3370.0 ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1700,8 +1700,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 5,
+											"minor" : 6,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1852,7 +1852,7 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 159.0, 237.0, 100.0, 20.0 ],
-													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", "\u003b", "#X", "domainAndRange", 0.0, 13790.0, 0.0, 2.0, 0.0, 13790.0, 0.0, 10.0, 0.0, 13790.0, 0.0, 1000.0, 0.0, 13790.0, 0.0, 13790.0, 0.0, 13790.0, -4800.0, 4800.0, "\u003b" ],
+													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "function0", "function1", "function2", "function3", "function4", "\u003b", "#X", "domainAndRange", 0.0, 1000.0, 0.0, 1.0, 0.0, 1000.0, 0.0, 1.0, 0.0, 1000.0, 0.0, 1.0, 0.0, 1000.0, 0.0, 1.0, 0.0, 1000.0, 0.0, 1.0, "\u003b" ],
 													"text" : "mxj ej.fplay",
 													"varname" : "ej.play"
 												}
@@ -1997,8 +1997,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2178,8 +2178,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2454,7 +2454,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 295.0, 251.5, 353.0, 19.0 ],
-													"restore" : [ 0.0 ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -3155,8 +3155,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 5,
+											"minor" : 6,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3201,8 +3201,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3736,7 +3736,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 100.5, 249.0, 77.0, 20.0 ],
-													"presentation_linecount" : 2,
 													"text" : "$FREQUENCY"
 												}
 
@@ -4932,8 +4931,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5106,8 +5105,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 5,
+											"minor" : 6,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5333,8 +5332,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 5,
+											"minor" : 6,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 244.0, 1507.0, 648.0 ],
+		"rect" : [ 34.0, 100.0, 1444.0, 648.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -49,8 +49,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -213,14 +213,31 @@
 								}
 
 							}
- ]
+ ],
+						"saved_attribute_attributes" : 						{
+							"default_plcolor" : 							{
+								"expression" : ""
+							}
+
+						}
+
 					}
 ,
 					"patching_rect" : [ 832.875, 541.0, 47.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"default_plcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
+						"editing_bgcolor" : [ 0.211764705882353, 0.211764705882353, 0.211764705882353, 1.0 ],
 						"globalpatchername" : "",
+						"locked_bgcolor" : [ 0.211764705882353, 0.211764705882353, 0.211764705882353, 1.0 ],
+						"patchlinecolor" : [ 0.568627450980392, 0.568627450980392, 0.568627450980392, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -239,8 +256,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -403,14 +420,31 @@
 								}
 
 							}
- ]
+ ],
+						"saved_attribute_attributes" : 						{
+							"default_plcolor" : 							{
+								"expression" : ""
+							}
+
+						}
+
 					}
 ,
 					"patching_rect" : [ 650.375, 499.0, 47.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"default_plcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
+						"editing_bgcolor" : [ 0.211764705882353, 0.211764705882353, 0.211764705882353, 1.0 ],
 						"globalpatchername" : "",
+						"locked_bgcolor" : [ 0.211764705882353, 0.211764705882353, 0.211764705882353, 1.0 ],
+						"patchlinecolor" : [ 0.568627450980392, 0.568627450980392, 0.568627450980392, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -479,11 +513,12 @@
 					"id" : "obj-27",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 1023.0, 364.6290283203125, 203.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -529,8 +564,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -746,16 +781,47 @@
 							}
  ],
 						"bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-						"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+						"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
+						"saved_attribute_attributes" : 						{
+							"default_plcolor" : 							{
+								"expression" : ""
+							}
+,
+							"editing_bgcolor" : 							{
+								"expression" : ""
+							}
+,
+							"locked_bgcolor" : 							{
+								"expression" : ""
+							}
+
+						}
+
 					}
 ,
 					"patching_rect" : [ 283.0, 118.0, 78.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"default_plcolor" : 						{
+							"expression" : ""
+						}
+,
+						"editing_bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"locked_bgcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
 						"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
 						"globalpatchername" : "",
 						"locked_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
+						"patchlinecolor" : [ 0.568627450980392, 0.568627450980392, 0.568627450980392, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -846,11 +912,12 @@
 					"id" : "obj-71",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 1084.333333333333258, 546.55645751953125, 159.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -887,6 +954,7 @@
 							"parameter_enum" : [ "<none>", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32" ],
 							"parameter_longname" : "track[312]",
 							"parameter_mmax" : 32,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "track",
 							"parameter_type" : 2
 						}
@@ -984,6 +1052,7 @@
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_longname" : "live.text[312]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
 						}
@@ -1302,6 +1371,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.menu[779]",
 							"parameter_mmax" : 2,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "bracket",
 							"parameter_type" : 2
 						}
@@ -1337,6 +1407,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.button[312]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.button",
 							"parameter_type" : 2
 						}
@@ -1465,6 +1536,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.toggle[1412]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
 						}
@@ -1583,7 +1655,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1286.75, 224.0, 214.0, 20.0 ],
-					"restore" : [ 6 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1771,7 +1843,7 @@
 					"bgfillcolor_type" : "color",
 					"fontface" : 1,
 					"id" : "obj-103",
-					"items" : [ "Default", ",", "Tablature", ",", "ClefDesigner", ",", "BP chromatic", ",", "Percussion", ",", "Just Intonation", ",", "BP Tenor Clarinet", ",", "BP Soprano Clarinet", ",", "BP MIDI Keyboard", ",", "BP Contra Clarinet", ",", "BP Alto Kalimba", ",", "41EDO", ",", "31EDO", ",", "19EDO", ",", "17EDO", ",", "-", ",", "General MIDI Percussion", ",", "Soprano Clef", ",", "BP chromatic N clef", ",", "BP chromatic T clef", ",", "BP chromatic U clef", ",", "BP chromatic Z clef", ",", "-", ",", "24TET", ",", "48TET", ",", "72TET-Stahnke", ",", "72TET-Sims", ",", "72TET-Wyschnegradsky", ",", "96TET", ",", "-", ",", "Narrow", ",", "Wide", ",", "BP-Narrow", ",", "BP-Wide" ],
+					"items" : [ "Default", ",", "Tablature", ",", "Percussion", ",", "ClefDesigner", ",", "BP chromatic", ",", "17EDO", ",", "19EDO", ",", "31EDO", ",", "41EDO", ",", "BP Alto Kalimba", ",", "BP Contra Clarinet", ",", "BP MIDI Keyboard(A=N)", ",", "BP MIDI Keyboard", ",", "BP Soprano Clarinet", ",", "BP Tenor Clarinet", ",", "Carlos Alpha Kalimba", ",", "Just Intonation", ",", "-", ",", "General MIDI Percussion", ",", "Soprano Clef", ",", "BP chromatic R clef", ",", "BP chromatic N clef", ",", "BP chromatic T clef", ",", "BP chromatic U clef", ",", "BP chromatic Z clef", ",", "-", ",", "24TET", ",", "48TET", ",", "72TET-Stahnke", ",", "72TET-Sims", ",", "72TET-Wyschnegradsky", ",", "96TET", ",", "-", ",", "Narrow", ",", "Wide", ",", "BP-Narrow", ",", "BP-Wide" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1835,7 +1907,7 @@
 					"htricolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"id" : "obj-54",
 					"maxclass" : "number",
-					"maximum" : 19,
+					"maximum" : 13,
 					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -2488,14 +2560,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 65.0, 154.0, 1033.0, 750.0 ],
+						"rect" : [ 65.0, 100.0, 1033.0, 761.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2524,6 +2596,18 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 71.0, 305.0, 59.0, 22.0 ],
+									"text" : "packback"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-29",
 									"maxclass" : "message",
@@ -2760,7 +2844,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 815.0, 175.0, 33.0, 20.0 ],
+									"patching_rect" : [ 819.0, 175.0, 33.0, 20.0 ],
 									"text" : "t l l"
 								}
 
@@ -3003,7 +3087,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 815.0, 448.0, 73.0, 20.0 ],
+									"patching_rect" : [ 819.0, 448.0, 73.0, 20.0 ],
 									"text" : "t l"
 								}
 
@@ -3017,7 +3101,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 592.0, 494.0, 60.0, 20.0 ],
+									"patching_rect" : [ 591.0, 486.0, 60.0, 20.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -3096,8 +3180,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 6,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4226,16 +4310,47 @@
 											}
  ],
 										"bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-										"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+										"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
+										"saved_attribute_attributes" : 										{
+											"default_plcolor" : 											{
+												"expression" : ""
+											}
+,
+											"editing_bgcolor" : 											{
+												"expression" : ""
+											}
+,
+											"locked_bgcolor" : 											{
+												"expression" : ""
+											}
+
+										}
+
 									}
 ,
 									"patching_rect" : [ 442.0, 266.0, 68.0, 20.0 ],
+									"saved_attribute_attributes" : 									{
+										"default_plcolor" : 										{
+											"expression" : ""
+										}
+,
+										"editing_bgcolor" : 										{
+											"expression" : ""
+										}
+,
+										"locked_bgcolor" : 										{
+											"expression" : ""
+										}
+
+									}
+,
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
 										"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
 										"globalpatchername" : "",
 										"locked_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
+										"patchlinecolor" : [ 0.568627450980392, 0.568627450980392, 0.568627450980392, 1.0 ],
 										"tags" : ""
 									}
 ,
@@ -4271,48 +4386,6 @@
 , 							{
 								"box" : 								{
 									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-15",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 120.0, 323.0, 59.0, 22.0 ],
-									"text" : "tosymbol"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 10.0,
-									"id" : "obj-193",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 155.0, 366.0, 68.0, 20.0 ],
-									"text" : "route symbol"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 10.0,
-									"id" : "obj-192",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 71.0, 293.0, 68.0, 20.0 ],
-									"text" : "route symbol"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"id" : "obj-191",
 									"maxclass" : "newobj",
@@ -4328,26 +4401,12 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
-									"id" : "obj-188",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 70.0, 407.0, 104.0, 22.0 ],
-									"text" : "pack s s"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
 									"id" : "obj-185",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 71.0, 237.0, 113.0, 22.0 ],
+									"patching_rect" : [ 71.0, 211.0, 138.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -4368,7 +4427,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
-									"midpoints" : [ 838.5, 211.0, 350.0, 211.0 ],
+									"midpoints" : [ 842.5, 211.0, 350.0, 211.0 ],
 									"source" : [ "obj-10", 1 ]
 								}
 
@@ -4383,7 +4442,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-119", 0 ],
-									"midpoints" : [ 350.0, 435.5, 824.5, 435.5 ],
+									"midpoints" : [ 350.0, 435.5, 828.5, 435.5 ],
 									"order" : 0,
 									"source" : [ "obj-11", 0 ]
 								}
@@ -4400,7 +4459,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-120", 0 ],
-									"midpoints" : [ 794.5, 477.0, 601.5, 477.0 ],
+									"midpoints" : [ 794.5, 477.0, 600.5, 477.0 ],
 									"source" : [ "obj-114", 0 ]
 								}
 
@@ -4459,7 +4518,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-120", 0 ],
-									"midpoints" : [ 824.5, 477.5, 601.5, 477.5 ],
+									"midpoints" : [ 828.5, 477.5, 600.5, 477.5 ],
 									"source" : [ "obj-119", 0 ]
 								}
 
@@ -4540,8 +4599,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-188", 0 ],
-									"source" : [ "obj-15", 0 ]
+									"destination" : [ "obj-191", 0 ],
+									"source" : [ "obj-14", 0 ]
 								}
 
 							}
@@ -4568,23 +4627,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-192", 0 ],
-									"source" : [ "obj-185", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-193", 0 ],
-									"midpoints" : [ 111.833333333333329, 279.0, 164.5, 279.0 ],
+									"destination" : [ "obj-14", 1 ],
+									"midpoints" : [ 120.166666666666657, 279.0, 120.5, 279.0 ],
 									"source" : [ "obj-185", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-191", 0 ],
-									"source" : [ "obj-188", 0 ]
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-185", 0 ]
 								}
 
 							}
@@ -4600,27 +4652,6 @@
 									"destination" : [ "obj-131", 0 ],
 									"midpoints" : [ 79.5, 616.5, 540.166625999999951, 616.5 ],
 									"source" : [ "obj-191", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
-									"source" : [ "obj-192", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-188", 0 ],
-									"source" : [ "obj-192", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-188", 1 ],
-									"source" : [ "obj-193", 0 ]
 								}
 
 							}
@@ -4698,7 +4729,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-120", 0 ],
-									"midpoints" : [ 752.5, 477.0, 601.5, 477.0 ],
+									"midpoints" : [ 752.5, 477.0, 600.5, 477.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -4807,16 +4838,47 @@
 							}
  ],
 						"bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-						"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+						"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
+						"saved_attribute_attributes" : 						{
+							"default_plcolor" : 							{
+								"expression" : ""
+							}
+,
+							"editing_bgcolor" : 							{
+								"expression" : ""
+							}
+,
+							"locked_bgcolor" : 							{
+								"expression" : ""
+							}
+
+						}
+
 					}
 ,
 					"patching_rect" : [ 445.0, 260.0, 50.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"default_plcolor" : 						{
+							"expression" : ""
+						}
+,
+						"editing_bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"locked_bgcolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
 						"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
 						"globalpatchername" : "",
 						"locked_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
+						"patchlinecolor" : [ 0.568627450980392, 0.568627450980392, 0.568627450980392, 1.0 ],
 						"tags" : ""
 					}
 ,
@@ -4836,7 +4898,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1229.0, 82.0, 169.0, 20.0 ],
-					"restore" : [ 19 ],
+					"restore" : [ 13 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4849,10 +4911,10 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"bgcolor" : [ 0.36078431372549, 1.0, 0.909803921568627, 1.0 ],
 					"bgfillcolor_angle" : 270.0,
 					"bgfillcolor_autogradient" : 0.0,
-					"bgfillcolor_color" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+					"bgfillcolor_color" : [ 0.36078431372549, 1.0, 0.909803921568627, 1.0 ],
 					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_proportion" : 0.39,
@@ -4895,6 +4957,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.toggle[1244]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
 						}
@@ -4929,6 +4992,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.toggle[1410]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
 						}
@@ -4963,6 +5027,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.toggle[1245]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
 						}
@@ -5048,6 +5113,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.menu[857]",
 							"parameter_mmax" : 4,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
 						}
@@ -5154,6 +5220,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.toggle[1411]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.toggle",
 							"parameter_type" : 2
 						}
@@ -5182,7 +5249,7 @@
 					"presentation_rect" : [ 114.0, 4.0, 99.0, 19.0 ],
 					"readonly" : 1,
 					"rounded" : 0.0,
-					"text" : "B1",
+					"text" : "<empty>",
 					"textcolor" : [ 0.945098039215686, 0.945098039215686, 0.945098039215686, 1.0 ],
 					"varname" : "instrument"
 				}
@@ -5270,6 +5337,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.menu[623]",
 							"parameter_mmax" : 15,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2
 						}
@@ -5298,6 +5366,29 @@
 					"patching_rect" : [ 42.75, 352.0, 100.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ -632.5, 77.0, 2000.0, 49.0 ],
+					"saved_attribute_attributes" : 					{
+						"bgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"bgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"textoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"textovercolor" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"text" : "",
 					"textcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 					"texton" : "",
@@ -6269,7 +6360,22 @@
 			}
  ],
 		"bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
-		"editing_bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ]
+		"editing_bgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
+		"saved_attribute_attributes" : 		{
+			"default_plcolor" : 			{
+				"expression" : ""
+			}
+,
+			"editing_bgcolor" : 			{
+				"expression" : ""
+			}
+,
+			"locked_bgcolor" : 			{
+				"expression" : ""
+			}
+
+		}
+
 	}
 
 }

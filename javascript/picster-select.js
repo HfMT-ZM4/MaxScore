@@ -12,14 +12,17 @@ SVGString = [];
 SVGImages = [];
 var mgraphics = new JitterObject("jit.mgraphics", 4000, 2000);
 var findbounds = new JitterObject("jit.findbounds");
+var planeop = new JitterObject("jit.planeop");
+planeop.op = "+";
 var outmatrix = new JitterMatrix(4, "char", 4000, 2000);
+var monoplane = new JitterMatrix(1, "char", 320, 240);
 var import = new JitterMatrix(4, "char", 4000, 2000);
 import.adapt = 1;
 mgraphics.svg_create("img", "<svg></svg>");
 var svg = new Dict();
 svg.name = "svg";
-findbounds.min = [0, 0, 0, 0];
-findbounds.max = [1, 1, 1, 0.99];
+findbounds.min = 0.5;
+findbounds.max = 1;
 var renderedMessages = new Dict();
 var RenderMessageOffset = [];
 var textRenderOffset = [0, 0];
@@ -92,7 +95,7 @@ var currentMeasure = -1;
 var currentID = "";
 var addedShape = [];
 var annotation = new Dict;
-var timeUnit, prop, timesig, tempo, editor;
+var timeUnit, prop, timesig, tempo, editor, bgcolor_argb, bgcolor_rgba;
 var status = "regular";
 
 removeTextedit();
@@ -2136,7 +2139,9 @@ function anything()
 		annotation.parse(msg[0]);
 		prop = annotation.get("proportional");
 		timeUnit = annotation.get("timeUnit");
-		//post("timeUnit", annotation.stringify(), timeUnit, "\n");
+		bgcolor_rgba = annotation.contains("bgcolor") ? annotation.get("bgcolor") : [1, 1, 1, 1];//rgba
+		bgcolor_argb = map2char(bgcolor_rgba);
+		//post("bgcolor", bgcolor_rgba, bgcolor_argb, "\n");
 		break;
 	case "key" :
 		switch (Number(msg)) {
@@ -2937,6 +2942,16 @@ function findBounds(d)
 	return [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]];
 }
 
+function map2char(a) // rgba -> argb
+{
+	var out = new Array(4);
+	for (var i = 0; i < 4; i++) {
+		if (i != 3) out[i + 1] = Math.round(a[i] * 255);
+		else out[0] = Math.round(a[i] * 255);
+		}
+	return out;
+}
+
 function findBoundsToo(d)
 {
 	var renderOffset = [600, 600];
@@ -3016,14 +3031,14 @@ function findBoundsToo(d)
 	svg += ds2svg(d);
 	svg += "</g></svg>";
 	//img.setsvg(svg);
-	//post("post-D", svg, "\n");
 	mgraphics.svg_set("img", svg);
-	mgraphics.set_source_rgba(1, 1, 1, 1);
+	mgraphics.set_source_rgba(bgcolor_rgba);
 	mgraphics.paint();
 	mgraphics.svg_render("img");
-
 	mgraphics.matrixcalc(outmatrix, outmatrix);
-	findbounds.matrixcalc(outmatrix, outmatrix);
+	outmatrix.op("!=", bgcolor_argb);
+	planeop.matrixcalc(outmatrix, monoplane);
+	findbounds.matrixcalc(monoplane, monoplane);
 	//post("FIND", svg, [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
 	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) renderOffset = [0, 0];
 		horizontalOffset = 0;
@@ -3112,12 +3127,13 @@ function findBoundsForRenderedExpression(msg, d)
 	svg += SVGString.join("");
 	svg += "</g></svg>";
 	mgraphics.svg_set("img", svg);
-	mgraphics.set_source_rgba(1, 1, 1, 1);
+	mgraphics.set_source_rgba(bgcolor_rgba);
 	mgraphics.paint();
 	mgraphics.svg_render("img");
-
 	mgraphics.matrixcalc(outmatrix, outmatrix);
-	findbounds.matrixcalc(outmatrix, outmatrix);
+	outmatrix.op("!=", bgcolor_argb);
+	planeop.matrixcalc(outmatrix, monoplane);
+	findbounds.matrixcalc(monoplane, monoplane);
 	//post("FIND", [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]], "\n");
 	if (findbounds.boundmin[0] == -1 && findbounds.boundmax[1] == -1) renderOffset = [0, 0];
 		horizontalOffset = 0;

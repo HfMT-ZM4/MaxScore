@@ -98,7 +98,7 @@
 					"maxclass" : "newobj",
 					"text" : "MaxScore",
 					"patching_rect" : [ 127.0, 65.0, 63.0, 22.0 ],
-					"outlettype" : [ "", "", "", "" ],
+					"outlettype" : [ "", "", "", "newScore" ],
 					"id" : "obj-22",
 					"numinlets" : 2,
 					"numoutlets" : 4

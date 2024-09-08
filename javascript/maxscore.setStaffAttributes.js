@@ -207,12 +207,11 @@ setStyle(stl, 0);
 }
 else 
 {
-//post("state", "other", "\n");
 initStyle("Default");
 setStyle("Default", 0);
 }
 
-if (annotation.contains("staff-"+StaffIndex+"::clip") && annotation.get("staff-"+StaffIndex+"::clip" != "*")) {
+if (annotation.contains("staff-"+StaffIndex+"::clip") && annotation.get("staff-"+StaffIndex+"::clip") != "*") {
 var clp = annotation.get("staff-"+StaffIndex+"::clip");
 if (clp[0] != "A" && clp[0] != "S") clp = "S " + clp.join(":"); 
 outlet(1, clp);
