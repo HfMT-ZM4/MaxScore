@@ -435,15 +435,17 @@ function scroll() {
     outlet(0, "getScoreAnnotation");
    if (annotation.contains("proportional")) {
 		proportional = annotation.get("proportional");
-		this.patcher.parentpatcher.getnamed("playback").subpatcher().getnamed("sequenceDump").setvalueof(proportional);
+		//this.patcher.parentpatcher.getnamed("playback").subpatcher().getnamed("sequenceDump").setvalueof(proportional);
 		}
     if (proportional) {
         var msg = arrayfromargs(arguments);
+		//post(msg, "\n");
         var from, to, dur, scoreOffset;
         if (annotation.contains("timeUnit")) timeUnit = annotation.get("timeUnit");
         switch (msg[0]) {
             case "start":
-                var s = (typeof msg[1] == "undefined") ? 0 : msg[1];
+ 				this.patcher.parentpatcher.getnamed("playback").subpatcher().getnamed("sequenceDump").setvalueof(0);
+               	var s = (typeof msg[1] == "undefined") ? 0 : msg[1];
                 scoreSize = 0.;
                 outlet(0, "getNumMeasures");
                 for (var m = 0; m < numMeasures; m++) {
@@ -486,14 +488,17 @@ function scroll() {
                 outlet(1, "scroll", "offset", -s * timeUnit * zoom / 0.5, timeUnit, 0, to, dur);
                 break;
             case "stop" :
-                //outlet(2, "stop");
+  				this.patcher.parentpatcher.getnamed("playback").subpatcher().getnamed("sequenceDump").setvalueof(1);
+               //outlet(2, "stop");
                 outlet(1, "scroll", "stop");
                 break;
             case "rewind" :
- 				pixels = 0;
+   				this.patcher.parentpatcher.getnamed("playback").subpatcher().getnamed("sequenceDump").setvalueof(1);
+				pixels = 0;
                	outlet(1, "scroll", "offset", 0, timeUnit);
                 break;
             case "resume" :
+ 				this.patcher.parentpatcher.getnamed("playback").subpatcher().getnamed("sequenceDump").setvalueof(0);
                 scoreSize = 0.;
                 outlet(0, "getNumMeasures");
                 for (var m = 0; m < numMeasures; m++) {
@@ -514,6 +519,7 @@ function scroll() {
 				pixels = msg[1];
 			break;
             case "to" :
+  				this.patcher.parentpatcher.getnamed("playback").subpatcher().getnamed("sequenceDump").setvalueof(0);
                 to = -1 * msg[1] * timeUnit * zoom / 0.5;
                 dur = (msg[1] + pixels / timeUnit) * 1000. * zoom / 0.5;
  				//post("pixels", msg, timeUnit, "\n");
