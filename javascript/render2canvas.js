@@ -14,6 +14,7 @@ var SVGLines = {};
 var SVGImages = {};
 var SVGImages2 = {};
 var SVGGraphics = {};
+var SVGNSG = {};//non-scrolling graphics
 var SVGTransforms = {};
 var output = new Dict();
 output.name = "output";
@@ -401,6 +402,7 @@ function fillObj(groups)
 	SVGString = {};
 	SVGLines = {};
 	SVGGraphics = {}
+	SVGNSG = {};
  	SVGTransforms = {};
 	SVGImages = {};
 	SVGImages2 = {};
@@ -409,6 +411,7 @@ function fillObj(groups)
 		SVGString[s] = [];
 		SVGLines[s] = [];
 		SVGGraphics[s] = [];
+		SVGNSG[s] = [];
  		SVGTransforms[s] = [];
 		SVGImages[s] = [];
 		SVGImages2[s] = [];
@@ -444,6 +447,7 @@ function fillObj(groups)
 	SVGString = {};
 	SVGLines = {};
 	SVGGraphics = {};
+	SVGNSG = {};
  	SVGTransforms = {};
 	SVGImages = {};
 	SVGImages2 = {};
@@ -452,6 +456,7 @@ function fillObj(groups)
 		SVGString[s] = [];
 		SVGLines[s] = [];
 		SVGGraphics[s] = [];
+		SVGNSG[s] = [];
  		SVGTransforms[s] = [];
 		SVGImages[s] = [];
 		SVGImages2[s] = [];
@@ -1008,7 +1013,6 @@ function writeBarlines()
 					else barlineEnd = stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1];
 						var dest = remap(sg[s], mathMin, barlineStart);
 						var dest2 = remap(sg[s], mathMax, barlineEnd);
-						//post("dest.length", dest, dest.length, "\n");
 						if (dest != -1)
 							{
 							for (var d = 0; d < dest.length; d++) {
@@ -1158,6 +1162,15 @@ function showRuler(show)
 function writeRuler()
 {
 	if (_showRuler) {
+	var rulerOffset = 0;
+	/*
+	for (var i = 0; i < _scoreLayout[1]; i++) {
+		outlet(1, "getMeasureInfo", i);
+		//rulerOffset += Number(measurewidth);
+		post("getMeasureInfo", score.stringify(), "\n");
+	}
+	post("scoreLayout", _scoreLayout, measurewidth, "\n");
+	*/
 	var _time = 0;
 	if (typeof timeUnit != "number") timeUnit = 100;
 	for (var s = 0; s < groupcount; s++)
@@ -1522,6 +1535,7 @@ function scoreLayout()
 		SVGLines = {};
 		SVGClefs = {};
 		SVGGraphics = {};
+		SVGNSG = {};
  		SVGTransforms = {};
 		SVGImages = {};
 		SVGImages2 = {};
@@ -1540,7 +1554,8 @@ function scoreLayout()
 			SVGString[s] = [];
 			SVGLines[s] = [];
 			SVGGraphics[s] = [];
- 			SVGTransforms[s] = [];
+ 			SVGNSG[s] = [];
+			SVGTransforms[s] = [];
 			SVGImages[s] = [];
 			SVGImages2[s] = [];
 		}
@@ -2308,7 +2323,14 @@ function anything() {
 			}
 			else if (e.contains("picster-element")) {
 				renderedMessages.set(rm++, msg);
-				//post("renderedMessages", renderedMessages.stringify(), "\n");					
+				//Determine whether element is non-scrolling
+				//If so, copy position and showbetween to new object
+				var nonScrolling = {};
+				if (e.contains("picster-element[1]::val::non-scrolling")) if (e.get("picster-element[1]::val::non-scrolling"))	{
+					nonScrolling["non-scrolling"] = (prop) ? e.get("picster-element[1]::val::non-scrolling") : 0;
+					nonScrolling.position = e.get("picster-element[1]::val::position");
+					nonScrolling.showbetween = e.get("picster-element[1]::val::showbetween");
+				}				
 				_key = e.get("picster-element[0]::key");
 				svggroupflag = false;
 				var vals = [].concat(e.get("picster-element[0]::val"));
@@ -2355,7 +2377,7 @@ function anything() {
 									picster.replace("child[1]::font-size", _tabfont[1]);
 									}
 								}
-							renderDrawSocket(s, dest[d], RenderMessageOffset, picster);
+							renderDrawSocket(s, dest[d], RenderMessageOffset, picster, nonScrolling);
 						}
 						else if (_key == "render-expression") renderExpression(msg, s, dest[d], RenderMessageOffset, e);
 								}
@@ -3133,7 +3155,7 @@ function anything() {
 	}
 }
 
-function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
+function renderDrawSocket(s, _dest, RenderMessageOffset, picster, nonScrolling)
 {
 			var transf = {};
 			var jpicster = {};
@@ -3168,6 +3190,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				SVGGraphics[s + 1].push(jpicster);
 				transf["picster:scale"] = (jpicster.hasOwnProperty("picster:scale")) ? jpicster["picster:scale"] : "1,1";
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				break;
 				case "g" :
 				if (Array.isArray(picster.get("child"))) for (var i = 0; i < picster.get("child").length; i++) {
@@ -3189,6 +3212,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				iterateGroup(jpicster);
 				SVGGraphics[s + 1].push(jpicster);
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				break;
 				case "marker" :
 				post("I'm a marker and I'm not supported!\n");	
@@ -3237,6 +3261,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				});
 				}
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				SVGGraphics[s + 1].push({
 				"new" : "g",
 				"id" : picster.get("id"),
@@ -3251,26 +3276,31 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				}
 				break;
 				case "rect" :
 				//var roundedness = (picster.contains("rx")) ? picster.get("rx") : 0;
+				//post("jpicster", picster.stringify(), "\n");
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				break;
 				case "ellipse" :
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				break;
 				case "polyline" :
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				break;
 				case "path" :
 				/*
@@ -3285,6 +3315,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				}
 				break;
 				case "text" :
@@ -3303,12 +3334,12 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				break;
 				case "image" :
 				var href = picster.get("xlink:href");
 				var imgtype = "";
 				if (!href.indexOf("data")) {
-				//post("jpicster", transform, [transform[0], transform[1], transform[2], transform[3], transform[4] + RenderMessageOffset[0], transform[5] + _dest], "\n");
 				SVGGraphics[s + 1].push({
 				"new" : "image",
 				"id" : "embedded-" + idcount++,
@@ -3322,6 +3353,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 				}
 				);					
 				SVGTransforms[s + 1].push(transf);
+				SVGNSG[s + 1].push(nonScrolling);
 				}
 				else if (!href.indexOf("reference")) { //if "reference" is at index 0
 				var reference = href.slice(href.indexOf(":") + 1);
@@ -3357,6 +3389,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster)
 					//iterateGroup(jpicster);
 					SVGGraphics[s + 1].push(jpicster);
 					SVGTransforms[s + 1].push(transf);
+					SVGNSG[s + 1].push(nonScrolling);
 					}
 					
 				}
@@ -3642,6 +3675,7 @@ function writeSVG(destination)
 	f.svgimages = SVGImages;
 	f.picster = SVGGraphics;
 	f.transforms = SVGTransforms;
+	f.nsg = SVGNSG;
 	f.pageSize = [_scoreLayout[4], _scoreLayout[5]];
 	f.setZoom = zoom;
 	f.bgcolor = bcolor;

@@ -1,4 +1,4 @@
-outlets = 2;
+outlets = 3;
 include("maxscore.tools");
 
 var output = new Dict();
@@ -245,14 +245,14 @@ function anything()
 		} 		
 	else {
 		switch(msg[0]) {
-			case "quintetnet":
+			case "extras":
 				switch(msg[1]) {
 				case "clearGraphics":
-				var clear = {"key" : "remove", "val" : "quintetnet"};	
+				var clear = {"key" : "remove", "val" : "extras"};	
 				var val = {
 				"parent" : "main-svg",
 				"new" : "g",
-				"id" : "quintetnet"
+				"id" : "extras"
 				};
 				var _draw = {"*" : [clear, {"key" : "svg", "val" : val}]};	
 				draw.parse(JSON.stringify(_draw));
@@ -278,7 +278,7 @@ function anything()
 				case "show_text":
 				//var _draw = {};
 				var val = [{
-					"parent" : "quintetnet",
+					"parent" : "extras",
 					"new" : "text",
 					"id" : "draw-" + pons,
 					"x" : x,
@@ -298,7 +298,7 @@ function anything()
 				break;
 				case "rectangle" :
 				_val = [{						
-					"parent" : "quintetnet",
+					"parent" : "extras",
 					"new" : "rect",
 					"id" : "draw-" + pons,
 					"x" : msg[2],
@@ -438,11 +438,13 @@ function obj_ref(o)
 	SVGLines = o.lines;
 	SVGPicster = JSON.parse(JSON.stringify(o.picster));
 	SVGDefs = JSON.parse(JSON.stringify(o.transforms));
+	SVGExtras = o.nsg;
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
 	groupcount = o.groupcount;
+	var nsg = new Dict;
+	var num = cnt();
 	//Check whether images are already in the media folder. If not copy them there.
-	//post("mediafolder", pathToScript + mediaFolder, "\n");
 	for (var s = 1; s <= groupcount; s++) {
 		for (var i = 0; i < SVGImages[s].length; i++) {
 		if (SVGImages[s][i]["xlink:href"].slice(0, 4) != "data") {
@@ -458,6 +460,46 @@ function obj_ref(o)
 		{
 		for (var i = 0; i < SVGPicster[s].length; i++) {
 		var scale = (o.transforms[s][i]).hasOwnProperty("picster:scale") ? o.transforms[s][i]["picster:scale"].split(",") : [1, 1];
+		var showbetween = o.nsg[s][i].showbetween;
+		if (o.nsg[s][i].hasOwnProperty("non-scrolling")) {
+			if (o.nsg[s][i]["non-scrolling"]) {
+			var translate = o.nsg[s][i].position;
+			SVGExtras[s][i] = JSON.parse(JSON.stringify(SVGPicster[s][i]));
+			if (SVGExtras[s][i].new != "svg") {
+				nsg.replace(SVGPicster[s][i].id + "::showbetween", showbetween);
+				nsg.replace(SVGPicster[s][i].id + "::visible", 0);
+				SVGExtras[s][i].visibility = "hidden";
+				SVGExtras[s][i].transform = "matrix(" + scale[0] + ",0,0," + scale[1] + "," + translate + ")";
+				}
+			else {
+				if (SVGExtras[s][i].hasOwnProperty("child")) {
+					//WRAP SVG IN G WITH TRANSFORM
+					var temp = JSON.parse(JSON.stringify(o.picster[s][i]));
+					delete temp["picster:offset"];
+					delete temp["picster:scale"];
+					delete temp["width"];
+					delete temp["height"];
+					delete temp["viewBox"];
+					SVGExtras[s][i] = {"new" : "g"};
+					SVGExtras[s][i].id = "Picster-Element_" + num;
+					nsg.replace("Picster-Element_" + num + "::showbetween", showbetween);
+					nsg.replace("Picster-Element_" + num + "::visible", 0);
+					for (var j = 0; j < temp.child.length; j++) {
+						if (temp.child[j].new == "defs") {
+							SVGDefs[s][i].new = "g";
+							SVGDefs[s][i].parent = "defs";
+							SVGDefs[s][i].child = temp.child[j];
+							temp.child[j] = {};
+							}
+						}
+					SVGExtras[s][i].visibility = "hidden";
+					SVGExtras[s][i].transform = "matrix(" + scale[0] + ",0,0," + scale[1] + "," + translate + ")";
+					SVGExtras[s][i].child = temp;
+					}
+				}
+			}
+		}
+		//post("NSG-1", JSON.stringify(SVGExtras), "\n");
 		var translate = o.transforms[s][i]["picster:offset"];
 		SVGDefs[s][i] = {};
 		//ONLY IF NEW != SVG
@@ -472,6 +514,7 @@ function obj_ref(o)
 				delete temp["height"];
 				delete temp["viewBox"];
 				SVGPicster[s][i] = {"new" : "g"};
+				SVGPicster[s][i].id = "Picster-Element_" + num;
 				for (var j = 0; j < temp.child.length; j++) {
 					if (temp.child[j].new == "defs") {
 						SVGDefs[s][i].new = "g";
@@ -504,7 +547,7 @@ function obj_ref(o)
 		val.push({
 			"parent" : "main-svg",
 			"new" : "g",
-			"id" : "quintetnet"
+			"id" : "extras"
 			});
 		val.push({
 			"id" : "svg",
@@ -517,21 +560,28 @@ function obj_ref(o)
 			"transform" : "matrix(" + [thisZoom(s), 0, 0, thisZoom(s), 0, 0] + ")",
     		"child" : o.lines[s].concat(o.svg[s], o.svgimages[s], SVGDefs[s], SVGPicster[s])
 			});
+		val.push({
+ 			"parent" : "extras",
+   			"new" : "g",
+    		"id" : "extras-" + s,
+			"transform" : "matrix(" + [thisZoom(s), 0, 0, thisZoom(s), 0, 0] + ")",
+    		"child" : SVGExtras[s],
+			});	
 		joutput[s] = [clear, {"key" : "svg", "val" : val}];
 	}
 	output.parse(JSON.stringify(joutput));
-	
 	outlet(0, "dictionary", output.name);
 	scroll("offset", _offset);
 	renderPlayhead();
 	drawBounds();
+	outlet(2, "dictionary", nsg.name);
 }
 
-
-function zoomlist()
+function cnt()
 {
-	zl = arrayfromargs(arguments);
-}	
+	var date = new Date;
+	return parseInt(date.getTime());
+}
 
 function isFile(path, filename)
 {
@@ -541,7 +591,6 @@ function isFile(path, filename)
     folder.push(f.filename);
     f.next();
   	}
-	//post("folder", mediaFolder, folder, filename, "\n");
 	return (folder.indexOf(filename) == -1) ? false : true;
 	f.close ();
 }

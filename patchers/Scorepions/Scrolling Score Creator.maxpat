@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,7 +50,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -87,13 +87,13 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-53",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 124.0, 960.0, 875.0, 76.0 ],
-									"text" : "4 276.3ocuREsZCBCE843WQHOsAZi8gM574NXCZgBs6ownD0qlzpQIIypT5+9LQsHL1qiPtbOmb3dtI2b0CQpEIZCnBfBnDjFBNB+IFgt5gPHxYnyRPzM4DeGSCqvxfFUfHR3hShnjkCChPDQpia2Xsecn1GCmNmqfLmhsrDgzTo432VGQ+PCJMcOmofT5VVKdEciHVwTcVz9jJEPWCIhXn.6P6JXcfZHWSeGuopAvGDYYLYG8PPceKc7oEmpymLt05Z3HnaN3hH0vsDurZhhChbt6E44vINihI0YUpRW6WxLJQ6CK8C6Wt3i2cpPHOG8+eQsteyyyF7+0bDZ66e8eMJiq9VlpG9ADrze1F+0rx1Ct48Ss8YIt 0 0"
+									"text" : "4 269.3occQF0ZCBCEE94jeEg7zFnK1G1nym6fMnEJztmFiRTuZBUiRRlUoz+6yD0gPYDRHmub3bubyULh1HSMVPGBkPEnrTRL4KBBcEiPH5Yn2Anl1BZfmzxKcDzjCDUAW7VjU7BXzDhJy7r8SY+1X1mhleuqTpNGKzPt22NdpTYqMBx6ahYeZ.sgcPv0PFaGuirlsUln45dm5PZsFXafTYBTR7p8k7dPOd2v9frstEHGk44bUO6XXyPic54mZTE+UdWUilD8KEWjYVgC755Yj.jEB+b4knYlUyUl7Zcku8q3Vsr6gUAQCK+4iTmuaXr6H3twIzMDf4+lnI0+nxLieDgqBVrIeuH1AwM7ujgYug. 0 0"
 								}
 
 							}
@@ -133,7 +133,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -895,7 +895,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1230,7 +1230,7 @@
 												"val" : 												{
 													"new" : "image",
 													"id" : "Picster-Element_0",
-													"xlink:href" : "Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/I Love Tiffany/T-page_5.jpg",
+													"xlink:href" : "Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/Decibel ScorePlayer Scores/I Love Tiffany/T-page_5.png",
 													"x" : 0,
 													"y" : 0,
 													"width" : 980,
@@ -1774,7 +1774,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2959,7 +2959,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"id" : "obj-39",
-					"items" : "T-page_1.jpg",
+					"items" : "T-page_1.png",
 					"maxclass" : "umenu",
 					"menumode" : 2,
 					"numinlets" : 1,
@@ -3523,7 +3523,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4185,15 +4185,15 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-2",
-					"linecount" : 10,
+					"linecount" : 11,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 27.0, 39.5, 199.0, 152.0 ],
+					"patching_rect" : [ 27.0, 39.5, 199.0, 166.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 8,
 					"presentation_rect" : [ 4.0, 129.0, 255.0, 123.0 ],
-					"text" : "This Scorepion creates scrolling scores à la Decibel ScorePlayer. \n\nSelect a folder containing images to be attached to the score according to the settings below. The image files need to be numbered (starting with _1).\nThis Scorepion creates a new score.",
+					"text" : "This Scorepion imports projects created for the Decibel ScorePlayer. \n\nSelect a folder containing images to be attached to the score according to the settings below. The image files need to be numbered (starting with _1).\nThis Scorepion creates a new score.",
 					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ]
 				}
 

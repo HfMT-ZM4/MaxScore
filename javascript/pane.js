@@ -133,6 +133,7 @@ var img = new MGraphicsSVG("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"8
 var clefs = new MGraphicsSVG();
 var picster = [];
 var embedded = new MGraphicsSVG();
+var nsg = new Dict;
 
 var pageWidth = 1200;
 var pageHeight = 800;
@@ -649,9 +650,9 @@ function picsterShape()
 	mgraphics.redraw();
 }
 
-function dictionary()
+function dictionary(d)
 {
-
+	nsg.name = d;
 }
 
 function autoadjust(a)
@@ -721,6 +722,7 @@ function paint() {
 			notifyclients();
 			outlet(1, "offset", horizontalOffset, verticalOffset);
 			outlet(0, "scroll", "pixels", horizontalOffset);
+			nsgVisible(horizontalOffset);
 			horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);
 			}
 		mgraphics.identity_matrix();
@@ -737,7 +739,6 @@ function paint() {
 		for (var i = 0; i < picster.length; i++) {
 		mgraphics.translate(pOffset[i]);	
 		mgraphics.scale(pScale[i]);
-		//post("pscale", pScale[i], "\n");
 		mgraphics.svg_render(picster[i]);
 		mgraphics.set_matrix(m);
 		}
@@ -761,6 +762,39 @@ function paint() {
 		if (verticalScrollbar.visible && horizontalScrollbar.visible && !virgin) handle();
 		if (verticalScrollbar.visible && !virgin) vbar();
 		if ((horizontalScrollbar.visible || prop) && !virgin) hbar();
+}
+
+function nsgVisible(offset)
+{
+	// convert offset into msec!!
+	if (nsg.stringify().length > 10) {
+	var t = offset / timeUnit * -1000.;
+	var vis = new Dict;
+	var keys = nsg.getkeys();
+	//post("nsg", keys, "\n");
+	for (var i = 0; i < keys.length; i++)
+	{
+	//post("time", t, nsg.get("Picster-Element_1727881616747" + "::showbetween")[0], nsg.get("Picster-Element_1727881616747" + "::showbetween")[1], "\n");
+		if (t > nsg.get(keys[i] + "::showbetween")[0] && t < nsg.get(keys[i] + "::showbetween")[1]) {
+			if (nsg.get(keys[i] + "::visible") == 0) {
+			vis.replace("*::key", "svg");
+			vis.replace("*::val::id", keys[i]);
+			vis.replace("*::val::style::visibility", "visible");
+			outlet(3, "dictionary", vis.name);
+			nsg.replace(keys[i] + "::visible", 1);
+			}
+		}
+		else {
+			if (nsg.get(keys[i] + "::visible")) {
+			vis.replace("*::key", "svg");
+			vis.replace("*::val::id", keys[i]);
+			vis.replace("*::val::style::visibility", "hidden");
+			outlet(3, "dictionary", vis.name);
+			nsg.replace(keys[i] + "::visible", 0);				
+			}				
+		}
+	}
+	}
 }
 
 function drawPlayhead()
@@ -1116,6 +1150,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	outlet(1, "offset", horizontalOffset, verticalOffset);
 	if (previousHorizontalOffset != horizontalOffset) outlet(0, "scroll", "pixels", horizontalOffset);
 	previousHorizontalOffset = horizontalOffset;
+	nsgVisible(horizontalOffset);
 	}
 	mgraphics.redraw();
 	last_position = position;

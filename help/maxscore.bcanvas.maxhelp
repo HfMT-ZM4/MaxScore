@@ -6253,7 +6253,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1429.0, 804.0 ],
+						"rect" : [ 34.0, 126.0, 1429.0, 804.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6284,13 +6284,49 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-78",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1226.6666259765625, 509.0, 77.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "layer overlay"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-77",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1227.0, 483.0, 67.0, 22.0 ],
+									"text" : "layer score"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-73",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1226.6666259765625, 457.0, 63.0, 22.0 ],
+									"text" : "layer back"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-61",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 34.75, 69.0, 82.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "previousPage"
 								}
 
@@ -6840,7 +6876,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 762.6666259765625, 582.5, 652.0, 200.0 ],
+									"patching_rect" : [ 762.6666259765625, 587.0, 652.0, 200.0 ],
 									"rendermode" : 1,
 									"url" : "localhost:3002/1"
 								}
@@ -7456,7 +7492,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 148.25, 607.0, 321.0, 48.0 ],
-									"text" : "/stdout : \"received socket close /1 antYwM5ZwWSUKX14HIq/qA==\""
+									"text" : "/stdout : \"received socket close /1 stj3tgdn+D2QSxOvMcjmtw==\""
 								}
 
 							}
@@ -11929,7 +11965,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 126.0, 1429.0, 804.0 ],
+						"rect" : [ 0.0, 26.0, 1429.0, 804.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

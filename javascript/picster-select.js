@@ -2361,7 +2361,6 @@ function anything()
 			edit.parse(JSON.stringify(_picster));
 			action = "group";
 			createRenderedMessage(0, ".", ".", edit.stringify_compressed());
-			//outlet(3, "bang");
 			//post("xy", foundobjects.get(item)[4], foundobjects.get(item)[5], "\n");
 			//singleClick(foundobjects.get(item)[4] + 1, foundobjects.get(item)[5] + 1, 0);
 			// restore picster preference
@@ -2374,13 +2373,24 @@ function anything()
 				outlet(0, "getSelectedElement", "dictionary", edit.name);
 			}
 			break;
-			case 76 : //l
+			case 76 : //l (save element to library)
 			if (foundobjects.contains("0") && item != -1) this.patcher.getnamed("savedialog").message("bang");
 			break;
-			case 77 : //m
+			case 77 : //m (preference = measure)
 			preference = "measure";
 			break;
-			case 82 : //r (convert into trajectory)
+			case 78 : //n (non-scrolling element)
+			//add these lines to dictionary
+			//if (foundobjects.contains("0") && item != -1) {
+			//edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+			//}
+			/*
+				"non-scrolling" : 1,
+				"position" : [ 250, 100 ],
+				"showbetween" : [ 1000, 2000 ]
+			*/
+			break;
+			case 82 : //r (convert to trajectory)
 			if (foundobjects.contains("0") && item != -1) {
 				edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 				if (edit.contains("picster-element[0]::val")) {
