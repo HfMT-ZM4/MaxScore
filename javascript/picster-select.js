@@ -2743,11 +2743,27 @@ function setProperty()
 		var temp = foundobjects.get(item);
 		temp[temp.length - 1] = compressed;
 		foundobjects.replace(item, temp);
-		post("EDIT-1", currentID, "\n");
+		//post("EDIT-1", currentID, "\n");
 		//findElementByID(currentID);
 	}
 }
 
+function nonscrolling()
+{
+	var a = arrayfromargs(arguments);
+	if (a.length != 5) error("not enough arguments. Indicate status, position and showbetween times\n");
+	if (foundobjects.contains("0") && item != -1) {
+		edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+		edit.replace("picster-element[1]::val::non-scrolling", a[0]);
+		edit.replace("picster-element[1]::val::position", a.slice(1, 3));
+		edit.replace("picster-element[1]::val::showbetween", a.slice(3, 5));
+		var compressed = edit.stringify_compressed();
+ 		reattachRenderedMessage(compressed);
+		var temp = foundobjects.get(item);
+		temp[temp.length - 1] = compressed;
+		foundobjects.replace(item, temp);
+	}	
+}
 
 function dumpexpressions()
 {

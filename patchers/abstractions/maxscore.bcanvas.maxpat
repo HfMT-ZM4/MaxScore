@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 587.0, 72.0, 815.0, 731.0 ],
+		"rect" : [ 49.0, 66.0, 815.0, 731.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,31 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-46",
+					"linecount" : 5,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 8.166665999999964, 464.0, 50.0, 76.0 ],
+					"text" : "offset -81.379261 -8.59375"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 416.333332999999925, 532.0, 72.0, 22.0 ],
+					"text" : "pvar pane 4"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-64",
 					"maxclass" : "newobj",
@@ -322,7 +347,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 30.0, 607.0, 187.0, 22.0 ],
-					"restore" : [ "440px-A-D-A_Flow.svg" ],
+					"restore" : [ "beamgroup.svg" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -375,8 +400,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -610,8 +633,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -910,7 +931,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 416.333332999999925, 506.0, 78.0, 22.0 ],
+					"patching_rect" : [ 383.333332999999925, 501.0, 78.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -985,9 +1006,9 @@
 					"id" : "obj-35",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 350.333332999999925, 474.0, 85.0, 22.0 ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 350.333332999999925, 470.0, 85.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "socket.pane.js",
 						"parameter_enable" : 0
@@ -1007,7 +1028,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 500.499999984558031, 470.0, 59.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "jit.pane.js",
+						"filename" : "jit.pane",
 						"parameter_enable" : 0
 					}
 ,
@@ -1033,7 +1054,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 563.0, 100.0, 1065.0, 791.0 ],
+						"rect" : [ 413.0, 100.0, 1065.0, 791.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2037,8 +2058,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -2537,10 +2556,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 974.0, 200.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 460.0, 200.0 ],
 					"readonly" : 1,
 					"rounded" : 0.0,
-					"text" : "440px-A-D-A_Flow.svg",
+					"text" : "beamgroup.svg",
 					"textcolor" : [ 0.968627450980392, 0.968627450980392, 0.968627450980392, 0.0 ],
 					"varname" : "dropfile"
 				}
@@ -3029,7 +3048,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 71.666665999999964, 289.5, 213.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "render2canvas",
+						"filename" : "render2canvas.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -3072,7 +3091,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 78.166665999999964, 470.0, 146.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "picster-select",
+						"filename" : "picster-select.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -3084,7 +3103,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1 ] ],
+					"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1.0 ], [ "transparency", 0 ] ],
 					"filename" : "pane.js",
 					"id" : "obj-7",
 					"maxclass" : "jsui",
@@ -3094,7 +3113,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 736.0, 485.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 715.0, 486.0 ],
 					"varname" : "pane"
 				}
 
@@ -3179,6 +3198,14 @@
 					"destination" : [ "obj-4", 0 ],
 					"midpoints" : [ 108.666665999999964, 666.0, 196.166665999999964, 666.0 ],
 					"source" : [ "obj-2", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"midpoints" : [ 478.833332999999925, 568.0, 359.833332999999925, 568.0 ],
+					"source" : [ "obj-20", 3 ]
 				}
 
 			}
@@ -3316,6 +3343,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
 					"source" : [ "obj-35", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"source" : [ "obj-35", 2 ]
 				}
 
 			}
@@ -3469,6 +3503,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-34", 0 ],
+					"order" : 0,
 					"source" : [ "obj-9", 1 ]
 				}
 
@@ -3478,6 +3513,14 @@
 					"destination" : [ "obj-4", 0 ],
 					"midpoints" : [ 12.666665999999964, 666.181196212768555, 196.166665999999964, 666.181196212768555 ],
 					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-46", 1 ],
+					"order" : 1,
+					"source" : [ "obj-9", 1 ]
 				}
 
 			}

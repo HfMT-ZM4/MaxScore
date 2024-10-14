@@ -5,7 +5,12 @@
 			"1" : 			{
 				"id" : 1,
 				"data" : 				{
+					"attenuation" : [ 64.606299212598344 ],
+					"chordal_weight" : [ 2.0 ],
 					"dynamics" : [ 93.0 ],
+					"event_length" : [ 80.767189781315523 ],
+					"eventfulness" : [ 77.165354330708709 ],
+					"harmoniclarity" : [ 75.590551181102313 ],
 					"interp-attenuation" : [ 1 ],
 					"interp-chordal-weight" : [ 0 ],
 					"interp-dynamics" : [ 1 ],
@@ -18,14 +23,20 @@
 					"interp-pitch-center" : [ 1 ],
 					"interp-pitch-range" : [ 1 ],
 					"interp-tonic-pitch" : [ 1 ],
-					"melodic_cohesion" : [ -9.448818897637778 ],
+					"melodic_cohesion" : [ 1.0 ],
+					"melody_scope" : [ 96.0 ],
+					"meter" : [ "11 2" ],
 					"meters" : [ 						{
 							"my-meter" : [ 105, 1, 61, 16, 76, 31, 46, 91, 10, 70, 25, 85, 40, 55, 105, 4, 64, 19, 79, 34, 49, 94, 7, 67, 22, 82, 37, 52, 101, 13, 73, 28, 88, 43, 58, 104, 2, 62, 17, 77, 32, 47, 93, 11, 71, 26, 86, 41, 56, 105, 5, 65, 20, 80, 35, 50, 95, 8, 68, 23, 83, 38, 53, 100, 14, 74, 29, 89, 44, 59, 105, 3, 63, 18, 78, 33, 48, 94, 12, 72, 27, 87, 42, 57, 105, 6, 66, 21, 81, 36, 51, 98, 9, 69, 24, 84, 39, 54, 105, 15, 75, 30, 90, 45, 60 ]
 						}
  ],
+					"metriclarity" : [ 100.0 ],
 					"ostinato" : [ 0.0 ],
 					"outset" : [ 1.0 ],
 					"overlap" : [ 0.0 ],
+					"pitch_center" : [ 60.0 ],
+					"pitch_range" : [ 96.0 ],
+					"scale" : [ "my-pitchset" ],
 					"scales" : [ 						{
 							"Major" : 							{
 								"1" : [ -9600, 1, 256, -126 ],
@@ -4152,7 +4163,8 @@
 						}
  ],
 					"silent_downbeat" : [ 0.0 ],
-					"sorted" : [ 1.0 ]
+					"sorted" : [ 1.0 ],
+					"tonic_pitch" : [ 60.0 ]
 				}
 
 			}

@@ -3689,11 +3689,11 @@ function writeSVG(destination)
 	if (f.isopen) {
 	f.eof = 0;
 	f.writeline("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
-	f.writeline("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">");
+	f.writeline("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\" >");
 	var SVGZoom = 1;
-	if (paperSize.length == 0) f.writeline("<svg width=\"" + _scoreLayout[4] + "px\" height=\"" + _scoreLayout[5] + "px\" viewBox=\"0 0 " + _scoreLayout[4] + " " + _scoreLayout[5] + "\" style=\"background:" + "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">\n");
+	if (paperSize.length == 0) f.writeline("<svg width=\"" + _scoreLayout[4] + "px\" height=\"" + _scoreLayout[5] + "px\" viewBox=\"0 0 " + _scoreLayout[4] + " " + _scoreLayout[5] + "\" style=\"background:" + "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:picster=\"http://www.myexample.com/whatever\" version=\"1.1\">\n");
 	else {
-		f.writeline("<svg width=\"" + paperSize[0] + "px\" height=\"" + paperSize[1] + "px\" viewBox=\"0 0 " + paperSize[0] + " " + paperSize[1] + "\" style=\"background:" + "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">\n");
+		f.writeline("<svg width=\"" + paperSize[0] + "px\" height=\"" + paperSize[1] + "px\" viewBox=\"0 0 " + paperSize[0] + " " + paperSize[1] + "\" style=\"background:" + "rgb("+ bcolor[0] * 255 + "," + bcolor[1] * 255 + "," + bcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:picster=\"http://www.myexample.com/whatever\" version=\"1.1\">\n");
 		SVGZoom = paperSize[1] / _scoreLayout[5];
 		}
 	writeDefs(destination, f);
@@ -3715,8 +3715,8 @@ function writeSVG(destination)
 		var translate = SVGTransforms[s][i]["picster:offset"];
 		if (SVGGraphics_[s][i].hasOwnProperty("child")) {
 			//var SVGAttrs = JSON.parse(JSON.stringify(SVGTransforms[s][i]));
-			delete SVGGraphics_[s][i]["picster:offset"];
-			delete SVGGraphics_[s][i]["picster:scale"];
+			//delete SVGGraphics_[s][i]["picster:offset"];
+			//delete SVGGraphics_[s][i]["picster:scale"];
 			delete SVGGraphics_[s][i]["width"];
 			delete SVGGraphics_[s][i]["height"];
 			delete SVGGraphics_[s][i]["viewBox"];

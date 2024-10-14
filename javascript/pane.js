@@ -775,7 +775,7 @@ function nsgVisible(offset)
 	for (var i = 0; i < keys.length; i++)
 	{
 	//post("time", t, nsg.get("Picster-Element_1727881616747" + "::showbetween")[0], nsg.get("Picster-Element_1727881616747" + "::showbetween")[1], "\n");
-		if (t > nsg.get(keys[i] + "::showbetween")[0] && t < nsg.get(keys[i] + "::showbetween")[1]) {
+		if (t >= nsg.get(keys[i] + "::showbetween")[0] && t < nsg.get(keys[i] + "::showbetween")[1]) {
 			if (nsg.get(keys[i] + "::visible") == 0) {
 			vis.replace("*::key", "svg");
 			vis.replace("*::val::id", keys[i]);
