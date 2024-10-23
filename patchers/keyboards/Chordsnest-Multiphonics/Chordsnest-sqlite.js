@@ -14,7 +14,14 @@ var result = new SQLResult;
 
 var currentFilter = new Dict('currentFilter');
 var resultsDict = new Dict('results');
-var selectedDict = new Dict('selected')
+var selectedDict = new Dict('selected');
+
+// from Max #0
+function prefix(p) {
+	currentFilter.name = p+'-currentFilter';
+	resultsDict.name = p+'-results';
+	selectedDict.name = p+'-selected'
+}
 
 //open a file-based DB
 function opendb(x)
@@ -87,7 +94,7 @@ function getResults() {
 
 function getIndex(index) {
 	sqlite.exec("SELECT * FROM dumpster WHERE rowid = "+index, result);
-	post(result.value(3, 0));
+	//post(result.value(3, 0));
 	var selectedObj = {
 		index: index,
 		instrument: result.value(1, 0),

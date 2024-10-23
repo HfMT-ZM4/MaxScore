@@ -1,0 +1,3212 @@
+{
+	"Clarinet-Multiphonics.instr" : 	{
+		"1" : 		{
+			"sample" : "Clarinet-01.wav",
+			"root_key" : 1,
+			"key_zone_floor" : 1,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"2" : 		{
+			"sample" : "Clarinet-02.wav",
+			"root_key" : 2,
+			"key_zone_floor" : 2,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"3" : 		{
+			"sample" : "Clarinet-03.wav",
+			"root_key" : 3,
+			"key_zone_floor" : 3,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"4" : 		{
+			"sample" : "Clarinet-04.wav",
+			"root_key" : 4,
+			"key_zone_floor" : 4,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"5" : 		{
+			"sample" : "Clarinet-05.wav",
+			"root_key" : 5,
+			"key_zone_floor" : 5,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"6" : 		{
+			"sample" : "Clarinet-06.wav",
+			"root_key" : 6,
+			"key_zone_floor" : 6,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"7" : 		{
+			"sample" : "Clarinet-07.wav",
+			"root_key" : 7,
+			"key_zone_floor" : 7,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"8" : 		{
+			"sample" : "Clarinet-08.wav",
+			"root_key" : 8,
+			"key_zone_floor" : 8,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"9" : 		{
+			"sample" : "Clarinet-09.wav",
+			"root_key" : 9,
+			"key_zone_floor" : 9,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"10" : 		{
+			"sample" : "Clarinet-10.wav",
+			"root_key" : 10,
+			"key_zone_floor" : 10,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"11" : 		{
+			"sample" : "Clarinet-11.wav",
+			"root_key" : 11,
+			"key_zone_floor" : 11,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"12" : 		{
+			"sample" : "Clarinet-12.wav",
+			"root_key" : 12,
+			"key_zone_floor" : 12,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"13" : 		{
+			"sample" : "Clarinet-13.wav",
+			"root_key" : 13,
+			"key_zone_floor" : 13,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"14" : 		{
+			"sample" : "Clarinet-14.wav",
+			"root_key" : 14,
+			"key_zone_floor" : 14,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"15" : 		{
+			"sample" : "Clarinet-15.wav",
+			"root_key" : 15,
+			"key_zone_floor" : 15,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"16" : 		{
+			"sample" : "Clarinet-16.wav",
+			"root_key" : 16,
+			"key_zone_floor" : 16,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"17" : 		{
+			"sample" : "Clarinet-17.wav",
+			"root_key" : 17,
+			"key_zone_floor" : 17,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"18" : 		{
+			"sample" : "Clarinet-18.wav",
+			"root_key" : 18,
+			"key_zone_floor" : 18,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"19" : 		{
+			"sample" : "Clarinet-19.wav",
+			"root_key" : 19,
+			"key_zone_floor" : 19,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"20" : 		{
+			"sample" : "Clarinet-20.wav",
+			"root_key" : 20,
+			"key_zone_floor" : 20,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"21" : 		{
+			"sample" : "Clarinet-21.wav",
+			"root_key" : 21,
+			"key_zone_floor" : 21,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"22" : 		{
+			"sample" : "Clarinet-22.wav",
+			"root_key" : 22,
+			"key_zone_floor" : 22,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"23" : 		{
+			"sample" : "Clarinet-23.wav",
+			"root_key" : 23,
+			"key_zone_floor" : 23,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"24" : 		{
+			"sample" : "Clarinet-24.wav",
+			"root_key" : 24,
+			"key_zone_floor" : 24,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"25" : 		{
+			"sample" : "Clarinet-25.wav",
+			"root_key" : 25,
+			"key_zone_floor" : 25,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"26" : 		{
+			"sample" : "Clarinet-26.wav",
+			"root_key" : 26,
+			"key_zone_floor" : 26,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"27" : 		{
+			"sample" : "Clarinet-27.wav",
+			"root_key" : 27,
+			"key_zone_floor" : 27,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"28" : 		{
+			"sample" : "Clarinet-28.wav",
+			"root_key" : 28,
+			"key_zone_floor" : 28,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"29" : 		{
+			"sample" : "Clarinet-29.wav",
+			"root_key" : 29,
+			"key_zone_floor" : 29,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"30" : 		{
+			"sample" : "Clarinet-30.wav",
+			"root_key" : 30,
+			"key_zone_floor" : 30,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"31" : 		{
+			"sample" : "Clarinet-31.wav",
+			"root_key" : 31,
+			"key_zone_floor" : 31,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"32" : 		{
+			"sample" : "Clarinet-32.wav",
+			"root_key" : 32,
+			"key_zone_floor" : 32,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"33" : 		{
+			"sample" : "Clarinet-33.wav",
+			"root_key" : 33,
+			"key_zone_floor" : 33,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"34" : 		{
+			"sample" : "Clarinet-34.wav",
+			"root_key" : 34,
+			"key_zone_floor" : 34,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"35" : 		{
+			"sample" : "Clarinet-35.wav",
+			"root_key" : 35,
+			"key_zone_floor" : 35,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"36" : 		{
+			"sample" : "Clarinet-36.wav",
+			"root_key" : 36,
+			"key_zone_floor" : 36,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"37" : 		{
+			"sample" : "Clarinet-37.wav",
+			"root_key" : 37,
+			"key_zone_floor" : 37,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"38" : 		{
+			"sample" : "Clarinet-38.wav",
+			"root_key" : 38,
+			"key_zone_floor" : 38,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"39" : 		{
+			"sample" : "Clarinet-39.wav",
+			"root_key" : 39,
+			"key_zone_floor" : 39,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"40" : 		{
+			"sample" : "Clarinet-40.wav",
+			"root_key" : 40,
+			"key_zone_floor" : 40,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"41" : 		{
+			"sample" : "Clarinet-41.wav",
+			"root_key" : 41,
+			"key_zone_floor" : 41,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"42" : 		{
+			"sample" : "Clarinet-42.wav",
+			"root_key" : 42,
+			"key_zone_floor" : 42,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"43" : 		{
+			"sample" : "Clarinet-43.wav",
+			"root_key" : 43,
+			"key_zone_floor" : 43,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"44" : 		{
+			"sample" : "Clarinet-44.wav",
+			"root_key" : 44,
+			"key_zone_floor" : 44,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"45" : 		{
+			"sample" : "Clarinet-45.wav",
+			"root_key" : 45,
+			"key_zone_floor" : 45,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"46" : 		{
+			"sample" : "Clarinet-46.wav",
+			"root_key" : 46,
+			"key_zone_floor" : 46,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"47" : 		{
+			"sample" : "Clarinet-47.wav",
+			"root_key" : 47,
+			"key_zone_floor" : 47,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"48" : 		{
+			"sample" : "Clarinet-48.wav",
+			"root_key" : 48,
+			"key_zone_floor" : 48,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"49" : 		{
+			"sample" : "Clarinet-49.wav",
+			"root_key" : 49,
+			"key_zone_floor" : 49,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"50" : 		{
+			"sample" : "Clarinet-50.wav",
+			"root_key" : 50,
+			"key_zone_floor" : 50,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"51" : 		{
+			"sample" : "Clarinet-51.wav",
+			"root_key" : 51,
+			"key_zone_floor" : 51,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"52" : 		{
+			"sample" : "Clarinet-52.wav",
+			"root_key" : 52,
+			"key_zone_floor" : 52,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"53" : 		{
+			"sample" : "Clarinet-53.wav",
+			"root_key" : 53,
+			"key_zone_floor" : 53,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"54" : 		{
+			"sample" : "Clarinet-54.wav",
+			"root_key" : 54,
+			"key_zone_floor" : 54,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"55" : 		{
+			"sample" : "Clarinet-55.wav",
+			"root_key" : 55,
+			"key_zone_floor" : 55,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"56" : 		{
+			"sample" : "Clarinet-56.wav",
+			"root_key" : 56,
+			"key_zone_floor" : 56,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"57" : 		{
+			"sample" : "Clarinet-57.wav",
+			"root_key" : 57,
+			"key_zone_floor" : 57,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"58" : 		{
+			"sample" : "Clarinet-58.wav",
+			"root_key" : 58,
+			"key_zone_floor" : 58,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"59" : 		{
+			"sample" : "Clarinet-59.wav",
+			"root_key" : 59,
+			"key_zone_floor" : 59,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"60" : 		{
+			"sample" : "Clarinet-60.wav",
+			"root_key" : 60,
+			"key_zone_floor" : 60,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"61" : 		{
+			"sample" : "Clarinet-61.wav",
+			"root_key" : 61,
+			"key_zone_floor" : 61,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"62" : 		{
+			"sample" : "Clarinet-62.wav",
+			"root_key" : 62,
+			"key_zone_floor" : 62,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"63" : 		{
+			"sample" : "Clarinet-63.wav",
+			"root_key" : 63,
+			"key_zone_floor" : 63,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"64" : 		{
+			"sample" : "Clarinet-64.wav",
+			"root_key" : 64,
+			"key_zone_floor" : 64,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"65" : 		{
+			"sample" : "Clarinet-65.wav",
+			"root_key" : 65,
+			"key_zone_floor" : 65,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"66" : 		{
+			"sample" : "Clarinet-66.wav",
+			"root_key" : 66,
+			"key_zone_floor" : 66,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"67" : 		{
+			"sample" : "Clarinet-67.wav",
+			"root_key" : 67,
+			"key_zone_floor" : 67,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"68" : 		{
+			"sample" : "Clarinet-68.wav",
+			"root_key" : 68,
+			"key_zone_floor" : 68,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"69" : 		{
+			"sample" : "Clarinet-69.wav",
+			"root_key" : 69,
+			"key_zone_floor" : 69,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"70" : 		{
+			"sample" : "Clarinet-70.wav",
+			"root_key" : 70,
+			"key_zone_floor" : 70,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"71" : 		{
+			"sample" : "Clarinet-71.wav",
+			"root_key" : 71,
+			"key_zone_floor" : 71,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"72" : 		{
+			"sample" : "Clarinet-72.wav",
+			"root_key" : 72,
+			"key_zone_floor" : 72,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"73" : 		{
+			"sample" : "Clarinet-73.wav",
+			"root_key" : 73,
+			"key_zone_floor" : 73,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"74" : 		{
+			"sample" : "Clarinet-74.wav",
+			"root_key" : 74,
+			"key_zone_floor" : 74,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"75" : 		{
+			"sample" : "Clarinet-75.wav",
+			"root_key" : 75,
+			"key_zone_floor" : 75,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"76" : 		{
+			"sample" : "Clarinet-76.wav",
+			"root_key" : 76,
+			"key_zone_floor" : 76,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"77" : 		{
+			"sample" : "Clarinet-77.wav",
+			"root_key" : 77,
+			"key_zone_floor" : 77,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"78" : 		{
+			"sample" : "Clarinet-78.wav",
+			"root_key" : 78,
+			"key_zone_floor" : 78,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"79" : 		{
+			"sample" : "Clarinet-79.wav",
+			"root_key" : 79,
+			"key_zone_floor" : 79,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"80" : 		{
+			"sample" : "Clarinet-80.wav",
+			"root_key" : 80,
+			"key_zone_floor" : 80,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"81" : 		{
+			"sample" : "Clarinet-81.wav",
+			"root_key" : 81,
+			"key_zone_floor" : 81,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"82" : 		{
+			"sample" : "Clarinet-82.wav",
+			"root_key" : 82,
+			"key_zone_floor" : 82,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"83" : 		{
+			"sample" : "Clarinet-83.wav",
+			"root_key" : 83,
+			"key_zone_floor" : 83,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"84" : 		{
+			"sample" : "Clarinet-84.wav",
+			"root_key" : 84,
+			"key_zone_floor" : 84,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"85" : 		{
+			"sample" : "Clarinet-85.wav",
+			"root_key" : 85,
+			"key_zone_floor" : 85,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"86" : 		{
+			"sample" : "Clarinet-86.wav",
+			"root_key" : 86,
+			"key_zone_floor" : 86,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"87" : 		{
+			"sample" : "Clarinet-87.wav",
+			"root_key" : 87,
+			"key_zone_floor" : 87,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"88" : 		{
+			"sample" : "Clarinet-88.wav",
+			"root_key" : 88,
+			"key_zone_floor" : 88,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"89" : 		{
+			"sample" : "Clarinet-89.wav",
+			"root_key" : 89,
+			"key_zone_floor" : 89,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"90" : 		{
+			"sample" : "Clarinet-90.wav",
+			"root_key" : 90,
+			"key_zone_floor" : 90,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"91" : 		{
+			"sample" : "Clarinet-91.wav",
+			"root_key" : 91,
+			"key_zone_floor" : 91,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"92" : 		{
+			"sample" : "Clarinet-92.wav",
+			"root_key" : 92,
+			"key_zone_floor" : 92,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"93" : 		{
+			"sample" : "Clarinet-93.wav",
+			"root_key" : 93,
+			"key_zone_floor" : 93,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"94" : 		{
+			"sample" : "Clarinet-94.wav",
+			"root_key" : 94,
+			"key_zone_floor" : 94,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"95" : 		{
+			"sample" : "Clarinet-95.wav",
+			"root_key" : 95,
+			"key_zone_floor" : 95,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"96" : 		{
+			"sample" : "Clarinet-96.wav",
+			"root_key" : 96,
+			"key_zone_floor" : 96,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"97" : 		{
+			"sample" : "Clarinet-97.wav",
+			"root_key" : 97,
+			"key_zone_floor" : 97,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"98" : 		{
+			"sample" : "Clarinet-98.wav",
+			"root_key" : 98,
+			"key_zone_floor" : 98,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"99" : 		{
+			"sample" : "Clarinet-99.wav",
+			"root_key" : 99,
+			"key_zone_floor" : 99,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"100" : 		{
+			"sample" : "Clarinet-100.wav",
+			"root_key" : 100,
+			"key_zone_floor" : 100,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"101" : 		{
+			"sample" : "Clarinet-101.wav",
+			"root_key" : 101,
+			"key_zone_floor" : 101,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"102" : 		{
+			"sample" : "Clarinet-102.wav",
+			"root_key" : 102,
+			"key_zone_floor" : 102,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"103" : 		{
+			"sample" : "Clarinet-103.wav",
+			"root_key" : 103,
+			"key_zone_floor" : 103,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"104" : 		{
+			"sample" : "Clarinet-104.wav",
+			"root_key" : 104,
+			"key_zone_floor" : 104,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"105" : 		{
+			"sample" : "Clarinet-105.wav",
+			"root_key" : 105,
+			"key_zone_floor" : 105,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"106" : 		{
+			"sample" : "Clarinet-106.wav",
+			"root_key" : 106,
+			"key_zone_floor" : 106,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"107" : 		{
+			"sample" : "Clarinet-107.wav",
+			"root_key" : 107,
+			"key_zone_floor" : 107,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"108" : 		{
+			"sample" : "Clarinet-108.wav",
+			"root_key" : 108,
+			"key_zone_floor" : 108,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"109" : 		{
+			"sample" : "Clarinet-109.wav",
+			"root_key" : 109,
+			"key_zone_floor" : 109,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"110" : 		{
+			"sample" : "Clarinet-110.wav",
+			"root_key" : 110,
+			"key_zone_floor" : 110,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"111" : 		{
+			"sample" : "Clarinet-111.wav",
+			"root_key" : 111,
+			"key_zone_floor" : 111,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"112" : 		{
+			"sample" : "Clarinet-112.wav",
+			"root_key" : 112,
+			"key_zone_floor" : 112,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"113" : 		{
+			"sample" : "Clarinet-113.wav",
+			"root_key" : 113,
+			"key_zone_floor" : 113,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"114" : 		{
+			"sample" : "Clarinet-114.wav",
+			"root_key" : 114,
+			"key_zone_floor" : 114,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"115" : 		{
+			"sample" : "Clarinet-115.wav",
+			"root_key" : 115,
+			"key_zone_floor" : 115,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"116" : 		{
+			"sample" : "Clarinet-116.wav",
+			"root_key" : 116,
+			"key_zone_floor" : 116,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"117" : 		{
+			"sample" : "Clarinet-117.wav",
+			"root_key" : 117,
+			"key_zone_floor" : 117,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"118" : 		{
+			"sample" : "Clarinet-118.wav",
+			"root_key" : 118,
+			"key_zone_floor" : 118,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"119" : 		{
+			"sample" : "Clarinet-119.wav",
+			"root_key" : 119,
+			"key_zone_floor" : 119,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"120" : 		{
+			"sample" : "Clarinet-120.wav",
+			"root_key" : 120,
+			"key_zone_floor" : 120,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"121" : 		{
+			"sample" : "Clarinet-121.wav",
+			"root_key" : 121,
+			"key_zone_floor" : 121,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"122" : 		{
+			"sample" : "Clarinet-122.wav",
+			"root_key" : 122,
+			"key_zone_floor" : 122,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"123" : 		{
+			"sample" : "Clarinet-123.wav",
+			"root_key" : 123,
+			"key_zone_floor" : 123,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"124" : 		{
+			"sample" : "Clarinet-124.wav",
+			"root_key" : 124,
+			"key_zone_floor" : 124,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"125" : 		{
+			"sample" : "Clarinet-125.wav",
+			"root_key" : 125,
+			"key_zone_floor" : 125,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"126" : 		{
+			"sample" : "Clarinet-126.wav",
+			"root_key" : 126,
+			"key_zone_floor" : 126,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"127" : 		{
+			"sample" : "Clarinet-127.wav",
+			"root_key" : 127,
+			"key_zone_floor" : 127,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"128" : 		{
+			"sample" : "Clarinet-128.wav",
+			"root_key" : 128,
+			"key_zone_floor" : 128,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"129" : 		{
+			"sample" : "Clarinet-129.wav",
+			"root_key" : 1,
+			"key_zone_floor" : 1,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"130" : 		{
+			"sample" : "Clarinet-130.wav",
+			"root_key" : 2,
+			"key_zone_floor" : 2,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"131" : 		{
+			"sample" : "Clarinet-131.wav",
+			"root_key" : 3,
+			"key_zone_floor" : 3,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"132" : 		{
+			"sample" : "Clarinet-132.wav",
+			"root_key" : 4,
+			"key_zone_floor" : 4,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"133" : 		{
+			"sample" : "Clarinet-133.wav",
+			"root_key" : 5,
+			"key_zone_floor" : 5,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"134" : 		{
+			"sample" : "Clarinet-134.wav",
+			"root_key" : 6,
+			"key_zone_floor" : 6,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"135" : 		{
+			"sample" : "Clarinet-135.wav",
+			"root_key" : 7,
+			"key_zone_floor" : 7,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"136" : 		{
+			"sample" : "Clarinet-136.wav",
+			"root_key" : 8,
+			"key_zone_floor" : 8,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"137" : 		{
+			"sample" : "Clarinet-137.wav",
+			"root_key" : 9,
+			"key_zone_floor" : 9,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+
+	}
+,
+	"BassClarinet-Multiphonics.instr" : 	{
+		"1" : 		{
+			"sample" : "BassClarinet-01.wav",
+			"root_key" : 1,
+			"key_zone_floor" : 1,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"2" : 		{
+			"sample" : "BassClarinet-02.wav",
+			"root_key" : 2,
+			"key_zone_floor" : 2,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"3" : 		{
+			"sample" : "BassClarinet-03.wav",
+			"root_key" : 3,
+			"key_zone_floor" : 3,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"4" : 		{
+			"sample" : "BassClarinet-04.wav",
+			"root_key" : 4,
+			"key_zone_floor" : 4,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"5" : 		{
+			"sample" : "BassClarinet-05.wav",
+			"root_key" : 5,
+			"key_zone_floor" : 5,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"6" : 		{
+			"sample" : "BassClarinet-06.wav",
+			"root_key" : 6,
+			"key_zone_floor" : 6,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"7" : 		{
+			"sample" : "BassClarinet-07.wav",
+			"root_key" : 7,
+			"key_zone_floor" : 7,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"8" : 		{
+			"sample" : "BassClarinet-08.wav",
+			"root_key" : 8,
+			"key_zone_floor" : 8,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"9" : 		{
+			"sample" : "BassClarinet-09.wav",
+			"root_key" : 9,
+			"key_zone_floor" : 9,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"10" : 		{
+			"sample" : "BassClarinet-10.wav",
+			"root_key" : 10,
+			"key_zone_floor" : 10,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"11" : 		{
+			"sample" : "BassClarinet-11.wav",
+			"root_key" : 11,
+			"key_zone_floor" : 11,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"12" : 		{
+			"sample" : "BassClarinet-12.wav",
+			"root_key" : 12,
+			"key_zone_floor" : 12,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"13" : 		{
+			"sample" : "BassClarinet-13.wav",
+			"root_key" : 13,
+			"key_zone_floor" : 13,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"14" : 		{
+			"sample" : "BassClarinet-14.wav",
+			"root_key" : 14,
+			"key_zone_floor" : 14,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"15" : 		{
+			"sample" : "BassClarinet-15.wav",
+			"root_key" : 15,
+			"key_zone_floor" : 15,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"16" : 		{
+			"sample" : "BassClarinet-16.wav",
+			"root_key" : 16,
+			"key_zone_floor" : 16,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"17" : 		{
+			"sample" : "BassClarinet-17.wav",
+			"root_key" : 17,
+			"key_zone_floor" : 17,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"18" : 		{
+			"sample" : "BassClarinet-18.wav",
+			"root_key" : 18,
+			"key_zone_floor" : 18,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"19" : 		{
+			"sample" : "BassClarinet-19.wav",
+			"root_key" : 19,
+			"key_zone_floor" : 19,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"20" : 		{
+			"sample" : "BassClarinet-20.wav",
+			"root_key" : 20,
+			"key_zone_floor" : 20,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"21" : 		{
+			"sample" : "BassClarinet-21.wav",
+			"root_key" : 21,
+			"key_zone_floor" : 21,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"22" : 		{
+			"sample" : "BassClarinet-22.wav",
+			"root_key" : 22,
+			"key_zone_floor" : 22,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"23" : 		{
+			"sample" : "BassClarinet-23.wav",
+			"root_key" : 23,
+			"key_zone_floor" : 23,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"24" : 		{
+			"sample" : "BassClarinet-24.wav",
+			"root_key" : 24,
+			"key_zone_floor" : 24,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"25" : 		{
+			"sample" : "BassClarinet-25.wav",
+			"root_key" : 25,
+			"key_zone_floor" : 25,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"26" : 		{
+			"sample" : "BassClarinet-26.wav",
+			"root_key" : 26,
+			"key_zone_floor" : 26,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"27" : 		{
+			"sample" : "BassClarinet-27.wav",
+			"root_key" : 27,
+			"key_zone_floor" : 27,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"28" : 		{
+			"sample" : "BassClarinet-28.wav",
+			"root_key" : 28,
+			"key_zone_floor" : 28,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"29" : 		{
+			"sample" : "BassClarinet-29.wav",
+			"root_key" : 29,
+			"key_zone_floor" : 29,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"30" : 		{
+			"sample" : "BassClarinet-30.wav",
+			"root_key" : 30,
+			"key_zone_floor" : 30,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"31" : 		{
+			"sample" : "BassClarinet-31.wav",
+			"root_key" : 31,
+			"key_zone_floor" : 31,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"32" : 		{
+			"sample" : "BassClarinet-32.wav",
+			"root_key" : 32,
+			"key_zone_floor" : 32,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"33" : 		{
+			"sample" : "BassClarinet-33.wav",
+			"root_key" : 33,
+			"key_zone_floor" : 33,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"34" : 		{
+			"sample" : "BassClarinet-34.wav",
+			"root_key" : 34,
+			"key_zone_floor" : 34,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"35" : 		{
+			"sample" : "BassClarinet-35.wav",
+			"root_key" : 35,
+			"key_zone_floor" : 35,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"36" : 		{
+			"sample" : "BassClarinet-36.wav",
+			"root_key" : 36,
+			"key_zone_floor" : 36,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"37" : 		{
+			"sample" : "BassClarinet-37.wav",
+			"root_key" : 37,
+			"key_zone_floor" : 37,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"38" : 		{
+			"sample" : "BassClarinet-38.wav",
+			"root_key" : 38,
+			"key_zone_floor" : 38,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"39" : 		{
+			"sample" : "BassClarinet-39.wav",
+			"root_key" : 39,
+			"key_zone_floor" : 39,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"40" : 		{
+			"sample" : "BassClarinet-40.wav",
+			"root_key" : 40,
+			"key_zone_floor" : 40,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"41" : 		{
+			"sample" : "BassClarinet-41.wav",
+			"root_key" : 41,
+			"key_zone_floor" : 41,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"42" : 		{
+			"sample" : "BassClarinet-42.wav",
+			"root_key" : 42,
+			"key_zone_floor" : 42,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"43" : 		{
+			"sample" : "BassClarinet-43.wav",
+			"root_key" : 43,
+			"key_zone_floor" : 43,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"44" : 		{
+			"sample" : "BassClarinet-44.wav",
+			"root_key" : 44,
+			"key_zone_floor" : 44,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"45" : 		{
+			"sample" : "BassClarinet-45.wav",
+			"root_key" : 45,
+			"key_zone_floor" : 45,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"46" : 		{
+			"sample" : "BassClarinet-46.wav",
+			"root_key" : 46,
+			"key_zone_floor" : 46,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"47" : 		{
+			"sample" : "BassClarinet-47.wav",
+			"root_key" : 47,
+			"key_zone_floor" : 47,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"48" : 		{
+			"sample" : "BassClarinet-48.wav",
+			"root_key" : 48,
+			"key_zone_floor" : 48,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"49" : 		{
+			"sample" : "BassClarinet-49.wav",
+			"root_key" : 49,
+			"key_zone_floor" : 49,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"50" : 		{
+			"sample" : "BassClarinet-50.wav",
+			"root_key" : 50,
+			"key_zone_floor" : 50,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"51" : 		{
+			"sample" : "BassClarinet-51.wav",
+			"root_key" : 51,
+			"key_zone_floor" : 51,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"52" : 		{
+			"sample" : "BassClarinet-52.wav",
+			"root_key" : 52,
+			"key_zone_floor" : 52,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"53" : 		{
+			"sample" : "BassClarinet-53.wav",
+			"root_key" : 53,
+			"key_zone_floor" : 53,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"54" : 		{
+			"sample" : "BassClarinet-54.wav",
+			"root_key" : 54,
+			"key_zone_floor" : 54,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"55" : 		{
+			"sample" : "BassClarinet-55.wav",
+			"root_key" : 55,
+			"key_zone_floor" : 55,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"56" : 		{
+			"sample" : "BassClarinet-56.wav",
+			"root_key" : 56,
+			"key_zone_floor" : 56,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"57" : 		{
+			"sample" : "BassClarinet-57.wav",
+			"root_key" : 57,
+			"key_zone_floor" : 57,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"58" : 		{
+			"sample" : "BassClarinet-58.wav",
+			"root_key" : 58,
+			"key_zone_floor" : 58,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"59" : 		{
+			"sample" : "BassClarinet-59.wav",
+			"root_key" : 59,
+			"key_zone_floor" : 59,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"60" : 		{
+			"sample" : "BassClarinet-60.wav",
+			"root_key" : 60,
+			"key_zone_floor" : 60,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"61" : 		{
+			"sample" : "BassClarinet-61.wav",
+			"root_key" : 61,
+			"key_zone_floor" : 61,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"62" : 		{
+			"sample" : "BassClarinet-62.wav",
+			"root_key" : 62,
+			"key_zone_floor" : 62,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"63" : 		{
+			"sample" : "BassClarinet-63.wav",
+			"root_key" : 63,
+			"key_zone_floor" : 63,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"64" : 		{
+			"sample" : "BassClarinet-64.wav",
+			"root_key" : 64,
+			"key_zone_floor" : 64,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"65" : 		{
+			"sample" : "BassClarinet-65.wav",
+			"root_key" : 65,
+			"key_zone_floor" : 65,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"66" : 		{
+			"sample" : "BassClarinet-66.wav",
+			"root_key" : 66,
+			"key_zone_floor" : 66,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"67" : 		{
+			"sample" : "BassClarinet-67.wav",
+			"root_key" : 67,
+			"key_zone_floor" : 67,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"68" : 		{
+			"sample" : "BassClarinet-68.wav",
+			"root_key" : 68,
+			"key_zone_floor" : 68,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"69" : 		{
+			"sample" : "BassClarinet-69.wav",
+			"root_key" : 69,
+			"key_zone_floor" : 69,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"70" : 		{
+			"sample" : "BassClarinet-70.wav",
+			"root_key" : 70,
+			"key_zone_floor" : 70,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"71" : 		{
+			"sample" : "BassClarinet-71.wav",
+			"root_key" : 71,
+			"key_zone_floor" : 71,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"72" : 		{
+			"sample" : "BassClarinet-72.wav",
+			"root_key" : 72,
+			"key_zone_floor" : 72,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"73" : 		{
+			"sample" : "BassClarinet-73.wav",
+			"root_key" : 73,
+			"key_zone_floor" : 73,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"74" : 		{
+			"sample" : "BassClarinet-74.wav",
+			"root_key" : 74,
+			"key_zone_floor" : 74,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"75" : 		{
+			"sample" : "BassClarinet-75.wav",
+			"root_key" : 75,
+			"key_zone_floor" : 75,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"76" : 		{
+			"sample" : "BassClarinet-76.wav",
+			"root_key" : 76,
+			"key_zone_floor" : 76,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"77" : 		{
+			"sample" : "BassClarinet-77.wav",
+			"root_key" : 77,
+			"key_zone_floor" : 77,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"78" : 		{
+			"sample" : "BassClarinet-78.wav",
+			"root_key" : 78,
+			"key_zone_floor" : 78,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"79" : 		{
+			"sample" : "BassClarinet-79.wav",
+			"root_key" : 79,
+			"key_zone_floor" : 79,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"80" : 		{
+			"sample" : "BassClarinet-80.wav",
+			"root_key" : 80,
+			"key_zone_floor" : 80,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"81" : 		{
+			"sample" : "BassClarinet-81.wav",
+			"root_key" : 81,
+			"key_zone_floor" : 81,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"82" : 		{
+			"sample" : "BassClarinet-82.wav",
+			"root_key" : 82,
+			"key_zone_floor" : 82,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"83" : 		{
+			"sample" : "BassClarinet-83.wav",
+			"root_key" : 83,
+			"key_zone_floor" : 83,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"84" : 		{
+			"sample" : "BassClarinet-84.wav",
+			"root_key" : 84,
+			"key_zone_floor" : 84,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"85" : 		{
+			"sample" : "BassClarinet-85.wav",
+			"root_key" : 85,
+			"key_zone_floor" : 85,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"86" : 		{
+			"sample" : "BassClarinet-86.wav",
+			"root_key" : 86,
+			"key_zone_floor" : 86,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"87" : 		{
+			"sample" : "BassClarinet-87.wav",
+			"root_key" : 87,
+			"key_zone_floor" : 87,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"88" : 		{
+			"sample" : "BassClarinet-88.wav",
+			"root_key" : 88,
+			"key_zone_floor" : 88,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"89" : 		{
+			"sample" : "BassClarinet-89.wav",
+			"root_key" : 89,
+			"key_zone_floor" : 89,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"90" : 		{
+			"sample" : "BassClarinet-90.wav",
+			"root_key" : 90,
+			"key_zone_floor" : 90,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"91" : 		{
+			"sample" : "BassClarinet-91.wav",
+			"root_key" : 91,
+			"key_zone_floor" : 91,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"92" : 		{
+			"sample" : "BassClarinet-92.wav",
+			"root_key" : 92,
+			"key_zone_floor" : 92,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"93" : 		{
+			"sample" : "BassClarinet-93.wav",
+			"root_key" : 93,
+			"key_zone_floor" : 93,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"94" : 		{
+			"sample" : "BassClarinet-94.wav",
+			"root_key" : 94,
+			"key_zone_floor" : 94,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"95" : 		{
+			"sample" : "BassClarinet-95.wav",
+			"root_key" : 95,
+			"key_zone_floor" : 95,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"96" : 		{
+			"sample" : "BassClarinet-96.wav",
+			"root_key" : 96,
+			"key_zone_floor" : 96,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"97" : 		{
+			"sample" : "BassClarinet-97.wav",
+			"root_key" : 97,
+			"key_zone_floor" : 97,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"98" : 		{
+			"sample" : "BassClarinet-98.wav",
+			"root_key" : 98,
+			"key_zone_floor" : 98,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"99" : 		{
+			"sample" : "BassClarinet-99.wav",
+			"root_key" : 99,
+			"key_zone_floor" : 99,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"100" : 		{
+			"sample" : "BassClarinet-100.wav",
+			"root_key" : 100,
+			"key_zone_floor" : 100,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"101" : 		{
+			"sample" : "BassClarinet-101.wav",
+			"root_key" : 101,
+			"key_zone_floor" : 101,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"102" : 		{
+			"sample" : "BassClarinet-102.wav",
+			"root_key" : 102,
+			"key_zone_floor" : 102,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"103" : 		{
+			"sample" : "BassClarinet-103.wav",
+			"root_key" : 103,
+			"key_zone_floor" : 103,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"104" : 		{
+			"sample" : "BassClarinet-104.wav",
+			"root_key" : 104,
+			"key_zone_floor" : 104,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"105" : 		{
+			"sample" : "BassClarinet-105.wav",
+			"root_key" : 105,
+			"key_zone_floor" : 105,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"106" : 		{
+			"sample" : "BassClarinet-106.wav",
+			"root_key" : 106,
+			"key_zone_floor" : 106,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"107" : 		{
+			"sample" : "BassClarinet-107.wav",
+			"root_key" : 107,
+			"key_zone_floor" : 107,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"108" : 		{
+			"sample" : "BassClarinet-108.wav",
+			"root_key" : 108,
+			"key_zone_floor" : 108,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"109" : 		{
+			"sample" : "BassClarinet-109.wav",
+			"root_key" : 109,
+			"key_zone_floor" : 109,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"110" : 		{
+			"sample" : "BassClarinet-110.wav",
+			"root_key" : 110,
+			"key_zone_floor" : 110,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"111" : 		{
+			"sample" : "BassClarinet-111.wav",
+			"root_key" : 111,
+			"key_zone_floor" : 111,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"112" : 		{
+			"sample" : "BassClarinet-112.wav",
+			"root_key" : 112,
+			"key_zone_floor" : 112,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"113" : 		{
+			"sample" : "BassClarinet-113.wav",
+			"root_key" : 113,
+			"key_zone_floor" : 113,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"114" : 		{
+			"sample" : "BassClarinet-114.wav",
+			"root_key" : 114,
+			"key_zone_floor" : 114,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"115" : 		{
+			"sample" : "BassClarinet-115.wav",
+			"root_key" : 115,
+			"key_zone_floor" : 115,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"116" : 		{
+			"sample" : "BassClarinet-116.wav",
+			"root_key" : 116,
+			"key_zone_floor" : 116,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"117" : 		{
+			"sample" : "BassClarinet-117.wav",
+			"root_key" : 117,
+			"key_zone_floor" : 117,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"118" : 		{
+			"sample" : "BassClarinet-118.wav",
+			"root_key" : 118,
+			"key_zone_floor" : 118,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"119" : 		{
+			"sample" : "BassClarinet-119.wav",
+			"root_key" : 119,
+			"key_zone_floor" : 119,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"120" : 		{
+			"sample" : "BassClarinet-120.wav",
+			"root_key" : 120,
+			"key_zone_floor" : 120,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"121" : 		{
+			"sample" : "BassClarinet-121.wav",
+			"root_key" : 121,
+			"key_zone_floor" : 121,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"122" : 		{
+			"sample" : "BassClarinet-122.wav",
+			"root_key" : 122,
+			"key_zone_floor" : 122,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"123" : 		{
+			"sample" : "BassClarinet-123.wav",
+			"root_key" : 123,
+			"key_zone_floor" : 123,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"124" : 		{
+			"sample" : "BassClarinet-124.wav",
+			"root_key" : 124,
+			"key_zone_floor" : 124,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"125" : 		{
+			"sample" : "BassClarinet-125.wav",
+			"root_key" : 125,
+			"key_zone_floor" : 125,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"126" : 		{
+			"sample" : "BassClarinet-126.wav",
+			"root_key" : 126,
+			"key_zone_floor" : 126,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"127" : 		{
+			"sample" : "BassClarinet-127.wav",
+			"root_key" : 127,
+			"key_zone_floor" : 127,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"128" : 		{
+			"sample" : "BassClarinet-128.wav",
+			"root_key" : 128,
+			"key_zone_floor" : 128,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"129" : 		{
+			"sample" : "BassClarinet-129.wav",
+			"root_key" : 1,
+			"key_zone_floor" : 1,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+,
+		"130" : 		{
+			"sample" : "BassClarinet-130.wav",
+			"root_key" : 2,
+			"key_zone_floor" : 2,
+			"vel_zone_floor" : 84,
+			"envelope" : [ 20000, 0, 1, 0, 0, 0, 500, 1, 0, 19000, 1, 2, 20000, 0, 0, "linear" ],
+			"loop" : [ 0, 0, 0 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+
+	}
+
+}
