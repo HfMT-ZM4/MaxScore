@@ -6284,25 +6284,31 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-67",
-									"maxclass" : "message",
+									"fontface" : 0,
+									"fontsize" : 12.0,
+									"id" : "obj-69",
+									"linecount" : 16,
+									"maxclass" : "o.compose",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1134.6666259765625, 63.0, 201.0, 22.0 ],
-									"text" : "picster nonscrolling 1 200 50 0 2000"
+									"patching_rect" : [ 551.0, 509.0, 187.0, 234.0 ],
+									"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 32, 47, 42, 0, 0, 44, 46, 0, 0, 0, 0, 1, 20, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 107, 101, 121, 0, 0, 0, 0, 44, 115, 0, 0, 116, 119, 101, 101, 110, 0, 0, 0, 0, 0, 0, -24, 47, 118, 97, 108, 0, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, -40, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 105, 100, 0, 44, 115, 0, 0, 102, 111, 111, 84, 119, 101, 101, 110, 0, 0, 0, 0, 0, 0, 0, 44, 47, 116, 97, 114, 103, 101, 116, 0, 44, 115, 0, 0, 35, 80, 105, 99, 115, 116, 101, 114, 45, 69, 108, 101, 109, 101, 110, 116, 95, 49, 55, 50, 57, 55, 49, 48, 51, 57, 48, 48, 50, 53, 0, 0, 0, 0, 0, 16, 47, 100, 117, 114, 0, 0, 0, 0, 44, 105, 0, 0, 0, 0, 0, 1, 0, 0, 0, 104, 47, 118, 97, 114, 115, 0, 0, 0, 44, 46, 0, 0, 0, 0, 0, 88, 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 47, 114, 111, 116, 97, 116, 105, 111, 110, 0, 0, 0, 44, 105, 0, 0, 0, 0, 1, 104, 0, 0, 0, 20, 47, 112, 97, 117, 115, 101, 100, 0, 44, 115, 0, 0, 102, 97, 108, 115, 101, 0, 0, 0, 0, 0, 0, 20, 47, 101, 97, 115, 101, 0, 0, 0, 44, 115, 0, 0, 108, 105, 110, 101, 97, 114, 0, 0 ],
+									"saved_bundle_length" : 308,
+									"text" : "/* : {\n  /key : \"tween\",\n  /val : {\n    /id : \"fooTween\",\n    /target : \"#Picster-Element_1729710390025\",\n    /dur : 1,\n    /vars : {\n      /rotation : 360,\n      /paused : \"false\",\n      /ease : \"linear\"\n    }\n  }\n}"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-63",
+									"id" : "obj-67",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 622.0, 95.5, 72.0, 22.0 ],
-									"text" : "insertStaff 0"
+									"patching_rect" : [ 1226.6666259765625, 438.0, 195.0, 35.0 ],
+									"text" : "picster nonscrolling 1 200 50 1000 3000"
 								}
 
 							}
@@ -6313,7 +6319,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 34.75, 69.0, 82.0, 22.0 ],
+									"patching_rect" : [ 258.0, 127.0, 82.0, 22.0 ],
 									"text" : "previousPage"
 								}
 
@@ -6325,7 +6331,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 34.75, 95.5, 59.0, 22.0 ],
+									"patching_rect" : [ 258.0, 154.0, 59.0, 22.0 ],
 									"text" : "nextPage"
 								}
 
@@ -6762,7 +6768,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1086.0, 294.0, 86.0, 22.0 ],
-									"text" : "zoomlist 0.6 1."
+									"text" : "zoomlist 0.8 1."
 								}
 
 							}
@@ -7479,7 +7485,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 148.25, 607.0, 321.0, 48.0 ],
-									"text" : "/stdout : \"received socket close /1 uR7rlV6P22Va3GKbUwl2uQ==\""
+									"text" : "/stdout : \"received socket close /aa pxLmezj2GuxTAiNFJPT3fg==\""
 								}
 
 							}
@@ -11346,7 +11352,7 @@
 									"numoutlets" : 4,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 134.0, 289.0, 581.0, 197.0 ],
+									"patching_rect" : [ 134.0, 289.0, 579.0, 197.0 ],
 									"prototypename" : "bcanvas",
 									"varname" : "bcanvas",
 									"viewvisibility" : 1
@@ -11575,7 +11581,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-35", 1 ],
-									"midpoints" : [ 221.833333333333314, 284.5, 705.5, 284.5 ],
+									"midpoints" : [ 221.833333333333314, 284.5, 703.5, 284.5 ],
 									"source" : [ "obj-34", 1 ]
 								}
 
@@ -11590,7 +11596,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 330.833333333333371, 515.25, 41.75, 515.25 ],
+									"midpoints" : [ 330.166666666666629, 515.25, 41.75, 515.25 ],
 									"source" : [ "obj-35", 1 ]
 								}
 
@@ -11793,13 +11799,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-34", 0 ],
-									"source" : [ "obj-63", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-52", 0 ],
 									"source" : [ "obj-66", 0 ]
 								}
@@ -11808,6 +11807,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-34", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-67", 0 ]
 								}
 
@@ -11817,6 +11817,13 @@
 									"destination" : [ "obj-34", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-68", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-69", 0 ]
 								}
 
 							}
@@ -11997,6 +12004,31 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-63",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1019.0, 361.0, 177.0, 22.0 ],
+									"presentation_linecount" : 3,
+									"text" : "picster showAllHiddenElements"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-61",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1019.0, 333.0, 114.0, 22.0 ],
+									"text" : "picster hideElement"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_autogradient" : 0.0,
@@ -12154,8 +12186,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 453.0, 19.0, 247.0, 87.0 ],
-													"presentation_linecount" : 27,
+													"patching_rect" : [ 453.0, 19.0, 249.0, 87.0 ],
 													"text" : "Non-scrolling (applies to proportional scores)\nArguments: status, position (x, y) and \"between time\" (on/off in msec)\nNon-scrolling elements are shown in fixed position above the scrolling layer for the time interval given by between time."
 												}
 
@@ -13875,8 +13906,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-61", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-60", 0 ],
 									"source" : [ "obj-62", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-63", 0 ]
 								}
 
 							}

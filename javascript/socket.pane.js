@@ -333,6 +333,7 @@ function anything()
 			var _draw = {"*" : [clear, {"key" : "svg", "val" : val}]};	
 			draw.parse(JSON.stringify(_draw));
 			outlet(0, "dictionary", draw.name);	
+			renderPlayhead();
 			break;
 			case "set_source_rgb":
 			source_rgb = [msg[1], msg[2], msg[3], 1];
@@ -557,7 +558,7 @@ function obj_ref(o)
  			"parent" : "score",
    			"new" : "g",
     		"id" : "score-" + s,
-			"transform" : "matrix(" + [thisZoom(s), 0, 0, thisZoom(s), 0, 0] + ")",
+			"transform" : "matrix(" + [ thisZoom(s), 0, 0, thisZoom(s), 0, 0] + ")",
     		"child" : o.lines[s].concat(o.svg[s], o.svgimages[s], SVGDefs[s], SVGPicster[s])
 			});
 		val.push({
@@ -576,6 +577,11 @@ function obj_ref(o)
 	drawBounds();
 	outlet(2, "dictionary", nsg.name);
 }
+
+function zoomlist()
+{
+	zl = arrayfromargs(arguments);
+}	
 
 function cnt()
 {
@@ -952,13 +958,13 @@ function playhead(x)
 
 function renderPlayhead()
 {
-			var color = [0.2, 1, 0.2, 1];
+ 			var color = [0.2, 1, 0.2, 1];
 			if (prop) var fill_opacity = (playheadPosition == 0) ? 0 : Math.round(color[3] * 255);
 			else var fill_opacity = 0;
-			//post("prop", prop, playheadPosition, fill_opacity, "\n");
 			for (var s = 0; s < groupcount; s++)
 			{
 			jcursors[s + 1] = {};			
+			//post("thisZoom", zl, typeof zl,  s + 1, thisZoom(s + 1), "\n");
 				var val = [{
 					"parent" : "overlay",
 					"new" : "rect",
@@ -1223,8 +1229,9 @@ function scroll()
 
 function thisZoom(s)
 {
-	var _zl = (s > zl.length) ? zl[zl.length - 1] * 2 : zl[s - 1] * 2;
+	var _zl = (s > zl.length) ? zl[zl.length - 1] : zl[s - 1];
 	if (_zl == "default") _zl = 1.;
 	else if (_zl == "current") _zl = zoom;
-	return _zl
+	else _zl *= 2.;
+	return _zl;
 }

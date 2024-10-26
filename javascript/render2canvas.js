@@ -2371,6 +2371,7 @@ function anything() {
 					for (var d = 0; d < dest.length; d++) {
 						svggroupflag = false;
 						if (_key == "svg") {
+							if (e.contains("picster-element[0]::val::visibility") && e.get("picster-element[0]::val::visibility") == "hidden") return;
 							if (e.contains("picster-element[0]::val::id")){
 								if (e.get("picster-element[0]::val::id").indexOf("Tablature") != -1) {
 									picster.replace("child[1]::font-family", _tabfont[0]);
@@ -3697,7 +3698,8 @@ function writeSVG(destination)
 		SVGZoom = paperSize[1] / _scoreLayout[5];
 		}
 	writeDefs(destination, f);
-	for (var s = 1; s <= groupcount; s++) {
+	//for (var s = 1; s <= groupcount; s++) {
+	var s = 1;
 	f.writeline("<g id=\"_" + s +  "\" transform=\"matrix(" + [SVGZoom, 0., 0., SVGZoom, 0., 0.] + ")\">");	
 	if (prop) for (var i = 0; i < SVGClefs[s].length; i++) f.writeline(ds2svg(SVGClefs[s][i]));
 	for (var i = 0; i < SVGLines[s].length; i++) f.writeline(ds2svg(SVGLines[s][i]));
@@ -3739,7 +3741,7 @@ function writeSVG(destination)
 	if (pageNumber != "") f.writeline(pageNumber);
 	if (SVGImages[s].length > 0) f.writeline(SVGImages[s]);
 	f.writeline("</g>");
-	}
+	//}
 	f.writeline("</svg>");	
 	f.close();
 	}

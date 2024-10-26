@@ -156,7 +156,7 @@ function setattr_bgcolor(r, g, b, a)
 
 function zoomlist()
 {
-	
+	outlet(0, "setRenderAllowed", 1);
 }	
 
 function setMediaFolder()

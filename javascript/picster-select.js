@@ -1275,7 +1275,7 @@ function createRenderedMessage(f, x, y, serialized)
 	}
 	else if (!selectionBufferSize && measurerange[0] != -1)
 		{
-			//post("serialized", "\n");
+			post("serialized", "\n");
 			increment = 0;
 			anchors = {};
 			for (var i = measurerange[0]; i <= measurerange[2]; i++) {
@@ -1948,7 +1948,7 @@ function removeAllElements()
 		for (var j = 0; j < measurerange[3] - measurerange[1] + 1; j++) {
 		if (preference == "staff") outlet(0, "removeAllRenderedMessagesFromStaff", measurerange[0] + i, measurerange[1] + j);
 		else outlet(0, "removeAllRenderedMessagesFromMeasure", measurerange[0] + i);
-		post("i/j", i, j, "\n");
+		//post("i/j", i, j, "\n");
 		}
 	}
 	outlet(0, "saveToUndoStack");
@@ -1961,6 +1961,8 @@ function removeAllElements()
 	}
 	outlet(2, "bounds", "hide");
 }
+
+
 
 function rotate(angle)
 {
@@ -2514,8 +2516,13 @@ function anything()
 			/// DOESN'T SEEM TO WORK
 			break;
 			case 86 : //v
-			post("JSON", JSON.stringify(cp.copy), "\n");
-			if (cp.copy != "undefined") createRenderedMessage(1, cp.copy[0], cp.copy[1], cp.copy[2]);
+			if (cp.copy != "undefined") {
+				var num = cnt();
+				var tempDict = new Dict();
+				tempDict.parse(cp.copy[2]);
+				tempDict.replace("picster-element[0]::val::id", "Picster-Element_" + num);
+				createRenderedMessage(1, cp.copy[0], cp.copy[1], [].concat(tempDict.stringify_compressed()));
+				}
 			break;
 			case 88 : //x
 			if (foundobjects.contains("0") && item != -1) {
@@ -2764,6 +2771,89 @@ function nonscrolling()
 		foundobjects.replace(item, temp);
 	}	
 }
+
+function hideElement()
+{
+	if (foundobjects.contains("0") && item != -1) {
+		edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
+		edit.replace("picster-element[0]::val::visibility", "hidden");
+		var compressed = edit.stringify_compressed();
+ 		reattachRenderedMessage(compressed);
+		var temp = foundobjects.get(item);
+		temp[temp.length - 1] = compressed;
+		foundobjects.replace(item, temp);
+	}	
+}
+
+function showAllHiddenElements()
+{
+	measurerange = this.patcher.getnamed("measurerange").getvalueof();
+	post("measurerange", measurerange, "\n");
+	outlet(0, "getSelectionBufferSize");
+		if (!selectionBufferSize) {
+			if (measurerange[0] == -1) return;
+				dumpinfo = ["staff", measurerange[n]];
+				outlet(0, "dumpScore", measurerange[0], measurerange[2] - measurerange[0] + 1);
+				//post("staff", JSON.stringify(userBeans), "\n");
+				if (preference == "staff") {
+					for (var m = measurerange[0]; m < measurerange[2] + 1; m++) {
+						for (var n = measurerange[1]; n < measurerange[3] + 1; n++) {
+						outlet(0, "removeAllRenderedMessagesFromStaff", n, m);
+						for (var i = 0; i < userBeans.length; i++) {
+							var tempDict = new Dict();
+							tempDict.parse(userBeans[i]["@Message"]);
+							if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToStaff", m, n, parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+							else {
+								if (tempDict.contains("picster-element[0]::val::visibility")) tempDict.replace("picster-element[0]::val::visibility", "visible");
+								outlet(0, "addRenderedMessageToStaff", m, n, parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), tempDict.stringify_compressed());
+								}
+							}
+						}
+					}	
+				}			
+				else {
+					for (var m = measurerange[0]; m < measurerange[2] + 1; m++) {
+					dumpinfo = ["measure"];
+					outlet(0, "dumpScore", measurerange[0], measurerange[2] - measurerange[0] + 1);
+					outlet(0, "removeAllRenderedMessagesFromMeasure", m);
+					for (var i = 0; i < userBeans.length; i++) {
+							var tempDict = new Dict();
+							tempDict.parse(userBeans[i]["@Message"]);
+							if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToMeasure", m, parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+							else {
+								if (tempDict.contains("picster-element[0]::val::visibility")) tempDict.replace("picster-element[0]::val::visibility", "visible");
+								outlet(0, "addRenderedMessageToMeasure", m, parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), tempDict.stringify_compressed());
+							}
+						}
+					}
+				}
+				outlet(0, "saveToUndoStack");
+				outlet(0, "setRenderAllowed", "1");	
+				}
+				else if (selectionBufferSize != 0) {
+					increment = 0;
+					anchors = {};
+					outlet(0, "getNoteAnchor");
+					for (var event in anchors){
+					anchor = anchors[event];
+					outlet(0, (anchor[6] == -1) ? "getNoteInfo" : "getIntervalInfo", anchor.slice(2));
+					outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
+					//post("selectionBufferSize", anchor.slice(2), selectionBufferSize, userBeans.length, "\n");
+					for (var i = 0; i < userBeans.length; i++) {
+						var tempDict = new Dict();
+						tempDict.parse(userBeans[i]["@Message"]);
+						if (tempDict.contains("image-segment")) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
+						else {
+							if (tempDict.contains("picster-element[0]::val::visibility")) tempDict.replace("picster-element[0]::val::visibility", "visible");
+							outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), tempDict.stringify_compressed());
+						}
+					}
+				}
+				outlet(0, "saveToUndoStack");
+				outlet(0, "setRenderAllowed", "1");
+			}
+}
+
 
 function dumpexpressions()
 {
