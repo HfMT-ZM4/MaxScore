@@ -2690,18 +2690,29 @@ function anything()
 	case "getNumStaves" :
 		numStaves = msg[0];
 		break;
-	case "dictionary" :
+	case "startdump" :
+		break;
+	case "enddump" :
+		break;
+	}
+}
+}
+}
+
+function dictionary(d)
+{
 		var dump = new Dict;
-		dump.name = msg[0];
+		dump.name = d;
 		userBeans = [];
 		json = JSON.parse(dump.stringify());
 		var key = Object.keys(json);
 		if ((key == "interval" || key == "note") && "userBean" in json[key]){
 		var occurence = getAllIndexes(json[key][".ordering"], "userBean");
 		for (var i = 0; i < occurence.length; i++) userBeans[i] = json[key]["userBean"][i];
-		hold = json[key]["@HOLD"];			
+		hold = json[key]["@HOLD"];
 		}
 		else if (dumpinfo[0] == "staff") {
+			//post("staff", dumpinfo, JSON.stringify(json), "\n");
 			if (key == "score" && "staffUserBean" in json["score"]["measure"][0]["staff"][dumpinfo[1]]){
 					var occurence = getAllIndexes(json["score"]["measure"][0]["staff"][dumpinfo[1]][".ordering"], "staffUserBean");
 					for (i = 0; i < occurence.length; i++) {
@@ -2721,15 +2732,8 @@ function anything()
 				}
 			}
 		}
-		break;
-	case "startdump" :
-		break;
-	case "enddump" :
-		break;
-	}
 }
-}
-}
+
 
 function getSelectedElement()
 {
@@ -2792,13 +2796,13 @@ function showAllHiddenElements()
 	outlet(0, "getSelectionBufferSize");
 		if (!selectionBufferSize) {
 			if (measurerange[0] == -1) return;
-				dumpinfo = ["staff", measurerange[n]];
-				outlet(0, "dumpScore", measurerange[0], measurerange[2] - measurerange[0] + 1);
-				//post("staff", JSON.stringify(userBeans), "\n");
 				if (preference == "staff") {
 					for (var m = measurerange[0]; m < measurerange[2] + 1; m++) {
 						for (var n = measurerange[1]; n < measurerange[3] + 1; n++) {
-						outlet(0, "removeAllRenderedMessagesFromStaff", n, m);
+						dumpinfo = ["staff", n];
+						//post("show", dumpinfo, "\n");
+						outlet(0, "dumpScore", measurerange[0], measurerange[2] - measurerange[0] + 1);
+						outlet(0, "removeAllRenderedMessagesFromStaff", m, n);
 						for (var i = 0; i < userBeans.length; i++) {
 							var tempDict = new Dict();
 							tempDict.parse(userBeans[i]["@Message"]);
@@ -2809,7 +2813,9 @@ function showAllHiddenElements()
 								}
 							}
 						}
-					}	
+					}
+				outlet(0, "saveToUndoStack");
+				outlet(0, "setRenderAllowed", 1);			
 				}			
 				else {
 					for (var m = measurerange[0]; m < measurerange[2] + 1; m++) {
@@ -2826,19 +2832,22 @@ function showAllHiddenElements()
 							}
 						}
 					}
-				}
 				outlet(0, "saveToUndoStack");
-				outlet(0, "setRenderAllowed", "1");	
+				outlet(0, "setRenderAllowed", 1);	
+				}
 				}
 				else if (selectionBufferSize != 0) {
+					outlet(0, "setRenderAllowed", 0);
 					increment = 0;
 					anchors = {};
 					outlet(0, "getNoteAnchor");
 					for (var event in anchors){
 					anchor = anchors[event];
+					outlet(0, "clearSelection");
+					outlet(0, "addNoteToSelection", anchor.slice(2));
 					outlet(0, (anchor[6] == -1) ? "getNoteInfo" : "getIntervalInfo", anchor.slice(2));
-					outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
-					//post("selectionBufferSize", anchor.slice(2), selectionBufferSize, userBeans.length, "\n");
+					//outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
+					//post("userBeans", userBeans, anchors[event], "\n");
 					for (var i = 0; i < userBeans.length; i++) {
 						var tempDict = new Dict();
 						tempDict.parse(userBeans[i]["@Message"]);
@@ -2850,7 +2859,7 @@ function showAllHiddenElements()
 					}
 				}
 				outlet(0, "saveToUndoStack");
-				outlet(0, "setRenderAllowed", "1");
+				outlet(0, "setRenderAllowed", 1);
 			}
 }
 
