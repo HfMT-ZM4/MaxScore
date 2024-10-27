@@ -7485,7 +7485,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 148.25, 607.0, 321.0, 48.0 ],
-									"text" : "/stdout : \"received socket close /aa pxLmezj2GuxTAiNFJPT3fg==\""
+									"text" : "/stdout : \"received socket close /loco Zr+GBgIOJB3e742k0naGKg==\""
 								}
 
 							}
@@ -12828,17 +12828,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-35",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 62.0, 158.0, 143.0, 22.0 ],
-									"text" : "print maxscore.makenote"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-34",
 									"maxclass" : "comment",
@@ -13632,13 +13621,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
 									"source" : [ "obj-22", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-35", 0 ],
-									"source" : [ "obj-22", 2 ]
 								}
 
 							}
