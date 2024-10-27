@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,13 +40,38 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 183.5, 400.0, 177.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "picster showAllHiddenElements"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 157.0, 551.0, 114.0, 22.0 ],
+					"text" : "picster hideElement"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-31",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 180.5, 406.0, 24.0, 24.0 ]
+					"patching_rect" : [ 104.0, 399.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -57,7 +82,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 180.5, 445.5, 93.0, 22.0 ],
+					"patching_rect" : [ 104.0, 439.0, 93.0, 22.0 ],
 					"text" : "opendialog json"
 				}
 
@@ -66,11 +91,11 @@
 				"box" : 				{
 					"id" : "obj-28",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 180.5, 369.5, 136.0, 22.0 ],
-					"text" : "sel Load... \"Remove All\""
+					"numinlets" : 5,
+					"numoutlets" : 5,
+					"outlettype" : [ "bang", "bang", "bang", "bang", "" ],
+					"patching_rect" : [ 104.0, 356.0, 125.0, 22.0 ],
+					"text" : "sel 0 1 2 3"
 				}
 
 			}
@@ -93,7 +118,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 239.0, 530.62060546875, 151.0, 22.0 ],
+					"patching_rect" : [ 130.5, 477.0, 151.0, 22.0 ],
 					"text" : "picster removeAllElements"
 				}
 
@@ -105,7 +130,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 78.1666259765625, 530.62060546875, 97.0, 22.0 ],
+					"patching_rect" : [ 78.0, 517.0, 97.0, 22.0 ],
 					"text" : "picster attach $1"
 				}
 
@@ -302,17 +327,18 @@
 					"button" : 1,
 					"id" : "obj-19",
 					"maxclass" : "tab",
+					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 104.0, 332.5, 172.0, 24.0 ],
+					"patching_rect" : [ 104.0, 319.0, 172.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 19.643821716308594, 34.307246999999997, 213.554092407226562, 24.0 ],
+					"presentation_rect" : [ 19.643821716308594, 34.307246999999997, 214.0, 24.0 ],
 					"rounded" : 0.0,
 					"segmented" : 1,
 					"tabcolor" : [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
-					"tabs" : [ "Load...", "Remove All" ],
+					"tabs" : [ "Load...", "Remove All", "Hide", "Show All" ],
 					"textcolor" : [ 0.968627450980392, 0.968627450980392, 0.968627450980392, 1.0 ],
 					"varname" : "action"
 				}
@@ -393,7 +419,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 12.0,
 					"id" : "obj-22",
-					"items" : [ "Default", "Library", ",", "Allegro_moderato", ",", "allobjects", ",", "arco", ",", "breathmark", ",", "caesura", ",", "Coda", ",", "cresc", ",", "dim", ",", "dolce", ",", "ffff", ",", "fp", ",", "gliss", ",", "legato_e_cantabile", ",", "Pedal-down", ",", "Pedal-up", ",", "pizz", ",", "poco-dim", ",", "poco_a_poco_cresc", ",", "pppp", ",", "rall", ",", "Repeat-measure", ",", "Repeat-measure2", ",", "Segno", ",", "sempre", ",", "sempre_cresc", ",", "Senza_rall", ",", "sf", ",", "sfz", ",", "User Library", ",", "RECT" ],
+					"items" : [ "Default", "Library", ",", "Allegro_moderato", ",", "allobjects", ",", "arco", ",", "breathmark", ",", "caesura", ",", "Coda", ",", "cresc", ",", "dim", ",", "dolce", ",", "ffff", ",", "fp", ",", "gliss", ",", "legato_e_cantabile", ",", "Pedal-down", ",", "Pedal-up", ",", "pizz", ",", "poco-dim", ",", "poco_a_poco_cresc", ",", "pppp", ",", "rall", ",", "Repeat-measure", ",", "Repeat-measure2", ",", "Segno", ",", "sempre", ",", "sempre_cresc", ",", "Senza_rall", ",", "sf", ",", "sfz", ",", "User Library" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -415,9 +441,9 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"hidden" : 1,
 					"id" : "obj-4",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "picster.QuickText.maxpat",
 					"numinlets" : 1,
@@ -445,8 +471,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -650,7 +676,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 201.166671752929688, 193.5, 527.0, 22.0 ],
-									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/MaxScore/PicsterLib/" ],
+									"restore" : [ "./packages/MaxScore/patchers/Picster/Library" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1036,24 +1062,24 @@
  ],
 						"styles" : [ 							{
 								"name" : "black on white",
-								"number" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-									"fontname" : [ "Arial" ],
-									"fontsize" : [ 12.0 ]
-								}
-,
 								"umenu" : 								{
-									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 										"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
-
+,
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+								}
+,
+								"number" : 								{
+									"fontname" : [ "Arial" ],
+									"fontsize" : [ 12.0 ],
+									"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1072,8 +1098,8 @@
 , 							{
 								"name" : "section dividers",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 3 ],
+									"fontname" : [ "Arial" ],
 									"fontsize" : [ 15.0 ]
 								}
 ,
@@ -1093,8 +1119,8 @@
 , 							{
 								"name" : "titles",
 								"default" : 								{
-									"fontname" : [ "Arial" ],
 									"fontface" : [ 1 ],
+									"fontname" : [ "Arial" ],
 									"fontsize" : [ 20.0 ]
 								}
 ,
@@ -1236,8 +1262,10 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hidden" : 1,
 					"id" : "obj-7",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "expression-editors.maxpat",
 					"numinlets" : 2,
@@ -1333,7 +1361,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
-					"source" : [ "obj-19", 1 ]
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -1367,8 +1402,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-28", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-28", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-28", 3 ]
 				}
 
 			}
@@ -1383,6 +1432,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
 					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
+					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -1495,24 +1551,24 @@
  ],
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 12.0 ]
-				}
-,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1531,8 +1587,8 @@
 , 			{
 				"name" : "section dividers",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 3 ],
+					"fontname" : [ "Arial" ],
 					"fontsize" : [ 15.0 ]
 				}
 ,
@@ -1552,8 +1608,8 @@
 , 			{
 				"name" : "titles",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"fontface" : [ 1 ],
+					"fontname" : [ "Arial" ],
 					"fontsize" : [ 20.0 ]
 				}
 ,
