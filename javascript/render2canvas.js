@@ -2821,18 +2821,18 @@ function anything() {
 						 Accidental.push("tridecimaldown");
 						break;
 					case 17: 
-						fifths += -5 * factorPowersNum[i][1];
+						fifths += 7 * factorPowersNum[i][1];
 						//fifths += 5 * factorPowersDenom[i][1];
 						Accidental.push("17schismadown");
-						JIAccidentalSuffix = "syntup";
+						//JIAccidentalSuffix = "syntup";
 						break;
 					case 19: 
 						fifths += -3 * factorPowersNum[i][1];
 						 Accidental.push("19schismaup");
 						break;
 					case 23: 
-						fifths += -6 * factorPowersNum[i][1];
-						Accidental.push("23commaup");
+						fifths += 6 * factorPowersNum[i][1];
+						Accidental.push("23commadown");
 						break;
 					}
 				}
@@ -2867,17 +2867,17 @@ function anything() {
 						 Accidental.push("tridecimalup");
 						break;
 					case 17: 
-						fifths += 5 * factorPowersDenom[i][1];
+						fifths += -7 * factorPowersDenom[i][1];
 						Accidental.push("17schismaup");
-						JIAccidentalSuffix = "syntdown";
+						//JIAccidentalSuffix = "syntdown";
 						break;
 					case 19: 
 						fifths += 3 * factorPowersDenom[i][1];
 						 Accidental.push("19schismadown");
 						break;
 					case 23: 
-						fifths += 6 * factorPowersDenom[i][1];
-						 Accidental.push("23commadown");
+						fifths += -6 * factorPowersDenom[i][1];
+						 Accidental.push("23commaup");
 						break;
 					}
 				}
