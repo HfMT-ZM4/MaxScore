@@ -760,6 +760,7 @@ function paste(data) {
 }
 
 function update(data) {
+	//post("update", "\n"); 
 	getSelection();
 	addGraceNotes();
     if (info.contains("0")) keys = info.getkeys();
@@ -781,7 +782,6 @@ function update(data) {
 	retrieve(styletype);
     for (var i = 0; i < keys.length; i++) {
         var inf = info.get(keys[i]);
-		//post("update", info.stringify(), "\n"); 
 		outlet(0, "clearSelection");
 		outlet(0, "addNoteToSelection", inf);
         if (inf[1] == StaffIndex) {
@@ -801,6 +801,7 @@ function update(data) {
                     }
                 } 
 				else {
+					//post(info.stringify(), "\n"); 
 					map(styletype);
                     list = getStaffNoteIntervalInfo(i);
 					imap(styletype, null);
@@ -1069,21 +1070,25 @@ function getLevel()
 	}
 	return level;
 }
+
 function addGraceNotes() {
 	var j = 0;
 	info.clear();
 	///we need to consider notes and intervals and add grace note even though they may already be in the MaxScore selection buffer
+	//post("gracenotes", JSON.stringify(getNumGraceNotes), "\n"); 	
 	for (graceNotes in getNumGraceNotes) {
+		if (getNumGraceNotes[graceNotes][4] != -1) {
 		var graceNote = [];
-		if (getNumGraceNotes[graceNotes].slice(6, 8).join() == "-1,-1") {
-		graceNote = getNumGraceNotes[graceNotes].slice(1, getNumGraceNotes[graceNotes].length);
-		info.replace(j++, graceNote.slice(0, graceNote.length - 1));
-		if (graceNote[graceNote.length - 1] != 0) {
-			for (var k = 0; k < graceNote[graceNote.length - 1]; k++) {
-				info.replace(j++, graceNote.slice(0, graceNote.length - 3).concat([k, -1]));
-    			messnamed(grab+"-relay", "isChord", graceNote.slice(0, graceNote.length - 3).concat([k, -1]));
-				//post("addGraceNotes", graceNote.slice(0, graceNote.length - 1), dump.stringify(), "\n"); 
-				for (var m = 0; m < dump.getkeys().length; m++) if (dump.get(m)[dump.get(m).length - 1] != 0) info.replace(j++, graceNote.slice(0, graceNote.length - 3).concat([k, m]));
+			if (getNumGraceNotes[graceNotes].slice(6, 8).join() == "-1,-1") {
+			graceNote = getNumGraceNotes[graceNotes].slice(1, getNumGraceNotes[graceNotes].length);
+			info.replace(j++, graceNote.slice(0, graceNote.length - 1));
+			if (graceNote[graceNote.length - 1] != 0) {
+				for (var k = 0; k < graceNote[graceNote.length - 1]; k++) {
+					info.replace(j++, graceNote.slice(0, graceNote.length - 3).concat([k, -1]));
+    				messnamed(grab+"-relay", "isChord", graceNote.slice(0, graceNote.length - 3).concat([k, -1]));
+					//post("addGraceNotes", graceNote.slice(0, graceNote.length - 1), dump.stringify(), "\n"); 
+					for (var m = 0; m < dump.getkeys().length; m++) if (dump.get(m)[dump.get(m).length - 1] != 0) info.replace(j++, graceNote.slice(0, graceNote.length - 3).concat([k, m]));
+					}
 				}
 			}
 		}
@@ -1097,7 +1102,7 @@ function getSelection() {
 	getNumGraceNotes = JSON.parse(dump.stringify());
 	var j = 0;
 	selection.clear();
-	for (graceNotes in getNumGraceNotes) selection.replace(j++, getNumGraceNotes[graceNotes].slice(1, getNumGraceNotes[graceNotes].length - 1));
+	for (graceNotes in getNumGraceNotes) if (getNumGraceNotes[graceNotes][4] != -1) selection.replace(j++, getNumGraceNotes[graceNotes].slice(1, getNumGraceNotes[graceNotes].length - 1));
 	//post("getSelection", JSON.stringify(getNumGraceNotes), selection.stringify(), "\n");
     //outlet(0, "clearSelection");
 }

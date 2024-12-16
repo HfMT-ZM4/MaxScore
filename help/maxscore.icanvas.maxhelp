@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 100.0, 807.0, 848.0 ],
+		"rect" : [ 134.0, 138.0, 950.0, 901.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -70,13 +70,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 126.0, 807.0, 822.0 ],
+						"rect" : [ 134.0, 164.0, 950.0, 875.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -238,7 +238,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 2,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -391,7 +391,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 2,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -444,17 +444,17 @@
 																			"score" : 																			{
 																				"0" : 																				{
 																					"@NAME" : "JMSLMaxScore-31",
-																					"@WIDTH" : 320,
+																					"@WIDTH" : 860,
 																					"@HEIGHT" : 220,
 																					"@STAFFS" : 2,
 																					"@NUMTRACKSPERSTAFF" : 2,
 																					"@InstrumentNamesVisible" : "false",
-																					"@TempoVisible" : "true",
+																					"@TempoVisible" : "false",
 																					"@StaffNumbersVisible" : "true",
-																					"@MeasureNumbersVisible" : "true",
-																					"@SectionBracketsVisible" : "true",
-																					"@TimeSignaturesVisible" : "true",
-																					"@KeySignaturesVisible" : "true",
+																					"@MeasureNumbersVisible" : "false",
+																					"@SectionBracketsVisible" : "false",
+																					"@TimeSignaturesVisible" : "false",
+																					"@KeySignaturesVisible" : "false",
 																					"@ClefsVisible" : "true",
 																					"@ScoreTitleVisible" : "false",
 																					"@CourtesyClefsVisible" : "false",
@@ -480,7 +480,7 @@
 																					"ScoreAnnotation" : 																					{
 																						"0" : 																						{
 																							"@CLASSNAME" : "com.softsynth.jmsl.score.ScoreAnnotation",
-																							"@Annotation" : "385.3oc4Q9yaBCCDEeN4SgkmCQAo9GQ2JhNfTghnsBoV0AmvkfK19hrcfhP7cu1NP.15dWrk+cOe9dOuONhtAzFNpnjGHz9oYzDGqVi0n15vLguPlGlKXp0yXUPGwxkv6Jt0C5mkk1BgerknJ.oOp4tN3wxFCuniOTy1znYz1tXEPWk2b8zPlBaIyQISETjWUfBT6q+IIKcvf6RtX6lDhatIe4UVdsxrjKV5DI3J3OHy.1EZVcvbGO+Ahxf6Su8HYjyEs4zq0rBtpZHyzFPo2eTxyHV6JLSv1kyJV2kdlU31EqPALEsvbvXMiUOIqs6l.LSiFLWob9pc1UxwpYW703tX3wOKzxJK6k4OGsONxYUXYEn8F1bxGdU6DgYjNBJYMBKMfk7BsKxCFlJmzSgJnsBa42MF6oWIhV39uBpVd48CAQOAhqapOqMLRUZrk4R6DRu9g.1027b8XkwpmxjsCDosUbOrQBJquxLzv817kxRWbFZcbzg3yFt++CCGeH9W6bPAlC"
+																							"@Annotation" : "385.3oc4Q9yaBCCDEeN4SgkmCnDo9GQ2JhNfTghnsBoV0AmvkfK19hrcfhP7cu1NP.15dWRj+cu678ddebDcCnMbTQIOPnY8SoINVsFqQs0gYBegLOLWvTqmwp.OI0SrbI7thaCRRaQvO1RTEPzG0bW+drrwvK53C0rMMZFscFVAzU4M2DMjovVxbTxTAE4UEn.095eRR6OXvcIW76lDhaqIe4UVdsxzjK9zIRvUvePlArKzr5N26N+Ahxf26e6QxHmKZSoWqYEbU0PloMd5e+QIOiXsqvLAaWNqXcW1YVgaWrBEvTzByAi0LV8jr1taBvLMZvbkx4q1YWIGqlcwCiqwvkeVnkUV1K0eNZebjypvxJP6Mr4jO7p1IB6HcDTxZDVZ.K4EZWjGLLUNomBUPaE1xuaL1S2RDsv8dETs7x9CAQOAhqapOqMrRUZrk4R6DRurP.6ladtdrxX0SYx1EhzNJtG1HAk0WYFZ3da9RYoKNCiNN5P7YCm8+vvwGh+EVCSAIB"
 																						}
 
 																					}
@@ -491,8 +491,8 @@
 																							"jmslscoreinstrument" : 																							{
 																								"0" : 																								{
 																									"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
-																									"@EditEnabled" : "true",
 																									"@InsIndex" : 0,
+																									"@EditEnabled" : "true",
 																									"@Name" : "MaxScoreIns-0",
 																									"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
 																									"@Transposition" : 0.0,
@@ -528,8 +528,8 @@
 ,
 																								"1" : 																								{
 																									"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
-																									"@EditEnabled" : "true",
 																									"@InsIndex" : 1,
+																									"@EditEnabled" : "true",
 																									"@Name" : "MaxScoreIns-1",
 																									"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
 																									"@Transposition" : 0.0,
@@ -768,8 +768,8 @@
 ,
 																					"measure" : 																					{
 																						"0" : 																						{
-																							"@WIDTH" : 561,
-																							"@WIDTHSETBYHAND" : "false",
+																							"@WIDTH" : 840,
+																							"@WIDTHSETBYHAND" : "true",
 																							"@TIMESIG" : [ 4, 4 ],
 																							"@TIMESIGSETBYHAND" : "false",
 																							"@TEMPO" : 60.0,
@@ -777,10 +777,10 @@
 																							"@REPEATSTART" : "false",
 																							"@REPEATEND" : "false",
 																							"@NUMREPEATS" : 1,
-																							"@BARLINE" : "SINGLE",
+																							"@BARLINE" : "NONE",
 																							"@MEASURETEXTX" : 48,
 																							"@MEASURETEXTY" : 48,
-																							"@MEASURELEFTMARGIN" : 50.0,
+																							"@MEASURELEFTMARGIN" : 0.0,
 																							"staff" : 																							{
 																								"0" : 																								{
 																									"@INDEX" : 0,
@@ -811,7 +811,7 @@
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 0,
+																													"@ACCVISPOLICY" : 1,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -827,7 +827,7 @@
 																													"@NOTEHEADSCALE" : 1.0,
 																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "true",
+																													"@STEMVISIBLE" : "false",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
@@ -848,13 +848,24 @@
 ,
 																														"2" : 																														{
 																															"@index" : 6,
-																															"@value" : -1.0,
+																															"@value" : 0.0,
 																															"@name" : "index"
 																														}
 
 																													}
 ,
-																													".ordering" : [ "dim", "dim", "dim" ]
+																													"userBean" : 																													{
+																														"0" : 																														{
+																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
+																															"@Name" : "RenderedMessageBean_note-sel",
+																															"@Message" : "222.3occP1zZBDCDF97jeEggdnBYkcqHT8nGzK0KdUjRpapFb2rKIwuP7+tYmjEjVjPRXdl2YdGlaL.a0acdkMSUopUFOxmxWyA3FC..Ont1AP2ocnfHmjUcDHo.Pi5LIoU52G0.ntLV0QmWpMem2yi3keJFw+ZR9vwhQKouhXz3dcN+0JUxljOcPayAhhuMe0hYIw8IxZZka0dZdK9Spy5xvvER7AwuyR93sRi62FaM00Zo2pu7dgHObn2AHijynZ92VQcIz.2qVL+zbzT5h6yrBwSW9lmZaH3N6AvEqPEc",
+																															"@Xoffset" : 4.0,
+																															"@Yoffset" : 0.0
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
 																												}
 ,
 																												"1" : 																												{
@@ -870,7 +881,7 @@
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 0,
+																													"@ACCVISPOLICY" : 1,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -886,7 +897,7 @@
 																													"@NOTEHEADSCALE" : 1.0,
 																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "true",
+																													"@STEMVISIBLE" : "false",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
@@ -907,13 +918,24 @@
 ,
 																														"2" : 																														{
 																															"@index" : 6,
-																															"@value" : -1.0,
+																															"@value" : 1.0,
 																															"@name" : "index"
 																														}
 
 																													}
 ,
-																													".ordering" : [ "dim", "dim", "dim" ]
+																													"userBean" : 																													{
+																														"0" : 																														{
+																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
+																															"@Name" : "RenderedMessageBean_note-sel",
+																															"@Message" : "222.3occP1zZBDCDF97jeEggdnBYkcqHT8nGzK0KdUjRpapFb2rKIwuP7+tYmjEjVjPRXdl2YdGlaL.a0acdkMSUopUFOxmxWyA3FC..Ont1AP2ocnfHmjUcDHo.Pi5LIoU52G0.ntLV0QmWpMem2yi3keJFw+ZR9vwhQKouhXz3dcN+0JUxljOcPayAhhuMe0hYIw8IxZZka0dZdK9Spy5xvvER7AwuyR93sRi62FaM00Zo2pu7dgHObn2AHijynZ92VQcIz.2qVL+zbzT5h6yrBwSW9lmZaH3N6AvEqPEc",
+																															"@Xoffset" : 4.0,
+																															"@Yoffset" : 0.0
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
 																												}
 ,
 																												"2" : 																												{
@@ -929,7 +951,7 @@
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 0,
+																													"@ACCVISPOLICY" : 1,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -945,7 +967,7 @@
 																													"@NOTEHEADSCALE" : 1.0,
 																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "true",
+																													"@STEMVISIBLE" : "false",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
@@ -966,13 +988,24 @@
 ,
 																														"2" : 																														{
 																															"@index" : 6,
-																															"@value" : -1.0,
+																															"@value" : 2.0,
 																															"@name" : "index"
 																														}
 
 																													}
 ,
-																													".ordering" : [ "dim", "dim", "dim" ]
+																													"userBean" : 																													{
+																														"0" : 																														{
+																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
+																															"@Name" : "RenderedMessageBean_note-sel",
+																															"@Message" : "222.3occP1zZBDCDF97jeEggdnBYkcqHT8nGzK0KdUjRpapFb2rKIwuP7+tYmjEjVjPRXdl2YdGlaL.a0acdkMSUopUFOxmxWyA3FC..Ont1AP2ocnfHmjUcDHo.Pi5LIoU52G0.ntLV0QmWpMem2yi3keJFw+ZR9vwhQKouhXz3dcN+0JUxljOcPayAhhuMe0hYIw8IxZZka0dZdK9Spy5xvvER7AwuyR93sRi62FaM00Zo2pu7dgHObn2AHijynZ92VQcIz.2qVL+zbzT5h6yrBwSW9lmZaH3N6AvEqPEc",
+																															"@Xoffset" : 4.0,
+																															"@Yoffset" : 0.0
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
 																												}
 ,
 																												"3" : 																												{
@@ -988,7 +1021,7 @@
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 0,
+																													"@ACCVISPOLICY" : 1,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -1004,7 +1037,7 @@
 																													"@NOTEHEADSCALE" : 1.0,
 																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "true",
+																													"@STEMVISIBLE" : "false",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
@@ -1025,13 +1058,24 @@
 ,
 																														"2" : 																														{
 																															"@index" : 6,
-																															"@value" : -1.0,
+																															"@value" : 3.0,
 																															"@name" : "index"
 																														}
 
 																													}
 ,
-																													".ordering" : [ "dim", "dim", "dim" ]
+																													"userBean" : 																													{
+																														"0" : 																														{
+																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
+																															"@Name" : "RenderedMessageBean_note-sel",
+																															"@Message" : "222.3occP1zZBDCDF97jeEggdnBYkcqHT8nGzK0KdUjRpapFb2rKIwuP7+tYmjEjVjPRXdl2YdGlaL.a0acdkMSUopUFOxmxWyA3FC..Ont1AP2ocnfHmjUcDHo.Pi5LIoU52G0.ntLV0QmWpMem2yi3keJFw+ZR9vwhQKouhXz3dcN+0JUxljOcPayAhhuMe0hYIw8IxZZka0dZdK9Spy5xvvER7AwuyR93sRi62FaM00Zo2pu7dgHObn2AHijynZ92VQcIz.2qVL+zbzT5h6yrBwSW9lmZaH3N6AvEqPEc",
+																															"@Xoffset" : 4.0,
+																															"@Yoffset" : 0.0
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
 																												}
 
 																											}
@@ -1078,7 +1122,7 @@
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 0,
+																													"@ACCVISPOLICY" : 1,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -1094,7 +1138,7 @@
 																													"@NOTEHEADSCALE" : 1.0,
 																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "true",
+																													"@STEMVISIBLE" : "false",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
@@ -1115,13 +1159,24 @@
 ,
 																														"2" : 																														{
 																															"@index" : 6,
-																															"@value" : -1.0,
+																															"@value" : 4.0,
 																															"@name" : "index"
 																														}
 
 																													}
 ,
-																													".ordering" : [ "dim", "dim", "dim" ]
+																													"userBean" : 																													{
+																														"0" : 																														{
+																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
+																															"@Name" : "RenderedMessageBean_note-sel",
+																															"@Message" : "222.3occP1zZBDCDF97jeEggdnBYkcqHT8nGzK0KdUjRpapFb2rKIwuP7+tYmjEjVjPRXdl2YdGlaL.a0acdkMSUopUFOxmxWyA3FC..Ont1AP2ocnfHmjUcDHo.Pi5LIoU52G0.ntLV0QmWpMem2yi3keJFw+ZR9vwhQKouhXz3dcN+0JUxljOcPayAhhuMe0hYIw8IxZZka0dZdK9Spy5xvvER7AwuyR93sRi62FaM00Zo2pu7dgHObn2AHijynZ92VQcIz.2qVL+zbzT5h6yrBwSW9lmZaH3N6AvEqPEc",
+																															"@Xoffset" : 4.0,
+																															"@Yoffset" : 0.0
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
 																												}
 ,
 																												"1" : 																												{
@@ -1137,7 +1192,7 @@
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 0,
+																													"@ACCVISPOLICY" : 1,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -1153,7 +1208,7 @@
 																													"@NOTEHEADSCALE" : 1.0,
 																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "true",
+																													"@STEMVISIBLE" : "false",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
@@ -1174,13 +1229,24 @@
 ,
 																														"2" : 																														{
 																															"@index" : 6,
-																															"@value" : -1.0,
+																															"@value" : 5.0,
 																															"@name" : "index"
 																														}
 
 																													}
 ,
-																													".ordering" : [ "dim", "dim", "dim" ]
+																													"userBean" : 																													{
+																														"0" : 																														{
+																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
+																															"@Name" : "RenderedMessageBean_note-sel",
+																															"@Message" : "222.3occP1zZBDCDF97jeEggdnBYkcqHT8nGzK0KdUjRpapFb2rKIwuP7+tYmjEjVjPRXdl2YdGlaL.a0acdkMSUopUFOxmxWyA3FC..Ont1AP2ocnfHmjUcDHo.Pi5LIoU52G0.ntLV0QmWpMem2yi3keJFw+ZR9vwhQKouhXz3dcN+0JUxljOcPayAhhuMe0hYIw8IxZZka0dZdK9Spy5xvvER7AwuyR93sRi62FaM00Zo2pu7dgHObn2AHijynZ92VQcIz.2qVL+zbzT5h6yrBwSW9lmZaH3N6AvEqPEc",
+																															"@Xoffset" : 4.0,
+																															"@Yoffset" : 0.0
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
 																												}
 ,
 																												"2" : 																												{
@@ -1196,7 +1262,7 @@
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 0,
+																													"@ACCVISPOLICY" : 1,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -1212,7 +1278,7 @@
 																													"@NOTEHEADSCALE" : 1.0,
 																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "true",
+																													"@STEMVISIBLE" : "false",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
@@ -1233,13 +1299,24 @@
 ,
 																														"2" : 																														{
 																															"@index" : 6,
-																															"@value" : -1.0,
+																															"@value" : 6.0,
 																															"@name" : "index"
 																														}
 
 																													}
 ,
-																													".ordering" : [ "dim", "dim", "dim" ]
+																													"userBean" : 																													{
+																														"0" : 																														{
+																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
+																															"@Name" : "RenderedMessageBean_note-sel",
+																															"@Message" : "222.3occP1zZBDCDF97jeEggdnBYkcqHT8nGzK0KdUjRpapFb2rKIwuP7+tYmjEjVjPRXdl2YdGlaL.a0acdkMSUopUFOxmxWyA3FC..Ont1AP2ocnfHmjUcDHo.Pi5LIoU52G0.ntLV0QmWpMem2yi3keJFw+ZR9vwhQKouhXz3dcN+0JUxljOcPayAhhuMe0hYIw8IxZZka0dZdK9Spy5xvvER7AwuyR93sRi62FaM00Zo2pu7dgHObn2AHijynZ92VQcIz.2qVL+zbzT5h6yrBwSW9lmZaH3N6AvEqPEc",
+																															"@Xoffset" : 4.0,
+																															"@Yoffset" : 0.0
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
 																												}
 ,
 																												"3" : 																												{
@@ -1255,7 +1332,7 @@
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 0,
+																													"@ACCVISPOLICY" : 1,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -1271,7 +1348,7 @@
 																													"@NOTEHEADSCALE" : 1.0,
 																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "true",
+																													"@STEMVISIBLE" : "false",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
@@ -1292,13 +1369,24 @@
 ,
 																														"2" : 																														{
 																															"@index" : 6,
-																															"@value" : -1.0,
+																															"@value" : 7.0,
 																															"@name" : "index"
 																														}
 
 																													}
 ,
-																													".ordering" : [ "dim", "dim", "dim" ]
+																													"userBean" : 																													{
+																														"0" : 																														{
+																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
+																															"@Name" : "RenderedMessageBean_note-sel",
+																															"@Message" : "222.3occP1zZBDCDF97jeEggdnBYkcqHT8nGzK0KdUjRpapFb2rKIwuP7+tYmjEjVjPRXdl2YdGlaL.a0acdkMSUopUFOxmxWyA3FC..Ont1AP2ocnfHmjUcDHo.Pi5LIoU52G0.ntLV0QmWpMem2yi3keJFw+ZR9vwhQKouhXz3dcN+0JUxljOcPayAhhuMe0hYIw8IxZZka0dZdK9Spy5xvvER7AwuyR93sRi62FaM00Zo2pu7dgHObn2AHijynZ92VQcIz.2qVL+zbzT5h6yrBwSW9lmZaH3N6AvEqPEc",
+																															"@Xoffset" : 4.0,
+																															"@Yoffset" : 0.0
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
 																												}
 
 																											}
@@ -1322,8 +1410,8 @@
 																						}
 ,
 																						"1" : 																						{
-																							"@WIDTH" : 450,
-																							"@WIDTHSETBYHAND" : "false",
+																							"@WIDTH" : 800,
+																							"@WIDTHSETBYHAND" : "true",
 																							"@TIMESIG" : [ 4, 4 ],
 																							"@TIMESIGSETBYHAND" : "false",
 																							"@TEMPO" : 60.0,
@@ -1331,10 +1419,10 @@
 																							"@REPEATSTART" : "false",
 																							"@REPEATEND" : "false",
 																							"@NUMREPEATS" : 1,
-																							"@BARLINE" : "SINGLE",
+																							"@BARLINE" : "NONE",
 																							"@MEASURETEXTX" : 48,
 																							"@MEASURETEXTY" : 48,
-																							"@MEASURELEFTMARGIN" : 50.0,
+																							"@MEASURELEFTMARGIN" : 0.0,
 																							"staff" : 																							{
 																								"0" : 																								{
 																									"@INDEX" : 0,
@@ -1631,7 +1719,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 2,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2145,7 +2233,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 2,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2349,8 +2437,8 @@
 													"id" : "obj-35",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 425.833332999999925, 576.0, 85.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"filename" : "socket.pane",
@@ -2391,7 +2479,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 2,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2693,7 +2781,7 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 476.833333333333371, 394.5, 180.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"initial" : [ 9632 ],
+														"initial" : [ 5363 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -2738,7 +2826,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 0.0, 0.0, 320.0, 220.0 ],
+													"presentation_rect" : [ 0.0, 0.0, 860.0, 220.0 ],
 													"rounded" : 0.0,
 													"types" : "TEXT",
 													"varname" : "dropfile"
@@ -2835,7 +2923,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 2,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3100,7 +3188,7 @@
 , 											{
 												"box" : 												{
 													"border" : 0,
-													"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1.0 ] ],
+													"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1.0 ], [ "transparency", 0 ] ],
 													"filename" : "pane.js",
 													"id" : "obj-7",
 													"maxclass" : "jsui",
@@ -3110,7 +3198,7 @@
 													"parameter_enable" : 0,
 													"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 0.0, 0.0, 320.0, 220.0 ],
+													"presentation_rect" : [ 0.0, 0.0, 860.0, 220.0 ],
 													"varname" : "pane"
 												}
 
@@ -3763,7 +3851,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 76.0, 304.0, 320.0, 220.0 ],
+									"patching_rect" : [ 76.0, 304.0, 860.0, 220.0 ],
 									"prototypename" : "maxscore.icanvas",
 									"varname" : "bcanvas",
 									"viewvisibility" : 1
@@ -3781,13 +3869,13 @@
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
-									"name" : "maxscore.fluidsynth2.maxpat",
+									"name" : "maxscore.fluidsynth.maxpat",
 									"numinlets" : 2,
-									"numoutlets" : 1,
+									"numoutlets" : 2,
 									"offset" : [ 0.0, 0.0 ],
-									"outlettype" : [ "multichannelsignal" ],
+									"outlettype" : [ "multichannelsignal", "" ],
 									"patching_rect" : [ 76.0, 593.0, 318.0, 228.0 ],
-									"varname" : "maxscore.fluidsynth[1]",
+									"varname" : "maxscore.fluidsynth",
 									"viewvisibility" : 1
 								}
 
@@ -4035,13 +4123,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 807.0, 822.0 ],
+						"rect" : [ 0.0, 26.0, 950.0, 875.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4090,6 +4178,7 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
+			"obj-11::obj-11::obj-10" : [ "live.text[41]", "live.text", 0 ],
 			"obj-11::obj-11::obj-11" : [ "mc.live.gain~[1]", "mc.live.gain~", 0 ],
 			"obj-11::obj-11::obj-24::obj-10::obj-7" : [ "sound[24]", "sound", 0 ],
 			"obj-11::obj-11::obj-24::obj-11::obj-7" : [ "sound[23]", "sound", 0 ],
@@ -4284,6 +4373,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.fluidsynth-player.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "../patchers/modules/Components",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.fluidsynth.instrument.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
 				"patcherrelativepath" : "../patchers/modules/Components",
@@ -4291,23 +4387,16 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.fluidsynth.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules",
+				"patcherrelativepath" : "../patchers/modules",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.fluidsynth.menus.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
 				"patcherrelativepath" : "../patchers/modules/Components",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.fluidsynth2-player.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
-				"patcherrelativepath" : "../patchers/modules/Components",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "maxscore.fluidsynth2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules",
-				"patcherrelativepath" : "../patchers/modules",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -4389,6 +4478,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.voice2midichannels.maxpat",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "../patchers/modules/Components",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.xml2json.maxpat",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
@@ -4422,8 +4518,8 @@
 			}
 , 			{
 				"name" : "my-loadbang.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
+				"patcherrelativepath" : "../../../Library/MaxScore",
 				"type" : "JSON",
 				"implicit" : 1
 			}

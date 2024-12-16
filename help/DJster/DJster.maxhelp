@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 972.0, 721.0 ],
+		"rect" : [ 134.0, 178.0, 972.0, 721.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -710,18 +710,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-69",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 45.8047869048537, 384.0, 75.0, 22.0 ],
-					"text" : "note $1 $2 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-57",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -1004,7 +992,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-69", 0 ],
+					"destination" : [ "obj-70", 0 ],
 					"source" : [ "obj-55", 0 ]
 				}
 
@@ -1021,13 +1009,6 @@
 					"destination" : [ "obj-55", 0 ],
 					"midpoints" : [ 603.5, 495.0, 568.40239345242685, 495.0, 568.40239345242685, 158.600006000000008, 55.3047869048537, 158.600006000000008 ],
 					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-70", 0 ],
-					"source" : [ "obj-69", 0 ]
 				}
 
 			}
@@ -1202,8 +1183,8 @@
 			}
 , 			{
 				"name" : "AdditiveMeter2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1223,71 +1204,71 @@
 			}
 , 			{
 				"name" : "Inner-Equation.5.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Inside.3.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Mod.2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pof_(Qi)(i=0toz-r-1).2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pof_(Qj)(j=1toz).2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pof_(Qz+1-k)(k=0tor).2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Qz+1-k2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Qz-r2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "TIE.7.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Total-Internal-Equation.6.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1307,15 +1288,15 @@
 			}
 , 			{
 				"name" : "dispenser.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/core",
-				"patcherrelativepath" : "../../patchers/DJster/core",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1328,8 +1309,8 @@
 			}
 , 			{
 				"name" : "dumper.2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1345,7 +1326,14 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "harmonic-energy-profile-15.txt",
+				"name" : "gcdlcm.gendsp",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/externals",
+				"patcherrelativepath" : "../../externals",
+				"type" : "gDSP",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "harmonic-energy-profile.txt",
 				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Profiles",
 				"patcherrelativepath" : "../../patchers/DJster/Profiles",
 				"type" : "TEXT",
@@ -1353,15 +1341,15 @@
 			}
 , 			{
 				"name" : "harmonicity.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Tonality",
-				"patcherrelativepath" : "../../patchers/DJster/Tonality",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "indigestibility.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Tonality",
-				"patcherrelativepath" : "../../patchers/DJster/Tonality",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1427,8 +1415,8 @@
 			}
 , 			{
 				"name" : "packback.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
-				"patcherrelativepath" : "../../patchers/abstractions",
+				"bootpath" : "/Users/Shared/Max 8/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../../Quintet.net/patchers/Library/Abstractions/utilities",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -1455,15 +1443,15 @@
 			}
 , 			{
 				"name" : "reader.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "reader2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/dispenser",
-				"patcherrelativepath" : "../../patchers/DJster/dispenser",
+				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/DJster/Indispensibility",
+				"patcherrelativepath" : "../../patchers/DJster/Indispensibility",
 				"type" : "JSON",
 				"implicit" : 1
 			}

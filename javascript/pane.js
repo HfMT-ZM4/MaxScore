@@ -1197,7 +1197,7 @@ function onresize(w,h)
 {
 	width = this.box.rect[2] - this.box.rect[0];
 	height = this.box.rect[3] - this.box.rect[1];
-
+	//post("w/h", this.box.rect, "\n");
 	verticalScrollbar.extent = height-horizontalScrollbar.span;
 	horizontalScrollbar.extent = width-verticalScrollbar.span;
 	pageSize(pageWidth, pageHeight);
@@ -1223,7 +1223,6 @@ function onwheel(x, y, wheel_inc_x, wheel_inc_y, cmd, shift, caps, opt, ctrl)
 	horizontalScrollbar.value = scale(horizontalOffset, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom[0]) - pageWidth, horizontalScrollbar.percentage/2, (200 - horizontalScrollbar.percentage)/2);
 	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom[1] - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	notifyclients();
-	//post("w/h", prop, horizontalOffset, verticalOffset, pageWidth, pageHeight, horizontalScrollbar.extent, verticalScrollbar.extent, "\n");
 	mgraphics.redraw();
 }
 onwheel.local = 1;
