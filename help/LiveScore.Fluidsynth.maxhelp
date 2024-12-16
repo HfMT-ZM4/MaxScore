@@ -2,42 +2,16 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 84.0, 129.0, 640.0, 480.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 134.0, 178.0, 640.0, 480.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"autosave" : 1,
@@ -49,17 +23,20 @@
 					"id" : "obj-1",
 					"linecount" : 2,
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 119.0, 142.0, 399.0, 193.0 ],
+					"patching_rect" : [ 119.0, 142.0, 386.0, 196.0 ],
 					"presentation_linecount" : 2,
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
 							"parameter_longname" : "amxd~",
+							"parameter_modmode" : 0,
+							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "amxd~",
 							"parameter_type" : 3
 						}
@@ -68,8 +45,8 @@
 ,
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 1,
-						"patchername" : "LiveScore.Fluidsynth2.amxd",
-						"patchername_fallback" : "~/Music/Ableton/User Library/LiveScore/LiveScore.Fluidsynth2.amxd"
+						"patchername" : "LiveScore.Fluidsynth.amxd",
+						"patchername_fallback" : "~/Music/Ableton/User Library/LiveScore/LiveScore.Fluidsynth.amxd"
 					}
 ,
 					"snapshot" : 					{
@@ -82,8 +59,8 @@
 						"subtype" : "Undefined",
 						"embed" : 1,
 						"snapshot" : 						{
-							"name" : "LiveScore.Fluidsynth2.amxd",
-							"origname" : "~/Music/Ableton/User Library/LiveScore/LiveScore.Fluidsynth2.amxd",
+							"name" : "LiveScore.Fluidsynth.amxd",
+							"origname" : "~/Music/Ableton/User Library/LiveScore/LiveScore.Fluidsynth.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"sound" : 0.0,
@@ -119,13 +96,14 @@
 									"sound[8]" : 0.0,
 									"sound[9]" : 0.0,
 									"blob" : 									{
-										"Edit Button[2]" : [ 0.0 ]
+										"Edit Button[3]" : [ 0.0 ]
 									}
 
 								}
 
 							}
-
+,
+							"active" : 1
 						}
 ,
 						"snapshotlist" : 						{
@@ -134,14 +112,14 @@
 									"filetype" : "C74Snapshot",
 									"version" : 2,
 									"minorversion" : 0,
-									"name" : "LiveScore.Fluidsynth2.amxd",
-									"origin" : "LiveScore.Fluidsynth2.amxd",
+									"name" : "LiveScore.Fluidsynth.amxd",
+									"origin" : "LiveScore.Fluidsynth.amxd",
 									"type" : "amxd",
 									"subtype" : "Undefined",
-									"embed" : 0,
+									"embed" : 1,
 									"snapshot" : 									{
-										"name" : "LiveScore.Fluidsynth2.amxd",
-										"origname" : "~/Music/Ableton/User Library/LiveScore/LiveScore.Fluidsynth2.amxd",
+										"name" : "LiveScore.Fluidsynth.amxd",
+										"origname" : "~/Music/Ableton/User Library/LiveScore/LiveScore.Fluidsynth.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"sound" : 0.0,
@@ -177,21 +155,22 @@
 												"sound[8]" : 0.0,
 												"sound[9]" : 0.0,
 												"blob" : 												{
-													"Edit Button[2]" : [ 0.0 ]
+													"Edit Button[3]" : [ 0.0 ]
 												}
 
 											}
 
 										}
-
+,
+										"active" : 1
 									}
 ,
 									"fileref" : 									{
-										"name" : "LiveScore.Fluidsynth2.amxd",
-										"filename" : "LiveScore.Fluidsynth2.amxd.maxsnap",
-										"filepath" : "~/Documents/Max 8/Snapshots",
+										"name" : "LiveScore.Fluidsynth.amxd",
+										"filename" : "LiveScore.Fluidsynth.amxd.maxsnap",
+										"filepath" : "~/Documents/Max 9/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "5c7589f3d4380ad3cc47a6fc50d50825"
+										"snapshotfileid" : "95e584aeed014fa8d2966a930f4aca2d"
 									}
 
 								}
@@ -220,6 +199,7 @@
 			}
  ],
 		"lines" : [  ],
+		"originid" : "pat-15253",
 		"parameters" : 		{
 			"obj-1" : [ "amxd~", "amxd~", 0 ],
 			"parameterbanks" : 			{
@@ -230,64 +210,78 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "LiveScore.Fluidsynth2.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../../../hajdu/Documents/Max 8/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "LiveScore.Fluidsynth2.amxd",
+				"name" : "LiveScore.Fluidsynth.amxd",
 				"bootpath" : "~/Music/Ableton/User Library/LiveScore",
 				"patcherrelativepath" : "../../../../../hajdu/Music/Ableton/User Library/LiveScore",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "livescore.fluidsynth2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules",
+				"name" : "LiveScore.Fluidsynth.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
+				"patcherrelativepath" : "../../../../../hajdu/Documents/Max 9/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "divmod.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/DJster/core",
+				"patcherrelativepath" : "../patchers/DJster/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fixpathissue.js",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluidsynth~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "livescore.fluidsynth.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules",
 				"patcherrelativepath" : "../patchers/modules",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.fluidsynth.menus.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"name" : "maxscore.fluidsynth-player.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/Components",
 				"patcherrelativepath" : "../patchers/modules/Components",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.fluidsynth.instrument.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/Components",
 				"patcherrelativepath" : "../patchers/modules/Components",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.fluidsynth2-player.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"name" : "maxscore.fluidsynth.menus.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/Components",
 				"patcherrelativepath" : "../patchers/modules/Components",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fixpathissue.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.fluidsynthGUI.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/Components",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/Components",
 				"patcherrelativepath" : "../patchers/modules/Components",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluidsynth~.mxo",
-				"type" : "iLaX"
+				"name" : "maxscore.voice2midichannels.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/Components",
+				"patcherrelativepath" : "../patchers/modules/Components",
+				"type" : "JSON",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0

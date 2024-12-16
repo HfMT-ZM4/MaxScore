@@ -10,15 +10,15 @@ var output = new Dict();
 output.name = "output";
 SVGString = [];
 SVGImages = [];
-var mgraphics = new JitterObject("jit.mgraphics", 4000, 2000);
+var Mgraphics = new JitterObject("jit.mgraphics", 4000, 2000);
 var findbounds = new JitterObject("jit.findbounds");
 var planeop = new JitterObject("jit.planeop");
 planeop.op = "+";
 var outmatrix = new JitterMatrix(4, "char", 4000, 2000);
 var monoplane = new JitterMatrix(1, "char", 320, 240);
-var import = new JitterMatrix(4, "char", 4000, 2000);
-import.adapt = 1;
-mgraphics.svg_create("img", "<svg></svg>");
+var place = new JitterMatrix(4, "char", 4000, 2000);
+place.adapt = 1;
+Mgraphics.svg_create("img", "<svg></svg>");
 var svg = new Dict();
 svg.name = "svg";
 findbounds.min = 0.5;
@@ -69,7 +69,7 @@ var font = "Arial";
 var fontsize = 18.;
 var fontstyle = "";
 var style = "frame";
-var cp = new Global("copyandpaste");
+var cp = new Global("copypaste");
 var textedit;
 var storedText = "";
 var id = 0;
@@ -103,15 +103,17 @@ removeTextedit();
 
 function removeTextedit()
 {
-	var objs = [];
-	var ocount = this.patcher.parentpatcher.count;
-	var o = this.patcher.parentpatcher.firstobject;
-	objs.push(o.varname);
-	for (var i = 0; i < ocount - 1; i++){
-	o = o.nextobject;
-	objs.push(o.varname);
+	if (this.patcher.parentpatcher) {
+		var objs = [];
+		var ocount = this.patcher.parentpatcher.count;
+		var o = this.patcher.parentpatcher.firstobject;
+		objs.push(o.varname);
+		for (var i = 0; i < ocount - 1; i++){
+		o = o.nextobject;
+		objs.push(o.varname);
+		}
+		for (var i = 0; i < objs.length; i++) if (objs[i].indexOf("-textedit") != -1) this.patcher.parentpatcher.remove(this.patcher.parentpatcher.getnamed(objs[i]));
 	}
-	for (var i = 0; i < objs.length; i++) if (objs[i].indexOf("-textedit") != -1) this.patcher.parentpatcher.remove(this.patcher.parentpatcher.getnamed(objs[i]));
 }
 
 
@@ -843,7 +845,6 @@ if (mode == "picster") {
 				}
 				break;
 			case 6 :
-				post("blocked", click, blocked, "\n");
 				var temp = [];
 				if (click == "ctrl" && !blocked) return;
 				if (click == "single") {
@@ -1717,8 +1718,8 @@ function addShape()
 			var href = msg[3];
 			var pictype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
 			if (pictype != "svg") {
-				import.importmovie(msg[3]);
-				var _dim = import.dim;
+				place.importmovie(msg[3]);
+				var _dim = place.dim;
 			}
 			else {
 				var f = new File(msg[3]);
@@ -2644,8 +2645,8 @@ function anything()
 				addShape(origin[0], origin[1], "image", msg[0], msg[1]);
 			}
 			else if (pictype == "raster") {
-				import.importmovie(msg);
-				var _dim = import.dim;
+				place.importmovie(msg);
+				var _dim = place.dim;
 				addShape(origin[0], origin[1], "image", msg[0]);
 			}
 			else {
@@ -3056,13 +3057,13 @@ function findBounds(d)
 	svg += "</svg>";
 	//img.setsvg(svg);
  	//post("svg", svg, "\n");
-	mgraphics.svg_create("img", svg);
-	mgraphics.set_source_rgba(1, 1, 1, 1);
-	mgraphics.paint();
-	mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
-	mgraphics.svg_render("img");
+	Mgraphics.svg_create("img", svg);
+	Mgraphics.set_source_rgba(1, 1, 1, 1);
+	Mgraphics.paint();
+	Mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
+	Mgraphics.svg_render("img");
 
-	mgraphics.matrixcalc(outmatrix, outmatrix);
+	Mgraphics.matrixcalc(outmatrix, outmatrix);
 	findbounds.matrixcalc(outmatrix, outmatrix);
 	return [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]];
 }
@@ -3156,11 +3157,11 @@ function findBoundsToo(d)
 	svg += ds2svg(d);
 	svg += "</g></svg>";
 	//img.setsvg(svg);
-	mgraphics.svg_set("img", svg);
-	mgraphics.set_source_rgba(bgcolor_rgba);
-	mgraphics.paint();
-	mgraphics.svg_render("img");
-	mgraphics.matrixcalc(outmatrix, outmatrix);
+	Mgraphics.svg_set("img", svg);
+	Mgraphics.set_source_rgba(bgcolor_rgba);
+	Mgraphics.paint();
+	Mgraphics.svg_render("img");
+	Mgraphics.matrixcalc(outmatrix, outmatrix);
 	outmatrix.op("!=", bgcolor_argb);
 	planeop.matrixcalc(outmatrix, monoplane);
 	findbounds.matrixcalc(monoplane, monoplane);
@@ -3251,11 +3252,11 @@ function findBoundsForRenderedExpression(msg, d)
 	var svg = "<svg><g transform = \"matrix(1,0,0,1," + renderOffset[0] + "," + renderOffset[1] + ")\">";
 	svg += SVGString.join("");
 	svg += "</g></svg>";
-	mgraphics.svg_set("img", svg);
-	mgraphics.set_source_rgba(bgcolor_rgba);
-	mgraphics.paint();
-	mgraphics.svg_render("img");
-	mgraphics.matrixcalc(outmatrix, outmatrix);
+	Mgraphics.svg_set("img", svg);
+	Mgraphics.set_source_rgba(bgcolor_rgba);
+	Mgraphics.paint();
+	Mgraphics.svg_render("img");
+	Mgraphics.matrixcalc(outmatrix, outmatrix);
 	outmatrix.op("!=", bgcolor_argb);
 	planeop.matrixcalc(outmatrix, monoplane);
 	findbounds.matrixcalc(monoplane, monoplane);

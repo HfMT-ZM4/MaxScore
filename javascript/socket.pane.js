@@ -35,6 +35,7 @@ var cursobj = {};
 var blnk = new Task(blink, this);
 var boundingRect = [];
 var boundingRectOffset = [];
+var _playback = 0;
 var pons = 0;
 var x = 0; 
 var y = 0;
@@ -46,7 +47,8 @@ var	buttonfillcolor = "red";
 var	buttonstrokecolor = "red";
 var buttonstrokewidth = 0.5;
 var buttonfillopacity = 0.2;
-var ref, listener;
+var ref;
+var listener = null;
 var zl = [0.5];
 
 
@@ -82,10 +84,12 @@ if (jsarguments.length >= 1)
 		}
 }
 
-var waitasecond = new Task(shortDelay, this);
-waitasecond.schedule(10);
+function loadbang()
+{
+	bang();
+}
 
-function shortDelay()
+function bang()
 {
 	ref = this.patcher.getnamed("pane");
 	listener = new MaxobjListener(ref, null, listenerobj);
@@ -93,9 +97,10 @@ function shortDelay()
 
 function listenerobj(data)
 {
+	return;
 	if (data.value[1]) {
 		_offset = data.value[0];
-		//post("data", _offset, "\n");
+		post("data", _offset, "\n");
 		scroll("offset", _offset);
 		lastAction = "offset";
 		}
@@ -145,7 +150,6 @@ function remap(staffGroup, staffIndex, position)
 	for (j = 0; j < idx[i]; j++) destinationBoxes += (spacing[staffGroup[j]] + 24);
 	//dest.push(scoreTopMarginOfFirstPage + scoreTopMargin + destinationBoxes + delta);
 	dest.push(destinationBoxes + delta);
-	//post("dest", destinationBoxes, delta, dest, "\n");
 	}
 	}
 	if (dest.length != 0) return dest;
@@ -159,10 +163,12 @@ function clear()
 	//clearGraphics();
 }
 
+/*
 function proportional(p)
 {
  	prop = p;
 }
+*/
 
 function setImages(img)
 {
@@ -241,7 +247,7 @@ function anything()
 		idleOut = msg[1];
 		} 
 	else if (msg[0] == "playback") {
-		playback = msg[1];
+		_playback = msg[1];
 		} 		
 	else {
 		switch(msg[0]) {
@@ -428,9 +434,9 @@ function flashing()
 		*/
 }
 
-function obj_ref(o)
+function msg_dictionary(o)
 {
-	//gc();
+	//post("dest", JSON.stringify(o), "\n");
 	pageWidth = o.pageSize[0];
 	pageHeight = o.pageSize[1];
 	setZoom(o.setZoom);
@@ -443,6 +449,7 @@ function obj_ref(o)
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
 	groupcount = o.groupcount;
+	prop = o.proportional;
 	var nsg = new Dict;
 	var num = cnt();
 	//Check whether images are already in the media folder. If not copy them there.
@@ -575,7 +582,7 @@ function obj_ref(o)
 	scroll("offset", _offset);
 	renderPlayhead();
 	drawBounds();
-	outlet(2, "dictionary", nsg.name);
+	outlet(2, "nonScrolling", "dictionary", nsg.name);
 }
 
 function zoomlist()

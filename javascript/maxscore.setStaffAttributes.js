@@ -760,7 +760,6 @@ function paste(data) {
 }
 
 function update(data) {
-	//post("update", "\n"); 
 	getSelection();
 	addGraceNotes();
     if (info.contains("0")) keys = info.getkeys();
@@ -801,9 +800,9 @@ function update(data) {
                     }
                 } 
 				else {
-					//post(info.stringify(), "\n"); 
-					map(styletype);
+					map(styletype, StaffIndex);
                     list = getStaffNoteIntervalInfo(i);
+					//post("update", list, "\n"); 
 					imap(styletype, null);
                 }
             }
@@ -936,7 +935,6 @@ function getInfo() {
 
 function getStaffNoteIntervalInfo(i) {
     var inf = info.get(keys[i]);
-	//post("getStaffNoteIntervalInfo", inf, "\n"); 
     messnamed(grab+"-relay", "getStaffInfo", inf.slice(0, 2));
     l[7] = dump.get("staff::@CLEF");
     l[6] = dump.get("staff::@KEYSIGTYPE");
@@ -1104,8 +1102,7 @@ function getSelection() {
 	selection.clear();
 	for (graceNotes in getNumGraceNotes) if (getNumGraceNotes[graceNotes][4] != -1) selection.replace(j++, getNumGraceNotes[graceNotes].slice(1, getNumGraceNotes[graceNotes].length - 1));
 	//post("getSelection", JSON.stringify(getNumGraceNotes), selection.stringify(), "\n");
-    //outlet(0, "clearSelection");
-}
+ }
 
 
 function restoreSelection() {

@@ -2,42 +2,17 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
 		"rect" : [ 215.0, 127.0, 1072.0, 831.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
 		"toolbarvisible" : 0,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -48,8 +23,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 603.5, 97.0, 232.0, 53.0 ],
-					"text" : "Get ID of MaxScore Editor and communicate it to all instances of the grab object",
-					"textcolor" : [ 0.392157, 0.278431, 0.376471, 1.0 ]
+					"text" : "Get ID of MaxScore Editor and communicate it to all instances of the grab object"
 				}
 
 			}
@@ -71,8 +45,8 @@
 					"id" : "obj-53",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 438.5, 103.0, 109.0, 22.0 ],
 					"text" : "maxscore.bindtoID",
 					"varname" : "patcher[1]"
@@ -100,10 +74,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 857.0, 23.0, 92.0, 88.0 ],
+					"patching_rect" : [ 857.0, 23.0, 92.0, 81.838805970149252 ],
 					"pic" : "Scorepion-Tail-blue.svg",
 					"presentation" : 1,
-					"presentation_rect" : [ 197.75, 28.0, 58.0, 49.0 ]
+					"presentation_rect" : [ 197.75, 28.0, 58.0, 51.594029850746267 ]
 				}
 
 			}
@@ -184,8 +158,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 176.0, 75.0, 232.0, 22.0 ],
-					"text" : "GUI element, add to presentation",
-					"textcolor" : [ 0.392157, 0.278431, 0.376471, 1.0 ]
+					"text" : "GUI element, add to presentation"
 				}
 
 			}
@@ -211,8 +184,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 592.0, 58.0, 217.0, 22.0 ],
-					"text" : "The Scorepion logo, or your own.",
-					"textcolor" : [ 0.392157, 0.278431, 0.376471, 1.0 ]
+					"text" : "The Scorepion logo, or your own."
 				}
 
 			}
@@ -239,14 +211,12 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 566.0, 180.5, 149.0, 38.0 ],
-					"text" : "Instructions on how to use your Scorepion.",
-					"textcolor" : [ 0.392157, 0.278431, 0.376471, 1.0 ]
+					"text" : "Instructions on how to use your Scorepion."
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.501961, 0.360784, 0.262745, 0.243137 ],
 					"fontname" : "Arial",
 					"fontsize" : 14.0,
 					"id" : "obj-15",
@@ -255,14 +225,12 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 563.0, 287.0, 496.0, 163.0 ],
-					"text" : "This Scorepion is based on \"Fill Empty Measures with Rests\" and serves as an annotated template. Scorepions reside in Max 8/Packages/MaxScore/patchers/Scorepions and are dynamically included in the Scorepion menu when creating a new instance of the Editor .\n\nA Scorepion uses the grab object to receive info queries from the host. When the MaxScore Editor receives a message starting with sendScorepion from a Max patch it's embedded in all of its attributes are sent to the currently loaded Scorepion, e.g. \"sendScorepion bang\". \nSend all messages to the MaxScore Editor via the outlet. ",
-					"textcolor" : [ 0.392157, 0.278431, 0.376471, 1.0 ]
+					"text" : "This Scorepion is based on \"Fill Empty Measures with Rests\" and serves as an annotated template. Scorepions reside in Max 8/Packages/MaxScore/patchers/Scorepions and are dynamically included in the Scorepion menu when creating a new instance of the Editor .\n\nA Scorepion uses the grab object to receive info queries from the host. When the MaxScore Editor receives a message starting with sendScorepion from a Max patch it's embedded in all of its attributes are sent to the currently loaded Scorepion, e.g. \"sendScorepion bang\". \nSend all messages to the MaxScore Editor via the outlet. "
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"fontname" : "Arial",
 					"fontsize" : 14.0,
 					"id" : "obj-10",
@@ -274,15 +242,12 @@
 					"presentation" : 1,
 					"presentation_linecount" : 3,
 					"presentation_rect" : [ 74.0, 71.0, 485.0, 53.0 ],
-					"text" : "This Scorepion searches for empty measures and fills them with rests. This process will be applied to all measures / staves and doesn't require notes or measures to be selected beforehand.",
-					"textcolor" : [ 1.0, 0.988235294117647, 0.988235294117647, 1.0 ]
+					"text" : "This Scorepion searches for empty measures and fills them with rests. This process will be applied to all measures / staves and doesn't require notes or measures to be selected beforehand."
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"bgoncolor" : [ 0.55, 0.55, 0.55, 1.0 ],
 					"id" : "obj-9",
 					"legacytextcolor" : 1,
 					"maxclass" : "textbutton",
@@ -294,9 +259,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 260.0, 154.0, 100.0, 20.0 ],
 					"text" : "Apply Process",
-					"textcolor" : [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ],
-					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textovercolor" : [ 0.1, 0.1, 0.1, 1.0 ],
 					"usebgoncolor" : 1,
 					"usetextovercolor" : 1
 				}
@@ -665,12 +627,10 @@
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"background" : 1,
-					"bgcolor" : [ 0.501961, 0.360784, 0.262745, 0.243137 ],
+					"border" : 1,
 					"id" : "obj-36",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 13.0, 14.0, 540.5, 794.0 ]
@@ -970,23 +930,24 @@
 
 			}
  ],
+		"originid" : "pat-20620",
 		"dependency_cache" : [ 			{
-				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/DJster/patchers/DJster/Abstractions",
-				"patcherrelativepath" : "../../../DJster/patchers/DJster/Abstractions",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "Scorepion-Tail-blue.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/media/Images/svg",
 				"patcherrelativepath" : "../../media/Images/svg",
 				"type" : "svg",
 				"implicit" : 1
 			}
 , 			{
+				"name" : "divmod.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/DJster/core",
+				"patcherrelativepath" : "../../patchers/DJster/core",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.bindtoID.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
@@ -995,24 +956,24 @@
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "black on white",
-				"number" : 				{
-					"fontsize" : [ 12.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"fontname" : [ "Arial" ]
-				}
-,
 				"umenu" : 				{
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 						"color1" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
-
+,
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
+				}
+,
+				"number" : 				{
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 12.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

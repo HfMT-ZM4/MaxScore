@@ -151,7 +151,8 @@ function init() {
 									e.parse(userBeans[p]["@Message"][2]);
 									if (e.contains("picster-element")){
 									var picster = e.get("picster-element");
-									if(picster.contains("expression")) {
+									//post("e", e.stringify(), picster.length, "\n");
+									if(picster.length == 3 && picster[2].contains("expression")) {
 										jexpr.push(JSON.parse(picster.get("expression").stringify()));
 										o[_count] = jexpr;
 										}

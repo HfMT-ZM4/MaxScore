@@ -1,7 +1,10 @@
 inlets = 2;
 outlets = 4;
+var mgraphics_init;
+
 
 include("maxscore.tools");
+
 
 function Scrollbar()
 {
@@ -27,6 +30,7 @@ this.value = 0;
 mgraphics.init();				// initialize mgraphics
 mgraphics.relative_coords = 0;	// coordinate system: x, y, width height
 mgraphics.autofill = 0;
+mgraphics_init = 1;
 
 setinletassist(0, "render dumps");
 setinletassist(1, "modifier keys");
@@ -44,10 +48,10 @@ var width = this.box.rect[2] - this.box.rect[0];
 var height = this.box.rect[3] - this.box.rect[1];
 
 
-var verticalScrollbar = new Scrollbar();
+const verticalScrollbar = new Scrollbar();
 verticalScrollbar.type = "modern";
 verticalScrollbar.orientation = "vertical";
-var horizontalScrollbar = new Scrollbar();
+const horizontalScrollbar = new Scrollbar();
 horizontalScrollbar.type = "modern";
 horizontalScrollbar.orientation = "horizontal";
 verticalScrollbar.extent = height-horizontalScrollbar.span;
@@ -60,7 +64,7 @@ var	buttonfillcolor = [1., 0., 0., 0.1];
 var	buttonstrokecolor = [1., 0., 0., 1.];
 var buttonstrokewidth = 0.5;
 var horizontalOffset = 0;
-var verticalOffset =0;
+var verticalOffset = 0;
 var virgin = 1;
 var init = 1;
 var idl = 0;
@@ -78,7 +82,7 @@ var selection = 0;
 var shiftclick;
 var controlshift = 0;
 var zoom = [ 1., 1. ];
-var idleOut = 0;
+var _idleOut = 0;
 var capsl = 0;
 var bgcolor = [0.996, 0.996, 0.94, 1];
 var transparency = 0;
@@ -107,7 +111,7 @@ var boundingRectOffset = [0, 0];
 var playheadRect = [];
 var playheadColor = [0.3, 1., 0.3, 0.7];
 var playheadWidth = 3.;
-var playback = 0;
+var _playback = 0;
 var flashingNotes = {};
 var lines = {};
 var segments = {};
@@ -212,19 +216,24 @@ function anything()
 {
 	var _handle;
 	var msg = arrayfromargs(messagename, arguments);
-	if (msg[0] == "bounds") {
+	switch (msg[0]) {
+	case "bounds" :
 		if (msg[1] == "hide") boundingRect = [];
 		else if (msg[1] == "blink") blnk.schedule(200);
 		else boundingRect = [msg[1] * zoom[0], msg[2] * zoom[1], (msg[3] - msg[1]) * zoom[0], (msg[4] - msg[2]) * zoom[1]];
     	mgraphics.redraw();
-		}
-	else if (msg[0] == "idleOut") idleOut = msg[1];
-	else if (msg[0] == "playback") playback = msg[1];
-	else if (msg[0] == "quintetnet") {
+	break;
+	case "idleOut" :
+ 		_idleOut = msg[1];
+	break;
+	case "playback" : 
+		_playback = msg[1];
+	break;
+	case "quintetnet" :
 		//paintOnScore[pons++] = msg.slice(1);
     	//mgraphics.redraw();
-		}
-	else {
+	break;
+	default:
 		if (mgraphicsRoutines.indexOf(msg[0]) != -1) _handle = ["unnamed"];
 		else {
 			_handle = msg[0];
@@ -310,12 +319,13 @@ function renderImages()
 	}
 }
 
-function obj_ref(o)
+function msg_dictionary(o)
 {
 	s = 1;
 	pageSize(o.pageSize[0], o.pageSize[1]);
 	setZoom(o.setZoom);
 	init = o.init;
+	prop = o.proportional;
 	//matrix transform for g needs to also be applied to gradientTransform 
 	bgcolor = o.bgcolor;
 	_svgimages = o.svgimages[s];
@@ -341,12 +351,9 @@ function obj_ref(o)
 	svg += "</g>";
 	svg += "</svg>";
 	img.setsvg(svg);
-	
-	//ISSUE: create separate SVG objects and assign to picster which needs to be an array of MGraphics objects. Set scaling factor separately for every element of array.
 	picster = [];
 	pScale = [];
 	pOffset = [];
-	//post("o.picster[s]", JSON.stringify(o.picster[s][i]), "\n");
 	for (var i = 0; i < o.picster[s].length; i++) {
 		pOffset[i] = o.transforms[s][i]["picster:offset"].split(",");
 		pScale[i] = o.transforms[s][i].hasOwnProperty("picster:scale") ? o.transforms[s][i]["picster:scale"].split(",") : [1, 1];
@@ -365,7 +372,6 @@ function obj_ref(o)
 	svg += ds2svg(embeddedImages);
 	svg += "</g>";
 	svg += "</svg>";
-	//post("pScale", pScale, svg, "\n");
 	embedded.setsvg(svg);
 
 	var svgclefs = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
@@ -376,8 +382,9 @@ function obj_ref(o)
 	svgclefs += "</g>";
 	svgclefs += "</svg>";
 	clefs.setsvg(svgclefs);
-
 	virgin = 0;
+	if (o.playhead != -1) playheadRect = [o.playhead, 0, playheadWidth, pageHeight];
+
 }
 
 function gradientTransform(string, translate) {
@@ -418,7 +425,6 @@ function pageSize(x, y)
 	if (init) {	
 		horizontalOffset = 0;
 		verticalOffset = 0;
-		//post("visible", width, height, "\n");
 		manual = 0;
 		notifyclients();
 		//outlet(1, "offset", horizontalOffset, verticalOffset);
@@ -428,6 +434,7 @@ function pageSize(x, y)
 	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom[1] - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	oldPageWidth = pageWidth;
 	oldPageHeight = pageHeight;
+	//post("scrollbars", JSON.stringify(verticalScrollbar), JSON.stringify(verticalScrollbar), "\n");
 }
 
 function setZoom()
@@ -626,10 +633,12 @@ function cursor()
 	}
 }
 
+
 function proportional(p)
 {
 	prop = p;
 }
+
 
 function playhead(x)
 {
@@ -650,10 +659,12 @@ function picsterShape()
 	mgraphics.redraw();
 }
 
-function dictionary(d)
+
+function nonScrolling(name, arg)
 {
-	nsg.name = d;
+	nsg.name = arg;
 }
+
 
 function autoadjust(a)
 {
@@ -716,6 +727,7 @@ function countin(arg)
 }
 
 function paint() {
+		if (!mgraphics_init) post("init", mgraphics_init, "\n");
 		if (tsk["scroll"].running) {
 			horizontalOffset = (elapsed + ticks["scroll"]) * speed;
 			manual = 0;
@@ -732,7 +744,7 @@ function paint() {
 		mgraphics.rectangle(0, 0, pageWidth, pageHeight);
 		mgraphics.fill();
 		mgraphics.svg_render(img);
-		if (playback) flashingNoteheads();
+		if (_playback) flashingNoteheads();
 		renderImages();
 		mgraphics.svg_render(embedded);
 		var m = mgraphics.get_matrix();
@@ -750,7 +762,7 @@ function paint() {
 		mgraphics.identity_matrix();
 		mgraphics.scale(zoom[0], zoom[1]);
 		mgraphics.translate(0, verticalOffset);
-		if (prop || playback) drawPlayhead();
+		if (prop || _playback) drawPlayhead();
 		if (prop) mgraphics.svg_render(clefs);
 		mgraphics.identity_matrix();
 		if (mouseselection) selectionRect();
@@ -771,7 +783,6 @@ function nsgVisible(offset)
 	var t = offset / timeUnit * -1000.;
 	var vis = new Dict;
 	var keys = nsg.getkeys();
-	//post("nsg", keys, "\n");
 	for (var i = 0; i < keys.length; i++)
 	{
 	//post("time", t, nsg.get("Picster-Element_1727881616747" + "::showbetween")[0], nsg.get("Picster-Element_1727881616747" + "::showbetween")[1], "\n");
@@ -963,6 +974,7 @@ function hbar()
 		}
 //////////////////////////////////////////
 		identity_matrix();
+		//post(2, horizontalScrollbar.extent, "\n");
 		translate(0, verticalScrollbar.extent);
 		set_source_rgba(horizontalScrollbar.bgcolor);
 		rectangle(0, 0, horizontalScrollbar.extent, horizontalScrollbar.span);
@@ -974,7 +986,7 @@ function hbar()
 		rectangle_rounded(horizontalScrollbar.center-(horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*horizontalScrollbar.percentage/200, 3, (horizontalScrollbar.extent-horizontalScrollbar.spacer*2)*horizontalScrollbar.percentage/100., horizontalScrollbar.span-5, horizontalScrollbar.round, horizontalScrollbar.round);
 		fill();
 		}
-		//post("horizontalScrollbar", horizontalScrollbar.center, horizontalScrollbar.extent, horizontalScrollbar.percentage, "\n");
+		//post("horizontalScrollbar", horizontalScrollbar.center, horizontalScrollbar.span, verticalScrollbar.extent, horizontalScrollbar.percentage, "\n");
 //////////////////////////////////////////
 		}
 }
@@ -1022,7 +1034,6 @@ function capsLock(c)
 
 function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
 {
-	//post("modifiers", x,y,but,cmd,shift,capslock,option,ctrl, "\n");
 	var _cmd = (max["os"]=="macintosh") ? cmd : option;
 	idl = !but;
 	position = [x, y];
@@ -1076,7 +1087,6 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
     	outlet(0, "mousePressed", x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
 		return;
     	}
-   		//post("CASE", "2", "\n");
 		shiftclick = 0;
 		controlshift = 0;
 		outlet(0, "mousePressed",  x / zoom[0] - horizontalOffset, y / zoom[1] - verticalOffset);
@@ -1162,7 +1172,7 @@ function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 	if (!repeat) outlet(2, "idleout", 0);
 	repeat = 1;
 	var _cmd = (max["os"]=="macintosh") ? cmd : option;
-	if (idleOut) outlet(1, "mouseIdle",  x / zoom[0] - horizontalOffset , y / zoom[1] - verticalOffset, shift, ctrl);
+	if (_idleOut) outlet(1, "mouseIdle",  x / zoom[0] - horizontalOffset , y / zoom[1] - verticalOffset, shift, ctrl);
     canvasactive = 1;
     if (_cmd) DisplayCursor(9);
 	else if (ctrl) DisplayCursor(4);
@@ -1195,13 +1205,16 @@ ondblclick.local = 1;
 
 function onresize(w,h)
 {
+	/*
 	width = this.box.rect[2] - this.box.rect[0];
 	height = this.box.rect[3] - this.box.rect[1];
-	//post("w/h", this.box.rect, "\n");
+
 	verticalScrollbar.extent = height-horizontalScrollbar.span;
 	horizontalScrollbar.extent = width-verticalScrollbar.span;
+  	//post(1, width-verticalScrollbar.span, "\n");
 	pageSize(pageWidth, pageHeight);
 	mgraphics.redraw();
+	*/
 }
 onresize.local = 1; //private
 
@@ -1223,6 +1236,7 @@ function onwheel(x, y, wheel_inc_x, wheel_inc_y, cmd, shift, caps, opt, ctrl)
 	horizontalScrollbar.value = scale(horizontalOffset, 0, ((prop) ? 0 : horizontalScrollbar.extent / zoom[0]) - pageWidth, horizontalScrollbar.percentage/2, (200 - horizontalScrollbar.percentage)/2);
 	verticalScrollbar.value = scale(verticalOffset, 0, verticalScrollbar.extent / zoom[1] - pageHeight, verticalScrollbar.percentage/2, (200 - verticalScrollbar.percentage)/2);
 	notifyclients();
+	//post("w/h", prop, horizontalOffset, verticalOffset, pageWidth, pageHeight, horizontalScrollbar.extent, verticalScrollbar.extent, "\n");
 	mgraphics.redraw();
 }
 onwheel.local = 1;
@@ -1233,7 +1247,6 @@ function boxsize(w, h)
 	height = h;
 	verticalScrollbar.extent = height-horizontalScrollbar.span;
 	horizontalScrollbar.extent = width-verticalScrollbar.span;
-	//post("w/h", width, height, "\n");
 	pageSize(pageWidth, pageHeight);
 	outlet(1, "dim", width, height);
 	//mgraphics.redraw();

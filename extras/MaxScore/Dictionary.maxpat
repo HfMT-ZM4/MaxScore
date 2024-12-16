@@ -2,42 +2,18 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 200.0, 66.0, 1088.0, 716.0 ],
-		"bglocked" : 0,
+		"rect" : [ 100.0, 144.0, 1088.0, 716.0 ],
 		"openinpresentation" : 1,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
 		"toolbarvisible" : 0,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"title" : "MaxScore Dictionary",
 		"boxes" : [ 			{
 				"box" : 				{
@@ -126,6 +102,7 @@
 					"patching_rect" : [ 61.5, 644.0, 162.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 432.5, 0.0, 223.0, 21.0 ],
+					"tabcolor" : [ 0.572549019607843, 0.572549019607843, 0.572549019607843, 1.0 ],
 					"tabs" : [ "Core", "Extended" ]
 				}
 
@@ -605,7 +582,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 664.0, 1086.0, 44.0 ],
 					"rounded" : 0.0,
-					"text" : "GlissandoTransform | - | toggle glissando out for selected notes | GlissandoTransform",
+					"text" : "copyToAux2 | - | copies selected note(s) to aux buffer 2 | copyToAux2",
 					"textcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
 				}
 
@@ -783,7 +760,7 @@
 					"presentation_rect" : [ 1.0, 41.0, 1086.0, 621.0 ],
 					"rowhead" : 1,
 					"rowheight" : 20,
-					"rows" : 296,
+					"rows" : 56,
 					"selmode" : 3,
 					"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"stcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -1253,23 +1230,24 @@
 
 			}
  ],
+		"originid" : "pat-24720",
 		"dependency_cache" : [ 			{
 				"name" : "MaxScore-Messages.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/dictionary",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/dictionary",
 				"patcherrelativepath" : "../../patchers/dictionary",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Picster-Messages.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/dictionary",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/dictionary",
 				"patcherrelativepath" : "../../patchers/dictionary",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1

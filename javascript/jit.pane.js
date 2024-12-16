@@ -1,5 +1,6 @@
 inlets = 1;
 outlets = 1;
+include("maxscore.tools");
 
 
 /*
@@ -45,7 +46,7 @@ verticalScrollbar.center = verticalScrollbar.extent/2;
 horizontalScrollbar.center = horizontalScrollbar.extent/2;
 */
 
-var mgraphics = new JitterObject("jit.mgraphics", 600, 400);
+var Mgraphics = new JitterObject("jit.mgraphics", 600, 400);
 var outmatrix = new JitterMatrix(4, "char", 600, 400);
 var horizontalOffset = 0;
 var verticalOffset =0;
@@ -93,7 +94,7 @@ var pshape = "1: line";
 var boundingRect = [];
 var boundingRectOffset = [0, 0];
 var playheadRect = [];
-var playback = 0;
+var _playback = 0;
 var flashingNotes = {};
 var lines = {};
 var segments = {};	
@@ -120,12 +121,15 @@ var buttonstrokewidth = 0.5;
 var pCount = 0;
 var pScale = [];
 var pOffset = []
-var ref, listener;
+var ref;
+var listener = null;
 
-var waitasecond = new Task(shortDelay, this);
-waitasecond.schedule(10);
+function loadbang()
+{
+	bang();
+}
 
-function shortDelay()
+function bang()
 {
 	ref = this.patcher.getnamed("pane");
 	listener = new MaxobjListener(ref, null, listenerobj);
@@ -133,6 +137,7 @@ function shortDelay()
 
 function listenerobj(data)
 {
+	return;
 	if (data.value[1]) {
 		_offset = data.value[0];
 		scroll("offset", _offset);
@@ -192,7 +197,7 @@ function anything()
 		idleOut = msg[1];
 		} 
 	else if (msg[0] == "playback") {
-		playback = msg[1];
+		_playback = msg[1];
 		} 		
 	else if (msg[0] == "quintetnet") {
 		//paintOnScore[pons++] = msg.slice(1);
@@ -252,12 +257,12 @@ function setImages(img)
 			}
 }
 
-function obj_ref(o)
+function msg_dictionary(o)
 {
 	embeddedImages = [];
-	mgraphics.svg_create("img", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
-	mgraphics.svg_create("clefs", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
-	mgraphics.svg_create("embedded", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
+	Mgraphics.svg_create("img", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
+	Mgraphics.svg_create("clefs", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
+	Mgraphics.svg_create("embedded", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	width = this.patcher.box.rect[2] - this.patcher.box.rect[0];
 	height = this.patcher.box.rect[3] - this.patcher.box.rect[1];
 	if (virgin) {
@@ -270,8 +275,10 @@ function obj_ref(o)
 	pageSize(o.pageSize[0], o.pageSize[1]);
 	setZoom(o.setZoom);
 	init = o.init;
+	prop = o.proportional;
+	hscrollfactor = prop + 1;
 	outmatrix.dim = [pageWidth, pageHeight];
-	mgraphics.dim = [pageWidth, pageHeight];
+	Mgraphics.dim = [pageWidth, pageHeight];
 	bgcolor = o.bgcolor;
 	svgimages = o.svgimages[s];
 	for (var i = 0; i < svgimages.length; i++) {
@@ -279,7 +286,7 @@ function obj_ref(o)
 		var temp = svgimages[i][1].split("/");
 		var reference = temp[temp.length - 1];
 		if (!ImageCache.hasOwnProperty(reference)) {
-			mgraphics.svg_set(reference, svgimages[i][1]);
+			Mgraphics.svg_set(reference, svgimages[i][1]);
 			ImageCache[reference] = svgimages[i][1];
 			}
 		svgimages[i][1] = reference;
@@ -292,11 +299,10 @@ function obj_ref(o)
 	svg += ds2svg(o.svg[s]);
 	svg += "</g>";
 	svg += "</svg>";
-	mgraphics.svg_set("img", svg);
+	Mgraphics.svg_set("img", svg);
 	
 	pScale = [];
 	pOffset = [];
-	//post("o.picster[s]", o.picster[s][i].new, JSON.stringify(o.defs[s][i]), "\n");
 	pCount = o.picster[s].length;
 	for (var i = 0; i < pCount; i++) {
 		pOffset[i] = o.transforms[s][i]["picster:offset"].split(",");
@@ -305,23 +311,24 @@ function obj_ref(o)
 		svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 		svg += ds2svg(o.picster[s][i]);
 		svg += "</svg>";
-		mgraphics.svg_create("_picster[" + i + "]", "<svg></svg>");	
-		mgraphics.svg_set("_picster[" + i + "]", svg);
+		Mgraphics.svg_create("_picster[" + i + "]", "<svg></svg>");	
+		Mgraphics.svg_set("_picster[" + i + "]", svg);
 	}
-
+	post(embeddedImages.length, "\n");
+	if (embeddedImages.length > 0) {
 	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svg += "<g id=\"" + s +  "\">";	
 	svg += ds2svg(embeddedImages);
 	svg += "</g>";
 	svg += "</svg>";
-	mgraphics.svg_set("embedded", svg);
-
+	Mgraphics.svg_set("embedded", svg);
+	}
 	var svgclefs = "<svg width=\"" + 25 + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + 25 + " " + pageHeight + "\" style=\"background: ivory\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
 	svgclefs += "<g id=\"" + s +  "\">";
 	svgclefs += ds2svg(o.clefs[s]);
 	svgclefs += "</g>";
 	svgclefs += "</svg>";	
-	mgraphics.svg_set("clefs", svgclefs);	
+	Mgraphics.svg_set("clefs", svgclefs);	
 	virgin = 0;
 
 	redraw();	
@@ -330,7 +337,7 @@ function obj_ref(o)
 function clear()
 {
 	//img.setsvg("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");
-	mgraphics.svg_set("img", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
+	Mgraphics.svg_set("img", "<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");	
 	clearGraphics();
 }
 
@@ -540,11 +547,13 @@ function cursor()
 	}	
 }
 
+/*
 function proportional(p)
 {
 	prop = p;
 	hscrollfactor = p + 1;
 }
+*/
 
 function playhead(x)
 {
@@ -565,10 +574,12 @@ function picsterShape()
 	//redraw();
 }
 
+/*
 function dictionary()
 {
 	
 }
+*/
 
 function autoadjust(a)
 {
@@ -634,82 +645,82 @@ function redraw() {
 			//post("horizontalOffset", elapsed, ticks["scroll"], speed, "\n");
 			//horizontalScrollbar.value = scale(-horizontalOffset, 0, pageWidth, horizontalScrollbar.percentage/2, 100 - horizontalScrollbar.percentage/2);			
 			}
-		mgraphics.set_source_rgba(1., 1., 0.94, 1.);
-		mgraphics.paint();
- 		mgraphics.identity_matrix();
-		mgraphics.scale(zoom, zoom);
-		mgraphics.translate(horizontalOffset, verticalOffset);
-		mgraphics.set_source_rgba(bgcolor);
-		mgraphics.rectangle(0, 0, pageWidth, pageHeight);
-		mgraphics.fill();
-		mgraphics.svg_render("img");
-		if (playback) flashingNoteheads();
+		Mgraphics.set_source_rgba(1., 1., 0.94, 1.);
+		Mgraphics.paint();
+ 		Mgraphics.identity_matrix();
+		Mgraphics.scale(zoom, zoom);
+		Mgraphics.translate(horizontalOffset, verticalOffset);
+		Mgraphics.set_source_rgba(bgcolor);
+		Mgraphics.rectangle(0, 0, pageWidth, pageHeight);
+		Mgraphics.fill();
+		Mgraphics.svg_render("img");
+		if (_playback) flashingNoteheads();
 		renderImages();
-		mgraphics.svg_render("embedded");
-		var m = mgraphics.get_matrix();
+		Mgraphics.svg_render("embedded");
+		var m = Mgraphics.get_matrix();
 		for (var i = 0; i < pCount; i++) {
-		mgraphics.translate(pOffset[i]);	
-		mgraphics.scale(pScale[i]);
-		mgraphics.svg_render("_picster[" + i + "]");
-		mgraphics.set_matrix(m);
+		Mgraphics.translate(pOffset[i]);	
+		Mgraphics.scale(pScale[i]);
+		Mgraphics.svg_render("_picster[" + i + "]");
+		Mgraphics.set_matrix(m);
 		}
 		picsterLabel();
 		paintOnTop();
 		if (highlight) measureSelection();
-		mgraphics.identity_matrix();
+		Mgraphics.identity_matrix();
 		if (boundingRect.length > 0) drawBoundingRect();
-		mgraphics.scale(zoom, zoom);
+		Mgraphics.scale(zoom, zoom);
 		drawCursors();
 		drawCountins();
-		if (prop || playback) drawPlayhead();
-		mgraphics.translate(0, verticalOffset);
-		if (prop) mgraphics.svg_render("clefs");
-		mgraphics.identity_matrix();
+		if (prop || _playback) drawPlayhead();
+		Mgraphics.translate(0, verticalOffset);
+		if (prop) Mgraphics.svg_render("clefs");
+		Mgraphics.identity_matrix();
 		//selectionRect();
 
-		mgraphics.matrixcalc(outmatrix, outmatrix);
+		Mgraphics.matrixcalc(outmatrix, outmatrix);
 		outlet(0,"jit_matrix", outmatrix.name);
 
 }
 
 function renderImages()
 {
-	var currentMatrix = mgraphics.get_matrix();
-	mgraphics.set_source_rgba(0., 0., 0., 1.);
+	var currentMatrix = Mgraphics.get_matrix();
+	Mgraphics.set_source_rgba(0., 0., 0., 1.);
 	for (var i = 0; i < svgimages.length; i++){
 	//post("svgimages", JSON.stringify(svgimages[i].slice(4)), "\n");
-		mgraphics.transform(svgimages[i].slice(6)[0]);
-		mgraphics.translate(svgimages[i][2], svgimages[i][3]);
-		if (svgimages[i][0] == "raster") mgraphics.image_surface_draw(ImageCache[svgimages[i].slice(1, 2)], 0, 0, svgimages[i].slice(4, 6));
-  		else mgraphics.svg_render(ImageCache[svgimages[i].slice(1, 2)]);
-		mgraphics.set_matrix(currentMatrix);
+		Mgraphics.transform(svgimages[i].slice(6)[0]);
+		Mgraphics.translate(svgimages[i][2], svgimages[i][3]);
+		if (svgimages[i][0] == "raster") Mgraphics.image_surface_draw(ImageCache[svgimages[i].slice(1, 2)], 0, 0, svgimages[i].slice(4, 6));
+  		else Mgraphics.svg_render(ImageCache[svgimages[i].slice(1, 2)]);
+		Mgraphics.set_matrix(currentMatrix);
 		} 
 }
 
 function drawPlayhead()
 {
-				mgraphics.set_source_rgba(0.3, 1., 0.3, 0.7);
-				mgraphics.rectangle(playheadRect);
-				mgraphics.fill();	
+				Mgraphics.set_source_rgba(0.3, 1., 0.3, 0.7);
+				Mgraphics.rectangle(playheadRect);
+				Mgraphics.fill();	
 }
 
 function drawCursors()
 {	
 		for (var crsr in cursor_pos)
 		{
-            	mgraphics.set_line_width(1.);
-				mgraphics.set_source_rgba(cursor_color[crsr]);
-           		mgraphics.move_to(cursor_pos[crsr]);
-           		mgraphics.line_to(cursor_pos[crsr][0], cursor_pos[crsr][1] + cursor_pos[crsr][2]);
-           		mgraphics.move_to(cursor_pos[crsr]);
-           		mgraphics.line_to(cursor_pos[crsr][0] - 3, cursor_pos[crsr][1] - 5);
-           		mgraphics.move_to(cursor_pos[crsr]);
-        		mgraphics.line_to(cursor_pos[crsr][0] + 3, cursor_pos[crsr][1] - 5);
-           		mgraphics.move_to(cursor_pos[crsr][0], cursor_pos[crsr][1] + cursor_pos[crsr][2]);
-           		mgraphics.line_to(cursor_pos[crsr][0] - 3, cursor_pos[crsr][1] + cursor_pos[crsr][2] + 5);
-           		mgraphics.move_to(cursor_pos[crsr][0], cursor_pos[crsr][1] + cursor_pos[crsr][2]);
-       			mgraphics.line_to(cursor_pos[crsr][0] + 3, cursor_pos[crsr][1] + cursor_pos[crsr][2] + 5);
-       			mgraphics.stroke();
+            	Mgraphics.set_line_width(1.);
+				Mgraphics.set_source_rgba(cursor_color[crsr]);
+           		Mgraphics.move_to(cursor_pos[crsr]);
+           		Mgraphics.line_to(cursor_pos[crsr][0], cursor_pos[crsr][1] + cursor_pos[crsr][2]);
+           		Mgraphics.move_to(cursor_pos[crsr]);
+           		Mgraphics.line_to(cursor_pos[crsr][0] - 3, cursor_pos[crsr][1] - 5);
+           		Mgraphics.move_to(cursor_pos[crsr]);
+        		Mgraphics.line_to(cursor_pos[crsr][0] + 3, cursor_pos[crsr][1] - 5);
+           		Mgraphics.move_to(cursor_pos[crsr][0], cursor_pos[crsr][1] + cursor_pos[crsr][2]);
+           		Mgraphics.line_to(cursor_pos[crsr][0] - 3, cursor_pos[crsr][1] + cursor_pos[crsr][2] + 5);
+           		Mgraphics.move_to(cursor_pos[crsr][0], cursor_pos[crsr][1] + cursor_pos[crsr][2]);
+       			Mgraphics.line_to(cursor_pos[crsr][0] + 3, cursor_pos[crsr][1] + cursor_pos[crsr][2] + 5);
+       			Mgraphics.stroke();
 
 		}
 }
@@ -719,22 +730,22 @@ function drawCountins()
 	for (var cnt in countins)
 		{
 			if (countins[cnt] > 0) {
-				mgraphics.set_source_rgba(cursor_color[cnt]);
-				mgraphics.move_to(cursor_pos[cnt][0] - 8 , cursor_pos[cnt][1] - 6);
-				mgraphics.set_font_size(24);
- 				mgraphics.select_font_face("Arial");
-				mgraphics.text_path(JSON.stringify(countins[cnt]));				
-          		mgraphics.fill();
+				Mgraphics.set_source_rgba(cursor_color[cnt]);
+				Mgraphics.move_to(cursor_pos[cnt][0] - 8 , cursor_pos[cnt][1] - 6);
+				Mgraphics.set_font_size(24);
+ 				Mgraphics.select_font_face("Arial");
+				Mgraphics.text_path(JSON.stringify(countins[cnt]));				
+          		Mgraphics.fill();
 		}
 	}
 }
 
 function measureSelection()
 {
-				mgraphics.set_source_rgba(0., 0.5, 1., 0.10);
+				Mgraphics.set_source_rgba(0., 0.5, 1., 0.10);
 				for (var m in selectedMeasures){
-				mgraphics.rectangle(selectedMeasures[m]);
-				mgraphics.fill();	
+				Mgraphics.rectangle(selectedMeasures[m]);
+				Mgraphics.fill();	
 				}
 }
 
@@ -750,65 +761,65 @@ function handle()
 function picsterLabel()
 {
 			if (capsl) {
-				mgraphics.set_source_rgba(1., 0., 0., 1.);
-				mgraphics.move_to(2, 10);
-				mgraphics.set_font_size(8);
- 				mgraphics.select_font_face("Arial");
-				mgraphics.text_path(pshape);				
-            	mgraphics.fill();
+				Mgraphics.set_source_rgba(1., 0., 0., 1.);
+				Mgraphics.move_to(2, 10);
+				Mgraphics.set_font_size(8);
+ 				Mgraphics.select_font_face("Arial");
+				Mgraphics.text_path(pshape);				
+            	Mgraphics.fill();
 				}
 }
 
 function selectionRect()
 {
 //        if (selection && !controlshift) {
-               	mgraphics.set_line_width(0.5);
-                mgraphics.set_source_rgba(0.8, 0.8, 0.8, 0.1);
-                mgraphics.rectangle_rounded(Math.min(rect_x[0], rect_x[1]), Math.min(rect_y[0], rect_y[1]), Math.max(rect_x[0], rect_x[1]) - Math.min(rect_x[0], rect_x[1]), Math.max(rect_y[0], rect_y[1]) - Math.min(rect_y[0], rect_y[1]), 8, 8);
-                mgraphics.fill();
-               	mgraphics.set_source_rgba(0.8, 0.8, 0.8, 1.);
-                mgraphics.rectangle_rounded(Math.min(rect_x[0], rect_x[1]), Math.min(rect_y[0], rect_y[1]), Math.max(rect_x[0], rect_x[1]) - Math.min(rect_x[0], rect_x[1]), Math.max(rect_y[0], rect_y[1]) - Math.min(rect_y[0], rect_y[1]), 8, 8);
-                mgraphics.stroke();
+               	Mgraphics.set_line_width(0.5);
+                Mgraphics.set_source_rgba(0.8, 0.8, 0.8, 0.1);
+                Mgraphics.rectangle_rounded(Math.min(rect_x[0], rect_x[1]), Math.min(rect_y[0], rect_y[1]), Math.max(rect_x[0], rect_x[1]) - Math.min(rect_x[0], rect_x[1]), Math.max(rect_y[0], rect_y[1]) - Math.min(rect_y[0], rect_y[1]), 8, 8);
+                Mgraphics.fill();
+               	Mgraphics.set_source_rgba(0.8, 0.8, 0.8, 1.);
+                Mgraphics.rectangle_rounded(Math.min(rect_x[0], rect_x[1]), Math.min(rect_y[0], rect_y[1]), Math.max(rect_x[0], rect_x[1]) - Math.min(rect_x[0], rect_x[1]), Math.max(rect_y[0], rect_y[1]) - Math.min(rect_y[0], rect_y[1]), 8, 8);
+                Mgraphics.stroke();
  //     } 	
 }
 
 function drawBoundingRect()
 {
-                mgraphics.set_line_width(buttonstrokewidth);
-				mgraphics.save();
-				mgraphics.scale(zoom, zoom);
- 				mgraphics.translate(boundingRectOffset);
-               	mgraphics.set_source_rgba(buttonfillcolor);
-				mgraphics.rectangle(boundingRect);
-                mgraphics.fill();
-                mgraphics.set_source_rgba(buttonstrokecolor);
- 				mgraphics.rectangle(boundingRect);
-               	mgraphics.stroke();
-				mgraphics.restore();
+                Mgraphics.set_line_width(buttonstrokewidth);
+				Mgraphics.save();
+				Mgraphics.scale(zoom, zoom);
+ 				Mgraphics.translate(boundingRectOffset);
+               	Mgraphics.set_source_rgba(buttonfillcolor);
+				Mgraphics.rectangle(boundingRect);
+                Mgraphics.fill();
+                Mgraphics.set_source_rgba(buttonstrokecolor);
+ 				Mgraphics.rectangle(boundingRect);
+               	Mgraphics.stroke();
+				Mgraphics.restore();
 }
 
 function flashingNoteheads()
 {
 		for (var notehead in flashingNotes)
 		{
-               	mgraphics.set_source_rgba(flashingNotes[notehead][4], flashingNotes[notehead][5], flashingNotes[notehead][6], 1.);
-            	mgraphics.select_font_face(flashingNotes[notehead][2]);
-            	mgraphics.set_font_size(flashingNotes[notehead][3]);
-            	mgraphics.move_to(flashingNotes[notehead][0], flashingNotes[notehead][1]);
-				mgraphics.text_path(flashingNotes[notehead][7]);
-            	mgraphics.fill();
+               	Mgraphics.set_source_rgba(flashingNotes[notehead][4], flashingNotes[notehead][5], flashingNotes[notehead][6], 1.);
+            	Mgraphics.select_font_face(flashingNotes[notehead][2]);
+            	Mgraphics.set_font_size(flashingNotes[notehead][3]);
+            	Mgraphics.move_to(flashingNotes[notehead][0], flashingNotes[notehead][1]);
+				Mgraphics.text_path(flashingNotes[notehead][7]);
+            	Mgraphics.fill();
 			}
 }
 
 function paintOnTop()
 {
-		var currentMatrix = mgraphics.get_matrix();
+		var currentMatrix = Mgraphics.get_matrix();
 		var keys = Object.keys(paintOnScore);
 		for (var i = 0; i < keys.length; i++) {
-		if (paintOnScore[keys[i]].length == 2) eval("mgraphics." + paintOnScore[keys[i]][0] + "(\"" + paintOnScore[keys[i]][1] + "\")");
-		else eval("mgraphics." + paintOnScore[keys[i]][0] + "(" + paintOnScore[keys[i]].slice(1, paintOnScore[keys[i]].length).join() + ")");	
+		if (paintOnScore[keys[i]].length == 2) eval("Mgraphics." + paintOnScore[keys[i]][0] + "(\"" + paintOnScore[keys[i]][1] + "\")");
+		else eval("Mgraphics." + paintOnScore[keys[i]][0] + "(" + paintOnScore[keys[i]].slice(1, paintOnScore[keys[i]].length).join() + ")");	
 		}
-		mgraphics.set_matrix(currentMatrix);
+		Mgraphics.set_matrix(currentMatrix);
 }
 
 function capsLock(c)

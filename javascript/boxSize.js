@@ -72,7 +72,6 @@ function fullscreen(fs)
 
 function resize()
 {
-	//post("parent", parent,"\n");
 	switch (parent[0])
 	{
 	case "bcanvas": //banvas: box is toplevel. Top left-hand corner stays constant after zoom
@@ -119,6 +118,7 @@ function resize()
 function active(a)
 {
 	if (a) {
+	//post("active", a, "\n");
 	this.patcher.message("script", "sendbox", "pane", "patching_rect", 400., 20, 320, 240);
 	this.patcher.message("script", "sendbox", "dropfile", "patching_rect", 30, 532, 90, 70);
 	}
@@ -126,7 +126,9 @@ function active(a)
 
 function mytask()
 {
-	wind_coords[0] = this.patcher.parentpatcher.wind.location;
+	//post("ratio0", this.patcher.parentpatcher, "\n");
+	if (this.patcher.parentpatcher != 0) wind_coords[0] = this.patcher.parentpatcher.wind.location;
+	else return;
 	var ratio = 1;
 	if (parent[0] == "canvas") {
 		var w = wind_coords[0][2] - wind_coords[0][0];
@@ -148,7 +150,6 @@ function mytask()
 			//this.patcher.parentpatcher.message("script", "sendbox", this.patcher.box.varname, "presentation_rect", parent[1], parent[2], w - (parent[1] + parent[3]), h - (parent[2] + parent[4]));
 			//this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, this.patcher.box.rect[2], this.patcher.box.rect[3]);
 			this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, Math.round((w - (parent[1] + parent[3])) / ratio / zoom), Math.round((h - (parent[2] + parent[4])) / ratio / zoom));
-			//post("ratio0", Math.round((w - (parent[1] + parent[3])) / ratio / zoom), Math.round((h - (parent[2] + parent[4])) / ratio / zoom), "\n");
 			}
 			}
 		}

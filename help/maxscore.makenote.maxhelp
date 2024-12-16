@@ -2,44 +2,18 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
+			"major" : 9,
+			"minor" : 0,
 			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 178.0, 1492.0, 838.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 39.0, 106.0, 1442.0, 838.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -69,43 +43,17 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 6,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 204.0, 1492.0, 812.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
+						"rect" : [ 39.0, 132.0, 1442.0, 812.0 ],
 						"gridsize" : [ 5.0, 5.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
 						"showontab" : 1,
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-73",
@@ -114,7 +62,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 413.0, 111.0, 24.0, 24.0 ]
+									"patching_rect" : [ 413.0, 111.0, 24.0, 24.0 ],
+									"svg" : ""
 								}
 
 							}
@@ -163,6 +112,7 @@
 											"parameter_invisible" : 1,
 											"parameter_longname" : "vst~",
 											"parameter_modmode" : 0,
+											"parameter_osc_name" : "<default>",
 											"parameter_shortname" : "vst~",
 											"parameter_type" : 3
 										}
@@ -172,6 +122,48 @@
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 1,
 										"parameter_mappable" : 0
+									}
+,
+									"snapshot" : 									{
+										"filetype" : "C74Snapshot",
+										"version" : 2,
+										"minorversion" : 0,
+										"name" : "snapshotlist",
+										"origin" : "vst~",
+										"type" : "list",
+										"subtype" : "Undefined",
+										"embed" : 1,
+										"snapshot" : 										{
+
+										}
+,
+										"snapshotlist" : 										{
+											"current_snapshot" : 0,
+											"entries" : [ 												{
+													"filetype" : "C74Snapshot",
+													"version" : 2,
+													"minorversion" : 0,
+													"name" : "",
+													"origin" : "",
+													"type" : "AudioUnit",
+													"subtype" : "AudioEffect",
+													"embed" : 0,
+													"snapshot" : 													{
+
+													}
+,
+													"fileref" : 													{
+														"name" : "",
+														"filename" : ".maxsnap",
+														"filepath" : "~/Documents/Max 9/Snapshots",
+														"filepos" : -1,
+														"snapshotfileid" : "edc18562715fd820330f5076e3f70c26"
+													}
+
+												}
+ ]
+										}
+
 									}
 ,
 									"text" : "vst~",
@@ -224,8 +216,8 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 8,
-											"minor" : 6,
+											"major" : 9,
+											"minor" : 0,
 											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -233,33 +225,8 @@
 ,
 										"classnamespace" : "box",
 										"rect" : [ 596.0, 108.0, 797.0, 767.0 ],
-										"bglocked" : 0,
 										"openinpresentation" : 1,
-										"default_fontsize" : 12.0,
-										"default_fontface" : 0,
-										"default_fontname" : "Arial",
-										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
-										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
-										"statusbarvisible" : 2,
-										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
-										"boxanimatetime" : 200,
-										"enablehscroll" : 1,
-										"enablevscroll" : 1,
-										"devicewidth" : 0.0,
-										"description" : "",
-										"digest" : "",
-										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
-										"assistshowspatchername" : 0,
 										"title" : "maxscore.icanvas",
 										"boxes" : [ 											{
 												"box" : 												{
@@ -376,8 +343,8 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 8,
-															"minor" : 6,
+															"major" : 9,
+															"minor" : 0,
 															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -385,33 +352,7 @@
 ,
 														"classnamespace" : "box",
 														"rect" : [ 488.0, 580.0, 292.0, 246.0 ],
-														"bglocked" : 0,
-														"openinpresentation" : 0,
-														"default_fontsize" : 12.0,
-														"default_fontface" : 0,
-														"default_fontname" : "Arial",
-														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
-														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
-														"statusbarvisible" : 2,
-														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
-														"boxanimatetime" : 200,
-														"enablehscroll" : 1,
-														"enablevscroll" : 1,
-														"devicewidth" : 0.0,
-														"description" : "",
-														"digest" : "",
-														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
-														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"comment" : "",
@@ -511,6 +452,7 @@
 
 															}
  ],
+														"originid" : "pat-43",
 														"styles" : [ 															{
 																"name" : "black on white",
 																"umenu" : 																{
@@ -583,10 +525,7 @@
 ,
 													"patching_rect" : [ 188.166665999999964, 106.0, 108.166666500000019, 22.0 ],
 													"saved_object_attributes" : 													{
-														"description" : "",
-														"digest" : "",
-														"globalpatchername" : "",
-														"tags" : ""
+														"globalpatchername" : ""
 													}
 ,
 													"text" : "p maxscore.store"
@@ -639,8 +578,8 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 8,
-															"minor" : 6,
+															"major" : 9,
+															"minor" : 0,
 															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -648,33 +587,7 @@
 ,
 														"classnamespace" : "box",
 														"rect" : [ 236.0, 230.0, 474.0, 607.0 ],
-														"bglocked" : 0,
-														"openinpresentation" : 0,
-														"default_fontsize" : 12.0,
-														"default_fontface" : 0,
-														"default_fontname" : "Arial",
-														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
-														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
-														"statusbarvisible" : 2,
-														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
-														"boxanimatetime" : 200,
-														"enablehscroll" : 1,
-														"enablevscroll" : 1,
-														"devicewidth" : 0.0,
-														"description" : "",
-														"digest" : "",
-														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
-														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-3",
@@ -792,7 +705,14 @@
 																		"watch" : 0
 																	}
 ,
-																	"text" : "node.script n4m.max-fs.js @autostart 1"
+																	"text" : "node.script n4m.max-fs.js @autostart 1",
+																	"textfile" : 																	{
+																		"filename" : "n4m.max-fs.js",
+																		"flags" : 0,
+																		"embed" : 0,
+																		"autowatch" : 1
+																	}
+
 																}
 
 															}
@@ -1027,6 +947,7 @@
 
 															}
  ],
+														"originid" : "pat-119",
 														"styles" : [ 															{
 																"name" : "AudioStatus_Menu",
 																"default" : 																{
@@ -1089,10 +1010,7 @@
 ,
 													"patching_rect" : [ 491.833332999999925, 613.0, 78.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"description" : "",
-														"digest" : "",
-														"globalpatchername" : "",
-														"tags" : ""
+														"globalpatchername" : ""
 													}
 ,
 													"text" : "p searchpath"
@@ -1153,8 +1071,8 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 8,
-															"minor" : 6,
+															"major" : 9,
+															"minor" : 0,
 															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -1162,33 +1080,7 @@
 ,
 														"classnamespace" : "box",
 														"rect" : [ 569.0, 230.0, 306.0, 280.0 ],
-														"bglocked" : 0,
-														"openinpresentation" : 0,
-														"default_fontsize" : 12.0,
-														"default_fontface" : 0,
-														"default_fontname" : "Arial",
-														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
-														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
-														"statusbarvisible" : 2,
-														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
-														"boxanimatetime" : 200,
-														"enablehscroll" : 1,
-														"enablevscroll" : 1,
-														"devicewidth" : 0.0,
-														"description" : "",
-														"digest" : "",
-														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
-														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-4",
@@ -1324,15 +1216,13 @@
 																}
 
 															}
- ]
+ ],
+														"originid" : "pat-121"
 													}
 ,
 													"patching_rect" : [ 375.999999015441858, 394.5, 90.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"description" : "",
-														"digest" : "",
-														"globalpatchername" : "",
-														"tags" : ""
+														"globalpatchername" : ""
 													}
 ,
 													"text" : "p serializedDict"
@@ -1399,8 +1289,8 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 8,
-															"minor" : 6,
+															"major" : 9,
+															"minor" : 0,
 															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -1408,33 +1298,7 @@
 ,
 														"classnamespace" : "box",
 														"rect" : [ 502.0, 222.0, 371.0, 335.0 ],
-														"bglocked" : 0,
-														"openinpresentation" : 0,
-														"default_fontsize" : 12.0,
-														"default_fontface" : 0,
-														"default_fontname" : "Arial",
-														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
-														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
-														"statusbarvisible" : 2,
-														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
-														"boxanimatetime" : 200,
-														"enablehscroll" : 1,
-														"enablevscroll" : 1,
-														"devicewidth" : 0.0,
-														"description" : "",
-														"digest" : "",
-														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
-														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-6",
@@ -1667,15 +1531,13 @@
 																}
 
 															}
- ]
+ ],
+														"originid" : "pat-123"
 													}
 ,
 													"patching_rect" : [ 312.333332499999983, 576.0, 90.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"description" : "",
-														"digest" : "",
-														"globalpatchername" : "",
-														"tags" : ""
+														"globalpatchername" : ""
 													}
 ,
 													"text" : "p serializedDict"
@@ -1703,7 +1565,7 @@
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 476.833333333333371, 394.5, 180.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"initial" : [ 192980 ],
+														"initial" : [ 1000 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -1843,8 +1705,8 @@
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
-															"major" : 8,
-															"minor" : 6,
+															"major" : 9,
+															"minor" : 0,
 															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -1852,33 +1714,7 @@
 ,
 														"classnamespace" : "box",
 														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
-														"bglocked" : 0,
-														"openinpresentation" : 0,
-														"default_fontsize" : 12.0,
-														"default_fontface" : 0,
-														"default_fontname" : "Arial",
-														"gridonopen" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
-														"gridsnaponopen" : 1,
-														"objectsnaponopen" : 1,
-														"statusbarvisible" : 2,
-														"toolbarvisible" : 1,
-														"lefttoolbarpinned" : 0,
-														"toptoolbarpinned" : 0,
-														"righttoolbarpinned" : 0,
-														"bottomtoolbarpinned" : 0,
-														"toolbars_unpinned_last_save" : 0,
-														"tallnewobj" : 0,
-														"boxanimatetime" : 200,
-														"enablehscroll" : 1,
-														"enablevscroll" : 1,
-														"devicewidth" : 0.0,
-														"description" : "",
-														"digest" : "",
-														"tags" : "",
-														"style" : "",
-														"subpatcher_template" : "",
-														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -2032,15 +1868,13 @@
 																}
 
 															}
- ]
+ ],
+														"originid" : "pat-125"
 													}
 ,
 													"patching_rect" : [ 30.0, 625.0, 71.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"description" : "",
-														"digest" : "",
-														"globalpatchername" : "",
-														"tags" : ""
+														"globalpatchername" : ""
 													}
 ,
 													"text" : "p loadscore"
@@ -2110,7 +1944,7 @@
 , 											{
 												"box" : 												{
 													"border" : 0,
-													"embedstate" : [ [ "transparency", 0 ], [ "bgcolor", 0.996, 0.996, 0.94, 1 ] ],
+													"embedstate" : [ [ "bgcolor", 0.996, 0.996, 0.94, 1 ], [ "transparency", 0 ] ],
 													"filename" : "pane.js",
 													"id" : "obj-7",
 													"maxclass" : "jsui",
@@ -2705,6 +2539,7 @@
 
 											}
  ],
+										"originid" : "pat-21",
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
@@ -2850,8 +2685,8 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 8,
-											"minor" : 6,
+											"major" : 9,
+											"minor" : 0,
 											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -2859,33 +2694,7 @@
 ,
 										"classnamespace" : "box",
 										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
-										"bglocked" : 0,
-										"openinpresentation" : 0,
-										"default_fontsize" : 12.0,
-										"default_fontface" : 0,
-										"default_fontname" : "Arial",
-										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
-										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
-										"statusbarvisible" : 2,
-										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
-										"boxanimatetime" : 200,
-										"enablehscroll" : 1,
-										"enablevscroll" : 1,
-										"devicewidth" : 0.0,
-										"description" : "",
-										"digest" : "",
-										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
-										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -3099,15 +2908,13 @@
 												}
 
 											}
- ]
+ ],
+										"originid" : "pat-823"
 									}
 ,
 									"patching_rect" : [ 946.333333333333258, 397.5, 65.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"description" : "",
-										"digest" : "",
-										"globalpatchername" : "",
-										"tags" : ""
+										"globalpatchername" : ""
 									}
 ,
 									"text" : "p detonate"
@@ -3179,7 +2986,7 @@
 									"maxclass" : "mc.ezdac~",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 603.0, 702.0, 45.0, 45.0 ]
+									"patching_rect" : [ 603.0, 700.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -3645,6 +3452,7 @@
 
 							}
  ],
+						"originid" : "pat-18",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -3712,19 +3520,12 @@
 								"parentstyle" : "",
 								"multi" : 0
 							}
- ],
-						"bgcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ],
-						"editing_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+ ]
 					}
 ,
 					"patching_rect" : [ 10.0, 85.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"editing_bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"globalpatchername" : "",
-						"locked_bgcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ],
-						"tags" : ""
+						"globalpatchername" : ""
 					}
 ,
 					"text" : "p basic",
@@ -3757,53 +3558,25 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 6,
+							"major" : 9,
+							"minor" : 0,
 							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1492.0, 812.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
+						"rect" : [ 0.0, 26.0, 1442.0, 812.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
 						"showontab" : 1,
-						"assistshowspatchername" : 0,
 						"boxes" : [  ],
-						"lines" : [  ]
+						"lines" : [  ],
+						"originid" : "pat-1209"
 					}
 ,
 					"patching_rect" : [ 251.0, 277.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
+						"globalpatchername" : ""
 					}
 ,
 					"text" : "p ?",
@@ -3813,165 +3586,166 @@
 			}
  ],
 		"lines" : [  ],
+		"originid" : "pat-16",
 		"parameters" : 		{
 			"obj-9::obj-44::obj-10" : [ "live.text[24]", "live.text", 0 ],
 			"obj-9::obj-44::obj-2" : [ "live.text[38]", "live.text", 0 ],
 			"obj-9::obj-44::obj-23" : [ "live.tab", "live.tab", 0 ],
-			"obj-9::obj-44::obj-24::obj-36::obj-17" : [ "Pan[78]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-36::obj-25" : [ "Instrument[78]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-36::obj-39" : [ "892206-stored-instrument[78]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-36::obj-7" : [ "live.menu[157]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-36::obj-8" : [ "live.menu[158]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-37::obj-17" : [ "Pan[77]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-37::obj-25" : [ "Instrument[77]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-37::obj-39" : [ "892206-stored-instrument[77]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-37::obj-7" : [ "live.menu[156]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-37::obj-8" : [ "live.menu[155]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-38::obj-17" : [ "Pan[76]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-38::obj-25" : [ "Instrument[76]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-38::obj-39" : [ "892206-stored-instrument[76]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-38::obj-7" : [ "live.menu[154]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-38::obj-8" : [ "live.menu[153]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-39::obj-17" : [ "Pan[61]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-39::obj-25" : [ "Instrument[75]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-39::obj-39" : [ "892206-stored-instrument[75]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-39::obj-7" : [ "live.menu[151]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-39::obj-8" : [ "live.menu[152]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-40::obj-17" : [ "Pan[75]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-40::obj-25" : [ "Instrument[61]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-40::obj-39" : [ "892206-stored-instrument[74]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-40::obj-7" : [ "live.menu[150]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-40::obj-8" : [ "live.menu[149]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-41::obj-17" : [ "Pan[74]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-41::obj-25" : [ "Instrument[74]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-41::obj-39" : [ "892206-stored-instrument[73]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-41::obj-7" : [ "live.menu[148]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-41::obj-8" : [ "live.menu[118]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-42::obj-17" : [ "Pan[59]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-42::obj-25" : [ "Instrument[59]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-42::obj-39" : [ "892206-stored-instrument[59]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-42::obj-7" : [ "live.menu[117]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-42::obj-8" : [ "live.menu[147]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-43::obj-17" : [ "Pan[73]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-43::obj-25" : [ "Instrument[73]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-43::obj-39" : [ "892206-stored-instrument[58]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-43::obj-7" : [ "live.menu[146]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-43::obj-8" : [ "live.menu[116]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-44::obj-17" : [ "Pan[58]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-44::obj-25" : [ "Instrument[58]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-44::obj-39" : [ "892206-stored-instrument[72]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-44::obj-7" : [ "live.menu[145]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-44::obj-8" : [ "live.menu[115]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-45::obj-17" : [ "Pan[57]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-45::obj-25" : [ "Instrument[57]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-45::obj-39" : [ "892206-stored-instrument[71]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-45::obj-7" : [ "live.menu[143]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-45::obj-8" : [ "live.menu[144]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-46::obj-17" : [ "Pan[72]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-46::obj-25" : [ "Instrument[72]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-46::obj-39" : [ "892206-stored-instrument[57]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-46::obj-7" : [ "live.menu[112]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-46::obj-8" : [ "live.menu[113]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-47::obj-17" : [ "Pan[56]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-47::obj-25" : [ "Instrument[71]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-47::obj-39" : [ "892206-stored-instrument[56]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-47::obj-7" : [ "live.menu[142]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-47::obj-8" : [ "live.menu[111]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-48::obj-17" : [ "Pan[71]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-48::obj-25" : [ "Instrument[56]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-48::obj-39" : [ "892206-stored-instrument[70]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-48::obj-7" : [ "live.menu[110]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-48::obj-8" : [ "live.menu[141]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-49::obj-17" : [ "Pan[55]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-49::obj-25" : [ "Instrument[55]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-49::obj-39" : [ "892206-stored-instrument[55]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-49::obj-7" : [ "live.menu[109]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-49::obj-8" : [ "live.menu[140]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-50::obj-17" : [ "Pan[54]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-50::obj-25" : [ "Instrument[70]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-50::obj-39" : [ "892206-stored-instrument[69]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-50::obj-7" : [ "live.menu[108]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-50::obj-8" : [ "live.menu[139]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-51::obj-17" : [ "Pan[70]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-51::obj-25" : [ "Instrument[54]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-51::obj-39" : [ "892206-stored-instrument[54]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-51::obj-7" : [ "live.menu[107]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-51::obj-8" : [ "live.menu[138]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-52::obj-17" : [ "Pan[69]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-52::obj-25" : [ "Instrument[69]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-52::obj-39" : [ "892206-stored-instrument[53]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-52::obj-7" : [ "live.menu[137]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-52::obj-8" : [ "live.menu[106]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-53::obj-17" : [ "Pan[53]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-53::obj-25" : [ "Instrument[53]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-53::obj-39" : [ "892206-stored-instrument[68]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-53::obj-7" : [ "live.menu[105]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-53::obj-8" : [ "live.menu[136]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-54::obj-17" : [ "Pan[52]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-54::obj-25" : [ "Instrument[52]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-54::obj-39" : [ "892206-stored-instrument[67]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-54::obj-7" : [ "live.menu[135]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-54::obj-8" : [ "live.menu[104]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-55::obj-17" : [ "Pan[68]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-55::obj-25" : [ "Instrument[68]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-55::obj-39" : [ "892206-stored-instrument[52]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-55::obj-7" : [ "live.menu[103]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-55::obj-8" : [ "live.menu[134]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-56::obj-17" : [ "Pan[51]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-56::obj-25" : [ "Instrument[51]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-56::obj-39" : [ "892206-stored-instrument[51]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-56::obj-7" : [ "live.menu[126]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-56::obj-8" : [ "live.menu[133]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-57::obj-17" : [ "Pan[67]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-57::obj-25" : [ "Instrument[67]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-57::obj-39" : [ "892206-stored-instrument[66]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-57::obj-7" : [ "live.menu[100]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-57::obj-8" : [ "live.menu[101]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-58::obj-17" : [ "Pan[66]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-58::obj-25" : [ "Instrument[50]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-58::obj-39" : [ "892206-stored-instrument[50]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-58::obj-7" : [ "live.menu[124]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-58::obj-8" : [ "live.menu[99]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-59::obj-17" : [ "Pan[50]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-59::obj-25" : [ "Instrument[66]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-59::obj-39" : [ "892206-stored-instrument[62]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-59::obj-7" : [ "live.menu[123]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-59::obj-8" : [ "live.menu[132]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-60::obj-17" : [ "Pan[62]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-60::obj-25" : [ "Instrument[62]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-60::obj-39" : [ "892206-stored-instrument[65]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-60::obj-7" : [ "live.menu[122]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-60::obj-8" : [ "live.menu[98]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-61::obj-17" : [ "Pan[49]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-61::obj-25" : [ "Instrument[49]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-61::obj-39" : [ "892206-stored-instrument[61]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-61::obj-7" : [ "live.menu[131]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-61::obj-8" : [ "live.menu[127]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-62::obj-17" : [ "Pan[65]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-62::obj-25" : [ "Instrument[65]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-62::obj-39" : [ "892206-stored-instrument[49]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-62::obj-7" : [ "live.menu[97]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-62::obj-8" : [ "live.menu[121]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-63::obj-17" : [ "Pan[64]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-63::obj-25" : [ "Instrument[64]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-63::obj-39" : [ "892206-stored-instrument[64]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-63::obj-7" : [ "live.menu[120]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-63::obj-8" : [ "live.menu[96]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-64::obj-17" : [ "Pan[63]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-64::obj-25" : [ "Instrument[63]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-64::obj-39" : [ "892206-stored-instrument[63]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-64::obj-7" : [ "live.menu[129]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-64::obj-8" : [ "live.menu[130]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-65::obj-17" : [ "Pan[60]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-65::obj-25" : [ "Instrument[60]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-65::obj-39" : [ "892206-stored-instrument[60]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-65::obj-7" : [ "live.menu[125]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-65::obj-8" : [ "live.menu[128]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-66::obj-17" : [ "Pan[48]", "Pan", 0 ],
-			"obj-9::obj-44::obj-24::obj-66::obj-25" : [ "Instrument[48]", "instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-66::obj-39" : [ "892206-stored-instrument[48]", "892206-stored-instrument", 0 ],
-			"obj-9::obj-44::obj-24::obj-66::obj-7" : [ "live.menu[95]", "live.menu", 0 ],
-			"obj-9::obj-44::obj-24::obj-66::obj-8" : [ "live.menu[119]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-36::obj-17" : [ "Pan[26]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-36::obj-25" : [ "Instrument[32]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-36::obj-39" : [ "892206-stored-instrument[37]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-36::obj-7" : [ "live.menu[69]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-36::obj-8" : [ "live.menu[70]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-37::obj-17" : [ "Pan[25]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-37::obj-25" : [ "Instrument[31]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-37::obj-39" : [ "892206-stored-instrument[36]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-37::obj-7" : [ "live.menu[67]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-37::obj-8" : [ "live.menu[68]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-38::obj-17" : [ "Pan[24]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-38::obj-25" : [ "Instrument[30]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-38::obj-39" : [ "892206-stored-instrument[24]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-38::obj-7" : [ "live.menu[65]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-38::obj-8" : [ "live.menu[66]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-39::obj-17" : [ "Pan[23]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-39::obj-25" : [ "Instrument[29]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-39::obj-39" : [ "892206-stored-instrument[23]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-39::obj-7" : [ "live.menu[64]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-39::obj-8" : [ "live.menu[63]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-40::obj-17" : [ "Pan[36]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-40::obj-25" : [ "Instrument[28]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-40::obj-39" : [ "892206-stored-instrument[22]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-40::obj-7" : [ "live.menu[61]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-40::obj-8" : [ "live.menu[62]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-41::obj-17" : [ "Pan[35]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-41::obj-25" : [ "Instrument[27]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-41::obj-39" : [ "892206-stored-instrument[35]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-41::obj-7" : [ "live.menu[45]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-41::obj-8" : [ "live.menu[60]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-42::obj-17" : [ "Pan[34]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-42::obj-25" : [ "Instrument[25]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-42::obj-39" : [ "892206-stored-instrument[34]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-42::obj-7" : [ "live.menu[43]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-42::obj-8" : [ "live.menu[44]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-43::obj-17" : [ "Pan[33]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-43::obj-25" : [ "Instrument[24]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-43::obj-39" : [ "892206-stored-instrument[33]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-43::obj-7" : [ "live.menu[41]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-43::obj-8" : [ "live.menu[42]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-44::obj-17" : [ "Pan[32]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-44::obj-25" : [ "Instrument[23]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-44::obj-39" : [ "892206-stored-instrument[32]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-44::obj-7" : [ "live.menu[39]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-44::obj-8" : [ "live.menu[40]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-45::obj-17" : [ "Pan[22]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-45::obj-25" : [ "Instrument[22]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-45::obj-39" : [ "892206-stored-instrument[31]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-45::obj-7" : [ "live.menu[58]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-45::obj-8" : [ "live.menu[59]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-46::obj-17" : [ "Pan[21]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-46::obj-25" : [ "Instrument[21]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-46::obj-39" : [ "892206-stored-instrument[21]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-46::obj-7" : [ "live.menu[56]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-46::obj-8" : [ "live.menu[57]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-47::obj-17" : [ "Pan[20]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-47::obj-25" : [ "Instrument[20]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-47::obj-39" : [ "892206-stored-instrument[20]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-47::obj-7" : [ "live.menu[54]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-47::obj-8" : [ "live.menu[55]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-48::obj-17" : [ "Pan[19]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-48::obj-25" : [ "Instrument[19]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-48::obj-39" : [ "892206-stored-instrument[19]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-48::obj-7" : [ "live.menu[37]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-48::obj-8" : [ "live.menu[38]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-49::obj-17" : [ "Pan[18]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-49::obj-25" : [ "Instrument[18]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-49::obj-39" : [ "892206-stored-instrument[18]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-49::obj-7" : [ "live.menu[35]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-49::obj-8" : [ "live.menu[36]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-50::obj-17" : [ "Pan[17]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-50::obj-25" : [ "Instrument[17]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-50::obj-39" : [ "892206-stored-instrument[17]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-50::obj-7" : [ "live.menu[33]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-50::obj-8" : [ "live.menu[34]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-51::obj-17" : [ "Pan[16]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-51::obj-25" : [ "Instrument[16]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-51::obj-39" : [ "892206-stored-instrument[16]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-51::obj-7" : [ "live.menu[32]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-51::obj-8" : [ "live.menu[31]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-52::obj-17" : [ "Pan[15]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-52::obj-25" : [ "Instrument[15]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-52::obj-39" : [ "892206-stored-instrument[15]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-52::obj-7" : [ "live.menu[29]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-52::obj-8" : [ "live.menu[30]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-53::obj-17" : [ "Pan[14]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-53::obj-25" : [ "Instrument[14]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-53::obj-39" : [ "892206-stored-instrument[14]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-53::obj-7" : [ "live.menu[27]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-53::obj-8" : [ "live.menu[28]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-54::obj-17" : [ "Pan[13]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-54::obj-25" : [ "Instrument[13]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-54::obj-39" : [ "892206-stored-instrument[13]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-54::obj-7" : [ "live.menu[25]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-54::obj-8" : [ "live.menu[26]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-55::obj-17" : [ "Pan[12]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-55::obj-25" : [ "Instrument[12]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-55::obj-39" : [ "892206-stored-instrument[12]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-55::obj-7" : [ "live.menu[23]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-55::obj-8" : [ "live.menu[24]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-56::obj-17" : [ "Pan[11]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-56::obj-25" : [ "Instrument[11]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-56::obj-39" : [ "892206-stored-instrument[11]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-56::obj-7" : [ "live.menu[21]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-56::obj-8" : [ "live.menu[22]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-57::obj-17" : [ "Pan[10]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-57::obj-25" : [ "Instrument[10]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-57::obj-39" : [ "892206-stored-instrument[10]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-57::obj-7" : [ "live.menu[19]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-57::obj-8" : [ "live.menu[20]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-58::obj-17" : [ "Pan[9]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-58::obj-25" : [ "Instrument[9]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-58::obj-39" : [ "892206-stored-instrument[9]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-58::obj-7" : [ "live.menu[17]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-58::obj-8" : [ "live.menu[18]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-59::obj-17" : [ "Pan[8]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-59::obj-25" : [ "Instrument[8]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-59::obj-39" : [ "892206-stored-instrument[8]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-59::obj-7" : [ "live.menu[15]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-59::obj-8" : [ "live.menu[16]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-60::obj-17" : [ "Pan[7]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-60::obj-25" : [ "Instrument[7]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-60::obj-39" : [ "892206-stored-instrument[7]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-60::obj-7" : [ "live.menu[13]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-60::obj-8" : [ "live.menu[14]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-61::obj-17" : [ "Pan[6]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-61::obj-25" : [ "Instrument[6]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-61::obj-39" : [ "892206-stored-instrument[6]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-61::obj-7" : [ "live.menu[12]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-61::obj-8" : [ "live.menu[11]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-62::obj-17" : [ "Pan[5]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-62::obj-25" : [ "Instrument[5]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-62::obj-39" : [ "892206-stored-instrument[5]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-62::obj-7" : [ "live.menu[9]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-62::obj-8" : [ "live.menu[10]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-63::obj-17" : [ "Pan[4]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-63::obj-25" : [ "Instrument[4]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-63::obj-39" : [ "892206-stored-instrument[4]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-63::obj-7" : [ "live.menu[7]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-63::obj-8" : [ "live.menu[8]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-64::obj-17" : [ "Pan[3]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-64::obj-25" : [ "Instrument[3]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-64::obj-39" : [ "892206-stored-instrument[3]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-64::obj-7" : [ "live.menu[5]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-64::obj-8" : [ "live.menu[6]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-65::obj-17" : [ "Pan[2]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-65::obj-25" : [ "Instrument[2]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-65::obj-39" : [ "892206-stored-instrument[2]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-65::obj-7" : [ "live.menu[3]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-65::obj-8" : [ "live.menu[4]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-66::obj-17" : [ "Pan[1]", "Pan", 0 ],
+			"obj-9::obj-44::obj-24::obj-66::obj-25" : [ "Instrument[1]", "instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-66::obj-39" : [ "892206-stored-instrument[1]", "892206-stored-instrument", 0 ],
+			"obj-9::obj-44::obj-24::obj-66::obj-7" : [ "live.menu[1]", "live.menu", 0 ],
+			"obj-9::obj-44::obj-24::obj-66::obj-8" : [ "live.menu[2]", "live.menu", 0 ],
 			"obj-9::obj-44::obj-24::obj-67::obj-17" : [ "Pan[31]", "Pan", 0 ],
 			"obj-9::obj-44::obj-24::obj-67::obj-25" : [ "Instrument[26]", "instrument", 0 ],
 			"obj-9::obj-44::obj-24::obj-67::obj-39" : [ "892206-stored-instrument[30]", "892206-stored-instrument", 0 ],
@@ -4002,12 +3776,12 @@
 ,
 			"parameter_overrides" : 			{
 				"obj-9::obj-44::obj-24::obj-36::obj-17" : 				{
-					"parameter_longname" : "Pan[78]"
+					"parameter_longname" : "Pan[26]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-36::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[78]",
+					"parameter_longname" : "Instrument[32]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4015,20 +3789,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-36::obj-7" : 				{
-					"parameter_longname" : "live.menu[157]"
+					"parameter_longname" : "live.menu[69]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-36::obj-8" : 				{
-					"parameter_longname" : "live.menu[158]"
+					"parameter_longname" : "live.menu[70]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-37::obj-17" : 				{
-					"parameter_longname" : "Pan[77]"
+					"parameter_longname" : "Pan[25]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-37::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[77]",
+					"parameter_longname" : "Instrument[31]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4036,20 +3810,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-37::obj-7" : 				{
-					"parameter_longname" : "live.menu[156]"
+					"parameter_longname" : "live.menu[67]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-37::obj-8" : 				{
-					"parameter_longname" : "live.menu[155]"
+					"parameter_longname" : "live.menu[68]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-38::obj-17" : 				{
-					"parameter_longname" : "Pan[76]"
+					"parameter_longname" : "Pan[24]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-38::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[76]",
+					"parameter_longname" : "Instrument[30]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4057,20 +3831,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-38::obj-7" : 				{
-					"parameter_longname" : "live.menu[154]"
+					"parameter_longname" : "live.menu[65]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-38::obj-8" : 				{
-					"parameter_longname" : "live.menu[153]"
+					"parameter_longname" : "live.menu[66]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-39::obj-17" : 				{
-					"parameter_longname" : "Pan[61]"
+					"parameter_longname" : "Pan[23]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-39::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[75]",
+					"parameter_longname" : "Instrument[29]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4078,20 +3852,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-39::obj-7" : 				{
-					"parameter_longname" : "live.menu[151]"
+					"parameter_longname" : "live.menu[64]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-39::obj-8" : 				{
-					"parameter_longname" : "live.menu[152]"
+					"parameter_longname" : "live.menu[63]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-40::obj-17" : 				{
-					"parameter_longname" : "Pan[75]"
+					"parameter_longname" : "Pan[36]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-40::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[61]",
+					"parameter_longname" : "Instrument[28]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4099,20 +3873,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-40::obj-7" : 				{
-					"parameter_longname" : "live.menu[150]"
+					"parameter_longname" : "live.menu[61]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-40::obj-8" : 				{
-					"parameter_longname" : "live.menu[149]"
+					"parameter_longname" : "live.menu[62]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-41::obj-17" : 				{
-					"parameter_longname" : "Pan[74]"
+					"parameter_longname" : "Pan[35]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-41::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[74]",
+					"parameter_longname" : "Instrument[27]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4120,20 +3894,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-41::obj-7" : 				{
-					"parameter_longname" : "live.menu[148]"
+					"parameter_longname" : "live.menu[45]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-41::obj-8" : 				{
-					"parameter_longname" : "live.menu[118]"
+					"parameter_longname" : "live.menu[60]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-42::obj-17" : 				{
-					"parameter_longname" : "Pan[59]"
+					"parameter_longname" : "Pan[34]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-42::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[59]",
+					"parameter_longname" : "Instrument[25]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4141,20 +3915,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-42::obj-7" : 				{
-					"parameter_longname" : "live.menu[117]"
+					"parameter_longname" : "live.menu[43]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-42::obj-8" : 				{
-					"parameter_longname" : "live.menu[147]"
+					"parameter_longname" : "live.menu[44]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-43::obj-17" : 				{
-					"parameter_longname" : "Pan[73]"
+					"parameter_longname" : "Pan[33]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-43::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[73]",
+					"parameter_longname" : "Instrument[24]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4162,20 +3936,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-43::obj-7" : 				{
-					"parameter_longname" : "live.menu[146]"
+					"parameter_longname" : "live.menu[41]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-43::obj-8" : 				{
-					"parameter_longname" : "live.menu[116]"
+					"parameter_longname" : "live.menu[42]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-44::obj-17" : 				{
-					"parameter_longname" : "Pan[58]"
+					"parameter_longname" : "Pan[32]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-44::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[58]",
+					"parameter_longname" : "Instrument[23]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4183,20 +3957,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-44::obj-7" : 				{
-					"parameter_longname" : "live.menu[145]"
+					"parameter_longname" : "live.menu[39]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-44::obj-8" : 				{
-					"parameter_longname" : "live.menu[115]"
+					"parameter_longname" : "live.menu[40]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-45::obj-17" : 				{
-					"parameter_longname" : "Pan[57]"
+					"parameter_longname" : "Pan[22]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-45::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[57]",
+					"parameter_longname" : "Instrument[22]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4204,20 +3978,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-45::obj-7" : 				{
-					"parameter_longname" : "live.menu[143]"
+					"parameter_longname" : "live.menu[58]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-45::obj-8" : 				{
-					"parameter_longname" : "live.menu[144]"
+					"parameter_longname" : "live.menu[59]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-46::obj-17" : 				{
-					"parameter_longname" : "Pan[72]"
+					"parameter_longname" : "Pan[21]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-46::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[72]",
+					"parameter_longname" : "Instrument[21]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4225,20 +3999,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-46::obj-7" : 				{
-					"parameter_longname" : "live.menu[112]"
+					"parameter_longname" : "live.menu[56]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-46::obj-8" : 				{
-					"parameter_longname" : "live.menu[113]"
+					"parameter_longname" : "live.menu[57]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-47::obj-17" : 				{
-					"parameter_longname" : "Pan[56]"
+					"parameter_longname" : "Pan[20]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-47::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[71]",
+					"parameter_longname" : "Instrument[20]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4246,20 +4020,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-47::obj-7" : 				{
-					"parameter_longname" : "live.menu[142]"
+					"parameter_longname" : "live.menu[54]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-47::obj-8" : 				{
-					"parameter_longname" : "live.menu[111]"
+					"parameter_longname" : "live.menu[55]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-48::obj-17" : 				{
-					"parameter_longname" : "Pan[71]"
+					"parameter_longname" : "Pan[19]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-48::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[56]",
+					"parameter_longname" : "Instrument[19]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4267,20 +4041,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-48::obj-7" : 				{
-					"parameter_longname" : "live.menu[110]"
+					"parameter_longname" : "live.menu[37]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-48::obj-8" : 				{
-					"parameter_longname" : "live.menu[141]"
+					"parameter_longname" : "live.menu[38]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-49::obj-17" : 				{
-					"parameter_longname" : "Pan[55]"
+					"parameter_longname" : "Pan[18]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-49::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[55]",
+					"parameter_longname" : "Instrument[18]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4288,20 +4062,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-49::obj-7" : 				{
-					"parameter_longname" : "live.menu[109]"
+					"parameter_longname" : "live.menu[35]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-49::obj-8" : 				{
-					"parameter_longname" : "live.menu[140]"
+					"parameter_longname" : "live.menu[36]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-50::obj-17" : 				{
-					"parameter_longname" : "Pan[54]"
+					"parameter_longname" : "Pan[17]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-50::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[70]",
+					"parameter_longname" : "Instrument[17]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4309,20 +4083,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-50::obj-7" : 				{
-					"parameter_longname" : "live.menu[108]"
+					"parameter_longname" : "live.menu[33]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-50::obj-8" : 				{
-					"parameter_longname" : "live.menu[139]"
+					"parameter_longname" : "live.menu[34]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-51::obj-17" : 				{
-					"parameter_longname" : "Pan[70]"
+					"parameter_longname" : "Pan[16]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-51::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[54]",
+					"parameter_longname" : "Instrument[16]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4330,20 +4104,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-51::obj-7" : 				{
-					"parameter_longname" : "live.menu[107]"
+					"parameter_longname" : "live.menu[32]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-51::obj-8" : 				{
-					"parameter_longname" : "live.menu[138]"
+					"parameter_longname" : "live.menu[31]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-52::obj-17" : 				{
-					"parameter_longname" : "Pan[69]"
+					"parameter_longname" : "Pan[15]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-52::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[69]",
+					"parameter_longname" : "Instrument[15]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4351,20 +4125,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-52::obj-7" : 				{
-					"parameter_longname" : "live.menu[137]"
+					"parameter_longname" : "live.menu[29]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-52::obj-8" : 				{
-					"parameter_longname" : "live.menu[106]"
+					"parameter_longname" : "live.menu[30]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-53::obj-17" : 				{
-					"parameter_longname" : "Pan[53]"
+					"parameter_longname" : "Pan[14]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-53::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[53]",
+					"parameter_longname" : "Instrument[14]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4372,20 +4146,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-53::obj-7" : 				{
-					"parameter_longname" : "live.menu[105]"
+					"parameter_longname" : "live.menu[27]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-53::obj-8" : 				{
-					"parameter_longname" : "live.menu[136]"
+					"parameter_longname" : "live.menu[28]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-54::obj-17" : 				{
-					"parameter_longname" : "Pan[52]"
+					"parameter_longname" : "Pan[13]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-54::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[52]",
+					"parameter_longname" : "Instrument[13]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4393,20 +4167,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-54::obj-7" : 				{
-					"parameter_longname" : "live.menu[135]"
+					"parameter_longname" : "live.menu[25]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-54::obj-8" : 				{
-					"parameter_longname" : "live.menu[104]"
+					"parameter_longname" : "live.menu[26]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-55::obj-17" : 				{
-					"parameter_longname" : "Pan[68]"
+					"parameter_longname" : "Pan[12]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-55::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[68]",
+					"parameter_longname" : "Instrument[12]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4414,20 +4188,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-55::obj-7" : 				{
-					"parameter_longname" : "live.menu[103]"
+					"parameter_longname" : "live.menu[23]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-55::obj-8" : 				{
-					"parameter_longname" : "live.menu[134]"
+					"parameter_longname" : "live.menu[24]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-56::obj-17" : 				{
-					"parameter_longname" : "Pan[51]"
+					"parameter_longname" : "Pan[11]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-56::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[51]",
+					"parameter_longname" : "Instrument[11]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4435,20 +4209,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-56::obj-7" : 				{
-					"parameter_longname" : "live.menu[126]"
+					"parameter_longname" : "live.menu[21]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-56::obj-8" : 				{
-					"parameter_longname" : "live.menu[133]"
+					"parameter_longname" : "live.menu[22]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-57::obj-17" : 				{
-					"parameter_longname" : "Pan[67]"
+					"parameter_longname" : "Pan[10]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-57::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[67]",
+					"parameter_longname" : "Instrument[10]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4456,20 +4230,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-57::obj-7" : 				{
-					"parameter_longname" : "live.menu[100]"
+					"parameter_longname" : "live.menu[19]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-57::obj-8" : 				{
-					"parameter_longname" : "live.menu[101]"
+					"parameter_longname" : "live.menu[20]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-58::obj-17" : 				{
-					"parameter_longname" : "Pan[66]"
+					"parameter_longname" : "Pan[9]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-58::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[50]",
+					"parameter_longname" : "Instrument[9]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4477,20 +4251,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-58::obj-7" : 				{
-					"parameter_longname" : "live.menu[124]"
+					"parameter_longname" : "live.menu[17]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-58::obj-8" : 				{
-					"parameter_longname" : "live.menu[99]"
+					"parameter_longname" : "live.menu[18]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-59::obj-17" : 				{
-					"parameter_longname" : "Pan[50]"
+					"parameter_longname" : "Pan[8]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-59::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[66]",
+					"parameter_longname" : "Instrument[8]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4498,20 +4272,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-59::obj-7" : 				{
-					"parameter_longname" : "live.menu[123]"
+					"parameter_longname" : "live.menu[15]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-59::obj-8" : 				{
-					"parameter_longname" : "live.menu[132]"
+					"parameter_longname" : "live.menu[16]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-60::obj-17" : 				{
-					"parameter_longname" : "Pan[62]"
+					"parameter_longname" : "Pan[7]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-60::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[62]",
+					"parameter_longname" : "Instrument[7]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4519,20 +4293,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-60::obj-7" : 				{
-					"parameter_longname" : "live.menu[122]"
+					"parameter_longname" : "live.menu[13]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-60::obj-8" : 				{
-					"parameter_longname" : "live.menu[98]"
+					"parameter_longname" : "live.menu[14]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-61::obj-17" : 				{
-					"parameter_longname" : "Pan[49]"
+					"parameter_longname" : "Pan[6]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-61::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[49]",
+					"parameter_longname" : "Instrument[6]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4540,20 +4314,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-61::obj-7" : 				{
-					"parameter_longname" : "live.menu[131]"
+					"parameter_longname" : "live.menu[12]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-61::obj-8" : 				{
-					"parameter_longname" : "live.menu[127]"
+					"parameter_longname" : "live.menu[11]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-62::obj-17" : 				{
-					"parameter_longname" : "Pan[65]"
+					"parameter_longname" : "Pan[5]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-62::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[65]",
+					"parameter_longname" : "Instrument[5]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4561,20 +4335,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-62::obj-7" : 				{
-					"parameter_longname" : "live.menu[97]"
+					"parameter_longname" : "live.menu[9]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-62::obj-8" : 				{
-					"parameter_longname" : "live.menu[121]"
+					"parameter_longname" : "live.menu[10]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-63::obj-17" : 				{
-					"parameter_longname" : "Pan[64]"
+					"parameter_longname" : "Pan[4]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-63::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[64]",
+					"parameter_longname" : "Instrument[4]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4582,20 +4356,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-63::obj-7" : 				{
-					"parameter_longname" : "live.menu[120]"
+					"parameter_longname" : "live.menu[7]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-63::obj-8" : 				{
-					"parameter_longname" : "live.menu[96]"
+					"parameter_longname" : "live.menu[8]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-64::obj-17" : 				{
-					"parameter_longname" : "Pan[63]"
+					"parameter_longname" : "Pan[3]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-64::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[63]",
+					"parameter_longname" : "Instrument[3]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4603,20 +4377,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-64::obj-7" : 				{
-					"parameter_longname" : "live.menu[129]"
+					"parameter_longname" : "live.menu[5]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-64::obj-8" : 				{
-					"parameter_longname" : "live.menu[130]"
+					"parameter_longname" : "live.menu[6]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-65::obj-17" : 				{
-					"parameter_longname" : "Pan[60]"
+					"parameter_longname" : "Pan[2]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-65::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[60]",
+					"parameter_longname" : "Instrument[2]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4624,20 +4398,20 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-65::obj-7" : 				{
-					"parameter_longname" : "live.menu[125]"
+					"parameter_longname" : "live.menu[3]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-65::obj-8" : 				{
-					"parameter_longname" : "live.menu[128]"
+					"parameter_longname" : "live.menu[4]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-66::obj-17" : 				{
-					"parameter_longname" : "Pan[48]"
+					"parameter_longname" : "Pan[1]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-66::obj-25" : 				{
 					"parameter_invisible" : 0,
-					"parameter_longname" : "Instrument[48]",
+					"parameter_longname" : "Instrument[1]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 					"parameter_type" : 2,
@@ -4645,11 +4419,11 @@
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-66::obj-7" : 				{
-					"parameter_longname" : "live.menu[95]"
+					"parameter_longname" : "live.menu[1]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-66::obj-8" : 				{
-					"parameter_longname" : "live.menu[119]"
+					"parameter_longname" : "live.menu[2]"
 				}
 ,
 				"obj-9::obj-44::obj-24::obj-67::obj-25" : 				{
@@ -4666,8 +4440,15 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : ".maxsnap",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
+				"patcherrelativepath" : "../../../../../hajdu/Documents/Max 9/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "MaxScore.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
@@ -4678,56 +4459,49 @@
 			}
 , 			{
 				"name" : "MaxScoreKeyMap.txt",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/maps",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/maps",
 				"patcherrelativepath" : "../patchers/maps",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Sampler.json",
-				"bootpath" : "/Users/Shared/Max 8/Library/Summer 2021",
-				"patcherrelativepath" : "../../../Library/Summer 2021",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "Scorepion-Tail-blue.svg",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/media/Images/svg",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/media/Images/svg",
 				"patcherrelativepath" : "../media/Images/svg",
 				"type" : "svg",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bank-waveform.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "boxSize.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "divmod.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "djsterNotation.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/jsextensions",
 				"patcherrelativepath" : "../jsextensions",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fitcurve.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions/xytocurveto",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/jsextensions/xytocurveto",
 				"patcherrelativepath" : "../jsextensions/xytocurveto",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -4752,182 +4526,182 @@
 			}
 , 			{
 				"name" : "htmlEntities.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "icanvas.interaction.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "icanvas.queries.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "index-player.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "iswindows.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "jit.pane.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.bcanvas.hub.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.info.grab.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.info.recv.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.makenote.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.messagehub.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.multisamples-player.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.note2midi.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.proportionalNotation.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.rapidXML.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.rapidxml.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sample-player.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sampler.bank.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sampler.instrument.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sampler.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sampler.menus.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.setNoteIntervalAttribute.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.store.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.tools.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/jsextensions",
 				"patcherrelativepath" : "../jsextensions",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "mouseEvents.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "musicxml2jmsl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
@@ -4938,15 +4712,15 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "my-loadbang.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Library/MaxScore",
-				"patcherrelativepath" : "../../../Library/MaxScore",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -4958,98 +4732,98 @@
 			}
 , 			{
 				"name" : "n4m_musicxml2jmsl.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/node.js/musicxml2jmsl",
 				"patcherrelativepath" : "../patchers/node.js/musicxml2jmsl",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "packback.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/abstractions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "pane.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "panel_envelope2.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "panel_loop.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "panel_normalize.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "pentool.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/jsextensions/xytocurveto",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/jsextensions/xytocurveto",
 				"patcherrelativepath" : "../jsextensions/xytocurveto",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "picster-init.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "picster-select.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "render2canvas.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "samplerGUI3.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../patchers/modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sequenceDumpPlayer.maxpat",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/patchers/Picster",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/Picster",
 				"patcherrelativepath" : "../patchers/Picster",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "socket.pane.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "swissarmyknife.js",
-				"bootpath" : "/Users/Shared/Max 8/Packages/MaxScore/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1

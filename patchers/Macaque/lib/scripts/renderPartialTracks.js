@@ -175,7 +175,7 @@ function rendersvg()
 	f.bgcolor = bgcolor;
 	f.groupcount = 1;
 	//post("lines", JSON.stringify(f), "\n");
-	outlet(0, "obj_ref", f);
+	outlet_dictionary(0, f);
 	outlet(0, "setZoom", zoom2);
 }
 

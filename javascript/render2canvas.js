@@ -76,7 +76,7 @@ var textFontSize = "12.";
 var _musicFont = "Bravura";
 var _titleFont = "Times New Roman";
 var _tabfont = ["Verdana", 8];
-var mgraphics = new JitterObject("jit.mgraphics", 320, 240);
+var Mgraphics = new JitterObject("jit.mgraphics", 320, 240);
 var setStaffGroup = [];
 var _staffGroup = [];
 var instrumentNames = [];
@@ -91,7 +91,7 @@ var prev_noteheadx = [0, 0, 0, 0];
 var renderNoteheadx = [];
 var currentStaff = 0;
 var _frgb = [0, 0, 0]; //check lines 2264, 2265 and 2308 for consistency
-var frgb = "rgb(0, 0, 0)";
+var frgbstr = "rgb(0, 0, 0)";
 var bcolor = [0.996, 0.996, 0.94, 1];
 var fcolor = [0, 0, 0, 1];
 var lcolor = [0, 0, 0, 1];
@@ -391,6 +391,11 @@ function staffgroups()
 		}
 		outlet(1, "setRenderAllowed", 1);
 	}
+}
+
+function bang()
+{
+	outlet_dictionary(0, {"test" : [0, 12, 56]}); 
 }
 
 function fillObj(groups)
@@ -713,9 +718,9 @@ function remap(staffGroup, staffIndex, position)
 
 function text_measure(f, fs, t)
 {
-			mgraphics.select_font_face(f);
-			mgraphics.set_font_size(fs);
-			return mgraphics.text_measure(t);
+	Mgraphics.select_font_face(f);
+	Mgraphics.set_font_size(fs);
+	return Mgraphics.text_measure(t);
 }
 
 function getRenderAllowed(b)
@@ -959,7 +964,6 @@ function writeBarlines()
 					for (var i = 0; i < _linesMax.length; i++) {
 						if (stafflines[measures][mathMax][_linesMax[i]].length == 4) _linesMaxFiltered.push(_linesMax[i]);	
 					 }
-				//post("_linesFiltered", _linesMaxFiltered, _linesMinFiltered, "\n");
 				if (_linesMaxFiltered.length == 0 || _linesMinFiltered.length == 0) return;
 				var dest = remap(sg[s], mathMin, stafflines[measures][mathMin][_linesMinFiltered[0]][1]);
 				var dest2 = remap(sg[s], mathMax, stafflines[measures][mathMax][_linesMaxFiltered[_linesMaxFiltered.length - 1]][1]);
@@ -976,7 +980,6 @@ function writeBarlines()
 					"transform" : "matrix(1 0 0 1 0 0)"
 					}
 					);
-				//SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 				for (var br in brackets) {	
 					var mathMin = Math.min.apply(Math, brackets[br]);
 					if (mathMin < sg[s][0]) mathMin = sg[s][0];
@@ -1029,7 +1032,6 @@ function writeBarlines()
 								"transform" : "matrix(1 0 0 1 0 0)"
 								}
 								);
-								//SVGLines[s + 1].push("<line x1=\"" + barlines[measures][lines][1] + "\" y1=\"" + dest + "\" x2=\"" + barlines[measures][lines][1] + "\" y2=\"" + dest2 + "\" stroke=\"" + barLineColor + "\" stroke-width=\"" + barlines[measures][lines][4] * 0.6 + "\" stroke-dasharray=\"" + barlineDashArray + "\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 									if (_scoreLeftMargin == barlines[measures][lines][1]) {
 										if (annotation.contains("staff-" + brackets[br][0] + "::staffgroup")) {
 										switch (annotation.get("staff-" + brackets[br][0] + "::staffgroup")[1]) {
@@ -1082,9 +1084,6 @@ function writeBarlines()
  											]
 											}
 											);
-										//SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
-										//SVGLines[s + 1].push("<text x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest2 + "\" font-family=\"" + _musicFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"18\" fill=\"" + barLineColor + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" ></text>");
-										//SVGLines[s + 1].push("<rect x=\"" + (barlines[measures][lines][1] - 4) + "\" y=\"" + dest + "\" width=\"2.\" height=\"" + (dest2 - dest) + "\" fill=\"" + barLineColor + "\" stroke=\"none\" stroke-width=\"0.4\" fill-opacity=\"1\" stroke-opacity=\"1.0\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 										break;	
 									}
 								}
@@ -1123,7 +1122,6 @@ function writeStaffLines()
 							"transform" : "matrix(1 0 0 1 0 0)"
 							}
 							);
-							//SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 							path = "";
 							lineCount = 0;
 							}	
@@ -1145,7 +1143,6 @@ function writeStaffLines()
 			"transform" : "matrix(1 0 0 1 0 0)"
 			}
 			);
-			//SVGLines[s + 1].push("<path d=\"" + path + "\" stroke=\"" + staffLineColor + "\" stroke-width=\"0.8\" fill=\"" + staffLineColor + "\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 	}	
 }
 
@@ -1163,14 +1160,7 @@ function writeRuler()
 {
 	if (_showRuler) {
 	var rulerOffset = 0;
-	/*
-	for (var i = 0; i < _scoreLayout[1]; i++) {
-		outlet(1, "getMeasureInfo", i);
-		//rulerOffset += Number(measurewidth);
-		post("getMeasureInfo", score.stringify(), "\n");
-	}
-	post("scoreLayout", _scoreLayout, measurewidth, "\n");
-	*/
+	post("_playhead", _playhead, "\n");
 	var _time = 0;
 	if (typeof timeUnit != "number") timeUnit = 100;
 	for (var s = 0; s < groupcount; s++)
@@ -1192,26 +1182,24 @@ function writeRuler()
 				"font-weight" : "normal", 
 				"text-anchor" : "middle",
 				"font-size" : 10,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(1 0 0 1 0 0)"
 				}
 			);
-			//SVGString[s + 1].push("<text x=\"" + i + "\" y=\"" + 25 + "\" text-anchor=\"middle\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + 10 + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + _time + "</text>");
 		j++;
 		}	
 		SVGString[s + 1].push({
 			"new" : "path",
 			"id" : "rulerLine-" + idcount++,
 			"d" : path,
-			"stroke" : frgb,
+			"stroke" : frgbstr,
 			"stroke-width" : 0.4,
-			"fill" : frgb, 
+			"fill" : frgbstr, 
 			"fill-opacity" : 1, 
 			"transform" : "matrix(1 0 0 1 0 0)"
 			}
 		);
-		//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 		}
 	}
 }
@@ -1427,14 +1415,14 @@ function dictionary(d)
 function endRenderDump()
 {
 	//outlet(2, "endRenderDump");
+	//post(nnotation., "\n");
 	if (annotation.contains("proportional") && annotation.get("proportional")) {
-		outlet(0, "proportional", annotation.get("proportional"));
 		playhead();
 		outlet(1, "setNoteFlash", 0);
 		outlet(1, "setTurnPagesDuringPlayback", 0);
 	}
 	else {
-		outlet(0, "proportional", 0);
+		_playhead = -1;
 		outlet(1, "setNoteFlash", 1);
 		outlet(1, "setTurnPagesDuringPlayback", 1);
 	}
@@ -1447,13 +1435,11 @@ function endRenderDump()
 	writeSVG("object");
 	renderPage = 0;
 	_init = 0;
-	//gc();
 }
 
 function writeRests()
 {
 	var numTracks = score.get("score::measure::0::staff::0::.ordering").length;
-	//post("score", _scoreLayout, _scoreLayout[2] - _scoreLayout[1], "\n");
 	for (var m = 0; m < _scoreLayout[2]; m++) {
 		for (var st = 0; st < numStaves; st++){
 			var empty = 1;
@@ -1477,7 +1463,7 @@ function writeRests()
 					"width" : 8, 
 					"height" : 3,
 					"stroke" : "none",
-					"fill" : frgb, 
+					"fill" : frgbstr, 
 					"fill-opacity" : 1, 
 					"transform" : "matrix(1 0 0 1 0 0)"
 					}
@@ -1641,7 +1627,7 @@ function writeAt(s, font, fs, x, y, t)
 				"font-style" : "normal",
 				"font-weight" : "normal", 
 				"font-size" : fs,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(1 0 0 1 0 0)"
 				}
@@ -1651,7 +1637,8 @@ function writeAt(s, font, fs, x, y, t)
 
 function anything() {
     var msg = arrayfromargs(arguments);
-	if (renderPage){
+	//post("frgbstr", messagename, "\n");
+ 	if (renderPage){
     switch (messagename) {
 		case "width" :
 		//init = 1;
@@ -1668,8 +1655,8 @@ function anything() {
         case "frgb":
 			//expr $i1*256*256 + $i2*256 + $i3
 			var colorcode = msg[0] * 256 * 256 + msg[1] * 256 + msg[2];
-           	if ((colorcode != 0 || fcolor.length == 0 || colorcode == 255 || colorcode == 16756655) && colorcode != 4210752) frgb = "rgb("+ msg[0] + "," + msg[1] + "," + msg[2] + ")";
-			else if (colorcode != 4210752) frgb = "rgb("+ Math.round(255 * fcolor[0]) + "," + Math.round(255 * fcolor[1]) + "," + Math.round(255 * fcolor[2]) + ")";
+           	if ((colorcode != 0 || fcolor.length == 0 || colorcode == 255 || colorcode == 16756655) && colorcode != 4210752) frgbstr = "rgb("+ msg[0] + "," + msg[1] + "," + msg[2] + ")";
+			else if (colorcode != 4210752) frgbstr = "rgb("+ Math.round(255 * fcolor[0]) + "," + Math.round(255 * fcolor[1]) + "," + Math.round(255 * fcolor[2]) + ")";
          break;
         case "clearGraphics":
             break;
@@ -1689,7 +1676,7 @@ function anything() {
 				"font-style" : "normal",
 				"font-weight" : "normal", 
 				"font-size" : glyph[i*5+4],
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(1 0 0 1 0 0)"
 				}
@@ -1783,7 +1770,7 @@ function anything() {
 				"font-style" : "normal",
 				"font-weight" : "normal", 
 				"font-size" : 10,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(1 0 0 1 0 0)"
 				}
@@ -1822,9 +1809,9 @@ function anything() {
 				"new" : "path",
 				"id" : "LedgerLine-" + idcount++,
 				"d" : "M" + (msg[6] - 1) + "," + dest[d] + " L" + (msg[8] + 2) + "," + dest[d],
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.6,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(1 0 0 1 0 0)"
 				}
@@ -1837,8 +1824,7 @@ function anything() {
 			// Stem, measureIndex, staffIndex, trackIndex, noteIndex, zoom, x, y1, y2, isGraceNote, graceNoteIndex
 			if (msg[7] != -1) {
 			var stemXOffset = (msg[7] - msg[6] > 0) ? 0 : -0.5 * msg[4];  
-			//post("Stem", msg[1], annotation.contains("staff-" + msg[1] + "::style"), "\n");
- 			if (annotation.contains("staff-" + msg[1] + "::style")) var stemYOffset = (annotation.get("staff-" + msg[1] + "::style").indexOf("Tablature") != -1) ? -6 : 0;
+			if (annotation.contains("staff-" + msg[1] + "::style")) var stemYOffset = (annotation.get("staff-" + msg[1] + "::style").indexOf("Tablature") != -1) ? -6 : 0;
 			else var stemYOffset = 0;
 			for (var s = 0; s < groupcount; s++)
 			{
@@ -1854,7 +1840,7 @@ function anything() {
 				"width" : 1.8 * msg[4], 
 				"height" : Math.abs(msg[7] - msg[6] - stemYOffset),
 				"stroke" : "none",
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(1 0 0 1 0 0)"
 				}
@@ -1868,7 +1854,7 @@ function anything() {
 			//barline 0. 0.5 20. 51. 363. 1.
 			//barline measureIndex zoom x barTop barBottom barThickness
 			//post("barlines",  msg, "\n");	
-			//barLineColor = frgb;
+			//barLineColor = frgbstr;
 			barLineColor = "rgb("+ (lcolor[0] * 255) + "," + (lcolor[1] * 255) + "," + (lcolor[2] * 255) + ")";
 			if (msg[0] != oldMeasureIndex) bl = 0;
 			barlines[msg[0] - _scoreLayout[1]][bl] = msg.slice(1);
@@ -1894,7 +1880,7 @@ function anything() {
 				"width" : msg[11] + (2. * msg[8]), 
 				"height" : msg[12],
 				"stroke" : "none",
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(1 0 0 1 0 0)"
 				}
@@ -1917,9 +1903,9 @@ function anything() {
 				"new" : "path",
 				"id" : "Slur-" + idcount++,
 				"d" : "M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1",
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.4,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(" + [Math.abs(msg[11])/100., 0., 0., orient, msg[9], dest[d] + 7] + ")"
 				}
@@ -1944,9 +1930,9 @@ function anything() {
 				"new" : "path",
 				"id" : "Tie-" + idcount++,
 				"d" : "M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1",
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.4,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(" + [msg[11]/100., 0., 0., orient/compress, msg[9], dest[d] + 7] + ")"
 				}
@@ -1968,9 +1954,9 @@ function anything() {
 				"new" : "path",
 				"id" : "TieOut-" + idcount++,
 				"d" : "M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1",
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.4,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(" + [msg[7]/100., 0., 0., orient, msg[5], dest[d] + 7.] + ")"
 				}
@@ -1993,9 +1979,9 @@ function anything() {
 				"new" : "path",
 				"id" : "TieIn-" + idcount++,
 				"d" : "M0,1.1 l0,-0.2 c19.9,9.6,79.9,9.6,100,0 v0.2 C79.9,11.8,19.9,11.8,0,1.1",
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.4,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(" + [0.2, 0., 0., orient, msg[5] - 20, dest[d] + 7.] + ")"
 				}
@@ -2036,7 +2022,7 @@ function anything() {
 				"new" : "path",
 				"id" : "cresc-" + idcount++,
 				"d" : path,
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 1.,
 				"fill" : "none", 
 				"transform" : "matrix(" + [-1., 0., 0., 1., msg[11], dest[d] + hairpinVerticalOffset] + ")"
@@ -2076,7 +2062,7 @@ function anything() {
 				"new" : "path",
 				"id" : "decresc-" + idcount++,
 				"d" : path,
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 1.,
 				"fill" : "none", 
 				"transform" : "matrix(" + [1., 0., 0., 1., msg[11], dest[d] + hairpinVerticalOffset] + ")"
@@ -2099,7 +2085,7 @@ function anything() {
 			SVGString[s + 1].push({
 					"new" : "g",
 					"id" : "RepeatDots" + idcount++,
-					"fill" : frgb,
+					"fill" : frgbstr,
 					"fill-opacity" : 1, 
 					"transform" : "matrix(1 0 0 1 0 0)",
 					"child" : [ {
@@ -2140,7 +2126,7 @@ function anything() {
 				"new" : "path",
 				"id" : "Gliss-" + idcount++,
 				"d" : "M" + msg[9] + "," + dest[d] + " L" + msg[11] + "," + dest2,
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.8,
 				"fill" : "none", 
 				"transform" : "matrix(1 0 0 1 0 0)",
@@ -2164,13 +2150,12 @@ function anything() {
 				"new" : "path",
 				"id" : "TupletBracket-" + idcount++,
 				"d" : "M0,6L0,0,42,0M58,0 L100,0 L100,6",
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.4,
 				"fill" : "none", 
 				"transform" : "matrix(" + [(msg[12] - msg[9])/100., 0., 0., orient, msg[9], dest[d] - orient * 6] + ")",
 				}
 			);
-			//SVGString[s + 1].push("<path d=\"M0,6L0,0,42,0M58,0 L100,0 L100,6\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [(msg[12] - msg[9])/100., 0., 0., orient, msg[9], dest[d] - orient * 6] + ")\"/>");
 			}
 			}
 			}
@@ -2190,13 +2175,12 @@ function anything() {
 				"new" : "path",
 				"id" : "OttavaAltaLine-" + idcount++,
 				"d" : path,
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.4,
 				"fill" : "none", 
 				"transform" : "matrix(1 0 0 1 0 0)",
 				}
 			);
-			//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			}
 			}
 			}
@@ -2212,13 +2196,12 @@ function anything() {
 				"new" : "path",
 				"id" : "OttavaAltaHook-" + idcount++,
 				"d" : "M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) + 6),
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.4,
 				"fill" : "none", 
 				"transform" : "matrix(1 0 0 1 0 0)",
 				}
 			);
-			//SVGString[s + 1].push("<path d=\"M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) + 6) + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			}
 			}
 			}
@@ -2237,13 +2220,12 @@ function anything() {
 				"new" : "path",
 				"id" : "OttavaBassaLine-" + idcount++,
 				"d" : path,
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.4,
 				"fill" : "none", 
 				"transform" : "matrix(1 0 0 1 0 0)",
 				}
 			);
-			//SVGString[s + 1].push("<path d=\"" + path + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			//post("path", parseInt((msg[11] - msg[9]) / 12), "M" + (msg[11] - (msg[11] - msg[9]) % 12)  + "," + dest[d] + " L" + msg[11] + "," + dest[d], "\n");		
 			}
 			}
@@ -2260,13 +2242,12 @@ function anything() {
 				"new" : "path",
 				"id" : "OttavaAltaHook-" + idcount++,
 				"d" : "M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) - 6),
-				"stroke" : frgb,
+				"stroke" : frgbstr,
 				"stroke-width" : 0.4,
 				"fill" : "none", 
 				"transform" : "matrix(1 0 0 1 0 0)",
 				}
 			);
-			//SVGString[s + 1].push("<path d=\"M" + msg[9] + " " + dest + " " + "L" + msg[9] + " " +  (Number(dest) - 6) + "\" stroke=\"" + frgb + "\" stroke-width=\"0.4\" fill=\"none\" transform=\"matrix(" + [1., 0., 0., 1., 0., 0.] + ")\"/>");
 			}
 			}
 			}
@@ -2343,7 +2324,7 @@ function anything() {
             		svgstrokeopacity = 1.; 
  					}
 					if (picster.get("style::stroke") == "$FRGB") {
-					svgstroke = frgb;
+					svgstroke = frgbstr;
             		svgstrokeopacity = 1.; 
  					}
 					else {
@@ -2355,7 +2336,7 @@ function anything() {
             		svgfillopacity = 1.;
  					}
 					else if (picster.get("style::fill") == "$FRGB") {
-					svgfill = frgb;
+					svgfill = frgbstr;
             		svgfillopacity = 1.;
  					}
 					else {
@@ -2475,7 +2456,7 @@ function anything() {
                                break;
                             case "textcolor":
 								if (command[1] == "$FRGB") {
-									svgfill = frgb;
+									svgfill = frgbstr;
             						svgfillopacity = 1.;
  									}
 								else {
@@ -2669,7 +2650,7 @@ function anything() {
 				switch (e.get(keys[k])[0]) {
 					case "frgb" :
 						if (e.get(keys[k])[1] == "FRGB_CURRENT") {
-							_textcolor = frgb;
+							_textcolor = frgbstr;
             				_opacity = 1.;
  						}
 						else {
@@ -3088,12 +3069,11 @@ function anything() {
 				"font-style" : "normal",
 				"font-weight" : "normal", 
 				"font-size" : glyph[i*5+4] * msg[2] * 2,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(" + [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]] + ")",
 				}
 				);
-				//SVGClefs[s + 1].push([fontFamily, glyph[i*5+4] * msg[2] * 2, frgb, [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]], t]);
 				else SVGString[s + 1].push({
 				"new" : "text",
 				"id" : "glyph-" + idcount++,
@@ -3104,12 +3084,11 @@ function anything() {
 				"font-style" : "normal",
 				"font-weight" : "normal", 
 				"font-size" : glyph[i*5+4] * msg[2] * 2,
-				"fill" : frgb, 
+				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
 				"transform" : "matrix(" + [1., 0., 0., 1., glyph[i*5+1] + (gracenoteOffset * 0.5) + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")",
 				}
 			);
-			//SVGString[s + 1].push("<text x=\"" + 0 + "\" y=\"" + 0 + "\" font-family=\"" + fontFamily + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"" + glyph[i*5+4] * msg[2] * 2  + "\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., glyph[i*5+1] + (gracenoteOffset * 0.5) + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")\" >" + t + "</text>");
 			}
 			}
 		  }
@@ -3165,9 +3144,9 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster, nonScrolling)
 			var dasharray = " ";
 			var wave = false;
 			if (picster.contains("style")){
-				if (picster.get("style::stroke") == "$FRGB") picster.replace("style::stroke", frgb); 
+				if (picster.get("style::stroke") == "$FRGB") picster.replace("style::stroke", frgbstr); 
 				else if (picster.get("style::stroke") == "$BRGB") picster.replace("style::stroke", brgb); 
-				if (picster.get("style::fill") == "$FRGB") picster.replace("style::fill", frgb); 
+				if (picster.get("style::fill") == "$FRGB") picster.replace("style::fill", frgbstr); 
 				else if (picster.get("style::fill") == "$BRGB") picster.replace("style::fill", brgb);
 			}
 			if (picster.contains("style::stroke-dasharray")) if (picster.get("style::stroke-dasharray") == -1) wave = true;
@@ -3196,16 +3175,16 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster, nonScrolling)
 				case "g" :
 				if (Array.isArray(picster.get("child"))) for (var i = 0; i < picster.get("child").length; i++) {
 				if (picster.contains("child[" + i + "]::style")){
-					if (picster.get("child[" + i + "]::style::stroke") == "$FRGB") picster.replace("child[" + i + "]::style::stroke", frgb); 
+					if (picster.get("child[" + i + "]::style::stroke") == "$FRGB") picster.replace("child[" + i + "]::style::stroke", frgbstr); 
 					else if (picster.get("child[" + i + "]::style::stroke") == "$BRGB") picster.replace("child[" + i + "]::style::stroke", brgb); 
-					if (picster.get("child[" + i + "]::style::fill") == "$FRGB") picster.replace("child[" + i + "]::style::fill", frgb); 
+					if (picster.get("child[" + i + "]::style::fill") == "$FRGB") picster.replace("child[" + i + "]::style::fill", frgbstr); 
 					else if (picster.get("child[" + i + "]::style::fill") == "$BRGB") picster.replace("child[" + i + "]::style::fill", brgb); 
 				}
 				}
 				if (picster.contains("child::style")){
-					if (picster.get("child::style::stroke") == "$FRGB") picster.replace("child::style::stroke", frgb); 
+					if (picster.get("child::style::stroke") == "$FRGB") picster.replace("child::style::stroke", frgbstr); 
 					else if (picster.get("child::style::stroke") == "$BRGB") picster.replace("child::style::stroke", brgb); 
-					if (picster.get("child::style::fill") == "$FRGB") picster.replace("child::style::fill", frgb); 
+					if (picster.get("child::style::fill") == "$FRGB") picster.replace("child::style::fill", frgbstr); 
 					else if (picster.get("child::style::fill") == "$BRGB") picster.replace("child::style::fill", brgb); 
 				}
 				jpicster = JSON.parse(picster.stringify());
@@ -3545,13 +3524,12 @@ function renderExpression(msg, s, _dest, RenderMessageOffset, e)
 						"new" : "path",
 						"id" : "bpf-" + idcount++,
 						"d" : bpf,
-						"stroke" : frgb,
+						"stroke" : frgbstr,
 						"stroke-width" : 0.1,
-						"fill" : frgb, 
+						"fill" : frgbstr, 
 						"transform" : "matrix(1 0 0 1 0 0)",
 						}
 						);
-						//SVGString[s + 1].push("<path d=\"" + bpf + "\" stroke=\"" + frgb + "\" stroke-width=\"" + 0.1 + "\" stroke-opacity=\"" + 1. + "\" fill=\"" + frgb + "\" fill-opacity=\"" + 1. + "\" transform=\"matrix(" + [1, 0, 0, 1, 0, 0] + ")\"/>");
 }
 
 function getNoteAreaWidth(m, w)
@@ -3660,7 +3638,7 @@ function pagenumber()
 	var pn = arrayfromargs(arguments);
 	if (pn[0]) {
 		var y_pos = (pn[2]) ? _scoreLayout[5] - 20 : 20;
-		pageNumber = "<text x=\"" + _scoreLayout[4] / 2 + "\" y=\"" + y_pos + "\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"12\" fill=\"" + frgb + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + pn[1] + "</text>";
+		pageNumber = "<text x=\"" + _scoreLayout[4] / 2 + "\" y=\"" + y_pos + "\" font-family=\"" + _textFont + "\" font-style=\"normal\" font-weight=\"normal\" font-size=\"12\" fill=\"" + frgbstr + "\" fill-opacity=\"1\" transform=\"matrix("+ [1., 0., 0., 1., 0., 0.] + ")\" >" + pn[1] + "</text>";
 		}
 	else pageNumber = "";
 }
@@ -3682,7 +3660,11 @@ function writeSVG(destination)
 	f.bgcolor = bcolor;
 	f.groupcount = groupcount;
 	f.init = _init;
-	outlet(0, "obj_ref", f); 
+	f.proportional = prop;
+	f.playhead = _playhead;
+	outlet_dictionary(0, f); 
+	//outlet_dictionary(0, {"test" : [0, 12, 56]}); 
+	//post("obj", JSON.stringify(f), "\n");
 	}
 	else if (destination !== undefined)
 	{
@@ -3727,7 +3709,6 @@ function writeSVG(destination)
 			f.writeline("<g transform=\"" + "translate("  + translate + ") scale(" + scale + ")\">");
 			var svgstring = ds2svg(SVGGraphics_[s][i]);
 			var butt = locations("><", svgstring);
-			//post("svg", butt[butt.length - 1] + 1, svgstring.length, "\n");
 			f.writeline(svgstring.substring(0, butt[0] + 1));
 			for (var j = 0; j < butt.length - 1; j++) f.writeline(svgstring.substring(butt[j] + 1, butt[j + 1] + 1));
 			f.writeline(svgstring.substring(butt[butt.length - 1] + 1), svgstring.length);
@@ -3832,11 +3813,8 @@ function playhead()
 		var from = staffBoundingInfo[4];
 		for (var s = 0; s < groupcount; s++)
 		{
-		//var extent = cursorExtent(sg[s], startStaff, endStaff);
-		//if (extent != -1) {
 		_playhead = from;
-		outlet(0, "playhead", from);
-		//}	
+		//outlet(0, "playhead", from);
 	}			
 }
 
