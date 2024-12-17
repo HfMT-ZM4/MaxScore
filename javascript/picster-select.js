@@ -16,8 +16,8 @@ var planeop = new JitterObject("jit.planeop");
 planeop.op = "+";
 var outmatrix = new JitterMatrix(4, "char", 4000, 2000);
 var monoplane = new JitterMatrix(1, "char", 320, 240);
-var place = new JitterMatrix(4, "char", 4000, 2000);
-place.adapt = 1;
+//var place = new JitterMatrix(4, "char", 4000, 2000);
+//place.adapt = 1;
 Mgraphics.svg_create("img", "<svg></svg>");
 var svg = new Dict();
 svg.name = "svg";
@@ -1718,8 +1718,12 @@ function addShape()
 			var href = msg[3];
 			var pictype = (href.substr(href.lastIndexOf(".") + 1).toLowerCase() == "svg") ? "svg" : "raster";
 			if (pictype != "svg") {
+				/*
 				place.importmovie(msg[3]);
 				var _dim = place.dim;
+				*/
+				var im = new Image(msg[3]);
+				var _dim = im.size;
 			}
 			else {
 				var f = new File(msg[3]);
@@ -2645,8 +2649,12 @@ function anything()
 				addShape(origin[0], origin[1], "image", msg[0], msg[1]);
 			}
 			else if (pictype == "raster") {
-				place.importmovie(msg);
+				/*
+				place.importmovie(msg[3]);
 				var _dim = place.dim;
+				*/
+				var im = new Image(msg[3]);
+				var _dim = im.size;
 				addShape(origin[0], origin[1], "image", msg[0]);
 			}
 			else {
@@ -3094,13 +3102,14 @@ function findBoundsToo(d)
 		}
 	break;
 	case "image" :
+		if (imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)) == null) return [-1, -1, -1, -1];
 		if (!d[0]["xlink:href"].indexOf("reference")) {
 			if ((d[0]["xlink:href"].substr(d[0]["xlink:href"].lastIndexOf(".") + 1).toLowerCase() != "svg")) {
+			post(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)) == null, "\n");
 			d[0]["xlink:href"] = "data:image/png;base64," + imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("");
 			}
 			else {
 			scale = d[0]["picster:scale"].split(",");
-			//post(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1), "\n");
 			d[0] = JSON.parse(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("")).val;
 			}
 		}
