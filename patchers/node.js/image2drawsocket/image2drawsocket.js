@@ -180,7 +180,6 @@ function styleStr2obj(style_)
         let keyval = element.split(':');
         ret[ keyval[0] ] = keyval[1];
     });
-    
     return ret;
 }
 
@@ -193,7 +192,7 @@ function css2obj(style_)
 		let v = styleStr2obj(tok[i].slice(tok[i].indexOf("{") + 1, tok[i].indexOf("}")));
 		ret[key] = v;
 		};
-
+	//Max.post(JSON.stringify(ret));
 	return ret;	
 }
 
@@ -205,7 +204,9 @@ function css2obj(style_)
  */
 function procElements(el_array, artboard_index = "", _ret_reflist = [])
 {
-   if( !Array.isArray(el_array) )
+  const timestamp = Date.now();
+  //Max.post(timestamp);
+  if( !Array.isArray(el_array) )
         el_array = [ el_array ];
 
 	for (let i = el_array.length - 1; i >= 0; i--) {
@@ -257,7 +258,8 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
                     break;
 					*/
                     default:
-                        obj_[k] = n.attributes[k];
+						if (k == "class") obj_[k] = `${n.attributes[k]}-${timestamp}`
+                        else obj_[k] = n.attributes[k];
                     break;
 
                 }
@@ -269,7 +271,7 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
         }
  
         if( n.hasOwnProperty('elements') ) {
-            if( obj_.new == "text" ) {
+           if( obj_.new == "text" ) {
  			//Max.post(JSON.stringify(n.elements[0]));
  				if (n.elements[0].type == 'text' ) obj_.text = htmlEntities(n.elements[0].text);
 				else if (n.elements[0].type == 'element' &&  n.elements[0].name == 'tspan') {
@@ -283,11 +285,10 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
 				}
 			}
 			else if (obj_.new == "style" ) {
- 				//Max.post(JSON.stringify(n.elements[0]));
-			if (n.elements[0].type == "text" ){
+ 			if (n.elements[0].type == "text" ){
 					}
-				//Max.post(JSON.stringify(n.elements[0].text));
-				obj_.text = n.elements[0].text;
+				//Max.post(timestamp, JSON.stringify(txt.replace(/(\.cls-\d+)/g, `$1-${timestamp}`));
+				obj_.text = n.elements[0].text.replace(/(\.cls-\d+)/g, `$1-${timestamp}`);
 				}
             else obj_.child = procElements(n.elements, artboard_index, _ret_reflist);
 			}
