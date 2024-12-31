@@ -30,7 +30,7 @@
 		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
 		"enablehscroll" : 0,
-		"enablevscroll" : 1,
+		"enablevscroll" : 0,
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
@@ -40,12 +40,43 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-53",
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1066.0, 971.0, 127.0, 22.0 ],
+					"text" : "prepend picster attach"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 498.0, 881.0, 87.0, 22.0 ],
-					"text" : "print maxscore"
+					"patching_rect" : [ 1066.0, 1006.0, 73.0, 22.0 ],
+					"text" : "s #2toScore"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
+					"patching_rect" : [ 1066.0, 934.0, 127.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"legacy" : 0,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict picsterChordsnest"
 				}
 
 			}
@@ -56,7 +87,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1073.0, 537.0, 54.0, 22.0 ],
+					"patching_rect" : [ 1094.0, 524.0, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -68,7 +99,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "bang" ],
-					"patching_rect" : [ 1073.0, 495.0, 81.0, 22.0 ],
+					"patching_rect" : [ 1094.0, 482.0, 81.0, 22.0 ],
 					"text" : "t b b"
 				}
 
@@ -80,7 +111,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 1188.0, 235.0, 152.500000000000227, 22.0 ],
+					"patching_rect" : [ 1066.0, 249.0, 152.500000000000227, 22.0 ],
 					"text" : "route pitch vel instr"
 				}
 
@@ -92,7 +123,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "int" ],
-					"patching_rect" : [ 1188.0, 359.0, 64.0, 22.0 ],
+					"patching_rect" : [ 1066.0, 373.0, 64.0, 22.0 ],
 					"text" : "t b i"
 				}
 
@@ -104,7 +135,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1188.0, 395.0, 152.5, 22.0 ],
+					"patching_rect" : [ 1066.0, 409.0, 152.5, 22.0 ],
 					"text" : "pack note i i i"
 				}
 
@@ -116,7 +147,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 1188.0, 326.0, 37.0, 22.0 ],
+					"patching_rect" : [ 1066.0, 340.0, 37.0, 22.0 ],
 					"text" : "* 100"
 				}
 
@@ -128,7 +159,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
-					"patching_rect" : [ 1188.0, 289.0, 108.0, 22.0 ],
+					"patching_rect" : [ 1066.0, 303.0, 108.0, 22.0 ],
 					"text" : "makenote 60 3000"
 				}
 
@@ -140,8 +171,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1073.0, 624.0, 243.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 1094.0, 611.0, 243.0, 22.0 ],
 					"text" : "instrument BassClarinet-Multiphonics.instr 2"
 				}
 
@@ -153,21 +183,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1073.0, 592.0, 216.0, 22.0 ],
+					"patching_rect" : [ 1094.0, 579.0, 216.0, 22.0 ],
 					"text" : "instrument Clarinet-Multiphonics.instr 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "gain~",
-					"multichannelvariant" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "multichannelsignal", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 1073.0, 854.0, 188.0, 19.0 ]
 				}
 
 			}
@@ -177,7 +194,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1073.0, 898.0, 54.0, 22.0 ],
+					"patching_rect" : [ 1066.0, 835.0, 54.0, 22.0 ],
 					"text" : "mc.dac~"
 				}
 
@@ -189,7 +206,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 1073.0, 461.0, 58.0, 22.0 ],
+					"patching_rect" : [ 1094.0, 448.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -201,7 +218,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1135.0, 561.0, 225.0, 22.0 ],
+					"patching_rect" : [ 1156.0, 548.0, 225.0, 22.0 ],
 					"text" : "bank Chordsnest-Multiphonics.bank.json"
 				}
 
@@ -222,32 +239,9 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "multichannelsignal", "dictionary" ],
-					"patching_rect" : [ 1073.0, 661.0, 837.0, 175.0 ],
+					"patching_rect" : [ 1066.0, 643.0, 837.0, 175.0 ],
 					"varname" : "maxscore.sampler",
 					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-23",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 684.0, 881.0, 123.0, 22.0 ],
-					"text" : "loadmess prefix #0"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 416.0, 1006.0, 104.0, 22.0 ],
-					"text" : "print to_maxscore"
 				}
 
 			}
@@ -256,11 +250,11 @@
 					"id" : "obj-18",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 523.5, 1006.0, 150.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "Chordsnest-toMaxScore.js",
+						"filename" : "Chordsnest-toMaxScore",
 						"parameter_enable" : 0
 					}
 ,
@@ -275,7 +269,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 100.5, 814.0, 75.0, 22.0 ],
+					"patching_rect" : [ 65.5, 710.0, 75.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -306,7 +300,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 100.5, 774.0, 66.0, 22.0 ],
+					"patching_rect" : [ 65.5, 670.0, 66.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -315,17 +309,6 @@
 					}
 ,
 					"text" : "dict results"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-20",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 711.0, 1006.0, 77.0, 22.0 ],
-					"text" : "print to_jweb"
 				}
 
 			}
@@ -350,7 +333,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 336.0, 958.0, 394.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "Chordsnest-sqlite.js",
+						"filename" : "Chordsnest-sqlite",
 						"parameter_enable" : 0
 					}
 ,
@@ -365,7 +348,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 336.0, 867.0, 123.0, 22.0 ],
+					"patching_rect" : [ 336.0, 860.0, 123.0, 22.0 ],
 					"text" : "route sqlite maxscore"
 				}
 
@@ -377,7 +360,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 100.5, 732.0, 95.0, 22.0 ],
+					"patching_rect" : [ 65.5, 628.0, 95.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -386,17 +369,6 @@
 					}
 ,
 					"text" : "dict currentFilter"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 241.0, 879.601685000000089, 91.0, 22.0 ],
-					"text" : "print from_jweb"
 				}
 
 			}
@@ -419,7 +391,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 308.0, 201.800842499999931, 42.0, 22.0 ],
+					"patching_rect" : [ 172.5, 189.0, 42.0, 22.0 ],
 					"text" : "reload"
 				}
 
@@ -505,7 +477,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.5, 881.0, 91.0, 22.0 ],
+					"patching_rect" : [ 64.5, 881.0, 97.0, 22.0 ],
 					"text" : "loadmess #1"
 				}
 
@@ -541,7 +513,7 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
+					"destination" : [ "obj-25", 0 ],
 					"source" : [ "obj-10", 0 ]
 				}
 
@@ -555,8 +527,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -569,9 +555,17 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-48", 0 ],
-					"midpoints" : [ 664.0, 1038.0, 1054.75, 1038.0, 1054.75, 232.0, 1197.5, 232.0 ],
+					"destination" : [ "obj-12", 0 ],
+					"midpoints" : [ 598.5, 1049.0, 1010.0, 1049.0, 1010.0, 917.0, 1075.5, 917.0 ],
 					"source" : [ "obj-18", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-48", 0 ],
+					"midpoints" : [ 664.0, 1037.0, 1054.75, 1037.0, 1054.75, 235.0, 1075.5, 235.0 ],
+					"source" : [ "obj-18", 2 ]
 				}
 
 			}
@@ -585,15 +579,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"disabled" : 1,
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
+					"midpoints" : [ 250.5, 854.900421000000051, 345.5, 854.900421000000051 ],
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -608,31 +595,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"disabled" : 1,
-					"source" : [ "obj-23", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"disabled" : 1,
-					"source" : [ "obj-23", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-49", 0 ],
 					"source" : [ "obj-24", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-25", 0 ],
-					"source" : [ "obj-26", 0 ]
 				}
 
 			}
@@ -674,7 +638,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
-					"midpoints" : [ 1197.5, 439.400421000000051, 1082.5, 439.400421000000051 ],
+					"midpoints" : [ 1075.5, 436.400421000000051, 1075.5, 436.400421000000051 ],
 					"source" : [ "obj-37", 0 ]
 				}
 
@@ -724,7 +688,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-37", 3 ],
-					"midpoints" : [ 1286.500000000000227, 272.5, 1331.0, 272.5 ],
+					"midpoints" : [ 1164.500000000000227, 286.5, 1209.0, 286.5 ],
 					"source" : [ "obj-48", 2 ]
 				}
 
@@ -769,15 +733,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"order" : 0,
-					"source" : [ "obj-6", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-53", 0 ],
-					"order" : 1,
+					"midpoints" : [ 397.5, 996.0, 533.0, 996.0 ],
 					"source" : [ "obj-6", 1 ]
 				}
 
@@ -799,6 +755,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
+					"midpoints" : [ 182.0, 887.5, 360.5, 887.5 ],
 					"order" : 0,
 					"source" : [ "obj-7", 0 ]
 				}
@@ -828,24 +785,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"disabled" : 1,
-					"source" : [ "obj-9", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"midpoints" : [ 720.5, 990.0, 213.5, 990.0, 213.5, 232.800841999999989, 250.5, 232.800841999999989 ],
-					"source" : [ "obj-9", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-20", 0 ],
-					"disabled" : 1,
 					"source" : [ "obj-9", 2 ]
 				}
 
@@ -1694,24 +1635,37 @@
 					"parameter_longname" : "live.menu[1]"
 				}
 ,
+				"obj-10::obj-24::obj-67::obj-17" : 				{
+					"parameter_longname" : "Pan"
+				}
+,
 				"obj-10::obj-24::obj-67::obj-25" : 				{
 					"parameter_invisible" : 0,
+					"parameter_longname" : "Instrument[32]",
 					"parameter_modmode" : 0,
 					"parameter_range" : [ "<none>", "Clarinet-Multiphonics.instr", "BassClarinet-Multiphonics.instr" ],
 					"parameter_type" : 2,
 					"parameter_unitstyle" : 10
 				}
 ,
+				"obj-10::obj-24::obj-67::obj-7" : 				{
+					"parameter_longname" : "live.menu[66]"
+				}
+,
+				"obj-10::obj-24::obj-67::obj-8" : 				{
+					"parameter_longname" : "live.menu[65]"
+				}
+,
 				"obj-10::obj-43::obj-17::obj-3::obj-24" : 				{
-					"parameter_range" : [ 0.0, 6333.760000000000218 ]
+					"parameter_range" : [ 0.0, 5626.670000000000073 ]
 				}
 ,
 				"obj-10::obj-43::obj-17::obj-3::obj-27" : 				{
-					"parameter_range" : [ 0.0, 6333.760000000000218 ]
+					"parameter_range" : [ 0.0, 5626.670000000000073 ]
 				}
 ,
 				"obj-10::obj-43::obj-17::obj-3::obj-6" : 				{
-					"parameter_range" : [ 0.0, 6333.760000000000218 ]
+					"parameter_range" : [ 0.0, 5626.670000000000073 ]
 				}
 
 			}
