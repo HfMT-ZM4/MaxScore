@@ -43,7 +43,7 @@ function drawFingering() {
             key: 'svg',
             val: {
                 new: 'g',
-                /*id: 'Picster-Element_'+timestamp,*/
+                id: 'Picster-Element_'+timestamp,*/
                 style: {
                     stroke: 'black',
                     'stroke-width': 3,
