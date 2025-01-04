@@ -19,7 +19,7 @@ var selection = new Dict();
 //selection.name = "selection";
 var events = new Dict();
 var keys = [];
-var stafflines = [0, 0];
+var _stafflines = [0, 0];
 var staffStyles = new Dict();
 staffStyles.name = "staffStyles";
 var staffStyles2 = new Dict();
@@ -423,18 +423,6 @@ this.patcher.parentpatcher.parentpatcher.getnamed("tools").subpatcher().getnamed
 function state(st) {
     oldstl = st;
 }
-
-/*
-function setStyle(stl) {
-    if (aliases.contains(stl)) stl = aliases.get(stl);
-    var basestyle = stl.split("|")[0];
- 	this.patcher.getnamed("style").message("setsymbol", basestyle);
-  	//post("setitem", staffStyles.stringify(), "\n");
-   	styletype = staffStyles.contains(basestyle) ? staffStyles.get(basestyle)[0] : "Default";
-   	if (editors.names.indexOf(basestyle) != -1) this.patcher.getnamed("style").message("setitem", editors.names.indexOf(basestyle) + 1, stl);
-  	//if (editors.names.indexOf(basestyle) != -1) post("setitem", editors.names.indexOf(basestyle) + 1, "\n");
-}
-*/
 
 function setStyle(stl, flag)
 {
@@ -858,7 +846,7 @@ function setStafflines(n) {
     var spacingbelow = n[1] * 12 + 72;
     this.patcher.getnamed("spacingabove").message(spacingabove);
     this.patcher.getnamed("spacingbelow").message(spacingbelow);
-    stafflines = n;
+    _stafflines = n;
     //set hidden state for select stafflines and set annotation dict
     if (ss[0] == "clefdesigner") {
             annotation.replace("staff-" + StaffIndex + "::stafflineshidden::" + hidden, 0);

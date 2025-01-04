@@ -3422,7 +3422,13 @@ function splitText(obj)
 	var textGroup = {};
 	textGroup.new = "g";
 	textGroup.id = obj.id;
-	textGroup.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
+	textGroup["font-family"] = obj["font-family"];
+	textGroup["font-size"] = obj["font-size"];
+	textGroup["font-weight"] = obj["font-weight"];
+	textGroup["font-style"] = obj["font-style"];
+	textGroup["text-anchor"] = obj["text-anchor"];
+	textGroup.style = obj.style;
+	textGroup.transform = obj.transform;
 	textGroup.child = [];
 	var splittext = obj.text.split("||");
 	for (var i = 0; i < splittext.length; i++) {
@@ -3663,8 +3669,6 @@ function writeSVG(destination)
 	f.proportional = prop;
 	f.playhead = _playhead;
 	outlet_dictionary(0, f); 
-	//outlet_dictionary(0, {"test" : [0, 12, 56]}); 
-	//post("obj", JSON.stringify(f), "\n");
 	}
 	else if (destination !== undefined)
 	{

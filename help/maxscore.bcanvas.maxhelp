@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 106.0, 1443.0, 830.0 ],
+		"rect" : [ 34.0, 100.0, 1444.0, 836.0 ],
 		"gridsize" : [ 18.0, 18.0 ],
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
@@ -31,7 +31,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1443.0, 804.0 ],
+						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -61,10 +61,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-15",
@@ -338,7 +340,7 @@
 
 											}
  ],
-										"originid" : "pat-2842"
+										"originid" : "pat-31371"
 									}
 ,
 									"patching_rect" : [ 233.0, 138.0, 61.0, 23.0 ],
@@ -515,7 +517,7 @@
 
 											}
  ],
-										"originid" : "pat-2844"
+										"originid" : "pat-31373"
 									}
 ,
 									"patching_rect" : [ 373.0, 138.0, 61.0, 23.0 ],
@@ -663,7 +665,7 @@
 
 							}
  ],
-						"originid" : "pat-2746",
+						"originid" : "pat-31275",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -761,7 +763,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1443.0, 804.0 ],
+						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -4534,7 +4536,7 @@
 
 											}
  ],
-										"originid" : "pat-2848"
+										"originid" : "pat-31377"
 									}
 ,
 									"patching_rect" : [ 686.666625999999951, 65.0, 41.0, 22.0 ],
@@ -5114,7 +5116,7 @@
 
 											}
  ],
-										"originid" : "pat-2850"
+										"originid" : "pat-31379"
 									}
 ,
 									"patching_rect" : [ 301.0, 536.0, 69.0, 22.0 ],
@@ -5387,7 +5389,7 @@
 
 											}
  ],
-										"originid" : "pat-2854"
+										"originid" : "pat-31383"
 									}
 ,
 									"patching_rect" : [ 1.0, 53.0, 34.0, 22.0 ],
@@ -5935,7 +5937,7 @@
 
 							}
  ],
-						"originid" : "pat-2846",
+						"originid" : "pat-31375",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -6033,42 +6035,30 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 132.0, 1443.0, 804.0 ],
+						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"bgcolor" : [ 0.0, 0.0, 0.0, 0.0 ],
-									"border" : 1.0,
-									"fontname" : "Arial",
-									"fontsize" : 18.0,
-									"id" : "obj-69",
-									"keymode" : 1,
-									"maxclass" : "textedit",
+									"id" : "obj-58",
+									"linecount" : 8,
+									"maxclass" : "comment",
 									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "int", "", "" ],
-									"outputmode" : 1,
-									"parameter_enable" : 0,
-									"patching_rect" : [ 178.0, 290.0, 233.0, 30.0 ],
-									"presentation" : 1,
-									"presentation_rect" : [ 178.0, 290.0, 233.0, 30.0 ],
-									"rounded" : 0.0,
-									"text" : "Text for Kieran ",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"varname" : "0-textedit"
+									"numoutlets" : 0,
+									"patching_rect" : [ 1169.0, 466.0, 262.0, 114.0 ],
+									"presentation_linecount" : 16,
+									"text" : "Select a picster element and apply message to create a non-scrolling element that stays in a fixed location on top of a scrolling score (only visible in the web browser). The arguments are: enable flag, x and y position as well as the time interval in milliseconds during which the element is shown. Scores need to be in proportional notation for this to work."
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-67",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1226.6666259765625, 438.0, 195.0, 35.0 ],
+									"patching_rect" : [ 1169.0, 435.0, 227.0, 22.0 ],
 									"text" : "picster nonscrolling 1 200 50 1000 3000"
 								}
 
@@ -6216,10 +6206,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-29",
@@ -6458,7 +6450,7 @@
 
 											}
  ],
-										"originid" : "pat-2952"
+										"originid" : "pat-31481"
 									}
 ,
 									"patching_rect" : [ 762.666625999999951, 114.0, 41.0, 22.0 ],
@@ -6905,7 +6897,7 @@
 
 											}
  ],
-										"originid" : "pat-2954"
+										"originid" : "pat-31483"
 									}
 ,
 									"patching_rect" : [ 831.6666259765625, 114.0, 58.0, 22.0 ],
@@ -7121,7 +7113,7 @@
 
 											}
  ],
-										"originid" : "pat-2956"
+										"originid" : "pat-31485"
 									}
 ,
 									"patching_rect" : [ 98.25, 127.0, 34.0, 22.0 ],
@@ -7168,7 +7160,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 148.25, 607.0, 321.0, 48.0 ],
-									"text" : "/stdout : \"received socket close /1 wnrkGJfhWvyjfpdZgaLO7w==\""
+									"text" : "/stdout : \"received socket close /1 9XwgSO+a33Q0+9LtmYgUDw==\""
 								}
 
 							}
@@ -11549,7 +11541,7 @@
 
 							}
  ],
-						"originid" : "pat-2950",
+						"originid" : "pat-31479",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -11647,10 +11639,23 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1443.0, 804.0 ],
+						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-35",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 635.5, 558.0, 219.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "picster addShape 80 80 text whats||app"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-63",
 									"maxclass" : "message",
@@ -11678,10 +11683,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-59",
@@ -12135,7 +12142,7 @@
 
 											}
  ],
-										"originid" : "pat-3070"
+										"originid" : "pat-31599"
 									}
 ,
 									"patching_rect" : [ 937.0, 158.0, 146.0, 22.0 ],
@@ -12406,7 +12413,7 @@
 
 											}
  ],
-										"originid" : "pat-3072"
+										"originid" : "pat-31601"
 									}
 ,
 									"patching_rect" : [ 333.5, 532.5, 37.0, 22.0 ],
@@ -12681,10 +12688,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-7",
@@ -13052,10 +13061,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-15",
@@ -13301,6 +13312,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-33", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-35", 0 ]
 								}
 
 							}
@@ -13565,7 +13583,7 @@
 
 							}
  ],
-						"originid" : "pat-3068",
+						"originid" : "pat-31597",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -13663,7 +13681,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1443.0, 804.0 ],
+						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -13695,10 +13713,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-6",
@@ -13728,10 +13748,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-3",
@@ -13760,10 +13782,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-5",
@@ -13793,10 +13817,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-15",
@@ -14044,10 +14070,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-16",
@@ -14325,7 +14353,7 @@
 
 							}
  ],
-						"originid" : "pat-3168",
+						"originid" : "pat-31697",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -14423,7 +14451,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1443.0, 804.0 ],
+						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -14598,10 +14626,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-34",
@@ -14618,10 +14648,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-32",
@@ -14982,10 +15014,12 @@
 								"box" : 								{
 									"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgcolor2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
 									"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
 									"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"gradient" : 1,
 									"id" : "obj-15",
@@ -15317,7 +15351,7 @@
 
 							}
  ],
-						"originid" : "pat-3264",
+						"originid" : "pat-31793",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -15434,7 +15468,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1443.0, 804.0 ],
+						"rect" : [ 34.0, 126.0, 1444.0, 810.0 ],
 						"gridsize" : [ 5.0, 5.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -15721,7 +15755,7 @@
 
 							}
  ],
-						"originid" : "pat-3360",
+						"originid" : "pat-31889",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -15835,12 +15869,12 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1443.0, 804.0 ],
+						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [  ],
 						"lines" : [  ],
-						"originid" : "pat-3550"
+						"originid" : "pat-32079"
 					}
 ,
 					"patching_rect" : [ 390.0, 354.0, 50.0, 22.0 ],
@@ -15855,7 +15889,7 @@
 			}
  ],
 		"lines" : [  ],
-		"originid" : "pat-2744",
+		"originid" : "pat-31273",
 		"parameters" : 		{
 			"obj-1::obj-8" : [ "live.menu[54]", "bracket", 0 ],
 			"parameterbanks" : 			{
