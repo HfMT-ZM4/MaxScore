@@ -1904,6 +1904,11 @@ function addShape()
 			}
 }
 
+function clearSelection()
+{
+	foundobjects.clear();
+}
+
 function attach()
 {
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
