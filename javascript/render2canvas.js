@@ -1415,7 +1415,6 @@ function dictionary(d)
 function endRenderDump()
 {
 	//outlet(2, "endRenderDump");
-	//post(nnotation., "\n");
 	if (annotation.contains("proportional") && annotation.get("proportional")) {
 		playhead();
 		outlet(1, "setNoteFlash", 0);
@@ -1511,6 +1510,7 @@ function flashcolor(r, g, b)
 
 function scoreLayout()
 {
+		//post("scoreLayout", "\n");
 		_scoreLayout = arrayfromargs(arguments);
 		usedFonts.replace(_musicFont + "::Regular", 1); 
 		usedFonts.replace(_textFont + "::Regular", 1);  

@@ -53,6 +53,7 @@ var click = "";
 var polyclicks = [];
 var clickcount = 0;
 var firstClick = [0, 0];
+var lastClick = [0, 0];
 var lcd;
 var blocked = 0;
 var stroke = 0;
@@ -234,6 +235,7 @@ if (mode == "picster" && !blocked) {
 	if (_c > 0) {
 		item = clicks % _c;
 		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
+		outlet(0, "setRenderAllowed", 0);
 		outlet(0, "clearSelection");
 		if (!buttonMode) {
 		//post("_c", foundobjects.stringify(), "\n");
@@ -245,8 +247,6 @@ if (mode == "picster" && !blocked) {
 			for (var i = 0; i <= foundobjects.get(item)[5]; i++) outlet(0, "selectNextInterval");
 			break;
 			case "note" :
-			//outlet(0, "selectNote", foundobjects.get(item).slice(1, 5));
-			outlet(0, "clearSelection");
 			outlet(0, "addNoteToSelection", foundobjects.get(item).slice(1, 8));
    			outlet(0, "setSelectedStaff", foundobjects.get(item).slice(1, 3));
 			this.patcher.getnamed("measurerange").setvalueof(foundobjects.get(item)[1], foundobjects.get(item)[2], foundobjects.get(item)[1], foundobjects.get(item)[2]);
@@ -261,6 +261,7 @@ if (mode == "picster" && !blocked) {
 			this.patcher.getnamed("measurerange").setvalueof(foundobjects.get(item)[1], 0, foundobjects.get(item)[1], numStaves - 1);
 			break;
 		}
+		outlet(0, "setRenderAllowed", 1);
 		}
 		outlet(1, foundobjects.get(item).slice(0, foundobjects.get(item).length - 5));
 		var tempDict2 = new Dict();
@@ -449,6 +450,7 @@ function findElementByID(id)
 	if (_c > 0) {
 		item = clicks % _c;
 		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
+		error("clearSelection-455\n");
 		outlet(0, "clearSelection");
 		if (!buttonMode) {
 		switch (foundobjects.get(item)[0]){
@@ -691,7 +693,8 @@ function mouseDragged(x, y)
 
 function mouseReleased(x, y)
 {
-if (mode == "picster") {
+	lastClick = [x, y];
+	if (mode == "picster") {
 	if (editor == "pb") return;
 	if (!buttonMode) {
 	outlet(2, "clearGraphics");
@@ -1326,6 +1329,7 @@ function cnt()
 
 function restoreSelection(obj)
 {
+		error("clearSelection-1335\n");
 		outlet(0, "clearSelection");
 		for(var event in obj){
 		anchor = obj[event];
@@ -1339,6 +1343,7 @@ function restoreSelection(obj)
 
 function addPortamento(serialized)
 {
+	outlet(0, "setRenderAllowed", "false");
 	outlet(0, "clearSelection");
 	outlet(0, "selectNote", anchors[Object.keys(anchors)[0]].slice(2));
 	outlet(0, "addRenderedMessageToSelectedNotes", 7, 0, serialized);
@@ -1385,10 +1390,10 @@ function addShape()
 			}
 		}
 			else offsets[0] = [msg[0] / factor , msg[1] / factor];
-			//post("offsets", offsets[0], "\n");
 			action = "addShape";
 			switch (msg[2]){
 			case "line":
+				//post("msg", msg, "\n");
 				var margin = 2;
 				var coords = [(msg[3] <= msg[5]) ? msg[3] : msg[5], (msg[4] <= msg[6]) ? msg[4] : msg[6], (msg[3] > msg[5]) ? msg[3] : msg[5], (msg[4] > msg[6]) ? msg[4] : msg[6]];
 				var attr = {};
@@ -1496,8 +1501,8 @@ function addShape()
 				attr.id = currentID;
 				attr.cx = msg[3] + (msg[5] - msg[3]) / 2;
 				attr.cy = msg[4] + (msg[6] - msg[4]) / 2;
-				attr.rx = (msg[5] - msg[3]) / 2;
-				attr.ry = (msg[6] - msg[4]) / 2;
+				attr.rx = Math.abs((msg[5] - msg[3]) / 2);
+				attr.ry = Math.abs((msg[6] - msg[4]) / 2);
 				attr.style = {};
 				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
 				attr.style["stroke-opacity"] = color[3];
@@ -1616,14 +1621,13 @@ function addShape()
 				polyclicks = [];
 				if (msg.length == 4) polyclicks = msg[3];
 				else for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
-				//var fitted = fitCurve([[x,y]].concat(polyclicks));
+				//post("polyclicks", origin, JSON.stringify(polyclicks), "\n");
+				if (polyclicks.length < 1) return;
+				else if (polyclicks.length == 1) addShape(origin[0], origin[1], "line", 0, 0, lastClick[0] - origin[0], lastClick[1] - origin[1]); //post("line", JSON.stringify(msg[3]), "\n");
+				else {
 				var fitted = fitCurve([[0,0]].concat(polyclicks));
-				//post(JSON.stringify(fitted));
-				//var d = "M " + fitted[0][0] + " " + fitted[0][1];
 				var d = "M 0 0";
-				//for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i][0] + " " + + fitted[i][1] + "," + fitted[i][2] + " " + fitted[i][3] + "," + fitted[i][4] + " " + fitted[i][5];
 				for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i];
-				//post(d+"\n");
 				var attr = {};
 				attr.new = "path";
 				attr.id = currentID;
@@ -1651,7 +1655,7 @@ function addShape()
 				_picster["picster-element"][1].val = {"bounds" : findBoundsToo([].concat(attr))};
 				edit.parse(JSON.stringify(_picster));
 				createRenderedMessage(0, offsets[0][0], offsets[0][1], edit.stringify_compressed());
-				//outlet(3, "bang");
+				}
 			break;
 			case "text":
 				//post("found number of double vertical lines: ", msg[3].split("||").length - 1 , "\n");
@@ -2857,6 +2861,7 @@ function showAllHiddenElements()
 					outlet(0, "getNoteAnchor");
 					for (var event in anchors){
 					anchor = anchors[event];
+					error("clearSelection\n");
 					outlet(0, "clearSelection");
 					outlet(0, "addNoteToSelection", anchor.slice(2));
 					outlet(0, (anchor[6] == -1) ? "getNoteInfo" : "getIntervalInfo", anchor.slice(2));

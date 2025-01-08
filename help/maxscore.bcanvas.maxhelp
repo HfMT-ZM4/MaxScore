@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 1444.0, 836.0 ],
+		"rect" : [ 34.0, 100.0, 1069.0, 836.0 ],
 		"gridsize" : [ 18.0, 18.0 ],
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
@@ -31,7 +31,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
+						"rect" : [ 0.0, 26.0, 1069.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -340,7 +340,7 @@
 
 											}
  ],
-										"originid" : "pat-31371"
+										"originid" : "pat-2809"
 									}
 ,
 									"patching_rect" : [ 233.0, 138.0, 61.0, 23.0 ],
@@ -517,7 +517,7 @@
 
 											}
  ],
-										"originid" : "pat-31373"
+										"originid" : "pat-2811"
 									}
 ,
 									"patching_rect" : [ 373.0, 138.0, 61.0, 23.0 ],
@@ -665,7 +665,7 @@
 
 							}
  ],
-						"originid" : "pat-31275",
+						"originid" : "pat-2713",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -763,7 +763,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
+						"rect" : [ 0.0, 26.0, 1069.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -4536,7 +4536,7 @@
 
 											}
  ],
-										"originid" : "pat-31377"
+										"originid" : "pat-2815"
 									}
 ,
 									"patching_rect" : [ 686.666625999999951, 65.0, 41.0, 22.0 ],
@@ -5116,7 +5116,7 @@
 
 											}
  ],
-										"originid" : "pat-31379"
+										"originid" : "pat-2817"
 									}
 ,
 									"patching_rect" : [ 301.0, 536.0, 69.0, 22.0 ],
@@ -5389,7 +5389,7 @@
 
 											}
  ],
-										"originid" : "pat-31383"
+										"originid" : "pat-2821"
 									}
 ,
 									"patching_rect" : [ 1.0, 53.0, 34.0, 22.0 ],
@@ -5937,7 +5937,7 @@
 
 							}
  ],
-						"originid" : "pat-31375",
+						"originid" : "pat-2813",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -6035,7 +6035,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
+						"rect" : [ 0.0, 26.0, 1069.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -6045,8 +6045,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1169.0, 466.0, 262.0, 114.0 ],
-									"presentation_linecount" : 16,
+									"patching_rect" : [ 1169.0, 466.0, 264.0, 114.0 ],
 									"text" : "Select a picster element and apply message to create a non-scrolling element that stays in a fixed location on top of a scrolling score (only visible in the web browser). The arguments are: enable flag, x and y position as well as the time interval in milliseconds during which the element is shown. Scores need to be in proportional notation for this to work."
 								}
 
@@ -6450,7 +6449,7 @@
 
 											}
  ],
-										"originid" : "pat-31481"
+										"originid" : "pat-2919"
 									}
 ,
 									"patching_rect" : [ 762.666625999999951, 114.0, 41.0, 22.0 ],
@@ -6897,7 +6896,7 @@
 
 											}
  ],
-										"originid" : "pat-31483"
+										"originid" : "pat-2921"
 									}
 ,
 									"patching_rect" : [ 831.6666259765625, 114.0, 58.0, 22.0 ],
@@ -7113,7 +7112,7 @@
 
 											}
  ],
-										"originid" : "pat-31485"
+										"originid" : "pat-2923"
 									}
 ,
 									"patching_rect" : [ 98.25, 127.0, 34.0, 22.0 ],
@@ -7154,13 +7153,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-15",
-									"linecount" : 2,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 148.25, 607.0, 321.0, 48.0 ],
-									"text" : "/stdout : \"received socket close /1 9XwgSO+a33Q0+9LtmYgUDw==\""
+									"patching_rect" : [ 148.25, 607.0, 321.0, 34.0 ]
 								}
 
 							}
@@ -11541,7 +11538,7 @@
 
 							}
  ],
-						"originid" : "pat-31479",
+						"originid" : "pat-2917",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -11639,23 +11636,10 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
+						"rect" : [ 34.0, 126.0, 1069.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-35",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 635.5, 558.0, 219.0, 22.0 ],
-									"presentation_linecount" : 2,
-									"text" : "picster addShape 80 80 text whats||app"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-63",
 									"maxclass" : "message",
@@ -12142,7 +12126,7 @@
 
 											}
  ],
-										"originid" : "pat-31599"
+										"originid" : "pat-3037"
 									}
 ,
 									"patching_rect" : [ 937.0, 158.0, 146.0, 22.0 ],
@@ -12413,7 +12397,7 @@
 
 											}
  ],
-										"originid" : "pat-31601"
+										"originid" : "pat-3039"
 									}
 ,
 									"patching_rect" : [ 333.5, 532.5, 37.0, 22.0 ],
@@ -13317,13 +13301,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-22", 0 ],
-									"source" : [ "obj-35", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-36", 0 ]
 								}
@@ -13583,7 +13560,7 @@
 
 							}
  ],
-						"originid" : "pat-31597",
+						"originid" : "pat-3035",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -13681,7 +13658,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
+						"rect" : [ 0.0, 26.0, 1069.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -14353,7 +14330,7 @@
 
 							}
  ],
-						"originid" : "pat-31697",
+						"originid" : "pat-3135",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -14451,7 +14428,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
+						"rect" : [ 0.0, 26.0, 1069.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -15351,7 +15328,7 @@
 
 							}
  ],
-						"originid" : "pat-31793",
+						"originid" : "pat-3231",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -15468,7 +15445,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 126.0, 1444.0, 810.0 ],
+						"rect" : [ 0.0, 26.0, 1069.0, 810.0 ],
 						"gridsize" : [ 5.0, 5.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -15755,7 +15732,7 @@
 
 							}
  ],
-						"originid" : "pat-31889",
+						"originid" : "pat-3327",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -15869,12 +15846,12 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1444.0, 810.0 ],
+						"rect" : [ 0.0, 26.0, 1069.0, 810.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [  ],
 						"lines" : [  ],
-						"originid" : "pat-32079"
+						"originid" : "pat-3517"
 					}
 ,
 					"patching_rect" : [ 390.0, 354.0, 50.0, 22.0 ],
@@ -15889,7 +15866,7 @@
 			}
  ],
 		"lines" : [  ],
-		"originid" : "pat-31273",
+		"originid" : "pat-2711",
 		"parameters" : 		{
 			"obj-1::obj-8" : [ "live.menu[54]", "bracket", 0 ],
 			"parameterbanks" : 			{
