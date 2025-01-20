@@ -49,6 +49,7 @@ var buttonstrokewidth = 0.5;
 var buttonfillopacity = 0.2;
 var ref;
 var listener = null;
+var css = "";
 var zl = [0.5];
 
 
@@ -446,6 +447,7 @@ function msg_dictionary(o)
 	SVGPicster = JSON.parse(JSON.stringify(o.picster));
 	SVGDefs = JSON.parse(JSON.stringify(o.transforms));
 	SVGExtras = o.nsg;
+	css = o.css;
 	SVGClefs = o.clefs;
 	SVGImages = o.svgimages;
 	groupcount = o.groupcount;
@@ -575,7 +577,7 @@ function msg_dictionary(o)
 			"transform" : "matrix(" + [thisZoom(s), 0, 0, thisZoom(s), 0, 0] + ")",
     		"child" : SVGExtras[s],
 			});	
-		joutput[s] = [clear, {"key" : "svg", "val" : val}];
+		joutput[s] = [clear, css, {"key" : "svg", "val" : val}];
 	}
 	output.parse(JSON.stringify(joutput));
 	outlet(0, "dictionary", output.name);

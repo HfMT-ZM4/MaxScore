@@ -2,6 +2,17 @@ var string = "";
 var depth = 0;
 var endTags = [];
 
+function ds2css(d)
+{
+	var style = `<style> 
+		.glyph { font-family: ${d.val[0].props["font-family"]};font-style: normal;font-weight: normal;font-size: 24px; fill: ${d.val[0].props.fill};fill-opacity: ${d.val[0].props["fill-opacity"]}; }
+  		.text  { font-family: ${d.val[1].props["font-family"]};font-style: normal;font-weight: normal;font-size: 10px; fill: ${d.val[1].props.fill};fill-opacity: ${d.val[1].props["fill-opacity"]}; }
+  		.line { stroke: ${d.val[2].props.stroke}; stroke-width: 0.6; stroke-dasharray: ${d.val[2].props["stroke-dasharray"]} } 
+</style>`;
+	return style;
+}
+
+
 function ds2svg(code)
 {
 	if (!Array.isArray(code)) code = [].concat(code);
@@ -29,7 +40,8 @@ function ds2svgiterate(code)
 			}		
 		else if (element == "style") {
 			string += " " + element + "=\"";
-			for (var property in code[i].style) string += property + ": " + code[i].style[property] + ";";
+			if (typeof code[i].style == "string") string += code[i].style;
+			else for (var property in code[i].style) string += property + ": " + code[i].style[property] + ";";
 			string += "\"";
 			}
 		else if (element == "child") {

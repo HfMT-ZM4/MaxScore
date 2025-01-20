@@ -123,6 +123,8 @@ var pScale = [];
 var pOffset = []
 var ref;
 var listener = null;
+var css = "";
+
 
 function loadbang()
 {
@@ -275,6 +277,7 @@ function msg_dictionary(o)
 	pageSize(o.pageSize[0], o.pageSize[1]);
 	setZoom(o.setZoom);
 	init = o.init;
+	css = o.css;
 	prop = o.proportional;
 	hscrollfactor = prop + 1;
 	outmatrix.dim = [pageWidth, pageHeight];
@@ -294,6 +297,7 @@ function msg_dictionary(o)
 		embeddedImages.push(_svgimages[i]);
 	}
 	var svg = "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
+	svg += ds2css(css);
 	svg += "<g id=\"" + s +  "\">";	
 	svg += ds2svg(o.lines[s]);
 	svg += ds2svg(o.svg[s]);

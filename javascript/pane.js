@@ -48,10 +48,10 @@ var width = this.box.rect[2] - this.box.rect[0];
 var height = this.box.rect[3] - this.box.rect[1];
 
 
-const verticalScrollbar = new Scrollbar();
+var verticalScrollbar = new Scrollbar();
 verticalScrollbar.type = "modern";
 verticalScrollbar.orientation = "vertical";
-const horizontalScrollbar = new Scrollbar();
+var horizontalScrollbar = new Scrollbar();
 horizontalScrollbar.type = "modern";
 horizontalScrollbar.orientation = "horizontal";
 verticalScrollbar.extent = height-horizontalScrollbar.span;
@@ -138,6 +138,7 @@ var clefs = new MGraphicsSVG();
 var picster = [];
 var embedded = new MGraphicsSVG();
 var nsg = new Dict;
+var css = "";
 
 var pageWidth = 1200;
 var pageHeight = 800;
@@ -325,6 +326,7 @@ function msg_dictionary(o)
 	pageSize(o.pageSize[0], o.pageSize[1]);
 	setZoom(o.setZoom);
 	init = o.init;
+	css = o.css;
 	prop = o.proportional;
 	//matrix transform for g needs to also be applied to gradientTransform 
 	bgcolor = o.bgcolor;
@@ -345,6 +347,7 @@ function msg_dictionary(o)
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	//svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
+	svg += ds2css(css);
 	svg += "<g id=\"_" + s +  "\">";
 	svg += ds2svg(o.lines[s]);
 	svg += ds2svg(o.svg[s]);
@@ -364,7 +367,7 @@ function msg_dictionary(o)
 		picster[i] = new MGraphicsSVG();
 		picster[i].setsvg(svg);
 	}
-		
+	//post("svg", JSON.stringify(o.picster), svg, "\n");
 	var svg = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	//svg += "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">";
 	svg += "<svg width=\"" + pageWidth + "px\" height=\"" + pageHeight + "px\" viewBox=\"0 0 " + pageWidth + " " + pageHeight + "\" style=\"background:" + "rgb("+ bgcolor[0] * 255 + "," + bgcolor[1] * 255 + "," + bgcolor[2] * 255 + ")\"" + " xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\">";
@@ -389,7 +392,6 @@ function msg_dictionary(o)
 
 function gradientTransform(string, translate) {
 	string += " translate(" + translate[4] + " " + translate[5] + ")";
-	//post("obj2", string, "\n");
 	return string;
 }
 

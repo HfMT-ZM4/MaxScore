@@ -1404,7 +1404,7 @@ function addShape()
 				attr.x2 = msg[5];
 				attr.y2 = msg[6];
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
@@ -1433,12 +1433,12 @@ function addShape()
 				attr.width = Math.abs(msg[5] - msg[3]);
 				attr.height = Math.abs(msg[6] - msg[4]);
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {
@@ -1470,12 +1470,12 @@ function addShape()
 				//BUG in MGraphics
 				attr.rx = roundedness;
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {
@@ -1504,12 +1504,12 @@ function addShape()
 				attr.rx = Math.abs((msg[5] - msg[3]) / 2);
 				attr.ry = Math.abs((msg[6] - msg[4]) / 2);
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {
@@ -1534,12 +1534,12 @@ function addShape()
 				attr.id = currentID;
 				attr.d = ovalarc(arc[0], arc[1], msg[3] + (msg[5] - msg[3])/2, msg[4] + (msg[6] - msg[4])/2, (msg[5] - msg[3])/2, (msg[6] - msg[4])/2);
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {
@@ -1568,12 +1568,12 @@ function addShape()
 				attr.id = currentID;
 				attr.points = polyclicks.join(" ");
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {
@@ -1601,7 +1601,7 @@ function addShape()
 				attr.id = currentID;
 				attr.points = polyclicks.join(" ");
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
@@ -1621,24 +1621,24 @@ function addShape()
 				polyclicks = [];
 				if (msg.length == 4) polyclicks = msg[3];
 				else for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
-				//post("polyclicks", origin, JSON.stringify(polyclicks), "\n");
 				if (polyclicks.length < 1) return;
 				else if (polyclicks.length == 1) addShape(origin[0], origin[1], "line", 0, 0, lastClick[0] - origin[0], lastClick[1] - origin[1]); //post("line", JSON.stringify(msg[3]), "\n");
 				else {
 				var fitted = fitCurve([[0,0]].concat(polyclicks));
 				var d = "M 0 0";
-				for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i];
+				for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i].map(ele => ele.toFixed(1));;
+				//post("polyclicks", fitted[1], "\n");
 				var attr = {};
 				attr.new = "path";
 				attr.id = currentID;
 				attr.d = d;
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {
@@ -1675,7 +1675,7 @@ function addShape()
 				attr["text-anchor"] = "start";
 				//attr.rotate = 0;
 				attr.style = {};
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 				_picster["picster-element"] = [];
@@ -1787,12 +1787,12 @@ function addShape()
 				for (var i = 0; i < segments.length; i++) d += " C " + segments[i];
 				attr.d = d;
 				attr.style = {};
-				attr.style["stroke"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb(" + 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {
@@ -1820,12 +1820,12 @@ function addShape()
 				attr.id = currentID;
 				attr.d = "M" + [msg[3],msg[4]] + " V" + msg[6] + " H" + msg[5] + " V" + msg[4];
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {
@@ -1852,12 +1852,12 @@ function addShape()
 				attr.id = currentID;
 				attr.d = "M" + [msg[5], msg[6]] + " L" + [msg[3],msg[4] + (msg[6] - msg[4])/2] + " L" + [msg[5], msg[4]];
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (dasharray[0] != 0) attr.style["stroke-dasharray"] = dasharray;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {
@@ -1882,11 +1882,11 @@ function addShape()
 				attr.id = currentID;
 				attr.d = msg[3];
 				attr.style = {};
-				attr.style["stroke"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["stroke"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["stroke-opacity"] = color[3];
 				attr.style["stroke-width"] = pensize;
 				if (property == "fill") {
-				attr.style["fill"] = "rgb("+ 255 * color[0] + "," + 255 * color[1] + "," + 255 * color[2] + ")";
+				attr.style["fill"] = "rgb("+ Math.round(255 * color[0]) + "," + Math.round(255 * color[1]) + "," + Math.round(255 * color[2]) + ")";
 				attr.style["fill-opacity"] = color[3];
 				}
 				else {

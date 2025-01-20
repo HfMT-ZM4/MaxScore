@@ -98,7 +98,7 @@ var lcolor = [0, 0, 0, 1];
 var flcolor = [0.3, 1., 0.3, 0.7];
 var svgstrokewidth = 1.;
 var staffLineColor = [];
-var barLineColor = [];
+var barLineColor = "";
 var barlineDashArray = "none";
 var cursors = new Dict();
 cursors.name = "cursors";
@@ -175,6 +175,42 @@ var wholeNoteRestsInEmptyMeasures = 0;
 var accList = ["natural", "sharp", "flat", "natural", "doubleflat", "doublesharp", "quartertoneflat", "threequartertoneflat", "quartertonesharp", "threequartertonesharp", "no_accidental"];
 var clefDesigner = new Dict();
 clefDesigner.import_json("MaxScoreClefDesigner.json");
+var css = {
+		"key" : "css",
+		"val" : [ 			{
+				"selector" : ".glyph",
+				"props" : 				{
+					"font-family" : "Bravura",
+					"font-style" : "normal",
+					"font-weight" : "normal",
+					"font-size" : "24px",
+					"fill" : "#000",
+					"fill-opacity" : 1,
+				}
+
+			}
+, 			{
+				"selector" : ".text",
+				"props" : 				{
+					"font-family" : "Arial",
+					"font-style" : "normal",
+					"font-weight" : "normal",
+					"font-size" : "10px",
+					"fill" : "#000",
+					"fill-opacity" : 1,
+				}
+
+			}
+,			{
+				"selector" : ".line",
+				"props" : 				{
+					"stroke" : "#000",
+					"stroke-width" : 0.6,
+					"stroke-dasharray" : "none"
+				}
+
+			}
+]};
 var clefs = {
 	"0" : ["", 3], 
 	"1" : ["", 2], 
@@ -971,11 +1007,11 @@ function writeBarlines()
 				if (_scoreLeftMargin == barlines[measures][lines][1] && numStaves > 1) 	SVGLines[s + 1].push({
 					"new" : "line",
 					"id" : "barline-" + idcount++,
+					"class" : "line",
 					"x1" : barlines[measures][lines][1],
 					"y1" : dest[0],
 					"x2" : barlines[measures][lines][1], 
 					"y2" : dest2[0],
-					"stroke" : barLineColor,
 					"stroke-width" : barlines[measures][lines][4] * 0.6,
 					"transform" : "matrix(1 0 0 1 0 0)"
 					}
@@ -1021,12 +1057,12 @@ function writeBarlines()
 							for (var d = 0; d < dest.length; d++) {
 								if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGLines[s + 1].push({
 								"new" : "line",
+								"class" : "line",
 								"id" : "barline-" + idcount++,
 								"x1" : barlines[measures][lines][1],
 								"y1" : dest[0],
 								"x2" : barlines[measures][lines][1], 
 								"y2" : dest2[0],
-								"stroke" : barLineColor,
 								"stroke-width" : barlines[measures][lines][4] * 0.6,
 								"stroke-dasharray" : barlineDashArray,
 								"transform" : "matrix(1 0 0 1 0 0)"
@@ -1168,7 +1204,7 @@ function writeRuler()
 	var path = "";
 	var j = 0;
 		for (var i = _playhead + 2; i <= _scoreLayout[4] - scoreRightMargin; i += timeUnit) {
-			path += "M" + i + " " + 0 + " V" + 15 + " ";
+			path += "M" + i + " " + 0 + " L" + i + " " + 15 + " ";
 			var padding = (j % 60 < 10) ? "0" : "";
 			_time = parseInt(j / 60) + "\'" + padding + j % 60 + "\"";
 			SVGString[s + 1].push({
@@ -1588,18 +1624,6 @@ function init()
 	oldRange = "";
 }
 
-/*
-			css.push({
-    			"selector" : ".writeAt",
-    			"props" : {
-				"font-family" : font,
-				"font-style" : "normal",
-				"font-weight" : "normal", 
-				"font-size" : fs
-    			}
-  			});
-*/
-
 function writeAt(s, font, fs, x, y, t)
 {
 			var a = arrayfromargs(arguments);
@@ -1619,17 +1643,13 @@ function writeAt(s, font, fs, x, y, t)
 			var xoffset = (tempoflag == 1) ? 10. : 0.;
 			SVGString[s + 1].push({
 				"new" : "text",
+				//"class" : "text",
 				"id" : "writeAt-" + idcount++,
-				"x" : x + xoffset,
-				"y" : y,
 				"text" : htmlEntities(t),
 				"font-family" : font,
-				"font-style" : "normal",
-				"font-weight" : "normal", 
 				"font-size" : fs,
 				"fill" : frgbstr, 
-				"fill-opacity" : 1, 
-				"transform" : "matrix(1 0 0 1 0 0)"
+				"transform" : `matrix(1 0 0 1 ${x + xoffset} ${y})`
 				}
 			);
 			}
@@ -1673,8 +1693,6 @@ function anything() {
 				"y" : glyph[i*5+2] + msg[1],
 				"text" : glyph[i*5+0],
 				"font-family" : _musicFont,
-				"font-style" : "normal",
-				"font-weight" : "normal", 
 				"font-size" : glyph[i*5+4],
 				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
@@ -1851,11 +1869,8 @@ function anything() {
 			}
            break;
         case "barline":
-			//barline 0. 0.5 20. 51. 363. 1.
-			//barline measureIndex zoom x barTop barBottom barThickness
-			//post("barlines",  msg, "\n");	
-			//barLineColor = frgbstr;
 			barLineColor = "rgb("+ (lcolor[0] * 255) + "," + (lcolor[1] * 255) + "," + (lcolor[2] * 255) + ")";
+			css.val[2].props.stroke = `#${lcolor[0] * 255}${lcolor[1] * 255}${lcolor[2] * 255}`;
 			if (msg[0] != oldMeasureIndex) bl = 0;
 			barlines[msg[0] - _scoreLayout[1]][bl] = msg.slice(1);
 			bl++;
@@ -2268,7 +2283,6 @@ function anything() {
             break;
         case "RenderMessage":
 			format = "sadam.canvas";
-			//post("renderedMessages1", msg, "\n");					
 			switch (msg[0]){
 				/*
 				case "interval" :
@@ -2293,14 +2307,22 @@ function anything() {
 			if (format == "drawsocket"){
 			var e = new Dict();
 			e.parse(msg[msg.length - 1]);
-				//post("e", e.stringify(), "\n");	
-			if (e.contains("image-segment")){
+			if (e.contains("image-segment")) {
+				
 				var reference = e.get("image-segment::reference");
 				if (imageCache.contains(reference)) return;
-				data.push(e.get("image-segment::data"));
-				if (e.get("image-segment::index") != e.get("image-segment::numsegments")) return;
-				imageCache.replace(reference, data);
-				data = [];
+				if (e.get("image-segment::index") == 1) data = [];
+				if (e.get("image-segment::index") == e.get("image-segment::numsegments")) {
+					data.push(e.get("image-segment::data"));
+					imageCache.replace(reference, data); //move to endrenderdump
+					data = []; 
+				}
+				else {
+					data.push(e.get("image-segment::data"));
+					//post("renderedMessage", e.get("image-segment::data").slice(0, 30), "\n");
+					return;
+				}
+				
 			}
 			else if (e.contains("picster-element")) {
 				renderedMessages.set(rm++, msg);
@@ -2315,10 +2337,12 @@ function anything() {
 				_key = e.get("picster-element[0]::key");
 				svggroupflag = false;
 				var vals = [].concat(e.get("picster-element[0]::val"));
- 				for (var i = 0; i < vals.length; i++){
-					//var picster = JSON.parse(vals[i].stringify());
+				for (var i = 0; i < vals.length; i++){
+ 					//var picster = JSON.parse(vals[i].stringify());
 					var picster = vals[i];
-					if (picster.contains("style")) {
+					// Is this still needed?
+					/*
+					if (picster.contains("style") && typeof picster.get("style") != "string") {
 					if (picster.get("style::stroke") == "$BRGB") {
 					svgstroke = "rgb("+ parseInt(bcolor[0] * 255) + "," + parseInt(bcolor[1] * 255) + "," + parseInt(bcolor[2] * 255) + ")";
             		svgstrokeopacity = 1.; 
@@ -2343,7 +2367,8 @@ function anything() {
 					svgfill = picster.get("style::fill");
             		svgfillopacity = picster.get("style::fill-opacity");
 					}		
-					}	
+					}
+					*/
 					for (var s = 0; s < groupcount; s++) {
 					if (msg[0] != "measure") var dest = remap(sg[s], msg[2], RenderMessageOffset[1]);
 					else var dest = [].concat(RenderMessageOffset[1]);
@@ -3061,31 +3086,33 @@ function anything() {
 				usedFonts.replace(fontFamily + "::Regular", 1);
 				if (staticClefs) SVGClefs[s + 1].push({
 				"new" : "text",
+				//"class" : "glyph",
 				"id" : "clef-" + idcount++,
-				"x" : 0,
-				"y" : 0,
-				"text" : t,
-				"font-family" : fontFamily,
+				/*
 				"font-style" : "normal",
 				"font-weight" : "normal", 
-				"font-size" : glyph[i*5+4] * msg[2] * 2,
-				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
+				*/
+				"fill" : frgbstr, 
+				"text" : t,
+				"font-family" : fontFamily,
+				"font-size" : glyph[i*5+4] * msg[2] * 2,
 				"transform" : "matrix(" + [1., 0., 0., 1., glyph[i*5+1] + msg[0], glyph[i*5+2] + dest[d]] + ")",
 				}
 				);
 				else SVGString[s + 1].push({
 				"new" : "text",
+				//"class" : "glyph",
 				"id" : "glyph-" + idcount++,
-				"x" : 0,
-				"y" : 0,
-				"text" : t,
-				"font-family" : fontFamily,
+				/*
 				"font-style" : "normal",
 				"font-weight" : "normal", 
-				"font-size" : glyph[i*5+4] * msg[2] * 2,
-				"fill" : frgbstr, 
 				"fill-opacity" : 1, 
+				*/
+				"fill" : frgbstr, 
+				"text" : t,
+				"font-family" : fontFamily,
+				"font-size" : glyph[i*5+4] * msg[2] * 2,
 				"transform" : "matrix(" + [1., 0., 0., 1., glyph[i*5+1] + (gracenoteOffset * 0.5) + msg[0], glyph[i*5+2] - gracenoteOffset + dest[d]] + ")",
 				}
 			);
@@ -3143,7 +3170,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster, nonScrolling)
 			var	brgb = "rgb(" + bcolor.slice(0, 3).map(function(element){return Math.round(element * 255)}) + ")";
 			var dasharray = " ";
 			var wave = false;
-			if (picster.contains("style")){
+			if (picster.contains("style") && typeof picster.get("style") != "string"){
 				if (picster.get("style::stroke") == "$FRGB") picster.replace("style::stroke", frgbstr); 
 				else if (picster.get("style::stroke") == "$BRGB") picster.replace("style::stroke", brgb); 
 				if (picster.get("style::fill") == "$FRGB") picster.replace("style::fill", frgbstr); 
@@ -3163,9 +3190,9 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster, nonScrolling)
 			///
 				switch (picster.get("new")) {
 				case "svg" :
+				//post("picster", picster.stringify(), "\n");
 				jpicster = JSON.parse(picster.stringify());
 				//jpicster.transform = svgtransform;
-				//post("jpicster", JSON.stringify(jpicster), "\n");
 				//iterateGroup(jpicster);
 				SVGGraphics[s + 1].push(jpicster);
 				transf["picster:scale"] = (jpicster.hasOwnProperty("picster:scale")) ? jpicster["picster:scale"] : "1,1";
@@ -3173,6 +3200,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster, nonScrolling)
 				SVGNSG[s + 1].push(nonScrolling);
 				break;
 				case "g" :
+				//post("picster-CHILD", picster.get("child").stringify(), "\n");
 				if (Array.isArray(picster.get("child"))) for (var i = 0; i < picster.get("child").length; i++) {
 				if (picster.contains("child[" + i + "]::style")){
 					if (picster.get("child[" + i + "]::style::stroke") == "$FRGB") picster.replace("child[" + i + "]::style::stroke", frgbstr); 
@@ -3654,6 +3682,7 @@ function writeSVG(destination)
 	if (destination == "object") {
 	var f = {};
 	//for (var s = 1; s <= groupcount; s++) SVGString[s] = SVGString[s].concat(SVGGraphics[s]);
+	f.css = css;
 	f.svg = SVGString;
 	f.lines = SVGLines;
 	f.clefs = SVGClefs;
@@ -3684,6 +3713,7 @@ function writeSVG(destination)
 		SVGZoom = paperSize[1] / _scoreLayout[5];
 		}
 	writeDefs(destination, f);
+	f.writeline(ds2css(css));
 	//for (var s = 1; s <= groupcount; s++) {
 	var s = 1;
 	f.writeline("<g id=\"_" + s +  "\" transform=\"matrix(" + [SVGZoom, 0., 0., SVGZoom, 0., 0.] + ")\">");	

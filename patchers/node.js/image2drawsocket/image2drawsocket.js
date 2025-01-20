@@ -85,6 +85,8 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
     try {
         const svgFile = fs.readFileSync(userpath+infile, 'utf8');
        	const svgJS = convert.xml2js(svgFile.replaceAll('&', '&amp;'), { ignoreComment: true, compact: false });
+		const maxChunk = 32000;
+  		const timestamp = Date.now();
 		let value = {};
 		let css = {};
 		let _procElements = [];
@@ -114,13 +116,13 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		}
 		value.child.push({"new" : "g", "transform" : "matrix(1,0,0,1," + -viewBox[0] + "," + -viewBox[1] + ")", "child" : _procElements2});
 		*/
- 		value.child = procElements(getSVGElements(svgJS));
+ 		value.child = procElements(getSVGElements(svgJS), timestamp);
 		splitText(value);
         let svgObj = {
             key: 'svg',
             val: value
         }
-		if (JSON.stringify(svgObj).length < 32000)
+		if (JSON.stringify(svgObj).length < maxChunk)
 		{
 			Max.outlet(svgObj);
  			//Max.outlet(svgJS);
@@ -139,8 +141,8 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 				}
 			};
 			let stringified = JSON.stringify(svgObj).replace(/\\n|\\t|\\r|/g, "");
-			let segments = stringToChunks(stringified, 32000);
-			//Max.post(LZString.decompressFromBase64(segments.join("")).length);
+			let segments = stringToChunks(stringified, maxChunk);
+			Max.post(segments.length);
 			let seg = {};
 			for (let i = 0; i < segments.length; i++) {
 				seg.reference = infile.replace(/\s/g, '').replace(/[\[()\]]/g, '');
@@ -150,6 +152,7 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 				Max.outlet(seg);
 			}
 			img.val["xlink:href"] = 'reference:' + infile.replace(/\s/g, '').replace(/[\[()\]]/g, '');
+			Max.post("img", JSON.stringify(img), JSON.stringify(SVGAttributes));
 			img.val.width = SVGAttributes.hasOwnProperty("width") ? SVGAttributes.width : Number(SVGAttributes.viewBox.split(" ")[2]);
 			img.val.height = SVGAttributes.hasOwnProperty("height") ? SVGAttributes.height : Number(SVGAttributes.viewBox.split(" ")[3]);
 			Max.outlet(img);
@@ -202,10 +205,9 @@ function css2obj(style_)
  * @param {number/string} artboard_index - artboard index is used to make sure ids are not overwritten when reused in different files
  * @param {array} _ret_reflist - (optional) a reference to an array that will be filled with the ids of href links used in the layer
  */
-function procElements(el_array, artboard_index = "", _ret_reflist = [])
+function procElements(el_array, timestamp, artboard_index = "", _ret_reflist = [])
 {
-  const timestamp = Date.now();
-  //Max.post(timestamp);
+  Max.post(timestamp);
   if( !Array.isArray(el_array) )
         el_array = [ el_array ];
 
@@ -222,7 +224,6 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
         {
             for( let k in n.attributes )
             {
-
                 switch(k)
                 {
  					/*
@@ -234,9 +235,9 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
                   	obj_.style = styleStr2obj(n.attributes[k]);
                     break;
 					case 'type':
+							//Max.post("type", n.elements[0].text.replace(/(\.[a-zA-Z0-9_-]+)/g, `$1-${timestamp}`));
 						if (n.attributes[k] == 'text/css') {
 							css = css2obj(n.elements[0].text);
-							//Max.post("type", Object.keys(css2obj(n.elements[0].text)), css.st0);
 							}
 					break;
 					/*
@@ -258,7 +259,8 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
                     break;
 					*/
                     default:
-						if (k == "class") obj_[k] = `${n.attributes[k]}-${timestamp}`
+						//Max.post("DEFAULT", JSON.stringify(n.attributes[k]));
+ 						if (k == "class") obj_[k] = `${n.attributes[k]}-${timestamp}`
                         else obj_[k] = n.attributes[k];
                     break;
 
@@ -272,7 +274,6 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
  
         if( n.hasOwnProperty('elements') ) {
            if( obj_.new == "text" ) {
- 			//Max.post(JSON.stringify(n.elements[0]));
  				if (n.elements[0].type == 'text' ) obj_.text = htmlEntities(n.elements[0].text);
 				else if (n.elements[0].type == 'element' &&  n.elements[0].name == 'tspan') {
 					obj_.text = "";
@@ -288,9 +289,9 @@ function procElements(el_array, artboard_index = "", _ret_reflist = [])
  			if (n.elements[0].type == "text" ){
 					}
 				//Max.post(timestamp, JSON.stringify(txt.replace(/(\.cls-\d+)/g, `$1-${timestamp}`));
-				obj_.text = n.elements[0].text.replace(/(\.cls-\d+)/g, `$1-${timestamp}`);
+				obj_.text = n.elements[0].text.replace(/(\.[a-zA-Z0-9_-]+)/g, `$1-${timestamp}`);
 				}
-            else obj_.child = procElements(n.elements, artboard_index, _ret_reflist);
+            else obj_.child = procElements(n.elements, timestamp, artboard_index, _ret_reflist);
 			}
 
         return obj_;
@@ -311,7 +312,6 @@ function splitText(obj)
 
 function splitIntoTextGroup(obj)
 {
-	//Max.post("2", JSON.stringify(obj));
 	let textGroup = {};
 	textGroup.new = "g";
 	textGroup.id = obj.id;

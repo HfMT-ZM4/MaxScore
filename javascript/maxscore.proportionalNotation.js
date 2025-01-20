@@ -303,6 +303,7 @@ function setProportionalNotation(b) {
         outlet(0, "clearSelection");
 
         outlet(0, "setScoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["@HEIGHT"]));
+        outlet(2, "set", "scoreSize", (Math.round(scoreSize * factor) + playheadPosition + scoreRightMargin), parseFloat(scoreAttributes["@HEIGHT"]));
         outlet(0, "setReceivePlayheadPosition", "false");
         outlet(0, "setNoteFlash", "false");
         //if (!selection) {}
@@ -316,7 +317,8 @@ function setProportionalNotation(b) {
          	//post("proportional", Object.keys(originalScoreAttributes).length, "\n");
           	if (Object.keys(originalScoreAttributes).length) {
 				outlet(0, "setScoreSize", parseFloat(originalScoreAttributes["@WIDTH"]), parseFloat(originalScoreAttributes["@HEIGHT"]));
-            	scoreRightMargin = parseFloat(originalScoreAttributes["@RightMargin"]);
+ 				outlet(2, "set", "scoreSize", parseFloat(originalScoreAttributes["@WIDTH"]), parseFloat(originalScoreAttributes["@HEIGHT"]));
+           		scoreRightMargin = parseFloat(originalScoreAttributes["@RightMargin"]);
             	outlet(0, "setScoreLeftMargin", parseFloat(originalScoreAttributes["@LeftMargin"]));
             	outlet(0, "setScoreRightMargin", parseFloat(originalScoreAttributes["@RightMargin"]) - 2);
             	outlet(0, "setScoreFirstSystemIndent", parseFloat(originalScoreAttributes["@FirstSystemIndent"]));
