@@ -152,9 +152,19 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 				Max.outlet(seg);
 			}
 			img.val["xlink:href"] = 'reference:' + infile.replace(/\s/g, '').replace(/[\[()\]]/g, '');
-			Max.post("img", JSON.stringify(img), JSON.stringify(SVGAttributes));
-			img.val.width = SVGAttributes.hasOwnProperty("width") ? SVGAttributes.width : Number(SVGAttributes.viewBox.split(" ")[2]);
-			img.val.height = SVGAttributes.hasOwnProperty("height") ? SVGAttributes.height : Number(SVGAttributes.viewBox.split(" ")[3]);
+			//Max.post("img", JSON.stringify(img), JSON.stringify(SVGAttributes));
+			if (SVGAttributes.hasOwnProperty("width") && SVGAttributes.hasOwnProperty("height")) {
+				img.val.width = SVGAttributes.width;
+				img.val.height = SVGAttributes.height;
+			}
+			else if (SVGAttributes.hasOwnProperty("viewBox")) {
+				img.val.width = Number(SVGAttributes.viewBox.split(" ")[2]);
+				img.val.height = Number(SVGAttributes.viewBox.split(" ")[3]);
+			}
+			else {
+				img.val.width = 512;
+				img.val.height = 512;
+			}
 			Max.outlet(img);
 		}
    }
