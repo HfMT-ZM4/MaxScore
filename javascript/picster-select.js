@@ -2331,16 +2331,22 @@ function anything()
 			}
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["@Message"].indexOf("rendered") == -1 && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
-			//tempObjArray[i] = {};
-			//cases: don't consider old format, sustains, pitchbends (same?) and tablature symbols
-			tempDict.parse(userBeans[i]["@Message"]);
-			tempObjArray[i] = JSON.parse(tempDict.stringify());
-			tempObjArray[i].Xoffset = parseFloat(userBeans[i]["@Xoffset"]) * factor;
-			tempObjArray[i].Yoffset = parseFloat(userBeans[i]["@Yoffset"]) * factor;
-			//post("Xoffset/Yoffset", anchor, factor, parseFloat(userBeans[i]["@Xoffset"]) * factor, parseFloat(userBeans[i]["@Yoffset"]) * factor, tempObjArray[i].Xoffset, tempObjArray[i].Yoffset, "\n");
+				//tempObjArray[i] = {};
+				//cases: don't consider old format, sustains, pitchbends (same?) and tablature symbols
+				tempDict.parse(userBeans[i]["@Message"]);
+				if ((tempDict.contains("picster-element[0]::val::visibility") && tempDict.get("picster-element[0]::val::visibility") == "visible") || !tempDict.contains("picster-element[0]::val::visibility")) {
+					tempObjArray[i] = JSON.parse(tempDict.stringify());
+					tempObjArray[i].Xoffset = parseFloat(userBeans[i]["@Xoffset"]) * factor;
+					tempObjArray[i].Yoffset = parseFloat(userBeans[i]["@Yoffset"]) * factor;
+				}
+				else {
+					tempDict.replace("picster-element[0]::val::transform", "matrix(" + [1, 0, 0, 1, parseFloat(userBeans[i]["@Xoffset"]) * factor, parseFloat(userBeans[i]["@Yoffset"]) * factor] + ")");
+					createRenderedMessage(0, ".", ".", tempDict.stringify_compressed());
+					}
 			}
 			else return;
 			}
+			//post("cont", "\n");
 			var attr = {};
 			attr.new = "g";
 			attr.id = "Picster-Element_" + cnt();
@@ -2377,17 +2383,23 @@ function anything()
 			edit.parse(JSON.stringify(_picster));
 			action = "group";
 			createRenderedMessage(0, ".", ".", edit.stringify_compressed());
-			//post("xy", foundobjects.get(item)[4], foundobjects.get(item)[5], "\n");
+			//post("EDIT", edit.stringify(), "\n");
 			//singleClick(foundobjects.get(item)[4] + 1, foundobjects.get(item)[5] + 1, 0);
 			// restore picster preference
 			outlet(2, "bounds", "hide");
 			}
+			break;
+			case 72 : //h = hide
+				hideElement();
 			break;
 			case 73 : //i
 			if (foundobjects.contains("0") && item != -1) {
 				edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1])
 				outlet(0, "getSelectedElement", "dictionary", edit.name);
 			}
+			break;
+			case 74:
+				showAllHiddenElements();
 			break;
 			case 76 : //l (save element to library)
 			if (foundobjects.contains("0") && item != -1) this.patcher.getnamed("savedialog").message("bang");

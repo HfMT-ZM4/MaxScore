@@ -157,8 +157,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -404,7 +402,7 @@
 
 							}
  ],
-						"originid" : "pat-81",
+						"originid" : "pat-82",
 						"styles" : [ 							{
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
@@ -540,10 +538,11 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 2000.0, 600.0 ],
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 240.0 ],
 					"readonly" : 1,
 					"rounded" : 0.0,
-					"text" : "/Users/hajdu/Documents/Stuff from Desktop 5/MaxScore/ActorPreludeSample.xml-pdf/Example2.svg",
+					"text" : "/Users/hajdu/Documents/tunnel_pieces/Georg/Tunnel Project/Cycling144-large-2.XML",
 					"textcolor" : [ 0.968627450980392, 0.968627450980392, 0.968627450980392, 0.0 ],
 					"varname" : "dropfile"
 				}
@@ -557,7 +556,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 30.0, 607.0, 187.0, 22.0 ],
-					"restore" : [ "/Users/hajdu/Documents/Stuff from Desktop 5/MaxScore/ActorPreludeSample.xml-pdf/Example2.svg" ],
+					"restore" : [ "/Users/hajdu/Documents/tunnel_pieces/Georg/Tunnel Project/Cycling144-large-2.XML" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -610,8 +609,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -1586,7 +1583,7 @@
 
 											}
  ],
-										"originid" : "pat-85"
+										"originid" : "pat-86"
 									}
 ,
 									"patching_rect" : [ 245.0, 303.0, 177.0, 22.0 ],
@@ -1664,8 +1661,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -2085,7 +2080,7 @@
 
 							}
  ],
-						"originid" : "pat-83"
+						"originid" : "pat-84"
 					}
 ,
 					"patching_rect" : [ 226.666665999999964, 470.0, 98.0, 22.0 ],
@@ -2337,7 +2332,7 @@
 
 							}
  ],
-						"originid" : "pat-101"
+						"originid" : "pat-102"
 					}
 ,
 					"patching_rect" : [ 30.0, 634.0, 71.0, 22.0 ],
@@ -2498,7 +2493,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 320.0, 220.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 455.0, 545.0 ],
 					"textfile" : 					{
 						"filename" : "pane.js",
 						"flags" : 0,
@@ -2901,7 +2896,7 @@
 
 			}
  ],
-		"originid" : "pat-79",
+		"originid" : "pat-80",
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{

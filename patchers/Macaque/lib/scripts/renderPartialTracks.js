@@ -15,11 +15,48 @@ var playhead = -1.;
 var markers = {};
 markers[1] = [];
 var selectedmarker = -1;
-var grain;
+var grain = 0;;
 var numTracks;
 var partialTracks = {};
 var coloredTracks = {};
 for (var i = 0; i < 10; i++) coloredTracks[i] = "";
+
+var css = {
+		"key" : "css",
+		"val" : [ 			{
+				"selector" : ".glyph",
+				"props" : 				{
+					"font-family" : "Bravura",
+					"font-style" : "normal",
+					"font-weight" : "normal",
+					"font-size" : "24px",
+					"fill" : "#000",
+					"fill-opacity" : 1,
+				}
+
+			}
+, 			{
+				"selector" : ".text",
+				"props" : 				{
+					"font-family" : "Arial",
+					"font-style" : "normal",
+					"font-weight" : "normal",
+					"font-size" : "10px",
+					"fill" : "#000",
+					"fill-opacity" : 1,
+				}
+
+			}
+,			{
+				"selector" : ".line",
+				"props" : 				{
+					"stroke" : "#000",
+					"stroke-width" : 0.6,
+					"stroke-dasharray" : "none"
+				}
+
+			}
+]};
 
 function markers_obj(o)
 {
@@ -75,7 +112,7 @@ function envelope()
 function partialtrack(index, x, y)
 {
 	coloredTracks[index - 1] += "M" + x + "," + y + "L" + (x + grain/10) + "," + y;
-	//post("<line x1=\"" + arr[0] + "\" y1=\"" + arr[1] + "\" x2=\"" + arr[2] + "\" y2=\"" + arr[3] + "\" stroke=\"" + "rgb("+ arr[4] + "," + arr[5] + "," + arr[6] + ")" + "\" stroke-width=\"" + svgstrokewidth + "\" stroke-opacity=\"" + arr[7]/255 + "\"" + " stroke-linecap=\"" + "butt" + "\"" + "/>", "\n");
+	//post("d", "M" + x + "," + y + "L" + (x + grain/10) + "," + y, "\n");
 }
 
 function setnumtracks(t)
@@ -166,6 +203,7 @@ function rendersvg()
 	pushLineSegments(_envelope, "rgb(0,255,255)", 1.0);	
 	var f = {};
 	f.svg = {"1": []};
+	f.css = css;
 	f.lines = linesegments;
 	f.clefs = {"1": []};
 	f.svgimages = {"1": []};

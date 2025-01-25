@@ -528,7 +528,7 @@
 
 											}
  ],
-										"originid" : "pat-1518"
+										"originid" : "pat-183"
 									}
 ,
 									"patching_rect" : [ 503.500000000000057, 331.0, 55.0, 20.0 ],
@@ -1771,7 +1771,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 723.0, 115.0, 354.0, 20.0 ],
-									"restore" : [ 17954.502105712890625 ],
+									"restore" : [ 3248.526096343994141 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2848,7 +2848,7 @@
 
 							}
  ],
-						"originid" : "pat-1516"
+						"originid" : "pat-181"
 					}
 ,
 					"patching_rect" : [ 4.0, 348.0, 433.0, 19.0 ],
@@ -2882,7 +2882,7 @@
 					"id" : "obj-59",
 					"maxclass" : "flonum",
 					"maximum" : 2.0,
-					"minimum" : 0.178228278409447,
+					"minimum" : 0.98506211897186,
 					"numdecimalplaces" : 2,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -3124,10 +3124,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 745.0, 1394.0, 108.0, 19.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 4, 44, 358, 172 ],
+						"client_rect" : [ 1187, 252, 1796, 568 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 69, 1034, 197 ]
+						"storage_rect" : [ 780, 524, 1380, 824 ]
 					}
 ,
 					"text" : "pattrstorage macaque",
@@ -3614,7 +3614,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 205.0, 66.0, 354.0, 20.0 ],
-									"restore" : [ 17954.502105712890625 ],
+									"restore" : [ 3248.526096343994141 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4298,7 +4298,7 @@
 
 							}
  ],
-						"originid" : "pat-1522"
+						"originid" : "pat-187"
 					}
 ,
 					"patching_rect" : [ 665.5, 459.0, 66.0, 20.0 ],
@@ -4873,7 +4873,7 @@
 
 							}
  ],
-						"originid" : "pat-1524"
+						"originid" : "pat-189"
 					}
 ,
 					"patching_rect" : [ 482.0, 1119.0, 113.0, 20.0 ],
@@ -6009,7 +6009,7 @@
 
 							}
  ],
-						"originid" : "pat-1526"
+						"originid" : "pat-191"
 					}
 ,
 					"patching_rect" : [ 179.0, 1562.0, 489.0, 20.0 ],
@@ -6243,7 +6243,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 146.0, 93.0, 393.0, 20.0 ],
-									"restore" : [ 17954.502105712890625 ],
+									"restore" : [ 3248.526096343994141 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -6335,7 +6335,7 @@
 
 							}
  ],
-						"originid" : "pat-1528"
+						"originid" : "pat-193"
 					}
 ,
 					"patching_rect" : [ 152.5, 438.0, 42.0, 19.0 ],
@@ -6689,7 +6689,7 @@
 
 							}
  ],
-						"originid" : "pat-1530"
+						"originid" : "pat-195"
 					}
 ,
 					"patching_rect" : [ 519.0, 1356.0, 90.0, 19.0 ],
@@ -6911,7 +6911,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 272.0, 6.0, 354.0, 20.0 ],
-									"restore" : [ 17954.502105712890625 ],
+									"restore" : [ 3248.526096343994141 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7245,7 +7245,7 @@
 
 											}
  ],
-										"originid" : "pat-1534"
+										"originid" : "pat-199"
 									}
 ,
 									"patching_rect" : [ 53.5, 385.0, 78.0, 20.0 ],
@@ -7748,7 +7748,7 @@
 
 							}
  ],
-						"originid" : "pat-1532"
+						"originid" : "pat-197"
 					}
 ,
 					"patching_rect" : [ 5.0, 813.0, 87.0, 19.0 ],
@@ -7943,7 +7943,7 @@
 
 							}
  ],
-						"originid" : "pat-1536"
+						"originid" : "pat-201"
 					}
 ,
 					"patching_rect" : [ 418.0, 712.0, 106.5, 19.0 ],
@@ -7966,7 +7966,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 215.0, 1150.0, 342.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 93 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -7986,7 +7986,7 @@
 					"htricolor" : [ 0.87, 0.82, 0.24, 1.0 ],
 					"id" : "obj-61",
 					"maxclass" : "number",
-					"maximum" : 33,
+					"maximum" : 93,
 					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -8135,7 +8135,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 661.0, 146.0, 342.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 93 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -8321,7 +8321,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 547.0, 173.0, 1173.0, 848.0 ],
+						"rect" : [ 319.0, 149.0, 1069.0, 885.0 ],
 						"default_fontsize" : 10.0,
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
@@ -8396,7 +8396,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 660.25, 656.5, 374.0, 20.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ 93 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -8537,20 +8537,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 635.0, 150.0, 39.0, 20.0 ],
-									"text" : "set 0.5"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-59",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "float" ],
-									"patching_rect" : [ 635.0, 118.0, 76.5, 20.0 ],
-									"text" : "t b f"
+									"patching_rect" : [ 630.0, 163.0, 80.0, 20.0 ],
+									"text" : "minimum $1, $1"
 								}
 
 							}
@@ -8561,20 +8549,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 635.0, 209.0, 123.0, 20.0 ],
+									"patching_rect" : [ 630.0, 190.0, 123.0, 20.0 ],
 									"text" : "pattrforward parent::zoom"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-49",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 692.5, 176.0, 89.0, 20.0 ],
-									"text" : "prepend minimum"
 								}
 
 							}
@@ -8585,7 +8561,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 692.5, 150.0, 72.0, 20.0 ],
+									"patching_rect" : [ 630.0, 135.0, 72.0, 20.0 ],
 									"text" : "expr 3200./$f1"
 								}
 
@@ -8873,7 +8849,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 457.0, 244.0, 413.0, 20.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ "1TRC" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -8984,7 +8960,7 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 150.5, 177.5, 100.0, 20.0 ],
-													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", "\u003b", "#X", "domainAndRange", 0.0, 17954.501953125, 0.0, 2.0, 0.0, 17954.501953125, 0.0, 10.0, 0.0, 17954.501953125, 0.0, 1000.0, 0.0, 17954.501953125, 0.0, 17954.501953125, 0.0, 17954.501953125, -4800.0, 4800.0, "\u003b" ],
+													"save2" : [ "#X", "nbfunctions", 5, "\u003b", "#X", "name", "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", "\u003b", "#X", "domainAndRange", 0.0, 3248.526123046875, 0.0, 2.0, 0.0, 3248.526123046875, 0.0, 10.0, 0.0, 3248.526123046875, 0.0, 1000.0, 0.0, 3248.526123046875, 0.0, 3248.526123046875, 0.0, 3248.526123046875, -4800.0, 4800.0, "\u003b" ],
 													"text" : "mxj ej.fplay",
 													"varname" : "ej.play"
 												}
@@ -9229,7 +9205,7 @@
 
 															}
  ],
-														"originid" : "pat-1542"
+														"originid" : "pat-207"
 													}
 ,
 													"patching_rect" : [ 204.5, 229.0, 76.0, 20.0 ],
@@ -9396,7 +9372,7 @@
 
 															}
  ],
-														"originid" : "pat-1544"
+														"originid" : "pat-209"
 													}
 ,
 													"patching_rect" : [ 150.5, 204.0, 73.0, 20.0 ],
@@ -9525,7 +9501,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 284.5, 309.0, 410.0, 20.0 ],
-													"restore" : [ 0 ],
+													"restore" : [ 93 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -9784,7 +9760,7 @@
 
 											}
  ],
-										"originid" : "pat-1540"
+										"originid" : "pat-205"
 									}
 ,
 									"patching_rect" : [ 261.0, 494.5, 280.0, 20.0 ],
@@ -9927,7 +9903,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "int", "int" ],
-									"patching_rect" : [ 30.0, 68.0, 40.0, 20.0 ],
+									"patching_rect" : [ 30.0, 62.0, 40.0, 20.0 ],
 									"text" : "t b i i"
 								}
 
@@ -9969,7 +9945,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 30.0, 47.0, 32.5, 20.0 ],
+									"patching_rect" : [ 30.0, 36.0, 32.5, 20.0 ],
 									"text" : "+ 1"
 								}
 
@@ -9983,7 +9959,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 30.0, 18.0, 25.0, 25.0 ]
+									"patching_rect" : [ 30.0, 3.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -10011,7 +9987,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 434.0, 47.0, 354.0, 20.0 ],
-									"restore" : [ 17954.502105712890625 ],
+									"restore" : [ 3248.526096343994141 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -10024,11 +10000,9 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 									"fontname" : "Arial",
 									"fontsize" : 10.0,
 									"format" : 6,
-									"htricolor" : [ 0.87, 0.82, 0.24, 1.0 ],
 									"id" : "obj-18",
 									"maxclass" : "flonum",
 									"numinlets" : 1,
@@ -10036,8 +10010,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 434.0, 79.0, 85.0, 20.0 ],
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"tricolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 									"triscale" : 0.9
 								}
 
@@ -10315,8 +10287,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-59", 0 ],
-									"midpoints" : [ 443.5, 104.0, 644.5, 104.0 ],
+									"destination" : [ "obj-53", 0 ],
+									"midpoints" : [ 443.5, 104.0, 639.5, 104.0 ],
 									"order" : 0,
 									"source" : [ "obj-18", 0 ]
 								}
@@ -10573,13 +10545,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-56", 0 ],
-									"source" : [ "obj-49", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-51", 0 ],
 									"source" : [ "obj-50", 1 ]
 								}
@@ -10615,7 +10580,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-49", 0 ],
+									"destination" : [ "obj-65", 0 ],
 									"source" : [ "obj-53", 0 ]
 								}
 
@@ -10639,20 +10604,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-60", 0 ],
 									"source" : [ "obj-58", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-53", 0 ],
-									"source" : [ "obj-59", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-65", 0 ],
-									"source" : [ "obj-59", 0 ]
 								}
 
 							}
@@ -10871,7 +10822,7 @@
 
 							}
  ],
-						"originid" : "pat-1538"
+						"originid" : "pat-203"
 					}
 ,
 					"patching_rect" : [ 4.0, 46.0, 41.0, 20.0 ],
@@ -10947,20 +10898,20 @@
 						"attractor" : [ 6.0 ],
 						"audio-gain" : [ -10.158554044380828 ],
 						"division" : [ "16n" ],
-						"domain_length" : [ 3867.25547178562374 ],
+						"domain_length" : [ 3260.0 ],
 						"dynamics" : [ 1 ],
 						"first/average" : [ 1 ],
-						"functions" : [ 5, 5, 2, 2, 2, 2, 2, "Amplitude", 0, 17954.502105712890625, 0, 2, 100, 0.1, 0, 1, 0, 0, 1, 0, "Spectral Stretching", 0, 17954.502105712890625, 0, 10, 100, 0.1, 0, 2, 0, 0, 2, 0, "Reference Frequency", 0, 17954.502105712890625, 0, 1000, 100, 0.1, 0, 55, 0, 0, 55, 0, "Trajectory", 0, 17954.502105712890625, 0, 17954.502105712890625, 100, 0.1, 0, 0, 0, 0, 0, 0, "Transposition", 0, 17954.502105712890625, -4800, 4800, 100, 0.1, 0, 0, 0, 0, 0, 0 ],
+						"functions" : [ 5, 5, 2, 2, 2, 2, 2, "Amplitude", 0, 3248.526096343994141, 0, 2, 100, 0.1, 0, 1, 0, 3248, 1, 0, "Spectral Stretching", 0, 3248.526096343994141, 0, 10, 100, 0.1, 0, 2, 0, 3248, 2, 0, "Reference Frequency", 0, 3248.526096343994141, 0, 1000, 100, 0.1, 0, 55, 0, 3248, 55, 0, "Trajectory", 0, 3248.526096343994141, 0, 3248.526096343994141, 100, 0.1, 0, 0, 0, 3248, 3248, 0, "Transposition", 0, 3248.526096343994141, -4800, 4800, 100, 0.1, 0, 0, 0, 3248, 0, 0 ],
 						"m_grain" : [ 125.0 ],
 						"minRequired" : [ 1 ],
 						"noise-floor" : [ 0.0 ],
 						"note_value" : [ 2 ],
-						"pane" : [ 0, 1 ],
-						"pane[1]" : [ 0, 1 ],
+						"pane" : [ 0, 0 ],
+						"pane[1]" : [ 0, 0 ],
 						"pane[2]" : [ 0, 1 ],
 						"partialLabel" : [ 0 ],
 						"quartertones" : [ 1 ],
-						"relevant-tracks" : [ 33 ],
+						"relevant-tracks" : [ 93 ],
 						"s_grain" : [ 10.0 ],
 						"subdivision" : [ 2 ],
 						"tempo" : [ 120.0 ],
@@ -10968,7 +10919,7 @@
 						"tolerance" : [ 10 ],
 						"vel_tolerance" : [ 20 ],
 						"view" : [ 1 ],
-						"zoom" : [ 0.5 ]
+						"zoom" : [ 0.98506211897186 ]
 					}
 ,
 					"text" : "autopattr settings",
@@ -11075,7 +11026,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-107",
-					"items" : "<empty>",
+					"items" : "serving tray.sdif",
 					"maxclass" : "umenu",
 					"menumode" : 2,
 					"numinlets" : 1,
@@ -11267,7 +11218,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 114.0, 30.0, 365.0, 18.0 ],
-									"restore" : [ 0 ],
+									"restore" : [ "Macintosh HD:/Users/Shared/Max 8/Library/Teaching/Computational Music Theory/serving tray.sdif" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -11322,7 +11273,7 @@
 
 							}
  ],
-						"originid" : "pat-1546"
+						"originid" : "pat-211"
 					}
 ,
 					"patching_rect" : [ 661.0, 87.0, 61.0, 20.0 ],
@@ -11781,7 +11732,7 @@
 
 							}
  ],
-						"originid" : "pat-1548"
+						"originid" : "pat-213"
 					}
 ,
 					"patching_rect" : [ 533.0, 797.0, 175.0, 19.0 ],
@@ -11828,7 +11779,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "CreateNFunctions", 5, "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", 0, 2, 0, 17954.502105712890625, 0, 10, 0, 17954.502105712890625, 0, 1000, 0, 17954.502105712890625, 0, 17954.502105712890625, 0, 17954.502105712890625, -4800, 4800, 0, 17954.502105712890625 ], [ "SetColor", 0, "brgb", 0, 0, 0 ], [ "SetColor", 0, "frgb", 150, 211, 110 ], [ "SetColor", 0, "rgb2", 150, 211, 110 ], [ "SetColor", 0, "rgb3", 255, 0, 0 ], [ "SetColor", 0, "rgb4", 150, 211, 110 ], [ "SetColor", 0, "rgb5", 255, 255, 255 ], [ "SetColor", 0, "rgb6", 107, 107, 107 ], [ "SetColor", 1, "brgb", 0, 0, 0 ], [ "SetColor", 1, "frgb", 255, 19, 120 ], [ "SetColor", 1, "rgb2", 255, 19, 120 ], [ "SetColor", 1, "rgb3", 255, 0, 0 ], [ "SetColor", 1, "rgb4", 255, 19, 120 ], [ "SetColor", 1, "rgb5", 128, 128, 128 ], [ "SetColor", 1, "rgb6", 255, 0, 0 ], [ "SetColor", 2, "brgb", 0, 0, 0 ], [ "SetColor", 2, "frgb", 225, 162, 137 ], [ "SetColor", 2, "rgb2", 225, 162, 137 ], [ "SetColor", 2, "rgb3", 255, 0, 0 ], [ "SetColor", 2, "rgb4", 225, 162, 137 ], [ "SetColor", 2, "rgb5", 128, 128, 128 ], [ "SetColor", 2, "rgb6", 255, 0, 0 ], [ "SetColor", 3, "brgb", 0, 0, 0 ], [ "SetColor", 3, "frgb", 206, 229, 232 ], [ "SetColor", 3, "rgb2", 206, 229, 232 ], [ "SetColor", 3, "rgb3", 255, 0, 0 ], [ "SetColor", 3, "rgb4", 206, 229, 232 ], [ "SetColor", 3, "rgb5", 128, 128, 128 ], [ "SetColor", 3, "rgb6", 107, 107, 107 ], [ "SetColor", 4, "brgb", 0, 0, 0 ], [ "SetColor", 4, "frgb", 180, 160, 210 ], [ "SetColor", 4, "rgb2", 180, 160, 210 ], [ "SetColor", 4, "rgb3", 255, 0, 0 ], [ "SetColor", 4, "rgb4", 180, 160, 210 ], [ "SetColor", 4, "rgb5", 128, 128, 128 ], [ "SetColor", 4, "rgb6", 107, 107, 107 ], [ "fsaa", 1 ], [ "redrawon" ], [ "drawtoedges", 0 ], [ "autosustain", 0 ], [ "ghost", 30 ], [ "movemode", 0 ], [ "hiddenpoint", 0 ], [ "cacheddrawing", 0 ], [ "notifyrecalled", 0 ], [ "numcurvepoints", 12 ], [ "legend", 1 ], [ "clicksustain", 1 ], [ "timedisplay", 0 ], [ "nbfunction", 5 ], [ "mousereport", 1 ], [ "clickmove", 1 ], [ "grid", 0 ], [ "autocursor", 1 ], [ "outputmode", 0 ], [ "clickadd", 1 ], [ "mode", 0 ], [ "snap2grid", 0 ], [ "bordersync", 0 ], [ "pointsize", 5 ] ],
+					"embedstate" : [ [ "CreateNFunctions", 5, "Amplitude", "Spectral Stretching", "Reference Frequency", "Trajectory", "Transposition", 0, 2, 0, 3248.526096343994141, 0, 10, 0, 3248.526096343994141, 0, 1000, 0, 3248.526096343994141, 0, 3248.526096343994141, 0, 3248.526096343994141, -4800, 4800, 0, 3248.526096343994141 ], [ "SetColor", 0, "brgb", 0, 0, 0 ], [ "SetColor", 0, "frgb", 150, 211, 110 ], [ "SetColor", 0, "rgb2", 150, 211, 110 ], [ "SetColor", 0, "rgb3", 255, 0, 0 ], [ "SetColor", 0, "rgb4", 150, 211, 110 ], [ "SetColor", 0, "rgb5", 255, 255, 255 ], [ "SetColor", 0, "rgb6", 107, 107, 107 ], [ "SetColor", 1, "brgb", 0, 0, 0 ], [ "SetColor", 1, "frgb", 255, 19, 120 ], [ "SetColor", 1, "rgb2", 255, 19, 120 ], [ "SetColor", 1, "rgb3", 255, 0, 0 ], [ "SetColor", 1, "rgb4", 255, 19, 120 ], [ "SetColor", 1, "rgb5", 128, 128, 128 ], [ "SetColor", 1, "rgb6", 255, 0, 0 ], [ "SetColor", 2, "brgb", 0, 0, 0 ], [ "SetColor", 2, "frgb", 225, 162, 137 ], [ "SetColor", 2, "rgb2", 225, 162, 137 ], [ "SetColor", 2, "rgb3", 255, 0, 0 ], [ "SetColor", 2, "rgb4", 225, 162, 137 ], [ "SetColor", 2, "rgb5", 128, 128, 128 ], [ "SetColor", 2, "rgb6", 255, 0, 0 ], [ "SetColor", 3, "brgb", 0, 0, 0 ], [ "SetColor", 3, "frgb", 206, 229, 232 ], [ "SetColor", 3, "rgb2", 206, 229, 232 ], [ "SetColor", 3, "rgb3", 255, 0, 0 ], [ "SetColor", 3, "rgb4", 206, 229, 232 ], [ "SetColor", 3, "rgb5", 128, 128, 128 ], [ "SetColor", 3, "rgb6", 107, 107, 107 ], [ "SetColor", 4, "brgb", 0, 0, 0 ], [ "SetColor", 4, "frgb", 180, 160, 210 ], [ "SetColor", 4, "rgb2", 180, 160, 210 ], [ "SetColor", 4, "rgb3", 255, 0, 0 ], [ "SetColor", 4, "rgb4", 180, 160, 210 ], [ "SetColor", 4, "rgb5", 128, 128, 128 ], [ "SetColor", 4, "rgb6", 107, 107, 107 ], [ "fsaa", 1 ], [ "redrawon" ], [ "mode", 0 ], [ "bordersync", 0 ], [ "clickmove", 1 ], [ "mousereport", 1 ], [ "movemode", 0 ], [ "drawtoedges", 0 ], [ "legend", 1 ], [ "ghost", 30 ], [ "clickadd", 1 ], [ "hiddenpoint", 0 ], [ "grid", 0 ], [ "snap2grid", 0 ], [ "pointsize", 5 ], [ "cacheddrawing", 0 ], [ "outputmode", 0 ], [ "notifyrecalled", 0 ], [ "autosustain", 0 ], [ "numcurvepoints", 12 ], [ "timedisplay", 0 ], [ "nbfunction", 5 ], [ "autocursor", 1 ], [ "clicksustain", 1 ] ],
 					"filename" : "ej.function.js",
 					"id" : "obj-108",
 					"maxclass" : "jsui",
@@ -11845,7 +11796,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "transparency", 0 ] ],
+					"embedstate" : [ [ "bgcolor", 0, 0, 0, 1 ], [ "transparency", 0 ] ],
 					"filename" : "pane.js",
 					"id" : "obj-48",
 					"maxclass" : "v8ui",
@@ -12548,7 +12499,7 @@
 
 			}
  ],
-		"originid" : "pat-1514",
+		"originid" : "pat-179",
 		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ]
 	}
 
