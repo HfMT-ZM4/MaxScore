@@ -1,5 +1,5 @@
 inlets = 1;
-outlets = 3; // 0: keyboard forward to maxscore, 1: to maxscore object, 2: makenote to preview sampler
+outlets = 4; // 0: keyboard forward to maxscore, 1: picster add, 2: makenote to preview sampler, 3: direct to maxscore
 
 var selectedDict = new Dict('selected');
 var picsterDict = new Dict('picsterChordsnest')
@@ -30,7 +30,9 @@ function addSelected() {
     var pitchMidicent = selectedDict.get('pitchMidicent').split(' ');
     outlet(0, Number(pitchMidicent[0])/100, 0);
     for (var i = 1; i < pitchMidicent.length; i++) {
-        outlet(0, Number(pitchMidicent[i])/100, 1);
+        var upperNote = Number(pitchMidicent[i])/100
+        if (upperNote >= 70) outlet (3, 'overrideStemDirection', 'DOWN'); // stem down if higher note >= Bb
+        outlet(0, upperNote, 1);
     }
     drawFingering();
 }
@@ -43,13 +45,13 @@ function drawFingering() {
             key: 'svg',
             val: {
                 new: 'g',
-                id: 'Picster-Element_'/*+timestamp*/,
+                id: 'Picster-Element_'+timestamp,
                 style: {
                     stroke: 'black',
                     'stroke-width': 3,
                     fill: 'none'
                 },
-                transform: 'matrix(0.2,0,0,0.2,10,-50)',
+                transform: 'matrix(0.12,0,0,0.12,-10,-70)',
                 child: [{ // keygroup aG
                     new: 'g',
                     style: {

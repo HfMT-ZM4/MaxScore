@@ -105,7 +105,7 @@
 
         .select-label {
             display: none;
-            font-size: 30px;
+            font-size: 25px;
             font-weight: bolder;
             fill: white;
         }
@@ -153,6 +153,9 @@
             font-size: 13px;
         }
 
+        .go-button-g {
+            fill: var(--light1);
+        }
         .go-button-g:hover g {
             transform: scale(1.1);
         }
@@ -191,7 +194,7 @@
         }
 
         .filter-category:hover .category-bg {
-            opacity: 0.5;
+            opacity: 0.3;
             transform: scale(1.1);
         }
         .category-label {
@@ -202,6 +205,8 @@
         }
         .filter-category:hover .category-label {
             display: inherit;
+            fill: var(--main-color);
+            opacity: 1;
         }
 
         .category-circle {
@@ -264,6 +269,7 @@
         .tag-g text {
             fill: white;
             font-weight: bold;
+            font-size: 13px;
         }
 
         .tag-g:hover g {
@@ -520,9 +526,9 @@
             <text class="body-subtitle" id="search-sound-subtitle" x="400" y="210">Choose filters</text>
             <image class="back-button" id="sound-back" href="images/back-button.png" x="20" y="340" />
             <text class="body-resultscount" id="search-sound-resultscount" x="400" y="575">0 result(s)</text>
-            <g class="go-button-g" transform="translate(780,380)">
+            <g class="go-button-g" id="sound-go-button" transform="translate(780,380)">
                 <g>
-                    <polygon class="go-button-bg" id="sound-go-button" points="0,0 -30,-30 -30,-15 -70,-15 -70,15 -30,15 -30,30" fill="var(--light1)"></polygon>
+                    <polygon class="go-button-bg" points="0,0 -30,-30 -30,-15 -70,-15 -70,15 -30,15 -30,30"></polygon>
                     <text x="-50" y="2">GO</text>
                 </g>
             </g>
@@ -530,8 +536,8 @@
                 <g class="category-bg" id="dynamics-bg">
                     <circle class="category-circle"></circle>
                     <image class="icon" id="dynamics-icon" href="images/category-dynamics.svg" x="-60" y="-22" width="120"/>
-                    <text class="category-label" id="dynamics-label">Dynamics</text>
                 </g>
+                <text class="category-label" id="dynamics-label">Dynamics</text>
                 <g class="filter-options" id="dynamics-options">
                     <g class="option" id="dynamics-1" transform="translate(-70, 50)">
                         <g>
@@ -557,8 +563,8 @@
                 <g class="category-bg" id="pitch-bg">
                     <circle class="category-circle"></circle>
                     <image class="icon" id="pitch-icon" href="images/category-pitch.svg" x="-36" y="-40" width="72"/>
-                    <text class="category-label" id="pitch-label">Pitch</text>
                 </g>
+                <text class="category-label" id="pitch-label">Pitch</text>
                 <g class="filter-options" id="pitch-options">
                     <g class="option" id="pitch-0" transform="translate(0, 70)">
                         <g>
@@ -638,8 +644,8 @@
                 <g class="category-bg" id="difficulty-bg">
                     <circle class="category-circle"></circle>
                     <image class="icon" id="difficulty-icon" href="images/category-difficulty.svg" x="-26" y="-45" width="52"/>
-                    <text class="category-label" id="difficulty-label">Difficulty</text>
                 </g>
+                <text class="category-label" id="difficulty-label">Difficulty</text>
                 <g class="filter-options" id="difficulty-options">
                     <g class="option" id="difficulty-1" transform="translate(-70, 50)">
                         <g>
@@ -756,13 +762,13 @@
             <g id="info-button" class="button-small" transform="translate(750,205)" onclick="mouseEvents.infoClick()">
                 <g>
                     <circle />
-                    <text y="2">i</text>
+                    <image class="icon" id="sound-info-icon" href="images/info-icon.svg" x="-4" y="-9" width="8"/>
                 </g>
             </g>
             <g id="sound-clear-button" class="button-small" transform="translate(700,205)" onclick="mouseEvents.soundClearClick()">
                 <g>
                     <circle />
-                    <text y="1">C</text>
+                    <image class="icon" id="sound-clear-icon" href="images/clear-icon.svg" x="-8" y="-10" width="16"/>
                 </g>
             </g>
             <g id="info-g" class="info-g hidden-transparent">
@@ -819,11 +825,20 @@
                 <image class="results-navigation-button" id="results-sound-navigation-next" href="images/forward-button.png" x="480" y="555" width="20" />
                 <text class="results-navigation-number" id="results-sound-navigation-number" x="400" y="575"></text>
             </g>
-            <g class="go-button-g" id="sound-add-button" display="none" transform="translate(700,570)">
+            <g class="go-button-g" id="sound-add-button" display="none" transform="translate(650,570)">
                 <g>
-                    <polygon class="go-button-bg" points="0,0 -30,-30 -30,-15 -80,-15 -80,15 -30,15 -30,30" fill="var(--light1)"></polygon>
+                    <polygon class="go-button-bg" points="0,0 -30,-30 -30,-15 -80,-15 -80,15 -30,15 -30,30"></polygon>
                     <text x="-50" y="2">ADD</text>
                 </g>
+            </g>
+            <g class="go-button-g" id="sound-ord-button" transform="translate(700,570)" display="none">
+                <g>
+                    <circle class="ord-button-bg" r="20"/>
+                    <text>ord.</text>
+                </g>
+            </g>
+            <g class="ord-button-info" id="sound-ord-info" display="none">
+                
             </g>
         </g>
         <g class="page-body hidden-right" id="search-fingering-page">
@@ -831,16 +846,16 @@
             <text class="body-subtitle" id="search-fingering-subtitle" x="400" y="210">Toggle keys to include in fingering</text>
             <image class="back-button" id="fingering-back" href="images/back-button.png" x="20" y="340" />
             <text class="body-resultscount" id="search-fingering-resultscount" x="550" y="380">0 result(s)</text>
-            <g class="go-button-g" transform="translate(700,380)">
+            <g class="go-button-g" id="fingering-go-button" transform="translate(700,380)">
                 <g>
-                    <polygon class="go-button-bg" id="fingering-go-button" points="0,0 -30,-30 -30,-15 -70,-15 -70,15 -30,15 -30,30" fill="var(--light1)"></polygon>
+                    <polygon class="go-button-bg" points="0,0 -30,-30 -30,-15 -70,-15 -70,15 -30,15 -30,30"></polygon>
                     <text x="-50" y="2">GO</text>
                 </g>
             </g>
             <g id="fingering-clear-button" class="button-small" transform="translate(520,260)" onclick="mouseEvents.fingeringClearClick()">
                 <g>
                     <circle />
-                    <text y="1">C</text>
+                    <image class="icon" id="fingering-clear-icon" href="images/clear-icon.svg" x="-5" y="-5" width="10"/>
                 </g>
             </g>
             <g id="search-fingering-toggles">
@@ -919,7 +934,7 @@
             <g class="results-g" id="results-fingering-g"></g>
             <g class="go-button-g" id="fingering-add-button" display="none" transform="translate(450,530)">
                 <g>
-                    <polygon class="go-button-bg" points="0,0 -30,-30 -30,-15 -80,-15 -80,15 -30,15 -30,30" fill="var(--light1)"></polygon>
+                    <polygon class="go-button-bg" points="0,0 -30,-30 -30,-15 -80,-15 -80,15 -30,15 -30,30"></polygon>
                     <text x="-50" y="2">ADD</text>
                 </g>
             </g>
@@ -1136,6 +1151,7 @@
                 }
                 element.classList.add('result-selected');
                 document.getElementById(currentFilter.searchMethod+'-add-button').setAttribute('display', 'inherit');
+                document.getElementById(currentFilter.searchMethod+'-ord-button').setAttribute('display', 'inherit');
                 window.max.outlet('sqlite', 'getIndex', Number(element.dataset.index));
             },
             addClick: function() {

@@ -2,43 +2,46 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 0,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
 		"openrect" : [ 500.0, 500.0, 800.0, 600.0 ],
-		"bglocked" : 0,
 		"openinpresentation" : 1,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
 		"toolbarvisible" : 0,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
 		"enablehscroll" : 0,
 		"enablevscroll" : 0,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
+		"title" : "Chordsnest - Multiphonics Palette for MaxScore",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1207.0, 971.0, 123.0, 22.0 ],
+					"text" : "picster clearSelection"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 1066.0, 935.0, 29.5, 22.0 ],
+					"text" : "t l b"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "newobj",
@@ -56,7 +59,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1066.0, 1006.0, 73.0, 22.0 ],
+					"patching_rect" : [ 1066.0, 1006.0, 90.0, 22.0 ],
 					"text" : "s #2toScore"
 				}
 
@@ -68,7 +71,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 1066.0, 934.0, 127.0, 22.0 ],
+					"patching_rect" : [ 1066.0, 899.0, 127.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"legacy" : 0,
@@ -250,9 +253,9 @@
 					"id" : "obj-18",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 523.5, 1006.0, 150.0, 22.0 ],
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 524.0, 1006.0, 200.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "Chordsnest-toMaxScore",
 						"parameter_enable" : 0
@@ -398,6 +401,7 @@
 			}
 , 			{
 				"box" : 				{
+					"disablefind" : 0,
 					"id" : "obj-2",
 					"maxclass" : "jweb",
 					"numinlets" : 1,
@@ -527,7 +531,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-16", 0 ],
+					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-12", 0 ]
 				}
 
@@ -556,15 +560,22 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
-					"midpoints" : [ 598.5, 1049.0, 1010.0, 1049.0, 1010.0, 917.0, 1075.5, 917.0 ],
+					"midpoints" : [ 593.833333333333371, 1049.0, 1010.0, 1049.0, 1010.0, 881.515625, 1075.5, 881.515625 ],
 					"source" : [ "obj-18", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-18", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-48", 0 ],
-					"midpoints" : [ 664.0, 1037.0, 1054.75, 1037.0, 1054.75, 235.0, 1075.5, 235.0 ],
+					"midpoints" : [ 654.166666666666742, 1037.0, 1054.75, 1037.0, 1054.75, 235.0, 1075.5, 235.0 ],
 					"source" : [ "obj-18", 2 ]
 				}
 
@@ -572,8 +583,22 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-91", 0 ],
-					"midpoints" : [ 533.0, 1038.0, 55.5, 1038.0, 55.5, 937.601684999999975, 74.0, 937.601684999999975 ],
+					"midpoints" : [ 533.5, 1038.0, 55.5, 1038.0, 55.5, 937.601684999999975, 74.0, 937.601684999999975 ],
 					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-19", 1 ]
 				}
 
 			}
@@ -590,6 +615,13 @@
 					"destination" : [ "obj-3", 0 ],
 					"disabled" : 1,
 					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-23", 0 ]
 				}
 
 			}
@@ -733,7 +765,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"midpoints" : [ 397.5, 996.0, 533.0, 996.0 ],
+					"midpoints" : [ 397.5, 996.0, 533.5, 996.0 ],
 					"source" : [ "obj-6", 1 ]
 				}
 
@@ -792,6 +824,7 @@
 
 			}
  ],
+		"originid" : "pat-2129",
 		"parameters" : 		{
 			"obj-10::obj-10" : [ "live.text[24]", "live.text", 0 ],
 			"obj-10::obj-2" : [ "live.text[38]", "live.text", 0 ],
@@ -1675,105 +1708,105 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "Chordsnest-sqlite.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/keyboards/Chordsnest-Multiphonics",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/keyboards/Chordsnest-Multiphonics",
 				"patcherrelativepath" : "./Chordsnest-Multiphonics",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Chordsnest-toMaxScore.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/keyboards/Chordsnest-Multiphonics",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/keyboards/Chordsnest-Multiphonics",
 				"patcherrelativepath" : "./Chordsnest-Multiphonics",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Scorepion-Tail-blue.svg",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/media/Images/svg",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/media/Images/svg",
 				"patcherrelativepath" : "../../media/Images/svg",
 				"type" : "svg",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bank-waveform.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.multisamples-player.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sample-player.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sampler.bank.js",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sampler.instrument.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sampler.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "maxscore.sampler.menus.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/extensions",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "panel_envelope2.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "panel_loop.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "panel_normalize.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "samplerGUI3.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
 				"implicit" : 1
