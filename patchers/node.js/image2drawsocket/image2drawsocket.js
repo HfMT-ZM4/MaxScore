@@ -1,11 +1,3 @@
-// user parameters
-/*
-const infile = __dirname +  `/testfile.svg`;
-const outfile = __dirname +  `/testfile.json`;
-const drawsocketPrefix = "/foo"; 
-*/
-
-// libraries
 const fs = require('fs');
 const convert = require('xml-js');
 const imageToBase64 = require('image-to-base64');
@@ -26,11 +18,12 @@ let hrefPathPrefix;
 Max.addHandler("img2drawsocket", (msg) => {
 	let filename = msg.substring(msg.lastIndexOf('/') + 1).replace(/\s/g, '').replace(/[\[()\]]/g, '');
 	let seg = {};
+	let id = (isNaN(filename.charAt(0))) ? filename : "_" + filename;
 	let img = {
 			"key" : "svg",
 			"val" : 			{
 				"new" : "image",
-				"id" : (isNaN(filename.charAt(0))) ? filename : "_" + filename,
+				"id" : id,
 				"xlink:href" : "",
 				"x" : 0,
 				"y" : 0,
@@ -57,6 +50,7 @@ imageToBase64(msg) // Path to the image
 		else {
 			let segments = stringToChunks(response, 28000);
 			for (let i = 0; i < segments.length; i++) {
+				seg.id = id;
 				seg.reference = msg;
 				seg.index = i + 1;
 				seg.numsegments = segments.length;
@@ -103,6 +97,7 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 		}
 		value["picster:scale"] = "1,1";
  		let filename = infile.substring(infile.lastIndexOf('/') + 1).replace(/\s/g, '').replace(/[\[()\]]/g, '');
+		let id = (isNaN(filename.charAt(0))) ? filename : "_" + filename;
 		Max.post(filename);
 		value.id = "_" + filename;
 		value.child = [];
@@ -122,17 +117,13 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
             key: 'svg',
             val: value
         }
-		if (JSON.stringify(svgObj).length < maxChunk)
-		{
-			Max.outlet(svgObj);
- 			//Max.outlet(svgJS);
-		}
+		if (JSON.stringify(svgObj).length < maxChunk) Max.outlet(svgObj);
 		else {
 			let img = {
 				"key" : "svg",
 				"val" : 			{
 					"new" : "image",
-					"id" : (isNaN(filename.charAt(0))) ? filename : "_" + filename,
+					"id" : id,
 					"xlink:href" : "",
 					"width" : "",
 					"height" : "",
@@ -145,6 +136,7 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 			Max.post(segments.length);
 			let seg = {};
 			for (let i = 0; i < segments.length; i++) {
+				seq.id = id;
 				seg.reference = infile.replace(/\s/g, '').replace(/[\[()\]]/g, '');
 				seg.index = i + 1;
 				seg.numsegments = segments.length;

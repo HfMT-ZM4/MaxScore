@@ -98,6 +98,7 @@ var addedShape = [];
 var annotation = new Dict;
 var timeUnit, prop, timesig, tempo, editor, bgcolor_argb, bgcolor_rgba;
 var status = "regular";
+var dataID = "";
 
 removeTextedit();
 
@@ -1056,6 +1057,100 @@ function deleteSelectedItem()
 	}
 }
 
+function sendTo(layer)
+{
+	//layer: front || back
+	if (mode == "picster") {
+	var id = "";
+	switch (foundobjects.get(item)[0]){
+		case "note" :
+			outlet(0, (foundobjects.get(item)[5] == -1) ? "getNoteInfo" : "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
+			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
+			var match = [];
+			var nomatch = [];
+			for (let i = 0; i < userBeans.length; i++) {
+				var tempDict = new Dict();
+				tempDict.parse(userBeans[i]["@Message"]);
+				var key = tempDict.getkeys();
+				if (key == "image-segment") id = tempDict.get("image-segment::id");
+				else {
+					var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
+			 		id = tempVal[tempVal.length - 1].get("id");
+				}
+			if (id != foundobjects.get(item)[foundobjects.get(item).length - 6]) nomatch.push([parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]]);
+			else match.push([parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]]);
+			}
+			if (layer == "front") {
+				for (let i = 0; i < nomatch.length; i++) outlet(0, "addRenderedMessageToSelectedNotes", nomatch[i][0], nomatch[i][1], nomatch[i][2]);
+				for (let i = 0; i < match.length; i++) outlet(0, "addRenderedMessageToSelectedNotes", match[i][0], match[i][1], match[i][2]);
+			}
+			else {
+				for (let i = 0; i < match.length; i++) outlet(0, "addRenderedMessageToSelectedNotes", match[i][0], match[i][1], match[i][2]);
+				for (let i = 0; i < nomatch.length; i++) outlet(0, "addRenderedMessageToSelectedNotes", nomatch[i][0], nomatch[i][1], nomatch[i][2]);
+			}
+		break;
+		case "staff" :
+			dumpinfo = ["staff", foundobjects.get(item)[2]];
+			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
+			outlet(0, "removeAllRenderedMessagesFromStaff", foundobjects.get(item).slice(1, 3));
+			var match = [];
+			var nomatch = [];
+			for (let i = 0; i < userBeans.length; i++) {
+				var tempDict = new Dict();
+				tempDict.parse(userBeans[i]["@Message"]);
+				var key = tempDict.getkeys();
+				if (key == "image-segment") id = tempDict.get("image-segment::id");
+				else {
+					var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
+			 		id = tempVal[tempVal.length - 1].get("id");
+				}
+			if (id != foundobjects.get(item)[foundobjects.get(item).length - 6]) nomatch.push([foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]]);
+			else match.push([foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]]);
+			}
+			if (layer == "front") {
+				for (let i = 0; i < nomatch.length; i++) outlet(0, "addRenderedMessageToStaff", nomatch[i][0], nomatch[i][1], nomatch[i][2], nomatch[i][3]);
+				for (let i = 0; i < match.length; i++) outlet(0, "addRenderedMessageToStaff", match[i][0], match[i][1], match[i][2], match[i][3]);
+			}
+			else {
+				for (let i = 0; i < match.length; i++) outlet(0, "addRenderedMessageToStaff", match[i][0], match[i][1], match[i][2], match[i][3]);
+				for (let i = 0; i < nomatch.length; i++) outlet(0, "addRenderedMessageToStaff", nomatch[i][0], nomatch[i][1], nomatch[i][2], nomatch[i][3]);
+			}
+		break;
+		case "measure" :
+			dumpinfo = ["measure"];
+ 			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
+			outlet(0, "removeAllRenderedMessagesFromMeasure", foundobjects.get(item)[1]);
+			var match = [];
+			var nomatch = [];
+			for (let i = 0; i < userBeans.length; i++) {
+				var tempDict = new Dict();
+				tempDict.parse(userBeans[i]["@Message"]);
+				var key = tempDict.getkeys();
+				if (key == "image-segment") id = tempDict.get("image-segment::id");
+				else {
+					var tempVal = [].concat(tempDict.get("picster-element[0]::val"));
+			 		id = tempVal[tempVal.length - 1].get("id");
+				}
+			if (id != foundobjects.get(item)[foundobjects.get(item).length - 6]) nomatch.push([foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]]);
+			else match.push([foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]]);
+			}
+			if (layer == "front") {
+				for (let i = 0; i < nomatch.length; i++) outlet(0, "addRenderedMessageToMeasure", nomatch[i][0], nomatch[i][1], nomatch[i][2], nomatch[i][3]);
+				for (let i = 0; i < match.length; i++) outlet(0, "addRenderedMessageToMeasure", match[i][0], match[i][1], match[i][2], match[i][3]);
+			}
+			else {
+				for (let i = 0; i < match.length; i++) outlet(0, "addRenderedMessageToMeasure", match[i][0], match[i][1], match[i][2], match[i][3]);
+				for (let i = 0; i < nomatch.length; i++) outlet(0, "addRenderedMessageToMeasure", nomatch[i][0], nomatch[i][1], nomatch[i][2], nomatch[i][3]);
+			}
+		break;
+		}
+		outlet(2, "bounds", "hide");
+		outlet(0, "saveToUndoStack");
+		outlet(0, "setRenderAllowed", "true");
+		item = -1;
+	}	
+}
+
 function reattachRenderedMessage(serialized)
 {
 	//post("reattachRenderedMessage", "\n");
@@ -1695,10 +1790,12 @@ function addShape()
 			if (embedimage != 0) {
 			var dict = new Dict;
 			dict.name = msg[4];
-			//post("href",  msg, "\n");
 			if (dict.contains("data")) {
+				if (dict.get("index") == 1) dataID = dict.get("id") + "_" + num;
+				//post("id",  dict.get("index"), dataID, "\n");
 				_picster = {};
 				_picster["image-segment"] = {};
+				_picster["image-segment"].id = dataID;
 				_picster["image-segment"].reference = dict.get("reference");
 				_picster["image-segment"].index = dict.get("index");
 				_picster["image-segment"].numsegments = dict.get("numsegments");
@@ -1706,16 +1803,18 @@ function addShape()
 			}
 			else 
 			{ 
-			//post("picster", dict.stringify().length, "\n");
-			currentID = dict.get("val::id") + "_" + num
+			currentID = dict.get("val::id") + "_" + num;
+			post("id", dataID, currentID, "\n");
 			_picster = {};
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {};
 			_picster["picster-element"][0] = JSON.parse(dict.stringify());
-			_picster["picster-element"][0]["val"]["id"] = currentID;
+			_picster["picster-element"][0]["val"]["id"] = (dataID == "") ? currentID : dataID;
 			_picster["picster-element"][1] = {};
 			_picster["picster-element"][1].key = "extras";
 			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
+			dataID = "";
+			post("JSON", JSON.stringify(_picster), "\n");
 			}
 			}
 			else {			
@@ -2232,7 +2331,10 @@ function anything()
 			//outlet(3, "bang");
 			}
 			break;
-			case 67 :  //copy
+			case 66 : //b = send to back;
+			sendTo("back");
+			break;
+			case 67 :  //c = copy
 			if (foundobjects.contains("0") && item != -1) {
 				anchors = {};
 				var element = [foundobjects.get(item)[foundobjects.get(item).length - 1]];
@@ -2284,6 +2386,9 @@ function anything()
 			if (foundobjects.contains("0") && item != -1) edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 			status = "editing";
 			outlet(3, "edit");
+			break;
+			case 70 : //f = send to front;
+			sendTo("front");
 			break;
 			case 71 : //g = group
 			edit.clear();
@@ -3124,7 +3229,7 @@ function findBoundsToo(d)
 		}
 	break;
 	case "image" :
-		if (imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)) == null) return [-1, -1, -1, -1];
+		//if (imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)) == null) return [-1, -1, -1, -1];
 		if (!d[0]["xlink:href"].indexOf("reference")) {
 			if ((d[0]["xlink:href"].substr(d[0]["xlink:href"].lastIndexOf(".") + 1).toLowerCase() != "svg")) {
 			post(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)) == null, "\n");
@@ -3158,7 +3263,6 @@ function findBoundsToo(d)
 				"transform" : transform
 			};
 		}
- 		//post("jpicster", JSON.stringify(d[0]), "\n");
 	break;
 	case "svg" :
 		//if (d[0].hasOwnProperty("picster:scale")) 
