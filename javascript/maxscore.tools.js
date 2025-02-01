@@ -83,7 +83,7 @@ function sortIndexes(d, trim)
 			else b[i] += (padding + a[i][j]).slice(-4);
 		}
 	}
-	Array.sort(b);
+	b.sort();
 	for (var i = 0; i < b.length; i++)
 	{
 		a[i] = b[i].split(",");
