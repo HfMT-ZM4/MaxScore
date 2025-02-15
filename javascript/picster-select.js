@@ -2021,6 +2021,9 @@ function anything()
 		bgcolor_argb = map2char(bgcolor_rgba);
 		//post("bgcolor", bgcolor_rgba, bgcolor_argb, "\n");
 		break;
+	case "clearbounds" :
+		outlet(2, "bounds", "hide");
+	break;
 	case "key" :
 		switch (Number(msg)) {
 			case 46 : //period

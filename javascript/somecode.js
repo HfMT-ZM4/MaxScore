@@ -1,3 +1,5 @@
+include("Base64.js");
+
 var str = "---";
 //var conv = new Base64();
 function anything(){

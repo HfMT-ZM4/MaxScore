@@ -23,7 +23,7 @@
 					"interp-pitch-center" : [ 1 ],
 					"interp-pitch-range" : [ 1 ],
 					"interp-tonic-pitch" : [ 1 ],
-					"melodic_cohesion" : [ -17.322834645669261 ],
+					"melodic_cohesion" : [ 1.0 ],
 					"melody_scope" : [ 7.0 ],
 					"meter" : [ "2+2+3" ],
 					"meters" : [ 						{
