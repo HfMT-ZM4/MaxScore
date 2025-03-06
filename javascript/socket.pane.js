@@ -437,7 +437,8 @@ function flashing()
 
 function msg_dictionary(o)
 {
-	//post("dest", JSON.stringify(o), "\n");
+	//post("playhead", o.playhead, "\n");
+	playheadPosition = o.playhead;
 	pageWidth = o.pageSize[0];
 	pageHeight = o.pageSize[1];
 	setZoom(o.setZoom);
@@ -968,12 +969,12 @@ function playhead(x)
 function renderPlayhead()
 {
  			var color = [0.2, 1, 0.2, 1];
+			//post("renderPlayhead", playheadPosition, color, "\n");
 			if (prop) var fill_opacity = (playheadPosition == 0) ? 0 : Math.round(color[3] * 255);
 			else var fill_opacity = 0;
 			for (var s = 0; s < groupcount; s++)
 			{
 			jcursors[s + 1] = {};			
-			//post("thisZoom", zl, typeof zl,  s + 1, thisZoom(s + 1), "\n");
 				var val = [{
 					"parent" : "overlay",
 					"new" : "rect",

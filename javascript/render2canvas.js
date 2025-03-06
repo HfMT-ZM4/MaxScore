@@ -3697,6 +3697,7 @@ function writeSVG(destination)
 	f.init = _init;
 	f.proportional = prop;
 	f.playhead = _playhead;
+	f.timeunit = timeUnit;
 	outlet_dictionary(0, f); 
 	}
 	else if (destination !== undefined)

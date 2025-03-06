@@ -139,6 +139,7 @@ var picster = [];
 var embedded = new MGraphicsSVG();
 var nsg = new Dict;
 var css = "";
+var timeUnit = 100;
 
 var pageWidth = 1200;
 var pageHeight = 800;
@@ -328,6 +329,7 @@ function msg_dictionary(o)
 	init = o.init;
 	css = o.css;
 	prop = o.proportional;
+	timeUnit = o.timeUnit;
 	//matrix transform for g needs to also be applied to gradientTransform 
 	bgcolor = o.bgcolor;
 	_svgimages = o.svgimages[s];

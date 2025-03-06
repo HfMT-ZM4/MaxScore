@@ -279,6 +279,7 @@ function msg_dictionary(o)
 	init = o.init;
 	css = o.css;
 	prop = o.proportional;
+	playheadRect = [o.playhead, 0, 3, pageHeight];
 	hscrollfactor = prop + 1;
 	outmatrix.dim = [pageWidth, pageHeight];
 	Mgraphics.dim = [pageWidth, pageHeight];
