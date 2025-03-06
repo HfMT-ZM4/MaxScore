@@ -405,7 +405,7 @@ function scroll()
 		case "play" :
 			var times = 0;
 			line = [0, msg[2], msg[3]];
-			times = (line[2] + horizontalOffset * msg[1] / 10) / grain;
+			times = (line[2] + horizontalOffset * 1000 / msg[1]) / grain;
 			speed = (msg[2] - horizontalOffset) / times;
 			elapsed = horizontalOffset / speed;
 			ticks["scroll"] = 0;
