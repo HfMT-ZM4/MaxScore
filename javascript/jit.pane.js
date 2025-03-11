@@ -219,6 +219,16 @@ function blink()
     redraw();
 }
 
+function showgrid(show, size)
+{
+	
+}
+
+function drawGrid()
+{
+ 
+}
+
 function flashing()
 {
 	var flash = arrayfromargs(arguments);

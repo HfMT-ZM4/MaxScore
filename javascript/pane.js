@@ -112,6 +112,7 @@ var playheadRect = [];
 var playheadColor = [0.3, 1., 0.3, 0.7];
 var playheadWidth = 3.;
 var _playback = 0;
+var grid = 0;
 var flashingNotes = {};
 var lines = {};
 var segments = {};
@@ -760,6 +761,7 @@ function paint() {
 		}
 		paintOnTop();
 		if (highlight) measureSelection();
+		drawGrid();
 		drawCursors();
 		drawCountins();
 		if (boundingRect.length > 0) drawBoundingRect();
@@ -820,6 +822,34 @@ function drawPlayhead()
 				rectangle(playheadRect);
 				fill();
 			}
+}
+
+function showgrid(show, grid_x, grid_y)
+{
+ 	//post("showgrid", show, grid_x, grid_y, "\n");
+	grid = show;
+	gridsize = [grid_x, grid_y];
+	mgraphics.redraw();
+}
+
+function drawGrid()
+{
+	if (grid) {
+		with (mgraphics) {
+           	set_line_width(0.3);
+			set_source_rgba(0.8, 0.8, 0.8, 1.);
+			for (var i = 0; i < pageWidth / gridsize[0]; i++) {
+       		move_to(gridsize[0] * i, 0);
+       		line_to(gridsize[0] * i, 800);
+   			stroke();
+			}
+  			for (var i = 0; i < pageHeight / gridsize[1]; i++) {
+        	move_to(0, gridsize[1] * i);
+       		line_to(800, gridsize[1] * i);
+   			stroke();
+			}		
+		}
+	}
 }
 
 function drawCursors()
@@ -920,7 +950,6 @@ function selectionRect()
 
 function drawBoundingRect()
 {
- 			//post("drawBoundingRect", boundingRect, "\n");
            with(mgraphics) {
               set_line_width(buttonstrokewidth);
              	set_source_rgba(buttonfillcolor);

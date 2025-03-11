@@ -421,6 +421,17 @@ function setZoom(z)
 	//mgraphics.redraw();	
 }	
 
+function showgrid(show, size)
+{
+	
+}
+
+function drawGrid()
+{
+ 
+}
+
+
 function flashing()
 {
 	/*

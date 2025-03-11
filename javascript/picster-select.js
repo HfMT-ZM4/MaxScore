@@ -54,6 +54,7 @@ var polyclicks = [];
 var clickcount = 0;
 var firstClick = [0, 0];
 var lastClick = [0, 0];
+var currentBounds = [];
 var lcd;
 var blocked = 0;
 var stroke = 0;
@@ -77,6 +78,9 @@ var id = 0;
 var oldCoords = "";
 var horizontalOffset = 0;
 var verticalOffset = 0;
+var  _showgrid = 0;
+var gridsize = [10, 10];
+var snapToGrid = 0;
 var translate = [];
 var moveToFlag = 0;
 var buttonMode = 0;
@@ -318,6 +322,24 @@ function ctrlClick(x, y)
 	}
 }
 
+function snaptogrid(snap)
+{
+	snapToGrid = snap;
+}
+
+function setgrid(x, y)
+{
+	gridsize = [x, y];
+	outlet(2, "showgrid", _showgrid, gridsize);
+}
+
+function showgrid(show)
+{
+	_showgrid = show;
+	outlet(2, "showgrid", _showgrid, gridsize);
+}
+
+
 function findElementByID(id)
 {
 	//post("ID", id, renderedMessages.stringify(), "\n");
@@ -450,7 +472,7 @@ function findElementByID(id)
 	if (_c > 0) {
 		item = clicks % _c;
 		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
-		error("clearSelection-455\n");
+		//error("clearSelection-455\n");
 		outlet(0, "clearSelection");
 		if (!buttonMode) {
 		//post("foundobjects", foundobjects.get(item), "\n");		
@@ -554,7 +576,10 @@ function mouseDragged(x, y)
 		outlet(2, "clearGraphics");
 		//suppress dragging for pitchbend curves
 		if (item != -1) {
-			if (editor != "pb") outlet(2, "bounds", (foundobjects.get(item)[foundobjects.get(item).length - 5] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 4] + y - origin[1]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 3] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 2] + y - origin[1]) * 0.5 / zoom);
+			if (editor != "pb") {
+				currentBounds = [(foundobjects.get(item)[foundobjects.get(item).length - 5] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 4] + y - origin[1]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 3] + x - origin[0]) * 0.5 / zoom, (foundobjects.get(item)[foundobjects.get(item).length - 2] + y - origin[1]) * 0.5 / zoom];
+				outlet(2, "bounds", currentBounds);
+			}
 			if (!shape) pathDone = true;
 		}
 		else {
@@ -698,12 +723,30 @@ function mouseReleased(x, y)
 	//suppress dragging for pitchbend curves
 	var dragged = !(JSON.stringify(origin) == JSON.stringify([x, y]));
 	if (item != -1 && dragged)  {
-	//post("note", foundobjects.get(item)[5], "\n");
+	increment = 0;
+	anchors = {};
 	switch (foundobjects.get(item)[0]){
 		case "note" :
 			outlet(0, (foundobjects.get(item)[5] == -1) ? "getNoteInfo" : "getIntervalInfo", foundobjects.get(item).slice(1, foundobjects.get(item).length - 6));
 			outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
 			for (var i = 0; i < userBeans.length; i++) {
+				var pos_x = parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor;
+				var pos_y = parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor;
+				if (snapToGrid) {
+					outlet(0, "getNoteAnchor");
+					anchor_x = (anchors[0][0] % gridsize[0]) / factor;
+					anchor_y = (anchors[0][1] % gridsize[1]) / factor;
+					pos_x = Math.round((pos_x + anchor_x) / (gridsize[0] / factor)) * (gridsize[0] / factor) - anchor_x;
+					pos_y = Math.round((pos_y + anchor_y) / (gridsize[1] / factor)) * (gridsize[1] / factor) - anchor_y;
+					var delta_x = currentBounds[2] - currentBounds[0];
+					var delta_y = currentBounds[3] - currentBounds[1];
+					currentBounds[0] = (Math.round(currentBounds[0] * zoom / factor / gridsize[0]) * gridsize[0]) * factor / zoom ; // * factor / zoom
+					currentBounds[1] = Math.round(currentBounds[1] * zoom / factor / gridsize[1]) * gridsize[1] * factor / zoom; //* factor / zoom
+					currentBounds[2] = (currentBounds[0] + delta_x);
+					currentBounds[3] = (currentBounds[1] + delta_y);
+					//post("x/y2", currentBounds, currentBounds.map((x) => x * zoom / factor), "\n");
+					outlet(2, "bounds", currentBounds);
+				}
 				var tempDict = new Dict();
 				tempDict.parse(userBeans[i]["@Message"]);
 				var key = tempDict.getkeys();
@@ -713,7 +756,7 @@ function mouseReleased(x, y)
 			 		id = tempVal[tempVal.length - 1].get("id");
 				}
 				if (id != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
-				else outlet(0, "addRenderedMessageToSelectedNotes", parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["@Message"]);
+				else outlet(0, "addRenderedMessageToSelectedNotes", pos_x, pos_y, userBeans[i]["@Message"]);
 			}
 		break;
 		case "staff" :
@@ -1113,10 +1156,15 @@ if (mode == "picster") {
 
 function createRenderedMessage(f, x, y, serialized)
 {
+	post("pos", x, y, "\n");
 	outlet(0, "getSelectionBufferSize");
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
 	if (selectionBufferSize > 0)
 	{
+		if (snapToGrid) {
+			x = Math.round(x / (gridsize[0] / factor)) * (gridsize[0] / factor);
+			y = Math.round(y / (gridsize[1] / factor)) * (gridsize[1] / factor);
+		}
 		increment = 0;
 		anchors = {};
 		outlet(0, "getNoteAnchor");
@@ -1137,7 +1185,6 @@ function createRenderedMessage(f, x, y, serialized)
 	}
 	else if (!selectionBufferSize && measurerange[0] != -1)
 		{
-			post("serialized", "\n");
 			increment = 0;
 			anchors = {};
 			for (var i = measurerange[0]; i <= measurerange[2]; i++) {
