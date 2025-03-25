@@ -5,6 +5,7 @@ include("maxscore.tools");
 include("fitcurve");
 include("pentool");
 include("djsterNotation");
+include("svgPathToExpression");
 
 var output = new Dict();
 output.name = "output";
@@ -1156,7 +1157,7 @@ if (mode == "picster") {
 
 function createRenderedMessage(f, x, y, serialized)
 {
-	post("pos", x, y, "\n");
+	//post("pos", x, y, "\n");
 	outlet(0, "getSelectionBufferSize");
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
 	if (selectionBufferSize > 0)
@@ -1614,7 +1615,7 @@ function addShape()
 			else 
 			{ 
 			currentID = dict.get("val::id") + "_" + num;
-			post("id", dataID, currentID, "\n");
+			//post("id", dataID, currentID, "\n");
 			_picster = {};
 			_picster["picster-element"] = [];
 			_picster["picster-element"][0] = {};
@@ -1624,7 +1625,7 @@ function addShape()
 			_picster["picster-element"][1].key = "extras";
 			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 			dataID = "";
-			post("JSON", JSON.stringify(_picster), "\n");
+			//post("JSON", JSON.stringify(_picster), "\n");
 			}
 			}
 			else {			
@@ -1863,7 +1864,7 @@ function attach()
 function removeAllElements()
 {
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
-	post("measurerange", measurerange, "\n");
+	//post("measurerange", measurerange, "\n");
 	outlet(0, "getSelectionBufferSize");
 	if (!selectionBufferSize) {
 	if (measurerange[0] == -1) return;
@@ -2089,7 +2090,7 @@ function anything()
 			for (var i = 0; i < Object.keys(anchors).length; i++) {
 			outlet(0, "dumpScore", anchors[Object.keys(anchors)[i]][2], 1);	
 			tempoArray[i] = tempo;
-			post("anchors", tempoArray[i], anchors[Object.keys(anchors)[i]][2], "\n");
+			//post("anchors", tempoArray[i], anchors[Object.keys(anchors)[i]][2], "\n");
 			}		
 			outlet(0, "getSelectedNoteInfo");
 			var keys = Object.keys(json.selectedNotes);
@@ -2110,7 +2111,7 @@ function anything()
 			for (var i = 0; i < Object.keys(anchors).length - 1; i++) {
 			if (keys[1] == ".ordering") totalDur += json["selectedNotes"][keys[0]][i]["@DURATION"] * 60 / tempoArray[i];
 			else totalDur += json["selectedNotes"][keys[i]][0]["@DURATION"] * 60 / tempoArray[i];
-			post("totalDur",i , totalDur, "\n");
+			//post("totalDur",i , totalDur, "\n");
 			}
 			_picster = { "picster-element" : [ 	{
 				"key" : "render-expression",
@@ -2336,7 +2337,7 @@ function anything()
 				"showbetween" : [ 1000, 2000 ]
 			*/
 			break;
-			case 82 : //r (convert to trajectory)
+			case 82 : //r (render bpf)
 			if (foundobjects.contains("0") && item != -1) {
 				edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 				if (edit.contains("picster-element[0]::val")) {
@@ -2436,6 +2437,35 @@ function anything()
 							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "path" :
+							var accum = 0;
+							var path = edit.get("picster-element[0]::val::d").split(/[\s,]+/);
+							var points = SVGParse(path);
+							//post(JSON.stringify(points), "\n");
+							var xyt = refactorArray(points);
+							var max_x = Math.max(...xyt[0]);
+							var min_x = Math.min(...xyt[0]);
+							var max_y = Math.max(...xyt[1]);
+							var min_y = Math.min(...xyt[1]);
+							var sum = xyt[2].reduce((sum, num) => sum + num, 0);
+							//post(min_x, max_x, min_y, max_y, sum, "\n");
+							trajectory.push("data", 0, points.length * 3 + 4, sum * time2pixels, 0, 800);
+							accum = 0;
+							for (var i = 0; i < points.length; i++) {
+								accum += points[i][2] * time2pixels;
+								trajectory.push([accum, scaleValue(points[i][0], min_x, max_x, 0, 800), 0]);
+							}
+							trajectory.push("linear");
+							trajectory.push("data", 1, points.length * 3 + 4, sum * time2pixels, 0, 800);
+							accum = 0;
+							for (var i = 0; i < points.length; i++) {
+								accum += points[i][2] * time2pixels;
+								trajectory.push([accum, scaleValue(points[i][1], min_y, max_y, 0, 800), 0]);
+							}
+							trajectory.push("linear");
+							expr.replace("editor", "bpf");
+							expr.replace("message", edit.get("picster-element[0]::val::id"));
+							expr.replace("value", trajectory.flat());
+							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						default :
 						error("Error: This shape can not translated into an expression");
@@ -2647,6 +2677,21 @@ function anything()
 }
 }
 
+function refactorArray(inputArray) {
+    const firstValues = [];
+    const secondValues = [];
+    const thirdValues = [];
+
+    for (const [first, second, third] of inputArray) {
+        firstValues.push(first);
+        secondValues.push(second);
+        thirdValues.push(third);
+    }
+
+    return [firstValues, secondValues, thirdValues];
+}
+
+
 function dictionary(d)
 {
 		var dump = new Dict;
@@ -2740,7 +2785,7 @@ function hideElement()
 function showAllHiddenElements()
 {
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
-	post("measurerange", measurerange, "\n");
+	//post("measurerange", measurerange, "\n");
 	outlet(0, "getSelectionBufferSize");
 		if (!selectionBufferSize) {
 			if (measurerange[0] == -1) return;
@@ -3045,7 +3090,7 @@ function findBoundsToo(d)
 		//if (imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)) == null) return [-1, -1, -1, -1];
 		if (!d[0]["xlink:href"].indexOf("reference")) {
 			if ((d[0]["xlink:href"].substr(d[0]["xlink:href"].lastIndexOf(".") + 1).toLowerCase() != "svg")) {
-			post(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)) == null, "\n");
+			//post(imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)) == null, "\n");
 			d[0]["xlink:href"] = "data:image/png;base64," + imageCache.get(d[0]["xlink:href"].slice(d[0]["xlink:href"].indexOf(":") + 1)).join("");
 			}
 			else {

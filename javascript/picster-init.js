@@ -69,8 +69,8 @@ function init() {
 				userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["measureUserBean"][n];
 				e.parse(userBeans[n]["@Message"]);
 				if(e.contains("picster-element[2]::val")) {
-				//post("offsets", leftMargin, clefsVisible, (clefsVisible == "true") ? 20 : 0, userBeans[n]["@Xoffset"]/2, e.get("picster-element[1]::val::bounds")[0], "\n");
-				var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
+				//var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
+				var offset = (userBeans[n]["@Xoffset"]/2 - ((clefsVisible == "true") ? 20 : 0)) / timeUnit;
 				var dictArray = [].concat(e.get("picster-element[2]::val"));
 				for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
 				o[userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1)] = jexpr;
@@ -87,7 +87,9 @@ function init() {
 					userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["staffUserBean"][n];
 					e.parse(userBeans[n]["@Message"]);
 					if(e.contains("picster-element[2]::val")) {
-					var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
+					//var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
+					var offset = (userBeans[n]["@Xoffset"]/2 - ((clefsVisible == "true") ? 20 : 0)) / timeUnit;
+					post("offsets", offset, "\n");
 					var dictArray = [].concat(e.get("picster-element[2]::val"));
 					for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
 					o[userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1)] = jexpr;

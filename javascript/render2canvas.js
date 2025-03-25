@@ -1196,7 +1196,7 @@ function writeRuler()
 {
 	if (_showRuler) {
 	var rulerOffset = 0;
-	post("_playhead", _playhead, "\n");
+	//post("_playhead", _playhead, "\n");
 	var _time = 0;
 	if (typeof timeUnit != "number") timeUnit = 100;
 	for (var s = 0; s < groupcount; s++)
@@ -3928,7 +3928,7 @@ function cursor()
 			var to = staffBoundingInfo[2] + staffBoundingInfo[0];
 			var travel = stretch * (60000 / parseFloat(tempo) * (4 * parseFloat(timesig[0]) / parseFloat(timesig[1])));
 			var interval = stretch * 60000 / parseFloat(tempo) * 4 / parseFloat(timesig[1]);
-			post("cursors", i - _scoreLayout[1], from, to, travel, tempo, timesig, "\n");
+			//post("cursors", i - _scoreLayout[1], from, to, travel, tempo, timesig, "\n");
 			cursorAttr[id]["@trajectory"][i] = [from, to, travel];
 			}			
 			}

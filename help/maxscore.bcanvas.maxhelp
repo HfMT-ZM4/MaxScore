@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 38.0, 106.0, 1285.0, 895.0 ],
+		"rect" : [ 34.0, 106.0, 1438.0, 895.0 ],
 		"gridsize" : [ 18.0, 18.0 ],
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
@@ -31,7 +31,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1285.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -340,7 +340,7 @@
 
 											}
  ],
-										"originid" : "pat-2394"
+										"originid" : "pat-226"
 									}
 ,
 									"patching_rect" : [ 233.0, 138.0, 61.0, 23.0 ],
@@ -513,7 +513,7 @@
 
 											}
  ],
-										"originid" : "pat-2396"
+										"originid" : "pat-228"
 									}
 ,
 									"patching_rect" : [ 373.0, 138.0, 61.0, 23.0 ],
@@ -657,7 +657,7 @@
 
 							}
  ],
-						"originid" : "pat-2298",
+						"originid" : "pat-130",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -751,7 +751,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1285.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -4524,7 +4524,7 @@
 
 											}
  ],
-										"originid" : "pat-2400"
+										"originid" : "pat-232"
 									}
 ,
 									"patching_rect" : [ 686.666625999999951, 65.0, 41.0, 22.0 ],
@@ -5099,7 +5099,7 @@
 
 											}
  ],
-										"originid" : "pat-2402"
+										"originid" : "pat-234"
 									}
 ,
 									"patching_rect" : [ 301.0, 536.0, 69.0, 22.0 ],
@@ -5367,7 +5367,7 @@
 
 											}
  ],
-										"originid" : "pat-2406"
+										"originid" : "pat-238"
 									}
 ,
 									"patching_rect" : [ 1.0, 53.0, 34.0, 22.0 ],
@@ -5911,7 +5911,7 @@
 
 							}
  ],
-						"originid" : "pat-2398",
+						"originid" : "pat-230",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -6005,7 +6005,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1285.0, 869.0 ],
+						"rect" : [ 34.0, 132.0, 1438.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -6416,7 +6416,7 @@
 
 											}
  ],
-										"originid" : "pat-2504"
+										"originid" : "pat-336"
 									}
 ,
 									"patching_rect" : [ 762.666625999999951, 114.0, 41.0, 22.0 ],
@@ -6857,7 +6857,7 @@
 
 											}
  ],
-										"originid" : "pat-2506"
+										"originid" : "pat-338"
 									}
 ,
 									"patching_rect" : [ 831.6666259765625, 114.0, 58.0, 22.0 ],
@@ -7069,7 +7069,7 @@
 
 											}
  ],
-										"originid" : "pat-2508"
+										"originid" : "pat-340"
 									}
 ,
 									"patching_rect" : [ 98.25, 127.0, 34.0, 22.0 ],
@@ -7106,11 +7106,13 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-15",
+									"linecount" : 2,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 148.25, 607.0, 321.0, 34.0 ]
+									"patching_rect" : [ 148.25, 607.0, 321.0, 48.0 ],
+									"text" : "/stdout : \"received socket close /1 VrkIy6ikNv3v2GNgnRDxFA==\""
 								}
 
 							}
@@ -11491,7 +11493,7 @@
 
 							}
  ],
-						"originid" : "pat-2502",
+						"originid" : "pat-334",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -11585,7 +11587,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 38.0, 132.0, 1285.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -12135,7 +12137,7 @@
 
 											}
  ],
-										"originid" : "pat-2622"
+										"originid" : "pat-454"
 									}
 ,
 									"patching_rect" : [ 937.0, 158.0, 146.0, 22.0 ],
@@ -12401,7 +12403,7 @@
 
 											}
  ],
-										"originid" : "pat-2624"
+										"originid" : "pat-456"
 									}
 ,
 									"patching_rect" : [ 333.5, 532.5, 37.0, 22.0 ],
@@ -13593,7 +13595,7 @@
 
 							}
  ],
-						"originid" : "pat-2620",
+						"originid" : "pat-452",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -13687,7 +13689,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1285.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -14354,7 +14356,7 @@
 
 							}
  ],
-						"originid" : "pat-2720",
+						"originid" : "pat-552",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -14448,7 +14450,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1285.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -15345,7 +15347,7 @@
 
 							}
  ],
-						"originid" : "pat-2816",
+						"originid" : "pat-648",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -15458,7 +15460,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1285.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
 						"gridsize" : [ 5.0, 5.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -15745,7 +15747,7 @@
 
 							}
  ],
-						"originid" : "pat-2912",
+						"originid" : "pat-744",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -15855,12 +15857,12 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1285.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [  ],
 						"lines" : [  ],
-						"originid" : "pat-3102"
+						"originid" : "pat-934"
 					}
 ,
 					"patching_rect" : [ 390.0, 354.0, 50.0, 22.0 ],
@@ -15871,7 +15873,7 @@
 			}
  ],
 		"lines" : [  ],
-		"originid" : "pat-2296",
+		"originid" : "pat-128",
 		"parameters" : 		{
 			"obj-1::obj-8" : [ "live.menu[54]", "bracket", 0 ],
 			"parameterbanks" : 			{

@@ -72,6 +72,12 @@ function ds2svgiterate(code)
 	}
 }
 
+function scaleValue(value, inMin, inMax, outMin, outMax) {
+    if (inMin === inMax) error("Input range cannot be zero.");
+    // Scale value to the output range
+    return ((value - inMin) / (inMax - inMin)) * (outMax - outMin) + outMin;
+}
+
 function getAllIndexes(arr, val) {
     var indexes = [-1], i;
 	var c = 0;

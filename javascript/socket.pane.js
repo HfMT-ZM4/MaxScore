@@ -98,7 +98,6 @@ function bang()
 
 function listenerobj(data)
 {
-	return;
 	if (data.value[1]) {
 		_offset = data.value[0];
 		post("data", _offset, "\n");
