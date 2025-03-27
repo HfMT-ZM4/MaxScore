@@ -71,6 +71,12 @@
             transition: all 0.5s;
         }
         
+        #header-info {
+            font-size: 10px;
+            text-anchor: middle;
+            transition: all 0.5s;
+        }
+
         #header-line {
             stroke: gray;
             stroke-width: 1px;
@@ -84,6 +90,10 @@
             transform: scale(0.8) translate(200px, -98px);
         }
         .small-header #header-line {
+            transform: translateY(-72px);
+        }
+        .small-header #header-info {
+            opacity: 0;
             transform: translateY(-72px);
         }
 
@@ -320,7 +330,7 @@
             text-anchor: start;
             dominant-baseline: auto;
             font-size: 40px;
-            transform: translate(-45px, 10px);
+            transform: translate(-35px, 10px) scale(0.8);
         }
         .result-ledger-line {
             stroke: var(--main-color);
@@ -331,17 +341,17 @@
             font-size: 40px;
             dominant-baseline: auto;
             text-anchor: end;
-            transform: translate(-15px, 55px);
+            transform: translate(-15px, 55px) scale(0.6);
         }
         .result-box-dynamics-max {
             font-family: Bravura;
             font-size: 40px;
             dominant-baseline: auto;
             text-anchor: start;
-            transform: translate(15px, 55px);
+            transform: translate(15px, 55px) scale(0.6);
         }
         .result-box-dynamics-line {
-            stroke-width: 2px;
+            stroke-width: 1.5px;
             stroke: var(--main-color);
         }
         .result-box-difficulty rect {
@@ -481,10 +491,11 @@
 
 <body>
     <svg class="main" viewBox="0 0 800 600" overflow="hidden">
-        <g class="header" id="header">
+        <g class="header" id="header" onclick="mouseEvents.infoClick('credits-box')">
             <image id="header-logo" href="images/logo.png"/>
-            <text id="header-title" x="400" y="200">Multiphonics Palette for MaxScore</text>
-            <line id="header-line" x1="100" x2="700" y1="220" y2="220" />
+            <text id="header-title" x="400" y="190">Multiphonics Palette for MaxScore</text>
+            <text id="header-info" x="400" y="215">Created by Aigerim Seilova, James Tsz-Him Cheung, Heather Roche and Georg Hajdu. Supported by Ligeti-Zentrum (Hamburg)</text>
+            <line id="header-line" x1="100" x2="700" y1="230" y2="230" />
         </g>
         <g class="page-body" id="select-instrument-page">
             <text class="body-title" id="select-instrument-title" x="400" y="260">Select Instrument</text>
@@ -759,7 +770,7 @@
                     </g>
                 </g>
             </g>
-            <g id="info-button" class="button-small" transform="translate(750,205)" onclick="mouseEvents.infoClick()">
+            <g id="info-button" class="button-small" transform="translate(750,205)" onclick="mouseEvents.infoClick('info-g')">
                 <g>
                     <circle />
                     <image class="icon" id="sound-info-icon" href="images/info-icon.svg" x="-4" y="-9" width="8"/>
@@ -774,7 +785,7 @@
             <g id="info-g" class="info-g hidden-transparent">
                 <rect id="dim-page-sound" x="0" y="0" width="100%" height="100%" fill="black" fill-opacity="0.5" />
                 <rect id="info-bg" x="50" y="50" width="700" height="500" fill="white" fill-opacity="0.8" />
-                <text class="close-button" id="close-info-button" x="90" y="90" font-size="50px" fill="darkgray" text-anchor="middle" dominant-baseline="middle" onclick="mouseEvents.infoClose()">✕</text>
+                <text class="close-button" id="close-info-button" x="90" y="90" font-size="50px" fill="darkgray" text-anchor="middle" dominant-baseline="middle" onclick="mouseEvents.infoClose('info-g')">✕</text>
                 <text class="info-tagtitles" id="info-text" x="100" y="110">
                     <tspan x="100" dy="1.8em" class="info-tagtitle">Dyad</tspan>
                     <tspan x="100" dy="3em" class="info-tagtitle">Pure</tspan>
@@ -825,20 +836,11 @@
                 <image class="results-navigation-button" id="results-sound-navigation-next" href="images/forward-button.png" x="480" y="555" width="20" />
                 <text class="results-navigation-number" id="results-sound-navigation-number" x="400" y="575"></text>
             </g>
-            <g class="go-button-g" id="sound-add-button" display="none" transform="translate(650,570)">
+            <g class="go-button-g" id="sound-add-button" display="none" transform="translate(700,570)">
                 <g>
                     <polygon class="go-button-bg" points="0,0 -30,-30 -30,-15 -80,-15 -80,15 -30,15 -30,30"></polygon>
                     <text x="-50" y="2">ADD</text>
                 </g>
-            </g>
-            <g class="go-button-g" id="sound-ord-button" transform="translate(700,570)" display="none">
-                <g>
-                    <circle class="ord-button-bg" r="20"/>
-                    <text>ord.</text>
-                </g>
-            </g>
-            <g class="ord-button-info" id="sound-ord-info" display="none">
-                
             </g>
         </g>
         <g class="page-body hidden-right" id="search-fingering-page">
@@ -938,6 +940,18 @@
                     <text x="-50" y="2">ADD</text>
                 </g>
             </g>
+        </g>
+        <g class="info-g hidden-transparent" id="credits-box">
+            <rect id="dim-page-credits" class="dim-page" x="0" y="0" width="100%" height="100%" fill="black" fill-opacity="0.5" />
+            <rect id="info-credits-bg" class="info-bg" x="50" y="50" width="700" height="500" fill="white" fill-opacity="0.8" />
+            <text class="close-button" id="close-credits-button" x="90" y="90" font-size="50px" fill="darkgray" text-anchor="middle" dominant-baseline="middle" onclick="mouseEvents.infoClose('credits-box')">✕</text>
+            <text class="info-tagdescription" id="credits-text" x="100" y="130">
+                <tspan x="100" >Multiphonics Palette for MaxScore was a collaborative project by Aigerim Seilova,</tspan>
+                <tspan x="100" dy="1.2em">James Tsz-Him Cheung, Heather Roche and Georg Hajdu. Together, we developed and</tspan>
+                <tspan x="100" dy="1.2em">implemented the tool, with contributions including project conception, clarinet</tspan>
+                <tspan x="100" dy="1.2em">recordings, and user interface design. </tspan>
+                <tspan x="100" dy="1.8em">The project was supported by ligeti zentrum during January - April 2024. All rights reserved</tspan>
+            </text>
         </g>
         <defs>
             <g id="def-fingering">
@@ -1048,18 +1062,16 @@
                 currentFilter.sound = {tags:[]};
                 updateNumrecords();
             },
-            infoClick: function() {
-                for (var e of document.querySelectorAll('.info-g')) {
-                    if (e.classList.contains('hidden-transparent')) {
-                        e.classList.remove('hidden-transparent');
-                    }
+            infoClick: function(id) {
+                var element = document.getElementById(id);    
+                if (element.classList.contains('hidden-transparent')) {
+                    element.classList.remove('hidden-transparent');
                 }
             },
-            infoClose: function() {
-                for (var e of document.querySelectorAll('.info-g')) {
-                    if (!e.classList.contains('hidden-transparent')) {
-                        e.classList.add('hidden-transparent');
-                    }
+            infoClose: function(id) {
+                var element = document.getElementById(id);    
+                if (!element.classList.contains('hidden-transparent')) {
+                    element.classList.add('hidden-transparent');
                 }
             },
             optionClick: function (option) {
@@ -1151,7 +1163,7 @@
                 }
                 element.classList.add('result-selected');
                 document.getElementById(currentFilter.searchMethod+'-add-button').setAttribute('display', 'inherit');
-                document.getElementById(currentFilter.searchMethod+'-ord-button').setAttribute('display', 'inherit');
+                //document.getElementById(currentFilter.searchMethod+'-ord-button').setAttribute('display', 'inherit');
                 window.max.outlet('sqlite', 'getIndex', Number(element.dataset.index));
             },
             addClick: function() {
