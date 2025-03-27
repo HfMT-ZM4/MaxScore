@@ -1,8 +1,14 @@
 inlets = 1;
-outlets = 4; // 0: keyboard forward to maxscore, 1: picster add, 2: makenote to preview sampler, 3: direct to maxscore
+outlets = 4; // 0: keyboard forward to maxscore, 1: picster add, 2: to playlist~, 3: direct to maxscore
 
 var selectedDict = new Dict('selected');
 var picsterDict = new Dict('picsterChordsnest')
+
+var duration = 1;
+function currentDuration(d) {
+    duration = d;
+}
+
 
 // from Max #0
 function prefix(p) {
@@ -12,10 +18,13 @@ function prefix(p) {
 function playSelected() {
     // check sampler mapping from aigerim
     var instr = selectedDict.get('instrument');
+    var index = selectedDict.get('index');
+    if (instr == 'clar-bb') index += 130;
+    outlet(2, index);
+    /*
+    // deprecated: these are for midi in maxscore sampler
     if (instr == 'clar-bb') outlet(2, 'instr', 1);
     else if (instr == 'clar-bass') outlet(2, 'instr', 2);
-
-    var index = selectedDict.get('index');
     if (index <= 128) {
         outlet(2, 'vel', 60);
         outlet(2, 'pitch', index);
@@ -24,17 +33,39 @@ function playSelected() {
         outlet(2, 'vel', 100);
         outlet(2, 'pitch', index-128);
     }
+    */
 }
 
 function addSelected() {
+
+    outlet(3, "setRenderAllowed", 0);
+
     var pitchMidicent = selectedDict.get('pitchMidicent').split(' ');
-    outlet(0, Number(pitchMidicent[0])/100, 0);
+    // outlet(0, Number(pitchMidicent[0])/100, 0); // deprecated: use addNote instead of keyboard forward
+
+    var index = selectedDict.get('index');
+    if (index <= 128) {
+        outlet(3, "addNote", duration, Number(pitchMidicent[0])/100, 60) // amplitude set to 60 for correct sample playback (vel_zone)
+        outlet(3, "setNoteDimension", "originalPitch", index);
+        //outlet(3, "setAmplitude", 60);
+    }
+    else {
+        outlet(3, "addNote", duration, Number(pitchMidicent[0])/100, 100) // amplitude set to 100 for correct sample playback (vel_zone)
+        outlet(3, "setNoteDimension", "originalPitch", index-128);
+        //outlet(3, "setAmplitude", 100);
+    }
+
     for (var i = 1; i < pitchMidicent.length; i++) {
         var upperNote = Number(pitchMidicent[i])/100
         if (upperNote >= 70) outlet (3, 'overrideStemDirection', 'DOWN'); // stem down if higher note >= Bb
-        outlet(0, upperNote, 1);
+        //outlet(0, upperNote, 1);
+        outlet(3, "addInterval", upperNote);
+        outlet(3, "setAmplitude", 0);
     }
     drawFingering();
+    outlet(3, "picster", "clearbounds"); // remove selection red rectangle
+    outlet(3, "clearSelection");
+    outlet(3, "setRenderAllowed", 1);
 }
 
 function drawFingering() {
