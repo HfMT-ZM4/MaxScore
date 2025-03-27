@@ -100,7 +100,7 @@ function listenerobj(data)
 {
 	if (data.value[1]) {
 		_offset = data.value[0];
-		post("data", _offset, "\n");
+		//post("data", _offset, "\n");
 		scroll("offset", _offset);
 		lastAction = "offset";
 		}

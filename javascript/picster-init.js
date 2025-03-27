@@ -73,8 +73,8 @@ function init() {
 				var offset = (userBeans[n]["@Xoffset"]/2 - ((clefsVisible == "true") ? 20 : 0)) / timeUnit;
 				var dictArray = [].concat(e.get("picster-element[2]::val"));
 				for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
-				o[userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1)] = jexpr;
-				outlet(1, scount++, -1, onset + offset, userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1));
+				o[userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1) + "-" + n] = jexpr;
+				outlet(1, scount++, -1, onset + offset, userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1) + "-" + n);
 				}
 			}
 		}
@@ -89,11 +89,11 @@ function init() {
 					if(e.contains("picster-element[2]::val")) {
 					//var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
 					var offset = (userBeans[n]["@Xoffset"]/2 - ((clefsVisible == "true") ? 20 : 0)) / timeUnit;
-					post("offsets", offset, "\n");
 					var dictArray = [].concat(e.get("picster-element[2]::val"));
 					for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
-					o[userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1)] = jexpr;
-					outlet(1, scount++, j, onset + offset, userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1, userBeans[n]["@Name"].indexOf("-")));
+					o[userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1) + "-" + n] = jexpr;
+					//post("beans-1", JSON.stringify(o), "\n");
+					outlet(1, scount++, j, onset + offset, userBeans[n]["@Name"].substr(userBeans[n]["@Name"].indexOf("_") + 1, userBeans[n]["@Name"].indexOf("-")) + "-" + n);
 					}
 				}
 			}
@@ -237,6 +237,7 @@ function init() {
 		}
 	}
 	expr.parse(JSON.stringify(o));
+	//post("beans-2", JSON.stringify(o), "\n");
 	outlet(1, "dictionary", expr.name);
 	outlet(0, "clearSelection");
 	if (selectionBufferSize > 0) restoreSelection(_anchors);

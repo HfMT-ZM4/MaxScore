@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -18,6 +18,48 @@
 		"enablevscroll" : 0,
 		"devicewidth" : 622.0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+					"activetextcolor" : [ 0.071196037102503, 0.071195997168178, 0.071196007384196, 1.0 ],
+					"hint" : "Clear Scales menu",
+					"id" : "obj-18",
+					"maxclass" : "live.text",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"parameter_mappable" : 0,
+					"patching_rect" : [ 459.625, 462.5, 14.75, 17.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 219.25, 92.0, 15.0, 14.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : "themecolor.live_control_fg_on"
+						}
+,
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_invisible" : 2,
+							"parameter_longname" : "live.text[21]",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "Clear Scales",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "C",
+					"varname" : "clear_scales"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial ",
 					"fontsize" : 12.0,
@@ -79,7 +121,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -371,14 +413,10 @@
 
 							}
  ],
-						"originid" : "pat-24422"
+						"originid" : "pat-2861"
 					}
 ,
 					"patching_rect" : [ 286.0, 639.0, 99.0, 20.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p restore-presets"
 				}
 
@@ -469,7 +507,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -851,14 +889,10 @@
 
 							}
  ],
-						"originid" : "pat-24426"
+						"originid" : "pat-2865"
 					}
 ,
 					"patching_rect" : [ 941.469727000000034, 665.0, 46.0, 20.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p route"
 				}
 
@@ -991,7 +1025,7 @@
 , 			{
 				"box" : 				{
 					"activebgcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
-					"activetextcolor" : [ 0.079348079365577, 0.07934804057877, 0.079348050547289, 1.0 ],
+					"activetextcolor" : [ 0.071196037102503, 0.071195997168178, 0.071196007384196, 1.0 ],
 					"fontname" : "Arial ",
 					"hint" : "Load Scala browser to add more scales",
 					"id" : "obj-115",
@@ -1020,7 +1054,6 @@
 							"parameter_longname" : "live.text[18]",
 							"parameter_mmax" : 1,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "live.text",
 							"parameter_type" : 2
 						}
@@ -1063,7 +1096,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "clear" ],
-					"patching_rect" : [ 403.3125, 365.0, 47.0, 20.0 ],
+					"patching_rect" : [ 380.5, 365.0, 47.0, 20.0 ],
 					"text" : "t l clear"
 				}
 
@@ -1076,7 +1109,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 403.3125, 333.25, 187.0, 20.0 ],
+					"patching_rect" : [ 381.0, 333.0, 231.625, 20.0 ],
 					"restore" : [ "" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -1110,7 +1143,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 517.469727000000148, 477.0, 108.0, 20.0 ],
+					"patching_rect" : [ 493.0, 478.0, 108.0, 20.0 ],
 					"text" : "prepend add-scale",
 					"varname" : "add-scale[1]"
 				}
@@ -1144,7 +1177,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 517.469727000000148, 452.0, 242.0, 20.0 ],
+					"patching_rect" : [ 493.0, 453.0, 242.0, 20.0 ],
 					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -1191,7 +1224,7 @@
 					"activebgoncolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 					"bordercolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"focusbordercolor" : [ 0.57636836783545, 0.576368229540612, 0.576368265679262, 1.0 ],
+					"focusbordercolor" : [ 0.53926766494125, 0.539267534772943, 0.539267568788001, 1.0 ],
 					"id" : "obj-125",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -1224,7 +1257,6 @@
 							"parameter_longname" : "Subdivide",
 							"parameter_mmax" : 1,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Subdivide",
 							"parameter_type" : 2
 						}
@@ -1353,7 +1385,7 @@
 					"activebgoncolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 					"bordercolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"focusbordercolor" : [ 0.57636836783545, 0.576368229540612, 0.576368265679262, 1.0 ],
+					"focusbordercolor" : [ 0.53926766494125, 0.539267534772943, 0.539267568788001, 1.0 ],
 					"id" : "obj-78",
 					"ignoreclick" : 1,
 					"maxclass" : "live.toggle",
@@ -1385,7 +1417,6 @@
 							"parameter_longname" : "Overlap[1]",
 							"parameter_mmax" : 1,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Overlap",
 							"parameter_type" : 2
 						}
@@ -1414,7 +1445,7 @@
 					"activebgoncolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 					"bordercolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"focusbordercolor" : [ 0.57636836783545, 0.576368229540612, 0.576368265679262, 1.0 ],
+					"focusbordercolor" : [ 0.53926766494125, 0.539267534772943, 0.539267568788001, 1.0 ],
 					"id" : "obj-136",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -1445,7 +1476,6 @@
 							"parameter_longname" : "Sorted[1]",
 							"parameter_mmax" : 1,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Sorted",
 							"parameter_type" : 2
 						}
@@ -1485,12 +1515,12 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "A measure of the preservation of the scale used as input for the stocastic process. The values range from -1 (preserved sequence played backward)  to 0 (weighted randomness) to 1 (preserved sequence played forward).\nThe scale can be represented either as an ascending sequence or as sequence, the order of which depending on its members' harmonic distance from the tonic or an arbitrarily assignedpriority value (use the Sort switch to toggle between these modes).\n",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-70",
@@ -1536,7 +1566,6 @@
 							"parameter_mmax" : 100.0,
 							"parameter_mmin" : -100.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Melodic cohesion",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 5
@@ -1587,62 +1616,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 725.0, 308.0, 30.0, 18.0 ],
+					"patching_rect" : [ 722.0, 305.0, 30.0, 18.0 ],
 					"text" : "* 2."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
-					"bordercolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
-					"fontname" : "Arial ",
-					"fontsize" : 11.0,
-					"id" : "obj-22",
-					"ignoreclick" : 1,
-					"maxclass" : "textedit",
-					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 871.5, 363.25, 72.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 157.583332687616348, 89.0, 61.0, 20.0 ],
-					"rounded" : 0.0,
-					"varname" : "textedit"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial ",
-					"id" : "obj-18",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "clear" ],
-					"patching_rect" : [ 787.5, 363.25, 47.0, 20.0 ],
-					"text" : "t l clear"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial ",
-					"id" : "obj-21",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 787.5, 329.5, 187.0, 20.0 ],
-					"restore" : [ "" ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr @invisible 1 @autorestore 0",
-					"varname" : "u222010244"
 				}
 
 			}
@@ -1659,7 +1634,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1699,7 +1674,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 149.843414306640625, 187.0, 22.0 ],
-									"restore" : [ "281399-" ],
+									"restore" : [ "5519-" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1788,14 +1763,10 @@
 
 							}
  ],
-						"originid" : "pat-24428"
+						"originid" : "pat-2867"
 					}
 ,
 					"patching_rect" : [ 13.5, 488.0, 63.0, 20.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p bindtoID",
 					"varname" : "patcher[1]"
 				}
@@ -1830,13 +1801,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "Three choices: none, rhythmic talea, ostinato ",
 					"annotation_name" : "Outset Pulses",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-88",
@@ -1878,10 +1849,9 @@
 							"parameter_annotation_name" : "Outset Pulses",
 							"parameter_invisible" : 2,
 							"parameter_longname" : "outset",
-							"parameter_mmax" : 4.0,
+							"parameter_mmax" : 16.0,
 							"parameter_mmin" : 1.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Outset",
 							"parameter_type" : 1,
 							"parameter_unitstyle" : 0
@@ -1914,7 +1884,7 @@
 					"activebgoncolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 					"bordercolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"focusbordercolor" : [ 0.57636836783545, 0.576368229540612, 0.576368265679262, 1.0 ],
+					"focusbordercolor" : [ 0.53926766494125, 0.539267534772943, 0.539267568788001, 1.0 ],
 					"id" : "obj-29",
 					"maxclass" : "live.toggle",
 					"numinlets" : 1,
@@ -1945,7 +1915,6 @@
 							"parameter_longname" : "Silent Downbeat[1]",
 							"parameter_mmax" : 1,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Silent Downbeat",
 							"parameter_type" : 2
 						}
@@ -1995,7 +1964,6 @@
 							"parameter_longname" : "ostinato[2]",
 							"parameter_mmax" : 2,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Ostinato",
 							"parameter_type" : 2,
 							"parameter_unitstyle" : 9
@@ -2145,8 +2113,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 279.5, 199.0, 20.0, 20.0 ],
-					"svg" : ""
+					"patching_rect" : [ 279.5, 199.0, 20.0, 20.0 ]
 				}
 
 			}
@@ -2229,7 +2196,6 @@
 							"parameter_longname" : "Meter open...",
 							"parameter_mmax" : 1,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Meter open...",
 							"parameter_type" : 2
 						}
@@ -2321,7 +2287,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2341,7 +2307,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2666,14 +2632,10 @@
 
 											}
  ],
-										"originid" : "pat-24432"
+										"originid" : "pat-2871"
 									}
 ,
 									"patching_rect" : [ 677.32189900000003, 287.546692000000007, 86.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p getAttributes"
 								}
 
@@ -3059,7 +3021,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3351,7 +3313,7 @@
 
 											}
  ],
-										"originid" : "pat-24440",
+										"originid" : "pat-2879",
 										"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
 										"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
 									}
@@ -3359,7 +3321,6 @@
 									"patching_rect" : [ 595.32189900000003, 170.453307999999993, 57.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-										"globalpatchername" : "",
 										"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
 									}
 ,
@@ -3716,7 +3677,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3873,14 +3834,10 @@
 
 											}
  ],
-										"originid" : "pat-24446"
+										"originid" : "pat-2885"
 									}
 ,
 									"patching_rect" : [ 148.75, 480.0, 86.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p getAttributes"
 								}
 
@@ -4013,7 +3970,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4420,7 +4377,7 @@
 
 											}
  ],
-										"originid" : "pat-24452",
+										"originid" : "pat-2891",
 										"bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
 										"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
 									}
@@ -4428,7 +4385,6 @@
 									"patching_rect" : [ 66.821442000000005, 211.5, 60.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"editing_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ],
-										"globalpatchername" : "",
 										"locked_bgcolor" : [ 0.529411764705882, 0.529411764705882, 0.529411764705882, 1.0 ]
 									}
 ,
@@ -4444,7 +4400,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 36.25, 128.927153999999973, 233.0, 22.0 ],
-									"restore" : [ 0, 0, 0, 0 ],
+									"restore" : [ -1, -1, -1, -1 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -5135,14 +5091,10 @@
 
 							}
  ],
-						"originid" : "pat-24430"
+						"originid" : "pat-2869"
 					}
 ,
 					"patching_rect" : [ 152.5, 605.5, 78.0, 20.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p gather-info",
 					"varname" : "patcher"
 				}
@@ -5162,7 +5114,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5190,7 +5142,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 100.783282999999983, 617.0, 51.0, 35.0 ],
-									"text" : "pulses 4"
+									"text" : "pulses 112"
 								}
 
 							}
@@ -5587,7 +5539,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6165,14 +6117,10 @@
 
 											}
  ],
-										"originid" : "pat-24458"
+										"originid" : "pat-2897"
 									}
 ,
 									"patching_rect" : [ 251.5, 242.5, 77.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p pre-accum"
 								}
 
@@ -6686,14 +6634,10 @@
 
 							}
  ],
-						"originid" : "pat-24456"
+						"originid" : "pat-2895"
 					}
 ,
 					"patching_rect" : [ 218.0, 335.5, 135.0, 20.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p accum-pulses"
 				}
 
@@ -7250,7 +7194,6 @@
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 334.0, 298.5, 20.0, 20.0 ],
-					"svg" : "",
 					"varname" : "toggle"
 				}
 
@@ -7317,7 +7260,7 @@
 					"patching_rect" : [ 784.969727000000148, 495.0, 240.0, 101.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 37.2022705078125, 412.5, 199.0, 101.0 ],
-					"rows" : 1,
+					"rows" : 7,
 					"sccolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"selmode" : 5,
 					"sgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
@@ -7435,10 +7378,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 295.5, 510.0, 30.0, 20.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "in 1"
 				}
 
@@ -7513,13 +7452,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "The central (=average) MIDI-‘velocity’ of the stream.",
 					"annotation_name" : "Dynamics",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-27",
@@ -7564,7 +7503,6 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "dynamics[2]",
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Dynamics",
 							"parameter_type" : 1,
 							"parameter_unitstyle" : 0
@@ -7741,7 +7679,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 787.5, 246.0, 138.0, 17.0 ],
-					"restore" : [ 4 ],
+					"restore" : [ 16 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -7789,7 +7727,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "float" ],
-					"patching_rect" : [ 688.0, 258.0, 52.0, 18.0 ],
+					"patching_rect" : [ 688.0, 258.0, 53.0, 18.0 ],
 					"text" : "t b f"
 				}
 
@@ -7865,7 +7803,7 @@
 						"chordal_weight" : [ 1.0 ],
 						"dynamics" : [ 84.0 ],
 						"event_length" : [ 100.000000000000028 ],
-						"eventfulness" : [ 100.0 ],
+						"eventfulness" : [ 73.228346456692975 ],
 						"harmoniclarity" : [ 50.0 ],
 						"interp-attenuation" : [ 1 ],
 						"interp-chordal-weight" : [ 0 ],
@@ -7879,9 +7817,9 @@
 						"interp-pitch-center" : [ 1 ],
 						"interp-pitch-range" : [ 1 ],
 						"interp-tonic-pitch" : [ 1 ],
-						"melodic_cohesion" : [ -27.346456692913346 ],
+						"melodic_cohesion" : [ 1.0 ],
 						"melody_scope" : [ 7.0 ],
-						"meter" : [ "1" ],
+						"meter" : [ "2 2" ],
 						"meters" : [ 							{
 								"my-meter" : [ 105, 1, 74, 56, 76, 48, 95, 78, 32, 95, 18, 94, 87, 64, 104, 41, 53, 44, 93, 50, 54, 103, 13, 81, 79, 44, 69, 94, 99, 46, 102, 21, 91, 76, 64, 99, 42, 53, 44, 96, 28, 76, 102, 25, 88, 85, 76, 62, 84, 104, 9, 101, 26, 90, 84, 33, 96, 67, 76, 60, 104, 31, 70, 101, 26, 64, 92, 79, 69, 91, 95, 19, 96, 36, 92, 84, 39, 96, 40, 75, 34, 103, 44, 78, 105, 8, 84, 85, 84, 69, 98, 88, 30, 92, 40, 68, 96, 54, 104, 69, 47, 63, 102, 62, 85 ]
 							}
@@ -7892,7 +7830,7 @@
 						"overlap" : [ 1.0 ],
 						"pitch_center" : [ 60.0 ],
 						"pitch_range" : [ 11.987160465605228 ],
-						"scale" : [ "Kumoi" ],
+						"scale" : [ "Major" ],
 						"scales" : [ 							{
 								"Major" : 								{
 									"1" : [ -9600, 1, 256, -126 ],
@@ -12015,6 +11953,202 @@
 									"6" : [ 500, 1, 1, -6 ],
 									"7" : [ 600, 1, 1, -7 ]
 								}
+,
+								"12-yarman24a" : 								{
+									"0" : [ -9600, 1, 256, -125 ],
+									"1" : [ -9516, 1, 243, -75 ],
+									"2" : [ -9408, 9, 2048, -61 ],
+									"3" : [ -9308, 1, 216, -91 ],
+									"4" : [ -9214, 5, 1024, -61 ],
+									"5" : [ -9102, 1, 192, -115 ],
+									"6" : [ -9016, 4, 729, -56 ],
+									"7" : [ -8904, 3, 512, -86 ],
+									"8" : [ -8812, 1, 162, -86 ],
+									"9" : [ -8712, 5, 768, -59 ],
+									"10" : [ -8604, 1, 144, -107 ],
+									"11" : [ -8512, 15, 2048, -50 ],
+									"12" : [ -8400, 1, 128, -143 ],
+									"13" : [ -8316, 2, 243, -70 ],
+									"14" : [ -8208, 9, 1024, -65 ],
+									"15" : [ -8108, 1, 108, -100 ],
+									"16" : [ -8014, 5, 512, -65 ],
+									"17" : [ -7902, 1, 96, -130 ],
+									"18" : [ -7816, 8, 729, -53 ],
+									"19" : [ -7704, 3, 256, -94 ],
+									"20" : [ -7612, 1, 81, -94 ],
+									"21" : [ -7512, 5, 384, -62 ],
+									"22" : [ -7404, 1, 72, -120 ],
+									"23" : [ -7312, 15, 1024, -52 ],
+									"24" : [ -7200, 1, 64, -167 ],
+									"25" : [ -7116, 4, 243, -65 ],
+									"26" : [ -7008, 9, 512, -70 ],
+									"27" : [ -6908, 1, 54, -111 ],
+									"28" : [ -6814, 5, 256, -69 ],
+									"29" : [ -6702, 1, 48, -150 ],
+									"30" : [ -6616, 16, 729, -50 ],
+									"31" : [ -6504, 3, 128, -103 ],
+									"32" : [ -6412, 2, 81, -86 ],
+									"33" : [ -6312, 5, 192, -66 ],
+									"34" : [ -6204, 1, 36, -136 ],
+									"35" : [ -6112, 15, 512, 55 ],
+									"36" : [ -6000, 1, 32, -200 ],
+									"37" : [ -5916, 8, 243, -61 ],
+									"38" : [ -5808, 9, 256, -75 ],
+									"39" : [ -5708, 1, 27, -125 ],
+									"40" : [ -5614, 5, 128, -75 ],
+									"41" : [ -5502, 1, 24, -176 ],
+									"42" : [ -5416, 7, 160, -46 ],
+									"43" : [ -5304, 3, 64, -115 ],
+									"44" : [ -5212, 4, 81, -79 ],
+									"45" : [ -5112, 5, 96, -71 ],
+									"46" : [ -5004, 1, 18, -158 ],
+									"47" : [ -4912, 15, 256, 59 ],
+									"48" : [ -4800, 1, 16, -250 ],
+									"49" : [ -4716, 16, 243, -58 ],
+									"50" : [ -4608, 9, 128, -81 ],
+									"51" : [ -4508, 2, 27, -111 ],
+									"52" : [ -4414, 5, 64, 81 ],
+									"53" : [ -4302, 1, 12, -214 ],
+									"54" : [ -4216, 7, 80, -48 ],
+									"55" : [ -4104, 3, 32, -130 ],
+									"56" : [ -4012, 8, 81, -73 ],
+									"57" : [ -3912, 5, 48, -77 ],
+									"58" : [ -3804, 1, 9, -187 ],
+									"59" : [ -3712, 15, 128, 62 ],
+									"60" : [ -3600, 1, 8, -333 ],
+									"61" : [ -3516, 32, 243, -55 ],
+									"62" : [ -3408, 9, 64, -88 ],
+									"63" : [ -3308, 4, 27, -100 ],
+									"64" : [ -3214, 5, 32, 88 ],
+									"65" : [ -3102, 1, 6, -273 ],
+									"66" : [ -3016, 7, 40, 51 ],
+									"67" : [ -2904, 3, 16, -150 ],
+									"68" : [ -2812, 16, 81, -68 ],
+									"69" : [ -2712, 5, 24, 83 ],
+									"70" : [ -2604, 2, 9, -158 ],
+									"71" : [ -2512, 15, 64, 66 ],
+									"72" : [ -2400, 1, 4, -500 ],
+									"73" : [ -2316, 64, 243, -52 ],
+									"74" : [ -2208, 9, 32, 97 ],
+									"75" : [ -2108, 8, 27, -91 ],
+									"76" : [ -2014, 5, 16, 96 ],
+									"77" : [ -1902, 1, 3, -375 ],
+									"78" : [ -1816, 7, 20, 54 ],
+									"79" : [ -1704, 3, 8, -176 ],
+									"80" : [ -1612, 32, 81, -64 ],
+									"81" : [ -1512, 5, 12, 90 ],
+									"82" : [ -1404, 4, 9, -136 ],
+									"83" : [ -1312, 15, 32, 71 ],
+									"84" : [ -1200, 1, 2, -1000 ],
+									"85" : [ -1116, 128, 243, -49 ],
+									"86" : [ -1008, 9, 16, 107 ],
+									"87" : [ -908, 16, 27, -83 ],
+									"88" : [ -814, 5, 8, 106 ],
+									"89" : [ -702, 2, 3, -273 ],
+									"90" : [ -616, 7, 10, 57 ],
+									"91" : [ -504, 3, 4, 214 ],
+									"92" : [ -412, 64, 81, -60 ],
+									"93" : [ -312, 5, 6, 99 ],
+									"94" : [ -204, 8, 9, -120 ],
+									"95" : [ -112, 15, 16, 77 ],
+									"96" : [ 0, 1, 1, 1111 ],
+									"97" : [ 84, 21, 20, 47 ],
+									"98" : [ 192, 9, 8, 120 ],
+									"99" : [ 292, 32, 27, -77 ],
+									"100" : [ 386, 5, 4, 119 ],
+									"101" : [ 498, 4, 3, -214 ],
+									"102" : [ 584, 7, 5, 60 ],
+									"103" : [ 696, 3, 2, 273 ],
+									"104" : [ 788, 128, 81, -57 ],
+									"105" : [ 888, 5, 3, 110 ],
+									"106" : [ 996, 16, 9, -107 ],
+									"107" : [ 1088, 15, 8, 83 ],
+									"108" : [ 1200, 2, 1, 1000 ],
+									"109" : [ 1284, 21, 10, 49 ],
+									"110" : [ 1392, 9, 4, 136 ],
+									"111" : [ 1492, 64, 27, -71 ],
+									"112" : [ 1586, 5, 2, 135 ],
+									"113" : [ 1698, 8, 3, 176 ],
+									"114" : [ 1784, 45, 16, 64 ],
+									"115" : [ 1896, 3, 1, 375 ],
+									"116" : [ 1988, 256, 81, -54 ],
+									"117" : [ 2088, 10, 3, 99 ],
+									"118" : [ 2196, 32, 9, -97 ],
+									"119" : [ 2288, 15, 4, 90 ],
+									"120" : [ 2400, 4, 1, 500 ],
+									"121" : [ 2484, 21, 5, 52 ],
+									"122" : [ 2592, 9, 2, 158 ],
+									"123" : [ 2692, 128, 27, -67 ],
+									"124" : [ 2786, 5, 1, 156 ],
+									"125" : [ 2898, 16, 3, 150 ],
+									"126" : [ 2984, 45, 8, 68 ],
+									"127" : [ 3096, 6, 1, 273 ],
+									"128" : [ 3188, 512, 81, -51 ],
+									"129" : [ 3288, 20, 3, 90 ],
+									"130" : [ 3396, 64, 9, 88 ],
+									"131" : [ 3488, 15, 2, 99 ],
+									"132" : [ 3600, 8, 1, 333 ],
+									"133" : [ 3684, 42, 5, 49 ],
+									"134" : [ 3792, 9, 1, 188 ],
+									"135" : [ 3892, 256, 27, 63 ],
+									"136" : [ 3986, 10, 1, 135 ],
+									"137" : [ 4098, 32, 3, 130 ],
+									"138" : [ 4184, 45, 4, 73 ],
+									"139" : [ 4296, 12, 1, 214 ],
+									"140" : [ 4388, 25, 2, 72 ],
+									"141" : [ 4488, 40, 3, 83 ],
+									"142" : [ 4596, 128, 9, 81 ],
+									"143" : [ 4688, 15, 1, 110 ],
+									"144" : [ 4800, 16, 1, 250 ],
+									"145" : [ 4884, 135, 8, 57 ],
+									"146" : [ 4992, 18, 1, 158 ],
+									"147" : [ 5092, 512, 27, 59 ],
+									"148" : [ 5186, 20, 1, 119 ],
+									"149" : [ 5298, 64, 3, 115 ],
+									"150" : [ 5384, 45, 2, 79 ],
+									"151" : [ 5496, 24, 1, 176 ],
+									"152" : [ 5588, 25, 1, 78 ],
+									"153" : [ 5688, 27, 1, 125 ],
+									"154" : [ 5796, 256, 9, 75 ],
+									"155" : [ 5888, 30, 1, 99 ],
+									"156" : [ 6000, 32, 1, 200 ],
+									"157" : [ 6084, 135, 4, 61 ],
+									"158" : [ 6192, 36, 1, 136 ],
+									"159" : [ 6292, 1024, 27, 56 ],
+									"160" : [ 6386, 40, 1, 106 ],
+									"161" : [ 6498, 128, 3, 103 ],
+									"162" : [ 6584, 45, 1, 85 ],
+									"163" : [ 6696, 48, 1, 150 ],
+									"164" : [ 6788, 50, 1, 72 ],
+									"165" : [ 6888, 160, 3, 71 ],
+									"166" : [ 6996, 512, 9, 70 ],
+									"167" : [ 7088, 60, 1, 90 ],
+									"168" : [ 7200, 64, 1, 167 ],
+									"169" : [ 7284, 135, 2, 65 ],
+									"170" : [ 7392, 72, 1, 120 ],
+									"171" : [ 7492, 2048, 27, 53 ],
+									"172" : [ 7586, 80, 1, 96 ],
+									"173" : [ 7698, 256, 3, 94 ],
+									"174" : [ 7784, 90, 1, 79 ],
+									"175" : [ 7896, 96, 1, 130 ],
+									"176" : [ 7988, 405, 4, 52 ],
+									"177" : [ 8088, 320, 3, 66 ],
+									"178" : [ 8196, 1024, 9, 65 ],
+									"179" : [ 8288, 120, 1, 83 ],
+									"180" : [ 8400, 128, 1, 143 ],
+									"181" : [ 8484, 135, 1, 69 ],
+									"182" : [ 8592, 144, 1, 107 ],
+									"183" : [ 8692, 4096, 27, 50 ],
+									"184" : [ 8786, 160, 1, 88 ],
+									"185" : [ 8898, 512, 3, 86 ],
+									"186" : [ 8984, 180, 1, 73 ],
+									"187" : [ 9096, 192, 1, 115 ],
+									"188" : [ 9188, 405, 2, 55 ],
+									"189" : [ 9288, 640, 3, 62 ],
+									"190" : [ 9396, 2048, 9, 61 ],
+									"191" : [ 9488, 240, 1, 77 ],
+									"192" : [ 9600, 256, 1, 125 ]
+								}
 
 							}
  ],
@@ -12044,10 +12178,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 84.0, 220.0, 184.0, 28.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 4, 44, 358, 172 ],
+						"client_rect" : [ 763, 140, 1507, 770 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 514, 188, 1114, 754 ]
+						"storage_rect" : [ 780, 524, 1380, 824 ]
 					}
 ,
 					"text" : "pattrstorage omnibus @outputmode 1 @savemode 3",
@@ -12064,7 +12198,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 343.0, 485.0, 22.0, 20.0 ],
+					"patching_rect" : [ 343.0, 477.0, 22.0, 20.0 ],
 					"text" : "t 0"
 				}
 
@@ -12078,7 +12212,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 343.0, 461.0, 104.0, 20.0 ],
+					"patching_rect" : [ 343.0, 453.0, 104.0, 20.0 ],
 					"text" : "pvar \"Scale open\""
 				}
 
@@ -12152,7 +12286,6 @@
 							"parameter_longname" : "Scale open...",
 							"parameter_mmax" : 1,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Scale open...",
 							"parameter_type" : 2
 						}
@@ -12180,7 +12313,7 @@
 					"fontname" : "Arial ",
 					"fontsize" : 10.0,
 					"id" : "obj-16",
-					"items" : [ "Major", ",", "Minor", ",", "Dorian", ",", "Mixolydian", ",", "Lydian", ",", "Phrygian", ",", "Locrian", ",", "Whole Tone", ",", "Half-whole Dim.", ",", "Whole-half Dim.", ",", "Minor Blues", ",", "Minor Pentatonic", ",", "Major Pentatonic", ",", "Harmonic Minor", ",", "Harmonic Major", ",", "Dorian #4", ",", "Phrygian Dominant", ",", "Melodic Minor", ",", "Lydian Augmented", ",", "Lydian Dominant", ",", "Super Locrian", ",", "8-Tone Spanish", ",", "Bhairav", ",", "Hungarian Minor", ",", "Hirajoshi", ",", "In-sen", ",", "Iwato", ",", "Kumoi", ",", "Pelog Selisir", ",", "Pelog Tembung", ",", "Messiaen 3", ",", "Messiaen 4", ",", "Messiaen 5", ",", "Messiaen 6", ",", "Messiaen 7", ",", "Chromatic", ",", "my-scale" ],
+					"items" : [ "Major", ",", "Minor", ",", "Dorian", ",", "Mixolydian", ",", "Lydian", ",", "Phrygian", ",", "Locrian", ",", "Whole Tone", ",", "Half-whole Dim.", ",", "Whole-half Dim.", ",", "Minor Blues", ",", "Minor Pentatonic", ",", "Major Pentatonic", ",", "Harmonic Minor", ",", "Harmonic Major", ",", "Dorian #4", ",", "Phrygian Dominant", ",", "Melodic Minor", ",", "Lydian Augmented", ",", "Lydian Dominant", ",", "Super Locrian", ",", "8-Tone Spanish", ",", "Bhairav", ",", "Hungarian Minor", ",", "Hirajoshi", ",", "In-sen", ",", "Iwato", ",", "Kumoi", ",", "Pelog Selisir", ",", "Pelog Tembung", ",", "Messiaen 3", ",", "Messiaen 4", ",", "Messiaen 5", ",", "Messiaen 6", ",", "Messiaen 7", ",", "Chromatic", ",", "my-scale", ",", "12-yarman24a" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12198,13 +12331,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "The extent to which the dynamics may deviate from the dynamics value; at minimum ‘metriclarity’  this is decided at random, whereas at maximum ‘metriclarity’ the deviation is related to the ‘indispensability’ of the pulse - the metriclarity is then dynamically amplified; this may be useful in the case of maximum eventfulness where agogic elements are neutralized.",
 					"annotation_name" : "Attenuation",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-28",
@@ -12250,7 +12383,6 @@
 							"parameter_longname" : "attenuation[4]",
 							"parameter_mmax" : 100.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Attenuation",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 5
@@ -12267,13 +12399,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "Set event length",
 					"annotation_name" : "Pitch range",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-26",
@@ -12318,7 +12450,6 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "pitch_range[2]",
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Pitch range",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -12335,12 +12466,12 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation_name" : "Pitch center",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-25",
@@ -12386,7 +12517,6 @@
 							"parameter_longname" : "pitch_center[2]",
 							"parameter_mmax" : 96.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Pitch center",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -12403,13 +12533,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "Analogous to metriclarity, a minimum value accords all pitches in the scale an equal probability, thus weakening the key-feeling; at maximum the opposite is true. Note that this description particularly holds in the case of scales such as the chromatic; a major scale would introduce its own intrinsic key-feeling even at the minimum Parameter value.",
 					"annotation_name" : "Harmoniclarity",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-24",
@@ -12454,7 +12584,6 @@
 							"parameter_longname" : "harmoniclarity[2]",
 							"parameter_mmax" : 100.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Harmoniclarity",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -12471,13 +12600,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "Up to a maximum of 3 notes can be played together in each stream. ",
 					"annotation_name" : "Chordal weight",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-23",
@@ -12521,7 +12650,6 @@
 							"parameter_mmax" : 5.0,
 							"parameter_mmin" : 1.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Chordal weight",
 							"parameter_type" : 1,
 							"parameter_unitstyle" : 0
@@ -12538,12 +12666,12 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation_name" : "Tonic Pitch",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-52",
@@ -12588,7 +12716,6 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "tonic_pitch[2]",
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Tonic Pitch",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -12605,13 +12732,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "The maximum number of semitones permitted between the MIDI number of any event and the one following it.",
 					"annotation_name" : "Melody scope",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-13",
@@ -12656,7 +12783,6 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "melody_scope[2]",
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Melody scope",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -12673,13 +12799,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
 					"annotation_name" : "Event length",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-12",
@@ -12726,7 +12852,6 @@
 							"parameter_mmax" : 1000.0,
 							"parameter_mmin" : 1.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Event length",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 5
@@ -12743,13 +12868,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "At minimum the stream is inactive, at maximum it is saturated with attacks, e.g. every available pulse in the metre accorded to this stream is played. ",
 					"annotation_name" : "Eventfulness",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-11",
@@ -12795,7 +12920,6 @@
 							"parameter_longname" : "Eventfulness[1]",
 							"parameter_mmax" : 100.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Eventfulness",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -12812,13 +12936,13 @@
 , 			{
 				"box" : 				{
 					"activedialcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"activefgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"activefgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"activeneedlecolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"annotation" : "A measure of the resultant clarity of the metre as played in the stream - at minimum all pulses are accorded equal probability and the metre cannot be musically detected, whereas at maximum the opposite is true.",
 					"annotation_name" : "Metriclarity",
 					"appearance" : 1,
-					"dialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
-					"fgdialcolor" : [ 0.447518749806177, 0.44751863973454, 0.447518668498017, 1.0 ],
+					"dialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
+					"fgdialcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
 					"fontname" : "Arial ",
 					"fontsize" : 9.0,
 					"id" : "obj-5",
@@ -12864,7 +12988,6 @@
 							"parameter_longname" : "metriclarity[4]",
 							"parameter_mmax" : 100.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "Metriclarity",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1
@@ -12899,7 +13022,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-44",
 					"maxclass" : "newobj",
-					"numinlets" : 6,
+					"numinlets" : 5,
 					"numoutlets" : 1,
 					"outlettype" : [ "clear" ],
 					"patching_rect" : [ 343.0, 510.0, 169.0, 20.0 ],
@@ -12971,7 +13094,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 78.3272705078125, 112.5, 81.73028564453125, 18.0 ],
 					"rounded" : 0.0,
-					"text" : "1",
+					"text" : "2 2",
 					"varname" : "meter",
 					"wordwrap" : 0
 				}
@@ -13156,15 +13279,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-44", 5 ],
+					"destination" : [ "obj-44", 4 ],
 					"source" : [ "obj-140", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-44", 5 ],
-					"source" : [ "obj-141", 0 ]
 				}
 
 			}
@@ -13198,7 +13314,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-44", 4 ],
+					"destination" : [ "obj-44", 2 ],
 					"source" : [ "obj-163", 0 ]
 				}
 
@@ -13227,14 +13343,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-22", 0 ],
-					"source" : [ "obj-18", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-44", 2 ],
+					"destination" : [ "obj-44", 3 ],
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -13285,20 +13394,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-114", 0 ],
 					"source" : [ "obj-209", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"source" : [ "obj-21", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-22", 0 ],
-					"source" : [ "obj-21", 1 ]
 				}
 
 			}
@@ -13571,15 +13666,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-186", 0 ],
-					"order" : 5,
-					"source" : [ "obj-32", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 0 ],
+					"destination" : [ "obj-18", 0 ],
 					"order" : 4,
 					"source" : [ "obj-32", 1 ]
 				}
@@ -13587,7 +13674,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-35", 0 ],
+					"destination" : [ "obj-186", 0 ],
 					"order" : 6,
 					"source" : [ "obj-32", 1 ]
 				}
@@ -13595,8 +13682,24 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-38", 0 ],
+					"destination" : [ "obj-34", 0 ],
+					"order" : 5,
+					"source" : [ "obj-32", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-35", 0 ],
 					"order" : 7,
+					"source" : [ "obj-32", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-38", 0 ],
+					"order" : 8,
 					"source" : [ "obj-32", 1 ]
 				}
 
@@ -13886,7 +13989,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-44", 2 ],
+					"destination" : [ "obj-44", 1 ],
 					"source" : [ "obj-81", 0 ]
 				}
 
@@ -13990,7 +14093,7 @@
 
 			}
  ],
-		"originid" : "pat-24420",
+		"originid" : "pat-2859",
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{

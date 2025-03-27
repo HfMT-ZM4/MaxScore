@@ -1235,7 +1235,7 @@ function cnt()
 
 function restoreSelection(obj)
 {
-		error("clearSelection-1335\n");
+		//error("clearSelection-1335\n");
 		outlet(0, "clearSelection");
 		for(var event in obj){
 		anchor = obj[event];
@@ -2337,35 +2337,26 @@ function anything()
 				"showbetween" : [ 1000, 2000 ]
 			*/
 			break;
+			case 80 : //p dump expressions
+				outlet(0, "dumpExpressions");
+			break;
 			case 82 : //r (render bpf)
 			if (foundobjects.contains("0") && item != -1) {
 				edit.parse(foundobjects.get(item)[foundobjects.get(item).length - 1]);
 				if (edit.contains("picster-element[0]::val")) {
 					var expr = new Dict();
+					var path = "";
 					var distances = [];
 					distances[0] = 0;
 					var trajectory = [];
 					var trajectory_x = [];
 					var trajectory_y = [];
-					switch (edit.get("picster-element[0]::val::new")) {
+					var type = edit.get("picster-element[0]::val::new");
+					switch (type) {
 						case "text" :
 							expr.replace("editor", "default");
 							expr.replace("message", edit.get("picster-element[0]::val::child").split(" ")[0]);
 							expr.replace("value", edit.get("picster-element[0]::val::child").split(" ")[1]);
-							addExpressionToSelectedShape("dictionary", expr.name);
-						break;
-						case "line" :
-							var line = JSON.parse(edit.get("picster-element[0]::val").stringify());
-							var totalDistance = Math.sqrt(Math.pow(line.x2 - line.x1, 2) + Math.pow(line.y2 - line.y1, 2));
-							trajectory.push("data", 0, 10, totalDistance * time2pixels, 0, 800);
-							trajectory.push(0, line.x1, 0, totalDistance * time2pixels, line.x2, 0);
-							trajectory.push("linear");
-							trajectory.push("data", 1, 10, totalDistance * time2pixels, 0, 800);
-							trajectory.push(0, line.y1, 0, totalDistance * time2pixels, line.y2, 0);
-							trajectory.push("linear");
-							expr.replace("editor", "bpf");
-							expr.replace("message", edit.get("picster-element[0]::val::id"));
-							expr.replace("value", trajectory);
 							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "rect" :
@@ -2379,27 +2370,6 @@ function anything()
 								}
 							trajectory.push("curve");
 							trajectory_y = [[0, _rect.y * time2pixels, 0, 0], [_rect.width, _rect.y * time2pixels, 0, 0], [_rect.width + _rect.height, (_rect.y + _rect.height) * time2pixels, 0, 0], [_rect.width * 2 + _rect.height, (_rect.y + _rect.height) * time2pixels, 0, 0], [totalDistance, _rect.y * time2pixels, 0, 0]];
-							trajectory.push("data", 1, 24, totalDistance * time2pixels, 0, 800);
-							for (var i = 0; i < 5; i++) {
-								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
-								}
-							trajectory.push("curve");
-							expr.replace("editor", "bpf");
-							expr.replace("message", edit.get("picster-element[0]::val::id"));
-							expr.replace("value", trajectory);
-							addExpressionToSelectedShape("dictionary", expr.name);
-						break;
-						case "ellipse" :
-							var ellipse = JSON.parse(edit.get("picster-element[0]::val").stringify());
-							var h = Math.pow((ellipse.rx-ellipse.ry), 2) / Math.pow((ellipse.rx+ellipse.ry), 2);
-    						var totalDistance = (Math.PI * ( ellipse.rx + ellipse.ry )) * (1 + ( (3 * h) / ( 10 + Math.sqrt( 4 - (3 * h)))));
-							trajectory_x = [[0, (ellipse.cx - ellipse.rx) * time2pixels, 0, 0], [totalDistance/4, ellipse.cx * time2pixels, 0, 0.5], [totalDistance/2, (ellipse.cx + ellipse.rx) * time2pixels, 0, -0.5], [totalDistance*3/4, ellipse.cx * time2pixels, 0, 0.5], [totalDistance, (ellipse.cx - ellipse.rx) * time2pixels, 0, -0.5]];
-							trajectory.push("data", 0, 24, totalDistance * time2pixels, 0, 800);
-							for (var i = 0; i < 5; i++) {
-								for (var j = 0; j < 4; j++) trajectory.push(trajectory_x[i][j]);
-								}
-							trajectory.push("curve");
-							trajectory_y = [[0, ellipse.cy * time2pixels, 0, 0], [totalDistance/4, (ellipse.cy - ellipse.ry) * time2pixels, 0, -0.5], [totalDistance/2, ellipse.cy * time2pixels, 0, 0.5], [totalDistance*3/4, (ellipse.cy + ellipse.ry) * time2pixels, 0, -0.5], [totalDistance, ellipse.cy * time2pixels, 0, 0.5]];
 							trajectory.push("data", 1, 24, totalDistance * time2pixels, 0, 800);
 							for (var i = 0; i < 5; i++) {
 								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
@@ -2436,11 +2406,26 @@ function anything()
 							expr.replace("value", trajectory);
 							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
+						case "line" :
+						case "ellipse" :
 						case "path" :
+							if (type == "line") {
+								var line = JSON.parse(edit.get("picster-element[0]::val").stringify());
+								var line2path = "M " + line.x1 + ", " + line.y1 + " L " + line.x2 + ", " + line.y2;
+								path = line2path.split(/[\s,]+/);
+							}
+							
+							else if (type == "ellipse") {
+								//cx="100" cy="50" rx="80" ry="40"
+								//"M (cx + rx), cy A cx,rx 0 1,0 (cx - rx), cy A cx,rx 0 1,0 (cx + rx), cy"
+								var ellipse = JSON.parse(edit.get("picster-element[0]::val").stringify());
+								var ellipse2path = "M " + (ellipse.cx + ellipse.rx) + ", " + ellipse.cy + " A " + ellipse.cx + ", " + ellipse.rx + " 0 1,0 " + (ellipse.cx - ellipse.rx) + ", " + ellipse.cy + " A " + ellipse.cx + ", " + ellipse.rx + " 0 1,0 " + (ellipse.cx + ellipse.rx) + ", " + ellipse.cy;
+								path = ellipse2path.split(/[\s,]+/);
+							}
+							else if (type == "path") path = edit.get("picster-element[0]::val::d").split(/[\s,]+/);
+							post("path", path, "\n");
 							var accum = 0;
-							var path = edit.get("picster-element[0]::val::d").split(/[\s,]+/);
 							var points = SVGParse(path);
-							//post(JSON.stringify(points), "\n");
 							var xyt = refactorArray(points);
 							var max_x = Math.max(...xyt[0]);
 							var min_x = Math.min(...xyt[0]);
@@ -2836,7 +2821,7 @@ function showAllHiddenElements()
 					outlet(0, "getNoteAnchor");
 					for (var event in anchors){
 					anchor = anchors[event];
-					error("clearSelection\n");
+					//error("clearSelection\n");
 					outlet(0, "clearSelection");
 					outlet(0, "addNoteToSelection", anchor.slice(2));
 					outlet(0, (anchor[6] == -1) ? "getNoteInfo" : "getIntervalInfo", anchor.slice(2));
