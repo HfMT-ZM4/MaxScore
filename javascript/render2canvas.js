@@ -1438,9 +1438,14 @@ function getLevel()
 	return level;
 }
 
+function getMeasureRange()
+{
+	outlet(1, "measurerange", measurerange);
+}
+
 function startRenderDump()
 {		
-		renderPage = 1;
+	renderPage = 1;
 }
 
 function dictionary(d)

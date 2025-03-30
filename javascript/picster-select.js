@@ -2359,54 +2359,12 @@ function anything()
 							expr.replace("value", edit.get("picster-element[0]::val::child").split(" ")[1]);
 							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
-						case "rect" :
-							var _rect = JSON.parse(edit.get("picster-element[0]::val").stringify());
-							//post("rect", JSON.stringify(_rect), "\n");
-    						var totalDistance = (_rect.width) * 2 + (_rect.height) * 2;
-							trajectory_x = [[0, _rect.x * time2pixels, 0, 0], [_rect.width, (_rect.x + _rect.width) * time2pixels, 0, 0], [_rect.width + _rect.height, (_rect.x + _rect.width) * time2pixels, 0, 0], [_rect.width * 2 + _rect.height, _rect.x * time2pixels, 0, 0], [totalDistance, _rect.x * time2pixels, 0, 0]];
-							trajectory.push("data", 0, 24, totalDistance  * time2pixels, 0, 800);
-							for (var i = 0; i < 5; i++) {
-								for (var j = 0; j < 4; j++) trajectory.push(trajectory_x[i][j]);
-								}
-							trajectory.push("curve");
-							trajectory_y = [[0, _rect.y * time2pixels, 0, 0], [_rect.width, _rect.y * time2pixels, 0, 0], [_rect.width + _rect.height, (_rect.y + _rect.height) * time2pixels, 0, 0], [_rect.width * 2 + _rect.height, (_rect.y + _rect.height) * time2pixels, 0, 0], [totalDistance, _rect.y * time2pixels, 0, 0]];
-							trajectory.push("data", 1, 24, totalDistance * time2pixels, 0, 800);
-							for (var i = 0; i < 5; i++) {
-								for (var j = 0; j < 4; j++) trajectory.push(trajectory_y[i][j]);
-								}
-							trajectory.push("curve");
-							expr.replace("editor", "bpf");
-							expr.replace("message", edit.get("picster-element[0]::val::id"));
-							expr.replace("value", trajectory);
-							addExpressionToSelectedShape("dictionary", expr.name);
-						break;
-						case "polyline" :
-							var totalDistance = 0;
-							var points = edit.get("picster-element[0]::val::points").split(" ");
-							for (var i = 0; i < points.length - 1; i++) {
-							distances[i + 1] = Math.sqrt(Math.pow(Number(points[i + 1].split(",")[0]) - Number(points[i].split(",")[0]), 2) + Math.pow(Number(points[i + 1].split(",")[1]) - Number(points[i].split(",")[1]), 2));
-							trajectory_x[i] = [totalDistance, Number(points[i].split(",")[0]) * time2pixels, 0];
-							trajectory_y[i] = [totalDistance, Number(points[i].split(",")[1]) * time2pixels, 0];
-							totalDistance += distances[i + 1];
-							}
-							trajectory_x[i] = [totalDistance, Number(points[points.length - 1].split(",")[0]) * time2pixels, 0];
-							trajectory_y[i] = [totalDistance, Number(points[points.length - 1].split(",")[1]) * time2pixels, 0];
-							trajectory.push("data", 0, trajectory_x.length * 3 + 4, totalDistance * time2pixels, 0, 800);
-							for (var i = 0; i < trajectory_x.length; i++) {
-								for (var j = 0; j < 3; j++) trajectory.push(trajectory_x[i][j]);
-							}
-							trajectory.push("linear");
-							trajectory.push("data", 1, trajectory_x.length * 3 + 4, totalDistance * time2pixels, 0, 800);
-							for (var i = 0; i < trajectory_y.length; i++) {
-								for (var j = 0; j < 3; j++) trajectory.push(trajectory_y[i][j]);
-								}
-							trajectory.push("linear");
-							expr.replace("editor", "bpf");
-							expr.replace("message", edit.get("picster-element[0]::val::id"));
-							expr.replace("value", trajectory);
-							addExpressionToSelectedShape("dictionary", expr.name);
+						case "svg" :
+							error("Error: This shape can not translated into an expression\n");
 						break;
 						case "line" :
+						case "polyline" :
+						case "rect" :
 						case "ellipse" :
 						case "path" :
 							if (type == "line") {
@@ -2414,7 +2372,54 @@ function anything()
 								var line2path = "M " + line.x1 + ", " + line.y1 + " L " + line.x2 + ", " + line.y2;
 								path = line2path.split(/[\s,]+/);
 							}
-							
+							else if (type == "polyline") {
+								var polyline = JSON.parse(edit.get("picster-element[0]::val").stringify());
+								let points = polyline.points.trim();
+    							let pointArray = points.split(/\s+|,/).map(Number);
+    							if (pointArray.length < 2) return;
+
+    							let points2path = `M ${pointArray[0]},${pointArray[1]}`;
+    
+    							for (let i = 2; i < pointArray.length; i += 2) points2path += ` L ${pointArray[i]},${pointArray[i + 1]}`;
+								
+								path = points2path.split(/[\s,]+/);
+								}
+							else if (type == "rect") {
+								var rect = JSON.parse(edit.get("picster-element[0]::val").stringify());
+
+    							let x = parseFloat(rect.x) || 0;
+     							let y = parseFloat(rect.y) || 0;
+     					   		let width = parseFloat(rect.width);
+    						   	let height = parseFloat(rect.height);
+    						   	let rx = parseFloat(rect.rx) || 0;
+    						   	let ry = parseFloat(rect.ry) || 0;
+    							
+     						   	// Ensure rx and ry do not exceed half of width/height
+     						   	rx = Math.min(rx, width / 2);
+    						   	ry = Math.min(ry, height / 2);
+    							let rect2path;
+
+    						    if (rx === 0 && ry === 0) {
+    						        // Standard rectangle without rounded corners
+    						        rect2path = `M ${x},${y} 
+               							L ${x + width},${y} 
+             							L ${x + width},${y + height} 
+             							L ${x},${y + height} 
+             							L ${x},${y}`;
+    							    } else {
+      						      // Rectangle with rounded corners using arc commands
+   							        rect2path = `M ${x + rx},${y} 
+   							             H ${x + width - rx} 
+   							             A ${rx},${ry} 0 0 1 ${x + width},${y + ry} 
+   							             V ${y + height - ry} 
+    							         A ${rx},${ry} 0 0 1 ${x + width - rx},${y + height} 
+    						             H ${x + rx} 
+    							         A ${rx},${ry} 0 0 1 ${x},${y + height - ry} 
+    							         V ${y + ry} 
+    					            	 A ${rx},${ry} 0 0 1 ${x + rx},${y}`;
+								}
+							path = rect2path.split(/[\s,]+/);
+							}
 							else if (type == "ellipse") {
 								//cx="100" cy="50" rx="80" ry="40"
 								//"M (cx + rx), cy A cx,rx 0 1,0 (cx - rx), cy A cx,rx 0 1,0 (cx + rx), cy"
@@ -3313,7 +3318,7 @@ function ovalarc(startangle, endangle, cx, cy, r1, r2) {
         var big = 0;
 		if (endangle - startangle < 0) endangle =+ Math.PI*2;
 		if (endangle - startangle > Math.PI) big = 1;
-        var d = "M" + cx + "," + cy + "M" + x1 + "," + y1 + "A" + r1 + "," + r2 + ",0 ," + big + ",1 " + x2.toFixed(3) + "," + y2.toFixed(3);
+        var d = "M " + cx + "," + cy + " M " + x1 + "," + y1 + " A " + r1 + "," + r2 + " 0 " + big + " 1 " + x2.toFixed(3) + "," + y2.toFixed(3);
 //            + " Z\"";                       // Close path back to (cx,cy)
  		return d;
 }
