@@ -2,42 +2,18 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 279.0, 66.0, 562.0, 438.0 ],
-		"bglocked" : 0,
+		"rect" : [ 448.0, 168.0, 562.0, 438.0 ],
 		"openinpresentation" : 1,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
 		"toolbarvisible" : 0,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"title" : "Shortcuts",
 		"boxes" : [ 			{
 				"box" : 				{
@@ -197,7 +173,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 256.0, 71.0, 637.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 1.0, 562.0, 21.0 ],
+					"presentation_rect" : [ 150.0, 1.0, 262.0, 21.0 ],
 					"tabcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"tabs" : [ "MaxScore", "Picster" ]
 				}
@@ -395,7 +371,7 @@
 					"cols" : 2,
 					"fontface" : 0,
 					"fontname" : "Arial",
-					"fontsize" : 10.0,
+					"fontsize" : 12.0,
 					"gridlinecolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 0.27 ],
 					"hcellcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
 					"hscroll" : 0,
@@ -408,7 +384,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 23.0, 562.0, 415.0 ],
 					"rowhead" : 1,
-					"rows" : 24,
+					"rows" : 33,
 					"selmode" : 0,
 					"stcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ]
 				}
@@ -417,14 +393,14 @@
 , 			{
 				"box" : 				{
 					"coll_data" : 					{
-						"count" : 24,
+						"count" : 33,
 						"data" : [ 							{
 								"key" : "period",
 								"value" : [ "toggle selection mode" ]
 							}
 , 							{
-								"key" : 0,
-								"value" : [ "Bezier tool" ]
+								"key" : "/",
+								"value" : [ "create pitch-bend expression for selected notes" ]
 							}
 , 							{
 								"key" : 1,
@@ -463,16 +439,48 @@
 								"value" : [ "image tool (.png or .svg)" ]
 							}
 , 							{
+								"key" : 0,
+								"value" : [ "Bezier tool" ]
+							}
+, 							{
+								"key" : "a",
+								"value" : [ "bracket tool" ]
+							}
+, 							{
+								"key" : "b",
+								"value" : [ "send to back (only works for Picster elements attached to same score element)" ]
+							}
+, 							{
 								"key" : "c",
 								"value" : [ "copy selected Picster element" ]
+							}
+, 							{
+								"key" : "d",
+								"value" : [ "create DJster expression based on note/interval settings" ]
 							}
 , 							{
 								"key" : "e",
 								"value" : [ "edit selected Picster element" ]
 							}
 , 							{
+								"key" : "f",
+								"value" : [ "send to front (only works for Picster elements attached to same score element)" ]
+							}
+, 							{
 								"key" : "g",
 								"value" : [ "group Picster elements attached to the same score element" ]
+							}
+, 							{
+								"key" : "h",
+								"value" : [ "create hairpin" ]
+							}
+, 							{
+								"key" : "i",
+								"value" : [ "get info on selected Picster element" ]
+							}
+, 							{
+								"key" : "j",
+								"value" : [ "show all hidden Picster elements attached to selected score element" ]
 							}
 , 							{
 								"key" : "l",
@@ -480,15 +488,19 @@
 							}
 , 							{
 								"key" : "m",
-								"value" : [ "set preference to measure" ]
+								"value" : [ "set preference for elements to be attached to measure" ]
+							}
+, 							{
+								"key" : "p",
+								"value" : [ "dump expressions for use with the maxscore.makenote object" ]
 							}
 , 							{
 								"key" : "r",
-								"value" : [ "convert selected Picster element to trajectory (supported shapes are line, rectangle, ellipse and polygon)" ]
+								"value" : [ "render selected Picster element as breakpoint function" ]
 							}
 , 							{
 								"key" : "s",
-								"value" : [ "set preference to staff" ]
+								"value" : [ "set preference for elements to be attached to staff" ]
 							}
 , 							{
 								"key" : "u",
@@ -686,9 +698,9 @@
 
 			}
  ],
+		"originid" : "pat-6902",
 		"dependency_cache" : [  ],
 		"autosave" : 0,
-		"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 		"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
 	}
 

@@ -59,7 +59,7 @@ var currentBounds = [];
 var lcd;
 var blocked = 0;
 var stroke = 0;
-var shapes = ["0: polycurve", "1: line", "2: rect", "3: orect", "4: oval", "5: arc", "6: poly", "7: fhand", "8: text", "9: img", "b: bracket", "h: hairpin"];
+var shapes = ["0: polycurve", "1: line", "2: rect", "3: orect", "4: oval", "5: arc", "6: poly", "7: fhand", "8: text", "9: img", "a: bracket", "h: hairpin"];
 var preference = "staff";
 var embedimage = 1;
 var property = "stroke";
@@ -858,8 +858,9 @@ function mouseReleased(x, y)
 				clickcount++;
 				}
 				else {
+				let z = polyclicks[0];
 				polyclicks[clickcount] = [x, y];
-				polyclicks.push(polyclicks[0]);
+				polyclicks.push(z);
 				for (var i = 0; i < polyclicks.length; i++) temp[i] = [polyclicks[i][0] - origin[0], polyclicks[i][1] - origin[1]];
 				addShape(origin[0], origin[1], "polygon", temp);
 				polyclicks = [];
@@ -1468,7 +1469,6 @@ function addShape()
 				polyclicks = [];
 				if (msg.length == 4) polyclicks = msg[3];
 				else for (var i = 3; i < msg.length; i += 2) polyclicks[(i - 3)/2] = [msg[i], msg[i + 1]];
-				polyclicks.push([msg[3], msg[4]]);
 				var attr = {};
 				attr.new = "polyline";
 				attr.id = currentID;
@@ -1533,7 +1533,6 @@ function addShape()
 				var fitted = fitCurve([[0,0]].concat(polyclicks));
 				var d = "M 0 0";
 				for (var i = 1; i < fitted.length; i++) d += " C " + fitted[i].map(ele => ele.toFixed(1));;
-				//post("polyclicks", fitted[1], "\n");
 				var attr = {};
 				attr.new = "path";
 				attr.id = currentID;
@@ -2317,7 +2316,7 @@ function anything()
 				outlet(0, "getSelectedElement", "dictionary", edit.name);
 			}
 			break;
-			case 74:
+			case 74: //j
 				showAllHiddenElements();
 			break;
 			case 76 : //l (save element to library)

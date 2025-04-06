@@ -1,2 +1,3 @@
 max objectfile canvas maxscore.canvas;
 max objectfile bcanvas maxscore.bcanvas;
+max objectfile maxscore.info.grab maxscore.query;

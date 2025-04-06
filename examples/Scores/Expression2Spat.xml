@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<jmslscoredoc>
+<!-- Saved document from JMSL's programmable music notation editor. Java Music Specification Language by Nick Didkovsky & Phil Burk, available from: http://www.algomusic.com -->
+<score NAME="JMSLMaxScore-1" SUBTITLE="" COMPOSER="" COPYRIGHT="" WIDTH="860" HEIGHT="220" STAFFS="2" NUMTRACKSPERSTAFF="2" InstrumentNamesVisible="false" TempoVisible="false" StaffNumbersVisible="true" MeasureNumbersVisible="false" SectionBracketsVisible="false" TimeSignaturesVisible="false" KeySignaturesVisible="false" ClefsVisible="true" ScoreTitleVisible="false" CourtesyClefsVisible="false" MeasureNumberOffset="1" LeftMargin="20.0" RightMargin="20.0" TopMargin="15.0" BottomMargin="15.0" TopMarginOfFirstPage="60.0" DrawAllMeasureNumbers="false" TextFontScaler="1.5" ScoreSubtitleFontScaler="2.0" ScoreTitleFontScaler="4.0" TimesigFontScaler="2.5" MeasureNumberFontScaler="1.5" TextFontName="SansSerif" ScoreSubtitleFontName="Serif" ScoreTitleFontName="Serif" TimesigFontName="Serif" MeasureNumberFontName="SansSerif" FirstSystemIndent="0.0" useLegacyMultiTrackOrientation="true" >
+<ScoreAnnotation CLASSNAME="com.softsynth.jmsl.score.ScoreAnnotation" Annotation="385.3oc4Q9yaBCCDEeN4SgkmCnDo9GQ2JhNfTghnsBoV0AmvkfK19hrcfhP7cu1NP.15dWRj+cu678ddebDcCnMbTQIOPnY8SoINVsFqQs0gYBegLOLWvTqmwp.OI0SrbI7thaCRRaQvO1RTEPzG0bW+drrwvK53C0rMMZFscFVAzU4M2DMjovVxbTxTAE4UEn.095eRR6OXvcIW76lDhaqIe4UVdsxzjK9zIRvUvePlArKzr5N26N+Ahxf26e6QxHmKZSoWqYEbU0PloMd5e+QIOiXsqvLAaWNqXcW1YVgaWrBEvTzByAi0LV8jr1taBvLMZvbkx4q1YWIGqlcwCiqwvkeVnkUV1K0eNZebjypvxJP6Mr4jO7p1IB6HcDTxZDVZ.K4EZWjGLLUNomBUPaE1xuaL1S2RDsv8dETs7x9CAQOAhqapOqMrRUZrk4R6DRurP.6ladtdrxX0SYx1EhzNJtG1HAk0WYFZ3da9RYoKNCiNN5P7YCm8+vvwGh+EVCSAIB" >
+</ScoreAnnotation>
+<orchestra CLASSNAME="com.softsynth.jmsl.score.Orchestra" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="0" EditEnabled="true" Name="MaxScoreIns-0" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" >
+<dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
+<dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
+<dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="10000.0" name="index" />
+</jmslscoreinstrument>
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="1" EditEnabled="true" Name="MaxScoreIns-1" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" >
+<dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
+<dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
+<dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="10000.0" name="index" />
+</jmslscoreinstrument>
+</orchestra>
+<mixerpanelsettings >
+<panamppair FADERINDEX="0" PAN="0.5" AMP="0.5" />
+<panamppair FADERINDEX="1" PAN="0.5" AMP="0.5" />
+</mixerpanelsettings>
+<staffspacing INDEX="0" ABOVE="72.0" BELOW="72.0" />
+<staffspacing INDEX="1" ABOVE="72.0" BELOW="72.0" />
+<scoresection NAME="A" START="0" END="0" />
+<scoresection NAME="B" START="0" END="0" />
+<scoresection NAME="C" START="0" END="0" />
+<scoresection NAME="D" START="0" END="0" />
+<scoresection NAME="E" START="0" END="0" />
+<scoresection NAME="F" START="0" END="0" />
+<scoresection NAME="G" START="0" END="0" />
+<scoresection NAME="H" START="0" END="0" />
+<scoresection NAME="I" START="0" END="0" />
+<scoresection NAME="J" START="0" END="0" />
+<scoresection NAME="K" START="0" END="0" />
+<scoresection NAME="L" START="0" END="0" />
+<scoresection NAME="M" START="0" END="0" />
+<scoresection NAME="N" START="0" END="0" />
+<scoresection NAME="O" START="0" END="0" />
+<scoresection NAME="P" START="0" END="0" />
+<scoresection NAME="Q" START="0" END="0" />
+<scoresection NAME="R" START="0" END="0" />
+<scoresection NAME="S" START="0" END="0" />
+<scoresection NAME="T" START="0" END="0" />
+<scoresection NAME="U" START="0" END="0" />
+<scoresection NAME="V" START="0" END="0" />
+<scoresection NAME="W" START="0" END="0" />
+<scoresection NAME="X" START="0" END="0" />
+<scoresection NAME="Y" START="0" END="0" />
+<scoresection NAME="Z" START="0" END="0" />
+<measure WIDTH="840" WIDTHSETBYHAND="true" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="NONE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="0.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+<note NOTEDUR="2" TUPLET="0" DOTS="0" ACCINFO="0" DURATION="1.0" PITCH="72.0" VELOCITY="0.5" HOLD="0.8" BEAMEDOUT="false" GLISSOUT="false" TIEDOUT="false" ACCPREF="0" ACCVISPOLICY="1" ALTENHARMONIC="false" DYN="0" SLUROUT="false" ISGRACENOTE="false" GRACENOTESEPARATIONSCALER="2.0" LEDGERLINESVISIBLE="true" WEDGE="none" OTTAVA="none" MARK="0" TEXTOFFSETX="0" TEXTOFFSETY="0" NOTEHEAD="0" NOTEHEADSCALE="1.0" VISIBLE="true" NOTEHEADVISIBLE="true" STEMVISIBLE="false" OVERRIDELEVEL="-1" ISOVERRIDELEVEL="false" STEMINFOOVERRIDE="false" STEMINFO="2" LAYOUTSHIFTX="0.0" TEXT="" >
+<dim index="4" value="0.0" name="EventFlag" />
+<dim index="5" value="-1.0" name="originalPitch" />
+<dim index="6" value="0.0" name="index" />
+<userBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_note-sel" Message="222.3occP1zZBDCDF97jeEggdnBYkcqHU7nGzK0KdUjRpapFb2rKIwuP7+tYmjEjVjPRXdl2YdGlaL.a0acdkMSUopUFOxmxWyA3FC..Ont1AP2ocnfHmjUcDHo.Pi5LIoU52G0.ntLV0QmWpMem2yi3kSDi3e8Y9vwhQKouhXz3dcN+0JUxljOcPayAhhuMe0hYIw8IxZZka0dZdK9Spy5xvvER7AwuyR93sRi62FaM00Zo2pu7dgHObn2AHijynZ92VQcIz.2qVL+zbzT5h6yrBwSW9lmZaH3N6APDGPka" Xoffset="4.0" Yoffset="0.0" >
+</userBean>
+</note>
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-0" Message="455.3ociRsraaCCD7rzWAAOkBPKvkuY+UBxAYKZW1HSIHQmDif7uWJJIi51n1.K.CLytyNyt78xBbu+vXzMry05N6BQL56nGQEEuWVTTfe1ccB.O9xILIi7Rc6DRwREE3f60bI8csWa8A2bcEXeSFNNT+S2gX2v0Uh9NeHNlIYDtDYTD.PRAQwPY.xZkiwqstkosLtIvgtmyn3gS6efRR+91RGqr655qO3iYuC+A0q9l3OlHXqDG8s4LgCc2r+L5c5jw+nbwaobEFO1MbN24453f+sGfIyPfYKUlKuL2yesPcukDXbqc59tKglw4SwNffrDjwPPJN5o+ip8CtwQeW3dke7tM3xkgdKptFe5.kA22e7F74jT0mbe9YLq8E2r53l5XMlfnDDj7JS.rJv.VEHYBpvxj5LogRmKxTonBkD.ESaoJqclVyqT.GLJMvUJFi+asHzxJkkYAoRxYZkUjVLRJqhyjRCvsRtvXX4hYTEjThZsFkJgpA1lCcSyl9vSOnqGRIaMgvWLgB4jAXVJmwjFZZpaGQP.UVtTX3FM0pzZg3eD40I7oYbqw9UBI5o0Ka8kzg1EZb42DgKssKu8yO+x+8Q4u.7AslyG" Xoffset="214.0" Yoffset="30.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-0" Message="344.3ocgQEsaCBCC74vWAJO0IQkHrMM59Up5CoEWZVCInjPaQU8eeAm.itspJhDxmsOe970DBsUry5.yRPBMfxQS+LccJgbMgPHziP+..0dpllgHm3xADRrBBUAmwRLvNWnFBUTgPNC+KOp1zu70wTWFxjGC5mGbVT4NL.7wpHxAPTe.UTYQDxf8yF6w55kPTOQAM.ZzGgfnp2tHOy+8Rb9iYWpa46DNT.rekZRHEiI1Kj3VSUZEPmidGOH9sjn17auxtWaZvNa3Ni3xB1fXxXAIkfkmf87GKGt3Iv9HWeqtSUYCGq7rgm2071T5lmPZqArVgVcOwquy.imu7oMEpD9qHBtsc+DbimJdM7naMxdGD3mVwcbJpTlWoEkEAYWlG9GduuZFD6M1rnh7epbpa+iJEJfa7TONB1yGwiGvTz+LhzMiKFuyuofpBPSQ0IkwaO5+3uaIeO6Z15A" Xoffset="808.0" Yoffset="72.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-0" Message="1371.3ociW00aajCC7YmeEF9od.tBhTjTh2ekh9fax1d9piSfsS+.E8+9MZ208hWq0swAIHRbonFNblr+3tEqdd68GO0c3sc65dra+oUK+6kua4hE+3tEKVr5yceutvpie4SqV2uxW1rqtxhwHVrZe2W6Coa2tsOeraHrEq19P+pmNr4e6t+zSG99akyac+2pakoy+Y+QPx3ed3xcOb4tGO88cciEvXETW7vSete0UG9zGdSbM97Wim14ce6SOu49smFx1js951GN8O0M3ya7ws65ulq1+z9tUud0KxS+5+7twZC208G+3SGdr+IebyoCa+1anZwrlFJo65C+t9m4JLt6aHAGmCl+vSur+giCcm3552jvqWxkku+2j0mOzc731m1eYle2EH3X2J9qqZ2CaQSqewO77G+0xOhTs4Scy0Z6y9KcC4e0CaNsY0Pox40KEQsfkbJlYMFUUST+tkX7heSjFjr4ERUIydQr0KytDxVzJLahlT139fYNGbEgXYJIEq.pxxb1Cpmzj4RTM2kRevoTInhG0H1.0QNUCV0PhkbVKJkEKUFJKQJgnlkjVhbJKTBwxbHWhFEKLkikB48wpZNDydoTjnwZlLrNpUDLtrICOcLFkTevlYABoDqgOI2QwYIrVN5jwIVsDWr9XQUErJhYDUysVwBsjBYMWnXhiH0.JG.vhEXjQbVtG4LU.FAjJTqdbAM.VEU5iEmZ.EX1UTt4hjbDqXR.PIIwTIVHqLhaDQRfTGonPrRB.RD849EyNZrF.P7CVpPdEqU7Hoh5F4TIw1PQhtDGvkgkZSDnhynh3bJ.fqnLf5Liid7jEEfH.ZNillwjGQ2A6GXgohaYGOU5bzpwAzXXB3kftQM0jkBE1ikTF8gjUzAnk.iIvI2LEYJmAI0qW0Lx.W4Ar5n7xCrABs8.HcX+JETkDUpsGDrmJdcUGm5XpKEOjyfmwdBWPT+RkPE.FwL5EkJoXrqw3PBoJkxbP8ETuU.IFP6FUQTcIEEdLXhXzhPOCcdj8BNBziq2iDA9L3GRgJiiFbIjHGCZ.ZiLp60iZGf7AJjaXPhxN3RdxmllrOvs45bKHNQNh1tRZrU8EGfIvcs.lBMP1QaOApY9patVF3frkqbSLo6BP7H5m5UXJMNNVotALrHBpChKRNlmztJt6isKFoLzyPvNJZ0dNcMUHOFcJFSAzo.C.KW+PbCVVbX9MUmFTzTsDX6PHCG10LXnbLDcUgJVG2q7QL9.L75oCR4QEJLc.nOAHMkUb50CEW6f+puJipCIQqpeFpH249A9FSwncNDslQSCEG.IEBPUDdV8ALmPADCTCgfhInI6Wq7HxXYm8XnpygQTTrUUrz7hZn2B8Y0AzBgGvyhhLQtDBXNOv+fLCTsq2CbbP.hwscdkXADlPDCtJlu.0rfR+FZ70QDCoAsQLPZtw101G4gKI3ET.2En.ZtBAsbEsmyXZpcmIB8+dbq1sce2lCvd7rMI8mZSJ2xl7JU2XYdaxYorsrImSyskM4UyY9MrImaDtkM4LZCMcImJ2NRPZZRNQMKM1CaZRNUkjtgE4sLHmIOssGmTei2k1tiSu3iWllliy.n+AdiupS01abNw11liyQulwcbFlaa6w4GJZXPNmVaaKy4zZaaZNUqUX6Ftly8u4011bpXKMpZ012bNw119lyI1112bNw119lSEaEOcCey4Taa6adVxrsO4zbEuoO4LlBs8ImEBZ5SNK7968Ie0qUz1mbNO319jSobl42vmbl+0g19jSmTf8xM7IwkAM+++KhjK7MW99yuw4lWvqf1s+gt92Vc+K61M9V48uXb+u94c+GfXj9Uq" Xoffset="1298.0" Yoffset="104.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-0" Message="337.3ocqR0ziBBCD8b4WAombSvMsHh089deuaLapxnaiPgzVTLF+uuzghItej0Ca.Zy7lGuY5a5kHBsQs05.yTnDp.siF+R7pXB4RDgPnGfyd.p83dZBhbTV5QHAFDpFNgTJUZXfCgpJPn2BR+5fzuyWjMKOadtXYVpXjaG2ykEhNeWTWpOJK8VVLdQdHz5NWBgtIzNdPS8ADkZ1uYBKo+4oPwFyNstQtU4vyF+KoNoJbe3Sjh3WiBEyYjZ6tZSEJckzYTcS3d0S3C0HBoGg+y2bPnqW.6uYhapa0E1AueZZB9kk1urPDu9Ozsw.VqpVeu1qtyTBCD1Me.JTtZCBtoY2M3pdoj6gGd5gkqEFJHsP5jzj9oWLm46+bwyoLAad1RNimOSvwbBFC2Gd+QViTvKURSuliZy+20Nd83QQ11aIft.PeQ2VVFtAfi.b6ZzmOZkq1A" Xoffset="592.0" Yoffset="152.0" >
+</staffUserBean>
+</staff>
+<staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-1" Message="503.3ockSssaiBCD8Y3qvxO0UxfFe2S+Up5CjfSV1R.DPZaTU+2qw.IJc2z1UZjPbNyb7Lmw9szDZW01gQeelu1ev2LRI2Sdfjj7VZRRB8I+oI.5vy6orHxyE0SHIKYjPa7uDSoqs9TcUieNuDZUYDdru3O9sis8mxDqTcsUMiCQZfADECkDokITjLIxrRhUvbNxDGaslgwS09kSd4nm.6aeJhR62u4tPAL3WKUrxl01UrsZLNG7OQ8RU43umHDqD6ppiyGso87nLidkNQ72SW5svL1Lrqs+PrxCEi8UudGepYX74VJMldZrl+xb8uFDX3V96l1iMkCyqkLkfE7HFwpXDzPd7azsq2OLT01bs1ObkGtrmfyCqurJrthfa51cF9PPph89asTipezOqOsrXrfxBaPhPyHJm1lCNoj6zZKH.DjQRG.yI43Ad9k.0QbTB4NM53VsyAbGJrLhDvbDvKAeVLtA04VtvpTFgAkFiKPnU1bqxdIb7k9BCx3.En3bq..s0EIBgL7eNXPiyHrBW3CptzreZZ3HhxaOB+eYSmdAUzGrtUKj+CsP31F1ZJ+aCR.lbkla3hfjBg1NMq2zfBFRNpMXPYkUFHzxuvxrZS94TcBKZrego.eK2p8Pdb8RWwwvsPeSoOdgs4Xc8xSy3ai3m2S+.75uHjB" Xoffset="402.0" Yoffset="-48.0" >
+</staffUserBean>
+</staff>
+</measure>
+<measure WIDTH="800" WIDTHSETBYHAND="true" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="NONE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="0.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+<staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<scoreUserBean CLASSNAME="com.algomusic.max.MaxScoreRenderedMessageListener" >
+</scoreUserBean>
+</score>
+</jmslscoredoc>

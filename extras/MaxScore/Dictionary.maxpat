@@ -4,18 +4,51 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 144.0, 1088.0, 716.0 ],
+		"rect" : [ 296.0, 72.0, 1088.0, 716.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"title" : "MaxScore Dictionary",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-12",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 391.0, 700.0, 143.0, 22.0 ],
+					"text" : "refer Editor-Messages.txt"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 112.0, 54.0, 136.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"precision" : 6
+					}
+,
+					"text" : "coll Editor-Messages.txt"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -35,11 +68,11 @@
 					"fontsize" : 12.0,
 					"id" : "obj-48",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 61.5, 671.0, 44.0, 22.0 ],
-					"text" : "sel 0 1"
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "bang", "bang", "bang", "" ],
+					"patching_rect" : [ 61.5, 667.0, 221.0, 22.0 ],
+					"text" : "sel 0 1 2"
 				}
 
 			}
@@ -103,7 +136,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 432.5, 0.0, 223.0, 21.0 ],
 					"tabcolor" : [ 0.572549019607843, 0.572549019607843, 0.572549019607843, 1.0 ],
-					"tabs" : [ "Core", "Extended" ]
+					"tabs" : [ "MaxScore", "Picster", "Editor" ]
 				}
 
 			}
@@ -573,6 +606,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-23",
+					"linecount" : 2,
 					"maxclass" : "textedit",
 					"numinlets" : 1,
 					"numoutlets" : 4,
@@ -580,9 +614,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 347.0, 644.0, 876.0, 54.0 ],
 					"presentation" : 1,
+					"presentation_linecount" : 2,
 					"presentation_rect" : [ 1.0, 664.0, 1086.0, 44.0 ],
 					"rounded" : 0.0,
-					"text" : "copyToAux2 | - | copies selected note(s) to aux buffer 2 | copyToAux2",
+					"text" : "autoajust | flag (int) | toggles between automatic adjustment of canvas size. If set to 0 and with the score size larger than the box size scroll bars will appear to allow the viewing of the entire score. | autoajust 0",
 					"textcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
 				}
 
@@ -760,7 +795,7 @@
 					"presentation_rect" : [ 1.0, 41.0, 1086.0, 621.0 ],
 					"rowhead" : 1,
 					"rowheight" : 20,
-					"rows" : 56,
+					"rows" : 325,
 					"selmode" : 3,
 					"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"stcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -845,6 +880,22 @@
 					"destination" : [ "obj-21", 0 ],
 					"midpoints" : [ 43.5, 106.5, 121.5, 106.5 ],
 					"source" : [ "obj-11", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-35", 0 ],
+					"order" : 1,
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-41", 0 ],
+					"order" : 0,
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}
@@ -1121,6 +1172,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-48", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-48", 0 ]
 				}
@@ -1230,8 +1288,15 @@
 
 			}
  ],
-		"originid" : "pat-24720",
+		"originid" : "pat-3417",
 		"dependency_cache" : [ 			{
+				"name" : "Editor-Messages.txt",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/dictionary",
+				"patcherrelativepath" : "../../patchers/dictionary",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "MaxScore-Messages.txt",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/dictionary",
 				"patcherrelativepath" : "../../patchers/dictionary",
@@ -1263,8 +1328,7 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ],
-		"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+ ]
 	}
 
 }

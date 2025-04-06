@@ -1,0 +1,4 @@
+applyStaffStyle, Editor "staff (int)" "applies the current staff style for notes and intervals added by messages to the Editor" "applyStaffStyle 0";
+loadScorepion, Editor "filename (symbol)" "loads a scorepion into the MaxScore Editor" "loadScorepion \"DJster Autobus-Scorepion.maxpat\"";
+sendScorepion, Editor "parameter (symbol) value (anything)" "sends a value to a named parameter to the currently loaded scorepion" "sendScorepion eventfulness 34";
+updateEditor, Editor - "updates the MaxScore Editor preferences and staff manager" updateEditor;

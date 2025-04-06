@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 106.0, 1438.0, 895.0 ],
+		"rect" : [ 34.0, 106.0, 1190.0, 895.0 ],
 		"gridsize" : [ 18.0, 18.0 ],
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
@@ -31,7 +31,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1190.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -340,7 +340,7 @@
 
 											}
  ],
-										"originid" : "pat-226"
+										"originid" : "pat-3956"
 									}
 ,
 									"patching_rect" : [ 233.0, 138.0, 61.0, 23.0 ],
@@ -513,7 +513,7 @@
 
 											}
  ],
-										"originid" : "pat-228"
+										"originid" : "pat-3958"
 									}
 ,
 									"patching_rect" : [ 373.0, 138.0, 61.0, 23.0 ],
@@ -657,7 +657,7 @@
 
 							}
  ],
-						"originid" : "pat-130",
+						"originid" : "pat-3678",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -751,7 +751,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1190.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -4524,7 +4524,7 @@
 
 											}
  ],
-										"originid" : "pat-232"
+										"originid" : "pat-3962"
 									}
 ,
 									"patching_rect" : [ 686.666625999999951, 65.0, 41.0, 22.0 ],
@@ -5099,7 +5099,7 @@
 
 											}
  ],
-										"originid" : "pat-234"
+										"originid" : "pat-3964"
 									}
 ,
 									"patching_rect" : [ 301.0, 536.0, 69.0, 22.0 ],
@@ -5367,7 +5367,7 @@
 
 											}
  ],
-										"originid" : "pat-238"
+										"originid" : "pat-3968"
 									}
 ,
 									"patching_rect" : [ 1.0, 53.0, 34.0, 22.0 ],
@@ -5911,7 +5911,7 @@
 
 							}
  ],
-						"originid" : "pat-230",
+						"originid" : "pat-3960",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -6005,7 +6005,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 132.0, 1438.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1190.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -6416,7 +6416,7 @@
 
 											}
  ],
-										"originid" : "pat-336"
+										"originid" : "pat-4248"
 									}
 ,
 									"patching_rect" : [ 762.666625999999951, 114.0, 41.0, 22.0 ],
@@ -6857,7 +6857,7 @@
 
 											}
  ],
-										"originid" : "pat-338"
+										"originid" : "pat-4250"
 									}
 ,
 									"patching_rect" : [ 831.6666259765625, 114.0, 58.0, 22.0 ],
@@ -7069,7 +7069,7 @@
 
 											}
  ],
-										"originid" : "pat-340"
+										"originid" : "pat-4252"
 									}
 ,
 									"patching_rect" : [ 98.25, 127.0, 34.0, 22.0 ],
@@ -7106,13 +7106,11 @@
 									"fontface" : 0,
 									"fontsize" : 12.0,
 									"id" : "obj-15",
-									"linecount" : 2,
 									"maxclass" : "o.display",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 148.25, 607.0, 321.0, 48.0 ],
-									"text" : "/stdout : \"received socket close /1 VrkIy6ikNv3v2GNgnRDxFA==\""
+									"patching_rect" : [ 148.25, 607.0, 321.0, 34.0 ]
 								}
 
 							}
@@ -11493,7 +11491,7 @@
 
 							}
  ],
-						"originid" : "pat-334",
+						"originid" : "pat-4246",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -11587,10 +11585,22 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
+						"rect" : [ 34.0, 132.0, 1190.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-70",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 897.0, 194.0, 155.0, 22.0 ],
+									"text" : "picster getSelectedElement"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-35",
 									"maxclass" : "toggle",
@@ -11657,7 +11667,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1019.0, 361.0, 177.0, 22.0 ],
+									"patching_rect" : [ 1019.268824934959412, 388.784952402114868, 177.0, 22.0 ],
 									"text" : "picster showAllHiddenElements"
 								}
 
@@ -11669,7 +11679,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1019.0, 333.0, 114.0, 22.0 ],
+									"patching_rect" : [ 1019.268824934959412, 360.827961921691895, 114.0, 22.0 ],
 									"text" : "picster hideElement"
 								}
 
@@ -11703,7 +11713,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1019.0, 278.0, 88.0, 22.0 ],
+									"patching_rect" : [ 1019.268824934959412, 305.9892498254776, 88.0, 22.0 ],
 									"text" : "bgcolor 1 1 1 1"
 								}
 
@@ -11715,7 +11725,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1019.0, 305.0, 108.0, 22.0 ],
+									"patching_rect" : [ 1019.268824934959412, 332.870971441268921, 108.0, 22.0 ],
 									"text" : "bgcolor 0.3 0.8 1 1"
 								}
 
@@ -11751,8 +11761,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 897.0, 194.0, 317.0, 22.0 ],
-									"text" : "picster findElementByID Picster-Element_1725811219232"
+									"patching_rect" : [ 897.182801485061646, 222.580654978752136, 318.0, 22.0 ],
+									"text" : "picster findElementByID Picster-Element_1743620322322"
 								}
 
 							}
@@ -12137,7 +12147,7 @@
 
 											}
  ],
-										"originid" : "pat-454"
+										"originid" : "pat-4548"
 									}
 ,
 									"patching_rect" : [ 937.0, 158.0, 146.0, 22.0 ],
@@ -12164,7 +12174,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 875.0, 497.0, 89.0, 22.0 ],
+									"patching_rect" : [ 875.182797074317932, 524.268829345703125, 89.0, 22.0 ],
 									"text" : "loadmess set 1"
 								}
 
@@ -12177,7 +12187,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 988.0, 497.0, 211.0, 78.0 ],
+									"patching_rect" : [ 988.086027860641479, 524.268829345703125, 211.0, 78.0 ],
 									"text" : "Embed PNG and SVG files in a MaxScore score. Useful when scores are shared over the network via Drawsocket. \nDefault: 1"
 								}
 
@@ -12190,7 +12200,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 975.0, 434.0, 162.0, 64.0 ],
+									"patching_rect" : [ 975.182801485061646, 461.903235197067261, 162.0, 64.0 ],
 									"text" : "A Picster object will act as a button. Particularly useful if combined with expressions"
 								}
 
@@ -12203,7 +12213,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 841.0, 497.0, 24.0, 24.0 ]
+									"patching_rect" : [ 840.774193406105042, 524.268829345703125, 24.0, 24.0 ]
 								}
 
 							}
@@ -12214,7 +12224,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 841.0, 525.0, 133.0, 22.0 ],
+									"patching_rect" : [ 840.774193406105042, 552.225819826126099, 133.0, 22.0 ],
 									"text" : "picster embedimage $1"
 								}
 
@@ -12227,7 +12237,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 844.0, 629.0, 237.0, 87.0 ],
+									"patching_rect" : [ 844.0, 656.526899695396423, 237.0, 87.0 ],
 									"text" : "Press caps lock to toggle between music notation and Picster drawing tools. \nA tutorial on how to use Picster is available in Max Reference at Maxscore > Tutorials > MaxScore: Graphics"
 								}
 
@@ -12240,7 +12250,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 844.0, 575.0, 234.0, 47.0 ],
+									"patching_rect" : [ 844.0, 602.763456463813782, 234.0, 47.0 ],
 									"text" : "Press caps lock to toggle between music notation and Picster drawing tools."
 								}
 
@@ -12403,7 +12413,7 @@
 
 											}
  ],
-										"originid" : "pat-456"
+										"originid" : "pat-4550"
 									}
 ,
 									"patching_rect" : [ 333.5, 532.5, 37.0, 22.0 ],
@@ -12415,10 +12425,11 @@
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-34",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 498.0, 737.0, 412.0, 24.0 ],
+									"patching_rect" : [ 497.849484324455261, 737.0, 319.150515675544739, 37.0 ],
 									"text" : "Dump expressions for playback into the maxscore.makenote abstraction"
 								}
 
@@ -12492,7 +12503,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 844.0, 305.0, 151.0, 22.0 ],
+									"patching_rect" : [ 844.0, 332.870971441268921, 151.0, 22.0 ],
 									"text" : "picster draw clearGraphics"
 								}
 
@@ -12504,7 +12515,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 844.0, 275.0, 121.0, 22.0 ],
+									"patching_rect" : [ 844.0, 302.763443231582642, 121.0, 22.0 ],
 									"text" : "prepend picster draw"
 								}
 
@@ -12516,7 +12527,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 844.0, 247.0, 289.0, 22.0 ],
+									"patching_rect" : [ 844.0, 274.806452751159668, 289.0, 22.0 ],
 									"text" : "set_source_rgba 1 0 0 0.5, rectangle 40 40 50 50, fill"
 								}
 
@@ -12527,7 +12538,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 844.0, 221.0, 349.0, 20.0 ],
+									"patching_rect" : [ 844.0, 249.0, 349.0, 20.0 ],
 									"text" : "Draw directly to canvas without attaching to MaxScore elements"
 								}
 
@@ -12540,7 +12551,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 938.0, 388.5, 113.0, 37.0 ],
+									"patching_rect" : [ 937.548391222953796, 415.666674017906189, 113.0, 37.0 ],
 									"text" : "Save page as SVG"
 								}
 
@@ -12553,7 +12564,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 844.0, 337.0, 24.0, 24.0 ]
+									"patching_rect" : [ 844.0, 364.053768515586853, 24.0, 24.0 ]
 								}
 
 							}
@@ -12564,7 +12575,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "bang" ],
-									"patching_rect" : [ 844.0, 367.0, 66.0, 22.0 ],
+									"patching_rect" : [ 844.0, 394.161296725273132, 66.0, 22.0 ],
 									"text" : "savedialog"
 								}
 
@@ -12576,7 +12587,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 844.0, 396.0, 76.0, 22.0 ],
+									"patching_rect" : [ 844.0, 423.193556070327759, 76.0, 22.0 ],
 									"text" : "writeSVG $1"
 								}
 
@@ -12589,7 +12600,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 844.0, 427.0, 24.0, 24.0 ]
+									"patching_rect" : [ 844.0, 454.376353144645691, 24.0, 24.0 ]
 								}
 
 							}
@@ -12600,7 +12611,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 844.0, 455.0, 127.0, 22.0 ],
+									"patching_rect" : [ 844.0, 482.333343625068665, 127.0, 22.0 ],
 									"text" : "picster buttonmode $1"
 								}
 
@@ -12709,7 +12720,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 386.0, 738.0, 104.0, 22.0 ],
+									"patching_rect" : [ 386.0, 744.5, 104.0, 22.0 ],
 									"text" : "dumpExpressions"
 								}
 
@@ -13540,6 +13551,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-70", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-71", 0 ]
 								}
@@ -13595,7 +13613,7 @@
 
 							}
  ],
-						"originid" : "pat-452",
+						"originid" : "pat-4546",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -13689,7 +13707,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1190.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -14356,7 +14374,7 @@
 
 							}
  ],
-						"originid" : "pat-552",
+						"originid" : "pat-4828",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -14450,7 +14468,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1190.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -15347,7 +15365,7 @@
 
 							}
  ],
-						"originid" : "pat-648",
+						"originid" : "pat-5106",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -15460,7 +15478,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1190.0, 869.0 ],
 						"gridsize" : [ 5.0, 5.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -15747,7 +15765,7 @@
 
 							}
  ],
-						"originid" : "pat-744",
+						"originid" : "pat-5384",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -15857,12 +15875,12 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1438.0, 869.0 ],
+						"rect" : [ 0.0, 26.0, 1190.0, 869.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [  ],
 						"lines" : [  ],
-						"originid" : "pat-934"
+						"originid" : "pat-5938"
 					}
 ,
 					"patching_rect" : [ 390.0, 354.0, 50.0, 22.0 ],
@@ -15873,7 +15891,7 @@
 			}
  ],
 		"lines" : [  ],
-		"originid" : "pat-128",
+		"originid" : "pat-3676",
 		"parameters" : 		{
 			"obj-1::obj-8" : [ "live.menu[54]", "bracket", 0 ],
 			"parameterbanks" : 			{
@@ -15884,6 +15902,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "ExpandExponential.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "MaxScore.maxpat",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
@@ -15898,6 +15923,13 @@
 				"name" : "MaxScoreKeyMap.txt",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/maps",
 				"patcherrelativepath" : "../patchers/maps",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "MaxScoreNoteheads.txt",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/maps/Font Mappings",
+				"patcherrelativepath" : "../patchers/maps/Font Mappings",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -16032,7 +16064,21 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.empty.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.info.recv.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.json.iter.maxpat",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
@@ -16046,10 +16092,31 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.parse2.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.parseJSON.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.proportionalNotation.js",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.query.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -16179,6 +16246,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "quote2backslashquote.js",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "render2canvas.js",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -16193,6 +16267,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "selectInterval.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "socket.pane.js",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -16203,6 +16284,13 @@
 				"name" : "startscript.js",
 				"bootpath" : "/Users/Shared/Max 9/Packages/drawsocket-max/javascript",
 				"patcherrelativepath" : "../../drawsocket-max/javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "svgPathToExpression.js",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

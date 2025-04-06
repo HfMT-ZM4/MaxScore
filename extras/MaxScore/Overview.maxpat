@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -46,7 +46,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -248,14 +248,10 @@
 
 							}
  ],
-						"originid" : "pat-870"
+						"originid" : "pat-17"
 					}
 ,
 					"patching_rect" : [ 550.5, 224.0, 49.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p exists"
 				}
 
@@ -400,7 +396,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -533,7 +529,7 @@
 
 							}
  ],
-						"originid" : "pat-872",
+						"originid" : "pat-19",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -563,10 +559,6 @@
 					}
 ,
 					"patching_rect" : [ 215.5, 398.155152000000044, 81.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p"
 				}
 
@@ -740,7 +732,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.345098039215686, 0.345098039215686, 0.345098039215686, 1.0 ],
-					"tabs" : [ "maxscore.parse2", "maxscore.split2", "maxscore.rapidxml" ],
+					"tabs" : [ "maxscore.query", "maxscore.parse2", "maxscore.split2", "maxscore.rapidxml" ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -761,7 +753,7 @@
 					"spacing_x" : 10.0,
 					"spacing_y" : 10.0,
 					"tabcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
-					"tabs" : [ "Parsing" ],
+					"tabs" : [ "Query & Parsing" ],
 					"textcolor" : [ 1.0, 0.996078431372549, 0.996078431372549, 1.0 ]
 				}
 
@@ -1174,7 +1166,7 @@
 
 			}
  ],
-		"originid" : "pat-868",
+		"originid" : "pat-15",
 		"dependency_cache" : [ 			{
 				"name" : "Hfmt_ligeti_banner.png",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/media/Images/png",
@@ -1258,8 +1250,7 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ],
-		"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+ ]
 	}
 
 }
