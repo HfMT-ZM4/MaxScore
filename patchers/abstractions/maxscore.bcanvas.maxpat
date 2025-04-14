@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 423.0, 115.0, 841.0, 769.0 ],
+		"rect" : [ 504.0, 72.0, 841.0, 769.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -37,7 +37,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -157,6 +157,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -402,7 +404,7 @@
 
 							}
  ],
-						"originid" : "pat-82",
+						"originid" : "pat-21911",
 						"styles" : [ 							{
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
@@ -464,10 +466,6 @@
 					}
 ,
 					"patching_rect" : [ 383.333332999999925, 501.0, 78.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p searchpath"
 				}
 
@@ -539,7 +537,7 @@
 					"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 0.0, 0.0, 320.0, 240.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 220.0 ],
 					"readonly" : 1,
 					"rounded" : 0.0,
 					"text" : "/Users/hajdu/Documents/tunnel_pieces/Georg/Tunnel Project/Cycling144-large-2.XML",
@@ -609,6 +607,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -762,7 +762,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1012,7 +1012,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1583,14 +1583,10 @@
 
 											}
  ],
-										"originid" : "pat-86"
+										"originid" : "pat-21915"
 									}
 ,
 									"patching_rect" : [ 245.0, 303.0, 177.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p imagetype"
 								}
 
@@ -1661,6 +1657,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 0
 									}
 ,
@@ -2080,14 +2078,10 @@
 
 							}
  ],
-						"originid" : "pat-84"
+						"originid" : "pat-21913"
 					}
 ,
 					"patching_rect" : [ 226.666665999999964, 470.0, 98.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p picster-support"
 				}
 
@@ -2165,7 +2159,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 8,
 					"outlettype" : [ "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 44.166665999999964, 124.0, 263.5, 22.0 ],
+					"patching_rect" : [ 44.0, 129.0, 263.5, 22.0 ],
 					"text" : "maxscore.bcanvas.hub",
 					"varname" : "hub"
 				}
@@ -2244,7 +2238,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2257,7 +2251,7 @@
 									"code" : "function anything()\r\n{\r\n\tvar s = messagename;\r\n\tvar extension = s.slice(s.lastIndexOf('.')).toLowerCase();\r\n\tswitch (extension) {\r\n\t\tcase \".xml\" :\r\n\t\tcase \".zip\" :\r\n\t\toutlet(0, \"loadScore\", s);\r\n\t\tbreak;\r\n\t\tcase \".svg\" :\r\n\t\tcase \".png\" :\r\n\t\toutlet(0, \"picster\", \"addShape\", \".\", \".\", \"image\", s);\r\n\t\tbreak;\r\n\t}\r\n}",
 									"filename" : "none",
 									"fontface" : 0,
-									"fontname" : "Menlo",
+									"fontname" : "Menlo Regular",
 									"fontsize" : 12.0,
 									"id" : "obj-9",
 									"maxclass" : "v8.codebox",
@@ -2332,14 +2326,10 @@
 
 							}
  ],
-						"originid" : "pat-102"
+						"originid" : "pat-21931"
 					}
 ,
 					"patching_rect" : [ 30.0, 634.0, 71.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p loadscore"
 				}
 
@@ -2493,7 +2483,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 455.0, 545.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 220.0 ],
 					"textfile" : 					{
 						"filename" : "pane.js",
 						"flags" : 0,
@@ -2678,7 +2668,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
+					"destination" : [ "obj-51", 0 ],
 					"source" : [ "obj-31", 0 ]
 				}
 
@@ -2807,7 +2797,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 1 ],
-					"midpoints" : [ 123.523808857142825, 210.5, 53.666665999999964, 210.5 ],
+					"midpoints" : [ 123.357142857142861, 210.5, 53.666665999999964, 210.5 ],
 					"source" : [ "obj-51", 2 ]
 				}
 
@@ -2822,7 +2812,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 1 ],
-					"midpoints" : [ 263.238094571428519, 226.25, 178.166665999999964, 226.25 ],
+					"midpoints" : [ 263.071428571428555, 226.25, 178.166665999999964, 226.25 ],
 					"source" : [ "obj-51", 6 ]
 				}
 
@@ -2830,7 +2820,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"midpoints" : [ 228.309523142857103, 217.5, 81.166665999999964, 217.5 ],
+					"midpoints" : [ 228.142857142857139, 217.5, 81.166665999999964, 217.5 ],
 					"source" : [ "obj-51", 5 ]
 				}
 
@@ -2838,7 +2828,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 2 ],
-					"midpoints" : [ 193.380951714285686, 162.0, 275.166665999999964, 162.0 ],
+					"midpoints" : [ 193.214285714285722, 162.0, 275.166665999999964, 162.0 ],
 					"source" : [ "obj-51", 4 ]
 				}
 
@@ -2846,7 +2836,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-32", 1 ],
-					"midpoints" : [ 158.452380285714241, 396.0, 262.499999333333278, 396.0 ],
+					"midpoints" : [ 158.285714285714278, 396.0, 262.499999333333278, 396.0 ],
 					"source" : [ "obj-51", 3 ]
 				}
 
@@ -2854,7 +2844,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"midpoints" : [ 88.595237428571394, 169.681196212768555, 196.166665999999964, 169.681196212768555 ],
+					"midpoints" : [ 88.428571428571431, 168.606977462768555, 196.166665999999964, 168.606977462768555 ],
 					"source" : [ "obj-51", 1 ]
 				}
 
@@ -2896,7 +2886,7 @@
 
 			}
  ],
-		"originid" : "pat-80",
+		"originid" : "pat-21909",
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{

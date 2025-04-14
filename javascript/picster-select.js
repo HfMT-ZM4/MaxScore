@@ -2466,15 +2466,16 @@ function anything()
 			preference = "staff";
 			break;
 			case 85 : //u = update: serialize picster-editor dict, format message, reattach to score element and redraw bounding rect, clear dict
+			if (!foundobjects.contains("0")) return;
 			status = "regular";
 			action = "update";
 			var updatedDict = new Dict();
 			updatedDict.name = "picster-editor";
 			var tempDict = new Dict();
+			//post("jpicster1", foundobjects.stringify(), "\n");
 			tempDict.parse(foundobjects.get(item).pop());
 			temp2 = tempDict.get("picster-element[0]::val");
 			if (updatedDict.contains("picster-element[1]::val::bounds")) updatedDict.replace("picster-element[1]::val::bounds", findBoundsToo(JSON.parse(temp2.stringify())));
-			//post("jpicster1", temp2.stringify(), "\n");
 			reattachRenderedMessage(updatedDict.stringify_compressed());
 			/// DOESN'T SEEM TO WORK
 			break;

@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 121.0, 366.0, 1395.0, 591.0 ],
+		"rect" : [ 161.0, 522.0, 1395.0, 591.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -85,7 +85,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -463,14 +463,10 @@
 
 							}
  ],
-						"originid" : "pat-19157"
+						"originid" : "pat-21956"
 					}
 ,
 					"patching_rect" : [ 21.0, 72.0, 82.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p messages",
 					"varname" : "messages"
 				}
@@ -629,14 +625,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 851.0, 77.0, 379.0, 22.0 ],
-					"restore" : [ 0 ],
+					"patching_rect" : [ 851.0, 77.0, 431.0, 22.0 ],
+					"restore" : [ 111 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "pattr @bindto parent::hub::edit::keyCode @invisible 1 @autorestore 0",
+					"text" : "pattr @bindto parent::bcanvas::hub::edit::keyCode @invisible 1 @autorestore 0",
 					"varname" : "u357000871"
 				}
 
@@ -1035,7 +1031,7 @@
 
 			}
  ],
-		"originid" : "pat-19155",
+		"originid" : "pat-21954",
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{

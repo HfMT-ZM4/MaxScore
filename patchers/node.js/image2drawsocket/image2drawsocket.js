@@ -133,10 +133,9 @@ Max.addHandler("svg2drawsocket", (infile, outfile="", prefix="/*", appendtofile=
 			};
 			let stringified = JSON.stringify(svgObj).replace(/\\n|\\t|\\r|/g, "");
 			let segments = stringToChunks(stringified, maxChunk);
-			Max.post(segments.length);
 			let seg = {};
 			for (let i = 0; i < segments.length; i++) {
-				seq.id = id;
+				seg.id = id;
 				seg.reference = infile.replace(/\s/g, '').replace(/[\[()\]]/g, '');
 				seg.index = i + 1;
 				seg.numsegments = segments.length;
@@ -209,7 +208,7 @@ function css2obj(style_)
  */
 function procElements(el_array, timestamp, artboard_index = "", _ret_reflist = [])
 {
-  Max.post(timestamp);
+  //Max.post(timestamp);
   if( !Array.isArray(el_array) )
         el_array = [ el_array ];
 
