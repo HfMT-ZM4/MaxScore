@@ -2,12 +2,17 @@
 44, nextGraceNote;
 60, includeNextGraceNote;
 62, selectAllGraceNotes;
+67, copyAttributes;
+86, pasteAttributes;
 92, pasteAsGraceNotes;
 98, beamTransform;
+99, copy;
 97, selectAll;
 101, switch "setAccPref ACC_PREFER_FLAT" "setAccPref ACC_PREFER_SHARP";
 115, setCurrentMeasureStaffToSelectedMeasureStaff;
 116, "execNotePropertiesTransform com.softsynth.jmsl.score.transforms.TieTransform";
+118, paste;
+120, cut;
 102, switch "overrideStemDirection UP" "overrideStemDirection DOWN";
 121, redo "setRenderAllowed 1";
 122, undo "setRenderAllowed 1";

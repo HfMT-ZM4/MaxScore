@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 448.0, 168.0, 562.0, 438.0 ],
+		"rect" : [ 505.0, 376.0, 562.0, 438.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -194,7 +194,7 @@
 , 			{
 				"box" : 				{
 					"coll_data" : 					{
-						"count" : 35,
+						"count" : 37,
 						"data" : [ 							{
 								"key" : "Mouse actions",
 								"value" : [  ]
@@ -248,6 +248,10 @@
 								"value" : [ "copy" ]
 							}
 , 							{
+								"key" : "C",
+								"value" : [ "copyAttributes" ]
+							}
+, 							{
 								"key" : "d",
 								"value" : [ "double note duration" ]
 							}
@@ -290,6 +294,10 @@
 , 							{
 								"key" : "v",
 								"value" : [ "paste" ]
+							}
+, 							{
+								"key" : "V",
+								"value" : [ "pasteAttributes" ]
 							}
 , 							{
 								"key" : "z",
@@ -382,9 +390,9 @@
 					"outlettype" : [ "list", "", "", "" ],
 					"patching_rect" : [ 256.0, 172.0, 637.0, 433.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 23.0, 562.0, 415.0 ],
+					"presentation_rect" : [ 0.0, 24.0, 562.0, 415.0 ],
 					"rowhead" : 1,
-					"rows" : 33,
+					"rows" : 37,
 					"selmode" : 0,
 					"stcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ]
 				}
@@ -698,7 +706,7 @@
 
 			}
  ],
-		"originid" : "pat-6902",
+		"originid" : "pat-27146",
 		"dependency_cache" : [  ],
 		"autosave" : 0,
 		"editing_bgcolor" : [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]

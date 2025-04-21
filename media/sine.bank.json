@@ -1,0 +1,17 @@
+{
+	"sine.instr" : 	{
+		"1" : 		{
+			"sample" : "sine2.aif",
+			"root_key" : 69.0,
+			"key_zone_floor" : 0,
+			"vel_zone_floor" : 0,
+			"envelope" : [ 5070, 0, 1, 0, 0, 0, 20, 1, 0, 5020, 1, 2, 5070, 0, 0, "linear" ],
+			"loop" : [ 1, 8.231299999999999, 1026.371900000000096 ],
+			"start" : 0,
+			"direction" : "fw",
+			"timestretch" : 1
+		}
+
+	}
+
+}

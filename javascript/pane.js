@@ -330,7 +330,8 @@ function msg_dictionary(o)
 	init = o.init;
 	css = o.css;
 	prop = o.proportional;
-	timeUnit = o.timeUnit;
+	timeUnit = o.timeunit;
+	//post("timeUnit", timeUnit, "\n");
 	//matrix transform for g needs to also be applied to gradientTransform 
 	bgcolor = o.bgcolor;
 	_svgimages = o.svgimages[s];
@@ -357,7 +358,6 @@ function msg_dictionary(o)
 	svg += "</g>";
 	svg += "</svg>";
 	img.setsvg(svg);
-	//post("svg", svg, "\n");
 	picster = [];
 	pScale = [];
 	pOffset = [];
@@ -791,7 +791,7 @@ function nsgVisible(offset)
 	var keys = nsg.getkeys();
 	for (var i = 0; i < keys.length; i++)
 	{
-	//post("time", t, nsg.get("Picster-Element_1727881616747" + "::showbetween")[0], nsg.get("Picster-Element_1727881616747" + "::showbetween")[1], "\n");
+	//post("time", offset, timeUnit, nsg.get("Picster-Element_1745148417901" + "::showbetween")[0], nsg.get("Picster-Element_1745148417901" + "::showbetween")[1], "\n");
 		if (t >= nsg.get(keys[i] + "::showbetween")[0] && t < nsg.get(keys[i] + "::showbetween")[1]) {
 			if (nsg.get(keys[i] + "::visible") == 0) {
 			vis.replace("*::key", "svg");

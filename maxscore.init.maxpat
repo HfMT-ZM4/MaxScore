@@ -4,24 +4,38 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 454.0, 275.0, 649.0, 132.0 ],
+		"rect" : [ 454.0, 275.0, 861.0, 480.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-1",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 272.0, 106.0, 78.0, 23.0 ],
+					"text" : "a b c d e f g"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontsize" : 36.0,
 					"id" : "obj-17",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 127.0, 40.0, 383.0, 47.0 ],
+					"patching_rect" : [ 362.0, 27.5, 383.0, 47.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 148.0, 38.0, 375.0, 47.0 ],
 					"text" : "Initializing MaxScore..."
@@ -174,24 +188,12 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-5",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 272.0, 111.0, 119.0, 22.0 ],
-					"text" : "newScore 1 100 100"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 272.0, 74.0, 54.0, 22.0 ],
+					"patching_rect" : [ 272.0, 67.0, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -203,32 +205,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 272.0, 40.0, 58.0, 22.0 ],
+					"patching_rect" : [ 272.0, 33.0, 58.0, 22.0 ],
 					"text" : "loadbang"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 5,
-					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 272.0, 147.0, 194.0, 22.0 ],
-					"text" : "mxj com.algomusic.max.MaxScore"
 				}
 
 			}
  ],
 		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-11", 0 ]
@@ -279,15 +262,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"source" : [ "obj-3", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-5", 0 ]
+					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -327,12 +303,7 @@
 
 			}
  ],
-		"originid" : "pat-287",
-		"dependency_cache" : [ 			{
-				"name" : "mxj.mxo",
-				"type" : "iLaX"
-			}
- ],
+		"dependency_cache" : [  ],
 		"autosave" : 0
 	}
 
