@@ -745,7 +745,6 @@ function mouseReleased(x, y)
 					currentBounds[1] = Math.round(currentBounds[1] * zoom / factor / gridsize[1]) * gridsize[1] * factor / zoom; //* factor / zoom
 					currentBounds[2] = (currentBounds[0] + delta_x);
 					currentBounds[3] = (currentBounds[1] + delta_y);
-					//post("x/y2", currentBounds, currentBounds.map((x) => x * zoom / factor), "\n");
 					outlet(2, "bounds", currentBounds);
 				}
 				var tempDict = new Dict();
@@ -765,6 +764,23 @@ function mouseReleased(x, y)
 			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
 			outlet(0, "removeAllRenderedMessagesFromStaff", foundobjects.get(item).slice(1, 3));
 			for (var i = 0; i < userBeans.length; i++) {
+				var pos_x = parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor;
+				var pos_y = parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor;
+				if (snapToGrid) {
+					var measurerange = this.patcher.getnamed("measurerange").getvalueof();
+					outlet(0, "getDrawingAnchor", measurerange[0], measurerange[1]);
+					anchor_x = (anchors[0][2] % gridsize[0]) / factor;
+					anchor_y = (anchors[0][3] % gridsize[1]) / factor;
+					pos_x = Math.round((pos_x + anchor_x) / (gridsize[0] / factor)) * (gridsize[0] / factor) - anchor_x; // - 40
+					pos_y = Math.round((pos_y + anchor_y) / (gridsize[1] / factor)) * (gridsize[1] / factor) - anchor_y; // - 20
+					var delta_x = currentBounds[2] - currentBounds[0];
+					var delta_y = currentBounds[3] - currentBounds[1];
+					currentBounds[0] = (Math.round(currentBounds[0] * zoom / factor / gridsize[0]) * gridsize[0]) * factor / zoom ; // * factor / zoom
+					currentBounds[1] = Math.round(currentBounds[1] * zoom / factor / gridsize[1]) * gridsize[1] * factor / zoom; //* factor / zoom
+					currentBounds[2] = (currentBounds[0] + delta_x);
+					currentBounds[3] = (currentBounds[1] + delta_y);
+					outlet(2, "bounds", currentBounds);
+				}
 				var tempDict = new Dict();
 				tempDict.parse(userBeans[i]["@Message"]);
 				var key = tempDict.getkeys();
@@ -774,7 +790,7 @@ function mouseReleased(x, y)
 			 		id = tempVal[tempVal.length - 1].get("id");
 				}
 				if (id != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
-				else outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["@Message"]);
+				else outlet(0, "addRenderedMessageToStaff", foundobjects.get(item).slice(1, 3), pos_x, pos_y, userBeans[i]["@Message"]);
 			}
 		break;
 		case "measure" :
@@ -782,6 +798,23 @@ function mouseReleased(x, y)
  			outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
 			outlet(0, "removeAllRenderedMessagesFromMeasure", foundobjects.get(item)[1]);
 			for (var i = 0; i < userBeans.length; i++) {
+				var pos_x = parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor;
+				var pos_y = parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor;
+				if (snapToGrid) {
+					var measurerange = this.patcher.getnamed("measurerange").getvalueof();
+					outlet(0, "getDrawingAnchor", measurerange[0]);
+					anchor_x = (anchors[0][1] % gridsize[0]) / factor;
+					anchor_y = (anchors[0][2] % gridsize[1]) / factor;
+					pos_x = Math.round((pos_x + anchor_x) / (gridsize[0] / factor)) * (gridsize[0] / factor) - anchor_x; // - 40
+					pos_y = Math.round((pos_y + anchor_y) / (gridsize[1] / factor)) * (gridsize[1] / factor) - anchor_y; // - 20
+					var delta_x = currentBounds[2] - currentBounds[0];
+					var delta_y = currentBounds[3] - currentBounds[1];
+					currentBounds[0] = (Math.round(currentBounds[0] * zoom / factor / gridsize[0]) * gridsize[0]) * factor / zoom ; // * factor / zoom
+					currentBounds[1] = Math.round(currentBounds[1] * zoom / factor / gridsize[1]) * gridsize[1] * factor / zoom; //* factor / zoom
+					currentBounds[2] = (currentBounds[0] + delta_x);
+					currentBounds[3] = (currentBounds[1] + delta_y);
+					outlet(2, "bounds", currentBounds);
+				}
 				var tempDict = new Dict();
 				tempDict.parse(userBeans[i]["@Message"]);
 				var key = tempDict.getkeys();
@@ -791,7 +824,7 @@ function mouseReleased(x, y)
 			 		id = tempVal[tempVal.length - 1].get("id");
 				}
 				if (id != foundobjects.get(item)[foundobjects.get(item).length - 6]) outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]), parseFloat(userBeans[i]["@Yoffset"]), userBeans[i]["@Message"]);
-				else outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], parseFloat(userBeans[i]["@Xoffset"]) + (x - origin[0]) / factor, parseFloat(userBeans[i]["@Yoffset"]) + (y - origin[1]) / factor, userBeans[i]["@Message"]);
+				else outlet(0, "addRenderedMessageToMeasure", foundobjects.get(item)[1], pos_x, pos_y, userBeans[i]["@Message"]);
 			}
 		break;
 		}
@@ -1187,6 +1220,10 @@ function createRenderedMessage(f, x, y, serialized)
 	}
 	else if (!selectionBufferSize && measurerange[0] != -1)
 		{
+			if (snapToGrid) {
+				x = Math.round(x / (gridsize[0] / factor)) * (gridsize[0] / factor);
+				y = Math.round(y / (gridsize[1] / factor)) * (gridsize[1] / factor);
+			}
 			increment = 0;
 			anchors = {};
 			for (var i = measurerange[0]; i <= measurerange[2]; i++) {
