@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 106.0, 1236.0, 747.0 ],
+		"rect" : [ 60.0, 106.0, 1236.0, 747.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
@@ -230,7 +230,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 132.0, 1236.0, 721.0 ],
+						"rect" : [ 60.0, 132.0, 1236.0, 721.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -304,8 +304,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 744.0, 533.5, 192.0, 23.0 ],
-									"text" : "clearlinks, linkannotationtoslot 1"
+									"patching_rect" : [ 744.0, 533.5, 411.0, 23.0 ],
+									"text" : "clearlinks, linkannotationtoslot 1, useTimeSignature 3 4, useTempo 60"
 								}
 
 							}
@@ -1058,7 +1058,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
-									"midpoints" : [ 22.5, 665.86328125, 2.0, 665.86328125, 2.0, 460.0, 22.5, 460.0 ],
+									"midpoints" : [ 22.5, 658.8671875, 2.0, 658.8671875, 2.0, 457.29296875, 22.5, 457.29296875 ],
 									"source" : [ "obj-23", 0 ]
 								}
 
@@ -1627,18 +1627,18 @@
 																		"jmslscoredoc" : 																		{
 																			"score" : 																			{
 																				"0" : 																				{
-																					"@NAME" : "JMSLMaxScore-2",
-																					"@WIDTH" : 660,
-																					"@HEIGHT" : 230,
-																					"@STAFFS" : 2,
+																					"@NAME" : "JMSLMaxScore-124",
+																					"@WIDTH" : 800,
+																					"@HEIGHT" : 115,
+																					"@STAFFS" : 1,
 																					"@NUMTRACKSPERSTAFF" : 4,
 																					"@InstrumentNamesVisible" : "false",
-																					"@TempoVisible" : "false",
+																					"@TempoVisible" : "true",
 																					"@StaffNumbersVisible" : "true",
-																					"@MeasureNumbersVisible" : "false",
-																					"@SectionBracketsVisible" : "false",
-																					"@TimeSignaturesVisible" : "false",
-																					"@KeySignaturesVisible" : "false",
+																					"@MeasureNumbersVisible" : "true",
+																					"@SectionBracketsVisible" : "true",
+																					"@TimeSignaturesVisible" : "true",
+																					"@KeySignaturesVisible" : "true",
 																					"@ClefsVisible" : "true",
 																					"@ScoreTitleVisible" : "false",
 																					"@CourtesyClefsVisible" : "false",
@@ -1664,7 +1664,7 @@
 																					"ScoreAnnotation" : 																					{
 																						"0" : 																						{
 																							"@CLASSNAME" : "com.softsynth.jmsl.score.ScoreAnnotation",
-																							"@Annotation" : "385.3oc4Q9yaBCCDEeN4SgkmCnDo9GQ2JhNfTghnsBoV0AmvkfK19hrcfhP7cu1NP.15dWRj+cu678ddebDcCnMbTQIOPnY8SoINVsFqQs0gYBegLOLWvTqmwp.OI0SrbI7thaCRRaQvO1RTEPzG0bW+drrwvK53C0rMMZFscFVAzU4M2DMjovVxbTxTAE4UEn.095eRR6OXvcIW76lDhaqIe4UVdsxzjK9zIRvUvePlArKzr5N26N+Ahxf26e6QxHmKZSoWqYEbU0PloMd5e+QIOiXsqvLAaWNqXcW1YVgaWrBEvTzByAi0LV8jr1taBvLMZvbkx4q1YWIGqlcwCiqwvkeVnkUV1K0eNZebjypvxJP6Mr4jO7p1IB6HcDTxZDVZ.K4EZWjGLLUNomBUPaE1xuaL1S2RDsv8dETs7x9CAQOAhqapOqMrRUZrk4R6DRurP.6ladtdrxX0SYx1EhzNJtG1HAk0WYFZ3da9RYoKNCiNN5P7YCm8+vvwGh+EVCSAIB"
+																							"@Annotation" : "377.3ociR0zSBDCD87t+JZ54kMKIFM3MM3ARDjfZHQiGFVlcoRamMscUID9ua+.Q7lWZSeya938ltOOi+AZrBRyYWy3CKq3EdrURPucNzhAzp.hSnvm0BW.XXUUYBD+x0P5HH+Fi.jwrU8VQ8I7aMvG8FfmphShmh7julV1L7S1BRA5TmaqIIYBwekUUNZzkEmccQAyOhr2BLa9KyphyNNQRJz3+flEcKMPWTbGe+BQpn5Ku3Hx8D0IzsykvtUP81SVicC84xMjDmQNbAZc1I56TctcSQv1aP6eXtXyN2F0D8bC0QFm24AoOQvcbGjH5fllAUg2Y6yy75.W2hlfZr+LjAV6jwMDeL1.8RGOBqD0FueFUCWMcflzXJBr98dq6mtjwq8KiHq0mmuILKCjDssu6WtwQp0PILuUVvFLL5d95tZkYh15Ly.UZfXoRIBf8JT6BQlSVQPlOzz3syXoyyNjezdG2Gar2NdrCp8F8sfM8+q7p7C4eC.OB8RL"
 																						}
 
 																					}
@@ -1746,47 +1746,10 @@
 ,
 																									".ordering" : [ "dim", "dim", "dim" ]
 																								}
-,
-																								"2" : 																								{
-																									"@CLASSNAME" : "com.algomusic.max.MaxScoreInstrument",
-																									"@InsIndex" : 2,
-																									"@EditEnabled" : "true",
-																									"@Name" : "MaxScoreIns-2",
-																									"@Transposition" : 0.0,
-																									"@MixerClassName" : "com.softsynth.jmsl.NullMixer",
-																									"dim" : 																									{
-																										"0" : 																										{
-																											"@index" : 4,
-																											"@defaultvalue" : 0.0,
-																											"@lowlimit" : 0.0,
-																											"@highlimit" : 3.0,
-																											"@name" : "EventFlag"
-																										}
-,
-																										"1" : 																										{
-																											"@index" : 5,
-																											"@defaultvalue" : -1.0,
-																											"@lowlimit" : -1.0,
-																											"@highlimit" : 127.0,
-																											"@name" : "originalPitch"
-																										}
-,
-																										"2" : 																										{
-																											"@index" : 6,
-																											"@defaultvalue" : -1.0,
-																											"@lowlimit" : -1.0,
-																											"@highlimit" : 10000.0,
-																											"@name" : "index"
-																										}
-
-																									}
-,
-																									".ordering" : [ "dim", "dim", "dim" ]
-																								}
 
 																							}
 ,
-																							".ordering" : [ "jmslscoreinstrument", "jmslscoreinstrument", "jmslscoreinstrument" ]
+																							".ordering" : [ "jmslscoreinstrument", "jmslscoreinstrument" ]
 																						}
 
 																					}
@@ -1805,16 +1768,10 @@
 																									"@PAN" : 0.5,
 																									"@AMP" : 0.5
 																								}
-,
-																								"2" : 																								{
-																									"@FADERINDEX" : 2,
-																									"@PAN" : 0.5,
-																									"@AMP" : 0.5
-																								}
 
 																							}
 ,
-																							".ordering" : [ "panamppair", "panamppair", "panamppair" ]
+																							".ordering" : [ "panamppair", "panamppair" ]
 																						}
 
 																					}
@@ -1825,46 +1782,40 @@
 																							"@ABOVE" : 72.0,
 																							"@BELOW" : 72.0
 																						}
-,
-																						"1" : 																						{
-																							"@INDEX" : 1,
-																							"@ABOVE" : 72.0,
-																							"@BELOW" : 72.0
-																						}
 
 																					}
 ,
 																					"StaffLineVisibility" : 																					{
 																						"0" : 																						{
-																							"@staffIndex" : 1,
+																							"@staffIndex" : 0,
 																							"@staffLineIndex" : 4,
 																							"@isVisible" : "true",
 																							"@ledgerLinesVisible" : "true"
 																						}
 ,
 																						"1" : 																						{
-																							"@staffIndex" : 1,
+																							"@staffIndex" : 0,
 																							"@staffLineIndex" : 3,
 																							"@isVisible" : "true",
 																							"@ledgerLinesVisible" : "true"
 																						}
 ,
 																						"2" : 																						{
-																							"@staffIndex" : 1,
+																							"@staffIndex" : 0,
 																							"@staffLineIndex" : 2,
 																							"@isVisible" : "true",
 																							"@ledgerLinesVisible" : "true"
 																						}
 ,
 																						"3" : 																						{
-																							"@staffIndex" : 1,
+																							"@staffIndex" : 0,
 																							"@staffLineIndex" : 1,
 																							"@isVisible" : "true",
 																							"@ledgerLinesVisible" : "true"
 																						}
 ,
 																						"4" : 																						{
-																							"@staffIndex" : 1,
+																							"@staffIndex" : 0,
 																							"@staffLineIndex" : 0,
 																							"@isVisible" : "true",
 																							"@ledgerLinesVisible" : "true"
@@ -2033,19 +1984,19 @@
 ,
 																					"measure" : 																					{
 																						"0" : 																						{
-																							"@WIDTH" : 440,
-																							"@WIDTHSETBYHAND" : "true",
-																							"@TIMESIG" : [ 2, 4 ],
+																							"@WIDTH" : 586,
+																							"@WIDTHSETBYHAND" : "false",
+																							"@TIMESIG" : [ 4, 4 ],
 																							"@TIMESIGSETBYHAND" : "false",
 																							"@TEMPO" : 60.0,
 																							"@TEMPOSETBYHAND" : "false",
 																							"@REPEATSTART" : "false",
 																							"@REPEATEND" : "false",
 																							"@NUMREPEATS" : 1,
-																							"@BARLINE" : "NONE",
+																							"@BARLINE" : "SINGLE",
 																							"@MEASURETEXTX" : 48,
 																							"@MEASURETEXTY" : 48,
-																							"@MEASURELEFTMARGIN" : 0.0,
+																							"@MEASURELEFTMARGIN" : 50.0,
 																							"staff" : 																							{
 																								"0" : 																								{
 																									"@INDEX" : 0,
@@ -2064,19 +2015,19 @@
 																											"@MultitrackRestAdjustmentY" : 0.0,
 																											"note" : 																											{
 																												"0" : 																												{
-																													"@NOTEDUR" : 4,
+																													"@NOTEDUR" : 0,
 																													"@TUPLET" : 0,
-																													"@DOTS" : 1,
+																													"@DOTS" : 0,
 																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.375,
-																													"@PITCH" : 0.0,
-																													"@VELOCITY" : 0.0,
-																													"@HOLD" : 0.375,
+																													"@DURATION" : 4.0,
+																													"@PITCH" : 74.0,
+																													"@VELOCITY" : 100.0,
+																													"@HOLD" : 3.960000038146973,
 																													"@BEAMEDOUT" : "false",
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
+																													"@ACCVISPOLICY" : 0,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -2088,15 +2039,15 @@
 																													"@MARK" : 0,
 																													"@TEXTOFFSETX" : 0,
 																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
+																													"@NOTEHEAD" : 1,
 																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
+																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
+																													"@STEMVISIBLE" : "true",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
+																													"@STEMINFO" : 0,
 																													"@LAYOUTSHIFTX" : 0.0,
 																													"dim" : 																													{
 																														"0" : 																														{
@@ -2113,49 +2064,121 @@
 ,
 																														"2" : 																														{
 																															"@index" : 6,
-																															"@value" : -1.0,
+																															"@value" : 0.0,
 																															"@name" : "index"
 																														}
 
 																													}
 ,
-																													".ordering" : [ "dim", "dim", "dim" ]
-																												}
+																													"userBean" : 																													{
+																														"0" : 																														{
+																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
+																															"@Name" : "RenderedMessageBean_note-sel",
+																															"@Message" : "433.3ocgRssZbCCD8Y4uBinOZunaizL8wR2dAJMgjWBTBEuqEMlrYsw1aZBg7uWKauF23scMHow5blyLyA8RDiWUrso0Wm524evuukG+93eDyXuDwXL989mCWvq86yCbdpp12zTTtmmzi+X1t.NajOiWj2y+xQQWOH5OkVEZAvAnSBC4x3M2kU46o+t02b4Uqu95udw2m.2lsy2VN.+kK91Gm.ZqKueLsOc0m+veee5uKxauKfpBW+ZTTXKYw.4epsNq4eMEaJOrOuYvJRkIyVw2dFYOsAEbzipy397h1x59Dp1L1+L9CcIl8qgIqpb2ya577IvNcN3GThmm0lwShEIwZURrbUWPpxHDgfimy1l9QhJs0YQkAbjSmDCV6Jq0BBMIPmVi54zUfhLFxXUjzJwvzqEuQRC.jE0NhbfDgjXbhQpXkkDjPfBUW5J.CI.H5TNBjBCQ.EDUZoUfSpPR3rjz4rv7RXQnq9FUnHfoqCkhYcAJsgOgVfj1fGsC5+LY7sGpez2YfGMR4YMRo3bV4BFKbO4Y8tELVXVKXbJyYNC4I59w4e3kb2q39f9iWi9CxM70qC",
+																															"@Xoffset" : 0.0,
+																															"@Yoffset" : 0.0
+																														}
+
+																													}
 ,
-																												"1" : 																												{
-																													"@NOTEDUR" : 4,
+																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
+																												}
+
+																											}
+,
+																											".ordering" : [ "note" ]
+																										}
+,
+																										"1" : 																										{
+																											"@INDEX" : 1,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+,
+																										"2" : 																										{
+																											"@INDEX" : 2,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+,
+																										"3" : 																										{
+																											"@INDEX" : 3,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+
+																									}
+,
+																									".ordering" : [ "track", "track", "track", "track" ]
+																								}
+
+																							}
+,
+																							".ordering" : [ "staff" ]
+																						}
+,
+																						"1" : 																						{
+																							"@WIDTH" : 500,
+																							"@WIDTHSETBYHAND" : "false",
+																							"@TIMESIG" : [ 4, 4 ],
+																							"@TIMESIGSETBYHAND" : "true",
+																							"@TEMPO" : 60.0,
+																							"@TEMPOSETBYHAND" : "false",
+																							"@REPEATSTART" : "false",
+																							"@REPEATEND" : "false",
+																							"@NUMREPEATS" : 1,
+																							"@BARLINE" : "SINGLE",
+																							"@MEASURETEXTX" : 48,
+																							"@MEASURETEXTY" : 48,
+																							"@MEASURELEFTMARGIN" : 50.0,
+																							"staff" : 																							{
+																								"0" : 																								{
+																									"@INDEX" : 0,
+																									"@CLEF" : 0,
+																									"@CLEFSETBYHAND" : "false",
+																									"@INSTRUMENTINDEX" : 0,
+																									"@INSINDEXSETBYHAND" : "false",
+																									"@KEYSIGTYPE" : 0,
+																									"@KEYSIGNUMACC" : 0,
+																									"@KEYSIGSETBYHAND" : "false",
+																									"@EXTENDEDLINESABOVE" : 0,
+																									"@EXTENDEDLINESBELOW" : 0,
+																									"track" : 																									{
+																										"0" : 																										{
+																											"@INDEX" : 0,
+																											"@MultitrackRestAdjustmentY" : 0.0,
+																											"note" : 																											{
+																												"0" : 																												{
+																													"@NOTEDUR" : 0,
 																													"@TUPLET" : 0,
-																													"@DOTS" : 1,
+																													"@DOTS" : 0,
 																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.375,
-																													"@PITCH" : 77.0,
+																													"@DURATION" : 4.0,
+																													"@PITCH" : 74.0,
 																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.371250003576279,
+																													"@HOLD" : 3.960000038146973,
 																													"@BEAMEDOUT" : "false",
 																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
+																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
+																													"@ACCVISPOLICY" : 0,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
 																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 1.4,
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
 																													"@LEDGERLINESVISIBLE" : "true",
 																													"@WEDGE" : "none",
 																													"@OTTAVA" : "none",
 																													"@MARK" : 0,
 																													"@TEXTOFFSETX" : 0,
 																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
+																													"@NOTEHEAD" : 1,
 																													"@NOTEHEADSCALE" : 1.0,
 																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
+																													"@STEMVISIBLE" : "true",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
+																													"@STEMINFO" : 0,
 																													"@LAYOUTSHIFTX" : 0.0,
 																													"dim" : 																													{
 																														"0" : 																														{
@@ -2178,416 +2201,12 @@
 
 																													}
 ,
-																													"gracenote" : 																													{
-																														"0" : 																														{
-																															"@NOTEDUR" : 3,
-																															"@TUPLET" : 0,
-																															"@DOTS" : 0,
-																															"@ACCINFO" : 1,
-																															"@DURATION" : 0.5,
-																															"@PITCH" : 73.0,
-																															"@VELOCITY" : 100.0,
-																															"@HOLD" : 0.495000004768372,
-																															"@BEAMEDOUT" : "false",
-																															"@GLISSOUT" : "false",
-																															"@TIEDOUT" : "false",
-																															"@ACCPREF" : 0,
-																															"@ACCVISPOLICY" : 0,
-																															"@ALTENHARMONIC" : "false",
-																															"@DYN" : 0,
-																															"@SLUROUT" : "false",
-																															"@ISGRACENOTE" : "true",
-																															"@GRACENOTESEPARATIONSCALER" : 2.0,
-																															"@LEDGERLINESVISIBLE" : "true",
-																															"@WEDGE" : "none",
-																															"@OTTAVA" : "none",
-																															"@MARK" : 0,
-																															"@TEXTOFFSETX" : 0,
-																															"@TEXTOFFSETY" : 0,
-																															"@NOTEHEAD" : 0,
-																															"@NOTEHEADSCALE" : 1.0,
-																															"@VISIBLE" : "true",
-																															"@NOTEHEADVISIBLE" : "true",
-																															"@STEMVISIBLE" : "true",
-																															"@OVERRIDELEVEL" : -1,
-																															"@ISOVERRIDELEVEL" : "false",
-																															"@STEMINFOOVERRIDE" : "false",
-																															"@STEMINFO" : 1,
-																															"@LAYOUTSHIFTX" : 0.0,
-																															"dim" : 																															{
-																																"0" : 																																{
-																																	"@index" : 4,
-																																	"@value" : 0.0,
-																																	"@name" : "EventFlag"
-																																}
-,
-																																"1" : 																																{
-																																	"@index" : 5,
-																																	"@value" : -1.0,
-																																	"@name" : "originalPitch"
-																																}
-,
-																																"2" : 																																{
-																																	"@index" : 6,
-																																	"@value" : -1.0,
-																																	"@name" : "index"
-																																}
-
-																															}
-,
-																															".ordering" : [ "dim", "dim", "dim" ]
-																														}
-
-																													}
-,
 																													"userBean" : 																													{
 																														"0" : 																														{
 																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
 																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "236.3occP1zZCCCCF9r8uBiXG1.mgSyb+XG6gtKqW10wX303sZZhSv18KJ8+9bTbfxZGFaPO5UuVRmnDn0rxGztLcktVaC.6Y16LB4DkPHvF8wN.328CvQxNUUGgjTP.qdOJoUEV2qg.lx9p15CJi8Sw.uGubJuf8pbziESjBgPNar3owRgjWr7Fv7aoTN3nObrRmZnTG0AcMaPJb2h2dYdR7PhrlV0JS.mr7+jZuoLNFwDiP9YZ5eBNk0+ciqFcsVEblC2myEwC99.PQ4Trlq1e5CQC7+2J7qls1Re+lOKmewk8wE1FCNS+E7S1bQN",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "gracenote", "userBean" ]
-																												}
-,
-																												"2" : 																												{
-																													"@NOTEDUR" : 4,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 8,
-																													"@DURATION" : 0.25,
-																													"@PITCH" : 64.25,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.247500002384186,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 2,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "true",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 2.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"interval" : 																													{
-																														"0" : 																														{
-																															"@NOTEDUR" : 4,
-																															"@TUPLET" : 0,
-																															"@DOTS" : 0,
-																															"@ACCINFO" : 0,
-																															"@DURATION" : 0.25,
-																															"@PITCH" : 77.0,
-																															"@VELOCITY" : 100.0,
-																															"@HOLD" : 0.247500002384186,
-																															"@BEAMEDOUT" : "false",
-																															"@GLISSOUT" : "false",
-																															"@TIEDOUT" : "false",
-																															"@ACCPREF" : 0,
-																															"@ACCVISPOLICY" : 1,
-																															"@ALTENHARMONIC" : "false",
-																															"@DYN" : 0,
-																															"@SLUROUT" : "false",
-																															"@ISGRACENOTE" : "false",
-																															"@GRACENOTESEPARATIONSCALER" : 2.0,
-																															"@LEDGERLINESVISIBLE" : "true",
-																															"@WEDGE" : "none",
-																															"@OTTAVA" : "none",
-																															"@MARK" : 0,
-																															"@TEXTOFFSETX" : 0,
-																															"@TEXTOFFSETY" : 0,
-																															"@NOTEHEAD" : 0,
-																															"@NOTEHEADSCALE" : 1.0,
-																															"@VISIBLE" : "false",
-																															"@NOTEHEADVISIBLE" : "true",
-																															"@STEMVISIBLE" : "false",
-																															"@OVERRIDELEVEL" : -1,
-																															"@ISOVERRIDELEVEL" : "false",
-																															"@STEMINFOOVERRIDE" : "false",
-																															"@STEMINFO" : 1,
-																															"@LAYOUTSHIFTX" : 0.0,
-																															"dim" : 																															{
-																																"0" : 																																{
-																																	"@index" : 4,
-																																	"@value" : 0.0,
-																																	"@name" : "EventFlag"
-																																}
-,
-																																"1" : 																																{
-																																	"@index" : 5,
-																																	"@value" : -1.0,
-																																	"@name" : "originalPitch"
-																																}
-,
-																																"2" : 																																{
-																																	"@index" : 6,
-																																	"@value" : 3.0,
-																																	"@name" : "index"
-																																}
-
-																															}
-,
-																															"userBean" : 																															{
-																																"0" : 																																{
-																																	"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																																	"@Name" : "RenderedMessageBean_note-sel",
-																																	"@Message" : "231.3occP1zRDCCDF97jeEgAOnPpzzZkhG8fdw8hWEQhaiZXaSKIY+hk8+toSSgEKlPBjm4cdyLyIFfCl09f1koa0cZa.4OveiCvIF..tQebDf9ceiBhrS0NRfjB.s58jjAU3mIM.ZZlxZqOnL1Oxm4S3U0hR9KxpaKpxiqhx56j02KJWs.IWppZ1Ke3XqNUJoZYD552PT7pmd84GShmCj0OnVaBTOI+Sn8llXCDCTP7yrz+DbJq+qdWG4ZmJ3LGtVJxia59FjQxYTNKlb5CQC7+2v6y9s1F+zLOSJt3ve+BaiONy9k.7sUj",
-																																	"@Xoffset" : 4.0,
-																																	"@Yoffset" : 0.0
-																																}
-
-																															}
-,
-																															".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "233.3occP1zSCDBDF97vuBxDOnIrlkVw13QOnWrW7pwXvtnR5tra.5Woo+2kcV1jFaEBjvy7NuLybfAXmcYHZ7ElZSiwEQ9C723.bfA.fqL66AXXy2nfHaz08DHq.PmYKIoSG+YPCf1pgrVGhZq6ixQ9.dwbwT9K2e2syTko0LoZhRMWJlt3bl7B5Ti1Eh6qM4pIWN8Pe6JhhW8zqO+XV7Xfh1N8RajZK4eBs0Vk5gTfID+HK+OQu1E9p02Pt1nid6tqkhxzltuAYjbFkyYCOytjAg+a98Y6ZWUXXrWHEmb3uehsoGGY+hh3bID",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "interval", "userBean" ]
-																												}
-,
-																												"3" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 8,
-																													"@DURATION" : 0.5,
-																													"@PITCH" : 64.25,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.495000004768372,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 2,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 4.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "231.3occP1zZCCCCF9r7uBiXG1.mRRS2ZoG6gtKqW10xX3030ZZhSv18KJ8+dcTbfxByFavO5UuVRWY.1n237JahpTUoLdjOmulCvUF..tWcoEftiaQAQNJKaIPTAfF0IRRizuqSCf5htrN37Rs46zddGd0LQN+iIoiRo0jouMKe5XQ9pAnrgpds2Km+RoJVJwZoEZq2ST7oke99hn39.I0MxMZO0SY+IzIcQnABAFS7ar3+3sRi62ZaE4Zkza0meNSjF1z8KHijynbFL4TmCF39ug2O0GLEttYdRl3gC+qGrM73F6N81uUg",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-,
-																												"4" : 																												{
-																													"@NOTEDUR" : 4,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.25,
-																													"@PITCH" : 0.0,
-																													"@VELOCITY" : 0.0,
-																													"@HOLD" : 0.25,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : -1.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim" ]
-																												}
-,
-																												"5" : 																												{
-																													"@NOTEDUR" : 4,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.25,
-																													"@PITCH" : 83.0,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.247500002384186,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "true",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 6.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "236.3occP1zZCCCCF9r8uBinG1.mQbxLccG2gsKsW10wX3031ZZhSv18KJ8+9bTbfxVGFaPO5UuVRmoDnyrzGztLcstQaC.6Y1GLB4LkPHvV8od.32uF3HYuptmPRJHfUe.kzoBaFzP.S0PU67Akw9U9He.u3IdIatPJdnbpLO+QYwrYxRQAubwMfhaoTN5nObpVmZnTG0CcsaQJL402e6kj3wDYscpkl.NYhek5foJNFwDEH+BM8OAmx5W05ZPWaTAm43cBdd7fu2CTTNEq4O6O8wnA9+aE9c6NakeXymI3WcYedkswfKze.7CnbQN",
-																															"@Xoffset" : 4.0,
+																															"@Message" : "433.3ocgRs0ZjBCE943uBIrOpC4jKmjrOtrydAJsk1WVnTJNigsRmNJpSuPo+2ah53ZWm1QHWLeWx47QdIhPqJV2z5pScab2611Ri+Z7UwDxKQDBgdm64vAzZ217.mmppcMMEkaoIc3OjsIfSF3SnE4c7Oevzk8ldCfbCpTZkQCpdsDZysYUtN5eY4eN+hkWd4uO6zQv0Yabsk8v+5rS99HPac4cCx9wE+7au+7zGKxauMfxCG+ZTTXJYVC4dpsNq4i5hUk61l2zGEoPxjQ70Gw1CGPgDcu6DpKunsrtSP0pg5mPu2KL6u8cVU4lmW4y7QPuO6b8NQyyZynIwrjXAOIFV32jxkLVXy90ISi+.Ft.0ngKUZqVjDqPbAhnhIrLiVHLhoz4JtUJsRjaADLgtWv9OKkViWkFYROYdnNfQJorEnkYYLCi60yUlfBkwn4ZqBXRqUYCtBncgRCbikoQKn0nZ5cfFku.jbg1KP5KQ+U7uxv.X3iIXFqPZ1mG1Oo0nq2U+fymf6SR3nIIvNVVNiwr3CNV3MivrrZFiCkMSY.Gn3GZ+9Wx9Wwca5VdM5M.xf204B",
+																															"@Xoffset" : 0.0,
 																															"@Yoffset" : 0.0
 																														}
 
@@ -2598,247 +2217,7 @@
 
 																											}
 ,
-																											".ordering" : [ "note", "note", "note", "note", "note", "note" ]
-																										}
-,
-																										"1" : 																										{
-																											"@INDEX" : 1,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-,
-																										"2" : 																										{
-																											"@INDEX" : 2,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-,
-																										"3" : 																										{
-																											"@INDEX" : 3,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-
-																									}
-,
-																									".ordering" : [ "track", "track", "track", "track" ]
-																								}
-,
-																								"1" : 																								{
-																									"@INDEX" : 1,
-																									"@CLEF" : 3,
-																									"@CLEFSETBYHAND" : "false",
-																									"@INSTRUMENTINDEX" : 1,
-																									"@INSINDEXSETBYHAND" : "false",
-																									"@KEYSIGTYPE" : 0,
-																									"@KEYSIGNUMACC" : 0,
-																									"@KEYSIGSETBYHAND" : "false",
-																									"@EXTENDEDLINESABOVE" : 0,
-																									"@EXTENDEDLINESBELOW" : 0,
-																									"track" : 																									{
-																										"0" : 																										{
-																											"@INDEX" : 0,
-																											"@MultitrackRestAdjustmentY" : 0.0,
-																											"note" : 																											{
-																												"0" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 3,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.33333,
-																													"@PITCH" : 0.0,
-																													"@VELOCITY" : 0.0,
-																													"@HOLD" : 0.333333343267441,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : -1.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim" ]
-																												}
-,
-																												"1" : 																												{
-																													"@NOTEDUR" : 2,
-																													"@TUPLET" : 3,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.66666,
-																													"@PITCH" : 45.0,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.660000026226044,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "true",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 8.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "236.3occP1zSCCCCF9ryuhHKN.RoSIsLnvwcfcY6BWQHT1Z.hVaZUR1WZZ+2IMMUZBFJJQxO90uw1mH.1oW67JalpV0nLdj9L8MJ.mH..3F0wd.518Exhjcx5dBjT.nQsOJoS5+dPCf5pgp157Rs4C9He.urjUPWHJ4Sxmx47hRw8O7ziE4rhkWAJtlxoiN57GqUoFJ0Q8Pa6lHEu4kWmOKIdLQVambs1GmLwuRsWWEFiPh7H+LI8Odqz39r01DcsQ5s5C2JX7vI9dGRhxIwZ9y9ScHXf6+VgqZ2ZpbCa9LA6hK88KrMDbl7CTiObsM",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-,
-																												"2" : 																												{
-																													"@NOTEDUR" : 2,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 1.0,
-																													"@PITCH" : 45.0,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.990000009536743,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 9.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "234.3occP1zRDCCDF97jeEgAOnPpjz0ErdzC5E2KdUDItMpgsMsjj8KV1+6lNMEVbWIj.yy7NuYl4.Cvd6xPz3KLMlViKh7G3uwA3.C..WY1O.vvluQAQ1naFHPVAfNyVRRuN9ynF.s0iUsND0V2GxI9Hdw8hY7WTp6tsbtTJUppRYUYkX1hyYpKna9jcg39FStaxsy.z2shn3UO85yOlEOknnqWuzFowR8mTas0oYHknj3GY4+I50tvWc9Vx0Vcza2csRHSG58FjQxYTMms7L6RFD9u82mcqc0gw0dgRbxk+9I1lBNx9EfA3yEI",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-
-																											}
-,
-																											".ordering" : [ "note", "note", "note" ]
+																											".ordering" : [ "note" ]
 																										}
 ,
 																										"1" : 																										{
@@ -2863,1669 +2242,29 @@
 
 																							}
 ,
-																							".ordering" : [ "staff", "staff" ]
-																						}
-,
-																						"1" : 																						{
-																							"@WIDTH" : 400,
-																							"@WIDTHSETBYHAND" : "true",
-																							"@TIMESIG" : [ 2, 4 ],
-																							"@TIMESIGSETBYHAND" : "true",
-																							"@TEMPO" : 60.0,
-																							"@TEMPOSETBYHAND" : "false",
-																							"@REPEATSTART" : "false",
-																							"@REPEATEND" : "false",
-																							"@NUMREPEATS" : 1,
-																							"@BARLINE" : "NONE",
-																							"@MEASURETEXTX" : 48,
-																							"@MEASURETEXTY" : 48,
-																							"@MEASURELEFTMARGIN" : 0.0,
-																							"staff" : 																							{
-																								"0" : 																								{
-																									"@INDEX" : 0,
-																									"@CLEF" : 0,
-																									"@CLEFSETBYHAND" : "false",
-																									"@INSTRUMENTINDEX" : 0,
-																									"@INSINDEXSETBYHAND" : "false",
-																									"@KEYSIGTYPE" : 0,
-																									"@KEYSIGNUMACC" : 0,
-																									"@KEYSIGSETBYHAND" : "false",
-																									"@EXTENDEDLINESABOVE" : 0,
-																									"@EXTENDEDLINESBELOW" : 0,
-																									"track" : 																									{
-																										"0" : 																										{
-																											"@INDEX" : 0,
-																											"@MultitrackRestAdjustmentY" : 0.0,
-																											"note" : 																											{
-																												"0" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 3,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.33333,
-																													"@PITCH" : 83.0,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.330000013113022,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 10.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "235.3occP1zZCCCCF9r7uBinG1fjQbZRYaG2g0KsW50wX303sYZhSv18KJ8+9bTbfxZGFaPO5UuVRmX.1oW67JappV0nLdj+L+MN.mX..3F0wd.518MlPjcx5dBDU.nQsmjzI8+LnAPc0PUacdo17Q1He.u7wjo7Eh7YOLKuLKqH+IQ4zhh.c4MfhaorbzQm+XsJ1PwNpGZa2PTbxqql+RT7Xhz1N4ZsmlLweRsWWEFiPhbhelE+GuUZbe0ZaHWajdq9vchjrvgduGYjbFUyU6O0gfAt+aE9Y6VSkaXymJRt3xe+BaCAmY+B+XDWjC",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-,
-																												"1" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 3,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 9,
-																													"@DURATION" : 0.33333,
-																													"@PITCH" : 63.5,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.330000013113022,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 2,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "true",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 11.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"interval" : 																													{
-																														"0" : 																														{
-																															"@NOTEDUR" : 3,
-																															"@TUPLET" : 3,
-																															"@DOTS" : 0,
-																															"@ACCINFO" : 0,
-																															"@DURATION" : 0.33333,
-																															"@PITCH" : 83.0,
-																															"@VELOCITY" : 100.0,
-																															"@HOLD" : 0.330000013113022,
-																															"@BEAMEDOUT" : "false",
-																															"@GLISSOUT" : "false",
-																															"@TIEDOUT" : "true",
-																															"@ACCPREF" : 0,
-																															"@ACCVISPOLICY" : 1,
-																															"@ALTENHARMONIC" : "false",
-																															"@DYN" : 0,
-																															"@SLUROUT" : "false",
-																															"@ISGRACENOTE" : "false",
-																															"@GRACENOTESEPARATIONSCALER" : 2.0,
-																															"@LEDGERLINESVISIBLE" : "true",
-																															"@WEDGE" : "none",
-																															"@OTTAVA" : "none",
-																															"@MARK" : 0,
-																															"@TEXTOFFSETX" : 0,
-																															"@TEXTOFFSETY" : 0,
-																															"@NOTEHEAD" : 0,
-																															"@NOTEHEADSCALE" : 1.0,
-																															"@VISIBLE" : "false",
-																															"@NOTEHEADVISIBLE" : "true",
-																															"@STEMVISIBLE" : "false",
-																															"@OVERRIDELEVEL" : -1,
-																															"@ISOVERRIDELEVEL" : "false",
-																															"@STEMINFOOVERRIDE" : "false",
-																															"@STEMINFO" : 1,
-																															"@LAYOUTSHIFTX" : 0.0,
-																															"dim" : 																															{
-																																"0" : 																																{
-																																	"@index" : 4,
-																																	"@value" : 0.0,
-																																	"@name" : "EventFlag"
-																																}
-,
-																																"1" : 																																{
-																																	"@index" : 5,
-																																	"@value" : -1.0,
-																																	"@name" : "originalPitch"
-																																}
-,
-																																"2" : 																																{
-																																	"@index" : 6,
-																																	"@value" : 12.0,
-																																	"@name" : "index"
-																																}
-
-																															}
-,
-																															"userBean" : 																															{
-																																"0" : 																																{
-																																	"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																																	"@Name" : "RenderedMessageBean_note-sel",
-																																	"@Message" : "234.3occP1zRCDCDF97jeEgfGTHqjOnRqG8fdwdwqhHwtQMzcytjj9Ek9e2rylEJVkPBLOy67lYliDf06VES1Pksw1Z8IF8d5qT.NR..XqsGF.r31uXbjr0zLPfhBf4s6PI8lz2iZ.lqdrpMwjw4eWLwGwKmy0zmWnu8N0LgPsXtPoUZIWu7Rl7OzMaxtX5PiszMk1Y.F5ViT1UO9xSOTDOknpq2rxkvwR9qT6b04YHmPg7Sjx+jBFe7ytPK5ZqIEb6uVxE4C9dCifxIXMWr7r6yFD+u82Gca70ww0dkje1k91Y1lCNQ9AfIAx0O",
-																																	"@Xoffset" : 4.0,
-																																	"@Yoffset" : 0.0
-																																}
-
-																															}
-,
-																															".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "233.3occP1zRDCCDF97jeEgAOnPpzr00V7nGzKtW7pHRbaTCaaZII6Wrr+2McZJrXQBIv7LuyalYNw.r2r1GztLcitUaCH+A9ab.Nw..vM5iC.zu6aTPjcplABjT.nUumjzqB+LpAPS8XUa8Akw9Q9DeDupRTve49paqJWlmun7NYkrnTTrZFRNW0xIu7giM5Tqj5kAnqaCQwqd50meLIdJQVWuZsIPyj7Oo1apiCPLwBhelk9mfSY8e04ZIWaUAm4v0RQd7Pu2fLRNipY1lSeHZf++Vde1s0V6G24YRwEW96WXaL3L6WrTuaMM",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "interval", "userBean" ]
-																												}
-,
-																												"2" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 3,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 9,
-																													"@DURATION" : 0.33333,
-																													"@PITCH" : 63.5,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.330000013113022,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 2,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 13.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"interval" : 																													{
-																														"0" : 																														{
-																															"@NOTEDUR" : 3,
-																															"@TUPLET" : 3,
-																															"@DOTS" : 0,
-																															"@ACCINFO" : 9,
-																															"@DURATION" : 0.33333,
-																															"@PITCH" : 66.5,
-																															"@VELOCITY" : 100.0,
-																															"@HOLD" : 0.330000013113022,
-																															"@BEAMEDOUT" : "false",
-																															"@GLISSOUT" : "false",
-																															"@TIEDOUT" : "true",
-																															"@ACCPREF" : 0,
-																															"@ACCVISPOLICY" : 2,
-																															"@ALTENHARMONIC" : "false",
-																															"@DYN" : 0,
-																															"@SLUROUT" : "false",
-																															"@ISGRACENOTE" : "false",
-																															"@GRACENOTESEPARATIONSCALER" : 2.0,
-																															"@LEDGERLINESVISIBLE" : "true",
-																															"@WEDGE" : "none",
-																															"@OTTAVA" : "none",
-																															"@MARK" : 0,
-																															"@TEXTOFFSETX" : 0,
-																															"@TEXTOFFSETY" : 0,
-																															"@NOTEHEAD" : 0,
-																															"@NOTEHEADSCALE" : 1.0,
-																															"@VISIBLE" : "true",
-																															"@NOTEHEADVISIBLE" : "true",
-																															"@STEMVISIBLE" : "false",
-																															"@OVERRIDELEVEL" : -1,
-																															"@ISOVERRIDELEVEL" : "false",
-																															"@STEMINFOOVERRIDE" : "false",
-																															"@STEMINFO" : 1,
-																															"@LAYOUTSHIFTX" : 0.0,
-																															"dim" : 																															{
-																																"0" : 																																{
-																																	"@index" : 4,
-																																	"@value" : 0.0,
-																																	"@name" : "EventFlag"
-																																}
-,
-																																"1" : 																																{
-																																	"@index" : 5,
-																																	"@value" : -1.0,
-																																	"@name" : "originalPitch"
-																																}
-,
-																																"2" : 																																{
-																																	"@index" : 6,
-																																	"@value" : 14.0,
-																																	"@name" : "index"
-																																}
-
-																															}
-,
-																															"userBean" : 																															{
-																																"0" : 																																{
-																																	"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																																	"@Name" : "RenderedMessageBean_note-sel",
-																																	"@Message" : "235.3occP1zZCCCCF9r7uBinG1.mgcxR6XG2gsKsW10wX3031ZZhSv18KJ8+9bbbfx5FFaPO5UuVRmI.1oW57JalpV0nLdj9L8CJ.mI..3V0od.51uFYQxdYcOARJ.znNDkzI8aFz.ntZnpcNuTa9hOxGvKdhUPmKD7GD4kbdt3wxYSmUvJVbKS7G5JGsy4OUqRcSpc5g11sQJN402e6kj3wDYscxkZebrD+J0AcUXFBIxi7Kjz+3sRiaUqsI5Ziza0GuSv3gS78djDkSh0byxScLXf6+1ee2tyT4FV6YB1UW5mWYaH3B4G.CjEWg.",
-																																	"@Xoffset" : 4.0,
-																																	"@Yoffset" : 0.0
-																																}
-
-																															}
-,
-																															".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																														}
-,
-																														"1" : 																														{
-																															"@NOTEDUR" : 3,
-																															"@TUPLET" : 3,
-																															"@DOTS" : 0,
-																															"@ACCINFO" : 0,
-																															"@DURATION" : 0.33333,
-																															"@PITCH" : 83.0,
-																															"@VELOCITY" : 100.0,
-																															"@HOLD" : 0.330000013113022,
-																															"@BEAMEDOUT" : "false",
-																															"@GLISSOUT" : "false",
-																															"@TIEDOUT" : "true",
-																															"@ACCPREF" : 0,
-																															"@ACCVISPOLICY" : 1,
-																															"@ALTENHARMONIC" : "false",
-																															"@DYN" : 0,
-																															"@SLUROUT" : "false",
-																															"@ISGRACENOTE" : "false",
-																															"@GRACENOTESEPARATIONSCALER" : 2.0,
-																															"@LEDGERLINESVISIBLE" : "true",
-																															"@WEDGE" : "none",
-																															"@OTTAVA" : "none",
-																															"@MARK" : 0,
-																															"@TEXTOFFSETX" : 0,
-																															"@TEXTOFFSETY" : 0,
-																															"@NOTEHEAD" : 0,
-																															"@NOTEHEADSCALE" : 1.0,
-																															"@VISIBLE" : "false",
-																															"@NOTEHEADVISIBLE" : "true",
-																															"@STEMVISIBLE" : "false",
-																															"@OVERRIDELEVEL" : -1,
-																															"@ISOVERRIDELEVEL" : "false",
-																															"@STEMINFOOVERRIDE" : "false",
-																															"@STEMINFO" : 1,
-																															"@LAYOUTSHIFTX" : 0.0,
-																															"dim" : 																															{
-																																"0" : 																																{
-																																	"@index" : 4,
-																																	"@value" : 0.0,
-																																	"@name" : "EventFlag"
-																																}
-,
-																																"1" : 																																{
-																																	"@index" : 5,
-																																	"@value" : -1.0,
-																																	"@name" : "originalPitch"
-																																}
-,
-																																"2" : 																																{
-																																	"@index" : 6,
-																																	"@value" : 15.0,
-																																	"@name" : "index"
-																																}
-
-																															}
-,
-																															"userBean" : 																															{
-																																"0" : 																																{
-																																	"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																																	"@Name" : "RenderedMessageBean_note-sel",
-																																	"@Message" : "235.3occP1zZCDBDF973uBQ5gVvsnYIRROlCoWZtzqkRwl01JYW2E07Eg7euty5Bg1DDElm4cdcl4DAXc10gnwWXpMMFWjQeh9FEfSD..1Fywd.Kr6aFGI6z08DHq.XNydTRmN9yfFfYqFpZaHpstODi7A7pY7R5KJwipISEBoRMadoPLWwKWcEn7ZJmN5XHdr1janbG0C8saPJ6tku97hr3wDEsc501HNYx+jZusJMFoDSP9YR9ehdsK7UquAcsQG81C2K4hzAeefQP4Drl+s+LGRFDt0J7y1stpvvluPxu3Re+BaSAmI+BOALWyC",
-																																	"@Xoffset" : 4.0,
-																																	"@Yoffset" : 0.0
-																																}
-
-																															}
-,
-																															".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "232.3occP1zZCDBDF973uBQ5gVvsncqzPO1CMWRtzqkRwl0jJYW2E07Eg7euty5BgtDDElm4cdcl4LAXc1UgnwWXpMMFWjQek9IEfyD..1Vyod.KreCiij855dBjU.Lm4.JoSG+cPCvrUCUsKD0V22hQ9.d4LdIcQo5wYunDB4ykBkTp3kKmfjSUoF8JDOUaxsRtW5g91sHkc26eL+sr3wDEsc5U1HNSx+k5fsJM.oDOg7Kj7+D8ZWXcquAcsQG81i2K4hzAeefQP4DrlIaNywjAgas79ocmqJLryKj7qtzutx1TvExeMn8VZB",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "interval", "interval", "userBean" ]
-																												}
-,
-																												"3" : 																												{
-																													"@NOTEDUR" : 5,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 9,
-																													"@DURATION" : 0.125,
-																													"@PITCH" : 63.5,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.123750001192093,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 2,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 16.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"interval" : 																													{
-																														"0" : 																														{
-																															"@NOTEDUR" : 5,
-																															"@TUPLET" : 0,
-																															"@DOTS" : 0,
-																															"@ACCINFO" : 9,
-																															"@DURATION" : 0.125,
-																															"@PITCH" : 66.5,
-																															"@VELOCITY" : 100.0,
-																															"@HOLD" : 0.123750001192093,
-																															"@BEAMEDOUT" : "false",
-																															"@GLISSOUT" : "false",
-																															"@TIEDOUT" : "true",
-																															"@ACCPREF" : 0,
-																															"@ACCVISPOLICY" : 2,
-																															"@ALTENHARMONIC" : "false",
-																															"@DYN" : 0,
-																															"@SLUROUT" : "false",
-																															"@ISGRACENOTE" : "false",
-																															"@GRACENOTESEPARATIONSCALER" : 2.0,
-																															"@LEDGERLINESVISIBLE" : "true",
-																															"@WEDGE" : "none",
-																															"@OTTAVA" : "none",
-																															"@MARK" : 0,
-																															"@TEXTOFFSETX" : 0,
-																															"@TEXTOFFSETY" : 0,
-																															"@NOTEHEAD" : 0,
-																															"@NOTEHEADSCALE" : 1.0,
-																															"@VISIBLE" : "false",
-																															"@NOTEHEADVISIBLE" : "true",
-																															"@STEMVISIBLE" : "false",
-																															"@OVERRIDELEVEL" : -1,
-																															"@ISOVERRIDELEVEL" : "false",
-																															"@STEMINFOOVERRIDE" : "false",
-																															"@STEMINFO" : 1,
-																															"@LAYOUTSHIFTX" : 0.0,
-																															"dim" : 																															{
-																																"0" : 																																{
-																																	"@index" : 4,
-																																	"@value" : 0.0,
-																																	"@name" : "EventFlag"
-																																}
-,
-																																"1" : 																																{
-																																	"@index" : 5,
-																																	"@value" : -1.0,
-																																	"@name" : "originalPitch"
-																																}
-,
-																																"2" : 																																{
-																																	"@index" : 6,
-																																	"@value" : 17.0,
-																																	"@name" : "index"
-																																}
-
-																															}
-,
-																															"userBean" : 																															{
-																																"0" : 																																{
-																																	"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																																	"@Name" : "RenderedMessageBean_note-sel",
-																																	"@Message" : "234.3occP1zZCCCCF9r7uBiYG1.mhcSyZYG2gtKsW50wX303sYZhSv18KJ8+9bTbfxBEiMnG8pWKoKDf0Z15CZWltRWqsAF8E56T.tP..X6zm6.L+geXbjbPU0QfjBfY0GQIspvu8Z.lorup89fxX+TLv6wqWvyoqlOehbZgPHVjOa1yERd95QH4XUECd4CmqzoVI0KcPWyNjxdX4l2dMIdHQVSqZqIfyj7eoNZJiCPLwTjekj9mfSY8e23pQWqUAm4ziRtHdv2mXDTNAqYzlSeJZf+dKuuZ1aK8867LI+lK8iarMFbk7GPGltUp",
-																																	"@Xoffset" : 4.0,
-																																	"@Yoffset" : 0.0
-																																}
-
-																															}
-,
-																															".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																														}
-,
-																														"1" : 																														{
-																															"@NOTEDUR" : 5,
-																															"@TUPLET" : 0,
-																															"@DOTS" : 0,
-																															"@ACCINFO" : 0,
-																															"@DURATION" : 0.125,
-																															"@PITCH" : 83.0,
-																															"@VELOCITY" : 100.0,
-																															"@HOLD" : 0.123750001192093,
-																															"@BEAMEDOUT" : "false",
-																															"@GLISSOUT" : "false",
-																															"@TIEDOUT" : "true",
-																															"@ACCPREF" : 0,
-																															"@ACCVISPOLICY" : 1,
-																															"@ALTENHARMONIC" : "false",
-																															"@DYN" : 0,
-																															"@SLUROUT" : "false",
-																															"@ISGRACENOTE" : "false",
-																															"@GRACENOTESEPARATIONSCALER" : 2.0,
-																															"@LEDGERLINESVISIBLE" : "true",
-																															"@WEDGE" : "none",
-																															"@OTTAVA" : "none",
-																															"@MARK" : 0,
-																															"@TEXTOFFSETX" : 0,
-																															"@TEXTOFFSETY" : 0,
-																															"@NOTEHEAD" : 0,
-																															"@NOTEHEADSCALE" : 1.0,
-																															"@VISIBLE" : "false",
-																															"@NOTEHEADVISIBLE" : "true",
-																															"@STEMVISIBLE" : "false",
-																															"@OVERRIDELEVEL" : -1,
-																															"@ISOVERRIDELEVEL" : "false",
-																															"@STEMINFOOVERRIDE" : "false",
-																															"@STEMINFO" : 1,
-																															"@LAYOUTSHIFTX" : 0.0,
-																															"dim" : 																															{
-																																"0" : 																																{
-																																	"@index" : 4,
-																																	"@value" : 0.0,
-																																	"@name" : "EventFlag"
-																																}
-,
-																																"1" : 																																{
-																																	"@index" : 5,
-																																	"@value" : -1.0,
-																																	"@name" : "originalPitch"
-																																}
-,
-																																"2" : 																																{
-																																	"@index" : 6,
-																																	"@value" : 18.0,
-																																	"@name" : "index"
-																																}
-
-																															}
-,
-																															"userBean" : 																															{
-																																"0" : 																																{
-																																	"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																																	"@Name" : "RenderedMessageBean_note-sel",
-																																	"@Message" : "236.3occP1zZCCCCF9r7uBiXG1.mgSxRS6N1CcWVurqiwvqwq0zDmfs6WT5+8433.ksNL1fdzqdsjNS.rSsx5jlDYsrQpcH8Y56T.NS..vsxS8.zteMxBj8h5dBDU.nVdHHoS31LnAPU0PU6rNgR+IejOfWNkkSeMq7wIYEbNOunbRV4L9Sr7k2.ldKkEiNZcmpkwFJ1Q8PS61.EuawauLOJdLQRamXkxElrzek5fpxOF9DYA9ER7ebFg19cqoI3ZivYTGuOkw8mv6CHIHmDp4O6O4QuA1+aE9U6NckcXymjxt5R+3Ja8AWH+jTcb0N",
-																																	"@Xoffset" : 4.0,
-																																	"@Yoffset" : 0.0
-																																}
-
-																															}
-,
-																															".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "232.3occP9zZCDBDE+73mBYnGZA2htKglzi8P6klK8ZoTrYssR10cQM+iP9tW2YcgPBEQA+Mu44y4HCvd6pPz3KLMlViKh7G4uyA3HC..WaNL.vv1ePAQ1paFHPVAfNyNRRuN96nF.s0icsID0V2mxI9Hd4bQE+0x6m+vLoTpTKJkKpDUKujntRyrIiBwCMlbNxAY.56VST7lme6kmxhmJTz0qWYizGRcQoc15T5SEJI9IV9chdsK7cmukbsUG8182pDxzhNuCYjbF0yUiMy9jAg+ax8U2FWcXbfWnDms4eblsoKmX+AJTwVG.",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "interval", "interval", "userBean" ]
-																												}
-,
-																												"4" : 																												{
-																													"@NOTEDUR" : 4,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 9,
-																													"@DURATION" : 0.25,
-																													"@PITCH" : 66.5,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.247500002384186,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 2,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 19.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"interval" : 																													{
-																														"0" : 																														{
-																															"@NOTEDUR" : 4,
-																															"@TUPLET" : 0,
-																															"@DOTS" : 0,
-																															"@ACCINFO" : 0,
-																															"@DURATION" : 0.25,
-																															"@PITCH" : 83.0,
-																															"@VELOCITY" : 100.0,
-																															"@HOLD" : 0.247500002384186,
-																															"@BEAMEDOUT" : "false",
-																															"@GLISSOUT" : "false",
-																															"@TIEDOUT" : "false",
-																															"@ACCPREF" : 0,
-																															"@ACCVISPOLICY" : 1,
-																															"@ALTENHARMONIC" : "false",
-																															"@DYN" : 0,
-																															"@SLUROUT" : "false",
-																															"@ISGRACENOTE" : "false",
-																															"@GRACENOTESEPARATIONSCALER" : 2.0,
-																															"@LEDGERLINESVISIBLE" : "true",
-																															"@WEDGE" : "none",
-																															"@OTTAVA" : "none",
-																															"@MARK" : 0,
-																															"@TEXTOFFSETX" : 0,
-																															"@TEXTOFFSETY" : 0,
-																															"@NOTEHEAD" : 0,
-																															"@NOTEHEADSCALE" : 1.0,
-																															"@VISIBLE" : "false",
-																															"@NOTEHEADVISIBLE" : "true",
-																															"@STEMVISIBLE" : "false",
-																															"@OVERRIDELEVEL" : -1,
-																															"@ISOVERRIDELEVEL" : "false",
-																															"@STEMINFOOVERRIDE" : "false",
-																															"@STEMINFO" : 1,
-																															"@LAYOUTSHIFTX" : 0.0,
-																															"dim" : 																															{
-																																"0" : 																																{
-																																	"@index" : 4,
-																																	"@value" : 0.0,
-																																	"@name" : "EventFlag"
-																																}
-,
-																																"1" : 																																{
-																																	"@index" : 5,
-																																	"@value" : -1.0,
-																																	"@name" : "originalPitch"
-																																}
-,
-																																"2" : 																																{
-																																	"@index" : 6,
-																																	"@value" : 20.0,
-																																	"@name" : "index"
-																																}
-
-																															}
-,
-																															"userBean" : 																															{
-																																"0" : 																																{
-																																	"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																																	"@Name" : "RenderedMessageBean_note-sel",
-																																	"@Message" : "231.3occP1zRDCCDF97jeEgAOnPpzzZkhG8fdw8hWEQhaiZXaSKIY+hk8+toSSgEKlPBjm4cdyLyIFfCl09f1koa0cZa.4OveiCvIF..tQebDf9ceiBhrS0NRfjB.s58jjAU3mIM.ZZlxZqOnL1Oxm4S3U0hR9KxpaKpxiqhx56j02KJWs.IWppZ1Ke3XqNUJoZYD552PT7pmd84GShmCj0OnVaBTOI+Sn8llXCDCTP7yrz+DbJq+qdWG4ZmJ3LGtVJxia59FjQxYTNKlb5CQC7+2v6y9s1F+zLOSJt3ve+BaiONy9k.7sUj",
-																																	"@Xoffset" : 4.0,
-																																	"@Yoffset" : 0.0
-																																}
-
-																															}
-,
-																															".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "233.3occP1zSCDBDF97vuBxDOnIrlkVw13QOnWrW7pwXvtnR5tra.5Woo+2kcV1jFaEBjvy7NuLybfAXmcYHZ7ElZSiwEQ9C723.bfA.fqL66AXXy2nfHaz08DHq.PmYKIoSG+YPCf1pgrVGhZq6ixQ9.dwbwT9K2e2syTko0LoZhRMWJlt3bl7B5Ti1Eh6qM4pIWN8Pe6JhhW8zqO+XV7Xfh1N8RajZK4eBs0Vk5gTfID+HK+OQu1E9p02Pt1nid6tqkhxzltuAYjbFkyYCOytjAg+a98Y6ZWUXXrWHEmb3uehsoGGY+hh3bID",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "interval", "userBean" ]
-																												}
-,
-																												"5" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 9,
-																													"@DURATION" : 0.5,
-																													"@PITCH" : 66.5,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.495000004768372,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 2,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 21.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "231.3occP1zZCCCCF9r7uBiXG1.mRRS2ZoG6gtKqW10xX3030ZZhSv18KJ8+dcTbfxByFavO5UuVRWY.1n237JahpTUoLdjOmulCvUF..tWcoEftiaQAQNJKaIPTAfF0IRRizuqSCf5htrN37Rs46zddGd0LQN+iIoiRo0jouMKe5XQ9pAnrgpds2Km+RoJVJwZoEZq2ST7oke99hn39.I0MxMZO0SY+IzIcQnABAFS7ar3+3sRi62ZaE4Zkza0meNSjF1z8KHijynbFL4TmCF39ug2O0GLEttYdRl3gC+qGrM73F6N81uUg",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-,
-																												"6" : 																												{
-																													"@NOTEDUR" : 5,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.125,
-																													"@PITCH" : 0.0,
-																													"@VELOCITY" : 0.0,
-																													"@HOLD" : 0.125,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : -1.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim" ]
-																												}
-
-																											}
-,
-																											".ordering" : [ "note", "note", "note", "note", "note", "note", "note" ]
-																										}
-,
-																										"1" : 																										{
-																											"@INDEX" : 1,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-,
-																										"2" : 																										{
-																											"@INDEX" : 2,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-,
-																										"3" : 																										{
-																											"@INDEX" : 3,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-
-																									}
-,
-																									".ordering" : [ "track", "track", "track", "track" ]
-																								}
-,
-																								"1" : 																								{
-																									"@INDEX" : 1,
-																									"@CLEF" : 3,
-																									"@CLEFSETBYHAND" : "false",
-																									"@INSTRUMENTINDEX" : 1,
-																									"@INSINDEXSETBYHAND" : "false",
-																									"@KEYSIGTYPE" : 0,
-																									"@KEYSIGNUMACC" : 0,
-																									"@KEYSIGSETBYHAND" : "false",
-																									"@EXTENDEDLINESABOVE" : 0,
-																									"@EXTENDEDLINESBELOW" : 0,
-																									"track" : 																									{
-																										"0" : 																										{
-																											"@INDEX" : 0,
-																											"@MultitrackRestAdjustmentY" : 0.0,
-																											"note" : 																											{
-																												"0" : 																												{
-																													"@NOTEDUR" : 4,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.25,
-																													"@PITCH" : 45.0,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.247500002384186,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 23.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "231.3occP1zRDCCDF97jeEgAOnPpzzZkhG8fdw8hWEQhaiZXaSKIY+hk8+toSSgEKlPBjm4cdyLyIFfCl09f1koa0cZa.4OveiCvIF..tQebDf9ceiBhrS0NRfjB.s58jjAU3mIM.ZZlxZqOnL1Oxm4S3U0hR9KxpaKpxiqhx56j02KJWs.IWppZ1Ke3XqNUJoZYD552PT7pmd84GShmCj0OnVaBTOI+Sn8llXCDCTP7yrz+DbJq+qdWG4ZmJ3LGtVJxia59FjQxYTNKlb5CQC7+2v6y9s1F+zLOSJt3ve+BaiONy9k.7sUj",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-,
-																												"1" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.5,
-																													"@PITCH" : 0.0,
-																													"@VELOCITY" : 0.0,
-																													"@HOLD" : 0.5,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : -1.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim" ]
-																												}
-,
-																												"2" : 																												{
-																													"@NOTEDUR" : 4,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.25,
-																													"@PITCH" : 45.0,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.247500002384186,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "true",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 25.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "233.3occP1zSCDBDF97vuBxDOnIrlkVw13QOnWrW7pwXvtnR5tra.5Woo+2kcV1jFaEBjvy7NuLybfAXmcYHZ7ElZSiwEQ9C723.bfA.fqL66AXXy2nfHaz08DHq.PmYKIoSG+YPCf1pgrVGhZq6ixQ9.dwbwT9K2e2syTko0LoZhRMWJlt3bl7B5Ti1Eh6qM4pIWN8Pe6JhhW8zqO+XV7Xfh1N8RajZK4eBs0Vk5gTfID+HK+OQu1E9p02Pt1nid6tqkhxzltuAYjbFkyYCOytjAg+a98Y6ZWUXXrWHEmb3uehsoGGY+hh3bID",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-,
-																												"3" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.5,
-																													"@PITCH" : 45.0,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.495000004768372,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 26.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "231.3occP1zZCCCCF9r7uBiXG1.mRRS2ZoG6gtKqW10xX3030ZZhSv18KJ8+dcTbfxByFavO5UuVRWY.1n237JahpTUoLdjOmulCvUF..tWcoEftiaQAQNJKaIPTAfF0IRRizuqSCf5htrN37Rs46zddGd0LQN+iIoiRo0jouMKe5XQ9pAnrgpds2Km+RoJVJwZoEZq2ST7oke99hn39.I0MxMZO0SY+IzIcQnABAFS7ar3+3sRi62ZaE4Zkza0meNSjF1z8KHijynbFL4TmCF39ug2O0GLEttYdRl3gC+qGrM73F6N81uUg",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-,
-																												"4" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.5,
-																													"@PITCH" : 0.0,
-																													"@VELOCITY" : 0.0,
-																													"@HOLD" : 0.5,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : -1.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim" ]
-																												}
-
-																											}
-,
-																											".ordering" : [ "note", "note", "note", "note", "note" ]
-																										}
-,
-																										"1" : 																										{
-																											"@INDEX" : 1,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-,
-																										"2" : 																										{
-																											"@INDEX" : 2,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-,
-																										"3" : 																										{
-																											"@INDEX" : 3,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-
-																									}
-,
-																									".ordering" : [ "track", "track", "track", "track" ]
-																								}
-
-																							}
-,
-																							".ordering" : [ "staff", "staff" ]
+																							".ordering" : [ "staff" ]
 																						}
 ,
 																						"2" : 																						{
-																							"@WIDTH" : 400,
-																							"@WIDTHSETBYHAND" : "true",
-																							"@TIMESIG" : [ 2, 4 ],
+																							"@WIDTH" : 433,
+																							"@WIDTHSETBYHAND" : "false",
+																							"@TIMESIG" : [ 3, 4 ],
 																							"@TIMESIGSETBYHAND" : "true",
 																							"@TEMPO" : 60.0,
 																							"@TEMPOSETBYHAND" : "false",
 																							"@REPEATSTART" : "false",
 																							"@REPEATEND" : "false",
 																							"@NUMREPEATS" : 1,
-																							"@BARLINE" : "NONE",
+																							"@BARLINE" : "SINGLE",
 																							"@MEASURETEXTX" : 48,
 																							"@MEASURETEXTY" : 48,
-																							"@MEASURELEFTMARGIN" : 0.0,
+																							"@MEASURELEFTMARGIN" : 50.0,
 																							"staff" : 																							{
 																								"0" : 																								{
 																									"@INDEX" : 0,
 																									"@CLEF" : 0,
 																									"@CLEFSETBYHAND" : "false",
 																									"@INSTRUMENTINDEX" : 0,
-																									"@INSINDEXSETBYHAND" : "false",
-																									"@KEYSIGTYPE" : 0,
-																									"@KEYSIGNUMACC" : 0,
-																									"@KEYSIGSETBYHAND" : "false",
-																									"@EXTENDEDLINESABOVE" : 0,
-																									"@EXTENDEDLINESBELOW" : 0,
-																									"track" : 																									{
-																										"0" : 																										{
-																											"@INDEX" : 0,
-																											"@MultitrackRestAdjustmentY" : 0.0,
-																											"note" : 																											{
-																												"0" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.5,
-																													"@PITCH" : 0.0,
-																													"@VELOCITY" : 0.0,
-																													"@HOLD" : 0.5,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : -1.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim" ]
-																												}
-,
-																												"1" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 9,
-																													"@DURATION" : 0.5,
-																													"@PITCH" : 63.5,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.495000004768372,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "true",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 2,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "true",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 29.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "233.3occP1zSCDBDF97vuBxDOnIrlkVw13QOnWrW7pwXvtnR5tra.5Woo+2kcV1jFaEBjvy7NuLybfAXmcYHZ7ElZSiwEQ9C723.bfA.fqL66AXXy2nfHaz08DHq.PmYKIoSG+YPCf1pgrVGhZq6ixQ9.dwbwT9K2e2syTko0LoZhRMWJlt3bl7B5Ti1Eh6qM4pIWN8Pe6JhhW8zqO+XV7Xfh1N8RajZK4eBs0Vk5gTfID+HK+OQu1E9p02Pt1nid6tqkhxzltuAYjbFkyYCOytjAg+a98Y6ZWUXXrWHEmb3uehsoGGY+hh3bID",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-,
-																												"2" : 																												{
-																													"@NOTEDUR" : 4,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
-																													"@ACCINFO" : 9,
-																													"@DURATION" : 0.25,
-																													"@PITCH" : 63.5,
-																													"@VELOCITY" : 100.0,
-																													"@HOLD" : 0.247500002384186,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 2,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 1,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : 30.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													"userBean" : 																													{
-																														"0" : 																														{
-																															"@CLASSNAME" : "com.softsynth.jmsl.score.util.RenderedMessageBean",
-																															"@Name" : "RenderedMessageBean_note-sel",
-																															"@Message" : "231.3occP1zRDCCDF97jeEgAOnPpzzZkhG8fdw8hWEQhaiZXaSKIY+hk8+toSSgEKlPBjm4cdyLyIFfCl09f1koa0cZa.4OveiCvIF..tQebDf9ceiBhrS0NRfjB.s58jjAU3mIM.ZZlxZqOnL1Oxm4S3U0hR9KxpaKpxiqhx56j02KJWs.IWppZ1Ke3XqNUJoZYD552PT7pmd84GShmCj0OnVaBTOI+Sn8llXCDCTP7yrz+DbJq+qdWG4ZmJ3LGtVJxia59FjQxYTNKlb5CQC7+2v6y9s1F+zLOSJt3ve+BaiONy9k.7sUj",
-																															"@Xoffset" : 4.0,
-																															"@Yoffset" : 0.0
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim", "userBean" ]
-																												}
-,
-																												"3" : 																												{
-																													"@NOTEDUR" : 3,
-																													"@TUPLET" : 0,
-																													"@DOTS" : 1,
-																													"@ACCINFO" : 0,
-																													"@DURATION" : 0.75,
-																													"@PITCH" : 0.0,
-																													"@VELOCITY" : 0.0,
-																													"@HOLD" : 0.75,
-																													"@BEAMEDOUT" : "false",
-																													"@GLISSOUT" : "false",
-																													"@TIEDOUT" : "false",
-																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
-																													"@ALTENHARMONIC" : "false",
-																													"@DYN" : 0,
-																													"@SLUROUT" : "false",
-																													"@ISGRACENOTE" : "false",
-																													"@GRACENOTESEPARATIONSCALER" : 2.0,
-																													"@LEDGERLINESVISIBLE" : "true",
-																													"@WEDGE" : "none",
-																													"@OTTAVA" : "none",
-																													"@MARK" : 0,
-																													"@TEXTOFFSETX" : 0,
-																													"@TEXTOFFSETY" : 0,
-																													"@NOTEHEAD" : 0,
-																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
-																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
-																													"@OVERRIDELEVEL" : -1,
-																													"@ISOVERRIDELEVEL" : "false",
-																													"@STEMINFOOVERRIDE" : "false",
-																													"@STEMINFO" : 2,
-																													"@LAYOUTSHIFTX" : 0.0,
-																													"dim" : 																													{
-																														"0" : 																														{
-																															"@index" : 4,
-																															"@value" : 0.0,
-																															"@name" : "EventFlag"
-																														}
-,
-																														"1" : 																														{
-																															"@index" : 5,
-																															"@value" : -1.0,
-																															"@name" : "originalPitch"
-																														}
-,
-																														"2" : 																														{
-																															"@index" : 6,
-																															"@value" : -1.0,
-																															"@name" : "index"
-																														}
-
-																													}
-,
-																													".ordering" : [ "dim", "dim", "dim" ]
-																												}
-
-																											}
-,
-																											".ordering" : [ "note", "note", "note", "note" ]
-																										}
-,
-																										"1" : 																										{
-																											"@INDEX" : 1,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-,
-																										"2" : 																										{
-																											"@INDEX" : 2,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-,
-																										"3" : 																										{
-																											"@INDEX" : 3,
-																											"@MultitrackRestAdjustmentY" : 0.0
-																										}
-
-																									}
-,
-																									".ordering" : [ "track", "track", "track", "track" ]
-																								}
-,
-																								"1" : 																								{
-																									"@INDEX" : 1,
-																									"@CLEF" : 3,
-																									"@CLEFSETBYHAND" : "false",
-																									"@INSTRUMENTINDEX" : 1,
 																									"@INSINDEXSETBYHAND" : "false",
 																									"@KEYSIGTYPE" : 0,
 																									"@KEYSIGNUMACC" : 0,
@@ -4540,17 +2279,17 @@
 																												"0" : 																												{
 																													"@NOTEDUR" : 1,
 																													"@TUPLET" : 0,
-																													"@DOTS" : 0,
+																													"@DOTS" : 1,
 																													"@ACCINFO" : 0,
-																													"@DURATION" : 2.0,
+																													"@DURATION" : 3.0,
 																													"@PITCH" : 0.0,
 																													"@VELOCITY" : 0.0,
-																													"@HOLD" : 2.0,
+																													"@HOLD" : 3.0,
 																													"@BEAMEDOUT" : "false",
 																													"@GLISSOUT" : "false",
 																													"@TIEDOUT" : "false",
 																													"@ACCPREF" : 0,
-																													"@ACCVISPOLICY" : 1,
+																													"@ACCVISPOLICY" : 0,
 																													"@ALTENHARMONIC" : "false",
 																													"@DYN" : 0,
 																													"@SLUROUT" : "false",
@@ -4564,9 +2303,9 @@
 																													"@TEXTOFFSETY" : 0,
 																													"@NOTEHEAD" : 1,
 																													"@NOTEHEADSCALE" : 1.0,
-																													"@VISIBLE" : "false",
+																													"@VISIBLE" : "true",
 																													"@NOTEHEADVISIBLE" : "true",
-																													"@STEMVISIBLE" : "false",
+																													"@STEMVISIBLE" : "true",
 																													"@OVERRIDELEVEL" : -1,
 																													"@ISOVERRIDELEVEL" : "false",
 																													"@STEMINFOOVERRIDE" : "false",
@@ -4623,7 +2362,127 @@
 
 																							}
 ,
-																							".ordering" : [ "staff", "staff" ]
+																							".ordering" : [ "staff" ]
+																						}
+,
+																						"3" : 																						{
+																							"@WIDTH" : 490,
+																							"@WIDTHSETBYHAND" : "false",
+																							"@TIMESIG" : [ 4, 4 ],
+																							"@TIMESIGSETBYHAND" : "true",
+																							"@TEMPO" : 60.0,
+																							"@TEMPOSETBYHAND" : "false",
+																							"@REPEATSTART" : "false",
+																							"@REPEATEND" : "false",
+																							"@NUMREPEATS" : 1,
+																							"@BARLINE" : "SINGLE",
+																							"@MEASURETEXTX" : 48,
+																							"@MEASURETEXTY" : 48,
+																							"@MEASURELEFTMARGIN" : 50.0,
+																							"staff" : 																							{
+																								"0" : 																								{
+																									"@INDEX" : 0,
+																									"@CLEF" : 0,
+																									"@CLEFSETBYHAND" : "false",
+																									"@INSTRUMENTINDEX" : 0,
+																									"@INSINDEXSETBYHAND" : "false",
+																									"@KEYSIGTYPE" : 0,
+																									"@KEYSIGNUMACC" : 0,
+																									"@KEYSIGSETBYHAND" : "false",
+																									"@EXTENDEDLINESABOVE" : 0,
+																									"@EXTENDEDLINESBELOW" : 0,
+																									"track" : 																									{
+																										"0" : 																										{
+																											"@INDEX" : 0,
+																											"@MultitrackRestAdjustmentY" : 0.0,
+																											"note" : 																											{
+																												"0" : 																												{
+																													"@NOTEDUR" : 0,
+																													"@TUPLET" : 0,
+																													"@DOTS" : 0,
+																													"@ACCINFO" : 0,
+																													"@DURATION" : 4.0,
+																													"@PITCH" : 0.0,
+																													"@VELOCITY" : 0.0,
+																													"@HOLD" : 4.0,
+																													"@BEAMEDOUT" : "false",
+																													"@GLISSOUT" : "false",
+																													"@TIEDOUT" : "false",
+																													"@ACCPREF" : 0,
+																													"@ACCVISPOLICY" : 0,
+																													"@ALTENHARMONIC" : "false",
+																													"@DYN" : 0,
+																													"@SLUROUT" : "false",
+																													"@ISGRACENOTE" : "false",
+																													"@GRACENOTESEPARATIONSCALER" : 2.0,
+																													"@LEDGERLINESVISIBLE" : "true",
+																													"@WEDGE" : "none",
+																													"@OTTAVA" : "none",
+																													"@MARK" : 0,
+																													"@TEXTOFFSETX" : 0,
+																													"@TEXTOFFSETY" : 0,
+																													"@NOTEHEAD" : 1,
+																													"@NOTEHEADSCALE" : 1.0,
+																													"@VISIBLE" : "true",
+																													"@NOTEHEADVISIBLE" : "true",
+																													"@STEMVISIBLE" : "true",
+																													"@OVERRIDELEVEL" : -1,
+																													"@ISOVERRIDELEVEL" : "false",
+																													"@STEMINFOOVERRIDE" : "false",
+																													"@STEMINFO" : 0,
+																													"@LAYOUTSHIFTX" : 0.0,
+																													"dim" : 																													{
+																														"0" : 																														{
+																															"@index" : 4,
+																															"@value" : 0.0,
+																															"@name" : "EventFlag"
+																														}
+,
+																														"1" : 																														{
+																															"@index" : 5,
+																															"@value" : -1.0,
+																															"@name" : "originalPitch"
+																														}
+,
+																														"2" : 																														{
+																															"@index" : 6,
+																															"@value" : -1.0,
+																															"@name" : "index"
+																														}
+
+																													}
+,
+																													".ordering" : [ "dim", "dim", "dim" ]
+																												}
+
+																											}
+,
+																											".ordering" : [ "note" ]
+																										}
+,
+																										"1" : 																										{
+																											"@INDEX" : 1,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+,
+																										"2" : 																										{
+																											"@INDEX" : 2,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+,
+																										"3" : 																										{
+																											"@INDEX" : 3,
+																											"@MultitrackRestAdjustmentY" : 0.0
+																										}
+
+																									}
+,
+																									".ordering" : [ "track", "track", "track", "track" ]
+																								}
+
+																							}
+,
+																							".ordering" : [ "staff" ]
 																						}
 
 																					}
@@ -4635,7 +2494,7 @@
 
 																					}
 ,
-																					".ordering" : [ "ScoreAnnotation", "orchestra", "mixerpanelsettings", "staffspacing", "staffspacing", "StaffLineVisibility", "StaffLineVisibility", "StaffLineVisibility", "StaffLineVisibility", "StaffLineVisibility", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "measure", "measure", "measure", "scoreUserBean" ]
+																					".ordering" : [ "ScoreAnnotation", "orchestra", "mixerpanelsettings", "staffspacing", "StaffLineVisibility", "StaffLineVisibility", "StaffLineVisibility", "StaffLineVisibility", "StaffLineVisibility", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "scoresection", "measure", "measure", "measure", "measure", "scoreUserBean" ]
 																				}
 
 																			}
@@ -6809,7 +4668,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 30.0, 532.0, 90.0, 70.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 0.0, 0.0, 660.0, 230.0 ],
+													"presentation_rect" : [ 0.0, 0.0, 800.0, 115.0 ],
 													"rounded" : 0.0,
 													"types" : "TEXT",
 													"varname" : "dropfile"
@@ -7162,7 +5021,7 @@
 													"parameter_enable" : 0,
 													"patching_rect" : [ 400.0, 20.0, 320.0, 240.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 0.0, 0.0, 660.0, 230.0 ],
+													"presentation_rect" : [ 0.0, 0.0, 800.0, 115.0 ],
 													"textfile" : 													{
 														"filename" : "pane.js",
 														"flags" : 0,
@@ -7836,7 +5695,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 101.0, 448.0, 660.0, 230.0 ],
+									"patching_rect" : [ 101.0, 448.0, 800.0, 115.0 ],
 									"prototypename" : "maxscore.icanvas",
 									"varname" : "bcanvas[1]",
 									"viewvisibility" : 1
