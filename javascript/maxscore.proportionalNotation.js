@@ -114,14 +114,14 @@ function setProportionalNotation(b) {
         annotation.set("timeUnit", timeUnit);
         outlet(0, "setScoreAnnotation", annotation.stringify_compressed());
        	outlet(0, "selectAll");
-    	//post("previously proportional?", proportional, "\n"); 
        if (!proportional) {//notation is currently not proportional
+    		//post("previously proportional?", proportional, "\n"); 
             //annotation.clear();
             originalScoreAttributes = json["jmslscoredoc"]["score"][0];
             outlet(0, "getScoreAnnotation");
             //outlet(0, "setScoreLeftMargin", playheadPosition);
             outlet(0, "setScoreFirstSystemIndent", 0.);
-            outlet(0, "getDurationalSpacingBase");
+            //outlet(0, "getDurationalSpacingBase");
             outlet(0, "setDurationalSpacingBase", 0.4);
             outlet(0, "setWrap", 0);
             outlet(0, "showTimeSignatures", "false");
@@ -141,6 +141,8 @@ function setProportionalNotation(b) {
                 originalMeasureWidths[m] = [json["measure"]["@WIDTH"], json["measure"]["@MEASURELEFTMARGIN"]];
             }
         }
+ 		annotation.set("setDurationalSpacingBase", 0.4);
+        outlet(0, "setScoreAnnotation", annotation.stringify_compressed());
  		}
         scoreSize = 0;
         outlet(0, "getNumMeasures");
