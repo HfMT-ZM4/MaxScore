@@ -42,7 +42,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 151.0, 1398.0, 873.0 ],
+						"rect" : [ 34.0, 151.0, 1337.0, 873.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -76,9 +76,40 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 296.0, 106.0, 1036.0, 902.0 ],
+										"rect" : [ 296.0, 106.0, 1040.0, 902.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-56",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 203.0, 289.0, 65.0, 22.0 ],
+													"text" : "prepend id"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-49",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 3,
+													"outlettype" : [ "", "", "" ],
+													"patching_rect" : [ 203.0, 260.0, 361.0, 22.0 ],
+													"restore" : [ "8680-fromScore" ],
+													"saved_object_attributes" : 													{
+														"parameter_enable" : 0,
+														"parameter_mappable" : 0
+													}
+,
+													"text" : "pattr @bindto parent::parent::grabber @invisible 1 @autorestore 0",
+													"varname" : "u143013797"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-46",
 													"maxclass" : "comment",
@@ -164,7 +195,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 460.0, 260.0, 29.5, 22.0 ],
+													"patching_rect" : [ 460.0, 302.0, 29.5, 22.0 ],
 													"text" : "!-",
 													"varname" : "toScore[9]"
 												}
@@ -388,7 +419,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-14",
-																	"int" : 1,
 																	"maxclass" : "gswitch2",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -470,7 +500,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-79",
-																	"int" : 1,
 																	"maxclass" : "gswitch2",
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
@@ -1132,18 +1161,6 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-35",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 163.0, 267.0, 29.5, 22.0 ],
-													"text" : "0 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-31",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
@@ -1185,7 +1202,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 394.625, 313.0, 29.5, 22.0 ],
+													"patching_rect" : [ 394.625, 368.0, 29.5, 22.0 ],
 													"text" : "+",
 													"varname" : "toScore[10]"
 												}
@@ -1254,18 +1271,6 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-48",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 214.0, 260.0, 208.0, 22.0 ],
-													"text" : "loadmess id #0-fromScore"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-11",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -1298,17 +1303,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 186.25, 858.0, 30.0, 30.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-21",
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 507.0, 260.0, 143.0, 20.0 ],
-													"text" : "check whether this works"
 												}
 
 											}
@@ -1445,9 +1439,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "int", "", "int" ],
+													"outlettype" : [ "int", "", "bang" ],
 													"patching_rect" : [ 111.0, 177.0, 47.0, 22.0 ],
-													"text" : "t i l i",
+													"text" : "t i l b",
 													"varname" : "toScore[1]"
 												}
 
@@ -1492,7 +1486,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-79",
-													"int" : 1,
 													"maxclass" : "gswitch2",
 													"numinlets" : 2,
 													"numoutlets" : 2,
@@ -1631,7 +1624,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 111.0, 303.0, 103.0, 22.0 ],
+													"patching_rect" : [ 111.0, 317.0, 103.0, 22.0 ],
 													"text" : "dumpScore $1 $2"
 												}
 
@@ -1752,6 +1745,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
 													"source" : [ "obj-2", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-49", 0 ],
+													"source" : [ "obj-2", 2 ]
 												}
 
 											}
@@ -1886,13 +1886,6 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-34", 0 ],
-													"source" : [ "obj-35", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-96", 0 ],
 													"source" : [ "obj-37", 0 ]
 												}
@@ -1951,9 +1944,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-40", 0 ],
-													"midpoints" : [ 223.5, 340.5, 120.5, 340.5 ],
-													"source" : [ "obj-48", 0 ]
+													"destination" : [ "obj-56", 0 ],
+													"source" : [ "obj-49", 0 ]
 												}
 
 											}
@@ -2000,6 +1992,13 @@
 													"destination" : [ "obj-94", 0 ],
 													"midpoints" : [ 218.625, 468.0, 457.5, 468.0 ],
 													"source" : [ "obj-55", 10 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-40", 1 ],
+													"source" : [ "obj-56", 0 ]
 												}
 
 											}
@@ -3310,7 +3309,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 986.321929931640625, 176.0, 321.0, 22.0 ],
-									"restore" : [ "7601-fromScore" ],
+									"restore" : [ "8680-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4324,7 +4323,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 29.0, 18.0, 321.0, 22.0 ],
-									"restore" : [ "7601-fromScore" ],
+									"restore" : [ "8680-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4987,7 +4986,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 62.0, 15.0, 321.0, 22.0 ],
-									"restore" : [ "7601-fromScore" ],
+									"restore" : [ "8680-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -6219,7 +6218,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 308.0, 175.0, 321.0, 22.0 ],
-									"restore" : [ "7601-fromScore" ],
+									"restore" : [ "8680-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -6900,7 +6899,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 255.0, 83.5, 321.0, 22.0 ],
-									"restore" : [ "7601-fromScore" ],
+									"restore" : [ "8680-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -7276,7 +7275,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 455.0, 289.0, 388.0, 102.0 ],
-									"presentation_linecount" : 5,
 									"text" : "set version \"1.0\", set proportional 0, set blankPage 0, set timeUnit 100., set textfont Arial, set musicfont Bravura, set titlefont \"Times New Roman\", set bgcolor 0.996 0.996 0.94 1., set fgcolor 0. 0. 0. 1., set linecolor 0. 0. 0. 1., set setWrap 1, set setZoom 0.5, set setDurationalSpacingBase 0.7, set setLoopingPlayback 0, set showWholeNoteRestsInEmptyMeasures 0, set showRhythmInProportionalNotation 0"
 								}
 
@@ -8658,7 +8656,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 569.5, 5.0, 321.0, 22.0 ],
-									"restore" : [ "7601-fromScore" ],
+									"restore" : [ "8680-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -10677,7 +10675,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 420.0, 339.0, 232.0, 22.0 ],
-					"restore" : [ "7601-fromScore" ],
+					"restore" : [ "8680-fromScore" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10781,7 +10779,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "saveToUndoStack" ],
 					"patching_rect" : [ 30.696825396825375, 8.0, 30.0, 30.0 ]
 				}
 
@@ -10839,7 +10837,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 117.0, 283.0, 321.0, 22.0 ],
-									"restore" : [ "7601-fromScore" ],
+									"restore" : [ "8680-fromScore" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0

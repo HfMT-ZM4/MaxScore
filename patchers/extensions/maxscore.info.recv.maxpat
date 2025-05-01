@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -182,7 +182,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.0, 292.0, 209.0, 22.0 ],
+					"patching_rect" : [ 232.0, 290.0, 209.0, 22.0 ],
 					"text" : "loadmess  #1-fromScore"
 				}
 
@@ -571,8 +571,7 @@
 				}
 
 			}
- ],
-		"originid" : "pat-2026"
+ ]
 	}
 
 }

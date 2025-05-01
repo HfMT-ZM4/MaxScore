@@ -43,6 +43,7 @@ var f_size = 12;
 var f_face = "Arial";
 var source_rgb = [];
 var _val = {};
+var vvv = {};
 var	buttonfillcolor = "red";
 var	buttonstrokecolor = "red";
 var buttonstrokewidth = 0.5;
@@ -279,10 +280,8 @@ function anything()
 				break;
 				case "select_font_face":
 				f_face = msg[2];
-				//post("test", f_face, f_size, "\n");
 				break;
 				case "show_text":
-				//var _draw = {};
 				var val = [{
 					"parent" : "extras",
 					"new" : "text",
@@ -344,6 +343,9 @@ function anything()
 			case "set_source_rgb":
 			source_rgb = [msg[1], msg[2], msg[3], 1];
 			break;
+			case "set_source_rgba":
+			source_rgb = [msg[1], msg[2], msg[3], msg[4]];
+			break;
 			case "move_to":
 			x = msg[1];
 			y = msg[2];
@@ -353,31 +355,31 @@ function anything()
 			break;
 			case "select_font_face":
 			f_face = msg[1];
-			//post("test", f_face, f_size, "\n");
 			break;
 			case "show_text":
 			//var _draw = {};
-			var val = [{
+			//post("show_text", msg[1], "\n");
+			var _val = {
 					"parent" : "overlay",
 					"new" : "text",
 					"id" : "draw-" + pons,
 					"x" : x,
 					"y" : y,
-					"child" : msg[1],
+					"text" : msg[1],
 					"style" : 					{
 						"font-family" : f_face,
 						"font-size" : f_size,
 						"fill" : "rgb(" + Math.round(source_rgb[0] * 255) + "," + Math.round(source_rgb[1] * 255) + "," + Math.round(source_rgb[2] * 255) + ")",
-						"fill-opacity" : Math.round(source_rgb[3] * 255)
+						"fill-opacity" : source_rgb[3]
 					}
-					}];
-				var _draw = {"*" : { "key" : "svg", "val" : val}};	
+					};
+				var _draw = {"*" : { "key" : "svg", "val" : _val}};	
 				draw.parse(JSON.stringify(_draw));
 				outlet(0, "dictionary", draw.name);	
 				pons++;
 			break;
 			case "rectangle" :
-			_val = [{						
+			vvv = {						
 					"parent" : "overlay",
 					"new" : "rect",
 					"id" : "draw-" + pons,
@@ -390,13 +392,16 @@ function anything()
 						"stroke" : "none",
 						"stroke-opacity" : 0.,
 						"fill" : "rgb(" + Math.round(source_rgb[0] * 255) + "," + Math.round(source_rgb[1] * 255) + "," + Math.round(source_rgb[2] * 255) + ")",
-						"fill-opacity" : Math.round(source_rgb[3] * 255)
+						"fill-opacity" : source_rgb[3]
 						}
-					}];	
+					};	
+				//post("val", JSON.stringify(vvv), "\n");
 				pons++;
 			break;
 			case "fill":
-			var _draw = {"*" : { "key" : "svg", "val" : _val}};	
+			//var _draw = {"*" : { "key" : "svg", "val" : _val}};	
+			//post("val2", typeof vvv, "\n");
+			var _draw = {"*" : { "key" : "svg", "val" : vvv}};	
 			draw.parse(JSON.stringify(_draw));
 			outlet(0, "dictionary", draw.name);	
 			break;
@@ -474,9 +479,9 @@ function msg_dictionary(o)
 			}
 		}
 	}
-	var clear = {"key" : "remove", "val" : "main"};
+	var clear = {"key" : "remove", "val" : ["back", "score", "extras"]};
+	//var clear = {"key" : "remove", "val" : "main"};
 	var joutput = {};
-	//writeSVG();
 	for (var s = 1; s <= groupcount; s++)
 		{
 		for (var i = 0; i < SVGPicster[s].length; i++) {
@@ -1013,7 +1018,7 @@ function renderPlayhead()
 					"id" : "clef-" + i,
 					"x" : 0,
 					"y" : 0,
-					"child" : SVGClefs[s + 1][i]["text"],
+					"text" : SVGClefs[s + 1][i]["text"],
 					"style" : 					{
 						"font-family" : SVGClefs[s + 1][i]["font-family"],
 						"font-size" : SVGClefs[s + 1][i]["font-size"] * thisZoom(s + 1),

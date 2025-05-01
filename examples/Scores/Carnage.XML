@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <jmslscoredoc>
 <!-- Saved document from JMSL's programmable music notation editor. Java Music Specification Language by Nick Didkovsky & Phil Burk, available from: http://www.algomusic.com -->
-<score NAME="Carnage" SUBTITLE="for Decibel Ensemble" COMPOSER="Georg Hajdu" COPYRIGHT="" WIDTH="1260" HEIGHT="597" STAFFS="5" NUMTRACKSPERSTAFF="4" InstrumentNamesVisible="false" TempoVisible="false" StaffNumbersVisible="true" MeasureNumbersVisible="false" SectionBracketsVisible="false" TimeSignaturesVisible="false" KeySignaturesVisible="false" ClefsVisible="false" ScoreTitleVisible="true" CourtesyClefsVisible="false" MeasureNumberOffset="1" LeftMargin="60.0" RightMargin="20.0" TopMargin="40.0" BottomMargin="15.0" TopMarginOfFirstPage="60.0" DrawAllMeasureNumbers="false" TextFontScaler="1.5" ScoreSubtitleFontScaler="2.0" ScoreTitleFontScaler="4.0" TimesigFontScaler="2.5" MeasureNumberFontScaler="1.5" TextFontName="SansSerif" ScoreSubtitleFontName="Serif" ScoreTitleFontName="Serif" TimesigFontName="Serif" MeasureNumberFontName="SansSerif" FirstSystemIndent="0.0" useLegacyMultiTrackOrientation="true" >
+<score NAME="Carnage" SUBTITLE="for Decibel Ensemble" COMPOSER="Georg Hajdu" COPYRIGHT="" WIDTH="1260" HEIGHT="597" STAFFS="5" NUMTRACKSPERSTAFF="4" InstrumentNamesVisible="false" TempoVisible="false" StaffNumbersVisible="true" MeasureNumbersVisible="false" SectionBracketsVisible="false" TimeSignaturesVisible="false" KeySignaturesVisible="false" ClefsVisible="false" ScoreTitleVisible="true" CourtesyClefsVisible="false" MeasureNumberOffset="1" LeftMargin="100.0" RightMargin="20.0" TopMargin="40.0" BottomMargin="15.0" TopMarginOfFirstPage="60.0" DrawAllMeasureNumbers="false" TextFontScaler="1.5" ScoreSubtitleFontScaler="2.0" ScoreTitleFontScaler="4.0" TimesigFontScaler="2.5" MeasureNumberFontScaler="1.5" TextFontName="SansSerif" ScoreSubtitleFontName="Serif" ScoreTitleFontName="Serif" TimesigFontName="Serif" MeasureNumberFontName="SansSerif" FirstSystemIndent="0.0" useLegacyMultiTrackOrientation="true" >
 <ScoreAnnotation CLASSNAME="com.softsynth.jmsl.score.ScoreAnnotation" Annotation="264.3oc6Q9ySCCCDEeN9Sg0MmHkzlADqTFXfRG5FhAm5yAq5+TY6LfJ86NI1UQQkUTICY642c9767uyjLvGXBQQIPejlcljc0PIMnO5EMyfXCk4Qc0D8pI50Sz0Qcu7BYv.THuEciisJO8TeovgivSJTrA8xVC59t9g8OuGxGCSqy1cZns26mNsj9QrDqow8hwGbaY5zPno6HGL6znILTYm0KCRq4MgvigwDBZ4AmUyhyEPtLXcoqenOJQyaiQL7eJ4bz7W9y3X8wqPYsGSKI.jToqnoZAMyUzrZAMyUzrdAMyUzT+OilMnf0oB2UdnesvXM3M.g+qjb2QRihYNti0FWvJxExOfASWc7" >
 </ScoreAnnotation>
 <orchestra CLASSNAME="com.softsynth.jmsl.score.Orchestra" >
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="0" EditEnabled="true" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" Name="Flute" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="0" Name="Flute" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="10000.0" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="1" EditEnabled="true" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" Name="Bass Cl." >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="1" Name="Bass Cl." MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="10000.0" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="2" EditEnabled="true" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" Name="Viola" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="2" Name="Viola" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="10000.0" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="3" EditEnabled="true" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" Name="Cello" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="3" Name="Cello" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="10000.0" name="index" />
 </jmslscoreinstrument>
-<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" InsIndex="4" EditEnabled="true" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" Name="Percussion" >
+<jmslscoreinstrument CLASSNAME="com.algomusic.max.MaxScoreInstrument" EditEnabled="true" InsIndex="4" Name="Percussion" MixerClassName="com.softsynth.jmsl.NullMixer" Transposition="0.0" >
 <dim index="4" defaultvalue="0.0" lowlimit="0.0" highlimit="3.0" name="EventFlag" />
 <dim index="5" defaultvalue="-1.0" lowlimit="-1.0" highlimit="127.0" name="originalPitch" />
 <dim index="6" defaultvalue="-1.0" lowlimit="-1.0" highlimit="10000.0" name="index" />
@@ -104,7 +104,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-176.0" Yoffset="6.0" Name="RenderedMessageBean_staff-0-0" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQF3wvu4UzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH754i6vLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuwWMBUt" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-0" Message="280.3occQsrRCDCEccxWQHqpvDXRa0VbmBt28hHoSyLMzLIkjX6LVJ3mg67WzOAyiYFhnRHKtm64btuNCA3ChJqiaHbIukqbXzsnmP.vYH..v648A.r8XCtHhbjICHfAF.rheJRww6bIN.rXaD5wAqeHY8KzUKudU4hxkyWOe8H2nt.6u97i2GA6BHkCA84A0ZkiTyZExTmcmQvjn6krp83bJVwa7.gE2jidhKZ1kJmRaZ8yxOz35k7+HYnEILU0NsIsMbLyzrNIBLsS71Ijw0D1zrYVYg+c0.+TNh9.qR3hi.MheANVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZi9U0Va5FSnEYezyY15Ct.+FFQIeG." Xoffset="0.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-0" Message="246.3occPFziBCBED9L7qfvI2DZRoECQuu226FyFzhJwVpAPsMF+uukGzjU2rgSuY9XX38.inWL68AsqP2p6z1.krlrgfPOvHDhdVOFEn9aGoLP4lpMpfxDHpUeGPZMVchAQMMfzW4n+LE82boXoTHpkhUU7Y1AdjsLOM9xzPUbRtb1r52l9vXqN2kbYhht9yfJ0cb2hR1z4i7SM6VzeQs2DfeF+Mq6llvozNnlr8MyFk+jx4TiI.AiHHaAjm3boBNk0en20AUnSEblgE7XKX7TWv.NFtye1y5go.7+2pdW+UaiO83kLRQMiHmJQUpD4PmFdh+w7iV1t" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -116,7 +118,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-176.0" Yoffset="8.0" Name="RenderedMessageBean_staff-0-1" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQF3wvu4UzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH754i6vLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuwWMBUt" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-1" Message="280.3occQsrRCDCEccxWQHqpvDXRa0VbmBt28hHoSyLMzLIkjX6LVJ3mg67WzOAyiYFhnRHKtm64btuNCA3ChJqiaHbIukqbXzsnmP.vYH..v648A.r8XCtHhbjICHfAF.rheJRww6bIN.rXaD5wAqeHY8KzUKudU4hxkyWOe8H2nt.6u97i2GA6BHkCA84A0ZkiTyZExTmcmQvjn6krp83bJVwa7.gE2jidhKZ1kJmRaZ8yxOz35k7+HYnEILU0NsIsMbLyzrNIBLsS71Ijw0D1zrYVYg+c0.+TNh9.qR3hi.MheANVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZi9U0Va5FSnEYezyY15Ct.+FFQIeG." Xoffset="0.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-1" Message="248.3occPFraCCBDD87xWAhSoRXIiCtts268duJphDSSPwFGAzDaEk+8ZVvRsophS6LOFF1qDfcxryGztBcmtWaCL5Kz2o.bk..vNpmhBL+48LNpbV0EUfLAvr5KHRmwpSL.yzhRuki90TzeHZj0MRY8yhGepbgcTDYKySS+ZZrJN0TuXV8SSeXpSm6RtLQQ2vQTk41ucUIe97P9oVbKFNo1YB3OSbm0ESa3PZGrlt4NyVk+fx4TSI.ImJoaPjajboBNk0+4fqGqPuJ3LiqDwVvEotPPbBdm+rm0iyA3+uU81gurs9ziWxoEq4zl4RTkJQNz4gajucuwk4K" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -128,10 +132,12 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="4.0" Name="RenderedMessageBean_staff-0-2" Message="rendered picster[4] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQF3wvu4UzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH754i6vLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuwWMBUt" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-2" Message="280.3occQsrRCDCEccxWQHqpvDXRa0VbmBt28hHoSyLMzLIkjX6LVJ3mg67WzOAyiYFhnRHKtm64btuNCA3ChJqiaHbIukqbXzsnmP.vYH..v648A.r8XCtHhbjICHfAF.rheJRww6bIN.rXaD5wAqeHY8KzUKudU4hxkyWOe8H2nt.6u97i2GA6BHkCA84A0ZkiTyZExTmcmQvjn6krp83bJVwa7.gE2jidhKZ1kJmRaZ8yxOz35k7+HYnEILU0NsIsMbLyzrNIBLsS71Ijw0D1zrYVYg+c0.+TNh9.qR3hi.MheANVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZi9U0Va5FSnEYezyY15Ct.+FFQIeG." Xoffset="0.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-2" Message="248.3occP1riBCBEEd8kmBBqbRnIkVTxL6m8y9IFCZYThsTCvnsw36tkeZxnlIr5dNeb3v8JBHmz6bdksP0p5TFOA+A9aL.WQ..jipwf.wcdOgFUNKaCJPl.HF0kHRq1nRL.Q2Dk9JG8mon2vD7kBNeUMak38Y1AVfsLOM9vzPUXRrb1r5ulN+XqJ2kbYBh19iQUhc+1Ekzoya4mZ1sn+jbm1G+Yrmrtna7GR6fZ75mLajtCRqUNl.3TLGuNhbCkKk2JMte5scwJzI8V8vBVnETVpKnHNJdmW1ypgo.b+2pda+ulFW5wKo3hZJVLUhpTIxgNMbCcGrOykEL" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
-<staff INDEX="3" CLEF="3" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -140,7 +146,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-178.0" Yoffset="6.0" Name="RenderedMessageBean_staff-0-3" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQF3wvu4UzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH754i6vLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuwWMBUt" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-3" Message="280.3occQsrRCDCEccxWQHqpvDXRa0VbmBt28hHoSyLMzLIkjX6LVJ3mg67WzOAyiYFhnRHKtm64btuNCA3ChJqiaHbIukqbXzsnmP.vYH..v648A.r8XCtHhbjICHfAF.rheJRww6bIN.rXaD5wAqeHY8KzUKudU4hxkyWOe8H2nt.6u97i2GA6BHkCA84A0ZkiTyZExTmcmQvjn6krp83bJVwa7.gE2jidhKZ1kJmRaZ8yxOz35k7+HYnEILU0NsIsMbLyzrNIBLsS71Ijw0D1zrYVYg+c0.+TNh9.qR3hi.MheANVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZi9U0Va5FSnEYezyY15Ct.+FFQIeG." Xoffset="0.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-3" Message="248.3occP1riBCBEEd8kmBBqbRnIkVp039Y+r2XlfVFkXK0.n1Fiu6S4mlLpYBqtmyGGNbui.xY0dqSZxjsxNo1Qvqwav.bGA.PNIG8BD60CDZP4pn0q.IBfnk2BHsJsLx.DUSP5qTzeFi9aVMuplyWVwJWsblcf4YySSiOMMT3mpqlMK9qo0M1JScIUFuno+TPkXNraQNc57Q5olcy5OK1qbgeF6EqapF2w3NnDu8EyFg8nvXDiQ.NEywaCHOPoR4LBs8mdSWnBcBmQMrf4aAkE6BJfiB24s8rbXJ.6+sp20eQ2XiOdNEmURw0SknHVhTnSCOP+Bbesk4K" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -152,9 +160,13 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-0-4" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6AOI9j2OOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd834cXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.n4JTGC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-4" Message="280.3occQsjSCCCEbs8oHxqJRwRwAJQkcfD6YOBgbScRspicksoMgptfSBq39wQ.+IIxU.xxKdyal486DDf1yqMVlFyDrNlzhxtK64L.3DD..ncrAO.xbnEkGPNPEdDvHC.RxNFnXY81HG.huI.8zn0OFs9UR0MKqJJWsZYYY0D2fNO6u+7qOl.68HEiACoAMJoE2P63hXmculSEYOHn06PoTL72YdBWeaJ5QFucarbRktyMKWnwNHX+QReKhox5sJcbaXo54YcVDXdm3riKBqIjtc8hhb26pQ9wbX0dZM2FFAR.+LbpXZpzz3pePeG0p48KHdKxIQifA5vflecobsplZ9ui0Z0axMl3MFSxS9YujXqK3L7GqEDed." Xoffset="-2.0" Yoffset="132.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-0-4" Message="246.3occPFziBCBED9L7qfvIMglTp3hw6d26aLaPKqRrkZ.Taiw+6VdPS10Ma3zalOFFdOvH5EyAeP6JzM5VsMPIqIeRPnGXDBQOqGhBT+siTFnbS0DUPYBD0puCHMFqNwfnlZPZaN5Mon+hKEKkBwGRwJY0DaOOxVlmF90TeUbRtbxr5ml9vPiN2kbYhhttyfJ0cb+rR13Yd9olbK5tnNXBvOi+l0cSc3TZGrfr6MyZk+jx4TCI.AiHH6.jm3boBNk0+cmqEpPqJ3L8y3wVv3otfAbLbm+rm08iA3+uU89tq1Ze5wKYjhELhbrDUoRjCcb3I9k+kV1v" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
+<measureUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_measure-0" Message="273.3occQkrZCCCE7rzWgPmRAKvh51j1qgbrPgbrTJJNxNhpkfjZhcC4euZw13RSQnCu4My71t.A3ihZmmaIbIWw0dL5YzaH.3BD..3O48Q.r6TKtHgbhIiHfAF.rleNQwy67YN.rXeB50Aq2js9C5xpGVVQe59pGWUNxMoKxFMhzECKGB5mGzXzdRCSIj41ZsQIpQaYZG5ks34jbhu4QJzUyQOyEsGxUSarpvn7KM9dI+FIicHgoqOXr4kgmYmF0IQfoURvNgLskv11cKJKBu6F3myQLGY0BeZHnI7qvwhYCSSSn9I8Jl2J5VPiVTPyFASzgIM+4PEZUKy8e2pcluz6c4SLgVL6idelsgfqveP+wom." Xoffset="0.0" Yoffset="0.0" >
+</measureUserBean>
 </measure>
 <measure WIDTH="236" WIDTHSETBYHAND="true" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="0.0" >
 <staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -166,7 +178,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="8.0" Name="RenderedMessageBean_staff-1-0" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6L3q9lWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.ocDTHC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-1-0" Message="279.3occQsjSCCCEbs8ovxqJRwRwJEpD6.I128HDxM0I0pN1U1tsIT0y.aYGWQNB3OIQFAHKu3MuYl2uKP.9fn153FBWx63JGFcO5YD.bAB..7d9P..aO0hKhHmXx.BXjA.q3miTb7dWhC.K1FgVOZ8SIqektZ4sqJqpVVUQoSbi5Br+5yOdeBrOfTNFLjGznUNRCqSHSc1CFAShdTxp2iyoXEuwCDptKG8LWztKUNk1z4mkenwMH4+QxPKRXp5cZSZa3Xl4YcVDXdm3sSHiqIrocyhxB+6lQ9obD8AVsvEGAZD+JbpXFlx13qeTeGyYD8KnAKJnIifQ5vnleco7spgY+ui0F8Q0Va5FSnEYezKY15CtB+1SrvWC" Xoffset="2.0" Yoffset="132.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-1-0" Message="248.3occP1raCCBDD9L7Tf3TpDVxXiKQ8dum6UQUj3sInXii.Rhshx6dM+Xo1TUwoclOFF16XD8rduyC1BnC5AimRdi7AAgtiQHD8DLEDntqGnrnxUUWPAkIPTCbKhzoMPhAQ0sQoM4neOE8mbonQJDMk0qeUtvNxCrk4ooeMMVEljMKlU+zz4m5fbWxkIHZGNEUo1C6VUxlOujepE2hgyp8Ze7mwex5lt0eLsCpIaexrU4NprV0TBPvHBx1HxCbtTdqx39Zv1GqPuxa0iq3gVv3otfi333c9ydFFmCv8eq5cCWLstziWxHE0LhbtDUoRjCcd3A9abupk4K" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -178,7 +192,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-1-1" Message="rendered picster[3] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1Evu4IvqnGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30yG2gYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdCggGT7B" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-1-1" Message="287.3occQsjSCCCEbs8ovxqJRIRwJTJvNPh8rGgPtoNoV0wtx1zlPUu.rAwInGDtT8Hf+jDYDfr7h27lYd+N.A3s7JikoyYBVKSZwnaQOg.fCP..f2v58.XytFbV.YGU3Q.CL.XIaefhk0Yib.X9p.ziCV+Pz5WHKtb9hhRx7xatlLxMnyy97oOe+7oO9ZLQmGsXHnOMnVIs40zVtH1c2o4TA5dAsZCNkhg+FySn7pTz8Ldy5XIkJcqad9gFauf8GI8sYNUVsVoiaDKUOMuSh.S6EmcbQXUg0MKmUj4dWLvOlKWskVwsgQfDvOBGKllJM0t5Gz2RsZd2Lh2hLRzHXfNLn4WWKWqpol+6fsT8pbkIdmyIYIezyI15BNB+F7za9YN" Xoffset="0.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-1-1" Message="248.3occP1riBCBEEdM7TPXkSBMozRSU26d2OwLAs2QI1RM.i1Fiu6S4mlLpYBqtmyGGNbuiQzKpCVGXxfVnCzNJYM4SBBcGiPH5YXzKPsWORYAkqxVuBJQfnZ3V.oUogHChpZBRaSQuIF8W7ZQUsPTspbIublcf6YySSiOMMT3mpqlMK9qo0M1BotjJiWzzeNnRMG2uHmMc9H8TytY8WjGTtvOi+h0MUi6TbGTR18hYizdRZLxwHffQDjcAjG3TobFo19cuoKTgNoynFVv8sfwicAGvwg671dFFlBv9eq588+narwGOmQxJYj5oRTDKQJzogG3eAbexk4K" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -190,10 +206,12 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-1-2" Message="rendered picster[1] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6P3a9lWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.pMITJC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-1-2" Message="281.3occQsjSCCCEbs8oHxqJRwRwhVZJ6nRcO6QHjapSpUcrqrMsIT0CA6XGWQNB3OIQFAHKu3MuYl2uKP.5HuxXYZLSvZYRKJ69rmx.fKP..fNv58.HyoFTd.4DU3Q.CL.HI6bfhk0Yib.H9t.ziCVuIZ8KjkyWrbdQ4pxxEqF4Fz4Y+0me79HXmGoXHnOMnVIs3ZZKWD6rGzbpHasfVc.kRwvei4Ib6conmY7l8wxIU5V2r7CM1dA6OR5aQLUVsWoiaCKUOMqSh.S6DmcbQXMgzMamUj6d2LvOlCqNRq31vHPB3WgiESSklZW8C5aoVMuaFwaQNIZDLPGFz7qKkqU0Ty+cr1pdUtyDuwXRdxO64DacAWgeCfHe7AC" Xoffset="4.0" Yoffset="132.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-1-2" Message="247.3occPF0ZCCBEE9Y8Wg3ScfAhIlEXuu226ixv1bWqzDSQcsIT5+8EuZfsNF9z8b973w6MJge1r2G.WAzCCfMvYuvdmQH2nDBgeBliBb+kCbApbQ2GUHYBB2BWQjdiERLDtoCkdKG8qon+P1pZZUpmqUpplU1IYjsLOM+qoop3TaypY0OM8g4dH2kbYhhtwSnJ2cX2lRwx4o7Ss5VLdVu2Dvel7AqqltvwzNnls8AyNs+n14zyI.kfoXaQj6zboBNs0+4na.qvfN3LSajwVHjotPQbJdm+rmgok.7+2pd23W1Ne5wKErhZAqcoDUoRjCcY3N8avycY4B" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
-<staff INDEX="3" CLEF="3" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -202,67 +220,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-1-3" Message="rendered picster[0] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1AvafeyqnGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30yG2gYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdCkMFTBC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-1-3" Message="280.3occQsjSCCCEbs8ovxqJRwRwhRifcfD6YOBgbScRspicksoMgpd.3FvNthbDveRhLpfr7h27lYd+NAA38hZqiaHbIuiqbXzcnmQ.vIH..v63CA.r8PKtHhbfICHfQF.rheLRww6cIN.rXSD5oQqeLY8qzpk2TsjVRqtsb0D2nt.6u+5yOl.6CHkiAC4AMZkizv5DxTmcuQvjnGjr5c3bJVw67.gqWkidjKZ2lJmRa57yxuz3Fj7+HYnEILU8VsIsMbLy7rNKBLuS71Ijw0D1ztdQYg+c0H+TNhdOqV3hi.MheFNULCSYa70Opui4Lh9EzfEEzjQvHcXTyEWJeqZX1+6XsV+lZiMciIzhrO5kLa8Amg+.V4CeQ." Xoffset="0.0" Yoffset="132.0" >
 </staffUserBean>
-</staff>
-<staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
-<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
-</track>
-</staff>
-</measure>
-<measure WIDTH="236" WIDTHSETBYHAND="true" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="0.0" >
-<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
-<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
-</track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="6.0" Name="RenderedMessageBean_staff-2-0" Message="rendered picster[3] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1Evu4IvqnGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30yG2gYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdCggGT7B" >
-</staffUserBean>
-</staff>
-<staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
-<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
-</track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-170.0" Yoffset="6.0" Name="RenderedMessageBean_staff-2-1" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6L3q9lWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.ocDTHC" >
-</staffUserBean>
-</staff>
-<staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
-<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
-</track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="4.0" Name="RenderedMessageBean_staff-2-2" Message="rendered picster[0] 249.3occQtjaCCBDFdMbJPyZ2JScZjZ2kyQTjEwF2fjgoBiZRUTNCcaNJsWmdA5UniAhUcTpDflGeyL+.G4L3USyPP6uS2qsZW.DOKXG4LFDzGB0kQ+X.FzfVqx0NjhkBxfHxZQjuA6QOTHJurjhMEILYFqCogTHfUdipmLpVNg7PFwhuoqCHk7IpEKql.px.68lfdrIee9qe97CPrYL+IdDCLtNbtDQu4EiKU7ntlZnJESdQtfCgqz81oxj+GxNSqdjpL6G7J2PG5s0VbdlVuZes5fd3l3WIlrw7Kmx0rC829KXwizyo7d5bAoy2oo7mx4oCZeh+Kf2jsVZ" >
-</staffUserBean>
-</staff>
-<staff INDEX="3" CLEF="3" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
-<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
-</track>
-<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
-</track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-164.0" Yoffset="8.0" Name="RenderedMessageBean_staff-2-3" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6MuD9jWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.hwLT9B" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-1-3" Message="248.3occPFziBCBED9L7qfvI2DZRokZ2cuu289FyFzhJwVpAPsMF+uukGzD0Ma3zalOFFd2vH5I8VmWYyTspNkwSIeR9lfP2vHDhdTMFDntK6oLP4hrMnfRDHpQcEPZ0FUjAQ0MfzpTzeEi9GdsnpVHVVU9Q06yrC7.adZZ7ooghvTc0rYwilN+XqJ0kTYBh19ifJ0teyhb1z4szSM6l0eRtU6geF+Eqq5F+g3Nnjr9EyFo6fzZkiQ.AiHHqAj63To7Vowsq21AUnS5s5gE7PKX7XWv.NFtye1ypgo.b+2pdS+YSiK934LRVIiTOUhhXIRgNMbG+KDPYkUL" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -286,7 +246,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-170.0" Yoffset="6.0" Name="RenderedMessageBean_staff-3-0" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ18vuIdC8HXZUbHOn8keI4A4rsdHf7ZrGcnO.6gaP.mB5rjslbNiuYHUDQwd0TOwRUTJQ6gVRV8.aM8PdErUHN5BpCDrKCpxgbgLx1.Budb+ILCVeKkxjX6IqWrwvLxuJ47TJ6ioFpEPmsASr.a7CsD6zN5KpgMiZyDN7+.+x7y6LX70cDubREkPtZSIT.WkciSHZ0a.cyCk1" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-2-0" Message="287.3occQsjSCCCEbs8ovxqJRIRwJTJvNPh8rGgPtoNoV0wtx1zlPUu.rAwInGDtT8Hf+jDYDfr7h27lYd+N.A3s7JikoyYBVKSZwnaQOg.fCP..f2v58.XytFbV.YGU3Q.CL.XIaefhk0Yib.X9p.ziCV+Pz5WHKtb9hhRx7xatlLxMnyy97oOe+7oO9ZLQmGsXHnOMnVIs40zVtH1c2o4TA5dAsZCNkhg+FySn7pTz8Ldy5XIkJcqad9gFauf8GI8sYNUVsVoiaDKUOMuSh.S6EmcbQXUg0MKmUj4dWLvOlKWskVwsgQfDvOBGKllJM0t5Gz2RsZd2Lh2hLRzHXfNLn4WWKWqpol+6fsT8pbkIdmyIYIezyI15BNB+F7za9YN" Xoffset="0.0" Yoffset="140.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-2-0" Message="247.3occP1riBCBEEd8kmBBqbRnIkVpMw8y9YuwLAsnRrkZ.Taiw28o7SSF0XX08b93vg6cDPNq1YcRSlrU1I0NBdEdMFf6H..xI4nWfXudfPCJWEsdEHQ.Ds7V.oUokQFfnZBR+jh96Xz+xp4U0bdEiubY4L6.yylmlFeZZnvOUWMaV7eSqarUl5RpLdQS+ofJwbX6hb5z4qzSM6l0eVrS4B+L1KV2TMtiwcPIdyKlMB6QgwHFi.bJli2DPdfRkxYDZ69dSWnBcBmQMrf4aAkE6BJfiB24s8rbXJ.6mV0a6unarwGOmhyJo35oRTDKQJzogGn+.xWSY5B" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -298,7 +260,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="6.0" Name="RenderedMessageBean_staff-3-1" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6IOE9jWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.hYBT8B" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-2-1" Message="280.3occQsjSCCCEbs8oHxqJRwRwjPKhcfD6YOBgbScRspicksoMgpdFXK63JxQ.+IIxU.xxKdyal486DDf1yqMVlFyDrNlzhxtK64L.3DD..ncrAO.xbnEkGPNPEdDvHC.RxNFnXY81HG.huI.8zn0OFs9UxppaVUUr71pxxqm3Fz4Y+8We9wDXuGoXLXHMnQIs3FZGWD6r60bpH6AAsdGJkhg+NySnbYJ5QFucarbRktyMKWnwNHX+QReKhox5sJcbaXo54YcVDXdm3riKBqIjtc8hhb26pQ9wbX0dZM2FFAR.+LbpXZpzz3pePeG0p48KHdKxIQifA5vflecobsplZ9ui0Z0axMl3MFSxS9YujXqK3L7GhIOeY." Xoffset="0.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-2-1" Message="249.3occP1raCCBDD97xSAhSoRXIiCtts268duJphDuMAEabDPSrUTd2q4GK0lpJNsy7wvvdk.rS5cNOZKvNrGMdF8E56T.tR..XGwof.ycdOiGUNq5BJPl.XF7RDoSavDCvzsQo2xQ+ZJ5ODMx5For94mdTVsvNJBrk4ooeMMVElZpWLq9ooyO0g4tjKSPzNbLpxr62tpjOedH+TKtECmT6z93OSbm0Ecq+PZGrlt4NyVk6fxZUSI.ImJoahH2H4R4sJi6yAaerB8JuUOtRDZAWj5BIhSh24O6YbbN.2+sp2N7ko0kd7RNsXMm1LWhpTIxgNObi7Mf+sV1v" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -310,10 +274,12 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-3-2" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ18vuIdC8HXZUbHOn8keI4A4rsdHf7ZrGcnO.6gaP.mB5rjslbNiuYHUDQwd0TOwRUTJQ6gVRV8.aM8PdErUHN5BpCDrKCpxgbgLx1.Budb+ILCVeKkxjX6IqWrwvLxuJ47TJ6ioFpEPmsASr.a7CsD6zN5KpgMiZyDN7+.+x7y6LX70cDubREkPtZSIT.WkciSHZ0a.cyCk1" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-2-2" Message="285.3occQsjSCCCEbs8ovxqJRwRwpkTfcfD6YOBgbScRspicksoMgpdFXKGE35vEfq.9SRTp.jkW7l2Ly62QH.uSTZcbCgK4MbkCitA8HB.NBA..dKuK.fs6qwYQj8LY.Azy.fU7CQJNdqKwAfEqiPOza88IqeltbwkKWjecwUEyyG3F0EX+06e98GuM.2Fvx6C5lFToUNREqQHS81sFAShtSxJ2hmRwJdkGHLuXJ5AtndSpfJsowOMmow0I4+QxPSRXpxMZSZe3XlwocTDXbq3sSHiKJrod0r7L+6hd9obD8NVovEGAZD+DbnXFlxV4qeTeCyYDsynAKxnIifQ5vnlecq7spgY+uy0J8Kp01zUlPyl7QOMwVevI3OPVhzmz" Xoffset="2.0" Yoffset="132.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-2-2" Message="248.3occP1raCCBDD9L7Tf3TpDVBrIkndu268pnJR71DTrwQ.MwVQ4culerTapp3zNyGCC6MLhd1r2G.WEzA8fMPIuPdmfP2vHDhdBlhBT+kCTVR4htKpfJDHpEtlP5LVHyfnl1jzakneMG8GBkbsRJetQw2vWXGEQVdYZ5WSi0wI05Ey5eZ5CScPoKkxDEcCmRpT2gcq3r4ySkmZwsZ3rduIj9YhGrtZZCGy6fFx1GLa09iZmSOkAjLhjrMgbGWJUvos9OGb8oJzqCNy3JQrELQtK3DNNcm+rmgw4.7+2pd2vW1Ve9w4LRUCinlKQctDkPmGti+F.+3kkK" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
-<staff INDEX="3" CLEF="3" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -322,7 +288,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="8.0" Name="RenderedMessageBean_staff-3-3" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6R3S9lWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.qkCTKC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-2-3" Message="280.3occQsjSCCCEbs8ovxqJRwR1psTA6.otm8HDxM0I0pN1U1tsIT0cbIXEWQNB3OIQAAHKu3MuYl2uKP.9frz4EVhPIZDZOFcO5YD.bAB..7dQWD.6NUiKRHm3pHBnmA.qEmST7hVelC.K2lfdp250YqeksZwxUz4Knz6XKG3lzEY+0me79.XaDg1GzMMnxn8jJdiTk6rGrRtB8nhWtGOkhS9lHRX9sSQOKj06xkSarMgY4GZ7cJwejL1hDttbmwl2FdtcbVGEAF2IA6jpzZBaq2LiVDd2zyOmiXNvKk9zHvR3WgCEyx0tpP8S5a3dqrcFKZQAKaDLQGlz7qKUnUsb2+cr1XNp25x2XBqXxG8xDaCAWgeCFsBeG." Xoffset="2.0" Yoffset="136.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-2-3" Message="247.3occP1riBCBEEdM7TPXkSBMoToCIy9Yu6MFCZuiRrkZ.Taiw2cK+zDGmLgU2y4iCGt2wH5Y8dmGrEPKzAFOk7EYMAgtiQHD8DLFDntqGnrnxUUaPAkIPTCbKhzpMPhAQ0MQoU4n+NE8VtTTKEhOqkUB9L6.OvVlmF+0zPUXRVOaV8poyO1B4tjKSPz1eJpRsG1snjMc9H+TytE8mU6093Oi+l0Mci+XZGrjr4MyFk6nxZUiI.AiHHahHOv4R4sJi6mdaWrBcJuUOrfGZAim5BNhii24O6YXXJ.2+sp20ewz3ROdIiTrjQjSknJUhbnSCOvOAxmTY5B" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -346,7 +314,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-4-0" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ18PvO3UzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH7548GvLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuQbO.E0" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-3-0" Message="279.3occQsrRCDCEccxWQHqpvDXB01htSgt28hHoSyLMzLIkjz1Yrz+C2I9G5mf4wLCQTIjE2y8bN2WWf.7AQk0wMDtj2xUNL5dzyH.3BD..3879..1dpAWDQNwjADv.C.VwOGo33ctDG.VrMB8zf0qSV+Jc0sKVUNu7tEKozQtQcA1e8w6eNB1EPJGB5yCp0JGol0JjoN6AifIQOJYU6w4Trh23AByWlidlKZ1kJmRaZ8yxOz35k7+HYnEILU0NsIsMbLyzrNIBLsS71Ijw0D1zrYVYg+cy.+TNh9.qR3hi.MheENVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZi9nZqMciIzhrO5kLa8AWgeicUxmI" Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-3-0" Message="247.3occPFzhCCBED9r9qP7TKXfXhtA166889RYw131JMwTT21DJ8+diOMPaWV7zalOGGeWwH5IyNeP6Jzc5dsMPIuS9hfPWwHDhdTOEEn9y6oLP4rpKpfxDHpUeAP5LVchAQMsfzm4n+HE827FgrQHjx2pkUKri7HaYdZ5oowp3Tibwr5QSeXpSm6RtLQQ2vQPk51ucUIa9rN+TKtECmT6LA3mwew5hoMbHsCpIadwrU4OnbN0TBPvHBxF.4FNWpfSY8+L35gJzqBNy3JdrELdpKX.GC24O6Y83b.9+aUuc3WaqO83kLRQMizLWhpTIxgNObCeGyKZY6B" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -358,7 +328,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="4.0" Name="RenderedMessageBean_staff-4-1" Message="rendered picster[0] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ18vu4gvKlGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30i6OgYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdC.9ITrC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-3-1" Message="280.3occQsjSCCCEbs8ovxqJRwRwTZqfcfD6YOBgbScRspicksoMgpthSAq3JxQ.+IIxU.xxKdyal486DDf2KprNtgvk7VtxgQ2gdFA.mf...ui2G.v1CM3hHxAlLf.FX.vJ9wHEGuyk3.vhMQnmFr9wj0uRWcyhUkyWPKu91kibi5Br+9qO+XDrKfTNDzmGTqUNRMqUHSc18FAShdPxp1gyoXEuyCDluLG8HWzrMUNk1z5mkKz35k7+HYnEILU0VsIsMbLyzrNIBLsS71Ijw0D1zrdVYg+c0.+TNhdOqR3hi.MheFNVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZs9M0Fa5FSnEYezKY15CNC+AKkBeJ." Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-3-1" Message="247.3occPFziBCBDE97vuBBmzDZRohaS166889FyFzxpDaoFfUaiw+6VFnIpa1vo4893wi4JAXmL67AsqP2p6z1.i9N8KJ.WI..ri5wn.yedOiiJmUsQEHS.Lq9BhzZr5DCvLMnzm4n+HE82hZ45Zo7sRQkTLyNHhrk4owmlFphS0qmMqdzzGFa04tjKSTz0eDUYt8aWTxmNKyO0raQ+I0NS.+YhWrtXZBGR6fUzMuX1n7GTNmZLAH4TIcChbijKUvor9e5ccXE5TAmYXgH1BtH0EBhSv67m8rdXJ.++sp21+qswmd7RNsXEmVOUhpTIxgNMbibGimQYuB" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -370,10 +342,12 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="8.0" Name="RenderedMessageBean_staff-4-2" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ18PvO3UzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH7548GvLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuQbO.E0" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-3-2" Message="279.3occQsrRCDCEccxWQHqpvDXB01htSgt28hHoSyLMzLIkjz1Yrz+C2I9G5mf4wLCQTIjE2y8bN2WWf.7AQk0wMDtj2xUNL5dzyH.3BD..3879..1dpAWDQNwjADv.C.VwOGo33ctDG.VrMB8zf0qSV+Jc0sKVUNu7tEKozQtQcA1e8w6eNB1EPJGB5yCp0JGol0JjoN6AifIQOJYU6w4Trh23AByWlidlKZ1kJmRaZ8yxOz35k7+HYnEILU0NsIsMbLyzrNIBLsS71Ijw0D1zrYVYg+cy.+TNh9.qR3hi.MheENVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZi9nZqMciIzhrO5kLa8AWgeicUxmI" Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-3-2" Message="248.3occP1riBCBEEdM7TPXklPSJszoQ26d2OwLAs2QI1RM.psw36tkeZxLNYBqtmyGGNbefQzKpCVGXxfVnCzNJYM4SBB8.iPH5YXzKPs2NRYAkaxVuBJQfnZ3d.oUogHChpZBRaSQuIF8W7ZQUsP7Q4phppY1AtmMOMM9qogB+Tc0rYwOMstwVH0kTY7hl9yAUp439E4royxzSM6l0eQdP4B+L9aV2UMtSwcPIY2alMR6IowHGi.BFQP1EPdhSkxYjZ628ltPE5jNiZXA22BFO1Eb.GGtye1yvvT.1+aUuu+ptwFe7bFIqjQpmJQQrDoPmFdheAjuGk8K" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
-<staff INDEX="3" CLEF="3" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -382,7 +356,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="8.0" Name="RenderedMessageBean_staff-4-3" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ18vuIdC8HXZUbHOn8keI4A4rsdHf7ZrGcnO.6gaP.mB5rjslbNiuYHUDQwd0TOwRUTJQ6gVRV8.aM8PdErUHN5BpCDrKCpxgbgLx1.Budb+ILCVeKkxjX6IqWrwvLxuJ47TJ6ioFpEPmsASr.a7CsD6zN5KpgMiZyDN7+.+x7y6LX70cDubREkPtZSIT.WkciSHZ0a.cyCk1" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-3-3" Message="280.3occQsjSCCCEbs8ovxqJRwRwjVhD6.otm8HDxM0I0pN1U1tsIT0KAqXGWQNB3OIQAAHKu3MuYl2uKP.9fnx53FBWxa4JGFcO5YD.bAB..7dde..aO0fyhHmXx.BXfA.q3miTb7NWhC.K1FgdZv50IqekVtbU4x7UEzxaKF4F0EX+0me79HXW.IeHnedPsV4H0rVgL0YOXDLI5QIqZOdNEq3MdfPwcyQOyEM6RkSoMs9Y4GZb8R9ejLzhDlpZm1j1FNlYZVmDAl1Id6Dx3ZBaZ1rHOy+tYfeJGQefUIbwQfFwuBGKlgor095G02xbFQ2BZvhLZxHXjNLp4WWJeqZX1+6XsQeTs0ltwDZ1rO5kY15CtB+FeQEeW." Xoffset="6.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-3-3" Message="248.3occP1riBCBEEdM7TPXklPSJszoQ26d2OwLAs2QI1RM.psw36tkeZxLNYBqtmyGGNbefQzKpCVGXxfVnCzNJYM4SBB8.iPH5YXzKPs2NRYAkaxVuBJQfnZ3d.oUogHChpZBRaSQuIF8W7ZQUsP7Q0px7hY1AtmMOMM9qogB+Tc0rYwOMstwVH0kTY7hl9yAUp439E4royxzSM6l0eQdP4B+L9aV2UMtSwcPIY2alMR6IowHGi.BFQP1EPdhSkxYjZ628ltPE5jNiZXA22BFO1Eb.GGtye1yvvT.1+aUuu+ptwFe7bFIqjQpmJQQrDoPmFdheAHeSkoK" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -406,7 +382,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="4.0" Name="RenderedMessageBean_staff-5-0" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6R3S9lWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.qkCTKC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-4-0" Message="280.3occQsjSCCCEbs8ovxqJRwRwTZCp6JRrm8HDxM0I0pN1U1l1Dp58.IVvUji.9SRTp.jkW7l2Ly62YH.ePTZcbCgK4MbkCiVgdFA.mg...um2E.v1i03rHxQlLf.5Y.vJ9oHEGu0k3.vhsQnm5s9wj0uRKtaQQ97k2dewhhAtQcA1e+0GeN.1FPx6C5lFToUNREqQHSc1ZifIQOHYk6wSoXEuyCDlubJ5ItndWpbJsowOKWow0I4+QxPKRXpxcZSZa3XlwYcTDXbm3sSHiqIrodyr7L+6ld9obD8AVovEGAZD+BbnXFlxV4qeTeCyYDsynAKxnIifQ5vnleco7spgY+ui0F8aps1zMlPyl7QuLwVevE3OBJIes." Xoffset="4.0" Yoffset="136.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-4-0" Message="248.3occP1raCCBDD97xSAhSoRXIiMNT068duGEUQhoInXii.Rhshx6dM+Xo1TUwoclOFF16HfbVu24U1BUmpWY7D7a3MX.ti..HmTSAAh65ABMpbU1ETfLAPLpaQjNsQkX.htMJ8QN52SQ+ISvaDbdy55WEqWXGYA1x7zzulFqBShlEypeZ57ScpbWxkIHZGNEUI1C6VURmOujepE2hgyx8Ze7mwdx5lt0eLsCpwaexrU5NJsV4TBfSwb71HxCTtTdqz39Zv1GqPuza0iqXgVPYotfh3n3c9ydVMNGf6+V06FtXZcoGujhKpoXwbIpRkHG57vCz2.fAkQL" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -418,7 +396,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-170.0" Yoffset="4.0" Name="RenderedMessageBean_staff-5-1" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6R3S9lWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.qkCTKC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-4-1" Message="281.3occQsjSCCCEbs8ovxqJRwRwjVhD6.otm8HDxM0I0pN1U1tsIT06A63PvEii.9SRTP.xxKdyal486BDfOHprNtgvk7VtxgQ2idFA.Wf...um2G.v1SM3rHxIlLf.FX.vJ94HEGuyk3.vhsQnmFrdcx5WokKWUtLurXUYwsibi5Br+5i2+bDrKfjODzOOnVqbjZVqPl5rGLBlD8njUsGOmhU7FOPn3t4nm4hlcoxozlV+r7CMtdI+ORFZQBSUsSaRaCGyLMqSh.S6DucBYbMgMMaVjm4e2LvOkinOvpDt3HPi3WgiEyvT1Ze8i5aYNinaAMXQFMYDLRGF07qKkuUML6+cr1nOp1ZS2XBMa1G8xLa8AWgeCvIY74C" Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-4-1" Message="248.3occP1riBCBEEd8kmBBqbRnIPKNM5d2O6MFCZYThsTCvnsw369T9oIy3jIr5dNeb3v8ABHW0GcdksP0p5TFOAuFuECvCD..4hZLHPb2NQnQkax1fBjI.hQcOhzpMpDCPzMQoOxQuIE8ddsXYsP7NqZEmMyNvCrr7z3ulFJCS0KmMK+ooyO1pxcIWlfns+RTkXOcXAiNcdK+TytE8WkG093Oi+h0cci+bZGTg28hYizcVZsxwDffhE3cQjmnbo7Vow8YusKVgNo2pGVvCsfxScAEwQw67m8rZXJ.2+spOz+kowkdbFEWTQw0SknLUhbnSCOQeCnN.kQK" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -430,10 +410,12 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-170.0" Yoffset="4.0" Name="RenderedMessageBean_staff-5-2" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6R3S9lWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.qkCTKC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-4-2" Message="280.3occQsjSCCCEbs8ovxqJRwRwTZCp6JRrm8HDxM0I0pN1U1l1Dp58.IVvUji.9SRTp.jkW7l2Ly62YH.ePTZcbCgK4MbkCiVgdFA.mg...um2E.v1i03rHxQlLf.5Y.vJ9oHEGu0k3.vhsQnm5s9wj0uRKtaQQ97k2dewhhAtQcA1e+0GeN.1FPx6C5lFToUNREqQHSc1ZifIQOHYk6wSoXEuyCDlubJ5ItndWpbJsowOKWow0I4+QxPKRXpxcZSZa3XlwYcTDXbm3sSHiqIrodyr7L+6ld9obD8AVovEGAZD+BbnXFlxV4qeTeCyYDsynAKxnIifQ5vnleco7spgY+ui0F8aps1zMlPyl7QuLwVevE3OBJIes." Xoffset="4.0" Yoffset="136.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-4-2" Message="249.3occP1raCCBDD97xSAhSoRXIiMots268duJphDuMAEabDPSrUTd2q4GK0lpJNsy7wvvdk.rS5cNOZKvNrGMdF8E56T.tR..XGwof.ycdOiGUNq5BJPl.XF7RDoSavDCvzsQo2xQ+ZJ5ODMx0MR4iRQ8yOsvNJBrk4ooeMMVElZVuXV8SSmepCycIWlfnc3XTkY2ucUIe97P9oVbKFNo1o8wel3NqK5V+gzNnlt4NyVk6fxZUSI.ImJoahH2H4R4sJi6yAaerB8JuUOtRDZAWj5BIhSh24O6YbbN.2+sp2N7ko0kd7RNsnlSalKQUpD4PmGtQ9Ff9tUFv" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
-<staff INDEX="3" CLEF="3" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -442,7 +424,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="6.0" Name="RenderedMessageBean_staff-5-3" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6IOE9jWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.hYBT8B" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-4-3" Message="279.3occQsrRCDCEccxWQHqpvDXB01htSgt28hHoSyLMzLIkjz1Yrz+C2I9G5mf4wLCQTIjE2y8bN2WWf.7AQk0wMDtj2xUNL5dzyH.3BD..3879..1dpAWDQNwjADv.C.VwOGo33ctDG.VrMB8zf0qSV+Jc0sKVUNu7tEKozQtQcA1e8w6eNB1EPJGB5yCp0JGol0JjoN6AifIQOJYU6w4Trh23AByWlidlKZ1kJmRaZ8yxOz35k7+HYnEILU0NsIsMbLyzrNIBLsS71Ijw0D1zrYVYg+cy.+TNh9.qR3hi.MheENVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZi9nZqMciIzhrO5kLa8AWgeicUxmI" Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-4-3" Message="247.3occPF0ZCCBEE9Y8Wg3ScfAholFnuu226ixv1bWqzDSQcsIT5+8EuZfsNF9z8b973w6cJgewbvG.WAzA8fMvYaYuyHj6TBgvOCSQAt+5Qt.Utp6hJjLAgagaHRmwBIFB2zhRuki90TzeHaT0MJ0lMxZkbgcTFYKySS+ZZrJN0TuXV8SSeXpCxcIWlnna3LpxcG2upTLedI+TKtECWzGLA7mIex5loMbJsCVy18jYq1eR6b5oDfRvTrcHxCZtTAm15+bv0iUnWGblwUxXKDxTWnHNEuye1yv3b.9+aUue3KaqO83kBVwZAqYtDUoRjCcd3A8auWXY3B" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -466,7 +450,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-6-0" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ18vuI3IzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH75w8mvLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuQcYB01" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-5-0" Message="280.3occQsjSCCCEbs8ovxqJRwRwjVhD6.otm8HDxM0I0pN1U1tsIT0KAqXGWQNB3OIQAAHKu3MuYl2uKP.9fnx53FBWxa4JGFcO5YD.bAB..7dde..aO0fyhHmXx.BXfA.q3miTb7NWhC.K1FgdZv50IqekVtbU4x7UEzxaKF4F0EX+0me79HXW.IeHnedPsV4H0rVgL0YOXDLI5QIqZOdNEq3MdfPwcyQOyEM6RkSoMs9Y4GZb8R9ejLzhDlpZm1j1FNlYZVmDAl1Id6Dx3ZBaZ1rHOy+tYfeJGQefUIbwQfFwuBGKlgor095G02xbFQ2BZvhLZxHXjNLp4WWJeqZX1+6XsQeTs0ltwDZ1rO5kY15CtB+FeQEeW." Xoffset="6.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-5-0" Message="246.3occPFziBCBED9L7qfvIMglTpzkj89deuaLFzhJwVpAX01X7+9VdPSV0rgSuY9XX3cGinWL68AsqP2p6z1.k7IYMAgtiQHD8rdLJP8WORYfxUUaTAkIPTq9FfzZr5DChZZ.ouyQ+UJ5sbonVJD0eHqkkyrC7HaYdZ7oogp3jrd1r5ul9vXqN2kbYhht9yfJ0cb2hR1zYY9olcK5un1aBvOi+h0MSS3TZGrhr4EyFk+jx4TiI.AiHHa.jG3boBNk0en20AUnSEblgE7XKX7TWv.NFtya6Y8vT.9+aUuq+GaiO83kLRwJFQNUhpTIxgNM7.+a9mT1u" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -478,7 +464,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="6.0" Name="RenderedMessageBean_staff-6-1" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ18vuIdC8HXZUbHOn8keI4A4rsdHf7ZrGcnO.6gaP.mB5rjslbNiuYHUDQwd0TOwRUTJQ6gVRV8.aM8PdErUHN5BpCDrKCpxgbgLx1.Budb+ILCVeKkxjX6IqWrwvLxuJ47TJ6ioFpEPmsASr.a7CsD6zN5KpgMiZyDN7+.+x7y6LX70cDubREkPtZSIT.WkciSHZ0a.cyCk1" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-5-1" Message="280.3occQsjSCCCEbs8ovxqJRwRwjVhD6.otm8HDxM0I0pN1U1tsIT0KAqXGWQNB3OIQAAHKu3MuYl2uKP.9fnx53FBWxa4JGFcO5YD.bAB..7dde..aO0fyhHmXx.BXfA.q3miTb7NWhC.K1FgdZv50IqekVtbU4x7UEzxaKF4F0EX+0me79HXW.IeHnedPsV4H0rVgL0YOXDLI5QIqZOdNEq3MdfPwcyQOyEM6RkSoMs9Y4GZb8R9ejLzhDlpZm1j1FNlYZVmDAl1Id6Dx3ZBaZ1rHOy+tYfeJGQefUIbwQfFwuBGKlgor095G02xbFQ2BZvhLZxHXjNLp4WWJeqZX1+6XsQeTs0ltwDZ1rO5kY15CtB+FeQEeW." Xoffset="6.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-5-1" Message="248.3occPFraCCBDD87xWAhSoRXIiMoVo268duJphDSSPwFGAzDaEk+8ZVvRsophS6LOFF1aDfc1r2GztBcmtWaCL5Kz2o.bi..vNomhBL+kCLNpbQ0EUfLAvr5qHRmwpSL.yzhRuki90TzeHZjqajxmExxM0KrihHaYdZ5WSiUwol0KlU+zzGl5z4tjKSTzMbBUYtC6VUxmOOkepE2hgyp8l.9yDOXc0zFNl1A0zsOX1p7GUNmZJAH4TIcKhbmjKUvor9OGb8XE5UAmYbkH1BtH0EBhSv67m8rdbN.++sp2M7ks0md7RNsnlSalKQUpD4PmGtS9F7dckgK" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -490,10 +478,12 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="6.0" Name="RenderedMessageBean_staff-6-2" Message="rendered picster[0] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1AvafeyqnGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30yG2gYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdCkMFTBC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-5-2" Message="280.3occQsjSCCCEbs8ovxqJRwRwjVhD6.otm8HDxM0I0pN1U1tsIT0KAqXGWQNB3OIQAAHKu3MuYl2uKP.9fnx53FBWxa4JGFcO5YD.bAB..7dde..aO0fyhHmXx.BXfA.q3miTb7NWhC.K1FgdZv50IqekVtbU4x7UEzxaKF4F0EX+0me79HXW.IeHnedPsV4H0rVgL0YOXDLI5QIqZOdNEq3MdfPwcyQOyEM6RkSoMs9Y4GZb8R9ejLzhDlpZm1j1FNlYZVmDAl1Id6Dx3ZBaZ1rHOy+tYfeJGQefUIbwQfFwuBGKlgor095G02xbFQ2BZvhLZxHXjNLp4WWJeqZX1+6XsQeTs0ltwDZ1rO5kY15CtB+FeQEeW." Xoffset="6.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-5-2" Message="248.3occP1rZCCCDD97pmBgNkBxfksbMz68duWBEk3sIhXKGjTSrIj28Z8ig1TJ5zNymFMZuQ.1Y8dmGsEXONfFOi9B8cJ.2H..rS3bPf4tbfwiJWT8AEHS.LCdMhzqMXhAX5tnza4neME8GhVYSqT9rrttQrxNIBrk4o4eMMUElZaVMq9ooyO2i4tjKSPzNdJpxrG1sojubdJ+TqtEimU6093OS7f0Ucm+XZGTS29fYmxcTYsp4DfjSkzsQj6jbo7Vkw84ncHVgAk2pm1HBsfKRcgDwIw67m8LNsDf6+V06F+xz4ROdImVTyosKknJUhbnKC2IeC3tHkcK" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
-<staff INDEX="3" CLEF="3" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -502,7 +492,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-6-3" Message="rendered picster[0] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ18vu4gvKlGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30i6OgYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdC.9ITrC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-5-3" Message="280.3occQsjSCCCEbs8ovxqJRwRwTZqfcfD6YOBgbScRspicksoMgpthSAq3JxQ.+IIxU.xxKdyal486DDf2KprNtgvk7VtxgQ2gdFA.mf...ui2G.v1CM3hHxAlLf.FX.vJ9wHEGuyk3.vhMQnmFr9wj0uRWcyhUkyWPKu91kibi5Br+9qO+XDrKfTNDzmGTqUNRMqUHSc18FAShdPxp1gyoXEuyCDluLG8HWzrMUNk1z5mkKz35k7+HYnEILU0VsIsMbLyzrNIBLsS71Ijw0D1zrdVYg+c0.+TNhdOqR3hi.MheFNVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZs9M0Fa5FSnEYezKY15CNC+AKkBeJ." Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-5-3" Message="247.3occP1riBCBEEd8kmBBqbRnIkVTRbu6c+DyDzhJwVpAXz1X7ceJ+zjQmLgU2y4iCGtOP.4p9fyqrEpVUmx3I303Ow.7.A.PtnFCBD2sSDZT4lrMn.YBfXT2iHsZiJw.DcSTZaN5Mon+hI3KEb9pU0BNalcfEXKySiuLMTElDKmMq9soyO1pxcIWlfns+RTkXOseQIc57Q9olcK5uJOn8weF6Mq65F+4zNnFu6MyFo6rzZkiI.NEyw6hHOQ4R4sRi6XusKVgNo2pGVvBsfxRcAEwQw67m8rZXJ.2+sp22+sowkd7RJtnlhESknJUhbnSCOQ+.0ePY7B" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -526,7 +518,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-7-0" Message="rendered picster[0] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1EvSfeyqnGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30yG2gYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdClk.TCC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-6-0" Message="278.3occQsrSCDBEcM7UPXUMYHYH1GQ2oIcu6MFCcJyTRYfFf1NiM8+vcl3WneBxiYlfQM.KtGNmy80EH.ePTYcbCgK4sbkCitG8LB.t.A..dOuO.fsmZvEQjSLY.ALv.fU7yQJNdmKwAfEaiPOMX85j0uRWMewp4kKVdm+NxMpKv9qOd+yQvt.R4PPedPsV4H0rVgLUYOXDLI5QIqZONmhU7FOP31k4nm4hlcozozlVeu7CMtdI+O9LThDlpZm1jlFNlYpWmDAllId6Dx3XBaZ1LqrvetYfe5Oh9.qR3hs.MheENlLCSYq84Opuk4LhtYzfEEzjQvHcXTyu1T9R0vr+2xZi9nZqMsiIzhrG5kLa8AWgeeoS7oC" Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-6-0" Message="248.3occPFraCCBDD87xWAhSoRXIiCVNs268duJphDSSPwFGAzDaEk+8ZVvRsophS6LOFF1aDfc1r2GztBcmtWaCL5Kz2o.bi..vNomhBL+kCLNpbQ0EUfLAvr5qHRmwpSL.yzhRuki90TzeHZj0MRY8lpRwyKrihHaYdZ5WSiUwol5EypeZ5CSc5bWxkIJ5FNgpL2gcqJ4ymmxO0hawvY0dS.+YhGrtZZCGS6f0zsOX1p7GUNmZJAH4TIcKhbmjKUvor9OGb8XE5UAmYbkH1BtH0EBhSv67m8rdbN.++sp2M7ks0md7RNsXMm1LWhpTIxgNObm7MHuNkoK" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -538,7 +532,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="4.0" Name="RenderedMessageBean_staff-7-1" Message="rendered picster[0] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1MvCfeyqnGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30yG2gYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdCmUETEC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-6-1" Message="279.3occQsrRCDCEccxWQHqpvDXB01htSgt28hHoSyLMzLIkjz1Yrz+C2I9G5mf4wLCQTIjE2y8bN2WWf.7AQk0wMDtj2xUNL5dzyH.3BD..3879..1dpAWDQNwjADv.C.VwOGo33ctDG.VrMB8zf0qSV+Jc0sKVUNu7tEKozQtQcA1e8w6eNB1EPJGB5yCp0JGol0JjoN6AifIQOJYU6w4Trh23AByWlidlKZ1kJmRaZ8yxOz35k7+HYnEILU0NsIsMbLyzrNIBLsS71Ijw0D1zrYVYg+cy.+TNh9.qR3hi.MheENVLCSYq80Opuk4LhtYzfEEzjQvHcXTyutT9V0vr+2wZi9nZqMciIzhrO5kLa8AWgeicUxmI" Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-6-1" Message="247.3occPFzaBDBED9L7qfvIaBaxBhESu26duwzftTk3trF.0ciw+6c4AaRqMMb5MyGCCu6XD8rceHZ7UlVSmwEoj2HePPn6XDBQOYFSBzv0CTFnbU2lTPEBD0YtAHsVmIyfn1FPZSI52yQ+IWIWojxW4JgX8L6.OwVWlF+0zfHMoVMaJ9oYHN1ZJcoTljnu+DnR8G1snlMcdo7TytU8m06sQ3mwex5lsIdLuCVR19jYiNbT685wLfjQjjs.xCboTQu1E9p22AUnSG81gE7TKX7bWv.NFtye1ylgo.B+2pdW+EWSH+30LR0RFQMUBQtDkPmFdf+FyWYY6B" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -550,10 +546,12 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-174.0" Yoffset="4.0" Name="RenderedMessageBean_staff-7-2" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1wPvu4UzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH754i6vLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuQaq.ky" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-6-2" Message="280.3occQsjSCCCEbs8ovxqJRwRwhRifcfD6YOBgbScRspicksoMgpd.3FvNthbDveRhLpfr7h27lYd+NAA38hZqiaHbIuiqbXzcnmQ.vIH..v63CA.r8PKtHhbfICHfQF.rheLRww6cIN.rXSD5oQqeLY8qzpk2TsjVRqtsb0D2nt.6u+5yOl.6CHkiAC4AMZkizv5DxTmcuQvjnGjr5c3bJVw67.gqWkidjKZ2lJmRa57yxuz3Fj7+HYnEILU8VsIsMbLy7rNKBLuS71Ijw0D1ztdQYg+c0H+TNhdOqV3hi.MheFNULCSYa70Opui4Lh9EzfEEzjQvHcXTyEWJeqZX1+6XsV+lZiMciIzhrO5kLa8Amg+.V4CeQ." Xoffset="0.0" Yoffset="132.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-6-2" Message="248.3occP1raCCBDD9L7Tf3TpDVxXiKQ8dum6UQUj3sInXii.Rhshx6dM+Xo1TUwoclOFF16XD8rduyC1BnC5AimRdi7AAgtiQHD8DLEDntqGnrnxUUWPAkIPTCbKhzoMPhAQ0sQoM4neOE8mbonQJDuJZpkqWXG4A1x7zzulFqBSxlEypeZ57ScPtK4xDDsCmhpT6gcqJYymWxO0hawvY0dsO9y3OYcS25Ol1A0jsOY1pbGUVqZJAHXDAYaD4ANWJuUYbeMX6iUnW4s5wU7PKX7TWvQbb7N+YOCiyA39uU8tgKlVW5wKYjhZFQNWhpTIxgNO7.+MzOMkIL" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
-<staff INDEX="3" CLEF="3" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -562,7 +560,77 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-7-3" Message="rendered picster[0] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1Evu4IvqnGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30yG2gYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdCggGT7B" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-6-3" Message="281.3occQsjSCCCEbs8ovxqJRwRwjVhD6.otm8HDxM0I0pN1U1tsIT06A63PvEii.9SRTP.xxKdyal486BDfOHprNtgvk7VtxgQ2idFA.Wf...um2G.v1SM3rHxIlLf.FX.vJ94HEGuyk3.vhsQnmFrdcx5WokKWUtLurXUYwsibi5Br+5i2+bDrKfjODzOOnVqbjZVqPl5rGLBlD8njUsGOmhU7FOPn3t4nm4hlcoxozlV+r7CMtdI+ORFZQBSUsSaRaCGyLMqSh.S6DucBYbMgMMaVjm4e2LvOkinOvpDt3HPi3WgiEyvT1Ze8i5aYNinaAMXQFMYDLRGF07qKkuUML6+cr1nOp1ZS2XBMa1G8xLa8AWgeCvIY74C" Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-6-3" Message="248.3occPFraCCBDD87xWAhSoRXIiCwtp268duJphDSSPwFGAzDaEk+8ZVvRsophS6LOFF1aDfc1r2GztBcmtWaCL5Kz2o.bi..vNomhBL+kCLNpbQ0EUfLAvr5qHRmwpSL.yzhRuki90TzeHZjaZjx55Zg74E1QQjsLOM8qowp3TylEypeZ5CSc5bWxkIJ5FNgpL2gcqJ4ymmxO0hawvY0dS.+YhGrtZZCGS6f0zsOX1p7GUNmZJAH4TIcKhbmjKUvor9OGb8XE5UAmYbkH1BtH0EBhSv67m8rdbN.++sp2M7ks0md7RNsXMm1LWhpTIxgNObm7MnOekAL" Xoffset="80.0" Yoffset="104.0" >
+</staffUserBean>
+</staff>
+<staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+</staff>
+</measure>
+<measure WIDTH="236" WIDTHSETBYHAND="true" TIMESIG="4 4" TIMESIGSETBYHAND="false" TEMPO="60.0" TEMPOSETBYHAND="false" REPEATSTART="false" REPEATEND="false" NUMREPEATS="1" BARLINE="SINGLE" MEASURETEXT="" MEASURETEXTX="48" MEASURETEXTY="48" MEASURELEFTMARGIN="0.0" >
+<staff INDEX="0" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="0" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-7-0" Message="281.3occQsjSCCCEbs8oHxqJRwRwjRChcfD6YOBgbScRspicksoMgpdA3DvNthbDveRhbEfr7h27lYd+NAAn87ZikowLAqiIsnr6xdNC.NAA..ZGavCfLGZQ4AjCTgGALx.fjriAJVVuMxAf3aBPOMZ8iQqekTs7lphxqKWsr51ItAcd1e+0meLA16QJFCFRCZTRKtg1wEwN6dMmJxdPPq2gRoX3uy7DJWkhdjwa2FKmTo6byxEZrCB1ejz2hXprdqRG2FVpddVmEAl2IN63hvZBoaWunH28tZjeLGVsmVysgQfDvOCmJllJMMt5Gz2QsZd+Bh2hbRzHXfNLn4WWJWqpol+6XsV8lbiIdiwj7je1KI15BNC+A7U77cA" Xoffset="0.0" Yoffset="132.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-7-0" Message="248.3occPFraCCBDD87xWAhSoRXIiCtts268duJphDSSPwFGAzDaEk+8ZVvRsophS6LOFF1qDfcxryGztBcmtWaCL5Kz2o.bk..vNpmhBL+48LNpbV0EUfLAvr5KHRmwpSL.yzhRuki90TzeHZj0MRY8SOJetbgcTDYKySS+ZZrJN0TuXV8SSeXpSm6RtLQQ2vQTk41ucUIe97P9oVbKFNo1YB3OSbm0ESa3PZGrlt4NyVk+fx4TSI.ImJoaPjajboBNk0+4fqGqPuJ3LiqDwVvEotPPbBdm+rm0iyA3+uU81gurs9ziWxoEq4zl4RTkJQNz4gajusO5kEL" Xoffset="80.0" Yoffset="104.0" >
+</staffUserBean>
+</staff>
+<staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-7-1" Message="281.3occQsjSCCCEbs8oHxqJRwRwPJk1cfD6YOBgbScRspicksoMgpdC3.vNthbDveRhbEfr7h27lYd+NAAn87JikowLAqkIsnrUYOmA.mf...si06APlCMn7.xApvi.FX.PR1w.EKqyF4.P7MAnmFr9wn0uRVTNeQYwckyKtd4H2fNO6u+5yOFA67HECA8oA0JoEWSa4hXmculSEYOHnU6PoTL72YdB2baJ5QFuYarbRkt0MKWnw1KX+QReKhoxpsJcbaXo5oYcRDXZm3riKBqIjtY8rhb26pA9wbX0dZE2FFAR.+LbrXZpzT6pePeK0p4cyHdKxIQifA5vflecobsplZ9ui0Z0axMl3MFSxS9YujXqK3L7GDVg7gA" Xoffset="4.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-7-1" Message="248.3occPF0aBCBEE9Y3WAgmbIzjREWi688tuuXVP6cJwVpAPsMF+uuxEZxlKK7z8b93vg6cJge1r2G.WAzBcfMvYuw9fQH2oDBgeBFiBb+0CbApbU2FUHYBB2B2PjViERLDtoAk1ji98TzeJqUqpUpWqJWKkyrCxHaYdZ7WSCUwo5UylU+zzGFagbWxkIJ55Ogpb2gcKJESmWxO0raQ+Y8dS.+YxmrtYZBGS6fkrsOY1n8G0NmdLAnDLEaKh7flKUvos9u5ccXE5zAmYXgL1BgL0EJhSw67m8LLLEf++V065uXa7oGuTvJVJX0SknJUhbnSCOneCj9+kQK" Xoffset="80.0" Yoffset="104.0" >
+</staffUserBean>
+</staff>
+<staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-7-2" Message="280.3occQsjSCCCEbs8ovxqJRwRwPaCp6JRrm8HDxM0I0pN1U1l1Dp5w.I1wUji.9SRTp.jkW7l2Ly62YH.ePTZcbCgK4MbkCiVgdFA.mg...um2E.v1i03rHxQlLf.5Y.vJ9oHEGu0k3.vhsQnm5s9wj0uRKlunXNMu31kKtefaTWf82e84GCfsAj79ftoAUZkiTwZDxTms1HXRzCRV4d7TJVw67.g6VNE8DWTuKUNk1z3mkqz35j7+HYnEILU4NsIsMbLy3rNJBLtS71Ijw0D1TuYVdl+cSO+TNh9.qT3hi.MheANTLCSYq70Opug4Lh1YzfEYzjQvHcXTyutT9V0vr+2wZi9M0Va5FSnYS9nWlXqO3B7Gww.eh." Xoffset="2.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-7-2" Message="247.3occPFziBCBED9L7qfvI2DZRohR189deuaLaPKpDaoF.01X7+9VdPSV0X3zalOFFd2vH5IyVeP6JzM5VsMPIeQVQPnaXDBQOpGhBT+k8TFnbQ0DUPYBD0puBHMFqNwfnlZP5mbzemh9WtTrPJDKER4mKmX64Q1x7zvCS8UwI4hIyp+a5CCM5bWxkIJ55NBpT29MyJYimOxO0jaQ2I0VS.9Y7mrtZpCGR6f4j0OYVq7GTNmZHAHXDAYMfbGmKUvor9cctVnBspfyzOiGaAim5BFvwvcdYOq6GCv+tU8lty1Ze5wKYjh4LhbrDUoRjCcb3N9O.EbXYHC" Xoffset="80.0" Yoffset="104.0" >
+</staffUserBean>
+</staff>
+<staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<track INDEX="0" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="1" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="2" MultitrackRestAdjustmentY="0.0" >
+</track>
+<track INDEX="3" MultitrackRestAdjustmentY="0.0" >
+</track>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-7-3" Message="287.3occQsjSCCCEbs8ovxqJRIRwJTJvNPh8rGgPtoNoV0wtx1zlPUu.rAwInGDtT8Hf+jDYDfr7h27lYd+N.A3s7JikoyYBVKSZwnaQOg.fCP..f2v58.XytFbV.YGU3Q.CL.XIaefhk0Yib.X9p.ziCV+Pz5WHKtb9hhRx7xatlLxMnyy97oOe+7oO9ZLQmGsXHnOMnVIs40zVtH1c2o4TA5dAsZCNkhg+FySn7pTz8Ldy5XIkJcqad9gFauf8GI8sYNUVsVoiaDKUOMuSh.S6EmcbQXUg0MKmUj4dWLvOlKWskVwsgQfDvOBGKllJM0t5Gz2RsZd2Lh2hLRzHXfNLn4WWKWqpol+6fsT8pbkIdmyIYIezyI15BNB+F7za9YN" Xoffset="0.0" Yoffset="134.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-7-3" Message="248.3occPF0aBCBEE9Y3WAgmbIzjREsK6889d2XVP6cJwVpAPsMF+uuxEZxlKK7z8b93vg6cJge1r2G.WAzBcfMvYuw1vHj6TBgvOAiQAt+5At.UtpaiJjLAgagaHRqwBIFB2zfReji98TzeJqUqpUp0qeUJkyrCxHaYdZ7WSCUwo5UylU+zzGFagbWxkIJ55Ogpb2gcKJESmWxO0raQ+Y8dS.+YxmrtYZBGS6fkrsOY1n8G0NmdLAnDLEaKh7flKUvos9u5ccXE5zAmYXgL1BgL0EJhSw67m8LLLEf++V065uXa7oGuTvJVJX0SknJUhbnSCOneC79ikgK" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -586,7 +654,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="4.0" Name="RenderedMessageBean_staff-8-0" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6MuD9jWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.hwLT9B" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-8-0" Message="280.3occQsjSCCCEbs8ovxqJRwR1psTA6.otm8HDxM0I0pN1U1tsIT0cbIXEWQNB3OIQAAHKu3MuYl2uKP.9frz4EVhPIZDZOFcO5YD.bAB..7dQWD.6NUiKRHm3pHBnmA.qEmST7hVelC.K2lfdp250YqeksZwxUz4Knz6XKG3lzEY+0me79.XaDg1GzMMnxn8jJdiTk6rGrRtB8nhWtGOkhS9lHRX9sSQOKj06xkSarMgY4GZ7cJwejL1hDttbmwl2FdtcbVGEAF2IA6jpzZBaq2LiVDd2zyOmiXNvKk9zHvR3WgCEyx0tpP8S5a3dqrcFKZQAKaDLQGlz7qKUnUsb2+cr1XNp25x2XBqXxG8xDaCAWgeCFsBeG." Xoffset="2.0" Yoffset="136.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-8-0" Message="248.3occP1riBCBEEdM7TPXkSBMozRSGm8y9YuwLAsWUhsTCfZaL9tOkeZxnFCqtmyGGNbugQzSpsVGXxfVnCzNJ4KxJBBcCiPH5QXzKPsW1SYAkKxVuBJQfnZ3Z.oUogHChpZBR+jh96Xz+xqEU0BQ0mKyWVNyNv8r4oowGlFJ7S0UylE+2z5FagTWRkwKZ5OFTol8aVjylNejdpY2r9SxsJW3mwex5ppwcHtCJIqexrQZOHMF4XDPvHBx5.xcbpTNiTa20a5BUnS5LpgEbeKX7XWvAbb3Nurmggo.ruaUuo+rtwFe7bFIqjQpmJQQrDoPmFti+C3eokML" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="1" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="1" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -598,7 +668,9 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-170.0" Yoffset="6.0" Name="RenderedMessageBean_staff-8-1" Message="rendered picster[0] 184.3ocUO9kBBCCCF2iRt.Jqt+.5adRJ0sLWg0FIq3lH6MuD9jWQOBlVEGxGz9keI4CxYa8P.40XO5Pe.1C2f.NEzYIaM4bFeyPpHhh8podhkpnTh1Csjr5A1Z5g7JXqPbzETGHXWFTkC4BYjsADd87wcXFr9VJkIw1SVuXigYjeUx4oT1GSMTKfNaClXA13GZI1oczWTCaF0lIb3+A9k4m2Yv3q6Hd4jJJgb0lRn.tJ6FmPzp2.hwLT9B" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-8-1" Message="280.3occQsjSCCCEbs8ovxqJRwR1psTA6.otm8HDxM0I0pN1U1tsIT0cbIXEWQNB3OIQAAHKu3MuYl2uKP.9frz4EVhPIZDZOFcO5YD.bAB..7dQWD.6NUiKRHm3pHBnmA.qEmST7hVelC.K2lfdp250YqeksZwxUz4Knz6XKG3lzEY+0me79.XaDg1GzMMnxn8jJdiTk6rGrRtB8nhWtGOkhS9lHRX9sSQOKj06xkSarMgY4GZ7cJwejL1hDttbmwl2FdtcbVGEAF2IA6jpzZBaq2LiVDd2zyOmiXNvKk9zHvR3WgCEyx0tpP8S5a3dqrcFKZQAKaDLQGlz7qKUnUsb2+cr1XNp25x2XBqXxG8xDaCAWgeCFsBeG." Xoffset="2.0" Yoffset="136.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-8-1" Message="248.3occP1riBCBEEd8kmBBqbRnIkVbv3d2O6MFCZYThsTCvnsw369T9oIy3jIr5dNeb3v8ABHW0GcdksP0p5TFOAuFuECvCD..4hZLHPb2NQnQkax1fBjI.hQcOhzpMpDCPzMQoOxQuIE8dlfuTv4uWUuRvlYGXA1x7z3ulFpBShkylU+zz4GaU4tjKSPz1eIpRrmNrnjNcdK+TytE8WkG093Oi8h0cci+bZGTi28hYizcVZsxwD.mh43cQjmnbo7Vow8YusKVgNo2pGVvBsfxRcAEwQw67m8rZXJ.2+spOz+kowkd7RJtnlhESknJUhbnSCOQeCPO+kwK" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="2" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="2" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
@@ -610,8 +682,12 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-8-2" Message="281.3occQsjSCCCEbs8oHxqJRwRwjRChcfD6YOBgbScRspicksoMgpdA3DvNthbDveRhbEfr7h27lYd+NAAn87ZikowLAqiIsnr6xdNC.NAA..ZGavCfLGZQ4AjCTgGALx.fjriAJVVuMxAf3aBPOMZ8iQqekTs7lphxqKWsr51ItAcd1e+0meLA16QJFCFRCZTRKtg1wEwN6dMmJxdPPq2gRoX3uy7DJWkhdjwa2FKmTo6byxEZrCB1ejz2hXprdqRG2FVpddVmEAl2IN63hvZBoaWunH28tZjeLGVsmVysgQfDvOCmJllJMMt5Gz2QsZd+Bh2hbRzHXfNLn4WWJWqpol+6XsV8lbiIdiwj7je1KI15BNC+A7U77cA" Xoffset="2.0" Yoffset="130.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-8-2" Message="247.3occPFziBCBED9L7qfvI2DZRoRWhd266ciwfVVkXK0.rZaL9eeKOnI65lMb5MyGCCuGXD8p4nOncE5Vcm1Fnj0jsDD5AFgPzK5wn.0e6DkAJ2TsQETl.Qs56.RqwpSLHpoAj9HG8lTz64RQsTHdWxqpWMyNvirk4oweMMTEmj0ylU+zzGFa04tjKSTz0eATotSGVTxlNukepY2h9qpil.7y3uXc2zDNm1AKI6dwrQ4OqbN0XBPvHBxN.4INWpfSY8e165fJzoBNyvBdrELdpKX.GC24O6Y8vT.9+aUen+KaiO83kLRwRFQNUhpTIxgNM7D+M4aQY+B" Xoffset="80.0" Yoffset="104.0" >
+</staffUserBean>
 </staff>
-<staff INDEX="3" CLEF="3" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<staff INDEX="3" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="3" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -620,10 +696,12 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-170.0" Yoffset="6.0" Name="RenderedMessageBean_staff-8-3" Message="rendered picster[0] 184.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1EvSfeyqnGASqhC4Asu7KIOHms0CAjWi8nC8AXObCB3TPmkr0jyY7MCohHJ1ql5IVphRIZOzRxpGXqoGxqfsBwQWPcffcYPUNjKjQ1FP30yG2gYv5aoTlDaOY8hMFlQ9UImmRYeL0Ps.5rMXhEXienkXm1QeQMrYTalvg+G3WledmAiuti3kSpnDxUaJgB3prabBQqdClk.TCC" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-8-3" Message="281.3occQsjSCCCEbs8oHxqJRwRwjRChcfD6YOBgbScRspicksoMgpdA3DvNthbDveRhbEfr7h27lYd+NAAn87ZikowLAqiIsnr6xdNC.NAA..ZGavCfLGZQ4AjCTgGALx.fjriAJVVuMxAf3aBPOMZ8iQqekTs7lphxqKWsr51ItAcd1e+0meLA16QJFCFRCZTRKtg1wEwN6dMmJxdPPq2gRoX3uy7DJWkhdjwa2FKmTo6byxEZrCB1ejz2hXprdqRG2FVpddVmEAl2IN63hvZBoaWunH28tZjeLGVsmVysgQfDvOCmJllJMMt5Gz2QsZd+Bh2hbRzHXfNLn4WWJWqpol+6XsV8lbiIdiwj7je1KI15BNC+A7U77cA" Xoffset="2.0" Yoffset="130.0" >
+</staffUserBean>
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-8-3" Message="247.3occPFziBCBED9L7qfvI2DZRoRWhd266ciwfVVkXK0.rZaL9eeKOnI65lMb5MyGCCuGXD8p4nOncE5Vcm1Fnj0jsDD5AFgPzK5wn.0e6DkAJ2TsQETl.Qs56.RqwpSLHpoAj9HG8lTz64RQsTHdWxqpWMyNvirk4oweMMTEmj0ylU+zzGFa04tjKSTz0eATotSGVTxlNukepY2h9qpil.7y3uXc2zDNm1AKI6dwrQ4OqbN0XBPvHBxN.4INWpfSY8e165fJzoBNyvBdrELdpKX.GC24O6Y8vT.9+aUen+KaiO83kLRwRFQNUhpTIxgNM7D+M4aQY+B" Xoffset="80.0" Yoffset="104.0" >
 </staffUserBean>
 </staff>
-<staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
+<staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="0" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
 <track INDEX="0" MultitrackRestAdjustmentY="0.0" >
 </track>
 <track INDEX="1" MultitrackRestAdjustmentY="0.0" >
@@ -674,7 +752,7 @@
 </track>
 <track INDEX="3" MultitrackRestAdjustmentY="0.0" >
 </track>
-<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Xoffset="-172.0" Yoffset="6.0" Name="RenderedMessageBean_staff-9-3" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1wPvu4UzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH754i6vLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuQaq.ky" >
+<staffUserBean CLASSNAME="com.softsynth.jmsl.score.util.RenderedMessageBean" Name="RenderedMessageBean_staff-9-3" Message="rendered picster[0] 183.3ocUO9lBBCCCE2iRt.Jqt+.527jTpaYtBqMRVwMQ1wPvu4UzifoUwg7f1W9kjGjy15g.xqwdzg9.rGtAAbJnyR1Zx4L9lgTQDE6US8DKUQoDsGZIY0Cr0zC4UvVg3nKnNPvtLnJGxExHaCH754i6vLX8sTJShsmrdwFCyH+pjySorOlZnV.c1FLwBrwOzRrS6nunF1LpMS3v+C7KyOuyfwW2Q7xIUTB4pMkPAbU1MNgnUuQaq.ky" Xoffset="-172.0" Yoffset="6.0" >
 </staffUserBean>
 </staff>
 <staff INDEX="4" CLEF="0" CLEFSETBYHAND="false" INSTRUMENTINDEX="4" INSINDEXSETBYHAND="false" KEYSIGTYPE="1" KEYSIGNUMACC="0" KEYSIGSETBYHAND="false" EXTENDEDLINESABOVE="0" EXTENDEDLINESBELOW="0" >
