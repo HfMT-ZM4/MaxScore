@@ -38,7 +38,7 @@ var rect_ = {
 var text_ = {
 				"new" : "text",
 				"id" : "Picster-Element_1618905248933",
-				"child" : "",
+				"text" : "",
 				"x" : 0,
 				"y" : 0,
 				"font-family" : "Arial",
@@ -56,7 +56,7 @@ var text_ = {
 var image_ = {
 				"new" : "image",
 				"id" : "Picster-Element_1618905319029",
-				"href" : "",
+				"xlink:href" : "",
 				"x" : 0,
 				"y" : 0,
 				"width" : 0,
@@ -67,6 +67,12 @@ var image_ = {
 var pensize, frgb, font, readpict;
 var serialized = "";
 var svg = [];
+
+function cnt()
+{
+	var date = new Date;
+	return parseInt(date.getTime());
+}
 
 function dictionary(d)
 {
@@ -92,7 +98,6 @@ function dictionary(d)
 							for(var p = 0; p < userBeans.length; p++) {
 								if(userBeans[p]["@Message"].indexOf("rendered") == -1 && userBeans[p]["@Message"].indexOf("sequenced") == -1) {
 									e.parse(userBeans[p]["@Message"]);
-									//post("userBean", e.stringify(), userBeans[p]["@Message"], "\n");
 									if(e.contains("picster-element[0]::val")) {
 										e.replace("picster-element[0]::val::style::stroke-width", parseFloat(e.get("picster-element[0]::val::style::stroke-width")) + 3.5);
 										outlet(1, "dictionary", e.name);
@@ -105,12 +110,9 @@ function dictionary(d)
 								} else {
 									e.parse(userBeans[p]["@Message"][2]);
 									if (e.contains("picster-element")){
-										//e.replace("picster-element[0]::val::style::stroke-width", parseFloat(e.get("picster-element[0]::val::style::stroke-width")) + 3.5);
-										outlet(1, "dictionary", e.name);
-										json["jmslscoredoc"]["score"][0]["measure"][i]["measureUserBean"][p]["@Message"] = serialized;
-										if (picster.contains("expression")) {
-										}
-										
+										var picster = new Dict;
+										picster = convert(e);
+										json["jmslscoredoc"]["score"][0]["measure"][i]["measureUserBean"][p]["@Message"] = picster.stringify_compressed();	
 									}
 									else {
 										var keys = e.getkeys();
@@ -169,12 +171,9 @@ function dictionary(d)
 								} else {
 									e.parse(userBeans[p]["@Message"][2]);
 									if (e.contains("picster-element")){
-										//e.replace("picster-element[0]::val::style::stroke-width", parseFloat(e.get("picster-element[0]::val::style::stroke-width")) + 3.5);
-										outlet(1, "dictionary", e.name);
-										json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["staffUserBean"][p]["@Message"] = serialized;
-										if (picster.contains("expression")) {
-										}
-										
+										var picster = new Dict;
+										picster = convert(e);
+										json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["staffUserBean"][p]["@Message"] = picster.stringify_compressed();	
 									}
 									else {
 										var keys = e.getkeys();
@@ -237,11 +236,9 @@ function dictionary(d)
 								} else {
 									e.parse(userBeans[p]["@Message"][2]);
 									if (e.contains("picster-element")){
-										//e.replace("picster-element[0]::val::style::stroke-width", parseFloat(e.get("picster-element[0]::val::style::stroke-width")) + 3.5);
-										outlet(1, "dictionary", e.name);
-										json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["userBean"][p]["@Message"] = serialized;
-										if (picster.contains("expression")) {
-										}	
+										var picster = new Dict;
+										picster = convert(e);
+										json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k]["note"][l]["userBean"][p]["@Message"] = spicster.stringify_compressed();	
 									}
 									else {
 										var keys = e.getkeys();
@@ -301,11 +298,12 @@ function dictionary(d)
 											o2.message = e.get("0")[0];
 											o2.value = e.get("0").slice(1);
 										} else {
+											
+											////THIS LOOKS LIKE IT NEEDS A LITTLE HELP
 											e.parse(userBeans[p]["@Message"].split(" ")[2]);
 											if (e.contains("picster-element")){
 											var picster = e.get("picster-element");
-											if(picster.contains("expression")) {
-											}
+											/////////////////////////////////////////
 										}
 										else {
 										var keys = e.getkeys();
@@ -345,7 +343,12 @@ function dictionary(d)
 		}
 	}
 	dict2.parse(JSON.stringify(json));
-	outlet(0, dict2.name);
+	outlet(0, "dictionary", dict2.name);
+}
+
+function name()
+{
+	
 }
 
 function map()
@@ -403,6 +406,62 @@ function map()
 												break;
 											}
 
+}
+
+function convert(e)
+{
+	var keys = e.get("picster-element").getkeys();
+	post("keys", keys, "\n")
+	var key = "";
+	var val = {};
+	for (var i = 0; i < keys.length; i++){
+		if (keys[i].indexOf("text") == 0) key = "text";
+		else if (keys[i].indexOf("line") == 0) key = "line";
+		else if (keys[i].indexOf("rect") == 0) key = "rectangle";
+		else if (keys[i].indexOf("picture") == 0) key = "image";		
+	}
+	switch (key) {
+		case "text" :
+		text_.id = "Picster-Element_" + cnt();
+		text_.text = typeof e.get("picster-element::text_0::commands::2[1]") === 'number' ? String(e.get("picster-element::text_0::commands::2[1]")) : e.get("picster-element::text_0::commands::2[1]");
+		//text_["font-family"] = e.get("picster-element::text_0::commands::1[1]");
+		text_["font-family"] = "Arial";
+		text_["font-size"] = e.get("picster-element::text_0::commands::1[2]");
+		text_["style"].fill = "rgb(" + e.get("picster-element::text_0::commands::0").slice(1,4).join() + ")";
+		text_["style"]["fill-opacity"] = e.get("picster-element::text_0::commands::0[4]");
+		val = text_;
+		break;
+		case "line" :
+		post("line\n")
+		break;
+		case "rectangle" :
+		post("rectangle\n")
+		break;
+		case "image" :
+		image_.id = "Picster-Element_" + cnt();
+		image_["xlink:href"] = e.get("picster-element::picture_0::commands::0[1]");
+		image_.x = e.get("picster-element::picture_0::info::origin[0]");
+		image_.y = e.get("picster-element::picture_0::info::origin[1]");
+		image_.width = e.get("picster-element::picture_0::info::a[5]");
+		image_.height = e.get("picster-element::picture_0::info::b[5]");
+		val = image_;
+		break;
+		default :
+		post("element not supported\n");
+		return;
+	}
+	var picster_ = {};
+	picster_["picster-element"] = [];
+	picster_["picster-element"][0] = {};
+	picster_["picster-element"][1] = {};
+	picster_["picster-element"][0].key = "svg";
+	picster_["picster-element"][0].val = val;
+	picster_["picster-element"][1].key = "extras";
+	picster_["picster-element"][1].val = {};
+	picster_["picster-element"][1].val.bounds = [ -1, -1, -1, -1 ];										
+	var picster = new Dict;
+	picster.parse(JSON.stringify(picster_));
+	return picster;	
 }
 
 function serializedDict(s)
