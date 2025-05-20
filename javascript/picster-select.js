@@ -101,9 +101,12 @@ var currentMeasure = -1;
 var currentID = "";
 var addedShape = [];
 var annotation = new Dict;
-var timeUnit, prop, timesig, tempo, editor, bgcolor_argb, bgcolor_rgba;
+var timeUnit, prop, timesig, tempo, editor;
+var bgcolor_rgba = [1., 1., 0.94, 1.];
+var bgcolor_argb = [255, 254, 254, 240];
 var status = "regular";
 var dataID = "";
+var renderAllowed = 1;
 
 removeTextedit();
 
@@ -455,6 +458,7 @@ function findElementByID(id)
 	}
 	else {
 		_key = e.get("picster-element[0]::key");
+		//post("vals", JSON.stringify(vals), "\n");		
 		if (_key == "svg") {
 		if (vals[0]["id"].indexOf("sustain") == 0) var foundBounds = [-1, -1, -1, -1];
 		else var foundBounds = findBoundsToo(vals);
@@ -476,7 +480,6 @@ function findElementByID(id)
 		//error("clearSelection-455\n");
 		outlet(0, "clearSelection");
 		if (!buttonMode) {
-		//post("foundobjects", foundobjects.get(item), "\n");		
 		switch (foundobjects.get(item)[0]){
 			case "interval" :
 			outlet(0, "selectNote", foundobjects.get(item).slice(1, 6));
@@ -1192,6 +1195,7 @@ if (mode == "picster") {
 function createRenderedMessage(f, x, y, serialized)
 {
 	//post("pos", x, y, "\n");
+	outlet(0, "getRenderAllowed");
 	outlet(0, "getSelectionBufferSize");
 	measurerange = this.patcher.getnamed("measurerange").getvalueof();
 	if (selectionBufferSize > 0)
@@ -1254,12 +1258,14 @@ function createRenderedMessage(f, x, y, serialized)
 		}
  		outlet(2, "clearGraphics");
 		}
+		if (renderAllowed) {
 		outlet(0, "saveToUndoStack");
 		outlet(0, "setRenderAllowed", "true");
+		}
 		//post("RM", renderedMessages.stringify(), "\n");
 	}
 	else outlet(2, "clearGraphics");
-	findElementByID(currentID);
+	if (renderAllowed) findElementByID(currentID);
 }
 
 function cnt()
@@ -2391,8 +2397,8 @@ function anything()
 					switch (type) {
 						case "text" :
 							expr.replace("editor", "default");
-							expr.replace("message", edit.get("picster-element[0]::val::child").split(" ")[0]);
-							expr.replace("value", edit.get("picster-element[0]::val::child").split(" ")[1]);
+							expr.replace("message", edit.get("picster-element[0]::val::text").split(" ")[0]);
+							expr.replace("value", edit.get("picster-element[0]::val::text").split(" ").slice(1));
 							addExpressionToSelectedShape("dictionary", expr.name);
 						break;
 						case "svg" :
@@ -2702,6 +2708,12 @@ function anything()
 	}
 }
 }
+}
+
+function getRenderAllowed(r)
+{
+	renderAllowed = r;
+	//post("renderAllowed", renderAllowed);
 }
 
 function refactorArray(inputArray) {
@@ -3076,8 +3088,7 @@ function findBounds(d)
 	svg += SVGString.join("");
 	svg += "</svg>";
 	//img.setsvg(svg);
- 	//post("svg", svg, "\n");
-	Mgraphics.svg_create("img", svg);
+ 	Mgraphics.svg_create("img", svg);
 	Mgraphics.set_source_rgba(1, 1, 1, 1);
 	Mgraphics.paint();
 	Mgraphics.set_matrix(1, 0, 0, 1, horizontalOffset, verticalOffset);
@@ -3171,12 +3182,11 @@ function findBoundsToo(d)
 		iterateGroup(d[0]);
 	break;
 	}
-	//post("post-D", scale, "\n");
+	//post("SVG", bgcolor_rgba, bgcolor_argb, "\n");
 	var svg = "<svg><g transform = \"matrix(" + scale[0] + ",0,0," + scale[1] + "," + renderOffset[0] + "," + renderOffset[1] + ")\">";
 	///
 	svg += ds2svg(d);
 	svg += "</g></svg>";
-	//img.setsvg(svg);
 	Mgraphics.svg_set("img", svg);
 	Mgraphics.set_source_rgba(bgcolor_rgba);
 	Mgraphics.paint();

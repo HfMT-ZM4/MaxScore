@@ -840,12 +840,12 @@ function drawGrid()
 			set_source_rgba(0.8, 0.8, 0.8, 1.);
 			for (var i = 0; i < pageWidth / gridsize[0]; i++) {
        		move_to(gridsize[0] * i, 0);
-       		line_to(gridsize[0] * i, 800);
+       		line_to(gridsize[0] * i, pageHeight);
    			stroke();
 			}
   			for (var i = 0; i < pageHeight / gridsize[1]; i++) {
         	move_to(0, gridsize[1] * i);
-       		line_to(800, gridsize[1] * i);
+       		line_to(pageWidth, gridsize[1] * i);
    			stroke();
 			}		
 		}

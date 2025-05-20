@@ -222,12 +222,13 @@ function symbol(instr)
 
 function import(instr)
 {
-	//post(tempbank.get(instr).stringify(),"\n");
+	//post("instr0","\n");
 	bank.replace(instr, tempbank.get(instr));
 	var bankinstrkeys = [].concat(bank.getkeys());
 	for (var i = 0; i < bank.get(instr).getkeys().length; i++) {
 		pb.append(bank.get(instr + "::" + bank.get(instr).getkeys()[i] + "::sample"));
 	}
+	//post("instr1","\n");
 	clientbuffersoundindex.clear();
 	var dump = pb.dump();
 	for (var i = 0; i < dump.length / 6; i++){
