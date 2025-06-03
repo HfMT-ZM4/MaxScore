@@ -52,6 +52,7 @@ var ref;
 var listener = null;
 var css = "";
 var zl = [0.5];
+var buttonMode = 0;
 
 
 if (jsarguments.length >= 1) 
@@ -221,9 +222,10 @@ function setMeasureSelection(ms)
 
 function buttonmode(bm)
 {
+	buttonMode = bm;
 	buttonfillcolor = (bm) ? "lightblue" : "red";
 	buttonfillopacity = (bm) ? 0.8 : 0.2;
-	buttonstrokecolor = (bm) ? "lightblue" : "red";
+	buttonstrokecolor = (bm) ? "black" : "red";
 	buttonstrokewidth = (bm) ? 3 : 0.5;
 }
 
@@ -236,9 +238,11 @@ function anything()
 			drawBounds();
  		}
 		else if (msg[1] == "blink"){
-			blnk.schedule(200);
-			}
+			drawBounds();
+ 			blnk.schedule(200);
+ 			}
 		else {
+			post("msg", msg, "\n");
             boundingRect = [0, 0, msg[3] - msg[1], msg[4] - msg[2]];
             boundingRectOffset = [msg[1], msg[2]];			
 			}
@@ -358,7 +362,6 @@ function anything()
 			break;
 			case "show_text":
 			//var _draw = {};
-			//post("show_text", msg[1], "\n");
 			var _val = {
 					"parent" : "overlay",
 					"new" : "text",
@@ -470,6 +473,9 @@ function msg_dictionary(o)
 	prop = o.proportional;
 	var nsg = new Dict;
 	var num = cnt();
+	
+	//if (!buttomMode) {
+	
 	//Check whether images are already in the media folder. If not copy them there.
 	for (var s = 1; s <= groupcount; s++) {
 		for (var i = 0; i < SVGImages[s].length; i++) {
@@ -597,6 +603,7 @@ function msg_dictionary(o)
 	}
 	output.parse(JSON.stringify(joutput));
 	outlet(0, "dictionary", output.name);
+	//}
 	scroll("offset", _offset);
 	renderPlayhead();
 	drawBounds();
@@ -984,7 +991,6 @@ function playhead(x)
 function renderPlayhead()
 {
  			var color = [0.2, 1, 0.2, 1];
-			//post("renderPlayhead", playheadPosition, color, "\n");
 			if (prop) var fill_opacity = (playheadPosition == 0) ? 0 : Math.round(color[3] * 255);
 			else var fill_opacity = 0;
 			for (var s = 0; s < groupcount; s++)
@@ -1039,6 +1045,7 @@ function renderPlayhead()
 
 function drawBounds()
 {
+		//post("boundingRectOffset", boundingRect, "\n");
 		if (boundingRect.length == 4) {
 			for (var s = 0; s < groupcount; s++)
 			{
@@ -1054,7 +1061,7 @@ function drawBounds()
 					"style" : {
 						"stroke-width" : buttonstrokewidth,
 						"stroke" : buttonstrokecolor,
-						"stroke-opacity" : 0.,
+						"stroke-opacity" : 1.,
 						"fill" : buttonfillcolor,
 						"fill-opacity" : buttonfillopacity
 						},

@@ -17,10 +17,17 @@ function dictionary(d)
 		but = dict.get("event::val::button");
 		shift = dict.get("event::val::mods::shift");
 	}
-	else if (dict.contains("event::val::fingers") && (dict.get("event::val::fingers").length == 2))
+	//else if (dict.contains("event::val::fingers") && (dict.get("event::val::fingers").length == 2))
+	else if (dict.contains("event::val::fingers"))
 	{
-		x = dict.get("event::val::fingers[0]::x");
-		y = dict.get("event::val::fingers[0]::y");
+		if (Array.isArray(dict.get("event::val::fingers"))){
+			x = dict.get("event::val::fingers[0]::x");
+			y = dict.get("event::val::fingers[0]::y");
+		}
+		else {
+			x = dict.get("event::val::fingers::x");
+			y = dict.get("event::val::fingers::y");
+		}
 	}
 	//else return;
 	//post(dict.get("event::val::fingers").length, dict.contains("event::val::fingers"), dict.get("event::val::fingers[0]::x"), "\n");

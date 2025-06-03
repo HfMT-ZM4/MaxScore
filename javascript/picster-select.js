@@ -153,10 +153,13 @@ if (mode == "picster" && !blocked) {
 	foundobjects.clear();
 	offsets = {};
 	renderedMessages.name = this.patcher.getnamed("instance").getvalueof() + "-renderedMessages";
-	if (renderedMessages.stringify().length > 8 && selectionMode) {
+	//if (renderedMessages.stringify().length > 8 && selectionMode) {
+	if (renderedMessages.contains("0") && selectionMode) {
  	var keys = renderedMessages.getkeys();
+	//post("keys", keys, "\n");
 	for (var i = 0; i < keys.length; i++)
 	{
+		//post("outer loop", x, y, "\n");
 		format = "sadam.canvas";
 		switch (renderedMessages.get(keys[i])[0]){
 			case "interval" :
@@ -177,8 +180,8 @@ if (mode == "picster" && !blocked) {
 			break;
 	}
 	var e = new Dict();
-	//post("renderedMessages", renderedMessages.stringify(), "\n");
 	e.parse(renderedMessages.get(keys[i])[renderedMessages.get(keys[i]).length - 1]);
+	//REMOVE START
 	if (format == "sadam.canvas") {
 	var picster = e.get("picster-element");
 	var pkeys = picster.getkeys();
@@ -206,12 +209,14 @@ if (mode == "picster" && !blocked) {
 		}
 	}
 	else {
+	//REMOVE END
 	if (!e.contains("picster-element")) return;
 	if (Array.isArray(e.get("picster-element[0]::val"))) var dictArray = e.get("picster-element[0]::val");
 	else var dictArray = [].concat(e.get("picster-element[0]::val"));
  	var vals = [];
 	for (var k = 0; k < dictArray.length; k++) vals.push(JSON.parse(dictArray[k].stringify()));
-	if (e.get("picster-element[1]::val::bounds[0]") != -1 && vals[0]["transform"] == "matrix(1,0,0,1,0,0)") {
+	//if (e.get("picster-element[1]::val::bounds[0]") != -1 && vals[0]["transform"] == "matrix(1,0,0,1,0,0)") {
+	if (e.get("picster-element[1]::val::bounds").reduce((a, b) => a + b, 0) != -4) {
 		var foundBounds = e.get("picster-element[1]::val::bounds");
 		foundBounds[0] += RenderMessageOffset[0];
 		foundBounds[1] += RenderMessageOffset[1];
@@ -242,12 +247,12 @@ if (mode == "picster" && !blocked) {
 		}
 	}
 	if (_c > 0) {
+		//post("_c", _c, "\n");
 		item = clicks % _c;
 		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
 		outlet(0, "setRenderAllowed", 0);
 		outlet(0, "clearSelection");
 		if (!buttonMode) {
-		//post("_c", foundobjects.stringify(), "\n");
 		switch (foundobjects.get(item)[0]){
 			case "interval" :
 			outlet(0, "selectNote", foundobjects.get(item).slice(1, 6));
@@ -269,8 +274,8 @@ if (mode == "picster" && !blocked) {
 			outlet(0, "setSelectedStaff", foundobjects.get(item)[1], 0);
 			this.patcher.getnamed("measurerange").setvalueof(foundobjects.get(item)[1], 0, foundobjects.get(item)[1], numStaves - 1);
 			break;
-		}
-		outlet(0, "setRenderAllowed", 1);
+			}
+			outlet(0, "setRenderAllowed", 1);
 		}
 		outlet(1, foundobjects.get(item).slice(0, foundobjects.get(item).length - 5));
 		var tempDict2 = new Dict();
@@ -2931,6 +2936,7 @@ function setZoom(z)
 	zoom = z;
 }
 
+//REMOVE START
 function findBounds(d)
 {
           	var svgfill = "none";
@@ -3098,6 +3104,7 @@ function findBounds(d)
 	findbounds.matrixcalc(outmatrix, outmatrix);
 	return [findbounds.boundmin[0], findbounds.boundmin[1], findbounds.boundmax[0], findbounds.boundmax[1]];
 }
+//REMOVE END
 
 function map2char(a) // rgba -> argb
 {
