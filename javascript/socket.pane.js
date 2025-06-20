@@ -242,7 +242,7 @@ function anything()
  			blnk.schedule(200);
  			}
 		else {
-			post("msg", msg, "\n");
+			//post("msg", msg, "\n");
             boundingRect = [0, 0, msg[3] - msg[1], msg[4] - msg[2]];
             boundingRectOffset = [msg[1], msg[2]];			
 			}

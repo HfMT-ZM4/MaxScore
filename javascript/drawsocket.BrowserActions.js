@@ -6,14 +6,15 @@ var shift = 0;
 var option = 0;
 var ctrl = 0;
 var capslock = 1;
+var zoom = 0.5;
 
 function dictionary(d)
 {
 	dict.name = d;
 	if (dict.contains("event::val::button"))
 	{	
-		x = dict.get("event::val::xy")[0];
-		y = dict.get("event::val::xy")[1];
+		x = dict.get("event::val::xy")[0] / zoom * 0.5;
+		y = dict.get("event::val::xy")[1] / zoom * 0.5;
 		but = dict.get("event::val::button");
 		shift = dict.get("event::val::mods::shift");
 	}
@@ -21,12 +22,12 @@ function dictionary(d)
 	else if (dict.contains("event::val::fingers"))
 	{
 		if (Array.isArray(dict.get("event::val::fingers"))){
-			x = dict.get("event::val::fingers[0]::x");
-			y = dict.get("event::val::fingers[0]::y");
+			x = dict.get("event::val::fingers[0]::x") / zoom * 0.5;
+			y = dict.get("event::val::fingers[0]::y") / zoom * 0.5;
 		}
 		else {
-			x = dict.get("event::val::fingers::x");
-			y = dict.get("event::val::fingers::y");
+			x = dict.get("event::val::fingers::x") / zoom * 0.5;
+			y = dict.get("event::val::fingers::y") / zoom * 0.5;
 		}
 	}
 	//else return;
@@ -57,5 +58,10 @@ function dictionary(d)
 		break;
 		default:
 		}
+}
+
+function setZoom(z)
+{
+	zoom = z;
 }
 
