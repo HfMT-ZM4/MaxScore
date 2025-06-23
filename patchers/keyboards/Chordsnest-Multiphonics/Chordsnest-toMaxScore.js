@@ -43,25 +43,30 @@ function addSelected() {
     var pitchMidicent = selectedDict.get('pitchMidicent').split(' ');
     // outlet(0, Number(pitchMidicent[0])/100, 0); // deprecated: use addNote instead of keyboard forward
 
+    post('duration', duration)
+
+    var upperNote = Number(pitchMidicent[1])/100;
+
     var index = selectedDict.get('index');
     if (index <= 128) {
-        outlet(3, "addNote", duration, Number(pitchMidicent[0])/100, 60) // amplitude set to 60 for correct sample playback (vel_zone)
+        outlet(3, "addNote", duration, upperNote, 60, duration*0.9) // amplitude set to 60 for correct sample playback (vel_zone)
         outlet(3, "setNoteDimension", "originalPitch", index);
         //outlet(3, "setAmplitude", 60);
     }
     else {
-        outlet(3, "addNote", duration, Number(pitchMidicent[0])/100, 100) // amplitude set to 100 for correct sample playback (vel_zone)
+        outlet(3, "addNote", duration, upperNote, 100, duration*0.9) // amplitude set to 100 for correct sample playback (vel_zone)
         outlet(3, "setNoteDimension", "originalPitch", index-128);
         //outlet(3, "setAmplitude", 100);
     }
 
-    for (var i = 1; i < pitchMidicent.length; i++) {
-        var upperNote = Number(pitchMidicent[i])/100
-        if (upperNote >= 70) outlet (3, 'overrideStemDirection', 'DOWN'); // stem down if higher note >= Bb
-        //outlet(0, upperNote, 1);
-        outlet(3, "addInterval", upperNote);
-        outlet(3, "setAmplitude", 0);
-    }
+    // draw lower note
+    var lowerNote = Number(pitchMidicent[0])/100;
+    //outlet(0, upperNote, 1);
+    outlet(3, "addInterval", lowerNote);
+    outlet(3, "setAmplitude", 0);
+
+    if (upperNote >= 70) outlet (3, 'overrideStemDirection', 'DOWN'); // stem down if higher note >= Bb
+
     drawFingering();
     outlet(3, "picster", "clearbounds"); // remove selection red rectangle
     outlet(3, "clearSelection");
