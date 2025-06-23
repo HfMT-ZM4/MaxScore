@@ -203,7 +203,7 @@ function drawFingering() {
             key: 'expression',
             val: [{
                 editor: 'default',
-                message: 'instrument',
+                message: 'multiphonic',
                 value: ''
             }]
         }]
