@@ -87,7 +87,7 @@ function drawFingering() {
                     'stroke-width': 3,
                     fill: 'none'
                 },
-                transform: 'matrix(0.12,0,0,0.12,-10,-70)',
+                transform: 'matrix(0.12,0,0,0.12,-10,-90)',
                 child: [{ // keygroup aG
                     new: 'g',
                     style: {
