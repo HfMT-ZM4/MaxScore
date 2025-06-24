@@ -43,31 +43,29 @@ function addSelected() {
     var pitchMidicent = selectedDict.get('pitchMidicent').split(' ');
     // outlet(0, Number(pitchMidicent[0])/100, 0); // deprecated: use addNote instead of keyboard forward
 
-    post('duration', duration)
-
+    var lowerNote = Number(pitchMidicent[0])/100;
     var upperNote = Number(pitchMidicent[1])/100;
 
+    // draw lower note
+    outlet(3, "addNote", duration, lowerNote, 0, duration*0.9);
+
+    // draw upper note as interval
+    outlet(3, "addInterval", upperNote);
     var index = selectedDict.get('index');
     if (index <= 128) {
-        outlet(3, "addNote", duration, upperNote, 60, duration*0.9) // amplitude set to 60 for correct sample playback (vel_zone)
+        outlet(3, "setAmplitude", 60); // amplitude set to 60 for correct sample playback (vel_zone)
         outlet(3, "setNoteDimension", "originalPitch", index);
-        //outlet(3, "setAmplitude", 60);
     }
     else {
-        outlet(3, "addNote", duration, upperNote, 100, duration*0.9) // amplitude set to 100 for correct sample playback (vel_zone)
+        outlet(3, "setAmplitude", 100); // amplitude set to 100 for correct sample playback (vel_zone)
         outlet(3, "setNoteDimension", "originalPitch", index-128);
-        //outlet(3, "setAmplitude", 100);
     }
-
-    // draw lower note
-    var lowerNote = Number(pitchMidicent[0])/100;
-    //outlet(0, upperNote, 1);
-    outlet(3, "addInterval", lowerNote);
-    outlet(3, "setAmplitude", 0);
 
     if (upperNote >= 70) outlet (3, 'overrideStemDirection', 'DOWN'); // stem down if higher note >= Bb
 
+
     drawFingering();
+
     outlet(3, "picster", "clearbounds"); // remove selection red rectangle
     outlet(3, "clearSelection");
     outlet(3, "setRenderAllowed", 1);
@@ -87,7 +85,7 @@ function drawFingering() {
                     'stroke-width': 3,
                     fill: 'none'
                 },
-                transform: 'matrix(0.12,0,0,0.12,-10,-90)',
+                transform: 'matrix(0.12,0,0,0.12,-10,-70)',
                 child: [{ // keygroup aG
                     new: 'g',
                     style: {
