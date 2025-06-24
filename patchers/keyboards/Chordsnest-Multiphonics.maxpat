@@ -93,7 +93,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 50.0, 172.0, 187.0, 22.0 ],
-									"restore" : [ 2.0 ],
+									"restore" : [ 0.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -153,7 +153,7 @@
 
 							}
  ],
-						"originid" : "pat-2705"
+						"originid" : "pat-3710"
 					}
 ,
 					"patching_rect" : [ 622.5, 926.0, 101.0, 22.0 ],
@@ -3177,17 +3177,6 @@
 								}
 
 							}
-, 							{
-								"absolutepath" : "Clarinet-137.wav",
-								"filename" : "Clarinet-137.wav",
-								"filekind" : "audiofile",
-								"id" : "u509025713",
-								"loop" : 0,
-								"content_state" : 								{
-
-								}
-
-							}
  ]
 					}
 ,
@@ -3602,7 +3591,7 @@
 
 							}
  ],
-						"originid" : "pat-2707"
+						"originid" : "pat-3712"
 					}
 ,
 					"patching_rect" : [ 804.0, 979.0, 130.0, 22.0 ],
@@ -4212,7 +4201,7 @@
 
 			}
  ],
-		"originid" : "pat-2703",
+		"originid" : "pat-3708",
 		"parameters" : 		{
 			"obj-27::obj-10::obj-10" : [ "live.text[24]", "live.text", 0 ],
 			"obj-27::obj-10::obj-2" : [ "live.text[38]", "live.text", 0 ],
@@ -4405,6 +4394,10 @@
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-27::obj-10::obj-10" : 				{
+					"parameter_longname" : "live.text[24]"
+				}
+,
 				"obj-27::obj-10::obj-24::obj-36::obj-17" : 				{
 					"parameter_longname" : "Pan[55]"
 				}
@@ -5074,6 +5067,10 @@
 ,
 				"obj-27::obj-10::obj-43::obj-17::obj-3::obj-6" : 				{
 					"parameter_range" : [ 0.0, 5626.670000000000073 ]
+				}
+,
+				"obj-27::obj-10::obj-43::obj-29" : 				{
+					"parameter_longname" : "live.toggle[1]"
 				}
 
 			}
@@ -6356,13 +6353,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Clarinet-137.wav",
-				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/keyboards/Chordsnest-Multiphonics/sampler/samples/Clarinet-Multiphonics",
-				"patcherrelativepath" : "./Chordsnest-Multiphonics/sampler/samples/Clarinet-Multiphonics",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "Clarinet-14.wav",
 				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/keyboards/Chordsnest-Multiphonics/sampler/samples/Clarinet-Multiphonics",
 				"patcherrelativepath" : "./Chordsnest-Multiphonics/sampler/samples/Clarinet-Multiphonics",
@@ -7050,6 +7040,13 @@
 			}
 , 			{
 				"name" : "samplerGUI3.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
+				"patcherrelativepath" : "../modules/MaxScore-Sampler",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "sfz-importer.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/MaxScore/patchers/modules/MaxScore-Sampler",
 				"patcherrelativepath" : "../modules/MaxScore-Sampler",
 				"type" : "JSON",
