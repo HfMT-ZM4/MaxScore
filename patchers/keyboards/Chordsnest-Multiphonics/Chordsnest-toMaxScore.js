@@ -52,14 +52,8 @@ function addSelected() {
     // draw upper note as interval
     outlet(3, "addInterval", upperNote);
     var index = selectedDict.get('index');
-    if (index <= 128) {
-        outlet(3, "setAmplitude", 60); // amplitude set to 60 for correct sample playback (vel_zone)
-        outlet(3, "setNoteDimension", "originalPitch", index);
-    }
-    else {
-        outlet(3, "setAmplitude", 100); // amplitude set to 100 for correct sample playback (vel_zone)
-        outlet(3, "setNoteDimension", "originalPitch", index-128);
-    }
+    outlet(3, "setAmplitude", 100); 
+    outlet(3, "setNoteDimension", "originalPitch", index);
 
     if (upperNote >= 70) outlet (3, 'overrideStemDirection', 'DOWN'); // stem down if higher note >= Bb
 
