@@ -605,6 +605,7 @@ function cursor()
 		var d = new Dict();
 		d.name = msg[2];
 		//cursors[c] = {};
+		//post("dict", d.stringify(), "\n");
 		cursors[c] = JSON.parse(d.stringify());
 		var line = {};
 		line[0] = [0, 0, 0];
@@ -686,7 +687,6 @@ function highlightSelectedStaff(h)
 function scrollTask(id)
 {
 	ticks[id] = arguments.callee.task.iterations;
-	//post("scrollTask", arguments.callee.task.iterations, id,  maxiter[id], "\n");
    	if (arguments.callee.task.iterations > maxiter[id]) {
        arguments.callee.task.cancel();
    	}

@@ -3904,6 +3904,7 @@ function cursor()
 		cursorAttr[id]["@color"] = [0.25, 1, 0.25, 1];
 		cursorAttr[id]["@countincolor"] = [1, 0, 0, 1];	
 		cursorAttr[id]["@countin"] = 0;	
+		cursorAttr[id]["@delay"] = 0;
 		cursorAttr[id]["@shape"] = "line";	
 		cursorAttr[id]["@notevalue"] = 1.;	
 		cursorAttr[id]["@trajectory"] = {};
@@ -3917,7 +3918,9 @@ function cursor()
 			var autostart = 0;
 			}
 		else var autostart = 1;
+		var delay = Number(cursorAttr[id]["@delay"]);
 		var stretch = cursorAttr[id]["@timestretch"];
+		//post("stretch", typeof stretch, "\n");
 		var startStaff = cursorAttr[id]["@begin"][1];
 		var endStaff = cursorAttr[id]["@end"][1];
 		for (var i = cursorAttr[id]["@begin"][0]; i <= cursorAttr[id]["@end"][0]; i++){
@@ -3933,7 +3936,6 @@ function cursor()
 			var to = staffBoundingInfo[2] + staffBoundingInfo[0];
 			var travel = stretch * (60000 / parseFloat(tempo) * (4 * parseFloat(timesig[0]) / parseFloat(timesig[1])));
 			var interval = stretch * 60000 / parseFloat(tempo) * 4 / parseFloat(timesig[1]);
-			//post("cursors", i - _scoreLayout[1], from, to, travel, tempo, timesig, "\n");
 			cursorAttr[id]["@trajectory"][i] = [from, to, travel];
 			}			
 			}
@@ -3962,7 +3964,16 @@ function cursor()
 					jcursors.segments[pass].color = cursorAttr[id]["@countincolor"];
 					pass++;
 				}
-				for (var p = 0; p < cursorAttr[id]["@passes"]; p++) {
+				else if (delay > 0) {
+					jcursors.segments[pass] = {};
+					jcursors.segments[pass].x = cursorAttr[id]["@trajectory"][cursorAttr[id]["@begin"][0]][0];
+					jcursors.segments[pass].y = dest[0];
+					jcursors.segments[pass].height = dest2 - dest;
+					jcursors.segments[pass].target = cursorAttr[id]["@trajectory"][cursorAttr[id]["@begin"][0]][0];
+					jcursors.segments[pass].duration = delay;
+					jcursors.segments[pass].color = cursorAttr[id]["@color"];
+					pass++;
+				}				for (var p = 0; p < cursorAttr[id]["@passes"]; p++) {
 					for (var n = cursorAttr[id]["@begin"][0]; n <= cursorAttr[id]["@end"][0]; n++) {
 						jcursors.segments[pass] = {};
 						jcursors.segments[pass].x = cursorAttr[id]["@trajectory"][n][0];
