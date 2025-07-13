@@ -48,6 +48,7 @@ function addSelected() {
 
     // draw lower note
     outlet(3, "addNote", duration, lowerNote, 0, duration*0.9);
+    if (upperNote >= 70) outlet (3, 'overrideStemDirection', 'DOWN'); // stem down if higher note >= Bb
 
     // draw upper note as interval
     outlet(3, "addInterval", upperNote);
@@ -55,7 +56,6 @@ function addSelected() {
     outlet(3, "setAmplitude", 100); 
     outlet(3, "setNoteDimension", "originalPitch", index);
 
-    if (upperNote >= 70) outlet (3, 'overrideStemDirection', 'DOWN'); // stem down if higher note >= Bb
 
 
     drawFingering();
