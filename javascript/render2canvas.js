@@ -419,7 +419,20 @@ function staffgroups()
 	{
 	flag = 0;
 	setStaffGroup = arrayfromargs(arguments);	
-	//post("setStaffGroup",setStaffGroup, "\n");	
+	//post("setStaffGroup",setStaffGroup, "\n");
+	//fill matrix	
+	for (var i = 0; i < numMeasures; i++) {
+		for (var j = 0; j < numStaves; j++) {
+			outlet(1, "getStaffBoundingInfo", i, j);
+		}
+	}
+	//get system index and calculate offset
+	for (var i = 0; i < numMeasures; i++) {
+		for (var j = 0; j < numStaves; j++) {
+			staffBoundingMatrix[i][j][2]
+
+		}
+	}
 	if (setStaffGroup[0] != "score" && setStaffGroup[0] != "parts") 
 		{
 		fillObj([].concat(setStaffGroup));
@@ -427,11 +440,6 @@ function staffgroups()
 		}
 		outlet(1, "setRenderAllowed", 1);
 	}
-}
-
-function bang()
-{
-	outlet_dictionary(0, {"test" : [0, 12, 56]}); 
 }
 
 function fillObj(groups)

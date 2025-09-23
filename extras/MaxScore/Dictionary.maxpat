@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 9,
-			"minor" : 0,
-			"revision" : 5,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -100,7 +100,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 180.5, 407.0, 22.0, 22.0 ],
-					"text" : "t 0"
+					"text" : "t 1"
 				}
 
 			}
@@ -386,6 +386,7 @@
 					"presentation_rect" : [ 0.0, 0.0, 222.0, 20.0 ],
 					"prototypename" : "Classic",
 					"rounded" : 0.0,
+					"text" : "measure",
 					"textcolor" : [ 0.988235294117647, 0.988235294117647, 1.0, 1.0 ],
 					"varname" : "search"
 				}
@@ -606,7 +607,6 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-23",
-					"linecount" : 2,
 					"maxclass" : "textedit",
 					"numinlets" : 1,
 					"numoutlets" : 4,
@@ -614,10 +614,9 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 347.0, 644.0, 876.0, 54.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 2,
 					"presentation_rect" : [ 1.0, 664.0, 1086.0, 44.0 ],
 					"rounded" : 0.0,
-					"text" : "autoajust | flag (int) | toggles between automatic adjustment of canvas size. If set to 0 and with the score size larger than the box size scroll bars will appear to allow the viewing of the entire score. | autoajust 0",
+					"text" : "setRepeatEnd | measure (int) flag (boolean) | set right repeat bar-line for specified measure | setRepeatEnd 1 true",
 					"textcolor" : [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
 				}
 
@@ -795,7 +794,7 @@
 					"presentation_rect" : [ 1.0, 41.0, 1086.0, 621.0 ],
 					"rowhead" : 1,
 					"rowheight" : 20,
-					"rows" : 325,
+					"rows" : 329,
 					"selmode" : 3,
 					"sgcolor" : [ 0.745098039215686, 0.745098039215686, 0.745098039215686, 1.0 ],
 					"stcolor" : [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
@@ -1288,7 +1287,6 @@
 
 			}
  ],
-		"originid" : "pat-3417",
 		"dependency_cache" : [ 			{
 				"name" : "Editor-Messages.txt",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/dictionary",

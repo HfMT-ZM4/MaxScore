@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 9,
-			"minor" : 0,
-			"revision" : 5,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -14,7 +14,42 @@
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
 		"gridsize" : [ 15.0, 15.0 ],
+		"assistshowspatchername" : 0,
+		"commentary" : "",
+		"showcommentary" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-179",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 877.953871250152588, 688.019408345222473, 160.0, 20.0 ],
+					"text" : "loadmess name #0ostinato_dict"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-170",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
+					"patching_rect" : [ 877.953871250152588, 715.019408345222473, 61.0, 20.0 ],
+					"saved_object_attributes" : 					{
+						"legacy" : 1,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict",
+					"varname" : "ostinato_dict"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-184",
 					"maxclass" : "newobj",
@@ -573,8 +608,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -582,6 +617,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 270.0, 460.0, 435.0, 417.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-5",
@@ -809,7 +847,6 @@
 
 							}
  ],
-						"originid" : "pat-3300",
 						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
@@ -889,8 +926,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -898,6 +935,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 95.0, 100.0, 1381.0, 611.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-31",
@@ -1586,8 +1626,7 @@
 								}
 
 							}
- ],
-						"originid" : "pat-3302"
+ ]
 					}
 ,
 					"patching_rect" : [ 425.0, 35.0, 43.0, 20.0 ],
@@ -1647,7 +1686,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "note", "hires" ],
-							"parameter_info" : "Event length given in ms or percentage of pulse length",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
@@ -1699,7 +1737,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 893.555813729763031, 661.165039479732513, 105.0, 20.0 ],
+					"patching_rect" : [ 877.953871250152588, 651.999990403652191, 105.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -1712,7 +1750,6 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"embed" : 0,
 						"legacy" : 1,
 						"parameter_enable" : 1,
 						"parameter_mappable" : 0
@@ -1730,7 +1767,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 893.555813729763031, 628.155331194400787, 107.0, 20.0 ],
+					"patching_rect" : [ 877.953871250152588, 618.999990403652191, 107.0, 20.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -1743,7 +1780,6 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"embed" : 0,
 						"legacy" : 1,
 						"parameter_enable" : 1,
 						"parameter_mappable" : 0
@@ -1799,7 +1835,6 @@
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 668.3130983710289, 666.019408345222473, 90.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"embed" : 0,
 						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1954,8 +1989,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1963,6 +1998,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 527.0, 206.0, 766.0, 463.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-10",
@@ -2288,8 +2326,7 @@
 								}
 
 							}
- ],
-						"originid" : "pat-3304"
+ ]
 					}
 ,
 					"patching_rect" : [ 154.75, 66.0, 51.0, 20.0 ],
@@ -2307,8 +2344,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2316,6 +2353,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 71.0, 100.0, 748.0, 741.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-26",
@@ -2440,7 +2480,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 363.0, 512.0, 347.0, 22.0 ],
-									"restore" : [ 332.042252947312136 ],
+									"restore" : [ 62.499999999999957 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2837,8 +2877,7 @@
 								}
 
 							}
- ],
-						"originid" : "pat-3306"
+ ]
 					}
 ,
 					"patching_rect" : [ 483.847081482410431, 553.398050665855408, 74.0, 20.0 ],
@@ -2857,8 +2896,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2866,6 +2905,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 164.0, 149.0, 1346.0, 717.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-58",
@@ -2958,7 +3000,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 419.0, 307.0, 347.0, 22.0 ],
-									"restore" : [ 332.042252947312136 ],
+									"restore" : [ 62.499999999999957 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3792,8 +3834,7 @@
 								}
 
 							}
- ],
-						"originid" : "pat-3308"
+ ]
 					}
 ,
 					"patching_rect" : [ 863.458726763725281, 366.990286231040955, 72.0, 20.0 ],
@@ -3850,7 +3891,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
-							"parameter_info" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Overlap",
@@ -3942,7 +3982,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "1", "2", "3", "4", "5" ],
-							"parameter_info" : "Set the number of intervals in a chord. A maximum of 5 notes can be played together in each stream. ",
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Chordal Weight",
@@ -4038,7 +4077,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
-							"parameter_info" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Use Transport",
@@ -4114,7 +4152,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "harm", "scale" ],
-							"parameter_info" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Sorted",
@@ -4195,7 +4232,6 @@
 						}
 ,
 						"valueof" : 						{
-							"parameter_info" : "A measure of the preservation of the scale used as input for the stocastic process. The values range from -1 (preserved sequence played backward)  to 0 (weighted randomness) to 1 (preserved sequence played forward).\nThe scale can be represented either as an ascending sequence or as sequence, the order of which depending on its members' harmonic distance from the tonic or an arbitrarily assignedpriority value (use the Sort switch to toggle between these modes).\n",
 							"parameter_initial" : [ 0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Melodic Cohesion",
@@ -4285,7 +4321,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "0", "1", "2", "3", "4", "5" ],
-							"parameter_info" : "Ostinato Buffer: Switch between different buffers",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Ostinato Buffer",
@@ -4333,7 +4368,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "ms", "%" ],
-							"parameter_info" : "Event length given in ms or percentage of pulse length",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 2,
@@ -4466,7 +4500,6 @@
 ,
 						"valueof" : 						{
 							"parameter_exponent" : 4.0,
-							"parameter_info" : "The length in pulses of every event generated; a value of 1 is similar to ‘staccato’, a large value to ‘legato’.",
 							"parameter_initial" : [ 99 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Event Length",
@@ -4567,7 +4600,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
-							"parameter_info" : "Turn event generation on/off",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Play",
@@ -4654,8 +4686,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4663,6 +4695,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 59.0, 106.0, 448.0, 566.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-7",
@@ -4957,12 +4992,11 @@
 
 							}
  ],
-						"originid" : "pat-3310",
 						"bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 						"editing_bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 626.565526127815247, 553.398050665855408, 70.0, 20.0 ],
+					"patching_rect" : [ 674.694162964820862, 553.398050665855408, 70.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"editing_bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ],
 						"locked_bgcolor" : [ 0.215686274509804, 0.215686274509804, 0.215686274509804, 1.0 ]
@@ -4989,11 +5023,11 @@
 					"id" : "obj-99",
 					"linecount" : 2,
 					"maxclass" : "newobj",
-					"numinlets" : 8,
-					"numoutlets" : 8,
-					"outlettype" : [ "", "", "", "", "", "", "", "" ],
-					"patching_rect" : [ 292.584948182106018, 483.495139002799988, 353.733368000000041, 31.0 ],
-					"text" : "routepass dictionary append-meter add-scale replace-pitchset event_length scale dump_params"
+					"numinlets" : 9,
+					"numoutlets" : 9,
+					"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 293.0, 483.495139002799988, 400.694162964820862, 31.0 ],
+					"text" : "routepass dictionary append-meter add-scale replace-pitchset event_length scale dump_params set-ostinato-buffer"
 				}
 
 			}
@@ -5190,7 +5224,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 235.303395569324493, 699.999990403652191, 30.0, 30.0 ]
+					"patching_rect" : [ 235.303395569324493, 722.56309974193573, 30.0, 30.0 ]
 				}
 
 			}
@@ -5294,7 +5328,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 763, 140, 1507, 770 ],
+						"client_rect" : [ 763, 140, 1715, 770 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 780, 524, 1380, 824 ]
@@ -5404,12 +5438,146 @@
 						"metriclarity" : [ 100.0 ],
 						"ostinato" : [ 0.0 ],
 						"ostinato-buffer" : [ 0.0 ],
+						"ostinato_dict" : [ 							{
+								"0" : 								{
+									"9" : 									{
+										"0" : [ 28, 6700, 64 ]
+									}
+,
+									"10" : 									{
+										"0" : [ 2, 6500, 55 ]
+									}
+,
+									"11" : 									{
+										"0" : [ 18, 6500, 60 ]
+									}
+,
+									"12" : 									{
+										"0" : [ 10, 6700, 58 ]
+									}
+,
+									"13" : 									{
+										"0" : [ 26, 6500, 63 ]
+									}
+,
+									"14" : 									{
+										"0" : [ 6, 6500, 56 ]
+									}
+,
+									"15" : 									{
+										"0" : [ 22, 6700, 62 ]
+									}
+,
+									"16" : 									{
+										"0" : [ 14, 6700, 59 ]
+									}
+,
+									"17" : 									{
+										"0" : [ 30, 6200, 64 ]
+									}
+,
+									"18" : 									{
+										"0" : [ 1, 6000, 55 ]
+									}
+,
+									"19" : 									{
+										"0" : [ 17, 6700, 60 ]
+									}
+,
+									"20" : 									{
+										"0" : [ 9, 5300, 57 ]
+									}
+,
+									"21" : 									{
+										"0" : [ 25, 6000, 63 ]
+									}
+,
+									"22" : 									{
+										"0" : [ 5, 5700, 56 ]
+									}
+,
+									"23" : 									{
+										"0" : [ 21, 5300, 61 ]
+									}
+,
+									"24" : 									{
+										"0" : [ 13, 6000, 59 ]
+									}
+,
+									"25" : 									{
+										"0" : [ 29, 5300, 64 ]
+									}
+,
+									"26" : 									{
+										"0" : [ 3, 5300, 55 ]
+									}
+,
+									"27" : 									{
+										"0" : [ 19, 6000, 61 ]
+									}
+,
+									"28" : 									{
+										"0" : [ 11, 6700, 58 ]
+									}
+,
+									"29" : 									{
+										"0" : [ 6, 5900, 63 ]
+									}
+,
+									"30" : 									{
+										"0" : [ 1, 6500, 56 ]
+									}
+,
+									"31" : 									{
+										"0" : [ 5, 6400, 62 ]
+									}
+,
+									"32" : 									{
+										"0" : [ 3, 6400, 59 ]
+									}
+,
+									"5" : 									{
+										"0" : [ 6, 5300, 63 ]
+									}
+,
+									"6" : 									{
+										"0" : [ 1, 4700, 56 ]
+									}
+,
+									"7" : 									{
+										"0" : [ 5, 4100, 62 ]
+									}
+,
+									"8" : 									{
+										"0" : [ 3, 4500, 59 ]
+									}
+,
+									"1" : 									{
+										"0" : [ 7, 4800, 64 ]
+									}
+,
+									"2" : 									{
+										"0" : [ 0, 4300, 54 ]
+									}
+,
+									"3" : 									{
+										"0" : [ 4, 4800, 60 ]
+									}
+,
+									"4" : 									{
+										"0" : [ 2, 5000, 57 ]
+									}
+
+								}
+
+							}
+ ],
 						"outset_pulses" : [ 1.0 ],
 						"overlap" : [ 1.0 ],
 						"pitch_center" : [ 60.0 ],
 						"pitch_range" : [ 7.000000000000002 ],
 						"precision" : [ 0.0 ],
-						"pulse_length" : [ 332.042252947312136 ],
+						"pulse_length" : [ 62.499999999999957 ],
 						"scale" : [ "Major" ],
 						"scales" : [ 							{
 								"Major" : 								{
@@ -10736,7 +10904,7 @@
 						"sorted" : [ 0.0 ],
 						"stream" : [ 0.0 ],
 						"subdivision" : [ "2 2 2" ],
-						"tempo" : [ 22.587486783466939 ],
+						"tempo" : [ 120.0 ],
 						"timesig_denominator" : [ "4" ],
 						"timesig_numerator" : [ 4 ],
 						"tonic_pitch" : [ 36.0 ],
@@ -10989,7 +11157,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "Narrow", "Wide", "Odd Narrow", "Odd Wide" ],
-							"parameter_info" : "Tonality Profile. A narrow profile assumes that small intervals can be clearly differentiated. ",
 							"parameter_invisible" : 1,
 							"parameter_longname" : "Tonality Profile",
 							"parameter_mmax" : 3,
@@ -11017,8 +11184,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -11026,6 +11193,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 419.0, 203.0, 882.0, 464.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-6",
@@ -11732,7 +11902,6 @@
 
 							}
  ],
-						"originid" : "pat-3318",
 						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
@@ -11778,7 +11947,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "i", "r", "w" ],
-							"parameter_info" : "Init, read and write presets",
 							"parameter_invisible" : 2,
 							"parameter_longname" : "Precision[1]",
 							"parameter_mmax" : 2,
@@ -11928,8 +12096,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -11937,6 +12105,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 1196.0, 289.0, 458.0, 308.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -12203,7 +12374,6 @@
 
 							}
  ],
-						"originid" : "pat-3320",
 						"bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
 						"editing_bgcolor" : [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
 					}
@@ -12316,7 +12486,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
-							"parameter_info" : "Silent downbeat. This parameter switches the relative probabilities for the first and second pulses",
 							"parameter_initial" : [ 0.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Silent Downbeat",
@@ -12575,7 +12744,6 @@
 ,
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "talea", "ostinato" ],
-							"parameter_info" : "Ostinato: modes are none, talea (rhythmic ostinato) and ostinato (melodic ostinato)",
 							"parameter_longname" : "Ostinato",
 							"parameter_mmax" : 2,
 							"parameter_modmode" : 0,
@@ -12640,7 +12808,6 @@
 ,
 						"valueof" : 						{
 							"parameter_exponent" : 5.0,
-							"parameter_info" : "The time interval between pulses",
 							"parameter_initial" : [ 200 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Pulse Length",
@@ -12727,7 +12894,6 @@
 						}
 ,
 						"valueof" : 						{
-							"parameter_info" : "The maximum velocity of the stream. Values may be attenuated dependimg on the Attenuation parameter setting.",
 							"parameter_initial" : [ 64 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Dynamics",
@@ -12848,7 +13014,6 @@
 ,
 						"valueof" : 						{
 							"parameter_exponent" : 2.0,
-							"parameter_info" : "The interval in semitones (floating point) from the pitch center defining the range the melody is allowed to move in.",
 							"parameter_initial" : [ 7 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Pitch Range",
@@ -12909,7 +13074,6 @@
 						}
 ,
 						"valueof" : 						{
-							"parameter_info" : "The MIDI pitch (floating point) of the center of pitch window (i.e. the range the melody is allowed to move in)",
 							"parameter_initial" : [ 60 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Pitch Center",
@@ -13028,7 +13192,6 @@
 						}
 ,
 						"valueof" : 						{
-							"parameter_info" : "The MIDI pitch (floating point) the selected tonality profile is anchored on. ",
 							"parameter_initial" : [ 36 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Tonic Pitch",
@@ -13149,7 +13312,6 @@
 						}
 ,
 						"valueof" : 						{
-							"parameter_info" : "At minimum the stream is inactive, at maximum it is saturated with attacks, e.g. every available pulse in the metre accorded to this stream is played. ",
 							"parameter_initial" : [ 100.0 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Eventfulness",
@@ -13256,7 +13418,6 @@
 						}
 ,
 						"valueof" : 						{
-							"parameter_info" : "Outset pulses: This parameter allows the metric profile for the given meter to be set to the indicated pulse number. If set to 2, the metric profile is shifted by 1. The downbeat would  have the probablity of the second pulse, the second pulse that of the third pulse and so on.",
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Outset Pulses",
@@ -14085,7 +14246,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-90", 0 ],
-					"midpoints" : [ 677.8130983710289, 691.921110928058624, 244.803395569324493, 691.921110928058624 ],
+					"midpoints" : [ 677.8130983710289, 696.014860928058624, 244.803395569324493, 696.014860928058624 ],
 					"source" : [ "obj-175", 0 ]
 				}
 
@@ -14108,6 +14269,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-184", 0 ],
 					"source" : [ "obj-178", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-170", 0 ],
+					"source" : [ "obj-179", 0 ]
 				}
 
 			}
@@ -14917,14 +15085,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-118", 0 ],
-					"source" : [ "obj-99", 7 ]
+					"source" : [ "obj-99", 8 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-151", 0 ],
-					"midpoints" : [ 541.180211039248888, 587.921110928058624, 523.444168448448181, 587.921110928058624 ],
+					"midpoints" : [ 541.058851853013039, 587.921110928058624, 523.444168448448181, 587.921110928058624 ],
 					"source" : [ "obj-99", 5 ]
 				}
 
@@ -14945,8 +15113,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-31", 0 ],
+					"source" : [ "obj-99", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-95", 4 ],
-					"midpoints" : [ 445.542105896391718, 527.796110928058624, 801.95872950553894, 527.796110928058624 ],
+					"midpoints" : [ 445.635311111807823, 527.796110928058624, 801.95872950553894, 527.796110928058624 ],
 					"source" : [ "obj-99", 3 ]
 				}
 
@@ -14954,7 +15129,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-95", 4 ],
-					"midpoints" : [ 397.723053324963189, 527.796110928058624, 801.95872950553894, 527.796110928058624 ],
+					"midpoints" : [ 397.923540741205215, 527.796110928058624, 801.95872950553894, 527.796110928058624 ],
 					"source" : [ "obj-99", 2 ]
 				}
 
@@ -14962,13 +15137,12 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-96", 2 ],
-					"midpoints" : [ 349.904000753534604, 538.421110928058624, 936.415038108825684, 538.421110928058624 ],
+					"midpoints" : [ 350.211770370602608, 538.421110928058624, 936.415038108825684, 538.421110928058624 ],
 					"source" : [ "obj-99", 1 ]
 				}
 
 			}
  ],
-		"originid" : "pat-3298",
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{

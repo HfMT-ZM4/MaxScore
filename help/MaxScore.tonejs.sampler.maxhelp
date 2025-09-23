@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 9,
-			"minor" : 0,
-			"revision" : 4,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -43,8 +43,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 4,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -75,8 +75,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 222.0, 217.0, 161.0, 47.0 ],
-									"text" : "Caveat: samples can only be in .mp3, .ogg or .wav formats to work in tone.js."
+									"patching_rect" : [ 167.0, 217.0, 216.0, 47.0 ],
+									"text" : "Caveat: samples can only be in .mp3, .ogg or .wav formats to work in tone.js.\nThis may not work with a smart phone!"
 								}
 
 							}
@@ -290,8 +290,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 9,
-											"minor" : 0,
-											"revision" : 4,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -467,8 +467,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 9,
-															"minor" : 0,
-															"revision" : 4,
+															"minor" : 1,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -480,7 +480,7 @@
 																"box" : 																{
 																	"id" : "obj-10",
 																	"maxclass" : "newobj",
-																	"numinlets" : 1,
+																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "dictionary" ],
 																	"patching_rect" : [ 106.0, 80.0, 185.0, 22.0 ],
@@ -1503,7 +1503,6 @@
 
 															}
  ],
-														"originid" : "pat-2172",
 														"styles" : [ 															{
 																"name" : "black on white",
 																"umenu" : 																{
@@ -1575,10 +1574,6 @@
 													}
 ,
 													"patching_rect" : [ 188.166665999999964, 106.0, 108.166666500000019, 22.0 ],
-													"saved_object_attributes" : 													{
-														"globalpatchername" : ""
-													}
-,
 													"text" : "p maxscore.store"
 												}
 
@@ -1630,8 +1625,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 9,
-															"minor" : 0,
-															"revision" : 4,
+															"minor" : 1,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1751,8 +1746,6 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 0,
-																		"node_bin_path" : "",
-																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -1998,7 +1991,6 @@
 
 															}
  ],
-														"originid" : "pat-2250",
 														"styles" : [ 															{
 																"name" : "AudioStatus_Menu",
 																"default" : 																{
@@ -2060,10 +2052,6 @@
 													}
 ,
 													"patching_rect" : [ 461.0, 613.0, 78.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"globalpatchername" : ""
-													}
-,
 													"text" : "p searchpath"
 												}
 
@@ -2174,8 +2162,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 9,
-															"minor" : 0,
-															"revision" : 4,
+															"minor" : 1,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2460,8 +2448,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 9,
-																			"minor" : 0,
-																			"revision" : 4,
+																			"minor" : 1,
+																			"revision" : 0,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3031,15 +3019,10 @@
 																				}
 
 																			}
- ],
-																		"originid" : "pat-2254"
+ ]
 																	}
 ,
 																	"patching_rect" : [ 245.0, 303.0, 177.0, 22.0 ],
-																	"saved_object_attributes" : 																	{
-																		"globalpatchername" : ""
-																	}
-,
 																	"text" : "p imagetype"
 																}
 
@@ -3110,8 +3093,6 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 1,
-																		"node_bin_path" : "",
-																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -3544,15 +3525,10 @@
 																}
 
 															}
- ],
-														"originid" : "pat-2252"
+ ]
 													}
 ,
 													"patching_rect" : [ 312.333332499999983, 576.0, 98.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"globalpatchername" : ""
-													}
-,
 													"text" : "p picster-support"
 												}
 
@@ -3700,8 +3676,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 9,
-															"minor" : 0,
-															"revision" : 4,
+															"minor" : 1,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3862,15 +3838,10 @@
 																}
 
 															}
- ],
-														"originid" : "pat-2256"
+ ]
 													}
 ,
 													"patching_rect" : [ 30.0, 625.0, 71.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"globalpatchername" : ""
-													}
-,
 													"text" : "p loadscore"
 												}
 
@@ -4566,7 +4537,6 @@
 
 											}
  ],
-										"originid" : "pat-2146",
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
@@ -4655,8 +4625,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 9,
-											"minor" : 0,
-											"revision" : 4,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4889,7 +4859,6 @@
 
 											}
  ],
-										"originid" : "pat-2033",
 										"styles" : [ 											{
 												"name" : "black on white",
 												"umenu" : 												{
@@ -5013,10 +4982,6 @@
 									}
 ,
 									"patching_rect" : [ 199.0, 554.0, 42.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p odot"
 								}
 
@@ -5532,7 +5497,6 @@
 
 							}
  ],
-						"originid" : "pat-1800",
 						"styles" : [ 							{
 								"name" : "black on white",
 								"umenu" : 								{
@@ -5656,10 +5620,6 @@
 					}
 ,
 					"patching_rect" : [ 10.0, 85.0, 50.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -5691,8 +5651,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 4,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5702,15 +5662,10 @@
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [  ],
-						"lines" : [  ],
-						"originid" : "pat-2141"
+						"lines" : [  ]
 					}
 ,
 					"patching_rect" : [ 205.0, 205.0, 50.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p ?",
 					"varname" : "q_tab"
 				}
@@ -5718,7 +5673,6 @@
 			}
  ],
 		"lines" : [  ],
-		"originid" : "pat-1798",
 		"parameters" : 		{
 			"obj-2::obj-3::obj-16" : [ "Edit Button[2]", "Edit Button", 0 ],
 			"obj-2::obj-3::obj-19" : [ "live.text[27]", "live.text", 0 ],
@@ -5737,6 +5691,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "ExpandExponential.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "MaxScore.maxpat",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
 				"patcherrelativepath" : "../patchers/abstractions",
@@ -5755,6 +5716,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "MaxScoreNoteheads.txt",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/maps/Font Mappings",
+				"patcherrelativepath" : "../patchers/maps/Font Mappings",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "boxSize.js",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -5769,6 +5737,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "djsterNotation.js",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/jsextensions",
+				"patcherrelativepath" : "../jsextensions",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "drawsocket-max.js",
 				"bootpath" : "/Users/Shared/Max 9/Packages/drawsocket-max/javascript",
 				"patcherrelativepath" : "../../drawsocket-max/javascript",
@@ -5780,6 +5755,13 @@
 				"bootpath" : "/Users/Shared/Max 9/Packages/drawsocket-max/patchers",
 				"patcherrelativepath" : "../../drawsocket-max/patchers",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fitcurve.js",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/jsextensions/xytocurveto",
+				"patcherrelativepath" : "../jsextensions/xytocurveto",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -5850,6 +5832,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.active.js",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.bcanvas.hub.maxpat",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
@@ -5857,14 +5846,21 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.info.grab.maxpat",
+				"name" : "maxscore.empty.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.info.recv.maxpat",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "maxscore.info.recv.maxpat",
+				"name" : "maxscore.json.iter.maxpat",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
 				"patcherrelativepath" : "../patchers/extensions",
 				"type" : "JSON",
@@ -5892,10 +5888,31 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "maxscore.parse2.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/abstractions",
+				"patcherrelativepath" : "../patchers/abstractions",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.parseJSON.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "maxscore.proportionalNotation.js",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "maxscore.query.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -5942,8 +5959,8 @@
 			}
 , 			{
 				"name" : "maxscore.tools.js",
-				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/jsextensions",
-				"patcherrelativepath" : "../jsextensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -5974,8 +5991,8 @@
 			}
 , 			{
 				"name" : "my-LtoColl.maxpat",
-				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
-				"patcherrelativepath" : "../patchers/extensions",
+				"bootpath" : "/Users/Shared/Max 9/Packages/Quintet.net/patchers/Library/Abstractions/utilities",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Library/Abstractions/utilities",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -6046,6 +6063,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "pentool.js",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/jsextensions/xytocurveto",
+				"patcherrelativepath" : "../jsextensions/xytocurveto",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "picster-init.js",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
@@ -6054,6 +6078,13 @@
 			}
 , 			{
 				"name" : "picster-select.js",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "quote2backslashquote.js",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
@@ -6071,6 +6102,13 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "selectInterval.maxpat",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/extensions",
+				"patcherrelativepath" : "../patchers/extensions",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "sequenceDumpPlayer.maxpat",
 				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/patchers/Picster",
 				"patcherrelativepath" : "../patchers/Picster",
@@ -6086,8 +6124,15 @@
 			}
 , 			{
 				"name" : "startscript.js",
-				"bootpath" : "/Users/Shared/Max 9/Packages/drawsocket-max/javascript",
-				"patcherrelativepath" : "../../drawsocket-max/javascript",
+				"bootpath" : "/Users/Shared/Max 9/Packages/Quintet.net/patchers/Library/nodejs/drawsocket-min/code",
+				"patcherrelativepath" : "../../Quintet.net/patchers/Library/nodejs/drawsocket-min/code",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "svgPathToExpression.js",
+				"bootpath" : "/Users/Shared/Max 9/Packages/MaxScore/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

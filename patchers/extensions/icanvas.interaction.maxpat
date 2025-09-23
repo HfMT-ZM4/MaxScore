@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 9,
-			"minor" : 0,
-			"revision" : 5,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -84,14 +84,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 5,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 172.0, 775.0, 346.0 ],
+						"rect" : [ 134.0, 172.0, 864.0, 346.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -101,7 +101,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 732.944458000000054, 282.0, 25.0, 25.0 ]
+									"patching_rect" : [ 749.0, 282.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -125,11 +125,11 @@
 									"id" : "obj-3",
 									"linecount" : 7,
 									"maxclass" : "newobj",
-									"numinlets" : 44,
-									"numoutlets" : 44,
-									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 22.944458000000001, 39.0, 729.0, 102.0 ],
-									"text" : "routepass setComposer setCopyright setSubtitle setTitle setTitleVisible setDurationalSpacingBase setMeasureNumberOffset setScoreBottomMargin setScoreLeftMargin setScoreRightMargin setScoreSize setScoreTopMargin setScoreTopMarginOfFirstPage setScoreFirstSystemIndent setSelectionBufferNoteColor setWrap setZoom showClefs showCourtesyClefs showInstruments showKeySignatures showMeasureNumbers showSectionBrackets showStaffNumbers showTempo showTimeSignatures routepass deleteStaff insertStaff loadScore newScore setInstrument setInstrumentDimension setInstrumentName setAbbreviatedInstrumentName setInstrumentTransposition setStaffSpacingAbove setStaffSpacingBelow setTurnPagesDuringPlayback transcribeMIDIFile setMultitrackRestAdjustmentY useLegacyMultiTrackOrientation setLayoutShiftX"
+									"numinlets" : 46,
+									"numoutlets" : 46,
+									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 22.944458000000001, 39.0, 745.0, 102.0 ],
+									"text" : "routepass addNote addInterval setComposer setCopyright setSubtitle setTitle setTitleVisible setDurationalSpacingBase setMeasureNumberOffset setScoreBottomMargin setScoreLeftMargin setScoreRightMargin setScoreSize setScoreTopMargin setScoreTopMarginOfFirstPage setScoreFirstSystemIndent setSelectionBufferNoteColor setWrap setZoom showClefs showCourtesyClefs showInstruments showKeySignatures showMeasureNumbers showSectionBrackets showStaffNumbers showTempo showTimeSignatures routepass deleteStaff insertStaff loadScore newScore setInstrument setInstrumentDimension setInstrumentName setAbbreviatedInstrumentName setInstrumentTransposition setStaffSpacingAbove setStaffSpacingBelow setTurnPagesDuringPlayback transcribeMIDIFile setMultitrackRestAdjustmentY useLegacyMultiTrackOrientation setLayoutShiftX"
 								}
 
 							}
@@ -151,6 +151,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-3", 44 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-3", 43 ]
 								}
 
 							}
@@ -458,12 +472,11 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"source" : [ "obj-3", 43 ]
+									"source" : [ "obj-3", 45 ]
 								}
 
 							}
- ],
-						"originid" : "pat-21956"
+ ]
 					}
 ,
 					"patching_rect" : [ 21.0, 72.0, 82.0, 22.0 ],
@@ -626,7 +639,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 851.0, 77.0, 431.0, 22.0 ],
-					"restore" : [ 111 ],
+					"restore" : [ 127 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1031,7 +1044,6 @@
 
 			}
  ],
-		"originid" : "pat-21954",
 		"styles" : [ 			{
 				"name" : "black on white",
 				"umenu" : 				{

@@ -2,42 +2,20 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 385.0, 232.0, 982.0, 523.0 ],
-		"bglocked" : 0,
+		"rect" : [ 414.0, 310.0, 982.0, 523.0 ],
 		"openinpresentation" : 1,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
+		"commentary" : "",
+		"showcommentary" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-20",
@@ -122,7 +100,7 @@
 					}
 ,
 					"text" : "pattr #0-stored-instrument @autorestore 0 @invisible 1",
-					"varname" : "10752691-stored-instrument"
+					"varname" : "#0-stored-instrument"
 				}
 
 			}
@@ -395,9 +373,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 793.75, 147.0, 32.0, 22.0 ],
-					"text" : "t  #1"
+					"text" : "t #1"
 				}
 
 			}
@@ -411,7 +389,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 177.333338618278503, 386.666678190231323, 130.0, 22.0 ],
-					"text" : "pak #1 s 0 1 0"
+					"text" : "pak #1 <none> 0 1 0"
 				}
 
 			}
@@ -481,10 +459,9 @@
 					"presentation_rect" : [ 18.0, 6.666667, 106.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_enum" : [ "<none>", "Bell-1.instr", "Bell-2.instr", "Hi_Voweler.instr", "Dreamers.instr", "Kalimbell.instr", "Wave_4.instr", "Dark_Monkey.instr", "Digi_Vocal.instr", "Mini_Moog.instr", "Synth_1980.instr", "E-Pad.instr", "Equinox.instr", "Galaxis.instr", "Venus_Pad.instr", "Celeste.instr", "percussion_glockenspiel_Glockenspiel-beaters_ordinario.instr", "Marimba.instr", "Stopped_Piano.instr", "Cymbales_Antiques.instr", "FretSound.instr", "Bandoneon.instr" ],
-							"parameter_info" : "Select instrument from current sound bank",
+							"parameter_enum" : [ "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "...", "..." ],
 							"parameter_longname" : "Instrument[26]",
-							"parameter_mmax" : 21,
+							"parameter_mmax" : 99,
 							"parameter_modmode" : 0,
 							"parameter_shortname" : "instrument",
 							"parameter_type" : 2
@@ -721,6 +698,26 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-17" : [ "Pan[31]", "Pan", 0 ],
+			"obj-25" : [ "Instrument[26]", "instrument", 0 ],
+			"obj-39" : [ "892206-stored-instrument[30]", "892206-stored-instrument", 0 ],
+			"obj-7" : [ "live.menu[52]", "live.menu", 0 ],
+			"obj-8" : [ "live.menu[53]", "live.menu", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [  ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "maxscore.default.buttons",
 				"default" : 				{

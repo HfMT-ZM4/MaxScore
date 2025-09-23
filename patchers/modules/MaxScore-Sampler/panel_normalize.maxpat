@@ -2,42 +2,20 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"major" : 9,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 632.0, 265.0, 695.0, 553.0 ],
-		"bglocked" : 0,
+		"rect" : [ 681.0, 371.0, 695.0, 553.0 ],
 		"openinpresentation" : 1,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
+		"commentary" : "",
+		"showcommentary" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-6",
@@ -313,6 +291,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[23]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.text[19]",
 							"parameter_type" : 2
 						}
@@ -360,6 +339,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.text[5]",
 							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.text[19]",
 							"parameter_type" : 2
 						}
@@ -383,8 +363,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 165.5, 495.0, 89.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 7.0, 1.0, 211.800003051757812, 20.0 ],
-					"text" : "Normalize",
+					"presentation_rect" : [ 7.0, -1.0, 211.800003051757812, 20.0 ],
+					"text" : "Edit",
 					"textcolor" : [ 0.082353003323078, 0.082353003323078, 0.098039001226425, 1.0 ],
 					"textjustification" : 1
 				}
@@ -423,6 +403,7 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.numbox[8]",
 							"parameter_mmax" : 1.0,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.numbox[4]",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1

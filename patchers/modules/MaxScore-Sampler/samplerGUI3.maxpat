@@ -3,16 +3,19 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 9,
-			"minor" : 0,
-			"revision" : 6,
+			"minor" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 290.0, 257.0, 1179.0, 730.0 ],
+		"rect" : [ 219.0, 190.0, 1179.0, 730.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
+		"assistshowspatchername" : 0,
+		"commentary" : "",
+		"showcommentary" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontsize" : 14.0,
@@ -68,8 +71,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 6,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -77,6 +80,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 84.0, 144.0, 373.0, 419.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -406,7 +412,7 @@
 						"precision" : 6
 					}
 ,
-					"text" : "coll #0-bank"
+					"text" : "coll #0-bank"
 				}
 
 			}
@@ -541,7 +547,7 @@
 					"presentation_rect" : [ 62.0, 153.0, 541.5, 16.0 ],
 					"rounded" : 0.0,
 					"segmented" : 1,
-					"tabs" : [ "#", "                         Name                             ", "Root Key", "Key Floor", "Vel Floor", "Envelope", "Loop", "Start", "Direction", "Timestretch" ]
+					"tabs" : [ "#", "¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†Name¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†", "Root Key", "Key Floor", "Vel Floor", "Envelope", "Loop", "Start", "Direction", "Timestretch" ]
 				}
 
 			}
@@ -885,15 +891,18 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 6,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 81.0, 284.0, 1374.0, 388.0 ],
+						"rect" : [ 169.0, 274.0, 1399.0, 621.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-8",
@@ -923,13 +932,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-13",
-									"linecount" : 25,
+									"linecount" : 26,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 960.200000000000045, 148.0, 231.0, 357.0 ],
-									"text" : ";\n#0-dim_command col 0 width 16;\n#0-dim_command col 1 width 154;\n#0-dim_command col 2 width 49;\n#0-dim_command col 3 width 50;\n#0-dim_command col 4 width 49;\n#0-dim_command col 5 width 49;\n#0-dim_command col 6 width 30;\n#0-dim_command col 7 width 33;\n#0-dim_command col 8 width 50;\n#0-dim_command col 9 width 60;\n#0-dim_command col 0 just 1;\n#0-dim_command col 1 just 1;\n#0-dim_command col 2 just 1;\n#0-dim_command col 3 just 1;\n#0-dim_command col 4 just 1;\n#0-dim_command col 5 just 1;\n#0-dim_command col 6 just 1;\n#0-dim_command col 7 just 1;\n#0-dim_command col 8 just 1;\n#0-dim_command col 9 just 1;\n#0-dim_command_2 col 0 width 47;\n#0-dim_command_2 col 1 width 646;\n#0-dim_command_2 col 0 just 0;\n#0-dim_command_2 col 1 just 0;\n"
+									"patching_rect" : [ 960.0, 148.0, 218.0, 357.0 ],
+									"text" : ";\r#0-dim_command col 0 width 16;\r#0-dim_command col 1 width 154;\r#0-dim_command col 2 width 49;\r#0-dim_command col 3 width 50;\r#0-dim_command col 4 width 49;\r#0-dim_command col 5 width 49;\r#0-dim_command col 6 width 30;\r#0-dim_command col 7 width 33;\r#0-dim_command col 8 width 50;\r#0-dim_command col 9 width 60;\r#0-dim_command col 0 just 1;\r#0-dim_command col 1 just 1;\r#0-dim_command col 2 just 1;\r#0-dim_command col 3 just 1;\r#0-dim_command col 4 just 1;\r#0-dim_command col 5 just 1;\r#0-dim_command col 6 just 1;\r#0-dim_command col 7 just 1;\r#0-dim_command col 8 just 1;\r#0-dim_command col 9 just 1;\r#0-dim_command_2 col 0 width 47;\r#0-dim_command_2 col 1 width 646;\r#0-dim_command_2 col 0 just 0;\r#0-dim_command_2 col 1 just 0;\r‹"
 								}
 
 							}
@@ -948,13 +957,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-15",
-									"linecount" : 7,
+									"linecount" : 8,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 721.900000000000091, 148.0, 245.0, 102.0 ],
-									"text" : ";\r#0-this_init script hide panel_Position;\r#0-this_init script hide panel_Envelope;\r#0-this_init script hide panel_Edit;\r#0-this_init script show panel_Loop;\r#0-interaction_init 1, 0;\r#0-sustain_init bang"
+									"patching_rect" : [ 721.900000000000091, 148.0, 231.0, 116.0 ],
+									"text" : ";\r#0-this_init script hide panel_Position;\r#0-this_init script hide panel_Envelope;\r#0-this_init script hide panel_Edit;\r#0-this_init script hide panel_Tune;\r#0-this_init script show panel_Loop;\r#0-interaction_init 1, 0;\r#0-sustain_init bang"
 								}
 
 							}
@@ -991,7 +1000,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 245.300000000000011, 148.0, 167.0, 62.0 ],
-									"text" : ";\n#0-sel-notes_init clear;\n#0-instance_init #0;"
+									"text" : ";\r#0-sel-notes_init clear;\r#0-instance_init #0;\r"
 								}
 
 							}
@@ -1004,7 +1013,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 483.600000000000023, 148.0, 183.0, 49.0 ],
-									"text" : ";\r#0-instrument-list_init bang;"
+									"text" : ";\r#0-instrument-list_init bang;\r"
 								}
 
 							}
@@ -1128,8 +1137,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 6,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1137,6 +1146,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 451.0, 396.0, 770.0, 390.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -1162,7 +1174,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 256.0, 246.0, 485.0, 22.0 ],
-									"restore" : [ "vibraphone_ordinario-soft-rubber.instr" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1417,8 +1429,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 6,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1426,6 +1438,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 34.0, 100.0, 858.0, 791.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-8",
@@ -1502,7 +1517,6 @@
 									"outlettype" : [ "dictionary", "", "", "", "" ],
 									"patching_rect" : [ 634.0, 498.0, 194.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"embed" : 0,
 										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1544,7 +1558,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 413.333333333333314, 339.0, 270.0, 22.0 ],
-									"restore" : [ 1, "vib_softrbvib-F3-pp.AIF" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1576,7 +1590,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 403.0, 567.0, 197.0, 22.0 ],
-									"restore" : [ "1042-clientbuffer.160" ],
+									"restore" : [ "1289-clientbuffer.4" ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -1697,10 +1711,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 403.0, 404.0, 188.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"embed" : 0
-									}
-,
 									"text" : "polybuffer~ #0-clientbuffer",
 									"varname" : "clientbuffer[1]"
 								}
@@ -1729,8 +1739,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 9,
-											"minor" : 0,
-											"revision" : 6,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1738,6 +1748,9 @@
 										"classnamespace" : "box",
 										"rect" : [ 501.0, 121.0, 468.0, 512.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
+										"assistshowspatchername" : 0,
+										"commentary" : "",
+										"showcommentary" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-11",
@@ -2761,8 +2774,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 6,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2770,6 +2783,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 424.0, 214.0, 749.0, 693.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-20",
@@ -2832,7 +2848,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 224.928571428571445, 129.5, 288.0, 22.0 ],
-									"restore" : [ "vibraphone_ordinario-soft-rubber.instr" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -2988,7 +3004,6 @@
 									"outlettype" : [ "dictionary", "", "", "", "" ],
 									"patching_rect" : [ 224.928571428571445, 191.851593017578125, 129.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"embed" : 0,
 										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -3382,7 +3397,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 512.0, 17.0, 239.0, 22.0 ],
-					"text" : "loadmess refer  #0-current-instrument"
+					"text" : "loadmess refer #0-current-instrument"
 				}
 
 			}
@@ -3436,7 +3451,8 @@
 				"box" : 				{
 					"bgcolor" : [ 0.224371293128988, 0.224371233701808, 0.224371249262613, 1.0 ],
 					"bordercolor" : [ 0.667272371436122, 0.667272213229683, 0.667272254571553, 1.0 ],
-					"coldef" : [ [ 0, 16, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 1, 154, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 2, 49, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 3, 50, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 4, 49, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 5, 49, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 6, 30, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 7, 33, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 8, 50, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ], [ 9, 60, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ] ],
+					"coldef" : [ [ 0, 16, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 1, -1, -1 ] ],
+					"cols" : 1,
 					"colwidth" : 104,
 					"fgcolor" : [ 0.8, 0.8, 0.8, 1.0 ],
 					"fontface" : 0,
@@ -3456,7 +3472,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 62.0, 169.0, 541.5, 97.0 ],
 					"rowhead" : 1,
-					"rows" : 39,
+					"rows" : 1,
 					"saved_attribute_attributes" : 					{
 						"bgcolor" : 						{
 							"expression" : "themecolor.live_surface_bg"
@@ -3516,8 +3532,8 @@
 				"box" : 				{
 					"bgcolor" : [ 0.224371293128988, 0.224371233701808, 0.224371249262613, 1.0 ],
 					"bordercolor" : [ 0.667272371436122, 0.667272213229683, 0.667272254571553, 1.0 ],
-					"coldef" : [ [ 0, 47, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 0, -1, -1 ], [ 1, 646, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 0, -1, -1 ] ],
-					"cols" : 2,
+					"coldef" : [ [ 0, 47, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, 0, -1, -1 ] ],
+					"cols" : 1,
 					"colwidth" : 256,
 					"fgcolor" : [ 0.8, 0.8, 0.8, 1.0 ],
 					"fontface" : 1,
@@ -3538,7 +3554,7 @@
 					"presentation_rect" : [ 62.0, 1.0, 543.0, 151.0 ],
 					"rowhead" : 1,
 					"rowheight" : 19,
-					"rows" : 6,
+					"rows" : 1,
 					"saved_attribute_attributes" : 					{
 						"bgcolor" : 						{
 							"expression" : "themecolor.live_surface_bg"
@@ -3649,7 +3665,7 @@
 					}
 ,
 					"tabcolor" : [ 0.41657702213511, 0.416576918840945, 0.41657694583336, 1.0 ],
-					"tabs" : [ "⇩ Empty", "Sort", "Delete", "Clear" ],
+					"tabs" : [ "‚á© Empty", "Sort", "Delete", "Clear" ],
 					"textcolor" : [ 0.8, 0.8, 0.8, 1.0 ],
 					"varname" : "live.tab[1]"
 				}
@@ -3665,7 +3681,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1057.0, 428.0, 237.0, 22.0 ],
-					"restore" : [ 1042 ],
+					"restore" : [ 1250 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3690,8 +3706,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 9,
-							"minor" : 0,
-							"revision" : 6,
+							"minor" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3699,6 +3715,9 @@
 						"classnamespace" : "box",
 						"rect" : [ 166.0, 248.0, 1176.0, 723.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"assistshowspatchername" : 0,
+						"commentary" : "",
+						"showcommentary" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-35",
@@ -3813,8 +3832,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 9,
-											"minor" : 0,
-											"revision" : 6,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3822,6 +3841,9 @@
 										"classnamespace" : "box",
 										"rect" : [ 134.0, 178.0, 919.0, 799.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
+										"assistshowspatchername" : 0,
+										"commentary" : "",
+										"showcommentary" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-8",
@@ -4498,7 +4520,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 636.454545454545496, 388.0, 485.0, 22.0 ],
-									"restore" : [ "vibraphone_ordinario-soft-rubber.instr" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4592,7 +4614,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 673.0, 278.0, 485.0, 22.0 ],
-									"restore" : [ "vibraphone_ordinario-soft-rubber.instr" ],
+									"restore" : [ 0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -4626,8 +4648,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 9,
-											"minor" : 0,
-											"revision" : 6,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4635,6 +4657,9 @@
 										"classnamespace" : "box",
 										"rect" : [ 546.0, 180.0, 774.0, 772.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
+										"assistshowspatchername" : 0,
+										"commentary" : "",
+										"showcommentary" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-26",
@@ -4910,13 +4935,12 @@
 													"outlettype" : [ "dictionary", "", "", "", "" ],
 													"patching_rect" : [ 473.0, 555.0, 186.999999999999972, 22.0 ],
 													"saved_object_attributes" : 													{
-														"embed" : 0,
 														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
 ,
-													"text" : "dict #0-temp"
+													"text" : "dict #0-temp"
 												}
 
 											}
@@ -5258,7 +5282,6 @@
 									}
 ,
 									"saved_object_attributes" : 									{
-										"embed" : 0,
 										"legacy" : 1,
 										"parameter_enable" : 1,
 										"parameter_mappable" : 0
@@ -5359,7 +5382,7 @@
 										"precision" : 6
 									}
 ,
-									"text" : "coll #0-bank"
+									"text" : "coll #0-bank"
 								}
 
 							}
@@ -5544,8 +5567,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 9,
-											"minor" : 0,
-											"revision" : 6,
+											"minor" : 1,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5553,6 +5576,9 @@
 										"classnamespace" : "box",
 										"rect" : [ 34.0, 100.0, 1477.0, 724.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
+										"assistshowspatchername" : 0,
+										"commentary" : "",
+										"showcommentary" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -5615,7 +5641,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 313.43182373046875, 219.0, 526.0, 22.0 ],
-													"restore" : [ "vibraphone_ordinario-soft-rubber.instr" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5662,7 +5688,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 1133.0, 277.0, 473.0, 35.0 ],
-													"restore" : [ "vibraphone_ordinario-soft-rubber.instr" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5722,7 +5748,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 842.6666259765625, 155.0, 526.0, 22.0 ],
-													"restore" : [ "vibraphone_ordinario-soft-rubber.instr" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -5744,8 +5770,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 9,
-															"minor" : 0,
-															"revision" : 6,
+															"minor" : 1,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5753,6 +5779,9 @@
 														"classnamespace" : "box",
 														"rect" : [ 505.0, 313.0, 364.0, 434.0 ],
 														"gridsize" : [ 15.0, 15.0 ],
+														"assistshowspatchername" : 0,
+														"commentary" : "",
+														"showcommentary" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-98",
@@ -5877,10 +5906,6 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 98.75, 146.5, 188.0, 22.0 ],
-																	"saved_object_attributes" : 																	{
-																		"embed" : 0
-																	}
-,
 																	"text" : "polybuffer~ #0-clientbuffer"
 																}
 
@@ -6134,10 +6159,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 225.0, 314.0, 188.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"embed" : 0
-													}
-,
 													"text" : "polybuffer~ #0-clientbuffer",
 													"varname" : "clientbuffer[2]"
 												}
@@ -6355,7 +6376,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 757.93182373046875, 61.0, 497.0, 22.0 ],
-													"restore" : [ 1, "vib_softrbvib-F3-pp.AIF" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -7176,8 +7197,8 @@
 									"numinlets" : 13,
 									"numoutlets" : 13,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 451.0, 56.0, 464.090909090909236, 37.0 ],
-									"text" : "route New Open Import Append Save Rename Remove \"Clear All\" \"⇩ Empty\" Sort Delete Clear"
+									"patching_rect" : [ 451.0, 56.0, 464.090909090909236, 35.0 ],
+									"text" : "route New Open Import Append Save Rename Remove \"Clear All\" \"‚á© Empty\" Sort Delete Clear"
 								}
 
 							}
