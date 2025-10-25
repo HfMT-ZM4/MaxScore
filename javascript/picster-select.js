@@ -59,7 +59,7 @@ var currentBounds = [];
 var lcd;
 var blocked = 0;
 var stroke = 0;
-var shapes = ["0: polycurve", "1: line", "2: rect", "3: orect", "4: oval", "5: arc", "6: poly", "7: fhand", "8: text", "9: img", "a: bracket", "h: hairpin"];
+var shapes = ["0: polycurve", "1: line", "2: rect", "3: orect", "4: oval", "5: arc", "6: poly", "7: fhand", "8: text", "9: img", "[: bracket", "]: hairpin"];
 var preference = "staff";
 var embedimage = 1;
 var property = "stroke";
@@ -2598,8 +2598,8 @@ function anything()
 			break;
 			default :
 			if (Number(msg) >= 48 && (Number(msg)) <= 57) shape = (Number(msg)) - 48;
-			else if (msg == 66) shape = 10;
-			else if (msg == 72) shape = 11;
+			else if (msg == 91) shape = 10;
+			else if (msg == 93) shape = 11;
 			//lcd = this.patcher.getnamed("pane");
 			outlet(2, "picsterShape", shapes[shape], selectionMode);
 				switch (shape) {

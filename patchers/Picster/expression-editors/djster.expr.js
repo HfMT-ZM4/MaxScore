@@ -302,6 +302,7 @@ function bang() {
     }
     else {
       var middleX = 65+50*djsterAttributes.event_length/djsterAttributes.pulse_length;
+      //post(JSON.stringify(djsterAttributes), JSON.stringify(colorPalette), transformMatrix, "\n");
       var thickh = JSON.parse('{"new":"line","x1":60,"y1":56,"x2":'+middleX+',"y2":56,"style":{"stroke":"'+colorPalette.event.dark[onoff]+'","stroke-width":3,"stroke-opacity":1},"transform":"'+transformMatrix+'"}');
       thickh.id = groupId+"_event_thickh";
       outputPicster["picster-element"][0]["val"]["child"].push(thickh);
@@ -363,7 +364,7 @@ function bang() {
 
   //melody scope
   if ("melody_scope" in djsterAttributes) {
-    var melody_scope = JSON.parse('{"new":"text","x":'+currentSize*28+',"y":'+currentSize*42+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var melody_scope = JSON.parse('{"new":"text","x":'+currentSize*25+',"y":'+currentSize*58+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     melody_scope.id = groupId+"_melody_scope";
     melody_scope.text = "±"+parseFloat(djsterAttributes.melody_scope.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(melody_scope);
@@ -383,7 +384,7 @@ function bang() {
 
   //tonic pitch
   if ("tonic_pitch" in djsterAttributes) {
-    var tonic_pitch = JSON.parse('{"new":"text","x":'+currentSize*55+',"y":'+currentSize*55+',"font-style":"normal","font-weight":"normal","text-anchor":"end","font-family":"Arial","font-size":'+currentSize*11+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var tonic_pitch = JSON.parse('{"new":"text","x":'+currentSize*52+',"y":'+currentSize*61+',"font-style":"normal","font-weight":"normal","text-anchor":"end","font-family":"Arial","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     tonic_pitch.id = groupId+"_tonic_pitch";
     tonic_pitch.text = parseFloat(djsterAttributes.tonic_pitch.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(tonic_pitch);
@@ -474,6 +475,29 @@ function bang() {
 
     var text = JSON.parse('{"new":"text","x":'+currentSize*64+',"y":'+currentSize*11+',"text":"M","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.meter.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     text.id = groupId+"_metriclarity_text";
+    outputPicster["picster-element"][0]["val"]["child"].push(text);
+  }
+  
+    if ("melodic_cohesion" in djsterAttributes) {
+    var fillbarlength = Math.round((djsterAttributes.harmoniclarity + 100) / 400 * 60);
+    var fillbarystart = 47-fillbarlength;
+    var fillbar = JSON.parse('{"new":"rect","x":40,"y":'+fillbarystart+',"width":10,"height":'+fillbarlength+',"style":{"fill":"'+colorPalette.pitch.light[onoff]+'","fill-opacity":1,"stroke":"none","stroke-opacity":0,"stroke-width":0},"transform":"'+transformMatrix+'"}');
+    fillbar.id = groupId+"_melodic_cohesion_fillbar";
+    outputPicster["picster-element"][0]["val"]["child"].push(fillbar);
+
+    var border = JSON.parse('{"new":"rect","x":40,"y":18,"width":10,"height":30,"style":{"stroke":"'+colorPalette.pitch.dark[onoff]+'","stroke-width":1, "stroke-opacity":1,"fill":"none","fill-opacity":0},"transform":"'+transformMatrix+'"}');
+    border.id = groupId+"_melodic_cohesion_border";
+    outputPicster["picster-element"][0]["val"]["child"].push(border);
+
+    var text = JSON.parse('{"new":"text","x":'+(currentSize*42)+',"y":'+currentSize*44+',"text":"C","font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.pitch.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    text.id = groupId+"_melodic_cohesion_text";
+    outputPicster["picster-element"][0]["val"]["child"].push(text);
+  }
+    if ("sorted" in djsterAttributes) {
+    // p == pitch; t == tonal semblance
+    //post((djsterAttributes.sorted)?'p':'t', "\n");
+    var text = JSON.parse('{"new":"text","x":'+currentSize*42+',"y":'+currentSize*22+',"text":'+(djsterAttributes.sorted)?'"p"':'"t"'+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.pitch.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    text.id = groupId+"_sorted_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
   }
 

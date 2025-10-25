@@ -3302,7 +3302,6 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster, nonScrolling)
 				break;
 				case "rect" :
 				//var roundedness = (picster.contains("rx")) ? picster.get("rx") : 0;
-				//post("jpicster", picster.stringify(), "\n");
 				jpicster = JSON.parse(picster.stringify());
 				jpicster.transform = svgtransform;
 				SVGGraphics[s + 1].push(jpicster);
@@ -3345,6 +3344,7 @@ function renderDrawSocket(s, _dest, RenderMessageOffset, picster, nonScrolling)
 				else if (picster.get("font-style") == "normal" && picster.get("font-weight") == "bold") usedFonts.replace(picster.get("font-family") + "::Bold", 1);
 				else if (picster.get("font-style") == "italic" && picster.get("font-weight") == "normal") usedFonts.replace(picster.get("font-family") + "::Italic", 1);
 				else if (picster.get("font-style") == "italic" && picster.get("font-weight") == "bold") usedFonts.replace(picster.get("font-family") + "::Bold Italic", 1);
+                if (typeof picster.get("font-family") == "object") picster.replace("font-family", picster.get("font-family")[0]); //post("array", "\n");
 				//SVGGraphics[s + 1].push("<text id=\"" + picster.get("id") + "\" x=\"" + picster.get("x") + "\" y=\"" + picster.get("y") + "\" font-family=\"" + picster.get("font-family") + "\" font-size=\"" + picster.get("font-size") + "\" font-style=\"" + picster.get("font-style") + "\" font-weight=\"" + picster.get("font-weight") + "\" text-anchor=\"" + picster.get("text-anchor") + "\" text-decoration=\"none\" fill=\"" + svgfill + "\" fill-opacity=\"" + svgfillopacity + "\" " + svgtransform + onclick + ">" + picster.get("child") + "</text>");
 				if (picster.contains("child")) {
 					picster.replace("text", picster.get("child"));	
@@ -3916,6 +3916,7 @@ function cursor()
 		cursorAttr[id]["@shape"] = "line";	
 		cursorAttr[id]["@notevalue"] = 1.;	
 		cursorAttr[id]["@trajectory"] = {};
+        cursorAttr[id]["@stretch"] = 1.;
 		for (var i = 0; i < occurence.length; i++){
 		var attribute =  msg.slice(occurence[i], occurence[i+1]);
 		cursorAttr[id]["@trajectory"][i] = [];
@@ -3928,7 +3929,7 @@ function cursor()
 		else var autostart = 1;
 		var delay = Number(cursorAttr[id]["@delay"]);
 		var stretch = cursorAttr[id]["@timestretch"];
-		//post("stretch", typeof stretch, "\n");
+        var vscale = cursorAttr[id]["@stretch"];
 		var startStaff = cursorAttr[id]["@begin"][1];
 		var endStaff = cursorAttr[id]["@end"][1];
 		for (var i = cursorAttr[id]["@begin"][0]; i <= cursorAttr[id]["@end"][0]; i++){
@@ -3965,8 +3966,8 @@ function cursor()
 				if (cursorAttr[id]["@countin"] == 1) {
 					jcursors.segments[pass] = {};
 					jcursors.segments[pass].x = cursorAttr[id]["@trajectory"][cursorAttr[id]["@begin"][0]][0];
-					jcursors.segments[pass].y = dest[0];
-					jcursors.segments[pass].height = dest2 - dest;
+					jcursors.segments[pass].y = dest[0] - (dest2 - dest) / 2 * (vscale - 1);
+					jcursors.segments[pass].height = (dest2 - dest) * vscale;
 					jcursors.segments[pass].target = cursorAttr[id]["@trajectory"][cursorAttr[id]["@begin"][0]][0];
 					jcursors.segments[pass].duration = countin[0] * countinInterval;
 					jcursors.segments[pass].color = cursorAttr[id]["@countincolor"];
@@ -3975,18 +3976,20 @@ function cursor()
 				else if (delay > 0) {
 					jcursors.segments[pass] = {};
 					jcursors.segments[pass].x = cursorAttr[id]["@trajectory"][cursorAttr[id]["@begin"][0]][0];
-					jcursors.segments[pass].y = dest[0];
-					jcursors.segments[pass].height = dest2 - dest;
+					jcursors.segments[pass].y = dest[0] - (dest2 - dest) / 2 * (vscale - 1);
+					jcursors.segments[pass].height = (dest2 - dest) * vscale;
 					jcursors.segments[pass].target = cursorAttr[id]["@trajectory"][cursorAttr[id]["@begin"][0]][0];
 					jcursors.segments[pass].duration = delay;
 					jcursors.segments[pass].color = cursorAttr[id]["@color"];
 					pass++;
-				}				for (var p = 0; p < cursorAttr[id]["@passes"]; p++) {
+				}
+				for (var p = 0; p < cursorAttr[id]["@passes"]; p++) {
 					for (var n = cursorAttr[id]["@begin"][0]; n <= cursorAttr[id]["@end"][0]; n++) {
 						jcursors.segments[pass] = {};
 						jcursors.segments[pass].x = cursorAttr[id]["@trajectory"][n][0];
-						jcursors.segments[pass].y = dest[0];
-						jcursors.segments[pass].height = dest2 - dest;
+						jcursors.segments[pass].y = dest[0] - (dest2 - dest) / 2 * (vscale - 1);
+		                //post("stretch", vscale, "\n");
+						jcursors.segments[pass].height = (dest2 - dest) * vscale;
 						jcursors.segments[pass].target = cursorAttr[id]["@trajectory"][n][1];
 						jcursors.segments[pass].duration = cursorAttr[id]["@trajectory"][n][2];
 						jcursors.segments[pass].color = cursorAttr[id]["@color"];
