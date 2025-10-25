@@ -42,9 +42,13 @@ function addSelected() {
 
     var pitchMidicent = selectedDict.get('pitchMidicent').split(' ');
     // outlet(0, Number(pitchMidicent[0])/100, 0); // deprecated: use addNote instead of keyboard forward
-
-    var lowerNote = Number(pitchMidicent[0])/100;
-    var upperNote = Number(pitchMidicent[1])/100;
+    
+    // var instr = selectedDict.get('instrument');
+    var transposition = 0;
+    // if (instr == 'clar-bb') transposition = -2;
+    // else if (instr = 'clar-bass') transposition = -14;
+    var lowerNote = Number(pitchMidicent[0])/100 + transposition;
+    var upperNote = Number(pitchMidicent[1])/100 + transposition;
 
     // draw lower note
     outlet(3, "addNote", duration, lowerNote, 0, duration*0.9);

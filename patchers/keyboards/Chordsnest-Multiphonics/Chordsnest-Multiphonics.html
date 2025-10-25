@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!--
-  We start with a basic html 'page' that is the size of the jweb object,
-  but has no scrollbars nor floating content.
--->
-
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +76,11 @@
             stroke: gray;
             stroke-width: 1px;
             transition: all 0.5s;
+        }
+
+        .acknowledgement-logo {
+            y: 450px;
+            height: 60px;
         }
 
         .small-header #header-logo {
@@ -942,16 +942,24 @@
             </g>
         </g>
         <g class="info-g hidden-transparent" id="credits-box">
-            <rect id="dim-page-credits" class="dim-page" x="0" y="0" width="100%" height="100%" fill="black" fill-opacity="0.5" />
+            <rect id="dim-page-credits" class="dim-page" x="0" y="0" width="100%" height="100%" fill="black" fill-opacity="0.7" />
             <rect id="info-credits-bg" class="info-bg" x="50" y="50" width="700" height="500" fill="white" fill-opacity="0.8" />
+            <image id="header-logo" href="images/logo.png" style="y:80;"/>
             <text class="close-button" id="close-credits-button" x="90" y="90" font-size="50px" fill="darkgray" text-anchor="middle" dominant-baseline="middle" onclick="mouseEvents.infoClose('credits-box')">✕</text>
-            <text class="info-tagdescription" id="credits-text" x="100" y="130">
-                <tspan x="100" >Multiphonics Palette for MaxScore was a collaborative project by Aigerim Seilova,</tspan>
-                <tspan x="100" dy="1.2em">James Tsz-Him Cheung, Heather Roche and Georg Hajdu. Together, we developed and</tspan>
-                <tspan x="100" dy="1.2em">implemented the tool, with contributions including project conception, clarinet</tspan>
-                <tspan x="100" dy="1.2em">recordings, and user interface design. </tspan>
-                <tspan x="100" dy="1.8em">The project was supported by ligeti zentrum during January - April 2024. All rights reserved</tspan>
+            <text class="info-tagdescription" id="credits-text" x="100" y="250">
+                <tspan x="100" font-weight="bold">ChordsNest: Multiphonics Palette for MaxScore</tspan><tspan> is a collaborative project</tspan>
+                <tspan x="100" dy="1.2em">supported by the Hochschule für Musik und Theater Hamburg.</tspan>
+                <tspan x="100" dy="2.2em" font-weight="bold">Project leader: </tspan><tspan>Aigerim Seilova</tspan>
+                <tspan x="100" dy="1.2em" font-weight="bold">User interface design and implementation: </tspan><tspan>James Tsz-Him Cheung</tspan>
+                <tspan x="100" dy="1.2em" font-weight="bold">Clarinet recordings and multiphonics consultant: </tspan><tspan>Heather Roche</tspan>
+                <tspan x="100" dy="1.2em" font-weight="bold">Project Supervisor: </tspan><tspan>Georg Hajdu</tspan>
+                <tspan x="100" dy="2.2em">If you would like to support our project, please consider </tspan><tspan font-weight="bold"><a id="donateLink" href="#">donating here</a>.</tspan>
+                <tspan x="100" dy="2.2em">The project was supported by </tspan><tspan font-weight="bold">Gerhard Trede Stiftung</tspan><tspan> from January - April 2024.</tspan>
+                <tspan x="100" dy="1.2em">All rights reserved</tspan>
             </text>
+            <image class="acknowledgement-logo" x="170" href="images/hfmt-logo.png" />
+            <image class="acknowledgement-logo" x="334" href="images/trede-stiftung-logo.png" />
+            <image class="acknowledgement-logo" x="568" href="images/ligeti-zentrum-logo.png" />
         </g>
         <defs>
             <g id="def-fingering">
@@ -1481,6 +1489,14 @@
             window.max.getDict('results', function (results) {
                 drawResults(currentFilter.searchMethod, results);
             })
+        });
+
+        // donate link
+        document.getElementById('donateLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (window.max) {
+            window.max.outlet('donatelink');
+            }
         });
     </script>
 </body>
