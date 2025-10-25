@@ -364,7 +364,7 @@ function bang() {
 
   //melody scope
   if ("melody_scope" in djsterAttributes) {
-    var melody_scope = JSON.parse('{"new":"text","x":'+currentSize*25+',"y":'+currentSize*58+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var melody_scope = JSON.parse('{"new":"text","x":'+currentSize*25+',"y":'+currentSize*37+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     melody_scope.id = groupId+"_melody_scope";
     melody_scope.text = "±"+parseFloat(djsterAttributes.melody_scope.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(melody_scope);
@@ -384,7 +384,7 @@ function bang() {
 
   //tonic pitch
   if ("tonic_pitch" in djsterAttributes) {
-    var tonic_pitch = JSON.parse('{"new":"text","x":'+currentSize*52+',"y":'+currentSize*61+',"font-style":"normal","font-weight":"normal","text-anchor":"end","font-family":"Arial","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var tonic_pitch = JSON.parse('{"new":"text","x":'+currentSize*52+',"y":'+currentSize*59+',"font-style":"normal","font-weight":"normal","text-anchor":"end","font-family":"Arial","font-size":'+currentSize*10+',"style":{"fill":"'+colorPalette.pitch.mid[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     tonic_pitch.id = groupId+"_tonic_pitch";
     tonic_pitch.text = parseFloat(djsterAttributes.tonic_pitch.toFixed(2));
     outputPicster["picster-element"][0]["val"]["child"].push(tonic_pitch);
@@ -495,10 +495,10 @@ function bang() {
   }
     if ("sorted" in djsterAttributes) {
     // p == pitch; t == tonal semblance
-    //post((djsterAttributes.sorted)?'p':'t', "\n");
-    var text = JSON.parse('{"new":"text","x":'+currentSize*42+',"y":'+currentSize*22+',"text":'+(djsterAttributes.sorted)?'"p"':'"t"'+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*8+',"style":{"fill":"'+colorPalette.pitch.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
+    var text = JSON.parse('{"new":"text","x":'+currentSize*53+',"y":'+currentSize*24+',"text":'+((djsterAttributes.sorted)?'"P"':'"T"')+',"font-family":"Arial","font-style":"normal","font-weight":"normal","font-size":'+currentSize*9+',"style":{"fill":"'+colorPalette.pitch.dark[onoff]+'","fill-opacity":1},"transform":"matrix(1,0,0,1,0,0)"}');
     text.id = groupId+"_sorted_text";
     outputPicster["picster-element"][0]["val"]["child"].push(text);
+    //post(JSON.stringify(outputPicster), "\n");
   }
 
   //export jsobject as Dict
