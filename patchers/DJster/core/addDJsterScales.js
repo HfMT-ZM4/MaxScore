@@ -43,7 +43,8 @@ function exec(arg, path)
 	if (scale[scale.length - 1] == 0) scale.pop();
  	var scales = {};
 	scalename = path.slice(0, path.indexOf('.'));
-	scales[scalename] = scale;
+	scales[scalename][vals] = scale;
+ 	scales[scalename][vals] = _profile;
 	expand(scales);
 }
 
@@ -89,7 +90,7 @@ function addScale()
 function readCentsFile(f)
 {
 	var scales = {};
-	var file = new File(f);
+ 	var file = new File(f);
 	var line;
 	var a,c;
 	var b = '';
@@ -100,15 +101,20 @@ function readCentsFile(f)
 			a = file.readchars(1); //returns an array of single character strings
 			if (a[0].charCodeAt(0) != 10) b += a;
 			if (a[0].charCodeAt(0) == 10 || i == c - 1) {
-			var scale = b.split(' ');
-			//post(b, "\n");
+			var scale = b.trim().split(' ');
+            scales[scale[0]] = {};
 			if (["narrow", "wide", "odd-narrow", "odd-wide"].indexOf(scale[scale.length - 1]) != -1) {
-				//post("scale", scale, "\n");
-				scales[scale[0]] = scale.slice(1, scale.length - 1).map(Number);
-				_profile = scale[scale.length - 1];
+				scales[scale[0]].vals = scale.slice(1, scale.length - 1).map(Number);
+                scales[scale[0]].profile = scale[scale.length - 1];
 			}
-			else if (isNaN(Number(scale[0]))) scales[scale[0]] = scale.slice(1).map(Number);
-			else scales["scale-" + i++] = scale.map(Number); // Barlow's legacy file type	
+			else if (isNaN(Number(scale[0]))) {
+                scales[scale[0]].vals = scale.slice(1).map(Number);
+                scales[scale[0]].profile = "wide";
+              }
+			else { 
+                scales["scale-" + i++].vals = scale.map(Number); // Barlow's legacy file type
+                scales[scale[0]].profile = "wide";
+               }	
 			b = '';
 			}
 		}	
@@ -149,13 +155,13 @@ function expand(scales)
 	for (scale in scales) {
 		expandedScales[scale] = {};
 		var index = 0;
-		var frame = scales[scale][scales[scale].length - 1];
+		var frame = scales[scale].vals[scales[scale].vals.length - 1];
 		var repeats = Math.floor(9600 / frame);
 		for (var i = 1; i < (repeats + 1) * 2; i++) {
-			for (var j = 0; j < scales[scale].length - 1; j++) {
-				var step = Math.round((i - (repeats + 1)) * frame + scales[scale][j]);
+			for (var j = 0; j < scales[scale].vals.length - 1; j++) {
+				var step = Math.round((i - (repeats + 1)) * frame + scales[scale].vals[j]);
 				//post(i, frame, repeats, step, "\n");
-				if (step >= -9600 && step <= 9600) expandedScales[scale][index++] = [step].concat(lookup(step));
+				if (step >= -9600 && step <= 9600) expandedScales[scale][index++] = [step].concat(lookup(step, scales[scale].profile));
 			}
 		}
 	DJsterScale = new Dict;
@@ -170,10 +176,10 @@ function expand(scales)
 	//post(currentScale.length, Object.keys(scales), keys.length, keys, "\n");
 }
 
-function lookup(step)
+function lookup(step, profile_)
 {
 	var ratio = []; //harmonic-energy profile
-	switch (_profile) {
+	switch (profile_) {
 		case "narrow" :
 			ratio = narrow.get(step).slice(1);
 		break;
