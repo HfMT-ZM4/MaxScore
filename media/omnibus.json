@@ -4541,7 +4541,7 @@
                     "interp-pitch-range": [ 0 ],
                     "interp-tonic-pitch": [ 0 ],
                     "melodic_cohesion": [ -100.0 ],
-                    "melody_scope": [ 8.0 ],
+                    "melody_scope": [ 6.0 ],
                     "meter": [ "2 2" ],
                     "meters": [
                         {
@@ -4552,8 +4552,8 @@
                     "ostinato": [ 0.0 ],
                     "outset": [ 1.0 ],
                     "overlap": [ 0.0 ],
-                    "pitch_center": [ 61.0 ],
-                    "pitch_range": [ 16.0 ],
+                    "pitch_center": [ 60.0 ],
+                    "pitch_range": [ 6.0 ],
                     "scale": [ "Major" ],
                     "scales": [
                         {
@@ -9033,7 +9033,7 @@
                     ],
                     "silent_downbeat": [ 0.0 ],
                     "sorted": [ 1.0 ],
-                    "tonic_pitch": [ 61.0 ]
+                    "tonic_pitch": [ 60.0 ]
                 }
             }
         }

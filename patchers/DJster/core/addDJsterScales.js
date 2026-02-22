@@ -101,9 +101,12 @@ function readCentsFile(f)
 			a = file.readchars(1); //returns an array of single character strings
 			if (a[0].charCodeAt(0) != 10) b += a;
 			if (a[0].charCodeAt(0) == 10 || i == c - 1) {
-			var scale = b.trim().split(' ');
+			const scale = b
+                .trim()
+                .match(/"[^"]*"|\S+/g)
+                .map(function (s) {return s.replace(/^"|"$/g, '');}); //"
             scales[scale[0]] = {};
-			if (["narrow", "wide", "odd-narrow", "odd-wide"].indexOf(scale[scale.length - 1]) != -1) {
+ 			if (["narrow", "wide", "odd-narrow", "odd-wide"].indexOf(scale[scale.length - 1]) != -1) {
 				scales[scale[0]].vals = scale.slice(1, scale.length - 1).map(Number);
                 scales[scale[0]].profile = scale[scale.length - 1];
 			}
@@ -171,9 +174,9 @@ function expand(scales)
 	var currentScale = this.patcher.parentpatcher.getnamed("scale").getvalueof();
 	this.patcher.parentpatcher.getnamed("scale").message("clear");
 	var keys = DJsterScales.getkeys();
+	//post("scale", keys, "\n"); 
 	for (var i = 0; i < keys.length; i++) this.patcher.parentpatcher.getnamed("scale").message("append", keys[i]);
 	if (currentScale.length > 1) this.patcher.parentpatcher.getnamed("scale").setvalueof(currentScale);
-	//post(currentScale.length, Object.keys(scales), keys.length, keys, "\n");
 }
 
 function lookup(step, profile_)
