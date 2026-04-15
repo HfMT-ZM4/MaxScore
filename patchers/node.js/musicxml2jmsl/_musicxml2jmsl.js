@@ -1229,10 +1229,10 @@ var musicxml_callbacks =
 						                      'duration' : (mxml,jmsl)=>{
 						                          nattr.DURATION = Number(v(mxml)) / divisions
 						                      },
-						                      'tie' : undefined, // sound element---notations:tied is for notation
-						                      'instrument' : undefined,
-						                      'footnote' : undefined,
-						                      'level' : undefined,
+						                      'tie' : ()=>{}, // sound element---notations:tied is for notation
+						                      'instrument' : ()=>{},
+						                      'footnote' : ()=>{},
+						                      'level' : ()=>{},
 						                      'voice' : (mxml,jmsl)=>{ // jmsl track
 						                          tracknum = Number(v(mxml)) - 1;
 						                      },
