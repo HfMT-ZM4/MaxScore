@@ -461,9 +461,16 @@ function push_note_onto_staff(staff, tracknum, note)
 
 function push_note_onto_interval(staff, tracknum, note)
 {
+    var track = staff.elements[tracknum];
+
+    if (!track || !track.elements || track.elements.length === 0) {
+        console.warn("Chord note without previous anchor note on track", tracknum, note);
+        push_note_onto_staff(staff, tracknum, note);
+        return;
+    }
+
     note.name = "interval";
-    var es = staff.elements[tracknum].elements;
-    es[es.length - 1].elements.push(note);
+    track.elements[track.elements.length - 1].elements.push(note);
 }
 
 function push_text_onto_note(staff, text, placement)

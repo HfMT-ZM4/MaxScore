@@ -81,7 +81,7 @@ var setStaffGroup = [];
 var _staffGroup = [];
 var instrumentNames = [];
 var flag = 0;
-var wrap = 1;
+//var wrap = 1;
 var _init = 1;
 var tempoflag = 0;
 var moveToFlag = 0;
@@ -1262,11 +1262,13 @@ function getScoreAnnotation(a)
 	if (_init) {
 		if (annotation.contains("setLoopingPlayback")) outlet(1, "setLoopingPlayback", annotation.get("setLoopingPlayback"));
 		if (annotation.contains("setZoom")) outlet(1, "setZoom", annotation.get("setZoom"));//zoom value is needed by render2canvas!!!!!
+/*
 		if (annotation.contains("setWrap")) {
             //post(Number(annotation.get("setWrap") === "true" || annotation.get("setWrap") === 1), wrap, "\n");
             if (Number(annotation.get("setWrap") === "true" || annotation.get("setWrap") === 1) != wrap) outlet(1, "setWrap", annotation.get("setWrap"));
             wrap = Number(annotation.get("setWrap") === "true" || annotation.get("setWrap") === 1);
         }
+*/
 		if (annotation.contains("setDurationalSpacingBase")) outlet(1, "setDurationalSpacingBase", annotation.get("setDurationalSpacingBase"));
 	}
 	bcolor = (annotation.contains("bgcolor")) ? annotation.get("bgcolor") : [0.996, 0.996, 0.94, 1];
@@ -1639,7 +1641,7 @@ function scoreLayout()
 function init()
 {
 	_init = 1;
-    wrap = 1;
+    //wrap = 1;
 	oldRange = "";
 }
 

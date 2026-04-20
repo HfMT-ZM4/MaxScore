@@ -112,6 +112,7 @@ getStaffBoundingInfo, info "measure (int) staff (int)" "returns x y width height
 getStaffInfo, info "measure (int) staff (int)" "dumps staff info for given measure/staff in XML format out of the second outlet" "getStaffInfo 0 0";
 getStaffSpacing, info "staff (int)" "returns space above and below a specified staff" "getStaffSpacing 0";
 getSubtitle, info "measure (int)" "returns sub title" getSubtitle;
+getSystemWrap, info - "returns  whether systems wrap or not" getSystemWrap;
 getTimeSignature, info "measure (int)" "returns the time signature for the specified measure" "getTimeSignature 45";
 getTitle, info "measure (int)" "returns title" getTitle;
 getUndoStackMemoryThresholdMB, info "undo-stack-memory-threshold (int)" "returns the current threshold in MB" getUndoStackMemoryThresholdMB;
@@ -281,6 +282,7 @@ setStaffLineVisible, preference "staff (int) line (int) flag (boolean)" "set vis
 setStaffSpacingAbove, layout "staff (int) space_above (int)" "set space above for specified staff. At zoom = 1., space_above equals number of pixels. At zoom = 0.5, space_above is twice the number of pixels" "setStaffSpacingAbove 0 20";
 setStaffSpacingBelow, layout "staff (int) space_below (int)" "set space below for specified staff. At zoom = 1., space_below equals number of pixels. At zoom = 0.5, space_below is twice the number of pixels" "setStaffSpacingBelow 0 10";
 setSubtitle, score "subtitle (symbol)" "set subtitle for score" "setSubtitle a" wonderful piece of music;
+setSystemWrap, preference "flag (boolean)" "when set to true, a system of staves will wrap depending on the space below the system. Default = true" "setSystemWrap true";
 setTempo, measure "measure (int) quarter_equals (float)" "set tempo for specified measure. Tempo is always in reference to the duration of a quarter note" "setTempo 0 120.";
 setText, note "text (symbol) xOffset (int) yOffset (int)" "setText for selected note(s). At zoom = 1., offset equals number of pixels. At zoom = 0.5, offset is twice the number of pixels" "setText this" is "text 0 0";
 setTextOffset, note "xOffset (int) yOffset (int)" "set text position relative to selected note(s)." "setTextOffset 67 78";
@@ -296,7 +298,6 @@ setUndoStackEnabled, preference "flag (boolean)" "suspends or engages saving to 
 setUndoStackMemoryThresholdMB, preference "memory-threshold (int)" "The undo system stops taking snapshots if the memory is below this amount." "setUndoStackMemoryThresholdMB 100";
 setUserClef, Canvas "user-clef (symbol)" "sets a user clef included in Max" "8/Packages/MaxScore/patchers/maps/MaxScoreClefDesigner.json or included in the score file by name." "setUserClef FFGG";
 setWholeNoteRestInEmptyMeasures, Canvas "flag (int)" "toggles the appearance of whole-notes rests in empty measures." "setWholeNoteRestInEmptyMeasures 0";
-setWrap, preference "flag (boolean)" "when set to true, a system of staves will wrap depending on the space below the system. Default = true" "setWrap true";
 setZoom, layout "zoom_factor (float)" "zoom out or in. Because of roundoff errors simple ratios work better than complex ones." "setZoom 0.5";
 setid, "Core extended" "name (symbol)" "sets the name of a receive object from which to grab MaxScore query messages" "grab 1000-grabber";
 shiftCapturedTimeStampsToZero, transcriber "flag (boolean)" "when set to true, transcribed sequences will always start at time 0." "shiftCapturedTimeStampsToZero true";
