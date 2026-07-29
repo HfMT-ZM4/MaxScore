@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 59.0, 119.0, 1200.0, 343.0 ],
+        "rect": [ 59.0, 119.0, 1367.0, 624.0 ],
         "openinpresentation": 1,
         "boxes": [
             {
@@ -951,14 +951,14 @@
                                                 }
                                             }
                                         ],
-                                        "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                                        "bgfillcolor_type": "color",
+                                        "bgfillcolor_color1": [ 0.3764705882352941, 0.3843137254901961, 0.4, 1.0 ],
+                                        "bgfillcolor_color2": [ 0.2901960784313726, 0.30980392156862746, 0.30196078431372547, 1.0 ],
+                                        "bgfillcolor_color": [ 0.15864068919580723, 0.15864064239998057, 0.15864065462847765, 1.0 ],
+                                        "bgfillcolor_angle": 270.0,
+                                        "bgfillcolor_proportion": 0.39
                                     },
                                     "patching_rect": [ 617.0342606666667, 194.0, 103.0, 22.0 ],
-                                    "saved_object_attributes": {
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "locked_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
-                                    },
                                     "text": "p clearUndoStack"
                                 }
                             },
@@ -1140,7 +1140,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 334.0, 266.0, 470.0, 22.0 ],
-                                                    "restore": [ "scoreLayout", 360, 109, 23, 0.5, 1500, 3600 ],
+                                                    "restore": [ "scoreLayout", 7, 0, 7, 0.5, 800, 800 ],
                                                     "saved_object_attributes": {
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
@@ -1231,7 +1231,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 69.0, 53.0, 532.0, 22.0 ],
-                                                    "restore": [ -1, -1, -1, -1 ],
+                                                    "restore": [ 1, 0, 1, 0 ],
                                                     "saved_object_attributes": {
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
@@ -1688,15 +1688,9 @@
                                                 "parentstyle": "",
                                                 "multi": 0
                                             }
-                                        ],
-                                        "bgcolor": [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
-                                        "editing_bgcolor": [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
+                                        ]
                                     },
                                     "patching_rect": [ 470.82470912723227, 183.0, 104.0, 22.0 ],
-                                    "saved_object_attributes": {
-                                        "editing_bgcolor": [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
-                                        "locked_bgcolor": [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
-                                    },
                                     "text": "p deleteMeasures",
                                     "varname": "deleteMeasures"
                                 }
@@ -1885,7 +1879,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 302.28497314453125, 79.0, 541.0, 22.0 ],
-                                                    "restore": [ 0 ],
+                                                    "restore": [ 1 ],
                                                     "saved_object_attributes": {
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
@@ -2101,15 +2095,9 @@
                                                 "parentstyle": "",
                                                 "multi": 0
                                             }
-                                        ],
-                                        "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                                        ]
                                     },
                                     "patching_rect": [ 507.666626, 283.0, 91.60190446874998, 22.0 ],
-                                    "saved_object_attributes": {
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "locked_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
-                                    },
                                     "text": "p staves",
                                     "varname": "staves"
                                 }
@@ -2378,15 +2366,9 @@
                                                     "source": [ "obj-9", 0 ]
                                                 }
                                             }
-                                        ],
-                                        "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                                        ]
                                     },
                                     "patching_rect": [ 434.2532958984375, 245.0, 103.0, 22.0 ],
-                                    "saved_object_attributes": {
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "locked_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
-                                    },
                                     "text": "p insertMeasures"
                                 }
                             },
@@ -2969,7 +2951,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 397.0, 147.0, 492.0, 22.0 ],
-                                                    "restore": [ 842, 1191 ],
+                                                    "restore": [ 800, 800 ],
                                                     "saved_object_attributes": {
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
@@ -3444,15 +3426,9 @@
                                                     "source": [ "obj-9", 0 ]
                                                 }
                                             }
-                                        ],
-                                        "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                                        ]
                                     },
                                     "patching_rect": [ 873.1104495000001, 150.0, 83.0, 22.0 ],
-                                    "saved_object_attributes": {
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "locked_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
-                                    },
                                     "text": "p fitMeasures",
                                     "varname": "fitMeasures"
                                 }
@@ -3808,7 +3784,13 @@
                                                             }
                                                         ],
                                                         "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
+                                                        "bgfillcolor_type": "color",
+                                                        "bgfillcolor_color1": [ 0.3764705882352941, 0.3843137254901961, 0.4, 1.0 ],
+                                                        "bgfillcolor_color2": [ 0.2901960784313726, 0.30980392156862746, 0.30196078431372547, 1.0 ],
+                                                        "bgfillcolor_color": [ 0.15864068919580723, 0.15864064239998057, 0.15864065462847765, 1.0 ],
+                                                        "bgfillcolor_angle": 270.0,
+                                                        "bgfillcolor_proportion": 0.39
                                                     },
                                                     "patching_rect": [ 78.0, 197.5, 59.0, 22.0 ],
                                                     "saved_object_attributes": {
@@ -3943,15 +3925,9 @@
                                                     "source": [ "obj-7", 0 ]
                                                 }
                                             }
-                                        ],
-                                        "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                                        ]
                                     },
                                     "patching_rect": [ 396.555542, 151.0, 91.444458, 22.0 ],
-                                    "saved_object_attributes": {
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "locked_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
-                                    },
                                     "text": "p addMeasures"
                                 }
                             },
@@ -4830,15 +4806,9 @@
                                 "parentstyle": "",
                                 "multi": 0
                             }
-                        ],
-                        "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                        ]
                     },
                     "patching_rect": [ 437.60001627604163, 129.0, 135.09999593098962, 20.0 ],
-                    "saved_object_attributes": {
-                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                        "locked_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
-                    },
                     "text": "p editmenu",
                     "varname": "editmenu-patcher"
                 }
@@ -4862,7 +4832,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 324.0, 100.0, 964.0, 794.0 ],
+                        "rect": [ 134.0, 173.0, 964.0, 794.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -5055,7 +5025,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 50.0, 100.0, 541.0, 22.0 ],
-                                                    "restore": [ 0 ],
+                                                    "restore": [ 1 ],
                                                     "saved_object_attributes": {
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
@@ -5167,15 +5137,9 @@
                                                     "source": [ "obj-61", 0 ]
                                                 }
                                             }
-                                        ],
-                                        "bgcolor": [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
-                                        "editing_bgcolor": [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
+                                        ]
                                     },
                                     "patching_rect": [ 128.486759, 359.0, 83.0, 22.0 ],
-                                    "saved_object_attributes": {
-                                        "editing_bgcolor": [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ],
-                                        "locked_bgcolor": [ 0.309803921568627, 0.309803921568627, 0.309803921568627, 1.0 ]
-                                    },
                                     "text": "p notransform"
                                 }
                             },
@@ -5290,7 +5254,7 @@
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
                                     "patching_rect": [ 286.3234506666667, 496.0, 310.7252019047621, 35.0 ],
-                                    "restore": [ 0 ],
+                                    "restore": [ 1 ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -5624,7 +5588,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 34.0, 100.0, 1549.0, 884.0 ],
+                                        "rect": [ 134.0, 173.0, 1549.0, 884.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -5977,15 +5941,9 @@
                                                                     "source": [ "obj-151", 0 ]
                                                                 }
                                                             }
-                                                        ],
-                                                        "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                                                        ]
                                                     },
                                                     "patching_rect": [ 59.00001512353516, 321.8333740234375, 104.0, 22.0 ],
-                                                    "saved_object_attributes": {
-                                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                                        "locked_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
-                                                    },
                                                     "text": "p live-song-tempo",
                                                     "varname": "song-tempo"
                                                 }
@@ -6419,15 +6377,9 @@
                                                                 "parentstyle": "",
                                                                 "multi": 0
                                                             }
-                                                        ],
-                                                        "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                                                        ]
                                                     },
                                                     "patching_rect": [ 126.66242204492187, 447.16668701171875, 34.0, 22.0 ],
-                                                    "saved_object_attributes": {
-                                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                                        "locked_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
-                                                    },
                                                     "text": "p init",
                                                     "varname": "init"
                                                 }
@@ -6740,7 +6692,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 345.38544450585937, 677.833313, 485.0, 22.0 ],
-                                                    "restore": [ "untitled.xml" ],
+                                                    "restore": [ "JMSLMaxScore-4" ],
                                                     "saved_object_attributes": {
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
@@ -7912,15 +7864,9 @@
                                                 "parentstyle": "",
                                                 "multi": 0
                                             }
-                                        ],
-                                        "bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
+                                        ]
                                     },
                                     "patching_rect": [ 47.986759, 208.0, 452.3941935714288, 22.0 ],
-                                    "saved_object_attributes": {
-                                        "editing_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ],
-                                        "locked_bgcolor": [ 0.56078431372549, 0.56078431372549, 0.56078431372549, 1.0 ]
-                                    },
                                     "text": "p open&save",
                                     "varname": "open&save"
                                 }
@@ -7981,7 +7927,7 @@
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
                                     "patching_rect": [ 247.65678400000002, 265.0, 471.0, 22.0 ],
-                                    "restore": [ 0 ],
+                                    "restore": [ 118 ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -8026,7 +7972,6 @@
                                         "openinpresentation": 1,
                                         "toolbarvisible": 0,
                                         "title": "Print",
-                                        "visible": 1,
                                         "boxes": [
                                             {
                                                 "box": {
@@ -11995,7 +11940,7 @@
                                                                     "numoutlets": 3,
                                                                     "outlettype": [ "", "", "" ],
                                                                     "patching_rect": [ 146.0, 73.0, 385.0, 35.0 ],
-                                                                    "restore": [ 0 ],
+                                                                    "restore": [ 1 ],
                                                                     "saved_object_attributes": {
                                                                         "parameter_enable": 0,
                                                                         "parameter_mappable": 0
@@ -12675,7 +12620,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "", "", "" ],
                                                     "patching_rect": [ 9.899963, 325.2000120000001, 407.0, 35.0 ],
-                                                    "restore": [ "untitled.xml" ],
+                                                    "restore": [ "JMSLMaxScore-4" ],
                                                     "saved_object_attributes": {
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
@@ -14846,7 +14791,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 700.4000244140625, 250.0, 331.0, 31.0 ],
-                    "restore": [ -1, -1, -1, -1 ],
+                    "restore": [ 1, 0, 1, 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0

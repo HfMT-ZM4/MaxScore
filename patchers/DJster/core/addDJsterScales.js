@@ -28,6 +28,16 @@ function closedb()
 	sqlite.close();
 }
 
+function bang()
+{
+   	var currentScale = this.patcher.parentpatcher.getnamed("scale").getvalueof();
+	this.patcher.parentpatcher.getnamed("scale").message("clear");
+	var keys = DJsterScales.getkeys();
+	//post("scale", keys, "\n"); 
+	for (var i = 0; i < keys.length; i++) this.patcher.parentpatcher.getnamed("scale").message("append", keys[i]);
+	if (currentScale.length > 1) this.patcher.parentpatcher.getnamed("scale").setvalueof(currentScale); 
+}
+
 function exec(arg, path)
 {
 	sqlite.exec(arg, result);
@@ -81,9 +91,13 @@ function profile(p)
 
 function addScale()
 {
-	var args = arrayfromargs(arguments);
+	var scale = arrayfromargs(arguments);
 	var scales = {};
-	scales[args[0]] = args.slice(1);
+	scales[scale[0]] = {};
+    scales[scale[0]].vals = scale.slice(1);
+    if (scale.slice(-1) >= 1900 && scale.slice(-1) <= 1902) scales[scale[0]].profile = "odd-wide";
+    else scales[scale[0]].profile = "wide";
+    //post(JSON.stringify(scales), "\n");
 	expand(scales);
 }
 
@@ -171,7 +185,7 @@ function expand(scales)
 	DJsterScale.parse(JSON.stringify(expandedScales[scale]));
 	DJsterScales.replace(scale, DJsterScale);
 	}
-	var currentScale = this.patcher.parentpatcher.getnamed("scale").getvalueof();
+ 	var currentScale = this.patcher.parentpatcher.getnamed("scale").getvalueof();
 	this.patcher.parentpatcher.getnamed("scale").message("clear");
 	var keys = DJsterScales.getkeys();
 	//post("scale", keys, "\n"); 

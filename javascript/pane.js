@@ -111,8 +111,10 @@ var boundingRectOffset = [0, 0];
 var playheadRect = [];
 var playheadColor = [0.3, 1., 0.3, 0.7];
 var playheadWidth = 3.;
+var canvasactive = 0;
 var _playback = 0;
 var grid = 0;
+var gridsize = [20, 20];
 var flashingNotes = {};
 var lines = {};
 var segments = {};
@@ -132,9 +134,9 @@ var mouseselection = 1;
 var incrementers = {};
 var pScale = [];
 var pOffset = []
-var mgraphicsRoutines = [ "append_path", "arc", "arc_negative", "attr_setfill", "clear_surface", "close_path", "curve_to", "device_to_user", "ellipse", "fill", "fill_extents", "fill_preserve", "fill_preserve_with_alpha", "fill_with_alpha", "font_extents", "get_current_point", "get_line_cap", "get_line_join", "get_line_width", "get_matrix", "getfontlist", "identity_matrix", "image_surface_create", "image_surface_destroy", "image_surface_draw", "image_surface_draw_fast", "image_surface_get_size", "in_fill", "line_to", "move_to", "new_path", "ovalarc", "paint", "paint_with_alpha", "parentpaint", "path_roundcorners", "pattern_add_color_stop_rgba", "pattern_create_for_surface", "pattern_create_linear", "pattern_create_radial", "pattern_create_rgba", "pattern_destroy", "pattern_get_extend", "pattern_get_matrix", "pattern_get_type", "pattern_identity_matrix", "pattern_rotate", "pattern_scale", "pattern_set_extend", "pattern_set_matrix", "pattern_translate", "pop_group_to_source", "push_group", "rectangle", "rectangle_rounded", "rel_curve_to", "rel_line_to", "rel_move_to", "restore", "rotate", "save", "scale", "scale_source_rgba", "select_font_face", "set_dash", "set_font_size", "set_line_cap", "set_line_join", "set_line_width", "set_matrix", "set_source", "set_source_rgb", "set_source_rgba", "set_source_surface", "show_text", "stroke", "stroke_preserve", "stroke_preserve_with_alpha", "stroke_with_alpha", "svg_create", "svg_destroy", "svg_get_size", "svg_render", "svg_set", "text_measure", "text_path", "transform", "translate", "translate_source_rgba", "user_to_device", "user_to_device" ];
+var mgraphicsRoutines = [ "append_path", "arc", "arc_negative", "attr_setfill", "clear_surface", "close_path", "curve_to", "device_to_user", "ellipse", "fill", "fill_extents", "fill_preserve", "fill_preserve_with_alpha", "fill_with_alpha", "font_extents", "get_current_point", "get_line_cap", "get_line_join", "get_line_width", "get_matrix", "getfontlist", "identity_matrix", "image_surface_create", "image_surface_destroy", "image_surface_draw", "image_surface_draw_fast", "image_surface_get_size", "in_fill", "line_to", "move_to", "new_path", "ovalarc", "paint", "paint_with_alpha", "parentpaint", "path_roundcorners", "pattern_add_color_stop_rgba", "pattern_create_for_surface", "pattern_create_linear", "pattern_create_radial", "pattern_create_rgba", "pattern_destroy", "pattern_get_extend", "pattern_get_matrix", "pattern_get_type", "pattern_identity_matrix", "pattern_rotate", "pattern_scale", "pattern_set_extend", "pattern_set_matrix", "pattern_translate", "pop_group_to_source", "push_group", "rectangle", "rectangle_rounded", "rel_curve_to", "rel_line_to", "rel_move_to", "restore", "rotate", "save", "scale", "scale_source_rgba", "select_font_face", "set_dash", "set_font_size", "set_line_cap", "set_line_join", "set_line_width", "set_matrix", "set_source", "set_source_rgb", "set_source_rgba", "set_source_surface", "show_text", "stroke", "stroke_preserve", "stroke_preserve_with_alpha", "stroke_with_alpha", "svg_create", "svg_destroy", "svg_get_size", "svg_render", "svg_set", "text_measure", "text_path", "transform", "translate", "translate_source_rgba", "user_to_device", "user_to_device", "clear"];
 	
-var img = new MGraphicsSVG("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: ivory\" xml:space=\"preserve\"><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 30)\">Create new score or</text><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(60,60,60)\" transform=\"matrix(1 0 0 1 54 90)\">load score from disk</text></svg>");
+var img = new MGraphicsSVG("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: ivory\" xml:space=\"preserve\"><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(20,20,20)\" transform=\"matrix(1 0 0 1 54 50)\">Create new score or</text><text font-family=\"Arial\" font-style=\"normal\" font-weight=\"bold\" font-size=\"24\" fill=\"rgb(20,20,20)\" transform=\"matrix(1 0 0 1 54 90)\">load score from disk</text></svg>");
 var clefs = new MGraphicsSVG();
 var picster = [];
 var embedded = new MGraphicsSVG();
@@ -237,19 +239,26 @@ function anything()
     	//mgraphics.redraw();
 	break;
 	default:
-		if (mgraphicsRoutines.indexOf(msg[0]) != -1) _handle = ["unnamed"];
+		if (mgraphicsRoutines.indexOf(msg[0]) != -1) _handle = "unnamed";
 		else {
 			_handle = msg[0];
 			msg.shift();
-			}
+        }
 		if (paintOnScore.hasOwnProperty(_handle)) {
-			incrementers[_handle] += 1;
-			}
-		else {
-			paintOnScore[_handle] = {};
+            if (msg[0] == "clear") {
+ 			paintOnScore[_handle] = {};
 			incrementers[_handle] = 0;
+            }  
+            else {              
+            incrementers[_handle] += 1;
+            paintOnScore[_handle][incrementers[_handle]] = msg;
+            }
+        }
+		else if (msg[0] != "clear"){
+            paintOnScore[_handle] = {};
+			incrementers[_handle] = 0;
+ 		    paintOnScore[_handle][incrementers[_handle]] = msg;
 		}
- 		paintOnScore[_handle][incrementers[_handle]] = msg;
    		mgraphics.redraw();
 	}
 }
@@ -324,14 +333,13 @@ function renderImages()
 
 function msg_dictionary(o)
 {
-	s = 1;
-	pageSize(o.pageSize[0], o.pageSize[1]);
-	setZoom(o.setZoom);
+	var s = 1;
 	init = o.init;
 	css = o.css;
 	prop = o.proportional;
 	timeUnit = o.timeunit;
-	//post("timeUnit", timeUnit, "\n");
+	pageSize(o.pageSize[0], o.pageSize[1]);
+	setZoom(o.setZoom);
 	//matrix transform for g needs to also be applied to gradientTransform 
 	bgcolor = o.bgcolor;
 	_svgimages = o.svgimages[s];
@@ -424,6 +432,7 @@ function pageSize(x, y)
 		verticalScrollbar.extent = height - horizontalScrollbar.span;
 		horizontalScrollbar.extent = width - verticalScrollbar.span;
 		}
+    //post("horizontalScrollbar.visible", horizontalScrollbar.visible, adjust, virgin, prop, "\n");
 	horizontalScrollbar.percentage = horizontalScrollbar.extent / (pageWidth * zoom[0]) * ((prop) ? 50 : 100);
 	verticalScrollbar.percentage = verticalScrollbar.extent / (pageHeight * zoom[1]) * 100;
 	//if (JSON.stringify([oldPageWidth, oldPageHeight]) != JSON.stringify([pageWidth, pageHeight]))
@@ -609,7 +618,7 @@ function cursor()
 		cursors[c] = JSON.parse(d.stringify());
 		var line = {};
 		line[0] = [0, 0, 0];
-		for (sgm in cursors[c].segments){
+		for (let sgm in cursors[c].segments){
 			line[sgm] = [cursors[c].segments[sgm].x, cursors[c].segments[sgm].target, cursors[c].segments[sgm].duration];
 			}
 		lines[c] = line;
@@ -698,6 +707,7 @@ scrollTask.local = 1; // prevent triggering the task directly from Max
 function cursorTask(arg)
 {
 	var currentSegment = 0;
+    var elapsedTime = 0;
 	for (var j = 0; j < segments[arg].length - 1 ; j++){
 	var currentTime = (arguments.callee.task.iterations - 1) * grain;
 	if (segments[arg][j] <= currentTime && segments[arg][j + 1] >= currentTime) {
@@ -732,7 +742,7 @@ function countin(arg)
 }
 
 function paint() {
-		if (!mgraphics_init) post("init", mgraphics_init, "\n");
+ 		if (!mgraphics_init) post("init", mgraphics_init, "\n");
 		if (tsk["scroll"].running) {
 			horizontalOffset = (elapsed + ticks["scroll"]) * speed;
 			manual = 0;
@@ -817,7 +827,6 @@ function nsgVisible(offset)
 function drawPlayhead()
 {
            with(mgraphics) {
-				//post("playheadRect", playheadRect, "\n");
 				set_source_rgba(playheadColor);
 				rectangle(playheadRect);
 				fill();
@@ -983,8 +992,12 @@ function paintOnTop()
 		for (var _handle in paintOnScore) {
 			var keys = Object.keys(paintOnScore[_handle]);
 			for (var i = 0; i < keys.length; i++) {
-			if (paintOnScore[_handle][keys[i]].length == 2) eval(paintOnScore[_handle][keys[i]][0] + "(\"" + paintOnScore[_handle][keys[i]][1] + "\")");
-			else eval(paintOnScore[_handle][keys[i]][0] + "(" + paintOnScore[_handle][keys[i]].slice(1, paintOnScore[_handle][keys[i]].length).join() + ")");
+                if (paintOnScore[_handle][keys[i]][0] == "svg_render") {
+                    const args = paintOnScore[_handle][keys[i]].slice(1);
+                    svg_render(...args);
+                }
+			    else if (paintOnScore[_handle][keys[i]].length == 2) eval(paintOnScore[_handle][keys[i]][0] + "(\"" + paintOnScore[_handle][keys[i]][1] + "\")");
+			    else eval(paintOnScore[_handle][keys[i]][0] + "(" + paintOnScore[_handle][keys[i]].slice(1, paintOnScore[_handle][keys[i]].length).join() + ")");
 			}
 		}
 	set_matrix(currentMatrix);
@@ -1007,7 +1020,6 @@ function hbar()
 		}
 //////////////////////////////////////////
 		identity_matrix();
-		//post(2, horizontalScrollbar.extent, "\n");
 		translate(0, verticalScrollbar.extent);
 		set_source_rgba(horizontalScrollbar.bgcolor);
 		rectangle(0, 0, horizontalScrollbar.extent, horizontalScrollbar.span);
@@ -1145,7 +1157,6 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 		outlet(controlshift, "mouseRightButtonDown", 0);
         outlet(controlshift, "ctrlKeyDown", 0);
         outlet(controlshift, "shiftKeyDown", 0);
-		outlet(controlshift, "getSelectedLocation");
         //outlet(1, "graphicsSelection", 0);
 		outlet(2, 0);
     }

@@ -18,11 +18,8 @@ var counted;
 
 function dim(x, y, w, h)
 {
-	//width = Math.min(w, wind_coords[0][2] - wind_coords[0][0] - 60);
-	//height = Math.min(h, wind_coords[0][3] - wind_coords[0][1]);
 	width = w;
 	height = h;
-	//post("iscanvas", width, height, "\n");
 	resize();
 }
 
@@ -76,7 +73,7 @@ function resize()
 	{
 	case "bcanvas": //banvas: box is toplevel. Top left-hand corner stays constant after zoom
 	if (adjust) {
-		var b = this.patcher.box.rect;
+		var b = this.patcher.box.getattr("presentation_rect");
 		this.patcher.parentpatcher.message("script", "sendbox", this.patcher.box.varname, "presentation_rect", b[0], b[1], Math.round(width * zoom), Math.round(height * zoom));
 		this.patcher.parentpatcher.message("script", "sendbox", this.patcher.box.varname, "patching_rect", b[0], b[1], Math.round(width * zoom), Math.round(height * zoom));
 		this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, width * zoom, height * zoom);
@@ -85,7 +82,7 @@ function resize()
 		}
 		break;
 	case "canvas": //canvas: 
-		var b = this.patcher.box.rect;
+		var b = this.patcher.box.getattr("presentation_rect");
 		var w = this.patcher.parentpatcher.wind.location;
 		//post("window", w[2] - w[0], w[3] - w[1], width, height,"\n");
 		counted++;	
@@ -98,14 +95,25 @@ function resize()
 			outlet(0, "boxsize", w[2] - w[0] - (parent[1] + parent[3]), w[3] - w[1] - (parent[2] + parent[4]));
 			}
 		else {
-			//post("window0", fullscreenFlag, w[2] - w[0], w[3] - w[1], b,"\n");
 			this.patcher.parentpatcher.message("script", "sendbox", this.patcher.box.varname, "presentation_rect", parent[1], parent[2], Math.round(width * zoom), Math.round(height * zoom));
 			this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, Math.round(width * zoom), Math.round(height * zoom));
 			outlet(0, "boxsize", Math.round(width * zoom), Math.round(height * zoom));
 			}
 		break;
+    case "icanvas":
+            var boxdim;
+ 			//post("icanvas", width, height, this.patcher.parentpatcher.box.getattr("varname"), "\n");
+            var presentation = this.patcher.parentpatcher.parentpatcher.getattr("openinpresentation");
+            if (presentation) boxdim = this.patcher.parentpatcher.box.getattr("presentation_rect");
+            else boxdim = this.patcher.parentpatcher.box.getattr("patching_rect");
+			if (presentation) this.patcher.parentpatcher.parentpatcher.box.setattr("presentation_rect", boxdim[0], boxdim[1], Math.round(width * zoom), Math.round(height * zoom));
+            else this.patcher.parentpatcher.box.setattr("patching_rect", boxdim[0], boxdim[1], Math.round(width * zoom), Math.round(height * zoom));
+			this.patcher.parentpatcher.message("script", "sendbox", "bcanvas", "presentation_rect", 0, 0, Math.round(width * zoom), Math.round(height * zoom));
+			this.patcher.getnamed("pane").setattr("presentation_rect", 0, 0, Math.round(width * zoom), Math.round(height * zoom));
+			outlet(0, "boxsize", Math.round(width * zoom), Math.round(height * zoom));
+        break;
 	case "editor": //banvas: box is toplevel. Top left-hand corner stays constant after zoom
-		var b = this.patcher.box.rect;
+		var b = this.patcher.box.getattr("presentation_rect");
 		//this.patcher.parentpatcher.message("script", "sendbox", this.patcher.box.varname, "presentation_rect", b[0], b[1], width * zoom, height * zoom);
 		//this.patcher.parentpatcher.message("script", "sendbox", this.patcher.box.varname, "patching_rect", b[0], b[1], width * zoom, height * zoom);
 		//this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, Math.round(width * zoom), Math.round(height * zoom));
@@ -126,11 +134,11 @@ function active(a)
 
 function mytask()
 {
-	//post("ratio0", this.patcher.parentpatcher, "\n");
-	if (this.patcher.parentpatcher != 0) wind_coords[0] = this.patcher.parentpatcher.wind.location;
-	else return;
+	if (this.patcher.parentpatcher == 0) return;
 	var ratio = 1;
 	if (parent[0] == "canvas") {
+        wind_coords[0] = this.patcher.parentpatcher.wind.location;
+        //post("wind_coords", wind_coords[0], "\n");
 		var w = wind_coords[0][2] - wind_coords[0][0];
 		var h = wind_coords[0][3] - wind_coords[0][1];
 		wind_coords[fullscreenFlag + 1] = wind_coords[0];
@@ -139,29 +147,36 @@ function mytask()
 			ratio = w / (wind_coords[1][2] - wind_coords[1][0]);
 			outlet(1, "setZoom", zoom / 2 * ratio);
 			outlet(2, "setScoreSize", Math.round((w - (parent[1] + parent[3])) / ratio / zoom), Math.round((h - (parent[2] + parent[4])) / ratio / zoom));
-			//this.patcher.parentpatcher.message("script", "sendbox", this.patcher.box.varname, "presentation_rect", parent[1], parent[2], w - (parent[1] + parent[3]), h - (parent[2] + parent[4]));
 			this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, this.patcher.box.rect[2], this.patcher.box.rect[3]);
-			//this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, Math.round((w - (parent[1] + parent[3])) / ratio / zoom), Math.round((h - (parent[2] + parent[4])) / ratio / zoom));
 			//post("ratio1", Math.round((w - (parent[1] + parent[3])) / ratio / zoom), Math.round((h - (parent[2] + parent[4])) / ratio / zoom), this.patcher.box.rect[2], this.patcher.box.rect[3], "\n");
 			}
 		else {
 			outlet(1, "setZoom", zoom / 2);
 			outlet(2, "setScoreSize", Math.round((w - (parent[1] + parent[3])) / ratio / zoom), Math.round((h - (parent[2] + parent[4])) / ratio / zoom));
-			//this.patcher.parentpatcher.message("script", "sendbox", this.patcher.box.varname, "presentation_rect", parent[1], parent[2], w - (parent[1] + parent[3]), h - (parent[2] + parent[4]));
-			//this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, this.patcher.box.rect[2], this.patcher.box.rect[3]);
 			this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, Math.round((w - (parent[1] + parent[3])) / ratio / zoom), Math.round((h - (parent[2] + parent[4])) / ratio / zoom));
 			}
 			}
 		}
+    else if (parent[0] == "icanvas") {
+         var boxdim = this.patcher.parentpatcher.box.getattr("presentation_rect");
+		var w = boxdim[2];
+		var h = boxdim[3];
+		//this adjusts pane size to bpatcher size
+		if (!(w == old_w && h == old_h)) {
+			this.patcher.parentpatcher.message("script", "sendbox", "bcanvas", "presentation_rect", 0, 0, w, h);
+			this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, w, h);
+			outlet(0, "boxsize", w, h);
+		}       
+        }
 	else {
-		var w = this.patcher.box.rect[2];
-		var h = this.patcher.box.rect[3];
+        var boxdim = this.patcher.box.getattr("presentation_rect");
+        //post("else", boxdim, typeof boxdim);
+		var w = boxdim[2];
+		var h = boxdim[3];
 		//this adjusts pane size to bpatcher size
 		if (!(w == old_w && h == old_h)) {
 			this.patcher.message("script", "sendbox", "pane", "presentation_rect", 0, 0, w, h);
-			//post("this.patcher.box.rect", this.patcher.box.rect, "\n");
-			//post("boxsize-2", this.patcher.box.rect, "\n");
-			outlet(0, "boxsize", this.patcher.box.rect[2] - this.patcher.box.rect[0], this.patcher.box.rect[3] - this.patcher.box.rect[1]);
+			outlet(0, "boxsize", w, h);
 		}
 	}
 	old_w = w;

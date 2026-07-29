@@ -58,7 +58,7 @@ var css = {
 			}
 ]};
 
-function markers_obj(o)
+function msg_dictionary(o)
 {
 	//post(JSON.stringify(o), "\n");
 	markers[1] = o.markers;

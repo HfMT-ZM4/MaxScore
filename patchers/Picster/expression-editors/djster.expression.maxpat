@@ -3,7 +3,7 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
+            "minor": 2,
             "revision": 0,
             "architecture": "x64",
             "modernui": 1
@@ -200,30 +200,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 221.41666666666663, 330.62280654907227, 219.0, 22.0 ],
-                    "restore": [
-                        {
-                            "stream": 1,
-                            "scale": "Major",
-                            "meter": [ 2, 2 ],
-                            "ostinato": 0,
-                            "outset_pulses": 1,
-                            "metriclarity": 100,
-                            "pulse_length": 1000,
-                            "eventfulness": 100,
-                            "event_length": 1000,
-                            "melody_scope": 7,
-                            "tonic_pitch": 60,
-                            "chordal_weight": 1,
-                            "harmoniclarity": 100,
-                            "pitch_center": 48,
-                            "pitch_range": 7,
-                            "dynamics": 64,
-                            "attenuation": 12.5,
-                            "silent_downbeat": 0,
-                            "melodic_cohesion": 0,
-                            "sorted": 1
-                        }
-                    ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -331,7 +308,7 @@
                         "valueof": {
                             "parameter_enum": [ "val1", "val2" ],
                             "parameter_invisible": 2,
-                            "parameter_longname": "live.text[24]",
+                            "parameter_longname": "live.text[4]",
                             "parameter_mmax": 1,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.text",
@@ -445,17 +422,24 @@
             },
             {
                 "box": {
+                    "filename": "djster.expr.js",
                     "id": "obj-3",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 712.4166666666666, 248.62280654907227, 87.0, 22.0 ],
+                    "patching_rect": [ 712.4166666666666, 248.62280654907227, 91.0, 22.0 ],
                     "saved_object_attributes": {
-                        "filename": "djster.expr.js",
+                        "embed": 0,
                         "parameter_enable": 0
                     },
-                    "text": "js djster.expr.js"
+                    "text": "v8 djster.expr.js",
+                    "textfile": {
+                        "filename": "djster.expr.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    }
                 }
             },
             {
@@ -489,7 +473,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 113.41666666666664, 696.0, 239.0, 22.0 ],
-                    "restore": [ "djster" ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -506,7 +490,7 @@
                     "numinlets": 1,
                     "numoutlets": 21,
                     "outlettype": [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
-                    "patching_rect": [ 221.41666666666663, 451.0, 1113.8817928632102, 35.0 ],
+                    "patching_rect": [ 221.41666666666663, 451.0, 1114.0, 35.0 ],
                     "saved_object_attributes": {
                         "legacy": 0
                     },
@@ -1514,7 +1498,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-53", 0 ],
-                    "midpoints": [ 755.9166666666666, 443.81140327453613, 230.91666666666663, 443.81140327453613 ],
+                    "midpoints": [ 757.9166666666666, 443.81140327453613, 230.91666666666663, 443.81140327453613 ],
                     "source": [ "obj-3", 1 ]
                 }
             },

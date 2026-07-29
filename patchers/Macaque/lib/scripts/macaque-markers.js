@@ -11,7 +11,7 @@ function mousePressed(x, y)
 {
 	clicked = [x, y];
 	selectmarker();
-	outlet(3, "setplayhead", clicked[0]);
+	outlet(2, "setplayhead", clicked[0]);
 }
 
 function rendermarkers()
@@ -23,14 +23,13 @@ function rendermarkers()
 	_markers.name = "markers";
 	_markers.parse(JSON.stringify(obj));
 	outlet(2, "dictionary", _markers.name);
-	outlet(1, "markers_obj", obj);
 }
 
 function mouseDragged(x, y)
 {
 	dragged = [x, y];
 	if (selectedmarker != -1) markers[selectedmarker] = [markers[selectedmarker][0], dragged[0] / 100. ];
-	outlet(3, "setregion", clicked[0], dragged[0] - clicked[0]);
+	outlet(2, "setregion", clicked[0], dragged[0] - clicked[0]);
 	rendermarkers();
 }
 

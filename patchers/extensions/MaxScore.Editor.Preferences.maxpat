@@ -771,9 +771,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-222",
@@ -2601,7 +2601,7 @@
                         "note_value": [ 2 ],
                         "overdrive": [ 1 ],
                         "papersize": [ 3 ],
-                        "setComposer": [ "Brain Mcknight" ],
+                        "setComposer": [ "Georg Hajdu" ],
                         "setCopyright": [ "2022" ],
                         "setDurationalSpacingBase": [ 0.7 ],
                         "setHoldScaler": [ 1.0 ],
@@ -2613,21 +2613,21 @@
                         "setScoreRightMargin": [ 20.0 ],
                         "setScoreTopMargin": [ 15.0 ],
                         "setScoreTopMarginOfFirstPage": [ 60.0 ],
-                        "setSubtitle": [ "for Chinese Ensemble and Electronics" ],
-                        "setTitle": [ "JMSLMaxScore-4" ],
+                        "setSubtitle": [ "for Decibel Ensemble" ],
+                        "setTitle": [ "JMSLMaxScore-1" ],
                         "setTitleVisible": [ 0 ],
                         "setWrap": [ 1 ],
                         "showClefs": [ 1 ],
                         "showCourtesyClefs": [ 0 ],
                         "showInstruments": [ 0 ],
                         "showKeySignatures": [ 0 ],
-                        "showMeasureNumbers": [ 1 ],
-                        "showSectionBrackets": [ 1 ],
+                        "showMeasureNumbers": [ 0 ],
+                        "showSectionBrackets": [ 0 ],
                         "showStaffNumbers": [ 1 ],
-                        "showTempo": [ 1 ],
-                        "showTimeSignatures": [ 1 ],
+                        "showTempo": [ 0 ],
+                        "showTimeSignatures": [ 0 ],
                         "showWholeNoteRestsInEmptyMeasures": [ 0 ],
-                        "showrhythm": [ 0 ],
+                        "showrhythm": [ 1 ],
                         "slashedGraceNotes": [ 1 ],
                         "subdivision": [ 3 ],
                         "svgoutput": [ 1, 1, 0 ],
@@ -2805,7 +2805,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 457.0, 139.0, 765.0, 619.0 ],
+                        "rect": [ 457.0, 139.0, 848.0, 706.0 ],
                         "default_fontsize": 10.0,
                         "default_fontname": "Arial Bold",
                         "boxes": [
@@ -2995,7 +2995,13 @@
                                                     "source": [ "obj-36", 0 ]
                                                 }
                                             }
-                                        ]
+                                        ],
+                                        "bgfillcolor_type": "color",
+                                        "bgfillcolor_color1": [ 0.3764705882352941, 0.3843137254901961, 0.4, 1.0 ],
+                                        "bgfillcolor_color2": [ 0.2901960784313726, 0.30980392156862746, 0.30196078431372547, 1.0 ],
+                                        "bgfillcolor_color": [ 0.15864068919580723, 0.15864064239998057, 0.15864065462847765, 1.0 ],
+                                        "bgfillcolor_angle": 270.0,
+                                        "bgfillcolor_proportion": 0.39
                                     },
                                     "patching_rect": [ 203.5, 497.0, 80.00000000000003, 20.0 ],
                                     "text": "p setAttributes"
@@ -3049,7 +3055,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
-                                    "patching_rect": [ 506.0, 344.51239013671875, 53.0, 20.0 ],
+                                    "patching_rect": [ 531.0625, 334.0, 53.0, 20.0 ],
                                     "text": "route 127"
                                 }
                             },
@@ -3062,7 +3068,7 @@
                                     "numinlets": 3,
                                     "numoutlets": 1,
                                     "outlettype": [ "int" ],
-                                    "patching_rect": [ 540.0, 371.51239013671875, 38.0, 20.0 ],
+                                    "patching_rect": [ 565.0625, 367.0, 38.0, 20.0 ],
                                     "text": "itoa"
                                 }
                             },
@@ -3077,7 +3083,7 @@
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
                                     "patching_rect": [ 506.0, 158.51239013671875, 245.0, 31.0 ],
-                                    "restore": [ 2591 ],
+                                    "restore": [ 3706 ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -3214,7 +3220,13 @@
                                                     "source": [ "obj-43", 0 ]
                                                 }
                                             }
-                                        ]
+                                        ],
+                                        "bgfillcolor_type": "color",
+                                        "bgfillcolor_color1": [ 0.3764705882352941, 0.3843137254901961, 0.4, 1.0 ],
+                                        "bgfillcolor_color2": [ 0.2901960784313726, 0.30980392156862746, 0.30196078431372547, 1.0 ],
+                                        "bgfillcolor_color": [ 0.15864068919580723, 0.15864064239998057, 0.15864065462847765, 1.0 ],
+                                        "bgfillcolor_angle": 270.0,
+                                        "bgfillcolor_proportion": 0.39
                                     },
                                     "patching_rect": [ 173.0625, 64.0, 97.0, 20.0 ],
                                     "text": "p scoreAnnotation"
@@ -3290,7 +3302,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 506.0, 449.51239013671875, 52.0, 20.0 ],
+                                    "patching_rect": [ 531.0625, 445.0, 52.0, 20.0 ],
                                     "text": "deferlow"
                                 }
                             },
@@ -3367,7 +3379,7 @@
                                     "numinlets": 5,
                                     "numoutlets": 5,
                                     "outlettype": [ "bang", "bang", "bang", "bang", "" ],
-                                    "patching_rect": [ 540.0, 403.51239013671875, 61.0, 20.0 ],
+                                    "patching_rect": [ 565.0625, 399.0, 61.0, 20.0 ],
                                     "text": "sel v x y z"
                                 }
                             },
@@ -3381,8 +3393,8 @@
                                     "numinlets": 1,
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
-                                    "patching_rect": [ 506.0, 294.51239013671875, 224.0, 42.0 ],
-                                    "restore": [ 0 ],
+                                    "patching_rect": [ 531.0625, 277.0, 224.0, 42.0 ],
+                                    "restore": [ 101 ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -3549,7 +3561,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 84.0625, 9.0, 25.0, 25.0 ]
+                                    "patching_rect": [ 84.0, 4.0, 25.0, 25.0 ]
                                 }
                             },
                             {
@@ -3675,6 +3687,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-17", 0 ],
+                                    "disabled": 1,
                                     "source": [ "obj-2", 0 ]
                                 }
                             },
@@ -3797,7 +3810,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-17", 0 ],
-                                    "midpoints": [ 515.5, 495.0, 120.5, 495.0 ],
+                                    "midpoints": [ 540.5625, 489.8984375, 120.5, 489.8984375 ],
                                     "source": [ "obj-5", 0 ]
                                 }
                             },
@@ -3817,7 +3830,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-17", 0 ],
-                                    "midpoints": [ 241.71875, 269.0, 78.0, 269.0, 78.0, 496.0, 120.5, 496.0 ],
+                                    "midpoints": [ 241.71875, 269.0, 78.0, 269.0, 78.0, 490.11328125, 120.5, 490.11328125 ],
                                     "source": [ "obj-7", 2 ]
                                 }
                             },
@@ -3895,16 +3908,12 @@
                                 "parentstyle": "",
                                 "multi": 0
                             }
-                        ],
-                        "bgcolor": [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ],
-                        "editing_bgcolor": [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
+                        ]
                     },
                     "patching_rect": [ 1072.0, 521.0, 250.0, 22.0 ],
                     "saved_object_attributes": {
-                        "editing_bgcolor": [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ],
                         "fontname": "Arial Bold",
-                        "fontsize": 10.0,
-                        "locked_bgcolor": [ 0.898039215686275, 0.898039215686275, 0.898039215686275, 1.0 ]
+                        "fontsize": 10.0
                     },
                     "text": "p annotation",
                     "varname": "annotation"
@@ -4022,9 +4031,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-118",
@@ -5072,9 +5081,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-135",
@@ -5404,9 +5413,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.404, 0.498, 0.51, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.404, 0.498, 0.51, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.404, 0.498, 0.51, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-128",
@@ -5472,9 +5481,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-13",
@@ -5844,9 +5853,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-97",
@@ -5973,7 +5982,7 @@
                     "presentation_rect": [ 225.0, 40.0, 163.0, 20.0 ],
                     "rounded": 0.0,
                     "style": "black on white",
-                    "text": "for Chinese Ensemble and Electronics",
+                    "text": "for Decibel Ensemble",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "varname": "setSubtitle",
                     "wordwrap": 0
@@ -6329,9 +6338,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "hidden": 1,
@@ -6629,7 +6638,7 @@
                     "presentation_rect": [ 225.0, 65.0, 163.0, 20.0 ],
                     "rounded": 0.0,
                     "style": "black on white",
-                    "text": "Brain Mcknight",
+                    "text": "Georg Hajdu",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "varname": "setComposer",
                     "wordwrap": 0
@@ -6649,7 +6658,7 @@
                     "presentation_rect": [ 225.0, 15.0, 164.0, 20.0 ],
                     "rounded": 0.0,
                     "style": "black on white",
-                    "text": "JMSLMaxScore-4",
+                    "text": "JMSLMaxScore-1",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "varname": "setTitle",
                     "wordwrap": 0
@@ -6685,7 +6694,7 @@
                     "presentation_rect": [ 312.0, 116.0, 75.0, 20.0 ],
                     "rounded": 0.0,
                     "style": "black on white",
-                    "text": "842 1191",
+                    "text": "860 220",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "valuemode": 1,
                     "varname": "canvassize",
@@ -6990,9 +6999,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-11",
@@ -7011,9 +7020,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-12",
@@ -7058,9 +7067,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-87",
@@ -7094,9 +7103,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-75",
@@ -7130,9 +7139,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-239",
@@ -7153,9 +7162,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-14",
@@ -7176,9 +7185,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-15",
@@ -7199,9 +7208,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-240",
@@ -7222,9 +7231,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-17",
@@ -7245,9 +7254,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-18",
@@ -7268,9 +7277,9 @@
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
                         [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
-                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ],
+                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ],
                         [ "bgcolor", 0.29, 0.31, 0.302, 1 ],
-                        [ "checkedcolor", 0.804, 0.898, 0.91, 1 ]
+                        [ "uncheckedcolor", 0.376, 0.384, 0.4, 1 ]
                     ],
                     "filename": "btoggle.js",
                     "id": "obj-241",

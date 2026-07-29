@@ -3,13 +3,13 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
+            "minor": 2,
             "revision": 0,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 1184.0, 384.0, 761.0, 543.0 ],
+        "rect": [ 498.0, 316.0, 761.0, 543.0 ],
         "openinpresentation": 1,
         "boxes": [
             {
@@ -119,17 +119,24 @@
             },
             {
                 "box": {
+                    "filename": "default.expr.js",
                     "id": "obj-2",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 514.0, 346.62280654907227, 83.0, 22.0 ],
+                    "patching_rect": [ 514.0, 346.62280654907227, 87.0, 22.0 ],
                     "saved_object_attributes": {
-                        "filename": "default.expr",
+                        "embed": 0,
                         "parameter_enable": 0
                     },
-                    "text": "js default.expr"
+                    "text": "v8 default.expr",
+                    "textfile": {
+                        "filename": "default.expr.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    }
                 }
             },
             {
@@ -214,7 +221,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 115.66666666666669, 208.0, 85.0, 22.0 ],
-                    "restore": [ "my-message" ],
+                    "restore": [ "cursor" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -231,7 +238,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 196.33333333333337, 313.0, 65.0, 22.0 ],
-                    "restore": [ 1, 2, 3, 4 ],
+                    "restore": [ 2, "@begin", 3, 0, "@end", 3, 0, "@timestretch", 1, "@passes", 1, "@color", 0, 0, 0, 1 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -259,7 +266,7 @@
                     "presentation": 1,
                     "presentation_rect": [ 3.0, 0.0, 251.0, 20.0 ],
                     "rounded": 0.0,
-                    "text": "my-message",
+                    "text": "cursor",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "valuemode": 1,
                     "varname": "textedit[1]",
@@ -309,6 +316,7 @@
                     "fontsize": 12.0,
                     "id": "obj-118",
                     "keymode": 1,
+                    "linecount": 2,
                     "maxclass": "textedit",
                     "nosymquotes": 1,
                     "numinlets": 1,
@@ -317,9 +325,10 @@
                     "parameter_enable": 0,
                     "patching_rect": [ 219.33333333333337, 349.0, 264.0, 20.0 ],
                     "presentation": 1,
+                    "presentation_linecount": 2,
                     "presentation_rect": [ 3.0, 22.0, 251.0, 20.0 ],
                     "rounded": 0.0,
-                    "text": "1 2 3 4",
+                    "text": "2 @begin 3 0 @end 3 0 @timestretch 1 @passes 1 @color 0 0 0 1",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "valuemode": 1,
                     "varname": "textedit"
@@ -469,7 +478,6 @@
                 }
             }
         ],
-        "autosave": 0,
         "styles": [
             {
                 "name": "black on white",

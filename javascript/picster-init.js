@@ -16,8 +16,8 @@ function dumpExpressions()
 }
 
 function init() {
-	//var currentMode = mode;
-	//mode = "picster";
+	//init goes through all score elements, updates noteDimension 6 (index) and
+	//fills a coll called sequence with Picster expressions for playback
 	outlet(1, "clear");
 	_anchors = {};
 	anchors = {};
@@ -69,7 +69,6 @@ function init() {
 				userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["measureUserBean"][n];
 				e.parse(userBeans[n]["@Message"]);
 				if(e.contains("picster-element[2]::val")) {
-				//var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
 				var offset = (userBeans[n]["@Xoffset"]/2 - ((clefsVisible == "true") ? 20 : 0)) / timeUnit;
 				var dictArray = [].concat(e.get("picster-element[2]::val"));
 				for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
@@ -87,7 +86,6 @@ function init() {
 					userBeans[n] = json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["staffUserBean"][n];
 					e.parse(userBeans[n]["@Message"]);
 					if(e.contains("picster-element[2]::val")) {
-					//var offset = (userBeans[n]["@Xoffset"]/2 + (e.get("picster-element[1]::val::bounds")[0] == -1) ? 0 : e.get("picster-element[1]::val::bounds")[0] - (clefsVisible == "true") ? 20 : 0)/timeUnit;
 					var offset = (userBeans[n]["@Xoffset"]/2 - ((clefsVisible == "true") ? 20 : 0)) / timeUnit;
 					var dictArray = [].concat(e.get("picster-element[2]::val"));
 					for(var q = 0; q < dictArray.length; q++) jexpr.push(JSON.parse(dictArray[q].stringify()));
@@ -102,7 +100,6 @@ function init() {
 					////////////////////////////// NOTES ////////////////////////
 					var allIndexes = getAllIndexes(json["jmslscoredoc"]["score"][0]["measure"][i]["staff"][j]["track"][k][".ordering"], "note");
 					if(allIndexes[0] != -1) var numNotes = allIndexes.length;
-					//else break;
 					for(var l = 0; l < numNotes; l++) {
 						outlet(0, "clearSelection");
 						outlet(0, "selectNote", i, j, k, l);
@@ -241,7 +238,9 @@ function init() {
 	outlet(1, "dictionary", expr.name);
 	outlet(0, "clearSelection");
 	if (selectionBufferSize > 0) restoreSelection(_anchors);
-	if (renderAllowed) outlet(0, "setRenderAllowed", 1);
+	//if (renderAllowed) 
+    outlet(1, "setCanvasRenderAllowed", 1);
+    outlet(0, "setRenderAllowed", 1);
 	//mode = currentMode;
 }
 

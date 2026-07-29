@@ -53,6 +53,7 @@ var listener = null;
 var css = "";
 var zl = [0.5];
 var buttonMode = 0;
+var _val = {};
 
 
 if (jsarguments.length >= 1) 
@@ -242,7 +243,6 @@ function anything()
  			blnk.schedule(200);
  			}
 		else {
-			//post("msg", msg, "\n");
             boundingRect = [0, 0, msg[3] - msg[1], msg[4] - msg[2]];
             boundingRectOffset = [msg[1], msg[2]];			
 			}
@@ -306,6 +306,7 @@ function anything()
 				pons++;
 				break;
 				case "rectangle" :
+	            post("rect", msg, "\n");
 				_val = [{						
 					"parent" : "extras",
 					"new" : "rect",
@@ -325,6 +326,7 @@ function anything()
 				pons++;
 				break;
 				case "fill":
+	            post("msg", JSON.stringify(_val), "\n");
 				var _draw = {"*" : { "key" : "svg", "val" : _val}};	
 				draw.parse(JSON.stringify(_draw));
 				outlet(0, "dictionary", draw.name);	
@@ -362,7 +364,7 @@ function anything()
 			break;
 			case "show_text":
 			//var _draw = {};
-			var _val = {
+			_val = {
 					"parent" : "overlay",
 					"new" : "text",
 					"id" : "draw-" + pons,

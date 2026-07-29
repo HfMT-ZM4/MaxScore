@@ -3,7 +3,7 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
+            "minor": 2,
             "revision": 0,
             "architecture": "x64",
             "modernui": 1
@@ -35,7 +35,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
@@ -515,7 +515,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
@@ -596,21 +596,29 @@
                             },
                             {
                                 "box": {
+                                    "filename": "sadam.canvas.translator.js",
                                     "id": "obj-96",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 825.0, 227.0, 151.0, 22.0 ],
+                                    "patching_rect": [ 825.0, 227.0, 155.0, 22.0 ],
                                     "saved_object_attributes": {
-                                        "filename": "sadam.canvas.translator",
+                                        "embed": 0,
                                         "parameter_enable": 0
                                     },
-                                    "text": "js sadam.canvas.translator"
+                                    "text": "v8 sadam.canvas.translator",
+                                    "textfile": {
+                                        "filename": "sadam.canvas.translator.js",
+                                        "flags": 0,
+                                        "embed": 0,
+                                        "autowatch": 1
+                                    }
                                 }
                             },
                             {
                                 "box": {
+                                    "embed": 0,
                                     "embedstate": [
                                         [ "bgcolor", 0.8, 0.8, 0.8, 1 ],
                                         [ "transparency", 0 ]
@@ -622,9 +630,9 @@
                                     "numoutlets": 4,
                                     "outlettype": [ "", "", "", "" ],
                                     "parameter_enable": 0,
-                                    "patching_rect": [ 825.0, 259.0, 200.0, 120.0 ],
+                                    "patching_rect": [ 825.0, 259.0, 200.0, 20.0 ],
                                     "presentation": 1,
-                                    "presentation_rect": [ 51.25, 78.0, 200.0, 120.0 ],
+                                    "presentation_rect": [ 51.25, 78.0, 200.0, 20.0 ],
                                     "textfile": {
                                         "filename": "pane.js",
                                         "flags": 0,
@@ -722,7 +730,7 @@
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
                                     "patching_rect": [ 587.5, 358.0, 204.0, 49.0 ],
-                                    "restore": [ 473130 ],
+                                    "restore": [ 1915 ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -819,7 +827,52 @@
                                     "outlettype": [ "", "", "", "" ],
                                     "patching_rect": [ 214.600006, 395.88940399999996, 58.0, 22.0 ],
                                     "restore": {
-                                        "instrument": [ 8 ]
+                                        "button[0]": [ 0 ],
+                                        "dump": [ 0.0 ],
+                                        "instrument": [ 0 ],
+                                        "interval": [ 1.0 ],
+                                        "kammerton": [ 0 ],
+                                        "live.gain~": [ 0.0 ],
+                                        "numfrets": [ 19 ],
+                                        "numstrings": [ 1 ],
+                                        "onebang": [ 0.0 ],
+                                        "pane": [ 0, 0 ],
+                                        "string[0]": [ 62.0 ]
+                                    },
+                                    "restore_extra": {
+                                        "button[0]": {
+                                            "id": "obj-54"
+                                        },
+                                        "dump": {
+                                            "id": "obj-1647"
+                                        },
+                                        "instrument": {
+                                            "id": "obj-43"
+                                        },
+                                        "interval": {
+                                            "id": "obj-335"
+                                        },
+                                        "kammerton": {
+                                            "id": "obj-120"
+                                        },
+                                        "live.gain~": {
+                                            "id": "obj-177"
+                                        },
+                                        "numfrets": {
+                                            "id": "obj-30"
+                                        },
+                                        "numstrings": {
+                                            "id": "obj-15"
+                                        },
+                                        "onebang": {
+                                            "id": "obj-29"
+                                        },
+                                        "pane": {
+                                            "id": "obj-37"
+                                        },
+                                        "string[0]": {
+                                            "id": "obj-47"
+                                        }
                                     },
                                     "text": "autopattr",
                                     "varname": "u778013205"
@@ -870,7 +923,7 @@
                                         "valueof": {
                                             "parameter_initial": [ 0.0 ],
                                             "parameter_invisible": 2,
-                                            "parameter_longname": "live.gain~[1]",
+                                            "parameter_longname": "live.gain~[3]",
                                             "parameter_mmax": 6.0,
                                             "parameter_mmin": -70.0,
                                             "parameter_modmode": 0,
@@ -935,7 +988,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 0,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -1171,7 +1224,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 0,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -2016,7 +2069,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 0,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -2168,7 +2221,7 @@
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
-                                                    "patching_rect": [ 297.0, 697.968262, 106.0, 23.0 ],
+                                                    "patching_rect": [ 297.0, 697.968262, 104.0, 38.0 ],
                                                     "text": "send~ #0-tune"
                                                 }
                                             },
@@ -2683,52 +2736,8 @@
                                     "patching_rect": [ 146.5, 257.5, 58.0, 22.0 ],
                                     "restore": {
                                         "annotation": [
-                                            {
-                                                "version": "1.0",
-                                                "blankPage": 0,
-                                                "timeUnit": 100.0,
-                                                "textfont": "Arial",
-                                                "musicfont": "Bravura",
-                                                "titlefont": "Times New Roman",
-                                                "bgcolor": [ 0.996, 0.996, 0.94, 1.0 ],
-                                                "fgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                                                "linecolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                                                "setWrap": "true",
-                                                "setZoom": 0.5,
-                                                "setLoopingPlayback": 0,
-                                                "showWholeNoteRestsInEmptyMeasures": 0,
-                                                "showRhythmInProportionalNotation": 0,
-                                                "staff-0": {
-                                                    "ledgerlines": 1,
-                                                    "style": "Tablature|guitar",
-                                                    "micromap": "mM-none",
-                                                    "adjust": -1,
-                                                    "clef": "TAB",
-                                                    "ratio-lookup": 0,
-                                                    "staffgroup": [ 0, -1 ],
-                                                    "abbrInstrName": " ",
-                                                    "instrumentNamePositionOffset": 0,
-                                                    "tritave": 4,
-                                                    "subdivision": 0
-                                                },
-                                                "userclefs": {
-                                                    "G8vb": {
-                                                        "alias": "<none>",
-                                                        "stafflines": {
-                                                            "above": 0,
-                                                            "below": 0,
-                                                            "hidden": "none"
-                                                        },
-                                                        "baseclef": "TREBLE_CLEF",
-                                                        "font": [ "$MUSICFONT", 24 ],
-                                                        "characters": "",
-                                                        "offsets": [ 0, -6 ],
-                                                        "transposition": -12
-                                                    }
-                                                }
-                                            }
+                                            {                                            }
                                         ],
-                                        "button[0]": [ 0 ],
                                         "current-staff": [ 0 ],
                                         "dict": [
                                             {
@@ -2833,16 +2842,18 @@
                                                     "fret-interval": 1.463
                                                 }
                                             }
-                                        ],
-                                        "dump": [ 0.0 ],
-                                        "interval": [ 1.0 ],
-                                        "kammerton": [ 0 ],
-                                        "live.gain~": [ 0.0 ],
-                                        "numfrets": [ 19 ],
-                                        "numstrings": [ 6 ],
-                                        "onebang": [ 1.0 ],
-                                        "pane": [ 0, 0 ],
-                                        "string[0]": [ 40.0 ]
+                                        ]
+                                    },
+                                    "restore_extra": {
+                                        "annotation": {
+                                            "id": "obj-190"
+                                        },
+                                        "current-staff": {
+                                            "id": "obj-26"
+                                        },
+                                        "dict": {
+                                            "id": "obj-1"
+                                        }
                                     },
                                     "text": "autopattr",
                                     "varname": "u909018340"
@@ -3023,6 +3034,7 @@
                                     "outlettype": [ "", "" ],
                                     "patching_rect": [ 825.0, 193.0, 105.0, 22.0 ],
                                     "saved_object_attributes": {
+                                        "embed": 0,
                                         "parameter_enable": 0
                                     },
                                     "text": "v8 tablature-editor",
@@ -3112,7 +3124,7 @@
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
                                     "patching_rect": [ 507.100006, 123.5, 411.0, 22.0 ],
-                                    "restore": [ "472934-" ],
+                                    "restore": [ "1262-" ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -3266,7 +3278,7 @@
                                     "parameter_enable": 0,
                                     "patching_rect": [ 750.0, 234.0, 45.0, 17.0 ],
                                     "presentation": 1,
-                                    "presentation_rect": [ 17.0, 180.0, 36.0, 17.0 ],
+                                    "presentation_rect": [ 17.0, 80.0, 36.0, 17.0 ],
                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                                     "tricolor": [ 0.047, 0.424, 0.847, 1.0 ],
                                     "varname": "string[0]"
@@ -3287,7 +3299,7 @@
                                     "parameter_enable": 0,
                                     "patching_rect": [ 735.0, 234.0, 18.0, 18.0 ],
                                     "presentation": 1,
-                                    "presentation_rect": [ 0.0, 180.0, 18.0, 18.0 ],
+                                    "presentation_rect": [ 0.0, 80.0, 18.0, 18.0 ],
                                     "shape": 2,
                                     "size": 1,
                                     "values": [ 0 ],
@@ -4040,7 +4052,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
@@ -4132,7 +4144,7 @@
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
                                     "patching_rect": [ 579.0, 114.5, 457.0, 22.0 ],
-                                    "restore": [ 473130 ],
+                                    "restore": [ 1915 ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -4336,7 +4348,7 @@
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
                                     "patching_rect": [ 579.0, 50.0, 411.0, 22.0 ],
-                                    "restore": [ "472934-" ],
+                                    "restore": [ "1262-" ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -5046,7 +5058,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
@@ -5088,7 +5100,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 0,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -5304,7 +5316,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 0,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -6895,7 +6907,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 182.0, 167.0, 219.0, 22.0 ],
-                    "restore": [ "shiftLocation", 77, 43.0099983215332, 0 ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -6941,7 +6953,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
@@ -6972,7 +6984,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 0,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -7188,7 +7200,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 0,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -8140,7 +8152,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
@@ -8204,7 +8216,7 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
+                                            "minor": 2,
                                             "revision": 0,
                                             "architecture": "x64",
                                             "modernui": 1
@@ -9292,7 +9304,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 386.400024, 102.0, 264.0, 22.0 ],
-                    "restore": [ 53, 0, 0, "false", 77, 0, 0, 0, 132, 0.5, "note", 0 ],
+                    "restore": [ -1, 0, 0, "false", 84, 0, 0, 0, 136, 0.5, "note", 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -9356,7 +9368,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 565.0, 446.0, 250.0, 22.0 ],
-                    "restore": [ "send", "parent::tablature::map" ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -9436,7 +9448,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 6.0, 128.5, 216.0, 22.0 ],
-                    "restore": [ 53.24100000000001, 0 ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0

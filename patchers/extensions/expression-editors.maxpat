@@ -3,7 +3,7 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
+            "minor": 2,
             "revision": 0,
             "architecture": "x64",
             "modernui": 1
@@ -38,7 +38,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
@@ -587,6 +587,7 @@
             },
             {
                 "box": {
+                    "filename": "scriptExpressionEditors.js",
                     "fontname": "Arial",
                     "fontsize": 12.0,
                     "id": "obj-101",
@@ -594,12 +595,18 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 979.0, 316.5, 158.0, 22.0 ],
+                    "patching_rect": [ 979.0, 316.5, 162.0, 22.0 ],
                     "saved_object_attributes": {
-                        "filename": "scriptExpressionEditors.js",
+                        "embed": 0,
                         "parameter_enable": 0
                     },
-                    "text": "js scriptExpressionEditors.js"
+                    "text": "v8 scriptExpressionEditors.js",
+                    "textfile": {
+                        "filename": "scriptExpressionEditors.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    }
                 }
             },
             {
@@ -1097,7 +1104,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
@@ -1736,7 +1743,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 0,
                             "architecture": "x64",
                             "modernui": 1
@@ -2271,7 +2278,7 @@
                 "box": {
                     "activebgcolor": [ 0.047058823529412, 0.423529411764706, 0.847058823529412, 1.0 ],
                     "activetextcolor": [ 0.980392156862745, 0.980392156862745, 0.980392156862745, 1.0 ],
-                    "activetextoncolor": [ 0.071196037102503, 0.071195997168178, 0.071196007384196, 1.0 ],
+                    "activetextoncolor": [ 0.07119603710250286, 0.07119599716817815, 0.07119600738419576, 1.0 ],
                     "bgcolor": [ 0.607843137254902, 0.83921568627451, 0.756862745098039, 1.0 ],
                     "bordercolor": [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 0.0 ],
                     "fontsize": 11.0,
@@ -2307,7 +2314,7 @@
                         "valueof": {
                             "parameter_enum": [ "val1", "val2" ],
                             "parameter_invisible": 2,
-                            "parameter_longname": "live.text[31]",
+                            "parameter_longname": "live.text[24]",
                             "parameter_mmax": 1,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.text",
@@ -2362,7 +2369,7 @@
                         "valueof": {
                             "parameter_enum": [ "val1", "val2" ],
                             "parameter_invisible": 2,
-                            "parameter_longname": "live.text[30]",
+                            "parameter_longname": "live.text[18]",
                             "parameter_mmax": 1,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.text",
@@ -2378,7 +2385,7 @@
                 "box": {
                     "activebgcolor": [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
                     "activetextcolor": [ 0.968627450980392, 0.968627450980392, 0.968627450980392, 1.0 ],
-                    "activetextoncolor": [ 0.071196037102503, 0.071195997168178, 0.071196007384196, 1.0 ],
+                    "activetextoncolor": [ 0.07119603710250286, 0.07119599716817815, 0.07119600738419576, 1.0 ],
                     "bgcolor": [ 0.086274509803922, 0.4, 0.894117647058824, 1.0 ],
                     "bordercolor": [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 0.0 ],
                     "id": "obj-83",
@@ -2413,7 +2420,7 @@
                         "valueof": {
                             "parameter_enum": [ "val1", "val2" ],
                             "parameter_invisible": 2,
-                            "parameter_longname": "live.text[29]",
+                            "parameter_longname": "live.text[3]",
                             "parameter_mmax": 1,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.text",
@@ -2898,7 +2905,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-60", 0 ],
-                    "order": 0,
+                    "order": 1,
                     "source": [ "obj-59", 0 ]
                 }
             },

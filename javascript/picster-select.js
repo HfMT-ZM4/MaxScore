@@ -210,6 +210,7 @@ if (mode == "picster" && !blocked) {
 	}
 	else {
 	//REMOVE END
+    //post("!", "\n");
 	if (!e.contains("picster-element")) return;
 	if (Array.isArray(e.get("picster-element[0]::val"))) var dictArray = e.get("picster-element[0]::val");
 	else var dictArray = [].concat(e.get("picster-element[0]::val"));
@@ -247,12 +248,11 @@ if (mode == "picster" && !blocked) {
 		}
 	}
 	if (_c > 0) {
-		//post("_c", _c, "\n");
 		item = clicks % _c;
 		outlet(2, "bounds", foundobjects.get(item)[foundobjects.get(item).length - 5] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 4] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 3] * 0.5 / zoom, foundobjects.get(item)[foundobjects.get(item).length - 2] * 0.5 / zoom);
-		outlet(0, "setRenderAllowed", 0);
-		outlet(0, "clearSelection");
 		if (!buttonMode) {
+		outlet(0, "clearSelection");
+		outlet(0, "setRenderAllowed", 0);
 		switch (foundobjects.get(item)[0]){
 			case "interval" :
 			outlet(0, "selectNote", foundobjects.get(item).slice(1, 6));
@@ -2126,7 +2126,7 @@ function anything()
 			outlet(2, "bounds", "hide");
 			outlet(2, "picsterShape", shapes[shape], selectionMode);
 			break;
-			case 47 : //create a pb expression between two selected notes
+			case 47 : //forward slash: create a pb expression between two selected notes
 			action = "addPortamento";
 			anchors = {};
 			outlet(0, "getScoreAnnotation");

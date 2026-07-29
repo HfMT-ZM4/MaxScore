@@ -9,7 +9,7 @@
                     "chordal_weight": [ 1.0 ],
                     "dynamics": [ 64.0 ],
                     "event_length": [ 158.32283464566925 ],
-                    "eventfulness": [ 96.85039370078742 ],
+                    "eventfulness": [ 75.59055118110241 ],
                     "harmoniclarity": [ 75.0 ],
                     "interp-attenuation": [ 1 ],
                     "interp-chordal-weight": [ 0 ],
@@ -23,8 +23,8 @@
                     "interp-pitch-center": [ 1 ],
                     "interp-pitch-range": [ 0 ],
                     "interp-tonic-pitch": [ 0 ],
-                    "melodic_cohesion": [ -100.0 ],
-                    "melody_scope": [ 6.0 ],
+                    "melodic_cohesion": [ 0.0 ],
+                    "melody_scope": [ 10.0 ],
                     "meter": [ "2 2" ],
                     "meters": [
                         {
@@ -36,7 +36,7 @@
                     "outset": [ 1.0 ],
                     "overlap": [ 0.0 ],
                     "pitch_center": [ 60.0 ],
-                    "pitch_range": [ 6.0 ],
+                    "pitch_range": [ 11.0 ],
                     "scale": [ "Major" ],
                     "scales": [
                         {
