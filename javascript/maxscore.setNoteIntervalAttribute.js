@@ -136,28 +136,28 @@ for (var i= 0; i < keys.length; i++)
 
 function query(element)
 {
-		for (var k = 0; k < attr.length; k++)
+		var _query;
+        for (var k = 0; k < attr.length; k++)
 		{
 			var singleAttribute = [];
 			singleAttribute[0] = attr[k];
 			var common = intersect(singleAttribute, noteAttributes);
 			if (common.length)
 			{	
-				var _query = selectedNotes.get(element + "::@" + attr[k]);
+                //post("typeof", selectedNotes.stringify(), "\n");
+                if (attr[k] == "TEXT" && typeof selectedNotes.get(element + "::@" + attr[k]) == "object") _query = selectedNotes.get(element + "::@" + attr[k]).join("");
+				else _query = selectedNotes.get(element + "::@" + attr[k]);
 				result.push(_query);
 			}
 			else
 			{
 			if (attr[k].indexOf("userBean") == -1){
 				var occurrence = getAllIndexes(selectedNotes.get(element + "::.ordering"),"dim").length;
-				for (var l = 0; l < occurrence; l++) if (attr[k] == selectedNotes.get(element + "::dim::" + l + "::@name")) var _query = selectedNotes.get(element + "::dim::" + l + "::@value");
+				for (var l = 0; l < occurrence; l++) if (attr[k] == selectedNotes.get(element + "::dim::" + l + "::@name")) _query = selectedNotes.get(element + "::dim::" + l + "::@value");
 				}
-			else {
-			var _query = selectedNotes.get(element + "::" + attr[k]);	
-			}
+			else _query = selectedNotes.get(element + "::" + attr[k]);	
 			result.push(_query);
 			}
-			//post("info", _query, "\n");
 		}	
 
 }

@@ -233,6 +233,14 @@ const css = {
             "stroke-dasharray": "none"
         }
 
+    }, {
+        "selector": ".thickline",
+        "props": {
+            "stroke": "#000",
+            "stroke-width": 3.375,
+            "stroke-dasharray": "none"
+        }
+
     }]
 };
 const clefs = {
@@ -924,10 +932,10 @@ function writeBarlines() {
     let numBrackets = 0;
     for (let i = 0; i < numStaves; i++)
         if (annotation.contains("staff-" + i + "::staffgroup")) brackets[annotation.get("staff-" + i + "::staffgroup")[0]] = [];
-    numBrackets = Object.keys(brackets).length;
-    if (!numBrackets) brackets = {
+        numBrackets = Object.keys(brackets).length;
+        if (!numBrackets) brackets = {
         0: [0, numStaves - 1]
-    };
+        };
     else {
         for (let i = 0; i < numStaves; i++) {
             if (annotation.contains("staff-" + i + "::staffgroup")) {
@@ -1032,14 +1040,16 @@ function writeBarlines() {
                         for (let d = 0; d < dest.length; d++) {
                             if (measures > 0 || _scoreLeftMargin != barlines[measures][lines][1]) SVGLines[s + 1].push({
                                 "new": "line",
-                                "class": "line",
+                                "class": (barlines[measures][lines][4] == 1.) ? "line" : "thickline",
                                 "id": "barline-" + idcount++,
                                 "x1": barlines[measures][lines][1],
                                 "y1": dest[0],
                                 "x2": barlines[measures][lines][1],
                                 "y2": dest2[0],
+                                "stroke": "rgb(0,0,0)",
                                 "stroke-width": barlines[measures][lines][4] * 0.6,
                                 "stroke-dasharray": barlineDashArray,
+                                "fill": "none",
                                 "transform": "matrix(1 0 0 1 0 0)"
                             });
                             if (_scoreLeftMargin == barlines[measures][lines][1]) {
@@ -1575,7 +1585,7 @@ function setCanvasRenderAllowed(r)
 }
 
 function renderNow() {
-        outlet(1, "getSelectedLocation");
+        //outlet(1, "getSelectedLocation");
         if (annotation.contains("proportional") && annotation.get("proportional")) {
             playhead();
             outlet(1, "setNoteFlash", 0);
@@ -2516,7 +2526,7 @@ function parseFrozenRenderDump(dump) {
                 }
                 staticClefs = 0;
                 if (selector.indexOf("measurenumber") != -1) {
-                    //writeAt(0, _textFont, glyph[4], msg[0] + glyph[1], msg[1] + glyph[2], glyph[0]);
+                    writeAt(0, _textFont, glyph[4], msg[0] + glyph[1], msg[1] + glyph[2], glyph[0]);
                     //return;
                 } 
                 else if (["tr", "al", "te", "ba", "pr"].indexOf(selector) != -1) {
@@ -2592,6 +2602,7 @@ function parseFrozenRenderDump(dump) {
                                 }
                                 if (glyph[i * 5 + 3] == "$TEXTFONT") var fontFamily = _textFont;
                                 else if (glyph[i * 5 + 3] == "$MUSICFONT") var fontFamily = _musicFont;
+                                else if (glyph[i * 5 + 3] == "$TITLEFONT") var fontFamily = _titleFont;
                                 else var fontFamily = glyph[i * 5 + 3];
                                 usedFonts.replace(fontFamily + "::Regular", 1);
                                 if (staticClefs) SVGClefs[s + 1].push({

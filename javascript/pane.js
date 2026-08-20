@@ -985,6 +985,7 @@ function flashingNoteheads()
 		}
 }
 
+/*
 function paintOnTop()
 {
 	with(mgraphics) {
@@ -1001,6 +1002,38 @@ function paintOnTop()
 			}
 		}
 	set_matrix(currentMatrix);
+    }
+}
+*/
+
+function paintOnTop()
+{
+    //post("zoom", zoom, "\n");
+    with (mgraphics) {
+        var currentMatrix = get_matrix();
+
+        for (var _handle in paintOnScore) {
+            if (!paintOnScore.hasOwnProperty(_handle)) continue;
+
+            var keys = Object.keys(paintOnScore[_handle]);
+
+            for (var i = 0; i < keys.length; i++) {
+                var cmd = paintOnScore[_handle][keys[i]];
+                if (!cmd || !cmd.length) continue;
+
+                var routine = cmd[0];
+                var args = cmd.slice(1);
+
+                if (typeof mgraphics[routine] === "function") {
+                    mgraphics[routine].apply(mgraphics, args);
+                }
+                else {
+                    post("paintOnTop: unknown mgraphics routine '" + routine + "'\n");
+                }
+            }
+        }
+
+        set_matrix(currentMatrix);
     }
 }
 
@@ -1157,6 +1190,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 		outlet(controlshift, "mouseRightButtonDown", 0);
         outlet(controlshift, "ctrlKeyDown", 0);
         outlet(controlshift, "shiftKeyDown", 0);
+  		outlet(controlshift, "getSelectedLocation");
         //outlet(1, "graphicsSelection", 0);
 		outlet(2, 0);
     }

@@ -1,5 +1,29 @@
-outlets = 3;
+outlets = 4;
 include("maxscore.tools");
+
+
+const EPSILON = 1e-9;
+const TWO_PI = Math.PI * 2;
+
+const clamp = (value, min = 0, max = 1) =>
+    Math.max(min, Math.min(max, Number(value) || 0));
+
+const number = value => {
+    const result = Number(value);
+    return Number.isFinite(result) ? result : 0;
+};
+
+const formatNumber = value => {
+    const n = Math.abs(number(value)) < 1e-12 ? 0 : number(value);
+    return String(Math.round(n * 1e6) / 1e6);
+};
+
+const samePoint = (x1, y1, x2, y2) =>
+    Math.abs(x1 - x2) < EPSILON && Math.abs(y1 - y2) < EPSILON;
+
+const rgbString = color =>
+    `rgb(${color.slice(0, 3).map(v => Math.round(clamp(v) * 255)).join(",")})`;
+
 
 var output = new Dict();
 output.name = "output";
@@ -88,6 +112,823 @@ if (jsarguments.length >= 1)
 		}
 }
 
+class Matrix2D {
+    // MGraphics/Cairo order: [xx, xy, yx, yy, x0, y0]
+    constructor(values = [1, 0, 0, 1, 0, 0]) {
+        this.values = [...values].map(number);
+    }
+
+    static identity() {
+        return new Matrix2D();
+    }
+
+    clone() {
+        return new Matrix2D(this.values);
+    }
+
+    multiply(other) {
+        const [a0, a1, a2, a3, a4, a5] = this.values;
+        const [b0, b1, b2, b3, b4, b5] = other.values;
+
+        return new Matrix2D([
+            a0 * b0 + a1 * b2,
+            a0 * b1 + a1 * b3,
+            a2 * b0 + a3 * b2,
+            a2 * b1 + a3 * b3,
+            a0 * b4 + a1 * b5 + a4,
+            a2 * b4 + a3 * b5 + a5
+        ]);
+    }
+
+    translate(x, y) {
+        return this.multiply(new Matrix2D([1, 0, 0, 1, number(x), number(y)]));
+    }
+
+    scale(x, y = x) {
+        return this.multiply(new Matrix2D([number(x), 0, 0, number(y), 0, 0]));
+    }
+
+    rotate(radians) {
+        const angle = number(radians);
+        const c = Math.cos(angle);
+        const s = Math.sin(angle);
+        return this.multiply(new Matrix2D([c, -s, s, c, 0, 0]));
+    }
+
+    transformPoint(x, y) {
+        const [xx, xy, yx, yy, x0, y0] = this.values;
+        return [
+            xx * number(x) + xy * number(y) + x0,
+            yx * number(x) + yy * number(y) + y0
+        ];
+    }
+
+    inverse() {
+        const [xx, xy, yx, yy, x0, y0] = this.values;
+        const determinant = xx * yy - xy * yx;
+
+        if (Math.abs(determinant) < 1e-12)
+            return null;
+
+        return new Matrix2D([
+             yy / determinant,
+            -xy / determinant,
+            -yx / determinant,
+             xx / determinant,
+            (xy * y0 - yy * x0) / determinant,
+            (yx * x0 - xx * y0) / determinant
+        ]);
+    }
+
+    get isIdentity() {
+        const [xx, xy, yx, yy, x0, y0] = this.values;
+        return Math.abs(xx - 1) < EPSILON &&
+               Math.abs(xy) < EPSILON &&
+               Math.abs(yx) < EPSILON &&
+               Math.abs(yy - 1) < EPSILON &&
+               Math.abs(x0) < EPSILON &&
+               Math.abs(y0) < EPSILON;
+    }
+
+    toSVG() {
+        const [xx, xy, yx, yy, x0, y0] = this.values;
+        // SVG matrix(a b c d e f):
+        // x' = a*x + c*y + e, y' = b*x + d*y + f
+        return `matrix(${[xx, yx, xy, yy, x0, y0].map(formatNumber).join(" ")})`;
+    }
+}
+
+class GraphicsState {
+    constructor() {
+        this.source = [0, 0, 0, 1];
+        this.colorScale = [1, 1, 1, 1];
+        this.colorOffset = [0, 0, 0, 0];
+
+        this.lineWidth = 1;
+        this.lineCap = "butt";
+        this.lineJoin = "miter";
+        this.dash = [];
+        this.dashOffset = 0;
+
+        this.fontFamily = "Arial";
+        this.fontSize = 12;
+        this.fontStyle = "normal";
+        this.fontWeight = "normal";
+
+        this.matrix = Matrix2D.identity();
+    }
+
+    clone() {
+        const result = new GraphicsState();
+        Object.assign(result, {
+            source: [...this.source],
+            colorScale: [...this.colorScale],
+            colorOffset: [...this.colorOffset],
+            lineWidth: this.lineWidth,
+            lineCap: this.lineCap,
+            lineJoin: this.lineJoin,
+            dash: [...this.dash],
+            dashOffset: this.dashOffset,
+            fontFamily: this.fontFamily,
+            fontSize: this.fontSize,
+            fontStyle: this.fontStyle,
+            fontWeight: this.fontWeight,
+            matrix: this.matrix.clone()
+        });
+        return result;
+    }
+
+    effectiveColor(alphaOverride = undefined) {
+        const color = this.source.map((component, index) =>
+            clamp(component * this.colorScale[index] + this.colorOffset[index])
+        );
+
+        if (alphaOverride !== undefined)
+            color[3] = clamp(alphaOverride);
+
+        return color;
+    }
+
+    fillStyle(alphaOverride = undefined) {
+        const color = this.effectiveColor(alphaOverride);
+        return {
+            fill: rgbString(color),
+            "fill-opacity": color[3],
+            stroke: "none"
+        };
+    }
+
+    strokeStyle(alphaOverride = undefined) {
+        const color = this.effectiveColor(alphaOverride);
+        const style = {
+            fill: "none",
+            stroke: rgbString(color),
+            "stroke-opacity": color[3],
+            "stroke-width": this.lineWidth,
+            "stroke-linecap": this.lineCap,
+            "stroke-linejoin": this.lineJoin
+        };
+
+        if (this.dash.length)
+            style["stroke-dasharray"] = this.dash.join(" ");
+
+        if (this.dashOffset)
+            style["stroke-dashoffset"] = this.dashOffset;
+
+        return style;
+    }
+
+    fontStyleObject(baseStyle) {
+        return {
+            ...baseStyle,
+            "font-family": this.fontFamily,
+            "font-size": this.fontSize,
+            "font-style": this.fontStyle,
+            "font-weight": this.fontWeight
+        };
+    }
+}
+
+class GraphicsPath {
+    constructor() {
+        this.d = [];
+        this.currentPoint = null;
+        this.subpathStart = null;
+        this.textPaths = [];
+        this.matrix = null;
+    }
+
+    get hasGeometry() {
+        return this.d.length > 0;
+    }
+
+    get hasCurrentPoint() {
+        return this.currentPoint !== null;
+    }
+
+    snapshotMatrix(matrix) {
+        if (!this.matrix)
+            this.matrix = matrix.clone();
+    }
+
+    append(command, matrix) {
+        this.snapshotMatrix(matrix);
+        this.d.push(command);
+    }
+
+    moveTo(x, y, matrix) {
+        const point = [number(x), number(y)];
+        this.append(`M ${formatNumber(point[0])} ${formatNumber(point[1])}`, matrix);
+        this.currentPoint = point;
+        this.subpathStart = [...point];
+    }
+
+    lineTo(x, y, matrix) {
+        const point = [number(x), number(y)];
+
+        if (!this.hasCurrentPoint) {
+            this.moveTo(...point, matrix);
+            return;
+        }
+
+        this.append(`L ${formatNumber(point[0])} ${formatNumber(point[1])}`, matrix);
+        this.currentPoint = point;
+    }
+
+    curveTo(x1, y1, x2, y2, x3, y3, matrix) {
+        const values = [x1, y1, x2, y2, x3, y3].map(number);
+
+        if (!this.hasCurrentPoint)
+            this.moveTo(values[0], values[1], matrix);
+
+        this.append(`C ${values.map(formatNumber).join(" ")}`, matrix);
+        this.currentPoint = [values[4], values[5]];
+    }
+
+    close(matrix) {
+        if (!this.hasCurrentPoint)
+            return;
+
+        this.append("Z", matrix);
+        if (this.subpathStart)
+            this.currentPoint = [...this.subpathStart];
+    }
+
+    rectangle(x, y, width, height, matrix) {
+        const [px, py, w, h] = [x, y, width, height].map(number);
+        this.moveTo(px, py, matrix);
+        this.lineTo(px + w, py, matrix);
+        this.lineTo(px + w, py + h, matrix);
+        this.lineTo(px, py + h, matrix);
+        this.close(matrix);
+    }
+
+    roundedRectangle(x, y, width, height, ovalWidth, ovalHeight, matrix) {
+        let [px, py, w, h] = [x, y, width, height].map(number);
+        const ow = Math.abs(number(ovalWidth));
+        const oh = Math.abs(number(ovalHeight));
+
+        if (w < 0) {
+            px += w;
+            w = -w;
+        }
+        if (h < 0) {
+            py += h;
+            h = -h;
+        }
+
+        const rx = Math.min(w / 2, ow / 2);
+        const ry = Math.min(h / 2, oh / 2);
+
+        if (rx <= 0 || ry <= 0) {
+            this.rectangle(px, py, w, h, matrix);
+            return;
+        }
+
+        this.moveTo(px + rx, py, matrix);
+        this.lineTo(px + w - rx, py, matrix);
+        this.appendArcSegment(rx, ry, px + w, py + ry, true, matrix);
+        this.lineTo(px + w, py + h - ry, matrix);
+        this.appendArcSegment(rx, ry, px + w - rx, py + h, true, matrix);
+        this.lineTo(px + rx, py + h, matrix);
+        this.appendArcSegment(rx, ry, px, py + h - ry, true, matrix);
+        this.lineTo(px, py + ry, matrix);
+        this.appendArcSegment(rx, ry, px + rx, py, true, matrix);
+        this.close(matrix);
+    }
+
+    ellipse(x, y, width, height, matrix) {
+        const [px, py, w, h] = [x, y, width, height].map(number);
+        const rx = Math.abs(w) / 2;
+        const ry = Math.abs(h) / 2;
+        const cx = px + w / 2;
+        const cy = py + h / 2;
+
+        if (rx <= 0 || ry <= 0)
+            return;
+
+        this.moveTo(cx + rx, cy, matrix);
+        this.append(`A ${formatNumber(rx)} ${formatNumber(ry)} 0 1 1 ${formatNumber(cx - rx)} ${formatNumber(cy)}`, matrix);
+        this.currentPoint = [cx - rx, cy];
+        this.append(`A ${formatNumber(rx)} ${formatNumber(ry)} 0 1 1 ${formatNumber(cx + rx)} ${formatNumber(cy)}`, matrix);
+        this.currentPoint = [cx + rx, cy];
+        this.close(matrix);
+    }
+
+    appendArcSegment(rx, ry, x, y, clockwise, matrix, largeArc = 0) {
+        const sweep = clockwise ? 1 : 0;
+        this.append(
+            `A ${formatNumber(rx)} ${formatNumber(ry)} 0 ${largeArc} ${sweep} ${formatNumber(x)} ${formatNumber(y)}`,
+            matrix
+        );
+        this.currentPoint = [number(x), number(y)];
+    }
+
+    arc(xc, yc, rx, ry, angle1, angle2, clockwise, matrix) {
+        const cx = number(xc);
+        const cy = number(yc);
+        const radiusX = Math.abs(number(rx));
+        const radiusY = Math.abs(number(ry));
+        const a1 = number(angle1);
+        const a2 = number(angle2);
+
+        if (radiusX <= 0 || radiusY <= 0)
+            return;
+
+        let delta = a2 - a1;
+
+        if (clockwise) {
+            while (delta < 0) delta += TWO_PI;
+            if (Math.abs(delta) < EPSILON && a2 !== a1) delta = TWO_PI;
+        } else {
+            while (delta > 0) delta -= TWO_PI;
+            if (Math.abs(delta) < EPSILON && a2 !== a1) delta = -TWO_PI;
+        }
+
+        delta = clamp(delta, -TWO_PI, TWO_PI);
+
+        const start = [
+            cx + radiusX * Math.cos(a1),
+            cy + radiusY * Math.sin(a1)
+        ];
+
+        if (!this.hasCurrentPoint)
+            this.moveTo(...start, matrix);
+        else if (!samePoint(...this.currentPoint, ...start))
+            this.lineTo(...start, matrix);
+
+        let remaining = delta;
+        let angle = a1;
+
+        // Split at PI so complete circles and large arcs remain well-defined in SVG.
+        while (Math.abs(remaining) > 1e-10) {
+            const step = Math.sign(remaining) * Math.min(Math.abs(remaining), Math.PI);
+            const next = angle + step;
+            const end = [
+                cx + radiusX * Math.cos(next),
+                cy + radiusY * Math.sin(next)
+            ];
+
+            this.appendArcSegment(
+                radiusX,
+                radiusY,
+                ...end,
+                clockwise,
+                matrix,
+                Math.abs(step) > Math.PI ? 1 : 0
+            );
+
+            angle = next;
+            remaining -= step;
+        }
+    }
+
+    appendRawSVGPathData(data, matrix) {
+        const text = String(data ?? "").trim();
+        if (!text)
+            return;
+
+        this.append(text, matrix);
+        // We cannot infer the current point from arbitrary SVG path data.
+        this.currentPoint = null;
+    }
+
+    addText(text, state) {
+        const [x, y] = this.currentPoint ?? [0, 0];
+        this.textPaths.push({
+            text: String(text),
+            x,
+            y,
+            fontFamily: state.fontFamily,
+            fontSize: state.fontSize,
+            fontStyle: state.fontStyle,
+            fontWeight: state.fontWeight,
+            matrix: state.matrix.clone()
+        });
+    }
+
+    toString() {
+        return this.d.join(" ");
+    }
+}
+
+class MGraphicsToDrawsocket {
+    constructor() {
+        this.draw = new Dict();
+        this.parentId = "overlay";
+        this.width = 0;
+        this.height = 0;
+        this.nextId = 0;
+        this.warnUnsupported = true;
+
+        this.surfaces = new Map();
+        this.stateStack = [];
+        this.state = new GraphicsState();
+        this.path = new GraphicsPath();
+
+        this.commands = this.buildCommandTable();
+    }
+
+    buildCommandTable() {
+        return {
+            // source / color
+            set_source_rgb: ([r, g, b]) => {
+                this.state.source = [clamp(r), clamp(g), clamp(b), 1];
+            },
+
+            set_source_rgba: ([r, g, b, a]) => {
+                this.state.source = [clamp(r), clamp(g), clamp(b), clamp(a)];
+            },
+
+            scale_source_rgba: values => {
+                const factors = [0, 1, 2, 3].map(i => number(values[i] ?? 1));
+                this.state.colorScale = this.state.colorScale.map((v, i) => v * factors[i]);
+            },
+
+            translate_source_rgba: values => {
+                const offsets = [0, 1, 2, 3].map(i => number(values[i] ?? 0));
+                this.state.colorOffset = this.state.colorOffset.map((v, i) => v + offsets[i]);
+            },
+
+            // stroke state
+            set_line_width: ([width]) => this.state.lineWidth = number(width),
+            set_line_cap: ([cap]) => this.state.lineCap = String(cap),
+            set_line_join: ([join]) => this.state.lineJoin = String(join),
+
+            set_dash: args => {
+                // Accept either: set_dash d1 d2 ...
+                // or:             set_dash [d1 d2 ...] offset
+                // Max lists arrive flattened, so the common message case simply works.
+                const numeric = args.map(Number).filter(Number.isFinite);
+                this.state.dash = numeric;
+                this.state.dashOffset = 0;
+            },
+
+            // fonts
+            select_font_face: args => this.selectFontFace(args),
+            set_font_size: ([size]) => this.state.fontSize = number(size),
+
+            // path construction
+            new_path: () => this.path = new GraphicsPath(),
+            move_to: ([x, y]) => this.path.moveTo(x, y, this.state.matrix),
+            line_to: ([x, y]) => this.path.lineTo(x, y, this.state.matrix),
+            curve_to: args => this.path.curveTo(...args.slice(0, 6), this.state.matrix),
+            close_path: () => this.path.close(this.state.matrix),
+
+            rel_move_to: ([dx, dy]) => {
+                const [x, y] = this.path.currentPoint ?? [0, 0];
+                this.path.moveTo(x + number(dx), y + number(dy), this.state.matrix);
+            },
+
+            rel_line_to: ([dx, dy]) => {
+                const [x, y] = this.path.currentPoint ?? [0, 0];
+                this.path.lineTo(x + number(dx), y + number(dy), this.state.matrix);
+            },
+
+            rel_curve_to: ([dx1, dy1, dx2, dy2, dx3, dy3]) => {
+                const [x, y] = this.path.currentPoint ?? [0, 0];
+                this.path.curveTo(
+                    x + number(dx1), y + number(dy1),
+                    x + number(dx2), y + number(dy2),
+                    x + number(dx3), y + number(dy3),
+                    this.state.matrix
+                );
+            },
+
+            rectangle: args => this.path.rectangle(...args.slice(0, 4), this.state.matrix),
+            rectangle_rounded: args => this.path.roundedRectangle(...args.slice(0, 6), this.state.matrix),
+            ellipse: args => this.path.ellipse(...args.slice(0, 4), this.state.matrix),
+
+            arc: ([xc, yc, radius, a1, a2]) =>
+                this.path.arc(xc, yc, radius, radius, a1, a2, true, this.state.matrix),
+
+            arc_negative: ([xc, yc, radius, a1, a2]) =>
+                this.path.arc(xc, yc, radius, radius, a1, a2, false, this.state.matrix),
+
+            ovalarc: ([xc, yc, rx, ry, a1, a2]) =>
+                this.path.arc(xc, yc, rx, ry, a1, a2, true, this.state.matrix),
+
+            append_path: args =>
+                this.path.appendRawSVGPathData(args.join(" "), this.state.matrix),
+
+            text_path: args => this.path.addText(args.join(" "), this.state),
+
+            // fill / stroke execution
+            fill: () => this.emitCurrentPath("fill"),
+            fill_preserve: () => this.emitCurrentPath("fill", undefined, true),
+            fill_with_alpha: ([alpha]) => this.emitCurrentPath("fill", alpha),
+            fill_preserve_with_alpha: ([alpha]) => this.emitCurrentPath("fill", alpha, true),
+
+            stroke: () => this.emitCurrentPath("stroke"),
+            stroke_preserve: () => this.emitCurrentPath("stroke", undefined, true),
+            stroke_with_alpha: ([alpha]) => this.emitCurrentPath("stroke", alpha),
+            stroke_preserve_with_alpha: ([alpha]) => this.emitCurrentPath("stroke", alpha, true),
+
+            // immediate drawing
+            show_text: args => this.emitShowText(args.join(" ")),
+            paint: () => this.emitPaint(),
+            paint_with_alpha: ([alpha]) => this.emitPaint(alpha),
+
+            // transform state
+            identity_matrix: () => this.state.matrix = Matrix2D.identity(),
+            translate: ([x, y]) => this.state.matrix = this.state.matrix.translate(x, y),
+            scale: ([x, y]) => this.state.matrix = this.state.matrix.scale(x, y ?? x),
+            rotate: ([radians]) => this.state.matrix = this.state.matrix.rotate(radians),
+
+            transform: args => {
+                const matrix = new Matrix2D(args.slice(0, 6));
+                this.state.matrix = this.state.matrix.multiply(matrix);
+            },
+
+            set_matrix: args => this.state.matrix = new Matrix2D(args.slice(0, 6)),
+
+            save: () => this.stateStack.push(this.state.clone()),
+            restore: () => {
+                const restored = this.stateStack.pop();
+                if (restored)
+                    this.state = restored;
+                else
+                    this.warn("restore", "state stack is empty");
+            },
+            // images / browser-loadable SVG assets
+            image_surface_create: args => this.createImageSurface(args),
+            image_surface_destroy: ([id]) => this.surfaces.delete(String(id)),
+            image_surface_draw: args => this.emitImageFromSurface(args),
+            image_surface_draw_fast: args => this.emitImageFromSurface(args),
+            image_surface_get_size: ([id]) => this.emitImageSurfaceSize(id),
+            svg_render: args => this.emitSVGAsset(args),
+
+            // coordinate / state queries
+            get_current_point: () => this.emitCurrentPoint(),
+            user_to_device: ([x, y]) => this.emitPointQuery("user_to_device", this.state.matrix, x, y),
+            device_to_user: ([x, y]) => this.emitDeviceToUser(x, y),
+
+            // clearing
+            clear_surface: () => this.clear(),
+            clear:         () => this.clear(),
+            clearGraphics: () => this.clear(),
+        };
+    }
+
+    handle(name, args = []) {
+        const command = String(name);
+        const handler = this.commands[command];
+
+        if (handler) {
+            handler(args);
+            return;
+        }
+
+        if (command.startsWith("pattern_")) {
+            this.warn(command, "pattern routines deliberately skipped");
+            return;
+        }
+
+        const unsupported = {
+            path_roundcorners: "arbitrary path corner-rounding has no direct SVG equivalent",
+            fill_extents: "requires geometry calculation rather than drawing",
+            in_fill: "requires point-in-path geometry calculation",
+            font_extents: "requires browser/font measurement",
+            text_measure: "requires browser/font measurement",
+            attr_setfill: "depends on Max named style colors",
+            set_source: "pattern source deliberately skipped",
+            set_source_surface: "surface-as-source implies a pattern/image fill",
+            push_group: "offscreen group/source semantics are deliberately skipped",
+            pop_group_to_source: "offscreen group/source semantics are deliberately skipped",
+            parentpaint: "jspainter parent rendering has no Drawsocket equivalent"
+        };
+
+        this.warn(command, unsupported[command] ?? "unknown command");
+    }
+
+    selectFontFace([family, slant = "normal", weight = "normal"]) {
+        if (family !== undefined)
+            this.state.fontFamily = String(family);
+
+        const normalizedSlant = String(slant).toLowerCase();
+        const normalizedWeight = String(weight).toLowerCase();
+
+        this.state.fontStyle = ["italic", "oblique"].includes(normalizedSlant)
+            ? normalizedSlant
+            : "normal";
+
+        this.state.fontWeight = ["bold", "700", "800", "900"].includes(normalizedWeight)
+            ? "bold"
+            : "normal";
+    }
+
+    makeId() {
+        return `draw-${this.nextId++}`;
+    }
+
+    addParent(object) {
+        return this.parentId
+            ? { parent: this.parentId, ...object }
+            : object;
+    }
+
+    addTransform(object, matrix = this.state.matrix) {
+        return !matrix.isIdentity
+            ? { ...object, transform: matrix.toSVG() }
+            : object;
+    }
+
+    sendDrawsocket(key, val) {
+        const packet = { "*": { key, val } };
+
+        // Keep serialization as the JS-object -> Max Dict boundary. It also
+        // snapshots nested arrays/objects before subsequent drawing state mutates.
+        this.draw.parse(JSON.stringify(packet));
+        outlet(0, "dictionary", this.draw.name);
+    }
+
+    emitSVG(object) {
+        this.sendDrawsocket("svg", this.addParent(object));
+    }
+
+    emitCurrentPath(mode, alphaOverride = undefined, preserve = false) {
+        const style = mode === "stroke"
+            ? this.state.strokeStyle(alphaOverride)
+            : this.state.fillStyle(alphaOverride);
+
+        if (this.path.hasGeometry) {
+            const object = this.addTransform({
+                new: "path",
+                id: this.makeId(),
+                d: this.path.toString(),
+                style
+            }, this.path.matrix ?? this.state.matrix);
+
+            this.emitSVG(object);
+        }
+
+        // text_path is approximated as SVG <text>. It obeys fill/stroke and
+        // transforms, but is not converted into actual glyph outlines.
+        for (const textPath of this.path.textPaths) {
+            const fontState = this.state.clone();
+            Object.assign(fontState, {
+                fontFamily: textPath.fontFamily,
+                fontSize: textPath.fontSize,
+                fontStyle: textPath.fontStyle,
+                fontWeight: textPath.fontWeight
+            });
+
+            const textStyle = fontState.fontStyleObject(
+                mode === "stroke"
+                    ? fontState.strokeStyle(alphaOverride)
+                    : fontState.fillStyle(alphaOverride)
+            );
+
+            const object = this.addTransform({
+                new: "text",
+                id: this.makeId(),
+                x: textPath.x,
+                y: textPath.y,
+                text: textPath.text,
+                style: textStyle
+            }, textPath.matrix);
+
+            this.emitSVG(object);
+        }
+
+        if (!preserve)
+            this.path = new GraphicsPath();
+    }
+
+    emitShowText(text) {
+        const [x, y] = this.path.currentPoint ?? [0, 0];
+        const style = this.state.fontStyleObject(this.state.fillStyle());
+
+        // No transform is attached here. MGraphics show_text() is treated as
+        // immediate text at the current point; text_path() is the transformable
+        // path-like alternative.
+        this.emitSVG({
+            new: "text",
+            id: this.makeId(),
+            x,
+            y,
+            text: String(text),
+            style
+        });
+    }
+
+    emitPaint(alphaOverride = undefined) {
+        this.emitSVG({
+            new: "rect",
+            id: this.makeId(),
+            x: 0,
+            y: 0,
+            width: this.width > 0 ? this.width : "100%",
+            height: this.height > 0 ? this.height : "100%",
+            style: this.state.fillStyle(alphaOverride)
+        });
+    }
+
+    createImageSurface([id, source, width = 0, height = 0]) {
+        this.surfaces.set(String(id), {
+            source: String(source ?? ""),
+            width: number(width),
+            height: number(height)
+        });
+    }
+
+    emitImageFromSurface([id, x = 0, y = 0, width, height, opacity]) {
+        const surface = this.surfaces.get(String(id));
+        const source = surface?.source ?? String(id);
+
+        this.emitImage({
+            source,
+            x,
+            y,
+            width: width ?? surface?.width,
+            height: height ?? surface?.height,
+            opacity
+        });
+    }
+
+    emitSVGAsset([source, x = 0, y = 0, width, height, opacity]) {
+        this.emitImage({ source, x, y, width, height, opacity });
+    }
+
+    emitImage({ source, x = 0, y = 0, width, height, opacity }) {
+        const object = {
+            new: "image",
+            id: this.makeId(),
+            href: String(source ?? ""),
+            x: number(x),
+            y: number(y),
+            ...(width !== undefined && number(width) > 0 ? { width: number(width) } : {}),
+            ...(height !== undefined && number(height) > 0 ? { height: number(height) } : {}),
+            ...(opacity !== undefined ? { opacity: clamp(opacity) } : {})
+        };
+
+        this.emitSVG(this.addTransform(object));
+    }
+
+    emitCurrentPoint() {
+        const [x, y] = this.path.currentPoint ?? [0, 0];
+        outlet(3, "get_current_point", x, y);
+    }
+
+    emitPointQuery(name, matrix, x, y) {
+        const [resultX, resultY] = matrix.transformPoint(x, y);
+        outlet(3, name, resultX, resultY);
+    }
+
+    emitDeviceToUser(x, y) {
+        const inverse = this.state.matrix.inverse();
+
+        if (!inverse) {
+            outlet(3, "device_to_user", "singular_matrix");
+            return;
+        }
+
+        this.emitPointQuery("device_to_user", inverse, x, y);
+    }
+
+    emitImageSurfaceSize(id) {
+        const surface = this.surfaces.get(String(id));
+        outlet(
+            1,
+            "image_surface_get_size",
+            surface?.width ?? 0,
+            surface?.height ?? 0
+        );
+    }
+
+    clear() {
+        this.sendDrawsocket("clear", this.parentId || "svg");
+
+        this.nextId = 0;
+        this.path = new GraphicsPath();
+
+        // Reset transformations
+        this.state.matrix = Matrix2D.identity();
+        this.stateStack.length = 0;
+    }
+
+    reset() {
+        this.stateStack.length = 0;
+        this.state = new GraphicsState();
+        this.path = new GraphicsPath();
+        this.surfaces.clear();
+        this.nextId = 0;
+    }
+
+    warn(command, reason = "") {
+        if (!this.warnUnsupported)
+            return;
+
+        post(
+            `socket.pane: MGraphics '${command}' not translated` +
+            (reason ? ` (${reason})` : "") +
+            "\n"
+        );
+    }
+}
+
+const translator = new MGraphicsToDrawsocket();
+
 function loadbang()
 {
 	bang();
@@ -159,14 +1000,14 @@ function remap(staffGroup, staffIndex, position)
 	else return idx;
 }
 
-
+/*
 function clear()
 {
 	//img.setsvg("<svg x=\"0px\" y=\"0px\" width=\"1200px\" height=\"800px\" viewBox=\"0 0 1200 800\" style=\"background: white\" xml:space=\"preserve\"></svg>");
 	//clearGraphics();
 }
 
-/*
+
 function proportional(p)
 {
  	prop = p;
@@ -176,6 +1017,119 @@ function proportional(p)
 function setImages(img)
 {
 	
+}
+
+function boxsize()
+{
+	
+}
+
+function capsLock()
+{
+    
+}
+
+function anything()
+{
+	var msg = arrayfromargs(messagename, arguments);
+    var parent = "overlay";
+	if (msg[0] == "bounds") {
+		if (msg[1] == "hide") {
+			boundingRect = [];
+			drawBounds();
+ 		}
+		else if (msg[1] == "blink"){
+			drawBounds();
+ 			blnk.schedule(200);
+ 			}
+		else {
+            boundingRect = [0, 0, msg[3] - msg[1], msg[4] - msg[2]];
+            boundingRectOffset = [msg[1], msg[2]];			
+			}
+    	//mgraphics.redraw();		
+		}
+	    else if (msg[0] == "idleOut") {
+		idleOut = msg[1];
+		} 
+	    else if (msg[0] == "playback") {
+		_playback = msg[1];
+		} 		
+	    else {
+            var mgraphicsRoutines = [ "append_path", "arc", "arc_negative", "attr_setfill", "clear_surface", "close_path", "curve_to", "device_to_user", "ellipse", "fill", "fill_extents", "fill_preserve", "fill_preserve_with_alpha", "fill_with_alpha", "font_extents", "get_current_point", "identity_matrix", "image_surface_create", "image_surface_destroy", "image_surface_draw", "image_surface_draw_fast", "image_surface_get_size", "in_fill", "line_to", "move_to", "new_path", "ovalarc", "paint", "paint_with_alpha", "parentpaint", "path_roundcorners", "pattern_add_color_stop_rgba", "pattern_create_for_surface", "pattern_create_linear", "pattern_create_radial", "pattern_create_rgba", "pattern_destroy", "pattern_get_extend", "pattern_get_matrix", "pattern_get_type", "pattern_identity_matrix", "pattern_rotate", "pattern_scale", "pattern_set_extend", "pattern_set_matrix", "pattern_translate", "pop_group_to_source", "push_group", "rectangle", "rectangle_rounded", "rel_curve_to", "rel_line_to", "rel_move_to", "restore", "rotate", "save", "scale", "scale_source_rgba", "select_font_face", "set_dash", "set_font_size", "set_line_cap", "set_line_join", "set_line_width", "set_matrix", "set_source", "set_source_rgb", "set_source_rgba", "set_source_surface", "show_text", "stroke", "stroke_preserve", "stroke_preserve_with_alpha", "stroke_with_alpha", "svg_render", "text_measure", "text_path", "transform", "translate", "translate_source_rgba", "user_to_device", "user_to_device", "clear", "clearGraphics" ];
+            if (mgraphicsRoutines.indexOf(msg[0]) == -1) {
+                translator.parentId = msg[0];
+                msg = msg.slice(1);
+            }            
+            translator.handle(msg[0], msg.slice(1));	
+	}
+}
+
+/*
+function bounds(width, height) {
+    translator.width = number(width);
+    translator.height = number(height);
+}
+*/
+
+function reset() {
+    translator.reset();
+}
+
+function warnings(value = 1) {
+    translator.warnUnsupported = Boolean(number(value));
+}
+
+/*
+    Example input sequence:
+
+        set_source_rgba 0.2 0.6 1. 0.8
+        set_line_width 3
+        rectangle_rounded 20 20 180 80 20 20
+        fill_preserve
+        set_source_rgba 0 0 0 1
+        stroke
+
+    The first fill emits the current path but preserves it. The final stroke
+    emits the same SVG path with stroke styling and then clears the current path.
+*/
+
+
+function blink()
+{
+	boundingRect = [];
+	drawBounds();
+}
+
+function setZoom(z)
+{
+	zoom = z * 2;
+	//pageSize(pageWidth, pageHeight);
+	//mgraphics.redraw();	
+}	
+
+function showgrid(show, size)
+{
+	
+}
+
+function drawGrid()
+{
+ 
+}
+
+
+function flashing()
+{
+	/*
+	var flash = arrayfromargs(arguments);
+	if (flash[4] + flash[5] + flash[6] != 0) {
+		flashingNotes[flash[0] + "+" + flash[1]] = flash;
+	}
+	else {
+		delete flashingNotes[flash[0] + "+" + flash[1]];
+		}
+    	//mgraphics.redraw();
+		*/
 }
 
 function dyn_playhead(x, y2, y1, f)
@@ -228,231 +1182,6 @@ function buttonmode(bm)
 	buttonfillopacity = (bm) ? 0.8 : 0.2;
 	buttonstrokecolor = (bm) ? "black" : "red";
 	buttonstrokewidth = (bm) ? 3 : 0.5;
-}
-
-function anything()
-{
-	var msg = arrayfromargs(messagename, arguments);
-	if (msg[0] == "bounds") {
-		if (msg[1] == "hide") {
-			boundingRect = [];
-			drawBounds();
- 		}
-		else if (msg[1] == "blink"){
-			drawBounds();
- 			blnk.schedule(200);
- 			}
-		else {
-            boundingRect = [0, 0, msg[3] - msg[1], msg[4] - msg[2]];
-            boundingRectOffset = [msg[1], msg[2]];			
-			}
-    	//mgraphics.redraw();		
-		}
-	else if (msg[0] == "idleOut") {
-		idleOut = msg[1];
-		} 
-	else if (msg[0] == "playback") {
-		_playback = msg[1];
-		} 		
-	else {
-		switch(msg[0]) {
-			case "extras":
-				switch(msg[1]) {
-				case "clearGraphics":
-				var clear = {"key" : "remove", "val" : "extras"};	
-				var val = {
-				"parent" : "main-svg",
-				"new" : "g",
-				"id" : "extras"
-				};
-				var _draw = {"*" : [clear, {"key" : "svg", "val" : val}]};	
-				draw.parse(JSON.stringify(_draw));
-				outlet(0, "dictionary", draw.name);	
-				break;
-				case "set_source_rgb":
-				source_rgb = [msg[2], msg[3], msg[4], 1];
-				break;
-				case "set_source_rgba":
-				source_rgb = [msg[2], msg[3], msg[4], msg[5]];
-				break;
-				case "move_to":
-				x = msg[2];
-				y = msg[3];
-				break;
-				case "set_font_size":
-				f_size = msg[2];
-				break;
-				case "select_font_face":
-				f_face = msg[2];
-				break;
-				case "show_text":
-				var val = [{
-					"parent" : "extras",
-					"new" : "text",
-					"id" : "draw-" + pons,
-					"x" : x,
-					"y" : y,
-					"child" : msg[2],
-					"style" : 					{
-						"font-family" : f_face,
-						"font-size" : f_size,
-						"fill" : "rgb(" + Math.round(source_rgb[0] * 255) + "," + Math.round(source_rgb[1] * 255) + "," + Math.round(source_rgb[2] * 255) + ")",
-						"fill-opacity" : source_rgb[3]
-					}
-					}];
-				var _draw = {"*" : { "key" : "svg", "val" : val}};	
-				draw.parse(JSON.stringify(_draw));
-				outlet(0, "dictionary", draw.name);	
-				pons++;
-				break;
-				case "rectangle" :
-	            post("rect", msg, "\n");
-				_val = [{						
-					"parent" : "extras",
-					"new" : "rect",
-					"id" : "draw-" + pons,
-					"x" : msg[2],
-					"y" : msg[3],
-					"width" : msg[4],
-					"height" : msg[5],
-					"style" : {
-						"stroke-width" : 0.6,
-						"stroke" : "none",
-						"stroke-opacity" : 0.,
-						"fill" : "rgb(" + Math.round(source_rgb[0] * 255) + "," + Math.round(source_rgb[1] * 255) + "," + Math.round(source_rgb[2] * 255) + ")",
-						"fill-opacity" : source_rgb[3]
-						}
-					}];	
-				pons++;
-				break;
-				case "fill":
-	            post("msg", JSON.stringify(_val), "\n");
-				var _draw = {"*" : { "key" : "svg", "val" : _val}};	
-				draw.parse(JSON.stringify(_draw));
-				outlet(0, "dictionary", draw.name);	
-				break;
-				default :
-				}
-			break;
-			case "clearGraphics":
-			var clear = {"key" : "remove", "val" : "overlay"};	
-			var val = {
-			"parent" : "main-svg",
-			"new" : "g",
-			"id" : "overlay"
-			};
-			var _draw = {"*" : [clear, {"key" : "svg", "val" : val}]};	
-			draw.parse(JSON.stringify(_draw));
-			outlet(0, "dictionary", draw.name);	
-			renderPlayhead();
-			break;
-			case "set_source_rgb":
-			source_rgb = [msg[1], msg[2], msg[3], 1];
-			break;
-			case "set_source_rgba":
-			source_rgb = [msg[1], msg[2], msg[3], msg[4]];
-			break;
-			case "move_to":
-			x = msg[1];
-			y = msg[2];
-			break;
-			case "set_font_size":
-			f_size = msg[1];
-			break;
-			case "select_font_face":
-			f_face = msg[1];
-			break;
-			case "show_text":
-			//var _draw = {};
-			_val = {
-					"parent" : "overlay",
-					"new" : "text",
-					"id" : "draw-" + pons,
-					"x" : x,
-					"y" : y,
-					"text" : msg[1],
-					"style" : 					{
-						"font-family" : f_face,
-						"font-size" : f_size,
-						"fill" : "rgb(" + Math.round(source_rgb[0] * 255) + "," + Math.round(source_rgb[1] * 255) + "," + Math.round(source_rgb[2] * 255) + ")",
-						"fill-opacity" : source_rgb[3]
-					}
-					};
-				var _draw = {"*" : { "key" : "svg", "val" : _val}};	
-				draw.parse(JSON.stringify(_draw));
-				outlet(0, "dictionary", draw.name);	
-				pons++;
-			break;
-			case "rectangle" :
-			vvv = {						
-					"parent" : "overlay",
-					"new" : "rect",
-					"id" : "draw-" + pons,
-					"x" : msg[1],
-					"y" : msg[2],
-					"width" : msg[3],
-					"height" : msg[4],
-					"style" : {
-						"stroke-width" : 0.6,
-						"stroke" : "none",
-						"stroke-opacity" : 0.,
-						"fill" : "rgb(" + Math.round(source_rgb[0] * 255) + "," + Math.round(source_rgb[1] * 255) + "," + Math.round(source_rgb[2] * 255) + ")",
-						"fill-opacity" : source_rgb[3]
-						}
-					};	
-				//post("val", JSON.stringify(vvv), "\n");
-				pons++;
-			break;
-			case "fill":
-			//var _draw = {"*" : { "key" : "svg", "val" : _val}};	
-			//post("val2", typeof vvv, "\n");
-			var _draw = {"*" : { "key" : "svg", "val" : vvv}};	
-			draw.parse(JSON.stringify(_draw));
-			outlet(0, "dictionary", draw.name);	
-			break;
-			default :
-			
-		}
-		
-	}
-}
-
-function blink()
-{
-	boundingRect = [];
-	drawBounds();
-}
-
-function setZoom(z)
-{
-	zoom = z * 2;
-	//pageSize(pageWidth, pageHeight);
-	//mgraphics.redraw();	
-}	
-
-function showgrid(show, size)
-{
-	
-}
-
-function drawGrid()
-{
- 
-}
-
-
-function flashing()
-{
-	/*
-	var flash = arrayfromargs(arguments);
-	if (flash[4] + flash[5] + flash[6] != 0) {
-		flashingNotes[flash[0] + "+" + flash[1]] = flash;
-	}
-	else {
-		delete flashingNotes[flash[0] + "+" + flash[1]];
-		}
-    	//mgraphics.redraw();
-		*/
 }
 
 function msg_dictionary(o)

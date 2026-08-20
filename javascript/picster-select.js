@@ -86,6 +86,7 @@ var translate = [];
 var moveToFlag = 0;
 var buttonMode = 0;
 var selectionMode = 1;
+
 var textbox = "destroyed";
 var _picster = {};
 var format = "";
@@ -107,6 +108,7 @@ var bgcolor_argb = [255, 254, 254, 240];
 var status = "regular";
 var dataID = "";
 var renderAllowed = 1;
+var boundingRectFlag = 1;
 
 removeTextedit();
 
@@ -1254,7 +1256,6 @@ function createRenderedMessage(f, x, y, serialized)
 			if (preference == "staff") {
 				outlet(0, "addRenderedMessageToStaff", anchor[0], anchor[1], (!isNaN(x)) ? x - anchor[2]/factor : (x.length > 1) ? parseFloat(x.slice(1)) : 0, (!isNaN(y)) ? y - anchor[3]/factor : (y.length > 1) ? parseFloat(y.slice(1)) : 0, serialized);
 				addedShape = ["staff", anchor[0], anchor[1], (!isNaN(x)) ? x * factor : (x.length > 1) ? parseFloat(x.slice(1)) : 0, (!isNaN(y)) ? y * factor : (y.length > 1) ? parseFloat(y.slice(1)) : 0, factor, serialized];
-				//post("anchors", x, y, anchor, x - anchor[2]/factor, y - anchor[3]/factor, "\n");
 			}
 			else {
 				outlet(0, "addRenderedMessageToMeasure", anchor[0], (!isNaN(x)) ? x - anchor[1]/factor : (x.length > 1) ? parseFloat(x.slice(1)) : 0, (!isNaN(y)) ? y - anchor[2]/factor : (y.length > 1) ? parseFloat(y.slice(1)) : 0, serialized);
@@ -1267,10 +1268,9 @@ function createRenderedMessage(f, x, y, serialized)
 		outlet(0, "saveToUndoStack");
 		outlet(0, "setRenderAllowed", "true");
 		}
-		//post("RM", renderedMessages.stringify(), "\n");
 	}
 	else outlet(2, "clearGraphics");
-	if (renderAllowed) findElementByID(currentID);
+	if (renderAllowed && boundingRectFlag) findElementByID(currentID);
 }
 
 function cnt()
@@ -1313,7 +1313,7 @@ function addShape()
 	var num = cnt();
 	currentID = "Picster-Element_" + num;
 	var msg = arrayfromargs(arguments);
-	var toffsets = [0, 0];
+    var toffsets = [0, 0];
 	edit.clear();
 	outlet(0, "getSelectionBufferSize");
 	if (isNaN(msg[0]) || isNaN(msg[1])) {
@@ -1672,7 +1672,6 @@ function addShape()
 			_picster["picster-element"][1].key = "extras";
 			_picster["picster-element"][1].val = {"bounds" : [-1, -1, -1, -1]};
 			dataID = "";
-			//post("JSON", JSON.stringify(_picster), "\n");
 			}
 			}
 			else {			
@@ -1863,6 +1862,38 @@ function addShape()
 				//outlet(3, "bang");
 			break;
 			}
+}
+
+function addShapeWithoutSelection()
+{
+	//post("arrayfromargs", arrayfromargs(arguments), "\n");
+    boundingRectFlag = 0;
+    addShape(...arrayfromargs(arguments));
+    boundingRectFlag = 1;
+}
+
+function removeAllShapesFromMeasure(m)
+{
+  outlet(0, "removeAllRenderedMessagesFromMeasure", m);
+  outlet(0, "setRenderAllowed", 1);
+}
+
+function removeAllShapesFromSelectedNotes()
+{
+  outlet(0, "removeAllRenderedMessagesFromSelectedNotes");
+  outlet(0, "setRenderAllowed", 1);
+}
+
+function removeAllShapesFromStaff(m, s)
+{
+  outlet(0, "removeAllRenderedMessagesFromStaff", m, s);
+  outlet(0, "setRenderAllowed", 1);
+}
+
+function removeAllShapesFromNote(m, s, t, n)
+{
+  outlet(0, "removeAllRenderedMessagesFromMeasure", m, s, t, n);
+  outlet(0, "setRenderAllowed", 1);
 }
 
 function clearSelection()
@@ -2220,7 +2251,8 @@ function anything()
 					cp.copy = [(offsets[item][0] - anchor[0]) / factor, (offsets[item][1] - anchor[1]) / factor, element];
 				}
 				else {
-					outlet(0, "getDrawingAnchor",  foundobjects.get(item)[1], foundobjects.get(item)[2]);
+					if (foundobjects.get(item)[0] == "staff") outlet(0, "getDrawingAnchor",  foundobjects.get(item)[1], foundobjects.get(item)[2]);
+                    else outlet(0, "getDrawingAnchor", foundobjects.get(item)[1]);
 					anchor = anchors[increment - 1];
 					outlet(0, "dumpScore", foundobjects.get(item)[1], 1);
 					for (var i = 0; i < userBeans.length; i++) {
@@ -2236,7 +2268,8 @@ function anything()
 							}
 						}
 					}
-					cp.copy = [(offsets[item][0] - anchor[2]) / factor, (offsets[item][1] - anchor[3]) / factor, element];
+					if (foundobjects.get(item)[0] == "staff") cp.copy = [(offsets[item][0] - anchor[2]) / factor, (offsets[item][1] - anchor[3]) / factor, element];
+                    else cp.copy = [(offsets[item][0] - anchor[1]) / factor, (offsets[item][1] - anchor[2]) / factor, element];
 				}
 			}
 			break;
@@ -2475,7 +2508,7 @@ function anything()
 								path = ellipse2path.split(/[\s,]+/);
 							}
 							else if (type == "path") path = edit.get("picster-element[0]::val::d").split(/[\s,]+/);
-							post("path", path, "\n");
+							//post("path", path, "\n");
 							var accum = 0;
 							var points = SVGParse(path);
 							var xyt = refactorArray(points);

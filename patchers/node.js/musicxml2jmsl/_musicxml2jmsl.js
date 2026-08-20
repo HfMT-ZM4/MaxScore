@@ -932,6 +932,10 @@ var musicxml_callbacks =
 				              // and are part of the notes that they attach to, so we have to keep
 				              // an array of them until the next real note appears.
 				              var gracenotes = undefined;
+						      // Remember staff/track of the previous non-chord note.
+						      // MusicXML chord members may omit <voice> and/or <staff>.
+						      var previous_note_tracknum = 0;
+						      var previous_note_staffnum = 0;
 				              T(mxml, jmsl,
 				                {
 				                    
@@ -1183,7 +1187,9 @@ var musicxml_callbacks =
 					                    var tracknum = 0;
 					                    var chord = false;
 					                    var staffnum = 0;
-					                    var dots = 0;
+    									var voice_specified = false;
+    									var staff_specified = false;
+										var dots = 0;
 					                    var grace = false;
 					                    start_of_measure = false;
 					                    T(mxml, jmsl,
@@ -1240,9 +1246,10 @@ var musicxml_callbacks =
 						                      'instrument' : ()=>{},
 						                      'footnote' : ()=>{},
 						                      'level' : ()=>{},
-						                      'voice' : (mxml,jmsl)=>{ // jmsl track
-						                          tracknum = Number(v(mxml)) - 1;
-						                      },
+						                     'voice' : (mxml,jmsl)=>{ // jmsl track
+    											tracknum = Number(v(mxml)) - 1;
+    											voice_specified = true;
+											  },
 						                      'type' : (mxml,jmsl)=>{
 						                          nattr.NOTEDUR = notetype_to_notedur(v(mxml));
 						                          nattr.DURATION = notetype_to_duration(v(mxml));
@@ -1306,9 +1313,10 @@ var musicxml_callbacks =
 						                          }
 						                      },
 						                      'notehead-text' : undefined,
-						                      'staff' : (mxml,jmsl)=>{
-						                          staffnum = Number(v(mxml)) - 1;
-						                      },
+											  'staff' : (mxml,jmsl)=>{
+    											  staffnum = Number(v(mxml)) - 1;
+    											  staff_specified = true;
+											  },
 						                      'beam' : (mxml,jmsl)=>{
 						                          var val = v(mxml);
 						                          if(val == "begin" || val == "continue"){
@@ -1520,6 +1528,15 @@ var musicxml_callbacks =
 						                      },
 						                      'play' : undefined
 					                      })
+										if (chord) {
+										    if (!voice_specified) {
+										        tracknum = previous_note_tracknum;
+										    }
+	
+										    if (!staff_specified) {
+										        staffnum = previous_note_staffnum;
+										    }
+										}
 					                    nattr.DOTS = dots;
 					                    if(dots > 0){
 					                        var d = nattr.DURATION;
@@ -1568,7 +1585,10 @@ var musicxml_callbacks =
 					                        }
 					                        push_note_onto_staff(__ss[staffnum], tracknum, note);
 					                    }
-					                    
+					                    if (!chord) {
+										    previous_note_tracknum = tracknum;
+										    previous_note_staffnum = staffnum;
+										}
 				                    }
 				                })
 				              __ss.forEach((s, i) => {

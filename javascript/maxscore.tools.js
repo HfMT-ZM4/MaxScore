@@ -10,6 +10,7 @@ function ds2css(d)
 		.glyph { font-family: ${d.val[0].props["font-family"]};font-style: normal;font-weight: normal;font-size: 24px; fill: ${d.val[0].props.fill};fill-opacity: ${d.val[0].props["fill-opacity"]}; }
   		.text  { font-family: ${d.val[1].props["font-family"]};font-style: normal;font-weight: normal;font-size: 10px; fill: ${d.val[1].props.fill};fill-opacity: ${d.val[1].props["fill-opacity"]}; }
   		.line { stroke: ${d.val[2].props.stroke}; stroke-width: 0.6; stroke-dasharray: ${d.val[2].props["stroke-dasharray"]} } 
+  		.thickline { stroke: ${d.val[3].props.stroke}; stroke-width: 3.375; stroke-dasharray: ${d.val[2].props["stroke-dasharray"]} } 
 </style>`;
 	return style;
 }
