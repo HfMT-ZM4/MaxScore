@@ -2328,15 +2328,17 @@ function anything()
 			//var userBeans = [].concat(json["measure"]["measureUserBean"]);
 			break;
 			}
+            let jay = 0;
 			for (var i = 0; i < userBeans.length; i++) {
 			if (userBeans[i]["@Message"].indexOf("rendered") == -1 && userBeans[i]["@Message"].indexOf("sequenced") == -1) {
 				//tempObjArray[i] = {};
 				//cases: don't consider old format, sustains, pitchbends (same?) and tablature symbols
 				tempDict.parse(userBeans[i]["@Message"]);
 				if ((tempDict.contains("picster-element[0]::val::visibility") && tempDict.get("picster-element[0]::val::visibility") == "visible") || !tempDict.contains("picster-element[0]::val::visibility")) {
-					tempObjArray[i] = JSON.parse(tempDict.stringify());
-					tempObjArray[i].Xoffset = parseFloat(userBeans[i]["@Xoffset"]) * factor;
-					tempObjArray[i].Yoffset = parseFloat(userBeans[i]["@Yoffset"]) * factor;
+					tempObjArray[jay] = JSON.parse(tempDict.stringify());
+					tempObjArray[jay].Xoffset = parseFloat(userBeans[i]["@Xoffset"]) * factor;
+					tempObjArray[jay].Yoffset = parseFloat(userBeans[i]["@Yoffset"]) * factor;
+                    jay++;
 				}
 				else {
 					tempDict.replace("picster-element[0]::val::transform", "matrix(" + [1, 0, 0, 1, parseFloat(userBeans[i]["@Xoffset"]) * factor, parseFloat(userBeans[i]["@Yoffset"]) * factor] + ")");
@@ -2351,6 +2353,7 @@ function anything()
 			attr.id = "Picster-Element_" + cnt();
 			attr.transform = "matrix(" + [1, 0, 0, 1, 0, 0] + ")";
 			attr.child = [];
+            //post("tempObjArray", JSON.stringify(tempObjArray), "\n");
 			// filter out non-Picster elements
 			for (var i = 0; i < tempObjArray.length; i++) {
 				attr.child.push(tempObjArray[i]["picster-element"][0].val);

@@ -1033,7 +1033,9 @@ function anything()
 {
 	var msg = arrayfromargs(messagename, arguments);
     var parent = "overlay";
-	if (msg[0] == "bounds") {
+	//post("msg", msg[0], "\n");
+    if (msg[0] == "picsterShape") return;
+	else if (msg[0] == "bounds") {
 		if (msg[1] == "hide") {
 			boundingRect = [];
 			drawBounds();
@@ -1262,7 +1264,6 @@ function msg_dictionary(o)
 				}
 			}
 		}
-		//post("NSG-1", JSON.stringify(SVGExtras), "\n");
 		var translate = o.transforms[s][i]["picster:offset"];
 		SVGDefs[s][i] = {};
 		//ONLY IF NEW != SVG
